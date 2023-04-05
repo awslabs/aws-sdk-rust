@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`r#type(NotebookType)`](crate::operation::import_notebook::builders::ImportNotebookFluentBuilder::type) / [`set_type(Option<NotebookType>)`](crate::operation::import_notebook::builders::ImportNotebookFluentBuilder::set_type): <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::operation::import_notebook::builders::ImportNotebookFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::import_notebook::builders::ImportNotebookFluentBuilder::set_client_request_token): <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
     /// - On success, responds with [`ImportNotebookOutput`](crate::operation::import_notebook::ImportNotebookOutput) with field(s):
-    ///   - [`notebook_id(Option<String>)`](crate::operation::import_notebook::ImportNotebookOutput::notebook_id): <p>The ID of the notebook to import.</p>
+    ///   - [`notebook_id(Option<String>)`](crate::operation::import_notebook::ImportNotebookOutput::notebook_id): <p>The ID assigned to the imported notebook.</p>
     /// - On failure, responds with [`SdkError<ImportNotebookError>`](crate::operation::import_notebook::ImportNotebookError)
     pub fn import_notebook(
         &self,

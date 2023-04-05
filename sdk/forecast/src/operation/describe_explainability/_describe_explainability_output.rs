@@ -18,7 +18,7 @@ pub struct DescribeExplainabilityOutput {
     /// <p>Whether the visualization was enabled for the Explainability resource.</p>
     #[doc(hidden)]
     pub enable_visualization: std::option::Option<bool>,
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<crate::types::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
@@ -83,7 +83,7 @@ impl DescribeExplainabilityOutput {
     pub fn enable_visualization(&self) -> std::option::Option<bool> {
         self.enable_visualization
     }
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
@@ -227,12 +227,12 @@ impl DescribeExplainabilityOutputBuilder {
         self.enable_visualization = input;
         self
     }
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = Some(input);
         self
     }
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self

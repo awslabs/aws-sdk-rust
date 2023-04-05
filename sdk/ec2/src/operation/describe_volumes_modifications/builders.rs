@@ -147,22 +147,22 @@ impl DescribeVolumesModificationsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The <code>nextToken</code> value returned by a previous paginated request.</p>
+    /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> value returned by a previous paginated request.</p>
+    /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request.</p>
+    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request.</p>
+    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self

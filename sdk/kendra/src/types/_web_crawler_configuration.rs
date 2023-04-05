@@ -7,22 +7,22 @@ pub struct WebCrawlerConfiguration {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
+    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     #[doc(hidden)]
     pub urls: std::option::Option<crate::types::Urls>,
     /// <p>Specifies the number of levels in a website that you want to crawl.</p>
-    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has 3 levels – index level (i.e. seed in this example), sections level, and subsections level – and you are only interested in crawling information up to the sections level (i.e. levels 0-1), you can set your depth to 1.</p>
+    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has three levels—index level (the seed in this example), sections level, and subsections level—and you are only interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.</p>
     /// <p>The default crawl depth is set to 2.</p>
     #[doc(hidden)]
     pub crawl_depth: std::option::Option<i32>,
-    /// <p>The maximum number of URLs on a webpage to include when crawling a website. This number is per webpage.</p>
-    /// <p>As a website’s webpages are crawled, any URLs the webpages link to are also crawled. URLs on a webpage are crawled in order of appearance.</p>
+    /// <p>The maximum number of URLs on a web page to include when crawling a website. This number is per web page.</p>
+    /// <p>As a website’s web pages are crawled, any URLs the web pages link to are also crawled. URLs on a web page are crawled in order of appearance.</p>
     /// <p>The default maximum links per page is 100.</p>
     #[doc(hidden)]
     pub max_links_per_page: std::option::Option<i32>,
-    /// <p>The maximum size (in MB) of a webpage or attachment to crawl.</p>
+    /// <p>The maximum size (in MB) of a web page or attachment to crawl.</p>
     /// <p>Files larger than this size (in MB) are skipped/not crawled.</p>
-    /// <p>The default maximum size of a webpage or attachment is set to 50 MB.</p>
+    /// <p>The default maximum size of a web page or attachment is set to 50 MB.</p>
     #[doc(hidden)]
     pub max_content_size_per_page_in_mega_bytes: std::option::Option<f32>,
     /// <p>The maximum number of URLs crawled per website host per minute.</p>
@@ -52,25 +52,25 @@ impl WebCrawlerConfiguration {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
+    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     pub fn urls(&self) -> std::option::Option<&crate::types::Urls> {
         self.urls.as_ref()
     }
     /// <p>Specifies the number of levels in a website that you want to crawl.</p>
-    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has 3 levels – index level (i.e. seed in this example), sections level, and subsections level – and you are only interested in crawling information up to the sections level (i.e. levels 0-1), you can set your depth to 1.</p>
+    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has three levels—index level (the seed in this example), sections level, and subsections level—and you are only interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.</p>
     /// <p>The default crawl depth is set to 2.</p>
     pub fn crawl_depth(&self) -> std::option::Option<i32> {
         self.crawl_depth
     }
-    /// <p>The maximum number of URLs on a webpage to include when crawling a website. This number is per webpage.</p>
-    /// <p>As a website’s webpages are crawled, any URLs the webpages link to are also crawled. URLs on a webpage are crawled in order of appearance.</p>
+    /// <p>The maximum number of URLs on a web page to include when crawling a website. This number is per web page.</p>
+    /// <p>As a website’s web pages are crawled, any URLs the web pages link to are also crawled. URLs on a web page are crawled in order of appearance.</p>
     /// <p>The default maximum links per page is 100.</p>
     pub fn max_links_per_page(&self) -> std::option::Option<i32> {
         self.max_links_per_page
     }
-    /// <p>The maximum size (in MB) of a webpage or attachment to crawl.</p>
+    /// <p>The maximum size (in MB) of a web page or attachment to crawl.</p>
     /// <p>Files larger than this size (in MB) are skipped/not crawled.</p>
-    /// <p>The default maximum size of a webpage or attachment is set to 50 MB.</p>
+    /// <p>The default maximum size of a web page or attachment is set to 50 MB.</p>
     pub fn max_content_size_per_page_in_mega_bytes(&self) -> std::option::Option<f32> {
         self.max_content_size_per_page_in_mega_bytes
     }
@@ -129,7 +129,7 @@ impl WebCrawlerConfigurationBuilder {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
+    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     pub fn urls(mut self, input: crate::types::Urls) -> Self {
         self.urls = Some(input);
         self
@@ -137,49 +137,49 @@ impl WebCrawlerConfigurationBuilder {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
+    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     pub fn set_urls(mut self, input: std::option::Option<crate::types::Urls>) -> Self {
         self.urls = input;
         self
     }
     /// <p>Specifies the number of levels in a website that you want to crawl.</p>
-    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has 3 levels – index level (i.e. seed in this example), sections level, and subsections level – and you are only interested in crawling information up to the sections level (i.e. levels 0-1), you can set your depth to 1.</p>
+    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has three levels—index level (the seed in this example), sections level, and subsections level—and you are only interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.</p>
     /// <p>The default crawl depth is set to 2.</p>
     pub fn crawl_depth(mut self, input: i32) -> Self {
         self.crawl_depth = Some(input);
         self
     }
     /// <p>Specifies the number of levels in a website that you want to crawl.</p>
-    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has 3 levels – index level (i.e. seed in this example), sections level, and subsections level – and you are only interested in crawling information up to the sections level (i.e. levels 0-1), you can set your depth to 1.</p>
+    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has three levels—index level (the seed in this example), sections level, and subsections level—and you are only interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.</p>
     /// <p>The default crawl depth is set to 2.</p>
     pub fn set_crawl_depth(mut self, input: std::option::Option<i32>) -> Self {
         self.crawl_depth = input;
         self
     }
-    /// <p>The maximum number of URLs on a webpage to include when crawling a website. This number is per webpage.</p>
-    /// <p>As a website’s webpages are crawled, any URLs the webpages link to are also crawled. URLs on a webpage are crawled in order of appearance.</p>
+    /// <p>The maximum number of URLs on a web page to include when crawling a website. This number is per web page.</p>
+    /// <p>As a website’s web pages are crawled, any URLs the web pages link to are also crawled. URLs on a web page are crawled in order of appearance.</p>
     /// <p>The default maximum links per page is 100.</p>
     pub fn max_links_per_page(mut self, input: i32) -> Self {
         self.max_links_per_page = Some(input);
         self
     }
-    /// <p>The maximum number of URLs on a webpage to include when crawling a website. This number is per webpage.</p>
-    /// <p>As a website’s webpages are crawled, any URLs the webpages link to are also crawled. URLs on a webpage are crawled in order of appearance.</p>
+    /// <p>The maximum number of URLs on a web page to include when crawling a website. This number is per web page.</p>
+    /// <p>As a website’s web pages are crawled, any URLs the web pages link to are also crawled. URLs on a web page are crawled in order of appearance.</p>
     /// <p>The default maximum links per page is 100.</p>
     pub fn set_max_links_per_page(mut self, input: std::option::Option<i32>) -> Self {
         self.max_links_per_page = input;
         self
     }
-    /// <p>The maximum size (in MB) of a webpage or attachment to crawl.</p>
+    /// <p>The maximum size (in MB) of a web page or attachment to crawl.</p>
     /// <p>Files larger than this size (in MB) are skipped/not crawled.</p>
-    /// <p>The default maximum size of a webpage or attachment is set to 50 MB.</p>
+    /// <p>The default maximum size of a web page or attachment is set to 50 MB.</p>
     pub fn max_content_size_per_page_in_mega_bytes(mut self, input: f32) -> Self {
         self.max_content_size_per_page_in_mega_bytes = Some(input);
         self
     }
-    /// <p>The maximum size (in MB) of a webpage or attachment to crawl.</p>
+    /// <p>The maximum size (in MB) of a web page or attachment to crawl.</p>
     /// <p>Files larger than this size (in MB) are skipped/not crawled.</p>
-    /// <p>The default maximum size of a webpage or attachment is set to 50 MB.</p>
+    /// <p>The default maximum size of a web page or attachment is set to 50 MB.</p>
     pub fn set_max_content_size_per_page_in_mega_bytes(
         mut self,
         input: std::option::Option<f32>,

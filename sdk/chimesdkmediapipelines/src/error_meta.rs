@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::types::error::BadRequestException),
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
@@ -26,6 +28,7 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::BadRequestException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::ResourceLimitExceededException(inner) => inner.fmt(f),
@@ -113,6 +116,84 @@ impl From<crate::operation::create_media_concatenation_pipeline::CreateMediaConc
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError,
+    ) -> Self {
+        match err {
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError> for Error {
+    fn from(err: crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError) -> Self {
+        match err {
+            crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError, R>) -> Self {
         match err {
@@ -186,6 +267,34 @@ impl From<crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePip
             crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
             crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
             crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError> for Error {
+    fn from(err: crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -281,6 +390,33 @@ impl From<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineE
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError> for Error {
+    fn from(err: crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError) -> Self {
+        match err {
+            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -372,6 +508,33 @@ impl From<crate::operation::list_media_capture_pipelines::ListMediaCapturePipeli
             crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
             crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
             crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError> for Error {
+    fn from(err: crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -575,11 +738,68 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError> for Error {
+    fn from(err: crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError) -> Self {
+        match err {
+            crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError> for Error {
+    fn from(err: crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError) -> Self {
+        match err {
+            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl std::error::Error for Error {}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::BadRequestException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::ForbiddenException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
             Self::ResourceLimitExceededException(e) => e.request_id(),

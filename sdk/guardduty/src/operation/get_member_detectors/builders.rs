@@ -6,6 +6,7 @@ pub use crate::operation::get_member_detectors::_get_member_detectors_input::Get
 /// Fluent builder constructing a request to `GetMemberDetectors`.
 ///
 /// <p>Describes which data sources are enabled for the member account's detector.</p>
+/// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMemberDetectorsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

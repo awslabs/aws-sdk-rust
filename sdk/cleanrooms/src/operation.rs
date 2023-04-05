@@ -82,8 +82,17 @@ pub mod list_protected_queries;
 /// Types for the `ListSchemas` operation.
 pub mod list_schemas;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `StartProtectedQuery` operation.
 pub mod start_protected_query;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
 
 /// Types for the `UpdateCollaboration` operation.
 pub mod update_collaboration;

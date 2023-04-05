@@ -13,7 +13,7 @@ pub struct IpamPool {
     /// <p>The ID of the source IPAM pool. You can use this option to create an IPAM pool within an existing source pool.</p>
     #[doc(hidden)]
     pub source_ipam_pool_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IPAM pool.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IPAM pool.</p>
     #[doc(hidden)]
     pub ipam_pool_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the scope of the IPAM pool.</p>
@@ -71,6 +71,9 @@ pub struct IpamPool {
     /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
     #[doc(hidden)]
     pub aws_service: std::option::Option<crate::types::IpamPoolAwsService>,
+    /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>BYOIP</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    #[doc(hidden)]
+    pub public_ip_source: std::option::Option<crate::types::IpamPoolPublicIpSource>,
 }
 impl IpamPool {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
@@ -85,7 +88,7 @@ impl IpamPool {
     pub fn source_ipam_pool_id(&self) -> std::option::Option<&str> {
         self.source_ipam_pool_id.as_deref()
     }
-    /// <p>The ARN of the IPAM pool.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IPAM pool.</p>
     pub fn ipam_pool_arn(&self) -> std::option::Option<&str> {
         self.ipam_pool_arn.as_deref()
     }
@@ -164,6 +167,10 @@ impl IpamPool {
     pub fn aws_service(&self) -> std::option::Option<&crate::types::IpamPoolAwsService> {
         self.aws_service.as_ref()
     }
+    /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>BYOIP</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn public_ip_source(&self) -> std::option::Option<&crate::types::IpamPoolPublicIpSource> {
+        self.public_ip_source.as_ref()
+    }
 }
 impl IpamPool {
     /// Creates a new builder-style object to manufacture [`IpamPool`](crate::types::IpamPool).
@@ -199,6 +206,7 @@ pub struct IpamPoolBuilder {
         std::option::Option<std::vec::Vec<crate::types::IpamResourceTag>>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) aws_service: std::option::Option<crate::types::IpamPoolAwsService>,
+    pub(crate) public_ip_source: std::option::Option<crate::types::IpamPoolPublicIpSource>,
 }
 impl IpamPoolBuilder {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
@@ -234,12 +242,12 @@ impl IpamPoolBuilder {
         self.source_ipam_pool_id = input;
         self
     }
-    /// <p>The ARN of the IPAM pool.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IPAM pool.</p>
     pub fn ipam_pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.ipam_pool_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the IPAM pool.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IPAM pool.</p>
     pub fn set_ipam_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.ipam_pool_arn = input;
         self
@@ -456,6 +464,19 @@ impl IpamPoolBuilder {
         self.aws_service = input;
         self
     }
+    /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>BYOIP</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn public_ip_source(mut self, input: crate::types::IpamPoolPublicIpSource) -> Self {
+        self.public_ip_source = Some(input);
+        self
+    }
+    /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>BYOIP</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn set_public_ip_source(
+        mut self,
+        input: std::option::Option<crate::types::IpamPoolPublicIpSource>,
+    ) -> Self {
+        self.public_ip_source = input;
+        self
+    }
     /// Consumes the builder and constructs a [`IpamPool`](crate::types::IpamPool).
     pub fn build(self) -> crate::types::IpamPool {
         crate::types::IpamPool {
@@ -481,6 +502,7 @@ impl IpamPoolBuilder {
             allocation_resource_tags: self.allocation_resource_tags,
             tags: self.tags,
             aws_service: self.aws_service,
+            public_ip_source: self.public_ip_source,
         }
     }
 }

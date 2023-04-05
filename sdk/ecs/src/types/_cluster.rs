@@ -86,7 +86,7 @@ pub struct Cluster {
     /// </ul>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or disabled for a cluster.</p>
+    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a cluster.</p>
     #[doc(hidden)]
     pub settings: std::option::Option<std::vec::Vec<crate::types::ClusterSetting>>,
     /// <p>The capacity providers associated with the cluster.</p>
@@ -220,7 +220,7 @@ impl Cluster {
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or disabled for a cluster.</p>
+    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a cluster.</p>
     pub fn settings(&self) -> std::option::Option<&[crate::types::ClusterSetting]> {
         self.settings.as_deref()
     }
@@ -533,14 +533,14 @@ impl ClusterBuilder {
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
     ///
-    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or disabled for a cluster.</p>
+    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a cluster.</p>
     pub fn settings(mut self, input: crate::types::ClusterSetting) -> Self {
         let mut v = self.settings.unwrap_or_default();
         v.push(input);
         self.settings = Some(v);
         self
     }
-    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or disabled for a cluster.</p>
+    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a cluster.</p>
     pub fn set_settings(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ClusterSetting>>,

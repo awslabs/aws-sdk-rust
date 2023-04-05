@@ -10,6 +10,9 @@ pub struct VariantImportItemDetail {
     /// <p>The item's job status.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::types::JobStatus>,
+    /// <p> A message that provides additional context about a job </p>
+    #[doc(hidden)]
+    pub status_message: std::option::Option<std::string::String>,
 }
 impl VariantImportItemDetail {
     /// <p>The source file's location in Amazon S3.</p>
@@ -19,6 +22,10 @@ impl VariantImportItemDetail {
     /// <p>The item's job status.</p>
     pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
+    }
+    /// <p> A message that provides additional context about a job </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
     }
 }
 impl VariantImportItemDetail {
@@ -34,6 +41,7 @@ impl VariantImportItemDetail {
 pub struct VariantImportItemDetailBuilder {
     pub(crate) source: std::option::Option<std::string::String>,
     pub(crate) job_status: std::option::Option<crate::types::JobStatus>,
+    pub(crate) status_message: std::option::Option<std::string::String>,
 }
 impl VariantImportItemDetailBuilder {
     /// <p>The source file's location in Amazon S3.</p>
@@ -56,11 +64,22 @@ impl VariantImportItemDetailBuilder {
         self.job_status = input;
         self
     }
+    /// <p> A message that provides additional context about a job </p>
+    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+        self.status_message = Some(input.into());
+        self
+    }
+    /// <p> A message that provides additional context about a job </p>
+    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
     /// Consumes the builder and constructs a [`VariantImportItemDetail`](crate::types::VariantImportItemDetail).
     pub fn build(self) -> crate::types::VariantImportItemDetail {
         crate::types::VariantImportItemDetail {
             source: self.source,
             job_status: self.job_status,
+            status_message: self.status_message,
         }
     }
 }

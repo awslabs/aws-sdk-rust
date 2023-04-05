@@ -21,15 +21,11 @@ pub fn ser_create_portfolio_share_input(
         )?;
         object_5.finish();
     }
-    if input.share_tag_options {
-        object
-            .key("ShareTagOptions")
-            .boolean(input.share_tag_options);
+    if let Some(var_6) = &input.share_tag_options {
+        object.key("ShareTagOptions").boolean(*var_6);
     }
-    if input.share_principals {
-        object
-            .key("SharePrincipals")
-            .boolean(input.share_principals);
+    if let Some(var_7) = &input.share_principals {
+        object.key("SharePrincipals").boolean(*var_7);
     }
     Ok(())
 }

@@ -7,7 +7,7 @@ pub struct ClickFeedback {
     /// <p>The identifier of the search result that was clicked.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
-    /// <p>The Unix timestamp of the date and time that the result was clicked.</p>
+    /// <p>The Unix timestamp when the result was clicked.</p>
     #[doc(hidden)]
     pub click_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -16,7 +16,7 @@ impl ClickFeedback {
     pub fn result_id(&self) -> std::option::Option<&str> {
         self.result_id.as_deref()
     }
-    /// <p>The Unix timestamp of the date and time that the result was clicked.</p>
+    /// <p>The Unix timestamp when the result was clicked.</p>
     pub fn click_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.click_time.as_ref()
     }
@@ -46,12 +46,12 @@ impl ClickFeedbackBuilder {
         self.result_id = input;
         self
     }
-    /// <p>The Unix timestamp of the date and time that the result was clicked.</p>
+    /// <p>The Unix timestamp when the result was clicked.</p>
     pub fn click_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.click_time = Some(input);
         self
     }
-    /// <p>The Unix timestamp of the date and time that the result was clicked.</p>
+    /// <p>The Unix timestamp when the result was clicked.</p>
     pub fn set_click_time(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

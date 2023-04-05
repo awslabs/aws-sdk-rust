@@ -63,6 +63,54 @@ pub use crate::types::_mfa_delete::MfaDelete;
 
 pub use crate::types::_tagging::Tagging;
 
+pub use crate::types::_replication_configuration::ReplicationConfiguration;
+
+pub use crate::types::_replication_rule::ReplicationRule;
+
+pub use crate::types::_delete_marker_replication::DeleteMarkerReplication;
+
+pub use crate::types::_delete_marker_replication_status::DeleteMarkerReplicationStatus;
+
+pub use crate::types::_destination::Destination;
+
+pub use crate::types::_replication_storage_class::ReplicationStorageClass;
+
+pub use crate::types::_metrics::Metrics;
+
+pub use crate::types::_replication_time_value::ReplicationTimeValue;
+
+pub use crate::types::_metrics_status::MetricsStatus;
+
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+
+pub use crate::types::_access_control_translation::AccessControlTranslation;
+
+pub use crate::types::_owner_override::OwnerOverride;
+
+pub use crate::types::_replication_time::ReplicationTime;
+
+pub use crate::types::_replication_time_status::ReplicationTimeStatus;
+
+pub use crate::types::_existing_object_replication::ExistingObjectReplication;
+
+pub use crate::types::_existing_object_replication_status::ExistingObjectReplicationStatus;
+
+pub use crate::types::_source_selection_criteria::SourceSelectionCriteria;
+
+pub use crate::types::_replica_modifications::ReplicaModifications;
+
+pub use crate::types::_replica_modifications_status::ReplicaModificationsStatus;
+
+pub use crate::types::_sse_kms_encrypted_objects::SseKmsEncryptedObjects;
+
+pub use crate::types::_sse_kms_encrypted_objects_status::SseKmsEncryptedObjectsStatus;
+
+pub use crate::types::_replication_rule_status::ReplicationRuleStatus;
+
+pub use crate::types::_replication_rule_filter::ReplicationRuleFilter;
+
+pub use crate::types::_replication_rule_and_operator::ReplicationRuleAndOperator;
+
 pub use crate::types::_lifecycle_configuration::LifecycleConfiguration;
 
 pub use crate::types::_lifecycle_rule::LifecycleRule;
@@ -116,6 +164,10 @@ pub use crate::types::_job_timers::JobTimers;
 pub use crate::types::_operation_name::OperationName;
 
 pub use crate::types::_object_lambda_access_point::ObjectLambdaAccessPoint;
+
+pub use crate::types::_object_lambda_access_point_alias::ObjectLambdaAccessPointAlias;
+
+pub use crate::types::_object_lambda_access_point_alias_status::ObjectLambdaAccessPointAliasStatus;
 
 pub use crate::types::_access_point::AccessPoint;
 
@@ -259,6 +311,8 @@ pub use crate::types::_bucket_canned_acl::BucketCannedAcl;
 
 mod _abort_incomplete_multipart_upload;
 
+mod _access_control_translation;
+
 mod _access_point;
 
 mod _account_level;
@@ -295,13 +349,25 @@ mod _create_bucket_configuration;
 
 mod _create_multi_region_access_point_input;
 
+mod _delete_marker_replication;
+
+mod _delete_marker_replication_status;
+
 mod _delete_multi_region_access_point_input;
 
+mod _destination;
+
 mod _detailed_status_codes_metrics;
+
+mod _encryption_configuration;
 
 mod _established_multi_region_access_point_policy;
 
 mod _exclude;
+
+mod _existing_object_replication;
+
+mod _existing_object_replication_status;
 
 mod _expiration_status;
 
@@ -361,6 +427,10 @@ mod _lifecycle_rule_filter;
 
 mod _list_storage_lens_configuration_entry;
 
+mod _metrics;
+
+mod _metrics_status;
+
 mod _mfa_delete;
 
 mod _mfa_delete_status;
@@ -385,6 +455,10 @@ mod _noncurrent_version_transition;
 
 mod _object_lambda_access_point;
 
+mod _object_lambda_access_point_alias;
+
+mod _object_lambda_access_point_alias_status;
+
 mod _object_lambda_allowed_feature;
 
 mod _object_lambda_configuration;
@@ -398,6 +472,8 @@ mod _object_lambda_transformation_configuration_action;
 mod _operation_name;
 
 mod _output_schema_version;
+
+mod _owner_override;
 
 mod _policy_status;
 
@@ -417,7 +493,29 @@ mod _region_report;
 
 mod _regional_bucket;
 
+mod _replica_modifications;
+
+mod _replica_modifications_status;
+
+mod _replication_configuration;
+
+mod _replication_rule;
+
+mod _replication_rule_and_operator;
+
+mod _replication_rule_filter;
+
+mod _replication_rule_status;
+
 mod _replication_status;
+
+mod _replication_storage_class;
+
+mod _replication_time;
+
+mod _replication_time_status;
+
+mod _replication_time_value;
 
 mod _requested_job_status;
 
@@ -486,6 +584,12 @@ mod _s3_storage_class;
 mod _s3_tag;
 
 mod _selection_criteria;
+
+mod _source_selection_criteria;
+
+mod _sse_kms_encrypted_objects;
+
+mod _sse_kms_encrypted_objects_status;
 
 mod _ssekms;
 

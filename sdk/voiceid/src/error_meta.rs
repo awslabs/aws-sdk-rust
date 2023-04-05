@@ -35,6 +35,51 @@ impl std::fmt::Display for Error {
     }
 }
 impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::associate_fraudster::AssociateFraudsterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::associate_fraudster::AssociateFraudsterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_fraudster::AssociateFraudsterError> for Error {
+    fn from(err: crate::operation::associate_fraudster::AssociateFraudsterError) -> Self {
+        match err {
+            crate::operation::associate_fraudster::AssociateFraudsterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_fraudster::AssociateFraudsterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_fraudster::AssociateFraudsterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_fraudster::AssociateFraudsterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_fraudster::AssociateFraudsterError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::associate_fraudster::AssociateFraudsterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_fraudster::AssociateFraudsterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_fraudster::AssociateFraudsterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError, R>>
     for Error
 where
@@ -88,6 +133,51 @@ impl From<crate::operation::create_domain::CreateDomainError> for Error {
             crate::operation::create_domain::CreateDomainError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_watchlist::CreateWatchlistError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_watchlist::CreateWatchlistError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_watchlist::CreateWatchlistError> for Error {
+    fn from(err: crate::operation::create_watchlist::CreateWatchlistError) -> Self {
+        match err {
+            crate::operation::create_watchlist::CreateWatchlistError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_watchlist::CreateWatchlistError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_watchlist::CreateWatchlistError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_watchlist::CreateWatchlistError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_watchlist::CreateWatchlistError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_watchlist::CreateWatchlistError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_watchlist::CreateWatchlistError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_watchlist::CreateWatchlistError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -252,6 +342,64 @@ impl From<crate::operation::delete_speaker::DeleteSpeakerError> for Error {
                 Error::ValidationException(inner)
             }
             crate::operation::delete_speaker::DeleteSpeakerError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_watchlist::DeleteWatchlistError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_watchlist::DeleteWatchlistError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_watchlist::DeleteWatchlistError> for Error {
+    fn from(err: crate::operation::delete_watchlist::DeleteWatchlistError) -> Self {
+        match err {
+            crate::operation::delete_watchlist::DeleteWatchlistError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::delete_watchlist::DeleteWatchlistError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_watchlist::DeleteWatchlistError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::delete_watchlist::DeleteWatchlistError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_watchlist::DeleteWatchlistError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::delete_watchlist::DeleteWatchlistError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::delete_watchlist::DeleteWatchlistError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -485,6 +633,93 @@ impl From<crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnro
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::describe_watchlist::DescribeWatchlistError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_watchlist::DescribeWatchlistError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_watchlist::DescribeWatchlistError> for Error {
+    fn from(err: crate::operation::describe_watchlist::DescribeWatchlistError) -> Self {
+        match err {
+            crate::operation::describe_watchlist::DescribeWatchlistError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_watchlist::DescribeWatchlistError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_watchlist::DescribeWatchlistError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_watchlist::DescribeWatchlistError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_watchlist::DescribeWatchlistError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_watchlist::DescribeWatchlistError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_fraudster::DisassociateFraudsterError> for Error {
+    fn from(err: crate::operation::disassociate_fraudster::DisassociateFraudsterError) -> Self {
+        match err {
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::evaluate_session::EvaluateSessionError,
             R,
         >,
@@ -634,6 +869,61 @@ impl From<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegis
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::list_fraudsters::ListFraudstersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_fraudsters::ListFraudstersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_fraudsters::ListFraudstersError> for Error {
+    fn from(err: crate::operation::list_fraudsters::ListFraudstersError) -> Self {
+        match err {
+            crate::operation::list_fraudsters::ListFraudstersError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_fraudsters::ListFraudstersError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_fraudsters::ListFraudstersError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_fraudsters::ListFraudstersError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_fraudsters::ListFraudstersError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_fraudsters::ListFraudstersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError,
             R,
         >,
@@ -769,6 +1059,61 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_watchlists::ListWatchlistsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_watchlists::ListWatchlistsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_watchlists::ListWatchlistsError> for Error {
+    fn from(err: crate::operation::list_watchlists::ListWatchlistsError) -> Self {
+        match err {
+            crate::operation::list_watchlists::ListWatchlistsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_watchlists::ListWatchlistsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_watchlists::ListWatchlistsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_watchlists::ListWatchlistsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_watchlists::ListWatchlistsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_watchlists::ListWatchlistsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1065,6 +1410,64 @@ impl From<crate::operation::update_domain::UpdateDomainError> for Error {
                 Error::ValidationException(inner)
             }
             crate::operation::update_domain::UpdateDomainError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_watchlist::UpdateWatchlistError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_watchlist::UpdateWatchlistError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_watchlist::UpdateWatchlistError> for Error {
+    fn from(err: crate::operation::update_watchlist::UpdateWatchlistError) -> Self {
+        match err {
+            crate::operation::update_watchlist::UpdateWatchlistError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::update_watchlist::UpdateWatchlistError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_watchlist::UpdateWatchlistError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::update_watchlist::UpdateWatchlistError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_watchlist::UpdateWatchlistError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::update_watchlist::UpdateWatchlistError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::update_watchlist::UpdateWatchlistError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

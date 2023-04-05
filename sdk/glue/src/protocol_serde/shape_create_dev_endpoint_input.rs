@@ -33,52 +33,52 @@ pub fn ser_create_dev_endpoint_input(
         }
         array_9.finish();
     }
-    if input.number_of_nodes != 0 {
+    if let Some(var_11) = &input.number_of_nodes {
         object.key("NumberOfNodes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.number_of_nodes).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.worker_type {
-        object.key("WorkerType").string(var_11.as_str());
+    if let Some(var_12) = &input.worker_type {
+        object.key("WorkerType").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.glue_version {
-        object.key("GlueVersion").string(var_12.as_str());
+    if let Some(var_13) = &input.glue_version {
+        object.key("GlueVersion").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.number_of_workers {
+    if let Some(var_14) = &input.number_of_workers {
         object.key("NumberOfWorkers").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_13).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.extra_python_libs_s3_path {
-        object.key("ExtraPythonLibsS3Path").string(var_14.as_str());
+    if let Some(var_15) = &input.extra_python_libs_s3_path {
+        object.key("ExtraPythonLibsS3Path").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.extra_jars_s3_path {
-        object.key("ExtraJarsS3Path").string(var_15.as_str());
+    if let Some(var_16) = &input.extra_jars_s3_path {
+        object.key("ExtraJarsS3Path").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.security_configuration {
-        object.key("SecurityConfiguration").string(var_16.as_str());
+    if let Some(var_17) = &input.security_configuration {
+        object.key("SecurityConfiguration").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.tags {
+    if let Some(var_18) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("Tags").start_object();
-        for (key_19, value_20) in var_17 {
+        let mut object_19 = object.key("Tags").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_18.key(key_19.as_str()).string(value_20.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_18.finish();
+        object_19.finish();
     }
-    if let Some(var_21) = &input.arguments {
+    if let Some(var_22) = &input.arguments {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("Arguments").start_object();
-        for (key_23, value_24) in var_21 {
+        let mut object_23 = object.key("Arguments").start_object();
+        for (key_24, value_25) in var_22 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
-        object_22.finish();
+        object_23.finish();
     }
     Ok(())
 }

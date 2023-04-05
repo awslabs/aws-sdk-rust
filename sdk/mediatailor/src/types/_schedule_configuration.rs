@@ -7,11 +7,18 @@ pub struct ScheduleConfiguration {
     /// <p>Program transition configurations.</p>
     #[doc(hidden)]
     pub transition: std::option::Option<crate::types::Transition>,
+    /// <p>Program clip range configuration.</p>
+    #[doc(hidden)]
+    pub clip_range: std::option::Option<crate::types::ClipRange>,
 }
 impl ScheduleConfiguration {
     /// <p>Program transition configurations.</p>
     pub fn transition(&self) -> std::option::Option<&crate::types::Transition> {
         self.transition.as_ref()
+    }
+    /// <p>Program clip range configuration.</p>
+    pub fn clip_range(&self) -> std::option::Option<&crate::types::ClipRange> {
+        self.clip_range.as_ref()
     }
 }
 impl ScheduleConfiguration {
@@ -26,6 +33,7 @@ impl ScheduleConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ScheduleConfigurationBuilder {
     pub(crate) transition: std::option::Option<crate::types::Transition>,
+    pub(crate) clip_range: std::option::Option<crate::types::ClipRange>,
 }
 impl ScheduleConfigurationBuilder {
     /// <p>Program transition configurations.</p>
@@ -38,10 +46,21 @@ impl ScheduleConfigurationBuilder {
         self.transition = input;
         self
     }
+    /// <p>Program clip range configuration.</p>
+    pub fn clip_range(mut self, input: crate::types::ClipRange) -> Self {
+        self.clip_range = Some(input);
+        self
+    }
+    /// <p>Program clip range configuration.</p>
+    pub fn set_clip_range(mut self, input: std::option::Option<crate::types::ClipRange>) -> Self {
+        self.clip_range = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
     pub fn build(self) -> crate::types::ScheduleConfiguration {
         crate::types::ScheduleConfiguration {
             transition: self.transition,
+            clip_range: self.clip_range,
         }
     }
 }

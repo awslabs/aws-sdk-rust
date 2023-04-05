@@ -40,6 +40,9 @@ pub struct FirewallPolicy {
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
     #[doc(hidden)]
     pub stateful_engine_options: std::option::Option<crate::types::StatefulEngineOptions>,
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+    #[doc(hidden)]
+    pub tls_inspection_configuration_arn: std::option::Option<std::string::String>,
 }
 impl FirewallPolicy {
     /// <p>References to the stateless rule groups that are used in the policy. These define the matching criteria in stateless rules. </p>
@@ -90,6 +93,10 @@ impl FirewallPolicy {
     ) -> std::option::Option<&crate::types::StatefulEngineOptions> {
         self.stateful_engine_options.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+    pub fn tls_inspection_configuration_arn(&self) -> std::option::Option<&str> {
+        self.tls_inspection_configuration_arn.as_deref()
+    }
 }
 impl FirewallPolicy {
     /// Creates a new builder-style object to manufacture [`FirewallPolicy`](crate::types::FirewallPolicy).
@@ -113,6 +120,7 @@ pub struct FirewallPolicyBuilder {
         std::option::Option<std::vec::Vec<crate::types::StatefulRuleGroupReference>>,
     pub(crate) stateful_default_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) stateful_engine_options: std::option::Option<crate::types::StatefulEngineOptions>,
+    pub(crate) tls_inspection_configuration_arn: std::option::Option<std::string::String>,
 }
 impl FirewallPolicyBuilder {
     /// Appends an item to `stateless_rule_group_references`.
@@ -275,6 +283,22 @@ impl FirewallPolicyBuilder {
         self.stateful_engine_options = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+    pub fn tls_inspection_configuration_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        self.tls_inspection_configuration_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+    pub fn set_tls_inspection_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.tls_inspection_configuration_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`FirewallPolicy`](crate::types::FirewallPolicy).
     pub fn build(self) -> crate::types::FirewallPolicy {
         crate::types::FirewallPolicy {
@@ -285,6 +309,7 @@ impl FirewallPolicyBuilder {
             stateful_rule_group_references: self.stateful_rule_group_references,
             stateful_default_actions: self.stateful_default_actions,
             stateful_engine_options: self.stateful_engine_options,
+            tls_inspection_configuration_arn: self.tls_inspection_configuration_arn,
         }
     }
 }

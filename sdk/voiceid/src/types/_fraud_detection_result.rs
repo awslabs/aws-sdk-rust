@@ -7,10 +7,10 @@ pub struct FraudDetectionResult {
     /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
     #[doc(hidden)]
     pub fraud_detection_result_id: std::option::Option<std::string::String>,
-    /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
+    /// <p>A timestamp of when audio aggregation started for this fraud detection result.</p>
     #[doc(hidden)]
     pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
+    /// <p>A timestamp of when audio aggregation ended for this fraud detection result.</p>
     #[doc(hidden)]
     pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
@@ -31,11 +31,11 @@ impl FraudDetectionResult {
     pub fn fraud_detection_result_id(&self) -> std::option::Option<&str> {
         self.fraud_detection_result_id.as_deref()
     }
-    /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
+    /// <p>A timestamp of when audio aggregation started for this fraud detection result.</p>
     pub fn audio_aggregation_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.audio_aggregation_started_at.as_ref()
     }
-    /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
+    /// <p>A timestamp of when audio aggregation ended for this fraud detection result.</p>
     pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.audio_aggregation_ended_at.as_ref()
     }
@@ -89,12 +89,12 @@ impl FraudDetectionResultBuilder {
         self.fraud_detection_result_id = input;
         self
     }
-    /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
+    /// <p>A timestamp of when audio aggregation started for this fraud detection result.</p>
     pub fn audio_aggregation_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.audio_aggregation_started_at = Some(input);
         self
     }
-    /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
+    /// <p>A timestamp of when audio aggregation started for this fraud detection result.</p>
     pub fn set_audio_aggregation_started_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -102,12 +102,12 @@ impl FraudDetectionResultBuilder {
         self.audio_aggregation_started_at = input;
         self
     }
-    /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
+    /// <p>A timestamp of when audio aggregation ended for this fraud detection result.</p>
     pub fn audio_aggregation_ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.audio_aggregation_ended_at = Some(input);
         self
     }
-    /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
+    /// <p>A timestamp of when audio aggregation ended for this fraud detection result.</p>
     pub fn set_audio_aggregation_ended_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

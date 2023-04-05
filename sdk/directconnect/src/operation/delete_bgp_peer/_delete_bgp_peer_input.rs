@@ -8,7 +8,7 @@ pub struct DeleteBgpPeerInput {
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     #[doc(hidden)]
-    pub asn: i32,
+    pub asn: std::option::Option<i32>,
     /// <p>The IP address assigned to the customer interface.</p>
     #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ impl DeleteBgpPeerInput {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-    pub fn asn(&self) -> i32 {
+    pub fn asn(&self) -> std::option::Option<i32> {
         self.asn
     }
     /// <p>The IP address assigned to the customer interface.</p>
@@ -103,7 +103,7 @@ impl DeleteBgpPeerInputBuilder {
     > {
         Ok(crate::operation::delete_bgp_peer::DeleteBgpPeerInput {
             virtual_interface_id: self.virtual_interface_id,
-            asn: self.asn.unwrap_or_default(),
+            asn: self.asn,
             customer_address: self.customer_address,
             bgp_peer_id: self.bgp_peer_id,
         })

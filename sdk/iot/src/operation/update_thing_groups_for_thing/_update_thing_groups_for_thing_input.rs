@@ -14,7 +14,7 @@ pub struct UpdateThingGroupsForThingInput {
     pub thing_groups_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     #[doc(hidden)]
-    pub override_dynamic_groups: bool,
+    pub override_dynamic_groups: std::option::Option<bool>,
 }
 impl UpdateThingGroupsForThingInput {
     /// <p>The thing whose group memberships will be updated.</p>
@@ -30,7 +30,7 @@ impl UpdateThingGroupsForThingInput {
         self.thing_groups_to_remove.as_deref()
     }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
-    pub fn override_dynamic_groups(&self) -> bool {
+    pub fn override_dynamic_groups(&self) -> std::option::Option<bool> {
         self.override_dynamic_groups
     }
 }
@@ -121,7 +121,7 @@ impl UpdateThingGroupsForThingInputBuilder {
                 thing_name: self.thing_name,
                 thing_groups_to_add: self.thing_groups_to_add,
                 thing_groups_to_remove: self.thing_groups_to_remove,
-                override_dynamic_groups: self.override_dynamic_groups.unwrap_or_default(),
+                override_dynamic_groups: self.override_dynamic_groups,
             },
         )
     }

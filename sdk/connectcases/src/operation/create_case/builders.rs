@@ -6,7 +6,11 @@ pub use crate::operation::create_case::_create_case_input::CreateCaseInputBuilde
 /// Fluent builder constructing a request to `CreateCase`.
 ///
 /// <p>Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.</p> <note>
-/// <p> <code>customer_id</code> is a required field when creating a case.</p>
+/// <p>The following fields are required when creating a case:</p>
+/// <ul>
+/// <li> <p> <code>customer_id</code> - You must provide the full customer profile ARN in this format: <code>arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID</code> </p> </li>
+/// <li> <p> <code>title</code> </p> </li>
+/// </ul>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCaseFluentBuilder {

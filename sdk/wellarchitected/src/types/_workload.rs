@@ -87,7 +87,7 @@ pub struct Workload {
     /// <p>The improvement status for a workload.</p>
     #[doc(hidden)]
     pub improvement_status: std::option::Option<crate::types::WorkloadImprovementStatus>,
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     #[doc(hidden)]
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -216,7 +216,7 @@ impl Workload {
     ) -> std::option::Option<&crate::types::WorkloadImprovementStatus> {
         self.improvement_status.as_ref()
     }
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::types::Risk, i32>> {
@@ -576,14 +576,14 @@ impl WorkloadBuilder {
     ///
     /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
     ///
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.risk_counts.unwrap_or_default();
         hash_map.insert(k, v);
         self.risk_counts = Some(hash_map);
         self
     }
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn set_risk_counts(
         mut self,
         input: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,

@@ -149,6 +149,26 @@ pub(crate) fn reflens_describe_pending_maintenance_actions_output_marker(
     Some(input)
 }
 
+pub(crate) fn reflens_describe_recommendation_limitations_output_next_token(
+    input: &crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_describe_recommendations_output_next_token(
+    input: &crate::operation::describe_recommendations::DescribeRecommendationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_describe_replication_instance_task_logs_output_marker(
     input: &crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsOutput,
 ) -> std::option::Option<&std::string::String> {

@@ -13,7 +13,7 @@ pub struct ObjectCountByEncryptionType {
     /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
     #[doc(hidden)]
     pub s3_managed: i64,
-    /// <p>The total number of objects that aren't encrypted or use client-side encryption.</p>
+    /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
     #[doc(hidden)]
     pub unencrypted: i64,
     /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
@@ -33,7 +33,7 @@ impl ObjectCountByEncryptionType {
     pub fn s3_managed(&self) -> i64 {
         self.s3_managed
     }
-    /// <p>The total number of objects that aren't encrypted or use client-side encryption.</p>
+    /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
     pub fn unencrypted(&self) -> i64 {
         self.unencrypted
     }
@@ -90,12 +90,12 @@ impl ObjectCountByEncryptionTypeBuilder {
         self.s3_managed = input;
         self
     }
-    /// <p>The total number of objects that aren't encrypted or use client-side encryption.</p>
+    /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
     pub fn unencrypted(mut self, input: i64) -> Self {
         self.unencrypted = Some(input);
         self
     }
-    /// <p>The total number of objects that aren't encrypted or use client-side encryption.</p>
+    /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
     pub fn set_unencrypted(mut self, input: std::option::Option<i64>) -> Self {
         self.unencrypted = input;
         self

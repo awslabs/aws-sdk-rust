@@ -10,34 +10,44 @@ pub struct UpdateTableInput {
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>For each column to be added to the specified table:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
-    /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub add_columns: std::option::Option<std::vec::Vec<crate::types::ColumnDefinition>>,
     /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub capacity_specification: std::option::Option<crate::types::CapacitySpecification>,
     /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
+    /// <ul>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// </ul>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub encryption_specification: std::option::Option<crate::types::EncryptionSpecification>,
     /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
+    /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub point_in_time_recovery: std::option::Option<crate::types::PointInTimeRecovery>,
     /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
-    /// <p>• <code>status:enabled</code> </p>
-    /// <p>• <code>status:disabled</code> </p>
+    /// <ul>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
+    /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -46,6 +56,13 @@ pub struct UpdateTableInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub default_time_to_live: std::option::Option<i32>,
+    /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <ul>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
+    /// </ul>
+    /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
+    #[doc(hidden)]
+    pub client_side_timestamps: std::option::Option<crate::types::ClientSideTimestamps>,
 }
 impl UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
@@ -57,14 +74,18 @@ impl UpdateTableInput {
         self.table_name.as_deref()
     }
     /// <p>For each column to be added to the specified table:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
-    /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
+    /// </ul>
     pub fn add_columns(&self) -> std::option::Option<&[crate::types::ColumnDefinition]> {
         self.add_columns.as_deref()
     }
     /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn capacity_specification(
@@ -73,8 +94,10 @@ impl UpdateTableInput {
         self.capacity_specification.as_ref()
     }
     /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
+    /// <ul>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// </ul>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn encryption_specification(
@@ -83,9 +106,11 @@ impl UpdateTableInput {
         self.encryption_specification.as_ref()
     }
     /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
+    /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn point_in_time_recovery(
         &self,
@@ -93,8 +118,10 @@ impl UpdateTableInput {
         self.point_in_time_recovery.as_ref()
     }
     /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
-    /// <p>• <code>status:enabled</code> </p>
-    /// <p>• <code>status:disabled</code> </p>
+    /// <ul>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
+    /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn ttl(&self) -> std::option::Option<&crate::types::TimeToLive> {
@@ -104,6 +131,16 @@ impl UpdateTableInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn default_time_to_live(&self) -> std::option::Option<i32> {
         self.default_time_to_live
+    }
+    /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <ul>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
+    /// </ul>
+    /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
+    pub fn client_side_timestamps(
+        &self,
+    ) -> std::option::Option<&crate::types::ClientSideTimestamps> {
+        self.client_side_timestamps.as_ref()
     }
 }
 impl UpdateTableInput {
@@ -125,6 +162,7 @@ pub struct UpdateTableInputBuilder {
     pub(crate) point_in_time_recovery: std::option::Option<crate::types::PointInTimeRecovery>,
     pub(crate) ttl: std::option::Option<crate::types::TimeToLive>,
     pub(crate) default_time_to_live: std::option::Option<i32>,
+    pub(crate) client_side_timestamps: std::option::Option<crate::types::ClientSideTimestamps>,
 }
 impl UpdateTableInputBuilder {
     /// <p>The name of the keyspace the specified table is stored in.</p>
@@ -152,8 +190,10 @@ impl UpdateTableInputBuilder {
     /// To override the contents of this collection use [`set_add_columns`](Self::set_add_columns).
     ///
     /// <p>For each column to be added to the specified table:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
-    /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
+    /// </ul>
     pub fn add_columns(mut self, input: crate::types::ColumnDefinition) -> Self {
         let mut v = self.add_columns.unwrap_or_default();
         v.push(input);
@@ -161,8 +201,10 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>For each column to be added to the specified table:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
-    /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
+    /// </ul>
     pub fn set_add_columns(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ColumnDefinition>>,
@@ -171,8 +213,10 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn capacity_specification(mut self, input: crate::types::CapacitySpecification) -> Self {
@@ -180,8 +224,10 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_capacity_specification(
@@ -192,8 +238,10 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
+    /// <ul>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// </ul>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn encryption_specification(
@@ -204,8 +252,10 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
+    /// <ul>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// </ul>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_encryption_specification(
@@ -216,18 +266,22 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
+    /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn point_in_time_recovery(mut self, input: crate::types::PointInTimeRecovery) -> Self {
         self.point_in_time_recovery = Some(input);
         self
     }
     /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
+    /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_point_in_time_recovery(
         mut self,
@@ -237,8 +291,10 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
-    /// <p>• <code>status:enabled</code> </p>
-    /// <p>• <code>status:disabled</code> </p>
+    /// <ul>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
+    /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn ttl(mut self, input: crate::types::TimeToLive) -> Self {
@@ -246,8 +302,10 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
-    /// <p>• <code>status:enabled</code> </p>
-    /// <p>• <code>status:disabled</code> </p>
+    /// <ul>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
+    /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_ttl(mut self, input: std::option::Option<crate::types::TimeToLive>) -> Self {
@@ -266,6 +324,27 @@ impl UpdateTableInputBuilder {
         self.default_time_to_live = input;
         self
     }
+    /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <ul>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
+    /// </ul>
+    /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
+    pub fn client_side_timestamps(mut self, input: crate::types::ClientSideTimestamps) -> Self {
+        self.client_side_timestamps = Some(input);
+        self
+    }
+    /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <ul>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
+    /// </ul>
+    /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
+    pub fn set_client_side_timestamps(
+        mut self,
+        input: std::option::Option<crate::types::ClientSideTimestamps>,
+    ) -> Self {
+        self.client_side_timestamps = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(
         self,
@@ -282,6 +361,7 @@ impl UpdateTableInputBuilder {
             point_in_time_recovery: self.point_in_time_recovery,
             ttl: self.ttl,
             default_time_to_live: self.default_time_to_live,
+            client_side_timestamps: self.client_side_timestamps,
         })
     }
 }

@@ -187,6 +187,8 @@ pub use crate::types::_model_card::ModelCardBuilder;
 
 pub use crate::types::_user_context::UserContextBuilder;
 
+pub use crate::types::_iam_identity::IamIdentityBuilder;
+
 pub use crate::types::_model_card_security_config::ModelCardSecurityConfigBuilder;
 
 pub use crate::types::_model_dashboard_model::ModelDashboardModelBuilder;
@@ -236,6 +238,10 @@ pub use crate::types::_image_config::ImageConfigBuilder;
 pub use crate::types::_repository_auth_config::RepositoryAuthConfigBuilder;
 
 pub use crate::types::_hyper_parameter_tuning_job_search_entity::HyperParameterTuningJobSearchEntityBuilder;
+
+pub use crate::types::_hyper_parameter_tuning_job_consumed_resources::HyperParameterTuningJobConsumedResourcesBuilder;
+
+pub use crate::types::_hyper_parameter_tuning_job_completion_details::HyperParameterTuningJobCompletionDetailsBuilder;
 
 pub use crate::types::_hyper_parameter_tuning_job_warm_start_config::HyperParameterTuningJobWarmStartConfigBuilder;
 
@@ -294,6 +300,10 @@ pub use crate::types::_hyper_parameter_tuning_job_objective::HyperParameterTunin
 pub use crate::types::_hyper_parameter_tuning_job_config::HyperParameterTuningJobConfigBuilder;
 
 pub use crate::types::_tuning_job_completion_criteria::TuningJobCompletionCriteriaBuilder;
+
+pub use crate::types::_convergence_detected::ConvergenceDetectedBuilder;
+
+pub use crate::types::_best_objective_not_improving::BestObjectiveNotImprovingBuilder;
 
 pub use crate::types::_resource_limits::ResourceLimitsBuilder;
 
@@ -442,6 +452,10 @@ pub use crate::types::_metric_data::MetricDataBuilder;
 pub use crate::types::_secondary_status_transition::SecondaryStatusTransitionBuilder;
 
 pub use crate::types::_algorithm_specification::AlgorithmSpecificationBuilder;
+
+pub use crate::types::_training_image_config::TrainingImageConfigBuilder;
+
+pub use crate::types::_training_repository_auth_config::TrainingRepositoryAuthConfigBuilder;
 
 pub use crate::types::_model_artifacts::ModelArtifactsBuilder;
 
@@ -593,6 +607,8 @@ pub use crate::types::_inference_recommendations_job_step::InferenceRecommendati
 
 pub use crate::types::_recommendation_job_inference_benchmark::RecommendationJobInferenceBenchmarkBuilder;
 
+pub use crate::types::_inference_metrics::InferenceMetricsBuilder;
+
 pub use crate::types::_model_configuration::ModelConfigurationBuilder;
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
@@ -651,13 +667,13 @@ pub use crate::types::_git_config::GitConfigBuilder;
 
 pub use crate::types::_auto_ml_candidate::AutoMlCandidateBuilder;
 
+pub use crate::types::_auto_ml_container_definition::AutoMlContainerDefinitionBuilder;
+
 pub use crate::types::_candidate_properties::CandidatePropertiesBuilder;
 
 pub use crate::types::_metric_datum::MetricDatumBuilder;
 
 pub use crate::types::_candidate_artifact_locations::CandidateArtifactLocationsBuilder;
-
-pub use crate::types::_auto_ml_container_definition::AutoMlContainerDefinitionBuilder;
 
 pub use crate::types::_auto_ml_candidate_step::AutoMlCandidateStepBuilder;
 
@@ -750,8 +766,6 @@ pub use crate::types::_labeling_job_output_config::LabelingJobOutputConfigBuilde
 pub use crate::types::_endpoint_performance::EndpointPerformanceBuilder;
 
 pub use crate::types::_endpoint_info::EndpointInfoBuilder;
-
-pub use crate::types::_inference_metrics::InferenceMetricsBuilder;
 
 pub use crate::types::_inference_recommendation::InferenceRecommendationBuilder;
 
@@ -865,15 +879,31 @@ pub use crate::types::_input_config::InputConfigBuilder;
 
 pub use crate::types::_model_digests::ModelDigestsBuilder;
 
+pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfigBuilder;
+
+pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfigBuilder;
+
 pub use crate::types::_model_deploy_result::ModelDeployResultBuilder;
 
 pub use crate::types::_model_deploy_config::ModelDeployConfigBuilder;
 
-pub use crate::types::_resolved_attributes::ResolvedAttributesBuilder;
+pub use crate::types::_text_classification_job_config::TextClassificationJobConfigBuilder;
 
 pub use crate::types::_auto_ml_job_completion_criteria::AutoMlJobCompletionCriteriaBuilder;
 
+pub use crate::types::_image_classification_job_config::ImageClassificationJobConfigBuilder;
+
 pub use crate::types::_auto_ml_job_objective::AutoMlJobObjectiveBuilder;
+
+pub use crate::types::_auto_ml_output_data_config::AutoMlOutputDataConfigBuilder;
+
+pub use crate::types::_auto_ml_job_channel::AutoMlJobChannelBuilder;
+
+pub use crate::types::_auto_ml_data_source::AutoMlDataSourceBuilder;
+
+pub use crate::types::_auto_mls3_data_source::AutoMls3DataSourceBuilder;
+
+pub use crate::types::_resolved_attributes::ResolvedAttributesBuilder;
 
 pub use crate::types::_auto_ml_job_artifacts::AutoMlJobArtifactsBuilder;
 
@@ -881,17 +911,9 @@ pub use crate::types::_auto_ml_job_config::AutoMlJobConfigBuilder;
 
 pub use crate::types::_auto_ml_candidate_generation_config::AutoMlCandidateGenerationConfigBuilder;
 
-pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfigBuilder;
-
-pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfigBuilder;
-
-pub use crate::types::_auto_ml_output_data_config::AutoMlOutputDataConfigBuilder;
+pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfigBuilder;
 
 pub use crate::types::_auto_ml_channel::AutoMlChannelBuilder;
-
-pub use crate::types::_auto_ml_data_source::AutoMlDataSourceBuilder;
-
-pub use crate::types::_auto_mls3_data_source::AutoMls3DataSourceBuilder;
 
 pub use crate::types::_algorithm_status_details::AlgorithmStatusDetailsBuilder;
 

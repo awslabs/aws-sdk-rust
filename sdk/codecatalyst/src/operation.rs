@@ -67,6 +67,9 @@ pub mod start_dev_environment_session;
 /// Types for the `StopDevEnvironment` operation.
 pub mod stop_dev_environment;
 
+/// Types for the `StopDevEnvironmentSession` operation.
+pub mod stop_dev_environment_session;
+
 /// Types for the `UpdateDevEnvironment` operation.
 pub mod update_dev_environment;
 

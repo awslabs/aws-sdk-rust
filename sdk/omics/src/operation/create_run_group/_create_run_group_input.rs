@@ -12,14 +12,14 @@ pub struct CreateRunGroupInput {
     /// <p>The maximum number of concurrent runs for the group.</p>
     #[doc(hidden)]
     pub max_runs: std::option::Option<i32>,
-    /// <p>A max duration for the group.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     #[doc(hidden)]
     pub max_duration: std::option::Option<i32>,
     /// <p>Tags for the group.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A request ID for the group.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
@@ -36,7 +36,7 @@ impl CreateRunGroupInput {
     pub fn max_runs(&self) -> std::option::Option<i32> {
         self.max_runs
     }
-    /// <p>A max duration for the group.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(&self) -> std::option::Option<i32> {
         self.max_duration
     }
@@ -47,7 +47,7 @@ impl CreateRunGroupInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A request ID for the group.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -102,12 +102,12 @@ impl CreateRunGroupInputBuilder {
         self.max_runs = input;
         self
     }
-    /// <p>A max duration for the group.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
         self.max_duration = Some(input);
         self
     }
-    /// <p>A max duration for the group.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn set_max_duration(mut self, input: std::option::Option<i32>) -> Self {
         self.max_duration = input;
         self
@@ -137,12 +137,12 @@ impl CreateRunGroupInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>A request ID for the group.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.request_id = Some(input.into());
         self
     }
-    /// <p>A request ID for the group.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.request_id = input;
         self

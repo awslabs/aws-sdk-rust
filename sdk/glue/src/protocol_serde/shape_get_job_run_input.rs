@@ -9,10 +9,8 @@ pub fn ser_get_job_run_input(
     if let Some(var_2) = &input.run_id {
         object.key("RunId").string(var_2.as_str());
     }
-    if input.predecessors_included {
-        object
-            .key("PredecessorsIncluded")
-            .boolean(input.predecessors_included);
+    if let Some(var_3) = &input.predecessors_included {
+        object.key("PredecessorsIncluded").boolean(*var_3);
     }
     Ok(())
 }

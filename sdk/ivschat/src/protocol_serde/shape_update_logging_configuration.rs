@@ -46,6 +46,23 @@ pub fn de_update_logging_configuration_http_error(
                                                     }
             tmp
         }),
+        "ConflictException" => crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "PendingVerification" => crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::PendingVerification({
             #[allow(unused_mut)]
             let mut tmp =

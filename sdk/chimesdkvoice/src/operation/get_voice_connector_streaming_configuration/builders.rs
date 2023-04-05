@@ -5,6 +5,7 @@ pub use crate::operation::get_voice_connector_streaming_configuration::_get_voic
 
 /// Fluent builder constructing a request to `GetVoiceConnectorStreamingConfiguration`.
 ///
+/// <p>Retrieves the streaming configuration details for the specified Amazon Chime SDK Voice Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis. It also shows the retention period, in hours, for the Amazon Kinesis data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceConnectorStreamingConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl GetVoiceConnectorStreamingConfigurationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,

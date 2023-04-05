@@ -21,7 +21,7 @@ pub struct GetReadSetActivationJobOutput {
     /// <p>When the job completed.</p>
     #[doc(hidden)]
     pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::types::ActivateReadSetSourceItem>>,
     _request_id: Option<String>,
@@ -51,7 +51,7 @@ impl GetReadSetActivationJobOutput {
     pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::types::ActivateReadSetSourceItem]> {
         self.sources.as_deref()
     }
@@ -160,14 +160,14 @@ impl GetReadSetActivationJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::ActivateReadSetSourceItem) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
         self.sources = Some(v);
         self
     }
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ActivateReadSetSourceItem>>,

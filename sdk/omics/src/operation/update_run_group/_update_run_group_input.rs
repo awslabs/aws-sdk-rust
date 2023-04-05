@@ -15,7 +15,7 @@ pub struct UpdateRunGroupInput {
     /// <p>The maximum number of concurrent runs for the group.</p>
     #[doc(hidden)]
     pub max_runs: std::option::Option<i32>,
-    /// <p>The maximum amount of time to run.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     #[doc(hidden)]
     pub max_duration: std::option::Option<i32>,
 }
@@ -36,7 +36,7 @@ impl UpdateRunGroupInput {
     pub fn max_runs(&self) -> std::option::Option<i32> {
         self.max_runs
     }
-    /// <p>The maximum amount of time to run.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(&self) -> std::option::Option<i32> {
         self.max_duration
     }
@@ -99,12 +99,12 @@ impl UpdateRunGroupInputBuilder {
         self.max_runs = input;
         self
     }
-    /// <p>The maximum amount of time to run.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
         self.max_duration = Some(input);
         self
     }
-    /// <p>The maximum amount of time to run.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn set_max_duration(mut self, input: std::option::Option<i32>) -> Self {
         self.max_duration = input;
         self

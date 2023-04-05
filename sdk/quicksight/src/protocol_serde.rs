@@ -626,6 +626,12 @@ pub(crate) mod shape_dashboard_visual_publish_options;
 
 pub(crate) mod shape_data_color_palette;
 
+pub(crate) mod shape_data_point_drill_up_down_option;
+
+pub(crate) mod shape_data_point_menu_label_option;
+
+pub(crate) mod shape_data_point_tooltip_option;
+
 pub(crate) mod shape_data_set_arns_list;
 
 pub(crate) mod shape_data_set_configuration;
@@ -655,6 +661,8 @@ pub(crate) mod shape_error_info;
 pub(crate) mod shape_exasol_parameters;
 
 pub(crate) mod shape_export_to_csv_option;
+
+pub(crate) mod shape_export_with_hidden_fields_option;
 
 pub(crate) mod shape_field_folder_map;
 
@@ -734,6 +742,8 @@ pub(crate) mod shape_sheet_definition;
 
 pub(crate) mod shape_sheet_definition_list;
 
+pub(crate) mod shape_sheet_layout_element_maximization_option;
+
 pub(crate) mod shape_sheet_list;
 
 pub(crate) mod shape_sheet_style;
@@ -773,6 +783,10 @@ pub(crate) mod shape_twitter_parameters;
 pub(crate) mod shape_typography;
 
 pub(crate) mod shape_ui_color_palette;
+
+pub(crate) mod shape_visual_axis_sort_option;
+
+pub(crate) mod shape_visual_menu_option;
 
 pub(crate) mod shape_action_list;
 
@@ -827,6 +841,10 @@ pub(crate) mod shape_output_column;
 pub(crate) mod shape_parameter_control;
 
 pub(crate) mod shape_project_operation;
+
+pub(crate) mod shape_registered_user_console_feature_configurations;
+
+pub(crate) mod shape_registered_user_dashboard_feature_configurations;
 
 pub(crate) mod shape_rename_column_operation;
 
@@ -974,6 +992,8 @@ pub(crate) mod shape_pivot_table_visual;
 
 pub(crate) mod shape_principal_list;
 
+pub(crate) mod shape_radar_chart_visual;
+
 pub(crate) mod shape_relative_dates_filter;
 
 pub(crate) mod shape_sankey_diagram_visual;
@@ -987,6 +1007,8 @@ pub(crate) mod shape_sheet_control_layout_configuration;
 pub(crate) mod shape_sheet_control_layout_list;
 
 pub(crate) mod shape_sheet_text_box_list;
+
+pub(crate) mod shape_state_persistence_configurations;
 
 pub(crate) mod shape_string_default_values;
 
@@ -1105,6 +1127,8 @@ pub(crate) mod shape_pie_chart_configuration;
 pub(crate) mod shape_pivot_table_conditional_formatting;
 
 pub(crate) mod shape_pivot_table_configuration;
+
+pub(crate) mod shape_radar_chart_configuration;
 
 pub(crate) mod shape_relative_date_time_control_display_options;
 
@@ -1293,6 +1317,12 @@ pub(crate) mod shape_pivot_table_sort_configuration;
 pub(crate) mod shape_pivot_table_total_options;
 
 pub(crate) mod shape_predefined_hierarchy;
+
+pub(crate) mod shape_radar_chart_field_wells;
+
+pub(crate) mod shape_radar_chart_series_settings;
+
+pub(crate) mod shape_radar_chart_sort_configuration;
 
 pub(crate) mod shape_reference_line;
 
@@ -1513,6 +1543,10 @@ pub(crate) mod shape_pivot_total_options;
 pub(crate) mod shape_progress_bar_options;
 
 pub(crate) mod shape_projected_column_list;
+
+pub(crate) mod shape_radar_chart_aggregated_field_wells;
+
+pub(crate) mod shape_radar_chart_area_style_settings;
 
 pub(crate) mod shape_reference_line_data_configuration;
 
@@ -1835,6 +1869,12 @@ pub(crate) mod shape_pivot_table_dimension_list;
 pub(crate) mod shape_pivot_table_field_subtotal_options_list;
 
 pub(crate) mod shape_predefined_hierarchy_column_list;
+
+pub(crate) mod shape_radar_chart_category_field_list;
+
+pub(crate) mod shape_radar_chart_color_field_list;
+
+pub(crate) mod shape_radar_chart_values_field_list;
 
 pub(crate) mod shape_row_alternate_color_list;
 

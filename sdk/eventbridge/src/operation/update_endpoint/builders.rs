@@ -85,12 +85,12 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    /// <p>Configure the routing policy, including the health check and secondary Region.</p>
     pub fn routing_config(mut self, input: crate::types::RoutingConfig) -> Self {
         self.inner = self.inner.routing_config(input);
         self
     }
-    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    /// <p>Configure the routing policy, including the health check and secondary Region.</p>
     pub fn set_routing_config(
         mut self,
         input: std::option::Option<crate::types::RoutingConfig>,

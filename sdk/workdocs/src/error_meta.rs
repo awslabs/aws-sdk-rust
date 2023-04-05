@@ -19,7 +19,7 @@ pub enum Error {
     EntityAlreadyExistsException(crate::types::error::EntityAlreadyExistsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::types::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>The user is undergoing transfer of ownership.</p>
     IllegalUserStateException(crate::types::error::IllegalUserStateException),
@@ -1642,6 +1642,7 @@ impl From<crate::operation::initiate_document_version_upload::InitiateDocumentVe
             crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
             crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
             crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
             crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
@@ -1790,6 +1791,48 @@ impl From<crate::operation::restore_document_versions::RestoreDocumentVersionsEr
             crate::operation::restore_document_versions::RestoreDocumentVersionsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
             crate::operation::restore_document_versions::RestoreDocumentVersionsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
             crate::operation::restore_document_versions::RestoreDocumentVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_resources::SearchResourcesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::search_resources::SearchResourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::search_resources::SearchResourcesError> for Error {
+    fn from(err: crate::operation::search_resources::SearchResourcesError) -> Self {
+        match err {
+            crate::operation::search_resources::SearchResourcesError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::search_resources::SearchResourcesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::search_resources::SearchResourcesError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::search_resources::SearchResourcesError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::operation::search_resources::SearchResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

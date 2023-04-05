@@ -12,11 +12,11 @@ pub fn ser_execute_command_input(
     if let Some(var_3) = &input.command {
         object.key("command").string(var_3.as_str());
     }
-    {
-        object.key("interactive").boolean(input.interactive);
+    if let Some(var_4) = &input.interactive {
+        object.key("interactive").boolean(*var_4);
     }
-    if let Some(var_4) = &input.task {
-        object.key("task").string(var_4.as_str());
+    if let Some(var_5) = &input.task {
+        object.key("task").string(var_5.as_str());
     }
     Ok(())
 }

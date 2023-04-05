@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportNotebookOutput {
-    /// <p>The ID of the notebook to import.</p>
+    /// <p>The ID assigned to the imported notebook.</p>
     #[doc(hidden)]
     pub notebook_id: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl ImportNotebookOutput {
-    /// <p>The ID of the notebook to import.</p>
+    /// <p>The ID assigned to the imported notebook.</p>
     pub fn notebook_id(&self) -> std::option::Option<&str> {
         self.notebook_id.as_deref()
     }
@@ -34,12 +34,12 @@ pub struct ImportNotebookOutputBuilder {
     _request_id: Option<String>,
 }
 impl ImportNotebookOutputBuilder {
-    /// <p>The ID of the notebook to import.</p>
+    /// <p>The ID assigned to the imported notebook.</p>
     pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.notebook_id = Some(input.into());
         self
     }
-    /// <p>The ID of the notebook to import.</p>
+    /// <p>The ID assigned to the imported notebook.</p>
     pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.notebook_id = input;
         self

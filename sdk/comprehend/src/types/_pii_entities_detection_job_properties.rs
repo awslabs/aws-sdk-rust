@@ -7,7 +7,7 @@ pub struct PiiEntitiesDetectionJobProperties {
     /// <p>The identifier assigned to the PII entities detection job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -51,7 +51,7 @@ pub struct PiiEntitiesDetectionJobProperties {
     /// <p>The language code of the input documents</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::types::LanguageCode>,
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
@@ -63,7 +63,7 @@ impl PiiEntitiesDetectionJobProperties {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -117,7 +117,7 @@ impl PiiEntitiesDetectionJobProperties {
     pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -162,7 +162,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self.job_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -180,7 +180,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self.job_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -305,12 +305,12 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self.language_code = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_access_role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,

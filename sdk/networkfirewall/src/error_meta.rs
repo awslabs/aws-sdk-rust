@@ -275,6 +275,29 @@ impl From<crate::operation::create_rule_group::CreateRuleGroupError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError> for Error {
+    fn from(err: crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError) -> Self {
+        match err {
+            crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -447,6 +470,31 @@ impl From<crate::operation::delete_rule_group::DeleteRuleGroupError> for Error {
             crate::operation::delete_rule_group::DeleteRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_rule_group::DeleteRuleGroupError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::delete_rule_group::DeleteRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError> for Error {
+    fn from(err: crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -710,6 +758,30 @@ impl From<crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetad
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError> for Error {
+    fn from(err: crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -928,6 +1000,34 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1372,6 +1472,31 @@ impl From<crate::operation::update_subnet_change_protection::UpdateSubnetChangeP
             crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError::ResourceOwnerCheckException(inner) => Error::ResourceOwnerCheckException(inner),
             crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError> for Error {
+    fn from(err: crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError) -> Self {
+        match err {
+            crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

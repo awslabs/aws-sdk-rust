@@ -6,7 +6,7 @@ pub struct DescribeSubnetsOutput {
     /// <p>Information about one or more subnets.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<crate::types::Subnet>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -16,7 +16,7 @@ impl DescribeSubnetsOutput {
     pub fn subnets(&self) -> std::option::Option<&[crate::types::Subnet]> {
         self.subnets.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,12 +61,12 @@ impl DescribeSubnetsOutputBuilder {
         self.subnets = input;
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

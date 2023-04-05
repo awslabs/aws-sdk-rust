@@ -5,7 +5,7 @@ pub use crate::operation::delete_attribute_group::_delete_attribute_group_input:
 
 /// Fluent builder constructing a request to `DeleteAttributeGroup`.
 ///
-/// <p>Deletes an attribute group, specified either by its attribute group ID or name.</p>
+/// <p>Deletes an attribute group, specified either by its attribute group ID, name, or ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAttributeGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +69,12 @@ impl DeleteAttributeGroupFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn attribute_group(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.attribute_group(input.into());
         self
     }
-    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn set_attribute_group(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_group(input);
         self

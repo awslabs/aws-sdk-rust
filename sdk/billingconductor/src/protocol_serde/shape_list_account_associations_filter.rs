@@ -9,5 +9,14 @@ pub fn ser_list_account_associations_filter(
     if let Some(var_2) = &input.account_id {
         object.key("AccountId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.account_ids {
+        let mut array_4 = object.key("AccountIds").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }

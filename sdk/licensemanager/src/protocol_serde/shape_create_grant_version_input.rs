@@ -30,5 +30,11 @@ pub fn ser_create_grant_version_input(
     if let Some(var_9) = &input.source_version {
         object.key("SourceVersion").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.options {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("Options").start_object();
+        crate::protocol_serde::shape_options::ser_options(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

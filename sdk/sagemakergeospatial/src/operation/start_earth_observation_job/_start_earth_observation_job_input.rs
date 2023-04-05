@@ -9,7 +9,7 @@ pub struct StartEarthObservationJobInput {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Input configuration information for the Earth Observation job.</p>
@@ -35,7 +35,7 @@ impl StartEarthObservationJobInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -102,12 +102,12 @@ impl StartEarthObservationJobInputBuilder {
         self.client_token = input;
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.kms_key_id = input;
         self

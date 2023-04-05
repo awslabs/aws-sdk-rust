@@ -314,6 +314,15 @@ pub(crate) fn de_describe_backup_job(
                             .transpose()?,
                         );
                     }
+                    "ResourceName" => {
+                        builder = builder.set_resource_name(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "ResourceType" => {
                         builder = builder.set_resource_type(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

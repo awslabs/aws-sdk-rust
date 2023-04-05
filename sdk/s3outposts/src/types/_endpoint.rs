@@ -37,6 +37,9 @@ pub struct Endpoint {
     /// <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
     #[doc(hidden)]
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
+    /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+    #[doc(hidden)]
+    pub failed_reason: std::option::Option<crate::types::FailedReason>,
 }
 impl Endpoint {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
@@ -83,6 +86,10 @@ impl Endpoint {
     pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
+    /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+    pub fn failed_reason(&self) -> std::option::Option<&crate::types::FailedReason> {
+        self.failed_reason.as_ref()
+    }
 }
 impl Endpoint {
     /// Creates a new builder-style object to manufacture [`Endpoint`](crate::types::Endpoint).
@@ -107,6 +114,7 @@ pub struct EndpointBuilder {
     pub(crate) security_group_id: std::option::Option<std::string::String>,
     pub(crate) access_type: std::option::Option<crate::types::EndpointAccessType>,
     pub(crate) customer_owned_ipv4_pool: std::option::Option<std::string::String>,
+    pub(crate) failed_reason: std::option::Option<crate::types::FailedReason>,
 }
 impl EndpointBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
@@ -240,6 +248,19 @@ impl EndpointBuilder {
         self.customer_owned_ipv4_pool = input;
         self
     }
+    /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+    pub fn failed_reason(mut self, input: crate::types::FailedReason) -> Self {
+        self.failed_reason = Some(input);
+        self
+    }
+    /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+    pub fn set_failed_reason(
+        mut self,
+        input: std::option::Option<crate::types::FailedReason>,
+    ) -> Self {
+        self.failed_reason = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
@@ -254,6 +275,7 @@ impl EndpointBuilder {
             security_group_id: self.security_group_id,
             access_type: self.access_type,
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
+            failed_reason: self.failed_reason,
         }
     }
 }

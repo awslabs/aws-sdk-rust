@@ -5,7 +5,6 @@
 pub struct CreatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -22,16 +21,15 @@ pub struct CreatePortfolioShareInput {
     pub organization_node: std::option::Option<crate::types::OrganizationNode>,
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
     #[doc(hidden)]
-    pub share_tag_options: bool,
+    pub share_tag_options: std::option::Option<bool>,
     /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
     /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
     #[doc(hidden)]
-    pub share_principals: bool,
+    pub share_principals: std::option::Option<bool>,
 }
 impl CreatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -51,12 +49,12 @@ impl CreatePortfolioShareInput {
         self.organization_node.as_ref()
     }
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
-    pub fn share_tag_options(&self) -> bool {
+    pub fn share_tag_options(&self) -> std::option::Option<bool> {
         self.share_tag_options
     }
     /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
     /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
-    pub fn share_principals(&self) -> bool {
+    pub fn share_principals(&self) -> std::option::Option<bool> {
         self.share_principals
     }
 }
@@ -82,7 +80,6 @@ pub struct CreatePortfolioShareInputBuilder {
 impl CreatePortfolioShareInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -92,7 +89,6 @@ impl CreatePortfolioShareInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -168,8 +164,8 @@ impl CreatePortfolioShareInputBuilder {
                 portfolio_id: self.portfolio_id,
                 account_id: self.account_id,
                 organization_node: self.organization_node,
-                share_tag_options: self.share_tag_options.unwrap_or_default(),
-                share_principals: self.share_principals.unwrap_or_default(),
+                share_tag_options: self.share_tag_options,
+                share_principals: self.share_principals,
             },
         )
     }

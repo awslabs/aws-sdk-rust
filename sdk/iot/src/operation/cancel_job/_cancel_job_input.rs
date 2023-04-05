@@ -15,7 +15,7 @@ pub struct CancelJobInput {
     /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
     /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     #[doc(hidden)]
-    pub force: bool,
+    pub force: std::option::Option<bool>,
 }
 impl CancelJobInput {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
@@ -32,7 +32,7 @@ impl CancelJobInput {
     }
     /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
     /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> std::option::Option<bool> {
         self.force
     }
 }
@@ -106,7 +106,7 @@ impl CancelJobInputBuilder {
             job_id: self.job_id,
             reason_code: self.reason_code,
             comment: self.comment,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

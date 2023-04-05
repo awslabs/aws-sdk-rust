@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_entity_recognizer_summaries::builders::ListEntityRecognizerSummariesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_entity_recognizer_summaries::builders::ListEntityRecognizerSummariesFluentBuilder::set_max_results): <p>The maximum number of results to return on each page. The default is 100.</p>
     /// - On success, responds with [`ListEntityRecognizerSummariesOutput`](crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput) with field(s):
     ///   - [`entity_recognizer_summaries_list(Option<Vec<EntityRecognizerSummary>>)`](crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput::entity_recognizer_summaries_list): <p>The list entity recognizer summaries.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput::next_token): <p>The list entity recognizer summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListEntityRecognizerSummariesError>`](crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesError)
     pub fn list_entity_recognizer_summaries(&self) -> crate::operation::list_entity_recognizer_summaries::builders::ListEntityRecognizerSummariesFluentBuilder{
         crate::operation::list_entity_recognizer_summaries::builders::ListEntityRecognizerSummariesFluentBuilder::new(self.handle.clone())

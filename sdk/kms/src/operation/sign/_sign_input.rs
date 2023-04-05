@@ -15,11 +15,23 @@ pub struct SignInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide the message digest.</p>
-    /// <p>If you provide a message, KMS generates a hash digest of the message and then signs it.</p>
+    /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide a message digest.</p>
+    /// <p>If you provide a message digest, use the <code>DIGEST</code> value of <code>MessageType</code> to prevent the digest from being hashed again while signing.</p>
     #[doc(hidden)]
     pub message: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The default value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.</p>
+    /// <p>Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are already hashed.</p>
+    /// <p>When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm.</p> <important>
+    /// <p>Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the signing operation can be compromised.</p>
+    /// </important>
+    /// <p>When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code> value must match the length of hashed messages for the specified signing algorithm.</p>
+    /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, this can cause verification failures when verifying with a system that assumes a single hash.</p>
+    /// <p>The hashing algorithm in that <code>Sign</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
+    /// <ul>
+    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
+    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
+    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
+    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub message_type: std::option::Option<crate::types::MessageType>,
     /// <p>A list of grant tokens.</p>
@@ -27,7 +39,7 @@ pub struct SignInput {
     #[doc(hidden)]
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
-    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key.</p>
+    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
     #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::types::SigningAlgorithmSpec>,
 }
@@ -45,12 +57,24 @@ impl SignInput {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide the message digest.</p>
-    /// <p>If you provide a message, KMS generates a hash digest of the message and then signs it.</p>
+    /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide a message digest.</p>
+    /// <p>If you provide a message digest, use the <code>DIGEST</code> value of <code>MessageType</code> to prevent the digest from being hashed again while signing.</p>
     pub fn message(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.message.as_ref()
     }
-    /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The default value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.</p>
+    /// <p>Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are already hashed.</p>
+    /// <p>When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm.</p> <important>
+    /// <p>Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the signing operation can be compromised.</p>
+    /// </important>
+    /// <p>When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code> value must match the length of hashed messages for the specified signing algorithm.</p>
+    /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, this can cause verification failures when verifying with a system that assumes a single hash.</p>
+    /// <p>The hashing algorithm in that <code>Sign</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
+    /// <ul>
+    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
+    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
+    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
+    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// </ul>
     pub fn message_type(&self) -> std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
@@ -60,7 +84,7 @@ impl SignInput {
         self.grant_tokens.as_deref()
     }
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
-    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key.</p>
+    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
     pub fn signing_algorithm(&self) -> std::option::Option<&crate::types::SigningAlgorithmSpec> {
         self.signing_algorithm.as_ref()
     }
@@ -122,24 +146,48 @@ impl SignInputBuilder {
         self.key_id = input;
         self
     }
-    /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide the message digest.</p>
-    /// <p>If you provide a message, KMS generates a hash digest of the message and then signs it.</p>
+    /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide a message digest.</p>
+    /// <p>If you provide a message digest, use the <code>DIGEST</code> value of <code>MessageType</code> to prevent the digest from being hashed again while signing.</p>
     pub fn message(mut self, input: aws_smithy_types::Blob) -> Self {
         self.message = Some(input);
         self
     }
-    /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide the message digest.</p>
-    /// <p>If you provide a message, KMS generates a hash digest of the message and then signs it.</p>
+    /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide a message digest.</p>
+    /// <p>If you provide a message digest, use the <code>DIGEST</code> value of <code>MessageType</code> to prevent the digest from being hashed again while signing.</p>
     pub fn set_message(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
         self.message = input;
         self
     }
-    /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The default value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.</p>
+    /// <p>Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are already hashed.</p>
+    /// <p>When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm.</p> <important>
+    /// <p>Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the signing operation can be compromised.</p>
+    /// </important>
+    /// <p>When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code> value must match the length of hashed messages for the specified signing algorithm.</p>
+    /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, this can cause verification failures when verifying with a system that assumes a single hash.</p>
+    /// <p>The hashing algorithm in that <code>Sign</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
+    /// <ul>
+    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
+    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
+    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
+    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// </ul>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = Some(input);
         self
     }
-    /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The default value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.</p>
+    /// <p>Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are already hashed.</p>
+    /// <p>When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm.</p> <important>
+    /// <p>Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the signing operation can be compromised.</p>
+    /// </important>
+    /// <p>When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code> value must match the length of hashed messages for the specified signing algorithm.</p>
+    /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, this can cause verification failures when verifying with a system that assumes a single hash.</p>
+    /// <p>The hashing algorithm in that <code>Sign</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
+    /// <ul>
+    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
+    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
+    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
+    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// </ul>
     pub fn set_message_type(
         mut self,
         input: std::option::Option<crate::types::MessageType>,
@@ -169,13 +217,13 @@ impl SignInputBuilder {
         self
     }
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
-    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key.</p>
+    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithmSpec) -> Self {
         self.signing_algorithm = Some(input);
         self
     }
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
-    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key.</p>
+    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
     pub fn set_signing_algorithm(
         mut self,
         input: std::option::Option<crate::types::SigningAlgorithmSpec>,

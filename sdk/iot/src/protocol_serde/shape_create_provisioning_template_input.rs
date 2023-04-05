@@ -6,41 +6,41 @@ pub fn ser_create_provisioning_template_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if input.enabled {
-        object.key("enabled").boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        object.key("enabled").boolean(*var_2);
     }
-    if let Some(var_2) = &input.pre_provisioning_hook {
+    if let Some(var_3) = &input.pre_provisioning_hook {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("preProvisioningHook").start_object();
+        let mut object_4 = object.key("preProvisioningHook").start_object();
         crate::protocol_serde::shape_provisioning_hook::ser_provisioning_hook(
-            &mut object_3,
-            var_2,
+            &mut object_4,
+            var_3,
         )?;
-        object_3.finish();
+        object_4.finish();
     }
-    if let Some(var_4) = &input.provisioning_role_arn {
-        object.key("provisioningRoleArn").string(var_4.as_str());
+    if let Some(var_5) = &input.provisioning_role_arn {
+        object.key("provisioningRoleArn").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.tags {
-        let mut array_6 = object.key("tags").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("tags").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_9) = &input.template_body {
-        object.key("templateBody").string(var_9.as_str());
+    if let Some(var_10) = &input.template_body {
+        object.key("templateBody").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.template_name {
-        object.key("templateName").string(var_10.as_str());
+    if let Some(var_11) = &input.template_name {
+        object.key("templateName").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.r#type {
-        object.key("type").string(var_11.as_str());
+    if let Some(var_12) = &input.r#type {
+        object.key("type").string(var_12.as_str());
     }
     Ok(())
 }

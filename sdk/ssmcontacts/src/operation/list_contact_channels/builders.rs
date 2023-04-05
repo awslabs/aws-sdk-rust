@@ -80,12 +80,12 @@ impl ListContactChannelsFluentBuilder {
             self.inner,
         )
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact. </p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact. </p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self

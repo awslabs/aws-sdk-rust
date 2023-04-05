@@ -168,9 +168,9 @@ pub type GetResourceConfigHistoryErrorKind = GetResourceConfigHistoryError;
 pub enum GetResourceConfigHistoryError {
     /// <p>The specified limit is outside the allowable range.</p>
     InvalidLimitException(crate::types::error::InvalidLimitException),
-    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
+    /// <p>The specified next token is not valid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
-    /// <p>The specified time range is invalid. The earlier time is not chronologically before the later time.</p>
+    /// <p>The specified time range is not valid. The earlier time is not chronologically before the later time.</p>
     InvalidTimeRangeException(crate::types::error::InvalidTimeRangeException),
     /// <p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>
     NoAvailableConfigurationRecorderException(
@@ -178,7 +178,7 @@ pub enum GetResourceConfigHistoryError {
     ),
     /// <p>You have specified a resource that is either unknown or has not been discovered.</p>
     ResourceNotDiscoveredException(crate::types::error::ResourceNotDiscoveredException),
-    /// <p>The requested action is invalid.</p>
+    /// <p>The requested action is not valid.</p>
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::types::error::ValidationException),

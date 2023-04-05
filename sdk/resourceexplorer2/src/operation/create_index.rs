@@ -165,7 +165,7 @@ pub type CreateIndexErrorKind = CreateIndexError;
 pub enum CreateIndexError {
     /// <p>The credentials that you used to call this operation don't have the minimum required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>You tried to create a new view or index when one already exists, and you either didn't specify or specified a different idempotency token as the original request.</p>
+    /// <p>The request failed because either you specified parameters that didn’t match the original request, or you attempted to create a view with a name that already exists in this Amazon Web Services Region.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request failed because of internal service error. Try your request again later.</p>
     InternalServerException(crate::types::error::InternalServerException),

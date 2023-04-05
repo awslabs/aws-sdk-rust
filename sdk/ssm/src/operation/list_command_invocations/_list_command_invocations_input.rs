@@ -20,7 +20,7 @@ pub struct ListCommandInvocationsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::types::CommandFilter>>,
     /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     #[doc(hidden)]
-    pub details: bool,
+    pub details: std::option::Option<bool>,
 }
 impl ListCommandInvocationsInput {
     /// <p>(Optional) The invocations for a specific command ID.</p>
@@ -44,7 +44,7 @@ impl ListCommandInvocationsInput {
         self.filters.as_deref()
     }
     /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
-    pub fn details(&self) -> bool {
+    pub fn details(&self) -> std::option::Option<bool> {
         self.details
     }
 }
@@ -152,7 +152,7 @@ impl ListCommandInvocationsInputBuilder {
                 max_results: self.max_results,
                 next_token: self.next_token,
                 filters: self.filters,
-                details: self.details.unwrap_or_default(),
+                details: self.details,
             },
         )
     }

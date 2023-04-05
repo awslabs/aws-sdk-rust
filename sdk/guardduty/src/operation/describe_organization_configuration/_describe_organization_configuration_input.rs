@@ -6,11 +6,25 @@ pub struct DescribeOrganizationConfigurationInput {
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response to continue listing data.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigurationInput {
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl DescribeOrganizationConfigurationInput {
@@ -25,6 +39,8 @@ impl DescribeOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationInputBuilder {
     pub(crate) detector_id: std::option::Option<std::string::String>,
+    pub(crate) max_results: std::option::Option<i32>,
+    pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigurationInputBuilder {
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
@@ -37,11 +53,35 @@ impl DescribeOrganizationConfigurationInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.max_results = Some(input);
+        self
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response.</p>
+    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+        self.max_results = input;
+        self
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response to continue listing data.</p>
+    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+        self.next_token = Some(input.into());
+        self
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response to continue listing data.</p>
+    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
     pub fn build(self) -> Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput {
                 detector_id: self.detector_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
                 ,
             }
         )

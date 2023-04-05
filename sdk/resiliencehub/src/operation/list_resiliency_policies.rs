@@ -175,13 +175,13 @@ pub type ListResiliencyPoliciesErrorKind = ListResiliencyPoliciesError;
 pub enum ListResiliencyPoliciesError {
     /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Resilience Hub service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The specified resource could not be found.</p>
+    /// <p>This exception occurs when the specified resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The limit on the number of requests per second was exceeded.</p>
+    /// <p>This exception occurs when you have exceeded the limit on the number of requests per second.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>Indicates that a request was not valid.</p>
+    /// <p>This exception occurs when a request is not valid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

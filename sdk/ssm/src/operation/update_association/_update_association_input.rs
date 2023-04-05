@@ -63,7 +63,7 @@ pub struct UpdateAssociationInput {
     /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
     /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
     #[doc(hidden)]
-    pub apply_only_at_cron_interval: bool,
+    pub apply_only_at_cron_interval: std::option::Option<bool>,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
     #[doc(hidden)]
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -166,7 +166,7 @@ impl UpdateAssociationInput {
     /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
     /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
     /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
-    pub fn apply_only_at_cron_interval(&self) -> bool {
+    pub fn apply_only_at_cron_interval(&self) -> std::option::Option<bool> {
         self.apply_only_at_cron_interval
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
@@ -613,7 +613,7 @@ impl UpdateAssociationInputBuilder {
                 max_concurrency: self.max_concurrency,
                 compliance_severity: self.compliance_severity,
                 sync_compliance: self.sync_compliance,
-                apply_only_at_cron_interval: self.apply_only_at_cron_interval.unwrap_or_default(),
+                apply_only_at_cron_interval: self.apply_only_at_cron_interval,
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,

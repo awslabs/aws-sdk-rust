@@ -28,6 +28,9 @@ pub mod delete_cluster;
 /// Types for the `DeleteService` operation.
 pub mod delete_service;
 
+/// Types for the `DeleteTaskDefinitions` operation.
+pub mod delete_task_definitions;
+
 /// Types for the `DeleteTaskSet` operation.
 pub mod delete_task_set;
 

@@ -33,26 +33,26 @@ pub fn ser_update_job_template_input(
         }
         array_6.finish();
     }
-    if input.priority != 0 {
+    if let Some(var_9) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.priority).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.queue {
-        object.key("queue").string(var_9.as_str());
+    if let Some(var_10) = &input.queue {
+        object.key("queue").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.settings {
+    if let Some(var_11) = &input.settings {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("settings").start_object();
+        let mut object_12 = object.key("settings").start_object();
         crate::protocol_serde::shape_job_template_settings::ser_job_template_settings(
-            &mut object_11,
-            var_10,
+            &mut object_12,
+            var_11,
         )?;
-        object_11.finish();
+        object_12.finish();
     }
-    if let Some(var_12) = &input.status_update_interval {
-        object.key("statusUpdateInterval").string(var_12.as_str());
+    if let Some(var_13) = &input.status_update_interval {
+        object.key("statusUpdateInterval").string(var_13.as_str());
     }
     Ok(())
 }

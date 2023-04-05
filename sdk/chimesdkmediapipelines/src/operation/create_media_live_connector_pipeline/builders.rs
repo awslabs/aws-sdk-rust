@@ -5,7 +5,7 @@ pub use crate::operation::create_media_live_connector_pipeline::_create_media_li
 
 /// Fluent builder constructing a request to `CreateMediaLiveConnectorPipeline`.
 ///
-/// <p>Creates a streaming media pipeline in an Amazon Chime SDK meeting.</p>
+/// <p>Creates a media live connector pipeline in an Amazon Chime SDK meeting.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMediaLiveConnectorPipelineFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -60,12 +60,12 @@ impl CreateMediaLiveConnectorPipelineFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>The media pipeline's data sources.</p>
+    /// <p>The media live connector pipeline's data sources.</p>
     pub fn sources(mut self, input: crate::types::LiveConnectorSourceConfiguration) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    /// <p>The media pipeline's data sources.</p>
+    /// <p>The media live connector pipeline's data sources.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
@@ -77,12 +77,12 @@ impl CreateMediaLiveConnectorPipelineFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
     ///
-    /// <p>The media pipeline's data sinks.</p>
+    /// <p>The media live connector pipeline's data sinks.</p>
     pub fn sinks(mut self, input: crate::types::LiveConnectorSinkConfiguration) -> Self {
         self.inner = self.inner.sinks(input);
         self
     }
-    /// <p>The media pipeline's data sinks.</p>
+    /// <p>The media live connector pipeline's data sinks.</p>
     pub fn set_sinks(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
@@ -107,12 +107,12 @@ impl CreateMediaLiveConnectorPipelineFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags associated with the media pipeline.</p>
+    /// <p>The tags associated with the media live connector pipeline.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The tags associated with the media pipeline.</p>
+    /// <p>The tags associated with the media live connector pipeline.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,

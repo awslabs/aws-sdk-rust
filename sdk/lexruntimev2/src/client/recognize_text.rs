@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`interpretations(Option<Vec<Interpretation>>)`](crate::operation::recognize_text::RecognizeTextOutput::interpretations): <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>  <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     ///   - [`request_attributes(Option<HashMap<String, String>>)`](crate::operation::recognize_text::RecognizeTextOutput::request_attributes): <p>The attributes sent in the request.</p>
     ///   - [`session_id(Option<String>)`](crate::operation::recognize_text::RecognizeTextOutput::session_id): <p>The identifier of the session in use.</p>
+    ///   - [`recognized_bot_member(Option<RecognizedBotMember>)`](crate::operation::recognize_text::RecognizeTextOutput::recognized_bot_member): <p>The bot member that recognized the text.</p>
     /// - On failure, responds with [`SdkError<RecognizeTextError>`](crate::operation::recognize_text::RecognizeTextError)
     pub fn recognize_text(
         &self,

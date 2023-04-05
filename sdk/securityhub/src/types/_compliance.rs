@@ -23,6 +23,12 @@ pub struct Compliance {
     /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
     #[doc(hidden)]
     pub status_reasons: std::option::Option<std::vec::Vec<crate::types::StatusReason>>,
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    #[doc(hidden)]
+    pub security_control_id: std::option::Option<std::string::String>,
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
+    #[doc(hidden)]
+    pub associated_standards: std::option::Option<std::vec::Vec<crate::types::AssociatedStandard>>,
 }
 impl Compliance {
     /// <p>The result of a standards check.</p>
@@ -47,6 +53,14 @@ impl Compliance {
     pub fn status_reasons(&self) -> std::option::Option<&[crate::types::StatusReason]> {
         self.status_reasons.as_deref()
     }
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    pub fn security_control_id(&self) -> std::option::Option<&str> {
+        self.security_control_id.as_deref()
+    }
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
+    pub fn associated_standards(&self) -> std::option::Option<&[crate::types::AssociatedStandard]> {
+        self.associated_standards.as_deref()
+    }
 }
 impl Compliance {
     /// Creates a new builder-style object to manufacture [`Compliance`](crate::types::Compliance).
@@ -62,6 +76,9 @@ pub struct ComplianceBuilder {
     pub(crate) status: std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) related_requirements: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) status_reasons: std::option::Option<std::vec::Vec<crate::types::StatusReason>>,
+    pub(crate) security_control_id: std::option::Option<std::string::String>,
+    pub(crate) associated_standards:
+        std::option::Option<std::vec::Vec<crate::types::AssociatedStandard>>,
 }
 impl ComplianceBuilder {
     /// <p>The result of a standards check.</p>
@@ -135,12 +152,46 @@ impl ComplianceBuilder {
         self.status_reasons = input;
         self
     }
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    pub fn security_control_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.security_control_id = Some(input.into());
+        self
+    }
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    pub fn set_security_control_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_control_id = input;
+        self
+    }
+    /// Appends an item to `associated_standards`.
+    ///
+    /// To override the contents of this collection use [`set_associated_standards`](Self::set_associated_standards).
+    ///
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
+    pub fn associated_standards(mut self, input: crate::types::AssociatedStandard) -> Self {
+        let mut v = self.associated_standards.unwrap_or_default();
+        v.push(input);
+        self.associated_standards = Some(v);
+        self
+    }
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
+    pub fn set_associated_standards(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssociatedStandard>>,
+    ) -> Self {
+        self.associated_standards = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Compliance`](crate::types::Compliance).
     pub fn build(self) -> crate::types::Compliance {
         crate::types::Compliance {
             status: self.status,
             related_requirements: self.related_requirements,
             status_reasons: self.status_reasons,
+            security_control_id: self.security_control_id,
+            associated_standards: self.associated_standards,
         }
     }
 }

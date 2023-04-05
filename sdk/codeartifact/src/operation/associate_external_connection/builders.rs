@@ -110,6 +110,7 @@ impl AssociateExternalConnectionFluentBuilder {
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
     /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
     pub fn external_connection(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.external_connection(input.into());
@@ -124,6 +125,7 @@ impl AssociateExternalConnectionFluentBuilder {
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
     /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
     pub fn set_external_connection(
         mut self,

@@ -40,7 +40,7 @@ pub struct Input {
     /// Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
     #[doc(hidden)]
     pub filter_enable: std::option::Option<crate::types::InputFilterEnable>,
-    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
     #[doc(hidden)]
     pub filter_strength: i32,
     /// Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input individually. This setting is disabled by default.
@@ -132,7 +132,7 @@ impl Input {
     pub fn filter_enable(&self) -> std::option::Option<&crate::types::InputFilterEnable> {
         self.filter_enable.as_ref()
     }
-    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
     pub fn filter_strength(&self) -> i32 {
         self.filter_strength
     }
@@ -382,12 +382,12 @@ impl InputBuilder {
         self.filter_enable = input;
         self
     }
-    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
     pub fn filter_strength(mut self, input: i32) -> Self {
         self.filter_strength = Some(input);
         self
     }
-    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
     pub fn set_filter_strength(mut self, input: std::option::Option<i32>) -> Self {
         self.filter_strength = input;
         self

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppAssessmentOutput {
-    /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
+    /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
     #[doc(hidden)]
     pub assessment: std::option::Option<crate::types::AppAssessment>,
     _request_id: Option<String>,
 }
 impl DescribeAppAssessmentOutput {
-    /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
+    /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
     pub fn assessment(&self) -> std::option::Option<&crate::types::AppAssessment> {
         self.assessment.as_ref()
     }
@@ -36,12 +36,12 @@ pub struct DescribeAppAssessmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeAppAssessmentOutputBuilder {
-    /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
+    /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
     pub fn assessment(mut self, input: crate::types::AppAssessment) -> Self {
         self.assessment = Some(input);
         self
     }
-    /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
+    /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
     pub fn set_assessment(
         mut self,
         input: std::option::Option<crate::types::AppAssessment>,

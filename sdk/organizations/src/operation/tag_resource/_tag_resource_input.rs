@@ -15,7 +15,7 @@ pub struct TagResourceInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A list of tags to add to the specified resource.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
-    /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
+    /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -34,7 +34,7 @@ impl TagResourceInput {
     }
     /// <p>A list of tags to add to the specified resource.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
-    /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
+    /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
@@ -85,7 +85,7 @@ impl TagResourceInputBuilder {
     ///
     /// <p>A list of tags to add to the specified resource.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
-    /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
+    /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -95,7 +95,7 @@ impl TagResourceInputBuilder {
     }
     /// <p>A list of tags to add to the specified resource.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
-    /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
+    /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     pub fn set_tags(
         mut self,

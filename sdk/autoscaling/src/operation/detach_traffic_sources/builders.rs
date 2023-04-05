@@ -5,8 +5,8 @@ pub use crate::operation::detach_traffic_sources::_detach_traffic_sources_input:
 
 /// Fluent builder constructing a request to `DetachTrafficSources`.
 ///
-/// <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change. Do not use this API for production workloads. This API is also subject to change.</b> </p>
 /// <p>Detaches one or more traffic sources from the specified Auto Scaling group.</p>
+/// <p>When you detach a taffic, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the traffic source using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachTrafficSourcesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -87,14 +87,12 @@ impl DetachTrafficSourcesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
     ///
-    /// <p>The unique identifiers of one or more traffic sources you are detaching. You can specify up to 10 traffic sources.</p>
-    /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. When you detach a target group, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the target group using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
+    /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
     pub fn traffic_sources(mut self, input: crate::types::TrafficSourceIdentifier) -> Self {
         self.inner = self.inner.traffic_sources(input);
         self
     }
-    /// <p>The unique identifiers of one or more traffic sources you are detaching. You can specify up to 10 traffic sources.</p>
-    /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. When you detach a target group, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the target group using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
+    /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
     pub fn set_traffic_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>,

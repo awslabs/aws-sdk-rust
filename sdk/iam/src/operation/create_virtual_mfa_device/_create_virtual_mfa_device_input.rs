@@ -8,7 +8,7 @@ pub struct CreateVirtualMfaDeviceInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
-    /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
+    /// <p>The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub virtual_mfa_device_name: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ impl CreateVirtualMfaDeviceInput {
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
+    /// <p>The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn virtual_mfa_device_name(&self) -> std::option::Option<&str> {
         self.virtual_mfa_device_name.as_deref()
@@ -69,13 +69,13 @@ impl CreateVirtualMfaDeviceInputBuilder {
         self.path = input;
         self
     }
-    /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
+    /// <p>The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn virtual_mfa_device_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.virtual_mfa_device_name = Some(input.into());
         self
     }
-    /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
+    /// <p>The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_virtual_mfa_device_name(
         mut self,

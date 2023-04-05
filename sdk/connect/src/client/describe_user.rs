@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`user_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_user_id): <p>The identifier of the user account.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// - On success, responds with [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::describe_user::DescribeUserOutput::user): <p>Information about the user account and configuration settings.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)

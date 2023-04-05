@@ -16,6 +16,8 @@ impl super::Client {
     ///   - [`replication_type(Option<ReplicationType>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::application_id): <p>Source server application ID.</p>
+    ///   - [`user_provided_id(Option<String>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::user_provided_id): <p>Source server user provided ID.</p>
+    ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<DisconnectFromServiceError>`](crate::operation::disconnect_from_service::DisconnectFromServiceError)
     pub fn disconnect_from_service(
         &self,

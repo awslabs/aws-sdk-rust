@@ -18,8 +18,8 @@ pub fn ser_put_evaluations_input(
     if let Some(var_5) = &input.result_token {
         object.key("ResultToken").string(var_5.as_str());
     }
-    if input.test_mode {
-        object.key("TestMode").boolean(input.test_mode);
+    if let Some(var_6) = &input.test_mode {
+        object.key("TestMode").boolean(*var_6);
     }
     Ok(())
 }

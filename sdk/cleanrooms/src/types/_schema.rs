@@ -7,7 +7,7 @@ pub struct Schema {
     /// <p>The columns for the relation this schema represents.</p>
     #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::types::Column>>,
-    /// <p>The partition keys for the data set underlying this schema.</p>
+    /// <p>The partition keys for the dataset underlying this schema.</p>
     #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<crate::types::Column>>,
     /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
@@ -46,7 +46,7 @@ impl Schema {
     pub fn columns(&self) -> std::option::Option<&[crate::types::Column]> {
         self.columns.as_deref()
     }
-    /// <p>The partition keys for the data set underlying this schema.</p>
+    /// <p>The partition keys for the dataset underlying this schema.</p>
     pub fn partition_keys(&self) -> std::option::Option<&[crate::types::Column]> {
         self.partition_keys.as_deref()
     }
@@ -140,14 +140,14 @@ impl SchemaBuilder {
     ///
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
     ///
-    /// <p>The partition keys for the data set underlying this schema.</p>
+    /// <p>The partition keys for the dataset underlying this schema.</p>
     pub fn partition_keys(mut self, input: crate::types::Column) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
         v.push(input);
         self.partition_keys = Some(v);
         self
     }
-    /// <p>The partition keys for the data set underlying this schema.</p>
+    /// <p>The partition keys for the dataset underlying this schema.</p>
     pub fn set_partition_keys(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Column>>,

@@ -9,6 +9,11 @@ pub fn ser_traffic_source_identifier(
     if let Some(var_2) = &input.identifier {
         scope_1.string(var_2);
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("Type");
+    if let Some(var_4) = &input.r#type {
+        scope_3.string(var_4);
+    }
     Ok(())
 }
 
@@ -20,7 +25,7 @@ pub fn de_traffic_source_identifier(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Identifier") /* Identifier com.amazonaws.autoscaling#TrafficSourceIdentifier$Identifier */ =>  {
-                let var_3 =
+                let var_5 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -29,7 +34,20 @@ pub fn de_traffic_source_identifier(
                         ?
                     )
                 ;
-                builder = builder.set_identifier(var_3);
+                builder = builder.set_identifier(var_5);
+            }
+            ,
+            s if s.matches("Type") /* Type com.amazonaws.autoscaling#TrafficSourceIdentifier$Type */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_type(var_6);
             }
             ,
             _ => {}

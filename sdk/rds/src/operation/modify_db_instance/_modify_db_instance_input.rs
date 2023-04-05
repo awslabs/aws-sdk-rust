@@ -120,6 +120,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
     /// <p>For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the default for that DB parameter group family.</p>
     /// <p>If you specify only a major version, Amazon RDS will update the DB instance to the default minor version if the current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
+    /// <p>If the instance that you're modifying is acting as a read replica, the engine version that you specify must be the same or later than the version that the source DB instance or cluster is running.</p>
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
@@ -517,6 +518,7 @@ impl ModifyDbInstanceInput {
     /// <p>The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
     /// <p>For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the default for that DB parameter group family.</p>
     /// <p>If you specify only a major version, Amazon RDS will update the DB instance to the default minor version if the current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
+    /// <p>If the instance that you're modifying is acting as a read replica, the engine version that you specify must be the same or later than the version that the source DB instance or cluster is running.</p>
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
@@ -1212,6 +1214,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
     /// <p>For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the default for that DB parameter group family.</p>
     /// <p>If you specify only a major version, Amazon RDS will update the DB instance to the default minor version if the current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
+    /// <p>If the instance that you're modifying is acting as a read replica, the engine version that you specify must be the same or later than the version that the source DB instance or cluster is running.</p>
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.engine_version = Some(input.into());
@@ -1220,6 +1223,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
     /// <p>For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the default for that DB parameter group family.</p>
     /// <p>If you specify only a major version, Amazon RDS will update the DB instance to the default minor version if the current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
+    /// <p>If the instance that you're modifying is acting as a read replica, the engine version that you specify must be the same or later than the version that the source DB instance or cluster is running.</p>
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.engine_version = input;

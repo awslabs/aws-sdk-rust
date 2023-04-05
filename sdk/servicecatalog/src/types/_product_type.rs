@@ -13,7 +13,9 @@
 /// # let producttype = unimplemented!();
 /// match producttype {
 ///     ProductType::CloudFormationTemplate => { /* ... */ },
+///     ProductType::DefaultCustom => { /* ... */ },
 ///     ProductType::Marketplace => { /* ... */ },
+///     ProductType::TerraformOpenSource => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -50,7 +52,11 @@ pub enum ProductType {
     #[allow(missing_docs)] // documentation missing in model
     CloudFormationTemplate,
     #[allow(missing_docs)] // documentation missing in model
+    DefaultCustom,
+    #[allow(missing_docs)] // documentation missing in model
     Marketplace,
+    #[allow(missing_docs)] // documentation missing in model
+    TerraformOpenSource,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -58,7 +64,9 @@ impl std::convert::From<&str> for ProductType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD_FORMATION_TEMPLATE" => ProductType::CloudFormationTemplate,
+            "DEFAULT_CUSTOM" => ProductType::DefaultCustom,
             "MARKETPLACE" => ProductType::Marketplace,
+            "TERRAFORM_OPEN_SOURCE" => ProductType::TerraformOpenSource,
             other => ProductType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -75,13 +83,20 @@ impl ProductType {
     pub fn as_str(&self) -> &str {
         match self {
             ProductType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
+            ProductType::DefaultCustom => "DEFAULT_CUSTOM",
             ProductType::Marketplace => "MARKETPLACE",
+            ProductType::TerraformOpenSource => "TERRAFORM_OPEN_SOURCE",
             ProductType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD_FORMATION_TEMPLATE", "MARKETPLACE"]
+        &[
+            "CLOUD_FORMATION_TEMPLATE",
+            "DEFAULT_CUSTOM",
+            "MARKETPLACE",
+            "TERRAFORM_OPEN_SOURCE",
+        ]
     }
 }
 impl AsRef<str> for ProductType {

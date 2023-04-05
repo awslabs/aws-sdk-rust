@@ -21,7 +21,7 @@ pub struct PutObjectRetentionInput {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
     #[doc(hidden)]
-    pub bypass_governance_retention: bool,
+    pub bypass_governance_retention: std::option::Option<bool>,
     /// <p>The MD5 hash for the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     #[doc(hidden)]
@@ -57,7 +57,7 @@ impl PutObjectRetentionInput {
         self.version_id.as_deref()
     }
     /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
-    pub fn bypass_governance_retention(&self) -> bool {
+    pub fn bypass_governance_retention(&self) -> std::option::Option<bool> {
         self.bypass_governance_retention
     }
     /// <p>The MD5 hash for the request body.</p>
@@ -220,7 +220,7 @@ impl PutObjectRetentionInputBuilder {
                 retention: self.retention,
                 request_payer: self.request_payer,
                 version_id: self.version_id,
-                bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
+                bypass_governance_retention: self.bypass_governance_retention,
                 content_md5: self.content_md5,
                 checksum_algorithm: self.checksum_algorithm,
                 expected_bucket_owner: self.expected_bucket_owner,

@@ -12,7 +12,7 @@ pub struct StartConfigurationSessionInput {
     /// <p>The configuration profile ID or the configuration profile name.</p>
     #[doc(hidden)]
     pub configuration_profile_identifier: std::option::Option<std::string::String>,
-    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     #[doc(hidden)]
     pub required_minimum_poll_interval_in_seconds: std::option::Option<i32>,
 }
@@ -29,7 +29,7 @@ impl StartConfigurationSessionInput {
     pub fn configuration_profile_identifier(&self) -> std::option::Option<&str> {
         self.configuration_profile_identifier.as_deref()
     }
-    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn required_minimum_poll_interval_in_seconds(&self) -> std::option::Option<i32> {
         self.required_minimum_poll_interval_in_seconds
     }
@@ -93,12 +93,12 @@ impl StartConfigurationSessionInputBuilder {
         self.configuration_profile_identifier = input;
         self
     }
-    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn required_minimum_poll_interval_in_seconds(mut self, input: i32) -> Self {
         self.required_minimum_poll_interval_in_seconds = Some(input);
         self
     }
-    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn set_required_minimum_poll_interval_in_seconds(
         mut self,
         input: std::option::Option<i32>,

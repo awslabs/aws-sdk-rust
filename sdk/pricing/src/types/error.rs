@@ -9,6 +9,10 @@ pub use crate::types::error::_internal_error_exception::InternalErrorException;
 
 pub use crate::types::error::_expired_next_token_exception::ExpiredNextTokenException;
 
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
+mod _access_denied_exception;
+
 mod _expired_next_token_exception;
 
 mod _internal_error_exception;

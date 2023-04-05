@@ -13,12 +13,16 @@ When calling StartConfigurationSession, your code sends the following informatio
 
 In response, AppConfig provides an InitialConfigurationToken to be given to the session's client and used the first time it calls GetLatestConfiguration for that session.
 
+This token should only be used once in your first call to GetLatestConfiguration. You _must_ use the new token in the GetLatestConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.
+
 When calling GetLatestConfiguration, your client code sends the most recent ConfigurationToken value it has and receives in response:
   - NextPollConfigurationToken: the ConfigurationToken value to use on the next call to GetLatestConfiguration.
   - NextPollIntervalInSeconds: the duration the client should wait before making its next call to GetLatestConfiguration. This duration may vary over the course of the session, so it should be used instead of the value sent on the StartConfigurationSession call.
   - The configuration: the latest data intended for the session. This may be empty if the client already has the latest version of the configuration.
 
-For more information and to view example CLI commands that show how to retrieve a configuration using the AppConfig Data StartConfigurationSession and GetLatestConfiguration API actions, see [Receiving the configuration](http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration) in the _AppConfig User Guide_.
+The InitialConfigurationToken and NextPollConfigurationToken should only be used once. To support long poll use cases, the tokens are valid for up to 24 hours. If a GetLatestConfiguration call uses an expired token, the system returns BadRequestException.
+
+For more information and to view example CLI commands that show how to retrieve a configuration using the AppConfig Data StartConfigurationSession and GetLatestConfiguration API actions, see [Retrieving the configuration](http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration) in the _AppConfig User Guide_.
 
 ## Getting Started
 
@@ -32,7 +36,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-appconfigdata = "0.25.0"
+aws-sdk-appconfigdata = "0.25.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

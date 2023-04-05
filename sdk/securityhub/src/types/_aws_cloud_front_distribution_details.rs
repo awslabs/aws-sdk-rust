@@ -21,7 +21,7 @@ pub struct AwsCloudFrontDistributionDetails {
     #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Indicates when that the distribution was last modified.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<std::string::String>,
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
@@ -70,7 +70,7 @@ impl AwsCloudFrontDistributionDetails {
         self.e_tag.as_deref()
     }
     /// <p>Indicates when that the distribution was last modified.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&str> {
         self.last_modified_time.as_deref()
     }
@@ -198,13 +198,13 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         self
     }
     /// <p>Indicates when that the distribution was last modified.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn last_modified_time(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_modified_time = Some(input.into());
         self
     }
     /// <p>Indicates when that the distribution was last modified.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_last_modified_time(
         mut self,
         input: std::option::Option<std::string::String>,

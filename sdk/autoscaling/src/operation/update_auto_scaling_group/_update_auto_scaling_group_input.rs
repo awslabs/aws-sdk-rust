@@ -33,8 +33,9 @@ pub struct UpdateAutoScalingGroupInput {
     /// <p>One or more Availability Zones for the group.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
+    /// <p>The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Only specify <code>EC2</code> if you must clear a value that was previously set.</p>
     #[doc(hidden)]
     pub health_check_type: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -72,9 +73,9 @@ pub struct UpdateAutoScalingGroupInput {
     /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
     #[doc(hidden)]
     pub desired_capacity_type: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource consumption to become stable after an instance reaches the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
-    /// <p>To manage your warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale continuously, such as target tracking and step scaling policies. </p>
-    /// <p>If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value of <code>0</code>.</p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
+    /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
     #[doc(hidden)]
     pub default_instance_warmup: std::option::Option<i32>,
@@ -123,8 +124,9 @@ impl UpdateAutoScalingGroupInput {
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
+    /// <p>The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Only specify <code>EC2</code> if you must clear a value that was previously set.</p>
     pub fn health_check_type(&self) -> std::option::Option<&str> {
         self.health_check_type.as_deref()
     }
@@ -173,9 +175,9 @@ impl UpdateAutoScalingGroupInput {
     pub fn desired_capacity_type(&self) -> std::option::Option<&str> {
         self.desired_capacity_type.as_deref()
     }
-    /// <p>The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource consumption to become stable after an instance reaches the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
-    /// <p>To manage your warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale continuously, such as target tracking and step scaling policies. </p>
-    /// <p>If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value of <code>0</code>.</p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
+    /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
     pub fn default_instance_warmup(&self) -> std::option::Option<i32> {
         self.default_instance_warmup
@@ -334,14 +336,16 @@ impl UpdateAutoScalingGroupInputBuilder {
         self.availability_zones = input;
         self
     }
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
+    /// <p>The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Only specify <code>EC2</code> if you must clear a value that was previously set.</p>
     pub fn health_check_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.health_check_type = Some(input.into());
         self
     }
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
+    /// <p>The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Only specify <code>EC2</code> if you must clear a value that was previously set.</p>
     pub fn set_health_check_type(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -480,17 +484,17 @@ impl UpdateAutoScalingGroupInputBuilder {
         self.desired_capacity_type = input;
         self
     }
-    /// <p>The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource consumption to become stable after an instance reaches the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
-    /// <p>To manage your warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale continuously, such as target tracking and step scaling policies. </p>
-    /// <p>If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value of <code>0</code>.</p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
+    /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
     pub fn default_instance_warmup(mut self, input: i32) -> Self {
         self.default_instance_warmup = Some(input);
         self
     }
-    /// <p>The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource consumption to become stable after an instance reaches the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
-    /// <p>To manage your warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale continuously, such as target tracking and step scaling policies. </p>
-    /// <p>If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value of <code>0</code>.</p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
+    /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
     pub fn set_default_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
         self.default_instance_warmup = input;

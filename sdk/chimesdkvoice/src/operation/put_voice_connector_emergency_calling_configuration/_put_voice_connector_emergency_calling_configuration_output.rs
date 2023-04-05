@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated configuration.</p>
     #[doc(hidden)]
     pub emergency_calling_configuration:
         std::option::Option<crate::types::EmergencyCallingConfiguration>,
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated configuration.</p>
     pub fn emergency_calling_configuration(
         &self,
     ) -> std::option::Option<&crate::types::EmergencyCallingConfiguration> {
@@ -38,7 +38,7 @@ pub struct PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated configuration.</p>
     pub fn emergency_calling_configuration(
         mut self,
         input: crate::types::EmergencyCallingConfiguration,
@@ -46,7 +46,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
         self.emergency_calling_configuration = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated configuration.</p>
     pub fn set_emergency_calling_configuration(
         mut self,
         input: std::option::Option<crate::types::EmergencyCallingConfiguration>,

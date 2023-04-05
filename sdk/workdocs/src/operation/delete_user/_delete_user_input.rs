@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the user.</p>
@@ -11,7 +11,7 @@ pub struct DeleteUserInput {
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -43,12 +43,12 @@ pub struct DeleteUserInputBuilder {
     pub(crate) user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,

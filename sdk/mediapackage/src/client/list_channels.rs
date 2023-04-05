@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_max_results): Upper bound on number of records to return.
+    ///   - [`max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_max_results): Upper bound on number of records to return.
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput) with field(s):
     ///   - [`channels(Option<Vec<Channel>>)`](crate::operation::list_channels::ListChannelsOutput::channels): A list of Channel records.

@@ -22,6 +22,9 @@ pub mod describe_scaling_policies;
 /// Types for the `DescribeScheduledActions` operation.
 pub mod describe_scheduled_actions;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `PutScalingPolicy` operation.
 pub mod put_scaling_policy;
 
@@ -30,3 +33,9 @@ pub mod put_scheduled_action;
 
 /// Types for the `RegisterScalableTarget` operation.
 pub mod register_scalable_target;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;

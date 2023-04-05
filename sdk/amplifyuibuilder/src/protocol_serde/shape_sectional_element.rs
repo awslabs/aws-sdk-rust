@@ -24,6 +24,9 @@ pub fn ser_sectional_element(
     if let Some(var_6) = &input.orientation {
         object.key("orientation").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.excluded {
+        object.key("excluded").boolean(*var_7);
+    }
     Ok(())
 }
 
@@ -92,6 +95,13 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "excluded" => {
+                                builder = builder.set_excluded(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

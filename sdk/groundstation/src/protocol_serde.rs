@@ -30,6 +30,8 @@ pub(crate) mod shape_describe_contact;
 
 pub(crate) mod shape_describe_ephemeris;
 
+pub(crate) mod shape_get_agent_configuration;
+
 pub(crate) mod shape_get_config;
 
 pub(crate) mod shape_get_dataflow_endpoint_group;
@@ -56,11 +58,15 @@ pub(crate) mod shape_list_satellites;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_register_agent;
+
 pub(crate) mod shape_reserve_contact;
 
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_agent_status;
 
 pub(crate) mod shape_update_config;
 
@@ -94,6 +100,8 @@ pub(crate) mod shape_list_contacts_input;
 
 pub(crate) mod shape_list_ephemerides_input;
 
+pub(crate) mod shape_register_agent_input;
+
 pub(crate) mod shape_reserve_contact_input;
 
 pub(crate) mod shape_resource_limit_exceeded_exception;
@@ -102,11 +110,19 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_update_agent_status_input;
+
 pub(crate) mod shape_update_config_input;
 
 pub(crate) mod shape_update_ephemeris_input;
 
 pub(crate) mod shape_update_mission_profile_input;
+
+pub(crate) mod shape_agent_details;
+
+pub(crate) mod shape_aggregate_status;
+
+pub(crate) mod shape_component_status_data;
 
 pub(crate) mod shape_config_list;
 
@@ -119,6 +135,8 @@ pub(crate) mod shape_dataflow_edge_list;
 pub(crate) mod shape_dataflow_endpoint_group_list;
 
 pub(crate) mod shape_dataflow_list;
+
+pub(crate) mod shape_discovery_data;
 
 pub(crate) mod shape_elevation;
 
@@ -138,6 +156,8 @@ pub(crate) mod shape_ground_station_id_list;
 
 pub(crate) mod shape_ground_station_list;
 
+pub(crate) mod shape_kms_key;
+
 pub(crate) mod shape_mission_profile_list;
 
 pub(crate) mod shape_satellite_list;
@@ -149,6 +169,10 @@ pub(crate) mod shape_antenna_downlink_config;
 pub(crate) mod shape_antenna_downlink_demod_decode_config;
 
 pub(crate) mod shape_antenna_uplink_config;
+
+pub(crate) mod shape_aws_ground_station_agent_endpoint;
+
+pub(crate) mod shape_component_version;
 
 pub(crate) mod shape_config_list_item;
 
@@ -186,6 +210,8 @@ pub(crate) mod shape_tracking_config;
 
 pub(crate) mod shape_uplink_echo_config;
 
+pub(crate) mod shape_connection_details;
+
 pub(crate) mod shape_decode_config;
 
 pub(crate) mod shape_demodulation_config;
@@ -193,6 +219,8 @@ pub(crate) mod shape_demodulation_config;
 pub(crate) mod shape_destination;
 
 pub(crate) mod shape_eirp;
+
+pub(crate) mod shape_ranged_connection_details;
 
 pub(crate) mod shape_s3_object;
 
@@ -212,6 +240,8 @@ pub(crate) mod shape_frequency;
 
 pub(crate) mod shape_frequency_bandwidth;
 
+pub(crate) mod shape_ranged_socket_address;
+
 pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_subnet_list;
@@ -219,5 +249,7 @@ pub(crate) mod shape_subnet_list;
 pub(crate) mod shape_time_range;
 
 pub(crate) mod shape_antenna_demod_decode_details;
+
+pub(crate) mod shape_integer_range;
 
 pub(crate) mod shape_s3_recording_details;

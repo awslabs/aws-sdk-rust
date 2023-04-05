@@ -37,7 +37,7 @@ pub struct PortMapping {
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub app_protocol: std::option::Option<crate::types::ApplicationProtocol>,
-    /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+    /// <p>The port number range on the container that's bound to the dynamically mapped host port range. </p>
     /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
     /// <ul>
     /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
@@ -95,7 +95,7 @@ impl PortMapping {
     pub fn app_protocol(&self) -> std::option::Option<&crate::types::ApplicationProtocol> {
         self.app_protocol.as_ref()
     }
-    /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+    /// <p>The port number range on the container that's bound to the dynamically mapped host port range. </p>
     /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
     /// <ul>
     /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
@@ -222,7 +222,7 @@ impl PortMappingBuilder {
         self.app_protocol = input;
         self
     }
-    /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+    /// <p>The port number range on the container that's bound to the dynamically mapped host port range. </p>
     /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
     /// <ul>
     /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>
@@ -246,7 +246,7 @@ impl PortMappingBuilder {
         self.container_port_range = Some(input.into());
         self
     }
-    /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
+    /// <p>The port number range on the container that's bound to the dynamically mapped host port range. </p>
     /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
     /// <ul>
     /// <li> <p>You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p> </li>

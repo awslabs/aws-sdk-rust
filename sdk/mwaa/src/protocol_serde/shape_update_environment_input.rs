@@ -75,13 +75,21 @@ pub fn ser_update_environment_input(
     if let Some(var_20) = &input.source_bucket_arn {
         object.key("SourceBucketArn").string(var_20.as_str());
     }
-    if let Some(var_21) = &input.webserver_access_mode {
-        object.key("WebserverAccessMode").string(var_21.as_str());
+    if let Some(var_21) = &input.startup_script_s3_object_version {
+        object
+            .key("StartupScriptS3ObjectVersion")
+            .string(var_21.as_str());
     }
-    if let Some(var_22) = &input.weekly_maintenance_window_start {
+    if let Some(var_22) = &input.startup_script_s3_path {
+        object.key("StartupScriptS3Path").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.webserver_access_mode {
+        object.key("WebserverAccessMode").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.weekly_maintenance_window_start {
         object
             .key("WeeklyMaintenanceWindowStart")
-            .string(var_22.as_str());
+            .string(var_24.as_str());
     }
     Ok(())
 }

@@ -5,7 +5,9 @@ pub use crate::operation::update_event_data_store::_update_event_data_store_inpu
 
 /// Fluent builder constructing a request to `UpdateEventDataStore`.
 ///
-/// <p>Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2557. By default, <code>TerminationProtection</code> is enabled. <code>AdvancedEventSelectors</code> includes or excludes management and data events in your event data store; for more information about <code>AdvancedEventSelectors</code>, see <code>PutEventSelectorsRequest$AdvancedEventSelectors</code>.</p>
+/// <p>Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2557. By default, <code>TerminationProtection</code> is enabled.</p>
+/// <p>For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes management and data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see <code>PutEventSelectorsRequest$AdvancedEventSelectors</code>. </p>
+/// <p> For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, <code>AdvancedEventSelectors</code> includes events of that type in your event data store.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEventDataStoreFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

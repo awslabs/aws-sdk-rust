@@ -35,61 +35,92 @@ pub fn de_create_collection_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => {
-            crate::operation::create_collection::CreateCollectionError::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => crate::operation::create_collection::CreateCollectionError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_collection::CreateCollectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::operation::create_collection::CreateCollectionError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::create_collection::CreateCollectionError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_collection::CreateCollectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::operation::create_collection::CreateCollectionError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OcuLimitExceededException" => crate::operation::create_collection::CreateCollectionError::OcuLimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::OcuLimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_ocu_limit_exceeded_exception::de_ocu_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_collection::CreateCollectionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceQuotaExceededException" => crate::operation::create_collection::CreateCollectionError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_collection::CreateCollectionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::create_collection::CreateCollectionError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_collection::CreateCollectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::operation::create_collection::CreateCollectionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_collection::CreateCollectionError::generic(generic)
     })
 }
 

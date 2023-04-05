@@ -49,6 +49,15 @@ pub struct KafkaStreamingSourceOptions {
     /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
     #[doc(hidden)]
     pub min_partitions: std::option::Option<i32>,
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    #[doc(hidden)]
+    pub include_headers: std::option::Option<bool>,
+    /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    #[doc(hidden)]
+    pub add_record_timestamp: std::option::Option<std::string::String>,
+    /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    #[doc(hidden)]
+    pub emit_consumer_lag_metrics: std::option::Option<std::string::String>,
 }
 impl KafkaStreamingSourceOptions {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
@@ -111,6 +120,18 @@ impl KafkaStreamingSourceOptions {
     pub fn min_partitions(&self) -> std::option::Option<i32> {
         self.min_partitions
     }
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    pub fn include_headers(&self) -> std::option::Option<bool> {
+        self.include_headers
+    }
+    /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn add_record_timestamp(&self) -> std::option::Option<&str> {
+        self.add_record_timestamp.as_deref()
+    }
+    /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn emit_consumer_lag_metrics(&self) -> std::option::Option<&str> {
+        self.emit_consumer_lag_metrics.as_deref()
+    }
 }
 impl KafkaStreamingSourceOptions {
     /// Creates a new builder-style object to manufacture [`KafkaStreamingSourceOptions`](crate::types::KafkaStreamingSourceOptions).
@@ -138,6 +159,9 @@ pub struct KafkaStreamingSourceOptionsBuilder {
     pub(crate) retry_interval_ms: std::option::Option<i64>,
     pub(crate) max_offsets_per_trigger: std::option::Option<i64>,
     pub(crate) min_partitions: std::option::Option<i32>,
+    pub(crate) include_headers: std::option::Option<bool>,
+    pub(crate) add_record_timestamp: std::option::Option<std::string::String>,
+    pub(crate) emit_consumer_lag_metrics: std::option::Option<std::string::String>,
 }
 impl KafkaStreamingSourceOptionsBuilder {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
@@ -299,6 +323,42 @@ impl KafkaStreamingSourceOptionsBuilder {
         self.min_partitions = input;
         self
     }
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    pub fn include_headers(mut self, input: bool) -> Self {
+        self.include_headers = Some(input);
+        self
+    }
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    pub fn set_include_headers(mut self, input: std::option::Option<bool>) -> Self {
+        self.include_headers = input;
+        self
+    }
+    /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn add_record_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+        self.add_record_timestamp = Some(input.into());
+        self
+    }
+    /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn set_add_record_timestamp(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.add_record_timestamp = input;
+        self
+    }
+    /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn emit_consumer_lag_metrics(mut self, input: impl Into<std::string::String>) -> Self {
+        self.emit_consumer_lag_metrics = Some(input.into());
+        self
+    }
+    /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn set_emit_consumer_lag_metrics(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.emit_consumer_lag_metrics = input;
+        self
+    }
     /// Consumes the builder and constructs a [`KafkaStreamingSourceOptions`](crate::types::KafkaStreamingSourceOptions).
     pub fn build(self) -> crate::types::KafkaStreamingSourceOptions {
         crate::types::KafkaStreamingSourceOptions {
@@ -317,6 +377,9 @@ impl KafkaStreamingSourceOptionsBuilder {
             retry_interval_ms: self.retry_interval_ms,
             max_offsets_per_trigger: self.max_offsets_per_trigger,
             min_partitions: self.min_partitions,
+            include_headers: self.include_headers,
+            add_record_timestamp: self.add_record_timestamp,
+            emit_consumer_lag_metrics: self.emit_consumer_lag_metrics,
         }
     }
 }

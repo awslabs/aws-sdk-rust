@@ -25,6 +25,9 @@ pub struct UpdateChannelInput {
     /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
     #[doc(hidden)]
     pub recording_configuration_arn: std::option::Option<std::string::String>,
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    #[doc(hidden)]
+    pub insecure_ingest: bool,
 }
 impl UpdateChannelInput {
     /// <p>ARN of the channel to be updated.</p>
@@ -55,6 +58,10 @@ impl UpdateChannelInput {
     pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.recording_configuration_arn.as_deref()
     }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn insecure_ingest(&self) -> bool {
+        self.insecure_ingest
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -73,6 +80,7 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) r#type: std::option::Option<crate::types::ChannelType>,
     pub(crate) authorized: std::option::Option<bool>,
     pub(crate) recording_configuration_arn: std::option::Option<std::string::String>,
+    pub(crate) insecure_ingest: std::option::Option<bool>,
 }
 impl UpdateChannelInputBuilder {
     /// <p>ARN of the channel to be updated.</p>
@@ -149,6 +157,16 @@ impl UpdateChannelInputBuilder {
         self.recording_configuration_arn = input;
         self
     }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn insecure_ingest(mut self, input: bool) -> Self {
+        self.insecure_ingest = Some(input);
+        self
+    }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn set_insecure_ingest(mut self, input: std::option::Option<bool>) -> Self {
+        self.insecure_ingest = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -163,6 +181,7 @@ impl UpdateChannelInputBuilder {
             r#type: self.r#type,
             authorized: self.authorized.unwrap_or_default(),
             recording_configuration_arn: self.recording_configuration_arn,
+            insecure_ingest: self.insecure_ingest.unwrap_or_default(),
         })
     }
 }

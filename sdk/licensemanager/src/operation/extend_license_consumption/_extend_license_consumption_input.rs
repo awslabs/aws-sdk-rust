@@ -8,7 +8,7 @@ pub struct ExtendLicenseConsumptionInput {
     pub license_consumption_token: std::option::Option<std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
     #[doc(hidden)]
-    pub dry_run: bool,
+    pub dry_run: std::option::Option<bool>,
 }
 impl ExtendLicenseConsumptionInput {
     /// <p>License consumption token.</p>
@@ -16,7 +16,7 @@ impl ExtendLicenseConsumptionInput {
         self.license_consumption_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -70,7 +70,7 @@ impl ExtendLicenseConsumptionInputBuilder {
         Ok(
             crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput {
                 license_consumption_token: self.license_consumption_token,
-                dry_run: self.dry_run.unwrap_or_default(),
+                dry_run: self.dry_run,
             },
         )
     }

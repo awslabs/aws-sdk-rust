@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`updated_at(Option<String>)`](crate::operation::get_detector::GetDetectorOutput::updated_at): <p>The last-updated timestamp for the detector.</p>
     ///   - [`data_sources(Option<DataSourceConfigurationsResult>)`](crate::operation::get_detector::GetDetectorOutput::data_sources): <p>Describes which data sources are enabled for the detector.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_detector::GetDetectorOutput::tags): <p>The tags of the detector resource.</p>
+    ///   - [`features(Option<Vec<DetectorFeatureConfigurationResult>>)`](crate::operation::get_detector::GetDetectorOutput::features): <p>Describes the features that have been enabled for the detector.</p>
     /// - On failure, responds with [`SdkError<GetDetectorError>`](crate::operation::get_detector::GetDetectorError)
     pub fn get_detector(
         &self,

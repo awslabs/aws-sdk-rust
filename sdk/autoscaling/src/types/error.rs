@@ -11,11 +11,13 @@ pub use crate::types::error::_limit_exceeded_fault::LimitExceededFault;
 
 pub use crate::types::error::_instance_refresh_in_progress_fault::InstanceRefreshInProgressFault;
 
+pub use crate::types::error::_irreversible_instance_refresh_fault::IrreversibleInstanceRefreshFault;
+
+pub use crate::types::error::_active_instance_refresh_not_found_fault::ActiveInstanceRefreshNotFoundFault;
+
 pub use crate::types::error::_already_exists_fault::AlreadyExistsFault;
 
 pub use crate::types::error::_invalid_next_token::InvalidNextToken;
-
-pub use crate::types::error::_active_instance_refresh_not_found_fault::ActiveInstanceRefreshNotFoundFault;
 
 mod _active_instance_refresh_not_found_fault;
 
@@ -24,6 +26,8 @@ mod _already_exists_fault;
 mod _instance_refresh_in_progress_fault;
 
 mod _invalid_next_token;
+
+mod _irreversible_instance_refresh_fault;
 
 mod _limit_exceeded_fault;
 

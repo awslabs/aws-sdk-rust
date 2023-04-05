@@ -2,7 +2,7 @@
 
 /// <p>The information for a launch template. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseLaunchTemplateData {
     /// <p>The ID of the kernel, if applicable.</p>
     #[doc(hidden)]
@@ -288,6 +288,55 @@ impl ResponseLaunchTemplateData {
         self.disable_api_stop
     }
 }
+impl std::fmt::Debug for ResponseLaunchTemplateData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseLaunchTemplateData");
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.field("placement", &self.placement);
+        formatter.field("ram_disk_id", &self.ram_disk_id);
+        formatter.field("disable_api_termination", &self.disable_api_termination);
+        formatter.field(
+            "instance_initiated_shutdown_behavior",
+            &self.instance_initiated_shutdown_behavior,
+        );
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field(
+            "elastic_gpu_specifications",
+            &self.elastic_gpu_specifications,
+        );
+        formatter.field(
+            "elastic_inference_accelerators",
+            &self.elastic_inference_accelerators,
+        );
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("instance_market_options", &self.instance_market_options);
+        formatter.field("credit_specification", &self.credit_specification);
+        formatter.field("cpu_options", &self.cpu_options);
+        formatter.field(
+            "capacity_reservation_specification",
+            &self.capacity_reservation_specification,
+        );
+        formatter.field("license_specifications", &self.license_specifications);
+        formatter.field("hibernation_options", &self.hibernation_options);
+        formatter.field("metadata_options", &self.metadata_options);
+        formatter.field("enclave_options", &self.enclave_options);
+        formatter.field("instance_requirements", &self.instance_requirements);
+        formatter.field("private_dns_name_options", &self.private_dns_name_options);
+        formatter.field("maintenance_options", &self.maintenance_options);
+        formatter.field("disable_api_stop", &self.disable_api_stop);
+        formatter.finish()
+    }
+}
 impl ResponseLaunchTemplateData {
     /// Creates a new builder-style object to manufacture [`ResponseLaunchTemplateData`](crate::types::ResponseLaunchTemplateData).
     pub fn builder() -> crate::types::builders::ResponseLaunchTemplateDataBuilder {
@@ -297,7 +346,7 @@ impl ResponseLaunchTemplateData {
 
 /// A builder for [`ResponseLaunchTemplateData`](crate::types::ResponseLaunchTemplateData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct ResponseLaunchTemplateDataBuilder {
     pub(crate) kernel_id: std::option::Option<std::string::String>,
     pub(crate) ebs_optimized: std::option::Option<bool>,
@@ -874,5 +923,54 @@ impl ResponseLaunchTemplateDataBuilder {
             maintenance_options: self.maintenance_options,
             disable_api_stop: self.disable_api_stop,
         }
+    }
+}
+impl std::fmt::Debug for ResponseLaunchTemplateDataBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseLaunchTemplateDataBuilder");
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.field("placement", &self.placement);
+        formatter.field("ram_disk_id", &self.ram_disk_id);
+        formatter.field("disable_api_termination", &self.disable_api_termination);
+        formatter.field(
+            "instance_initiated_shutdown_behavior",
+            &self.instance_initiated_shutdown_behavior,
+        );
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field(
+            "elastic_gpu_specifications",
+            &self.elastic_gpu_specifications,
+        );
+        formatter.field(
+            "elastic_inference_accelerators",
+            &self.elastic_inference_accelerators,
+        );
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("instance_market_options", &self.instance_market_options);
+        formatter.field("credit_specification", &self.credit_specification);
+        formatter.field("cpu_options", &self.cpu_options);
+        formatter.field(
+            "capacity_reservation_specification",
+            &self.capacity_reservation_specification,
+        );
+        formatter.field("license_specifications", &self.license_specifications);
+        formatter.field("hibernation_options", &self.hibernation_options);
+        formatter.field("metadata_options", &self.metadata_options);
+        formatter.field("enclave_options", &self.enclave_options);
+        formatter.field("instance_requirements", &self.instance_requirements);
+        formatter.field("private_dns_name_options", &self.private_dns_name_options);
+        formatter.field("maintenance_options", &self.maintenance_options);
+        formatter.field("disable_api_stop", &self.disable_api_stop);
+        formatter.finish()
     }
 }

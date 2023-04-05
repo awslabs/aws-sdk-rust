@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_arn(impl Into<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::set_cluster_arn): <p>The arn of the cluster.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::set_max_results): <p>The maxResults of the query.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::set_max_results): <p>The maxResults of the query.</p>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::set_next_token): <p>The nextToken of the query.</p>
     /// - On success, responds with [`ListScramSecretsOutput`](crate::operation::list_scram_secrets::ListScramSecretsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_scram_secrets::ListScramSecretsOutput::next_token): <p>Paginated results marker.</p>

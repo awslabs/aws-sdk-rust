@@ -20,7 +20,7 @@ pub struct CreateJobInput {
     pub job_template: std::option::Option<std::string::String>,
     /// Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
     /// Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
     #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
@@ -69,7 +69,7 @@ impl CreateJobInput {
         self.job_template.as_deref()
     }
     /// Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
     /// Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
@@ -336,7 +336,7 @@ impl CreateJobInputBuilder {
             client_request_token: self.client_request_token,
             hop_destinations: self.hop_destinations,
             job_template: self.job_template,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             queue: self.queue,
             role: self.role,
             settings: self.settings,

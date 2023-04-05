@@ -5,14 +5,14 @@
 pub struct ListInvitationsInput {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsInput {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -63,7 +63,7 @@ impl ListInvitationsInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::list_invitations::ListInvitationsInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

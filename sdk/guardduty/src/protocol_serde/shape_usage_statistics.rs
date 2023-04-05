@@ -43,6 +43,11 @@ where
                                     crate::protocol_serde::shape_usage_resource_result_list::de_usage_resource_result_list(tokens)?
                                 );
                             }
+                            "sumByFeature" => {
+                                builder = builder.set_sum_by_feature(
+                                    crate::protocol_serde::shape_usage_feature_result_list::de_usage_feature_result_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

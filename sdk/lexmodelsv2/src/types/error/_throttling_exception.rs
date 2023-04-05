@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of seconds after which the user can invoke the API again.</p>
     #[doc(hidden)]
     pub retry_after_seconds: i32,
     #[allow(missing_docs)] // documentation missing in model
@@ -13,7 +13,7 @@ pub struct ThrottlingException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of seconds after which the user can invoke the API again.</p>
     pub fn retry_after_seconds(&self) -> i32 {
         self.retry_after_seconds
     }
@@ -63,12 +63,12 @@ pub struct ThrottlingExceptionBuilder {
     meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ThrottlingExceptionBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of seconds after which the user can invoke the API again.</p>
     pub fn retry_after_seconds(mut self, input: i32) -> Self {
         self.retry_after_seconds = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of seconds after which the user can invoke the API again.</p>
     pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
         self.retry_after_seconds = input;
         self

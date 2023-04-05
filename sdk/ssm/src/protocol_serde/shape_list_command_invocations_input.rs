@@ -33,8 +33,8 @@ pub fn ser_list_command_invocations_input(
         }
         array_6.finish();
     }
-    if input.details {
-        object.key("Details").boolean(input.details);
+    if let Some(var_9) = &input.details {
+        object.key("Details").boolean(*var_9);
     }
     Ok(())
 }

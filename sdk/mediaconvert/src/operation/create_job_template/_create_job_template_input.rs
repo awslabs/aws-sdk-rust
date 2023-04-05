@@ -20,7 +20,7 @@ pub struct CreateJobTemplateInput {
     pub name: std::option::Option<std::string::String>,
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
     #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
@@ -59,7 +59,7 @@ impl CreateJobTemplateInput {
         self.name.as_deref()
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
@@ -256,7 +256,7 @@ impl CreateJobTemplateInputBuilder {
                 description: self.description,
                 hop_destinations: self.hop_destinations,
                 name: self.name,
-                priority: self.priority.unwrap_or_default(),
+                priority: self.priority,
                 queue: self.queue,
                 settings: self.settings,
                 status_update_interval: self.status_update_interval,

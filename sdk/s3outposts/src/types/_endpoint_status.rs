@@ -13,6 +13,8 @@
 /// # let endpointstatus = unimplemented!();
 /// match endpointstatus {
 ///     EndpointStatus::Available => { /* ... */ },
+///     EndpointStatus::CreateFailed => { /* ... */ },
+///     EndpointStatus::DeleteFailed => { /* ... */ },
 ///     EndpointStatus::Deleting => { /* ... */ },
 ///     EndpointStatus::Pending => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -51,6 +53,10 @@ pub enum EndpointStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -61,6 +67,8 @@ impl std::convert::From<&str> for EndpointStatus {
     fn from(s: &str) -> Self {
         match s {
             "Available" => EndpointStatus::Available,
+            "Create_Failed" => EndpointStatus::CreateFailed,
+            "Delete_Failed" => EndpointStatus::DeleteFailed,
             "Deleting" => EndpointStatus::Deleting,
             "Pending" => EndpointStatus::Pending,
             other => {
@@ -81,6 +89,8 @@ impl EndpointStatus {
     pub fn as_str(&self) -> &str {
         match self {
             EndpointStatus::Available => "Available",
+            EndpointStatus::CreateFailed => "Create_Failed",
+            EndpointStatus::DeleteFailed => "Delete_Failed",
             EndpointStatus::Deleting => "Deleting",
             EndpointStatus::Pending => "Pending",
             EndpointStatus::Unknown(value) => value.as_str(),
@@ -88,7 +98,13 @@ impl EndpointStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Available", "Deleting", "Pending"]
+        &[
+            "Available",
+            "Create_Failed",
+            "Delete_Failed",
+            "Deleting",
+            "Pending",
+        ]
     }
 }
 impl AsRef<str> for EndpointStatus {

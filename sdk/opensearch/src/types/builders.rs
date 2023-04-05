@@ -7,6 +7,8 @@ pub use crate::types::_vpc_derived_info::VpcDerivedInfoBuilder;
 
 pub use crate::types::_vpc_options::VpcOptionsBuilder;
 
+pub use crate::types::_scheduled_action::ScheduledActionBuilder;
+
 pub use crate::types::_package_details::PackageDetailsBuilder;
 
 pub use crate::types::_error_details::ErrorDetailsBuilder;
@@ -21,6 +23,20 @@ pub use crate::types::_dry_run_results::DryRunResultsBuilder;
 
 pub use crate::types::_domain_config::DomainConfigBuilder;
 
+pub use crate::types::_software_update_options_status::SoftwareUpdateOptionsStatusBuilder;
+
+pub use crate::types::_option_status::OptionStatusBuilder;
+
+pub use crate::types::_software_update_options::SoftwareUpdateOptionsBuilder;
+
+pub use crate::types::_off_peak_window_options_status::OffPeakWindowOptionsStatusBuilder;
+
+pub use crate::types::_off_peak_window_options::OffPeakWindowOptionsBuilder;
+
+pub use crate::types::_off_peak_window::OffPeakWindowBuilder;
+
+pub use crate::types::_window_start_time::WindowStartTimeBuilder;
+
 pub use crate::types::_auto_tune_options_status::AutoTuneOptionsStatusBuilder;
 
 pub use crate::types::_auto_tune_status::AutoTuneStatusBuilder;
@@ -32,8 +48,6 @@ pub use crate::types::_auto_tune_maintenance_schedule::AutoTuneMaintenanceSchedu
 pub use crate::types::_duration::DurationBuilder;
 
 pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptionsStatusBuilder;
-
-pub use crate::types::_option_status::OptionStatusBuilder;
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptionsBuilder;
 
@@ -132,6 +146,8 @@ pub use crate::types::_reserved_instance_offering::ReservedInstanceOfferingBuild
 pub use crate::types::_describe_packages_filter::DescribePackagesFilterBuilder;
 
 pub use crate::types::_outbound_connection::OutboundConnectionBuilder;
+
+pub use crate::types::_connection_properties::ConnectionPropertiesBuilder;
 
 pub use crate::types::_outbound_connection_status::OutboundConnectionStatusBuilder;
 

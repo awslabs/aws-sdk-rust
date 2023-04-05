@@ -12,7 +12,7 @@ pub struct CreateSecurityConfigInput {
     /// <p>A description of the security configuration.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Describes SAML options in in the form of a key-value map.</p>
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     #[doc(hidden)]
     pub saml_options: std::option::Option<crate::types::SamlConfigOptions>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
@@ -32,7 +32,7 @@ impl CreateSecurityConfigInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Describes SAML options in in the form of a key-value map.</p>
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn saml_options(&self) -> std::option::Option<&crate::types::SamlConfigOptions> {
         self.saml_options.as_ref()
     }
@@ -93,12 +93,12 @@ impl CreateSecurityConfigInputBuilder {
         self.description = input;
         self
     }
-    /// <p>Describes SAML options in in the form of a key-value map.</p>
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn saml_options(mut self, input: crate::types::SamlConfigOptions) -> Self {
         self.saml_options = Some(input);
         self
     }
-    /// <p>Describes SAML options in in the form of a key-value map.</p>
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn set_saml_options(
         mut self,
         input: std::option::Option<crate::types::SamlConfigOptions>,

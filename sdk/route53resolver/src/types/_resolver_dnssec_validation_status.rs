@@ -16,6 +16,8 @@
 ///     ResolverDnssecValidationStatus::Disabling => { /* ... */ },
 ///     ResolverDnssecValidationStatus::Enabled => { /* ... */ },
 ///     ResolverDnssecValidationStatus::Enabling => { /* ... */ },
+///     ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting => { /* ... */ },
+///     ResolverDnssecValidationStatus::UseLocalResourceSetting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,6 +59,10 @@ pub enum ResolverDnssecValidationStatus {
     Enabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabling,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateToUseLocalResourceSetting,
+    #[allow(missing_docs)] // documentation missing in model
+    UseLocalResourceSetting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -67,6 +73,10 @@ impl std::convert::From<&str> for ResolverDnssecValidationStatus {
             "DISABLING" => ResolverDnssecValidationStatus::Disabling,
             "ENABLED" => ResolverDnssecValidationStatus::Enabled,
             "ENABLING" => ResolverDnssecValidationStatus::Enabling,
+            "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING" => {
+                ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting
+            }
+            "USE_LOCAL_RESOURCE_SETTING" => ResolverDnssecValidationStatus::UseLocalResourceSetting,
             other => ResolverDnssecValidationStatus::Unknown(
                 crate::primitives::UnknownVariantValue(other.to_owned()),
             ),
@@ -88,12 +98,23 @@ impl ResolverDnssecValidationStatus {
             ResolverDnssecValidationStatus::Disabling => "DISABLING",
             ResolverDnssecValidationStatus::Enabled => "ENABLED",
             ResolverDnssecValidationStatus::Enabling => "ENABLING",
+            ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting => {
+                "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING"
+            }
+            ResolverDnssecValidationStatus::UseLocalResourceSetting => "USE_LOCAL_RESOURCE_SETTING",
             ResolverDnssecValidationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
+        &[
+            "DISABLED",
+            "DISABLING",
+            "ENABLED",
+            "ENABLING",
+            "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING",
+            "USE_LOCAL_RESOURCE_SETTING",
+        ]
     }
 }
 impl AsRef<str> for ResolverDnssecValidationStatus {

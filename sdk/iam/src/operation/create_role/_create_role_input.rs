@@ -10,6 +10,7 @@ pub struct CreateRoleInput {
     pub path: std::option::Option<std::string::String>,
     /// <p>The name of the role to create.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The trust relationship policy document that grants an entity permission to assume the role.</p>
@@ -30,7 +31,9 @@ pub struct CreateRoleInput {
     /// <p>Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter. If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM roles</a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
     pub max_session_duration: std::option::Option<i32>,
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the role.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
     pub permissions_boundary: std::option::Option<std::string::String>,
     /// <p>A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>
@@ -48,6 +51,7 @@ impl CreateRoleInput {
     }
     /// <p>The name of the role to create.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -72,7 +76,9 @@ impl CreateRoleInput {
     pub fn max_session_duration(&self) -> std::option::Option<i32> {
         self.max_session_duration
     }
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the role.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub fn permissions_boundary(&self) -> std::option::Option<&str> {
         self.permissions_boundary.as_deref()
     }
@@ -119,12 +125,14 @@ impl CreateRoleInputBuilder {
     }
     /// <p>The name of the role to create.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.role_name = Some(input.into());
         self
     }
     /// <p>The name of the role to create.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.role_name = input;
         self
@@ -180,12 +188,16 @@ impl CreateRoleInputBuilder {
         self.max_session_duration = input;
         self
     }
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the role.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
         self.permissions_boundary = Some(input.into());
         self
     }
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the role.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub fn set_permissions_boundary(
         mut self,
         input: std::option::Option<std::string::String>,

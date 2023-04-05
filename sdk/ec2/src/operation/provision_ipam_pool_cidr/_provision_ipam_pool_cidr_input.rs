@@ -9,12 +9,18 @@ pub struct ProvisionIpamPoolCidrInput {
     /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
     #[doc(hidden)]
     pub ipam_pool_id: std::option::Option<std::string::String>,
-    /// <p>The CIDR you want to assign to the IPAM pool.</p>
+    /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
     #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
     #[doc(hidden)]
     pub cidr_authorization_context: std::option::Option<crate::types::IpamCidrAuthorizationContext>,
+    /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
+    #[doc(hidden)]
+    pub netmask_length: std::option::Option<i32>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
 }
 impl ProvisionIpamPoolCidrInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -25,7 +31,7 @@ impl ProvisionIpamPoolCidrInput {
     pub fn ipam_pool_id(&self) -> std::option::Option<&str> {
         self.ipam_pool_id.as_deref()
     }
-    /// <p>The CIDR you want to assign to the IPAM pool.</p>
+    /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
     pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
@@ -34,6 +40,14 @@ impl ProvisionIpamPoolCidrInput {
         &self,
     ) -> std::option::Option<&crate::types::IpamCidrAuthorizationContext> {
         self.cidr_authorization_context.as_ref()
+    }
+    /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
+    pub fn netmask_length(&self) -> std::option::Option<i32> {
+        self.netmask_length
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl ProvisionIpamPoolCidrInput {
@@ -54,6 +68,8 @@ pub struct ProvisionIpamPoolCidrInputBuilder {
     pub(crate) cidr: std::option::Option<std::string::String>,
     pub(crate) cidr_authorization_context:
         std::option::Option<crate::types::IpamCidrAuthorizationContext>,
+    pub(crate) netmask_length: std::option::Option<i32>,
+    pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl ProvisionIpamPoolCidrInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -76,12 +92,12 @@ impl ProvisionIpamPoolCidrInputBuilder {
         self.ipam_pool_id = input;
         self
     }
-    /// <p>The CIDR you want to assign to the IPAM pool.</p>
+    /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
     pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
         self.cidr = Some(input.into());
         self
     }
-    /// <p>The CIDR you want to assign to the IPAM pool.</p>
+    /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.cidr = input;
         self
@@ -102,6 +118,26 @@ impl ProvisionIpamPoolCidrInputBuilder {
         self.cidr_authorization_context = input;
         self
     }
+    /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
+    pub fn netmask_length(mut self, input: i32) -> Self {
+        self.netmask_length = Some(input);
+        self
+    }
+    /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
+    pub fn set_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+        self.netmask_length = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+        self.client_token = Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ProvisionIpamPoolCidrInput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput).
     pub fn build(
         self,
@@ -115,6 +151,8 @@ impl ProvisionIpamPoolCidrInputBuilder {
                 ipam_pool_id: self.ipam_pool_id,
                 cidr: self.cidr,
                 cidr_authorization_context: self.cidr_authorization_context,
+                netmask_length: self.netmask_length,
+                client_token: self.client_token,
             },
         )
     }

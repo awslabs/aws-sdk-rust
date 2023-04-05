@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`contact_id(impl Into<String>)`](crate::operation::stop_contact::builders::StopContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::stop_contact::builders::StopContactFluentBuilder::set_contact_id): <p>The ID of the contact.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::stop_contact::builders::StopContactFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::stop_contact::builders::StopContactFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::stop_contact::builders::StopContactFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::stop_contact::builders::StopContactFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// - On success, responds with [`StopContactOutput`](crate::operation::stop_contact::StopContactOutput)
     /// - On failure, responds with [`SdkError<StopContactError>`](crate::operation::stop_contact::StopContactError)
     pub fn stop_contact(

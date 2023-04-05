@@ -6,17 +6,20 @@ pub fn ser_create_outbound_connection_input(
     if let Some(var_1) = &input.connection_alias {
         object.key("ConnectionAlias").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.local_domain_info {
-        #[allow(unused_mut)]
-        let mut object_3 = object.key("LocalDomainInfo").start_object();
-        crate::protocol_serde::shape_domain_information_container::ser_domain_information_container(&mut object_3, var_2)?;
-        object_3.finish();
+    if let Some(var_2) = &input.connection_mode {
+        object.key("ConnectionMode").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.remote_domain_info {
+    if let Some(var_3) = &input.local_domain_info {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("RemoteDomainInfo").start_object();
-        crate::protocol_serde::shape_domain_information_container::ser_domain_information_container(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("LocalDomainInfo").start_object();
+        crate::protocol_serde::shape_domain_information_container::ser_domain_information_container(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.remote_domain_info {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("RemoteDomainInfo").start_object();
+        crate::protocol_serde::shape_domain_information_container::ser_domain_information_container(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

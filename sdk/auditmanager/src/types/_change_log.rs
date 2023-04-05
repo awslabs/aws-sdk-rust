@@ -16,7 +16,7 @@ pub struct ChangeLog {
     /// <p> The time when the action was performed and the changelog record was created. </p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The IAM user or role that performed the action. </p>
+    /// <p> The user or role that performed the action. </p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
 }
@@ -37,7 +37,7 @@ impl ChangeLog {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p> The IAM user or role that performed the action. </p>
+    /// <p> The user or role that performed the action. </p>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -106,12 +106,12 @@ impl ChangeLogBuilder {
         self.created_at = input;
         self
     }
-    /// <p> The IAM user or role that performed the action. </p>
+    /// <p> The user or role that performed the action. </p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
         self.created_by = Some(input.into());
         self
     }
-    /// <p> The IAM user or role that performed the action. </p>
+    /// <p> The user or role that performed the action. </p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.created_by = input;
         self

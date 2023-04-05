@@ -8,11 +8,15 @@ pub struct UsageCriteria {
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The data sources to aggregate usage statistics from.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The features to aggregate usage statistics from.</p>
+    #[doc(hidden)]
+    pub features: std::option::Option<std::vec::Vec<crate::types::UsageFeature>>,
 }
 impl UsageCriteria {
     /// <p>The account IDs to aggregate usage statistics from.</p>
@@ -20,12 +24,17 @@ impl UsageCriteria {
         self.account_ids.as_deref()
     }
     /// <p>The data sources to aggregate usage statistics from.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(&self) -> std::option::Option<&[crate::types::DataSource]> {
         self.data_sources.as_deref()
     }
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
     pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
+    }
+    /// <p>The features to aggregate usage statistics from.</p>
+    pub fn features(&self) -> std::option::Option<&[crate::types::UsageFeature]> {
+        self.features.as_deref()
     }
 }
 impl UsageCriteria {
@@ -42,6 +51,7 @@ pub struct UsageCriteriaBuilder {
     pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) data_sources: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
     pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) features: std::option::Option<std::vec::Vec<crate::types::UsageFeature>>,
 }
 impl UsageCriteriaBuilder {
     /// Appends an item to `account_ids`.
@@ -68,6 +78,7 @@ impl UsageCriteriaBuilder {
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
     /// <p>The data sources to aggregate usage statistics from.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
         v.push(input);
@@ -75,6 +86,7 @@ impl UsageCriteriaBuilder {
         self
     }
     /// <p>The data sources to aggregate usage statistics from.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn set_data_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
@@ -101,12 +113,32 @@ impl UsageCriteriaBuilder {
         self.resources = input;
         self
     }
+    /// Appends an item to `features`.
+    ///
+    /// To override the contents of this collection use [`set_features`](Self::set_features).
+    ///
+    /// <p>The features to aggregate usage statistics from.</p>
+    pub fn features(mut self, input: crate::types::UsageFeature) -> Self {
+        let mut v = self.features.unwrap_or_default();
+        v.push(input);
+        self.features = Some(v);
+        self
+    }
+    /// <p>The features to aggregate usage statistics from.</p>
+    pub fn set_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UsageFeature>>,
+    ) -> Self {
+        self.features = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UsageCriteria`](crate::types::UsageCriteria).
     pub fn build(self) -> crate::types::UsageCriteria {
         crate::types::UsageCriteria {
             account_ids: self.account_ids,
             data_sources: self.data_sources,
             resources: self.resources,
+            features: self.features,
         }
     }
 }

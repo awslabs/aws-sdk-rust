@@ -95,12 +95,12 @@ impl UpdateNotebookFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The ID of the session in which the notebook will be updated.</p>
+    /// <p>The active notebook session ID. Required if the notebook has an active session.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
-    /// <p>The ID of the session in which the notebook will be updated.</p>
+    /// <p>The active notebook session ID. Required if the notebook has an active session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self

@@ -3,9 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSentimentInput {
-    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
@@ -13,9 +11,7 @@ pub struct DetectSentimentInput {
     pub language_code: std::option::Option<crate::types::LanguageCode>,
 }
 impl DetectSentimentInput {
-    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -47,16 +43,12 @@ pub struct DetectSentimentInputBuilder {
     pub(crate) language_code: std::option::Option<crate::types::LanguageCode>,
 }
 impl DetectSentimentInputBuilder {
-    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p>
     pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
         self.text = Some(input.into());
         self
     }
-    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.text = input;
         self

@@ -35,6 +35,17 @@ pub struct PutSourceServerActionOutput {
             std::vec::Vec<crate::types::SsmParameterStoreParameter>,
         >,
     >,
+    /// <p>Source server post migration custom action external parameters.</p>
+    #[doc(hidden)]
+    pub external_parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::SsmExternalParameter>,
+    >,
+    /// <p>Source server post migration custom action description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Source server post migration custom action category.</p>
+    #[doc(hidden)]
+    pub category: std::option::Option<crate::types::ActionCategory>,
     _request_id: Option<String>,
 }
 impl PutSourceServerActionOutput {
@@ -81,6 +92,22 @@ impl PutSourceServerActionOutput {
     > {
         self.parameters.as_ref()
     }
+    /// <p>Source server post migration custom action external parameters.</p>
+    pub fn external_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::SsmExternalParameter>,
+    > {
+        self.external_parameters.as_ref()
+    }
+    /// <p>Source server post migration custom action description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Source server post migration custom action category.</p>
+    pub fn category(&self) -> std::option::Option<&crate::types::ActionCategory> {
+        self.category.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for PutSourceServerActionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -114,6 +141,11 @@ pub struct PutSourceServerActionOutputBuilder {
             std::vec::Vec<crate::types::SsmParameterStoreParameter>,
         >,
     >,
+    pub(crate) external_parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::SsmExternalParameter>,
+    >,
+    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) category: std::option::Option<crate::types::ActionCategory>,
     _request_id: Option<String>,
 }
 impl PutSourceServerActionOutputBuilder {
@@ -228,6 +260,54 @@ impl PutSourceServerActionOutputBuilder {
         self.parameters = input;
         self
     }
+    /// Adds a key-value pair to `external_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
+    ///
+    /// <p>Source server post migration custom action external parameters.</p>
+    pub fn external_parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::SsmExternalParameter,
+    ) -> Self {
+        let mut hash_map = self.external_parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.external_parameters = Some(hash_map);
+        self
+    }
+    /// <p>Source server post migration custom action external parameters.</p>
+    pub fn set_external_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::SsmExternalParameter>,
+        >,
+    ) -> Self {
+        self.external_parameters = input;
+        self
+    }
+    /// <p>Source server post migration custom action description.</p>
+    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+        self.description = Some(input.into());
+        self
+    }
+    /// <p>Source server post migration custom action description.</p>
+    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>Source server post migration custom action category.</p>
+    pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
+        self.category = Some(input);
+        self
+    }
+    /// <p>Source server post migration custom action category.</p>
+    pub fn set_category(
+        mut self,
+        input: std::option::Option<crate::types::ActionCategory>,
+    ) -> Self {
+        self.category = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -249,6 +329,9 @@ impl PutSourceServerActionOutputBuilder {
             timeout_seconds: self.timeout_seconds.unwrap_or_default(),
             must_succeed_for_cutover: self.must_succeed_for_cutover,
             parameters: self.parameters,
+            external_parameters: self.external_parameters,
+            description: self.description,
+            category: self.category,
             _request_id: self._request_id,
         }
     }

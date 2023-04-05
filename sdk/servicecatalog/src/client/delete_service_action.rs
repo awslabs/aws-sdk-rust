@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::delete_service_action::builders::DeleteServiceActionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_service_action::builders::DeleteServiceActionFluentBuilder::set_id): <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::operation::delete_service_action::builders::DeleteServiceActionFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::delete_service_action::builders::DeleteServiceActionFluentBuilder::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
+    ///   - [`accept_language(impl Into<String>)`](crate::operation::delete_service_action::builders::DeleteServiceActionFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::delete_service_action::builders::DeleteServiceActionFluentBuilder::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     /// - On success, responds with [`DeleteServiceActionOutput`](crate::operation::delete_service_action::DeleteServiceActionOutput)
     /// - On failure, responds with [`SdkError<DeleteServiceActionError>`](crate::operation::delete_service_action::DeleteServiceActionError)
     pub fn delete_service_action(

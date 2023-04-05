@@ -36,11 +36,11 @@ pub fn ser_create_image_version_input(
     if let Some(var_11) = &input.processor {
         object.key("Processor").string(var_11.as_str());
     }
-    if input.horovod {
-        object.key("Horovod").boolean(input.horovod);
+    if let Some(var_12) = &input.horovod {
+        object.key("Horovod").boolean(*var_12);
     }
-    if let Some(var_12) = &input.release_notes {
-        object.key("ReleaseNotes").string(var_12.as_str());
+    if let Some(var_13) = &input.release_notes {
+        object.key("ReleaseNotes").string(var_13.as_str());
     }
     Ok(())
 }

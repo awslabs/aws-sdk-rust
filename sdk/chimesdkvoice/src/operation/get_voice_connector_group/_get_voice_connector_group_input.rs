@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorGroupInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector group ID.</p>
     #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorGroupInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector group ID.</p>
     pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
         self.voice_connector_group_id.as_deref()
     }
@@ -29,12 +29,12 @@ pub struct GetVoiceConnectorGroupInputBuilder {
     pub(crate) voice_connector_group_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorGroupInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector group ID.</p>
     pub fn voice_connector_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_group_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector group ID.</p>
     pub fn set_voice_connector_group_id(
         mut self,
         input: std::option::Option<std::string::String>,

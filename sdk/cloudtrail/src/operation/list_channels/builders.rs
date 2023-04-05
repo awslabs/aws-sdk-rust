@@ -5,7 +5,7 @@ pub use crate::operation::list_channels::_list_channels_input::ListChannelsInput
 
 /// Fluent builder constructing a request to `ListChannels`.
 ///
-/// <p> Lists the channels in the current account, and their source names. Amazon Web Services services create service-linked channels get information about CloudTrail events on your behalf. For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing service-linked channels for CloudTrail by using the CLI</a>. </p>
+/// <p> Lists the channels in the current account, and their source names. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

@@ -33,85 +33,83 @@ pub fn ser_create_model_package_input(
         crate::protocol_serde::shape_source_algorithm_specification::ser_source_algorithm_specification(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if input.certify_for_marketplace {
-        object
-            .key("CertifyForMarketplace")
-            .boolean(input.certify_for_marketplace);
+    if let Some(var_10) = &input.certify_for_marketplace {
+        object.key("CertifyForMarketplace").boolean(*var_10);
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("Tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("Tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_14) = &input.model_approval_status {
-        object.key("ModelApprovalStatus").string(var_14.as_str());
+    if let Some(var_15) = &input.model_approval_status {
+        object.key("ModelApprovalStatus").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.metadata_properties {
+    if let Some(var_16) = &input.metadata_properties {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("MetadataProperties").start_object();
+        let mut object_17 = object.key("MetadataProperties").start_object();
         crate::protocol_serde::shape_metadata_properties::ser_metadata_properties(
-            &mut object_16,
-            var_15,
+            &mut object_17,
+            var_16,
         )?;
-        object_16.finish();
+        object_17.finish();
     }
-    if let Some(var_17) = &input.model_metrics {
+    if let Some(var_18) = &input.model_metrics {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("ModelMetrics").start_object();
-        crate::protocol_serde::shape_model_metrics::ser_model_metrics(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("ModelMetrics").start_object();
+        crate::protocol_serde::shape_model_metrics::ser_model_metrics(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.client_token {
-        object.key("ClientToken").string(var_19.as_str());
+    if let Some(var_20) = &input.client_token {
+        object.key("ClientToken").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.customer_metadata_properties {
+    if let Some(var_21) = &input.customer_metadata_properties {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("CustomerMetadataProperties").start_object();
-        for (key_22, value_23) in var_20 {
+        let mut object_22 = object.key("CustomerMetadataProperties").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_21.finish();
+        object_22.finish();
     }
-    if let Some(var_24) = &input.drift_check_baselines {
+    if let Some(var_25) = &input.drift_check_baselines {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("DriftCheckBaselines").start_object();
+        let mut object_26 = object.key("DriftCheckBaselines").start_object();
         crate::protocol_serde::shape_drift_check_baselines::ser_drift_check_baselines(
-            &mut object_25,
-            var_24,
+            &mut object_26,
+            var_25,
         )?;
-        object_25.finish();
+        object_26.finish();
     }
-    if let Some(var_26) = &input.domain {
-        object.key("Domain").string(var_26.as_str());
+    if let Some(var_27) = &input.domain {
+        object.key("Domain").string(var_27.as_str());
     }
-    if let Some(var_27) = &input.task {
-        object.key("Task").string(var_27.as_str());
+    if let Some(var_28) = &input.task {
+        object.key("Task").string(var_28.as_str());
     }
-    if let Some(var_28) = &input.sample_payload_url {
-        object.key("SamplePayloadUrl").string(var_28.as_str());
+    if let Some(var_29) = &input.sample_payload_url {
+        object.key("SamplePayloadUrl").string(var_29.as_str());
     }
-    if let Some(var_29) = &input.additional_inference_specifications {
-        let mut array_30 = object
+    if let Some(var_30) = &input.additional_inference_specifications {
+        let mut array_31 = object
             .key("AdditionalInferenceSpecifications")
             .start_array();
-        for item_31 in var_29 {
+        for item_32 in var_30 {
             {
                 #[allow(unused_mut)]
-                let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_additional_inference_specification_definition::ser_additional_inference_specification_definition(&mut object_32, item_31)?;
-                object_32.finish();
+                let mut object_33 = array_31.value().start_object();
+                crate::protocol_serde::shape_additional_inference_specification_definition::ser_additional_inference_specification_definition(&mut object_33, item_32)?;
+                object_33.finish();
             }
         }
-        array_30.finish();
+        array_31.finish();
     }
     Ok(())
 }

@@ -313,11 +313,11 @@ pub fn ser_create_multipart_upload_headers(
             builder = builder.header("x-amz-server-side-encryption-context", header_value);
         }
     }
-    if input.bucket_key_enabled {
-        let mut encoder = aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled);
-        let formatted_39 = encoder.encode();
-        if !formatted_39.is_empty() {
-            let header_value = formatted_39;
+    if let Some(inner_39) = &input.bucket_key_enabled {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_39);
+        let formatted_40 = encoder.encode();
+        if !formatted_40.is_empty() {
+            let header_value = formatted_40;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "bucket_key_enabled",
@@ -333,10 +333,10 @@ pub fn ser_create_multipart_upload_headers(
             );
         }
     }
-    if let Some(inner_40) = &input.request_payer {
-        let formatted_41 = inner_40.as_str();
-        if !formatted_41.is_empty() {
-            let header_value = formatted_41;
+    if let Some(inner_41) = &input.request_payer {
+        let formatted_42 = inner_41.as_str();
+        if !formatted_42.is_empty() {
+            let header_value = formatted_42;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
@@ -349,10 +349,10 @@ pub fn ser_create_multipart_upload_headers(
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
-    if let Some(inner_42) = &input.tagging {
-        let formatted_43 = inner_42.as_str();
-        if !formatted_43.is_empty() {
-            let header_value = formatted_43;
+    if let Some(inner_43) = &input.tagging {
+        let formatted_44 = inner_43.as_str();
+        if !formatted_44.is_empty() {
+            let header_value = formatted_44;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "tagging",
@@ -365,10 +365,10 @@ pub fn ser_create_multipart_upload_headers(
             builder = builder.header("x-amz-tagging", header_value);
         }
     }
-    if let Some(inner_44) = &input.object_lock_mode {
-        let formatted_45 = inner_44.as_str();
-        if !formatted_45.is_empty() {
-            let header_value = formatted_45;
+    if let Some(inner_45) = &input.object_lock_mode {
+        let formatted_46 = inner_45.as_str();
+        if !formatted_46.is_empty() {
+            let header_value = formatted_46;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_mode",
@@ -381,10 +381,10 @@ pub fn ser_create_multipart_upload_headers(
             builder = builder.header("x-amz-object-lock-mode", header_value);
         }
     }
-    if let Some(inner_46) = &input.object_lock_retain_until_date {
-        let formatted_47 = inner_46.fmt(aws_smithy_types::date_time::Format::DateTime)?;
-        if !formatted_47.is_empty() {
-            let header_value = formatted_47;
+    if let Some(inner_47) = &input.object_lock_retain_until_date {
+        let formatted_48 = inner_47.fmt(aws_smithy_types::date_time::Format::DateTime)?;
+        if !formatted_48.is_empty() {
+            let header_value = formatted_48;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_retain_until_date",
@@ -397,10 +397,10 @@ pub fn ser_create_multipart_upload_headers(
             builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
         }
     }
-    if let Some(inner_48) = &input.object_lock_legal_hold_status {
-        let formatted_49 = inner_48.as_str();
-        if !formatted_49.is_empty() {
-            let header_value = formatted_49;
+    if let Some(inner_49) = &input.object_lock_legal_hold_status {
+        let formatted_50 = inner_49.as_str();
+        if !formatted_50.is_empty() {
+            let header_value = formatted_50;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_legal_hold_status",
@@ -413,10 +413,10 @@ pub fn ser_create_multipart_upload_headers(
             builder = builder.header("x-amz-object-lock-legal-hold", header_value);
         }
     }
-    if let Some(inner_50) = &input.expected_bucket_owner {
-        let formatted_51 = inner_50.as_str();
-        if !formatted_51.is_empty() {
-            let header_value = formatted_51;
+    if let Some(inner_51) = &input.expected_bucket_owner {
+        let formatted_52 = inner_51.as_str();
+        if !formatted_52.is_empty() {
+            let header_value = formatted_52;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
@@ -429,10 +429,10 @@ pub fn ser_create_multipart_upload_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
-    if let Some(inner_52) = &input.checksum_algorithm {
-        let formatted_53 = inner_52.as_str();
-        if !formatted_53.is_empty() {
-            let header_value = formatted_53;
+    if let Some(inner_53) = &input.checksum_algorithm {
+        let formatted_54 = inner_53.as_str();
+        if !formatted_54.is_empty() {
+            let header_value = formatted_54;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_algorithm",
@@ -445,9 +445,9 @@ pub fn ser_create_multipart_upload_headers(
             builder = builder.header("x-amz-checksum-algorithm", header_value);
         }
     }
-    if let Some(inner_54) = &input.metadata {
+    if let Some(inner_55) = &input.metadata {
         {
-            for (k, v) in inner_54 {
+            for (k, v) in inner_55 {
                 use std::str::FromStr;
                 let header_name =
                     http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
@@ -599,19 +599,6 @@ pub fn de_create_multipart_upload(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UploadId") /* UploadId com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$UploadId */ =>  {
-                let var_55 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_upload_id(var_55);
-            }
-            ,
-            s if s.matches("Bucket") /* Bucket com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$Bucket */ =>  {
                 let var_56 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -621,10 +608,10 @@ pub fn de_create_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_56);
+                builder = builder.set_upload_id(var_56);
             }
             ,
-            s if s.matches("Key") /* Key com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$Key */ =>  {
+            s if s.matches("Bucket") /* Bucket com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$Bucket */ =>  {
                 let var_57 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -634,7 +621,20 @@ pub fn de_create_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_57);
+                builder = builder.set_bucket(var_57);
+            }
+            ,
+            s if s.matches("Key") /* Key com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$Key */ =>  {
+                let var_58 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key(var_58);
             }
             ,
             _ => {}

@@ -3,19 +3,19 @@ pub fn ser_purchase_reserved_instance_offering_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.instance_count != 0 {
+    if let Some(var_1) = &input.instance_count {
         object.key("InstanceCount").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.instance_count).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.reservation_name {
-        object.key("ReservationName").string(var_1.as_str());
+    if let Some(var_2) = &input.reservation_name {
+        object.key("ReservationName").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.reserved_instance_offering_id {
+    if let Some(var_3) = &input.reserved_instance_offering_id {
         object
             .key("ReservedInstanceOfferingId")
-            .string(var_2.as_str());
+            .string(var_3.as_str());
     }
     Ok(())
 }

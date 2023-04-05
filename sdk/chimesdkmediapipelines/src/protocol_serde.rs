@@ -12,17 +12,27 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_media_concatenation_pipeline;
 
+pub(crate) mod shape_create_media_insights_pipeline;
+
+pub(crate) mod shape_create_media_insights_pipeline_configuration;
+
 pub(crate) mod shape_create_media_live_connector_pipeline;
 
 pub(crate) mod shape_delete_media_capture_pipeline;
+
+pub(crate) mod shape_delete_media_insights_pipeline_configuration;
 
 pub(crate) mod shape_delete_media_pipeline;
 
 pub(crate) mod shape_get_media_capture_pipeline;
 
+pub(crate) mod shape_get_media_insights_pipeline_configuration;
+
 pub(crate) mod shape_get_media_pipeline;
 
 pub(crate) mod shape_list_media_capture_pipelines;
+
+pub(crate) mod shape_list_media_insights_pipeline_configurations;
 
 pub(crate) mod shape_list_media_pipelines;
 
@@ -31,6 +41,10 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_media_insights_pipeline_configuration;
+
+pub(crate) mod shape_update_media_insights_pipeline_status;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -42,9 +56,15 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_bad_request_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_media_capture_pipeline_input;
 
 pub(crate) mod shape_create_media_concatenation_pipeline_input;
+
+pub(crate) mod shape_create_media_insights_pipeline_configuration_input;
+
+pub(crate) mod shape_create_media_insights_pipeline_input;
 
 pub(crate) mod shape_create_media_live_connector_pipeline_input;
 
@@ -66,11 +86,19 @@ pub(crate) mod shape_unauthorized_client_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_media_insights_pipeline_configuration_input;
+
+pub(crate) mod shape_update_media_insights_pipeline_status_input;
+
 pub(crate) mod shape_chime_sdk_meeting_configuration;
 
 pub(crate) mod shape_concatenation_sink;
 
 pub(crate) mod shape_concatenation_source;
+
+pub(crate) mod shape_kinesis_video_stream_recording_source_runtime_configuration;
+
+pub(crate) mod shape_kinesis_video_stream_source_runtime_configuration;
 
 pub(crate) mod shape_live_connector_sink_configuration;
 
@@ -82,15 +110,31 @@ pub(crate) mod shape_media_capture_pipeline_summary_list;
 
 pub(crate) mod shape_media_concatenation_pipeline;
 
+pub(crate) mod shape_media_insights_pipeline;
+
+pub(crate) mod shape_media_insights_pipeline_configuration;
+
+pub(crate) mod shape_media_insights_pipeline_configuration_element;
+
+pub(crate) mod shape_media_insights_pipeline_configuration_summary_list;
+
 pub(crate) mod shape_media_live_connector_pipeline;
 
 pub(crate) mod shape_media_pipeline;
 
 pub(crate) mod shape_media_pipeline_list;
 
+pub(crate) mod shape_real_time_alert_configuration;
+
+pub(crate) mod shape_s3_recording_sink_runtime_configuration;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_amazon_transcribe_call_analytics_processor_configuration;
+
+pub(crate) mod shape_amazon_transcribe_processor_configuration;
 
 pub(crate) mod shape_artifacts_configuration;
 
@@ -99,6 +143,12 @@ pub(crate) mod shape_chime_sdk_meeting_live_connector_configuration;
 pub(crate) mod shape_concatenation_sink_list;
 
 pub(crate) mod shape_concatenation_source_list;
+
+pub(crate) mod shape_fragment_selector;
+
+pub(crate) mod shape_kinesis_data_stream_sink_configuration;
+
+pub(crate) mod shape_lambda_function_sink_configuration;
 
 pub(crate) mod shape_live_connector_rtmp_configuration;
 
@@ -110,11 +160,31 @@ pub(crate) mod shape_media_capture_pipeline_source_configuration;
 
 pub(crate) mod shape_media_capture_pipeline_summary;
 
+pub(crate) mod shape_media_insights_pipeline_configuration_elements;
+
+pub(crate) mod shape_media_insights_pipeline_configuration_summary;
+
+pub(crate) mod shape_media_insights_runtime_metadata;
+
 pub(crate) mod shape_media_pipeline_summary;
+
+pub(crate) mod shape_real_time_alert_rule;
+
+pub(crate) mod shape_recording_stream_configuration;
 
 pub(crate) mod shape_s3_bucket_sink_configuration;
 
+pub(crate) mod shape_s3_recording_sink_configuration;
+
+pub(crate) mod shape_sns_topic_sink_configuration;
+
 pub(crate) mod shape_source_configuration;
+
+pub(crate) mod shape_sqs_queue_sink_configuration;
+
+pub(crate) mod shape_stream_configuration;
+
+pub(crate) mod shape_voice_analytics_processor_configuration;
 
 pub(crate) mod shape_audio_artifacts_configuration;
 
@@ -124,17 +194,39 @@ pub(crate) mod shape_composited_video_artifacts_configuration;
 
 pub(crate) mod shape_content_artifacts_configuration;
 
+pub(crate) mod shape_issue_detection_configuration;
+
+pub(crate) mod shape_keyword_match_configuration;
+
+pub(crate) mod shape_post_call_analytics_settings;
+
+pub(crate) mod shape_real_time_alert_rule_list;
+
+pub(crate) mod shape_recording_stream_list;
+
 pub(crate) mod shape_selected_video_streams;
+
+pub(crate) mod shape_sentiment_configuration;
+
+pub(crate) mod shape_stream_channel_definition;
+
+pub(crate) mod shape_streams;
+
+pub(crate) mod shape_timestamp_range;
 
 pub(crate) mod shape_video_artifacts_configuration;
 
 pub(crate) mod shape_artifacts_concatenation_configuration;
+
+pub(crate) mod shape_channel_definition;
 
 pub(crate) mod shape_grid_view_configuration;
 
 pub(crate) mod shape_attendee_id_list;
 
 pub(crate) mod shape_audio_concatenation_configuration;
+
+pub(crate) mod shape_category_name_list;
 
 pub(crate) mod shape_composited_video_concatenation_configuration;
 
@@ -151,3 +243,7 @@ pub(crate) mod shape_presenter_only_configuration;
 pub(crate) mod shape_transcription_messages_concatenation_configuration;
 
 pub(crate) mod shape_video_concatenation_configuration;
+
+pub(crate) mod shape_channel_definitions;
+
+pub(crate) mod shape_keyword_match_word_list;

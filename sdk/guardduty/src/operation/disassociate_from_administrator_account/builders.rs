@@ -6,6 +6,7 @@ pub use crate::operation::disassociate_from_administrator_account::_disassociate
 /// Fluent builder constructing a request to `DisassociateFromAdministratorAccount`.
 ///
 /// <p>Disassociates the current GuardDuty member account from its administrator account.</p>
+/// <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty in a member account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateFromAdministratorAccountFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

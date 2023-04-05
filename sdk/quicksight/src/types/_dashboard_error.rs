@@ -10,7 +10,7 @@ pub struct DashboardError {
     /// <p>Message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>Lists the violated entities that caused the dashboard error.</p>
     #[doc(hidden)]
     pub violated_entities: std::option::Option<std::vec::Vec<crate::types::Entity>>,
 }
@@ -23,7 +23,7 @@ impl DashboardError {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p></p>
+    /// <p>Lists the violated entities that caused the dashboard error.</p>
     pub fn violated_entities(&self) -> std::option::Option<&[crate::types::Entity]> {
         self.violated_entities.as_deref()
     }
@@ -71,14 +71,14 @@ impl DashboardErrorBuilder {
     ///
     /// To override the contents of this collection use [`set_violated_entities`](Self::set_violated_entities).
     ///
-    /// <p></p>
+    /// <p>Lists the violated entities that caused the dashboard error.</p>
     pub fn violated_entities(mut self, input: crate::types::Entity) -> Self {
         let mut v = self.violated_entities.unwrap_or_default();
         v.push(input);
         self.violated_entities = Some(v);
         self
     }
-    /// <p></p>
+    /// <p>Lists the violated entities that caused the dashboard error.</p>
     pub fn set_violated_entities(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Entity>>,

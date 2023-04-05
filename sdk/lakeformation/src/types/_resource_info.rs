@@ -13,6 +13,9 @@ pub struct ResourceInfo {
     /// <p>The date and time the resource was last modified.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Whether or not the resource is a federated resource.</p>
+    #[doc(hidden)]
+    pub with_federation: std::option::Option<bool>,
 }
 impl ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -26,6 +29,10 @@ impl ResourceInfo {
     /// <p>The date and time the resource was last modified.</p>
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn with_federation(&self) -> std::option::Option<bool> {
+        self.with_federation
     }
 }
 impl ResourceInfo {
@@ -42,6 +49,7 @@ pub struct ResourceInfoBuilder {
     pub(crate) resource_arn: std::option::Option<std::string::String>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) with_federation: std::option::Option<bool>,
 }
 impl ResourceInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -77,12 +85,23 @@ impl ResourceInfoBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn with_federation(mut self, input: bool) -> Self {
+        self.with_federation = Some(input);
+        self
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn set_with_federation(mut self, input: std::option::Option<bool>) -> Self {
+        self.with_federation = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {
         crate::types::ResourceInfo {
             resource_arn: self.resource_arn,
             role_arn: self.role_arn,
             last_modified: self.last_modified,
+            with_federation: self.with_federation,
         }
     }
 }

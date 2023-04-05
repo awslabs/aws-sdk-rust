@@ -6,7 +6,7 @@ pub struct GetClassificationScopeOutput {
     /// <p>The unique identifier for the classification scope.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the classification scope.</p>
+    /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
@@ -19,7 +19,7 @@ impl GetClassificationScopeOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the classification scope.</p>
+    /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -62,12 +62,12 @@ impl GetClassificationScopeOutputBuilder {
         self.id = input;
         self
     }
-    /// <p>The name of the classification scope.</p>
+    /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the classification scope.</p>
+    /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self

@@ -245,6 +245,11 @@ pub(crate) fn de_describe_bot_alias(
                             )?,
                         );
                     }
+                    "parentBotNetworks" => {
+                        builder = builder.set_parent_bot_networks(
+                            crate::protocol_serde::shape_parent_bot_networks::de_parent_bot_networks(tokens)?
+                        );
+                    }
                     "sentimentAnalysisSettings" => {
                         builder = builder.set_sentiment_analysis_settings(
                             crate::protocol_serde::shape_sentiment_analysis_settings::de_sentiment_analysis_settings(tokens)?

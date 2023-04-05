@@ -25,7 +25,7 @@ pub struct CdmaObj {
     /// <p>CDMA base station latitude in degrees.</p>
     #[doc(hidden)]
     pub base_lat: std::option::Option<f32>,
-    /// <p>CDMA base station longtitude in degrees.</p>
+    /// <p>CDMA base station longitude in degrees.</p>
     #[doc(hidden)]
     pub base_lng: std::option::Option<f32>,
     /// <p>CDMA network measurement reports.</p>
@@ -61,7 +61,7 @@ impl CdmaObj {
     pub fn base_lat(&self) -> std::option::Option<f32> {
         self.base_lat
     }
-    /// <p>CDMA base station longtitude in degrees.</p>
+    /// <p>CDMA base station longitude in degrees.</p>
     pub fn base_lng(&self) -> std::option::Option<f32> {
         self.base_lng
     }
@@ -165,12 +165,12 @@ impl CdmaObjBuilder {
         self.base_lat = input;
         self
     }
-    /// <p>CDMA base station longtitude in degrees.</p>
+    /// <p>CDMA base station longitude in degrees.</p>
     pub fn base_lng(mut self, input: f32) -> Self {
         self.base_lng = Some(input);
         self
     }
-    /// <p>CDMA base station longtitude in degrees.</p>
+    /// <p>CDMA base station longitude in degrees.</p>
     pub fn set_base_lng(mut self, input: std::option::Option<f32>) -> Self {
         self.base_lng = input;
         self

@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::put_integration::PutIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     ///   - [`object_type_names(Option<HashMap<String, String>>)`](crate::operation::put_integration::PutIntegrationOutput::object_type_names): <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     ///   - [`workflow_id(Option<String>)`](crate::operation::put_integration::PutIntegrationOutput::workflow_id): <p>Unique identifier for the workflow.</p>
-    ///   - [`is_unstructured(Option<bool>)`](crate::operation::put_integration::PutIntegrationOutput::is_unstructured): <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    ///   - [`is_unstructured(Option<bool>)`](crate::operation::put_integration::PutIntegrationOutput::is_unstructured): <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     /// - On failure, responds with [`SdkError<PutIntegrationError>`](crate::operation::put_integration::PutIntegrationError)
     pub fn put_integration(
         &self,

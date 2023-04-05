@@ -25,6 +25,9 @@ pub mod create_related_item;
 /// Types for the `CreateTemplate` operation.
 pub mod create_template;
 
+/// Types for the `DeleteDomain` operation.
+pub mod delete_domain;
+
 /// Types for the `GetCase` operation.
 pub mod get_case;
 

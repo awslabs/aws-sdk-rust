@@ -7,7 +7,7 @@ pub use crate::operation::create_channel_ban::_create_channel_ban_input::CreateC
 ///
 /// <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p>
 /// <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p> <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannelBanFluentBuilder {
@@ -92,12 +92,12 @@ impl CreateChannelBanFluentBuilder {
         self.inner = self.inner.set_member_arn(input);
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self

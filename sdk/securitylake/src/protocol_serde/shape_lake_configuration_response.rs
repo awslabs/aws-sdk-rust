@@ -77,6 +77,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "updateStatus" => {
+                                builder = builder.set_update_status(
+                                    crate::protocol_serde::shape_update_status::de_update_status(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

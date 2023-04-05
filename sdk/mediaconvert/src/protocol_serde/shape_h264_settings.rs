@@ -6,39 +6,48 @@ pub fn ser_h264_settings(
     if let Some(var_1) = &input.adaptive_quantization {
         object.key("adaptiveQuantization").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.bandwidth_reduction_filter {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("bandwidthReductionFilter").start_object();
+        crate::protocol_serde::shape_bandwidth_reduction_filter::ser_bandwidth_reduction_filter(
+            &mut object_3,
+            var_2,
+        )?;
+        object_3.finish();
+    }
     if input.bitrate != 0 {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((input.bitrate).into()),
         );
     }
-    if let Some(var_2) = &input.codec_level {
-        object.key("codecLevel").string(var_2.as_str());
+    if let Some(var_4) = &input.codec_level {
+        object.key("codecLevel").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.codec_profile {
-        object.key("codecProfile").string(var_3.as_str());
+    if let Some(var_5) = &input.codec_profile {
+        object.key("codecProfile").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.dynamic_sub_gop {
-        object.key("dynamicSubGop").string(var_4.as_str());
+    if let Some(var_6) = &input.dynamic_sub_gop {
+        object.key("dynamicSubGop").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.entropy_encoding {
-        object.key("entropyEncoding").string(var_5.as_str());
+    if let Some(var_7) = &input.entropy_encoding {
+        object.key("entropyEncoding").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.field_encoding {
-        object.key("fieldEncoding").string(var_6.as_str());
+    if let Some(var_8) = &input.field_encoding {
+        object.key("fieldEncoding").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.flicker_adaptive_quantization {
+    if let Some(var_9) = &input.flicker_adaptive_quantization {
         object
             .key("flickerAdaptiveQuantization")
-            .string(var_7.as_str());
+            .string(var_9.as_str());
     }
-    if let Some(var_8) = &input.framerate_control {
-        object.key("framerateControl").string(var_8.as_str());
+    if let Some(var_10) = &input.framerate_control {
+        object.key("framerateControl").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.framerate_conversion_algorithm {
+    if let Some(var_11) = &input.framerate_conversion_algorithm {
         object
             .key("framerateConversionAlgorithm")
-            .string(var_9.as_str());
+            .string(var_11.as_str());
     }
     if input.framerate_denominator != 0 {
         object.key("framerateDenominator").number(
@@ -52,8 +61,8 @@ pub fn ser_h264_settings(
             aws_smithy_types::Number::NegInt((input.framerate_numerator).into()),
         );
     }
-    if let Some(var_10) = &input.gop_b_reference {
-        object.key("gopBReference").string(var_10.as_str());
+    if let Some(var_12) = &input.gop_b_reference {
+        object.key("gopBReference").string(var_12.as_str());
     }
     if input.gop_closed_cadence != 0 {
         object.key("gopClosedCadence").number(
@@ -67,8 +76,8 @@ pub fn ser_h264_settings(
             aws_smithy_types::Number::Float((input.gop_size).into()),
         );
     }
-    if let Some(var_11) = &input.gop_size_units {
-        object.key("gopSizeUnits").string(var_11.as_str());
+    if let Some(var_13) = &input.gop_size_units {
+        object.key("gopSizeUnits").string(var_13.as_str());
     }
     if input.hrd_buffer_final_fill_percentage != 0 {
         object.key("hrdBufferFinalFillPercentage").number(
@@ -88,8 +97,8 @@ pub fn ser_h264_settings(
             aws_smithy_types::Number::NegInt((input.hrd_buffer_size).into()),
         );
     }
-    if let Some(var_12) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_12.as_str());
+    if let Some(var_14) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_14.as_str());
     }
     if input.max_bitrate != 0 {
         object.key("maxBitrate").number(
@@ -117,8 +126,8 @@ pub fn ser_h264_settings(
             aws_smithy_types::Number::NegInt((input.number_reference_frames).into()),
         );
     }
-    if let Some(var_13) = &input.par_control {
-        object.key("parControl").string(var_13.as_str());
+    if let Some(var_15) = &input.par_control {
+        object.key("parControl").string(var_15.as_str());
     }
     if input.par_denominator != 0 {
         object.key("parDenominator").number(
@@ -132,29 +141,29 @@ pub fn ser_h264_settings(
             aws_smithy_types::Number::NegInt((input.par_numerator).into()),
         );
     }
-    if let Some(var_14) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_14.as_str());
+    if let Some(var_16) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.qvbr_settings {
+    if let Some(var_17) = &input.qvbr_settings {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("qvbrSettings").start_object();
+        let mut object_18 = object.key("qvbrSettings").start_object();
         crate::protocol_serde::shape_h264_qvbr_settings::ser_h264_qvbr_settings(
-            &mut object_16,
-            var_15,
+            &mut object_18,
+            var_17,
         )?;
-        object_16.finish();
+        object_18.finish();
     }
-    if let Some(var_17) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_17.as_str());
+    if let Some(var_19) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_19.as_str());
     }
-    if let Some(var_18) = &input.repeat_pps {
-        object.key("repeatPps").string(var_18.as_str());
+    if let Some(var_20) = &input.repeat_pps {
+        object.key("repeatPps").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_19.as_str());
+    if let Some(var_21) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_21.as_str());
     }
-    if let Some(var_20) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_20.as_str());
+    if let Some(var_22) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_22.as_str());
     }
     if input.slices != 0 {
         object.key("slices").number(
@@ -162,8 +171,8 @@ pub fn ser_h264_settings(
             aws_smithy_types::Number::NegInt((input.slices).into()),
         );
     }
-    if let Some(var_21) = &input.slow_pal {
-        object.key("slowPal").string(var_21.as_str());
+    if let Some(var_23) = &input.slow_pal {
+        object.key("slowPal").string(var_23.as_str());
     }
     if input.softness != 0 {
         object.key("softness").number(
@@ -171,26 +180,26 @@ pub fn ser_h264_settings(
             aws_smithy_types::Number::NegInt((input.softness).into()),
         );
     }
-    if let Some(var_22) = &input.spatial_adaptive_quantization {
+    if let Some(var_24) = &input.spatial_adaptive_quantization {
         object
             .key("spatialAdaptiveQuantization")
-            .string(var_22.as_str());
+            .string(var_24.as_str());
     }
-    if let Some(var_23) = &input.syntax {
-        object.key("syntax").string(var_23.as_str());
+    if let Some(var_25) = &input.syntax {
+        object.key("syntax").string(var_25.as_str());
     }
-    if let Some(var_24) = &input.telecine {
-        object.key("telecine").string(var_24.as_str());
+    if let Some(var_26) = &input.telecine {
+        object.key("telecine").string(var_26.as_str());
     }
-    if let Some(var_25) = &input.temporal_adaptive_quantization {
+    if let Some(var_27) = &input.temporal_adaptive_quantization {
         object
             .key("temporalAdaptiveQuantization")
-            .string(var_25.as_str());
+            .string(var_27.as_str());
     }
-    if let Some(var_26) = &input.unregistered_sei_timecode {
+    if let Some(var_28) = &input.unregistered_sei_timecode {
         object
             .key("unregisteredSeiTimecode")
-            .string(var_26.as_str());
+            .string(var_28.as_str());
     }
     Ok(())
 }
@@ -227,6 +236,11 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "bandwidthReductionFilter" => {
+                                builder = builder.set_bandwidth_reduction_filter(
+                                    crate::protocol_serde::shape_bandwidth_reduction_filter::de_bandwidth_reduction_filter(tokens)?
                                 );
                             }
                             "bitrate" => {

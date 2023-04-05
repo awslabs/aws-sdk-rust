@@ -7,6 +7,7 @@ pub struct PutEventsOutput {
     #[doc(hidden)]
     pub failed_entry_count: i32,
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::types::PutEventsResultEntry>>,
     _request_id: Option<String>,
@@ -17,6 +18,7 @@ impl PutEventsOutput {
         self.failed_entry_count
     }
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::types::PutEventsResultEntry]> {
         self.entries.as_deref()
     }
@@ -57,6 +59,7 @@ impl PutEventsOutputBuilder {
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     pub fn entries(mut self, input: crate::types::PutEventsResultEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
@@ -64,6 +67,7 @@ impl PutEventsOutputBuilder {
         self
     }
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     pub fn set_entries(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::PutEventsResultEntry>>,

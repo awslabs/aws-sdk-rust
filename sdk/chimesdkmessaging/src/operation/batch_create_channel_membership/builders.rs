@@ -5,7 +5,7 @@ pub use crate::operation::batch_create_channel_membership::_batch_create_channel
 
 /// Fluent builder constructing a request to `BatchCreateChannelMembership`.
 ///
-/// <p>Adds a specified number of users to a channel. </p>
+/// <p>Adds a specified number of users and bots to a channel. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +69,12 @@ impl BatchCreateChannelMembershipFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The ARN of the channel to which you're adding users.</p>
+    /// <p>The ARN of the channel to which you're adding users or bots.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
         self
     }
-    /// <p>The ARN of the channel to which you're adding users.</p>
+    /// <p>The ARN of the channel to which you're adding users or bots.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_channel_arn(input);
         self
@@ -96,12 +96,12 @@ impl BatchCreateChannelMembershipFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_member_arns`](Self::set_member_arns).
     ///
-    /// <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
+    /// <p>The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and <code>AppInstanceBots</code> can be added as a channel member.</p>
     pub fn member_arns(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.member_arns(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
+    /// <p>The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and <code>AppInstanceBots</code> can be added as a channel member.</p>
     pub fn set_member_arns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -109,12 +109,12 @@ impl BatchCreateChannelMembershipFluentBuilder {
         self.inner = self.inner.set_member_arns(input);
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self

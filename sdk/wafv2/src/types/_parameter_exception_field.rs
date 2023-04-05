@@ -14,6 +14,7 @@
 /// match parameterexceptionfield {
 ///     ParameterExceptionField::AndStatement => { /* ... */ },
 ///     ParameterExceptionField::AssociableResource => { /* ... */ },
+///     ParameterExceptionField::AtpRuleSetResponseInspection => { /* ... */ },
 ///     ParameterExceptionField::BodyParsingFallbackBehavior => { /* ... */ },
 ///     ParameterExceptionField::ByteMatchStatement => { /* ... */ },
 ///     ParameterExceptionField::ChallengeConfig => { /* ... */ },
@@ -114,6 +115,8 @@ pub enum ParameterExceptionField {
     AndStatement,
     #[allow(missing_docs)] // documentation missing in model
     AssociableResource,
+    #[allow(missing_docs)] // documentation missing in model
+    AtpRuleSetResponseInspection,
     #[allow(missing_docs)] // documentation missing in model
     BodyParsingFallbackBehavior,
     #[allow(missing_docs)] // documentation missing in model
@@ -248,6 +251,9 @@ impl std::convert::From<&str> for ParameterExceptionField {
         match s {
             "AND_STATEMENT" => ParameterExceptionField::AndStatement,
             "ASSOCIABLE_RESOURCE" => ParameterExceptionField::AssociableResource,
+            "ATP_RULE_SET_RESPONSE_INSPECTION" => {
+                ParameterExceptionField::AtpRuleSetResponseInspection
+            }
             "BODY_PARSING_FALLBACK_BEHAVIOR" => {
                 ParameterExceptionField::BodyParsingFallbackBehavior
             }
@@ -336,6 +342,9 @@ impl ParameterExceptionField {
         match self {
             ParameterExceptionField::AndStatement => "AND_STATEMENT",
             ParameterExceptionField::AssociableResource => "ASSOCIABLE_RESOURCE",
+            ParameterExceptionField::AtpRuleSetResponseInspection => {
+                "ATP_RULE_SET_RESPONSE_INSPECTION"
+            }
             ParameterExceptionField::BodyParsingFallbackBehavior => {
                 "BODY_PARSING_FALLBACK_BEHAVIOR"
             }
@@ -413,6 +422,7 @@ impl ParameterExceptionField {
         &[
             "AND_STATEMENT",
             "ASSOCIABLE_RESOURCE",
+            "ATP_RULE_SET_RESPONSE_INSPECTION",
             "BODY_PARSING_FALLBACK_BEHAVIOR",
             "BYTE_MATCH_STATEMENT",
             "CHALLENGE_CONFIG",

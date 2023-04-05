@@ -105,4 +105,17 @@ impl CreateOutboundConnectionFluentBuilder {
         self.inner = self.inner.set_connection_alias(input);
         self
     }
+    /// <p>The connection mode.</p>
+    pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
+        self.inner = self.inner.connection_mode(input);
+        self
+    }
+    /// <p>The connection mode.</p>
+    pub fn set_connection_mode(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionMode>,
+    ) -> Self {
+        self.inner = self.inner.set_connection_mode(input);
+        self
+    }
 }

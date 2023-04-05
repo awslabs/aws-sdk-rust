@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesIdentifiers {
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<crate::types::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
@@ -15,7 +15,7 @@ pub struct TimeSeriesIdentifiers {
     pub format: std::option::Option<std::string::String>,
 }
 impl TimeSeriesIdentifiers {
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
@@ -44,12 +44,12 @@ pub struct TimeSeriesIdentifiersBuilder {
     pub(crate) format: std::option::Option<std::string::String>,
 }
 impl TimeSeriesIdentifiersBuilder {
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = Some(input);
         self
     }
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self

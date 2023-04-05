@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdatePhoneNumberSettings`](crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`calling_name(impl Into<String>)`](crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder::calling_name) / [`set_calling_name(Option<String>)`](crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder::set_calling_name): (undocumented)
+    ///   - [`calling_name(impl Into<String>)`](crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder::calling_name) / [`set_calling_name(Option<String>)`](crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder::set_calling_name): <p>The default outbound calling name for the account.</p>
     /// - On success, responds with [`UpdatePhoneNumberSettingsOutput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdatePhoneNumberSettingsError>`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError)
     pub fn update_phone_number_settings(&self) -> crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder{

@@ -24,6 +24,21 @@ pub fn ser_s3_data_access_asset_source_entry(
         }
         array_6.finish();
     }
+    if let Some(var_8) = &input.kms_keys_to_grant {
+        let mut array_9 = object.key("KmsKeysToGrant").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_kms_key_to_grant::ser_kms_key_to_grant(
+                    &mut object_11,
+                    item_10,
+                )?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }
 
@@ -69,6 +84,11 @@ where
                             "Keys" => {
                                 builder = builder.set_keys(
                                     crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?
+                                );
+                            }
+                            "KmsKeysToGrant" => {
+                                builder = builder.set_kms_keys_to_grant(
+                                    crate::protocol_serde::shape_list_of_kms_keys_to_grant::de_list_of_kms_keys_to_grant(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

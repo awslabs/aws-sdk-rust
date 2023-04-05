@@ -64,7 +64,7 @@ pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     pub network_interface_count: std::option::Option<
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails,
     >,
-    /// <p> The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
+    /// <p> The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     #[doc(hidden)]
@@ -72,7 +72,7 @@ pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     /// <p> Indicates whether instance types must support hibernation for On-Demand Instances. </p>
     #[doc(hidden)]
     pub require_hibernate_support: bool,
-    /// <p> The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
+    /// <p> The price protection threshold for Spot Instances. This is the maximum you'll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     #[doc(hidden)]
@@ -177,7 +177,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     > {
         self.network_interface_count.as_ref()
     }
-    /// <p> The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
+    /// <p> The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     pub fn on_demand_max_price_percentage_over_lowest_price(&self) -> i32 {
@@ -187,7 +187,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     pub fn require_hibernate_support(&self) -> bool {
         self.require_hibernate_support
     }
-    /// <p> The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
+    /// <p> The price protection threshold for Spot Instances. This is the maximum you'll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     pub fn spot_max_price_percentage_over_lowest_price(&self) -> i32 {
@@ -532,14 +532,14 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         self.network_interface_count = input;
         self
     }
-    /// <p> The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
+    /// <p> The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     pub fn on_demand_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
         self.on_demand_max_price_percentage_over_lowest_price = Some(input);
         self
     }
-    /// <p> The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
+    /// <p> The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     pub fn set_on_demand_max_price_percentage_over_lowest_price(
@@ -559,14 +559,14 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         self.require_hibernate_support = input;
         self
     }
-    /// <p> The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
+    /// <p> The price protection threshold for Spot Instances. This is the maximum you'll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     pub fn spot_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
         self.spot_max_price_percentage_over_lowest_price = Some(input);
         self
     }
-    /// <p> The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
+    /// <p> The price protection threshold for Spot Instances. This is the maximum you'll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     pub fn set_spot_max_price_percentage_over_lowest_price(

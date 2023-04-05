@@ -55,6 +55,8 @@ pub use crate::types::_dataset_type::DatasetType;
 
 pub use crate::types::_dataset_import_job_summary::DatasetImportJobSummary;
 
+pub use crate::types::_import_mode::ImportMode;
+
 pub use crate::types::_data_source::DataSource;
 
 pub use crate::types::_dataset_group_summary::DatasetGroupSummary;
@@ -230,6 +232,8 @@ mod _forecast_export_job_summary;
 mod _forecast_summary;
 
 mod _hyper_parameter_tuning_job_config;
+
+mod _import_mode;
 
 mod _input_data_config;
 

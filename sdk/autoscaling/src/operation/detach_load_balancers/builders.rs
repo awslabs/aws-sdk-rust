@@ -5,8 +5,11 @@ pub use crate::operation::detach_load_balancers::_detach_load_balancers_input::D
 
 /// Fluent builder constructing a request to `DetachLoadBalancers`.
 ///
+/// <note>
+/// <p>This API operation is superseded by <code>DetachTrafficSources</code>, which can detach multiple traffic sources types. We recommend using <code>DetachTrafficSources</code> to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancers</code>. You can use both the original <code>DetachLoadBalancers</code> API operation and <code>DetachTrafficSources</code> on the same Auto Scaling group.</p>
+/// </note>
 /// <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling group.</p>
-/// <p>This operation detaches only Classic Load Balancers. If you have Application Load Balancers, Network Load Balancers, or Gateway Load Balancer, use the <code>DetachLoadBalancerTargetGroups</code> API instead.</p>
+/// <p>This operation detaches only Classic Load Balancers. If you have Application Load Balancers, Network Load Balancers, or Gateway Load Balancers, use the <code>DetachLoadBalancerTargetGroups</code> API instead.</p>
 /// <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using the <code>DescribeLoadBalancers</code> API call. The instances remain running.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachLoadBalancersFluentBuilder {

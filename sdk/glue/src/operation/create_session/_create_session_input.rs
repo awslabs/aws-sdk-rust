@@ -16,10 +16,10 @@ pub struct CreateSessionInput {
     /// <p>The <code>SessionCommand</code> that runs the job. </p>
     #[doc(hidden)]
     pub command: std::option::Option<crate::types::SessionCommand>,
-    /// <p>The number of seconds before request times out. </p>
+    /// <p> The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types. </p>
     #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
-    /// <p>The number of seconds when idle before request times out. </p>
+    /// <p> The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types. </p>
     #[doc(hidden)]
     pub idle_timeout: std::option::Option<i32>,
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
@@ -75,11 +75,11 @@ impl CreateSessionInput {
     pub fn command(&self) -> std::option::Option<&crate::types::SessionCommand> {
         self.command.as_ref()
     }
-    /// <p>The number of seconds before request times out. </p>
+    /// <p> The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types. </p>
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>The number of seconds when idle before request times out. </p>
+    /// <p> The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types. </p>
     pub fn idle_timeout(&self) -> std::option::Option<i32> {
         self.idle_timeout
     }
@@ -202,22 +202,22 @@ impl CreateSessionInputBuilder {
         self.command = input;
         self
     }
-    /// <p>The number of seconds before request times out. </p>
+    /// <p> The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types. </p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = Some(input);
         self
     }
-    /// <p>The number of seconds before request times out. </p>
+    /// <p> The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types. </p>
     pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }
-    /// <p>The number of seconds when idle before request times out. </p>
+    /// <p> The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types. </p>
     pub fn idle_timeout(mut self, input: i32) -> Self {
         self.idle_timeout = Some(input);
         self
     }
-    /// <p>The number of seconds when idle before request times out. </p>
+    /// <p> The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types. </p>
     pub fn set_idle_timeout(mut self, input: std::option::Option<i32>) -> Self {
         self.idle_timeout = input;
         self

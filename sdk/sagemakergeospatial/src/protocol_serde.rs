@@ -206,6 +206,8 @@ pub(crate) mod shape_string_list_input;
 
 pub(crate) mod shape_temporal_statistics_list_input;
 
+pub(crate) mod shape_time_range_filter_output;
+
 pub(crate) mod shape_zonal_statistics_list_input;
 
 pub(crate) mod shape_asset_value;

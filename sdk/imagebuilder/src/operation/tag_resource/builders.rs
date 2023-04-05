@@ -5,7 +5,7 @@ pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBui
 
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p> Adds a tag to a resource.</p>
+/// <p>Adds a tag to a resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

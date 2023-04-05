@@ -6,47 +6,47 @@ pub fn ser_create_load_balancer_input(
     if let Some(var_1) = &input.load_balancer_name {
         object.key("loadBalancerName").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.instance_port {
         object.key("instancePort").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.instance_port).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.health_check_path {
-        object.key("healthCheckPath").string(var_2.as_str());
+    if let Some(var_3) = &input.health_check_path {
+        object.key("healthCheckPath").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.certificate_name {
-        object.key("certificateName").string(var_3.as_str());
+    if let Some(var_4) = &input.certificate_name {
+        object.key("certificateName").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.certificate_domain_name {
-        object.key("certificateDomainName").string(var_4.as_str());
+    if let Some(var_5) = &input.certificate_domain_name {
+        object.key("certificateDomainName").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.certificate_alternative_names {
-        let mut array_6 = object.key("certificateAlternativeNames").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.certificate_alternative_names {
+        let mut array_7 = object.key("certificateAlternativeNames").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("tags").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.ip_address_type {
-        object.key("ipAddressType").string(var_12.as_str());
+    if let Some(var_13) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.tls_policy_name {
-        object.key("tlsPolicyName").string(var_13.as_str());
+    if let Some(var_14) = &input.tls_policy_name {
+        object.key("tlsPolicyName").string(var_14.as_str());
     }
     Ok(())
 }

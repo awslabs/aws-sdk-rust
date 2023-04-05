@@ -44,7 +44,8 @@ pub struct SpotFleetRequestConfigData {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of your listings. This helps to avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     #[doc(hidden)]
     pub excess_capacity_termination_policy:
         std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
@@ -168,7 +169,8 @@ impl SpotFleetRequestConfigData {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         &self,
     ) -> std::option::Option<&crate::types::ExcessCapacityTerminationPolicy> {
@@ -427,7 +429,8 @@ impl SpotFleetRequestConfigDataBuilder {
         self.client_token = input;
         self
     }
-    /// <p>Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         mut self,
         input: crate::types::ExcessCapacityTerminationPolicy,
@@ -435,7 +438,8 @@ impl SpotFleetRequestConfigDataBuilder {
         self.excess_capacity_termination_policy = Some(input);
         self
     }
-    /// <p>Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(
         mut self,
         input: std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,

@@ -33,7 +33,7 @@ pub struct CreateComponentInput {
     /// <p>The operating system platform of the component.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::types::Platform>,
-    /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
     #[doc(hidden)]
     pub supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
@@ -90,7 +90,7 @@ impl CreateComponentInput {
     pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
         self.platform.as_ref()
     }
-    /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
     pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_os_versions.as_deref()
     }
@@ -231,14 +231,14 @@ impl CreateComponentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
     ///
-    /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
     pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.supported_os_versions.unwrap_or_default();
         v.push(input.into());
         self.supported_os_versions = Some(v);
         self
     }
-    /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
     pub fn set_supported_os_versions(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

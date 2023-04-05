@@ -31,12 +31,15 @@ pub struct EndpointProperties {
     /// <p>The date and time that the endpoint was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
     #[doc(hidden)]
     pub desired_data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    #[doc(hidden)]
+    pub flywheel_arn: std::option::Option<std::string::String>,
 }
 impl EndpointProperties {
     /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
@@ -75,13 +78,17 @@ impl EndpointProperties {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
     pub fn desired_data_access_role_arn(&self) -> std::option::Option<&str> {
         self.desired_data_access_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
+        self.flywheel_arn.as_deref()
     }
 }
 impl EndpointProperties {
@@ -106,6 +113,7 @@ pub struct EndpointPropertiesBuilder {
     pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
     pub(crate) desired_data_access_role_arn: std::option::Option<std::string::String>,
+    pub(crate) flywheel_arn: std::option::Option<std::string::String>,
 }
 impl EndpointPropertiesBuilder {
     /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
@@ -207,12 +215,12 @@ impl EndpointPropertiesBuilder {
         self.last_modified_time = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_access_role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -233,6 +241,16 @@ impl EndpointPropertiesBuilder {
         self.desired_data_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.flywheel_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.flywheel_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EndpointProperties`](crate::types::EndpointProperties).
     pub fn build(self) -> crate::types::EndpointProperties {
         crate::types::EndpointProperties {
@@ -247,6 +265,7 @@ impl EndpointPropertiesBuilder {
             last_modified_time: self.last_modified_time,
             data_access_role_arn: self.data_access_role_arn,
             desired_data_access_role_arn: self.desired_data_access_role_arn,
+            flywheel_arn: self.flywheel_arn,
         }
     }
 }

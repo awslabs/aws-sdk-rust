@@ -6,17 +6,17 @@ pub fn ser_start_attachment_upload_input(
     if let Some(var_1) = &input.attachment_name {
         object.key("AttachmentName").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.attachment_size_in_bytes {
         object.key("AttachmentSizeInBytes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.attachment_size_in_bytes).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.client_token {
-        object.key("ClientToken").string(var_2.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("ClientToken").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.content_type {
-        object.key("ContentType").string(var_3.as_str());
+    if let Some(var_4) = &input.content_type {
+        object.key("ContentType").string(var_4.as_str());
     }
     Ok(())
 }

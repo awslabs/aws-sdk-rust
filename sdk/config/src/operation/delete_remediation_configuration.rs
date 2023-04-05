@@ -179,7 +179,7 @@ pub enum DeleteRemediationConfigurationError {
     /// </ul> </li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>You specified an Config rule without a remediation configuration.</p>
     NoSuchRemediationConfigurationException(

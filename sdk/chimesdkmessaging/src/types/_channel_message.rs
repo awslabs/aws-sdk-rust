@@ -48,6 +48,9 @@ pub struct ChannelMessage {
     /// <p>The ID of the SubChannel.</p>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    /// <p>The content type of the channel message.</p>
+    #[doc(hidden)]
+    pub content_type: std::option::Option<std::string::String>,
 }
 impl ChannelMessage {
     /// <p>The ARN of the channel.</p>
@@ -110,6 +113,10 @@ impl ChannelMessage {
     pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
+    /// <p>The content type of the channel message.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -128,6 +135,7 @@ impl std::fmt::Debug for ChannelMessage {
         formatter.field("status", &self.status);
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -158,6 +166,7 @@ pub struct ChannelMessageBuilder {
         std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
     >,
     pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+    pub(crate) content_type: std::option::Option<std::string::String>,
 }
 impl ChannelMessageBuilder {
     /// <p>The ARN of the channel.</p>
@@ -333,6 +342,16 @@ impl ChannelMessageBuilder {
         self.sub_channel_id = input;
         self
     }
+    /// <p>The content type of the channel message.</p>
+    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.content_type = Some(input.into());
+        self
+    }
+    /// <p>The content type of the channel message.</p>
+    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.content_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ChannelMessage`](crate::types::ChannelMessage).
     pub fn build(self) -> crate::types::ChannelMessage {
         crate::types::ChannelMessage {
@@ -350,6 +369,7 @@ impl ChannelMessageBuilder {
             status: self.status,
             message_attributes: self.message_attributes,
             sub_channel_id: self.sub_channel_id,
+            content_type: self.content_type,
         }
     }
 }
@@ -370,6 +390,7 @@ impl std::fmt::Debug for ChannelMessageBuilder {
         formatter.field("status", &self.status);
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

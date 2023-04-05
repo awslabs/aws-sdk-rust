@@ -43,6 +43,8 @@ pub use crate::types::_environment::EnvironmentBuilder;
 
 pub use crate::types::_vpc_config::VpcConfigBuilder;
 
+pub use crate::types::_document_db_event_source_config::DocumentDbEventSourceConfigBuilder;
+
 pub use crate::types::_scaling_config::ScalingConfigBuilder;
 
 pub use crate::types::_self_managed_kafka_event_source_config::SelfManagedKafkaEventSourceConfigBuilder;

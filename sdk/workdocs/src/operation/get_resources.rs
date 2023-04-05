@@ -185,7 +185,7 @@ pub type GetResourcesErrorKind = GetResourcesError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourcesError {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),

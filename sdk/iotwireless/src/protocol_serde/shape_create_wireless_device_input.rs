@@ -24,20 +24,26 @@ pub fn ser_create_wireless_device_input(
     if let Some(var_7) = &input.positioning {
         object.key("Positioning").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("Tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.sidewalk {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("Sidewalk").start_object();
+        crate::protocol_serde::shape_sidewalk_create_wireless_device::ser_sidewalk_create_wireless_device(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("Tags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.r#type {
-        object.key("Type").string(var_12.as_str());
+    if let Some(var_14) = &input.r#type {
+        object.key("Type").string(var_14.as_str());
     }
     Ok(())
 }

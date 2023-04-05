@@ -13,7 +13,7 @@ pub struct QueryExecution {
     /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
     #[doc(hidden)]
     pub statement_type: std::option::Option<crate::types::StatementType>,
-    /// <p>The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
+    /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     #[doc(hidden)]
     pub result_configuration: std::option::Option<crate::types::ResultConfiguration>,
     /// <p>Specifies the query result reuse behavior that was used for the query.</p>
@@ -37,6 +37,9 @@ pub struct QueryExecution {
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
     #[doc(hidden)]
     pub execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The kind of query statement that was run.</p>
+    #[doc(hidden)]
+    pub substatement_type: std::option::Option<std::string::String>,
 }
 impl QueryExecution {
     /// <p>The unique identifier for each query execution.</p>
@@ -51,7 +54,7 @@ impl QueryExecution {
     pub fn statement_type(&self) -> std::option::Option<&crate::types::StatementType> {
         self.statement_type.as_ref()
     }
-    /// <p>The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
+    /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     pub fn result_configuration(&self) -> std::option::Option<&crate::types::ResultConfiguration> {
         self.result_configuration.as_ref()
     }
@@ -87,6 +90,10 @@ impl QueryExecution {
     pub fn execution_parameters(&self) -> std::option::Option<&[std::string::String]> {
         self.execution_parameters.as_deref()
     }
+    /// <p>The kind of query statement that was run.</p>
+    pub fn substatement_type(&self) -> std::option::Option<&str> {
+        self.substatement_type.as_deref()
+    }
 }
 impl QueryExecution {
     /// Creates a new builder-style object to manufacture [`QueryExecution`](crate::types::QueryExecution).
@@ -111,6 +118,7 @@ pub struct QueryExecutionBuilder {
     pub(crate) work_group: std::option::Option<std::string::String>,
     pub(crate) engine_version: std::option::Option<crate::types::EngineVersion>,
     pub(crate) execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) substatement_type: std::option::Option<std::string::String>,
 }
 impl QueryExecutionBuilder {
     /// <p>The unique identifier for each query execution.</p>
@@ -149,12 +157,12 @@ impl QueryExecutionBuilder {
         self.statement_type = input;
         self
     }
-    /// <p>The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
+    /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     pub fn result_configuration(mut self, input: crate::types::ResultConfiguration) -> Self {
         self.result_configuration = Some(input);
         self
     }
-    /// <p>The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
+    /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     pub fn set_result_configuration(
         mut self,
         input: std::option::Option<crate::types::ResultConfiguration>,
@@ -259,6 +267,19 @@ impl QueryExecutionBuilder {
         self.execution_parameters = input;
         self
     }
+    /// <p>The kind of query statement that was run.</p>
+    pub fn substatement_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.substatement_type = Some(input.into());
+        self
+    }
+    /// <p>The kind of query statement that was run.</p>
+    pub fn set_substatement_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.substatement_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`QueryExecution`](crate::types::QueryExecution).
     pub fn build(self) -> crate::types::QueryExecution {
         crate::types::QueryExecution {
@@ -273,6 +294,7 @@ impl QueryExecutionBuilder {
             work_group: self.work_group,
             engine_version: self.engine_version,
             execution_parameters: self.execution_parameters,
+            substatement_type: self.substatement_type,
         }
     }
 }

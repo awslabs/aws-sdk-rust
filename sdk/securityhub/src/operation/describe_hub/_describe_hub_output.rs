@@ -13,6 +13,11 @@ pub struct DescribeHubOutput {
     /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
     #[doc(hidden)]
     pub auto_enable_controls: bool,
+    /// <p>Specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    #[doc(hidden)]
+    pub control_finding_generator: std::option::Option<crate::types::ControlFindingGenerator>,
     _request_id: Option<String>,
 }
 impl DescribeHubOutput {
@@ -28,6 +33,14 @@ impl DescribeHubOutput {
     /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
     pub fn auto_enable_controls(&self) -> bool {
         self.auto_enable_controls
+    }
+    /// <p>Specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn control_finding_generator(
+        &self,
+    ) -> std::option::Option<&crate::types::ControlFindingGenerator> {
+        self.control_finding_generator.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeHubOutput {
@@ -49,6 +62,8 @@ pub struct DescribeHubOutputBuilder {
     pub(crate) hub_arn: std::option::Option<std::string::String>,
     pub(crate) subscribed_at: std::option::Option<std::string::String>,
     pub(crate) auto_enable_controls: std::option::Option<bool>,
+    pub(crate) control_finding_generator:
+        std::option::Option<crate::types::ControlFindingGenerator>,
     _request_id: Option<String>,
 }
 impl DescribeHubOutputBuilder {
@@ -84,6 +99,26 @@ impl DescribeHubOutputBuilder {
         self.auto_enable_controls = input;
         self
     }
+    /// <p>Specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn control_finding_generator(
+        mut self,
+        input: crate::types::ControlFindingGenerator,
+    ) -> Self {
+        self.control_finding_generator = Some(input);
+        self
+    }
+    /// <p>Specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn set_control_finding_generator(
+        mut self,
+        input: std::option::Option<crate::types::ControlFindingGenerator>,
+    ) -> Self {
+        self.control_finding_generator = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -99,6 +134,7 @@ impl DescribeHubOutputBuilder {
             hub_arn: self.hub_arn,
             subscribed_at: self.subscribed_at,
             auto_enable_controls: self.auto_enable_controls.unwrap_or_default(),
+            control_finding_generator: self.control_finding_generator,
             _request_id: self._request_id,
         }
     }

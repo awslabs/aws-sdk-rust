@@ -22,7 +22,7 @@ pub struct GetAggregateComplianceDetailsByConfigRuleInput {
     pub compliance_type: std::option::Option<crate::types::ComplianceType>,
     /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -51,7 +51,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
         self.compliance_type.as_ref()
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -174,7 +174,6 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
                 compliance_type: self.compliance_type
                 ,
                 limit: self.limit
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeofenceCollectionsOutput {
-    /// <p>Lists the geofence collections that exist in your AWS account.</p>
+    /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub entries:
         std::option::Option<std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>>,
@@ -13,7 +13,7 @@ pub struct ListGeofenceCollectionsOutput {
     _request_id: Option<String>,
 }
 impl ListGeofenceCollectionsOutput {
-    /// <p>Lists the geofence collections that exist in your AWS account.</p>
+    /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
     pub fn entries(
         &self,
     ) -> std::option::Option<&[crate::types::ListGeofenceCollectionsResponseEntry]> {
@@ -52,14 +52,14 @@ impl ListGeofenceCollectionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>Lists the geofence collections that exist in your AWS account.</p>
+    /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
     pub fn entries(mut self, input: crate::types::ListGeofenceCollectionsResponseEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = Some(v);
         self
     }
-    /// <p>Lists the geofence collections that exist in your AWS account.</p>
+    /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
     pub fn set_entries(
         mut self,
         input: std::option::Option<

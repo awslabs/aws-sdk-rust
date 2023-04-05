@@ -9,7 +9,7 @@ pub struct EnableFastLaunchOutput {
     /// <p>The type of resource that was defined for pre-provisioning the Windows AMI for faster launching.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::FastLaunchResourceType>,
-    /// <p>The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+    /// <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
     #[doc(hidden)]
     pub snapshot_configuration:
         std::option::Option<crate::types::FastLaunchSnapshotConfigurationResponse>,
@@ -17,7 +17,7 @@ pub struct EnableFastLaunchOutput {
     #[doc(hidden)]
     pub launch_template:
         std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationResponse>,
-    /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     #[doc(hidden)]
     pub max_parallel_launches: std::option::Option<i32>,
     /// <p>The owner ID for the Windows AMI for which faster launching was enabled.</p>
@@ -43,7 +43,7 @@ impl EnableFastLaunchOutput {
     pub fn resource_type(&self) -> std::option::Option<&crate::types::FastLaunchResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+    /// <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
     pub fn snapshot_configuration(
         &self,
     ) -> std::option::Option<&crate::types::FastLaunchSnapshotConfigurationResponse> {
@@ -55,7 +55,7 @@ impl EnableFastLaunchOutput {
     ) -> std::option::Option<&crate::types::FastLaunchLaunchTemplateSpecificationResponse> {
         self.launch_template.as_ref()
     }
-    /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     pub fn max_parallel_launches(&self) -> std::option::Option<i32> {
         self.max_parallel_launches
     }
@@ -130,7 +130,7 @@ impl EnableFastLaunchOutputBuilder {
         self.resource_type = input;
         self
     }
-    /// <p>The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+    /// <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
     pub fn snapshot_configuration(
         mut self,
         input: crate::types::FastLaunchSnapshotConfigurationResponse,
@@ -138,7 +138,7 @@ impl EnableFastLaunchOutputBuilder {
         self.snapshot_configuration = Some(input);
         self
     }
-    /// <p>The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+    /// <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
     pub fn set_snapshot_configuration(
         mut self,
         input: std::option::Option<crate::types::FastLaunchSnapshotConfigurationResponse>,
@@ -162,12 +162,12 @@ impl EnableFastLaunchOutputBuilder {
         self.launch_template = input;
         self
     }
-    /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     pub fn max_parallel_launches(mut self, input: i32) -> Self {
         self.max_parallel_launches = Some(input);
         self
     }
-    /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     pub fn set_max_parallel_launches(mut self, input: std::option::Option<i32>) -> Self {
         self.max_parallel_launches = input;
         self

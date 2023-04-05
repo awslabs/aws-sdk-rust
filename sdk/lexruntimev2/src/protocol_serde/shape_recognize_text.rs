@@ -234,6 +234,11 @@ pub(crate) fn de_recognize_text(
                             crate::protocol_serde::shape_messages::de_messages(tokens)?,
                         );
                     }
+                    "recognizedBotMember" => {
+                        builder = builder.set_recognized_bot_member(
+                            crate::protocol_serde::shape_recognized_bot_member::de_recognized_bot_member(tokens)?
+                        );
+                    }
                     "requestAttributes" => {
                         builder = builder.set_request_attributes(
                             crate::protocol_serde::shape_string_map::de_string_map(tokens)?,

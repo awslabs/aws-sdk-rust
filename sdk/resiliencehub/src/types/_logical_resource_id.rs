@@ -16,6 +16,11 @@ pub struct LogicalResourceId {
     /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
     #[doc(hidden)]
     pub terraform_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub eks_source_name: std::option::Option<std::string::String>,
 }
 impl LogicalResourceId {
     /// <p>The identifier of the resource.</p>
@@ -34,6 +39,12 @@ impl LogicalResourceId {
     pub fn terraform_source_name(&self) -> std::option::Option<&str> {
         self.terraform_source_name.as_deref()
     }
+    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// </note>
+    pub fn eks_source_name(&self) -> std::option::Option<&str> {
+        self.eks_source_name.as_deref()
+    }
 }
 impl LogicalResourceId {
     /// Creates a new builder-style object to manufacture [`LogicalResourceId`](crate::types::LogicalResourceId).
@@ -50,6 +61,7 @@ pub struct LogicalResourceIdBuilder {
     pub(crate) logical_stack_name: std::option::Option<std::string::String>,
     pub(crate) resource_group_name: std::option::Option<std::string::String>,
     pub(crate) terraform_source_name: std::option::Option<std::string::String>,
+    pub(crate) eks_source_name: std::option::Option<std::string::String>,
 }
 impl LogicalResourceIdBuilder {
     /// <p>The identifier of the resource.</p>
@@ -101,6 +113,20 @@ impl LogicalResourceIdBuilder {
         self.terraform_source_name = input;
         self
     }
+    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// </note>
+    pub fn eks_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.eks_source_name = Some(input.into());
+        self
+    }
+    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// </note>
+    pub fn set_eks_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.eks_source_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`LogicalResourceId`](crate::types::LogicalResourceId).
     pub fn build(self) -> crate::types::LogicalResourceId {
         crate::types::LogicalResourceId {
@@ -108,6 +134,7 @@ impl LogicalResourceIdBuilder {
             logical_stack_name: self.logical_stack_name,
             resource_group_name: self.resource_group_name,
             terraform_source_name: self.terraform_source_name,
+            eks_source_name: self.eks_source_name,
         }
     }
 }

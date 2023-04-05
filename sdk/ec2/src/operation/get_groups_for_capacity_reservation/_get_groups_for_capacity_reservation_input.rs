@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupsForCapacityReservationInput {
-    /// <p>The ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     #[doc(hidden)]
     pub capacity_reservation_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -17,7 +17,7 @@ pub struct GetGroupsForCapacityReservationInput {
     pub dry_run: std::option::Option<bool>,
 }
 impl GetGroupsForCapacityReservationInput {
-    /// <p>The ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     pub fn capacity_reservation_id(&self) -> std::option::Option<&str> {
         self.capacity_reservation_id.as_deref()
     }
@@ -51,12 +51,12 @@ pub struct GetGroupsForCapacityReservationInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl GetGroupsForCapacityReservationInputBuilder {
-    /// <p>The ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     pub fn capacity_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.capacity_reservation_id = Some(input.into());
         self
     }
-    /// <p>The ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     pub fn set_capacity_reservation_id(
         mut self,
         input: std::option::Option<std::string::String>,

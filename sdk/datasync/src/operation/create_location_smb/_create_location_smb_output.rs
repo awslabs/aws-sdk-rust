@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationSmbOutput {
-    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    /// <p>The ARN of the SMB location that you created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLocationSmbOutput {
-    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    /// <p>The ARN of the SMB location that you created.</p>
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
@@ -36,12 +36,12 @@ pub struct CreateLocationSmbOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateLocationSmbOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    /// <p>The ARN of the SMB location that you created.</p>
     pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.location_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    /// <p>The ARN of the SMB location that you created.</p>
     pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.location_arn = input;
         self

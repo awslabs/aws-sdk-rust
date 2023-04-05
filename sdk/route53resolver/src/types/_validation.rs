@@ -14,6 +14,7 @@
 /// match validation {
 ///     Validation::Disable => { /* ... */ },
 ///     Validation::Enable => { /* ... */ },
+///     Validation::UseLocalResourceSetting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum Validation {
     Disable,
     #[allow(missing_docs)] // documentation missing in model
     Enable,
+    #[allow(missing_docs)] // documentation missing in model
+    UseLocalResourceSetting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl std::convert::From<&str> for Validation {
         match s {
             "DISABLE" => Validation::Disable,
             "ENABLE" => Validation::Enable,
+            "USE_LOCAL_RESOURCE_SETTING" => Validation::UseLocalResourceSetting,
             other => Validation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +80,13 @@ impl Validation {
         match self {
             Validation::Disable => "DISABLE",
             Validation::Enable => "ENABLE",
+            Validation::UseLocalResourceSetting => "USE_LOCAL_RESOURCE_SETTING",
             Validation::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLE", "ENABLE"]
+        &["DISABLE", "ENABLE", "USE_LOCAL_RESOURCE_SETTING"]
     }
 }
 impl AsRef<str> for Validation {

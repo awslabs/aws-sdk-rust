@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ContainerInfo {
-    /// <p>The information about the EKS cluster.</p>
+    /// <p>The information about the Amazon EKS cluster.</p>
     EksInfo(crate::types::EksInfo),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

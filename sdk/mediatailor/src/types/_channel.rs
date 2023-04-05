@@ -37,6 +37,9 @@ pub struct Channel {
     /// <p>The tier for this channel. STANDARD tier channels can contain live programs.</p>
     #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
+    /// <p>The log configuration.</p>
+    #[doc(hidden)]
+    pub log_configuration: std::option::Option<crate::types::LogConfigurationForChannel>,
 }
 impl Channel {
     /// <p>The ARN of the channel.</p>
@@ -84,6 +87,12 @@ impl Channel {
     pub fn tier(&self) -> std::option::Option<&str> {
         self.tier.as_deref()
     }
+    /// <p>The log configuration.</p>
+    pub fn log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::LogConfigurationForChannel> {
+        self.log_configuration.as_ref()
+    }
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::types::Channel).
@@ -107,6 +116,7 @@ pub struct ChannelBuilder {
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) tier: std::option::Option<std::string::String>,
+    pub(crate) log_configuration: std::option::Option<crate::types::LogConfigurationForChannel>,
 }
 impl ChannelBuilder {
     /// <p>The ARN of the channel.</p>
@@ -246,6 +256,19 @@ impl ChannelBuilder {
         self.tier = input;
         self
     }
+    /// <p>The log configuration.</p>
+    pub fn log_configuration(mut self, input: crate::types::LogConfigurationForChannel) -> Self {
+        self.log_configuration = Some(input);
+        self
+    }
+    /// <p>The log configuration.</p>
+    pub fn set_log_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LogConfigurationForChannel>,
+    ) -> Self {
+        self.log_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {
         crate::types::Channel {
@@ -259,6 +282,7 @@ impl ChannelBuilder {
             playback_mode: self.playback_mode,
             tags: self.tags,
             tier: self.tier,
+            log_configuration: self.log_configuration,
         }
     }
 }

@@ -1051,6 +1051,54 @@ impl From<crate::operation::stop_dev_environment::StopDevEnvironmentError> for E
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::update_dev_environment::UpdateDevEnvironmentError,
             R,
         >,

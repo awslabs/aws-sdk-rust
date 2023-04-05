@@ -9,7 +9,7 @@ pub struct UpdateContactInput {
     /// <p>The full name of the contact or escalation plan.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     #[doc(hidden)]
     pub plan: std::option::Option<crate::types::Plan>,
 }
@@ -22,7 +22,7 @@ impl UpdateContactInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub fn plan(&self) -> std::option::Option<&crate::types::Plan> {
         self.plan.as_ref()
     }
@@ -63,12 +63,12 @@ impl UpdateContactInputBuilder {
         self.display_name = input;
         self
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
         self.plan = Some(input);
         self
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub fn set_plan(mut self, input: std::option::Option<crate::types::Plan>) -> Self {
         self.plan = input;
         self

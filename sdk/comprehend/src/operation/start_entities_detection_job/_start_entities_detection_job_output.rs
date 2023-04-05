@@ -6,7 +6,7 @@ pub struct StartEntitiesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -33,6 +33,9 @@ pub struct StartEntitiesDetectionJobOutput {
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::types::JobStatus>,
+    /// <p>The ARN of the custom entity recognition model.</p>
+    #[doc(hidden)]
+    pub entity_recognizer_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl StartEntitiesDetectionJobOutput {
@@ -40,7 +43,7 @@ impl StartEntitiesDetectionJobOutput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -69,6 +72,10 @@ impl StartEntitiesDetectionJobOutput {
     pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
+    /// <p>The ARN of the custom entity recognition model.</p>
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+        self.entity_recognizer_arn.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for StartEntitiesDetectionJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -89,6 +96,7 @@ pub struct StartEntitiesDetectionJobOutputBuilder {
     pub(crate) job_id: std::option::Option<std::string::String>,
     pub(crate) job_arn: std::option::Option<std::string::String>,
     pub(crate) job_status: std::option::Option<crate::types::JobStatus>,
+    pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl StartEntitiesDetectionJobOutputBuilder {
@@ -102,7 +110,7 @@ impl StartEntitiesDetectionJobOutputBuilder {
         self.job_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -120,7 +128,7 @@ impl StartEntitiesDetectionJobOutputBuilder {
         self.job_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -164,6 +172,19 @@ impl StartEntitiesDetectionJobOutputBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The ARN of the custom entity recognition model.</p>
+    pub fn entity_recognizer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.entity_recognizer_arn = Some(input.into());
+        self
+    }
+    /// <p>The ARN of the custom entity recognition model.</p>
+    pub fn set_entity_recognizer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.entity_recognizer_arn = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -181,6 +202,7 @@ impl StartEntitiesDetectionJobOutputBuilder {
             job_id: self.job_id,
             job_arn: self.job_arn,
             job_status: self.job_status,
+            entity_recognizer_arn: self.entity_recognizer_arn,
             _request_id: self._request_id,
         }
     }

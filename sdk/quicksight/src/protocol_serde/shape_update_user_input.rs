@@ -25,10 +25,8 @@ pub fn ser_update_user_input(
     if let Some(var_6) = &input.role {
         object.key("Role").string(var_6.as_str());
     }
-    if input.unapply_custom_permissions {
-        object
-            .key("UnapplyCustomPermissions")
-            .boolean(input.unapply_custom_permissions);
+    if let Some(var_7) = &input.unapply_custom_permissions {
+        object.key("UnapplyCustomPermissions").boolean(*var_7);
     }
     Ok(())
 }

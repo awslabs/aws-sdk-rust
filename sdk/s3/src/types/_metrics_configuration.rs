@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricsConfiguration {
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
@@ -12,7 +12,7 @@ pub struct MetricsConfiguration {
     pub filter: std::option::Option<crate::types::MetricsFilter>,
 }
 impl MetricsConfiguration {
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -36,12 +36,12 @@ pub struct MetricsConfigurationBuilder {
     pub(crate) filter: std::option::Option<crate::types::MetricsFilter>,
 }
 impl MetricsConfigurationBuilder {
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.id = input;
         self

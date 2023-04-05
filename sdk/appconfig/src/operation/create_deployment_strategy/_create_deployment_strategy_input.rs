@@ -14,7 +14,7 @@ pub struct CreateDeploymentStrategyInput {
     pub deployment_duration_in_minutes: std::option::Option<i32>,
     /// <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
     #[doc(hidden)]
-    pub final_bake_time_in_minutes: i32,
+    pub final_bake_time_in_minutes: std::option::Option<i32>,
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     #[doc(hidden)]
     pub growth_factor: std::option::Option<f32>,
@@ -49,7 +49,7 @@ impl CreateDeploymentStrategyInput {
         self.deployment_duration_in_minutes
     }
     /// <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn final_bake_time_in_minutes(&self) -> i32 {
+    pub fn final_bake_time_in_minutes(&self) -> std::option::Option<i32> {
         self.final_bake_time_in_minutes
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
@@ -224,7 +224,7 @@ impl CreateDeploymentStrategyInputBuilder {
                 name: self.name,
                 description: self.description,
                 deployment_duration_in_minutes: self.deployment_duration_in_minutes,
-                final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
+                final_bake_time_in_minutes: self.final_bake_time_in_minutes,
                 growth_factor: self.growth_factor,
                 growth_type: self.growth_type,
                 replicate_to: self.replicate_to,

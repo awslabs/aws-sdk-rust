@@ -50,6 +50,13 @@ pub struct SubscriberResource {
     /// <p>The date and time when the subscription was created. </p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
+    #[doc(hidden)]
+    pub resource_share_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the resource share.</p>
+    #[doc(hidden)]
+    pub resource_share_name: std::option::Option<std::string::String>,
 }
 impl SubscriberResource {
     /// <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
@@ -113,6 +120,15 @@ impl SubscriberResource {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn resource_share_name(&self) -> std::option::Option<&str> {
+        self.resource_share_name.as_deref()
+    }
 }
 impl SubscriberResource {
     /// Creates a new builder-style object to manufacture [`SubscriberResource`](crate::types::SubscriberResource).
@@ -140,6 +156,8 @@ pub struct SubscriberResourceBuilder {
     pub(crate) external_id: std::option::Option<std::string::String>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) resource_share_arn: std::option::Option<std::string::String>,
+    pub(crate) resource_share_name: std::option::Option<std::string::String>,
 }
 impl SubscriberResourceBuilder {
     /// <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
@@ -330,6 +348,34 @@ impl SubscriberResourceBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
+    pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_share_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
+    pub fn set_resource_share_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_arn = input;
+        self
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn resource_share_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_share_name = Some(input.into());
+        self
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn set_resource_share_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SubscriberResource`](crate::types::SubscriberResource).
     pub fn build(self) -> crate::types::SubscriberResource {
         crate::types::SubscriberResource {
@@ -348,6 +394,8 @@ impl SubscriberResourceBuilder {
             external_id: self.external_id,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            resource_share_arn: self.resource_share_arn,
+            resource_share_name: self.resource_share_name,
         }
     }
 }

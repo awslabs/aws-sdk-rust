@@ -7,10 +7,10 @@ pub struct DataSourceSyncJob {
     /// <p>A identifier for the synchronization job.</p>
     #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
-    /// <p>The UNIX datetime that the synchronization job started.</p>
+    /// <p>The Unix timestamp when the synchronization job started.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The UNIX datetime that the synchronization job completed.</p>
+    /// <p>The Unix timestamp when the synchronization job completed.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The execution status of the synchronization job. When the <code>Status</code> field is set to <code>SUCCEEDED</code>, the synchronization job is done. If the status code is set to <code>FAILED</code>, the <code>ErrorCode</code> and <code>ErrorMessage</code> fields give you the reason for the failure.</p>
@@ -34,11 +34,11 @@ impl DataSourceSyncJob {
     pub fn execution_id(&self) -> std::option::Option<&str> {
         self.execution_id.as_deref()
     }
-    /// <p>The UNIX datetime that the synchronization job started.</p>
+    /// <p>The Unix timestamp when the synchronization job started.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The UNIX datetime that the synchronization job completed.</p>
+    /// <p>The Unix timestamp when the synchronization job completed.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -94,12 +94,12 @@ impl DataSourceSyncJobBuilder {
         self.execution_id = input;
         self
     }
-    /// <p>The UNIX datetime that the synchronization job started.</p>
+    /// <p>The Unix timestamp when the synchronization job started.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.start_time = Some(input);
         self
     }
-    /// <p>The UNIX datetime that the synchronization job started.</p>
+    /// <p>The Unix timestamp when the synchronization job started.</p>
     pub fn set_start_time(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -107,12 +107,12 @@ impl DataSourceSyncJobBuilder {
         self.start_time = input;
         self
     }
-    /// <p>The UNIX datetime that the synchronization job completed.</p>
+    /// <p>The Unix timestamp when the synchronization job completed.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.end_time = Some(input);
         self
     }
-    /// <p>The UNIX datetime that the synchronization job completed.</p>
+    /// <p>The Unix timestamp when the synchronization job completed.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self

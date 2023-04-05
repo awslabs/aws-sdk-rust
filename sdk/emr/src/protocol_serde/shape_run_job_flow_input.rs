@@ -105,100 +105,98 @@ pub fn ser_run_job_flow_input(
         }
         array_29.finish();
     }
-    if input.visible_to_all_users {
-        object
-            .key("VisibleToAllUsers")
-            .boolean(input.visible_to_all_users);
+    if let Some(var_32) = &input.visible_to_all_users {
+        object.key("VisibleToAllUsers").boolean(*var_32);
     }
-    if let Some(var_32) = &input.job_flow_role {
-        object.key("JobFlowRole").string(var_32.as_str());
+    if let Some(var_33) = &input.job_flow_role {
+        object.key("JobFlowRole").string(var_33.as_str());
     }
-    if let Some(var_33) = &input.service_role {
-        object.key("ServiceRole").string(var_33.as_str());
+    if let Some(var_34) = &input.service_role {
+        object.key("ServiceRole").string(var_34.as_str());
     }
-    if let Some(var_34) = &input.tags {
-        let mut array_35 = object.key("Tags").start_array();
-        for item_36 in var_34 {
+    if let Some(var_35) = &input.tags {
+        let mut array_36 = object.key("Tags").start_array();
+        for item_37 in var_35 {
             {
                 #[allow(unused_mut)]
-                let mut object_37 = array_35.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_37, item_36)?;
-                object_37.finish();
+                let mut object_38 = array_36.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_38, item_37)?;
+                object_38.finish();
             }
         }
-        array_35.finish();
+        array_36.finish();
     }
-    if let Some(var_38) = &input.security_configuration {
-        object.key("SecurityConfiguration").string(var_38.as_str());
+    if let Some(var_39) = &input.security_configuration {
+        object.key("SecurityConfiguration").string(var_39.as_str());
     }
-    if let Some(var_39) = &input.auto_scaling_role {
-        object.key("AutoScalingRole").string(var_39.as_str());
+    if let Some(var_40) = &input.auto_scaling_role {
+        object.key("AutoScalingRole").string(var_40.as_str());
     }
-    if let Some(var_40) = &input.scale_down_behavior {
-        object.key("ScaleDownBehavior").string(var_40.as_str());
+    if let Some(var_41) = &input.scale_down_behavior {
+        object.key("ScaleDownBehavior").string(var_41.as_str());
     }
-    if let Some(var_41) = &input.custom_ami_id {
-        object.key("CustomAmiId").string(var_41.as_str());
+    if let Some(var_42) = &input.custom_ami_id {
+        object.key("CustomAmiId").string(var_42.as_str());
     }
-    if let Some(var_42) = &input.ebs_root_volume_size {
+    if let Some(var_43) = &input.ebs_root_volume_size {
         object.key("EbsRootVolumeSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_42).into()),
+            aws_smithy_types::Number::NegInt((*var_43).into()),
         );
     }
-    if let Some(var_43) = &input.repo_upgrade_on_boot {
-        object.key("RepoUpgradeOnBoot").string(var_43.as_str());
+    if let Some(var_44) = &input.repo_upgrade_on_boot {
+        object.key("RepoUpgradeOnBoot").string(var_44.as_str());
     }
-    if let Some(var_44) = &input.kerberos_attributes {
+    if let Some(var_45) = &input.kerberos_attributes {
         #[allow(unused_mut)]
-        let mut object_45 = object.key("KerberosAttributes").start_object();
+        let mut object_46 = object.key("KerberosAttributes").start_object();
         crate::protocol_serde::shape_kerberos_attributes::ser_kerberos_attributes(
-            &mut object_45,
-            var_44,
+            &mut object_46,
+            var_45,
         )?;
-        object_45.finish();
+        object_46.finish();
     }
-    if let Some(var_46) = &input.step_concurrency_level {
+    if let Some(var_47) = &input.step_concurrency_level {
         object.key("StepConcurrencyLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_46).into()),
+            aws_smithy_types::Number::NegInt((*var_47).into()),
         );
     }
-    if let Some(var_47) = &input.managed_scaling_policy {
+    if let Some(var_48) = &input.managed_scaling_policy {
         #[allow(unused_mut)]
-        let mut object_48 = object.key("ManagedScalingPolicy").start_object();
+        let mut object_49 = object.key("ManagedScalingPolicy").start_object();
         crate::protocol_serde::shape_managed_scaling_policy::ser_managed_scaling_policy(
-            &mut object_48,
-            var_47,
+            &mut object_49,
+            var_48,
         )?;
-        object_48.finish();
+        object_49.finish();
     }
-    if let Some(var_49) = &input.placement_group_configs {
-        let mut array_50 = object.key("PlacementGroupConfigs").start_array();
-        for item_51 in var_49 {
+    if let Some(var_50) = &input.placement_group_configs {
+        let mut array_51 = object.key("PlacementGroupConfigs").start_array();
+        for item_52 in var_50 {
             {
                 #[allow(unused_mut)]
-                let mut object_52 = array_50.value().start_object();
+                let mut object_53 = array_51.value().start_object();
                 crate::protocol_serde::shape_placement_group_config::ser_placement_group_config(
-                    &mut object_52,
-                    item_51,
+                    &mut object_53,
+                    item_52,
                 )?;
-                object_52.finish();
+                object_53.finish();
             }
         }
-        array_50.finish();
+        array_51.finish();
     }
-    if let Some(var_53) = &input.auto_termination_policy {
+    if let Some(var_54) = &input.auto_termination_policy {
         #[allow(unused_mut)]
-        let mut object_54 = object.key("AutoTerminationPolicy").start_object();
+        let mut object_55 = object.key("AutoTerminationPolicy").start_object();
         crate::protocol_serde::shape_auto_termination_policy::ser_auto_termination_policy(
-            &mut object_54,
-            var_53,
+            &mut object_55,
+            var_54,
         )?;
-        object_54.finish();
+        object_55.finish();
     }
-    if let Some(var_55) = &input.os_release_label {
-        object.key("OSReleaseLabel").string(var_55.as_str());
+    if let Some(var_56) = &input.os_release_label {
+        object.key("OSReleaseLabel").string(var_56.as_str());
     }
     Ok(())
 }

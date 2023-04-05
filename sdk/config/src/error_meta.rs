@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You have specified a template that is invalid or supported.</p>
+    /// <p>You have specified a template that is not valid or supported.</p>
     ConformancePackTemplateValidationException(
         crate::types::error::ConformancePackTemplateValidationException,
     ),
@@ -27,29 +27,29 @@ pub enum Error {
     InvalidConfigurationRecorderNameException(
         crate::types::error::InvalidConfigurationRecorderNameException,
     ),
-    /// <p>The specified delivery channel name is invalid.</p>
+    /// <p>The specified delivery channel name is not valid.</p>
     InvalidDeliveryChannelNameException(crate::types::error::InvalidDeliveryChannelNameException),
     /// <p>The syntax of the query is incorrect.</p>
     InvalidExpressionException(crate::types::error::InvalidExpressionException),
     /// <p>The specified limit is outside the allowable range.</p>
     InvalidLimitException(crate::types::error::InvalidLimitException),
-    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
+    /// <p>The specified next token is not valid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values might also be incorrectly formatted.</p>
+    /// <p>Config throws an exception if the recording group does not contain a valid list of resource types. Values that are not valid might also be incorrectly formatted.</p>
     InvalidRecordingGroupException(crate::types::error::InvalidRecordingGroupException),
-    /// <p>The specified <code>ResultToken</code> is invalid.</p>
+    /// <p>The specified <code>ResultToken</code> is not valid.</p>
     InvalidResultTokenException(crate::types::error::InvalidResultTokenException),
     /// <p>You have provided a null or empty role ARN.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
-    /// <p>The specified Amazon S3 key prefix is invalid.</p>
+    /// <p>The specified Amazon S3 key prefix is not valid.</p>
     InvalidS3KeyPrefixException(crate::types::error::InvalidS3KeyPrefixException),
-    /// <p>The specified Amazon KMS Key ARN is invalid.</p>
+    /// <p>The specified Amazon KMS Key ARN is not valid.</p>
     InvalidS3KmsKeyArnException(crate::types::error::InvalidS3KmsKeyArnException),
     /// <p>The specified Amazon SNS topic does not exist.</p>
     InvalidSnsTopicArnException(crate::types::error::InvalidSnsTopicArnException),
-    /// <p>The specified time range is invalid. The earlier time is not chronologically before the later time.</p>
+    /// <p>The specified time range is not valid. The earlier time is not chronologically before the later time.</p>
     InvalidTimeRangeException(crate::types::error::InvalidTimeRangeException),
     /// <p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>
     LastDeliveryChannelDeleteFailedException(
@@ -102,7 +102,7 @@ pub enum Error {
     ),
     /// <p>The specified Amazon S3 bucket does not exist.</p>
     NoSuchBucketException(crate::types::error::NoSuchBucketException),
-    /// <p>The Config rule in the request is invalid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::types::error::NoSuchConfigRuleException),
     /// <p>Config rule that you passed in the filter does not exist.</p>
     NoSuchConfigRuleInConformancePackException(
@@ -118,7 +118,7 @@ pub enum Error {
     NoSuchConformancePackException(crate::types::error::NoSuchConformancePackException),
     /// <p>You have specified a delivery channel that does not exist.</p>
     NoSuchDeliveryChannelException(crate::types::error::NoSuchDeliveryChannelException),
-    /// <p>The Config rule in the request is invalid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchOrganizationConfigRuleException(
         crate::types::error::NoSuchOrganizationConfigRuleException,
     ),
@@ -150,7 +150,7 @@ pub enum Error {
     OrganizationAllFeaturesNotEnabledException(
         crate::types::error::OrganizationAllFeaturesNotEnabledException,
     ),
-    /// <p>You have specified a template that is invalid or supported.</p>
+    /// <p>You have specified a template that is not valid or supported.</p>
     OrganizationConformancePackTemplateValidationException(
         crate::types::error::OrganizationConformancePackTemplateValidationException,
     ),
@@ -179,7 +179,7 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You have reached the limit of the number of tags you can use. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
-    /// <p>The requested action is invalid.</p>
+    /// <p>The requested action is not valid.</p>
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::types::error::ValidationException),

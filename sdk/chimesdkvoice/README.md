@@ -3,6 +3,8 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
+The Amazon Chime SDK telephony APIs in this section enable developers to create PSTN calling solutions that use Amazon Chime SDK Voice Connectors, and Amazon Chime SDK SIP media applications. Developers can also order and manage phone numbers, create and manage Voice Connectors and SIP media applications, and run voice analytics.
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -15,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-chimesdkvoice = "0.3.0"
+aws-sdk-chimesdkvoice = "0.3.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

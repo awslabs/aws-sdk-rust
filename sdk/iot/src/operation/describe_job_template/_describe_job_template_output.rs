@@ -37,6 +37,9 @@ pub struct DescribeJobTemplateOutput {
     /// <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
     #[doc(hidden)]
     pub job_executions_retry_config: std::option::Option<crate::types::JobExecutionsRetryConfig>,
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    #[doc(hidden)]
+    pub maintenance_windows: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
     _request_id: Option<String>,
 }
 impl DescribeJobTemplateOutput {
@@ -88,6 +91,10 @@ impl DescribeJobTemplateOutput {
     ) -> std::option::Option<&crate::types::JobExecutionsRetryConfig> {
         self.job_executions_retry_config.as_ref()
     }
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn maintenance_windows(&self) -> std::option::Option<&[crate::types::MaintenanceWindow]> {
+        self.maintenance_windows.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeJobTemplateOutput {
     fn request_id(&self) -> Option<&str> {
@@ -120,6 +127,8 @@ pub struct DescribeJobTemplateOutputBuilder {
     pub(crate) timeout_config: std::option::Option<crate::types::TimeoutConfig>,
     pub(crate) job_executions_retry_config:
         std::option::Option<crate::types::JobExecutionsRetryConfig>,
+    pub(crate) maintenance_windows:
+        std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
     _request_id: Option<String>,
 }
 impl DescribeJobTemplateOutputBuilder {
@@ -257,6 +266,25 @@ impl DescribeJobTemplateOutputBuilder {
         self.job_executions_retry_config = input;
         self
     }
+    /// Appends an item to `maintenance_windows`.
+    ///
+    /// To override the contents of this collection use [`set_maintenance_windows`](Self::set_maintenance_windows).
+    ///
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn maintenance_windows(mut self, input: crate::types::MaintenanceWindow) -> Self {
+        let mut v = self.maintenance_windows.unwrap_or_default();
+        v.push(input);
+        self.maintenance_windows = Some(v);
+        self
+    }
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn set_maintenance_windows(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
+    ) -> Self {
+        self.maintenance_windows = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -280,6 +308,7 @@ impl DescribeJobTemplateOutputBuilder {
             abort_config: self.abort_config,
             timeout_config: self.timeout_config,
             job_executions_retry_config: self.job_executions_retry_config,
+            maintenance_windows: self.maintenance_windows,
             _request_id: self._request_id,
         }
     }

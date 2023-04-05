@@ -42,6 +42,15 @@ where
                                     crate::protocol_serde::shape_string_list_input::de_string_list_input(tokens)?
                                 );
                             }
+                            "ZoneS3PathKmsKeyId" => {
+                                builder = builder.set_zone_s3_path_kms_key_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -89,6 +98,9 @@ pub fn ser_zonal_statistics_config_input(
             }
         }
         array_6.finish();
+    }
+    if let Some(var_8) = &input.zone_s3_path_kms_key_id {
+        object.key("ZoneS3PathKmsKeyId").string(var_8.as_str());
     }
     Ok(())
 }

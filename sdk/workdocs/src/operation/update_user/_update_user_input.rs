@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the user.</p>
@@ -27,12 +27,12 @@ pub struct UpdateUserInput {
     /// <p>The locale of the user.</p>
     #[doc(hidden)]
     pub locale: std::option::Option<crate::types::LocaleType>,
-    /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
+    /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     #[doc(hidden)]
     pub grant_poweruser_privileges: std::option::Option<crate::types::BooleanEnumType>,
 }
 impl UpdateUserInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -64,7 +64,7 @@ impl UpdateUserInput {
     pub fn locale(&self) -> std::option::Option<&crate::types::LocaleType> {
         self.locale.as_ref()
     }
-    /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
+    /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     pub fn grant_poweruser_privileges(
         &self,
     ) -> std::option::Option<&crate::types::BooleanEnumType> {
@@ -76,8 +76,8 @@ impl std::fmt::Debug for UpdateUserInput {
         let mut formatter = f.debug_struct("UpdateUserInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
         formatter.field("user_id", &self.user_id);
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
+        formatter.field("given_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("surname", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
         formatter.field("storage_rule", &self.storage_rule);
         formatter.field("time_zone_id", &self.time_zone_id);
@@ -111,12 +111,12 @@ pub struct UpdateUserInputBuilder {
     pub(crate) grant_poweruser_privileges: std::option::Option<crate::types::BooleanEnumType>,
 }
 impl UpdateUserInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -197,12 +197,12 @@ impl UpdateUserInputBuilder {
         self.locale = input;
         self
     }
-    /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
+    /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     pub fn grant_poweruser_privileges(mut self, input: crate::types::BooleanEnumType) -> Self {
         self.grant_poweruser_privileges = Some(input);
         self
     }
-    /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
+    /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     pub fn set_grant_poweruser_privileges(
         mut self,
         input: std::option::Option<crate::types::BooleanEnumType>,
@@ -235,8 +235,8 @@ impl std::fmt::Debug for UpdateUserInputBuilder {
         let mut formatter = f.debug_struct("UpdateUserInputBuilder");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
         formatter.field("user_id", &self.user_id);
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
+        formatter.field("given_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("surname", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
         formatter.field("storage_rule", &self.storage_rule);
         formatter.field("time_zone_id", &self.time_zone_id);

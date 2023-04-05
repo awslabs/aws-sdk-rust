@@ -170,7 +170,7 @@ pub type DeleteConfigRuleErrorKind = DeleteConfigRuleError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteConfigRuleError {
-    /// <p>The Config rule in the request is invalid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::types::error::NoSuchConfigRuleException),
     /// <p>You see this exception in the following cases: </p>
     /// <ul>

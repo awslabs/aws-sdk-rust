@@ -360,6 +360,9 @@ where
 impl From<crate::operation::delete_network::DeleteNetworkError> for Error {
     fn from(err: crate::operation::delete_network::DeleteNetworkError) -> Self {
         match err {
+            crate::operation::delete_network::DeleteNetworkError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::delete_network::DeleteNetworkError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
@@ -409,6 +412,7 @@ where
 impl From<crate::operation::delete_network_site::DeleteNetworkSiteError> for Error {
     fn from(err: crate::operation::delete_network_site::DeleteNetworkSiteError) -> Self {
         match err {
+            crate::operation::delete_network_site::DeleteNetworkSiteError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_network_site::DeleteNetworkSiteError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_network_site::DeleteNetworkSiteError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_network_site::DeleteNetworkSiteError::ValidationException(inner) => Error::ValidationException(inner),
@@ -906,6 +910,51 @@ impl From<crate::operation::ping::PingError> for Error {
                 Error::InternalServerException(inner)
             }
             crate::operation::ping::PingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_network_resource_update::StartNetworkResourceUpdateError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
+    ) -> Self {
+        match err {
+            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -6,14 +6,17 @@ pub fn ser_export_vector_enrichment_job_input(
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_2.as_str());
+    if let Some(var_2) = &input.client_token {
+        object.key("ClientToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.output_config {
+    if let Some(var_3) = &input.execution_role_arn {
+        object.key("ExecutionRoleArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("OutputConfig").start_object();
-        crate::protocol_serde::shape_export_vector_enrichment_job_output_config::ser_export_vector_enrichment_job_output_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("OutputConfig").start_object();
+        crate::protocol_serde::shape_export_vector_enrichment_job_output_config::ser_export_vector_enrichment_job_output_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

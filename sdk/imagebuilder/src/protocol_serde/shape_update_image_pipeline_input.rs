@@ -26,28 +26,34 @@ pub fn ser_update_image_pipeline_input(
     if let Some(var_7) = &input.image_recipe_arn {
         object.key("imageRecipeArn").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.image_tests_configuration {
+    if let Some(var_8) = &input.image_scanning_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        let mut object_9 = object.key("imageScanningConfiguration").start_object();
+        crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.infrastructure_configuration_arn {
+    if let Some(var_10) = &input.image_tests_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("imageTestsConfiguration").start_object();
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(
+            &mut object_11,
+            var_10,
+        )?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.infrastructure_configuration_arn {
         object
             .key("infrastructureConfigurationArn")
-            .string(var_10.as_str());
+            .string(var_12.as_str());
     }
-    if let Some(var_11) = &input.schedule {
+    if let Some(var_13) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("schedule").start_object();
-        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_14 = object.key("schedule").start_object();
+        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_13) = &input.status {
-        object.key("status").string(var_13.as_str());
+    if let Some(var_15) = &input.status {
+        object.key("status").string(var_15.as_str());
     }
     Ok(())
 }

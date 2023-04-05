@@ -6,7 +6,7 @@ pub use crate::operation::send_channel_message::_send_channel_message_input::Sen
 /// Fluent builder constructing a request to `SendChannelMessage`.
 ///
 /// <p>Sends a message to a particular channel that the member is a part of.</p> <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -141,12 +141,12 @@ impl SendChannelMessageFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
@@ -195,6 +195,16 @@ impl SendChannelMessageFluentBuilder {
     /// <p>The ID of the SubChannel in the request.</p>
     pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
+        self
+    }
+    /// <p>The content type of the channel message.</p>
+    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.content_type(input.into());
+        self
+    }
+    /// <p>The content type of the channel message.</p>
+    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_content_type(input);
         self
     }
 }

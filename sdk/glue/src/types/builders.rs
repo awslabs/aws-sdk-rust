@@ -51,21 +51,33 @@ pub use crate::types::_source_control_details::SourceControlDetailsBuilder;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNodeBuilder;
 
-pub use crate::types::_s3_hudi_direct_target::S3HudiDirectTargetBuilder;
+pub use crate::types::_s3_delta_direct_target::S3DeltaDirectTargetBuilder;
 
 pub use crate::types::_direct_schema_change_policy::DirectSchemaChangePolicyBuilder;
 
-pub use crate::types::_s3_hudi_catalog_target::S3HudiCatalogTargetBuilder;
+pub use crate::types::_s3_delta_catalog_target::S3DeltaCatalogTargetBuilder;
 
 pub use crate::types::_catalog_schema_change_policy::CatalogSchemaChangePolicyBuilder;
 
-pub use crate::types::_s3_hudi_source::S3HudiSourceBuilder;
+pub use crate::types::_s3_delta_source::S3DeltaSourceBuilder;
 
 pub use crate::types::_glue_schema::GlueSchemaBuilder;
 
 pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumnBuilder;
 
 pub use crate::types::_s3_direct_source_additional_options::S3DirectSourceAdditionalOptionsBuilder;
+
+pub use crate::types::_catalog_delta_source::CatalogDeltaSourceBuilder;
+
+pub use crate::types::_s3_catalog_delta_source::S3CatalogDeltaSourceBuilder;
+
+pub use crate::types::_direct_jdbc_source::DirectJdbcSourceBuilder;
+
+pub use crate::types::_s3_hudi_direct_target::S3HudiDirectTargetBuilder;
+
+pub use crate::types::_s3_hudi_catalog_target::S3HudiCatalogTargetBuilder;
+
+pub use crate::types::_s3_hudi_source::S3HudiSourceBuilder;
 
 pub use crate::types::_catalog_hudi_source::CatalogHudiSourceBuilder;
 
@@ -221,6 +233,8 @@ pub use crate::types::_dev_endpoint_custom_libraries::DevEndpointCustomLibraries
 
 pub use crate::types::_database_input::DatabaseInputBuilder;
 
+pub use crate::types::_federated_database::FederatedDatabaseBuilder;
+
 pub use crate::types::_database_identifier::DatabaseIdentifierBuilder;
 
 pub use crate::types::_principal_permissions::PrincipalPermissionsBuilder;
@@ -292,6 +306,8 @@ pub use crate::types::_data_source::DataSourceBuilder;
 pub use crate::types::_glue_table::GlueTableBuilder;
 
 pub use crate::types::_table::TableBuilder;
+
+pub use crate::types::_federated_table::FederatedTableBuilder;
 
 pub use crate::types::_sort_criterion::SortCriterionBuilder;
 

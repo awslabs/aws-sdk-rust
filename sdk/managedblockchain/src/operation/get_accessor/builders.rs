@@ -5,9 +5,6 @@ pub use crate::operation::get_accessor::_get_accessor_input::GetAccessorInputBui
 
 /// Fluent builder constructing a request to `GetAccessor`.
 ///
-/// <important>
-/// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p>
-/// </important>
 /// <p>Returns detailed information about an accessor. An accessor object is a container that has the information required for token based access to your Ethereum nodes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccessorFluentBuilder {

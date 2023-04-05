@@ -60,11 +60,15 @@ pub(crate) mod shape_delete_service_profile;
 
 pub(crate) mod shape_delete_wireless_device;
 
+pub(crate) mod shape_delete_wireless_device_import_task;
+
 pub(crate) mod shape_delete_wireless_gateway;
 
 pub(crate) mod shape_delete_wireless_gateway_task;
 
 pub(crate) mod shape_delete_wireless_gateway_task_definition;
+
+pub(crate) mod shape_deregister_wireless_device;
 
 pub(crate) mod shape_disassociate_aws_account_from_partner_account;
 
@@ -116,6 +120,8 @@ pub(crate) mod shape_get_service_profile;
 
 pub(crate) mod shape_get_wireless_device;
 
+pub(crate) mod shape_get_wireless_device_import_task;
+
 pub(crate) mod shape_get_wireless_device_statistics;
 
 pub(crate) mod shape_get_wireless_gateway;
@@ -133,6 +139,8 @@ pub(crate) mod shape_get_wireless_gateway_task_definition;
 pub(crate) mod shape_list_destinations;
 
 pub(crate) mod shape_list_device_profiles;
+
+pub(crate) mod shape_list_devices_for_wireless_device_import_task;
 
 pub(crate) mod shape_list_event_configurations;
 
@@ -153,6 +161,8 @@ pub(crate) mod shape_list_queued_messages;
 pub(crate) mod shape_list_service_profiles;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_wireless_device_import_tasks;
 
 pub(crate) mod shape_list_wireless_devices;
 
@@ -179,6 +189,10 @@ pub(crate) mod shape_start_bulk_disassociate_wireless_device_from_multicast_grou
 pub(crate) mod shape_start_fuota_task;
 
 pub(crate) mod shape_start_multicast_group_session;
+
+pub(crate) mod shape_start_single_wireless_device_import_task;
+
+pub(crate) mod shape_start_wireless_device_import_task;
 
 pub(crate) mod shape_tag_resource;
 
@@ -209,6 +223,8 @@ pub(crate) mod shape_update_resource_position;
 pub(crate) mod shape_update_resource_position_input;
 
 pub(crate) mod shape_update_wireless_device;
+
+pub(crate) mod shape_update_wireless_device_import_task;
 
 pub(crate) mod shape_update_wireless_gateway;
 
@@ -284,6 +300,10 @@ pub(crate) mod shape_start_fuota_task_input;
 
 pub(crate) mod shape_start_multicast_group_session_input;
 
+pub(crate) mod shape_start_single_wireless_device_import_task_input;
+
+pub(crate) mod shape_start_wireless_device_import_task_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -307,6 +327,8 @@ pub(crate) mod shape_update_partner_account_input;
 pub(crate) mod shape_update_position_input;
 
 pub(crate) mod shape_update_resource_event_configuration_input;
+
+pub(crate) mod shape_update_wireless_device_import_task_input;
 
 pub(crate) mod shape_update_wireless_device_input;
 
@@ -337,6 +359,8 @@ pub(crate) mod shape_event_configurations_list;
 pub(crate) mod shape_fuota_task_list;
 
 pub(crate) mod shape_gnss;
+
+pub(crate) mod shape_imported_wireless_device_list;
 
 pub(crate) mod shape_ip;
 
@@ -404,11 +428,25 @@ pub(crate) mod shape_sidewalk_account_info_with_fingerprint;
 
 pub(crate) mod shape_sidewalk_account_list;
 
+pub(crate) mod shape_sidewalk_create_device_profile;
+
+pub(crate) mod shape_sidewalk_create_wireless_device;
+
 pub(crate) mod shape_sidewalk_device;
 
 pub(crate) mod shape_sidewalk_device_metadata;
 
+pub(crate) mod shape_sidewalk_get_device_profile;
+
+pub(crate) mod shape_sidewalk_get_start_import_info;
+
+pub(crate) mod shape_sidewalk_single_start_import_info;
+
+pub(crate) mod shape_sidewalk_start_import_info;
+
 pub(crate) mod shape_sidewalk_update_account;
+
+pub(crate) mod shape_sidewalk_update_import_info;
 
 pub(crate) mod shape_tag;
 
@@ -419,6 +457,8 @@ pub(crate) mod shape_trace_content;
 pub(crate) mod shape_update_wireless_gateway_task_create;
 
 pub(crate) mod shape_wi_fi_access_point;
+
+pub(crate) mod shape_wireless_device_import_task_list;
 
 pub(crate) mod shape_wireless_device_list;
 
@@ -448,9 +488,13 @@ pub(crate) mod shape_beaconing;
 
 pub(crate) mod shape_cdma_obj;
 
+pub(crate) mod shape_dak_certificate_metadata_list;
+
 pub(crate) mod shape_destinations;
 
 pub(crate) mod shape_device_certificate_list;
+
+pub(crate) mod shape_device_creation_file_list;
 
 pub(crate) mod shape_device_profile;
 
@@ -465,6 +509,8 @@ pub(crate) mod shape_factory_preset_freqs_list;
 pub(crate) mod shape_fuota_task;
 
 pub(crate) mod shape_gsm_obj;
+
+pub(crate) mod shape_imported_wireless_device;
 
 pub(crate) mod shape_join_eui_filters;
 
@@ -502,6 +548,8 @@ pub(crate) mod shape_otaa_v1_1;
 
 pub(crate) mod shape_position_configuration_item;
 
+pub(crate) mod shape_private_keys_list;
+
 pub(crate) mod shape_semtech_gnss_configuration;
 
 pub(crate) mod shape_semtech_gnss_detail;
@@ -530,6 +578,8 @@ pub(crate) mod shape_wcdma_obj;
 
 pub(crate) mod shape_wireless_device_event_log_option;
 
+pub(crate) mod shape_wireless_device_import_task;
+
 pub(crate) mod shape_wireless_device_statistics;
 
 pub(crate) mod shape_wireless_gateway_event_log_option;
@@ -548,11 +598,15 @@ pub(crate) mod shape_cdma_nmr_obj;
 
 pub(crate) mod shape_certificate_list;
 
+pub(crate) mod shape_dak_certificate_metadata;
+
 pub(crate) mod shape_event_notification_item_configurations;
 
 pub(crate) mod shape_gsm_local_id;
 
 pub(crate) mod shape_gsm_nmr_obj;
+
+pub(crate) mod shape_imported_sidewalk_device;
 
 pub(crate) mod shape_join_eui_range;
 

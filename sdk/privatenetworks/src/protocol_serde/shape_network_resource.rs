@@ -160,6 +160,11 @@ where
                                     )?,
                                 );
                             }
+                            "returnInformation" => {
+                                builder = builder.set_return_information(
+                                    crate::protocol_serde::shape_return_information::de_return_information(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

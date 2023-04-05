@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-account = "0.25.0"
+//! aws-sdk-account = "0.25.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -173,6 +173,8 @@ pub mod middleware;
 
 ///
 mod no_credentials;
+
+mod lens;
 
 pub(crate) mod protocol_serde;
 

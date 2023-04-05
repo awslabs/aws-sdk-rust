@@ -25,7 +25,7 @@ pub struct EbsInstanceBlockDeviceSpecification {
     /// <p>Use to override the device's volume type.</p>
     #[doc(hidden)]
     pub volume_type: std::option::Option<crate::types::EbsVolumeType>,
-    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. </p>
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     #[doc(hidden)]
     pub throughput: std::option::Option<i32>,
 }
@@ -58,7 +58,7 @@ impl EbsInstanceBlockDeviceSpecification {
     pub fn volume_type(&self) -> std::option::Option<&crate::types::EbsVolumeType> {
         self.volume_type.as_ref()
     }
-    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. </p>
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub fn throughput(&self) -> std::option::Option<i32> {
         self.throughput
     }
@@ -157,12 +157,12 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
         self.volume_type = input;
         self
     }
-    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. </p>
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = Some(input);
         self
     }
-    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. </p>
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
         self.throughput = input;
         self

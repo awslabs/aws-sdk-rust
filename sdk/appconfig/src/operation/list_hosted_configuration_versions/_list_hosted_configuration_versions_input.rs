@@ -15,6 +15,9 @@ pub struct ListHostedConfigurationVersionsInput {
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
+    #[doc(hidden)]
+    pub version_label: std::option::Option<std::string::String>,
 }
 impl ListHostedConfigurationVersionsInput {
     /// <p>The application ID.</p>
@@ -33,6 +36,10 @@ impl ListHostedConfigurationVersionsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
 }
 impl ListHostedConfigurationVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListHostedConfigurationVersionsInput`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsInput).
@@ -49,6 +56,7 @@ pub struct ListHostedConfigurationVersionsInputBuilder {
     pub(crate) configuration_profile_id: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) version_label: std::option::Option<std::string::String>,
 }
 impl ListHostedConfigurationVersionsInputBuilder {
     /// <p>The application ID.</p>
@@ -94,6 +102,16 @@ impl ListHostedConfigurationVersionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
+    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
+        self.version_label = Some(input.into());
+        self
+    }
+    /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
+    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.version_label = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListHostedConfigurationVersionsInput`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsInput).
     pub fn build(
         self,
@@ -110,6 +128,8 @@ impl ListHostedConfigurationVersionsInputBuilder {
                 max_results: self.max_results
                 ,
                 next_token: self.next_token
+                ,
+                version_label: self.version_label
                 ,
             }
         )

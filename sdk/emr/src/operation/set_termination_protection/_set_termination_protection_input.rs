@@ -9,7 +9,7 @@ pub struct SetTerminationProtectionInput {
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     #[doc(hidden)]
-    pub termination_protected: bool,
+    pub termination_protected: std::option::Option<bool>,
 }
 impl SetTerminationProtectionInput {
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
@@ -17,7 +17,7 @@ impl SetTerminationProtectionInput {
         self.job_flow_ids.as_deref()
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
-    pub fn termination_protected(&self) -> bool {
+    pub fn termination_protected(&self) -> std::option::Option<bool> {
         self.termination_protected
     }
 }
@@ -77,7 +77,7 @@ impl SetTerminationProtectionInputBuilder {
         Ok(
             crate::operation::set_termination_protection::SetTerminationProtectionInput {
                 job_flow_ids: self.job_flow_ids,
-                termination_protected: self.termination_protected.unwrap_or_default(),
+                termination_protected: self.termination_protected,
             },
         )
     }

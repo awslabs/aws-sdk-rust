@@ -5,7 +5,7 @@ pub use crate::operation::update_namespace::_update_namespace_input::UpdateNames
 
 /// Fluent builder constructing a request to `UpdateNamespace`.
 ///
-/// <p>Updates a namespace with the specified settings.</p>
+/// <p>Updates a namespace with the specified settings. Unless required, you can't update multiple parameters in one request. For example, you must specify both <code>adminUsername</code> and <code>adminUserPassword</code> to update either field, but you can't update both <code>kmsKeyId</code> and <code>logExports</code> in a single request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateNamespaceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,22 +65,22 @@ impl UpdateNamespaceFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The name of the namespace.</p>
+    /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
     pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
-    /// <p>The name of the namespace.</p>
+    /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
     pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
-    /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     pub fn admin_user_password(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.admin_user_password(input.into());
         self
     }
-    /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     pub fn set_admin_user_password(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -88,12 +88,12 @@ impl UpdateNamespaceFluentBuilder {
         self.inner = self.inner.set_admin_user_password(input);
         self
     }
-    /// <p>The username of the administrator for the first database created in the namespace.</p>
+    /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
     pub fn admin_username(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.admin_username(input.into());
         self
     }
-    /// <p>The username of the administrator for the first database created in the namespace.</p>
+    /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
     pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_admin_username(input);
         self
@@ -108,12 +108,12 @@ impl UpdateNamespaceFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
     pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.default_iam_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
     pub fn set_default_iam_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -125,12 +125,12 @@ impl UpdateNamespaceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
     ///
-    /// <p>A list of IAM roles to associate with the namespace.</p>
+    /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
     pub fn iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.iam_roles(input.into());
         self
     }
-    /// <p>A list of IAM roles to associate with the namespace.</p>
+    /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
     pub fn set_iam_roles(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

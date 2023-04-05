@@ -90,6 +90,23 @@ pub fn de_register_organization_delegated_admin_http_error(response: &http::Resp
                                                     }
             tmp
         }),
+        "ConflictException" => crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "DelegatedAdminAccountLimitExceededException" => crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::DelegatedAdminAccountLimitExceededException({
             #[allow(unused_mut)]
             let mut tmp =

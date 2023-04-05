@@ -5,6 +5,7 @@ pub use crate::operation::update_global_settings::_update_global_settings_input:
 
 /// Fluent builder constructing a request to `UpdateGlobalSettings`.
 ///
+/// <p>Updates global settings for the Amazon Chime SDK Voice Connectors in an AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl UpdateGlobalSettingsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector settings.</p>
     pub fn voice_connector(mut self, input: crate::types::VoiceConnectorSettings) -> Self {
         self.inner = self.inner.voice_connector(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector settings.</p>
     pub fn set_voice_connector(
         mut self,
         input: std::option::Option<crate::types::VoiceConnectorSettings>,

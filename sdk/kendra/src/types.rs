@@ -29,6 +29,14 @@ pub use crate::types::_order::Order;
 
 pub use crate::types::_document_attribute_value_type::DocumentAttributeValueType;
 
+pub use crate::types::_conflicting_item::ConflictingItem;
+
+pub use crate::types::_featured_results_set::FeaturedResultsSet;
+
+pub use crate::types::_featured_document::FeaturedDocument;
+
+pub use crate::types::_featured_results_set_status::FeaturedResultsSetStatus;
+
 pub use crate::types::_experience_configuration::ExperienceConfiguration;
 
 pub use crate::types::_user_identity_configuration::UserIdentityConfiguration;
@@ -213,6 +221,24 @@ pub use crate::types::_relevance_type::RelevanceType;
 
 pub use crate::types::_click_feedback::ClickFeedback;
 
+pub use crate::types::_featured_results_item::FeaturedResultsItem;
+
+pub use crate::types::_document_attribute::DocumentAttribute;
+
+pub use crate::types::_text_with_highlights::TextWithHighlights;
+
+pub use crate::types::_highlight::Highlight;
+
+pub use crate::types::_highlight_type::HighlightType;
+
+pub use crate::types::_additional_result_attribute::AdditionalResultAttribute;
+
+pub use crate::types::_additional_result_attribute_value::AdditionalResultAttributeValue;
+
+pub use crate::types::_additional_result_attribute_value_type::AdditionalResultAttributeValueType;
+
+pub use crate::types::_query_result_type::QueryResultType;
+
 pub use crate::types::_spell_corrected_query::SpellCorrectedQuery;
 
 pub use crate::types::_correction::Correction;
@@ -237,23 +263,7 @@ pub use crate::types::_score_attributes::ScoreAttributes;
 
 pub use crate::types::_score_confidence::ScoreConfidence;
 
-pub use crate::types::_document_attribute::DocumentAttribute;
-
-pub use crate::types::_text_with_highlights::TextWithHighlights;
-
-pub use crate::types::_highlight::Highlight;
-
-pub use crate::types::_highlight_type::HighlightType;
-
-pub use crate::types::_additional_result_attribute::AdditionalResultAttribute;
-
-pub use crate::types::_additional_result_attribute_value::AdditionalResultAttributeValue;
-
-pub use crate::types::_additional_result_attribute_value_type::AdditionalResultAttributeValueType;
-
 pub use crate::types::_query_result_format::QueryResultFormat;
-
-pub use crate::types::_query_result_type::QueryResultType;
 
 pub use crate::types::_spell_correction_configuration::SpellCorrectionConfiguration;
 
@@ -292,6 +302,8 @@ pub use crate::types::_index_status::IndexStatus;
 pub use crate::types::_index_edition::IndexEdition;
 
 pub use crate::types::_group_summary::GroupSummary;
+
+pub use crate::types::_featured_results_set_summary::FeaturedResultsSetSummary;
 
 pub use crate::types::_faq_summary::FaqSummary;
 
@@ -365,6 +377,10 @@ pub use crate::types::_faq_statistics::FaqStatistics;
 
 pub use crate::types::_server_side_encryption_configuration::ServerSideEncryptionConfiguration;
 
+pub use crate::types::_featured_document_missing::FeaturedDocumentMissing;
+
+pub use crate::types::_featured_document_with_metadata::FeaturedDocumentWithMetadata;
+
 pub use crate::types::_batch_put_document_response_failed_document::BatchPutDocumentResponseFailedDocument;
 
 pub use crate::types::_document::Document;
@@ -378,6 +394,8 @@ pub use crate::types::_document_status::DocumentStatus;
 pub use crate::types::_batch_get_document_status_response_error::BatchGetDocumentStatusResponseError;
 
 pub use crate::types::_document_info::DocumentInfo;
+
+pub use crate::types::_batch_delete_featured_results_set_error::BatchDeleteFeaturedResultsSetError;
 
 pub use crate::types::_batch_delete_document_response_failed_document::BatchDeleteDocumentResponseFailedDocument;
 
@@ -409,6 +427,8 @@ mod _basic_authentication_configuration;
 
 mod _batch_delete_document_response_failed_document;
 
+mod _batch_delete_featured_results_set_error;
+
 mod _batch_get_document_status_response_error;
 
 mod _batch_put_document_response_failed_document;
@@ -422,6 +442,8 @@ mod _click_feedback;
 mod _column_configuration;
 
 mod _condition_operator;
+
+mod _conflicting_item;
 
 mod _confluence_attachment_configuration;
 
@@ -548,6 +570,20 @@ mod _faq_statistics;
 mod _faq_status;
 
 mod _faq_summary;
+
+mod _featured_document;
+
+mod _featured_document_missing;
+
+mod _featured_document_with_metadata;
+
+mod _featured_results_item;
+
+mod _featured_results_set;
+
+mod _featured_results_set_status;
+
+mod _featured_results_set_summary;
 
 mod _fsx_configuration;
 

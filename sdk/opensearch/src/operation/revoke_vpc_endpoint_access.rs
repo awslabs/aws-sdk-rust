@@ -187,13 +187,13 @@ pub type RevokeVpcEndpointAccessErrorKind = RevokeVpcEndpointAccessError;
 pub enum RevokeVpcEndpointAccessError {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::types::error::BaseException),
-    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    /// <p>An error occured because the client wanted to access a not supported operation.</p>
     DisabledOperationException(crate::types::error::DisabledOperationException),
-    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),
-    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    /// <p>An exception for accessing or deleting a resource that does not exist..</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

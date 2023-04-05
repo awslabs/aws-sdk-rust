@@ -12,23 +12,32 @@ pub fn ser_create_app_instance_user_input(
     if let Some(var_3) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.metadata {
-        object.key("Metadata").string(var_4.as_str());
+    if let Some(var_4) = &input.expiration_settings {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ExpirationSettings").start_object();
+        crate::protocol_serde::shape_expiration_settings::ser_expiration_settings(
+            &mut object_5,
+            var_4,
+        )?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.name {
-        object.key("Name").string(var_5.as_str());
+    if let Some(var_6) = &input.metadata {
+        object.key("Metadata").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.tags {
-        let mut array_7 = object.key("Tags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.name {
+        object.key("Name").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.tags {
+        let mut array_9 = object.key("Tags").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
     Ok(())
 }

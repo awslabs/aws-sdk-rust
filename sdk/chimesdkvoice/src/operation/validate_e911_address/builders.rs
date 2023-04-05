@@ -5,6 +5,7 @@ pub use crate::operation::validate_e911_address::_validate_e911_address_input::V
 
 /// Fluent builder constructing a request to `ValidateE911Address`.
 ///
+/// <p>Validates an address to be used for 911 calls made with Amazon Chime SDK Voice Connectors. You can use validated addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps ensure that addresses are routed to the appropriate Public Safety Answering Point.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ValidateE911AddressFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -68,72 +69,72 @@ impl ValidateE911AddressFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS account ID.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS account ID.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
     pub fn street_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.street_number(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
     pub fn set_street_number(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_street_number(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
     pub fn street_info(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.street_info(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
     pub fn set_street_info(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_street_info(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address city, such as <code>Portland</code>.</p>
     pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.city(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address city, such as <code>Portland</code>.</p>
     pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_city(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address state, such as <code>ME</code>.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.state(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address state, such as <code>ME</code>.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country in the address being validated.</p>
     pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.country(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country in the address being validated.</p>
     pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_country(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The dress postal code, such <code>04352</code>.</p>
     pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.postal_code(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The dress postal code, such <code>04352</code>.</p>
     pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_postal_code(input);
         self

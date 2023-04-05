@@ -68,14 +68,14 @@ impl DescribeTrustedAdvisorCheckSummariesFluentBuilder {
     /// To override the contents of this collection use [`set_check_ids`](Self::set_check_ids).
     ///
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn check_ids(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inner = self.inner.check_ids(input.into());
+    pub fn check_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.check_ids(input);
         self
     }
     /// <p>The IDs of the Trusted Advisor checks.</p>
     pub fn set_check_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_check_ids(input);
         self

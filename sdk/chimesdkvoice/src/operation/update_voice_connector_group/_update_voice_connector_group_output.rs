@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroupOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated Voice Connector group.</p>
     #[doc(hidden)]
     pub voice_connector_group: std::option::Option<crate::types::VoiceConnectorGroup>,
     _request_id: Option<String>,
 }
 impl UpdateVoiceConnectorGroupOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated Voice Connector group.</p>
     pub fn voice_connector_group(&self) -> std::option::Option<&crate::types::VoiceConnectorGroup> {
         self.voice_connector_group.as_ref()
     }
@@ -34,12 +34,12 @@ pub struct UpdateVoiceConnectorGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateVoiceConnectorGroupOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated Voice Connector group.</p>
     pub fn voice_connector_group(mut self, input: crate::types::VoiceConnectorGroup) -> Self {
         self.voice_connector_group = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated Voice Connector group.</p>
     pub fn set_voice_connector_group(
         mut self,
         input: std::option::Option<crate::types::VoiceConnectorGroup>,

@@ -18,13 +18,13 @@ pub struct CreateFirewallInput {
     pub subnet_mappings: std::option::Option<std::vec::Vec<crate::types::SubnetMapping>>,
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     #[doc(hidden)]
-    pub delete_protection: bool,
+    pub delete_protection: std::option::Option<bool>,
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     #[doc(hidden)]
-    pub subnet_change_protection: bool,
+    pub subnet_change_protection: std::option::Option<bool>,
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     #[doc(hidden)]
-    pub firewall_policy_change_protection: bool,
+    pub firewall_policy_change_protection: std::option::Option<bool>,
     /// <p>A description of the firewall.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -54,15 +54,15 @@ impl CreateFirewallInput {
         self.subnet_mappings.as_deref()
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-    pub fn delete_protection(&self) -> bool {
+    pub fn delete_protection(&self) -> std::option::Option<bool> {
         self.delete_protection
     }
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    pub fn subnet_change_protection(&self) -> bool {
+    pub fn subnet_change_protection(&self) -> std::option::Option<bool> {
         self.subnet_change_protection
     }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    pub fn firewall_policy_change_protection(&self) -> bool {
+    pub fn firewall_policy_change_protection(&self) -> std::option::Option<bool> {
         self.firewall_policy_change_protection
     }
     /// <p>A description of the firewall.</p>
@@ -247,11 +247,9 @@ impl CreateFirewallInputBuilder {
             firewall_policy_arn: self.firewall_policy_arn,
             vpc_id: self.vpc_id,
             subnet_mappings: self.subnet_mappings,
-            delete_protection: self.delete_protection.unwrap_or_default(),
-            subnet_change_protection: self.subnet_change_protection.unwrap_or_default(),
-            firewall_policy_change_protection: self
-                .firewall_policy_change_protection
-                .unwrap_or_default(),
+            delete_protection: self.delete_protection,
+            subnet_change_protection: self.subnet_change_protection,
+            firewall_policy_change_protection: self.firewall_policy_change_protection,
             description: self.description,
             tags: self.tags,
             encryption_configuration: self.encryption_configuration,

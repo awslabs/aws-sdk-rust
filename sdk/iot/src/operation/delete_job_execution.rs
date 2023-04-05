@@ -112,15 +112,17 @@ impl DeleteJobExecutionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.force {
-                    query.push_kv(
-                        "force",
-                        aws_smithy_types::primitive::Encoder::from(_input.force).encode(),
-                    );
+                if let Some(inner_4) = &_input.force {
+                    if *inner_4 {
+                        query.push_kv(
+                            "force",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_4) = &_input.namespace_id {
+                if let Some(inner_5) = &_input.namespace_id {
                     {
-                        query.push_kv("namespaceId", &aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("namespaceId", &aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
                 Ok(())

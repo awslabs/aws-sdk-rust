@@ -7,5 +7,11 @@ pub mod describe_services;
 /// Types for the `GetAttributeValues` operation.
 pub mod get_attribute_values;
 
+/// Types for the `GetPriceListFileUrl` operation.
+pub mod get_price_list_file_url;
+
 /// Types for the `GetProducts` operation.
 pub mod get_products;
+
+/// Types for the `ListPriceLists` operation.
+pub mod list_price_lists;

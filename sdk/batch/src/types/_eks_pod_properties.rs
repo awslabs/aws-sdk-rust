@@ -20,6 +20,9 @@ pub struct EksPodProperties {
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
     #[doc(hidden)]
     pub volumes: std::option::Option<std::vec::Vec<crate::types::EksVolume>>,
+    /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub metadata: std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodProperties {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
@@ -43,6 +46,10 @@ impl EksPodProperties {
     pub fn volumes(&self) -> std::option::Option<&[crate::types::EksVolume]> {
         self.volumes.as_deref()
     }
+    /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::types::EksMetadata> {
+        self.metadata.as_ref()
+    }
 }
 impl EksPodProperties {
     /// Creates a new builder-style object to manufacture [`EksPodProperties`](crate::types::EksPodProperties).
@@ -60,6 +67,7 @@ pub struct EksPodPropertiesBuilder {
     pub(crate) dns_policy: std::option::Option<std::string::String>,
     pub(crate) containers: std::option::Option<std::vec::Vec<crate::types::EksContainer>>,
     pub(crate) volumes: std::option::Option<std::vec::Vec<crate::types::EksVolume>>,
+    pub(crate) metadata: std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodPropertiesBuilder {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
@@ -135,6 +143,16 @@ impl EksPodPropertiesBuilder {
         self.volumes = input;
         self
     }
+    /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn metadata(mut self, input: crate::types::EksMetadata) -> Self {
+        self.metadata = Some(input);
+        self
+    }
+    /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn set_metadata(mut self, input: std::option::Option<crate::types::EksMetadata>) -> Self {
+        self.metadata = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EksPodProperties`](crate::types::EksPodProperties).
     pub fn build(self) -> crate::types::EksPodProperties {
         crate::types::EksPodProperties {
@@ -143,6 +161,7 @@ impl EksPodPropertiesBuilder {
             dns_policy: self.dns_policy,
             containers: self.containers,
             volumes: self.volumes,
+            metadata: self.metadata,
         }
     }
 }

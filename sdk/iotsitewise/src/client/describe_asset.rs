@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`asset_id(impl Into<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::set_asset_id): <p>The ID of the asset.</p>
-    ///   - [`exclude_properties(bool)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::exclude_properties) / [`set_exclude_properties(bool)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::set_exclude_properties): <p> Whether or not to exclude asset properties from the response. </p>
+    ///   - [`exclude_properties(bool)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::exclude_properties) / [`set_exclude_properties(Option<bool>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::set_exclude_properties): <p> Whether or not to exclude asset properties from the response. </p>
     /// - On success, responds with [`DescribeAssetOutput`](crate::operation::describe_asset::DescribeAssetOutput) with field(s):
     ///   - [`asset_id(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::asset_id): <p>The ID of the asset.</p>
     ///   - [`asset_arn(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::asset_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>

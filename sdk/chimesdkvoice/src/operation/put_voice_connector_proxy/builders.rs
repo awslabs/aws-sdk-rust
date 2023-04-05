@@ -5,6 +5,7 @@ pub use crate::operation::put_voice_connector_proxy::_put_voice_connector_proxy_
 
 /// Fluent builder constructing a request to `PutVoiceConnectorProxy`.
 ///
+/// <p>Puts the specified proxy configuration to the specified Amazon Chime SDK Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVoiceConnectorProxyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +70,12 @@ impl PutVoiceConnectorProxyFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -82,12 +83,12 @@ impl PutVoiceConnectorProxyFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default number of minutes allowed for proxy session.</p>
     pub fn default_session_expiry_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.default_session_expiry_minutes(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default number of minutes allowed for proxy session.</p>
     pub fn set_default_session_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_default_session_expiry_minutes(input);
         self
@@ -96,12 +97,12 @@ impl PutVoiceConnectorProxyFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_phone_number_pool_countries`](Self::set_phone_number_pool_countries).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The countries for proxy phone numbers to be selected from.</p>
     pub fn phone_number_pool_countries(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.phone_number_pool_countries(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The countries for proxy phone numbers to be selected from.</p>
     pub fn set_phone_number_pool_countries(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -109,12 +110,12 @@ impl PutVoiceConnectorProxyFluentBuilder {
         self.inner = self.inner.set_phone_number_pool_countries(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number to route calls to after a proxy session expires.</p>
     pub fn fall_back_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.fall_back_phone_number(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number to route calls to after a proxy session expires.</p>
     pub fn set_fall_back_phone_number(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -122,12 +123,12 @@ impl PutVoiceConnectorProxyFluentBuilder {
         self.inner = self.inner.set_fall_back_phone_number(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.inner = self.inner.disabled(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disabled(input);
         self

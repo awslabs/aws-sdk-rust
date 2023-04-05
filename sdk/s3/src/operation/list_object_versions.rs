@@ -73,22 +73,24 @@ impl ListObjectVersionsInput {
                         query.push_kv("key-marker", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.max_keys != 0 {
-                    query.push_kv(
-                        "max-keys",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
-                    );
-                }
-                if let Some(inner_4) = &_input.prefix {
-                    {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_4));
+                if let Some(inner_4) = &_input.max_keys {
+                    if *inner_4 != 0 {
+                        query.push_kv(
+                            "max-keys",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
                     }
                 }
-                if let Some(inner_5) = &_input.version_id_marker {
+                if let Some(inner_5) = &_input.prefix {
+                    {
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
+                }
+                if let Some(inner_6) = &_input.version_id_marker {
                     {
                         query.push_kv(
                             "version-id-marker",
-                            &aws_smithy_http::query::fmt_string(&inner_5),
+                            &aws_smithy_http::query::fmt_string(&inner_6),
                         );
                     }
                 }

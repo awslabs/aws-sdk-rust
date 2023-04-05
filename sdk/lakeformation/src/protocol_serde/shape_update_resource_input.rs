@@ -9,5 +9,8 @@ pub fn ser_update_resource_input(
     if let Some(var_2) = &input.role_arn {
         object.key("RoleArn").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.with_federation {
+        object.key("WithFederation").boolean(*var_3);
+    }
     Ok(())
 }

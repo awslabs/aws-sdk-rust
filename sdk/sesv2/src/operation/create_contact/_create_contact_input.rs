@@ -14,7 +14,7 @@ pub struct CreateContactInput {
     pub topic_preferences: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     #[doc(hidden)]
-    pub unsubscribe_all: bool,
+    pub unsubscribe_all: std::option::Option<bool>,
     /// <p>The attribute data attached to a contact.</p>
     #[doc(hidden)]
     pub attributes_data: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ impl CreateContactInput {
         self.topic_preferences.as_deref()
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
-    pub fn unsubscribe_all(&self) -> bool {
+    pub fn unsubscribe_all(&self) -> std::option::Option<bool> {
         self.unsubscribe_all
     }
     /// <p>The attribute data attached to a contact.</p>
@@ -132,7 +132,7 @@ impl CreateContactInputBuilder {
             contact_list_name: self.contact_list_name,
             email_address: self.email_address,
             topic_preferences: self.topic_preferences,
-            unsubscribe_all: self.unsubscribe_all.unwrap_or_default(),
+            unsubscribe_all: self.unsubscribe_all,
             attributes_data: self.attributes_data,
         })
     }

@@ -6,7 +6,7 @@ pub struct DescribeRouteCalculatorOutput {
     /// <p>The name of the route calculator resource being described.</p>
     #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
@@ -54,7 +54,7 @@ impl DescribeRouteCalculatorOutput {
     pub fn calculator_name(&self) -> std::option::Option<&str> {
         self.calculator_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
@@ -145,7 +145,7 @@ impl DescribeRouteCalculatorOutputBuilder {
         self.calculator_name = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
@@ -153,7 +153,7 @@ impl DescribeRouteCalculatorOutputBuilder {
         self.calculator_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>

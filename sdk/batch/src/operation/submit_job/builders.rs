@@ -141,12 +141,14 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_depends_on(input);
         self
     }
-    /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active revision is used.</p>
+    /// <p>The job definition used by this job. This value can be one of <code>definition-name</code>, <code>definition-name:revision</code>, or the Amazon Resource Name (ARN) for the job definition, with or without the revision (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i> </code>, or <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i> </code>).</p>
+    /// <p>If the revision is not specified, then the latest active revision is used.</p>
     pub fn job_definition(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_definition(input.into());
         self
     }
-    /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active revision is used.</p>
+    /// <p>The job definition used by this job. This value can be one of <code>definition-name</code>, <code>definition-name:revision</code>, or the Amazon Resource Name (ARN) for the job definition, with or without the revision (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i> </code>, or <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i> </code>).</p>
+    /// <p>If the revision is not specified, then the latest active revision is used.</p>
     pub fn set_job_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_job_definition(input);
         self

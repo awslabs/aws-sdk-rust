@@ -6,6 +6,7 @@ pub use crate::operation::describe_organization_configuration::_describe_organiz
 /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
 ///
 /// <p>Returns information about the account selected as the delegated administrator for GuardDuty.</p>
+/// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -56,6 +57,12 @@ impl DescribeOrganizationConfigurationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator{
+        crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -64,6 +71,26 @@ impl DescribeOrganizationConfigurationFluentBuilder {
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
+        self
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_results(input);
+        self
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response.</p>
+    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_results(input);
+        self
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response to continue listing data.</p>
+    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.next_token(input.into());
+        self
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response to continue listing data.</p>
+    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_next_token(input);
         self
     }
 }

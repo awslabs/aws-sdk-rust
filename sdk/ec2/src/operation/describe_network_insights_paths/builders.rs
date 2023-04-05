@@ -99,7 +99,14 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>destination - The ID of the resource.</p> </li>
-    /// <li> <p>destination-port - The destination port.</p> </li>
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
     /// <li> <p>protocol - The protocol.</p> </li>
     /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>
@@ -110,7 +117,14 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>destination - The ID of the resource.</p> </li>
-    /// <li> <p>destination-port - The destination port.</p> </li>
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
     /// <li> <p>protocol - The protocol.</p> </li>
     /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>

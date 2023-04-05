@@ -6,43 +6,43 @@ pub fn ser_list_model_card_export_jobs_input(
     if let Some(var_1) = &input.model_card_name {
         object.key("ModelCardName").string(var_1.as_str());
     }
-    if input.model_card_version != 0 {
+    if let Some(var_2) = &input.model_card_version {
         object.key("ModelCardVersion").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.model_card_version).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.creation_time_after {
+    if let Some(var_3) = &input.creation_time_after {
         object
             .key("CreationTimeAfter")
-            .date_time(var_2, aws_smithy_types::date_time::Format::EpochSeconds)?;
-    }
-    if let Some(var_3) = &input.creation_time_before {
-        object
-            .key("CreationTimeBefore")
             .date_time(var_3, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.model_card_export_job_name_contains {
+    if let Some(var_4) = &input.creation_time_before {
+        object
+            .key("CreationTimeBefore")
+            .date_time(var_4, aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
+    if let Some(var_5) = &input.model_card_export_job_name_contains {
         object
             .key("ModelCardExportJobNameContains")
-            .string(var_4.as_str());
+            .string(var_5.as_str());
     }
-    if let Some(var_5) = &input.status_equals {
-        object.key("StatusEquals").string(var_5.as_str());
+    if let Some(var_6) = &input.status_equals {
+        object.key("StatusEquals").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.sort_by {
-        object.key("SortBy").string(var_6.as_str());
+    if let Some(var_7) = &input.sort_by {
+        object.key("SortBy").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.sort_order {
-        object.key("SortOrder").string(var_7.as_str());
+    if let Some(var_8) = &input.sort_order {
+        object.key("SortOrder").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.next_token {
-        object.key("NextToken").string(var_8.as_str());
+    if let Some(var_9) = &input.next_token {
+        object.key("NextToken").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.max_results {
+    if let Some(var_10) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_9).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
     Ok(())

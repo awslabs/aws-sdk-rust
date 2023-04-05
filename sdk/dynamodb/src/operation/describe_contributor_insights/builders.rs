@@ -5,7 +5,7 @@ pub use crate::operation::describe_contributor_insights::_describe_contributor_i
 
 /// Fluent builder constructing a request to `DescribeContributorInsights`.
 ///
-/// <p>Returns information about contributor insights, for a given table or global secondary index.</p>
+/// <p>Returns information about contributor insights for a given table or global secondary index.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeContributorInsightsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

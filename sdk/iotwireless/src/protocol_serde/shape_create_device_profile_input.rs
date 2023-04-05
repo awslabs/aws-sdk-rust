@@ -18,17 +18,23 @@ pub fn ser_create_device_profile_input(
     if let Some(var_4) = &input.name {
         object.key("Name").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.tags {
-        let mut array_6 = object.key("Tags").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.sidewalk {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Sidewalk").start_object();
+        crate::protocol_serde::shape_sidewalk_create_device_profile::ser_sidewalk_create_device_profile(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.tags {
+        let mut array_8 = object.key("Tags").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
     Ok(())
 }

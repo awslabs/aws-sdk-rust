@@ -17,6 +17,7 @@
 ///     OperationType::PauseService => { /* ... */ },
 ///     OperationType::ResumeService => { /* ... */ },
 ///     OperationType::StartDeployment => { /* ... */ },
+///     OperationType::UpdateService => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -60,6 +61,8 @@ pub enum OperationType {
     ResumeService,
     #[allow(missing_docs)] // documentation missing in model
     StartDeployment,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateService,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -71,6 +74,7 @@ impl std::convert::From<&str> for OperationType {
             "PAUSE_SERVICE" => OperationType::PauseService,
             "RESUME_SERVICE" => OperationType::ResumeService,
             "START_DEPLOYMENT" => OperationType::StartDeployment,
+            "UPDATE_SERVICE" => OperationType::UpdateService,
             other => {
                 OperationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -93,6 +97,7 @@ impl OperationType {
             OperationType::PauseService => "PAUSE_SERVICE",
             OperationType::ResumeService => "RESUME_SERVICE",
             OperationType::StartDeployment => "START_DEPLOYMENT",
+            OperationType::UpdateService => "UPDATE_SERVICE",
             OperationType::Unknown(value) => value.as_str(),
         }
     }
@@ -104,6 +109,7 @@ impl OperationType {
             "PAUSE_SERVICE",
             "RESUME_SERVICE",
             "START_DEPLOYMENT",
+            "UPDATE_SERVICE",
         ]
     }
 }

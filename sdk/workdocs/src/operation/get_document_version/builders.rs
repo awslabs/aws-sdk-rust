@@ -69,12 +69,12 @@ impl GetDocumentVersionFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,

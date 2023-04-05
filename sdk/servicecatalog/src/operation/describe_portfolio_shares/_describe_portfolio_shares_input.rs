@@ -18,7 +18,7 @@ pub struct DescribePortfolioSharesInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: std::option::Option<i32>,
 }
 impl DescribePortfolioSharesInput {
     /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
@@ -38,7 +38,7 @@ impl DescribePortfolioSharesInput {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
 }
@@ -124,7 +124,7 @@ impl DescribePortfolioSharesInputBuilder {
                 portfolio_id: self.portfolio_id,
                 r#type: self.r#type,
                 page_token: self.page_token,
-                page_size: self.page_size.unwrap_or_default(),
+                page_size: self.page_size,
             },
         )
     }

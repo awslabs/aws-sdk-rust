@@ -10,7 +10,7 @@ pub struct TransitGatewayRouteTableAttachment {
     /// <p>The ID of the peering attachment.</p>
     #[doc(hidden)]
     pub peering_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the transit gateway attachment route table.</p>
+    /// <p>The ARN of the transit gateway attachment route table. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     #[doc(hidden)]
     pub transit_gateway_route_table_arn: std::option::Option<std::string::String>,
 }
@@ -23,7 +23,7 @@ impl TransitGatewayRouteTableAttachment {
     pub fn peering_id(&self) -> std::option::Option<&str> {
         self.peering_id.as_deref()
     }
-    /// <p>The ARN of the transit gateway attachment route table.</p>
+    /// <p>The ARN of the transit gateway attachment route table. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn transit_gateway_route_table_arn(&self) -> std::option::Option<&str> {
         self.transit_gateway_route_table_arn.as_deref()
     }
@@ -64,7 +64,7 @@ impl TransitGatewayRouteTableAttachmentBuilder {
         self.peering_id = input;
         self
     }
-    /// <p>The ARN of the transit gateway attachment route table.</p>
+    /// <p>The ARN of the transit gateway attachment route table. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn transit_gateway_route_table_arn(
         mut self,
         input: impl Into<std::string::String>,
@@ -72,7 +72,7 @@ impl TransitGatewayRouteTableAttachmentBuilder {
         self.transit_gateway_route_table_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the transit gateway attachment route table.</p>
+    /// <p>The ARN of the transit gateway attachment route table. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn set_transit_gateway_route_table_arn(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -17,13 +17,13 @@ pub struct GetDashboardEmbedUrlInput {
     pub session_lifetime_in_minutes: std::option::Option<i64>,
     /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
     #[doc(hidden)]
-    pub undo_redo_disabled: bool,
+    pub undo_redo_disabled: std::option::Option<bool>,
     /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
     #[doc(hidden)]
-    pub reset_disabled: bool,
+    pub reset_disabled: std::option::Option<bool>,
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     #[doc(hidden)]
-    pub state_persistence_enabled: bool,
+    pub state_persistence_enabled: std::option::Option<bool>,
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li> <p>Active Directory (AD) users or group members</p> </li>
@@ -58,15 +58,15 @@ impl GetDashboardEmbedUrlInput {
         self.session_lifetime_in_minutes
     }
     /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
-    pub fn undo_redo_disabled(&self) -> bool {
+    pub fn undo_redo_disabled(&self) -> std::option::Option<bool> {
         self.undo_redo_disabled
     }
     /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
-    pub fn reset_disabled(&self) -> bool {
+    pub fn reset_disabled(&self) -> std::option::Option<bool> {
         self.reset_disabled
     }
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
-    pub fn state_persistence_enabled(&self) -> bool {
+    pub fn state_persistence_enabled(&self) -> std::option::Option<bool> {
         self.state_persistence_enabled
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
@@ -249,9 +249,9 @@ impl GetDashboardEmbedUrlInputBuilder {
                 dashboard_id: self.dashboard_id,
                 identity_type: self.identity_type,
                 session_lifetime_in_minutes: self.session_lifetime_in_minutes,
-                undo_redo_disabled: self.undo_redo_disabled.unwrap_or_default(),
-                reset_disabled: self.reset_disabled.unwrap_or_default(),
-                state_persistence_enabled: self.state_persistence_enabled.unwrap_or_default(),
+                undo_redo_disabled: self.undo_redo_disabled,
+                reset_disabled: self.reset_disabled,
+                state_persistence_enabled: self.state_persistence_enabled,
                 user_arn: self.user_arn,
                 namespace: self.namespace,
                 additional_dashboard_ids: self.additional_dashboard_ids,

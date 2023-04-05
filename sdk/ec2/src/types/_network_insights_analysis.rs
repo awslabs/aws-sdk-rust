@@ -16,7 +16,7 @@ pub struct NetworkInsightsAnalysis {
     /// <p>The member accounts that contain resources that the path can traverse.</p>
     #[doc(hidden)]
     pub additional_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.</p>
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
     #[doc(hidden)]
     pub filter_in_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time the analysis started.</p>
@@ -70,7 +70,7 @@ impl NetworkInsightsAnalysis {
     pub fn additional_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_accounts.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.</p>
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
     pub fn filter_in_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.filter_in_arns.as_deref()
     }
@@ -213,14 +213,14 @@ impl NetworkInsightsAnalysisBuilder {
     ///
     /// To override the contents of this collection use [`set_filter_in_arns`](Self::set_filter_in_arns).
     ///
-    /// <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.</p>
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
     pub fn filter_in_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.filter_in_arns.unwrap_or_default();
         v.push(input.into());
         self.filter_in_arns = Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.</p>
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
     pub fn set_filter_in_arns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

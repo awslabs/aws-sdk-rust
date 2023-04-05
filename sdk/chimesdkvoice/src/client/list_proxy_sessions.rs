@@ -4,13 +4,13 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_voice_connector_id): (undocumented)
-    ///   - [`status(ProxySessionStatus)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::status) / [`set_status(Option<ProxySessionStatus>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_status): (undocumented)
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_next_token): (undocumented)
-    ///   - [`max_results(i32)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_max_results): (undocumented)
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
+    ///   - [`status(ProxySessionStatus)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::status) / [`set_status(Option<ProxySessionStatus>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_status): <p>The proxy session status.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_next_token): <p>The token used to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_max_results): <p>The maximum number of results to return in a single call.</p>
     /// - On success, responds with [`ListProxySessionsOutput`](crate::operation::list_proxy_sessions::ListProxySessionsOutput) with field(s):
-    ///   - [`proxy_sessions(Option<Vec<ProxySession>>)`](crate::operation::list_proxy_sessions::ListProxySessionsOutput::proxy_sessions): (undocumented)
-    ///   - [`next_token(Option<String>)`](crate::operation::list_proxy_sessions::ListProxySessionsOutput::next_token): (undocumented)
+    ///   - [`proxy_sessions(Option<Vec<ProxySession>>)`](crate::operation::list_proxy_sessions::ListProxySessionsOutput::proxy_sessions): <p>The proxy sessions' details.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_proxy_sessions::ListProxySessionsOutput::next_token): <p>The token used to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListProxySessionsError>`](crate::operation::list_proxy_sessions::ListProxySessionsError)
     pub fn list_proxy_sessions(
         &self,

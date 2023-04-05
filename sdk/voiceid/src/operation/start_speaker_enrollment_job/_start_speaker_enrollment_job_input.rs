@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSpeakerEnrollmentJobInput {
-    /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A name for your speaker enrollment job.</p>
@@ -26,7 +26,7 @@ pub struct StartSpeakerEnrollmentJobInput {
     pub output_data_config: std::option::Option<crate::types::OutputDataConfig>,
 }
 impl StartSpeakerEnrollmentJobInput {
-    /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -88,12 +88,12 @@ pub struct StartSpeakerEnrollmentJobInputBuilder {
     pub(crate) output_data_config: std::option::Option<crate::types::OutputDataConfig>,
 }
 impl StartSpeakerEnrollmentJobInputBuilder {
-    /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.client_token = input;
         self

@@ -48,5 +48,8 @@ pub fn ser_create_resolver_endpoint_input(
         }
         array_12.finish();
     }
+    if let Some(var_15) = &input.resolver_endpoint_type {
+        object.key("ResolverEndpointType").string(var_15.as_str());
+    }
     Ok(())
 }

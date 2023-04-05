@@ -268,6 +268,8 @@ mod delete_channel_message;
 
 mod delete_channel_moderator;
 
+mod delete_messaging_streaming_configurations;
+
 mod describe_channel;
 
 mod describe_channel_ban;
@@ -292,6 +294,8 @@ mod get_channel_message_status;
 
 mod get_messaging_session_endpoint;
 
+mod get_messaging_streaming_configurations;
+
 mod list_channel_bans;
 
 mod list_channel_flows;
@@ -314,7 +318,11 @@ mod list_sub_channels;
 
 mod list_tags_for_resource;
 
+mod put_channel_expiration_settings;
+
 mod put_channel_membership_preferences;
+
+mod put_messaging_streaming_configurations;
 
 mod redact_channel_message;
 

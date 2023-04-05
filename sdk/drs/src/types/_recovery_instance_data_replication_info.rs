@@ -27,6 +27,9 @@ pub struct RecoveryInstanceDataReplicationInfo {
     #[doc(hidden)]
     pub data_replication_error:
         std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
+    /// <p>AWS Availability zone into which data is being replicated.</p>
+    #[doc(hidden)]
+    pub staging_availability_zone: std::option::Option<std::string::String>,
 }
 impl RecoveryInstanceDataReplicationInfo {
     /// <p>Data replication lag duration.</p>
@@ -62,6 +65,10 @@ impl RecoveryInstanceDataReplicationInfo {
     ) -> std::option::Option<&crate::types::RecoveryInstanceDataReplicationError> {
         self.data_replication_error.as_ref()
     }
+    /// <p>AWS Availability zone into which data is being replicated.</p>
+    pub fn staging_availability_zone(&self) -> std::option::Option<&str> {
+        self.staging_availability_zone.as_deref()
+    }
 }
 impl RecoveryInstanceDataReplicationInfo {
     /// Creates a new builder-style object to manufacture [`RecoveryInstanceDataReplicationInfo`](crate::types::RecoveryInstanceDataReplicationInfo).
@@ -85,6 +92,7 @@ pub struct RecoveryInstanceDataReplicationInfoBuilder {
         std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiation>,
     pub(crate) data_replication_error:
         std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
+    pub(crate) staging_availability_zone: std::option::Option<std::string::String>,
 }
 impl RecoveryInstanceDataReplicationInfoBuilder {
     /// <p>Data replication lag duration.</p>
@@ -179,6 +187,19 @@ impl RecoveryInstanceDataReplicationInfoBuilder {
         self.data_replication_error = input;
         self
     }
+    /// <p>AWS Availability zone into which data is being replicated.</p>
+    pub fn staging_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+        self.staging_availability_zone = Some(input.into());
+        self
+    }
+    /// <p>AWS Availability zone into which data is being replicated.</p>
+    pub fn set_staging_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.staging_availability_zone = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecoveryInstanceDataReplicationInfo`](crate::types::RecoveryInstanceDataReplicationInfo).
     pub fn build(self) -> crate::types::RecoveryInstanceDataReplicationInfo {
         crate::types::RecoveryInstanceDataReplicationInfo {
@@ -188,6 +209,7 @@ impl RecoveryInstanceDataReplicationInfoBuilder {
             data_replication_state: self.data_replication_state,
             data_replication_initiation: self.data_replication_initiation,
             data_replication_error: self.data_replication_error,
+            staging_availability_zone: self.staging_availability_zone,
         }
     }
 }

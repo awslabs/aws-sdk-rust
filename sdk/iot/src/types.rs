@@ -481,11 +481,15 @@ pub use crate::types::_role_alias_description::RoleAliasDescription;
 
 pub use crate::types::_document_parameter::DocumentParameter;
 
+pub use crate::types::_maintenance_window::MaintenanceWindow;
+
 pub use crate::types::_job_execution::JobExecution;
 
 pub use crate::types::_job_execution_status_details::JobExecutionStatusDetails;
 
 pub use crate::types::_job::Job;
+
+pub use crate::types::_scheduled_job_rollout::ScheduledJobRollout;
 
 pub use crate::types::_scheduling_config::SchedulingConfig;
 
@@ -849,6 +853,8 @@ mod _logging_options_payload;
 
 mod _machine_learning_detection_config;
 
+mod _maintenance_window;
+
 mod _managed_job_template_summary;
 
 mod _message_format;
@@ -948,6 +954,8 @@ mod _s3_location;
 mod _salesforce_action;
 
 mod _scheduled_audit_metadata;
+
+mod _scheduled_job_rollout;
 
 mod _scheduling_config;
 

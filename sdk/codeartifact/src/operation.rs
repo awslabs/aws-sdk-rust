@@ -19,6 +19,9 @@ pub mod delete_domain;
 /// Types for the `DeleteDomainPermissionsPolicy` operation.
 pub mod delete_domain_permissions_policy;
 
+/// Types for the `DeletePackage` operation.
+pub mod delete_package;
+
 /// Types for the `DeletePackageVersions` operation.
 pub mod delete_package_versions;
 
@@ -87,6 +90,9 @@ pub mod list_repositories_in_domain;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PublishPackageVersion` operation.
+pub mod publish_package_version;
 
 /// Types for the `PutDomainPermissionsPolicy` operation.
 pub mod put_domain_permissions_policy;

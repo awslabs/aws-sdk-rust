@@ -12,7 +12,7 @@ pub struct CreateExportOutput {
     /// <p>The file format used for the bot or bot locale definition files.</p>
     #[doc(hidden)]
     pub file_format: std::option::Option<crate::types::ImportExportFileFormat>,
-    /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
+    /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
     #[doc(hidden)]
     pub export_status: std::option::Option<crate::types::ExportStatus>,
     /// <p>The date and time that the request to export a bot was created.</p>
@@ -35,7 +35,7 @@ impl CreateExportOutput {
     pub fn file_format(&self) -> std::option::Option<&crate::types::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
-    /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
+    /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
     pub fn export_status(&self) -> std::option::Option<&crate::types::ExportStatus> {
         self.export_status.as_ref()
     }
@@ -108,12 +108,12 @@ impl CreateExportOutputBuilder {
         self.file_format = input;
         self
     }
-    /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
+    /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
         self.export_status = Some(input);
         self
     }
-    /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
+    /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
     pub fn set_export_status(
         mut self,
         input: std::option::Option<crate::types::ExportStatus>,

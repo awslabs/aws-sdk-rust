@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAccountAuditConfiguration`](crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delete_scheduled_audits(bool)`](crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder::delete_scheduled_audits) / [`set_delete_scheduled_audits(bool)`](crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder::set_delete_scheduled_audits): <p>If true, all scheduled audits are deleted.</p>
+    ///   - [`delete_scheduled_audits(bool)`](crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder::delete_scheduled_audits) / [`set_delete_scheduled_audits(Option<bool>)`](crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder::set_delete_scheduled_audits): <p>If true, all scheduled audits are deleted.</p>
     /// - On success, responds with [`DeleteAccountAuditConfigurationOutput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteAccountAuditConfigurationError>`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationError)
     pub fn delete_account_audit_configuration(&self) -> crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder{

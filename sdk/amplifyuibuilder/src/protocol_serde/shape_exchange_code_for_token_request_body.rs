@@ -9,5 +9,8 @@ pub fn ser_exchange_code_for_token_request_body(
     if let Some(var_2) = &input.redirect_uri {
         object.key("redirectUri").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.client_id {
+        object.key("clientId").string(var_3.as_str());
+    }
     Ok(())
 }

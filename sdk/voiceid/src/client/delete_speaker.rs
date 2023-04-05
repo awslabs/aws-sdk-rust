@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSpeaker`](crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::set_domain_id): <p>The identifier of the domain containing the speaker.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::set_domain_id): <p>The identifier of the domain that contains the speaker.</p>
     ///   - [`speaker_id(impl Into<String>)`](crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::speaker_id) / [`set_speaker_id(Option<String>)`](crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::set_speaker_id): <p>The identifier of the speaker you want to delete.</p>
     /// - On success, responds with [`DeleteSpeakerOutput`](crate::operation::delete_speaker::DeleteSpeakerOutput)
     /// - On failure, responds with [`SdkError<DeleteSpeakerError>`](crate::operation::delete_speaker::DeleteSpeakerError)

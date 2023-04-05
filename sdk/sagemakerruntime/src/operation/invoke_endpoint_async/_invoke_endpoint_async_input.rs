@@ -23,9 +23,12 @@ pub struct InvokeEndpointAsyncInput {
     /// <p>The Amazon S3 URI where the inference request payload is stored.</p>
     #[doc(hidden)]
     pub input_location: std::option::Option<std::string::String>,
-    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
+    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     #[doc(hidden)]
     pub request_ttl_seconds: std::option::Option<i32>,
+    /// <p>Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15 minutes, or 900 seconds.</p>
+    #[doc(hidden)]
+    pub invocation_timeout_seconds: std::option::Option<i32>,
 }
 impl InvokeEndpointAsyncInput {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html"> <code>CreateEndpoint</code> </a> API.</p>
@@ -54,9 +57,13 @@ impl InvokeEndpointAsyncInput {
     pub fn input_location(&self) -> std::option::Option<&str> {
         self.input_location.as_deref()
     }
-    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
+    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     pub fn request_ttl_seconds(&self) -> std::option::Option<i32> {
         self.request_ttl_seconds
+    }
+    /// <p>Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15 minutes, or 900 seconds.</p>
+    pub fn invocation_timeout_seconds(&self) -> std::option::Option<i32> {
+        self.invocation_timeout_seconds
     }
 }
 impl std::fmt::Debug for InvokeEndpointAsyncInput {
@@ -69,6 +76,10 @@ impl std::fmt::Debug for InvokeEndpointAsyncInput {
         formatter.field("inference_id", &self.inference_id);
         formatter.field("input_location", &self.input_location);
         formatter.field("request_ttl_seconds", &self.request_ttl_seconds);
+        formatter.field(
+            "invocation_timeout_seconds",
+            &self.invocation_timeout_seconds,
+        );
         formatter.finish()
     }
 }
@@ -92,6 +103,7 @@ pub struct InvokeEndpointAsyncInputBuilder {
     pub(crate) inference_id: std::option::Option<std::string::String>,
     pub(crate) input_location: std::option::Option<std::string::String>,
     pub(crate) request_ttl_seconds: std::option::Option<i32>,
+    pub(crate) invocation_timeout_seconds: std::option::Option<i32>,
 }
 impl InvokeEndpointAsyncInputBuilder {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html"> <code>CreateEndpoint</code> </a> API.</p>
@@ -161,14 +173,24 @@ impl InvokeEndpointAsyncInputBuilder {
         self.input_location = input;
         self
     }
-    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
+    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     pub fn request_ttl_seconds(mut self, input: i32) -> Self {
         self.request_ttl_seconds = Some(input);
         self
     }
-    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
+    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     pub fn set_request_ttl_seconds(mut self, input: std::option::Option<i32>) -> Self {
         self.request_ttl_seconds = input;
+        self
+    }
+    /// <p>Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15 minutes, or 900 seconds.</p>
+    pub fn invocation_timeout_seconds(mut self, input: i32) -> Self {
+        self.invocation_timeout_seconds = Some(input);
+        self
+    }
+    /// <p>Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15 minutes, or 900 seconds.</p>
+    pub fn set_invocation_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+        self.invocation_timeout_seconds = input;
         self
     }
     /// Consumes the builder and constructs a [`InvokeEndpointAsyncInput`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput).
@@ -187,6 +209,7 @@ impl InvokeEndpointAsyncInputBuilder {
                 inference_id: self.inference_id,
                 input_location: self.input_location,
                 request_ttl_seconds: self.request_ttl_seconds,
+                invocation_timeout_seconds: self.invocation_timeout_seconds,
             },
         )
     }
@@ -201,6 +224,10 @@ impl std::fmt::Debug for InvokeEndpointAsyncInputBuilder {
         formatter.field("inference_id", &self.inference_id);
         formatter.field("input_location", &self.input_location);
         formatter.field("request_ttl_seconds", &self.request_ttl_seconds);
+        formatter.field(
+            "invocation_timeout_seconds",
+            &self.invocation_timeout_seconds,
+        );
         formatter.finish()
     }
 }

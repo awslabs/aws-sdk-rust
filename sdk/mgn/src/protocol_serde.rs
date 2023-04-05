@@ -68,6 +68,14 @@ pub(crate) mod shape_initialize_service;
 
 pub(crate) mod shape_list_applications;
 
+pub(crate) mod shape_list_export_errors;
+
+pub(crate) mod shape_list_exports;
+
+pub(crate) mod shape_list_import_errors;
+
+pub(crate) mod shape_list_imports;
+
 pub(crate) mod shape_list_source_server_actions;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -89,6 +97,10 @@ pub(crate) mod shape_remove_template_action;
 pub(crate) mod shape_retry_data_replication;
 
 pub(crate) mod shape_start_cutover;
+
+pub(crate) mod shape_start_export;
+
+pub(crate) mod shape_start_import;
 
 pub(crate) mod shape_start_replication;
 
@@ -188,6 +200,14 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_applications_input;
 
+pub(crate) mod shape_list_export_errors_input;
+
+pub(crate) mod shape_list_exports_input;
+
+pub(crate) mod shape_list_import_errors_input;
+
+pub(crate) mod shape_list_imports_input;
+
 pub(crate) mod shape_list_source_server_actions_input;
 
 pub(crate) mod shape_list_template_actions_input;
@@ -211,6 +231,10 @@ pub(crate) mod shape_retry_data_replication_input;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_cutover_input;
+
+pub(crate) mod shape_start_export_input;
+
+pub(crate) mod shape_start_import_input;
 
 pub(crate) mod shape_start_replication_input;
 
@@ -258,6 +282,18 @@ pub(crate) mod shape_describe_jobs_request_filters;
 
 pub(crate) mod shape_describe_source_servers_request_filters;
 
+pub(crate) mod shape_export_errors;
+
+pub(crate) mod shape_export_task;
+
+pub(crate) mod shape_exports_list;
+
+pub(crate) mod shape_import_errors;
+
+pub(crate) mod shape_import_list;
+
+pub(crate) mod shape_import_task;
+
 pub(crate) mod shape_job;
 
 pub(crate) mod shape_job_logs;
@@ -276,6 +312,10 @@ pub(crate) mod shape_life_cycle;
 
 pub(crate) mod shape_list_applications_request_filters;
 
+pub(crate) mod shape_list_exports_request_filters;
+
+pub(crate) mod shape_list_imports_request_filters;
+
 pub(crate) mod shape_list_waves_request_filters;
 
 pub(crate) mod shape_post_launch_actions;
@@ -288,6 +328,8 @@ pub(crate) mod shape_replication_configuration_templates;
 
 pub(crate) mod shape_replication_servers_security_groups_i_ds;
 
+pub(crate) mod shape_s3_bucket_source;
+
 pub(crate) mod shape_source_properties;
 
 pub(crate) mod shape_source_server_action_documents;
@@ -296,7 +338,11 @@ pub(crate) mod shape_source_server_actions_request_filters;
 
 pub(crate) mod shape_source_servers_list;
 
+pub(crate) mod shape_ssm_document_external_parameters;
+
 pub(crate) mod shape_ssm_document_parameters;
+
+pub(crate) mod shape_ssm_external_parameter;
 
 pub(crate) mod shape_ssm_parameter_store_parameter;
 
@@ -328,7 +374,15 @@ pub(crate) mod shape_disks;
 
 pub(crate) mod shape_error_details;
 
+pub(crate) mod shape_export_task_error;
+
+pub(crate) mod shape_export_task_summary;
+
 pub(crate) mod shape_identification_hints;
+
+pub(crate) mod shape_import_task_error;
+
+pub(crate) mod shape_import_task_summary;
 
 pub(crate) mod shape_job_log;
 
@@ -371,6 +425,16 @@ pub(crate) mod shape_data_replication_info_replicated_disk;
 pub(crate) mod shape_data_replication_initiation_steps;
 
 pub(crate) mod shape_disk;
+
+pub(crate) mod shape_export_error_data;
+
+pub(crate) mod shape_import_error_data;
+
+pub(crate) mod shape_import_task_summary_applications;
+
+pub(crate) mod shape_import_task_summary_servers;
+
+pub(crate) mod shape_import_task_summary_waves;
 
 pub(crate) mod shape_job_log_event_data;
 

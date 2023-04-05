@@ -13,6 +13,7 @@
 /// # let addontype = unimplemented!();
 /// match addontype {
 ///     AddOnType::AutoSnapshot => { /* ... */ },
+///     AddOnType::StopInstanceOnIdle => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@
 pub enum AddOnType {
     #[allow(missing_docs)] // documentation missing in model
     AutoSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
+    StopInstanceOnIdle,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +58,7 @@ impl std::convert::From<&str> for AddOnType {
     fn from(s: &str) -> Self {
         match s {
             "AutoSnapshot" => AddOnType::AutoSnapshot,
+            "StopInstanceOnIdle" => AddOnType::StopInstanceOnIdle,
             other => AddOnType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl AddOnType {
     pub fn as_str(&self) -> &str {
         match self {
             AddOnType::AutoSnapshot => "AutoSnapshot",
+            AddOnType::StopInstanceOnIdle => "StopInstanceOnIdle",
             AddOnType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AutoSnapshot"]
+        &["AutoSnapshot", "StopInstanceOnIdle"]
     }
 }
 impl AsRef<str> for AddOnType {

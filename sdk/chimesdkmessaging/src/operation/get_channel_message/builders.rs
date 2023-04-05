@@ -6,7 +6,7 @@ pub use crate::operation::get_channel_message::_get_channel_message_input::GetCh
 /// Fluent builder constructing a request to `GetChannelMessage`.
 ///
 /// <p>Gets the full details of a channel message.</p> <note>
-/// <p>The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetChannelMessageFluentBuilder {
@@ -91,12 +91,12 @@ impl GetChannelMessageFluentBuilder {
         self.inner = self.inner.set_message_id(input);
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self

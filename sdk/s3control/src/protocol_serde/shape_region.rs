@@ -9,6 +9,10 @@ pub fn ser_region(
         let mut inner_writer = scope.start_el("Bucket").finish();
         inner_writer.data(var_1.as_str());
     }
+    if let Some(var_2) = &input.bucket_account_id {
+        let mut inner_writer = scope.start_el("BucketAccountId").finish();
+        inner_writer.data(var_2.as_str());
+    }
     scope.finish();
     Ok(())
 }
@@ -21,7 +25,7 @@ pub fn de_region(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#Region$Bucket */ =>  {
-                let var_2 =
+                let var_3 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -30,7 +34,20 @@ pub fn de_region(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_2);
+                builder = builder.set_bucket(var_3);
+            }
+            ,
+            s if s.matches("BucketAccountId") /* BucketAccountId com.amazonaws.s3control#Region$BucketAccountId */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bucket_account_id(var_4);
             }
             ,
             _ => {}

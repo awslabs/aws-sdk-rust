@@ -55,4 +55,10 @@ pub use crate::types::error::_condition_check_failure_exception::ConditionCheckF
 
 pub use crate::types::error::_permission_type_mismatch_exception::PermissionTypeMismatchExceptionBuilder;
 
+pub use crate::types::error::_federation_source_retryable_exception::FederationSourceRetryableExceptionBuilder;
+
+pub use crate::types::error::_federation_source_exception::FederationSourceExceptionBuilder;
+
 pub use crate::types::error::_invalid_state_exception::InvalidStateExceptionBuilder;
+
+pub use crate::types::error::_federated_resource_already_exists_exception::FederatedResourceAlreadyExistsExceptionBuilder;

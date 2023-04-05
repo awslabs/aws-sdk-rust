@@ -56,6 +56,12 @@ pub fn ser_microsoft_sql_server_settings(
     if let Some(var_15) = &input.trim_space_in_char {
         object.key("TrimSpaceInChar").boolean(*var_15);
     }
+    if let Some(var_16) = &input.tlog_access_mode {
+        object.key("TlogAccessMode").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.force_lob_lookup {
+        object.key("ForceLobLookup").boolean(*var_17);
+    }
     Ok(())
 }
 
@@ -207,6 +213,25 @@ where
                             }
                             "TrimSpaceInChar" => {
                                 builder = builder.set_trim_space_in_char(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "TlogAccessMode" => {
+                                builder = builder.set_tlog_access_mode(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::TlogAccessMode::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "ForceLobLookup" => {
+                                builder = builder.set_force_lob_lookup(
                                     aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,

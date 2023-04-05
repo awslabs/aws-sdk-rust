@@ -292,11 +292,15 @@ mod delete_service_profile;
 
 mod delete_wireless_device;
 
+mod delete_wireless_device_import_task;
+
 mod delete_wireless_gateway;
 
 mod delete_wireless_gateway_task;
 
 mod delete_wireless_gateway_task_definition;
+
+mod deregister_wireless_device;
 
 mod disassociate_aws_account_from_partner_account;
 
@@ -348,6 +352,8 @@ mod get_service_profile;
 
 mod get_wireless_device;
 
+mod get_wireless_device_import_task;
+
 mod get_wireless_device_statistics;
 
 mod get_wireless_gateway;
@@ -365,6 +371,8 @@ mod get_wireless_gateway_task_definition;
 mod list_destinations;
 
 mod list_device_profiles;
+
+mod list_devices_for_wireless_device_import_task;
 
 mod list_event_configurations;
 
@@ -385,6 +393,8 @@ mod list_queued_messages;
 mod list_service_profiles;
 
 mod list_tags_for_resource;
+
+mod list_wireless_device_import_tasks;
 
 mod list_wireless_devices;
 
@@ -411,6 +421,10 @@ mod start_bulk_disassociate_wireless_device_from_multicast_group;
 mod start_fuota_task;
 
 mod start_multicast_group_session;
+
+mod start_single_wireless_device_import_task;
+
+mod start_wireless_device_import_task;
 
 mod tag_resource;
 
@@ -439,5 +453,7 @@ mod update_resource_event_configuration;
 mod update_resource_position;
 
 mod update_wireless_device;
+
+mod update_wireless_device_import_task;
 
 mod update_wireless_gateway;

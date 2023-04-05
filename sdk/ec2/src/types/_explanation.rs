@@ -164,6 +164,12 @@ pub struct Explanation {
     /// <p>The Region for the component.</p>
     #[doc(hidden)]
     pub component_region: std::option::Option<std::string::String>,
+    /// <p>The Network Firewall stateless rule.</p>
+    #[doc(hidden)]
+    pub firewall_stateless_rule: std::option::Option<crate::types::FirewallStatelessRule>,
+    /// <p>The Network Firewall stateful rule.</p>
+    #[doc(hidden)]
+    pub firewall_stateful_rule: std::option::Option<crate::types::FirewallStatefulRule>,
 }
 impl Explanation {
     /// <p>The network ACL.</p>
@@ -392,6 +398,18 @@ impl Explanation {
     pub fn component_region(&self) -> std::option::Option<&str> {
         self.component_region.as_deref()
     }
+    /// <p>The Network Firewall stateless rule.</p>
+    pub fn firewall_stateless_rule(
+        &self,
+    ) -> std::option::Option<&crate::types::FirewallStatelessRule> {
+        self.firewall_stateless_rule.as_ref()
+    }
+    /// <p>The Network Firewall stateful rule.</p>
+    pub fn firewall_stateful_rule(
+        &self,
+    ) -> std::option::Option<&crate::types::FirewallStatefulRule> {
+        self.firewall_stateful_rule.as_ref()
+    }
 }
 impl Explanation {
     /// Creates a new builder-style object to manufacture [`Explanation`](crate::types::Explanation).
@@ -458,6 +476,8 @@ pub struct ExplanationBuilder {
     pub(crate) transit_gateway_attachment: std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) component_account: std::option::Option<std::string::String>,
     pub(crate) component_region: std::option::Option<std::string::String>,
+    pub(crate) firewall_stateless_rule: std::option::Option<crate::types::FirewallStatelessRule>,
+    pub(crate) firewall_stateful_rule: std::option::Option<crate::types::FirewallStatefulRule>,
 }
 impl ExplanationBuilder {
     /// <p>The network ACL.</p>
@@ -1149,6 +1169,32 @@ impl ExplanationBuilder {
         self.component_region = input;
         self
     }
+    /// <p>The Network Firewall stateless rule.</p>
+    pub fn firewall_stateless_rule(mut self, input: crate::types::FirewallStatelessRule) -> Self {
+        self.firewall_stateless_rule = Some(input);
+        self
+    }
+    /// <p>The Network Firewall stateless rule.</p>
+    pub fn set_firewall_stateless_rule(
+        mut self,
+        input: std::option::Option<crate::types::FirewallStatelessRule>,
+    ) -> Self {
+        self.firewall_stateless_rule = input;
+        self
+    }
+    /// <p>The Network Firewall stateful rule.</p>
+    pub fn firewall_stateful_rule(mut self, input: crate::types::FirewallStatefulRule) -> Self {
+        self.firewall_stateful_rule = Some(input);
+        self
+    }
+    /// <p>The Network Firewall stateful rule.</p>
+    pub fn set_firewall_stateful_rule(
+        mut self,
+        input: std::option::Option<crate::types::FirewallStatefulRule>,
+    ) -> Self {
+        self.firewall_stateful_rule = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Explanation`](crate::types::Explanation).
     pub fn build(self) -> crate::types::Explanation {
         crate::types::Explanation {
@@ -1203,6 +1249,8 @@ impl ExplanationBuilder {
             transit_gateway_attachment: self.transit_gateway_attachment,
             component_account: self.component_account,
             component_region: self.component_region,
+            firewall_stateless_rule: self.firewall_stateless_rule,
+            firewall_stateful_rule: self.firewall_stateful_rule,
         }
     }
 }

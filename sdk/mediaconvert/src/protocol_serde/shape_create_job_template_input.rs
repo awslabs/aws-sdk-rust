@@ -36,36 +36,36 @@ pub fn ser_create_job_template_input(
     if let Some(var_9) = &input.name {
         object.key("name").string(var_9.as_str());
     }
-    if input.priority != 0 {
+    if let Some(var_10) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.priority).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.queue {
-        object.key("queue").string(var_10.as_str());
+    if let Some(var_11) = &input.queue {
+        object.key("queue").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.settings {
+    if let Some(var_12) = &input.settings {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("settings").start_object();
+        let mut object_13 = object.key("settings").start_object();
         crate::protocol_serde::shape_job_template_settings::ser_job_template_settings(
-            &mut object_12,
-            var_11,
+            &mut object_13,
+            var_12,
         )?;
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_13) = &input.status_update_interval {
-        object.key("statusUpdateInterval").string(var_13.as_str());
+    if let Some(var_14) = &input.status_update_interval {
+        object.key("statusUpdateInterval").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_15) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_15.finish();
+        object_16.finish();
     }
     Ok(())
 }

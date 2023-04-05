@@ -3,53 +3,53 @@ pub fn ser_create_lag_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_lag::CreateLagInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.number_of_connections {
         object.key("numberOfConnections").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.number_of_connections).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.location {
-        object.key("location").string(var_1.as_str());
+    if let Some(var_2) = &input.location {
+        object.key("location").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.connections_bandwidth {
-        object.key("connectionsBandwidth").string(var_2.as_str());
+    if let Some(var_3) = &input.connections_bandwidth {
+        object.key("connectionsBandwidth").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.lag_name {
-        object.key("lagName").string(var_3.as_str());
+    if let Some(var_4) = &input.lag_name {
+        object.key("lagName").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.connection_id {
-        object.key("connectionId").string(var_4.as_str());
+    if let Some(var_5) = &input.connection_id {
+        object.key("connectionId").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.tags {
-        let mut array_6 = object.key("tags").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("tags").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_9) = &input.child_connection_tags {
-        let mut array_10 = object.key("childConnectionTags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.child_connection_tags {
+        let mut array_11 = object.key("childConnectionTags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.provider_name {
-        object.key("providerName").string(var_13.as_str());
+    if let Some(var_14) = &input.provider_name {
+        object.key("providerName").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.request_mac_sec {
-        object.key("requestMACSec").boolean(*var_14);
+    if let Some(var_15) = &input.request_mac_sec {
+        object.key("requestMACSec").boolean(*var_15);
     }
     Ok(())
 }

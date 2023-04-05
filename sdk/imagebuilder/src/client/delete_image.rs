@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`image_build_version_arn(impl Into<String>)`](crate::operation::delete_image::builders::DeleteImageFluentBuilder::image_build_version_arn) / [`set_image_build_version_arn(Option<String>)`](crate::operation::delete_image::builders::DeleteImageFluentBuilder::set_image_build_version_arn): <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
     /// - On success, responds with [`DeleteImageOutput`](crate::operation::delete_image::DeleteImageOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::delete_image::DeleteImageOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
-    ///   - [`image_build_version_arn(Option<String>)`](crate::operation::delete_image::DeleteImageOutput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
+    ///   - [`image_build_version_arn(Option<String>)`](crate::operation::delete_image::DeleteImageOutput::image_build_version_arn): <p>The ARN of the Image Builder image resource that this request deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteImageError>`](crate::operation::delete_image::DeleteImageError)
     pub fn delete_image(
         &self,

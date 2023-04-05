@@ -5,7 +5,7 @@ pub use crate::operation::delete_account_setting::_delete_account_setting_input:
 
 /// Fluent builder constructing a request to `DeleteAccountSetting`.
 ///
-/// <p>Disables an account setting for a specified IAM user, IAM role, or the root user for an account.</p>
+/// <p>Disables an account setting for a specified user, role, or the root user for an account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccountSettingFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -79,12 +79,12 @@ impl DeleteAccountSettingFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or the root user. If you specify the root user, it disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or the root user. If you specify the root user, it disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self

@@ -28,7 +28,7 @@ pub struct CreateModelInput {
     pub vpc_config: std::option::Option<crate::types::VpcConfig>,
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
     #[doc(hidden)]
-    pub enable_network_isolation: bool,
+    pub enable_network_isolation: std::option::Option<bool>,
 }
 impl CreateModelInput {
     /// <p>The name of the new model.</p>
@@ -64,7 +64,7 @@ impl CreateModelInput {
         self.vpc_config.as_ref()
     }
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
-    pub fn enable_network_isolation(&self) -> bool {
+    pub fn enable_network_isolation(&self) -> std::option::Option<bool> {
         self.enable_network_isolation
     }
 }
@@ -219,7 +219,7 @@ impl CreateModelInputBuilder {
             execution_role_arn: self.execution_role_arn,
             tags: self.tags,
             vpc_config: self.vpc_config,
-            enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
+            enable_network_isolation: self.enable_network_isolation,
         })
     }
 }

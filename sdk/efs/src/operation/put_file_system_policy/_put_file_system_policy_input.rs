@@ -11,7 +11,7 @@ pub struct PutFileSystemPolicyInput {
     pub policy: std::option::Option<std::string::String>,
     /// <p>(Optional) A boolean that specifies whether or not to bypass the <code>FileSystemPolicy</code> lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future <code>PutFileSystemPolicy</code> requests on this file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the IAM principal that is making the request from making subsequent <code>PutFileSystemPolicy</code> requests on this file system. The default value is <code>False</code>. </p>
     #[doc(hidden)]
-    pub bypass_policy_lockout_safety_check: bool,
+    pub bypass_policy_lockout_safety_check: std::option::Option<bool>,
 }
 impl PutFileSystemPolicyInput {
     /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
@@ -23,7 +23,7 @@ impl PutFileSystemPolicyInput {
         self.policy.as_deref()
     }
     /// <p>(Optional) A boolean that specifies whether or not to bypass the <code>FileSystemPolicy</code> lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future <code>PutFileSystemPolicy</code> requests on this file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the IAM principal that is making the request from making subsequent <code>PutFileSystemPolicy</code> requests on this file system. The default value is <code>False</code>. </p>
-    pub fn bypass_policy_lockout_safety_check(&self) -> bool {
+    pub fn bypass_policy_lockout_safety_check(&self) -> std::option::Option<bool> {
         self.bypass_policy_lockout_safety_check
     }
 }
@@ -89,9 +89,7 @@ impl PutFileSystemPolicyInputBuilder {
             crate::operation::put_file_system_policy::PutFileSystemPolicyInput {
                 file_system_id: self.file_system_id,
                 policy: self.policy,
-                bypass_policy_lockout_safety_check: self
-                    .bypass_policy_lockout_safety_check
-                    .unwrap_or_default(),
+                bypass_policy_lockout_safety_check: self.bypass_policy_lockout_safety_check,
             },
         )
     }

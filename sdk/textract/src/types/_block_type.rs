@@ -22,6 +22,8 @@
 ///     BlockType::SelectionElement => { /* ... */ },
 ///     BlockType::Signature => { /* ... */ },
 ///     BlockType::Table => { /* ... */ },
+///     BlockType::TableFooter => { /* ... */ },
+///     BlockType::TableTitle => { /* ... */ },
 ///     BlockType::Title => { /* ... */ },
 ///     BlockType::Word => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -78,6 +80,10 @@ pub enum BlockType {
     #[allow(missing_docs)] // documentation missing in model
     Table,
     #[allow(missing_docs)] // documentation missing in model
+    TableFooter,
+    #[allow(missing_docs)] // documentation missing in model
+    TableTitle,
+    #[allow(missing_docs)] // documentation missing in model
     Title,
     #[allow(missing_docs)] // documentation missing in model
     Word,
@@ -97,6 +103,8 @@ impl std::convert::From<&str> for BlockType {
             "SELECTION_ELEMENT" => BlockType::SelectionElement,
             "SIGNATURE" => BlockType::Signature,
             "TABLE" => BlockType::Table,
+            "TABLE_FOOTER" => BlockType::TableFooter,
+            "TABLE_TITLE" => BlockType::TableTitle,
             "TITLE" => BlockType::Title,
             "WORD" => BlockType::Word,
             other => BlockType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -124,6 +132,8 @@ impl BlockType {
             BlockType::SelectionElement => "SELECTION_ELEMENT",
             BlockType::Signature => "SIGNATURE",
             BlockType::Table => "TABLE",
+            BlockType::TableFooter => "TABLE_FOOTER",
+            BlockType::TableTitle => "TABLE_TITLE",
             BlockType::Title => "TITLE",
             BlockType::Word => "WORD",
             BlockType::Unknown(value) => value.as_str(),
@@ -142,6 +152,8 @@ impl BlockType {
             "SELECTION_ELEMENT",
             "SIGNATURE",
             "TABLE",
+            "TABLE_FOOTER",
+            "TABLE_TITLE",
             "TITLE",
             "WORD",
         ]

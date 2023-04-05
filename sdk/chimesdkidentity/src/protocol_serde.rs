@@ -12,11 +12,15 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_app_instance_admin;
 
+pub(crate) mod shape_create_app_instance_bot;
+
 pub(crate) mod shape_create_app_instance_user;
 
 pub(crate) mod shape_delete_app_instance;
 
 pub(crate) mod shape_delete_app_instance_admin;
+
+pub(crate) mod shape_delete_app_instance_bot;
 
 pub(crate) mod shape_delete_app_instance_user;
 
@@ -26,6 +30,8 @@ pub(crate) mod shape_describe_app_instance;
 
 pub(crate) mod shape_describe_app_instance_admin;
 
+pub(crate) mod shape_describe_app_instance_bot;
+
 pub(crate) mod shape_describe_app_instance_user;
 
 pub(crate) mod shape_describe_app_instance_user_endpoint;
@@ -33,6 +39,8 @@ pub(crate) mod shape_describe_app_instance_user_endpoint;
 pub(crate) mod shape_get_app_instance_retention_settings;
 
 pub(crate) mod shape_list_app_instance_admins;
+
+pub(crate) mod shape_list_app_instance_bots;
 
 pub(crate) mod shape_list_app_instance_user_endpoints;
 
@@ -44,6 +52,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_app_instance_retention_settings;
 
+pub(crate) mod shape_put_app_instance_user_expiration_settings;
+
 pub(crate) mod shape_register_app_instance_user_endpoint;
 
 pub(crate) mod shape_tag_resource;
@@ -51,6 +61,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_app_instance;
+
+pub(crate) mod shape_update_app_instance_bot;
 
 pub(crate) mod shape_update_app_instance_user;
 
@@ -70,13 +82,19 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_app_instance_admin_input;
 
+pub(crate) mod shape_create_app_instance_bot_input;
+
 pub(crate) mod shape_create_app_instance_input;
 
 pub(crate) mod shape_create_app_instance_user_input;
 
 pub(crate) mod shape_forbidden_exception;
 
+pub(crate) mod shape_not_found_exception;
+
 pub(crate) mod shape_put_app_instance_retention_settings_input;
+
+pub(crate) mod shape_put_app_instance_user_expiration_settings_input;
 
 pub(crate) mod shape_register_app_instance_user_endpoint_input;
 
@@ -94,6 +112,8 @@ pub(crate) mod shape_unauthorized_client_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_app_instance_bot_input;
+
 pub(crate) mod shape_update_app_instance_input;
 
 pub(crate) mod shape_update_app_instance_user_endpoint_input;
@@ -105,6 +125,10 @@ pub(crate) mod shape_app_instance;
 pub(crate) mod shape_app_instance_admin;
 
 pub(crate) mod shape_app_instance_admin_list;
+
+pub(crate) mod shape_app_instance_bot;
+
+pub(crate) mod shape_app_instance_bot_list;
 
 pub(crate) mod shape_app_instance_list;
 
@@ -118,7 +142,11 @@ pub(crate) mod shape_app_instance_user_endpoint_summary_list;
 
 pub(crate) mod shape_app_instance_user_list;
 
+pub(crate) mod shape_configuration;
+
 pub(crate) mod shape_endpoint_attributes;
+
+pub(crate) mod shape_expiration_settings;
 
 pub(crate) mod shape_identity;
 
@@ -127,6 +155,8 @@ pub(crate) mod shape_tag;
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_app_instance_admin_summary;
+
+pub(crate) mod shape_app_instance_bot_summary;
 
 pub(crate) mod shape_app_instance_summary;
 
@@ -137,3 +167,5 @@ pub(crate) mod shape_app_instance_user_summary;
 pub(crate) mod shape_channel_retention_settings;
 
 pub(crate) mod shape_endpoint_state;
+
+pub(crate) mod shape_lex_configuration;

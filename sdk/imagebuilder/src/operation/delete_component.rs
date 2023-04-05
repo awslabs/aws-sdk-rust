@@ -182,7 +182,7 @@ pub enum DeleteComponentError {
     ClientException(crate::types::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
-    /// <p>You have made a request for an action that is not supported by the service.</p>
+    /// <p>You have requested an action that that the service doesn't support.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
     ResourceDependencyException(crate::types::error::ResourceDependencyException),

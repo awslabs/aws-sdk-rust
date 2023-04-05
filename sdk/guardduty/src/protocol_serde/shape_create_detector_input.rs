@@ -15,23 +15,35 @@ pub fn ser_create_detector_input(
         )?;
         object_3.finish();
     }
-    {
-        object.key("enable").boolean(input.enable);
+    if let Some(var_4) = &input.enable {
+        object.key("enable").boolean(*var_4);
     }
-    if let Some(var_4) = &input.finding_publishing_frequency {
-        object
-            .key("findingPublishingFrequency")
-            .string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+    if let Some(var_5) = &input.features {
+        let mut array_6 = object.key("features").start_array();
+        for item_7 in var_5 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_detector_feature_configuration::ser_detector_feature_configuration(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        object_6.finish();
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.finding_publishing_frequency {
+        object
+            .key("findingPublishingFrequency")
+            .string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                object_11.key(key_12.as_str()).string(value_13.as_str());
+            }
+        }
+        object_11.finish();
     }
     Ok(())
 }

@@ -87,13 +87,13 @@ impl CreateVirtualMFADeviceFluentBuilder {
         self.inner = self.inner.set_path(input);
         self
     }
-    /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
+    /// <p>The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn virtual_mfa_device_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.virtual_mfa_device_name(input.into());
         self
     }
-    /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
+    /// <p>The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_virtual_mfa_device_name(
         mut self,

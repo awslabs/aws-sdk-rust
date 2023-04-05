@@ -35,8 +35,8 @@ pub fn ser_subscribe_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("ReturnSubscriptionArn");
-    if input.return_subscription_arn {
-        scope_13.boolean(input.return_subscription_arn);
+    if let Some(var_14) = &input.return_subscription_arn {
+        scope_13.boolean(*var_14);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

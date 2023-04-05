@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBotInput {
-    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
@@ -23,9 +23,15 @@ pub struct UpdateBotInput {
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     #[doc(hidden)]
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
+    /// <p>The type of the bot to be updated.</p>
+    #[doc(hidden)]
+    pub bot_type: std::option::Option<crate::types::BotType>,
+    /// <p>The list of bot members in the network associated with the update action.</p>
+    #[doc(hidden)]
+    pub bot_members: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
 }
 impl UpdateBotInput {
-    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
@@ -51,6 +57,14 @@ impl UpdateBotInput {
     pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
         self.idle_session_ttl_in_seconds
     }
+    /// <p>The type of the bot to be updated.</p>
+    pub fn bot_type(&self) -> std::option::Option<&crate::types::BotType> {
+        self.bot_type.as_ref()
+    }
+    /// <p>The list of bot members in the network associated with the update action.</p>
+    pub fn bot_members(&self) -> std::option::Option<&[crate::types::BotMember]> {
+        self.bot_members.as_deref()
+    }
 }
 impl UpdateBotInput {
     /// Creates a new builder-style object to manufacture [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
@@ -69,14 +83,16 @@ pub struct UpdateBotInputBuilder {
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) data_privacy: std::option::Option<crate::types::DataPrivacy>,
     pub(crate) idle_session_ttl_in_seconds: std::option::Option<i32>,
+    pub(crate) bot_type: std::option::Option<crate::types::BotType>,
+    pub(crate) bot_members: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
 }
 impl UpdateBotInputBuilder {
-    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.bot_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.bot_id = input;
         self
@@ -138,6 +154,35 @@ impl UpdateBotInputBuilder {
         self.idle_session_ttl_in_seconds = input;
         self
     }
+    /// <p>The type of the bot to be updated.</p>
+    pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
+        self.bot_type = Some(input);
+        self
+    }
+    /// <p>The type of the bot to be updated.</p>
+    pub fn set_bot_type(mut self, input: std::option::Option<crate::types::BotType>) -> Self {
+        self.bot_type = input;
+        self
+    }
+    /// Appends an item to `bot_members`.
+    ///
+    /// To override the contents of this collection use [`set_bot_members`](Self::set_bot_members).
+    ///
+    /// <p>The list of bot members in the network associated with the update action.</p>
+    pub fn bot_members(mut self, input: crate::types::BotMember) -> Self {
+        let mut v = self.bot_members.unwrap_or_default();
+        v.push(input);
+        self.bot_members = Some(v);
+        self
+    }
+    /// <p>The list of bot members in the network associated with the update action.</p>
+    pub fn set_bot_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
+    ) -> Self {
+        self.bot_members = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
     pub fn build(
         self,
@@ -152,6 +197,8 @@ impl UpdateBotInputBuilder {
             role_arn: self.role_arn,
             data_privacy: self.data_privacy,
             idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
+            bot_type: self.bot_type,
+            bot_members: self.bot_members,
         })
     }
 }

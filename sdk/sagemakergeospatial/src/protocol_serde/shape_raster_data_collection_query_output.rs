@@ -44,7 +44,7 @@ where
                             }
                             "TimeRangeFilter" => {
                                 builder = builder.set_time_range_filter(
-                                    crate::protocol_serde::shape_time_range_filter_input::de_time_range_filter_input(tokens)?
+                                    crate::protocol_serde::shape_time_range_filter_output::de_time_range_filter_output(tokens)?
                                 );
                             }
                             "AreaOfInterest" => {

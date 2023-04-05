@@ -14,7 +14,7 @@ pub struct ListStageDevicesInput {
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
     /// <p>Toggle for excluding devices deployed in other stages.</p>
     #[doc(hidden)]
-    pub exclude_devices_deployed_in_other_stage: bool,
+    pub exclude_devices_deployed_in_other_stage: std::option::Option<bool>,
     /// <p>The name of the stage in the deployment.</p>
     #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ impl ListStageDevicesInput {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>Toggle for excluding devices deployed in other stages.</p>
-    pub fn exclude_devices_deployed_in_other_stage(&self) -> bool {
+    pub fn exclude_devices_deployed_in_other_stage(&self) -> std::option::Option<bool> {
         self.exclude_devices_deployed_in_other_stage
     }
     /// <p>The name of the stage in the deployment.</p>
@@ -129,8 +129,7 @@ impl ListStageDevicesInputBuilder {
                 max_results: self.max_results,
                 edge_deployment_plan_name: self.edge_deployment_plan_name,
                 exclude_devices_deployed_in_other_stage: self
-                    .exclude_devices_deployed_in_other_stage
-                    .unwrap_or_default(),
+                    .exclude_devices_deployed_in_other_stage,
                 stage_name: self.stage_name,
             },
         )

@@ -12,14 +12,14 @@ pub struct ConditionCheck {
     /// <p>Name of the table for the check item request.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to succeed. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub condition_expression: std::option::Option<std::string::String>,
-    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>One or more values that can be substituted in an expression.</p>
+    /// <p>One or more values that can be substituted in an expression. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
@@ -42,18 +42,18 @@ impl ConditionCheck {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to succeed. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn condition_expression(&self) -> std::option::Option<&str> {
         self.condition_expression.as_deref()
     }
-    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_names(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.expression_attribute_names.as_ref()
     }
-    /// <p>One or more values that can be substituted in an expression.</p>
+    /// <p>One or more values that can be substituted in an expression. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_values(
         &self,
     ) -> std::option::Option<
@@ -128,12 +128,12 @@ impl ConditionCheckBuilder {
         self.table_name = input;
         self
     }
-    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to succeed. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
         self.condition_expression = Some(input.into());
         self
     }
-    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to succeed. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_condition_expression(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -145,7 +145,7 @@ impl ConditionCheckBuilder {
     ///
     /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
     ///
-    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_names(
         mut self,
         k: impl Into<std::string::String>,
@@ -156,7 +156,7 @@ impl ConditionCheckBuilder {
         self.expression_attribute_names = Some(hash_map);
         self
     }
-    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_expression_attribute_names(
         mut self,
         input: std::option::Option<
@@ -170,7 +170,7 @@ impl ConditionCheckBuilder {
     ///
     /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
     ///
-    /// <p>One or more values that can be substituted in an expression.</p>
+    /// <p>One or more values that can be substituted in an expression. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_values(
         mut self,
         k: impl Into<std::string::String>,
@@ -181,7 +181,7 @@ impl ConditionCheckBuilder {
         self.expression_attribute_values = Some(hash_map);
         self
     }
-    /// <p>One or more values that can be substituted in an expression.</p>
+    /// <p>One or more values that can be substituted in an expression. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_expression_attribute_values(
         mut self,
         input: std::option::Option<

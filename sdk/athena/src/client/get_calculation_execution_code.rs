@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`calculation_execution_id(impl Into<String>)`](crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeFluentBuilder::calculation_execution_id) / [`set_calculation_execution_id(Option<String>)`](crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeFluentBuilder::set_calculation_execution_id): <p>The calculation execution UUID.</p>
     /// - On success, responds with [`GetCalculationExecutionCodeOutput`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput) with field(s):
-    ///   - [`code_block(Option<String>)`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput::code_block): <p>A pre-signed URL to the code that executed the calculation.</p>
+    ///   - [`code_block(Option<String>)`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput::code_block): <p>The unencrypted code that was executed for the calculation.</p>
     /// - On failure, responds with [`SdkError<GetCalculationExecutionCodeError>`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeError)
     pub fn get_calculation_execution_code(&self) -> crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeFluentBuilder{
         crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeFluentBuilder::new(self.handle.clone())

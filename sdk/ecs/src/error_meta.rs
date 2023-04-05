@@ -493,6 +493,48 @@ impl From<crate::operation::delete_service::DeleteServiceError> for Error {
 }
 impl<R>
     From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_task_definitions::DeleteTaskDefinitionsError> for Error {
+    fn from(err: crate::operation::delete_task_definitions::DeleteTaskDefinitionsError) -> Self {
+        match err {
+            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
         aws_smithy_http::result::SdkError<crate::operation::delete_task_set::DeleteTaskSetError, R>,
     > for Error
 where

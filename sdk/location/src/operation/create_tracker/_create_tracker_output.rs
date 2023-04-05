@@ -6,7 +6,7 @@ pub struct CreateTrackerOutput {
     /// <p>The name of the tracker resource.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
@@ -22,7 +22,7 @@ impl CreateTrackerOutput {
     pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
@@ -66,7 +66,7 @@ impl CreateTrackerOutputBuilder {
         self.tracker_name = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
@@ -74,7 +74,7 @@ impl CreateTrackerOutputBuilder {
         self.tracker_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>

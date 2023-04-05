@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`ListAllowListsOutput`](crate::operation::list_allow_lists::ListAllowListsOutput) with field(s):
     ///   - [`allow_lists(Option<Vec<AllowListSummary>>)`](crate::operation::list_allow_lists::ListAllowListsOutput::allow_lists): <p>An array of objects, one for each allow list.</p>

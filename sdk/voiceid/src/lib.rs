@@ -15,7 +15,7 @@
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! Amazon Connect Voice ID provides real-time caller authentication and fraud screening. This guide describes the APIs used for this service.
+//! Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection, which make voice interactions in contact centers more secure and efficient.
 //!
 //! ## Getting Started
 //!
@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-voiceid = "0.25.0"
+//! aws-sdk-voiceid = "0.25.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -146,13 +146,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteFraudster`](crate::operation::delete_fraudster) operation has
-/// a [`Client::delete_fraudster`], function which returns a builder for that operation.
+/// For example, the [`AssociateFraudster`](crate::operation::associate_fraudster) operation has
+/// a [`Client::associate_fraudster`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `call()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_fraudster()
+/// let result = client.associate_fraudster()
 ///     .domain_id("example")
 ///     .call()
 ///     .await;

@@ -79,6 +79,8 @@ pub use crate::types::_h264_settings::H264SettingsBuilder;
 
 pub use crate::types::_h264_qvbr_settings::H264QvbrSettingsBuilder;
 
+pub use crate::types::_bandwidth_reduction_filter::BandwidthReductionFilterBuilder;
+
 pub use crate::types::_frame_capture_settings::FrameCaptureSettingsBuilder;
 
 pub use crate::types::_avc_intra_settings::AvcIntraSettingsBuilder;

@@ -13,8 +13,10 @@
 /// # let provisioningartifacttype = unimplemented!();
 /// match provisioningartifacttype {
 ///     ProvisioningArtifactType::CloudFormationTemplate => { /* ... */ },
+///     ProvisioningArtifactType::DefaultCustom => { /* ... */ },
 ///     ProvisioningArtifactType::MarketplaceAmi => { /* ... */ },
 ///     ProvisioningArtifactType::MarketplaceCar => { /* ... */ },
+///     ProvisioningArtifactType::TerraformOpenSource => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,9 +53,13 @@ pub enum ProvisioningArtifactType {
     #[allow(missing_docs)] // documentation missing in model
     CloudFormationTemplate,
     #[allow(missing_docs)] // documentation missing in model
+    DefaultCustom,
+    #[allow(missing_docs)] // documentation missing in model
     MarketplaceAmi,
     #[allow(missing_docs)] // documentation missing in model
     MarketplaceCar,
+    #[allow(missing_docs)] // documentation missing in model
+    TerraformOpenSource,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -61,8 +67,10 @@ impl std::convert::From<&str> for ProvisioningArtifactType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD_FORMATION_TEMPLATE" => ProvisioningArtifactType::CloudFormationTemplate,
+            "DEFAULT_CUSTOM" => ProvisioningArtifactType::DefaultCustom,
             "MARKETPLACE_AMI" => ProvisioningArtifactType::MarketplaceAmi,
             "MARKETPLACE_CAR" => ProvisioningArtifactType::MarketplaceCar,
+            "TERRAFORM_OPEN_SOURCE" => ProvisioningArtifactType::TerraformOpenSource,
             other => ProvisioningArtifactType::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -81,8 +89,10 @@ impl ProvisioningArtifactType {
     pub fn as_str(&self) -> &str {
         match self {
             ProvisioningArtifactType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
+            ProvisioningArtifactType::DefaultCustom => "DEFAULT_CUSTOM",
             ProvisioningArtifactType::MarketplaceAmi => "MARKETPLACE_AMI",
             ProvisioningArtifactType::MarketplaceCar => "MARKETPLACE_CAR",
+            ProvisioningArtifactType::TerraformOpenSource => "TERRAFORM_OPEN_SOURCE",
             ProvisioningArtifactType::Unknown(value) => value.as_str(),
         }
     }
@@ -90,8 +100,10 @@ impl ProvisioningArtifactType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUD_FORMATION_TEMPLATE",
+            "DEFAULT_CUSTOM",
             "MARKETPLACE_AMI",
             "MARKETPLACE_CAR",
+            "TERRAFORM_OPEN_SOURCE",
         ]
     }
 }

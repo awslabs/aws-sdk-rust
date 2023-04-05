@@ -161,6 +161,8 @@ pub type CreateCustomDBEngineVersionErrorKind = CreateCustomDBEngineVersionError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCustomDBEngineVersionError {
+    /// <p>An error occurred while trying to create the CEV.</p>
+    CreateCustomDbEngineVersionFault(crate::types::error::CreateCustomDbEngineVersionFault),
     /// <p>A CEV with the specified name already exists.</p>
     CustomDbEngineVersionAlreadyExistsFault(
         crate::types::error::CustomDbEngineVersionAlreadyExistsFault,
@@ -191,6 +193,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateCustomDBEngineVersi
 impl std::fmt::Display for CreateCustomDBEngineVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Self::CreateCustomDbEngineVersionFault(_inner) => _inner.fmt(f),
             Self::CustomDbEngineVersionAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::CustomDbEngineVersionQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Ec2ImagePropertiesNotSupportedFault(_inner) => _inner.fmt(f),
@@ -202,6 +205,9 @@ impl std::fmt::Display for CreateCustomDBEngineVersionError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateCustomDBEngineVersionError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CreateCustomDbEngineVersionFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::CustomDbEngineVersionAlreadyExistsFault(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -261,12 +267,17 @@ impl CreateCustomDBEngineVersionError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::CreateCustomDbEngineVersionFault(e) => e.meta(),
             Self::CustomDbEngineVersionAlreadyExistsFault(e) => e.meta(),
             Self::CustomDbEngineVersionQuotaExceededFault(e) => e.meta(),
             Self::Ec2ImagePropertiesNotSupportedFault(e) => e.meta(),
             Self::KmsKeyNotAccessibleFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `CreateCustomDBEngineVersionError::CreateCustomDbEngineVersionFault`.
+    pub fn is_create_custom_db_engine_version_fault(&self) -> bool {
+        matches!(self, Self::CreateCustomDbEngineVersionFault(_))
     }
     /// Returns `true` if the error kind is `CreateCustomDBEngineVersionError::CustomDbEngineVersionAlreadyExistsFault`.
     pub fn is_custom_db_engine_version_already_exists_fault(&self) -> bool {
@@ -288,6 +299,7 @@ impl CreateCustomDBEngineVersionError {
 impl std::error::Error for CreateCustomDBEngineVersionError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Self::CreateCustomDbEngineVersionFault(_inner) => Some(_inner),
             Self::CustomDbEngineVersionAlreadyExistsFault(_inner) => Some(_inner),
             Self::CustomDbEngineVersionQuotaExceededFault(_inner) => Some(_inner),
             Self::Ec2ImagePropertiesNotSupportedFault(_inner) => Some(_inner),

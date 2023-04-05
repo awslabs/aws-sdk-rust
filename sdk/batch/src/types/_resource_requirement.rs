@@ -63,7 +63,7 @@ pub struct ResourceRequirement {
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 1, 2, or 4</p>
     /// </dd>
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
@@ -228,7 +228,7 @@ impl ResourceRequirement {
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 1, 2, or 4</p>
     /// </dd>
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
@@ -409,7 +409,7 @@ impl ResourceRequirementBuilder {
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 1, 2, or 4</p>
     /// </dd>
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
@@ -571,7 +571,7 @@ impl ResourceRequirementBuilder {
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 1, 2, or 4</p>
     /// </dd>
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360

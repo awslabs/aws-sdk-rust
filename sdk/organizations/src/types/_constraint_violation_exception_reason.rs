@@ -15,6 +15,7 @@
 ///     ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => { /* ... */ },
+///     ConstraintViolationExceptionReason::AccountCreationNotComplete => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountNumberLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CannotCloseManagementAccount => { /* ... */ },
@@ -85,6 +86,8 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountCannotLeaveWithoutPhoneVerification,
     #[allow(missing_docs)] // documentation missing in model
+    AccountCreationNotComplete,
+    #[allow(missing_docs)] // documentation missing in model
     AccountCreationRateLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     AccountNumberLimitExceeded,
@@ -153,6 +156,7 @@ impl std::convert::From<&str> for ConstraintViolationExceptionReason {
                         "ACCOUNT_CANNOT_LEAVE_ORGANIZATION" => ConstraintViolationExceptionReason::AccountCannotLeaveOrganization,
 "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula,
 "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification,
+"ACCOUNT_CREATION_NOT_COMPLETE" => ConstraintViolationExceptionReason::AccountCreationNotComplete,
 "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded,
 "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
 "CANNOT_CLOSE_MANAGEMENT_ACCOUNT" => ConstraintViolationExceptionReason::CannotCloseManagementAccount,
@@ -201,6 +205,7 @@ impl ConstraintViolationExceptionReason {
     ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
     ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
     ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
+    ConstraintViolationExceptionReason::AccountCreationNotComplete => "ACCOUNT_CREATION_NOT_COMPLETE",
     ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
     ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
     ConstraintViolationExceptionReason::CannotCloseManagementAccount => "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
@@ -240,6 +245,7 @@ impl ConstraintViolationExceptionReason {
             "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
             "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
             "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
+            "ACCOUNT_CREATION_NOT_COMPLETE",
             "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
             "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",

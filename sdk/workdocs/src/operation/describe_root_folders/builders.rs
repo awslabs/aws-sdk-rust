@@ -70,6 +70,17 @@ impl DescribeRootFoldersFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator {
+        crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Amazon WorkDocs authentication token.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());

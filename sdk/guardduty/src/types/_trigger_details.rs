@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggerDetails {
-    /// <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+    /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
     #[doc(hidden)]
     pub guard_duty_finding_id: std::option::Option<std::string::String>,
     /// <p>The description of the scan trigger.</p>
@@ -12,7 +12,7 @@ pub struct TriggerDetails {
     pub description: std::option::Option<std::string::String>,
 }
 impl TriggerDetails {
-    /// <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+    /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
     pub fn guard_duty_finding_id(&self) -> std::option::Option<&str> {
         self.guard_duty_finding_id.as_deref()
     }
@@ -36,12 +36,12 @@ pub struct TriggerDetailsBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
 }
 impl TriggerDetailsBuilder {
-    /// <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+    /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
     pub fn guard_duty_finding_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.guard_duty_finding_id = Some(input.into());
         self
     }
-    /// <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+    /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
     pub fn set_guard_duty_finding_id(
         mut self,
         input: std::option::Option<std::string::String>,

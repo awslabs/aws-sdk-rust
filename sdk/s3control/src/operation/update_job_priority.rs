@@ -73,6 +73,12 @@ impl UpdateJobPriorityInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_2 = &_input.priority;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "priority",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 query.push_kv(
                     "priority",
                     aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),

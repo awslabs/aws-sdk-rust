@@ -56,12 +56,12 @@ impl UpdateSensitivityInspectionTemplateFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>A custom description of the template.</p>
+    /// <p>A custom description of the template. The description can contain as many as 200 characters.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A custom description of the template.</p>
+    /// <p>A custom description of the template. The description can contain as many as 200 characters.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self

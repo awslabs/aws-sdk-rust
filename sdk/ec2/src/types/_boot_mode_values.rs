@@ -14,6 +14,7 @@
 /// match bootmodevalues {
 ///     BootModeValues::LegacyBios => { /* ... */ },
 ///     BootModeValues::Uefi => { /* ... */ },
+///     BootModeValues::UefiPreferred => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum BootModeValues {
     LegacyBios,
     #[allow(missing_docs)] // documentation missing in model
     Uefi,
+    #[allow(missing_docs)] // documentation missing in model
+    UefiPreferred,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl std::convert::From<&str> for BootModeValues {
         match s {
             "legacy-bios" => BootModeValues::LegacyBios,
             "uefi" => BootModeValues::Uefi,
+            "uefi-preferred" => BootModeValues::UefiPreferred,
             other => {
                 BootModeValues::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -78,12 +82,13 @@ impl BootModeValues {
         match self {
             BootModeValues::LegacyBios => "legacy-bios",
             BootModeValues::Uefi => "uefi",
+            BootModeValues::UefiPreferred => "uefi-preferred",
             BootModeValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["legacy-bios", "uefi"]
+        &["legacy-bios", "uefi", "uefi-preferred"]
     }
 }
 impl AsRef<str> for BootModeValues {

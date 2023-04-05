@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppInstanceAdminOutput {
-    /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+    /// <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     #[doc(hidden)]
     pub app_instance_admin: std::option::Option<crate::types::Identity>,
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
@@ -12,7 +12,7 @@ pub struct CreateAppInstanceAdminOutput {
     _request_id: Option<String>,
 }
 impl CreateAppInstanceAdminOutput {
-    /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+    /// <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn app_instance_admin(&self) -> std::option::Option<&crate::types::Identity> {
         self.app_instance_admin.as_ref()
     }
@@ -44,12 +44,12 @@ pub struct CreateAppInstanceAdminOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAppInstanceAdminOutputBuilder {
-    /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+    /// <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn app_instance_admin(mut self, input: crate::types::Identity) -> Self {
         self.app_instance_admin = Some(input);
         self
     }
-    /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+    /// <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn set_app_instance_admin(
         mut self,
         input: std::option::Option<crate::types::Identity>,

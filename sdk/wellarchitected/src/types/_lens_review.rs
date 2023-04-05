@@ -5,8 +5,8 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LensReview {
     /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
@@ -32,7 +32,7 @@ pub struct LensReview {
     /// <p>The notes associated with the workload.</p>
     #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     #[doc(hidden)]
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -41,8 +41,8 @@ pub struct LensReview {
 }
 impl LensReview {
     /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
@@ -77,7 +77,7 @@ impl LensReview {
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::types::Risk, i32>> {
@@ -113,16 +113,16 @@ pub struct LensReviewBuilder {
 }
 impl LensReviewBuilder {
     /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.lens_alias = Some(input.into());
         self
     }
     /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.lens_alias = input;
@@ -214,14 +214,14 @@ impl LensReviewBuilder {
     ///
     /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
     ///
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.risk_counts.unwrap_or_default();
         hash_map.insert(k, v);
         self.risk_counts = Some(hash_map);
         self
     }
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn set_risk_counts(
         mut self,
         input: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,

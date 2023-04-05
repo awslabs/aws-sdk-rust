@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataMetadataOptionsDetails {
-    /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won’t be able to access your instance metadata. </p>
+    /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won't be able to access your instance metadata. </p>
     #[doc(hidden)]
     pub http_endpoint: std::option::Option<std::string::String>,
     /// <p> Enables or disables the IPv6 endpoint for the instance metadata service. </p>
@@ -21,7 +21,7 @@ pub struct AwsEc2LaunchTemplateDataMetadataOptionsDetails {
     pub instance_metadata_tags: std::option::Option<std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {
-    /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won’t be able to access your instance metadata. </p>
+    /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won't be able to access your instance metadata. </p>
     pub fn http_endpoint(&self) -> std::option::Option<&str> {
         self.http_endpoint.as_deref()
     }
@@ -61,12 +61,12 @@ pub struct AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
     pub(crate) instance_metadata_tags: std::option::Option<std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
-    /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won’t be able to access your instance metadata. </p>
+    /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won't be able to access your instance metadata. </p>
     pub fn http_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
         self.http_endpoint = Some(input.into());
         self
     }
-    /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won’t be able to access your instance metadata. </p>
+    /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won't be able to access your instance metadata. </p>
     pub fn set_http_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.http_endpoint = input;
         self

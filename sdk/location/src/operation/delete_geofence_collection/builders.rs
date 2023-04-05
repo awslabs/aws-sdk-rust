@@ -5,7 +5,7 @@ pub use crate::operation::delete_geofence_collection::_delete_geofence_collectio
 
 /// Fluent builder constructing a request to `DeleteGeofenceCollection`.
 ///
-/// <p>Deletes a geofence collection from your AWS account.</p> <note>
+/// <p>Deletes a geofence collection from your Amazon Web Services account.</p> <note>
 /// <p>This operation deletes the resource permanently. If the geofence collection is the target of a tracker resource, the devices will no longer be monitored.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]

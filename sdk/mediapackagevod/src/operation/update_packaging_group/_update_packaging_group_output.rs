@@ -12,6 +12,9 @@ pub struct UpdatePackagingGroupOutput {
     /// CDN Authorization credentials
     #[doc(hidden)]
     pub authorization: std::option::Option<crate::types::Authorization>,
+    /// The time the PackagingGroup was created.
+    #[doc(hidden)]
+    pub created_at: std::option::Option<std::string::String>,
     /// The fully qualified domain name for Assets in the PackagingGroup.
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -39,6 +42,10 @@ impl UpdatePackagingGroupOutput {
     /// CDN Authorization credentials
     pub fn authorization(&self) -> std::option::Option<&crate::types::Authorization> {
         self.authorization.as_ref()
+    }
+    /// The time the PackagingGroup was created.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
     pub fn domain_name(&self) -> std::option::Option<&str> {
@@ -80,6 +87,7 @@ pub struct UpdatePackagingGroupOutputBuilder {
     pub(crate) approximate_asset_count: std::option::Option<i32>,
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) authorization: std::option::Option<crate::types::Authorization>,
+    pub(crate) created_at: std::option::Option<std::string::String>,
     pub(crate) domain_name: std::option::Option<std::string::String>,
     pub(crate) egress_access_logs: std::option::Option<crate::types::EgressAccessLogs>,
     pub(crate) id: std::option::Option<std::string::String>,
@@ -119,6 +127,16 @@ impl UpdatePackagingGroupOutputBuilder {
         input: std::option::Option<crate::types::Authorization>,
     ) -> Self {
         self.authorization = input;
+        self
+    }
+    /// The time the PackagingGroup was created.
+    pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
+        self.created_at = Some(input.into());
+        self
+    }
+    /// The time the PackagingGroup was created.
+    pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.created_at = input;
         self
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
@@ -194,6 +212,7 @@ impl UpdatePackagingGroupOutputBuilder {
             approximate_asset_count: self.approximate_asset_count.unwrap_or_default(),
             arn: self.arn,
             authorization: self.authorization,
+            created_at: self.created_at,
             domain_name: self.domain_name,
             egress_access_logs: self.egress_access_logs,
             id: self.id,

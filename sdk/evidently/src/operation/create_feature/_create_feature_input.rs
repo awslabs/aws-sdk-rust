@@ -32,6 +32,7 @@ pub struct CreateFeatureInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
+    /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
     #[doc(hidden)]
     pub entity_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -77,6 +78,7 @@ impl CreateFeatureInput {
         self.tags.as_ref()
     }
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
+    /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
     pub fn entity_overrides(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -224,6 +226,7 @@ impl CreateFeatureInputBuilder {
     /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).
     ///
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
+    /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
     pub fn entity_overrides(
         mut self,
         k: impl Into<std::string::String>,
@@ -235,6 +238,7 @@ impl CreateFeatureInputBuilder {
         self
     }
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
+    /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
     pub fn set_entity_overrides(
         mut self,
         input: std::option::Option<

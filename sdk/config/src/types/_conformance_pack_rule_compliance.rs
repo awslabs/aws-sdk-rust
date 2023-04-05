@@ -8,7 +8,6 @@ pub struct ConformancePackRuleCompliance {
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>Compliance of the Config rule.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
     #[doc(hidden)]
     pub compliance_type: std::option::Option<crate::types::ConformancePackComplianceType>,
     /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives. A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
@@ -21,7 +20,6 @@ impl ConformancePackRuleCompliance {
         self.config_rule_name.as_deref()
     }
     /// <p>Compliance of the Config rule.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
     pub fn compliance_type(
         &self,
     ) -> std::option::Option<&crate::types::ConformancePackComplianceType> {
@@ -59,13 +57,11 @@ impl ConformancePackRuleComplianceBuilder {
         self
     }
     /// <p>Compliance of the Config rule.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
     pub fn compliance_type(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
         self.compliance_type = Some(input);
         self
     }
     /// <p>Compliance of the Config rule.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
     pub fn set_compliance_type(
         mut self,
         input: std::option::Option<crate::types::ConformancePackComplianceType>,

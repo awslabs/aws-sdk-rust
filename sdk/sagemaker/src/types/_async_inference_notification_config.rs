@@ -10,6 +10,10 @@ pub struct AsyncInferenceNotificationConfig {
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
     #[doc(hidden)]
     pub error_topic: std::option::Option<std::string::String>,
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p>
+    #[doc(hidden)]
+    pub include_inference_response_in:
+        std::option::Option<std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
 }
 impl AsyncInferenceNotificationConfig {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
@@ -19,6 +23,12 @@ impl AsyncInferenceNotificationConfig {
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
     pub fn error_topic(&self) -> std::option::Option<&str> {
         self.error_topic.as_deref()
+    }
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p>
+    pub fn include_inference_response_in(
+        &self,
+    ) -> std::option::Option<&[crate::types::AsyncNotificationTopicTypes]> {
+        self.include_inference_response_in.as_deref()
     }
 }
 impl AsyncInferenceNotificationConfig {
@@ -34,6 +44,8 @@ impl AsyncInferenceNotificationConfig {
 pub struct AsyncInferenceNotificationConfigBuilder {
     pub(crate) success_topic: std::option::Option<std::string::String>,
     pub(crate) error_topic: std::option::Option<std::string::String>,
+    pub(crate) include_inference_response_in:
+        std::option::Option<std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
 }
 impl AsyncInferenceNotificationConfigBuilder {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
@@ -56,11 +68,34 @@ impl AsyncInferenceNotificationConfigBuilder {
         self.error_topic = input;
         self
     }
+    /// Appends an item to `include_inference_response_in`.
+    ///
+    /// To override the contents of this collection use [`set_include_inference_response_in`](Self::set_include_inference_response_in).
+    ///
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p>
+    pub fn include_inference_response_in(
+        mut self,
+        input: crate::types::AsyncNotificationTopicTypes,
+    ) -> Self {
+        let mut v = self.include_inference_response_in.unwrap_or_default();
+        v.push(input);
+        self.include_inference_response_in = Some(v);
+        self
+    }
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p>
+    pub fn set_include_inference_response_in(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
+    ) -> Self {
+        self.include_inference_response_in = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AsyncInferenceNotificationConfig`](crate::types::AsyncInferenceNotificationConfig).
     pub fn build(self) -> crate::types::AsyncInferenceNotificationConfig {
         crate::types::AsyncInferenceNotificationConfig {
             success_topic: self.success_topic,
             error_topic: self.error_topic,
+            include_inference_response_in: self.include_inference_response_in,
         }
     }
 }

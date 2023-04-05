@@ -89,12 +89,12 @@ impl DeprovisionPublicIpv4PoolCidrFluentBuilder {
         self.inner = self.inner.set_pool_id(input);
         self
     }
-    /// <p>The CIDR you want to deprovision from the pool.</p>
+    /// <p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the <code>/24</code> CIDR.</p>
     pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
         self
     }
-    /// <p>The CIDR you want to deprovision from the pool.</p>
+    /// <p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the <code>/24</code> CIDR.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_cidr(input);
         self

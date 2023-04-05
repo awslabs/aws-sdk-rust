@@ -38,6 +38,17 @@ pub struct TemplateActionDocument {
     /// <p>Operating system eligible for this template post migration custom action.</p>
     #[doc(hidden)]
     pub operating_system: std::option::Option<std::string::String>,
+    /// <p>Template post migration custom action external parameters.</p>
+    #[doc(hidden)]
+    pub external_parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::SsmExternalParameter>,
+    >,
+    /// <p>Template post migration custom action description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Template post migration custom action category.</p>
+    #[doc(hidden)]
+    pub category: std::option::Option<crate::types::ActionCategory>,
 }
 impl TemplateActionDocument {
     /// <p>Template post migration custom action ID.</p>
@@ -87,6 +98,22 @@ impl TemplateActionDocument {
     pub fn operating_system(&self) -> std::option::Option<&str> {
         self.operating_system.as_deref()
     }
+    /// <p>Template post migration custom action external parameters.</p>
+    pub fn external_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::SsmExternalParameter>,
+    > {
+        self.external_parameters.as_ref()
+    }
+    /// <p>Template post migration custom action description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Template post migration custom action category.</p>
+    pub fn category(&self) -> std::option::Option<&crate::types::ActionCategory> {
+        self.category.as_ref()
+    }
 }
 impl TemplateActionDocument {
     /// Creates a new builder-style object to manufacture [`TemplateActionDocument`](crate::types::TemplateActionDocument).
@@ -114,6 +141,11 @@ pub struct TemplateActionDocumentBuilder {
         >,
     >,
     pub(crate) operating_system: std::option::Option<std::string::String>,
+    pub(crate) external_parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::SsmExternalParameter>,
+    >,
+    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) category: std::option::Option<crate::types::ActionCategory>,
 }
 impl TemplateActionDocumentBuilder {
     /// <p>Template post migration custom action ID.</p>
@@ -237,6 +269,54 @@ impl TemplateActionDocumentBuilder {
         self.operating_system = input;
         self
     }
+    /// Adds a key-value pair to `external_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
+    ///
+    /// <p>Template post migration custom action external parameters.</p>
+    pub fn external_parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::SsmExternalParameter,
+    ) -> Self {
+        let mut hash_map = self.external_parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.external_parameters = Some(hash_map);
+        self
+    }
+    /// <p>Template post migration custom action external parameters.</p>
+    pub fn set_external_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::SsmExternalParameter>,
+        >,
+    ) -> Self {
+        self.external_parameters = input;
+        self
+    }
+    /// <p>Template post migration custom action description.</p>
+    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+        self.description = Some(input.into());
+        self
+    }
+    /// <p>Template post migration custom action description.</p>
+    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>Template post migration custom action category.</p>
+    pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
+        self.category = Some(input);
+        self
+    }
+    /// <p>Template post migration custom action category.</p>
+    pub fn set_category(
+        mut self,
+        input: std::option::Option<crate::types::ActionCategory>,
+    ) -> Self {
+        self.category = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TemplateActionDocument`](crate::types::TemplateActionDocument).
     pub fn build(self) -> crate::types::TemplateActionDocument {
         crate::types::TemplateActionDocument {
@@ -250,6 +330,9 @@ impl TemplateActionDocumentBuilder {
             must_succeed_for_cutover: self.must_succeed_for_cutover,
             parameters: self.parameters,
             operating_system: self.operating_system,
+            external_parameters: self.external_parameters,
+            description: self.description,
+            category: self.category,
         }
     }
 }

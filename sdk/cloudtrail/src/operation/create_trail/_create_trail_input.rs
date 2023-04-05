@@ -34,10 +34,11 @@ pub struct CreateTrailInput {
     /// </note>
     #[doc(hidden)]
     pub enable_log_file_validation: std::option::Option<bool>,
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
     #[doc(hidden)]
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
@@ -51,7 +52,7 @@ pub struct CreateTrailInput {
     /// </ul>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations.</p>
     #[doc(hidden)]
     pub is_organization_trail: std::option::Option<bool>,
     /// <p>A list of tags.</p>
@@ -96,11 +97,12 @@ impl CreateTrailInput {
     pub fn enable_log_file_validation(&self) -> std::option::Option<bool> {
         self.enable_log_file_validation
     }
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
-    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
     pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
@@ -116,7 +118,7 @@ impl CreateTrailInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations.</p>
     pub fn is_organization_trail(&self) -> std::option::Option<bool> {
         self.is_organization_trail
     }
@@ -238,12 +240,14 @@ impl CreateTrailInputBuilder {
         self.enable_log_file_validation = input;
         self
     }
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub fn cloud_watch_logs_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = Some(input.into());
         self
     }
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub fn set_cloud_watch_logs_log_group_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -251,12 +255,12 @@ impl CreateTrailInputBuilder {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
-    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
     pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = Some(input.into());
         self
     }
-    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
     pub fn set_cloud_watch_logs_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -290,12 +294,12 @@ impl CreateTrailInputBuilder {
         self.kms_key_id = input;
         self
     }
-    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations.</p>
     pub fn is_organization_trail(mut self, input: bool) -> Self {
         self.is_organization_trail = Some(input);
         self
     }
-    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations.</p>
     pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
         self.is_organization_trail = input;
         self

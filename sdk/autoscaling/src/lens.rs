@@ -79,6 +79,16 @@ pub(crate) fn reflens_describe_tags_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_describe_traffic_sources_output_next_token(
+    input: &crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_describe_auto_scaling_groups_output_auto_scaling_groups(
     input: crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::AutoScalingGroup>> {

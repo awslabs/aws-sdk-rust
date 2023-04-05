@@ -76,13 +76,13 @@ impl CreateIPSetFluentBuilder {
         self
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self

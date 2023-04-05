@@ -98,6 +98,9 @@ pub struct ContainerProperties {
     #[doc(hidden)]
     pub fargate_platform_configuration:
         std::option::Option<crate::types::FargatePlatformConfiguration>,
+    /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
+    #[doc(hidden)]
+    pub ephemeral_storage: std::option::Option<crate::types::EphemeralStorage>,
 }
 impl ContainerProperties {
     /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
@@ -218,6 +221,10 @@ impl ContainerProperties {
     ) -> std::option::Option<&crate::types::FargatePlatformConfiguration> {
         self.fargate_platform_configuration.as_ref()
     }
+    /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::types::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl ContainerProperties {
     /// Creates a new builder-style object to manufacture [`ContainerProperties`](crate::types::ContainerProperties).
@@ -252,6 +259,7 @@ pub struct ContainerPropertiesBuilder {
     pub(crate) network_configuration: std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) fargate_platform_configuration:
         std::option::Option<crate::types::FargatePlatformConfiguration>,
+    pub(crate) ephemeral_storage: std::option::Option<crate::types::EphemeralStorage>,
 }
 impl ContainerPropertiesBuilder {
     /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
@@ -599,6 +607,19 @@ impl ContainerPropertiesBuilder {
         self.fargate_platform_configuration = input;
         self
     }
+    /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
+    pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
+        self.ephemeral_storage = Some(input);
+        self
+    }
+    /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
+    pub fn set_ephemeral_storage(
+        mut self,
+        input: std::option::Option<crate::types::EphemeralStorage>,
+    ) -> Self {
+        self.ephemeral_storage = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ContainerProperties`](crate::types::ContainerProperties).
     pub fn build(self) -> crate::types::ContainerProperties {
         crate::types::ContainerProperties {
@@ -622,6 +643,7 @@ impl ContainerPropertiesBuilder {
             secrets: self.secrets,
             network_configuration: self.network_configuration,
             fargate_platform_configuration: self.fargate_platform_configuration,
+            ephemeral_storage: self.ephemeral_storage,
         }
     }
 }

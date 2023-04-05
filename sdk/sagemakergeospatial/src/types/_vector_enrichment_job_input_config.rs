@@ -4,22 +4,22 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VectorEnrichmentJobInputConfig {
-    /// <p></p>
+    /// <p>The input structure that defines the data source file type.</p>
     #[doc(hidden)]
     pub document_type: std::option::Option<crate::types::VectorEnrichmentJobDocumentType>,
-    /// <p></p>
+    /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
     #[doc(hidden)]
     pub data_source_config:
         std::option::Option<crate::types::VectorEnrichmentJobDataSourceConfigInput>,
 }
 impl VectorEnrichmentJobInputConfig {
-    /// <p></p>
+    /// <p>The input structure that defines the data source file type.</p>
     pub fn document_type(
         &self,
     ) -> std::option::Option<&crate::types::VectorEnrichmentJobDocumentType> {
         self.document_type.as_ref()
     }
-    /// <p></p>
+    /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
     pub fn data_source_config(
         &self,
     ) -> std::option::Option<&crate::types::VectorEnrichmentJobDataSourceConfigInput> {
@@ -42,12 +42,12 @@ pub struct VectorEnrichmentJobInputConfigBuilder {
         std::option::Option<crate::types::VectorEnrichmentJobDataSourceConfigInput>,
 }
 impl VectorEnrichmentJobInputConfigBuilder {
-    /// <p></p>
+    /// <p>The input structure that defines the data source file type.</p>
     pub fn document_type(mut self, input: crate::types::VectorEnrichmentJobDocumentType) -> Self {
         self.document_type = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The input structure that defines the data source file type.</p>
     pub fn set_document_type(
         mut self,
         input: std::option::Option<crate::types::VectorEnrichmentJobDocumentType>,
@@ -55,7 +55,7 @@ impl VectorEnrichmentJobInputConfigBuilder {
         self.document_type = input;
         self
     }
-    /// <p></p>
+    /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
     pub fn data_source_config(
         mut self,
         input: crate::types::VectorEnrichmentJobDataSourceConfigInput,
@@ -63,7 +63,7 @@ impl VectorEnrichmentJobInputConfigBuilder {
         self.data_source_config = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
     pub fn set_data_source_config(
         mut self,
         input: std::option::Option<crate::types::VectorEnrichmentJobDataSourceConfigInput>,

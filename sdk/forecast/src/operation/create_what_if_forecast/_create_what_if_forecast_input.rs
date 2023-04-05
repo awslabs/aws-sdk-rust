@@ -13,7 +13,8 @@ pub struct CreateWhatIfForecastInput {
     #[doc(hidden)]
     pub time_series_transformations:
         std::option::Option<std::vec::Vec<crate::types::TimeSeriesTransformation>>,
-    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
+    /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
     #[doc(hidden)]
@@ -38,7 +39,8 @@ impl CreateWhatIfForecastInput {
     ) -> std::option::Option<&[crate::types::TimeSeriesTransformation]> {
         self.time_series_transformations.as_deref()
     }
-    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
+    /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
     pub fn time_series_replacements_data_source(
@@ -120,7 +122,8 @@ impl CreateWhatIfForecastInputBuilder {
         self.time_series_transformations = input;
         self
     }
-    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
+    /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
     pub fn time_series_replacements_data_source(
@@ -130,7 +133,8 @@ impl CreateWhatIfForecastInputBuilder {
         self.time_series_replacements_data_source = Some(input);
         self
     }
-    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
+    /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
     pub fn set_time_series_replacements_data_source(

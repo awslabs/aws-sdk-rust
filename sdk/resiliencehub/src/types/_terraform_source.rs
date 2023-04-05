@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerraformSource {
-    /// <p> The Terraform s3 state file you need to import. </p>
+    /// <p> The URL of the Terraform s3 state file you need to import. </p>
     #[doc(hidden)]
     pub s3_state_file_url: std::option::Option<std::string::String>,
 }
 impl TerraformSource {
-    /// <p> The Terraform s3 state file you need to import. </p>
+    /// <p> The URL of the Terraform s3 state file you need to import. </p>
     pub fn s3_state_file_url(&self) -> std::option::Option<&str> {
         self.s3_state_file_url.as_deref()
     }
@@ -28,12 +28,12 @@ pub struct TerraformSourceBuilder {
     pub(crate) s3_state_file_url: std::option::Option<std::string::String>,
 }
 impl TerraformSourceBuilder {
-    /// <p> The Terraform s3 state file you need to import. </p>
+    /// <p> The URL of the Terraform s3 state file you need to import. </p>
     pub fn s3_state_file_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.s3_state_file_url = Some(input.into());
         self
     }
-    /// <p> The Terraform s3 state file you need to import. </p>
+    /// <p> The URL of the Terraform s3 state file you need to import. </p>
     pub fn set_s3_state_file_url(
         mut self,
         input: std::option::Option<std::string::String>,

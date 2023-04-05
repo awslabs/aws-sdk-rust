@@ -9,7 +9,7 @@ pub struct ListImagePackagesOutput {
     /// <p>The list of Image Packages returned in the response.</p>
     #[doc(hidden)]
     pub image_package_list: std::option::Option<std::vec::Vec<crate::types::ImagePackage>>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -23,7 +23,7 @@ impl ListImagePackagesOutput {
     pub fn image_package_list(&self) -> std::option::Option<&[crate::types::ImagePackage]> {
         self.image_package_list.as_deref()
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -80,12 +80,12 @@ impl ListImagePackagesOutputBuilder {
         self.image_package_list = input;
         self
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

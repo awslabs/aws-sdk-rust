@@ -38,7 +38,7 @@ pub struct Delegation {
     /// <p> The comment that's related to the delegation. </p>
     #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
-    /// <p> The IAM user or role that created the delegation. </p>
+    /// <p> The user or role that created the delegation. </p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
 }
@@ -87,7 +87,7 @@ impl Delegation {
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p> The IAM user or role that created the delegation. </p>
+    /// <p> The user or role that created the delegation. </p>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -233,12 +233,12 @@ impl DelegationBuilder {
         self.comment = input;
         self
     }
-    /// <p> The IAM user or role that created the delegation. </p>
+    /// <p> The user or role that created the delegation. </p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
         self.created_by = Some(input.into());
         self
     }
-    /// <p> The IAM user or role that created the delegation. </p>
+    /// <p> The user or role that created the delegation. </p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.created_by = input;
         self

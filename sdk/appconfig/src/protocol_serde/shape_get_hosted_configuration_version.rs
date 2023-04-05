@@ -102,6 +102,10 @@ pub fn de_get_hosted_configuration_version_http_response(
             crate::protocol_serde::shape_get_hosted_configuration_version_output::de_description_header(response.headers())
                                     .map_err(|_|crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled("Failed to parse Description from header `Description"))?
         );
+        output = output.set_version_label(
+            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_version_label_header(response.headers())
+                                    .map_err(|_|crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled("Failed to parse VersionLabel from header `VersionLabel"))?
+        );
         output = output.set_version_number(
             crate::protocol_serde::shape_get_hosted_configuration_version_output::de_version_number_header(response.headers())
                                     .map_err(|_|crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled("Failed to parse VersionNumber from header `Version-Number"))?

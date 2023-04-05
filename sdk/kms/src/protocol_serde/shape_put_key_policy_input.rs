@@ -12,10 +12,8 @@ pub fn ser_put_key_policy_input(
     if let Some(var_3) = &input.policy {
         object.key("Policy").string(var_3.as_str());
     }
-    if input.bypass_policy_lockout_safety_check {
-        object
-            .key("BypassPolicyLockoutSafetyCheck")
-            .boolean(input.bypass_policy_lockout_safety_check);
+    if let Some(var_4) = &input.bypass_policy_lockout_safety_check {
+        object.key("BypassPolicyLockoutSafetyCheck").boolean(*var_4);
     }
     Ok(())
 }

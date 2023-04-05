@@ -106,6 +106,11 @@ pub(crate) fn de_describe_channel(
                             )?,
                         );
                     }
+                    "LogConfiguration" => {
+                        builder = builder.set_log_configuration(
+                            crate::protocol_serde::shape_log_configuration_for_channel::de_log_configuration_for_channel(tokens)?
+                        );
+                    }
                     "Outputs" => {
                         builder = builder.set_outputs(
                             crate::protocol_serde::shape_response_outputs::de_response_outputs(

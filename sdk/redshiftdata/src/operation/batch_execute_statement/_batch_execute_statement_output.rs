@@ -21,7 +21,7 @@ pub struct BatchExecuteStatementOutput {
     /// <p>The name or ARN of the secret that enables access to the database. </p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a provisioned cluster.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -51,7 +51,7 @@ impl BatchExecuteStatementOutput {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a provisioned cluster.</p>
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
@@ -150,12 +150,12 @@ impl BatchExecuteStatementOutputBuilder {
         self.secret_arn = input;
         self
     }
-    /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a provisioned cluster.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.workgroup_name = Some(input.into());
         self
     }
-    /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a provisioned cluster.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.workgroup_name = input;
         self

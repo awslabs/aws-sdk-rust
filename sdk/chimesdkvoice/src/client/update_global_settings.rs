@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateGlobalSettings`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector(VoiceConnectorSettings)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::voice_connector) / [`set_voice_connector(Option<VoiceConnectorSettings>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::set_voice_connector): (undocumented)
+    ///   - [`voice_connector(VoiceConnectorSettings)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::voice_connector) / [`set_voice_connector(Option<VoiceConnectorSettings>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::set_voice_connector): <p>The Voice Connector settings.</p>
     /// - On success, responds with [`UpdateGlobalSettingsOutput`](crate::operation::update_global_settings::UpdateGlobalSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateGlobalSettingsError>`](crate::operation::update_global_settings::UpdateGlobalSettingsError)
     pub fn update_global_settings(

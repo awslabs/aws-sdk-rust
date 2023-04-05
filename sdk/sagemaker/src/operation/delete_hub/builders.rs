@@ -5,7 +5,9 @@ pub use crate::operation::delete_hub::_delete_hub_input::DeleteHubInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteHub`.
 ///
-/// <p>Delete a hub.</p>
+/// <p>Delete a hub.</p> <note>
+/// <p>Hub APIs are only callable through SageMaker Studio.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteHubFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

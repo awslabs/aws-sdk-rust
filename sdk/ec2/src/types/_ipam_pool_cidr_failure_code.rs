@@ -13,6 +13,7 @@
 /// # let ipampoolcidrfailurecode = unimplemented!();
 /// match ipampoolcidrfailurecode {
 ///     IpamPoolCidrFailureCode::CidrNotAvailable => { /* ... */ },
+///     IpamPoolCidrFailureCode::LimitExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@
 pub enum IpamPoolCidrFailureCode {
     #[allow(missing_docs)] // documentation missing in model
     CidrNotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    LimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +58,7 @@ impl std::convert::From<&str> for IpamPoolCidrFailureCode {
     fn from(s: &str) -> Self {
         match s {
             "cidr-not-available" => IpamPoolCidrFailureCode::CidrNotAvailable,
+            "limit-exceeded" => IpamPoolCidrFailureCode::LimitExceeded,
             other => IpamPoolCidrFailureCode::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -73,12 +77,13 @@ impl IpamPoolCidrFailureCode {
     pub fn as_str(&self) -> &str {
         match self {
             IpamPoolCidrFailureCode::CidrNotAvailable => "cidr-not-available",
+            IpamPoolCidrFailureCode::LimitExceeded => "limit-exceeded",
             IpamPoolCidrFailureCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["cidr-not-available"]
+        &["cidr-not-available", "limit-exceeded"]
     }
 }
 impl AsRef<str> for IpamPoolCidrFailureCode {

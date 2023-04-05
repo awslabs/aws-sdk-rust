@@ -100,6 +100,12 @@ pub struct Image {
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
     #[doc(hidden)]
     pub image_source: std::option::Option<crate::types::ImageSource>,
+    /// <p>Contains information about the current state of scans for this image.</p>
+    #[doc(hidden)]
+    pub scan_state: std::option::Option<crate::types::ImageScanState>,
+    /// <p>Contains settings for vulnerability scans.</p>
+    #[doc(hidden)]
+    pub image_scanning_configuration: std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl Image {
     /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
@@ -225,6 +231,16 @@ impl Image {
     pub fn image_source(&self) -> std::option::Option<&crate::types::ImageSource> {
         self.image_source.as_ref()
     }
+    /// <p>Contains information about the current state of scans for this image.</p>
+    pub fn scan_state(&self) -> std::option::Option<&crate::types::ImageScanState> {
+        self.scan_state.as_ref()
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn image_scanning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ImageScanningConfiguration> {
+        self.image_scanning_configuration.as_ref()
+    }
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
@@ -261,6 +277,9 @@ pub struct ImageBuilder {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) build_type: std::option::Option<crate::types::BuildType>,
     pub(crate) image_source: std::option::Option<crate::types::ImageSource>,
+    pub(crate) scan_state: std::option::Option<crate::types::ImageScanState>,
+    pub(crate) image_scanning_configuration:
+        std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl ImageBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
@@ -582,6 +601,35 @@ impl ImageBuilder {
         self.image_source = input;
         self
     }
+    /// <p>Contains information about the current state of scans for this image.</p>
+    pub fn scan_state(mut self, input: crate::types::ImageScanState) -> Self {
+        self.scan_state = Some(input);
+        self
+    }
+    /// <p>Contains information about the current state of scans for this image.</p>
+    pub fn set_scan_state(
+        mut self,
+        input: std::option::Option<crate::types::ImageScanState>,
+    ) -> Self {
+        self.scan_state = input;
+        self
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn image_scanning_configuration(
+        mut self,
+        input: crate::types::ImageScanningConfiguration,
+    ) -> Self {
+        self.image_scanning_configuration = Some(input);
+        self
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn set_image_scanning_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ImageScanningConfiguration>,
+    ) -> Self {
+        self.image_scanning_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
@@ -605,6 +653,8 @@ impl ImageBuilder {
             tags: self.tags,
             build_type: self.build_type,
             image_source: self.image_source,
+            scan_state: self.scan_state,
+            image_scanning_configuration: self.image_scanning_configuration,
         }
     }
 }

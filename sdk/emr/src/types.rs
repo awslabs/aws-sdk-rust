@@ -51,6 +51,12 @@ pub use crate::types::_placement_type::PlacementType;
 
 pub use crate::types::_instance_fleet_config::InstanceFleetConfig;
 
+pub use crate::types::_instance_fleet_resizing_specifications::InstanceFleetResizingSpecifications;
+
+pub use crate::types::_on_demand_resizing_specification::OnDemandResizingSpecification;
+
+pub use crate::types::_spot_resizing_specification::SpotResizingSpecification;
+
 pub use crate::types::_instance_fleet_provisioning_specifications::InstanceFleetProvisioningSpecifications;
 
 pub use crate::types::_on_demand_provisioning_specification::OnDemandProvisioningSpecification;
@@ -209,6 +215,8 @@ pub use crate::types::_cluster_summary::ClusterSummary;
 
 pub use crate::types::_cluster_status::ClusterStatus;
 
+pub use crate::types::_error_detail::ErrorDetail;
+
 pub use crate::types::_cluster_timeline::ClusterTimeline;
 
 pub use crate::types::_cluster_state_change_reason::ClusterStateChangeReason;
@@ -339,6 +347,8 @@ mod _ebs_volume;
 
 mod _ec2_instance_attributes;
 
+mod _error_detail;
+
 mod _execution_engine_config;
 
 mod _execution_engine_type;
@@ -362,6 +372,8 @@ mod _instance_fleet_config;
 mod _instance_fleet_modify_config;
 
 mod _instance_fleet_provisioning_specifications;
+
+mod _instance_fleet_resizing_specifications;
 
 mod _instance_fleet_state;
 
@@ -449,6 +461,8 @@ mod _on_demand_provisioning_allocation_strategy;
 
 mod _on_demand_provisioning_specification;
 
+mod _on_demand_resizing_specification;
+
 mod _os_release;
 
 mod _placement_group_config;
@@ -494,6 +508,8 @@ mod _spot_provisioning_allocation_strategy;
 mod _spot_provisioning_specification;
 
 mod _spot_provisioning_timeout_action;
+
+mod _spot_resizing_specification;
 
 mod _statistic;
 

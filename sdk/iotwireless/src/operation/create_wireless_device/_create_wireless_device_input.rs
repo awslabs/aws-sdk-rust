@@ -27,6 +27,9 @@ pub struct CreateWirelessDeviceInput {
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     #[doc(hidden)]
     pub positioning: std::option::Option<crate::types::PositioningConfigStatus>,
+    /// <p>The device configuration information to use to create the Sidewalk device.</p>
+    #[doc(hidden)]
+    pub sidewalk: std::option::Option<crate::types::SidewalkCreateWirelessDevice>,
 }
 impl CreateWirelessDeviceInput {
     /// <p>The wireless device type.</p>
@@ -61,6 +64,10 @@ impl CreateWirelessDeviceInput {
     pub fn positioning(&self) -> std::option::Option<&crate::types::PositioningConfigStatus> {
         self.positioning.as_ref()
     }
+    /// <p>The device configuration information to use to create the Sidewalk device.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::types::SidewalkCreateWirelessDevice> {
+        self.sidewalk.as_ref()
+    }
 }
 impl CreateWirelessDeviceInput {
     /// Creates a new builder-style object to manufacture [`CreateWirelessDeviceInput`](crate::operation::create_wireless_device::CreateWirelessDeviceInput).
@@ -82,6 +89,7 @@ pub struct CreateWirelessDeviceInputBuilder {
     pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanDevice>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) positioning: std::option::Option<crate::types::PositioningConfigStatus>,
+    pub(crate) sidewalk: std::option::Option<crate::types::SidewalkCreateWirelessDevice>,
 }
 impl CreateWirelessDeviceInputBuilder {
     /// <p>The wireless device type.</p>
@@ -185,6 +193,19 @@ impl CreateWirelessDeviceInputBuilder {
         self.positioning = input;
         self
     }
+    /// <p>The device configuration information to use to create the Sidewalk device.</p>
+    pub fn sidewalk(mut self, input: crate::types::SidewalkCreateWirelessDevice) -> Self {
+        self.sidewalk = Some(input);
+        self
+    }
+    /// <p>The device configuration information to use to create the Sidewalk device.</p>
+    pub fn set_sidewalk(
+        mut self,
+        input: std::option::Option<crate::types::SidewalkCreateWirelessDevice>,
+    ) -> Self {
+        self.sidewalk = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWirelessDeviceInput`](crate::operation::create_wireless_device::CreateWirelessDeviceInput).
     pub fn build(
         self,
@@ -202,6 +223,7 @@ impl CreateWirelessDeviceInputBuilder {
                 lo_ra_wan: self.lo_ra_wan,
                 tags: self.tags,
                 positioning: self.positioning,
+                sidewalk: self.sidewalk,
             },
         )
     }

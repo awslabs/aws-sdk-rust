@@ -69,12 +69,12 @@ impl StartTaskContactFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
@@ -213,6 +213,19 @@ impl StartTaskContactFluentBuilder {
     /// <p>The identifier for the quick connect.</p>
     pub fn set_quick_connect_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_quick_connect_id(input);
+        self
+    }
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    pub fn related_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.related_contact_id(input.into());
+        self
+    }
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    pub fn set_related_contact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_related_contact_id(input);
         self
     }
 }

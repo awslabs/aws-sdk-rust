@@ -151,12 +151,12 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_parameter_template(input);
         self
     }
-    /// <p>A storage capacity for the workflow.</p>
+    /// <p>A storage capacity for the workflow in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
         self
     }
-    /// <p>A storage capacity for the workflow.</p>
+    /// <p>A storage capacity for the workflow in gigabytes.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
@@ -184,12 +184,12 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A request ID for the workflow.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
         self
     }
-    /// <p>A request ID for the workflow.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self

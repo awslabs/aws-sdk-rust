@@ -6,7 +6,7 @@
 pub struct ListMultiplexProgramsInput {
     /// The maximum number of items to return.
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// The ID of the multiplex that the programs belong to.
     #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListMultiplexProgramsInput {
 }
 impl ListMultiplexProgramsInput {
     /// The maximum number of items to return.
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// The ID of the multiplex that the programs belong to.
@@ -85,7 +85,7 @@ impl ListMultiplexProgramsInputBuilder {
     > {
         Ok(
             crate::operation::list_multiplex_programs::ListMultiplexProgramsInput {
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 multiplex_id: self.multiplex_id,
                 next_token: self.next_token,
             },

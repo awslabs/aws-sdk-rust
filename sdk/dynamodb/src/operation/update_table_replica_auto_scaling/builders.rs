@@ -5,9 +5,9 @@ pub use crate::operation::update_table_replica_auto_scaling::_update_table_repli
 
 /// Fluent builder constructing a request to `UpdateTableReplicaAutoScaling`.
 ///
-/// <p>Updates auto scaling settings on your global tables at once.</p> <note>
-/// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
-/// </note>
+/// <p>Updates auto scaling settings on your global tables at once.</p> <important>
+/// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
+/// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTableReplicaAutoScalingFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

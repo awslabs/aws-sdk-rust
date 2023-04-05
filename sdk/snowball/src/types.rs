@@ -7,6 +7,8 @@ pub use crate::types::_shipping_option::ShippingOption;
 
 pub use crate::types::_on_device_service_configuration::OnDeviceServiceConfiguration;
 
+pub use crate::types::_eks_on_device_service_configuration::EksOnDeviceServiceConfiguration;
+
 pub use crate::types::_tgw_on_device_service_configuration::TgwOnDeviceServiceConfiguration;
 
 pub use crate::types::_storage_unit::StorageUnit;
@@ -34,6 +36,12 @@ pub use crate::types::_key_range::KeyRange;
 pub use crate::types::_notification::Notification;
 
 pub use crate::types::_job_state::JobState;
+
+pub use crate::types::_dependent_service::DependentService;
+
+pub use crate::types::_service_version::ServiceVersion;
+
+pub use crate::types::_service_name::ServiceName;
 
 pub use crate::types::_long_term_pricing_list_entry::LongTermPricingListEntry;
 
@@ -91,11 +99,15 @@ mod _compatible_image;
 
 mod _data_transfer;
 
+mod _dependent_service;
+
 mod _device_configuration;
 
 mod _device_service_name;
 
 mod _ec2_ami_resource;
+
+mod _eks_on_device_service_configuration;
 
 mod _event_trigger_definition;
 
@@ -130,6 +142,10 @@ mod _on_device_service_configuration;
 mod _remote_management;
 
 mod _s3_resource;
+
+mod _service_name;
+
+mod _service_version;
 
 mod _shipment;
 

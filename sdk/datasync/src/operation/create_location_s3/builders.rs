@@ -5,8 +5,7 @@ pub use crate::operation::create_location_s3::_create_location_s3_input::CreateL
 
 /// Fluent builder constructing a request to `CreateLocationS3`.
 ///
-/// <p>Creates an endpoint for an Amazon S3 bucket that DataSync can access for a transfer.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create an Amazon S3 location</a> in the <i>DataSync User Guide</i>.</p>
+/// <p>Creates an endpoint for an Amazon S3 bucket that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create an Amazon S3 location</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLocationS3FluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

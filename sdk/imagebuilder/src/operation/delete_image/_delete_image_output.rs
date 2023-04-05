@@ -6,7 +6,7 @@ pub struct DeleteImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
+    /// <p>The ARN of the Image Builder image resource that this request deleted.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -16,7 +16,7 @@ impl DeleteImageOutput {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
+    /// <p>The ARN of the Image Builder image resource that this request deleted.</p>
     pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -52,12 +52,12 @@ impl DeleteImageOutputBuilder {
         self.request_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
+    /// <p>The ARN of the Image Builder image resource that this request deleted.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.image_build_version_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
+    /// <p>The ARN of the Image Builder image resource that this request deleted.</p>
     pub fn set_image_build_version_arn(
         mut self,
         input: std::option::Option<std::string::String>,

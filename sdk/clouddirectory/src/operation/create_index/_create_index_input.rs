@@ -12,7 +12,7 @@ pub struct CreateIndexInput {
         std::option::Option<std::vec::Vec<crate::types::AttributeKey>>,
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     #[doc(hidden)]
-    pub is_unique: bool,
+    pub is_unique: std::option::Option<bool>,
     /// <p>A reference to the parent object that contains the index object.</p>
     #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::types::ObjectReference>,
@@ -32,7 +32,7 @@ impl CreateIndexInput {
         self.ordered_indexed_attribute_list.as_deref()
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
-    pub fn is_unique(&self) -> bool {
+    pub fn is_unique(&self) -> std::option::Option<bool> {
         self.is_unique
     }
     /// <p>A reference to the parent object that contains the index object.</p>
@@ -135,7 +135,7 @@ impl CreateIndexInputBuilder {
         Ok(crate::operation::create_index::CreateIndexInput {
             directory_arn: self.directory_arn,
             ordered_indexed_attribute_list: self.ordered_indexed_attribute_list,
-            is_unique: self.is_unique.unwrap_or_default(),
+            is_unique: self.is_unique,
             parent_reference: self.parent_reference,
             link_name: self.link_name,
         })

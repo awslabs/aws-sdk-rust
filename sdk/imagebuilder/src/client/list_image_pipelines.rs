@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListImagePipelinesOutput`](crate::operation::list_image_pipelines::ListImagePipelinesOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::list_image_pipelines::ListImagePipelinesOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_pipeline_list(Option<Vec<ImagePipeline>>)`](crate::operation::list_image_pipelines::ListImagePipelinesOutput::image_pipeline_list): <p>The list of image pipelines.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_image_pipelines::ListImagePipelinesOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_image_pipelines::ListImagePipelinesOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListImagePipelinesError>`](crate::operation::list_image_pipelines::ListImagePipelinesError)
     pub fn list_image_pipelines(
         &self,

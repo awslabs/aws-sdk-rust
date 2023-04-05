@@ -103,7 +103,7 @@ impl TagResourceFluentBuilder {
     ///
     /// <p>A list of tags to add to the specified resource.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
-    /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
+    /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -111,7 +111,7 @@ impl TagResourceFluentBuilder {
     }
     /// <p>A list of tags to add to the specified resource.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
-    /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
+    /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     pub fn set_tags(
         mut self,

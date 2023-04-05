@@ -17,7 +17,7 @@ pub struct CreateThreatIntelSetInput {
     pub location: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
     #[doc(hidden)]
-    pub activate: bool,
+    pub activate: std::option::Option<bool>,
     /// <p>The idempotency token for the create request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -44,7 +44,7 @@ impl CreateThreatIntelSetInput {
         self.location.as_deref()
     }
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
-    pub fn activate(&self) -> bool {
+    pub fn activate(&self) -> std::option::Option<bool> {
         self.activate
     }
     /// <p>The idempotency token for the create request.</p>
@@ -182,7 +182,7 @@ impl CreateThreatIntelSetInputBuilder {
                 name: self.name,
                 format: self.format,
                 location: self.location,
-                activate: self.activate.unwrap_or_default(),
+                activate: self.activate,
                 client_token: self.client_token,
                 tags: self.tags,
             },

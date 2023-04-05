@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDocumentVersionsInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
@@ -11,7 +11,7 @@ pub struct RestoreDocumentVersionsInput {
     pub document_id: std::option::Option<std::string::String>,
 }
 impl RestoreDocumentVersionsInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -45,12 +45,12 @@ pub struct RestoreDocumentVersionsInputBuilder {
     pub(crate) document_id: std::option::Option<std::string::String>,
 }
 impl RestoreDocumentVersionsInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,

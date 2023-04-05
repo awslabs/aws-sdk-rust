@@ -104,12 +104,12 @@ impl CreateNatGatewayFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>The subnet in which to create the NAT gateway.</p>
+    /// <p>The ID of the subnet in which to create the NAT gateway.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
         self
     }
-    /// <p>The subnet in which to create the NAT gateway.</p>
+    /// <p>The ID of the subnet in which to create the NAT gateway.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
@@ -155,6 +155,53 @@ impl CreateNatGatewayFluentBuilder {
         input: std::option::Option<std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_private_ip_address(input);
+        self
+    }
+    /// Appends an item to `SecondaryAllocationIds`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_allocation_ids`](Self::set_secondary_allocation_ids).
+    ///
+    /// <p>Secondary EIP allocation IDs. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    pub fn secondary_allocation_ids(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.secondary_allocation_ids(input.into());
+        self
+    }
+    /// <p>Secondary EIP allocation IDs. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    pub fn set_secondary_allocation_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_secondary_allocation_ids(input);
+        self
+    }
+    /// Appends an item to `SecondaryPrivateIpAddresses`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_private_ip_addresses`](Self::set_secondary_private_ip_addresses).
+    ///
+    /// <p>Secondary private IPv4 addresses. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    pub fn secondary_private_ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.secondary_private_ip_addresses(input.into());
+        self
+    }
+    /// <p>Secondary private IPv4 addresses. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    pub fn set_secondary_private_ip_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_secondary_private_ip_addresses(input);
+        self
+    }
+    /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    pub fn secondary_private_ip_address_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.secondary_private_ip_address_count(input);
+        self
+    }
+    /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    pub fn set_secondary_private_ip_address_count(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.inner = self.inner.set_secondary_private_ip_address_count(input);
         self
     }
 }

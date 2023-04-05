@@ -5,6 +5,7 @@ pub use crate::operation::update_sip_rule::_update_sip_rule_input::UpdateSipRule
 
 /// Fluent builder constructing a request to `UpdateSipRule`.
 ///
+/// <p>Updates the details of the specified SIP rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSipRuleFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -64,32 +65,32 @@ impl UpdateSipRuleFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn sip_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sip_rule_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn set_sip_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_sip_rule_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new name for the specified SIP rule.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new name for the specified SIP rule.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new value that indicates whether the rule is disabled.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.inner = self.inner.disabled(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new value that indicates whether the rule is disabled.</p>
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disabled(input);
         self
@@ -98,12 +99,12 @@ impl UpdateSipRuleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_target_applications`](Self::set_target_applications).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new list of target applications.</p>
     pub fn target_applications(mut self, input: crate::types::SipRuleTargetApplication) -> Self {
         self.inner = self.inner.target_applications(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new list of target applications.</p>
     pub fn set_target_applications(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,

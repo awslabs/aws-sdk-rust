@@ -6,7 +6,7 @@
 pub struct ListInputDeviceTransfersInput {
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// Placeholder documentation for __string
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListInputDeviceTransfersInput {
 }
 impl ListInputDeviceTransfersInput {
     /// Placeholder documentation for MaxResults
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// Placeholder documentation for __string
@@ -85,7 +85,7 @@ impl ListInputDeviceTransfersInputBuilder {
     > {
         Ok(
             crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput {
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
                 transfer_type: self.transfer_type,
             },

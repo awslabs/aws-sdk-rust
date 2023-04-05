@@ -40,6 +40,9 @@ pub mod export_lens;
 /// Types for the `GetAnswer` operation.
 pub mod get_answer;
 
+/// Types for the `GetConsolidatedReport` operation.
+pub mod get_consolidated_report;
+
 /// Types for the `GetLens` operation.
 pub mod get_lens;
 

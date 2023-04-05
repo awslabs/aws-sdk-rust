@@ -5,6 +5,7 @@ pub use crate::operation::get_sip_rule::_get_sip_rule_input::GetSipRuleInputBuil
 
 /// Fluent builder constructing a request to `GetSipRule`.
 ///
+/// <p>Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target endpoints.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSipRuleFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -64,12 +65,12 @@ impl GetSipRuleFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn sip_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sip_rule_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn set_sip_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_sip_rule_id(input);
         self

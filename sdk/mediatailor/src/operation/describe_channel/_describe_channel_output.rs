@@ -34,6 +34,9 @@ pub struct DescribeChannelOutput {
     /// <p>The channel's tier.</p>
     #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
+    /// <p>The log configuration for the channel.</p>
+    #[doc(hidden)]
+    pub log_configuration: std::option::Option<crate::types::LogConfigurationForChannel>,
     _request_id: Option<String>,
 }
 impl DescribeChannelOutput {
@@ -80,6 +83,12 @@ impl DescribeChannelOutput {
     pub fn tier(&self) -> std::option::Option<&str> {
         self.tier.as_deref()
     }
+    /// <p>The log configuration for the channel.</p>
+    pub fn log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::LogConfigurationForChannel> {
+        self.log_configuration.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeChannelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -108,6 +117,7 @@ pub struct DescribeChannelOutputBuilder {
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) tier: std::option::Option<std::string::String>,
+    pub(crate) log_configuration: std::option::Option<crate::types::LogConfigurationForChannel>,
     _request_id: Option<String>,
 }
 impl DescribeChannelOutputBuilder {
@@ -247,6 +257,19 @@ impl DescribeChannelOutputBuilder {
         self.tier = input;
         self
     }
+    /// <p>The log configuration for the channel.</p>
+    pub fn log_configuration(mut self, input: crate::types::LogConfigurationForChannel) -> Self {
+        self.log_configuration = Some(input);
+        self
+    }
+    /// <p>The log configuration for the channel.</p>
+    pub fn set_log_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LogConfigurationForChannel>,
+    ) -> Self {
+        self.log_configuration = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -269,6 +292,7 @@ impl DescribeChannelOutputBuilder {
             playback_mode: self.playback_mode,
             tags: self.tags,
             tier: self.tier,
+            log_configuration: self.log_configuration,
             _request_id: self._request_id,
         }
     }

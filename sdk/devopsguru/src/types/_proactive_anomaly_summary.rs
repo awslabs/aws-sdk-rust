@@ -43,6 +43,9 @@ pub struct ProactiveAnomalySummary {
     /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
     #[doc(hidden)]
     pub anomaly_resources: std::option::Option<std::vec::Vec<crate::types::AnomalyResource>>,
+    /// <p> A description of the proactive anomaly. </p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
 }
 impl ProactiveAnomalySummary {
     /// <p>The ID of the anomaly.</p>
@@ -99,6 +102,10 @@ impl ProactiveAnomalySummary {
     pub fn anomaly_resources(&self) -> std::option::Option<&[crate::types::AnomalyResource]> {
         self.anomaly_resources.as_deref()
     }
+    /// <p> A description of the proactive anomaly. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl ProactiveAnomalySummary {
     /// Creates a new builder-style object to manufacture [`ProactiveAnomalySummary`](crate::types::ProactiveAnomalySummary).
@@ -125,6 +132,7 @@ pub struct ProactiveAnomalySummaryBuilder {
     pub(crate) limit: std::option::Option<f64>,
     pub(crate) source_metadata: std::option::Option<crate::types::AnomalySourceMetadata>,
     pub(crate) anomaly_resources: std::option::Option<std::vec::Vec<crate::types::AnomalyResource>>,
+    pub(crate) description: std::option::Option<std::string::String>,
 }
 impl ProactiveAnomalySummaryBuilder {
     /// <p>The ID of the anomaly.</p>
@@ -296,6 +304,16 @@ impl ProactiveAnomalySummaryBuilder {
         self.anomaly_resources = input;
         self
     }
+    /// <p> A description of the proactive anomaly. </p>
+    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+        self.description = Some(input.into());
+        self
+    }
+    /// <p> A description of the proactive anomaly. </p>
+    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ProactiveAnomalySummary`](crate::types::ProactiveAnomalySummary).
     pub fn build(self) -> crate::types::ProactiveAnomalySummary {
         crate::types::ProactiveAnomalySummary {
@@ -312,6 +330,7 @@ impl ProactiveAnomalySummaryBuilder {
             limit: self.limit,
             source_metadata: self.source_metadata,
             anomaly_resources: self.anomaly_resources,
+            description: self.description,
         }
     }
 }

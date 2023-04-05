@@ -7,7 +7,7 @@ pub use crate::operation::modify_db_cluster::_modify_db_cluster_input::ModifyDbC
 ///
 /// <p>Modify the settings for an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You can change one or more settings by specifying these parameters and the new values in the request.</p>
 /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
-/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>
+/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDBClusterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -379,11 +379,12 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.set_cloudwatch_logs_export_configuration(input);
         self
     }
-    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+    /// <p>If the cluster that you're modifying has one or more read replicas, all replicas must be running an engine version that's the same or later than the version you specify.</p>
+    /// <p>To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p>To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
@@ -395,11 +396,12 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+    /// <p>If the cluster that you're modifying has one or more read replicas, all replicas must be running an engine version that's the same or later than the version you specify.</p>
+    /// <p>To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p>To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>

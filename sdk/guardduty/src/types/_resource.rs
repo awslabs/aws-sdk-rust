@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
-    /// <p>The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
+    /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
     #[doc(hidden)]
     pub access_key_details: std::option::Option<crate::types::AccessKeyDetails>,
     /// <p>Contains information on the S3 bucket.</p>
@@ -31,9 +31,15 @@ pub struct Resource {
     /// <p>Details of a container.</p>
     #[doc(hidden)]
     pub container_details: std::option::Option<crate::types::Container>,
+    /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
+    #[doc(hidden)]
+    pub rds_db_instance_details: std::option::Option<crate::types::RdsDbInstanceDetails>,
+    /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
+    #[doc(hidden)]
+    pub rds_db_user_details: std::option::Option<crate::types::RdsDbUserDetails>,
 }
 impl Resource {
-    /// <p>The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
+    /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
     pub fn access_key_details(&self) -> std::option::Option<&crate::types::AccessKeyDetails> {
         self.access_key_details.as_ref()
     }
@@ -69,6 +75,16 @@ impl Resource {
     pub fn container_details(&self) -> std::option::Option<&crate::types::Container> {
         self.container_details.as_ref()
     }
+    /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
+    pub fn rds_db_instance_details(
+        &self,
+    ) -> std::option::Option<&crate::types::RdsDbInstanceDetails> {
+        self.rds_db_instance_details.as_ref()
+    }
+    /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
+    pub fn rds_db_user_details(&self) -> std::option::Option<&crate::types::RdsDbUserDetails> {
+        self.rds_db_user_details.as_ref()
+    }
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::types::Resource).
@@ -90,14 +106,16 @@ pub struct ResourceBuilder {
     pub(crate) ebs_volume_details: std::option::Option<crate::types::EbsVolumeDetails>,
     pub(crate) ecs_cluster_details: std::option::Option<crate::types::EcsClusterDetails>,
     pub(crate) container_details: std::option::Option<crate::types::Container>,
+    pub(crate) rds_db_instance_details: std::option::Option<crate::types::RdsDbInstanceDetails>,
+    pub(crate) rds_db_user_details: std::option::Option<crate::types::RdsDbUserDetails>,
 }
 impl ResourceBuilder {
-    /// <p>The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
+    /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
     pub fn access_key_details(mut self, input: crate::types::AccessKeyDetails) -> Self {
         self.access_key_details = Some(input);
         self
     }
-    /// <p>The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
+    /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
     pub fn set_access_key_details(
         mut self,
         input: std::option::Option<crate::types::AccessKeyDetails>,
@@ -212,6 +230,32 @@ impl ResourceBuilder {
         self.container_details = input;
         self
     }
+    /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
+    pub fn rds_db_instance_details(mut self, input: crate::types::RdsDbInstanceDetails) -> Self {
+        self.rds_db_instance_details = Some(input);
+        self
+    }
+    /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
+    pub fn set_rds_db_instance_details(
+        mut self,
+        input: std::option::Option<crate::types::RdsDbInstanceDetails>,
+    ) -> Self {
+        self.rds_db_instance_details = input;
+        self
+    }
+    /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
+    pub fn rds_db_user_details(mut self, input: crate::types::RdsDbUserDetails) -> Self {
+        self.rds_db_user_details = Some(input);
+        self
+    }
+    /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
+    pub fn set_rds_db_user_details(
+        mut self,
+        input: std::option::Option<crate::types::RdsDbUserDetails>,
+    ) -> Self {
+        self.rds_db_user_details = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
@@ -224,6 +268,8 @@ impl ResourceBuilder {
             ebs_volume_details: self.ebs_volume_details,
             ecs_cluster_details: self.ecs_cluster_details,
             container_details: self.container_details,
+            rds_db_instance_details: self.rds_db_instance_details,
+            rds_db_user_details: self.rds_db_user_details,
         }
     }
 }

@@ -9,8 +9,8 @@ pub fn ser_delete_provisioned_product_plan_input(
     if let Some(var_2) = &input.plan_id {
         object.key("PlanId").string(var_2.as_str());
     }
-    if input.ignore_errors {
-        object.key("IgnoreErrors").boolean(input.ignore_errors);
+    if let Some(var_3) = &input.ignore_errors {
+        object.key("IgnoreErrors").boolean(*var_3);
     }
     Ok(())
 }

@@ -42,6 +42,9 @@ pub struct DescribeBotAliasOutput {
     /// <p>A timestamp of the date and time that the alias was last updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of the networks to which the bot alias you described belongs.</p>
+    #[doc(hidden)]
+    pub parent_bot_networks: std::option::Option<std::vec::Vec<crate::types::ParentBotNetwork>>,
     _request_id: Option<String>,
 }
 impl DescribeBotAliasOutput {
@@ -103,6 +106,10 @@ impl DescribeBotAliasOutput {
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
+    /// <p>A list of the networks to which the bot alias you described belongs.</p>
+    pub fn parent_bot_networks(&self) -> std::option::Option<&[crate::types::ParentBotNetwork]> {
+        self.parent_bot_networks.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeBotAliasOutput {
     fn request_id(&self) -> Option<&str> {
@@ -138,6 +145,8 @@ pub struct DescribeBotAliasOutputBuilder {
     pub(crate) bot_id: std::option::Option<std::string::String>,
     pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) parent_bot_networks:
+        std::option::Option<std::vec::Vec<crate::types::ParentBotNetwork>>,
     _request_id: Option<String>,
 }
 impl DescribeBotAliasOutputBuilder {
@@ -306,6 +315,25 @@ impl DescribeBotAliasOutputBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// Appends an item to `parent_bot_networks`.
+    ///
+    /// To override the contents of this collection use [`set_parent_bot_networks`](Self::set_parent_bot_networks).
+    ///
+    /// <p>A list of the networks to which the bot alias you described belongs.</p>
+    pub fn parent_bot_networks(mut self, input: crate::types::ParentBotNetwork) -> Self {
+        let mut v = self.parent_bot_networks.unwrap_or_default();
+        v.push(input);
+        self.parent_bot_networks = Some(v);
+        self
+    }
+    /// <p>A list of the networks to which the bot alias you described belongs.</p>
+    pub fn set_parent_bot_networks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ParentBotNetwork>>,
+    ) -> Self {
+        self.parent_bot_networks = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -330,6 +358,7 @@ impl DescribeBotAliasOutputBuilder {
             bot_id: self.bot_id,
             creation_date_time: self.creation_date_time,
             last_updated_date_time: self.last_updated_date_time,
+            parent_bot_networks: self.parent_bot_networks,
             _request_id: self._request_id,
         }
     }

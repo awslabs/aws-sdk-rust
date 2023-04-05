@@ -483,22 +483,17 @@ pub fn de_db_cluster(
                 builder = builder.set_enabled_cloudwatch_logs_exports(var_37);
             }
             ,
-            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.neptune#DBCluster$DeletionProtection */ =>  {
+            s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.neptune#DBCluster$PendingModifiedValues */ =>  {
                 let var_38 =
                     Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.neptune#BooleanOptional`)"))
-                        }
+                        crate::protocol_serde::shape_cluster_pending_modified_values::de_cluster_pending_modified_values(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_deletion_protection(var_38);
+                builder = builder.set_pending_modified_values(var_38);
             }
             ,
-            s if s.matches("CrossAccountClone") /* CrossAccountClone com.amazonaws.neptune#DBCluster$CrossAccountClone */ =>  {
+            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.neptune#DBCluster$DeletionProtection */ =>  {
                 let var_39 =
                     Some(
                          {
@@ -510,11 +505,26 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_cross_account_clone(var_39);
+                builder = builder.set_deletion_protection(var_39);
+            }
+            ,
+            s if s.matches("CrossAccountClone") /* CrossAccountClone com.amazonaws.neptune#DBCluster$CrossAccountClone */ =>  {
+                let var_40 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.neptune#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_cross_account_clone(var_40);
             }
             ,
             s if s.matches("AutomaticRestartTime") /* AutomaticRestartTime com.amazonaws.neptune#DBCluster$AutomaticRestartTime */ =>  {
-                let var_40 =
+                let var_41 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -524,17 +534,30 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_automatic_restart_time(var_40);
+                builder = builder.set_automatic_restart_time(var_41);
             }
             ,
             s if s.matches("ServerlessV2ScalingConfiguration") /* ServerlessV2ScalingConfiguration com.amazonaws.neptune#DBCluster$ServerlessV2ScalingConfiguration */ =>  {
-                let var_41 =
+                let var_42 =
                     Some(
                         crate::protocol_serde::shape_serverless_v2_scaling_configuration_info::de_serverless_v2_scaling_configuration_info(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_serverless_v2_scaling_configuration(var_41);
+                builder = builder.set_serverless_v2_scaling_configuration(var_42);
+            }
+            ,
+            s if s.matches("GlobalClusterIdentifier") /* GlobalClusterIdentifier com.amazonaws.neptune#DBCluster$GlobalClusterIdentifier */ =>  {
+                let var_43 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_global_cluster_identifier(var_43);
             }
             ,
             _ => {}

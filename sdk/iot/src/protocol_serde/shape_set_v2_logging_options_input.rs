@@ -6,11 +6,11 @@ pub fn ser_set_v2_logging_options_input(
     if let Some(var_1) = &input.default_log_level {
         object.key("defaultLogLevel").string(var_1.as_str());
     }
-    if input.disable_all_logs {
-        object.key("disableAllLogs").boolean(input.disable_all_logs);
+    if let Some(var_2) = &input.disable_all_logs {
+        object.key("disableAllLogs").boolean(*var_2);
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("roleArn").string(var_2.as_str());
+    if let Some(var_3) = &input.role_arn {
+        object.key("roleArn").string(var_3.as_str());
     }
     Ok(())
 }

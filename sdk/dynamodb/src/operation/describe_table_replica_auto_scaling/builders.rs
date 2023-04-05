@@ -5,9 +5,9 @@ pub use crate::operation::describe_table_replica_auto_scaling::_describe_table_r
 
 /// Fluent builder constructing a request to `DescribeTableReplicaAutoScaling`.
 ///
-/// <p>Describes auto scaling settings across replicas of the global table at once.</p> <note>
-/// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
-/// </note>
+/// <p>Describes auto scaling settings across replicas of the global table at once.</p> <important>
+/// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables.</p>
+/// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTableReplicaAutoScalingFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

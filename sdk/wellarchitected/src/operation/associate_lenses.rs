@@ -189,7 +189,7 @@ pub type AssociateLensesErrorKind = AssociateLensesError;
 pub enum AssociateLensesError {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The resource already exists.</p>
+    /// <p>The resource has already been processed, was deleted, or is too large.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::types::error::InternalServerException),

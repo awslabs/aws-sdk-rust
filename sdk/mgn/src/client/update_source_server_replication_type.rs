@@ -17,6 +17,8 @@ impl super::Client {
     ///   - [`replication_type(Option<ReplicationType>)`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeOutput::application_id): <p>Source server application ID.</p>
+    ///   - [`user_provided_id(Option<String>)`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeOutput::user_provided_id): <p>Source server user provided ID.</p>
+    ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<UpdateSourceServerReplicationTypeError>`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeError)
     pub fn update_source_server_replication_type(&self) -> crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeFluentBuilder{
         crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeFluentBuilder::new(self.handle.clone())

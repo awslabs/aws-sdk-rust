@@ -12,5 +12,8 @@ pub fn ser_ip_address_update(
     if let Some(var_3) = &input.ip {
         object.key("Ip").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.ipv6 {
+        object.key("Ipv6").string(var_4.as_str());
+    }
     Ok(())
 }

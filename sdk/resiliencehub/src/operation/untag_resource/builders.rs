@@ -79,12 +79,12 @@ impl UntagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// <p>The keys of the tags to remove.</p>
+    /// <p>The keys of the tags you want to remove.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tag_keys(input.into());
         self
     }
-    /// <p>The keys of the tags to remove.</p>
+    /// <p>The keys of the tags you want to remove.</p>
     pub fn set_tag_keys(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

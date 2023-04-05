@@ -219,12 +219,12 @@ impl CreateAutoScalingGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
     ///
-    /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancer, specify the <code>TargetGroupARNs</code> property instead.</p>
+    /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.</p>
     pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_names(input.into());
         self
     }
-    /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancer, specify the <code>TargetGroupARNs</code> property instead.</p>
+    /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.</p>
     pub fn set_load_balancer_names(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -249,14 +249,16 @@ impl CreateAutoScalingGroupFluentBuilder {
         self.inner = self.inner.set_target_group_ar_ns(input);
         self
     }
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
+    /// <p>The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Only specify <code>EC2</code> if you must clear a value that was previously set.</p>
     pub fn health_check_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.health_check_type(input.into());
         self
     }
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
+    /// <p>The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Only specify <code>EC2</code> if you must clear a value that was previously set.</p>
     pub fn set_health_check_type(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -432,18 +434,18 @@ impl CreateAutoScalingGroupFluentBuilder {
         self.inner = self.inner.set_desired_capacity_type(input);
         self
     }
-    /// <p>The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource consumption to become stable after an instance reaches the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
-    /// <p>To manage your warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale continuously, such as target tracking and step scaling policies. </p>
-    /// <p>If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value of <code>0</code>.</p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
+    /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
     /// <p>Default: None </p>
     pub fn default_instance_warmup(mut self, input: i32) -> Self {
         self.inner = self.inner.default_instance_warmup(input);
         self
     }
-    /// <p>The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource consumption to become stable after an instance reaches the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
-    /// <p>To manage your warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale continuously, such as target tracking and step scaling policies. </p>
-    /// <p>If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value of <code>0</code>.</p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
+    /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
     /// <p>Default: None </p>
     pub fn set_default_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
@@ -454,16 +456,12 @@ impl CreateAutoScalingGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
     ///
-    /// <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use this parameter for production workloads. It is also subject to change.</b> </p>
-    /// <p>The unique identifiers of one or more traffic sources.</p>
-    /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
+    /// <p>The list of traffic sources to attach to this Auto Scaling group. You can use any of the following as traffic sources for an Auto Scaling group: Classic Load Balancer, Application Load Balancer, Gateway Load Balancer, Network Load Balancer, and VPC Lattice.</p>
     pub fn traffic_sources(mut self, input: crate::types::TrafficSourceIdentifier) -> Self {
         self.inner = self.inner.traffic_sources(input);
         self
     }
-    /// <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use this parameter for production workloads. It is also subject to change.</b> </p>
-    /// <p>The unique identifiers of one or more traffic sources.</p>
-    /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
+    /// <p>The list of traffic sources to attach to this Auto Scaling group. You can use any of the following as traffic sources for an Auto Scaling group: Classic Load Balancer, Application Load Balancer, Gateway Load Balancer, Network Load Balancer, and VPC Lattice.</p>
     pub fn set_traffic_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>,

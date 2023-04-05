@@ -7,13 +7,13 @@ pub struct DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
     /// </note>
     #[doc(hidden)]
-    pub check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub check_ids: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
     /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
     /// </note>
-    pub fn check_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn check_ids(&self) -> std::option::Option<&[std::option::Option<std::string::String>]> {
         self.check_ids.as_deref()
     }
 }
@@ -28,7 +28,8 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesInputBuilder {
-    pub(crate) check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) check_ids:
+        std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesInputBuilder {
     /// Appends an item to `check_ids`.
@@ -38,9 +39,9 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInputBuilder {
     /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
     /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
     /// </note>
-    pub fn check_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn check_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
         let mut v = self.check_ids.unwrap_or_default();
-        v.push(input.into());
+        v.push(input);
         self.check_ids = Some(v);
         self
     }
@@ -49,7 +50,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInputBuilder {
     /// </note>
     pub fn set_check_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
     ) -> Self {
         self.check_ids = input;
         self

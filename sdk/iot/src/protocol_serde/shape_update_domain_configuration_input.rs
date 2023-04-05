@@ -17,10 +17,8 @@ pub fn ser_update_domain_configuration_input(
             .key("domainConfigurationStatus")
             .string(var_3.as_str());
     }
-    if input.remove_authorizer_config {
-        object
-            .key("removeAuthorizerConfig")
-            .boolean(input.remove_authorizer_config);
+    if let Some(var_4) = &input.remove_authorizer_config {
+        object.key("removeAuthorizerConfig").boolean(*var_4);
     }
     Ok(())
 }

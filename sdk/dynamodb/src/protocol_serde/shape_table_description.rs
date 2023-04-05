@@ -175,6 +175,13 @@ where
                                     crate::protocol_serde::shape_table_class_summary::de_table_class_summary(tokens)?
                                 );
                             }
+                            "DeletionProtectionEnabled" => {
+                                builder = builder.set_deletion_protection_enabled(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

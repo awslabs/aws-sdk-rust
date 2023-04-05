@@ -3,25 +3,23 @@ pub fn ser_list_object_parents_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_object_parents::ListObjectParentsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.include_all_links_to_each_parent {
-        object
-            .key("IncludeAllLinksToEachParent")
-            .boolean(input.include_all_links_to_each_parent);
+    if let Some(var_1) = &input.include_all_links_to_each_parent {
+        object.key("IncludeAllLinksToEachParent").boolean(*var_1);
     }
-    if let Some(var_1) = &input.max_results {
+    if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("NextToken").string(var_2.as_str());
+    if let Some(var_3) = &input.next_token {
+        object.key("NextToken").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.object_reference {
+    if let Some(var_4) = &input.object_reference {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ObjectReference").start_object();
-        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("ObjectReference").start_object();
+        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

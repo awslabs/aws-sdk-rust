@@ -5,8 +5,8 @@ pub use crate::operation::delete_channel_ban::_delete_channel_ban_input::DeleteC
 
 /// Fluent builder constructing a request to `DeleteChannelBan`.
 ///
-/// <p>Removes a user from a channel's ban list.</p> <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+/// <p>Removes a member from a channel's ban list.</p> <note>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannelBanFluentBuilder {
@@ -91,12 +91,12 @@ impl DeleteChannelBanFluentBuilder {
         self.inner = self.inner.set_member_arn(input);
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self

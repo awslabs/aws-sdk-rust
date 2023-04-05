@@ -111,4 +111,14 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_desired_data_access_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.flywheel_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_flywheel_arn(input);
+        self
+    }
 }

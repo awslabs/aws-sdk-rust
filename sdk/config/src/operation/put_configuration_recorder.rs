@@ -170,7 +170,7 @@ pub enum PutConfigurationRecorderError {
     InvalidConfigurationRecorderNameException(
         crate::types::error::InvalidConfigurationRecorderNameException,
     ),
-    /// <p>Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values might also be incorrectly formatted.</p>
+    /// <p>Config throws an exception if the recording group does not contain a valid list of resource types. Values that are not valid might also be incorrectly formatted.</p>
     InvalidRecordingGroupException(crate::types::error::InvalidRecordingGroupException),
     /// <p>You have provided a null or empty role ARN.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),

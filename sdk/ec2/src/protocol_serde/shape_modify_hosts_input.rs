@@ -36,6 +36,11 @@ pub fn ser_modify_hosts_input_input(
     if let Some(var_13) = &input.instance_family {
         scope_12.string(var_13);
     }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("HostMaintenance");
+    if let Some(var_15) = &input.host_maintenance {
+        scope_14.string(var_15.as_str());
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

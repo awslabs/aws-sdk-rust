@@ -12,14 +12,14 @@ pub fn ser_list_constraints_for_portfolio_input(
     if let Some(var_3) = &input.product_id {
         object.key("ProductId").string(var_3.as_str());
     }
-    if input.page_size != 0 {
+    if let Some(var_4) = &input.page_size {
         object.key("PageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.page_size).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.page_token {
-        object.key("PageToken").string(var_4.as_str());
+    if let Some(var_5) = &input.page_token {
+        object.key("PageToken").string(var_5.as_str());
     }
     Ok(())
 }

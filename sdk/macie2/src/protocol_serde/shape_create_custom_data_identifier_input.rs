@@ -27,42 +27,42 @@ pub fn ser_create_custom_data_identifier_input(
         }
         array_7.finish();
     }
-    if input.maximum_match_distance != 0 {
+    if let Some(var_9) = &input.maximum_match_distance {
         object.key("maximumMatchDistance").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_match_distance).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
+    if let Some(var_10) = &input.name {
+        object.key("name").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.regex {
-        object.key("regex").string(var_10.as_str());
+    if let Some(var_11) = &input.regex {
+        object.key("regex").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.severity_levels {
-        let mut array_12 = object.key("severityLevels").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.severity_levels {
+        let mut array_13 = object.key("severityLevels").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
+                let mut object_15 = array_13.value().start_object();
                 crate::protocol_serde::shape_severity_level::ser_severity_level(
-                    &mut object_14,
-                    item_13,
+                    &mut object_15,
+                    item_14,
                 )?;
-                object_14.finish();
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.tags {
+    if let Some(var_16) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("tags").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
     Ok(())
 }

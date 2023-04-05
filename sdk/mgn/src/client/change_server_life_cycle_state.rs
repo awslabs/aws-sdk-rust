@@ -17,6 +17,8 @@ impl super::Client {
     ///   - [`replication_type(Option<ReplicationType>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::application_id): <p>Source server application ID.</p>
+    ///   - [`user_provided_id(Option<String>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::user_provided_id): <p>Source server user provided ID.</p>
+    ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<ChangeServerLifeCycleStateError>`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError)
     pub fn change_server_life_cycle_state(&self) -> crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateFluentBuilder{
         crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateFluentBuilder::new(self.handle.clone())

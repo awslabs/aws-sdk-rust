@@ -523,6 +523,47 @@ impl From<crate::operation::describe_ephemeris::DescribeEphemerisError> for Erro
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_agent_configuration::GetAgentConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_agent_configuration::GetAgentConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_agent_configuration::GetAgentConfigurationError> for Error {
+    fn from(err: crate::operation::get_agent_configuration::GetAgentConfigurationError) -> Self {
+        match err {
+            crate::operation::get_agent_configuration::GetAgentConfigurationError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::get_agent_configuration::GetAgentConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_agent_configuration::GetAgentConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_agent_configuration::GetAgentConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_config::GetConfigError, R>>
     for Error
 where
@@ -1095,6 +1136,51 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     }
 }
 impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::register_agent::RegisterAgentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::register_agent::RegisterAgentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::register_agent::RegisterAgentError> for Error {
+    fn from(err: crate::operation::register_agent::RegisterAgentError) -> Self {
+        match err {
+            crate::operation::register_agent::RegisterAgentError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::register_agent::RegisterAgentError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::register_agent::RegisterAgentError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::register_agent::RegisterAgentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<
         aws_smithy_http::result::SdkError<
             crate::operation::reserve_contact::ReserveContactError,
@@ -1226,6 +1312,47 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_agent_status::UpdateAgentStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_agent_status::UpdateAgentStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_agent_status::UpdateAgentStatusError> for Error {
+    fn from(err: crate::operation::update_agent_status::UpdateAgentStatusError) -> Self {
+        match err {
+            crate::operation::update_agent_status::UpdateAgentStatusError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::update_agent_status::UpdateAgentStatusError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_agent_status::UpdateAgentStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_agent_status::UpdateAgentStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

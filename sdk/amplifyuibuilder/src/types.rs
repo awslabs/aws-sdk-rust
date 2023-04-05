@@ -13,6 +13,8 @@ pub use crate::types::_update_theme_data::UpdateThemeData;
 
 pub use crate::types::_form::Form;
 
+pub use crate::types::_label_decorator::LabelDecorator;
+
 pub use crate::types::_form_cta::FormCta;
 
 pub use crate::types::_form_button::FormButton;
@@ -31,11 +33,21 @@ pub use crate::types::_field_validation_configuration::FieldValidationConfigurat
 
 pub use crate::types::_field_input_config::FieldInputConfig;
 
+pub use crate::types::_file_uploader_field_config::FileUploaderFieldConfig;
+
+pub use crate::types::_storage_access_level::StorageAccessLevel;
+
 pub use crate::types::_value_mappings::ValueMappings;
+
+pub use crate::types::_form_input_binding_properties_value::FormInputBindingPropertiesValue;
+
+pub use crate::types::_form_input_binding_properties_value_properties::FormInputBindingPropertiesValueProperties;
 
 pub use crate::types::_value_mapping::ValueMapping;
 
 pub use crate::types::_form_input_value_property::FormInputValueProperty;
+
+pub use crate::types::_form_input_value_property_binding_properties::FormInputValuePropertyBindingProperties;
 
 pub use crate::types::_form_data_type_config::FormDataTypeConfig;
 
@@ -139,6 +151,8 @@ mod _field_position;
 
 mod _field_validation_configuration;
 
+mod _file_uploader_field_config;
+
 mod _fixed_position;
 
 mod _form;
@@ -157,13 +171,21 @@ mod _form_data_source_type;
 
 mod _form_data_type_config;
 
+mod _form_input_binding_properties_value;
+
+mod _form_input_binding_properties_value_properties;
+
 mod _form_input_value_property;
+
+mod _form_input_value_property_binding_properties;
 
 mod _form_style;
 
 mod _form_style_config;
 
 mod _form_summary;
+
+mod _label_decorator;
 
 mod _mutation_action_set_state_parameter;
 
@@ -178,6 +200,8 @@ mod _sectional_element;
 mod _sort_direction;
 
 mod _sort_property;
+
+mod _storage_access_level;
 
 mod _theme;
 

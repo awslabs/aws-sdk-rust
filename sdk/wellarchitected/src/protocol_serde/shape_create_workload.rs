@@ -87,6 +87,24 @@ pub fn de_create_workload_http_error(
                 tmp
             })
         }
+        "ResourceNotFoundException" => {
+            crate::operation::create_workload::CreateWorkloadError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_workload::CreateWorkloadError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceQuotaExceededException" => {
             crate::operation::create_workload::CreateWorkloadError::ServiceQuotaExceededException({
                 #[allow(unused_mut)]

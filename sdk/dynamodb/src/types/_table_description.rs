@@ -148,6 +148,9 @@ pub struct TableDescription {
     /// <p>Contains details of the table class.</p>
     #[doc(hidden)]
     pub table_class_summary: std::option::Option<crate::types::TableClassSummary>,
+    /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
+    #[doc(hidden)]
+    pub deletion_protection_enabled: std::option::Option<bool>,
 }
 impl TableDescription {
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute in the table and index key schema.</p>
@@ -321,6 +324,10 @@ impl TableDescription {
     pub fn table_class_summary(&self) -> std::option::Option<&crate::types::TableClassSummary> {
         self.table_class_summary.as_ref()
     }
+    /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
+    pub fn deletion_protection_enabled(&self) -> std::option::Option<bool> {
+        self.deletion_protection_enabled
+    }
 }
 impl TableDescription {
     /// Creates a new builder-style object to manufacture [`TableDescription`](crate::types::TableDescription).
@@ -359,6 +366,7 @@ pub struct TableDescriptionBuilder {
     pub(crate) sse_description: std::option::Option<crate::types::SseDescription>,
     pub(crate) archival_summary: std::option::Option<crate::types::ArchivalSummary>,
     pub(crate) table_class_summary: std::option::Option<crate::types::TableClassSummary>,
+    pub(crate) deletion_protection_enabled: std::option::Option<bool>,
 }
 impl TableDescriptionBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -821,6 +829,16 @@ impl TableDescriptionBuilder {
         self.table_class_summary = input;
         self
     }
+    /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
+    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
+        self.deletion_protection_enabled = Some(input);
+        self
+    }
+    /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
+    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+        self.deletion_protection_enabled = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TableDescription`](crate::types::TableDescription).
     pub fn build(self) -> crate::types::TableDescription {
         crate::types::TableDescription {
@@ -846,6 +864,7 @@ impl TableDescriptionBuilder {
             sse_description: self.sse_description,
             archival_summary: self.archival_summary,
             table_class_summary: self.table_class_summary,
+            deletion_protection_enabled: self.deletion_protection_enabled,
         }
     }
 }

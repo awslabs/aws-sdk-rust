@@ -9,6 +9,9 @@ pub struct GetMapSpritesOutput {
     /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
+    /// <p>The HTTP Cache-Control directive for the value.</p>
+    #[doc(hidden)]
+    pub cache_control: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMapSpritesOutput {
@@ -19,6 +22,10 @@ impl GetMapSpritesOutput {
     /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
+    }
+    /// <p>The HTTP Cache-Control directive for the value.</p>
+    pub fn cache_control(&self) -> std::option::Option<&str> {
+        self.cache_control.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMapSpritesOutput {
@@ -39,6 +46,7 @@ impl GetMapSpritesOutput {
 pub struct GetMapSpritesOutputBuilder {
     pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
     pub(crate) content_type: std::option::Option<std::string::String>,
+    pub(crate) cache_control: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMapSpritesOutputBuilder {
@@ -62,6 +70,16 @@ impl GetMapSpritesOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The HTTP Cache-Control directive for the value.</p>
+    pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
+        self.cache_control = Some(input.into());
+        self
+    }
+    /// <p>The HTTP Cache-Control directive for the value.</p>
+    pub fn set_cache_control(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cache_control = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -76,6 +94,7 @@ impl GetMapSpritesOutputBuilder {
         crate::operation::get_map_sprites::GetMapSpritesOutput {
             blob: self.blob,
             content_type: self.content_type,
+            cache_control: self.cache_control,
             _request_id: self._request_id,
         }
     }

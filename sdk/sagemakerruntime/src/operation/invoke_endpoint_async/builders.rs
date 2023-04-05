@@ -6,9 +6,9 @@ pub use crate::operation::invoke_endpoint_async::_invoke_endpoint_async_input::I
 /// Fluent builder constructing a request to `InvokeEndpointAsync`.
 ///
 /// <p>After you deploy a model into production using Amazon SageMaker hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint in an asynchronous manner.</p>
-/// <p>Inference requests sent to this API are enqueued for asynchronous processing. The processing of the inference request may or may not complete before the you receive a response from this API. The response from this API will not contain the result of the inference request but contain information about where you can locate it.</p>
+/// <p>Inference requests sent to this API are enqueued for asynchronous processing. The processing of the inference request may or may not complete before you receive a response from this API. The response from this API will not contain the result of the inference request but contain information about where you can locate it.</p>
 /// <p>Amazon SageMaker strips all <code>POST</code> headers except those supported by the API. Amazon SageMaker might add additional headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.</p>
-/// <p>Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.</p>
+/// <p>Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InvokeEndpointAsyncFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -139,14 +139,24 @@ impl InvokeEndpointAsyncFluentBuilder {
         self.inner = self.inner.set_input_location(input);
         self
     }
-    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
+    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     pub fn request_ttl_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.request_ttl_seconds(input);
         self
     }
-    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
+    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     pub fn set_request_ttl_seconds(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_request_ttl_seconds(input);
+        self
+    }
+    /// <p>Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15 minutes, or 900 seconds.</p>
+    pub fn invocation_timeout_seconds(mut self, input: i32) -> Self {
+        self.inner = self.inner.invocation_timeout_seconds(input);
+        self
+    }
+    /// <p>Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15 minutes, or 900 seconds.</p>
+    pub fn set_invocation_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_invocation_timeout_seconds(input);
         self
     }
 }

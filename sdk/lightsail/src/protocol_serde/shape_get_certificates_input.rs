@@ -12,13 +12,11 @@ pub fn ser_get_certificates_input(
         }
         array_2.finish();
     }
-    if input.include_certificate_details {
-        object
-            .key("includeCertificateDetails")
-            .boolean(input.include_certificate_details);
+    if let Some(var_4) = &input.include_certificate_details {
+        object.key("includeCertificateDetails").boolean(*var_4);
     }
-    if let Some(var_4) = &input.certificate_name {
-        object.key("certificateName").string(var_4.as_str());
+    if let Some(var_5) = &input.certificate_name {
+        object.key("certificateName").string(var_5.as_str());
     }
     Ok(())
 }

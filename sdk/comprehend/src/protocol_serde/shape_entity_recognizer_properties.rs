@@ -157,6 +157,20 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "FlywheelArn" => {
+                                builder = builder.set_flywheel_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "OutputDataConfig" => {
+                                builder = builder.set_output_data_config(
+                                    crate::protocol_serde::shape_entity_recognizer_output_data_config::de_entity_recognizer_output_data_config(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

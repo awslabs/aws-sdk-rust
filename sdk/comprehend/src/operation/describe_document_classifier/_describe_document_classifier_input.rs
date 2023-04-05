@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDocumentClassifierInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
     pub document_classifier_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentClassifierInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
     pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
         self.document_classifier_arn.as_deref()
     }
@@ -27,12 +27,12 @@ pub struct DescribeDocumentClassifierInputBuilder {
     pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentClassifierInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
     pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.document_classifier_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
     pub fn set_document_classifier_arn(
         mut self,
         input: std::option::Option<std::string::String>,

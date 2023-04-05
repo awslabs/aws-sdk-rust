@@ -161,7 +161,7 @@ pub type ListServersErrorKind = ListServersError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServersError {
-    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The user does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this user.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::types::error::InternalServerException),

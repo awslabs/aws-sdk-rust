@@ -191,6 +191,15 @@ where
                                     crate::protocol_serde::shape_copy_job_child_jobs_in_state::de_copy_job_child_jobs_in_state(tokens)?
                                 );
                             }
+                            "ResourceName" => {
+                                builder = builder.set_resource_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

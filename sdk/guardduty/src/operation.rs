@@ -82,6 +82,9 @@ pub mod enable_organization_admin_account;
 /// Types for the `GetAdministratorAccount` operation.
 pub mod get_administrator_account;
 
+/// Types for the `GetCoverageStatistics` operation.
+pub mod get_coverage_statistics;
+
 /// Types for the `GetDetector` operation.
 pub mod get_detector;
 
@@ -123,6 +126,9 @@ pub mod get_usage_statistics;
 
 /// Types for the `InviteMembers` operation.
 pub mod invite_members;
+
+/// Types for the `ListCoverage` operation.
+pub mod list_coverage;
 
 /// Types for the `ListDetectors` operation.
 pub mod list_detectors;

@@ -30,6 +30,18 @@ pub fn ser_customized_metric_specification(
     if let Some(var_8) = &input.unit {
         object.key("Unit").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.metrics {
+        let mut array_10 = object.key("Metrics").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_target_tracking_metric_data_query::ser_target_tracking_metric_data_query(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }
 
@@ -101,6 +113,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "Metrics" => {
+                                builder = builder.set_metrics(
+                                    crate::protocol_serde::shape_target_tracking_metric_data_queries::de_target_tracking_metric_data_queries(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

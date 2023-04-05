@@ -5,6 +5,7 @@ pub use crate::operation::list_supported_phone_number_countries::_list_supported
 
 /// Fluent builder constructing a request to `ListSupportedPhoneNumberCountries`.
 ///
+/// <p>Lists the countries that you can order phone numbers from.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl ListSupportedPhoneNumberCountriesFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.inner = self.inner.product_type(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn set_product_type(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberProductType>,

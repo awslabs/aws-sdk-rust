@@ -5,7 +5,7 @@ pub use crate::operation::get_resolver_config::_get_resolver_config_input::GetRe
 
 /// Fluent builder constructing a request to `GetResolverConfig`.
 ///
-/// <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud.</p>
+/// <p>Retrieves the behavior configuration of Route&nbsp;53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResolverConfigFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

@@ -21,7 +21,7 @@ pub struct SendChannelMessageInput {
     /// <p>The <code>Idempotency</code> token for each client request.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>The push notification configuration of the message.</p>
@@ -35,6 +35,9 @@ pub struct SendChannelMessageInput {
     /// <p>The ID of the SubChannel in the request.</p>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    /// <p>The content type of the channel message.</p>
+    #[doc(hidden)]
+    pub content_type: std::option::Option<std::string::String>,
 }
 impl SendChannelMessageInput {
     /// <p>The ARN of the channel.</p>
@@ -61,7 +64,7 @@ impl SendChannelMessageInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
@@ -83,6 +86,10 @@ impl SendChannelMessageInput {
     pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
+    /// <p>The content type of the channel message.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for SendChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -97,6 +104,7 @@ impl std::fmt::Debug for SendChannelMessageInput {
         formatter.field("push_notification", &self.push_notification);
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -124,6 +132,7 @@ pub struct SendChannelMessageInputBuilder {
         std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
     >,
     pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+    pub(crate) content_type: std::option::Option<std::string::String>,
 }
 impl SendChannelMessageInputBuilder {
     /// <p>The ARN of the channel.</p>
@@ -195,12 +204,12 @@ impl SendChannelMessageInputBuilder {
         self.client_request_token = input;
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.chime_bearer = Some(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.chime_bearer = input;
         self
@@ -253,6 +262,16 @@ impl SendChannelMessageInputBuilder {
         self.sub_channel_id = input;
         self
     }
+    /// <p>The content type of the channel message.</p>
+    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.content_type = Some(input.into());
+        self
+    }
+    /// <p>The content type of the channel message.</p>
+    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.content_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
     pub fn build(
         self,
@@ -272,6 +291,7 @@ impl SendChannelMessageInputBuilder {
                 push_notification: self.push_notification,
                 message_attributes: self.message_attributes,
                 sub_channel_id: self.sub_channel_id,
+                content_type: self.content_type,
             },
         )
     }
@@ -289,6 +309,7 @@ impl std::fmt::Debug for SendChannelMessageInputBuilder {
         formatter.field("push_notification", &self.push_notification);
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

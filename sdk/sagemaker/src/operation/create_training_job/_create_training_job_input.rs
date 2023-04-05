@@ -46,14 +46,14 @@ pub struct CreateTrainingJobInput {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     #[doc(hidden)]
-    pub enable_network_isolation: bool,
+    pub enable_network_isolation: std::option::Option<bool>,
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
     #[doc(hidden)]
-    pub enable_inter_container_traffic_encryption: bool,
+    pub enable_inter_container_traffic_encryption: std::option::Option<bool>,
     /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>
     /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
     #[doc(hidden)]
-    pub enable_managed_spot_training: bool,
+    pub enable_managed_spot_training: std::option::Option<bool>,
     /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
     #[doc(hidden)]
     pub checkpoint_config: std::option::Option<crate::types::CheckpointConfig>,
@@ -147,16 +147,16 @@ impl CreateTrainingJobInput {
         self.tags.as_deref()
     }
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-    pub fn enable_network_isolation(&self) -> bool {
+    pub fn enable_network_isolation(&self) -> std::option::Option<bool> {
         self.enable_network_isolation
     }
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
-    pub fn enable_inter_container_traffic_encryption(&self) -> bool {
+    pub fn enable_inter_container_traffic_encryption(&self) -> std::option::Option<bool> {
         self.enable_inter_container_traffic_encryption
     }
     /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>
     /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
-    pub fn enable_managed_spot_training(&self) -> bool {
+    pub fn enable_managed_spot_training(&self) -> std::option::Option<bool> {
         self.enable_managed_spot_training
     }
     /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
@@ -633,11 +633,10 @@ impl CreateTrainingJobInputBuilder {
                 vpc_config: self.vpc_config,
                 stopping_condition: self.stopping_condition,
                 tags: self.tags,
-                enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
+                enable_network_isolation: self.enable_network_isolation,
                 enable_inter_container_traffic_encryption: self
-                    .enable_inter_container_traffic_encryption
-                    .unwrap_or_default(),
-                enable_managed_spot_training: self.enable_managed_spot_training.unwrap_or_default(),
+                    .enable_inter_container_traffic_encryption,
+                enable_managed_spot_training: self.enable_managed_spot_training,
                 checkpoint_config: self.checkpoint_config,
                 debug_hook_config: self.debug_hook_config,
                 debug_rule_configurations: self.debug_rule_configurations,

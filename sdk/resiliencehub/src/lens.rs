@@ -39,6 +39,26 @@ pub(crate) fn reflens_list_app_component_recommendations_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_app_input_sources_output_next_token(
+    input: &crate::operation::list_app_input_sources::ListAppInputSourcesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_app_version_app_components_output_next_token(
+    input: &crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_app_version_resource_mappings_output_next_token(
     input: &crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput,
 ) -> std::option::Option<&std::string::String> {

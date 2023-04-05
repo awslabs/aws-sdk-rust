@@ -337,6 +337,50 @@ impl From<crate::operation::create_detector_version::CreateDetectorVersionError>
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_list::CreateListError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_list::CreateListError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_list::CreateListError> for Error {
+    fn from(err: crate::operation::create_list::CreateListError) -> Self {
+        match err {
+            crate::operation::create_list::CreateListError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_list::CreateListError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_list::CreateListError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_list::CreateListError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_list::CreateListError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError, R>>
     for Error
 where
@@ -975,6 +1019,53 @@ impl From<crate::operation::delete_label::DeleteLabelError> for Error {
                 Error::ValidationException(inner)
             }
             crate::operation::delete_label::DeleteLabelError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_list::DeleteListError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_list::DeleteListError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_list::DeleteListError> for Error {
+    fn from(err: crate::operation::delete_list::DeleteListError) -> Self {
+        match err {
+            crate::operation::delete_list::DeleteListError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_list::DeleteListError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_list::DeleteListError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_list::DeleteListError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_list::DeleteListError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_list::DeleteListError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -1887,6 +1978,92 @@ impl From<crate::operation::get_labels::GetLabelsError> for Error {
             crate::operation::get_labels::GetLabelsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_list_elements::GetListElementsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_list_elements::GetListElementsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_list_elements::GetListElementsError> for Error {
+    fn from(err: crate::operation::get_list_elements::GetListElementsError) -> Self {
+        match err {
+            crate::operation::get_list_elements::GetListElementsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_list_elements::GetListElementsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_list_elements::GetListElementsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_list_elements::GetListElementsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_list_elements::GetListElementsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_list_elements::GetListElementsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_lists_metadata::GetListsMetadataError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_lists_metadata::GetListsMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_lists_metadata::GetListsMetadataError> for Error {
+    fn from(err: crate::operation::get_lists_metadata::GetListsMetadataError) -> Self {
+        match err {
+            crate::operation::get_lists_metadata::GetListsMetadataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_lists_metadata::GetListsMetadataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_lists_metadata::GetListsMetadataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_lists_metadata::GetListsMetadataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_lists_metadata::GetListsMetadataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_lists_metadata::GetListsMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2858,6 +3035,56 @@ impl From<crate::operation::update_event_label::UpdateEventLabelError> for Error
             crate::operation::update_event_label::UpdateEventLabelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_event_label::UpdateEventLabelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_event_label::UpdateEventLabelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_list::UpdateListError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::update_list::UpdateListError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_list::UpdateListError> for Error {
+    fn from(err: crate::operation::update_list::UpdateListError) -> Self {
+        match err {
+            crate::operation::update_list::UpdateListError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_list::UpdateListError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_list::UpdateListError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_list::UpdateListError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_list::UpdateListError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_list::UpdateListError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_list::UpdateListError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

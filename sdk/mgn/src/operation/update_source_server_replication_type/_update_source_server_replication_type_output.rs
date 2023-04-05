@@ -37,6 +37,12 @@ pub struct UpdateSourceServerReplicationTypeOutput {
     /// <p>Source server application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
+    /// <p>Source server user provided ID.</p>
+    #[doc(hidden)]
+    pub user_provided_id: std::option::Option<std::string::String>,
+    /// <p>Source server fqdn for action framework.</p>
+    #[doc(hidden)]
+    pub fqdn_for_action_framework: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateSourceServerReplicationTypeOutput {
@@ -87,6 +93,14 @@ impl UpdateSourceServerReplicationTypeOutput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
+    /// <p>Source server user provided ID.</p>
+    pub fn user_provided_id(&self) -> std::option::Option<&str> {
+        self.user_provided_id.as_deref()
+    }
+    /// <p>Source server fqdn for action framework.</p>
+    pub fn fqdn_for_action_framework(&self) -> std::option::Option<&str> {
+        self.fqdn_for_action_framework.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateSourceServerReplicationTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -102,6 +116,8 @@ impl std::fmt::Debug for UpdateSourceServerReplicationTypeOutput {
         formatter.field("replication_type", &self.replication_type);
         formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.field("application_id", &self.application_id);
+        formatter.field("user_provided_id", &self.user_provided_id);
+        formatter.field("fqdn_for_action_framework", &self.fqdn_for_action_framework);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -134,6 +150,8 @@ pub struct UpdateSourceServerReplicationTypeOutputBuilder {
     pub(crate) replication_type: std::option::Option<crate::types::ReplicationType>,
     pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
     pub(crate) application_id: std::option::Option<std::string::String>,
+    pub(crate) user_provided_id: std::option::Option<std::string::String>,
+    pub(crate) fqdn_for_action_framework: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateSourceServerReplicationTypeOutputBuilder {
@@ -277,6 +295,29 @@ impl UpdateSourceServerReplicationTypeOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>Source server user provided ID.</p>
+    pub fn user_provided_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.user_provided_id = Some(input.into());
+        self
+    }
+    /// <p>Source server user provided ID.</p>
+    pub fn set_user_provided_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.user_provided_id = input;
+        self
+    }
+    /// <p>Source server fqdn for action framework.</p>
+    pub fn fqdn_for_action_framework(mut self, input: impl Into<std::string::String>) -> Self {
+        self.fqdn_for_action_framework = Some(input.into());
+        self
+    }
+    /// <p>Source server fqdn for action framework.</p>
+    pub fn set_fqdn_for_action_framework(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.fqdn_for_action_framework = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -311,6 +352,10 @@ impl UpdateSourceServerReplicationTypeOutputBuilder {
             ,
             application_id: self.application_id
             ,
+            user_provided_id: self.user_provided_id
+            ,
+            fqdn_for_action_framework: self.fqdn_for_action_framework
+            ,
             _request_id: self._request_id,
         }
     }
@@ -329,6 +374,8 @@ impl std::fmt::Debug for UpdateSourceServerReplicationTypeOutputBuilder {
         formatter.field("replication_type", &self.replication_type);
         formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.field("application_id", &self.application_id);
+        formatter.field("user_provided_id", &self.user_provided_id);
+        formatter.field("fqdn_for_action_framework", &self.fqdn_for_action_framework);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

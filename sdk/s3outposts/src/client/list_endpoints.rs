@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_next_token): <p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_max_results): <p>The maximum number of endpoints that will be returned in the response.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_max_results): <p>The maximum number of endpoints that will be returned in the response.</p>
     /// - On success, responds with [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput) with field(s):
     ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>

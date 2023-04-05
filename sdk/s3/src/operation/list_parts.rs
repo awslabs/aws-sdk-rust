@@ -74,28 +74,30 @@ impl ListPartsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "ListParts");
-                if _input.max_parts != 0 {
-                    query.push_kv(
-                        "max-parts",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_parts).encode(),
-                    );
-                }
-                if let Some(inner_2) = &_input.part_number_marker {
-                    {
+                if let Some(inner_2) = &_input.max_parts {
+                    if *inner_2 != 0 {
                         query.push_kv(
-                            "part-number-marker",
-                            &aws_smithy_http::query::fmt_string(&inner_2),
+                            "max-parts",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
                         );
                     }
                 }
-                let inner_3 = &_input.upload_id;
-                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                if let Some(inner_3) = &_input.part_number_marker {
+                    {
+                        query.push_kv(
+                            "part-number-marker",
+                            &aws_smithy_http::query::fmt_string(&inner_3),
+                        );
+                    }
+                }
+                let inner_4 = &_input.upload_id;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_3.is_empty() {
+                if inner_4.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "upload_id",
@@ -103,7 +105,7 @@ impl ListPartsInput {
                         ),
                     );
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

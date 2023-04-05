@@ -200,4 +200,20 @@ impl StartJobRunFluentBuilder {
         self.inner = self.inner.set_job_template_parameters(input);
         self
     }
+    /// <p>The retry policy configuration for the job run.</p>
+    pub fn retry_policy_configuration(
+        mut self,
+        input: crate::types::RetryPolicyConfiguration,
+    ) -> Self {
+        self.inner = self.inner.retry_policy_configuration(input);
+        self
+    }
+    /// <p>The retry policy configuration for the job run.</p>
+    pub fn set_retry_policy_configuration(
+        mut self,
+        input: std::option::Option<crate::types::RetryPolicyConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_retry_policy_configuration(input);
+        self
+    }
 }

@@ -13,6 +13,7 @@
 /// # let releasestatusvalues = unimplemented!();
 /// match releasestatusvalues {
 ///     ReleaseStatusValues::Beta => { /* ... */ },
+///     ReleaseStatusValues::Prod => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@
 pub enum ReleaseStatusValues {
     #[allow(missing_docs)] // documentation missing in model
     Beta,
+    #[allow(missing_docs)] // documentation missing in model
+    Prod,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +58,7 @@ impl std::convert::From<&str> for ReleaseStatusValues {
     fn from(s: &str) -> Self {
         match s {
             "beta" => ReleaseStatusValues::Beta,
+            "prod" => ReleaseStatusValues::Prod,
             other => ReleaseStatusValues::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -73,12 +77,13 @@ impl ReleaseStatusValues {
     pub fn as_str(&self) -> &str {
         match self {
             ReleaseStatusValues::Beta => "beta",
+            ReleaseStatusValues::Prod => "prod",
             ReleaseStatusValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["beta"]
+        &["beta", "prod"]
     }
 }
 impl AsRef<str> for ReleaseStatusValues {

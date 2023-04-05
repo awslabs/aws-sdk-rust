@@ -12,7 +12,7 @@ pub struct PurchaseReservedInstanceOfferingInput {
     pub reservation_name: std::option::Option<std::string::String>,
     /// <p>The number of OpenSearch instances to reserve.</p>
     #[doc(hidden)]
-    pub instance_count: i32,
+    pub instance_count: std::option::Option<i32>,
 }
 impl PurchaseReservedInstanceOfferingInput {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
@@ -24,7 +24,7 @@ impl PurchaseReservedInstanceOfferingInput {
         self.reservation_name.as_deref()
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
-    pub fn instance_count(&self) -> i32 {
+    pub fn instance_count(&self) -> std::option::Option<i32> {
         self.instance_count
     }
 }
@@ -86,7 +86,6 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
                 reservation_name: self.reservation_name
                 ,
                 instance_count: self.instance_count
-                    .unwrap_or_default()
                 ,
             }
         )

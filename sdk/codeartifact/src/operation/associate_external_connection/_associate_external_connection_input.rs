@@ -21,6 +21,7 @@ pub struct AssociateExternalConnectionInput {
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
     /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub external_connection: std::option::Option<std::string::String>,
@@ -47,6 +48,7 @@ impl AssociateExternalConnectionInput {
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
     /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
     pub fn external_connection(&self) -> std::option::Option<&str> {
         self.external_connection.as_deref()
@@ -108,6 +110,7 @@ impl AssociateExternalConnectionInputBuilder {
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
     /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
     pub fn external_connection(mut self, input: impl Into<std::string::String>) -> Self {
         self.external_connection = Some(input.into());
@@ -122,6 +125,7 @@ impl AssociateExternalConnectionInputBuilder {
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
     /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
     pub fn set_external_connection(
         mut self,

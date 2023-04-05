@@ -80,6 +80,10 @@ pub(crate) mod shape_event_integration_associations_list;
 
 pub(crate) mod shape_event_integrations_list;
 
+pub(crate) mod shape_file_configuration;
+
+pub(crate) mod shape_object_configuration;
+
 pub(crate) mod shape_schedule_configuration;
 
 pub(crate) mod shape_tag_map;
@@ -92,4 +96,10 @@ pub(crate) mod shape_event_integration;
 
 pub(crate) mod shape_event_integration_association;
 
+pub(crate) mod shape_fields_map;
+
+pub(crate) mod shape_folder_list;
+
 pub(crate) mod shape_client_association_metadata;
+
+pub(crate) mod shape_fields_list;

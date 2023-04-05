@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportLensOutput {
-    /// <p>The ARN for the lens.</p>
+    /// <p>The ARN for the lens that was created or updated.</p>
     #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The status of the imported lens.</p>
@@ -12,7 +12,7 @@ pub struct ImportLensOutput {
     _request_id: Option<String>,
 }
 impl ImportLensOutput {
-    /// <p>The ARN for the lens.</p>
+    /// <p>The ARN for the lens that was created or updated.</p>
     pub fn lens_arn(&self) -> std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
@@ -42,12 +42,12 @@ pub struct ImportLensOutputBuilder {
     _request_id: Option<String>,
 }
 impl ImportLensOutputBuilder {
-    /// <p>The ARN for the lens.</p>
+    /// <p>The ARN for the lens that was created or updated.</p>
     pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.lens_arn = Some(input.into());
         self
     }
-    /// <p>The ARN for the lens.</p>
+    /// <p>The ARN for the lens that was created or updated.</p>
     pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.lens_arn = input;
         self

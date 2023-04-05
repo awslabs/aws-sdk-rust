@@ -85,7 +85,7 @@ impl SearchRasterDataCollectionFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p></p>
+    /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
     pub fn raster_data_collection_query(
         mut self,
         input: crate::types::RasterDataCollectionQueryWithBandFilterInput,
@@ -93,7 +93,7 @@ impl SearchRasterDataCollectionFluentBuilder {
         self.inner = self.inner.raster_data_collection_query(input);
         self
     }
-    /// <p></p>
+    /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
     pub fn set_raster_data_collection_query(
         mut self,
         input: std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>,

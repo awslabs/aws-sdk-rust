@@ -15,8 +15,8 @@ pub struct CustomStepDetails {
     pub timeout_seconds: std::option::Option<i32>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
-    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub source_file_location: std::option::Option<std::string::String>,
@@ -36,8 +36,8 @@ impl CustomStepDetails {
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
-    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
     pub fn source_file_location(&self) -> std::option::Option<&str> {
         self.source_file_location.as_deref()
@@ -92,8 +92,8 @@ impl CustomStepDetailsBuilder {
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
-    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
     pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_file_location = Some(input.into());
@@ -101,8 +101,8 @@ impl CustomStepDetailsBuilder {
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
-    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
     pub fn set_source_file_location(
         mut self,

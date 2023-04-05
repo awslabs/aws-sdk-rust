@@ -25,10 +25,10 @@ pub struct DescribeIndexOutput {
     /// <p>The description for the index.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Unix datetime that the index was created.</p>
+    /// <p>The Unix timestamp when the index was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Unix datetime that the index was last updated.</p>
+    /// <p>The Unix when the index was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
@@ -88,11 +88,11 @@ impl DescribeIndexOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Unix datetime that the index was created.</p>
+    /// <p>The Unix timestamp when the index was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix datetime that the index was last updated.</p>
+    /// <p>The Unix when the index was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -246,12 +246,12 @@ impl DescribeIndexOutputBuilder {
         self.description = input;
         self
     }
-    /// <p>The Unix datetime that the index was created.</p>
+    /// <p>The Unix timestamp when the index was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The Unix datetime that the index was created.</p>
+    /// <p>The Unix timestamp when the index was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -259,12 +259,12 @@ impl DescribeIndexOutputBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The Unix datetime that the index was last updated.</p>
+    /// <p>The Unix when the index was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The Unix datetime that the index was last updated.</p>
+    /// <p>The Unix when the index was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

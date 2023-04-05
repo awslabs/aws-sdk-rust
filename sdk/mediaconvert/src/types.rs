@@ -77,6 +77,8 @@ pub use crate::types::_color_corrector::ColorCorrector;
 
 pub use crate::types::_sample_range_conversion::SampleRangeConversion;
 
+pub use crate::types::_hdr_to_sdr_tone_mapper::HdrToSdrToneMapper;
+
 pub use crate::types::_hdr10_metadata::Hdr10Metadata;
 
 pub use crate::types::_color_space_conversion::ColorSpaceConversion;
@@ -352,6 +354,12 @@ pub use crate::types::_h264_dynamic_sub_gop::H264DynamicSubGop;
 pub use crate::types::_h264_codec_profile::H264CodecProfile;
 
 pub use crate::types::_h264_codec_level::H264CodecLevel;
+
+pub use crate::types::_bandwidth_reduction_filter::BandwidthReductionFilter;
+
+pub use crate::types::_bandwidth_reduction_filter_strength::BandwidthReductionFilterStrength;
+
+pub use crate::types::_bandwidth_reduction_filter_sharpening::BandwidthReductionFilterSharpening;
 
 pub use crate::types::_h264_adaptive_quantization::H264AdaptiveQuantization;
 
@@ -1275,6 +1283,12 @@ mod _avc_intra_uhd_quality_tuning_level;
 
 mod _avc_intra_uhd_settings;
 
+mod _bandwidth_reduction_filter;
+
+mod _bandwidth_reduction_filter_sharpening;
+
+mod _bandwidth_reduction_filter_strength;
+
 mod _billing_tags_source;
 
 mod _burn_in_subtitle_style_passthrough;
@@ -1696,6 +1710,8 @@ mod _h265_write_mp4_packaging_type;
 mod _hdr10_metadata;
 
 mod _hdr10_plus;
+
+mod _hdr_to_sdr_tone_mapper;
 
 mod _hls_ad_markers;
 

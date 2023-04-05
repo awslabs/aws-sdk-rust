@@ -35,12 +35,11 @@ pub fn ser_delete_objects_headers(
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
-    if input.bypass_governance_retention {
-        let mut encoder =
-            aws_smithy_types::primitive::Encoder::from(input.bypass_governance_retention);
-        let formatted_5 = encoder.encode();
-        if !formatted_5.is_empty() {
-            let header_value = formatted_5;
+    if let Some(inner_5) = &input.bypass_governance_retention {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_5);
+        let formatted_6 = encoder.encode();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "bypass_governance_retention",
@@ -53,10 +52,10 @@ pub fn ser_delete_objects_headers(
             builder = builder.header("x-amz-bypass-governance-retention", header_value);
         }
     }
-    if let Some(inner_6) = &input.expected_bucket_owner {
-        let formatted_7 = inner_6.as_str();
-        if !formatted_7.is_empty() {
-            let header_value = formatted_7;
+    if let Some(inner_7) = &input.expected_bucket_owner {
+        let formatted_8 = inner_7.as_str();
+        if !formatted_8.is_empty() {
+            let header_value = formatted_8;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
@@ -69,10 +68,10 @@ pub fn ser_delete_objects_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
-    if let Some(inner_8) = &input.checksum_algorithm {
-        let formatted_9 = inner_8.as_str();
-        if !formatted_9.is_empty() {
-            let header_value = formatted_9;
+    if let Some(inner_9) = &input.checksum_algorithm {
+        let formatted_10 = inner_9.as_str();
+        if !formatted_10.is_empty() {
+            let header_value = formatted_10;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_algorithm",
@@ -166,37 +165,37 @@ pub fn de_delete_objects(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Error") /* Errors com.amazonaws.s3.synthetic#DeleteObjectsOutput$Errors */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         Result::<std::vec::Vec<crate::types::Error>, aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_11 = builder.errors.take().unwrap_or_default();
-                            list_11.push(
+                            let mut list_12 = builder.errors.take().unwrap_or_default();
+                            list_12.push(
                                 crate::protocol_serde::shape_error::de_error(&mut tag)
                                 ?
                             );
-                            list_11
+                            list_12
                         })
                         ?
                     )
                 ;
-                builder = builder.set_errors(var_10);
+                builder = builder.set_errors(var_11);
             }
             ,
             s if s.matches("Deleted") /* Deleted com.amazonaws.s3.synthetic#DeleteObjectsOutput$Deleted */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         Result::<std::vec::Vec<crate::types::DeletedObject>, aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_13 = builder.deleted.take().unwrap_or_default();
-                            list_13.push(
+                            let mut list_14 = builder.deleted.take().unwrap_or_default();
+                            list_14.push(
                                 crate::protocol_serde::shape_deleted_object::de_deleted_object(&mut tag)
                                 ?
                             );
-                            list_13
+                            list_14
                         })
                         ?
                     )
                 ;
-                builder = builder.set_deleted(var_12);
+                builder = builder.set_deleted(var_13);
             }
             ,
             _ => {}

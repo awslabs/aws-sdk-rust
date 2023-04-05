@@ -168,6 +168,11 @@ where
                                     crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?,
                                 );
                             }
+                            "imageScanningConfiguration" => {
+                                builder = builder.set_image_scanning_configuration(
+                                    crate::protocol_serde::shape_image_scanning_configuration::de_image_scanning_configuration(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

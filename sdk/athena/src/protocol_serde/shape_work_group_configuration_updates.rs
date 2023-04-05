@@ -58,5 +58,10 @@ pub fn ser_work_group_configuration_updates(
         crate::protocol_serde::shape_customer_content_encryption_configuration::ser_customer_content_encryption_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.enable_minimum_encryption_configuration {
+        object
+            .key("EnableMinimumEncryptionConfiguration")
+            .boolean(*var_15);
+    }
     Ok(())
 }

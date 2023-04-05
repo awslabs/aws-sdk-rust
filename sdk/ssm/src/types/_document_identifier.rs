@@ -13,7 +13,7 @@ pub struct DocumentIdentifier {
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services user account that created the document.</p>
+    /// <p>The Amazon Web Services user that created the document.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
@@ -63,7 +63,7 @@ impl DocumentIdentifier {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The Amazon Web Services user account that created the document.</p>
+    /// <p>The Amazon Web Services user that created the document.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -173,12 +173,12 @@ impl DocumentIdentifierBuilder {
         self.display_name = input;
         self
     }
-    /// <p>The Amazon Web Services user account that created the document.</p>
+    /// <p>The Amazon Web Services user that created the document.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
         self.owner = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services user account that created the document.</p>
+    /// <p>The Amazon Web Services user that created the document.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.owner = input;
         self

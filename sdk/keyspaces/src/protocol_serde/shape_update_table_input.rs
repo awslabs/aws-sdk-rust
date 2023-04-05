@@ -63,5 +63,14 @@ pub fn ser_update_table_input(
             aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
+    if let Some(var_16) = &input.client_side_timestamps {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("clientSideTimestamps").start_object();
+        crate::protocol_serde::shape_client_side_timestamps::ser_client_side_timestamps(
+            &mut object_17,
+            var_16,
+        )?;
+        object_17.finish();
+    }
     Ok(())
 }

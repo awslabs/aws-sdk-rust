@@ -27,44 +27,40 @@ pub fn ser_create_firewall_input(
         }
         array_5.finish();
     }
-    if input.delete_protection {
-        object
-            .key("DeleteProtection")
-            .boolean(input.delete_protection);
+    if let Some(var_8) = &input.delete_protection {
+        object.key("DeleteProtection").boolean(*var_8);
     }
-    if input.subnet_change_protection {
-        object
-            .key("SubnetChangeProtection")
-            .boolean(input.subnet_change_protection);
+    if let Some(var_9) = &input.subnet_change_protection {
+        object.key("SubnetChangeProtection").boolean(*var_9);
     }
-    if input.firewall_policy_change_protection {
+    if let Some(var_10) = &input.firewall_policy_change_protection {
         object
             .key("FirewallPolicyChangeProtection")
-            .boolean(input.firewall_policy_change_protection);
+            .boolean(*var_10);
     }
-    if let Some(var_8) = &input.description {
-        object.key("Description").string(var_8.as_str());
+    if let Some(var_11) = &input.description {
+        object.key("Description").string(var_11.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("Tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_10.finish();
+        array_13.finish();
     }
-    if let Some(var_13) = &input.encryption_configuration {
+    if let Some(var_16) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("EncryptionConfiguration").start_object();
+        let mut object_17 = object.key("EncryptionConfiguration").start_object();
         crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_14,
-            var_13,
+            &mut object_17,
+            var_16,
         )?;
-        object_14.finish();
+        object_17.finish();
     }
     Ok(())
 }

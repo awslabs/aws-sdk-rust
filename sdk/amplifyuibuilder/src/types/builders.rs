@@ -25,11 +25,19 @@ pub use crate::types::_field_validation_configuration::FieldValidationConfigurat
 
 pub use crate::types::_field_input_config::FieldInputConfigBuilder;
 
+pub use crate::types::_file_uploader_field_config::FileUploaderFieldConfigBuilder;
+
 pub use crate::types::_value_mappings::ValueMappingsBuilder;
+
+pub use crate::types::_form_input_binding_properties_value::FormInputBindingPropertiesValueBuilder;
+
+pub use crate::types::_form_input_binding_properties_value_properties::FormInputBindingPropertiesValuePropertiesBuilder;
 
 pub use crate::types::_value_mapping::ValueMappingBuilder;
 
 pub use crate::types::_form_input_value_property::FormInputValuePropertyBuilder;
+
+pub use crate::types::_form_input_value_property_binding_properties::FormInputValuePropertyBindingPropertiesBuilder;
 
 pub use crate::types::_form_data_type_config::FormDataTypeConfigBuilder;
 

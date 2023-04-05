@@ -6,7 +6,7 @@ pub struct CreateSubscriberOutput {
     /// <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
     #[doc(hidden)]
     pub subscription_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN for the Amazon Simple Notification Service.</p>
@@ -15,6 +15,12 @@ pub struct CreateSubscriberOutput {
     /// <p>The ARN for the Amazon S3 bucket. </p>
     #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    #[doc(hidden)]
+    pub resource_share_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the resource share.</p>
+    #[doc(hidden)]
+    pub resource_share_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSubscriberOutput {
@@ -22,7 +28,7 @@ impl CreateSubscriberOutput {
     pub fn subscription_id(&self) -> std::option::Option<&str> {
         self.subscription_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -33,6 +39,14 @@ impl CreateSubscriberOutput {
     /// <p>The ARN for the Amazon S3 bucket. </p>
     pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
         self.s3_bucket_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn resource_share_name(&self) -> std::option::Option<&str> {
+        self.resource_share_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSubscriberOutput {
@@ -56,6 +70,8 @@ pub struct CreateSubscriberOutputBuilder {
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) sns_arn: std::option::Option<std::string::String>,
     pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
+    pub(crate) resource_share_arn: std::option::Option<std::string::String>,
+    pub(crate) resource_share_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSubscriberOutputBuilder {
@@ -69,12 +85,12 @@ impl CreateSubscriberOutputBuilder {
         self.subscription_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.role_arn = input;
         self
@@ -99,6 +115,32 @@ impl CreateSubscriberOutputBuilder {
         self.s3_bucket_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_share_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    pub fn set_resource_share_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_arn = input;
+        self
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn resource_share_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_share_name = Some(input.into());
+        self
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn set_resource_share_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_name = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -115,6 +157,8 @@ impl CreateSubscriberOutputBuilder {
             role_arn: self.role_arn,
             sns_arn: self.sns_arn,
             s3_bucket_arn: self.s3_bucket_arn,
+            resource_share_arn: self.resource_share_arn,
+            resource_share_name: self.resource_share_name,
             _request_id: self._request_id,
         }
     }

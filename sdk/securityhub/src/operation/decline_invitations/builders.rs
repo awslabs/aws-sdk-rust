@@ -6,7 +6,8 @@ pub use crate::operation::decline_invitations::_decline_invitations_input::Decli
 /// Fluent builder constructing a request to `DeclineInvitations`.
 ///
 /// <p>Declines invitations to become a member account.</p>
-/// <p>This operation is only used by accounts that are not part of an organization. Organization accounts do not receive invitations.</p>
+/// <p>A prospective member account uses this operation to decline an invitation to become a member.</p>
+/// <p>This operation is only called by member accounts that aren't part of an organization. Organization accounts don't receive invitations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeclineInvitationsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -74,12 +75,12 @@ impl DeclineInvitationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
+    /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
+    /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
     pub fn set_account_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

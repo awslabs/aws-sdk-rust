@@ -5,7 +5,7 @@ pub use crate::operation::start_targeted_sentiment_detection_job::_start_targete
 
 /// Fluent builder constructing a request to `StartTargetedSentimentDetectionJob`.
 ///
-/// <p>Starts an asynchronous targeted sentiment detection job for a collection of documents. Use the operation to track the status of a job.</p>
+/// <p>Starts an asynchronous targeted sentiment detection job for a collection of documents. Use the <code>DescribeTargetedSentimentDetectionJob</code> operation to track the status of a job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartTargetedSentimentDetectionJobFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -82,12 +82,12 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -166,12 +166,12 @@ impl StartTargetedSentimentDetectionJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags to be associated with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to associate with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Tags to be associated with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to associate with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,

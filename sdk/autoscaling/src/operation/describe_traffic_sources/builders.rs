@@ -5,8 +5,9 @@ pub use crate::operation::describe_traffic_sources::_describe_traffic_sources_in
 
 /// Fluent builder constructing a request to `DescribeTrafficSources`.
 ///
-/// <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change. Do not use this API for production workloads. This API is also subject to change.</b> </p>
 /// <p>Gets information about the traffic sources for the specified Auto Scaling group.</p>
+/// <p>You can optionally provide a traffic source type. If you provide a traffic source type, then the results only include that traffic source type.</p>
+/// <p>If you do not provide a traffic source type, then the results include all the traffic sources for the specified Auto Scaling group. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrafficSourcesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -70,6 +71,18 @@ impl DescribeTrafficSourcesFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator
+    {
+        crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
@@ -83,12 +96,24 @@ impl DescribeTrafficSourcesFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
-    /// <p>The type of traffic source you are describing. Currently, the only valid value is <code>vpc-lattice</code>.</p>
+    /// <p>The traffic source type that you want to describe.</p>
+    /// <p>The following lists the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li>
+    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
+    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
+    /// </ul>
     pub fn traffic_source_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.traffic_source_type(input.into());
         self
     }
-    /// <p>The type of traffic source you are describing. Currently, the only valid value is <code>vpc-lattice</code>.</p>
+    /// <p>The traffic source type that you want to describe.</p>
+    /// <p>The following lists the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li>
+    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
+    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
+    /// </ul>
     pub fn set_traffic_source_type(
         mut self,
         input: std::option::Option<std::string::String>,

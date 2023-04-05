@@ -10,8 +10,8 @@ impl super::Client {
     ///   - [`index_id(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::index_id): <p>The identifier of the index for the FAQ.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::name): <p>The name that you gave the FAQ when it was created.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::description): <p>The description of the FAQ that you provided when it was created.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_faq::DescribeFaqOutput::created_at): <p>The date and time that the FAQ was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_faq::DescribeFaqOutput::updated_at): <p>The date and time that the FAQ was last updated.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_faq::DescribeFaqOutput::created_at): <p>The Unix timestamp when the FAQ was created.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_faq::DescribeFaqOutput::updated_at): <p>The Unix timestamp when the FAQ was last updated.</p>
     ///   - [`s3_path(Option<S3Path>)`](crate::operation::describe_faq::DescribeFaqOutput::s3_path): <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     ///   - [`status(Option<FaqStatus>)`](crate::operation::describe_faq::DescribeFaqOutput::status): <p>The status of the FAQ. It is ready to use when the status is <code>ACTIVE</code>.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>

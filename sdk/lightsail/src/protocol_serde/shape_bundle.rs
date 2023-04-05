@@ -111,6 +111,11 @@ where
                                     crate::protocol_serde::shape_instance_platform_list::de_instance_platform_list(tokens)?
                                 );
                             }
+                            "supportedAppCategories" => {
+                                builder = builder.set_supported_app_categories(
+                                    crate::protocol_serde::shape_app_category_list::de_app_category_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

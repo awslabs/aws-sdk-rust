@@ -12,7 +12,7 @@ pub struct DescribeStandardsControlsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of security standard controls to return.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl DescribeStandardsControlsInput {
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
@@ -25,7 +25,7 @@ impl DescribeStandardsControlsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of security standard controls to return.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -91,7 +91,7 @@ impl DescribeStandardsControlsInputBuilder {
             crate::operation::describe_standards_controls::DescribeStandardsControlsInput {
                 standards_subscription_arn: self.standards_subscription_arn,
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
             },
         )
     }

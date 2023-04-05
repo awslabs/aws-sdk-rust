@@ -216,6 +216,8 @@ pub(crate) mod shape_error_detail;
 
 pub(crate) mod shape_evaluate_code_error_detail;
 
+pub(crate) mod shape_event_bridge_data_source_config;
+
 pub(crate) mod shape_function_configuration;
 
 pub(crate) mod shape_functions;

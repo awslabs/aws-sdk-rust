@@ -2,7 +2,7 @@
 
 /// <p>Describes the metadata of a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceMetadata {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
@@ -56,6 +56,19 @@ impl ResourceMetadata {
         self.parent_id.as_deref()
     }
 }
+impl std::fmt::Debug for ResourceMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceMetadata");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("original_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &self.id);
+        formatter.field("version_id", &self.version_id);
+        formatter.field("owner", &self.owner);
+        formatter.field("parent_id", &self.parent_id);
+        formatter.finish()
+    }
+}
 impl ResourceMetadata {
     /// Creates a new builder-style object to manufacture [`ResourceMetadata`](crate::types::ResourceMetadata).
     pub fn builder() -> crate::types::builders::ResourceMetadataBuilder {
@@ -65,7 +78,7 @@ impl ResourceMetadata {
 
 /// A builder for [`ResourceMetadata`](crate::types::ResourceMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct ResourceMetadataBuilder {
     pub(crate) r#type: std::option::Option<crate::types::ResourceType>,
     pub(crate) name: std::option::Option<std::string::String>,
@@ -157,5 +170,18 @@ impl ResourceMetadataBuilder {
             owner: self.owner,
             parent_id: self.parent_id,
         }
+    }
+}
+impl std::fmt::Debug for ResourceMetadataBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceMetadataBuilder");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("original_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &self.id);
+        formatter.field("version_id", &self.version_id);
+        formatter.field("owner", &self.owner);
+        formatter.field("parent_id", &self.parent_id);
+        formatter.finish()
     }
 }

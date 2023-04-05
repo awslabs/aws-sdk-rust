@@ -7,11 +7,18 @@ pub struct DnsOptionsSpecification {
     /// <p>The DNS records created for the endpoint.</p>
     #[doc(hidden)]
     pub dns_record_ip_type: std::option::Option<crate::types::DnsRecordIpType>,
+    /// <p>Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.</p>
+    #[doc(hidden)]
+    pub private_dns_only_for_inbound_resolver_endpoint: std::option::Option<bool>,
 }
 impl DnsOptionsSpecification {
     /// <p>The DNS records created for the endpoint.</p>
     pub fn dns_record_ip_type(&self) -> std::option::Option<&crate::types::DnsRecordIpType> {
         self.dns_record_ip_type.as_ref()
+    }
+    /// <p>Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.</p>
+    pub fn private_dns_only_for_inbound_resolver_endpoint(&self) -> std::option::Option<bool> {
+        self.private_dns_only_for_inbound_resolver_endpoint
     }
 }
 impl DnsOptionsSpecification {
@@ -26,6 +33,7 @@ impl DnsOptionsSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DnsOptionsSpecificationBuilder {
     pub(crate) dns_record_ip_type: std::option::Option<crate::types::DnsRecordIpType>,
+    pub(crate) private_dns_only_for_inbound_resolver_endpoint: std::option::Option<bool>,
 }
 impl DnsOptionsSpecificationBuilder {
     /// <p>The DNS records created for the endpoint.</p>
@@ -41,10 +49,25 @@ impl DnsOptionsSpecificationBuilder {
         self.dns_record_ip_type = input;
         self
     }
+    /// <p>Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.</p>
+    pub fn private_dns_only_for_inbound_resolver_endpoint(mut self, input: bool) -> Self {
+        self.private_dns_only_for_inbound_resolver_endpoint = Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.</p>
+    pub fn set_private_dns_only_for_inbound_resolver_endpoint(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.private_dns_only_for_inbound_resolver_endpoint = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DnsOptionsSpecification`](crate::types::DnsOptionsSpecification).
     pub fn build(self) -> crate::types::DnsOptionsSpecification {
         crate::types::DnsOptionsSpecification {
             dns_record_ip_type: self.dns_record_ip_type,
+            private_dns_only_for_inbound_resolver_endpoint: self
+                .private_dns_only_for_inbound_resolver_endpoint,
         }
     }
 }

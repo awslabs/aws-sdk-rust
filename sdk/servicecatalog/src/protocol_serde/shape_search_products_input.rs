@@ -22,20 +22,20 @@ pub fn ser_search_products_input(
         }
         object_3.finish();
     }
-    if input.page_size != 0 {
+    if let Some(var_8) = &input.page_size {
         object.key("PageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.page_size).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.sort_by {
-        object.key("SortBy").string(var_8.as_str());
+    if let Some(var_9) = &input.sort_by {
+        object.key("SortBy").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.sort_order {
-        object.key("SortOrder").string(var_9.as_str());
+    if let Some(var_10) = &input.sort_order {
+        object.key("SortOrder").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.page_token {
-        object.key("PageToken").string(var_10.as_str());
+    if let Some(var_11) = &input.page_token {
+        object.key("PageToken").string(var_11.as_str());
     }
     Ok(())
 }

@@ -37,6 +37,23 @@ pub fn de_delete_event_data_store_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ChannelExistsForEDSException" => crate::operation::delete_event_data_store::DeleteEventDataStoreError::ChannelExistsForEdsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ChannelExistsForEdsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_channel_exists_for_eds_exception::de_channel_exists_for_eds_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_event_data_store::DeleteEventDataStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "EventDataStoreARNInvalidException" => crate::operation::delete_event_data_store::DeleteEventDataStoreError::EventDataStoreArnInvalidException({
             #[allow(unused_mut)]
             let mut tmp =

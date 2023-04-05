@@ -688,6 +688,31 @@ impl From<crate::operation::delete_channel_moderator::DeleteChannelModeratorErro
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError> for Error {
+    fn from(err: crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError) -> Self {
+        match err {
+            crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -1184,6 +1209,33 @@ impl From<crate::operation::get_messaging_session_endpoint::GetMessagingSessionE
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError> for Error {
+    fn from(err: crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError) -> Self {
+        match err {
+            crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -1624,6 +1676,55 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
+    ) -> Self {
+        match err {
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError, R>) -> Self {
         match err {
@@ -1653,6 +1754,34 @@ impl
             crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
             crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
             crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError> for Error {
+    fn from(err: crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError) -> Self {
+        match err {
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

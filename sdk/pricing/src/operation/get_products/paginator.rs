@@ -27,6 +27,14 @@ impl GetProductsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `price_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::get_products::paginator::GetProductsPaginatorItems {
+        crate::operation::get_products::paginator::GetProductsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -106,6 +114,33 @@ impl GetProductsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `GetProductsPaginator`
+///
+/// This is created with [`.items()`](GetProductsPaginator::items)
+pub struct GetProductsPaginatorItems(GetProductsPaginator);
+
+impl GetProductsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            std::string::String,
+            aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_products_output_price_list(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

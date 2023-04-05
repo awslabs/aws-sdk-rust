@@ -21,14 +21,14 @@ pub fn ser_start_resource_evaluation_input(
     if let Some(var_5) = &input.evaluation_mode {
         object.key("EvaluationMode").string(var_5.as_str());
     }
-    if input.evaluation_timeout != 0 {
+    if let Some(var_6) = &input.evaluation_timeout {
         object.key("EvaluationTimeout").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.evaluation_timeout).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("ClientToken").string(var_6.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("ClientToken").string(var_7.as_str());
     }
     Ok(())
 }

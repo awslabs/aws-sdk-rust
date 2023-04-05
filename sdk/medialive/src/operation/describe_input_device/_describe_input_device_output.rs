@@ -40,6 +40,10 @@ pub struct DescribeInputDeviceOutput {
     /// Settings that describe an input device that is type UHD.
     #[doc(hidden)]
     pub uhd_device_settings: std::option::Option<crate::types::InputDeviceUhdSettings>,
+    /// A collection of key-value pairs.
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeInputDeviceOutput {
@@ -99,6 +103,13 @@ impl DescribeInputDeviceOutput {
     ) -> std::option::Option<&crate::types::InputDeviceUhdSettings> {
         self.uhd_device_settings.as_ref()
     }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeInputDeviceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -131,6 +142,8 @@ pub struct DescribeInputDeviceOutputBuilder {
     pub(crate) serial_number: std::option::Option<std::string::String>,
     pub(crate) r#type: std::option::Option<crate::types::InputDeviceType>,
     pub(crate) uhd_device_settings: std::option::Option<crate::types::InputDeviceUhdSettings>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeInputDeviceOutputBuilder {
@@ -275,6 +288,31 @@ impl DescribeInputDeviceOutputBuilder {
         self.uhd_device_settings = input;
         self
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A collection of key-value pairs.
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
+    }
+    /// A collection of key-value pairs.
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -299,6 +337,7 @@ impl DescribeInputDeviceOutputBuilder {
             serial_number: self.serial_number,
             r#type: self.r#type,
             uhd_device_settings: self.uhd_device_settings,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }

@@ -6,7 +6,7 @@ pub struct CreateMapOutput {
     /// <p>The name of the map resource.</p>
     #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
@@ -22,7 +22,7 @@ impl CreateMapOutput {
     pub fn map_name(&self) -> std::option::Option<&str> {
         self.map_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
@@ -66,7 +66,7 @@ impl CreateMapOutputBuilder {
         self.map_name = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
@@ -74,7 +74,7 @@ impl CreateMapOutputBuilder {
         self.map_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>

@@ -28,6 +28,18 @@ where
                                     crate::protocol_serde::shape_life_cycle_last_launch_initiated::de_life_cycle_last_launch_initiated(tokens)?
                                 );
                             }
+                            "status" => {
+                                builder = builder.set_status(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::LaunchStatus::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

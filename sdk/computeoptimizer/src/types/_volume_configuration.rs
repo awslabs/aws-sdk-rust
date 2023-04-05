@@ -23,6 +23,9 @@ pub struct VolumeConfiguration {
     /// <p>The burst throughput of the volume.</p>
     #[doc(hidden)]
     pub volume_burst_throughput: i32,
+    /// <p> Contains the image used to boot the instance during launch. </p>
+    #[doc(hidden)]
+    pub root_volume: std::option::Option<bool>,
 }
 impl VolumeConfiguration {
     /// <p>The volume type.</p>
@@ -50,6 +53,10 @@ impl VolumeConfiguration {
     pub fn volume_burst_throughput(&self) -> i32 {
         self.volume_burst_throughput
     }
+    /// <p> Contains the image used to boot the instance during launch. </p>
+    pub fn root_volume(&self) -> std::option::Option<bool> {
+        self.root_volume
+    }
 }
 impl VolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`VolumeConfiguration`](crate::types::VolumeConfiguration).
@@ -68,6 +75,7 @@ pub struct VolumeConfigurationBuilder {
     pub(crate) volume_burst_iops: std::option::Option<i32>,
     pub(crate) volume_baseline_throughput: std::option::Option<i32>,
     pub(crate) volume_burst_throughput: std::option::Option<i32>,
+    pub(crate) root_volume: std::option::Option<bool>,
 }
 impl VolumeConfigurationBuilder {
     /// <p>The volume type.</p>
@@ -132,6 +140,16 @@ impl VolumeConfigurationBuilder {
         self.volume_burst_throughput = input;
         self
     }
+    /// <p> Contains the image used to boot the instance during launch. </p>
+    pub fn root_volume(mut self, input: bool) -> Self {
+        self.root_volume = Some(input);
+        self
+    }
+    /// <p> Contains the image used to boot the instance during launch. </p>
+    pub fn set_root_volume(mut self, input: std::option::Option<bool>) -> Self {
+        self.root_volume = input;
+        self
+    }
     /// Consumes the builder and constructs a [`VolumeConfiguration`](crate::types::VolumeConfiguration).
     pub fn build(self) -> crate::types::VolumeConfiguration {
         crate::types::VolumeConfiguration {
@@ -141,6 +159,7 @@ impl VolumeConfigurationBuilder {
             volume_burst_iops: self.volume_burst_iops.unwrap_or_default(),
             volume_baseline_throughput: self.volume_baseline_throughput.unwrap_or_default(),
             volume_burst_throughput: self.volume_burst_throughput.unwrap_or_default(),
+            root_volume: self.root_volume,
         }
     }
 }

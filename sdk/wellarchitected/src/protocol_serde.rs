@@ -34,6 +34,8 @@ pub(crate) mod shape_export_lens;
 
 pub(crate) mod shape_get_answer;
 
+pub(crate) mod shape_get_consolidated_report;
+
 pub(crate) mod shape_get_lens;
 
 pub(crate) mod shape_get_lens_review;
@@ -166,6 +168,8 @@ pub(crate) mod shape_check_summaries;
 
 pub(crate) mod shape_choice_update;
 
+pub(crate) mod shape_consolidated_report_metrics;
+
 pub(crate) mod shape_improvement_summaries;
 
 pub(crate) mod shape_lens;
@@ -215,6 +219,8 @@ pub(crate) mod shape_check_summary;
 pub(crate) mod shape_choice_answers;
 
 pub(crate) mod shape_choices;
+
+pub(crate) mod shape_consolidated_report_metric;
 
 pub(crate) mod shape_improvement_summary;
 
@@ -266,6 +272,8 @@ pub(crate) mod shape_choice_answer_summaries;
 
 pub(crate) mod shape_choice_improvement_plans;
 
+pub(crate) mod shape_lens_metrics;
+
 pub(crate) mod shape_lens_upgrade_summary;
 
 pub(crate) mod shape_pillar_difference;
@@ -280,10 +288,24 @@ pub(crate) mod shape_choice_content;
 
 pub(crate) mod shape_choice_improvement_plan;
 
+pub(crate) mod shape_lens_metric;
+
 pub(crate) mod shape_question_differences;
 
 pub(crate) mod shape_additional_resources;
 
+pub(crate) mod shape_pillar_metrics;
+
 pub(crate) mod shape_question_difference;
 
+pub(crate) mod shape_pillar_metric;
+
 pub(crate) mod shape_urls;
+
+pub(crate) mod shape_question_metrics;
+
+pub(crate) mod shape_question_metric;
+
+pub(crate) mod shape_best_practices;
+
+pub(crate) mod shape_best_practice;

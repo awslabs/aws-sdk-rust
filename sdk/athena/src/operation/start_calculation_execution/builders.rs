@@ -5,7 +5,7 @@ pub use crate::operation::start_calculation_execution::_start_calculation_execut
 
 /// Fluent builder constructing a request to `StartCalculationExecution`.
 ///
-/// <p>Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request or as an Amazon S3 URL.</p>
+/// <p>Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartCalculationExecutionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

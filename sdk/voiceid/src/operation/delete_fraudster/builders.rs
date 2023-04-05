@@ -5,7 +5,7 @@ pub use crate::operation::delete_fraudster::_delete_fraudster_input::DeleteFraud
 
 /// Fluent builder constructing a request to `DeleteFraudster`.
 ///
-/// <p>Deletes the specified fraudster from Voice ID.</p>
+/// <p>Deletes the specified fraudster from Voice ID. This action disassociates the fraudster from any watchlists it is a part of.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFraudsterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,12 +65,12 @@ impl DeleteFraudsterFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The identifier of the domain containing the fraudster.</p>
+    /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The identifier of the domain containing the fraudster.</p>
+    /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self

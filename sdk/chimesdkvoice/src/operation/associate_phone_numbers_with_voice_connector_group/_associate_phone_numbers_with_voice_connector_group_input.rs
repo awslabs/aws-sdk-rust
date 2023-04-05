@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon Chime SDK Voice Connector group ID.</p>
     #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     #[doc(hidden)]
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>If true, associates the provided phone numbers with the provided Amazon Chime SDK Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     #[doc(hidden)]
     pub force_associate: std::option::Option<bool>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon Chime SDK Voice Connector group ID.</p>
     pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
         self.voice_connector_group_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
         self.e164_phone_numbers.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>If true, associates the provided phone numbers with the provided Amazon Chime SDK Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub fn force_associate(&self) -> std::option::Option<bool> {
         self.force_associate
     }
@@ -43,12 +43,12 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
     pub(crate) force_associate: std::option::Option<bool>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon Chime SDK Voice Connector group ID.</p>
     pub fn voice_connector_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_group_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon Chime SDK Voice Connector group ID.</p>
     pub fn set_voice_connector_group_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -60,13 +60,14 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
     ///
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
         v.push(input.into());
         self.e164_phone_numbers = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn set_e164_phone_numbers(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -74,12 +75,12 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
         self.e164_phone_numbers = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>If true, associates the provided phone numbers with the provided Amazon Chime SDK Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub fn force_associate(mut self, input: bool) -> Self {
         self.force_associate = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>If true, associates the provided phone numbers with the provided Amazon Chime SDK Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub fn set_force_associate(mut self, input: std::option::Option<bool>) -> Self {
         self.force_associate = input;
         self

@@ -18,10 +18,10 @@ pub fn ser_get_sampled_requests_input(
         crate::protocol_serde::shape_time_window::ser_time_window(&mut object_5, var_4)?;
         object_5.finish();
     }
-    {
+    if let Some(var_6) = &input.max_items {
         object.key("MaxItems").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_items).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

@@ -15,12 +15,15 @@ pub struct CreateAppInstanceUserInput {
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
-    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
+    #[doc(hidden)]
+    pub expiration_settings: std::option::Option<crate::types::ExpirationSettings>,
 }
 impl CreateAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
@@ -39,13 +42,17 @@ impl CreateAppInstanceUserInput {
     pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
-    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn expiration_settings(&self) -> std::option::Option<&crate::types::ExpirationSettings> {
+        self.expiration_settings.as_ref()
     }
 }
 impl std::fmt::Debug for CreateAppInstanceUserInput {
@@ -55,8 +62,9 @@ impl std::fmt::Debug for CreateAppInstanceUserInput {
         formatter.field("app_instance_user_id", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
-        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_request_token", &self.client_request_token);
         formatter.field("tags", &self.tags);
+        formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
 }
@@ -79,6 +87,7 @@ pub struct CreateAppInstanceUserInputBuilder {
     pub(crate) metadata: std::option::Option<std::string::String>,
     pub(crate) client_request_token: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) expiration_settings: std::option::Option<crate::types::ExpirationSettings>,
 }
 impl CreateAppInstanceUserInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
@@ -124,12 +133,12 @@ impl CreateAppInstanceUserInputBuilder {
         self.metadata = input;
         self
     }
-    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -156,6 +165,19 @@ impl CreateAppInstanceUserInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
+        self.expiration_settings = Some(input);
+        self
+    }
+    /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn set_expiration_settings(
+        mut self,
+        input: std::option::Option<crate::types::ExpirationSettings>,
+    ) -> Self {
+        self.expiration_settings = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAppInstanceUserInput`](crate::operation::create_app_instance_user::CreateAppInstanceUserInput).
     pub fn build(
         self,
@@ -171,6 +193,7 @@ impl CreateAppInstanceUserInputBuilder {
                 metadata: self.metadata,
                 client_request_token: self.client_request_token,
                 tags: self.tags,
+                expiration_settings: self.expiration_settings,
             },
         )
     }
@@ -182,8 +205,9 @@ impl std::fmt::Debug for CreateAppInstanceUserInputBuilder {
         formatter.field("app_instance_user_id", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
-        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_request_token", &self.client_request_token);
         formatter.field("tags", &self.tags);
+        formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
 }

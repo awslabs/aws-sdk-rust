@@ -20,8 +20,8 @@ pub fn ser_describe_provisioning_artifact_input(
     if let Some(var_5) = &input.product_name {
         object.key("ProductName").string(var_5.as_str());
     }
-    if input.verbose {
-        object.key("Verbose").boolean(input.verbose);
+    if let Some(var_6) = &input.verbose {
+        object.key("Verbose").boolean(*var_6);
     }
     Ok(())
 }

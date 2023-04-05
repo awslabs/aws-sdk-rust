@@ -24,7 +24,7 @@ pub struct GetInstanceMetricDataInput {
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.</p>
     #[doc(hidden)]
-    pub period: i32,
+    pub period: std::option::Option<i32>,
     /// <p>The start time of the time period.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -69,7 +69,7 @@ impl GetInstanceMetricDataInput {
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.</p>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p>The start time of the time period.</p>
@@ -257,7 +257,7 @@ impl GetInstanceMetricDataInputBuilder {
             crate::operation::get_instance_metric_data::GetInstanceMetricDataInput {
                 instance_name: self.instance_name,
                 metric_name: self.metric_name,
-                period: self.period.unwrap_or_default(),
+                period: self.period,
                 start_time: self.start_time,
                 end_time: self.end_time,
                 unit: self.unit,

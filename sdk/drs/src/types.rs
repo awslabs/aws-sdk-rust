@@ -49,6 +49,8 @@ pub use crate::types::_life_cycle::LifeCycle;
 
 pub use crate::types::_life_cycle_last_launch::LifeCycleLastLaunch;
 
+pub use crate::types::_launch_status::LaunchStatus;
+
 pub use crate::types::_life_cycle_last_launch_initiated::LifeCycleLastLaunchInitiated;
 
 pub use crate::types::_last_launch_type::LastLaunchType;
@@ -82,8 +84,6 @@ pub use crate::types::_describe_recovery_snapshots_request_filters::DescribeReco
 pub use crate::types::_job::Job;
 
 pub use crate::types::_participating_server::ParticipatingServer;
-
-pub use crate::types::_launch_status::LaunchStatus;
 
 pub use crate::types::_job_status::JobStatus;
 

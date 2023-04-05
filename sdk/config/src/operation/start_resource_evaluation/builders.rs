@@ -6,7 +6,9 @@ pub use crate::operation::start_resource_evaluation::_start_resource_evaluation_
 /// Fluent builder constructing a request to `StartResourceEvaluation`.
 ///
 /// <p>Runs an on-demand evaluation for the specified resource to determine whether the resource details will comply with configured Config rules. You can also use it for evaluation purposes. Config recommends using an evaluation context. It runs an execution against the resource details with all of the Config rules in your account that match with the specified proactive mode and resource type.</p> <note>
-/// <p>Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate the resource type schema. </p>
+/// <p>Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate the resource type schema.</p>
+/// <p>You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the following CLI commmand: <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the CloudFormation User Guide.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartResourceEvaluationFluentBuilder {
@@ -98,12 +100,12 @@ impl StartResourceEvaluationFluentBuilder {
         self.inner = self.inner.set_evaluation_context(input);
         self
     }
-    /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
         self.inner = self.inner.evaluation_mode(input);
         self
     }
-    /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
     pub fn set_evaluation_mode(
         mut self,
         input: std::option::Option<crate::types::EvaluationMode>,

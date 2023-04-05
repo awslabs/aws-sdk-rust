@@ -7,9 +7,11 @@ impl super::Client {
     ///   - [`z(impl Into<String>)`](crate::operation::get_map_tile::builders::GetMapTileFluentBuilder::z) / [`set_z(Option<String>)`](crate::operation::get_map_tile::builders::GetMapTileFluentBuilder::set_z): <p>The zoom value for the map tile.</p>
     ///   - [`x(impl Into<String>)`](crate::operation::get_map_tile::builders::GetMapTileFluentBuilder::x) / [`set_x(Option<String>)`](crate::operation::get_map_tile::builders::GetMapTileFluentBuilder::set_x): <p>The X axis value for the map tile.</p>
     ///   - [`y(impl Into<String>)`](crate::operation::get_map_tile::builders::GetMapTileFluentBuilder::y) / [`set_y(Option<String>)`](crate::operation::get_map_tile::builders::GetMapTileFluentBuilder::set_y): <p>The Y axis value for the map tile. </p>
+    ///   - [`key(impl Into<String>)`](crate::operation::get_map_tile::builders::GetMapTileFluentBuilder::key) / [`set_key(Option<String>)`](crate::operation::get_map_tile::builders::GetMapTileFluentBuilder::set_key): <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     /// - On success, responds with [`GetMapTileOutput`](crate::operation::get_map_tile::GetMapTileOutput) with field(s):
     ///   - [`blob(Option<Blob>)`](crate::operation::get_map_tile::GetMapTileOutput::blob): <p>Contains Mapbox Vector Tile (MVT) data.</p>
     ///   - [`content_type(Option<String>)`](crate::operation::get_map_tile::GetMapTileOutput::content_type): <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
+    ///   - [`cache_control(Option<String>)`](crate::operation::get_map_tile::GetMapTileOutput::cache_control): <p>The HTTP Cache-Control directive for the value.</p>
     /// - On failure, responds with [`SdkError<GetMapTileError>`](crate::operation::get_map_tile::GetMapTileError)
     pub fn get_map_tile(
         &self,

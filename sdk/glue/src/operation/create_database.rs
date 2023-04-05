@@ -170,6 +170,10 @@ pub enum CreateDatabaseError {
     AlreadyExistsException(crate::types::error::AlreadyExistsException),
     /// <p>Two processes are trying to modify a resource simultaneously.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>A federated resource already exists.</p>
+    FederatedResourceAlreadyExistsException(
+        crate::types::error::FederatedResourceAlreadyExistsException,
+    ),
     /// <p>An encryption operation failed.</p>
     GlueEncryptionException(crate::types::error::GlueEncryptionException),
     /// <p>An internal service error occurred.</p>
@@ -200,6 +204,7 @@ impl std::fmt::Display for CreateDatabaseError {
         match self {
             Self::AlreadyExistsException(_inner) => _inner.fmt(f),
             Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            Self::FederatedResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::GlueEncryptionException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
@@ -216,6 +221,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDatabaseE
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ConcurrentModificationException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::FederatedResourceAlreadyExistsException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::GlueEncryptionException(_inner) => {
@@ -280,6 +288,7 @@ impl CreateDatabaseError {
         match self {
             Self::AlreadyExistsException(e) => e.meta(),
             Self::ConcurrentModificationException(e) => e.meta(),
+            Self::FederatedResourceAlreadyExistsException(e) => e.meta(),
             Self::GlueEncryptionException(e) => e.meta(),
             Self::InternalServiceException(e) => e.meta(),
             Self::InvalidInputException(e) => e.meta(),
@@ -295,6 +304,10 @@ impl CreateDatabaseError {
     /// Returns `true` if the error kind is `CreateDatabaseError::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(self, Self::ConcurrentModificationException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDatabaseError::FederatedResourceAlreadyExistsException`.
+    pub fn is_federated_resource_already_exists_exception(&self) -> bool {
+        matches!(self, Self::FederatedResourceAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateDatabaseError::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
@@ -322,6 +335,7 @@ impl std::error::Error for CreateDatabaseError {
         match self {
             Self::AlreadyExistsException(_inner) => Some(_inner),
             Self::ConcurrentModificationException(_inner) => Some(_inner),
+            Self::FederatedResourceAlreadyExistsException(_inner) => Some(_inner),
             Self::GlueEncryptionException(_inner) => Some(_inner),
             Self::InternalServiceException(_inner) => Some(_inner),
             Self::InvalidInputException(_inner) => Some(_inner),

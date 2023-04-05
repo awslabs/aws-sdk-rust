@@ -29,6 +29,16 @@ pub(crate) fn reflens_get_metric_data_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_get_metric_data_v2_output_next_token(
+    input: &crate::operation::get_metric_data_v2::GetMetricDataV2Output,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_agent_statuses_output_next_token(
     input: &crate::operation::list_agent_statuses::ListAgentStatusesOutput,
 ) -> std::option::Option<&std::string::String> {

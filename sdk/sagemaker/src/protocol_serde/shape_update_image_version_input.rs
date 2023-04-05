@@ -48,11 +48,11 @@ pub fn ser_update_image_version_input(
     if let Some(var_14) = &input.processor {
         object.key("Processor").string(var_14.as_str());
     }
-    if input.horovod {
-        object.key("Horovod").boolean(input.horovod);
+    if let Some(var_15) = &input.horovod {
+        object.key("Horovod").boolean(*var_15);
     }
-    if let Some(var_15) = &input.release_notes {
-        object.key("ReleaseNotes").string(var_15.as_str());
+    if let Some(var_16) = &input.release_notes {
+        object.key("ReleaseNotes").string(var_16.as_str());
     }
     Ok(())
 }

@@ -75,5 +75,14 @@ pub fn ser_create_table_input(
         }
         array_17.finish();
     }
+    if let Some(var_20) = &input.client_side_timestamps {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("clientSideTimestamps").start_object();
+        crate::protocol_serde::shape_client_side_timestamps::ser_client_side_timestamps(
+            &mut object_21,
+            var_20,
+        )?;
+        object_21.finish();
+    }
     Ok(())
 }

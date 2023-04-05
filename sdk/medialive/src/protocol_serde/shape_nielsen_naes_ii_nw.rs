@@ -12,6 +12,9 @@ pub fn ser_nielsen_naes_ii_nw(
             aws_smithy_types::Number::Float((input.sid).into()),
         );
     }
+    if let Some(var_2) = &input.timezone {
+        object.key("timezone").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -54,6 +57,21 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_f64_lossy()),
+                                );
+                            }
+                            "timezone" => {
+                                builder = builder.set_timezone(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::NielsenWatermarkTimezones::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

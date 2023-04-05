@@ -32,6 +32,24 @@ pub fn de_remove_tags_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ChannelNotFoundException" => {
+            crate::operation::remove_tags::RemoveTagsError::ChannelNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ChannelNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_channel_not_found_exception::de_channel_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_tags::RemoveTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "CloudTrailARNInvalidException" => {
             crate::operation::remove_tags::RemoveTagsError::CloudTrailArnInvalidException({
                 #[allow(unused_mut)]

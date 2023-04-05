@@ -79,6 +79,26 @@ pub(crate) fn reflens_get_labels_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_get_list_elements_output_next_token(
+    input: &crate::operation::get_list_elements::GetListElementsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_get_lists_metadata_output_next_token(
+    input: &crate::operation::get_lists_metadata::GetListsMetadataOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_get_models_output_next_token(
     input: &crate::operation::get_models::GetModelsOutput,
 ) -> std::option::Option<&std::string::String> {

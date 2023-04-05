@@ -49,6 +49,9 @@ pub struct FieldInputConfig {
     /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
     #[doc(hidden)]
     pub is_array: std::option::Option<bool>,
+    /// <p>The configuration for the file uploader field.</p>
+    #[doc(hidden)]
+    pub file_uploader_config: std::option::Option<crate::types::FileUploaderFieldConfig>,
 }
 impl FieldInputConfig {
     /// <p>The input type for the field. </p>
@@ -111,6 +114,12 @@ impl FieldInputConfig {
     pub fn is_array(&self) -> std::option::Option<bool> {
         self.is_array
     }
+    /// <p>The configuration for the file uploader field.</p>
+    pub fn file_uploader_config(
+        &self,
+    ) -> std::option::Option<&crate::types::FileUploaderFieldConfig> {
+        self.file_uploader_config.as_ref()
+    }
 }
 impl FieldInputConfig {
     /// Creates a new builder-style object to manufacture [`FieldInputConfig`](crate::types::FieldInputConfig).
@@ -138,6 +147,7 @@ pub struct FieldInputConfigBuilder {
     pub(crate) step: std::option::Option<f32>,
     pub(crate) value: std::option::Option<std::string::String>,
     pub(crate) is_array: std::option::Option<bool>,
+    pub(crate) file_uploader_config: std::option::Option<crate::types::FileUploaderFieldConfig>,
 }
 impl FieldInputConfigBuilder {
     /// <p>The input type for the field. </p>
@@ -296,6 +306,19 @@ impl FieldInputConfigBuilder {
         self.is_array = input;
         self
     }
+    /// <p>The configuration for the file uploader field.</p>
+    pub fn file_uploader_config(mut self, input: crate::types::FileUploaderFieldConfig) -> Self {
+        self.file_uploader_config = Some(input);
+        self
+    }
+    /// <p>The configuration for the file uploader field.</p>
+    pub fn set_file_uploader_config(
+        mut self,
+        input: std::option::Option<crate::types::FileUploaderFieldConfig>,
+    ) -> Self {
+        self.file_uploader_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`FieldInputConfig`](crate::types::FieldInputConfig).
     pub fn build(self) -> crate::types::FieldInputConfig {
         crate::types::FieldInputConfig {
@@ -314,6 +337,7 @@ impl FieldInputConfigBuilder {
             step: self.step,
             value: self.value,
             is_array: self.is_array,
+            file_uploader_config: self.file_uploader_config,
         }
     }
 }

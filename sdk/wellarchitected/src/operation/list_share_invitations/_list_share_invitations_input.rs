@@ -18,7 +18,7 @@ pub struct ListShareInvitationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListShareInvitationsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
@@ -38,7 +38,7 @@ impl ListShareInvitationsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -130,7 +130,7 @@ impl ListShareInvitationsInputBuilder {
                 lens_name_prefix: self.lens_name_prefix,
                 share_resource_type: self.share_resource_type,
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
             },
         )
     }

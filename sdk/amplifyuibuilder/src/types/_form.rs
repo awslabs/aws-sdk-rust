@@ -45,6 +45,9 @@ pub struct Form {
     /// <p>Stores the call to action configuration for the form.</p>
     #[doc(hidden)]
     pub cta: std::option::Option<crate::types::FormCta>,
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    #[doc(hidden)]
+    pub label_decorator: std::option::Option<crate::types::LabelDecorator>,
 }
 impl Form {
     /// <p>The unique ID of the Amplify app associated with the form.</p>
@@ -106,6 +109,10 @@ impl Form {
     pub fn cta(&self) -> std::option::Option<&crate::types::FormCta> {
         self.cta.as_ref()
     }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn label_decorator(&self) -> std::option::Option<&crate::types::LabelDecorator> {
+        self.label_decorator.as_ref()
+    }
 }
 impl Form {
     /// Creates a new builder-style object to manufacture [`Form`](crate::types::Form).
@@ -135,6 +142,7 @@ pub struct FormBuilder {
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) cta: std::option::Option<crate::types::FormCta>,
+    pub(crate) label_decorator: std::option::Option<crate::types::LabelDecorator>,
 }
 impl FormBuilder {
     /// <p>The unique ID of the Amplify app associated with the form.</p>
@@ -308,6 +316,19 @@ impl FormBuilder {
         self.cta = input;
         self
     }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn label_decorator(mut self, input: crate::types::LabelDecorator) -> Self {
+        self.label_decorator = Some(input);
+        self
+    }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn set_label_decorator(
+        mut self,
+        input: std::option::Option<crate::types::LabelDecorator>,
+    ) -> Self {
+        self.label_decorator = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Form`](crate::types::Form).
     pub fn build(self) -> crate::types::Form {
         crate::types::Form {
@@ -323,6 +344,7 @@ impl FormBuilder {
             schema_version: self.schema_version,
             tags: self.tags,
             cta: self.cta,
+            label_decorator: self.label_decorator,
         }
     }
 }

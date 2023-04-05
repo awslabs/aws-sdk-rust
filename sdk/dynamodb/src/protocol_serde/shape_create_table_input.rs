@@ -111,5 +111,8 @@ pub fn ser_create_table_input(
     if let Some(var_29) = &input.table_class {
         object.key("TableClass").string(var_29.as_str());
     }
+    if let Some(var_30) = &input.deletion_protection_enabled {
+        object.key("DeletionProtectionEnabled").boolean(*var_30);
+    }
     Ok(())
 }

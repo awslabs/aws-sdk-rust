@@ -79,12 +79,12 @@ impl UpdateAccountSettingsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
     pub fn default_namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.default_namespace(input.into());
         self
     }
-    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
     pub fn set_default_namespace(
         mut self,
         input: std::option::Option<std::string::String>,

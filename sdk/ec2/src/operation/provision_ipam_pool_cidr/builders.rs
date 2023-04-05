@@ -90,12 +90,12 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         self.inner = self.inner.set_ipam_pool_id(input);
         self
     }
-    /// <p>The CIDR you want to assign to the IPAM pool.</p>
+    /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
     pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
         self
     }
-    /// <p>The CIDR you want to assign to the IPAM pool.</p>
+    /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_cidr(input);
         self
@@ -114,6 +114,26 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         input: std::option::Option<crate::types::IpamCidrAuthorizationContext>,
     ) -> Self {
         self.inner = self.inner.set_cidr_authorization_context(input);
+        self
+    }
+    /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
+    pub fn netmask_length(mut self, input: i32) -> Self {
+        self.inner = self.inner.netmask_length(input);
+        self
+    }
+    /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
+    pub fn set_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_netmask_length(input);
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
         self
     }
 }

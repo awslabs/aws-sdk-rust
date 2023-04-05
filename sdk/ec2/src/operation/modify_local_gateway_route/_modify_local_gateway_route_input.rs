@@ -18,6 +18,9 @@ pub struct ModifyLocalGatewayRouteInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    #[doc(hidden)]
+    pub destination_prefix_list_id: std::option::Option<std::string::String>,
 }
 impl ModifyLocalGatewayRouteInput {
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
@@ -40,6 +43,10 @@ impl ModifyLocalGatewayRouteInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn destination_prefix_list_id(&self) -> std::option::Option<&str> {
+        self.destination_prefix_list_id.as_deref()
+    }
 }
 impl ModifyLocalGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`ModifyLocalGatewayRouteInput`](crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput).
@@ -59,6 +66,7 @@ pub struct ModifyLocalGatewayRouteInputBuilder {
     pub(crate) local_gateway_virtual_interface_group_id: std::option::Option<std::string::String>,
     pub(crate) network_interface_id: std::option::Option<std::string::String>,
     pub(crate) dry_run: std::option::Option<bool>,
+    pub(crate) destination_prefix_list_id: std::option::Option<std::string::String>,
 }
 impl ModifyLocalGatewayRouteInputBuilder {
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
@@ -126,6 +134,19 @@ impl ModifyLocalGatewayRouteInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.destination_prefix_list_id = Some(input.into());
+        self
+    }
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn set_destination_prefix_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_prefix_list_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyLocalGatewayRouteInput`](crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput).
     pub fn build(
         self,
@@ -141,6 +162,7 @@ impl ModifyLocalGatewayRouteInputBuilder {
                     .local_gateway_virtual_interface_group_id,
                 network_interface_id: self.network_interface_id,
                 dry_run: self.dry_run,
+                destination_prefix_list_id: self.destination_prefix_list_id,
             },
         )
     }

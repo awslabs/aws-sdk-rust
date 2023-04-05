@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPhoneNumberOrderOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number order details.</p>
     #[doc(hidden)]
     pub phone_number_order: std::option::Option<crate::types::PhoneNumberOrder>,
     _request_id: Option<String>,
 }
 impl GetPhoneNumberOrderOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number order details.</p>
     pub fn phone_number_order(&self) -> std::option::Option<&crate::types::PhoneNumberOrder> {
         self.phone_number_order.as_ref()
     }
@@ -35,12 +35,12 @@ pub struct GetPhoneNumberOrderOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetPhoneNumberOrderOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number order details.</p>
     pub fn phone_number_order(mut self, input: crate::types::PhoneNumberOrder) -> Self {
         self.phone_number_order = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number order details.</p>
     pub fn set_phone_number_order(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberOrder>,

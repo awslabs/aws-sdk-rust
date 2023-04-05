@@ -100,6 +100,14 @@ impl ListHostedConfigurationVersionsInput {
                         query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_4));
                     }
                 }
+                if let Some(inner_5) = &_input.version_label {
+                    {
+                        query.push_kv(
+                            "version_label",
+                            &aws_smithy_http::query::fmt_string(&inner_5),
+                        );
+                    }
+                }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

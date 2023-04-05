@@ -55,32 +55,32 @@ pub fn ser_create_db_proxy_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_22 = writer.prefix("RequireTLS");
-    if input.require_tls {
-        scope_22.boolean(input.require_tls);
+    if let Some(var_23) = &input.require_tls {
+        scope_22.boolean(*var_23);
     }
     #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("IdleClientTimeout");
-    if let Some(var_24) = &input.idle_client_timeout {
-        scope_23.number(
+    let mut scope_24 = writer.prefix("IdleClientTimeout");
+    if let Some(var_25) = &input.idle_client_timeout {
+        scope_24.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_24).into()),
+            aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("DebugLogging");
-    if input.debug_logging {
-        scope_25.boolean(input.debug_logging);
+    let mut scope_26 = writer.prefix("DebugLogging");
+    if let Some(var_27) = &input.debug_logging {
+        scope_26.boolean(*var_27);
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("Tags");
-    if let Some(var_27) = &input.tags {
-        let mut list_29 = scope_26.start_list(false, Some("Tag"));
-        for item_28 in var_27 {
+    let mut scope_28 = writer.prefix("Tags");
+    if let Some(var_29) = &input.tags {
+        let mut list_31 = scope_28.start_list(false, Some("Tag"));
+        for item_30 in var_29 {
             #[allow(unused_mut)]
-            let mut entry_30 = list_29.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_30, item_28)?;
+            let mut entry_32 = list_31.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_32, item_30)?;
         }
-        list_29.finish();
+        list_31.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

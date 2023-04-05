@@ -50,7 +50,7 @@ pub struct DescribeWhatIfForecastOutput {
     #[doc(hidden)]
     pub time_series_replacements_data_source:
         std::option::Option<crate::types::TimeSeriesReplacementsDataSource>,
-    /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
+    /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
     #[doc(hidden)]
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     _request_id: Option<String>,
@@ -115,7 +115,7 @@ impl DescribeWhatIfForecastOutput {
     ) -> std::option::Option<&crate::types::TimeSeriesReplacementsDataSource> {
         self.time_series_replacements_data_source.as_ref()
     }
-    /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
+    /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
     pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
         self.forecast_types.as_deref()
     }
@@ -324,14 +324,14 @@ impl DescribeWhatIfForecastOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
     ///
-    /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
+    /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
     pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.forecast_types.unwrap_or_default();
         v.push(input.into());
         self.forecast_types = Some(v);
         self
     }
-    /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
+    /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
     pub fn set_forecast_types(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

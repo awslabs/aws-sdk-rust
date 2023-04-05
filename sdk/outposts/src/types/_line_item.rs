@@ -23,6 +23,12 @@ pub struct LineItem {
     #[doc(hidden)]
     pub asset_information_list:
         std::option::Option<std::vec::Vec<crate::types::LineItemAssetInformation>>,
+    /// <p>The ID of the previous line item.</p>
+    #[doc(hidden)]
+    pub previous_line_item_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the previous order.</p>
+    #[doc(hidden)]
+    pub previous_order_id: std::option::Option<std::string::String>,
 }
 impl LineItem {
     /// <p> The ID of the catalog item. </p>
@@ -51,6 +57,14 @@ impl LineItem {
     ) -> std::option::Option<&[crate::types::LineItemAssetInformation]> {
         self.asset_information_list.as_deref()
     }
+    /// <p>The ID of the previous line item.</p>
+    pub fn previous_line_item_id(&self) -> std::option::Option<&str> {
+        self.previous_line_item_id.as_deref()
+    }
+    /// <p>The ID of the previous order.</p>
+    pub fn previous_order_id(&self) -> std::option::Option<&str> {
+        self.previous_order_id.as_deref()
+    }
 }
 impl LineItem {
     /// Creates a new builder-style object to manufacture [`LineItem`](crate::types::LineItem).
@@ -70,6 +84,8 @@ pub struct LineItemBuilder {
     pub(crate) shipment_information: std::option::Option<crate::types::ShipmentInformation>,
     pub(crate) asset_information_list:
         std::option::Option<std::vec::Vec<crate::types::LineItemAssetInformation>>,
+    pub(crate) previous_line_item_id: std::option::Option<std::string::String>,
+    pub(crate) previous_order_id: std::option::Option<std::string::String>,
 }
 impl LineItemBuilder {
     /// <p> The ID of the catalog item. </p>
@@ -144,6 +160,32 @@ impl LineItemBuilder {
         self.asset_information_list = input;
         self
     }
+    /// <p>The ID of the previous line item.</p>
+    pub fn previous_line_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.previous_line_item_id = Some(input.into());
+        self
+    }
+    /// <p>The ID of the previous line item.</p>
+    pub fn set_previous_line_item_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.previous_line_item_id = input;
+        self
+    }
+    /// <p>The ID of the previous order.</p>
+    pub fn previous_order_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.previous_order_id = Some(input.into());
+        self
+    }
+    /// <p>The ID of the previous order.</p>
+    pub fn set_previous_order_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.previous_order_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`LineItem`](crate::types::LineItem).
     pub fn build(self) -> crate::types::LineItem {
         crate::types::LineItem {
@@ -153,6 +195,8 @@ impl LineItemBuilder {
             status: self.status,
             shipment_information: self.shipment_information,
             asset_information_list: self.asset_information_list,
+            previous_line_item_id: self.previous_line_item_id,
+            previous_order_id: self.previous_order_id,
         }
     }
 }

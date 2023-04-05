@@ -86,12 +86,12 @@ impl CreateBotAliasFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
+    /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
         self
     }
-    /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
+    /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_bot_version(input);
         self

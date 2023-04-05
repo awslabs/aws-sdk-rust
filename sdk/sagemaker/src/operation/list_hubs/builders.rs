@@ -5,7 +5,9 @@ pub use crate::operation::list_hubs::_list_hubs_input::ListHubsInputBuilder;
 
 /// Fluent builder constructing a request to `ListHubs`.
 ///
-/// <p>List all existing hubs.</p>
+/// <p>List all existing hubs.</p> <note>
+/// <p>Hub APIs are only callable through SageMaker Studio.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListHubsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

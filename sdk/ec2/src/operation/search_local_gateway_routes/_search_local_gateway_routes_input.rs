@@ -8,6 +8,7 @@ pub struct SearchLocalGatewayRoutesInput {
     pub local_gateway_route_table_id: std::option::Option<std::string::String>,
     /// <p>One or more filters.</p>
     /// <ul>
+    /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
     /// <li> <p> <code>route-search.exact-match</code> - The exact match of the specified filter.</p> </li>
     /// <li> <p> <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p> </li>
     /// <li> <p> <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p> </li>
@@ -34,6 +35,7 @@ impl SearchLocalGatewayRoutesInput {
     }
     /// <p>One or more filters.</p>
     /// <ul>
+    /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
     /// <li> <p> <code>route-search.exact-match</code> - The exact match of the specified filter.</p> </li>
     /// <li> <p> <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p> </li>
     /// <li> <p> <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p> </li>
@@ -96,6 +98,7 @@ impl SearchLocalGatewayRoutesInputBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
+    /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
     /// <li> <p> <code>route-search.exact-match</code> - The exact match of the specified filter.</p> </li>
     /// <li> <p> <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p> </li>
     /// <li> <p> <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p> </li>
@@ -111,6 +114,7 @@ impl SearchLocalGatewayRoutesInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
+    /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
     /// <li> <p> <code>route-search.exact-match</code> - The exact match of the specified filter.</p> </li>
     /// <li> <p> <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p> </li>
     /// <li> <p> <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p> </li>

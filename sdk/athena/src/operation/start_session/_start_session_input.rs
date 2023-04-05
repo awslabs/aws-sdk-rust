@@ -12,7 +12,7 @@ pub struct StartSessionInput {
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
     #[doc(hidden)]
     pub engine_configuration: std::option::Option<crate::types::EngineConfiguration>,
-    /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+    /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     #[doc(hidden)]
     pub notebook_version: std::option::Option<std::string::String>,
     /// <p>The idle timeout in minutes for the session.</p>
@@ -37,7 +37,7 @@ impl StartSessionInput {
     pub fn engine_configuration(&self) -> std::option::Option<&crate::types::EngineConfiguration> {
         self.engine_configuration.as_ref()
     }
-    /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+    /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub fn notebook_version(&self) -> std::option::Option<&str> {
         self.notebook_version.as_deref()
     }
@@ -104,12 +104,12 @@ impl StartSessionInputBuilder {
         self.engine_configuration = input;
         self
     }
-    /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+    /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.notebook_version = Some(input.into());
         self
     }
-    /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+    /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub fn set_notebook_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.notebook_version = input;
         self

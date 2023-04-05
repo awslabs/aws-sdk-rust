@@ -1404,6 +1404,36 @@ pub fn ser_aws_security_finding_filters(
         }
         array_378.finish();
     }
+    if let Some(var_381) = &input.compliance_security_control_id {
+        let mut array_382 = object.key("ComplianceSecurityControlId").start_array();
+        for item_383 in var_381 {
+            {
+                #[allow(unused_mut)]
+                let mut object_384 = array_382.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(
+                    &mut object_384,
+                    item_383,
+                )?;
+                object_384.finish();
+            }
+        }
+        array_382.finish();
+    }
+    if let Some(var_385) = &input.compliance_associated_standards_id {
+        let mut array_386 = object.key("ComplianceAssociatedStandardsId").start_array();
+        for item_387 in var_385 {
+            {
+                #[allow(unused_mut)]
+                let mut object_388 = array_386.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(
+                    &mut object_388,
+                    item_387,
+                )?;
+                object_388.finish();
+            }
+        }
+        array_386.finish();
+    }
     Ok(())
 }
 
@@ -1916,6 +1946,16 @@ where
                             "Sample" => {
                                 builder = builder.set_sample(
                                     crate::protocol_serde::shape_boolean_filter_list::de_boolean_filter_list(tokens)?
+                                );
+                            }
+                            "ComplianceSecurityControlId" => {
+                                builder = builder.set_compliance_security_control_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
+                                );
+                            }
+                            "ComplianceAssociatedStandardsId" => {
+                                builder = builder.set_compliance_associated_standards_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

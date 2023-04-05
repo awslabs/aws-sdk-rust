@@ -6,7 +6,7 @@ pub struct ListTimelineEventsInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
     /// <li> <p> <code>eventTime</code> </p> </li>
     /// <li> <p> <code>eventType</code> </p> </li>
@@ -19,7 +19,7 @@ pub struct ListTimelineEventsInput {
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p>Sort by the specified key value pair.</p>
+    /// <p>Sort timeline events by the specified key value pair.</p>
     #[doc(hidden)]
     pub sort_by: std::option::Option<crate::types::TimelineEventSort>,
     /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
@@ -37,7 +37,7 @@ impl ListTimelineEventsInput {
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
-    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
     /// <li> <p> <code>eventTime</code> </p> </li>
     /// <li> <p> <code>eventType</code> </p> </li>
@@ -51,7 +51,7 @@ impl ListTimelineEventsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>Sort by the specified key value pair.</p>
+    /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::types::TimelineEventSort> {
         self.sort_by.as_ref()
     }
@@ -105,7 +105,7 @@ impl ListTimelineEventsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
     /// <li> <p> <code>eventTime</code> </p> </li>
     /// <li> <p> <code>eventType</code> </p> </li>
@@ -122,7 +122,7 @@ impl ListTimelineEventsInputBuilder {
         self.filters = Some(v);
         self
     }
-    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
     /// <li> <p> <code>eventTime</code> </p> </li>
     /// <li> <p> <code>eventType</code> </p> </li>
@@ -140,12 +140,12 @@ impl ListTimelineEventsInputBuilder {
         self.filters = input;
         self
     }
-    /// <p>Sort by the specified key value pair.</p>
+    /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn sort_by(mut self, input: crate::types::TimelineEventSort) -> Self {
         self.sort_by = Some(input);
         self
     }
-    /// <p>Sort by the specified key value pair.</p>
+    /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn set_sort_by(
         mut self,
         input: std::option::Option<crate::types::TimelineEventSort>,

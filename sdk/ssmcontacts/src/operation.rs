@@ -13,6 +13,12 @@ pub mod create_contact;
 /// Types for the `CreateContactChannel` operation.
 pub mod create_contact_channel;
 
+/// Types for the `CreateRotation` operation.
+pub mod create_rotation;
+
+/// Types for the `CreateRotationOverride` operation.
+pub mod create_rotation_override;
+
 /// Types for the `DeactivateContactChannel` operation.
 pub mod deactivate_contact_channel;
 
@@ -21,6 +27,12 @@ pub mod delete_contact;
 
 /// Types for the `DeleteContactChannel` operation.
 pub mod delete_contact_channel;
+
+/// Types for the `DeleteRotation` operation.
+pub mod delete_rotation;
+
+/// Types for the `DeleteRotationOverride` operation.
+pub mod delete_rotation_override;
 
 /// Types for the `DescribeEngagement` operation.
 pub mod describe_engagement;
@@ -37,6 +49,12 @@ pub mod get_contact_channel;
 /// Types for the `GetContactPolicy` operation.
 pub mod get_contact_policy;
 
+/// Types for the `GetRotation` operation.
+pub mod get_rotation;
+
+/// Types for the `GetRotationOverride` operation.
+pub mod get_rotation_override;
+
 /// Types for the `ListContactChannels` operation.
 pub mod list_contact_channels;
 
@@ -49,11 +67,26 @@ pub mod list_engagements;
 /// Types for the `ListPageReceipts` operation.
 pub mod list_page_receipts;
 
+/// Types for the `ListPageResolutions` operation.
+pub mod list_page_resolutions;
+
 /// Types for the `ListPagesByContact` operation.
 pub mod list_pages_by_contact;
 
 /// Types for the `ListPagesByEngagement` operation.
 pub mod list_pages_by_engagement;
+
+/// Types for the `ListPreviewRotationShifts` operation.
+pub mod list_preview_rotation_shifts;
+
+/// Types for the `ListRotationOverrides` operation.
+pub mod list_rotation_overrides;
+
+/// Types for the `ListRotationShifts` operation.
+pub mod list_rotation_shifts;
+
+/// Types for the `ListRotations` operation.
+pub mod list_rotations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -81,3 +114,6 @@ pub mod update_contact;
 
 /// Types for the `UpdateContactChannel` operation.
 pub mod update_contact_channel;
+
+/// Types for the `UpdateRotation` operation.
+pub mod update_rotation;

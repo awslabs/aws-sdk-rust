@@ -54,15 +54,17 @@ impl DescribeProductsInput {
                         query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                if let Some(inner_2) = &_input.max_results {
+                    if *inner_2 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_2) = &_input.product_arn {
+                if let Some(inner_3) = &_input.product_arn {
                     {
-                        query.push_kv("ProductArn", &aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("ProductArn", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
                 Ok(())

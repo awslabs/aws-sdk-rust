@@ -18,7 +18,7 @@ pub struct UpdateFirewallDeleteProtectionInput {
     pub firewall_name: std::option::Option<std::string::String>,
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     #[doc(hidden)]
-    pub delete_protection: bool,
+    pub delete_protection: std::option::Option<bool>,
 }
 impl UpdateFirewallDeleteProtectionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -38,7 +38,7 @@ impl UpdateFirewallDeleteProtectionInput {
         self.firewall_name.as_deref()
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-    pub fn delete_protection(&self) -> bool {
+    pub fn delete_protection(&self) -> std::option::Option<bool> {
         self.delete_protection
     }
 }
@@ -123,7 +123,6 @@ impl UpdateFirewallDeleteProtectionInputBuilder {
                 firewall_name: self.firewall_name
                 ,
                 delete_protection: self.delete_protection
-                    .unwrap_or_default()
                 ,
             }
         )

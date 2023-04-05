@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEcsServiceRecommendationProjectedMetricsInput {
-    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     #[doc(hidden)]
@@ -13,7 +13,7 @@ pub struct GetEcsServiceRecommendationProjectedMetricsInput {
     pub stat: std::option::Option<crate::types::MetricStatistic>,
     /// <p> The granularity, in seconds, of the projected metrics data points. </p>
     #[doc(hidden)]
-    pub period: i32,
+    pub period: std::option::Option<i32>,
     /// <p> The timestamp of the first projected metrics data point to return. </p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -22,7 +22,7 @@ pub struct GetEcsServiceRecommendationProjectedMetricsInput {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetEcsServiceRecommendationProjectedMetricsInput {
-    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn service_arn(&self) -> std::option::Option<&str> {
@@ -33,7 +33,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInput {
         self.stat.as_ref()
     }
     /// <p> The granularity, in seconds, of the projected metrics data points. </p>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p> The timestamp of the first projected metrics data point to return. </p>
@@ -63,14 +63,14 @@ pub struct GetEcsServiceRecommendationProjectedMetricsInputBuilder {
     pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
-    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.service_arn = Some(input.into());
         self
     }
-    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -129,7 +129,6 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
                 stat: self.stat
                 ,
                 period: self.period
-                    .unwrap_or_default()
                 ,
                 start_time: self.start_time
                 ,

@@ -81,61 +81,59 @@ pub fn ser_update_service_input(
     if let Some(var_21) = &input.platform_version {
         object.key("platformVersion").string(var_21.as_str());
     }
-    if input.force_new_deployment {
-        object
-            .key("forceNewDeployment")
-            .boolean(input.force_new_deployment);
+    if let Some(var_22) = &input.force_new_deployment {
+        object.key("forceNewDeployment").boolean(*var_22);
     }
-    if let Some(var_22) = &input.health_check_grace_period_seconds {
+    if let Some(var_23) = &input.health_check_grace_period_seconds {
         object.key("healthCheckGracePeriodSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_22).into()),
+            aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_23) = &input.enable_execute_command {
-        object.key("enableExecuteCommand").boolean(*var_23);
+    if let Some(var_24) = &input.enable_execute_command {
+        object.key("enableExecuteCommand").boolean(*var_24);
     }
-    if let Some(var_24) = &input.enable_ecs_managed_tags {
-        object.key("enableECSManagedTags").boolean(*var_24);
+    if let Some(var_25) = &input.enable_ecs_managed_tags {
+        object.key("enableECSManagedTags").boolean(*var_25);
     }
-    if let Some(var_25) = &input.load_balancers {
-        let mut array_26 = object.key("loadBalancers").start_array();
-        for item_27 in var_25 {
+    if let Some(var_26) = &input.load_balancers {
+        let mut array_27 = object.key("loadBalancers").start_array();
+        for item_28 in var_26 {
             {
                 #[allow(unused_mut)]
-                let mut object_28 = array_26.value().start_object();
+                let mut object_29 = array_27.value().start_object();
                 crate::protocol_serde::shape_load_balancer::ser_load_balancer(
-                    &mut object_28,
-                    item_27,
+                    &mut object_29,
+                    item_28,
                 )?;
-                object_28.finish();
+                object_29.finish();
             }
         }
-        array_26.finish();
+        array_27.finish();
     }
-    if let Some(var_29) = &input.propagate_tags {
-        object.key("propagateTags").string(var_29.as_str());
+    if let Some(var_30) = &input.propagate_tags {
+        object.key("propagateTags").string(var_30.as_str());
     }
-    if let Some(var_30) = &input.service_registries {
-        let mut array_31 = object.key("serviceRegistries").start_array();
-        for item_32 in var_30 {
+    if let Some(var_31) = &input.service_registries {
+        let mut array_32 = object.key("serviceRegistries").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_33 = array_31.value().start_object();
+                let mut object_34 = array_32.value().start_object();
                 crate::protocol_serde::shape_service_registry::ser_service_registry(
-                    &mut object_33,
-                    item_32,
+                    &mut object_34,
+                    item_33,
                 )?;
-                object_33.finish();
+                object_34.finish();
             }
         }
-        array_31.finish();
+        array_32.finish();
     }
-    if let Some(var_34) = &input.service_connect_configuration {
+    if let Some(var_35) = &input.service_connect_configuration {
         #[allow(unused_mut)]
-        let mut object_35 = object.key("serviceConnectConfiguration").start_object();
-        crate::protocol_serde::shape_service_connect_configuration::ser_service_connect_configuration(&mut object_35, var_34)?;
-        object_35.finish();
+        let mut object_36 = object.key("serviceConnectConfiguration").start_object();
+        crate::protocol_serde::shape_service_connect_configuration::ser_service_connect_configuration(&mut object_36, var_35)?;
+        object_36.finish();
     }
     Ok(())
 }

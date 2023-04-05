@@ -9,8 +9,12 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>There was an exception with the internal server.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The service link connection to your Outposts home Region is down. Check your connection and try again.</p>
+    OutpostOfflineException(crate::types::error::OutpostOfflineException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -22,7 +26,9 @@ impl std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::OutpostOfflineException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -71,9 +77,15 @@ impl From<crate::operation::create_endpoint::CreateEndpointError> for Error {
             crate::operation::create_endpoint::CreateEndpointError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
+            crate::operation::create_endpoint::CreateEndpointError::OutpostOfflineException(
+                inner,
+            ) => Error::OutpostOfflineException(inner),
             crate::operation::create_endpoint::CreateEndpointError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_endpoint::CreateEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::create_endpoint::CreateEndpointError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -123,9 +135,15 @@ impl From<crate::operation::delete_endpoint::DeleteEndpointError> for Error {
             crate::operation::delete_endpoint::DeleteEndpointError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::OutpostOfflineException(
+                inner,
+            ) => Error::OutpostOfflineException(inner),
             crate::operation::delete_endpoint::DeleteEndpointError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::delete_endpoint::DeleteEndpointError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -174,12 +192,57 @@ impl From<crate::operation::list_endpoints::ListEndpointsError> for Error {
             crate::operation::list_endpoints::ListEndpointsError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_endpoints::ListEndpointsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::list_endpoints::ListEndpointsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
             crate::operation::list_endpoints::ListEndpointsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error> for Error {
+    fn from(err: crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error) -> Self {
+        match err {
+            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -220,6 +283,7 @@ impl From<crate::operation::list_shared_endpoints::ListSharedEndpointsError> for
             crate::operation::list_shared_endpoints::ListSharedEndpointsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_shared_endpoints::ListSharedEndpointsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_shared_endpoints::ListSharedEndpointsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_shared_endpoints::ListSharedEndpointsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_shared_endpoints::ListSharedEndpointsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_shared_endpoints::ListSharedEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -232,7 +296,9 @@ impl aws_http::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::OutpostOfflineException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }

@@ -172,12 +172,12 @@ impl ListTablesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self

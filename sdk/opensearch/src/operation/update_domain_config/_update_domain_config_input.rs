@@ -36,7 +36,7 @@ pub struct UpdateDomainConfigInput {
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
     #[doc(hidden)]
     pub access_policies: std::option::Option<std::string::String>,
-    /// <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+    /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
     pub log_publishing_options: std::option::Option<
         std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
@@ -47,7 +47,7 @@ pub struct UpdateDomainConfigInput {
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::types::DomainEndpointOptions>,
-    /// <p>Node-To-Node Encryption options for the domain.</p>
+    /// <p>Node-to-node encryption options for the domain.</p>
     #[doc(hidden)]
     pub node_to_node_encryption_options:
         std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
@@ -67,6 +67,12 @@ pub struct UpdateDomainConfigInput {
     /// </ul>
     #[doc(hidden)]
     pub dry_run_mode: std::option::Option<crate::types::DryRunMode>,
+    /// <p>Off-peak window options for the domain.</p>
+    #[doc(hidden)]
+    pub off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
+    /// <p>Service software update options for the domain.</p>
+    #[doc(hidden)]
+    pub software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl UpdateDomainConfigInput {
     /// <p>The name of the domain that you're updating.</p>
@@ -111,7 +117,7 @@ impl UpdateDomainConfigInput {
     pub fn access_policies(&self) -> std::option::Option<&str> {
         self.access_policies.as_deref()
     }
-    /// <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+    /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub fn log_publishing_options(
         &self,
     ) -> std::option::Option<
@@ -131,7 +137,7 @@ impl UpdateDomainConfigInput {
     ) -> std::option::Option<&crate::types::DomainEndpointOptions> {
         self.domain_endpoint_options.as_ref()
     }
-    /// <p>Node-To-Node Encryption options for the domain.</p>
+    /// <p>Node-to-node encryption options for the domain.</p>
     pub fn node_to_node_encryption_options(
         &self,
     ) -> std::option::Option<&crate::types::NodeToNodeEncryptionOptions> {
@@ -158,6 +164,18 @@ impl UpdateDomainConfigInput {
     /// </ul>
     pub fn dry_run_mode(&self) -> std::option::Option<&crate::types::DryRunMode> {
         self.dry_run_mode.as_ref()
+    }
+    /// <p>Off-peak window options for the domain.</p>
+    pub fn off_peak_window_options(
+        &self,
+    ) -> std::option::Option<&crate::types::OffPeakWindowOptions> {
+        self.off_peak_window_options.as_ref()
+    }
+    /// <p>Service software update options for the domain.</p>
+    pub fn software_update_options(
+        &self,
+    ) -> std::option::Option<&crate::types::SoftwareUpdateOptions> {
+        self.software_update_options.as_ref()
     }
 }
 impl UpdateDomainConfigInput {
@@ -194,6 +212,8 @@ pub struct UpdateDomainConfigInputBuilder {
     pub(crate) auto_tune_options: std::option::Option<crate::types::AutoTuneOptions>,
     pub(crate) dry_run: std::option::Option<bool>,
     pub(crate) dry_run_mode: std::option::Option<crate::types::DryRunMode>,
+    pub(crate) off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
+    pub(crate) software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl UpdateDomainConfigInputBuilder {
     /// <p>The name of the domain that you're updating.</p>
@@ -318,7 +338,7 @@ impl UpdateDomainConfigInputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
     ///
-    /// <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+    /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub fn log_publishing_options(
         mut self,
         k: crate::types::LogType,
@@ -329,7 +349,7 @@ impl UpdateDomainConfigInputBuilder {
         self.log_publishing_options = Some(hash_map);
         self
     }
-    /// <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+    /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub fn set_log_publishing_options(
         mut self,
         input: std::option::Option<
@@ -368,7 +388,7 @@ impl UpdateDomainConfigInputBuilder {
         self.domain_endpoint_options = input;
         self
     }
-    /// <p>Node-To-Node Encryption options for the domain.</p>
+    /// <p>Node-to-node encryption options for the domain.</p>
     pub fn node_to_node_encryption_options(
         mut self,
         input: crate::types::NodeToNodeEncryptionOptions,
@@ -376,7 +396,7 @@ impl UpdateDomainConfigInputBuilder {
         self.node_to_node_encryption_options = Some(input);
         self
     }
-    /// <p>Node-To-Node Encryption options for the domain.</p>
+    /// <p>Node-to-node encryption options for the domain.</p>
     pub fn set_node_to_node_encryption_options(
         mut self,
         input: std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
@@ -444,6 +464,32 @@ impl UpdateDomainConfigInputBuilder {
         self.dry_run_mode = input;
         self
     }
+    /// <p>Off-peak window options for the domain.</p>
+    pub fn off_peak_window_options(mut self, input: crate::types::OffPeakWindowOptions) -> Self {
+        self.off_peak_window_options = Some(input);
+        self
+    }
+    /// <p>Off-peak window options for the domain.</p>
+    pub fn set_off_peak_window_options(
+        mut self,
+        input: std::option::Option<crate::types::OffPeakWindowOptions>,
+    ) -> Self {
+        self.off_peak_window_options = input;
+        self
+    }
+    /// <p>Service software update options for the domain.</p>
+    pub fn software_update_options(mut self, input: crate::types::SoftwareUpdateOptions) -> Self {
+        self.software_update_options = Some(input);
+        self
+    }
+    /// <p>Service software update options for the domain.</p>
+    pub fn set_software_update_options(
+        mut self,
+        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+    ) -> Self {
+        self.software_update_options = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
     pub fn build(
         self,
@@ -469,6 +515,8 @@ impl UpdateDomainConfigInputBuilder {
                 auto_tune_options: self.auto_tune_options,
                 dry_run: self.dry_run,
                 dry_run_mode: self.dry_run_mode,
+                off_peak_window_options: self.off_peak_window_options,
+                software_update_options: self.software_update_options,
             },
         )
     }

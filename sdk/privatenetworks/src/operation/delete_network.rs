@@ -184,6 +184,8 @@ pub type DeleteNetworkErrorKind = DeleteNetworkError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNetworkError {
+    /// <p>You do not have permission to perform this operation.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Information about an internal error.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource was not found.</p>
@@ -208,6 +210,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteNetworkError {
 impl std::fmt::Display for DeleteNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -218,6 +221,9 @@ impl std::fmt::Display for DeleteNetworkError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteNetworkError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::InternalServerException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -275,11 +281,16 @@ impl DeleteNetworkError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::AccessDeniedException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `DeleteNetworkError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteNetworkError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -297,6 +308,7 @@ impl DeleteNetworkError {
 impl std::error::Error for DeleteNetworkError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),

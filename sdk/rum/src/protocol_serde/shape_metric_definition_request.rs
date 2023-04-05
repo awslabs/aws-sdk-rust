@@ -25,6 +25,9 @@ pub fn ser_metric_definition_request(
     if let Some(var_8) = &input.event_pattern {
         object.key("EventPattern").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.namespace {
+        object.key("Namespace").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -86,6 +89,15 @@ where
                             }
                             "EventPattern" => {
                                 builder = builder.set_event_pattern(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Namespace" => {
+                                builder = builder.set_namespace(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

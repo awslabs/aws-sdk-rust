@@ -19,7 +19,7 @@ pub struct RasterDataCollectionMetadata {
     /// <p>The description URL of the raster data collection.</p>
     #[doc(hidden)]
     pub description_page_url: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The list of filters supported by the raster data collection.</p>
     #[doc(hidden)]
     pub supported_filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
     /// <p>Each tag consists of a key and a value.</p>
@@ -48,7 +48,7 @@ impl RasterDataCollectionMetadata {
     pub fn description_page_url(&self) -> std::option::Option<&str> {
         self.description_page_url.as_deref()
     }
-    /// <p></p>
+    /// <p>The list of filters supported by the raster data collection.</p>
     pub fn supported_filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.supported_filters.as_deref()
     }
@@ -141,14 +141,14 @@ impl RasterDataCollectionMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_filters`](Self::set_supported_filters).
     ///
-    /// <p></p>
+    /// <p>The list of filters supported by the raster data collection.</p>
     pub fn supported_filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.supported_filters.unwrap_or_default();
         v.push(input);
         self.supported_filters = Some(v);
         self
     }
-    /// <p></p>
+    /// <p>The list of filters supported by the raster data collection.</p>
     pub fn set_supported_filters(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Filter>>,

@@ -78,11 +78,13 @@ impl HeadObjectInput {
                         query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
-                    );
+                if let Some(inner_3) = &_input.part_number {
+                    if *inner_3 != 0 {
+                        query.push_kv(
+                            "partNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -244,15 +246,15 @@ impl HeadObjectInput {
                 output: &mut String,
             ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
             {
-                let input_3 = &_input.key;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
+                let input_4 = &_input.key;
+                let input_4 = input_4.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_3,
+                    input_4,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -271,16 +273,18 @@ impl HeadObjectInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_4) = &_input.version_id {
+                if let Some(inner_5) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
-                    );
+                if let Some(inner_6) = &_input.part_number {
+                    if *inner_6 != 0 {
+                        query.push_kv(
+                            "partNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

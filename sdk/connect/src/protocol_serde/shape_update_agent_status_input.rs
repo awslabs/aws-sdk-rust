@@ -15,13 +15,11 @@ pub fn ser_update_agent_status_input(
     if let Some(var_3) = &input.name {
         object.key("Name").string(var_3.as_str());
     }
-    if input.reset_order_number {
-        object
-            .key("ResetOrderNumber")
-            .boolean(input.reset_order_number);
+    if let Some(var_4) = &input.reset_order_number {
+        object.key("ResetOrderNumber").boolean(*var_4);
     }
-    if let Some(var_4) = &input.state {
-        object.key("State").string(var_4.as_str());
+    if let Some(var_5) = &input.state {
+        object.key("State").string(var_5.as_str());
     }
     Ok(())
 }

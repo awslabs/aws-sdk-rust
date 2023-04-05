@@ -1036,6 +1036,19 @@ pub fn de_db_instance(
                 builder = builder.set_certificate_details(var_80);
             }
             ,
+            s if s.matches("ReadReplicaSourceDBClusterIdentifier") /* ReadReplicaSourceDBClusterIdentifier com.amazonaws.rds#DBInstance$ReadReplicaSourceDBClusterIdentifier */ =>  {
+                let var_81 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_read_replica_source_db_cluster_identifier(var_81);
+            }
+            ,
             _ => {}
         }
     }

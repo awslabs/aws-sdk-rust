@@ -28,6 +28,12 @@ pub struct CreateBotInput {
     #[doc(hidden)]
     pub test_bot_alias_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The type of a bot to create.</p>
+    #[doc(hidden)]
+    pub bot_type: std::option::Option<crate::types::BotType>,
+    /// <p>The list of bot members in a network to be created.</p>
+    #[doc(hidden)]
+    pub bot_members: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
 }
 impl CreateBotInput {
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
@@ -66,6 +72,14 @@ impl CreateBotInput {
     {
         self.test_bot_alias_tags.as_ref()
     }
+    /// <p>The type of a bot to create.</p>
+    pub fn bot_type(&self) -> std::option::Option<&crate::types::BotType> {
+        self.bot_type.as_ref()
+    }
+    /// <p>The list of bot members in a network to be created.</p>
+    pub fn bot_members(&self) -> std::option::Option<&[crate::types::BotMember]> {
+        self.bot_members.as_deref()
+    }
 }
 impl CreateBotInput {
     /// Creates a new builder-style object to manufacture [`CreateBotInput`](crate::operation::create_bot::CreateBotInput).
@@ -87,6 +101,8 @@ pub struct CreateBotInputBuilder {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) test_bot_alias_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) bot_type: std::option::Option<crate::types::BotType>,
+    pub(crate) bot_members: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
 }
 impl CreateBotInputBuilder {
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
@@ -196,6 +212,35 @@ impl CreateBotInputBuilder {
         self.test_bot_alias_tags = input;
         self
     }
+    /// <p>The type of a bot to create.</p>
+    pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
+        self.bot_type = Some(input);
+        self
+    }
+    /// <p>The type of a bot to create.</p>
+    pub fn set_bot_type(mut self, input: std::option::Option<crate::types::BotType>) -> Self {
+        self.bot_type = input;
+        self
+    }
+    /// Appends an item to `bot_members`.
+    ///
+    /// To override the contents of this collection use [`set_bot_members`](Self::set_bot_members).
+    ///
+    /// <p>The list of bot members in a network to be created.</p>
+    pub fn bot_members(mut self, input: crate::types::BotMember) -> Self {
+        let mut v = self.bot_members.unwrap_or_default();
+        v.push(input);
+        self.bot_members = Some(v);
+        self
+    }
+    /// <p>The list of bot members in a network to be created.</p>
+    pub fn set_bot_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
+    ) -> Self {
+        self.bot_members = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateBotInput`](crate::operation::create_bot::CreateBotInput).
     pub fn build(
         self,
@@ -211,6 +256,8 @@ impl CreateBotInputBuilder {
             idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
             bot_tags: self.bot_tags,
             test_bot_alias_tags: self.test_bot_alias_tags,
+            bot_type: self.bot_type,
+            bot_members: self.bot_members,
         })
     }
 }

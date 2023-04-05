@@ -78,6 +78,11 @@ pub fn ser_firewall_policy(
         )?;
         object_23.finish();
     }
+    if let Some(var_24) = &input.tls_inspection_configuration_arn {
+        object
+            .key("TLSInspectionConfigurationArn")
+            .string(var_24.as_str());
+    }
     Ok(())
 }
 
@@ -140,6 +145,15 @@ where
                             "StatefulEngineOptions" => {
                                 builder = builder.set_stateful_engine_options(
                                     crate::protocol_serde::shape_stateful_engine_options::de_stateful_engine_options(tokens)?
+                                );
+                            }
+                            "TLSInspectionConfigurationArn" => {
+                                builder = builder.set_tls_inspection_configuration_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

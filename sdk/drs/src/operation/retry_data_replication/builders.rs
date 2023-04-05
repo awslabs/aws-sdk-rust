@@ -5,7 +5,8 @@ pub use crate::operation::retry_data_replication::_retry_data_replication_input:
 
 /// Fluent builder constructing a request to `RetryDataReplication`.
 ///
-/// <p>Causes the data replication initiation sequence to begin immediately upon next Handshake for the specified Source Server ID, regardless of when the previous initiation started. This command will work only if the Source Server is stalled or is in a DISCONNECTED or STOPPED state.</p>
+/// <p>WARNING: RetryDataReplication is deprecated. Causes the data replication initiation sequence to begin immediately upon next Handshake for the specified Source Server ID, regardless of when the previous initiation started. This command will work only if the Source Server is stalled or is in a DISCONNECTED or STOPPED state. </p>
+#[deprecated(note = "WARNING: RetryDataReplication is deprecated")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RetryDataReplicationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

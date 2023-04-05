@@ -3,6 +3,8 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
+This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -15,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-lexruntimev2 = "0.25.0"
+aws-sdk-lexruntimev2 = "0.25.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

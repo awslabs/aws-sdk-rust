@@ -12,6 +12,7 @@
 /// ```text
 /// # let originrequestpolicyheaderbehavior = unimplemented!();
 /// match originrequestpolicyheaderbehavior {
+///     OriginRequestPolicyHeaderBehavior::AllExcept => { /* ... */ },
 ///     OriginRequestPolicyHeaderBehavior::AllViewer => { /* ... */ },
 ///     OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront => { /* ... */ },
 ///     OriginRequestPolicyHeaderBehavior::None => { /* ... */ },
@@ -50,6 +51,8 @@
 )]
 pub enum OriginRequestPolicyHeaderBehavior {
     #[allow(missing_docs)] // documentation missing in model
+    AllExcept,
+    #[allow(missing_docs)] // documentation missing in model
     AllViewer,
     #[allow(missing_docs)] // documentation missing in model
     AllViewerAndWhitelistCloudFront,
@@ -63,6 +66,7 @@ pub enum OriginRequestPolicyHeaderBehavior {
 impl std::convert::From<&str> for OriginRequestPolicyHeaderBehavior {
     fn from(s: &str) -> Self {
         match s {
+            "allExcept" => OriginRequestPolicyHeaderBehavior::AllExcept,
             "allViewer" => OriginRequestPolicyHeaderBehavior::AllViewer,
             "allViewerAndWhitelistCloudFront" => {
                 OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront
@@ -86,6 +90,7 @@ impl OriginRequestPolicyHeaderBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OriginRequestPolicyHeaderBehavior::AllExcept => "allExcept",
             OriginRequestPolicyHeaderBehavior::AllViewer => "allViewer",
             OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront => {
                 "allViewerAndWhitelistCloudFront"
@@ -98,6 +103,7 @@ impl OriginRequestPolicyHeaderBehavior {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "allExcept",
             "allViewer",
             "allViewerAndWhitelistCloudFront",
             "none",

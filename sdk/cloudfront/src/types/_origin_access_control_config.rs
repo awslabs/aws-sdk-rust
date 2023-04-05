@@ -22,7 +22,7 @@ pub struct OriginAccessControlConfig {
     /// </ul>
     #[doc(hidden)]
     pub signing_behavior: std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
-    /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+    /// <p>The type of origin that this origin access control is for.</p>
     #[doc(hidden)]
     pub origin_access_control_origin_type:
         std::option::Option<crate::types::OriginAccessControlOriginTypes>,
@@ -54,7 +54,7 @@ impl OriginAccessControlConfig {
     ) -> std::option::Option<&crate::types::OriginAccessControlSigningBehaviors> {
         self.signing_behavior.as_ref()
     }
-    /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+    /// <p>The type of origin that this origin access control is for.</p>
     pub fn origin_access_control_origin_type(
         &self,
     ) -> std::option::Option<&crate::types::OriginAccessControlOriginTypes> {
@@ -146,7 +146,7 @@ impl OriginAccessControlConfigBuilder {
         self.signing_behavior = input;
         self
     }
-    /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+    /// <p>The type of origin that this origin access control is for.</p>
     pub fn origin_access_control_origin_type(
         mut self,
         input: crate::types::OriginAccessControlOriginTypes,
@@ -154,7 +154,7 @@ impl OriginAccessControlConfigBuilder {
         self.origin_access_control_origin_type = Some(input);
         self
     }
-    /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+    /// <p>The type of origin that this origin access control is for.</p>
     pub fn set_origin_access_control_origin_type(
         mut self,
         input: std::option::Option<crate::types::OriginAccessControlOriginTypes>,

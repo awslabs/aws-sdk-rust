@@ -53,6 +53,8 @@ pub use crate::types::error::_insufficient_encryption_policy_exception::Insuffic
 
 pub use crate::types::error::_insufficient_dependency_service_access_permission_exception::InsufficientDependencyServiceAccessPermissionException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_cloud_watch_logs_delivery_unavailable_exception::CloudWatchLogsDeliveryUnavailableException;
 
 pub use crate::types::error::_cloud_trail_invalid_client_token_id_exception::CloudTrailInvalidClientTokenIdException;
@@ -69,6 +71,14 @@ pub use crate::types::error::_event_data_store_has_ongoing_import_exception::Eve
 
 pub use crate::types::error::_event_data_store_arn_invalid_exception::EventDataStoreArnInvalidException;
 
+pub use crate::types::error::_invalid_event_data_store_category_exception::InvalidEventDataStoreCategoryException;
+
+pub use crate::types::error::_channel_not_found_exception::ChannelNotFoundException;
+
+pub use crate::types::error::_channel_arn_invalid_exception::ChannelArnInvalidException;
+
+pub use crate::types::error::_channel_already_exists_exception::ChannelAlreadyExistsException;
+
 pub use crate::types::error::_import_not_found_exception::ImportNotFoundException;
 
 pub use crate::types::error::_max_concurrent_queries_exception::MaxConcurrentQueriesException;
@@ -78,8 +88,6 @@ pub use crate::types::error::_invalid_query_statement_exception::InvalidQuerySta
 pub use crate::types::error::_invalid_import_source_exception::InvalidImportSourceException;
 
 pub use crate::types::error::_invalid_event_data_store_status_exception::InvalidEventDataStoreStatusException;
-
-pub use crate::types::error::_invalid_event_data_store_category_exception::InvalidEventDataStoreCategoryException;
 
 pub use crate::types::error::_account_has_ongoing_import_exception::AccountHasOngoingImportException;
 
@@ -101,6 +109,10 @@ pub use crate::types::error::_account_registered_exception::AccountRegisteredExc
 
 pub use crate::types::error::_account_not_found_exception::AccountNotFoundException;
 
+pub use crate::types::error::_resource_policy_not_valid_exception::ResourcePolicyNotValidException;
+
+pub use crate::types::error::_resource_arn_not_valid_exception::ResourceArnNotValidException;
+
 pub use crate::types::error::_invalid_insight_selectors_exception::InvalidInsightSelectorsException;
 
 pub use crate::types::error::_invalid_time_range_exception::InvalidTimeRangeException;
@@ -119,19 +131,17 @@ pub use crate::types::error::_invalid_query_status_exception::InvalidQueryStatus
 
 pub use crate::types::error::_invalid_date_range_exception::InvalidDateRangeException;
 
+pub use crate::types::error::_resource_policy_not_found_exception::ResourcePolicyNotFoundException;
+
 pub use crate::types::error::_query_id_not_found_exception::QueryIdNotFoundException;
 
 pub use crate::types::error::_insight_not_enabled_exception::InsightNotEnabledException;
 
-pub use crate::types::error::_channel_not_found_exception::ChannelNotFoundException;
-
-pub use crate::types::error::_channel_arn_invalid_exception::ChannelArnInvalidException;
-
 pub use crate::types::error::_account_not_registered_exception::AccountNotRegisteredException;
 
-pub use crate::types::error::_conflict_exception::ConflictException;
-
 pub use crate::types::error::_event_data_store_termination_protected_exception::EventDataStoreTerminationProtectedException;
+
+pub use crate::types::error::_channel_exists_for_eds_exception::ChannelExistsForEdsException;
 
 pub use crate::types::error::_trail_already_exists_exception::TrailAlreadyExistsException;
 
@@ -140,6 +150,10 @@ pub use crate::types::error::_tags_limit_exceeded_exception::TagsLimitExceededEx
 pub use crate::types::error::_maximum_number_of_trails_exceeded_exception::MaximumNumberOfTrailsExceededException;
 
 pub use crate::types::error::_event_data_store_already_exists_exception::EventDataStoreAlreadyExistsException;
+
+pub use crate::types::error::_invalid_source_exception::InvalidSourceException;
+
+pub use crate::types::error::_channel_max_limit_exceeded_exception::ChannelMaxLimitExceededException;
 
 pub use crate::types::error::_inactive_query_exception::InactiveQueryException;
 
@@ -153,7 +167,13 @@ mod _account_registered_exception;
 
 mod _cannot_delegate_management_account_exception;
 
+mod _channel_already_exists_exception;
+
 mod _channel_arn_invalid_exception;
+
+mod _channel_exists_for_eds_exception;
+
+mod _channel_max_limit_exceeded_exception;
 
 mod _channel_not_found_exception;
 
@@ -239,6 +259,8 @@ mod _invalid_s3_prefix_exception;
 
 mod _invalid_sns_topic_name_exception;
 
+mod _invalid_source_exception;
+
 mod _invalid_tag_parameter_exception;
 
 mod _invalid_time_range_exception;
@@ -271,7 +293,13 @@ mod _organizations_not_in_use_exception;
 
 mod _query_id_not_found_exception;
 
+mod _resource_arn_not_valid_exception;
+
 mod _resource_not_found_exception;
+
+mod _resource_policy_not_found_exception;
+
+mod _resource_policy_not_valid_exception;
 
 mod _resource_type_not_supported_exception;
 

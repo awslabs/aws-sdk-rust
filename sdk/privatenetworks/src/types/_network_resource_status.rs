@@ -13,6 +13,7 @@
 /// # let networkresourcestatus = unimplemented!();
 /// match networkresourcestatus {
 ///     NetworkResourceStatus::Available => { /* ... */ },
+///     NetworkResourceStatus::CreatingShippingLabel => { /* ... */ },
 ///     NetworkResourceStatus::Deleted => { /* ... */ },
 ///     NetworkResourceStatus::Deleting => { /* ... */ },
 ///     NetworkResourceStatus::Pending => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum NetworkResourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    CreatingShippingLabel,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
@@ -76,6 +79,7 @@ impl std::convert::From<&str> for NetworkResourceStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => NetworkResourceStatus::Available,
+            "CREATING_SHIPPING_LABEL" => NetworkResourceStatus::CreatingShippingLabel,
             "DELETED" => NetworkResourceStatus::Deleted,
             "DELETING" => NetworkResourceStatus::Deleting,
             "PENDING" => NetworkResourceStatus::Pending,
@@ -101,6 +105,7 @@ impl NetworkResourceStatus {
     pub fn as_str(&self) -> &str {
         match self {
             NetworkResourceStatus::Available => "AVAILABLE",
+            NetworkResourceStatus::CreatingShippingLabel => "CREATING_SHIPPING_LABEL",
             NetworkResourceStatus::Deleted => "DELETED",
             NetworkResourceStatus::Deleting => "DELETING",
             NetworkResourceStatus::Pending => "PENDING",
@@ -115,6 +120,7 @@ impl NetworkResourceStatus {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
+            "CREATING_SHIPPING_LABEL",
             "DELETED",
             "DELETING",
             "PENDING",

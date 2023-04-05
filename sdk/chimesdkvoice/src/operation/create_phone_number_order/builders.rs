@@ -5,6 +5,7 @@ pub use crate::operation::create_phone_number_order::_create_phone_number_order_
 
 /// Fluent builder constructing a request to `CreatePhoneNumberOrder`.
 ///
+/// <p>Creates an order for phone numbers to be provisioned. For numbers outside the U.S., you must use the Amazon Chime SDK SIP media application dial-in product type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePhoneNumberOrderFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +70,12 @@ impl CreatePhoneNumberOrderFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.inner = self.inner.product_type(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn set_product_type(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberProductType>,
@@ -86,12 +87,12 @@ impl CreatePhoneNumberOrderFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.e164_phone_numbers(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn set_e164_phone_numbers(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -55,25 +55,21 @@ pub fn ser_update_security_profile_input(
         }
         array_14.finish();
     }
-    if input.delete_additional_metrics_to_retain {
+    if let Some(var_17) = &input.delete_additional_metrics_to_retain {
         object
             .key("deleteAdditionalMetricsToRetain")
-            .boolean(input.delete_additional_metrics_to_retain);
+            .boolean(*var_17);
     }
-    if input.delete_alert_targets {
-        object
-            .key("deleteAlertTargets")
-            .boolean(input.delete_alert_targets);
+    if let Some(var_18) = &input.delete_alert_targets {
+        object.key("deleteAlertTargets").boolean(*var_18);
     }
-    if input.delete_behaviors {
-        object
-            .key("deleteBehaviors")
-            .boolean(input.delete_behaviors);
+    if let Some(var_19) = &input.delete_behaviors {
+        object.key("deleteBehaviors").boolean(*var_19);
     }
-    if let Some(var_17) = &input.security_profile_description {
+    if let Some(var_20) = &input.security_profile_description {
         object
             .key("securityProfileDescription")
-            .string(var_17.as_str());
+            .string(var_20.as_str());
     }
     Ok(())
 }

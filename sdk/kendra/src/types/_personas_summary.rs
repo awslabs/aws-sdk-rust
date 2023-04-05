@@ -10,10 +10,10 @@ pub struct PersonasSummary {
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     #[doc(hidden)]
     pub persona: std::option::Option<crate::types::Persona>,
-    /// <p>The date-time the summary information was created.</p>
+    /// <p>The Unix timestamp when the summary information was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date-time the summary information was last updated.</p>
+    /// <p>The Unix timestamp when the summary information was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -26,11 +26,11 @@ impl PersonasSummary {
     pub fn persona(&self) -> std::option::Option<&crate::types::Persona> {
         self.persona.as_ref()
     }
-    /// <p>The date-time the summary information was created.</p>
+    /// <p>The Unix timestamp when the summary information was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date-time the summary information was last updated.</p>
+    /// <p>The Unix timestamp when the summary information was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -72,12 +72,12 @@ impl PersonasSummaryBuilder {
         self.persona = input;
         self
     }
-    /// <p>The date-time the summary information was created.</p>
+    /// <p>The Unix timestamp when the summary information was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The date-time the summary information was created.</p>
+    /// <p>The Unix timestamp when the summary information was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -85,12 +85,12 @@ impl PersonasSummaryBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The date-time the summary information was last updated.</p>
+    /// <p>The Unix timestamp when the summary information was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The date-time the summary information was last updated.</p>
+    /// <p>The Unix timestamp when the summary information was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

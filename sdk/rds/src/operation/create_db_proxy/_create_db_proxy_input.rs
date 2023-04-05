@@ -23,13 +23,13 @@ pub struct CreateDbProxyInput {
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     #[doc(hidden)]
-    pub require_tls: bool,
+    pub require_tls: std::option::Option<bool>,
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
     #[doc(hidden)]
     pub idle_client_timeout: std::option::Option<i32>,
     /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     #[doc(hidden)]
-    pub debug_logging: bool,
+    pub debug_logging: std::option::Option<bool>,
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -60,7 +60,7 @@ impl CreateDbProxyInput {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
-    pub fn require_tls(&self) -> bool {
+    pub fn require_tls(&self) -> std::option::Option<bool> {
         self.require_tls
     }
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
@@ -68,7 +68,7 @@ impl CreateDbProxyInput {
         self.idle_client_timeout
     }
     /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
-    pub fn debug_logging(&self) -> bool {
+    pub fn debug_logging(&self) -> std::option::Option<bool> {
         self.debug_logging
     }
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
@@ -252,9 +252,9 @@ impl CreateDbProxyInputBuilder {
             role_arn: self.role_arn,
             vpc_subnet_ids: self.vpc_subnet_ids,
             vpc_security_group_ids: self.vpc_security_group_ids,
-            require_tls: self.require_tls.unwrap_or_default(),
+            require_tls: self.require_tls,
             idle_client_timeout: self.idle_client_timeout,
-            debug_logging: self.debug_logging.unwrap_or_default(),
+            debug_logging: self.debug_logging,
             tags: self.tags,
         })
     }

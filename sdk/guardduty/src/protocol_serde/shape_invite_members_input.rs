@@ -12,13 +12,11 @@ pub fn ser_invite_members_input(
         }
         array_2.finish();
     }
-    if input.disable_email_notification {
-        object
-            .key("disableEmailNotification")
-            .boolean(input.disable_email_notification);
+    if let Some(var_4) = &input.disable_email_notification {
+        object.key("disableEmailNotification").boolean(*var_4);
     }
-    if let Some(var_4) = &input.message {
-        object.key("message").string(var_4.as_str());
+    if let Some(var_5) = &input.message {
+        object.key("message").string(var_5.as_str());
     }
     Ok(())
 }

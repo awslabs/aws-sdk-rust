@@ -5,6 +5,8 @@ pub use crate::operation::create_voice_connector_group::_create_voice_connector_
 
 /// Fluent builder constructing a request to `CreateVoiceConnectorGroup`.
 ///
+/// <p>Creates an Amazon Chime SDK Voice Connector group under the administrator's AWS account. You can associate Amazon Chime SDK Voice Connectors with the Voice Connector group by including <code>VoiceConnectorItems</code> in the request. </p>
+/// <p>You can include Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroupFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +70,12 @@ impl CreateVoiceConnectorGroupFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
@@ -82,12 +84,12 @@ impl CreateVoiceConnectorGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_voice_connector_items`](Self::set_voice_connector_items).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
     pub fn voice_connector_items(mut self, input: crate::types::VoiceConnectorItem) -> Self {
         self.inner = self.inner.voice_connector_items(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
     pub fn set_voice_connector_items(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorItem>>,

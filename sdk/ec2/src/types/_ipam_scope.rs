@@ -11,7 +11,7 @@ pub struct IpamScope {
     /// <p>The ID of the scope.</p>
     #[doc(hidden)]
     pub ipam_scope_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the scope.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scope.</p>
     #[doc(hidden)]
     pub ipam_scope_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IPAM.</p>
@@ -48,7 +48,7 @@ impl IpamScope {
     pub fn ipam_scope_id(&self) -> std::option::Option<&str> {
         self.ipam_scope_id.as_deref()
     }
-    /// <p>The ARN of the scope.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scope.</p>
     pub fn ipam_scope_arn(&self) -> std::option::Option<&str> {
         self.ipam_scope_arn.as_deref()
     }
@@ -129,12 +129,12 @@ impl IpamScopeBuilder {
         self.ipam_scope_id = input;
         self
     }
-    /// <p>The ARN of the scope.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scope.</p>
     pub fn ipam_scope_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.ipam_scope_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the scope.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scope.</p>
     pub fn set_ipam_scope_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.ipam_scope_arn = input;
         self

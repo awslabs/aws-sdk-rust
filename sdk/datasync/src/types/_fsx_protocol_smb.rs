@@ -7,7 +7,7 @@ pub struct FsxProtocolSmb {
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     #[doc(hidden)]
     pub mount_options: std::option::Option<crate::types::SmbMountOptions>,
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
@@ -32,7 +32,7 @@ impl FsxProtocolSmb {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn mount_options(&self) -> std::option::Option<&crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
@@ -92,12 +92,12 @@ impl FsxProtocolSmbBuilder {
         self.domain = input;
         self
     }
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
         self.mount_options = Some(input);
         self
     }
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn set_mount_options(
         mut self,
         input: std::option::Option<crate::types::SmbMountOptions>,

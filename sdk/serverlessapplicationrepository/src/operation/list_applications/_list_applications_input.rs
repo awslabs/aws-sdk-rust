@@ -5,14 +5,14 @@
 pub struct ListApplicationsInput {
     /// <p>The total number of items to return.</p>
     #[doc(hidden)]
-    pub max_items: i32,
+    pub max_items: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
     /// <p>The total number of items to return.</p>
-    pub fn max_items(&self) -> i32 {
+    pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
     /// <p>A token to specify where to start paginating.</p>
@@ -64,7 +64,7 @@ impl ListApplicationsInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::list_applications::ListApplicationsInput {
-            max_items: self.max_items.unwrap_or_default(),
+            max_items: self.max_items,
             next_token: self.next_token,
         })
     }

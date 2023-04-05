@@ -4,10 +4,10 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcsServiceRecommendationOption {
-    /// <p> The memory size of the ECS service recommendation option. </p>
+    /// <p> The memory size of the Amazon ECS service recommendation option. </p>
     #[doc(hidden)]
     pub memory: std::option::Option<i32>,
-    /// <p> The CPU size of the ECS service recommendation option. </p>
+    /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
     #[doc(hidden)]
     pub cpu: std::option::Option<i32>,
     /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
@@ -16,21 +16,21 @@ pub struct EcsServiceRecommendationOption {
     /// </important>
     #[doc(hidden)]
     pub savings_opportunity: std::option::Option<crate::types::SavingsOpportunity>,
-    /// <p> An array of objects that describe the projected utilization metrics of the ECS service recommendation option. </p>
+    /// <p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>
     #[doc(hidden)]
     pub projected_utilization_metrics:
         std::option::Option<std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>>,
-    /// <p> The CPU and memory size recommendations for the containers within the task of your ECS service. </p>
+    /// <p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>
     #[doc(hidden)]
     pub container_recommendations:
         std::option::Option<std::vec::Vec<crate::types::ContainerRecommendation>>,
 }
 impl EcsServiceRecommendationOption {
-    /// <p> The memory size of the ECS service recommendation option. </p>
+    /// <p> The memory size of the Amazon ECS service recommendation option. </p>
     pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
     }
-    /// <p> The CPU size of the ECS service recommendation option. </p>
+    /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
     pub fn cpu(&self) -> std::option::Option<i32> {
         self.cpu
     }
@@ -41,13 +41,13 @@ impl EcsServiceRecommendationOption {
     pub fn savings_opportunity(&self) -> std::option::Option<&crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
-    /// <p> An array of objects that describe the projected utilization metrics of the ECS service recommendation option. </p>
+    /// <p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>
     pub fn projected_utilization_metrics(
         &self,
     ) -> std::option::Option<&[crate::types::EcsServiceProjectedUtilizationMetric]> {
         self.projected_utilization_metrics.as_deref()
     }
-    /// <p> The CPU and memory size recommendations for the containers within the task of your ECS service. </p>
+    /// <p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>
     pub fn container_recommendations(
         &self,
     ) -> std::option::Option<&[crate::types::ContainerRecommendation]> {
@@ -74,22 +74,22 @@ pub struct EcsServiceRecommendationOptionBuilder {
         std::option::Option<std::vec::Vec<crate::types::ContainerRecommendation>>,
 }
 impl EcsServiceRecommendationOptionBuilder {
-    /// <p> The memory size of the ECS service recommendation option. </p>
+    /// <p> The memory size of the Amazon ECS service recommendation option. </p>
     pub fn memory(mut self, input: i32) -> Self {
         self.memory = Some(input);
         self
     }
-    /// <p> The memory size of the ECS service recommendation option. </p>
+    /// <p> The memory size of the Amazon ECS service recommendation option. </p>
     pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
         self.memory = input;
         self
     }
-    /// <p> The CPU size of the ECS service recommendation option. </p>
+    /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
     pub fn cpu(mut self, input: i32) -> Self {
         self.cpu = Some(input);
         self
     }
-    /// <p> The CPU size of the ECS service recommendation option. </p>
+    /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
     pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
         self.cpu = input;
         self
@@ -117,7 +117,7 @@ impl EcsServiceRecommendationOptionBuilder {
     ///
     /// To override the contents of this collection use [`set_projected_utilization_metrics`](Self::set_projected_utilization_metrics).
     ///
-    /// <p> An array of objects that describe the projected utilization metrics of the ECS service recommendation option. </p>
+    /// <p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>
     pub fn projected_utilization_metrics(
         mut self,
         input: crate::types::EcsServiceProjectedUtilizationMetric,
@@ -127,7 +127,7 @@ impl EcsServiceRecommendationOptionBuilder {
         self.projected_utilization_metrics = Some(v);
         self
     }
-    /// <p> An array of objects that describe the projected utilization metrics of the ECS service recommendation option. </p>
+    /// <p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>
     pub fn set_projected_utilization_metrics(
         mut self,
         input: std::option::Option<
@@ -141,7 +141,7 @@ impl EcsServiceRecommendationOptionBuilder {
     ///
     /// To override the contents of this collection use [`set_container_recommendations`](Self::set_container_recommendations).
     ///
-    /// <p> The CPU and memory size recommendations for the containers within the task of your ECS service. </p>
+    /// <p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>
     pub fn container_recommendations(
         mut self,
         input: crate::types::ContainerRecommendation,
@@ -151,7 +151,7 @@ impl EcsServiceRecommendationOptionBuilder {
         self.container_recommendations = Some(v);
         self
     }
-    /// <p> The CPU and memory size recommendations for the containers within the task of your ECS service. </p>
+    /// <p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>
     pub fn set_container_recommendations(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ContainerRecommendation>>,

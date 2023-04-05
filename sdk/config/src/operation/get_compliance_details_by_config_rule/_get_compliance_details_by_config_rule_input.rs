@@ -8,12 +8,12 @@ pub struct GetComplianceDetailsByConfigRuleInput {
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     #[doc(hidden)]
     pub compliance_types: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -24,12 +24,12 @@ impl GetComplianceDetailsByConfigRuleInput {
         self.config_rule_name.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn compliance_types(&self) -> std::option::Option<&[crate::types::ComplianceType]> {
         self.compliance_types.as_deref()
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -69,7 +69,7 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
     /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
     ///
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn compliance_types(mut self, input: crate::types::ComplianceType) -> Self {
         let mut v = self.compliance_types.unwrap_or_default();
         v.push(input);
@@ -77,7 +77,7 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
         self
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn set_compliance_types(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,
@@ -114,7 +114,6 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
                 compliance_types: self.compliance_types
                 ,
                 limit: self.limit
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

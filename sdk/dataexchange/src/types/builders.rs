@@ -31,6 +31,8 @@ pub use crate::types::_database_lf_tag_policy::DatabaseLfTagPolicyBuilder;
 
 pub use crate::types::_s3_data_access_asset::S3DataAccessAssetBuilder;
 
+pub use crate::types::_kms_key_to_grant::KmsKeyToGrantBuilder;
+
 pub use crate::types::_api_gateway_api_asset::ApiGatewayApiAssetBuilder;
 
 pub use crate::types::_redshift_data_share_asset::RedshiftDataShareAssetBuilder;

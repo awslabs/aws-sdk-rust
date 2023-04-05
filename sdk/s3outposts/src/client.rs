@@ -246,4 +246,6 @@ mod delete_endpoint;
 
 mod list_endpoints;
 
+mod list_outposts_with_s3;
+
 mod list_shared_endpoints;

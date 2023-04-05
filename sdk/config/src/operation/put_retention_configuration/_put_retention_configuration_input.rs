@@ -7,13 +7,13 @@ pub struct PutRetentionConfigurationInput {
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     #[doc(hidden)]
-    pub retention_period_in_days: i32,
+    pub retention_period_in_days: std::option::Option<i32>,
 }
 impl PutRetentionConfigurationInput {
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
-    pub fn retention_period_in_days(&self) -> i32 {
+    pub fn retention_period_in_days(&self) -> std::option::Option<i32> {
         self.retention_period_in_days
     }
 }
@@ -54,7 +54,7 @@ impl PutRetentionConfigurationInputBuilder {
     > {
         Ok(
             crate::operation::put_retention_configuration::PutRetentionConfigurationInput {
-                retention_period_in_days: self.retention_period_in_days.unwrap_or_default(),
+                retention_period_in_days: self.retention_period_in_days,
             },
         )
     }

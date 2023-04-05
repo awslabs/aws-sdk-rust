@@ -18,7 +18,7 @@ pub struct UpdateFirewallPolicyChangeProtectionInput {
     pub firewall_name: std::option::Option<std::string::String>,
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     #[doc(hidden)]
-    pub firewall_policy_change_protection: bool,
+    pub firewall_policy_change_protection: std::option::Option<bool>,
 }
 impl UpdateFirewallPolicyChangeProtectionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -38,7 +38,7 @@ impl UpdateFirewallPolicyChangeProtectionInput {
         self.firewall_name.as_deref()
     }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    pub fn firewall_policy_change_protection(&self) -> bool {
+    pub fn firewall_policy_change_protection(&self) -> std::option::Option<bool> {
         self.firewall_policy_change_protection
     }
 }
@@ -121,7 +121,6 @@ impl UpdateFirewallPolicyChangeProtectionInputBuilder {
                 firewall_name: self.firewall_name
                 ,
                 firewall_policy_change_protection: self.firewall_policy_change_protection
-                    .unwrap_or_default()
                 ,
             }
         )

@@ -19,6 +19,8 @@ pub use crate::types::_package_origin_configuration::PackageOriginConfigurationB
 
 pub use crate::types::_package_origin_restrictions::PackageOriginRestrictionsBuilder;
 
+pub use crate::types::_asset_summary::AssetSummaryBuilder;
+
 pub use crate::types::_repository_summary::RepositorySummaryBuilder;
 
 pub use crate::types::_package_version_summary::PackageVersionSummaryBuilder;
@@ -28,8 +30,6 @@ pub use crate::types::_package_version_origin::PackageVersionOriginBuilder;
 pub use crate::types::_domain_entry_point::DomainEntryPointBuilder;
 
 pub use crate::types::_package_dependency::PackageDependencyBuilder;
-
-pub use crate::types::_asset_summary::AssetSummaryBuilder;
 
 pub use crate::types::_package_summary::PackageSummaryBuilder;
 

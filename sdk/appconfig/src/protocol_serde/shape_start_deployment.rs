@@ -293,6 +293,24 @@ pub(crate) fn de_start_deployment(
                             .transpose()?,
                         );
                     }
+                    "KmsKeyArn" => {
+                        builder = builder.set_kms_key_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "KmsKeyIdentifier" => {
+                        builder = builder.set_kms_key_identifier(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "PercentageComplete" => {
                         builder = builder.set_percentage_complete(
                             aws_smithy_json::deserialize::token::expect_number_or_null(

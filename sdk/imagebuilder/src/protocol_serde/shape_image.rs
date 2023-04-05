@@ -182,6 +182,16 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "scanState" => {
+                                builder = builder.set_scan_state(
+                                    crate::protocol_serde::shape_image_scan_state::de_image_scan_state(tokens)?
+                                );
+                            }
+                            "imageScanningConfiguration" => {
+                                builder = builder.set_image_scanning_configuration(
+                                    crate::protocol_serde::shape_image_scanning_configuration::de_image_scanning_configuration(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

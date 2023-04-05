@@ -65,6 +65,8 @@ pub use crate::types::_instance_type_item::InstanceTypeItem;
 
 pub use crate::types::_order::Order;
 
+pub use crate::types::_payment_term::PaymentTerm;
+
 pub use crate::types::_payment_option::PaymentOption;
 
 pub use crate::types::_line_item::LineItem;
@@ -76,8 +78,6 @@ pub use crate::types::_shipment_information::ShipmentInformation;
 pub use crate::types::_shipment_carrier::ShipmentCarrier;
 
 pub use crate::types::_connection_details::ConnectionDetails;
-
-pub use crate::types::_payment_term::PaymentTerm;
 
 pub use crate::types::_line_item_request::LineItemRequest;
 

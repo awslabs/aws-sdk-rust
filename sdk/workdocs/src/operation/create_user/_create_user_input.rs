@@ -27,7 +27,7 @@ pub struct CreateUserInput {
     /// <p>The amount of storage for the user.</p>
     #[doc(hidden)]
     pub storage_rule: std::option::Option<crate::types::StorageRuleType>,
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
 }
@@ -64,7 +64,7 @@ impl CreateUserInput {
     pub fn storage_rule(&self) -> std::option::Option<&crate::types::StorageRuleType> {
         self.storage_rule.as_ref()
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -73,10 +73,10 @@ impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
         formatter.field("organization_id", &self.organization_id);
-        formatter.field("username", &self.username);
+        formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
+        formatter.field("given_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("surname", &"*** Sensitive Data Redacted ***");
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("time_zone_id", &self.time_zone_id);
         formatter.field("storage_rule", &self.storage_rule);
@@ -189,12 +189,12 @@ impl CreateUserInputBuilder {
         self.storage_rule = input;
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -226,10 +226,10 @@ impl std::fmt::Debug for CreateUserInputBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInputBuilder");
         formatter.field("organization_id", &self.organization_id);
-        formatter.field("username", &self.username);
+        formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
+        formatter.field("given_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("surname", &"*** Sensitive Data Redacted ***");
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("time_zone_id", &self.time_zone_id);
         formatter.field("storage_rule", &self.storage_rule);

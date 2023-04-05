@@ -12,7 +12,7 @@ pub struct ListCaCertificatesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Determines the order of the results.</p>
     #[doc(hidden)]
-    pub ascending_order: bool,
+    pub ascending_order: std::option::Option<bool>,
     /// <p>The name of the provisioning template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -27,7 +27,7 @@ impl ListCaCertificatesInput {
         self.marker.as_deref()
     }
     /// <p>Determines the order of the results.</p>
-    pub fn ascending_order(&self) -> bool {
+    pub fn ascending_order(&self) -> std::option::Option<bool> {
         self.ascending_order
     }
     /// <p>The name of the provisioning template.</p>
@@ -104,7 +104,7 @@ impl ListCaCertificatesInputBuilder {
             crate::operation::list_ca_certificates::ListCaCertificatesInput {
                 page_size: self.page_size,
                 marker: self.marker,
-                ascending_order: self.ascending_order.unwrap_or_default(),
+                ascending_order: self.ascending_order,
                 template_name: self.template_name,
             },
         )

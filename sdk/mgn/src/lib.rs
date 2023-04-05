@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-mgn = "0.25.0"
+//! aws-sdk-mgn = "0.25.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -185,6 +185,8 @@ pub mod primitives;
 
 /// Data structures used by operation inputs/outputs.
 pub mod types;
+
+mod idempotency_token;
 
 ///
 pub mod middleware;

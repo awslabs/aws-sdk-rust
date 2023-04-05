@@ -5,7 +5,7 @@ pub use crate::operation::delete_route_calculator::_delete_route_calculator_inpu
 
 /// Fluent builder constructing a request to `DeleteRouteCalculator`.
 ///
-/// <p>Deletes a route calculator resource from your AWS account.</p> <note>
+/// <p>Deletes a route calculator resource from your Amazon Web Services account.</p> <note>
 /// <p>This operation deletes the resource permanently.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]

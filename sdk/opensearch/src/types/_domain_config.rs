@@ -10,7 +10,7 @@ pub struct DomainConfig {
     /// <p>Container for the cluster configuration of a the domain.</p>
     #[doc(hidden)]
     pub cluster_config: std::option::Option<crate::types::ClusterConfigStatus>,
-    /// <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+    /// <p>Container for EBS options configured for the domain.</p>
     #[doc(hidden)]
     pub ebs_options: std::option::Option<crate::types::EbsOptionsStatus>,
     /// <p>Specifies the access policies for the domain.</p>
@@ -51,6 +51,12 @@ pub struct DomainConfig {
     /// <p>Container for information about the progress of an existing configuration change.</p>
     #[doc(hidden)]
     pub change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
+    /// <p>Container for off-peak window options for the domain.</p>
+    #[doc(hidden)]
+    pub off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptionsStatus>,
+    /// <p>Software update options for the domain.</p>
+    #[doc(hidden)]
+    pub software_update_options: std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
 }
 impl DomainConfig {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
@@ -61,7 +67,7 @@ impl DomainConfig {
     pub fn cluster_config(&self) -> std::option::Option<&crate::types::ClusterConfigStatus> {
         self.cluster_config.as_ref()
     }
-    /// <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+    /// <p>Container for EBS options configured for the domain.</p>
     pub fn ebs_options(&self) -> std::option::Option<&crate::types::EbsOptionsStatus> {
         self.ebs_options.as_ref()
     }
@@ -125,6 +131,18 @@ impl DomainConfig {
     ) -> std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
+    /// <p>Container for off-peak window options for the domain.</p>
+    pub fn off_peak_window_options(
+        &self,
+    ) -> std::option::Option<&crate::types::OffPeakWindowOptionsStatus> {
+        self.off_peak_window_options.as_ref()
+    }
+    /// <p>Software update options for the domain.</p>
+    pub fn software_update_options(
+        &self,
+    ) -> std::option::Option<&crate::types::SoftwareUpdateOptionsStatus> {
+        self.software_update_options.as_ref()
+    }
 }
 impl DomainConfig {
     /// Creates a new builder-style object to manufacture [`DomainConfig`](crate::types::DomainConfig).
@@ -157,6 +175,10 @@ pub struct DomainConfigBuilder {
         std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
     pub(crate) auto_tune_options: std::option::Option<crate::types::AutoTuneOptionsStatus>,
     pub(crate) change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
+    pub(crate) off_peak_window_options:
+        std::option::Option<crate::types::OffPeakWindowOptionsStatus>,
+    pub(crate) software_update_options:
+        std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
 }
 impl DomainConfigBuilder {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
@@ -185,12 +207,12 @@ impl DomainConfigBuilder {
         self.cluster_config = input;
         self
     }
-    /// <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+    /// <p>Container for EBS options configured for the domain.</p>
     pub fn ebs_options(mut self, input: crate::types::EbsOptionsStatus) -> Self {
         self.ebs_options = Some(input);
         self
     }
-    /// <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+    /// <p>Container for EBS options configured for the domain.</p>
     pub fn set_ebs_options(
         mut self,
         input: std::option::Option<crate::types::EbsOptionsStatus>,
@@ -369,6 +391,38 @@ impl DomainConfigBuilder {
         self.change_progress_details = input;
         self
     }
+    /// <p>Container for off-peak window options for the domain.</p>
+    pub fn off_peak_window_options(
+        mut self,
+        input: crate::types::OffPeakWindowOptionsStatus,
+    ) -> Self {
+        self.off_peak_window_options = Some(input);
+        self
+    }
+    /// <p>Container for off-peak window options for the domain.</p>
+    pub fn set_off_peak_window_options(
+        mut self,
+        input: std::option::Option<crate::types::OffPeakWindowOptionsStatus>,
+    ) -> Self {
+        self.off_peak_window_options = input;
+        self
+    }
+    /// <p>Software update options for the domain.</p>
+    pub fn software_update_options(
+        mut self,
+        input: crate::types::SoftwareUpdateOptionsStatus,
+    ) -> Self {
+        self.software_update_options = Some(input);
+        self
+    }
+    /// <p>Software update options for the domain.</p>
+    pub fn set_software_update_options(
+        mut self,
+        input: std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
+    ) -> Self {
+        self.software_update_options = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DomainConfig`](crate::types::DomainConfig).
     pub fn build(self) -> crate::types::DomainConfig {
         crate::types::DomainConfig {
@@ -387,6 +441,8 @@ impl DomainConfigBuilder {
             advanced_security_options: self.advanced_security_options,
             auto_tune_options: self.auto_tune_options,
             change_progress_details: self.change_progress_details,
+            off_peak_window_options: self.off_peak_window_options,
+            software_update_options: self.software_update_options,
         }
     }
 }

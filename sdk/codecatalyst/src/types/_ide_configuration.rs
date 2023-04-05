@@ -4,19 +4,23 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdeConfiguration {
-    /// <p>A link to the IDE runtime image.</p>
+    /// <p>A link to the IDE runtime image. </p> <note>
+    /// <p>This parameter is not required for <code>VSCode</code>.</p>
+    /// </note>
     #[doc(hidden)]
     pub runtime: std::option::Option<std::string::String>,
-    /// <p>The name of the IDE.</p>
+    /// <p>The name of the IDE. Valid values include <code>Cloud9</code>, <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and <code>VSCode</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl IdeConfiguration {
-    /// <p>A link to the IDE runtime image.</p>
+    /// <p>A link to the IDE runtime image. </p> <note>
+    /// <p>This parameter is not required for <code>VSCode</code>.</p>
+    /// </note>
     pub fn runtime(&self) -> std::option::Option<&str> {
         self.runtime.as_deref()
     }
-    /// <p>The name of the IDE.</p>
+    /// <p>The name of the IDE. Valid values include <code>Cloud9</code>, <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and <code>VSCode</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -36,22 +40,26 @@ pub struct IdeConfigurationBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
 }
 impl IdeConfigurationBuilder {
-    /// <p>A link to the IDE runtime image.</p>
+    /// <p>A link to the IDE runtime image. </p> <note>
+    /// <p>This parameter is not required for <code>VSCode</code>.</p>
+    /// </note>
     pub fn runtime(mut self, input: impl Into<std::string::String>) -> Self {
         self.runtime = Some(input.into());
         self
     }
-    /// <p>A link to the IDE runtime image.</p>
+    /// <p>A link to the IDE runtime image. </p> <note>
+    /// <p>This parameter is not required for <code>VSCode</code>.</p>
+    /// </note>
     pub fn set_runtime(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.runtime = input;
         self
     }
-    /// <p>The name of the IDE.</p>
+    /// <p>The name of the IDE. Valid values include <code>Cloud9</code>, <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and <code>VSCode</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the IDE.</p>
+    /// <p>The name of the IDE. Valid values include <code>Cloud9</code>, <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and <code>VSCode</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self

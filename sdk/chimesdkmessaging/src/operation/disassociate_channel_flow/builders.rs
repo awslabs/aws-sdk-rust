@@ -6,7 +6,8 @@ pub use crate::operation::disassociate_channel_flow::_disassociate_channel_flow_
 /// Fluent builder constructing a request to `DisassociateChannelFlow`.
 ///
 /// <p>Disassociates a channel flow from all its channels. Once disassociated, all messages to that channel stop going through the channel flow processor.</p> <note>
-/// <p>Only administrators or channel moderators can disassociate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+/// <p>Only administrators or channel moderators can disassociate a channel flow.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateChannelFlowFluentBuilder {

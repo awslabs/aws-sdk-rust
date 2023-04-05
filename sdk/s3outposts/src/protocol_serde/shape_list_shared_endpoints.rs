@@ -75,6 +75,23 @@ pub fn de_list_shared_endpoints_http_error(
                                                     }
             tmp
         }),
+        "ThrottlingException" => crate::operation::list_shared_endpoints::ListSharedEndpointsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_shared_endpoints::ListSharedEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "ValidationException" => crate::operation::list_shared_endpoints::ListSharedEndpointsError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp =

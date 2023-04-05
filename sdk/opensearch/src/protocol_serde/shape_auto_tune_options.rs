@@ -21,6 +21,9 @@ pub fn ser_auto_tune_options(
         }
         array_4.finish();
     }
+    if let Some(var_7) = &input.use_off_peak_window {
+        object.key("UseOffPeakWindow").boolean(*var_7);
+    }
     Ok(())
 }
 
@@ -77,6 +80,13 @@ where
                             "MaintenanceSchedules" => {
                                 builder = builder.set_maintenance_schedules(
                                     crate::protocol_serde::shape_auto_tune_maintenance_schedule_list::de_auto_tune_maintenance_schedule_list(tokens)?
+                                );
+                            }
+                            "UseOffPeakWindow" => {
+                                builder = builder.set_use_off_peak_window(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -119,4 +119,14 @@ impl CreateHostedConfigurationVersionFluentBuilder {
         self.inner = self.inner.set_latest_version_number(input);
         self
     }
+    /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
+    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.version_label(input.into());
+        self
+    }
+    /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
+    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_version_label(input);
+        self
+    }
 }

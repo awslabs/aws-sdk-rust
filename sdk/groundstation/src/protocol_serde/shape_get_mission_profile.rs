@@ -192,6 +192,20 @@ pub(crate) fn de_get_mission_profile(
                             .transpose()?,
                         );
                     }
+                    "streamsKmsKey" => {
+                        builder = builder.set_streams_kms_key(
+                            crate::protocol_serde::shape_kms_key::de_kms_key(tokens)?,
+                        );
+                    }
+                    "streamsKmsRole" => {
+                        builder = builder.set_streams_kms_role(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "tags" => {
                         builder = builder
                             .set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);

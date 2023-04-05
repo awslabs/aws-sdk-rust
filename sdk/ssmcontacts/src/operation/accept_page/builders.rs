@@ -108,12 +108,12 @@ impl AcceptPageFluentBuilder {
         self.inner = self.inner.set_note(input);
         self
     }
-    /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+    /// <p>A 6-digit code used to acknowledge the page.</p>
     pub fn accept_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.accept_code(input.into());
         self
     }
-    /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+    /// <p>A 6-digit code used to acknowledge the page.</p>
     pub fn set_accept_code(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_accept_code(input);
         self

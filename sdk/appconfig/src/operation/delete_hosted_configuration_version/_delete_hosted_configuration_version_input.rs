@@ -11,7 +11,7 @@ pub struct DeleteHostedConfigurationVersionInput {
     pub configuration_profile_id: std::option::Option<std::string::String>,
     /// <p>The versions number to delete.</p>
     #[doc(hidden)]
-    pub version_number: i32,
+    pub version_number: std::option::Option<i32>,
 }
 impl DeleteHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
@@ -23,7 +23,7 @@ impl DeleteHostedConfigurationVersionInput {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The versions number to delete.</p>
-    pub fn version_number(&self) -> i32 {
+    pub fn version_number(&self) -> std::option::Option<i32> {
         self.version_number
     }
 }
@@ -85,7 +85,6 @@ impl DeleteHostedConfigurationVersionInputBuilder {
                 configuration_profile_id: self.configuration_profile_id
                 ,
                 version_number: self.version_number
-                    .unwrap_or_default()
                 ,
             }
         )

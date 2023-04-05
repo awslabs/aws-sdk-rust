@@ -430,6 +430,8 @@ pub(crate) mod shape_av1_qvbr_settings;
 
 pub(crate) mod shape_avc_intra_uhd_settings;
 
+pub(crate) mod shape_bandwidth_reduction_filter;
+
 pub(crate) mod shape_clip_limits;
 
 pub(crate) mod shape_cmaf_additional_manifest;

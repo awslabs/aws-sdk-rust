@@ -18,7 +18,7 @@ pub struct CreateClassificationJobInput {
     /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
     /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
     #[doc(hidden)]
-    pub initial_run: bool,
+    pub initial_run: std::option::Option<bool>,
     /// <p>The schedule for running the job. Valid values are:</p>
     /// <ul>
     /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
@@ -49,7 +49,7 @@ pub struct CreateClassificationJobInput {
     pub s3_job_definition: std::option::Option<crate::types::S3JobDefinition>,
     /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
     #[doc(hidden)]
-    pub sampling_percentage: i32,
+    pub sampling_percentage: std::option::Option<i32>,
     /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
     #[doc(hidden)]
     pub schedule_frequency: std::option::Option<crate::types::JobScheduleFrequency>,
@@ -78,7 +78,7 @@ impl CreateClassificationJobInput {
     }
     /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
     /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
-    pub fn initial_run(&self) -> bool {
+    pub fn initial_run(&self) -> std::option::Option<bool> {
         self.initial_run
     }
     /// <p>The schedule for running the job. Valid values are:</p>
@@ -116,7 +116,7 @@ impl CreateClassificationJobInput {
         self.s3_job_definition.as_ref()
     }
     /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
-    pub fn sampling_percentage(&self) -> i32 {
+    pub fn sampling_percentage(&self) -> std::option::Option<i32> {
         self.sampling_percentage
     }
     /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
@@ -387,13 +387,13 @@ impl CreateClassificationJobInputBuilder {
                 client_token: self.client_token,
                 custom_data_identifier_ids: self.custom_data_identifier_ids,
                 description: self.description,
-                initial_run: self.initial_run.unwrap_or_default(),
+                initial_run: self.initial_run,
                 job_type: self.job_type,
                 managed_data_identifier_ids: self.managed_data_identifier_ids,
                 managed_data_identifier_selector: self.managed_data_identifier_selector,
                 name: self.name,
                 s3_job_definition: self.s3_job_definition,
-                sampling_percentage: self.sampling_percentage.unwrap_or_default(),
+                sampling_percentage: self.sampling_percentage,
                 schedule_frequency: self.schedule_frequency,
                 tags: self.tags,
             },

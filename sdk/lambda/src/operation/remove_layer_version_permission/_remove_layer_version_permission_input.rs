@@ -8,7 +8,7 @@ pub struct RemoveLayerVersionPermissionInput {
     pub layer_name: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     #[doc(hidden)]
-    pub version_number: i64,
+    pub version_number: std::option::Option<i64>,
     /// <p>The identifier that was specified when the statement was added.</p>
     #[doc(hidden)]
     pub statement_id: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ impl RemoveLayerVersionPermissionInput {
         self.layer_name.as_deref()
     }
     /// <p>The version number.</p>
-    pub fn version_number(&self) -> i64 {
+    pub fn version_number(&self) -> std::option::Option<i64> {
         self.version_number
     }
     /// <p>The identifier that was specified when the statement was added.</p>
@@ -101,7 +101,7 @@ impl RemoveLayerVersionPermissionInputBuilder {
         Ok(
             crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionInput {
                 layer_name: self.layer_name,
-                version_number: self.version_number.unwrap_or_default(),
+                version_number: self.version_number,
                 statement_id: self.statement_id,
                 revision_id: self.revision_id,
             },

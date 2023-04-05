@@ -23,7 +23,7 @@ pub struct PutProfileObjectTypeInput {
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     #[doc(hidden)]
-    pub allow_profile_creation: bool,
+    pub allow_profile_creation: std::option::Option<bool>,
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     #[doc(hidden)]
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
@@ -68,7 +68,7 @@ impl PutProfileObjectTypeInput {
         self.encryption_key.as_deref()
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
-    pub fn allow_profile_creation(&self) -> bool {
+    pub fn allow_profile_creation(&self) -> std::option::Option<bool> {
         self.allow_profile_creation
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
@@ -308,7 +308,7 @@ impl PutProfileObjectTypeInputBuilder {
                 template_id: self.template_id,
                 expiration_days: self.expiration_days,
                 encryption_key: self.encryption_key,
-                allow_profile_creation: self.allow_profile_creation.unwrap_or_default(),
+                allow_profile_creation: self.allow_profile_creation,
                 source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
                 fields: self.fields,
                 keys: self.keys,

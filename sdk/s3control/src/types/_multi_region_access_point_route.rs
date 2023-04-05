@@ -15,7 +15,7 @@ pub struct MultiRegionAccessPointRoute {
     /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
     /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
     /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
-    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
+    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
     #[doc(hidden)]
     pub traffic_dial_percentage: std::option::Option<i32>,
 }
@@ -32,7 +32,7 @@ impl MultiRegionAccessPointRoute {
     /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
     /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
     /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
-    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
+    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
     pub fn traffic_dial_percentage(&self) -> std::option::Option<i32> {
         self.traffic_dial_percentage
     }
@@ -77,7 +77,7 @@ impl MultiRegionAccessPointRouteBuilder {
     /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
     /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
     /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
-    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
+    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
     pub fn traffic_dial_percentage(mut self, input: i32) -> Self {
         self.traffic_dial_percentage = Some(input);
         self
@@ -86,7 +86,7 @@ impl MultiRegionAccessPointRouteBuilder {
     /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
     /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
     /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
-    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
+    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
     pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<i32>) -> Self {
         self.traffic_dial_percentage = input;
         self

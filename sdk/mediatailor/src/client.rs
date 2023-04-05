@@ -212,6 +212,8 @@ impl Client {
     }
 }
 
+mod configure_logs_for_channel;
+
 mod configure_logs_for_playback_configuration;
 
 mod create_channel;
@@ -319,6 +321,8 @@ mod untag_resource;
 mod update_channel;
 
 mod update_live_source;
+
+mod update_program;
 
 mod update_source_location;
 

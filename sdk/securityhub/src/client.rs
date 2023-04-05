@@ -220,9 +220,15 @@ mod batch_disable_standards;
 
 mod batch_enable_standards;
 
+mod batch_get_security_controls;
+
+mod batch_get_standards_control_associations;
+
 mod batch_import_findings;
 
 mod batch_update_findings;
+
+mod batch_update_standards_control_associations;
 
 mod create_action_target;
 
@@ -331,6 +337,10 @@ mod list_invitations;
 mod list_members;
 
 mod list_organization_admin_accounts;
+
+mod list_security_control_definitions;
+
+mod list_standards_control_associations;
 
 mod list_tags_for_resource;
 

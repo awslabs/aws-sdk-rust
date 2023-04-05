@@ -1070,6 +1070,46 @@ impl From<crate::operation::get_administrator_account::GetAdministratorAccountEr
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_coverage_statistics::GetCoverageStatisticsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_coverage_statistics::GetCoverageStatisticsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_coverage_statistics::GetCoverageStatisticsError> for Error {
+    fn from(err: crate::operation::get_coverage_statistics::GetCoverageStatisticsError) -> Self {
+        match err {
+            crate::operation::get_coverage_statistics::GetCoverageStatisticsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_coverage_statistics::GetCoverageStatisticsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_coverage_statistics::GetCoverageStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_detector::GetDetectorError, R>>
     for Error
 where
@@ -1621,6 +1661,48 @@ impl From<crate::operation::invite_members::InviteMembersError> for Error {
                 inner,
             ) => Error::InternalServerErrorException(inner),
             crate::operation::invite_members::InviteMembersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_coverage::ListCoverageError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_coverage::ListCoverageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_coverage::ListCoverageError> for Error {
+    fn from(err: crate::operation::list_coverage::ListCoverageError) -> Self {
+        match err {
+            crate::operation::list_coverage::ListCoverageError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_coverage::ListCoverageError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::list_coverage::ListCoverageError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

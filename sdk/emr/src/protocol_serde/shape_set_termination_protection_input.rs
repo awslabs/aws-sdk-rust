@@ -12,10 +12,8 @@ pub fn ser_set_termination_protection_input(
         }
         array_2.finish();
     }
-    {
-        object
-            .key("TerminationProtected")
-            .boolean(input.termination_protected);
+    if let Some(var_4) = &input.termination_protected {
+        object.key("TerminationProtected").boolean(*var_4);
     }
     Ok(())
 }

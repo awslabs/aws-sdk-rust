@@ -10,7 +10,7 @@ pub struct StartBgpFailoverTestInput {
     #[doc(hidden)]
     pub bgp_peers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
-    /// <p>Maximum value: 180 minutes (3 hours).</p>
+    /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
     #[doc(hidden)]
     pub test_duration_in_minutes: std::option::Option<i32>,
@@ -25,7 +25,7 @@ impl StartBgpFailoverTestInput {
         self.bgp_peers.as_deref()
     }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
-    /// <p>Maximum value: 180 minutes (3 hours).</p>
+    /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
     pub fn test_duration_in_minutes(&self) -> std::option::Option<i32> {
         self.test_duration_in_minutes
@@ -81,14 +81,14 @@ impl StartBgpFailoverTestInputBuilder {
         self
     }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
-    /// <p>Maximum value: 180 minutes (3 hours).</p>
+    /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
     pub fn test_duration_in_minutes(mut self, input: i32) -> Self {
         self.test_duration_in_minutes = Some(input);
         self
     }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
-    /// <p>Maximum value: 180 minutes (3 hours).</p>
+    /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
     pub fn set_test_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.test_duration_in_minutes = input;

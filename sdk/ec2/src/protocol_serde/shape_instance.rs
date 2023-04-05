@@ -692,6 +692,20 @@ pub fn de_instance(
                 builder = builder.set_maintenance_options(var_56);
             }
             ,
+            s if s.matches("currentInstanceBootMode") /* CurrentInstanceBootMode com.amazonaws.ec2#Instance$CurrentInstanceBootMode */ =>  {
+                let var_57 =
+                    Some(
+                        Result::<crate::types::InstanceBootModeValues, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InstanceBootModeValues::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_current_instance_boot_mode(var_57);
+            }
+            ,
             _ => {}
         }
     }

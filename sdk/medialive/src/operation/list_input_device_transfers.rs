@@ -49,25 +49,27 @@ impl ListInputDeviceTransfersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
-                if let Some(inner_1) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_1));
+                if let Some(inner_1) = &_input.max_results {
+                    if *inner_1 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_1).encode(),
+                        );
                     }
                 }
-                let inner_2 = &_input.transfer_type;
-                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                if let Some(inner_2) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
+                }
+                let inner_3 = &_input.transfer_type;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "transfer_type",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_2.is_empty() {
+                if inner_3.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "transfer_type",
@@ -77,7 +79,7 @@ impl ListInputDeviceTransfersInput {
                 }
                 query.push_kv(
                     "transferType",
-                    &aws_smithy_http::query::fmt_string(&inner_2),
+                    &aws_smithy_http::query::fmt_string(&inner_3),
                 );
                 Ok(())
             }

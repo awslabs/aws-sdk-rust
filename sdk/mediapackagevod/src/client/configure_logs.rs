@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ConfigureLogsOutput`](crate::operation::configure_logs::ConfigureLogsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::arn): The ARN of the PackagingGroup.
     ///   - [`authorization(Option<Authorization>)`](crate::operation::configure_logs::ConfigureLogsOutput::authorization): CDN Authorization credentials
+    ///   - [`created_at(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::created_at): The time the PackagingGroup was created.
     ///   - [`domain_name(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
     ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::configure_logs::ConfigureLogsOutput::egress_access_logs): Configure egress access logging.
     ///   - [`id(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::id): The ID of the PackagingGroup.

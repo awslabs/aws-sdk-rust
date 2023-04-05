@@ -199,6 +199,24 @@ pub(crate) fn de_get_fuota_task(
                             .transpose()?,
                         );
                     }
+                    "FragmentIntervalMS" => {
+                        builder = builder.set_fragment_interval_ms(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i32::try_from)
+                            .transpose()?,
+                        );
+                    }
+                    "FragmentSizeBytes" => {
+                        builder = builder.set_fragment_size_bytes(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i32::try_from)
+                            .transpose()?,
+                        );
+                    }
                     "Id" => {
                         builder = builder.set_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -219,6 +237,15 @@ pub(crate) fn de_get_fuota_task(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "RedundancyPercent" => {
+                        builder = builder.set_redundancy_percent(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }

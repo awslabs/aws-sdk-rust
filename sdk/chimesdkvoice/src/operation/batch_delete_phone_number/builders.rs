@@ -5,6 +5,8 @@ pub use crate::operation::batch_delete_phone_number::_batch_delete_phone_number_
 
 /// Fluent builder constructing a request to `BatchDeletePhoneNumber`.
 ///
+/// <p> Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be disassociated from any users or Amazon Chime SDK Voice Connectors before they can be deleted. </p>
+/// <p> Phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeletePhoneNumberFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -73,12 +75,12 @@ impl BatchDeletePhoneNumberFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_phone_number_ids`](Self::set_phone_number_ids).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone number IDs.</p>
     pub fn phone_number_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.phone_number_ids(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone number IDs.</p>
     pub fn set_phone_number_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

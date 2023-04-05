@@ -9,6 +9,9 @@ pub fn ser_document_classifier_output_data_config(
     if let Some(var_2) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.flywheel_stats_s3_prefix {
+        object.key("FlywheelStatsS3Prefix").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -48,6 +51,15 @@ where
                             }
                             "KmsKeyId" => {
                                 builder = builder.set_kms_key_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "FlywheelStatsS3Prefix" => {
+                                builder = builder.set_flywheel_stats_s3_prefix(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

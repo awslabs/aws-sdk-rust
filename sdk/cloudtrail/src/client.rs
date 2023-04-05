@@ -216,6 +216,8 @@ mod add_tags;
 
 mod cancel_query;
 
+mod create_channel;
+
 mod create_event_data_store;
 
 mod create_trail;
@@ -248,7 +250,11 @@ mod create_trail;
 /// ```
 pub mod customize;
 
+mod delete_channel;
+
 mod delete_event_data_store;
+
+mod delete_resource_policy;
 
 mod delete_trail;
 
@@ -269,6 +275,8 @@ mod get_import;
 mod get_insight_selectors;
 
 mod get_query_results;
+
+mod get_resource_policy;
 
 mod get_trail;
 
@@ -296,6 +304,8 @@ mod put_event_selectors;
 
 mod put_insight_selectors;
 
+mod put_resource_policy;
+
 mod register_organization_delegated_admin;
 
 mod remove_tags;
@@ -311,6 +321,8 @@ mod start_query;
 mod stop_import;
 
 mod stop_logging;
+
+mod update_channel;
 
 mod update_event_data_store;
 

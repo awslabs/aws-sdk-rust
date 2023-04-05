@@ -22,7 +22,7 @@ pub struct ListMetricsInput {
     /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
     /// <p>The default is <code>false</code>.</p>
     #[doc(hidden)]
-    pub include_linked_accounts: bool,
+    pub include_linked_accounts: std::option::Option<bool>,
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
     #[doc(hidden)]
     pub owning_account: std::option::Option<std::string::String>,
@@ -51,7 +51,7 @@ impl ListMetricsInput {
     }
     /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
     /// <p>The default is <code>false</code>.</p>
-    pub fn include_linked_accounts(&self) -> bool {
+    pub fn include_linked_accounts(&self) -> std::option::Option<bool> {
         self.include_linked_accounts
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
@@ -178,7 +178,7 @@ impl ListMetricsInputBuilder {
             dimensions: self.dimensions,
             next_token: self.next_token,
             recently_active: self.recently_active,
-            include_linked_accounts: self.include_linked_accounts.unwrap_or_default(),
+            include_linked_accounts: self.include_linked_accounts,
             owning_account: self.owning_account,
         })
     }

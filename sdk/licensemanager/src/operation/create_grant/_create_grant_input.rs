@@ -12,7 +12,16 @@ pub struct CreateGrantInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
-    /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account, which includes only the account specified.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organizational unit (OU), which includes all accounts in the OU.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Home Region of the grant.</p>
@@ -35,7 +44,16 @@ impl CreateGrantInput {
     pub fn license_arn(&self) -> std::option::Option<&str> {
         self.license_arn.as_deref()
     }
-    /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account, which includes only the account specified.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organizational unit (OU), which includes all accounts in the OU.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
+    /// </ul>
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }
@@ -102,14 +120,32 @@ impl CreateGrantInputBuilder {
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
     ///
-    /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account, which includes only the account specified.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organizational unit (OU), which includes all accounts in the OU.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
+    /// </ul>
     pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
         v.push(input.into());
         self.principals = Some(v);
         self
     }
-    /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account, which includes only the account specified.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organizational unit (OU), which includes all accounts in the OU.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
+    /// </ul>
     pub fn set_principals(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

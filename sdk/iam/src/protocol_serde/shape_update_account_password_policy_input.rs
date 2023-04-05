@@ -16,49 +16,49 @@ pub fn ser_update_account_password_policy_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("RequireSymbols");
-    if input.require_symbols {
-        scope_3.boolean(input.require_symbols);
+    if let Some(var_4) = &input.require_symbols {
+        scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("RequireNumbers");
-    if input.require_numbers {
-        scope_4.boolean(input.require_numbers);
+    let mut scope_5 = writer.prefix("RequireNumbers");
+    if let Some(var_6) = &input.require_numbers {
+        scope_5.boolean(*var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("RequireUppercaseCharacters");
-    if input.require_uppercase_characters {
-        scope_5.boolean(input.require_uppercase_characters);
+    let mut scope_7 = writer.prefix("RequireUppercaseCharacters");
+    if let Some(var_8) = &input.require_uppercase_characters {
+        scope_7.boolean(*var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("RequireLowercaseCharacters");
-    if input.require_lowercase_characters {
-        scope_6.boolean(input.require_lowercase_characters);
+    let mut scope_9 = writer.prefix("RequireLowercaseCharacters");
+    if let Some(var_10) = &input.require_lowercase_characters {
+        scope_9.boolean(*var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("AllowUsersToChangePassword");
-    if input.allow_users_to_change_password {
-        scope_7.boolean(input.allow_users_to_change_password);
+    let mut scope_11 = writer.prefix("AllowUsersToChangePassword");
+    if let Some(var_12) = &input.allow_users_to_change_password {
+        scope_11.boolean(*var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("MaxPasswordAge");
-    if let Some(var_9) = &input.max_password_age {
-        scope_8.number(
+    let mut scope_13 = writer.prefix("MaxPasswordAge");
+    if let Some(var_14) = &input.max_password_age {
+        scope_13.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_9).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("PasswordReusePrevention");
-    if let Some(var_11) = &input.password_reuse_prevention {
-        scope_10.number(
+    let mut scope_15 = writer.prefix("PasswordReusePrevention");
+    if let Some(var_16) = &input.password_reuse_prevention {
+        scope_15.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_11).into()),
+            aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("HardExpiry");
-    if let Some(var_13) = &input.hard_expiry {
-        scope_12.boolean(*var_13);
+    let mut scope_17 = writer.prefix("HardExpiry");
+    if let Some(var_18) = &input.hard_expiry {
+        scope_17.boolean(*var_18);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

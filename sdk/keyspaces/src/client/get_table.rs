@@ -12,12 +12,13 @@ impl super::Client {
     ///   - [`creation_timestamp(Option<DateTime>)`](crate::operation::get_table::GetTableOutput::creation_timestamp): <p>The creation timestamp of the specified table.</p>
     ///   - [`status(Option<TableStatus>)`](crate::operation::get_table::GetTableOutput::status): <p>The current status of the specified table.</p>
     ///   - [`schema_definition(Option<SchemaDefinition>)`](crate::operation::get_table::GetTableOutput::schema_definition): <p>The schema definition of the specified table.</p>
-    ///   - [`capacity_specification(Option<CapacitySpecificationSummary>)`](crate::operation::get_table::GetTableOutput::capacity_specification): <p>The read/write throughput capacity mode for a table. The options are:</p>  <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>  <p>• <code>throughputMode:PROVISIONED</code> </p>
+    ///   - [`capacity_specification(Option<CapacitySpecificationSummary>)`](crate::operation::get_table::GetTableOutput::capacity_specification): <p>The read/write throughput capacity mode for a table. The options are:</p>  <ul>   <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>   <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>  </ul>
     ///   - [`encryption_specification(Option<EncryptionSpecification>)`](crate::operation::get_table::GetTableOutput::encryption_specification): <p>The encryption settings of the specified table.</p>
     ///   - [`point_in_time_recovery(Option<PointInTimeRecoverySummary>)`](crate::operation::get_table::GetTableOutput::point_in_time_recovery): <p>The point-in-time recovery status of the specified table.</p>
     ///   - [`ttl(Option<TimeToLive>)`](crate::operation::get_table::GetTableOutput::ttl): <p>The custom Time to Live settings of the specified table.</p>
-    ///   - [`default_time_to_live(Option<i32>)`](crate::operation::get_table::GetTableOutput::default_time_to_live): <p>The default Time to Live settings of the specified table.</p>
+    ///   - [`default_time_to_live(Option<i32>)`](crate::operation::get_table::GetTableOutput::default_time_to_live): <p>The default Time to Live settings in seconds of the specified table.</p>
     ///   - [`comment(Option<Comment>)`](crate::operation::get_table::GetTableOutput::comment): <p>The the description of the specified table.</p>
+    ///   - [`client_side_timestamps(Option<ClientSideTimestamps>)`](crate::operation::get_table::GetTableOutput::client_side_timestamps): <p> The client-side timestamps setting of the table.</p>
     /// - On failure, responds with [`SdkError<GetTableError>`](crate::operation::get_table::GetTableError)
     pub fn get_table(&self) -> crate::operation::get_table::builders::GetTableFluentBuilder {
         crate::operation::get_table::builders::GetTableFluentBuilder::new(self.handle.clone())

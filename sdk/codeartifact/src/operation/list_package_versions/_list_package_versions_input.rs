@@ -12,7 +12,7 @@ pub struct ListPackageVersionsInput {
     /// <p> The name of the repository that contains the requested package versions. </p>
     #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The format of the returned package versions. </p>
+    /// <p> The format of the package versions you want to list. </p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
@@ -20,6 +20,7 @@ pub struct ListPackageVersionsInput {
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -55,7 +56,7 @@ impl ListPackageVersionsInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The format of the returned package versions. </p>
+    /// <p> The format of the package versions you want to list. </p>
     pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
@@ -64,6 +65,7 @@ impl ListPackageVersionsInput {
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -149,12 +151,12 @@ impl ListPackageVersionsInputBuilder {
         self.repository = input;
         self
     }
-    /// <p> The format of the returned package versions. </p>
+    /// <p> The format of the package versions you want to list. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = Some(input);
         self
     }
-    /// <p> The format of the returned package versions. </p>
+    /// <p> The format of the package versions you want to list. </p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
@@ -164,6 +166,7 @@ impl ListPackageVersionsInputBuilder {
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
@@ -174,6 +177,7 @@ impl ListPackageVersionsInputBuilder {
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.namespace = input;

@@ -6,7 +6,7 @@ pub struct GetResourceProfileOutput {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
     #[doc(hidden)]
     pub profile_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+    /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
     #[doc(hidden)]
     pub sensitivity_score: i32,
     /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
@@ -22,7 +22,7 @@ impl GetResourceProfileOutput {
     pub fn profile_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.profile_updated_at.as_ref()
     }
-    /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+    /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
     pub fn sensitivity_score(&self) -> i32 {
         self.sensitivity_score
     }
@@ -72,12 +72,12 @@ impl GetResourceProfileOutputBuilder {
         self.profile_updated_at = input;
         self
     }
-    /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+    /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
     pub fn sensitivity_score(mut self, input: i32) -> Self {
         self.sensitivity_score = Some(input);
         self
     }
-    /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+    /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
     pub fn set_sensitivity_score(mut self, input: std::option::Option<i32>) -> Self {
         self.sensitivity_score = input;
         self

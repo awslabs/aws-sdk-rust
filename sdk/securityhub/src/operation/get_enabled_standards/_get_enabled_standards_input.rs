@@ -12,7 +12,7 @@ pub struct GetEnabledStandardsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl GetEnabledStandardsInput {
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
@@ -25,7 +25,7 @@ impl GetEnabledStandardsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -99,7 +99,7 @@ impl GetEnabledStandardsInputBuilder {
             crate::operation::get_enabled_standards::GetEnabledStandardsInput {
                 standards_subscription_arns: self.standards_subscription_arns,
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
             },
         )
     }

@@ -45,7 +45,7 @@ pub struct CreateBucketInput {
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     #[doc(hidden)]
-    pub object_lock_enabled_for_bucket: bool,
+    pub object_lock_enabled_for_bucket: std::option::Option<bool>,
     /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
     /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -104,7 +104,7 @@ impl CreateBucketInput {
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn object_lock_enabled_for_bucket(&self) -> bool {
+    pub fn object_lock_enabled_for_bucket(&self) -> std::option::Option<bool> {
         self.object_lock_enabled_for_bucket
     }
     /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
@@ -299,7 +299,7 @@ impl CreateBucketInputBuilder {
             grant_read_acp: self.grant_read_acp,
             grant_write: self.grant_write,
             grant_write_acp: self.grant_write_acp,
-            object_lock_enabled_for_bucket: self.object_lock_enabled_for_bucket.unwrap_or_default(),
+            object_lock_enabled_for_bucket: self.object_lock_enabled_for_bucket,
             outpost_id: self.outpost_id,
         })
     }

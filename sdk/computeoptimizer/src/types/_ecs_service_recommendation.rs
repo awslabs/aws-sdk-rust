@@ -4,127 +4,127 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcsServiceRecommendation {
-    /// <p> The Amazon Resource Name (ARN) of the current ECS service. </p>
+    /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
-    /// <p> The Amazon Web Services account ID of the ECS service. </p>
+    /// <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
-    /// <p> The configuration of the current ECS service. </p>
+    /// <p> The configuration of the current Amazon ECS service. </p>
     #[doc(hidden)]
     pub current_service_configuration: std::option::Option<crate::types::ServiceConfiguration>,
-    /// <p> An array of objects that describe the utilization metrics of the ECS service. </p>
+    /// <p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>
     #[doc(hidden)]
     pub utilization_metrics:
         std::option::Option<std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
-    /// <p> The number of days the ECS service utilization metrics were analyzed. </p>
+    /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
     #[doc(hidden)]
     pub lookback_period_in_days: f64,
-    /// <p> The launch type the ECS service is using. </p> <note>
+    /// <p> The launch type the Amazon ECS service is using. </p> <note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     #[doc(hidden)]
     pub launch_type: std::option::Option<crate::types::EcsServiceLaunchType>,
-    /// <p> The timestamp of when the ECS service recommendation was last generated. </p>
+    /// <p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>
     #[doc(hidden)]
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The finding classification of an ECS service. </p>
-    /// <p>Findings for ECS services include:</p>
+    /// <p> The finding classification of an Amazon ECS service. </p>
+    /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned ECS service might result in poor application performance.</p> </li>
-    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned ECS service might result in additional infrastructure costs. </p> </li>
-    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
+    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p> </li>
+    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs. </p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub finding: std::option::Option<crate::types::EcsServiceRecommendationFinding>,
-    /// <p> The reason for the finding classification of an ECS service. </p>
-    /// <p>Finding reason codes for ECS services include:</p>
+    /// <p> The reason for the finding classification of an Amazon ECS service. </p>
+    /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
-    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
+    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub finding_reason_codes:
         std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>>,
-    /// <p> An array of objects that describe the recommendation options for the ECS service. </p>
+    /// <p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>
     #[doc(hidden)]
     pub service_recommendation_options:
         std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
-    /// <p> The risk of the current ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
+    /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     #[doc(hidden)]
     pub current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
 }
 impl EcsServiceRecommendation {
-    /// <p> The Amazon Resource Name (ARN) of the current ECS service. </p>
+    /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn service_arn(&self) -> std::option::Option<&str> {
         self.service_arn.as_deref()
     }
-    /// <p> The Amazon Web Services account ID of the ECS service. </p>
+    /// <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p> The configuration of the current ECS service. </p>
+    /// <p> The configuration of the current Amazon ECS service. </p>
     pub fn current_service_configuration(
         &self,
     ) -> std::option::Option<&crate::types::ServiceConfiguration> {
         self.current_service_configuration.as_ref()
     }
-    /// <p> An array of objects that describe the utilization metrics of the ECS service. </p>
+    /// <p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>
     pub fn utilization_metrics(
         &self,
     ) -> std::option::Option<&[crate::types::EcsServiceUtilizationMetric]> {
         self.utilization_metrics.as_deref()
     }
-    /// <p> The number of days the ECS service utilization metrics were analyzed. </p>
+    /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
     pub fn lookback_period_in_days(&self) -> f64 {
         self.lookback_period_in_days
     }
-    /// <p> The launch type the ECS service is using. </p> <note>
+    /// <p> The launch type the Amazon ECS service is using. </p> <note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     pub fn launch_type(&self) -> std::option::Option<&crate::types::EcsServiceLaunchType> {
         self.launch_type.as_ref()
     }
-    /// <p> The timestamp of when the ECS service recommendation was last generated. </p>
+    /// <p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>
     pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
-    /// <p> The finding classification of an ECS service. </p>
-    /// <p>Findings for ECS services include:</p>
+    /// <p> The finding classification of an Amazon ECS service. </p>
+    /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned ECS service might result in poor application performance.</p> </li>
-    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned ECS service might result in additional infrastructure costs. </p> </li>
-    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
+    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p> </li>
+    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs. </p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
     /// </ul>
     pub fn finding(&self) -> std::option::Option<&crate::types::EcsServiceRecommendationFinding> {
         self.finding.as_ref()
     }
-    /// <p> The reason for the finding classification of an ECS service. </p>
-    /// <p>Finding reason codes for ECS services include:</p>
+    /// <p> The reason for the finding classification of an Amazon ECS service. </p>
+    /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
-    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
+    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
     /// </ul>
     pub fn finding_reason_codes(
         &self,
     ) -> std::option::Option<&[crate::types::EcsServiceRecommendationFindingReasonCode]> {
         self.finding_reason_codes.as_deref()
     }
-    /// <p> An array of objects that describe the recommendation options for the ECS service. </p>
+    /// <p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>
     pub fn service_recommendation_options(
         &self,
     ) -> std::option::Option<&[crate::types::EcsServiceRecommendationOption]> {
         self.service_recommendation_options.as_deref()
     }
-    /// <p> The risk of the current ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
+    /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     pub fn current_performance_risk(
         &self,
     ) -> std::option::Option<&crate::types::CurrentPerformanceRisk> {
@@ -159,31 +159,31 @@ pub struct EcsServiceRecommendationBuilder {
     pub(crate) current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
 }
 impl EcsServiceRecommendationBuilder {
-    /// <p> The Amazon Resource Name (ARN) of the current ECS service. </p>
+    /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.service_arn = Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the current ECS service. </p>
+    /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.service_arn = input;
         self
     }
-    /// <p> The Amazon Web Services account ID of the ECS service. </p>
+    /// <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.account_id = Some(input.into());
         self
     }
-    /// <p> The Amazon Web Services account ID of the ECS service. </p>
+    /// <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p> The configuration of the current ECS service. </p>
+    /// <p> The configuration of the current Amazon ECS service. </p>
     pub fn current_service_configuration(
         mut self,
         input: crate::types::ServiceConfiguration,
@@ -191,7 +191,7 @@ impl EcsServiceRecommendationBuilder {
         self.current_service_configuration = Some(input);
         self
     }
-    /// <p> The configuration of the current ECS service. </p>
+    /// <p> The configuration of the current Amazon ECS service. </p>
     pub fn set_current_service_configuration(
         mut self,
         input: std::option::Option<crate::types::ServiceConfiguration>,
@@ -203,14 +203,14 @@ impl EcsServiceRecommendationBuilder {
     ///
     /// To override the contents of this collection use [`set_utilization_metrics`](Self::set_utilization_metrics).
     ///
-    /// <p> An array of objects that describe the utilization metrics of the ECS service. </p>
+    /// <p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>
     pub fn utilization_metrics(mut self, input: crate::types::EcsServiceUtilizationMetric) -> Self {
         let mut v = self.utilization_metrics.unwrap_or_default();
         v.push(input);
         self.utilization_metrics = Some(v);
         self
     }
-    /// <p> An array of objects that describe the utilization metrics of the ECS service. </p>
+    /// <p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>
     pub fn set_utilization_metrics(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
@@ -218,24 +218,24 @@ impl EcsServiceRecommendationBuilder {
         self.utilization_metrics = input;
         self
     }
-    /// <p> The number of days the ECS service utilization metrics were analyzed. </p>
+    /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
     pub fn lookback_period_in_days(mut self, input: f64) -> Self {
         self.lookback_period_in_days = Some(input);
         self
     }
-    /// <p> The number of days the ECS service utilization metrics were analyzed. </p>
+    /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
     pub fn set_lookback_period_in_days(mut self, input: std::option::Option<f64>) -> Self {
         self.lookback_period_in_days = input;
         self
     }
-    /// <p> The launch type the ECS service is using. </p> <note>
+    /// <p> The launch type the Amazon ECS service is using. </p> <note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     pub fn launch_type(mut self, input: crate::types::EcsServiceLaunchType) -> Self {
         self.launch_type = Some(input);
         self
     }
-    /// <p> The launch type the ECS service is using. </p> <note>
+    /// <p> The launch type the Amazon ECS service is using. </p> <note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     pub fn set_launch_type(
@@ -245,12 +245,12 @@ impl EcsServiceRecommendationBuilder {
         self.launch_type = input;
         self
     }
-    /// <p> The timestamp of when the ECS service recommendation was last generated. </p>
+    /// <p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>
     pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_refresh_timestamp = Some(input);
         self
     }
-    /// <p> The timestamp of when the ECS service recommendation was last generated. </p>
+    /// <p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>
     pub fn set_last_refresh_timestamp(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -258,23 +258,23 @@ impl EcsServiceRecommendationBuilder {
         self.last_refresh_timestamp = input;
         self
     }
-    /// <p> The finding classification of an ECS service. </p>
-    /// <p>Findings for ECS services include:</p>
+    /// <p> The finding classification of an Amazon ECS service. </p>
+    /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned ECS service might result in poor application performance.</p> </li>
-    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned ECS service might result in additional infrastructure costs. </p> </li>
-    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
+    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p> </li>
+    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs. </p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::EcsServiceRecommendationFinding) -> Self {
         self.finding = Some(input);
         self
     }
-    /// <p> The finding classification of an ECS service. </p>
-    /// <p>Findings for ECS services include:</p>
+    /// <p> The finding classification of an Amazon ECS service. </p>
+    /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned ECS service might result in poor application performance.</p> </li>
-    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned ECS service might result in additional infrastructure costs. </p> </li>
-    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
+    /// <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p> </li>
+    /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs. </p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
     /// </ul>
     pub fn set_finding(
         mut self,
@@ -287,13 +287,13 @@ impl EcsServiceRecommendationBuilder {
     ///
     /// To override the contents of this collection use [`set_finding_reason_codes`](Self::set_finding_reason_codes).
     ///
-    /// <p> The reason for the finding classification of an ECS service. </p>
-    /// <p>Finding reason codes for ECS services include:</p>
+    /// <p> The reason for the finding classification of an Amazon ECS service. </p>
+    /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
-    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
+    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
     /// </ul>
     pub fn finding_reason_codes(
         mut self,
@@ -304,13 +304,13 @@ impl EcsServiceRecommendationBuilder {
         self.finding_reason_codes = Some(v);
         self
     }
-    /// <p> The reason for the finding classification of an ECS service. </p>
-    /// <p>Finding reason codes for ECS services include:</p>
+    /// <p> The reason for the finding classification of an Amazon ECS service. </p>
+    /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
-    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li>
+    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
     /// </ul>
     pub fn set_finding_reason_codes(
         mut self,
@@ -325,7 +325,7 @@ impl EcsServiceRecommendationBuilder {
     ///
     /// To override the contents of this collection use [`set_service_recommendation_options`](Self::set_service_recommendation_options).
     ///
-    /// <p> An array of objects that describe the recommendation options for the ECS service. </p>
+    /// <p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>
     pub fn service_recommendation_options(
         mut self,
         input: crate::types::EcsServiceRecommendationOption,
@@ -335,7 +335,7 @@ impl EcsServiceRecommendationBuilder {
         self.service_recommendation_options = Some(v);
         self
     }
-    /// <p> An array of objects that describe the recommendation options for the ECS service. </p>
+    /// <p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>
     pub fn set_service_recommendation_options(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
@@ -343,12 +343,12 @@ impl EcsServiceRecommendationBuilder {
         self.service_recommendation_options = input;
         self
     }
-    /// <p> The risk of the current ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
+    /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     pub fn current_performance_risk(mut self, input: crate::types::CurrentPerformanceRisk) -> Self {
         self.current_performance_risk = Some(input);
         self
     }
-    /// <p> The risk of the current ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
+    /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     pub fn set_current_performance_risk(
         mut self,
         input: std::option::Option<crate::types::CurrentPerformanceRisk>,

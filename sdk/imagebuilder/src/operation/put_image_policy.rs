@@ -171,7 +171,7 @@ pub enum PutImagePolicyError {
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>The value that you provided for the specified parameter is invalid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>You have made a request for an action that is not supported by the service.</p>
+    /// <p>You have requested an action that that the service doesn't support.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

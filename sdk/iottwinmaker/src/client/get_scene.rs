@@ -14,6 +14,8 @@ impl super::Client {
     ///   - [`update_date_time(Option<DateTime>)`](crate::operation::get_scene::GetSceneOutput::update_date_time): <p>The date and time when the scene was last updated.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_scene::GetSceneOutput::description): <p>The description of the scene.</p>
     ///   - [`capabilities(Option<Vec<String>>)`](crate::operation::get_scene::GetSceneOutput::capabilities): <p>A list of capabilities that the scene uses to render.</p>
+    ///   - [`scene_metadata(Option<HashMap<String, String>>)`](crate::operation::get_scene::GetSceneOutput::scene_metadata): <p>The response metadata.</p>
+    ///   - [`generated_scene_metadata(Option<HashMap<String, String>>)`](crate::operation::get_scene::GetSceneOutput::generated_scene_metadata): <p>The generated scene metadata.</p>
     /// - On failure, responds with [`SdkError<GetSceneError>`](crate::operation::get_scene::GetSceneError)
     pub fn get_scene(&self) -> crate::operation::get_scene::builders::GetSceneFluentBuilder {
         crate::operation::get_scene::builders::GetSceneFluentBuilder::new(self.handle.clone())

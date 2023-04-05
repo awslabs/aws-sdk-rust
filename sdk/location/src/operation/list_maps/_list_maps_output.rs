@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMapsOutput {
-    /// <p>Contains a list of maps in your AWS account</p>
+    /// <p>Contains a list of maps in your Amazon Web Services account</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::types::ListMapsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
@@ -12,7 +12,7 @@ pub struct ListMapsOutput {
     _request_id: Option<String>,
 }
 impl ListMapsOutput {
-    /// <p>Contains a list of maps in your AWS account</p>
+    /// <p>Contains a list of maps in your Amazon Web Services account</p>
     pub fn entries(&self) -> std::option::Option<&[crate::types::ListMapsResponseEntry]> {
         self.entries.as_deref()
     }
@@ -46,14 +46,14 @@ impl ListMapsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>Contains a list of maps in your AWS account</p>
+    /// <p>Contains a list of maps in your Amazon Web Services account</p>
     pub fn entries(mut self, input: crate::types::ListMapsResponseEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = Some(v);
         self
     }
-    /// <p>Contains a list of maps in your AWS account</p>
+    /// <p>Contains a list of maps in your Amazon Web Services account</p>
     pub fn set_entries(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ListMapsResponseEntry>>,

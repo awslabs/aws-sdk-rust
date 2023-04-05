@@ -7,11 +7,18 @@ pub struct EksPodPropertiesOverride {
     /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
     #[doc(hidden)]
     pub containers: std::option::Option<std::vec::Vec<crate::types::EksContainerOverride>>,
+    /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
+    #[doc(hidden)]
+    pub metadata: std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodPropertiesOverride {
     /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
     pub fn containers(&self) -> std::option::Option<&[crate::types::EksContainerOverride]> {
         self.containers.as_deref()
+    }
+    /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::types::EksMetadata> {
+        self.metadata.as_ref()
     }
 }
 impl EksPodPropertiesOverride {
@@ -26,6 +33,7 @@ impl EksPodPropertiesOverride {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct EksPodPropertiesOverrideBuilder {
     pub(crate) containers: std::option::Option<std::vec::Vec<crate::types::EksContainerOverride>>,
+    pub(crate) metadata: std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodPropertiesOverrideBuilder {
     /// Appends an item to `containers`.
@@ -47,10 +55,21 @@ impl EksPodPropertiesOverrideBuilder {
         self.containers = input;
         self
     }
+    /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
+    pub fn metadata(mut self, input: crate::types::EksMetadata) -> Self {
+        self.metadata = Some(input);
+        self
+    }
+    /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
+    pub fn set_metadata(mut self, input: std::option::Option<crate::types::EksMetadata>) -> Self {
+        self.metadata = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EksPodPropertiesOverride`](crate::types::EksPodPropertiesOverride).
     pub fn build(self) -> crate::types::EksPodPropertiesOverride {
         crate::types::EksPodPropertiesOverride {
             containers: self.containers,
+            metadata: self.metadata,
         }
     }
 }

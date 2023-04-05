@@ -98,23 +98,26 @@ impl ListLensReviewImprovementsInput {
                         query.push_kv("PillarId", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.milestone_number != 0 {
-                    query.push_kv(
-                        "MilestoneNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.milestone_number)
-                            .encode(),
-                    );
-                }
-                if let Some(inner_4) = &_input.next_token {
-                    {
-                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_4));
+                if let Some(inner_4) = &_input.milestone_number {
+                    if *inner_4 != 0 {
+                        query.push_kv(
+                            "MilestoneNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                if let Some(inner_5) = &_input.next_token {
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
+                }
+                if let Some(inner_6) = &_input.max_results {
+                    if *inner_6 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

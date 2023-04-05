@@ -38,6 +38,11 @@ where
                                     crate::protocol_serde::shape_data_source_configurations_result::de_data_source_configurations_result(tokens)?
                                 );
                             }
+                            "features" => {
+                                builder = builder.set_features(
+                                    crate::protocol_serde::shape_member_features_configurations_results::de_member_features_configurations_results(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

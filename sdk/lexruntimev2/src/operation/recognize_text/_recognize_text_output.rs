@@ -21,6 +21,9 @@ pub struct RecognizeTextOutput {
     /// <p>The identifier of the session in use.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
+    /// <p>The bot member that recognized the text.</p>
+    #[doc(hidden)]
+    pub recognized_bot_member: std::option::Option<crate::types::RecognizedBotMember>,
     _request_id: Option<String>,
 }
 impl RecognizeTextOutput {
@@ -49,6 +52,10 @@ impl RecognizeTextOutput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
+    /// <p>The bot member that recognized the text.</p>
+    pub fn recognized_bot_member(&self) -> std::option::Option<&crate::types::RecognizedBotMember> {
+        self.recognized_bot_member.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for RecognizeTextOutput {
     fn request_id(&self) -> Option<&str> {
@@ -72,6 +79,7 @@ pub struct RecognizeTextOutputBuilder {
     pub(crate) request_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) session_id: std::option::Option<std::string::String>,
+    pub(crate) recognized_bot_member: std::option::Option<crate::types::RecognizedBotMember>,
     _request_id: Option<String>,
 }
 impl RecognizeTextOutputBuilder {
@@ -165,6 +173,19 @@ impl RecognizeTextOutputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The bot member that recognized the text.</p>
+    pub fn recognized_bot_member(mut self, input: crate::types::RecognizedBotMember) -> Self {
+        self.recognized_bot_member = Some(input);
+        self
+    }
+    /// <p>The bot member that recognized the text.</p>
+    pub fn set_recognized_bot_member(
+        mut self,
+        input: std::option::Option<crate::types::RecognizedBotMember>,
+    ) -> Self {
+        self.recognized_bot_member = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -182,6 +203,7 @@ impl RecognizeTextOutputBuilder {
             interpretations: self.interpretations,
             request_attributes: self.request_attributes,
             session_id: self.session_id,
+            recognized_bot_member: self.recognized_bot_member,
             _request_id: self._request_id,
         }
     }

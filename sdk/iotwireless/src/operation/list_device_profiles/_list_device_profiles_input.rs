@@ -8,7 +8,10 @@ pub struct ListDeviceProfilesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
+    /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+    #[doc(hidden)]
+    pub device_profile_type: std::option::Option<crate::types::DeviceProfileType>,
 }
 impl ListDeviceProfilesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -16,8 +19,12 @@ impl ListDeviceProfilesInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in this operation.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+    pub fn device_profile_type(&self) -> std::option::Option<&crate::types::DeviceProfileType> {
+        self.device_profile_type.as_ref()
     }
 }
 impl ListDeviceProfilesInput {
@@ -34,6 +41,7 @@ impl ListDeviceProfilesInput {
 pub struct ListDeviceProfilesInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
+    pub(crate) device_profile_type: std::option::Option<crate::types::DeviceProfileType>,
 }
 impl ListDeviceProfilesInputBuilder {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -56,6 +64,19 @@ impl ListDeviceProfilesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+    pub fn device_profile_type(mut self, input: crate::types::DeviceProfileType) -> Self {
+        self.device_profile_type = Some(input);
+        self
+    }
+    /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+    pub fn set_device_profile_type(
+        mut self,
+        input: std::option::Option<crate::types::DeviceProfileType>,
+    ) -> Self {
+        self.device_profile_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDeviceProfilesInput`](crate::operation::list_device_profiles::ListDeviceProfilesInput).
     pub fn build(
         self,
@@ -66,7 +87,8 @@ impl ListDeviceProfilesInputBuilder {
         Ok(
             crate::operation::list_device_profiles::ListDeviceProfilesInput {
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
+                device_profile_type: self.device_profile_type,
             },
         )
     }

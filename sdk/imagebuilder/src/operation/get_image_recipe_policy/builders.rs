@@ -5,7 +5,7 @@ pub use crate::operation::get_image_recipe_policy::_get_image_recipe_policy_inpu
 
 /// Fluent builder constructing a request to `GetImageRecipePolicy`.
 ///
-/// <p> Gets an image recipe policy.</p>
+/// <p>Gets an image recipe policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetImageRecipePolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

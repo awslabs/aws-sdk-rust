@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p> This exception is thrown when you start a new import and a previous import is still in progress. </p>
     AccountHasOngoingImportException(crate::types::error::AccountHasOngoingImportException),
-    /// <p>This exception is thrown when when the specified account is not found or not part of an organization.</p>
+    /// <p>This exception is thrown when the specified account is not found or not part of an organization.</p>
     AccountNotFoundException(crate::types::error::AccountNotFoundException),
     /// <p>This exception is thrown when the specified account is not registered as the CloudTrail delegated administrator.</p>
     AccountNotRegisteredException(crate::types::error::AccountNotRegisteredException),
@@ -17,10 +17,19 @@ pub enum Error {
     ),
     /// <p>This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.</p>
     ChannelArnInvalidException(crate::types::error::ChannelArnInvalidException),
-    /// <p> The specified channel was not found. </p>
+    /// <p> This exception is thrown when the provided channel already exists. </p>
+    ChannelAlreadyExistsException(crate::types::error::ChannelAlreadyExistsException),
+    /// <p>This exception is thrown when the specified event data store cannot yet be deleted because it is in use by a channel.</p>
+    ChannelExistsForEdsException(crate::types::error::ChannelExistsForEdsException),
+    /// <p> This exception is thrown when the maximum number of channels limit is exceeded. </p>
+    ChannelMaxLimitExceededException(crate::types::error::ChannelMaxLimitExceededException),
+    /// <p>This exception is thrown when CloudTrail cannot find the specified channel.</p>
     ChannelNotFoundException(crate::types::error::ChannelNotFoundException),
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>This exception is also thrown when you call <code>AddTags</code> or <code>RemoveTags</code> on a trail, event data store, or channel with a resource ARN that is not valid.</p>
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::types::error::CloudTrailAccessNotEnabledException),
@@ -32,7 +41,7 @@ pub enum Error {
     CloudWatchLogsDeliveryUnavailableException(
         crate::types::error::CloudWatchLogsDeliveryUnavailableException,
     ),
-    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>This exception is thrown when the maximum number of CloudTrail delegated administrators is reached.</p>
     DelegatedAdminAccountLimitExceededException(
@@ -131,6 +140,8 @@ pub enum Error {
     InvalidS3PrefixException(crate::types::error::InvalidS3PrefixException),
     /// <p>This exception is thrown when the provided SNS topic name is not valid.</p>
     InvalidSnsTopicNameException(crate::types::error::InvalidSnsTopicNameException),
+    /// <p>This exception is thrown when the specified value of <code>Source</code> is not valid.</p>
+    InvalidSourceException(crate::types::error::InvalidSourceException),
     /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
     InvalidTagParameterException(crate::types::error::InvalidTagParameterException),
     /// <p>Occurs if the timestamp values are not valid. Either the start time occurs after the end time, or the time range is outside the range of possible values.</p>
@@ -181,13 +192,25 @@ pub enum Error {
     OrganizationsNotInUseException(crate::types::error::OrganizationsNotInUseException),
     /// <p>The query ID does not exist or does not map to a query.</p>
     QueryIdNotFoundException(crate::types::error::QueryIdNotFoundException),
+    /// <p> This exception is thrown when the provided resource does not exist, or the ARN format of the resource is not valid. The following is the valid format for a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
+    ResourceArnNotValidException(crate::types::error::ResourceArnNotValidException),
     /// <p>This exception is thrown when the specified resource is not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p> This exception is thrown when the specified resource policy is not found. </p>
+    ResourcePolicyNotFoundException(crate::types::error::ResourcePolicyNotFoundException),
+    /// <p> This exception is thrown when the resouce-based policy has syntax errors, or contains a principal that is not valid. </p>
+    /// <p>The following are requirements for the resource policy:</p>
+    /// <ul>
+    /// <li> <p> Contains only one action: cloudtrail-data:PutAuditEvents </p> </li>
+    /// <li> <p> Contains at least one statement. The policy can have a maximum of 20 statements. </p> </li>
+    /// <li> <p> Each statement contains at least one principal. A statement can have a maximum of 50 principals. </p> </li>
+    /// </ul>
+    ResourcePolicyNotValidException(crate::types::error::ResourcePolicyNotValidException),
     /// <p>This exception is thrown when the specified resource type is not supported by CloudTrail.</p>
     ResourceTypeNotSupportedException(crate::types::error::ResourceTypeNotSupportedException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
     S3BucketDoesNotExistException(crate::types::error::S3BucketDoesNotExistException),
-    /// <p>The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.</p>
+    /// <p>The number of tags per trail, event data store, or channel has exceeded the permitted amount. Currently, the limit is 50.</p>
     TagsLimitExceededException(crate::types::error::TagsLimitExceededException),
     /// <p>This exception is thrown when the specified trail already exists.</p>
     TrailAlreadyExistsException(crate::types::error::TrailAlreadyExistsException),
@@ -209,6 +232,9 @@ impl std::fmt::Display for Error {
             Error::AccountRegisteredException(inner) => inner.fmt(f),
             Error::CannotDelegateManagementAccountException(inner) => inner.fmt(f),
             Error::ChannelArnInvalidException(inner) => inner.fmt(f),
+            Error::ChannelAlreadyExistsException(inner) => inner.fmt(f),
+            Error::ChannelExistsForEdsException(inner) => inner.fmt(f),
+            Error::ChannelMaxLimitExceededException(inner) => inner.fmt(f),
             Error::ChannelNotFoundException(inner) => inner.fmt(f),
             Error::CloudTrailArnInvalidException(inner) => inner.fmt(f),
             Error::CloudTrailAccessNotEnabledException(inner) => inner.fmt(f),
@@ -251,6 +277,7 @@ impl std::fmt::Display for Error {
             Error::InvalidS3BucketNameException(inner) => inner.fmt(f),
             Error::InvalidS3PrefixException(inner) => inner.fmt(f),
             Error::InvalidSnsTopicNameException(inner) => inner.fmt(f),
+            Error::InvalidSourceException(inner) => inner.fmt(f),
             Error::InvalidTagParameterException(inner) => inner.fmt(f),
             Error::InvalidTimeRangeException(inner) => inner.fmt(f),
             Error::InvalidTokenException(inner) => inner.fmt(f),
@@ -267,7 +294,10 @@ impl std::fmt::Display for Error {
             Error::OrganizationNotInAllFeaturesModeException(inner) => inner.fmt(f),
             Error::OrganizationsNotInUseException(inner) => inner.fmt(f),
             Error::QueryIdNotFoundException(inner) => inner.fmt(f),
+            Error::ResourceArnNotValidException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ResourcePolicyNotFoundException(inner) => inner.fmt(f),
+            Error::ResourcePolicyNotValidException(inner) => inner.fmt(f),
             Error::ResourceTypeNotSupportedException(inner) => inner.fmt(f),
             Error::S3BucketDoesNotExistException(inner) => inner.fmt(f),
             Error::TagsLimitExceededException(inner) => inner.fmt(f),
@@ -305,6 +335,9 @@ where
 impl From<crate::operation::add_tags::AddTagsError> for Error {
     fn from(err: crate::operation::add_tags::AddTagsError) -> Self {
         match err {
+            crate::operation::add_tags::AddTagsError::ChannelNotFoundException(inner) => {
+                Error::ChannelNotFoundException(inner)
+            }
             crate::operation::add_tags::AddTagsError::CloudTrailArnInvalidException(inner) => {
                 Error::CloudTrailArnInvalidException(inner)
             }
@@ -385,6 +418,52 @@ impl From<crate::operation::cancel_query::CancelQueryError> for Error {
             crate::operation::cancel_query::CancelQueryError::QueryIdNotFoundException(inner) => Error::QueryIdNotFoundException(inner),
             crate::operation::cancel_query::CancelQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::cancel_query::CancelQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_channel::CreateChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_channel::CreateChannelError> for Error {
+    fn from(err: crate::operation::create_channel::CreateChannelError) -> Self {
+        match err {
+            crate::operation::create_channel::CreateChannelError::ChannelAlreadyExistsException(inner) => Error::ChannelAlreadyExistsException(inner),
+            crate::operation::create_channel::CreateChannelError::ChannelMaxLimitExceededException(inner) => Error::ChannelMaxLimitExceededException(inner),
+            crate::operation::create_channel::CreateChannelError::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::operation::create_channel::CreateChannelError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::operation::create_channel::CreateChannelError::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::operation::create_channel::CreateChannelError::InvalidEventDataStoreCategoryException(inner) => Error::InvalidEventDataStoreCategoryException(inner),
+            crate::operation::create_channel::CreateChannelError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_channel::CreateChannelError::InvalidSourceException(inner) => Error::InvalidSourceException(inner),
+            crate::operation::create_channel::CreateChannelError::InvalidTagParameterException(inner) => Error::InvalidTagParameterException(inner),
+            crate::operation::create_channel::CreateChannelError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::create_channel::CreateChannelError::TagsLimitExceededException(inner) => Error::TagsLimitExceededException(inner),
+            crate::operation::create_channel::CreateChannelError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::create_channel::CreateChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -506,6 +585,44 @@ impl From<crate::operation::create_trail::CreateTrailError> for Error {
     }
 }
 impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_channel::DeleteChannelError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_channel::DeleteChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_channel::DeleteChannelError> for Error {
+    fn from(err: crate::operation::delete_channel::DeleteChannelError) -> Self {
+        match err {
+            crate::operation::delete_channel::DeleteChannelError::ChannelArnInvalidException(inner) => Error::ChannelArnInvalidException(inner),
+            crate::operation::delete_channel::DeleteChannelError::ChannelNotFoundException(inner) => Error::ChannelNotFoundException(inner),
+            crate::operation::delete_channel::DeleteChannelError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_channel::DeleteChannelError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::delete_channel::DeleteChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         aws_smithy_http::result::SdkError<
             crate::operation::delete_event_data_store::DeleteEventDataStoreError,
@@ -539,6 +656,7 @@ where
 impl From<crate::operation::delete_event_data_store::DeleteEventDataStoreError> for Error {
     fn from(err: crate::operation::delete_event_data_store::DeleteEventDataStoreError) -> Self {
         match err {
+            crate::operation::delete_event_data_store::DeleteEventDataStoreError::ChannelExistsForEdsException(inner) => Error::ChannelExistsForEdsException(inner),
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::EventDataStoreHasOngoingImportException(inner) => Error::EventDataStoreHasOngoingImportException(inner),
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
@@ -551,6 +669,50 @@ impl From<crate::operation::delete_event_data_store::DeleteEventDataStoreError> 
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
+        match err {
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceArnNotValidException(inner) => Error::ResourceArnNotValidException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourcePolicyNotFoundException(inner) => Error::ResourcePolicyNotFoundException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceTypeNotSupportedException(inner) => Error::ResourceTypeNotSupportedException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -613,6 +775,7 @@ impl From<crate::operation::deregister_organization_delegated_admin::DeregisterO
             crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
             crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::AccountNotRegisteredException(inner) => Error::AccountNotRegisteredException(inner),
             crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::CloudTrailAccessNotEnabledException(inner) => Error::CloudTrailAccessNotEnabledException(inner),
+            crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::NotOrganizationManagementAccountException(inner) => Error::NotOrganizationManagementAccountException(inner),
@@ -975,6 +1138,50 @@ impl From<crate::operation::get_query_results::GetQueryResultsError> for Error {
             crate::operation::get_query_results::GetQueryResultsError::QueryIdNotFoundException(inner) => Error::QueryIdNotFoundException(inner),
             crate::operation::get_query_results::GetQueryResultsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_query_results::GetQueryResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_policy::GetResourcePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_policy::GetResourcePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceArnNotValidException(inner) => Error::ResourceArnNotValidException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourcePolicyNotFoundException(inner) => Error::ResourcePolicyNotFoundException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceTypeNotSupportedException(inner) => Error::ResourceTypeNotSupportedException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1563,6 +1770,50 @@ impl From<crate::operation::put_insight_selectors::PutInsightSelectorsError> for
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_policy::PutResourcePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_policy::PutResourcePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
+        match err {
+            crate::operation::put_resource_policy::PutResourcePolicyError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceArnNotValidException(inner) => Error::ResourceArnNotValidException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourcePolicyNotValidException(inner) => Error::ResourcePolicyNotValidException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceTypeNotSupportedException(inner) => Error::ResourceTypeNotSupportedException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError, R>) -> Self {
         match err {
@@ -1583,6 +1834,7 @@ impl From<crate::operation::register_organization_delegated_admin::RegisterOrgan
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::AccountRegisteredException(inner) => Error::AccountRegisteredException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::CannotDelegateManagementAccountException(inner) => Error::CannotDelegateManagementAccountException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::CloudTrailAccessNotEnabledException(inner) => Error::CloudTrailAccessNotEnabledException(inner),
+            crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::DelegatedAdminAccountLimitExceededException(inner) => Error::DelegatedAdminAccountLimitExceededException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -1621,6 +1873,7 @@ where
 impl From<crate::operation::remove_tags::RemoveTagsError> for Error {
     fn from(err: crate::operation::remove_tags::RemoveTagsError) -> Self {
         match err {
+            crate::operation::remove_tags::RemoveTagsError::ChannelNotFoundException(inner) => Error::ChannelNotFoundException(inner),
             crate::operation::remove_tags::RemoveTagsError::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
             crate::operation::remove_tags::RemoveTagsError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
             crate::operation::remove_tags::RemoveTagsError::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
@@ -1718,6 +1971,7 @@ impl From<crate::operation::start_import::StartImportError> for Error {
             crate::operation::start_import::StartImportError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
             crate::operation::start_import::StartImportError::ImportNotFoundException(inner) => Error::ImportNotFoundException(inner),
             crate::operation::start_import::StartImportError::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::operation::start_import::StartImportError::InsufficientEncryptionPolicyException(inner) => Error::InsufficientEncryptionPolicyException(inner),
             crate::operation::start_import::StartImportError::InvalidEventDataStoreCategoryException(inner) => Error::InvalidEventDataStoreCategoryException(inner),
             crate::operation::start_import::StartImportError::InvalidEventDataStoreStatusException(inner) => Error::InvalidEventDataStoreStatusException(inner),
             crate::operation::start_import::StartImportError::InvalidImportSourceException(inner) => Error::InvalidImportSourceException(inner),
@@ -1759,6 +2013,7 @@ impl From<crate::operation::start_logging::StartLoggingError> for Error {
     fn from(err: crate::operation::start_logging::StartLoggingError) -> Self {
         match err {
             crate::operation::start_logging::StartLoggingError::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::operation::start_logging::StartLoggingError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_logging::StartLoggingError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::operation::start_logging::StartLoggingError::InvalidHomeRegionException(inner) => Error::InvalidHomeRegionException(inner),
             crate::operation::start_logging::StartLoggingError::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
@@ -1886,6 +2141,7 @@ impl From<crate::operation::stop_logging::StopLoggingError> for Error {
     fn from(err: crate::operation::stop_logging::StopLoggingError) -> Self {
         match err {
             crate::operation::stop_logging::StopLoggingError::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::operation::stop_logging::StopLoggingError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::stop_logging::StopLoggingError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::operation::stop_logging::StopLoggingError::InvalidHomeRegionException(inner) => Error::InvalidHomeRegionException(inner),
             crate::operation::stop_logging::StopLoggingError::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
@@ -1895,6 +2151,50 @@ impl From<crate::operation::stop_logging::StopLoggingError> for Error {
             crate::operation::stop_logging::StopLoggingError::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
             crate::operation::stop_logging::StopLoggingError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::stop_logging::StopLoggingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_channel::UpdateChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_channel::UpdateChannelError> for Error {
+    fn from(err: crate::operation::update_channel::UpdateChannelError) -> Self {
+        match err {
+            crate::operation::update_channel::UpdateChannelError::ChannelAlreadyExistsException(inner) => Error::ChannelAlreadyExistsException(inner),
+            crate::operation::update_channel::UpdateChannelError::ChannelArnInvalidException(inner) => Error::ChannelArnInvalidException(inner),
+            crate::operation::update_channel::UpdateChannelError::ChannelNotFoundException(inner) => Error::ChannelNotFoundException(inner),
+            crate::operation::update_channel::UpdateChannelError::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::operation::update_channel::UpdateChannelError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::operation::update_channel::UpdateChannelError::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::operation::update_channel::UpdateChannelError::InvalidEventDataStoreCategoryException(inner) => Error::InvalidEventDataStoreCategoryException(inner),
+            crate::operation::update_channel::UpdateChannelError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_channel::UpdateChannelError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::update_channel::UpdateChannelError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::update_channel::UpdateChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1984,6 +2284,7 @@ impl From<crate::operation::update_trail::UpdateTrailError> for Error {
             crate::operation::update_trail::UpdateTrailError::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
             crate::operation::update_trail::UpdateTrailError::CloudTrailInvalidClientTokenIdException(inner) => Error::CloudTrailInvalidClientTokenIdException(inner),
             crate::operation::update_trail::UpdateTrailError::CloudWatchLogsDeliveryUnavailableException(inner) => Error::CloudWatchLogsDeliveryUnavailableException(inner),
+            crate::operation::update_trail::UpdateTrailError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_trail::UpdateTrailError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::operation::update_trail::UpdateTrailError::InsufficientEncryptionPolicyException(inner) => Error::InsufficientEncryptionPolicyException(inner),
             crate::operation::update_trail::UpdateTrailError::InsufficientS3BucketPolicyException(inner) => Error::InsufficientS3BucketPolicyException(inner),
@@ -2025,6 +2326,9 @@ impl aws_http::request_id::RequestId for Error {
             Self::AccountRegisteredException(e) => e.request_id(),
             Self::CannotDelegateManagementAccountException(e) => e.request_id(),
             Self::ChannelArnInvalidException(e) => e.request_id(),
+            Self::ChannelAlreadyExistsException(e) => e.request_id(),
+            Self::ChannelExistsForEdsException(e) => e.request_id(),
+            Self::ChannelMaxLimitExceededException(e) => e.request_id(),
             Self::ChannelNotFoundException(e) => e.request_id(),
             Self::CloudTrailArnInvalidException(e) => e.request_id(),
             Self::CloudTrailAccessNotEnabledException(e) => e.request_id(),
@@ -2067,6 +2371,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::InvalidS3BucketNameException(e) => e.request_id(),
             Self::InvalidS3PrefixException(e) => e.request_id(),
             Self::InvalidSnsTopicNameException(e) => e.request_id(),
+            Self::InvalidSourceException(e) => e.request_id(),
             Self::InvalidTagParameterException(e) => e.request_id(),
             Self::InvalidTimeRangeException(e) => e.request_id(),
             Self::InvalidTokenException(e) => e.request_id(),
@@ -2083,7 +2388,10 @@ impl aws_http::request_id::RequestId for Error {
             Self::OrganizationNotInAllFeaturesModeException(e) => e.request_id(),
             Self::OrganizationsNotInUseException(e) => e.request_id(),
             Self::QueryIdNotFoundException(e) => e.request_id(),
+            Self::ResourceArnNotValidException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ResourcePolicyNotFoundException(e) => e.request_id(),
+            Self::ResourcePolicyNotValidException(e) => e.request_id(),
             Self::ResourceTypeNotSupportedException(e) => e.request_id(),
             Self::S3BucketDoesNotExistException(e) => e.request_id(),
             Self::TagsLimitExceededException(e) => e.request_id(),

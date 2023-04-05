@@ -7,7 +7,6 @@ pub struct AttachTrafficSourcesInput {
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
     #[doc(hidden)]
     pub traffic_sources: std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
 }
@@ -17,7 +16,6 @@ impl AttachTrafficSourcesInput {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
     pub fn traffic_sources(&self) -> std::option::Option<&[crate::types::TrafficSourceIdentifier]> {
         self.traffic_sources.as_deref()
     }
@@ -57,7 +55,6 @@ impl AttachTrafficSourcesInputBuilder {
     /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
     ///
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
     pub fn traffic_sources(mut self, input: crate::types::TrafficSourceIdentifier) -> Self {
         let mut v = self.traffic_sources.unwrap_or_default();
         v.push(input);
@@ -65,7 +62,6 @@ impl AttachTrafficSourcesInputBuilder {
         self
     }
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
     pub fn set_traffic_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>,

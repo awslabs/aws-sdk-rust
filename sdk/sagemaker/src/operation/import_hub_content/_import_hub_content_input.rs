@@ -24,7 +24,7 @@ pub struct ImportHubContentInput {
     /// <p>A description of the hub content to import.</p>
     #[doc(hidden)]
     pub hub_content_description: std::option::Option<std::string::String>,
-    /// <p>Markdown files associated with the hub content to import.</p>
+    /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
     #[doc(hidden)]
     pub hub_content_markdown: std::option::Option<std::string::String>,
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
@@ -66,7 +66,7 @@ impl ImportHubContentInput {
     pub fn hub_content_description(&self) -> std::option::Option<&str> {
         self.hub_content_description.as_deref()
     }
-    /// <p>Markdown files associated with the hub content to import.</p>
+    /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
     pub fn hub_content_markdown(&self) -> std::option::Option<&str> {
         self.hub_content_markdown.as_deref()
     }
@@ -193,12 +193,12 @@ impl ImportHubContentInputBuilder {
         self.hub_content_description = input;
         self
     }
-    /// <p>Markdown files associated with the hub content to import.</p>
+    /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
     pub fn hub_content_markdown(mut self, input: impl Into<std::string::String>) -> Self {
         self.hub_content_markdown = Some(input.into());
         self
     }
-    /// <p>Markdown files associated with the hub content to import.</p>
+    /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
     pub fn set_hub_content_markdown(
         mut self,
         input: std::option::Option<std::string::String>,

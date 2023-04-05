@@ -8,7 +8,6 @@ pub struct DescribeComplianceByConfigRuleInput {
     #[doc(hidden)]
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
     #[doc(hidden)]
     pub compliance_types: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -21,7 +20,6 @@ impl DescribeComplianceByConfigRuleInput {
         self.config_rule_names.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
     pub fn compliance_types(&self) -> std::option::Option<&[crate::types::ComplianceType]> {
         self.compliance_types.as_deref()
     }
@@ -70,7 +68,6 @@ impl DescribeComplianceByConfigRuleInputBuilder {
     /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
     ///
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
     pub fn compliance_types(mut self, input: crate::types::ComplianceType) -> Self {
         let mut v = self.compliance_types.unwrap_or_default();
         v.push(input);
@@ -78,7 +75,6 @@ impl DescribeComplianceByConfigRuleInputBuilder {
         self
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
     pub fn set_compliance_types(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,

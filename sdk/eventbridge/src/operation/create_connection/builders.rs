@@ -89,12 +89,16 @@ impl CreateConnectionFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The type of authorization to use for the connection.</p>
+    /// <p>The type of authorization to use for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     pub fn authorization_type(mut self, input: crate::types::ConnectionAuthorizationType) -> Self {
         self.inner = self.inner.authorization_type(input);
         self
     }
-    /// <p>The type of authorization to use for the connection.</p>
+    /// <p>The type of authorization to use for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     pub fn set_authorization_type(
         mut self,
         input: std::option::Option<crate::types::ConnectionAuthorizationType>,

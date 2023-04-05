@@ -8,7 +8,7 @@ pub struct ListTagOptionsInput {
     pub filters: std::option::Option<crate::types::ListTagOptionsFilters>,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: std::option::Option<i32>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl ListTagOptionsInput {
         self.filters.as_ref()
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -85,7 +85,7 @@ impl ListTagOptionsInputBuilder {
     > {
         Ok(crate::operation::list_tag_options::ListTagOptionsInput {
             filters: self.filters,
-            page_size: self.page_size.unwrap_or_default(),
+            page_size: self.page_size,
             page_token: self.page_token,
         })
     }

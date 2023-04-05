@@ -14,6 +14,7 @@
 /// match targetformat {
 ///     TargetFormat::Avro => { /* ... */ },
 ///     TargetFormat::Csv => { /* ... */ },
+///     TargetFormat::Delta => { /* ... */ },
 ///     TargetFormat::Hudi => { /* ... */ },
 ///     TargetFormat::Json => { /* ... */ },
 ///     TargetFormat::Orc => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum TargetFormat {
     #[allow(missing_docs)] // documentation missing in model
     Csv,
     #[allow(missing_docs)] // documentation missing in model
+    Delta,
+    #[allow(missing_docs)] // documentation missing in model
     Hudi,
     #[allow(missing_docs)] // documentation missing in model
     Json,
@@ -71,6 +74,7 @@ impl std::convert::From<&str> for TargetFormat {
         match s {
             "avro" => TargetFormat::Avro,
             "csv" => TargetFormat::Csv,
+            "delta" => TargetFormat::Delta,
             "hudi" => TargetFormat::Hudi,
             "json" => TargetFormat::Json,
             "orc" => TargetFormat::Orc,
@@ -94,6 +98,7 @@ impl TargetFormat {
         match self {
             TargetFormat::Avro => "avro",
             TargetFormat::Csv => "csv",
+            TargetFormat::Delta => "delta",
             TargetFormat::Hudi => "hudi",
             TargetFormat::Json => "json",
             TargetFormat::Orc => "orc",
@@ -103,7 +108,7 @@ impl TargetFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["avro", "csv", "hudi", "json", "orc", "parquet"]
+        &["avro", "csv", "delta", "hudi", "json", "orc", "parquet"]
     }
 }
 impl AsRef<str> for TargetFormat {

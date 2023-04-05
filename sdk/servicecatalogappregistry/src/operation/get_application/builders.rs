@@ -5,7 +5,7 @@ pub use crate::operation::get_application::_get_application_input::GetApplicatio
 
 /// Fluent builder constructing a request to `GetApplication`.
 ///
-/// <p>Retrieves metadata information about one of your applications. The application can be specified either by its unique ID or by its name (which is unique within one account in one region at a given point in time). Specify by ID in automated workflows if you want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.</p>
+/// <p> Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID, or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in automated workflows if you want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetApplicationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,12 +65,12 @@ impl GetApplicationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
         self
     }
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_application(input);
         self

@@ -6,7 +6,8 @@ pub use crate::operation::delete_invitations::_delete_invitations_input::DeleteI
 /// Fluent builder constructing a request to `DeleteInvitations`.
 ///
 /// <p>Deletes invitations received by the Amazon Web Services account to become a member account.</p>
-/// <p>This operation is only used by accounts that are not part of an organization. Organization accounts do not receive invitations.</p>
+/// <p>A Security Hub administrator account can use this operation to delete invitations sent to one or more member accounts.</p>
+/// <p>This operation is only used to delete invitations that are sent to member accounts that aren't part of an organization. Organization accounts don't receive invitations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInvitationsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -74,12 +75,12 @@ impl DeleteInvitationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The list of the account IDs that sent the invitations to delete.</p>
+    /// <p>The list of member account IDs that received the invitations you want to delete.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p>The list of the account IDs that sent the invitations to delete.</p>
+    /// <p>The list of member account IDs that received the invitations you want to delete.</p>
     pub fn set_account_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

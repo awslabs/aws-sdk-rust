@@ -27,17 +27,17 @@ pub fn ser_create_firewall_policy_input(
         }
         array_6.finish();
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_9) = &input.dry_run {
+        object.key("DryRun").boolean(*var_9);
     }
-    if let Some(var_9) = &input.encryption_configuration {
+    if let Some(var_10) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("EncryptionConfiguration").start_object();
+        let mut object_11 = object.key("EncryptionConfiguration").start_object();
         crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_10,
-            var_9,
+            &mut object_11,
+            var_10,
         )?;
-        object_10.finish();
+        object_11.finish();
     }
     Ok(())
 }

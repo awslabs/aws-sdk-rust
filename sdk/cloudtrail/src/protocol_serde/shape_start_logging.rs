@@ -45,6 +45,23 @@ pub fn de_start_logging_http_error(
                                                     }
             tmp
         }),
+        "ConflictException" => crate::operation::start_logging::StartLoggingError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "InsufficientDependencyServiceAccessPermissionException" => crate::operation::start_logging::StartLoggingError::InsufficientDependencyServiceAccessPermissionException({
             #[allow(unused_mut)]
             let mut tmp =

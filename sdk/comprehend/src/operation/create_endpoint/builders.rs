@@ -112,12 +112,12 @@ impl CreateEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
+    /// <p>Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
+    /// <p>Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -125,17 +125,27 @@ impl CreateEndpointFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.</p>
+    pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.flywheel_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.</p>
+    pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_flywheel_arn(input);
         self
     }
 }

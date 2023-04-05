@@ -5,6 +5,7 @@ pub use crate::operation::get_phone_number_settings::_get_phone_number_settings_
 
 /// Fluent builder constructing a request to `GetPhoneNumberSettings`.
 ///
+/// <p>Retrieves the phone number settings for the administrator's AWS account, such as the default outbound calling name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPhoneNumberSettingsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

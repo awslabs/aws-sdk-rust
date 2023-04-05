@@ -12,14 +12,11 @@ pub struct GetPackageVersionReadmeInput {
     /// <p> The repository that contains the package with the requested readme file. </p>
     #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-    /// </note>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
@@ -45,15 +42,12 @@ impl GetPackageVersionReadmeInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-    /// </note>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
     pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
@@ -121,23 +115,18 @@ impl GetPackageVersionReadmeInputBuilder {
         self.repository = input;
         self
     }
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-    /// </note>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = Some(input);
         self
     }
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-    /// </note>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
     }
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
@@ -147,7 +136,6 @@ impl GetPackageVersionReadmeInputBuilder {
     }
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>

@@ -297,6 +297,18 @@ pub use crate::types::_agent_status_summary::AgentStatusSummary;
 
 pub use crate::types::_agent_status_type::AgentStatusType;
 
+pub use crate::types::_metric_result_v2::MetricResultV2;
+
+pub use crate::types::_metric_data_v2::MetricDataV2;
+
+pub use crate::types::_metric_v2::MetricV2;
+
+pub use crate::types::_metric_filter_v2::MetricFilterV2;
+
+pub use crate::types::_threshold_v2::ThresholdV2;
+
+pub use crate::types::_filter_v2::FilterV2;
+
 pub use crate::types::_historical_metric_result::HistoricalMetricResult;
 
 pub use crate::types::_historical_metric_data::HistoricalMetricData;
@@ -398,6 +410,8 @@ pub use crate::types::_contact_flow_module_status::ContactFlowModuleStatus;
 pub use crate::types::_contact_flow::ContactFlow;
 
 pub use crate::types::_contact::Contact;
+
+pub use crate::types::_wisdom_info::WisdomInfo;
 
 pub use crate::types::_agent_info::AgentInfo;
 
@@ -503,6 +517,8 @@ mod _event_bridge_action_definition;
 
 mod _event_source_name;
 
+mod _filter_v2;
+
 mod _filters;
 
 mod _grouping;
@@ -584,6 +600,14 @@ mod _lex_version;
 mod _list_phone_numbers_summary;
 
 mod _media_concurrency;
+
+mod _metric_data_v2;
+
+mod _metric_filter_v2;
+
+mod _metric_result_v2;
+
+mod _metric_v2;
 
 mod _monitor_capability;
 
@@ -755,6 +779,8 @@ mod _telephony_config;
 
 mod _threshold;
 
+mod _threshold_v2;
+
 mod _timer_eligible_participant_roles;
 
 mod _traffic_distribution_group;
@@ -810,6 +836,8 @@ mod _vocabulary_summary;
 mod _voice_recording_configuration;
 
 mod _voice_recording_track;
+
+mod _wisdom_info;
 
 /// Builders
 pub mod builders;

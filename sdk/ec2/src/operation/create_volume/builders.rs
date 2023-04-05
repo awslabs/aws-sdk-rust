@@ -197,7 +197,9 @@ impl CreateVolumeFluentBuilder {
     /// <li> <p>Throughput Optimized HDD: <code>st1</code> </p> </li>
     /// <li> <p>Cold HDD: <code>sc1</code> </p> </li>
     /// <li> <p>Magnetic: <code>standard</code> </p> </li>
-    /// </ul>
+    /// </ul> <important>
+    /// <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot volumes.</p>
+    /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>Default: <code>gp2</code> </p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
@@ -211,7 +213,9 @@ impl CreateVolumeFluentBuilder {
     /// <li> <p>Throughput Optimized HDD: <code>st1</code> </p> </li>
     /// <li> <p>Cold HDD: <code>sc1</code> </p> </li>
     /// <li> <p>Magnetic: <code>standard</code> </p> </li>
-    /// </ul>
+    /// </ul> <important>
+    /// <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot volumes.</p>
+    /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>Default: <code>gp2</code> </p>
     pub fn set_volume_type(mut self, input: std::option::Option<crate::types::VolumeType>) -> Self {

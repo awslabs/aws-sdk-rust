@@ -5,6 +5,7 @@ pub use crate::operation::get_global_settings::_get_global_settings_input::GetGl
 
 /// Fluent builder constructing a request to `GetGlobalSettings`.
 ///
+/// <p>Retrieves the global settings for the Amazon Chime SDK Voice Connectors in an AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetGlobalSettingsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

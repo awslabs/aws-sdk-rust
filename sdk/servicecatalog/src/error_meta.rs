@@ -214,6 +214,7 @@ impl From<crate::operation::associate_service_action_with_provisioning_artifact:
     fn from(err: crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError) -> Self {
         match err {
             crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError::DuplicateResourceException(inner) => Error::DuplicateResourceException(inner),
+            crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
             crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2710,6 +2711,72 @@ impl From<crate::operation::list_tag_options::ListTagOptionsError> for Error {
             crate::operation::list_tag_options::ListTagOptionsError::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
             crate::operation::list_tag_options::ListTagOptionsError::TagOptionNotMigratedException(inner) => Error::TagOptionNotMigratedException(inner),
             crate::operation::list_tag_options::ListTagOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError> for Error {
+    fn from(err: crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError) -> Self {
+        match err {
+            crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
+            crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError> for Error {
+    fn from(err: crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError) -> Self {
+        match err {
+            crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
+            crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError> for Error {
+    fn from(err: crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError) -> Self {
+        match err {
+            crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
+            crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

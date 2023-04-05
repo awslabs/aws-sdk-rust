@@ -52,6 +52,9 @@ pub struct AlgorithmSpecification {
     /// <p>The arguments for a container used to run a training job. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
     #[doc(hidden)]
     pub container_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The configuration to use an image from a private Docker registry for a training job.</p>
+    #[doc(hidden)]
+    pub training_image_config: std::option::Option<crate::types::TrainingImageConfig>,
 }
 impl AlgorithmSpecification {
     /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
@@ -108,6 +111,10 @@ impl AlgorithmSpecification {
     pub fn container_arguments(&self) -> std::option::Option<&[std::string::String]> {
         self.container_arguments.as_deref()
     }
+    /// <p>The configuration to use an image from a private Docker registry for a training job.</p>
+    pub fn training_image_config(&self) -> std::option::Option<&crate::types::TrainingImageConfig> {
+        self.training_image_config.as_ref()
+    }
 }
 impl AlgorithmSpecification {
     /// Creates a new builder-style object to manufacture [`AlgorithmSpecification`](crate::types::AlgorithmSpecification).
@@ -128,6 +135,7 @@ pub struct AlgorithmSpecificationBuilder {
     pub(crate) enable_sage_maker_metrics_time_series: std::option::Option<bool>,
     pub(crate) container_entrypoint: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) container_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) training_image_config: std::option::Option<crate::types::TrainingImageConfig>,
 }
 impl AlgorithmSpecificationBuilder {
     /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
@@ -285,6 +293,19 @@ impl AlgorithmSpecificationBuilder {
         self.container_arguments = input;
         self
     }
+    /// <p>The configuration to use an image from a private Docker registry for a training job.</p>
+    pub fn training_image_config(mut self, input: crate::types::TrainingImageConfig) -> Self {
+        self.training_image_config = Some(input);
+        self
+    }
+    /// <p>The configuration to use an image from a private Docker registry for a training job.</p>
+    pub fn set_training_image_config(
+        mut self,
+        input: std::option::Option<crate::types::TrainingImageConfig>,
+    ) -> Self {
+        self.training_image_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AlgorithmSpecification`](crate::types::AlgorithmSpecification).
     pub fn build(self) -> crate::types::AlgorithmSpecification {
         crate::types::AlgorithmSpecification {
@@ -297,6 +318,7 @@ impl AlgorithmSpecificationBuilder {
                 .unwrap_or_default(),
             container_entrypoint: self.container_entrypoint,
             container_arguments: self.container_arguments,
+            training_image_config: self.training_image_config,
         }
     }
 }

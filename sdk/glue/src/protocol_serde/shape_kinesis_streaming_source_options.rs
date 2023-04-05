@@ -81,6 +81,12 @@ pub fn ser_kinesis_streaming_source_options(
     if let Some(var_18) = &input.role_session_name {
         object.key("RoleSessionName").string(var_18.as_str());
     }
+    if let Some(var_19) = &input.add_record_timestamp {
+        object.key("AddRecordTimestamp").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.emit_consumer_lag_metrics {
+        object.key("EmitConsumerLagMetrics").string(var_20.as_str());
+    }
     Ok(())
 }
 
@@ -264,6 +270,24 @@ where
                             }
                             "RoleSessionName" => {
                                 builder = builder.set_role_session_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "AddRecordTimestamp" => {
+                                builder = builder.set_add_record_timestamp(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "EmitConsumerLagMetrics" => {
+                                builder = builder.set_emit_consumer_lag_metrics(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

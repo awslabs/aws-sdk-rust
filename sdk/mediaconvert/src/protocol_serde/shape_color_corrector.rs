@@ -30,14 +30,17 @@ pub fn ser_color_corrector(
         crate::protocol_serde::shape_hdr10_metadata::ser_hdr10_metadata(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.hdr_to_sdr_tone_mapper {
+        object.key("hdrToSdrToneMapper").string(var_6.as_str());
+    }
     if input.hue != 0 {
         object.key("hue").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((input.hue).into()),
         );
     }
-    if let Some(var_6) = &input.sample_range_conversion {
-        object.key("sampleRangeConversion").string(var_6.as_str());
+    if let Some(var_7) = &input.sample_range_conversion {
+        object.key("sampleRangeConversion").string(var_7.as_str());
     }
     if input.saturation != 0 {
         object.key("saturation").number(
@@ -121,6 +124,19 @@ where
                                     crate::protocol_serde::shape_hdr10_metadata::de_hdr10_metadata(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "hdrToSdrToneMapper" => {
+                                builder = builder.set_hdr_to_sdr_tone_mapper(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::HdrToSdrToneMapper::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             "hue" => {

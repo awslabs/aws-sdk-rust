@@ -3,7 +3,7 @@
 /// <p>Describes the launch specification for a Scheduled Instance.</p>
 /// <p>If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the subnet. You can specify the subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledInstancesLaunchSpecification {
     /// <p>The block device mapping entries.</p>
     #[doc(hidden)]
@@ -117,6 +117,26 @@ impl ScheduledInstancesLaunchSpecification {
         self.user_data.as_deref()
     }
 }
+impl std::fmt::Debug for ScheduledInstancesLaunchSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScheduledInstancesLaunchSpecification");
+        formatter.field("block_device_mappings", &"*** Sensitive Data Redacted ***");
+        formatter.field("ebs_optimized", &"*** Sensitive Data Redacted ***");
+        formatter.field("iam_instance_profile", &"*** Sensitive Data Redacted ***");
+        formatter.field("image_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("instance_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("kernel_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("key_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("monitoring", &"*** Sensitive Data Redacted ***");
+        formatter.field("network_interfaces", &"*** Sensitive Data Redacted ***");
+        formatter.field("placement", &"*** Sensitive Data Redacted ***");
+        formatter.field("ramdisk_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_group_ids", &"*** Sensitive Data Redacted ***");
+        formatter.field("subnet_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ScheduledInstancesLaunchSpecification {
     /// Creates a new builder-style object to manufacture [`ScheduledInstancesLaunchSpecification`](crate::types::ScheduledInstancesLaunchSpecification).
     pub fn builder() -> crate::types::builders::ScheduledInstancesLaunchSpecificationBuilder {
@@ -126,7 +146,7 @@ impl ScheduledInstancesLaunchSpecification {
 
 /// A builder for [`ScheduledInstancesLaunchSpecification`](crate::types::ScheduledInstancesLaunchSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct ScheduledInstancesLaunchSpecificationBuilder {
     pub(crate) block_device_mappings:
         std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesBlockDeviceMapping>>,
@@ -354,5 +374,25 @@ impl ScheduledInstancesLaunchSpecificationBuilder {
             subnet_id: self.subnet_id,
             user_data: self.user_data,
         }
+    }
+}
+impl std::fmt::Debug for ScheduledInstancesLaunchSpecificationBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScheduledInstancesLaunchSpecificationBuilder");
+        formatter.field("block_device_mappings", &"*** Sensitive Data Redacted ***");
+        formatter.field("ebs_optimized", &"*** Sensitive Data Redacted ***");
+        formatter.field("iam_instance_profile", &"*** Sensitive Data Redacted ***");
+        formatter.field("image_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("instance_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("kernel_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("key_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("monitoring", &"*** Sensitive Data Redacted ***");
+        formatter.field("network_interfaces", &"*** Sensitive Data Redacted ***");
+        formatter.field("placement", &"*** Sensitive Data Redacted ***");
+        formatter.field("ramdisk_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_group_ids", &"*** Sensitive Data Redacted ***");
+        formatter.field("subnet_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

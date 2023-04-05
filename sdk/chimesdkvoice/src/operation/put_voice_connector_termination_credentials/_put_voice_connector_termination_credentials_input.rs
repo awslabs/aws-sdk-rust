@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentialsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination credentials being updated.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<std::vec::Vec<crate::types::Credential>>,
 }
 impl PutVoiceConnectorTerminationCredentialsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination credentials being updated.</p>
     pub fn credentials(&self) -> std::option::Option<&[crate::types::Credential]> {
         self.credentials.as_deref()
     }
@@ -35,12 +35,12 @@ pub struct PutVoiceConnectorTerminationCredentialsInputBuilder {
     pub(crate) credentials: std::option::Option<std::vec::Vec<crate::types::Credential>>,
 }
 impl PutVoiceConnectorTerminationCredentialsInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -52,13 +52,14 @@ impl PutVoiceConnectorTerminationCredentialsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).
     ///
+    /// <p>The termination credentials being updated.</p>
     pub fn credentials(mut self, input: crate::types::Credential) -> Self {
         let mut v = self.credentials.unwrap_or_default();
         v.push(input);
         self.credentials = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination credentials being updated.</p>
     pub fn set_credentials(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Credential>>,

@@ -9,7 +9,7 @@ pub struct DescribeStandardsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of standards to return.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl DescribeStandardsInput {
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -18,7 +18,7 @@ impl DescribeStandardsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of standards to return.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -70,7 +70,7 @@ impl DescribeStandardsInputBuilder {
         Ok(
             crate::operation::describe_standards::DescribeStandardsInput {
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
             },
         )
     }

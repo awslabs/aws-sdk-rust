@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroupInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The <code>VoiceConnectorItems</code> to associate with the Voice Connector group.</p>
     #[doc(hidden)]
     pub voice_connector_items: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorItem>>,
 }
 impl UpdateVoiceConnectorGroupInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
         self.voice_connector_group_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector group.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The <code>VoiceConnectorItems</code> to associate with the Voice Connector group.</p>
     pub fn voice_connector_items(
         &self,
     ) -> std::option::Option<&[crate::types::VoiceConnectorItem]> {
@@ -46,12 +46,12 @@ pub struct UpdateVoiceConnectorGroupInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::VoiceConnectorItem>>,
 }
 impl UpdateVoiceConnectorGroupInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_group_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_group_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -59,12 +59,12 @@ impl UpdateVoiceConnectorGroupInputBuilder {
         self.voice_connector_group_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
@@ -73,13 +73,14 @@ impl UpdateVoiceConnectorGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_voice_connector_items`](Self::set_voice_connector_items).
     ///
+    /// <p>The <code>VoiceConnectorItems</code> to associate with the Voice Connector group.</p>
     pub fn voice_connector_items(mut self, input: crate::types::VoiceConnectorItem) -> Self {
         let mut v = self.voice_connector_items.unwrap_or_default();
         v.push(input);
         self.voice_connector_items = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The <code>VoiceConnectorItems</code> to associate with the Voice Connector group.</p>
     pub fn set_voice_connector_items(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorItem>>,

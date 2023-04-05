@@ -3,9 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectSentimentInput {
-    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
     #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
@@ -13,9 +11,7 @@ pub struct BatchDetectSentimentInput {
     pub language_code: std::option::Option<crate::types::LanguageCode>,
 }
 impl BatchDetectSentimentInput {
-    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
@@ -52,18 +48,14 @@ impl BatchDetectSentimentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
     ///
-    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
     pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.text_list.unwrap_or_default();
         v.push(input.into());
         self.text_list = Some(v);
         self
     }
-    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
     pub fn set_text_list(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

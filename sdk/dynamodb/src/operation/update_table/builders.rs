@@ -5,7 +5,9 @@ pub use crate::operation::update_table::_update_table_input::UpdateTableInputBui
 
 /// Fluent builder constructing a request to `UpdateTable`.
 ///
-/// <p>Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.</p>
+/// <p>Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.</p> <important>
+/// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
+/// </important>
 /// <p>You can only perform one of the following operations at once:</p>
 /// <ul>
 /// <li> <p>Modify the provisioned throughput settings of the table.</p> </li>
@@ -202,14 +204,14 @@ impl UpdateTableFluentBuilder {
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
     ///
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
     pub fn replica_updates(mut self, input: crate::types::ReplicationGroupUpdate) -> Self {
         self.inner = self.inner.replica_updates(input);
         self
     }
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
     pub fn set_replica_updates(
         mut self,
@@ -226,6 +228,16 @@ impl UpdateTableFluentBuilder {
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub fn set_table_class(mut self, input: std::option::Option<crate::types::TableClass>) -> Self {
         self.inner = self.inner.set_table_class(input);
+        self
+    }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.deletion_protection_enabled(input);
+        self
+    }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_deletion_protection_enabled(input);
         self
     }
 }

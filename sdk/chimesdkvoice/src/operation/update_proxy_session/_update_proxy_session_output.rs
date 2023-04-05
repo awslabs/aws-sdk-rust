@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProxySessionOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated proxy session details.</p>
     #[doc(hidden)]
     pub proxy_session: std::option::Option<crate::types::ProxySession>,
     _request_id: Option<String>,
 }
 impl UpdateProxySessionOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated proxy session details.</p>
     pub fn proxy_session(&self) -> std::option::Option<&crate::types::ProxySession> {
         self.proxy_session.as_ref()
     }
@@ -35,12 +35,12 @@ pub struct UpdateProxySessionOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateProxySessionOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated proxy session details.</p>
     pub fn proxy_session(mut self, input: crate::types::ProxySession) -> Self {
         self.proxy_session = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated proxy session details.</p>
     pub fn set_proxy_session(
         mut self,
         input: std::option::Option<crate::types::ProxySession>,

@@ -41,13 +41,16 @@ pub struct UpdateTableInput {
     #[doc(hidden)]
     pub sse_specification: std::option::Option<crate::types::SseSpecification>,
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
     #[doc(hidden)]
     pub replica_updates: std::option::Option<std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     #[doc(hidden)]
     pub table_class: std::option::Option<crate::types::TableClass>,
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    #[doc(hidden)]
+    pub deletion_protection_enabled: std::option::Option<bool>,
 }
 impl UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
@@ -98,7 +101,7 @@ impl UpdateTableInput {
         self.sse_specification.as_ref()
     }
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
     pub fn replica_updates(&self) -> std::option::Option<&[crate::types::ReplicationGroupUpdate]> {
         self.replica_updates.as_deref()
@@ -106,6 +109,10 @@ impl UpdateTableInput {
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub fn table_class(&self) -> std::option::Option<&crate::types::TableClass> {
         self.table_class.as_ref()
+    }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn deletion_protection_enabled(&self) -> std::option::Option<bool> {
+        self.deletion_protection_enabled
     }
 }
 impl UpdateTableInput {
@@ -131,6 +138,7 @@ pub struct UpdateTableInputBuilder {
     pub(crate) replica_updates:
         std::option::Option<std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
     pub(crate) table_class: std::option::Option<crate::types::TableClass>,
+    pub(crate) deletion_protection_enabled: std::option::Option<bool>,
 }
 impl UpdateTableInputBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -267,7 +275,7 @@ impl UpdateTableInputBuilder {
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
     ///
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
     pub fn replica_updates(mut self, input: crate::types::ReplicationGroupUpdate) -> Self {
         let mut v = self.replica_updates.unwrap_or_default();
@@ -276,7 +284,7 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
     pub fn set_replica_updates(
         mut self,
@@ -293,6 +301,16 @@ impl UpdateTableInputBuilder {
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub fn set_table_class(mut self, input: std::option::Option<crate::types::TableClass>) -> Self {
         self.table_class = input;
+        self
+    }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
+        self.deletion_protection_enabled = Some(input);
+        self
+    }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+        self.deletion_protection_enabled = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
@@ -312,6 +330,7 @@ impl UpdateTableInputBuilder {
             sse_specification: self.sse_specification,
             replica_updates: self.replica_updates,
             table_class: self.table_class,
+            deletion_protection_enabled: self.deletion_protection_enabled,
         })
     }
 }

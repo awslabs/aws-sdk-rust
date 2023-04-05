@@ -19,12 +19,11 @@ pub fn ser_put_object_retention_headers(
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
-    if input.bypass_governance_retention {
-        let mut encoder =
-            aws_smithy_types::primitive::Encoder::from(input.bypass_governance_retention);
-        let formatted_3 = encoder.encode();
-        if !formatted_3.is_empty() {
-            let header_value = formatted_3;
+    if let Some(inner_3) = &input.bypass_governance_retention {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_3);
+        let formatted_4 = encoder.encode();
+        if !formatted_4.is_empty() {
+            let header_value = formatted_4;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "bypass_governance_retention",
@@ -37,10 +36,10 @@ pub fn ser_put_object_retention_headers(
             builder = builder.header("x-amz-bypass-governance-retention", header_value);
         }
     }
-    if let Some(inner_4) = &input.content_md5 {
-        let formatted_5 = inner_4.as_str();
-        if !formatted_5.is_empty() {
-            let header_value = formatted_5;
+    if let Some(inner_5) = &input.content_md5 {
+        let formatted_6 = inner_5.as_str();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_md5",
@@ -53,10 +52,10 @@ pub fn ser_put_object_retention_headers(
             builder = builder.header("Content-MD5", header_value);
         }
     }
-    if let Some(inner_6) = &input.checksum_algorithm {
-        let formatted_7 = inner_6.as_str();
-        if !formatted_7.is_empty() {
-            let header_value = formatted_7;
+    if let Some(inner_7) = &input.checksum_algorithm {
+        let formatted_8 = inner_7.as_str();
+        if !formatted_8.is_empty() {
+            let header_value = formatted_8;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_algorithm",
@@ -69,10 +68,10 @@ pub fn ser_put_object_retention_headers(
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
-    if let Some(inner_8) = &input.expected_bucket_owner {
-        let formatted_9 = inner_8.as_str();
-        if !formatted_9.is_empty() {
-            let header_value = formatted_9;
+    if let Some(inner_9) = &input.expected_bucket_owner {
+        let formatted_10 = inner_9.as_str();
+        if !formatted_10.is_empty() {
+            let header_value = formatted_10;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",

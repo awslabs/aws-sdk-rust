@@ -16,6 +16,9 @@
 ///     RelationshipType::Child => { /* ... */ },
 ///     RelationshipType::ComplexFeatures => { /* ... */ },
 ///     RelationshipType::MergedCell => { /* ... */ },
+///     RelationshipType::Table => { /* ... */ },
+///     RelationshipType::TableFooter => { /* ... */ },
+///     RelationshipType::TableTitle => { /* ... */ },
 ///     RelationshipType::Title => { /* ... */ },
 ///     RelationshipType::Value => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -60,6 +63,12 @@ pub enum RelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     MergedCell,
     #[allow(missing_docs)] // documentation missing in model
+    Table,
+    #[allow(missing_docs)] // documentation missing in model
+    TableFooter,
+    #[allow(missing_docs)] // documentation missing in model
+    TableTitle,
+    #[allow(missing_docs)] // documentation missing in model
     Title,
     #[allow(missing_docs)] // documentation missing in model
     Value,
@@ -73,6 +82,9 @@ impl std::convert::From<&str> for RelationshipType {
             "CHILD" => RelationshipType::Child,
             "COMPLEX_FEATURES" => RelationshipType::ComplexFeatures,
             "MERGED_CELL" => RelationshipType::MergedCell,
+            "TABLE" => RelationshipType::Table,
+            "TABLE_FOOTER" => RelationshipType::TableFooter,
+            "TABLE_TITLE" => RelationshipType::TableTitle,
             "TITLE" => RelationshipType::Title,
             "VALUE" => RelationshipType::Value,
             other => {
@@ -96,6 +108,9 @@ impl RelationshipType {
             RelationshipType::Child => "CHILD",
             RelationshipType::ComplexFeatures => "COMPLEX_FEATURES",
             RelationshipType::MergedCell => "MERGED_CELL",
+            RelationshipType::Table => "TABLE",
+            RelationshipType::TableFooter => "TABLE_FOOTER",
+            RelationshipType::TableTitle => "TABLE_TITLE",
             RelationshipType::Title => "TITLE",
             RelationshipType::Value => "VALUE",
             RelationshipType::Unknown(value) => value.as_str(),
@@ -108,6 +123,9 @@ impl RelationshipType {
             "CHILD",
             "COMPLEX_FEATURES",
             "MERGED_CELL",
+            "TABLE",
+            "TABLE_FOOTER",
+            "TABLE_TITLE",
             "TITLE",
             "VALUE",
         ]

@@ -222,6 +222,8 @@ pub(crate) mod shape_list_of_asset_destination_entry;
 
 pub(crate) mod shape_list_of_asset_source_entry;
 
+pub(crate) mod shape_list_of_kms_keys_to_grant;
+
 pub(crate) mod shape_list_of_lf_permissions;
 
 pub(crate) mod shape_list_of_redshift_data_share_asset_source_entry;
@@ -237,6 +239,8 @@ pub(crate) mod shape_s3_data_access_asset_source_entry;
 pub(crate) mod shape_table_lf_tag_policy_and_permissions;
 
 pub(crate) mod shape_import_asset_from_signed_url_job_error_details;
+
+pub(crate) mod shape_kms_key_to_grant;
 
 pub(crate) mod shape_lf_tag;
 

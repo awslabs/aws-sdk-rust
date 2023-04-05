@@ -5,7 +5,7 @@ pub use crate::operation::list_lens_reviews::_list_lens_reviews_input::ListLensR
 
 /// Fluent builder constructing a request to `ListLensReviews`.
 ///
-/// <p>List lens reviews.</p>
+/// <p>List lens reviews for a particular workload.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLensReviewsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

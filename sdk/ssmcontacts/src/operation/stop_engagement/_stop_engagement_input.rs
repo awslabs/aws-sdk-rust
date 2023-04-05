@@ -6,7 +6,7 @@ pub struct StopEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     #[doc(hidden)]
     pub engagement_id: std::option::Option<std::string::String>,
-    /// <p>The reason that you're stopping the engagement. </p>
+    /// <p>The reason that you're stopping the engagement.</p>
     #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
@@ -15,7 +15,7 @@ impl StopEngagementInput {
     pub fn engagement_id(&self) -> std::option::Option<&str> {
         self.engagement_id.as_deref()
     }
-    /// <p>The reason that you're stopping the engagement. </p>
+    /// <p>The reason that you're stopping the engagement.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -45,12 +45,12 @@ impl StopEngagementInputBuilder {
         self.engagement_id = input;
         self
     }
-    /// <p>The reason that you're stopping the engagement. </p>
+    /// <p>The reason that you're stopping the engagement.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
         self.reason = Some(input.into());
         self
     }
-    /// <p>The reason that you're stopping the engagement. </p>
+    /// <p>The reason that you're stopping the engagement.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.reason = input;
         self

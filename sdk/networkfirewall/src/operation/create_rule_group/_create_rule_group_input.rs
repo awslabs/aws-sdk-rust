@@ -47,7 +47,7 @@ pub struct CreateRuleGroupInput {
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     #[doc(hidden)]
-    pub dry_run: bool,
+    pub dry_run: std::option::Option<bool>,
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
     #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::types::EncryptionConfiguration>,
@@ -106,7 +106,7 @@ impl CreateRuleGroupInput {
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
@@ -318,7 +318,7 @@ impl CreateRuleGroupInputBuilder {
             description: self.description,
             capacity: self.capacity,
             tags: self.tags,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
             encryption_configuration: self.encryption_configuration,
             source_metadata: self.source_metadata,
         })

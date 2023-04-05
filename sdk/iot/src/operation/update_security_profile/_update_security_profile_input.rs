@@ -28,13 +28,13 @@ pub struct UpdateSecurityProfileInput {
         std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>,
     /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
     #[doc(hidden)]
-    pub delete_behaviors: bool,
+    pub delete_behaviors: std::option::Option<bool>,
     /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
     #[doc(hidden)]
-    pub delete_alert_targets: bool,
+    pub delete_alert_targets: std::option::Option<bool>,
     /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
     #[doc(hidden)]
-    pub delete_additional_metrics_to_retain: bool,
+    pub delete_additional_metrics_to_retain: std::option::Option<bool>,
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     #[doc(hidden)]
     pub expected_version: std::option::Option<i64>,
@@ -73,15 +73,15 @@ impl UpdateSecurityProfileInput {
         self.additional_metrics_to_retain_v2.as_deref()
     }
     /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
-    pub fn delete_behaviors(&self) -> bool {
+    pub fn delete_behaviors(&self) -> std::option::Option<bool> {
         self.delete_behaviors
     }
     /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
-    pub fn delete_alert_targets(&self) -> bool {
+    pub fn delete_alert_targets(&self) -> std::option::Option<bool> {
         self.delete_alert_targets
     }
     /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
-    pub fn delete_additional_metrics_to_retain(&self) -> bool {
+    pub fn delete_additional_metrics_to_retain(&self) -> std::option::Option<bool> {
         self.delete_additional_metrics_to_retain
     }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
@@ -288,11 +288,9 @@ impl UpdateSecurityProfileInputBuilder {
                 alert_targets: self.alert_targets,
                 additional_metrics_to_retain: self.additional_metrics_to_retain,
                 additional_metrics_to_retain_v2: self.additional_metrics_to_retain_v2,
-                delete_behaviors: self.delete_behaviors.unwrap_or_default(),
-                delete_alert_targets: self.delete_alert_targets.unwrap_or_default(),
-                delete_additional_metrics_to_retain: self
-                    .delete_additional_metrics_to_retain
-                    .unwrap_or_default(),
+                delete_behaviors: self.delete_behaviors,
+                delete_alert_targets: self.delete_alert_targets,
+                delete_additional_metrics_to_retain: self.delete_additional_metrics_to_retain,
                 expected_version: self.expected_version,
             },
         )

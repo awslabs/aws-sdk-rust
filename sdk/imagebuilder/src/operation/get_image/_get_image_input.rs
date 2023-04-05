@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImageInput {
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetImageInput {
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
     pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -27,12 +27,12 @@ pub struct GetImageInputBuilder {
     pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetImageInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.image_build_version_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
     pub fn set_image_build_version_arn(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -25,10 +25,10 @@ pub struct DescribeVolumesModificationsInput {
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p>The <code>nextToken</code> value returned by a previous paginated request.</p>
+    /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request.</p>
+    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -58,11 +58,11 @@ impl DescribeVolumesModificationsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned by a previous paginated request.</p>
+    /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request.</p>
+    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -159,22 +159,22 @@ impl DescribeVolumesModificationsInputBuilder {
         self.filters = input;
         self
     }
-    /// <p>The <code>nextToken</code> value returned by a previous paginated request.</p>
+    /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> value returned by a previous paginated request.</p>
+    /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request.</p>
+    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request.</p>
+    /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

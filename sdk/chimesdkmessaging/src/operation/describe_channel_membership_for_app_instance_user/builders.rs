@@ -5,8 +5,8 @@ pub use crate::operation::describe_channel_membership_for_app_instance_user::_de
 
 /// Fluent builder constructing a request to `DescribeChannelMembershipForAppInstanceUser`.
 ///
-/// <p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.</p> <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+/// <p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.</p> <note>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeChannelMembershipForAppInstanceUserFluentBuilder {
@@ -68,12 +68,12 @@ impl DescribeChannelMembershipForAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
-    /// <p>The ARN of the user in a channel.</p>
+    /// <p>The ARN of the user or bot in a channel.</p>
     pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
-    /// <p>The ARN of the user in a channel.</p>
+    /// <p>The ARN of the user or bot in a channel.</p>
     pub fn set_app_instance_user_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -81,12 +81,12 @@ impl DescribeChannelMembershipForAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self

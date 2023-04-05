@@ -91,13 +91,11 @@ impl DescribeComplianceByConfigRuleFluentBuilder {
     /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
     ///
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
     pub fn compliance_types(mut self, input: crate::types::ComplianceType) -> Self {
         self.inner = self.inner.compliance_types(input);
         self
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
     pub fn set_compliance_types(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,

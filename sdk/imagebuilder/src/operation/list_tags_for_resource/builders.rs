@@ -5,7 +5,7 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input:
 
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p> Returns the list of tags for the specified resource.</p>
+/// <p>Returns the list of tags for the specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

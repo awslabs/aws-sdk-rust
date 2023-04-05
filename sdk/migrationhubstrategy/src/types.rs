@@ -129,19 +129,35 @@ pub use crate::types::_collector_health::CollectorHealth;
 
 pub use crate::types::_application_component_detail::ApplicationComponentDetail;
 
+pub use crate::types::_result::Result;
+
+pub use crate::types::_antipattern_report_result::AntipatternReportResult;
+
+pub use crate::types::_analyzer_name_union::AnalyzerNameUnion;
+
+pub use crate::types::_source_code_analyzer_name::SourceCodeAnalyzerName;
+
+pub use crate::types::_run_time_analyzer_name::RunTimeAnalyzerName;
+
+pub use crate::types::_binary_analyzer_name::BinaryAnalyzerName;
+
+pub use crate::types::_analysis_status_union::AnalysisStatusUnion;
+
+pub use crate::types::_src_code_or_db_analysis_status::SrcCodeOrDbAnalysisStatus;
+
+pub use crate::types::_runtime_analysis_status::RuntimeAnalysisStatus;
+
+pub use crate::types::_analysis_type::AnalysisType;
+
 pub use crate::types::_app_unit_error::AppUnitError;
 
 pub use crate::types::_app_unit_error_category::AppUnitErrorCategory;
-
-pub use crate::types::_runtime_analysis_status::RuntimeAnalysisStatus;
 
 pub use crate::types::_resource_sub_type::ResourceSubType;
 
 pub use crate::types::_source_code_repository::SourceCodeRepository;
 
 pub use crate::types::_database_config_detail::DatabaseConfigDetail;
-
-pub use crate::types::_src_code_or_db_analysis_status::SrcCodeOrDbAnalysisStatus;
 
 pub use crate::types::_application_component_criteria::ApplicationComponentCriteria;
 
@@ -172,6 +188,14 @@ pub use crate::types::_data_collection_details::DataCollectionDetails;
 pub use crate::types::_assessment_status::AssessmentStatus;
 
 pub use crate::types::_application_component_strategy::ApplicationComponentStrategy;
+
+mod _analysis_status_union;
+
+mod _analysis_type;
+
+mod _analyzer_name_union;
+
+mod _antipattern_report_result;
 
 mod _antipattern_report_status;
 
@@ -210,6 +234,8 @@ mod _auth_type;
 mod _aws_managed_resources;
 
 mod _aws_managed_target_destination;
+
+mod _binary_analyzer_name;
 
 mod _business_goals;
 
@@ -285,6 +311,10 @@ mod _remote_source_code_analysis_server_info;
 
 mod _resource_sub_type;
 
+mod _result;
+
+mod _run_time_analyzer_name;
+
 mod _run_time_assessment_status;
 
 mod _runtime_analysis_status;
@@ -316,6 +346,8 @@ mod _severity;
 mod _sort_order;
 
 mod _source_code;
+
+mod _source_code_analyzer_name;
 
 mod _source_code_repository;
 

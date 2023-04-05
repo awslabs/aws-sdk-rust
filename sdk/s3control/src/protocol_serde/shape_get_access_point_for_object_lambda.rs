@@ -96,8 +96,18 @@ pub fn de_get_access_point_for_object_lambda(inp: &[u8], mut builder: crate::ope
                 builder = builder.set_creation_date(var_4);
             }
             ,
-            s if s.matches("Name") /* Name com.amazonaws.s3control.synthetic#GetAccessPointForObjectLambdaOutput$Name */ =>  {
+            s if s.matches("Alias") /* Alias com.amazonaws.s3control.synthetic#GetAccessPointForObjectLambdaOutput$Alias */ =>  {
                 let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_object_lambda_access_point_alias::de_object_lambda_access_point_alias(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_alias(var_5);
+            }
+            ,
+            s if s.matches("Name") /* Name com.amazonaws.s3control.synthetic#GetAccessPointForObjectLambdaOutput$Name */ =>  {
+                let var_6 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -106,7 +116,7 @@ pub fn de_get_access_point_for_object_lambda(inp: &[u8], mut builder: crate::ope
                         ?
                     )
                 ;
-                builder = builder.set_name(var_5);
+                builder = builder.set_name(var_6);
             }
             ,
             _ => {}

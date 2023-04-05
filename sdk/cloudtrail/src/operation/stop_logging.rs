@@ -168,7 +168,12 @@ pub type StopLoggingErrorKind = StopLoggingError;
 pub enum StopLoggingError {
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>This exception is also thrown when you call <code>AddTags</code> or <code>RemoveTags</code> on a trail, event data store, or channel with a resource ARN that is not valid.</p>
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::types::error::InsufficientDependencyServiceAccessPermissionException,
@@ -217,6 +222,7 @@ impl std::fmt::Display for StopLoggingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => _inner.fmt(f),
             Self::InvalidHomeRegionException(_inner) => _inner.fmt(f),
             Self::InvalidTrailNameException(_inner) => _inner.fmt(f),
@@ -233,6 +239,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for StopLoggingErro
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CloudTrailArnInvalidException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ConflictException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => {
@@ -305,6 +314,7 @@ impl StopLoggingError {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::CloudTrailArnInvalidException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::InsufficientDependencyServiceAccessPermissionException(e) => e.meta(),
             Self::InvalidHomeRegionException(e) => e.meta(),
             Self::InvalidTrailNameException(e) => e.meta(),
@@ -319,6 +329,10 @@ impl StopLoggingError {
     /// Returns `true` if the error kind is `StopLoggingError::CloudTrailArnInvalidException`.
     pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
         matches!(self, Self::CloudTrailArnInvalidException(_))
+    }
+    /// Returns `true` if the error kind is `StopLoggingError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StopLoggingError::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
@@ -360,6 +374,7 @@ impl std::error::Error for StopLoggingError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::CloudTrailArnInvalidException(_inner) => Some(_inner),
+            Self::ConflictException(_inner) => Some(_inner),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => Some(_inner),
             Self::InvalidHomeRegionException(_inner) => Some(_inner),
             Self::InvalidTrailNameException(_inner) => Some(_inner),

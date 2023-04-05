@@ -43,15 +43,24 @@ pub fn ser_start_job_run_input(
     if let Some(var_13) = &input.release_label {
         object.key("releaseLabel").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_14) = &input.retry_policy_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_15 = object.key("retryPolicyConfiguration").start_object();
+        crate::protocol_serde::shape_retry_policy_configuration::ser_retry_policy_configuration(
+            &mut object_15,
+            var_14,
+        )?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_15.finish();
+        object_17.finish();
     }
     Ok(())
 }

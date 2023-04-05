@@ -23,7 +23,7 @@ pub struct DeleteStackInstancesInput {
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
     #[doc(hidden)]
-    pub retain_stacks: bool,
+    pub retain_stacks: std::option::Option<bool>,
     /// <p>The unique identifier for this stack set operation.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
     /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
@@ -66,7 +66,7 @@ impl DeleteStackInstancesInput {
     }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn retain_stacks(&self) -> bool {
+    pub fn retain_stacks(&self) -> std::option::Option<bool> {
         self.retain_stacks
     }
     /// <p>The unique identifier for this stack set operation.</p>
@@ -252,7 +252,7 @@ impl DeleteStackInstancesInputBuilder {
                 deployment_targets: self.deployment_targets,
                 regions: self.regions,
                 operation_preferences: self.operation_preferences,
-                retain_stacks: self.retain_stacks.unwrap_or_default(),
+                retain_stacks: self.retain_stacks,
                 operation_id: self.operation_id,
                 call_as: self.call_as,
             },

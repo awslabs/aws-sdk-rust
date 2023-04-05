@@ -10,6 +10,9 @@ pub struct CloudwatchLogsAction {
     /// <p>The CloudWatch log group to which the action sends data.</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
+    /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
+    #[doc(hidden)]
+    pub batch_mode: std::option::Option<bool>,
 }
 impl CloudwatchLogsAction {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
@@ -19,6 +22,10 @@ impl CloudwatchLogsAction {
     /// <p>The CloudWatch log group to which the action sends data.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
+    }
+    /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
+    pub fn batch_mode(&self) -> std::option::Option<bool> {
+        self.batch_mode
     }
 }
 impl CloudwatchLogsAction {
@@ -34,6 +41,7 @@ impl CloudwatchLogsAction {
 pub struct CloudwatchLogsActionBuilder {
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) log_group_name: std::option::Option<std::string::String>,
+    pub(crate) batch_mode: std::option::Option<bool>,
 }
 impl CloudwatchLogsActionBuilder {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
@@ -56,11 +64,22 @@ impl CloudwatchLogsActionBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
+    pub fn batch_mode(mut self, input: bool) -> Self {
+        self.batch_mode = Some(input);
+        self
+    }
+    /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
+    pub fn set_batch_mode(mut self, input: std::option::Option<bool>) -> Self {
+        self.batch_mode = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CloudwatchLogsAction`](crate::types::CloudwatchLogsAction).
     pub fn build(self) -> crate::types::CloudwatchLogsAction {
         crate::types::CloudwatchLogsAction {
             role_arn: self.role_arn,
             log_group_name: self.log_group_name,
+            batch_mode: self.batch_mode,
         }
     }
 }

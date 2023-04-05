@@ -15,7 +15,32 @@ pub fn de_list_inference_recommendations_job_steps_http_error(response: &http::R
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError::generic(generic))
+    let error_code = match generic.code() {
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError::unhandled(generic))
+                            };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError::ResourceNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError::generic(generic)
+    })
 }
 
 #[allow(clippy::unnecessary_wraps)]

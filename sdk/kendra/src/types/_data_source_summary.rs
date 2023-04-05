@@ -13,10 +13,10 @@ pub struct DataSourceSummary {
     /// <p>The type of the data source.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::DataSourceType>,
-    /// <p>The UNIX datetime that the data source was created.</p>
+    /// <p>The Unix timestamp when the data source connector was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The UNIX datetime that the data source was lasted updated. </p>
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.</p>
@@ -39,11 +39,11 @@ impl DataSourceSummary {
     pub fn r#type(&self) -> std::option::Option<&crate::types::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The UNIX datetime that the data source was created.</p>
+    /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The UNIX datetime that the data source was lasted updated. </p>
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -106,12 +106,12 @@ impl DataSourceSummaryBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The UNIX datetime that the data source was created.</p>
+    /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The UNIX datetime that the data source was created.</p>
+    /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -119,12 +119,12 @@ impl DataSourceSummaryBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The UNIX datetime that the data source was lasted updated. </p>
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The UNIX datetime that the data source was lasted updated. </p>
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

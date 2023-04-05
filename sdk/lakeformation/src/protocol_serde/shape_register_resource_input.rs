@@ -12,5 +12,8 @@ pub fn ser_register_resource_input(
     if let Some(var_3) = &input.use_service_linked_role {
         object.key("UseServiceLinkedRole").boolean(*var_3);
     }
+    if let Some(var_4) = &input.with_federation {
+        object.key("WithFederation").boolean(*var_4);
+    }
     Ok(())
 }

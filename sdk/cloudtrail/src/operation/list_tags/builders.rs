@@ -5,7 +5,7 @@ pub use crate::operation::list_tags::_list_tags_input::ListTagsInputBuilder;
 
 /// Fluent builder constructing a request to `ListTags`.
 ///
-/// <p>Lists the tags for the trail or event data store in the current region.</p>
+/// <p>Lists the tags for the trail, event data store, or channel in the current region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -75,12 +75,12 @@ impl ListTagsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
     ///
-    /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
+    /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     pub fn resource_id_list(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_id_list(input.into());
         self
     }
-    /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
+    /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     pub fn set_resource_id_list(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The product type.</p>
     #[doc(hidden)]
     pub product_type: std::option::Option<crate::types::PhoneNumberProductType>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The outbound calling name associated with the phone number.</p>
     #[doc(hidden)]
     pub calling_name: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     pub fn phone_number_id(&self) -> std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The product type.</p>
     pub fn product_type(&self) -> std::option::Option<&crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The outbound calling name associated with the phone number.</p>
     pub fn calling_name(&self) -> std::option::Option<&str> {
         self.calling_name.as_deref()
     }
@@ -53,22 +53,22 @@ pub struct UpdatePhoneNumberInputBuilder {
     pub(crate) calling_name: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.phone_number_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.product_type = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The product type.</p>
     pub fn set_product_type(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberProductType>,
@@ -76,12 +76,12 @@ impl UpdatePhoneNumberInputBuilder {
         self.product_type = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The outbound calling name associated with the phone number.</p>
     pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.calling_name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The outbound calling name associated with the phone number.</p>
     pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.calling_name = input;
         self

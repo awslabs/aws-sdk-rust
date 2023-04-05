@@ -17,6 +17,23 @@ pub fn de_create_custom_db_engine_version_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CreateCustomDBEngineVersionFault" => crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CreateCustomDbEngineVersionFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CreateCustomDbEngineVersionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_create_custom_db_engine_version_fault::de_create_custom_db_engine_version_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "CustomDBEngineVersionAlreadyExistsFault" => crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp =

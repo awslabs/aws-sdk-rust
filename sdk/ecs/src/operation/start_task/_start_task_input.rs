@@ -11,10 +11,10 @@ pub struct StartTaskInput {
     pub container_instances: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub enable_ecs_managed_tags: bool,
+    pub enable_ecs_managed_tags: std::option::Option<bool>,
     /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     #[doc(hidden)]
-    pub enable_execute_command: bool,
+    pub enable_execute_command: std::option::Option<bool>,
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
     #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
@@ -63,11 +63,11 @@ impl StartTaskInput {
         self.container_instances.as_deref()
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn enable_ecs_managed_tags(&self) -> bool {
+    pub fn enable_ecs_managed_tags(&self) -> std::option::Option<bool> {
         self.enable_ecs_managed_tags
     }
     /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
-    pub fn enable_execute_command(&self) -> bool {
+    pub fn enable_execute_command(&self) -> std::option::Option<bool> {
         self.enable_execute_command
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
@@ -323,8 +323,8 @@ impl StartTaskInputBuilder {
         Ok(crate::operation::start_task::StartTaskInput {
             cluster: self.cluster,
             container_instances: self.container_instances,
-            enable_ecs_managed_tags: self.enable_ecs_managed_tags.unwrap_or_default(),
-            enable_execute_command: self.enable_execute_command.unwrap_or_default(),
+            enable_ecs_managed_tags: self.enable_ecs_managed_tags,
+            enable_execute_command: self.enable_execute_command,
             group: self.group,
             network_configuration: self.network_configuration,
             overrides: self.overrides,

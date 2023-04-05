@@ -15,7 +15,7 @@ pub struct ListResourcesForTagOptionInput {
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: std::option::Option<i32>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
@@ -34,7 +34,7 @@ impl ListResourcesForTagOptionInput {
         self.resource_type.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -118,7 +118,7 @@ impl ListResourcesForTagOptionInputBuilder {
             crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput {
                 tag_option_id: self.tag_option_id,
                 resource_type: self.resource_type,
-                page_size: self.page_size.unwrap_or_default(),
+                page_size: self.page_size,
                 page_token: self.page_token,
             },
         )

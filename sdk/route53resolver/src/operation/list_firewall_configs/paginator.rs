@@ -27,6 +27,16 @@ impl ListFirewallConfigsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `firewall_configs`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(
+        self,
+    ) -> crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginatorItems {
+        crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -108,6 +118,35 @@ impl ListFirewallConfigsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListFirewallConfigsPaginator`
+///
+/// This is created with [`.items()`](ListFirewallConfigsPaginator::items)
+pub struct ListFirewallConfigsPaginatorItems(ListFirewallConfigsPaginator);
+
+impl ListFirewallConfigsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::types::FirewallConfig,
+            aws_smithy_http::result::SdkError<
+                crate::operation::list_firewall_configs::ListFirewallConfigsError,
+            >,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_firewall_configs_output_firewall_configs(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

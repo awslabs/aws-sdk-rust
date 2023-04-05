@@ -6,14 +6,14 @@ pub fn ser_upgrade_published_schema_input(
     if let Some(var_1) = &input.development_schema_arn {
         object.key("DevelopmentSchemaArn").string(var_1.as_str());
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_2) = &input.dry_run {
+        object.key("DryRun").boolean(*var_2);
     }
-    if let Some(var_2) = &input.minor_version {
-        object.key("MinorVersion").string(var_2.as_str());
+    if let Some(var_3) = &input.minor_version {
+        object.key("MinorVersion").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.published_schema_arn {
-        object.key("PublishedSchemaArn").string(var_3.as_str());
+    if let Some(var_4) = &input.published_schema_arn {
+        object.key("PublishedSchemaArn").string(var_4.as_str());
     }
     Ok(())
 }

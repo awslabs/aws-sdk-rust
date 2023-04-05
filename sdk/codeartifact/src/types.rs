@@ -35,6 +35,10 @@ pub use crate::types::_allow_upstream::AllowUpstream;
 
 pub use crate::types::_allow_publish::AllowPublish;
 
+pub use crate::types::_asset_summary::AssetSummary;
+
+pub use crate::types::_hash_algorithm::HashAlgorithm;
+
 pub use crate::types::_repository_summary::RepositorySummary;
 
 pub use crate::types::_package_version_summary::PackageVersionSummary;
@@ -48,10 +52,6 @@ pub use crate::types::_domain_entry_point::DomainEntryPoint;
 pub use crate::types::_package_version_sort_type::PackageVersionSortType;
 
 pub use crate::types::_package_dependency::PackageDependency;
-
-pub use crate::types::_asset_summary::AssetSummary;
-
-pub use crate::types::_hash_algorithm::HashAlgorithm;
 
 pub use crate::types::_package_summary::PackageSummary;
 

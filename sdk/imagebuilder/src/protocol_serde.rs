@@ -60,6 +60,10 @@ pub(crate) mod shape_get_image_recipe_policy;
 
 pub(crate) mod shape_get_infrastructure_configuration;
 
+pub(crate) mod shape_get_workflow_execution;
+
+pub(crate) mod shape_get_workflow_step_execution;
+
 pub(crate) mod shape_import_component;
 
 pub(crate) mod shape_import_vm_image;
@@ -82,11 +86,19 @@ pub(crate) mod shape_list_image_pipelines;
 
 pub(crate) mod shape_list_image_recipes;
 
+pub(crate) mod shape_list_image_scan_finding_aggregations;
+
+pub(crate) mod shape_list_image_scan_findings;
+
 pub(crate) mod shape_list_images;
 
 pub(crate) mod shape_list_infrastructure_configurations;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_workflow_executions;
+
+pub(crate) mod shape_list_workflow_step_executions;
 
 pub(crate) mod shape_put_component_policy;
 
@@ -174,9 +186,17 @@ pub(crate) mod shape_list_image_pipelines_input;
 
 pub(crate) mod shape_list_image_recipes_input;
 
+pub(crate) mod shape_list_image_scan_finding_aggregations_input;
+
+pub(crate) mod shape_list_image_scan_findings_input;
+
 pub(crate) mod shape_list_images_input;
 
 pub(crate) mod shape_list_infrastructure_configurations_input;
+
+pub(crate) mod shape_list_workflow_executions_input;
+
+pub(crate) mod shape_list_workflow_step_executions_input;
 
 pub(crate) mod shape_put_component_policy_input;
 
@@ -244,6 +264,14 @@ pub(crate) mod shape_image_recipe;
 
 pub(crate) mod shape_image_recipe_summary_list;
 
+pub(crate) mod shape_image_scan_finding_aggregations_list;
+
+pub(crate) mod shape_image_scan_findings_filter;
+
+pub(crate) mod shape_image_scan_findings_list;
+
+pub(crate) mod shape_image_scanning_configuration;
+
 pub(crate) mod shape_image_summary_list;
 
 pub(crate) mod shape_image_tests_configuration;
@@ -267,6 +295,10 @@ pub(crate) mod shape_schedule;
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_target_container_repository;
+
+pub(crate) mod shape_workflow_executions_list;
+
+pub(crate) mod shape_workflow_step_executions_list;
 
 pub(crate) mod shape_ami_distribution_configuration;
 
@@ -292,11 +324,19 @@ pub(crate) mod shape_distribution_list;
 
 pub(crate) mod shape_ebs_instance_block_device_specification;
 
+pub(crate) mod shape_ecr_configuration;
+
 pub(crate) mod shape_fast_launch_configuration;
 
 pub(crate) mod shape_image_package;
 
 pub(crate) mod shape_image_recipe_summary;
+
+pub(crate) mod shape_image_scan_finding;
+
+pub(crate) mod shape_image_scan_finding_aggregation;
+
+pub(crate) mod shape_image_scan_state;
 
 pub(crate) mod shape_image_state;
 
@@ -326,6 +366,12 @@ pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_systems_manager_agent;
 
+pub(crate) mod shape_workflow_execution_metadata;
+
+pub(crate) mod shape_workflow_step_metadata;
+
+pub(crate) mod shape_account_aggregation;
+
 pub(crate) mod shape_ami_list;
 
 pub(crate) mod shape_component_parameter_detail;
@@ -336,9 +382,21 @@ pub(crate) mod shape_fast_launch_launch_template_specification;
 
 pub(crate) mod shape_fast_launch_snapshot_configuration;
 
+pub(crate) mod shape_image_aggregation;
+
+pub(crate) mod shape_image_pipeline_aggregation;
+
+pub(crate) mod shape_inspector_score_details;
+
 pub(crate) mod shape_launch_permission_configuration;
 
+pub(crate) mod shape_package_vulnerability_details;
+
 pub(crate) mod shape_region_list;
+
+pub(crate) mod shape_remediation;
+
+pub(crate) mod shape_vulnerability_id_aggregation;
 
 pub(crate) mod shape_ami;
 
@@ -348,15 +406,37 @@ pub(crate) mod shape_component_parameter_value_list;
 
 pub(crate) mod shape_container;
 
+pub(crate) mod shape_cvss_score_details;
+
+pub(crate) mod shape_cvss_score_list;
+
 pub(crate) mod shape_fast_launch_configuration_list;
 
 pub(crate) mod shape_launch_template_configuration_list;
 
 pub(crate) mod shape_license_configuration_arn_list;
 
-pub(crate) mod shape_account_list;
+pub(crate) mod shape_non_empty_string_list;
+
+pub(crate) mod shape_remediation_recommendation;
+
+pub(crate) mod shape_severity_counts;
 
 pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_vulnerability_id_list;
+
+pub(crate) mod shape_vulnerable_package_list;
+
+pub(crate) mod shape_account_list;
+
+pub(crate) mod shape_cvss_score;
+
+pub(crate) mod shape_cvss_score_adjustment_list;
+
+pub(crate) mod shape_vulnerable_package;
+
+pub(crate) mod shape_cvss_score_adjustment;
 
 pub(crate) mod shape_organization_arn_list;
 

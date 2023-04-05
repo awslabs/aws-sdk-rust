@@ -25,9 +25,19 @@ pub use crate::types::_dataflow_endpoint_list_item::DataflowEndpointListItemBuil
 
 pub use crate::types::_endpoint_details::EndpointDetailsBuilder;
 
-pub use crate::types::_dataflow_endpoint::DataflowEndpointBuilder;
+pub use crate::types::_aws_ground_station_agent_endpoint::AwsGroundStationAgentEndpointBuilder;
+
+pub use crate::types::_ranged_connection_details::RangedConnectionDetailsBuilder;
+
+pub use crate::types::_ranged_socket_address::RangedSocketAddressBuilder;
+
+pub use crate::types::_integer_range::IntegerRangeBuilder;
+
+pub use crate::types::_connection_details::ConnectionDetailsBuilder;
 
 pub use crate::types::_socket_address::SocketAddressBuilder;
+
+pub use crate::types::_dataflow_endpoint::DataflowEndpointBuilder;
 
 pub use crate::types::_security_details::SecurityDetailsBuilder;
 
@@ -74,3 +84,13 @@ pub use crate::types::_dataflow_endpoint_config::DataflowEndpointConfigBuilder;
 pub use crate::types::_tracking_config::TrackingConfigBuilder;
 
 pub use crate::types::_antenna_downlink_config::AntennaDownlinkConfigBuilder;
+
+pub use crate::types::_agent_details::AgentDetailsBuilder;
+
+pub use crate::types::_component_version::ComponentVersionBuilder;
+
+pub use crate::types::_discovery_data::DiscoveryDataBuilder;
+
+pub use crate::types::_component_status_data::ComponentStatusDataBuilder;
+
+pub use crate::types::_aggregate_status::AggregateStatusBuilder;

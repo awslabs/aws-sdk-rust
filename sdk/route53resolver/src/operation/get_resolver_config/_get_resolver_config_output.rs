@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverConfigOutput {
-    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
+    /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     #[doc(hidden)]
     pub resolver_config: std::option::Option<crate::types::ResolverConfig>,
     _request_id: Option<String>,
 }
 impl GetResolverConfigOutput {
-    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
+    /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     pub fn resolver_config(&self) -> std::option::Option<&crate::types::ResolverConfig> {
         self.resolver_config.as_ref()
     }
@@ -35,12 +35,12 @@ pub struct GetResolverConfigOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetResolverConfigOutputBuilder {
-    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
+    /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     pub fn resolver_config(mut self, input: crate::types::ResolverConfig) -> Self {
         self.resolver_config = Some(input);
         self
     }
-    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
+    /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     pub fn set_resolver_config(
         mut self,
         input: std::option::Option<crate::types::ResolverConfig>,

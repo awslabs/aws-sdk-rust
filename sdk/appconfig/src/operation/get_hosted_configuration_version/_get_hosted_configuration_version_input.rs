@@ -11,7 +11,7 @@ pub struct GetHostedConfigurationVersionInput {
     pub configuration_profile_id: std::option::Option<std::string::String>,
     /// <p>The version.</p>
     #[doc(hidden)]
-    pub version_number: i32,
+    pub version_number: std::option::Option<i32>,
 }
 impl GetHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
@@ -23,7 +23,7 @@ impl GetHostedConfigurationVersionInput {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The version.</p>
-    pub fn version_number(&self) -> i32 {
+    pub fn version_number(&self) -> std::option::Option<i32> {
         self.version_number
     }
 }
@@ -90,7 +90,6 @@ impl GetHostedConfigurationVersionInputBuilder {
                 configuration_profile_id: self.configuration_profile_id
                 ,
                 version_number: self.version_number
-                    .unwrap_or_default()
                 ,
             }
         )

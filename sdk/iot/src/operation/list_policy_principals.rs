@@ -62,11 +62,13 @@ impl ListPolicyPrincipalsInput {
                         );
                     }
                 }
-                if _input.ascending_order {
-                    query.push_kv(
-                        "isAscendingOrder",
-                        aws_smithy_types::primitive::Encoder::from(_input.ascending_order).encode(),
-                    );
+                if let Some(inner_3) = &_input.ascending_order {
+                    if *inner_3 {
+                        query.push_kv(
+                            "isAscendingOrder",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

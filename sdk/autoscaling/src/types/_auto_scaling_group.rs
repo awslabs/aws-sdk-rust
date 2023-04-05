@@ -43,8 +43,7 @@ pub struct AutoScalingGroup {
     /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
     #[doc(hidden)]
     pub target_group_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
     #[doc(hidden)]
     pub health_check_type: std::option::Option<std::string::String>,
     /// <p>The duration of the health check grace period, in seconds.</p>
@@ -105,7 +104,7 @@ pub struct AutoScalingGroup {
     /// <p>The duration of the default instance warmup, in seconds.</p>
     #[doc(hidden)]
     pub default_instance_warmup: std::option::Option<i32>,
-    /// <p>The unique identifiers of the traffic sources.</p>
+    /// <p>The traffic sources associated with this Auto Scaling group.</p>
     #[doc(hidden)]
     pub traffic_sources: std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
 }
@@ -166,8 +165,7 @@ impl AutoScalingGroup {
     pub fn target_group_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.target_group_ar_ns.as_deref()
     }
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
     pub fn health_check_type(&self) -> std::option::Option<&str> {
         self.health_check_type.as_deref()
     }
@@ -250,7 +248,7 @@ impl AutoScalingGroup {
     pub fn default_instance_warmup(&self) -> std::option::Option<i32> {
         self.default_instance_warmup
     }
-    /// <p>The unique identifiers of the traffic sources.</p>
+    /// <p>The traffic sources associated with this Auto Scaling group.</p>
     pub fn traffic_sources(&self) -> std::option::Option<&[crate::types::TrafficSourceIdentifier]> {
         self.traffic_sources.as_deref()
     }
@@ -476,14 +474,12 @@ impl AutoScalingGroupBuilder {
         self.target_group_ar_ns = input;
         self
     }
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
     pub fn health_check_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.health_check_type = Some(input.into());
         self
     }
-    /// <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>
-    /// <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
+    /// <p>A comma-separated value string of one or more health check types.</p>
     pub fn set_health_check_type(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -750,14 +746,14 @@ impl AutoScalingGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
     ///
-    /// <p>The unique identifiers of the traffic sources.</p>
+    /// <p>The traffic sources associated with this Auto Scaling group.</p>
     pub fn traffic_sources(mut self, input: crate::types::TrafficSourceIdentifier) -> Self {
         let mut v = self.traffic_sources.unwrap_or_default();
         v.push(input);
         self.traffic_sources = Some(v);
         self
     }
-    /// <p>The unique identifiers of the traffic sources.</p>
+    /// <p>The traffic sources associated with this Auto Scaling group.</p>
     pub fn set_traffic_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>,

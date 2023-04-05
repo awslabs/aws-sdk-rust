@@ -56,6 +56,18 @@ where
                                     crate::protocol_serde::shape_app_component_list::de_app_component_list(tokens)?
                                 );
                             }
+                            "additionalInfo" => {
+                                builder = builder.set_additional_info(
+                                    crate::protocol_serde::shape_additional_info_map::de_additional_info_map(tokens)?
+                                );
+                            }
+                            "excluded" => {
+                                builder = builder.set_excluded(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

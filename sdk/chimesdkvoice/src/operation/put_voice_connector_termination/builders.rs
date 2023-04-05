@@ -5,6 +5,7 @@ pub use crate::operation::put_voice_connector_termination::_put_voice_connector_
 
 /// Fluent builder constructing a request to `PutVoiceConnectorTermination`.
 ///
+/// <p>Updates a Voice Connector's termination settings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl PutVoiceConnectorTerminationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -81,12 +82,12 @@ impl PutVoiceConnectorTerminationFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination settings to be updated.</p>
     pub fn termination(mut self, input: crate::types::Termination) -> Self {
         self.inner = self.inner.termination(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination settings to be updated.</p>
     pub fn set_termination(
         mut self,
         input: std::option::Option<crate::types::Termination>,

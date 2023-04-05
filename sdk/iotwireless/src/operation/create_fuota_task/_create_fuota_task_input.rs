@@ -24,6 +24,15 @@ pub struct CreateFuotaTaskInput {
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    /// <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
+    #[doc(hidden)]
+    pub redundancy_percent: std::option::Option<i32>,
+    /// <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
+    #[doc(hidden)]
+    pub fragment_size_bytes: std::option::Option<i32>,
+    /// <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
+    #[doc(hidden)]
+    pub fragment_interval_ms: std::option::Option<i32>,
 }
 impl CreateFuotaTaskInput {
     /// <p>The name of a FUOTA task.</p>
@@ -54,6 +63,18 @@ impl CreateFuotaTaskInput {
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
+    pub fn redundancy_percent(&self) -> std::option::Option<i32> {
+        self.redundancy_percent
+    }
+    /// <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
+    pub fn fragment_size_bytes(&self) -> std::option::Option<i32> {
+        self.fragment_size_bytes
+    }
+    /// <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
+    pub fn fragment_interval_ms(&self) -> std::option::Option<i32> {
+        self.fragment_interval_ms
+    }
 }
 impl CreateFuotaTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateFuotaTaskInput`](crate::operation::create_fuota_task::CreateFuotaTaskInput).
@@ -73,6 +94,9 @@ pub struct CreateFuotaTaskInputBuilder {
     pub(crate) firmware_update_image: std::option::Option<std::string::String>,
     pub(crate) firmware_update_role: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) redundancy_percent: std::option::Option<i32>,
+    pub(crate) fragment_size_bytes: std::option::Option<i32>,
+    pub(crate) fragment_interval_ms: std::option::Option<i32>,
 }
 impl CreateFuotaTaskInputBuilder {
     /// <p>The name of a FUOTA task.</p>
@@ -166,6 +190,36 @@ impl CreateFuotaTaskInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
+    pub fn redundancy_percent(mut self, input: i32) -> Self {
+        self.redundancy_percent = Some(input);
+        self
+    }
+    /// <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
+    pub fn set_redundancy_percent(mut self, input: std::option::Option<i32>) -> Self {
+        self.redundancy_percent = input;
+        self
+    }
+    /// <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
+    pub fn fragment_size_bytes(mut self, input: i32) -> Self {
+        self.fragment_size_bytes = Some(input);
+        self
+    }
+    /// <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
+    pub fn set_fragment_size_bytes(mut self, input: std::option::Option<i32>) -> Self {
+        self.fragment_size_bytes = input;
+        self
+    }
+    /// <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
+    pub fn fragment_interval_ms(mut self, input: i32) -> Self {
+        self.fragment_interval_ms = Some(input);
+        self
+    }
+    /// <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
+    pub fn set_fragment_interval_ms(mut self, input: std::option::Option<i32>) -> Self {
+        self.fragment_interval_ms = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateFuotaTaskInput`](crate::operation::create_fuota_task::CreateFuotaTaskInput).
     pub fn build(
         self,
@@ -181,6 +235,9 @@ impl CreateFuotaTaskInputBuilder {
             firmware_update_image: self.firmware_update_image,
             firmware_update_role: self.firmware_update_role,
             tags: self.tags,
+            redundancy_percent: self.redundancy_percent,
+            fragment_size_bytes: self.fragment_size_bytes,
+            fragment_interval_ms: self.fragment_interval_ms,
         })
     }
 }

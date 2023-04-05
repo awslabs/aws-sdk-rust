@@ -22,10 +22,10 @@ pub struct DescribeThesaurusOutput {
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>The Unix datetime that the thesaurus was created.</p>
+    /// <p>The Unix timestamp when the thesaurus was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
@@ -71,11 +71,11 @@ impl DescribeThesaurusOutput {
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>The Unix datetime that the thesaurus was created.</p>
+    /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -195,12 +195,12 @@ impl DescribeThesaurusOutputBuilder {
         self.error_message = input;
         self
     }
-    /// <p>The Unix datetime that the thesaurus was created.</p>
+    /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The Unix datetime that the thesaurus was created.</p>
+    /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -208,12 +208,12 @@ impl DescribeThesaurusOutputBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

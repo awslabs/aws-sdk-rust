@@ -75,6 +75,12 @@ impl UploadPartCopyInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPartCopy");
                 let inner_2 = &_input.part_number;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "part_number",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 query.push_kv(
                     "partNumber",
                     aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),

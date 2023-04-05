@@ -9,63 +9,63 @@ pub fn ser_create_rule_group_input(
     if let Some(var_2) = &input.scope {
         object.key("Scope").string(var_2.as_str());
     }
-    {
+    if let Some(var_3) = &input.capacity {
         object.key("Capacity").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.capacity).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("Description").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.rules {
-        let mut array_5 = object.key("Rules").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.rules {
+        let mut array_6 = object.key("Rules").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_rule::ser_rule(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_rule::ser_rule(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_8) = &input.visibility_config {
+    if let Some(var_9) = &input.visibility_config {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("VisibilityConfig").start_object();
+        let mut object_10 = object.key("VisibilityConfig").start_object();
         crate::protocol_serde::shape_visibility_config::ser_visibility_config(
-            &mut object_9,
-            var_8,
+            &mut object_10,
+            var_9,
         )?;
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("Tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("Tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_14) = &input.custom_response_bodies {
+    if let Some(var_15) = &input.custom_response_bodies {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("CustomResponseBodies").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_16 = object.key("CustomResponseBodies").start_object();
+        for (key_17, value_18) in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = object_15.key(key_16.as_str()).start_object();
+                let mut object_19 = object_16.key(key_17.as_str()).start_object();
                 crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(
-                    &mut object_18,
-                    value_17,
+                    &mut object_19,
+                    value_18,
                 )?;
-                object_18.finish();
+                object_19.finish();
             }
         }
-        object_15.finish();
+        object_16.finish();
     }
     Ok(())
 }

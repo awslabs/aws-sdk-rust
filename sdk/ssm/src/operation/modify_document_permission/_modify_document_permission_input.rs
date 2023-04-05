@@ -9,10 +9,10 @@ pub struct ModifyDocumentPermissionInput {
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
     #[doc(hidden)]
     pub permission_type: std::option::Option<crate::types::DocumentPermissionType>,
-    /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
     #[doc(hidden)]
     pub account_ids_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services user account can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to remove, the system removes access to the document.</p>
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
     #[doc(hidden)]
     pub account_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
@@ -28,11 +28,11 @@ impl ModifyDocumentPermissionInput {
     pub fn permission_type(&self) -> std::option::Option<&crate::types::DocumentPermissionType> {
         self.permission_type.as_ref()
     }
-    /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
     pub fn account_ids_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids_to_add.as_deref()
     }
-    /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services user account can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to remove, the system removes access to the document.</p>
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
     pub fn account_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids_to_remove.as_deref()
     }
@@ -88,14 +88,14 @@ impl ModifyDocumentPermissionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids_to_add`](Self::set_account_ids_to_add).
     ///
-    /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
     pub fn account_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids_to_add.unwrap_or_default();
         v.push(input.into());
         self.account_ids_to_add = Some(v);
         self
     }
-    /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
     pub fn set_account_ids_to_add(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -107,14 +107,14 @@ impl ModifyDocumentPermissionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids_to_remove`](Self::set_account_ids_to_remove).
     ///
-    /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services user account can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to remove, the system removes access to the document.</p>
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
     pub fn account_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids_to_remove.unwrap_or_default();
         v.push(input.into());
         self.account_ids_to_remove = Some(v);
         self
     }
-    /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services user account can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to remove, the system removes access to the document.</p>
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
     pub fn set_account_ids_to_remove(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

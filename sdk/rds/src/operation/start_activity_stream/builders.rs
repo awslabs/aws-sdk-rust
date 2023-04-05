@@ -112,12 +112,12 @@ impl StartActivityStreamFluentBuilder {
         self.inner = self.inner.set_apply_immediately(input);
         self
     }
-    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies to an Oracle DB instance. By default, no engine-native audit fields are included.</p>
+    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
         self.inner = self.inner.engine_native_audit_fields_included(input);
         self
     }
-    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies to an Oracle DB instance. By default, no engine-native audit fields are included.</p>
+    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     pub fn set_engine_native_audit_fields_included(
         mut self,
         input: std::option::Option<bool>,

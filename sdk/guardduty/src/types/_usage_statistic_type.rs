@@ -14,6 +14,7 @@
 /// match usagestatistictype {
 ///     UsageStatisticType::SumByAccount => { /* ... */ },
 ///     UsageStatisticType::SumByDataSource => { /* ... */ },
+///     UsageStatisticType::SumByFeatures => { /* ... */ },
 ///     UsageStatisticType::SumByResource => { /* ... */ },
 ///     UsageStatisticType::TopResources => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -54,6 +55,8 @@ pub enum UsageStatisticType {
     #[allow(missing_docs)] // documentation missing in model
     SumByDataSource,
     #[allow(missing_docs)] // documentation missing in model
+    SumByFeatures,
+    #[allow(missing_docs)] // documentation missing in model
     SumByResource,
     #[allow(missing_docs)] // documentation missing in model
     TopResources,
@@ -65,6 +68,7 @@ impl std::convert::From<&str> for UsageStatisticType {
         match s {
             "SUM_BY_ACCOUNT" => UsageStatisticType::SumByAccount,
             "SUM_BY_DATA_SOURCE" => UsageStatisticType::SumByDataSource,
+            "SUM_BY_FEATURES" => UsageStatisticType::SumByFeatures,
             "SUM_BY_RESOURCE" => UsageStatisticType::SumByResource,
             "TOP_RESOURCES" => UsageStatisticType::TopResources,
             other => UsageStatisticType::Unknown(crate::primitives::UnknownVariantValue(
@@ -86,6 +90,7 @@ impl UsageStatisticType {
         match self {
             UsageStatisticType::SumByAccount => "SUM_BY_ACCOUNT",
             UsageStatisticType::SumByDataSource => "SUM_BY_DATA_SOURCE",
+            UsageStatisticType::SumByFeatures => "SUM_BY_FEATURES",
             UsageStatisticType::SumByResource => "SUM_BY_RESOURCE",
             UsageStatisticType::TopResources => "TOP_RESOURCES",
             UsageStatisticType::Unknown(value) => value.as_str(),
@@ -96,6 +101,7 @@ impl UsageStatisticType {
         &[
             "SUM_BY_ACCOUNT",
             "SUM_BY_DATA_SOURCE",
+            "SUM_BY_FEATURES",
             "SUM_BY_RESOURCE",
             "TOP_RESOURCES",
         ]

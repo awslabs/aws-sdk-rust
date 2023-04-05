@@ -11,7 +11,7 @@ pub struct ListRoleAliasesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Return the list of role aliases in ascending alphabetical order.</p>
     #[doc(hidden)]
-    pub ascending_order: bool,
+    pub ascending_order: std::option::Option<bool>,
 }
 impl ListRoleAliasesInput {
     /// <p>The maximum number of results to return at one time.</p>
@@ -23,7 +23,7 @@ impl ListRoleAliasesInput {
         self.marker.as_deref()
     }
     /// <p>Return the list of role aliases in ascending alphabetical order.</p>
-    pub fn ascending_order(&self) -> bool {
+    pub fn ascending_order(&self) -> std::option::Option<bool> {
         self.ascending_order
     }
 }
@@ -83,7 +83,7 @@ impl ListRoleAliasesInputBuilder {
         Ok(crate::operation::list_role_aliases::ListRoleAliasesInput {
             page_size: self.page_size,
             marker: self.marker,
-            ascending_order: self.ascending_order.unwrap_or_default(),
+            ascending_order: self.ascending_order,
         })
     }
 }

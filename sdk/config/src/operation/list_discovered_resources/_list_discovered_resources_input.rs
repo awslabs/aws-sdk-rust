@@ -7,7 +7,7 @@ pub struct ListDiscoveredResourcesInput {
     /// <p>The type of resources that you want Config to list in the response.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResourceType>,
-    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
     #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
@@ -15,10 +15,10 @@ pub struct ListDiscoveredResourcesInput {
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
     #[doc(hidden)]
-    pub include_deleted_resources: bool,
+    pub include_deleted_resources: std::option::Option<bool>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -28,7 +28,7 @@ impl ListDiscoveredResourcesInput {
     pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
     pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_ids.as_deref()
     }
@@ -37,11 +37,11 @@ impl ListDiscoveredResourcesInput {
         self.resource_name.as_deref()
     }
     /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
-    pub fn include_deleted_resources(&self) -> bool {
+    pub fn include_deleted_resources(&self) -> std::option::Option<bool> {
         self.include_deleted_resources
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -87,14 +87,14 @@ impl ListDiscoveredResourcesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
-    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
     pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
         v.push(input.into());
         self.resource_ids = Some(v);
         self
     }
-    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
     pub fn set_resource_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -154,8 +154,8 @@ impl ListDiscoveredResourcesInputBuilder {
                 resource_type: self.resource_type,
                 resource_ids: self.resource_ids,
                 resource_name: self.resource_name,
-                limit: self.limit.unwrap_or_default(),
-                include_deleted_resources: self.include_deleted_resources.unwrap_or_default(),
+                limit: self.limit,
+                include_deleted_resources: self.include_deleted_resources,
                 next_token: self.next_token,
             },
         )

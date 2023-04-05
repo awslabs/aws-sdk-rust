@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkgroupInput {
-    /// <p>The name of the workgroup to update.</p>
+    /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>The new base data warehouse capacity in Redshift Processing Units (RPUs).</p>
@@ -12,7 +12,7 @@ pub struct UpdateWorkgroupInput {
     /// <p>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
     #[doc(hidden)]
     pub enhanced_vpc_routing: std::option::Option<bool>,
-    /// <p>An array of parameters to set for advanced control over a database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     #[doc(hidden)]
     pub config_parameters: std::option::Option<std::vec::Vec<crate::types::ConfigParameter>>,
     /// <p>A value that specifies whether the workgroup can be accessible from a public network.</p>
@@ -29,7 +29,7 @@ pub struct UpdateWorkgroupInput {
     pub port: std::option::Option<i32>,
 }
 impl UpdateWorkgroupInput {
-    /// <p>The name of the workgroup to update.</p>
+    /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
@@ -41,7 +41,7 @@ impl UpdateWorkgroupInput {
     pub fn enhanced_vpc_routing(&self) -> std::option::Option<bool> {
         self.enhanced_vpc_routing
     }
-    /// <p>An array of parameters to set for advanced control over a database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     pub fn config_parameters(&self) -> std::option::Option<&[crate::types::ConfigParameter]> {
         self.config_parameters.as_deref()
     }
@@ -83,12 +83,12 @@ pub struct UpdateWorkgroupInputBuilder {
     pub(crate) port: std::option::Option<i32>,
 }
 impl UpdateWorkgroupInputBuilder {
-    /// <p>The name of the workgroup to update.</p>
+    /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.workgroup_name = Some(input.into());
         self
     }
-    /// <p>The name of the workgroup to update.</p>
+    /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.workgroup_name = input;
         self
@@ -117,14 +117,14 @@ impl UpdateWorkgroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_config_parameters`](Self::set_config_parameters).
     ///
-    /// <p>An array of parameters to set for advanced control over a database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     pub fn config_parameters(mut self, input: crate::types::ConfigParameter) -> Self {
         let mut v = self.config_parameters.unwrap_or_default();
         v.push(input);
         self.config_parameters = Some(v);
         self
     }
-    /// <p>An array of parameters to set for advanced control over a database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     pub fn set_config_parameters(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ConfigParameter>>,

@@ -62,12 +62,12 @@ impl GetGroupsForCapacityReservationFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_groups_for_capacity_reservation::paginator::GetGroupsForCapacityReservationPaginator{
         crate::operation::get_groups_for_capacity_reservation::paginator::GetGroupsForCapacityReservationPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     pub fn capacity_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.capacity_reservation_id(input.into());
         self
     }
-    /// <p>The ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     pub fn set_capacity_reservation_id(
         mut self,
         input: std::option::Option<std::string::String>,

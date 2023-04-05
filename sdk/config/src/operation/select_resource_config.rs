@@ -172,7 +172,7 @@ pub enum SelectResourceConfigError {
     InvalidExpressionException(crate::types::error::InvalidExpressionException),
     /// <p>The specified limit is outside the allowable range.</p>
     InvalidLimitException(crate::types::error::InvalidLimitException),
-    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
+    /// <p>The specified next token is not valid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

@@ -151,12 +151,12 @@ impl EnableLoggingFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
     ///
-    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     pub fn log_exports(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.log_exports(input.into());
         self
     }
-    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     pub fn set_log_exports(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -93,12 +93,26 @@ pub(crate) fn de_create_program(
                             .transpose()?,
                         );
                     }
+                    "ClipRange" => {
+                        builder = builder.set_clip_range(
+                            crate::protocol_serde::shape_clip_range::de_clip_range(tokens)?,
+                        );
+                    }
                     "CreationTime" => {
                         builder = builder.set_creation_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
                                 aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
+                        );
+                    }
+                    "DurationMillis" => {
+                        builder = builder.set_duration_millis(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i64::try_from)
+                            .transpose()?,
                         );
                     }
                     "LiveSourceName" => {

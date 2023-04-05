@@ -204,6 +204,9 @@ pub struct S3Settings {
     /// <p>When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner against the specified parameter.</p>
     #[doc(hidden)]
     pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your data.</p>
+    #[doc(hidden)]
+    pub glue_catalog_generation: std::option::Option<bool>,
 }
 impl S3Settings {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an S3 bucket.</p>
@@ -452,6 +455,10 @@ impl S3Settings {
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
+    /// <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your data.</p>
+    pub fn glue_catalog_generation(&self) -> std::option::Option<bool> {
+        self.glue_catalog_generation
+    }
 }
 impl S3Settings {
     /// Creates a new builder-style object to manufacture [`S3Settings`](crate::types::S3Settings).
@@ -506,6 +513,7 @@ pub struct S3SettingsBuilder {
     pub(crate) date_partition_timezone: std::option::Option<std::string::String>,
     pub(crate) add_trailing_padding_character: std::option::Option<bool>,
     pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+    pub(crate) glue_catalog_generation: std::option::Option<bool>,
 }
 impl S3SettingsBuilder {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an S3 bucket.</p>
@@ -1128,6 +1136,16 @@ impl S3SettingsBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your data.</p>
+    pub fn glue_catalog_generation(mut self, input: bool) -> Self {
+        self.glue_catalog_generation = Some(input);
+        self
+    }
+    /// <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your data.</p>
+    pub fn set_glue_catalog_generation(mut self, input: std::option::Option<bool>) -> Self {
+        self.glue_catalog_generation = input;
+        self
+    }
     /// Consumes the builder and constructs a [`S3Settings`](crate::types::S3Settings).
     pub fn build(self) -> crate::types::S3Settings {
         crate::types::S3Settings {
@@ -1172,6 +1190,7 @@ impl S3SettingsBuilder {
             date_partition_timezone: self.date_partition_timezone,
             add_trailing_padding_character: self.add_trailing_padding_character,
             expected_bucket_owner: self.expected_bucket_owner,
+            glue_catalog_generation: self.glue_catalog_generation,
         }
     }
 }

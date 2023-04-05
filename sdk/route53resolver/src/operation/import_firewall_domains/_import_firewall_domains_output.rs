@@ -9,7 +9,7 @@ pub struct ImportFirewallDomainsOutput {
     /// <p>The name of the domain list. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p> </p>
+    /// <p>Status of the import request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::FirewallDomainListStatus>,
     /// <p>Additional information about the status of the list, if available.</p>
@@ -26,7 +26,7 @@ impl ImportFirewallDomainsOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> </p>
+    /// <p>Status of the import request.</p>
     pub fn status(&self) -> std::option::Option<&crate::types::FirewallDomainListStatus> {
         self.status.as_ref()
     }
@@ -80,12 +80,12 @@ impl ImportFirewallDomainsOutputBuilder {
         self.name = input;
         self
     }
-    /// <p> </p>
+    /// <p>Status of the import request.</p>
     pub fn status(mut self, input: crate::types::FirewallDomainListStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p> </p>
+    /// <p>Status of the import request.</p>
     pub fn set_status(
         mut self,
         input: std::option::Option<crate::types::FirewallDomainListStatus>,

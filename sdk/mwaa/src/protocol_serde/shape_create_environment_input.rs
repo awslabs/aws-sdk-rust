@@ -81,23 +81,31 @@ pub fn ser_create_environment_input(
     if let Some(var_21) = &input.source_bucket_arn {
         object.key("SourceBucketArn").string(var_21.as_str());
     }
-    if let Some(var_22) = &input.tags {
+    if let Some(var_22) = &input.startup_script_s3_object_version {
+        object
+            .key("StartupScriptS3ObjectVersion")
+            .string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.startup_script_s3_path {
+        object.key("StartupScriptS3Path").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("Tags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_25 = object.key("Tags").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_23.finish();
+        object_25.finish();
     }
-    if let Some(var_26) = &input.webserver_access_mode {
-        object.key("WebserverAccessMode").string(var_26.as_str());
+    if let Some(var_28) = &input.webserver_access_mode {
+        object.key("WebserverAccessMode").string(var_28.as_str());
     }
-    if let Some(var_27) = &input.weekly_maintenance_window_start {
+    if let Some(var_29) = &input.weekly_maintenance_window_start {
         object
             .key("WeeklyMaintenanceWindowStart")
-            .string(var_27.as_str());
+            .string(var_29.as_str());
     }
     Ok(())
 }

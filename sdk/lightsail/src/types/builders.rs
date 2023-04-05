@@ -161,6 +161,14 @@ pub use crate::types::_distribution_bundle::DistributionBundleBuilder;
 
 pub use crate::types::_disk_snapshot::DiskSnapshotBuilder;
 
+pub use crate::types::_resource_budget_estimate::ResourceBudgetEstimateBuilder;
+
+pub use crate::types::_cost_estimate::CostEstimateBuilder;
+
+pub use crate::types::_estimate_by_time::EstimateByTimeBuilder;
+
+pub use crate::types::_time_period::TimePeriodBuilder;
+
 pub use crate::types::_container_service_power::ContainerServicePowerBuilder;
 
 pub use crate::types::_container_service_log_event::ContainerServiceLogEventBuilder;
@@ -205,9 +213,13 @@ pub use crate::types::_monitored_resource_info::MonitoredResourceInfoBuilder;
 
 pub use crate::types::_add_on_request::AddOnRequestBuilder;
 
+pub use crate::types::_stop_instance_on_idle_request::StopInstanceOnIdleRequestBuilder;
+
 pub use crate::types::_auto_snapshot_add_on_request::AutoSnapshotAddOnRequestBuilder;
 
 pub use crate::types::_disk_map::DiskMapBuilder;
+
+pub use crate::types::_session::SessionBuilder;
 
 pub use crate::types::_container_service_registry_login::ContainerServiceRegistryLoginBuilder;
 

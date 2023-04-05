@@ -5,6 +5,7 @@ pub use crate::operation::put_voice_connector_logging_configuration::_put_voice_
 
 /// Fluent builder constructing a request to `PutVoiceConnectorLoggingConfiguration`.
 ///
+/// <p>Updates a Voice Connector's logging configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVoiceConnectorLoggingConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl PutVoiceConnectorLoggingConfigurationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -68,12 +69,12 @@ impl PutVoiceConnectorLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The logging configuration being updated.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.inner = self.inner.logging_configuration(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The logging configuration being updated.</p>
     pub fn set_logging_configuration(
         mut self,
         input: std::option::Option<crate::types::LoggingConfiguration>,

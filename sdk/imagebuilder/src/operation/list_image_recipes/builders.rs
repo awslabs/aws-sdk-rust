@@ -5,7 +5,7 @@ pub use crate::operation::list_image_recipes::_list_image_recipes_input::ListIma
 
 /// Fluent builder constructing a request to `ListImageRecipes`.
 ///
-/// <p> Returns a list of image recipes.</p>
+/// <p>Returns a list of image recipes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImageRecipesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

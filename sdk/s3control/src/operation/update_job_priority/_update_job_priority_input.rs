@@ -11,7 +11,7 @@ pub struct UpdateJobPriorityInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The priority you want to assign to this job.</p>
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
 }
 impl UpdateJobPriorityInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
@@ -23,7 +23,7 @@ impl UpdateJobPriorityInput {
         self.job_id.as_deref()
     }
     /// <p>The priority you want to assign to this job.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
 }
@@ -85,7 +85,7 @@ impl UpdateJobPriorityInputBuilder {
             crate::operation::update_job_priority::UpdateJobPriorityInput {
                 account_id: self.account_id,
                 job_id: self.job_id,
-                priority: self.priority.unwrap_or_default(),
+                priority: self.priority,
             },
         )
     }

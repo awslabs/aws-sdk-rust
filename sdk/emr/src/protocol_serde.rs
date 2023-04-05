@@ -350,6 +350,8 @@ pub(crate) mod shape_instance_fleet;
 
 pub(crate) mod shape_instance_fleet_provisioning_specifications;
 
+pub(crate) mod shape_instance_fleet_resizing_specifications;
+
 pub(crate) mod shape_instance_group;
 
 pub(crate) mod shape_instance_type_config;
@@ -412,6 +414,8 @@ pub(crate) mod shape_ebs_block_device_list;
 
 pub(crate) mod shape_ebs_volume_list;
 
+pub(crate) mod shape_error_detail_list;
+
 pub(crate) mod shape_failure_details;
 
 pub(crate) mod shape_instance_fleet_status;
@@ -432,11 +436,15 @@ pub(crate) mod shape_key_value;
 
 pub(crate) mod shape_on_demand_provisioning_specification;
 
+pub(crate) mod shape_on_demand_resizing_specification;
+
 pub(crate) mod shape_scaling_action;
 
 pub(crate) mod shape_scaling_trigger;
 
 pub(crate) mod shape_spot_provisioning_specification;
+
+pub(crate) mod shape_spot_resizing_specification;
 
 pub(crate) mod shape_step_detail_list;
 
@@ -455,6 +463,8 @@ pub(crate) mod shape_cloud_watch_alarm_definition;
 pub(crate) mod shape_ebs_block_device;
 
 pub(crate) mod shape_ebs_volume;
+
+pub(crate) mod shape_error_detail;
 
 pub(crate) mod shape_instance_fleet_state_change_reason;
 
@@ -481,6 +491,8 @@ pub(crate) mod shape_step_detail;
 pub(crate) mod shape_volume_specification;
 
 pub(crate) mod shape_ec2_instance_ids_list;
+
+pub(crate) mod shape_error_data;
 
 pub(crate) mod shape_instance_group_detail;
 

@@ -5,6 +5,10 @@ pub use crate::types::_advanced_field_selector::AdvancedFieldSelector;
 
 pub use crate::types::_event_data_store_status::EventDataStoreStatus;
 
+pub use crate::types::_destination::Destination;
+
+pub use crate::types::_destination_type::DestinationType;
+
 pub use crate::types::_import_statistics::ImportStatistics;
 
 pub use crate::types::_import_status::ImportStatus;
@@ -59,9 +63,7 @@ pub use crate::types::_trail::Trail;
 
 pub use crate::types::_query_statistics::QueryStatistics;
 
-pub use crate::types::_destination::Destination;
-
-pub use crate::types::_destination_type::DestinationType;
+pub use crate::types::_ingestion_status::IngestionStatus;
 
 pub use crate::types::_source_config::SourceConfig;
 
@@ -104,6 +106,8 @@ mod _import_statistics;
 mod _import_status;
 
 mod _imports_list_item;
+
+mod _ingestion_status;
 
 mod _insight_selector;
 

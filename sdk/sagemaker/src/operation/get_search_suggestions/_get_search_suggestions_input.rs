@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSearchSuggestionsInput {
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<crate::types::ResourceType>,
     /// <p>Limits the property names that are included in the response.</p>
@@ -11,7 +11,7 @@ pub struct GetSearchSuggestionsInput {
     pub suggestion_query: std::option::Option<crate::types::SuggestionQuery>,
 }
 impl GetSearchSuggestionsInput {
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     pub fn resource(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource.as_ref()
     }
@@ -36,12 +36,12 @@ pub struct GetSearchSuggestionsInputBuilder {
     pub(crate) suggestion_query: std::option::Option<crate::types::SuggestionQuery>,
 }
 impl GetSearchSuggestionsInputBuilder {
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     pub fn resource(mut self, input: crate::types::ResourceType) -> Self {
         self.resource = Some(input);
         self
     }
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     pub fn set_resource(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource = input;
         self

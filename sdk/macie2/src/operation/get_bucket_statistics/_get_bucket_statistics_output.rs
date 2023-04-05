@@ -6,19 +6,19 @@ pub struct GetBucketStatisticsOutput {
     /// <p>The total number of buckets.</p>
     #[doc(hidden)]
     pub bucket_count: i64,
-    /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     #[doc(hidden)]
     pub bucket_count_by_effective_permission:
         std::option::Option<crate::types::BucketCountByEffectivePermission>,
-    /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
+    /// <p>The total number of buckets whose settings do or don't specify default server-side encryption behavior for objects that are added to the buckets.</p>
     #[doc(hidden)]
     pub bucket_count_by_encryption_type:
         std::option::Option<crate::types::BucketCountByEncryptionType>,
-    /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
+    /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are added to the buckets.</p>
     #[doc(hidden)]
     pub bucket_count_by_object_encryption_requirement:
         std::option::Option<crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads>,
-    /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
+    /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
     #[doc(hidden)]
     pub bucket_count_by_shared_access_type:
         std::option::Option<crate::types::BucketCountBySharedAccessType>,
@@ -33,7 +33,7 @@ pub struct GetBucketStatisticsOutput {
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     #[doc(hidden)]
     pub classifiable_size_in_bytes: i64,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
     #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the buckets.</p>
@@ -61,25 +61,25 @@ impl GetBucketStatisticsOutput {
     pub fn bucket_count(&self) -> i64 {
         self.bucket_count
     }
-    /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn bucket_count_by_effective_permission(
         &self,
     ) -> std::option::Option<&crate::types::BucketCountByEffectivePermission> {
         self.bucket_count_by_effective_permission.as_ref()
     }
-    /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
+    /// <p>The total number of buckets whose settings do or don't specify default server-side encryption behavior for objects that are added to the buckets.</p>
     pub fn bucket_count_by_encryption_type(
         &self,
     ) -> std::option::Option<&crate::types::BucketCountByEncryptionType> {
         self.bucket_count_by_encryption_type.as_ref()
     }
-    /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
+    /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are added to the buckets.</p>
     pub fn bucket_count_by_object_encryption_requirement(
         &self,
     ) -> std::option::Option<&crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads> {
         self.bucket_count_by_object_encryption_requirement.as_ref()
     }
-    /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
+    /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
     pub fn bucket_count_by_shared_access_type(
         &self,
     ) -> std::option::Option<&crate::types::BucketCountBySharedAccessType> {
@@ -100,7 +100,7 @@ impl GetBucketStatisticsOutput {
     pub fn classifiable_size_in_bytes(&self) -> i64 {
         self.classifiable_size_in_bytes
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
@@ -183,7 +183,7 @@ impl GetBucketStatisticsOutputBuilder {
         self.bucket_count = input;
         self
     }
-    /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn bucket_count_by_effective_permission(
         mut self,
         input: crate::types::BucketCountByEffectivePermission,
@@ -191,7 +191,7 @@ impl GetBucketStatisticsOutputBuilder {
         self.bucket_count_by_effective_permission = Some(input);
         self
     }
-    /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn set_bucket_count_by_effective_permission(
         mut self,
         input: std::option::Option<crate::types::BucketCountByEffectivePermission>,
@@ -199,7 +199,7 @@ impl GetBucketStatisticsOutputBuilder {
         self.bucket_count_by_effective_permission = input;
         self
     }
-    /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
+    /// <p>The total number of buckets whose settings do or don't specify default server-side encryption behavior for objects that are added to the buckets.</p>
     pub fn bucket_count_by_encryption_type(
         mut self,
         input: crate::types::BucketCountByEncryptionType,
@@ -207,7 +207,7 @@ impl GetBucketStatisticsOutputBuilder {
         self.bucket_count_by_encryption_type = Some(input);
         self
     }
-    /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
+    /// <p>The total number of buckets whose settings do or don't specify default server-side encryption behavior for objects that are added to the buckets.</p>
     pub fn set_bucket_count_by_encryption_type(
         mut self,
         input: std::option::Option<crate::types::BucketCountByEncryptionType>,
@@ -215,7 +215,7 @@ impl GetBucketStatisticsOutputBuilder {
         self.bucket_count_by_encryption_type = input;
         self
     }
-    /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
+    /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are added to the buckets.</p>
     pub fn bucket_count_by_object_encryption_requirement(
         mut self,
         input: crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads,
@@ -223,7 +223,7 @@ impl GetBucketStatisticsOutputBuilder {
         self.bucket_count_by_object_encryption_requirement = Some(input);
         self
     }
-    /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
+    /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are added to the buckets.</p>
     pub fn set_bucket_count_by_object_encryption_requirement(
         mut self,
         input: std::option::Option<crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads>,
@@ -231,7 +231,7 @@ impl GetBucketStatisticsOutputBuilder {
         self.bucket_count_by_object_encryption_requirement = input;
         self
     }
-    /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
+    /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
     pub fn bucket_count_by_shared_access_type(
         mut self,
         input: crate::types::BucketCountBySharedAccessType,
@@ -239,7 +239,7 @@ impl GetBucketStatisticsOutputBuilder {
         self.bucket_count_by_shared_access_type = Some(input);
         self
     }
-    /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
+    /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
     pub fn set_bucket_count_by_shared_access_type(
         mut self,
         input: std::option::Option<crate::types::BucketCountBySharedAccessType>,
@@ -285,12 +285,12 @@ impl GetBucketStatisticsOutputBuilder {
         self.classifiable_size_in_bytes = input;
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_updated = Some(input);
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
     pub fn set_last_updated(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

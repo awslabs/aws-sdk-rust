@@ -30,6 +30,24 @@ pub fn ser_compliance(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.security_control_id {
+        object.key("SecurityControlId").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.associated_standards {
+        let mut array_11 = object.key("AssociatedStandards").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_associated_standard::ser_associated_standard(
+                    &mut object_13,
+                    item_12,
+                )?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }
 
@@ -75,6 +93,20 @@ where
                             "StatusReasons" => {
                                 builder = builder.set_status_reasons(
                                     crate::protocol_serde::shape_status_reasons_list::de_status_reasons_list(tokens)?
+                                );
+                            }
+                            "SecurityControlId" => {
+                                builder = builder.set_security_control_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "AssociatedStandards" => {
+                                builder = builder.set_associated_standards(
+                                    crate::protocol_serde::shape_associated_standards_list::de_associated_standards_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

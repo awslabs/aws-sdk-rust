@@ -37,10 +37,10 @@ pub struct Framework {
     /// <p> The time when the framework was most recently updated. </p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The IAM user or role that created the framework. </p>
+    /// <p> The user or role that created the framework. </p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
-    /// <p> The IAM user or role that most recently updated the framework. </p>
+    /// <p> The user or role that most recently updated the framework. </p>
     #[doc(hidden)]
     pub last_updated_by: std::option::Option<std::string::String>,
     /// <p> The tags that are associated with the framework. </p>
@@ -93,11 +93,11 @@ impl Framework {
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p> The IAM user or role that created the framework. </p>
+    /// <p> The user or role that created the framework. </p>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p> The IAM user or role that most recently updated the framework. </p>
+    /// <p> The user or role that most recently updated the framework. </p>
     pub fn last_updated_by(&self) -> std::option::Option<&str> {
         self.last_updated_by.as_deref()
     }
@@ -262,22 +262,22 @@ impl FrameworkBuilder {
         self.last_updated_at = input;
         self
     }
-    /// <p> The IAM user or role that created the framework. </p>
+    /// <p> The user or role that created the framework. </p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
         self.created_by = Some(input.into());
         self
     }
-    /// <p> The IAM user or role that created the framework. </p>
+    /// <p> The user or role that created the framework. </p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p> The IAM user or role that most recently updated the framework. </p>
+    /// <p> The user or role that most recently updated the framework. </p>
     pub fn last_updated_by(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_updated_by = Some(input.into());
         self
     }
-    /// <p> The IAM user or role that most recently updated the framework. </p>
+    /// <p> The user or role that most recently updated the framework. </p>
     pub fn set_last_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.last_updated_by = input;
         self

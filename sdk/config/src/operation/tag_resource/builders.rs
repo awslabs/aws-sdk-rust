@@ -5,7 +5,7 @@ pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBui
 
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are deleted as well.</p>
+/// <p>Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. If existing tags are specified, however, then their values will be updated. When a resource is deleted, the tags associated with that resource are deleted as well.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

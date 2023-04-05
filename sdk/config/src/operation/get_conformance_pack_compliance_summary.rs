@@ -150,7 +150,7 @@ pub type GetConformancePackComplianceSummaryErrorKind = GetConformancePackCompli
 pub enum GetConformancePackComplianceSummaryError {
     /// <p>The specified limit is outside the allowable range.</p>
     InvalidLimitException(crate::types::error::InvalidLimitException),
-    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
+    /// <p>The specified next token is not valid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>You specified one or more conformance packs that do not exist.</p>
     NoSuchConformancePackException(crate::types::error::NoSuchConformancePackException),

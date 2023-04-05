@@ -9,7 +9,7 @@ pub struct UpdateDomainInput {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description about this domain.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
@@ -26,7 +26,7 @@ impl UpdateDomainInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description about this domain.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -88,12 +88,12 @@ impl UpdateDomainInputBuilder {
         self.name = input;
         self
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description about this domain.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description about this domain.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
         self

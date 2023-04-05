@@ -18,6 +18,10 @@ pub struct CreateConfiguredTableAssociationInput {
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateConfiguredTableAssociationInput {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
@@ -40,6 +44,13 @@ impl CreateConfiguredTableAssociationInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl CreateConfiguredTableAssociationInput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredTableAssociationInput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput).
@@ -57,6 +68,8 @@ pub struct CreateConfiguredTableAssociationInputBuilder {
     pub(crate) membership_identifier: std::option::Option<std::string::String>,
     pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateConfiguredTableAssociationInputBuilder {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
@@ -115,6 +128,31 @@ impl CreateConfiguredTableAssociationInputBuilder {
         self.role_arn = input;
         self
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
+    }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateConfiguredTableAssociationInput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput).
     pub fn build(self) -> Result<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
@@ -128,6 +166,8 @@ impl CreateConfiguredTableAssociationInputBuilder {
                 configured_table_identifier: self.configured_table_identifier
                 ,
                 role_arn: self.role_arn
+                ,
+                tags: self.tags
                 ,
             }
         )

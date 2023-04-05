@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerProvider {
-    /// <p>The type of the container provider. EKS is the only supported type as of now.</p>
+    /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ContainerProviderType>,
     /// <p>The ID of the container cluster.</p>
@@ -15,7 +15,7 @@ pub struct ContainerProvider {
     pub info: std::option::Option<crate::types::ContainerInfo>,
 }
 impl ContainerProvider {
-    /// <p>The type of the container provider. EKS is the only supported type as of now.</p>
+    /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::types::ContainerProviderType> {
         self.r#type.as_ref()
     }
@@ -44,12 +44,12 @@ pub struct ContainerProviderBuilder {
     pub(crate) info: std::option::Option<crate::types::ContainerInfo>,
 }
 impl ContainerProviderBuilder {
-    /// <p>The type of the container provider. EKS is the only supported type as of now.</p>
+    /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     pub fn r#type(mut self, input: crate::types::ContainerProviderType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of the container provider. EKS is the only supported type as of now.</p>
+    /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     pub fn set_type(
         mut self,
         input: std::option::Option<crate::types::ContainerProviderType>,

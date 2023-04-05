@@ -69,22 +69,22 @@ impl UpdateRelatedItemsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
     pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.incident_record_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
     pub fn set_incident_record_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -92,12 +92,12 @@ impl UpdateRelatedItemsFluentBuilder {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
-    /// <p>Details about the item you are adding or deleting.</p>
+    /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     pub fn related_items_update(mut self, input: crate::types::RelatedItemsUpdate) -> Self {
         self.inner = self.inner.related_items_update(input);
         self
     }
-    /// <p>Details about the item you are adding or deleting.</p>
+    /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     pub fn set_related_items_update(
         mut self,
         input: std::option::Option<crate::types::RelatedItemsUpdate>,

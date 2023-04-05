@@ -37,6 +37,22 @@ pub fn ser_ssm_document(
         }
         object_5.finish();
     }
+    if let Some(var_11) = &input.external_parameters {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("externalParameters").start_object();
+        for (key_13, value_14) in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = object_12.key(key_13.as_str()).start_object();
+                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(
+                    &mut object_15,
+                    value_14,
+                )?;
+                object_15.finish();
+            }
+        }
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -98,6 +114,11 @@ where
                             "parameters" => {
                                 builder = builder.set_parameters(
                                     crate::protocol_serde::shape_ssm_document_parameters::de_ssm_document_parameters(tokens)?
+                                );
+                            }
+                            "externalParameters" => {
+                                builder = builder.set_external_parameters(
+                                    crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

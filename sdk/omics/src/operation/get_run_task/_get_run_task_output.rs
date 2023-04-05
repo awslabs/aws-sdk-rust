@@ -15,7 +15,7 @@ pub struct GetRunTaskOutput {
     /// <p>The task's CPU usage.</p>
     #[doc(hidden)]
     pub cpus: std::option::Option<i32>,
-    /// <p>The task's memory setting.</p>
+    /// <p>The task's memory use in gigabytes.</p>
     #[doc(hidden)]
     pub memory: std::option::Option<i32>,
     /// <p>When the task was created.</p>
@@ -52,7 +52,7 @@ impl GetRunTaskOutput {
     pub fn cpus(&self) -> std::option::Option<i32> {
         self.cpus
     }
-    /// <p>The task's memory setting.</p>
+    /// <p>The task's memory use in gigabytes.</p>
     pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
     }
@@ -146,12 +146,12 @@ impl GetRunTaskOutputBuilder {
         self.cpus = input;
         self
     }
-    /// <p>The task's memory setting.</p>
+    /// <p>The task's memory use in gigabytes.</p>
     pub fn memory(mut self, input: i32) -> Self {
         self.memory = Some(input);
         self
     }
-    /// <p>The task's memory setting.</p>
+    /// <p>The task's memory use in gigabytes.</p>
     pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
         self.memory = input;
         self

@@ -69,12 +69,13 @@ impl GetFolderInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.include_custom_metadata {
-                    query.push_kv(
-                        "includeCustomMetadata",
-                        aws_smithy_types::primitive::Encoder::from(_input.include_custom_metadata)
-                            .encode(),
-                    );
+                if let Some(inner_2) = &_input.include_custom_metadata {
+                    if *inner_2 {
+                        query.push_kv(
+                            "includeCustomMetadata",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -187,7 +188,7 @@ pub type GetFolderErrorKind = GetFolderError;
 pub enum GetFolderError {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::types::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),

@@ -104,13 +104,13 @@ pub struct CreateServiceInput {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub enable_ecs_managed_tags: bool,
+    pub enable_ecs_managed_tags: std::option::Option<bool>,
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action.</p>
     #[doc(hidden)]
     pub propagate_tags: std::option::Option<crate::types::PropagateTags>,
     /// <p>Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this enables execute command functionality on all containers in the service tasks.</p>
     #[doc(hidden)]
-    pub enable_execute_command: bool,
+    pub enable_execute_command: std::option::Option<bool>,
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -245,7 +245,7 @@ impl CreateServiceInput {
         self.tags.as_deref()
     }
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn enable_ecs_managed_tags(&self) -> bool {
+    pub fn enable_ecs_managed_tags(&self) -> std::option::Option<bool> {
         self.enable_ecs_managed_tags
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action.</p>
@@ -253,7 +253,7 @@ impl CreateServiceInput {
         self.propagate_tags.as_ref()
     }
     /// <p>Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this enables execute command functionality on all containers in the service tasks.</p>
-    pub fn enable_execute_command(&self) -> bool {
+    pub fn enable_execute_command(&self) -> std::option::Option<bool> {
         self.enable_execute_command
     }
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
@@ -728,9 +728,9 @@ impl CreateServiceInputBuilder {
             scheduling_strategy: self.scheduling_strategy,
             deployment_controller: self.deployment_controller,
             tags: self.tags,
-            enable_ecs_managed_tags: self.enable_ecs_managed_tags.unwrap_or_default(),
+            enable_ecs_managed_tags: self.enable_ecs_managed_tags,
             propagate_tags: self.propagate_tags,
-            enable_execute_command: self.enable_execute_command.unwrap_or_default(),
+            enable_execute_command: self.enable_execute_command,
             service_connect_configuration: self.service_connect_configuration,
         })
     }

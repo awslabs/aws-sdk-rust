@@ -4,10 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateFilter {
-    /// <p>A start date for the date filter.</p>
+    /// <p>A timestamp that provides the start date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
-    /// <p>An end date for the date filter.</p>
+    /// <p>A timestamp that provides the end date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub end: std::option::Option<std::string::String>,
     /// <p>A date range for the date filter.</p>
@@ -15,11 +17,13 @@ pub struct DateFilter {
     pub date_range: std::option::Option<crate::types::DateRange>,
 }
 impl DateFilter {
-    /// <p>A start date for the date filter.</p>
+    /// <p>A timestamp that provides the start date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn start(&self) -> std::option::Option<&str> {
         self.start.as_deref()
     }
-    /// <p>An end date for the date filter.</p>
+    /// <p>A timestamp that provides the end date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn end(&self) -> std::option::Option<&str> {
         self.end.as_deref()
     }
@@ -44,22 +48,26 @@ pub struct DateFilterBuilder {
     pub(crate) date_range: std::option::Option<crate::types::DateRange>,
 }
 impl DateFilterBuilder {
-    /// <p>A start date for the date filter.</p>
+    /// <p>A timestamp that provides the start date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
         self.start = Some(input.into());
         self
     }
-    /// <p>A start date for the date filter.</p>
+    /// <p>A timestamp that provides the start date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.start = input;
         self
     }
-    /// <p>An end date for the date filter.</p>
+    /// <p>A timestamp that provides the end date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
         self.end = Some(input.into());
         self
     }
-    /// <p>An end date for the date filter.</p>
+    /// <p>A timestamp that provides the end date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.end = input;
         self

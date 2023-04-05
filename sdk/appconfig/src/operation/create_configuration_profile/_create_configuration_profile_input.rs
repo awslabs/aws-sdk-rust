@@ -12,14 +12,23 @@ pub struct CreateConfigurationProfileInput {
     /// <p>A description of the configuration profile.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+    /// <p>A URI to locate the configuration. You can specify the following:</p>
+    /// <ul>
+    /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
+    /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
+    /// <parameter name></parameter></code> or the ARN.</p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// .
+    /// </secret></p> </li>
+    /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
     /// <bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li>
+    /// <li> <p>For an SSM document, specify either the document name in the format <code>ssm-document://
+    /// <document name></document></code> or the Amazon Resource Name (ARN).</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
@@ -53,14 +62,23 @@ impl CreateConfigurationProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+    /// <p>A URI to locate the configuration. You can specify the following:</p>
+    /// <ul>
+    /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
+    /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
+    /// <parameter name></parameter></code> or the ARN.</p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// .
+    /// </secret></p> </li>
+    /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
     /// <bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li>
+    /// <li> <p>For an SSM document, specify either the document name in the format <code>ssm-document://
+    /// <document name></document></code> or the Amazon Resource Name (ARN).</p> </li>
+    /// </ul>
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
@@ -140,26 +158,44 @@ impl CreateConfigurationProfileInputBuilder {
         self.description = input;
         self
     }
-    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+    /// <p>A URI to locate the configuration. You can specify the following:</p>
+    /// <ul>
+    /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
+    /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
+    /// <parameter name></parameter></code> or the ARN.</p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// .
+    /// </secret></p> </li>
+    /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
     /// <bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li>
+    /// <li> <p>For an SSM document, specify either the document name in the format <code>ssm-document://
+    /// <document name></document></code> or the Amazon Resource Name (ARN).</p> </li>
+    /// </ul>
     pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
         self.location_uri = Some(input.into());
         self
     }
-    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+    /// <p>A URI to locate the configuration. You can specify the following:</p>
+    /// <ul>
+    /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
+    /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
+    /// <parameter name></parameter></code> or the ARN.</p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// .
+    /// </secret></p> </li>
+    /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
     /// <bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li>
+    /// <li> <p>For an SSM document, specify either the document name in the format <code>ssm-document://
+    /// <document name></document></code> or the Amazon Resource Name (ARN).</p> </li>
+    /// </ul>
     pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.location_uri = input;
         self

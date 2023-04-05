@@ -194,6 +194,11 @@ pub(crate) fn de_create_bot(
                             .transpose()?,
                         );
                     }
+                    "botMembers" => {
+                        builder = builder.set_bot_members(
+                            crate::protocol_serde::shape_bot_members::de_bot_members(tokens)?,
+                        );
+                    }
                     "botName" => {
                         builder = builder.set_bot_name(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -218,6 +223,18 @@ pub(crate) fn de_create_bot(
                     "botTags" => {
                         builder = builder.set_bot_tags(
                             crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?,
+                        );
+                    }
+                    "botType" => {
+                        builder = builder.set_bot_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::types::BotType::from(u.as_ref()))
+                            })
+                            .transpose()?,
                         );
                     }
                     "creationDateTime" => {

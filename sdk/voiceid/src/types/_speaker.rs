@@ -16,13 +16,13 @@ pub struct Speaker {
     /// <p>The current status of the speaker.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::SpeakerStatus>,
-    /// <p>A timestamp showing when the speaker is created. </p>
+    /// <p>A timestamp of when the speaker was created. </p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A timestamp showing the speaker's last update.</p>
+    /// <p>A timestamp of the speaker's last update.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    /// <p>The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
     #[doc(hidden)]
     pub last_accessed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -43,15 +43,15 @@ impl Speaker {
     pub fn status(&self) -> std::option::Option<&crate::types::SpeakerStatus> {
         self.status.as_ref()
     }
-    /// <p>A timestamp showing when the speaker is created. </p>
+    /// <p>A timestamp of when the speaker was created. </p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>A timestamp showing the speaker's last update.</p>
+    /// <p>A timestamp of the speaker's last update.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    /// <p>The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
     pub fn last_accessed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_at.as_ref()
     }
@@ -135,12 +135,12 @@ impl SpeakerBuilder {
         self.status = input;
         self
     }
-    /// <p>A timestamp showing when the speaker is created. </p>
+    /// <p>A timestamp of when the speaker was created. </p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>A timestamp showing when the speaker is created. </p>
+    /// <p>A timestamp of when the speaker was created. </p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -148,12 +148,12 @@ impl SpeakerBuilder {
         self.created_at = input;
         self
     }
-    /// <p>A timestamp showing the speaker's last update.</p>
+    /// <p>A timestamp of the speaker's last update.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>A timestamp showing the speaker's last update.</p>
+    /// <p>A timestamp of the speaker's last update.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -161,12 +161,12 @@ impl SpeakerBuilder {
         self.updated_at = input;
         self
     }
-    /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    /// <p>The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
     pub fn last_accessed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_accessed_at = Some(input);
         self
     }
-    /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    /// <p>The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
     pub fn set_last_accessed_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

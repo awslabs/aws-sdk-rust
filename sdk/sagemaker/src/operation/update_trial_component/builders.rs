@@ -132,7 +132,7 @@ impl UpdateTrialComponentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
+    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
     pub fn parameters(
         mut self,
         k: impl Into<std::string::String>,
@@ -141,7 +141,7 @@ impl UpdateTrialComponentFluentBuilder {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
-    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
+    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
     pub fn set_parameters(
         mut self,
         input: std::option::Option<
@@ -175,7 +175,7 @@ impl UpdateTrialComponentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
     ///
-    /// <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
     pub fn input_artifacts(
         mut self,
         k: impl Into<std::string::String>,
@@ -184,7 +184,7 @@ impl UpdateTrialComponentFluentBuilder {
         self.inner = self.inner.input_artifacts(k.into(), v);
         self
     }
-    /// <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
     pub fn set_input_artifacts(
         mut self,
         input: std::option::Option<
@@ -215,7 +215,7 @@ impl UpdateTrialComponentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
     ///
-    /// <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
     pub fn output_artifacts(
         mut self,
         k: impl Into<std::string::String>,
@@ -224,7 +224,7 @@ impl UpdateTrialComponentFluentBuilder {
         self.inner = self.inner.output_artifacts(k.into(), v);
         self
     }
-    /// <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
     pub fn set_output_artifacts(
         mut self,
         input: std::option::Option<

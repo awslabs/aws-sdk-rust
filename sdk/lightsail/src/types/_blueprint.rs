@@ -40,6 +40,11 @@ pub struct Blueprint {
     /// <p>The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::types::InstancePlatform>,
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub app_category: std::option::Option<crate::types::AppCategory>,
 }
 impl Blueprint {
     /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
@@ -90,6 +95,12 @@ impl Blueprint {
     pub fn platform(&self) -> std::option::Option<&crate::types::InstancePlatform> {
         self.platform.as_ref()
     }
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn app_category(&self) -> std::option::Option<&crate::types::AppCategory> {
+        self.app_category.as_ref()
+    }
 }
 impl Blueprint {
     /// Creates a new builder-style object to manufacture [`Blueprint`](crate::types::Blueprint).
@@ -114,6 +125,7 @@ pub struct BlueprintBuilder {
     pub(crate) product_url: std::option::Option<std::string::String>,
     pub(crate) license_url: std::option::Option<std::string::String>,
     pub(crate) platform: std::option::Option<crate::types::InstancePlatform>,
+    pub(crate) app_category: std::option::Option<crate::types::AppCategory>,
 }
 impl BlueprintBuilder {
     /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
@@ -239,6 +251,23 @@ impl BlueprintBuilder {
         self.platform = input;
         self
     }
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn app_category(mut self, input: crate::types::AppCategory) -> Self {
+        self.app_category = Some(input);
+        self
+    }
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn set_app_category(
+        mut self,
+        input: std::option::Option<crate::types::AppCategory>,
+    ) -> Self {
+        self.app_category = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Blueprint`](crate::types::Blueprint).
     pub fn build(self) -> crate::types::Blueprint {
         crate::types::Blueprint {
@@ -254,6 +283,7 @@ impl BlueprintBuilder {
             product_url: self.product_url,
             license_url: self.license_url,
             platform: self.platform,
+            app_category: self.app_category,
         }
     }
 }

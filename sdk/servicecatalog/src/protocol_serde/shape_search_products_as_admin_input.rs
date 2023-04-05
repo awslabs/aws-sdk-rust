@@ -34,14 +34,14 @@ pub fn ser_search_products_as_admin_input(
     if let Some(var_11) = &input.page_token {
         object.key("PageToken").string(var_11.as_str());
     }
-    if input.page_size != 0 {
+    if let Some(var_12) = &input.page_size {
         object.key("PageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.page_size).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_12) = &input.product_source {
-        object.key("ProductSource").string(var_12.as_str());
+    if let Some(var_13) = &input.product_source {
+        object.key("ProductSource").string(var_13.as_str());
     }
     Ok(())
 }

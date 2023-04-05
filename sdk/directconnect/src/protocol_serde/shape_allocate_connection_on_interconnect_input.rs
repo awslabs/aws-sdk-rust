@@ -15,10 +15,10 @@ pub fn ser_allocate_connection_on_interconnect_input(
     if let Some(var_4) = &input.interconnect_id {
         object.key("interconnectId").string(var_4.as_str());
     }
-    {
+    if let Some(var_5) = &input.vlan {
         object.key("vlan").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.vlan).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

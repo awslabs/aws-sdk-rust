@@ -90,12 +90,12 @@ impl CreateAppInstanceFluentBuilder {
         self.inner = self.inner.set_metadata(input);
         self
     }
-    /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -107,12 +107,12 @@ impl CreateAppInstanceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// <p>Tags assigned to the <code>AppInstance</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// <p>Tags assigned to the <code>AppInstance</code>.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,

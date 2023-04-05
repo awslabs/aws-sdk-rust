@@ -46,6 +46,9 @@ pub mod describe_transaction;
 /// Types for the `ExtendTransaction` operation.
 pub mod extend_transaction;
 
+/// Types for the `GetDataCellsFilter` operation.
+pub mod get_data_cells_filter;
+
 /// Types for the `GetDataLakeSettings` operation.
 pub mod get_data_lake_settings;
 
@@ -123,6 +126,9 @@ pub mod start_query_planning;
 
 /// Types for the `StartTransaction` operation.
 pub mod start_transaction;
+
+/// Types for the `UpdateDataCellsFilter` operation.
+pub mod update_data_cells_filter;
 
 /// Types for the `UpdateLFTag` operation.
 pub mod update_lf_tag;

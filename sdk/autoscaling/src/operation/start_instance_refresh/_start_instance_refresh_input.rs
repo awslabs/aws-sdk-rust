@@ -7,16 +7,20 @@ pub struct StartInstanceRefreshInput {
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
-    /// <p>A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances that are replaced are not rolled back to their previous configuration. </p>
     #[doc(hidden)]
     pub strategy: std::option::Option<crate::types::RefreshStrategy>,
     /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
-    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can help you reduce the number of replacements that are required to apply updates. </p>
+    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
     #[doc(hidden)]
     pub desired_configuration: std::option::Option<crate::types::DesiredConfiguration>,
-    /// <p>Set of preferences associated with the instance refresh request. If not provided, the default values are used.</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <ul>
+    /// <li> <p>Auto rollback</p> </li>
+    /// <li> <p>Checkpoints</p> </li>
+    /// <li> <p>Skip matching</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub preferences: std::option::Option<crate::types::RefreshPreferences>,
 }
@@ -26,20 +30,24 @@ impl StartInstanceRefreshInput {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
-    /// <p>A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances that are replaced are not rolled back to their previous configuration. </p>
     pub fn strategy(&self) -> std::option::Option<&crate::types::RefreshStrategy> {
         self.strategy.as_ref()
     }
     /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
-    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can help you reduce the number of replacements that are required to apply updates. </p>
+    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
     pub fn desired_configuration(
         &self,
     ) -> std::option::Option<&crate::types::DesiredConfiguration> {
         self.desired_configuration.as_ref()
     }
-    /// <p>Set of preferences associated with the instance refresh request. If not provided, the default values are used.</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <ul>
+    /// <li> <p>Auto rollback</p> </li>
+    /// <li> <p>Checkpoints</p> </li>
+    /// <li> <p>Skip matching</p> </li>
+    /// </ul>
     pub fn preferences(&self) -> std::option::Option<&crate::types::RefreshPreferences> {
         self.preferences.as_ref()
     }
@@ -76,13 +84,11 @@ impl StartInstanceRefreshInputBuilder {
         self
     }
     /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
-    /// <p>A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances that are replaced are not rolled back to their previous configuration. </p>
     pub fn strategy(mut self, input: crate::types::RefreshStrategy) -> Self {
         self.strategy = Some(input);
         self
     }
     /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
-    /// <p>A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances that are replaced are not rolled back to their previous configuration. </p>
     pub fn set_strategy(
         mut self,
         input: std::option::Option<crate::types::RefreshStrategy>,
@@ -92,7 +98,7 @@ impl StartInstanceRefreshInputBuilder {
     }
     /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
-    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can help you reduce the number of replacements that are required to apply updates. </p>
+    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
     pub fn desired_configuration(mut self, input: crate::types::DesiredConfiguration) -> Self {
         self.desired_configuration = Some(input);
@@ -100,7 +106,7 @@ impl StartInstanceRefreshInputBuilder {
     }
     /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
-    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can help you reduce the number of replacements that are required to apply updates. </p>
+    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
     pub fn set_desired_configuration(
         mut self,
@@ -109,12 +115,22 @@ impl StartInstanceRefreshInputBuilder {
         self.desired_configuration = input;
         self
     }
-    /// <p>Set of preferences associated with the instance refresh request. If not provided, the default values are used.</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <ul>
+    /// <li> <p>Auto rollback</p> </li>
+    /// <li> <p>Checkpoints</p> </li>
+    /// <li> <p>Skip matching</p> </li>
+    /// </ul>
     pub fn preferences(mut self, input: crate::types::RefreshPreferences) -> Self {
         self.preferences = Some(input);
         self
     }
-    /// <p>Set of preferences associated with the instance refresh request. If not provided, the default values are used.</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <ul>
+    /// <li> <p>Auto rollback</p> </li>
+    /// <li> <p>Checkpoints</p> </li>
+    /// <li> <p>Skip matching</p> </li>
+    /// </ul>
     pub fn set_preferences(
         mut self,
         input: std::option::Option<crate::types::RefreshPreferences>,

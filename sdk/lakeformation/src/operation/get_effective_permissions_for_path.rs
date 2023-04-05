@@ -156,7 +156,7 @@ pub type GetEffectivePermissionsForPathErrorKind = GetEffectivePermissionsForPat
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEffectivePermissionsForPathError {
-    /// <p>A specified entity does not exist</p>
+    /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::types::error::InternalServiceException),

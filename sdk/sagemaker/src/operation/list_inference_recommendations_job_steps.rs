@@ -148,6 +148,8 @@ pub type ListInferenceRecommendationsJobStepsErrorKind = ListInferenceRecommenda
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInferenceRecommendationsJobStepsError {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::types::error::ResourceNotFound),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -166,6 +168,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListInferenceRecommendati
 impl std::fmt::Display for ListInferenceRecommendationsJobStepsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Self::ResourceNotFound(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -175,6 +178,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata
 {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ResourceNotFound(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -220,13 +226,19 @@ impl ListInferenceRecommendationsJobStepsError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ResourceNotFound(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `ListInferenceRecommendationsJobStepsError::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(self, Self::ResourceNotFound(_))
     }
 }
 impl std::error::Error for ListInferenceRecommendationsJobStepsError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Self::ResourceNotFound(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

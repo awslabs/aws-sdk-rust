@@ -33,5 +33,8 @@ pub fn ser_create_vocabulary_filter_input(
         }
         array_8.finish();
     }
+    if let Some(var_11) = &input.data_access_role_arn {
+        object.key("DataAccessRoleArn").string(var_11.as_str());
+    }
     Ok(())
 }

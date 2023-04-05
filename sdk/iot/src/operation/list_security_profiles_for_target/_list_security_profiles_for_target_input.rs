@@ -11,7 +11,7 @@ pub struct ListSecurityProfilesForTargetInput {
     pub max_results: std::option::Option<i32>,
     /// <p>If true, return child groups too.</p>
     #[doc(hidden)]
-    pub recursive: bool,
+    pub recursive: std::option::Option<bool>,
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
     #[doc(hidden)]
     pub security_profile_target_arn: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ impl ListSecurityProfilesForTargetInput {
         self.max_results
     }
     /// <p>If true, return child groups too.</p>
-    pub fn recursive(&self) -> bool {
+    pub fn recursive(&self) -> std::option::Option<bool> {
         self.recursive
     }
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
@@ -108,7 +108,6 @@ impl ListSecurityProfilesForTargetInputBuilder {
                 max_results: self.max_results
                 ,
                 recursive: self.recursive
-                    .unwrap_or_default()
                 ,
                 security_profile_target_arn: self.security_profile_target_arn
                 ,

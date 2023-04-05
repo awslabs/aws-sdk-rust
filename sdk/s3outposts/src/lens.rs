@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_endpoints_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_outposts_with_s3_output_next_token(
+    input: &crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_shared_endpoints_output_next_token(
     input: &crate::operation::list_shared_endpoints::ListSharedEndpointsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -23,6 +33,16 @@ pub(crate) fn lens_list_endpoints_output_endpoints(
     input: crate::operation::list_endpoints::ListEndpointsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::Endpoint>> {
     let input = match input.endpoints {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_outposts_with_s3_output_outposts(
+    input: crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output,
+) -> std::option::Option<std::vec::Vec<crate::types::Outpost>> {
+    let input = match input.outposts {
         None => return None,
         Some(t) => t,
     };

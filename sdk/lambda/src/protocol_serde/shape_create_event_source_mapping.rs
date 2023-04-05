@@ -190,6 +190,11 @@ pub(crate) fn de_create_event_source_mapping(
                             )?,
                         );
                     }
+                    "DocumentDBEventSourceConfig" => {
+                        builder = builder.set_document_db_event_source_config(
+                            crate::protocol_serde::shape_document_db_event_source_config::de_document_db_event_source_config(tokens)?
+                        );
+                    }
                     "EventSourceArn" => {
                         builder = builder.set_event_source_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAgent`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_arn(impl Into<String>)`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::agent_arn) / [`set_agent_arn(Option<String>)`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::set_agent_arn): <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+    ///   - [`agent_arn(impl Into<String>)`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::agent_arn) / [`set_agent_arn(Option<String>)`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::set_agent_arn): <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     /// - On success, responds with [`DescribeAgentOutput`](crate::operation::describe_agent::DescribeAgentOutput) with field(s):
-    ///   - [`agent_arn(Option<String>)`](crate::operation::describe_agent::DescribeAgentOutput::agent_arn): <p>The Amazon Resource Name (ARN) of the agent.</p>
+    ///   - [`agent_arn(Option<String>)`](crate::operation::describe_agent::DescribeAgentOutput::agent_arn): <p>The ARN of the agent.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_agent::DescribeAgentOutput::name): <p>The name of the agent.</p>
     ///   - [`status(Option<AgentStatus>)`](crate::operation::describe_agent::DescribeAgentOutput::status): <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
     ///   - [`last_connection_time(Option<DateTime>)`](crate::operation::describe_agent::DescribeAgentOutput::last_connection_time): <p>The time that the agent last connected to DataSync.</p>

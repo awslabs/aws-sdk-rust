@@ -13,8 +13,17 @@
 /// # let supportedrfregion = unimplemented!();
 /// match supportedrfregion {
 ///     SupportedRfRegion::As9231 => { /* ... */ },
+///     SupportedRfRegion::As9232 => { /* ... */ },
+///     SupportedRfRegion::As9233 => { /* ... */ },
+///     SupportedRfRegion::As9234 => { /* ... */ },
 ///     SupportedRfRegion::Au915 => { /* ... */ },
+///     SupportedRfRegion::Cn470 => { /* ... */ },
+///     SupportedRfRegion::Cn779 => { /* ... */ },
+///     SupportedRfRegion::Eu433 => { /* ... */ },
 ///     SupportedRfRegion::Eu868 => { /* ... */ },
+///     SupportedRfRegion::In865 => { /* ... */ },
+///     SupportedRfRegion::Kr920 => { /* ... */ },
+///     SupportedRfRegion::Ru864 => { /* ... */ },
 ///     SupportedRfRegion::Us915 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -52,9 +61,27 @@ pub enum SupportedRfRegion {
     #[allow(missing_docs)] // documentation missing in model
     As9231,
     #[allow(missing_docs)] // documentation missing in model
+    As9232,
+    #[allow(missing_docs)] // documentation missing in model
+    As9233,
+    #[allow(missing_docs)] // documentation missing in model
+    As9234,
+    #[allow(missing_docs)] // documentation missing in model
     Au915,
     #[allow(missing_docs)] // documentation missing in model
+    Cn470,
+    #[allow(missing_docs)] // documentation missing in model
+    Cn779,
+    #[allow(missing_docs)] // documentation missing in model
+    Eu433,
+    #[allow(missing_docs)] // documentation missing in model
     Eu868,
+    #[allow(missing_docs)] // documentation missing in model
+    In865,
+    #[allow(missing_docs)] // documentation missing in model
+    Kr920,
+    #[allow(missing_docs)] // documentation missing in model
+    Ru864,
     #[allow(missing_docs)] // documentation missing in model
     Us915,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -64,8 +91,17 @@ impl std::convert::From<&str> for SupportedRfRegion {
     fn from(s: &str) -> Self {
         match s {
             "AS923-1" => SupportedRfRegion::As9231,
+            "AS923-2" => SupportedRfRegion::As9232,
+            "AS923-3" => SupportedRfRegion::As9233,
+            "AS923-4" => SupportedRfRegion::As9234,
             "AU915" => SupportedRfRegion::Au915,
+            "CN470" => SupportedRfRegion::Cn470,
+            "CN779" => SupportedRfRegion::Cn779,
+            "EU433" => SupportedRfRegion::Eu433,
             "EU868" => SupportedRfRegion::Eu868,
+            "IN865" => SupportedRfRegion::In865,
+            "KR920" => SupportedRfRegion::Kr920,
+            "RU864" => SupportedRfRegion::Ru864,
             "US915" => SupportedRfRegion::Us915,
             other => {
                 SupportedRfRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -85,15 +121,27 @@ impl SupportedRfRegion {
     pub fn as_str(&self) -> &str {
         match self {
             SupportedRfRegion::As9231 => "AS923-1",
+            SupportedRfRegion::As9232 => "AS923-2",
+            SupportedRfRegion::As9233 => "AS923-3",
+            SupportedRfRegion::As9234 => "AS923-4",
             SupportedRfRegion::Au915 => "AU915",
+            SupportedRfRegion::Cn470 => "CN470",
+            SupportedRfRegion::Cn779 => "CN779",
+            SupportedRfRegion::Eu433 => "EU433",
             SupportedRfRegion::Eu868 => "EU868",
+            SupportedRfRegion::In865 => "IN865",
+            SupportedRfRegion::Kr920 => "KR920",
+            SupportedRfRegion::Ru864 => "RU864",
             SupportedRfRegion::Us915 => "US915",
             SupportedRfRegion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AS923-1", "AU915", "EU868", "US915"]
+        &[
+            "AS923-1", "AS923-2", "AS923-3", "AS923-4", "AU915", "CN470", "CN779", "EU433",
+            "EU868", "IN865", "KR920", "RU864", "US915",
+        ]
     }
 }
 impl AsRef<str> for SupportedRfRegion {

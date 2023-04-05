@@ -18,7 +18,7 @@ pub struct UpdateTrialComponentInput {
     /// <p>When the component ended.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
+    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::TrialComponentParameterValue>,
@@ -26,7 +26,7 @@ pub struct UpdateTrialComponentInput {
     /// <p>The hyperparameters to remove from the component.</p>
     #[doc(hidden)]
     pub parameters_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
     #[doc(hidden)]
     pub input_artifacts: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
@@ -34,7 +34,7 @@ pub struct UpdateTrialComponentInput {
     /// <p>The input artifacts to remove from the component.</p>
     #[doc(hidden)]
     pub input_artifacts_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
     #[doc(hidden)]
     pub output_artifacts: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
@@ -64,7 +64,7 @@ impl UpdateTrialComponentInput {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
+    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<
@@ -76,7 +76,7 @@ impl UpdateTrialComponentInput {
     pub fn parameters_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.parameters_to_remove.as_deref()
     }
-    /// <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
     pub fn input_artifacts(
         &self,
     ) -> std::option::Option<
@@ -88,7 +88,7 @@ impl UpdateTrialComponentInput {
     pub fn input_artifacts_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.input_artifacts_to_remove.as_deref()
     }
-    /// <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
     pub fn output_artifacts(
         &self,
     ) -> std::option::Option<
@@ -195,7 +195,7 @@ impl UpdateTrialComponentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
+    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
     pub fn parameters(
         mut self,
         k: impl Into<std::string::String>,
@@ -206,7 +206,7 @@ impl UpdateTrialComponentInputBuilder {
         self.parameters = Some(hash_map);
         self
     }
-    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
+    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
     pub fn set_parameters(
         mut self,
         input: std::option::Option<
@@ -242,7 +242,7 @@ impl UpdateTrialComponentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
     ///
-    /// <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
     pub fn input_artifacts(
         mut self,
         k: impl Into<std::string::String>,
@@ -253,7 +253,7 @@ impl UpdateTrialComponentInputBuilder {
         self.input_artifacts = Some(hash_map);
         self
     }
-    /// <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
     pub fn set_input_artifacts(
         mut self,
         input: std::option::Option<
@@ -286,7 +286,7 @@ impl UpdateTrialComponentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
     ///
-    /// <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
     pub fn output_artifacts(
         mut self,
         k: impl Into<std::string::String>,
@@ -297,7 +297,7 @@ impl UpdateTrialComponentInputBuilder {
         self.output_artifacts = Some(hash_map);
         self
     }
-    /// <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
+    /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
     pub fn set_output_artifacts(
         mut self,
         input: std::option::Option<

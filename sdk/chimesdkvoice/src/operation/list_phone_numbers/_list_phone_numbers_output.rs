@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumbersOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number details.</p>
     #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPhoneNumbersOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number details.</p>
     pub fn phone_numbers(&self) -> std::option::Option<&[crate::types::PhoneNumber]> {
         self.phone_numbers.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,13 +47,14 @@ impl ListPhoneNumbersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
     ///
+    /// <p>The phone number details.</p>
     pub fn phone_numbers(mut self, input: crate::types::PhoneNumber) -> Self {
         let mut v = self.phone_numbers.unwrap_or_default();
         v.push(input);
         self.phone_numbers = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number details.</p>
     pub fn set_phone_numbers(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
@@ -61,12 +62,12 @@ impl ListPhoneNumbersOutputBuilder {
         self.phone_numbers = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

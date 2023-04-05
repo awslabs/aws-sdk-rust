@@ -49,7 +49,7 @@ pub struct FunctionConfiguration {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
     #[doc(hidden)]
     pub environment: std::option::Option<crate::types::EnvironmentResponse>,
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a customer managed key.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
@@ -172,7 +172,7 @@ impl FunctionConfiguration {
     pub fn environment(&self) -> std::option::Option<&crate::types::EnvironmentResponse> {
         self.environment.as_ref()
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -466,12 +466,12 @@ impl FunctionConfigurationBuilder {
         self.environment = input;
         self
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a customer managed key.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_arn = Some(input.into());
         self
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a customer managed key.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.kms_key_arn = input;
         self

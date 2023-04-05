@@ -172,7 +172,7 @@ impl CreatePredictorFluentBuilder {
         self
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -184,7 +184,7 @@ impl CreatePredictorFluentBuilder {
         self
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -296,12 +296,12 @@ impl CreatePredictorFluentBuilder {
         self.inner = self.inner.set_featurization_config(input);
         self
     }
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.inner = self.inner.encryption_config(input);
         self
     }
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn set_encryption_config(
         mut self,
         input: std::option::Option<crate::types::EncryptionConfig>,
@@ -322,7 +322,7 @@ impl CreatePredictorFluentBuilder {
     /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
     /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -337,7 +337,7 @@ impl CreatePredictorFluentBuilder {
     /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
     /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn set_tags(
         mut self,

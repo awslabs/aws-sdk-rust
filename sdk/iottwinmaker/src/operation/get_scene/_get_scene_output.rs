@@ -27,6 +27,14 @@ pub struct GetSceneOutput {
     /// <p>A list of capabilities that the scene uses to render.</p>
     #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The response metadata.</p>
+    #[doc(hidden)]
+    pub scene_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The generated scene metadata.</p>
+    #[doc(hidden)]
+    pub generated_scene_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSceneOutput {
@@ -62,6 +70,20 @@ impl GetSceneOutput {
     pub fn capabilities(&self) -> std::option::Option<&[std::string::String]> {
         self.capabilities.as_deref()
     }
+    /// <p>The response metadata.</p>
+    pub fn scene_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.scene_metadata.as_ref()
+    }
+    /// <p>The generated scene metadata.</p>
+    pub fn generated_scene_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.generated_scene_metadata.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for GetSceneOutput {
     fn request_id(&self) -> Option<&str> {
@@ -87,6 +109,10 @@ pub struct GetSceneOutputBuilder {
     pub(crate) update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) scene_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) generated_scene_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSceneOutputBuilder {
@@ -185,6 +211,56 @@ impl GetSceneOutputBuilder {
         self.capabilities = input;
         self
     }
+    /// Adds a key-value pair to `scene_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_scene_metadata`](Self::set_scene_metadata).
+    ///
+    /// <p>The response metadata.</p>
+    pub fn scene_metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.scene_metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.scene_metadata = Some(hash_map);
+        self
+    }
+    /// <p>The response metadata.</p>
+    pub fn set_scene_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.scene_metadata = input;
+        self
+    }
+    /// Adds a key-value pair to `generated_scene_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_generated_scene_metadata`](Self::set_generated_scene_metadata).
+    ///
+    /// <p>The generated scene metadata.</p>
+    pub fn generated_scene_metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.generated_scene_metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.generated_scene_metadata = Some(hash_map);
+        self
+    }
+    /// <p>The generated scene metadata.</p>
+    pub fn set_generated_scene_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.generated_scene_metadata = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -205,6 +281,8 @@ impl GetSceneOutputBuilder {
             update_date_time: self.update_date_time,
             description: self.description,
             capabilities: self.capabilities,
+            scene_metadata: self.scene_metadata,
+            generated_scene_metadata: self.generated_scene_metadata,
             _request_id: self._request_id,
         }
     }

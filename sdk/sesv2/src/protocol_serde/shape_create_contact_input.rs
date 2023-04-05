@@ -24,8 +24,8 @@ pub fn ser_create_contact_input(
         }
         array_4.finish();
     }
-    if input.unsubscribe_all {
-        object.key("UnsubscribeAll").boolean(input.unsubscribe_all);
+    if let Some(var_7) = &input.unsubscribe_all {
+        object.key("UnsubscribeAll").boolean(*var_7);
     }
     Ok(())
 }

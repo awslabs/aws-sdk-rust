@@ -2,12 +2,38 @@
 
 /// <p>The operation failed because one of the input parameters was invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The message that informs you about what was invalid about the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
+    /// <p>The reason that validation failed.</p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<crate::types::ValidationExceptionReason>,
+    /// <p>The field where the invalid entry was detected.</p>
+    #[doc(hidden)]
+    pub field_list: std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+}
+impl ValidationException {
+    /// <p>The reason that validation failed.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::types::ValidationExceptionReason> {
+        self.reason.as_ref()
+    }
+    /// <p>The field where the invalid entry was detected.</p>
+    pub fn field_list(&self) -> std::option::Option<&[crate::types::ValidationExceptionField]> {
+        self.field_list.as_deref()
+    }
+}
+impl std::fmt::Debug for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidationException");
+        formatter.field("message", &"*** Sensitive Data Redacted ***");
+        formatter.field("reason", &self.reason);
+        formatter.field("field_list", &self.field_list);
+        formatter.field("meta", &self.meta);
+        formatter.finish()
+    }
 }
 impl ValidationException {
     /// Returns the error message.
@@ -18,11 +44,7 @@ impl ValidationException {
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
+        write!(f, ": {}", "*** Sensitive Data Redacted ***")?;
         Ok(())
     }
 }
@@ -47,20 +69,55 @@ impl ValidationException {
 
 /// A builder for [`ValidationException`](crate::types::error::ValidationException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct ValidationExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) reason: std::option::Option<crate::types::ValidationExceptionReason>,
+    pub(crate) field_list:
+        std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
     meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The message that informs you about what was invalid about the request.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
         self.message = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The message that informs you about what was invalid about the request.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.message = input;
+        self
+    }
+    /// <p>The reason that validation failed.</p>
+    pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
+        self.reason = Some(input);
+        self
+    }
+    /// <p>The reason that validation failed.</p>
+    pub fn set_reason(
+        mut self,
+        input: std::option::Option<crate::types::ValidationExceptionReason>,
+    ) -> Self {
+        self.reason = input;
+        self
+    }
+    /// Appends an item to `field_list`.
+    ///
+    /// To override the contents of this collection use [`set_field_list`](Self::set_field_list).
+    ///
+    /// <p>The field where the invalid entry was detected.</p>
+    pub fn field_list(mut self, input: crate::types::ValidationExceptionField) -> Self {
+        let mut v = self.field_list.unwrap_or_default();
+        v.push(input);
+        self.field_list = Some(v);
+        self
+    }
+    /// <p>The field where the invalid entry was detected.</p>
+    pub fn set_field_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
+    ) -> Self {
+        self.field_list = input;
         self
     }
     /// Sets error metadata
@@ -81,7 +138,18 @@ impl ValidationExceptionBuilder {
     pub fn build(self) -> crate::types::error::ValidationException {
         crate::types::error::ValidationException {
             message: self.message,
+            reason: self.reason,
+            field_list: self.field_list,
             meta: self.meta.unwrap_or_default(),
         }
+    }
+}
+impl std::fmt::Debug for ValidationExceptionBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidationExceptionBuilder");
+        formatter.field("message", &"*** Sensitive Data Redacted ***");
+        formatter.field("reason", &self.reason);
+        formatter.field("field_list", &self.field_list);
+        formatter.finish()
     }
 }

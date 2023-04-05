@@ -20,7 +20,7 @@ pub struct AutoMlCandidate {
     /// <p>The candidate's status.</p>
     #[doc(hidden)]
     pub candidate_status: std::option::Option<crate::types::CandidateStatus>,
-    /// <p>Information about the inference container definitions.</p>
+    /// <p>Information about the recommended inference container definitions.</p>
     #[doc(hidden)]
     pub inference_containers:
         std::option::Option<std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
@@ -39,6 +39,14 @@ pub struct AutoMlCandidate {
     /// <p>The properties of an AutoML candidate job.</p>
     #[doc(hidden)]
     pub candidate_properties: std::option::Option<crate::types::CandidateProperties>,
+    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
+    #[doc(hidden)]
+    pub inference_container_definitions: std::option::Option<
+        std::collections::HashMap<
+            crate::types::AutoMlProcessingUnit,
+            std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+        >,
+    >,
 }
 impl AutoMlCandidate {
     /// <p>The name of the candidate.</p>
@@ -63,7 +71,7 @@ impl AutoMlCandidate {
     pub fn candidate_status(&self) -> std::option::Option<&crate::types::CandidateStatus> {
         self.candidate_status.as_ref()
     }
-    /// <p>Information about the inference container definitions.</p>
+    /// <p>Information about the recommended inference container definitions.</p>
     pub fn inference_containers(
         &self,
     ) -> std::option::Option<&[crate::types::AutoMlContainerDefinition]> {
@@ -88,6 +96,17 @@ impl AutoMlCandidate {
     /// <p>The properties of an AutoML candidate job.</p>
     pub fn candidate_properties(&self) -> std::option::Option<&crate::types::CandidateProperties> {
         self.candidate_properties.as_ref()
+    }
+    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
+    pub fn inference_container_definitions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::types::AutoMlProcessingUnit,
+            std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+        >,
+    > {
+        self.inference_container_definitions.as_ref()
     }
 }
 impl AutoMlCandidate {
@@ -115,6 +134,12 @@ pub struct AutoMlCandidateBuilder {
     pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) failure_reason: std::option::Option<std::string::String>,
     pub(crate) candidate_properties: std::option::Option<crate::types::CandidateProperties>,
+    pub(crate) inference_container_definitions: std::option::Option<
+        std::collections::HashMap<
+            crate::types::AutoMlProcessingUnit,
+            std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+        >,
+    >,
 }
 impl AutoMlCandidateBuilder {
     /// <p>The name of the candidate.</p>
@@ -192,14 +217,14 @@ impl AutoMlCandidateBuilder {
     ///
     /// To override the contents of this collection use [`set_inference_containers`](Self::set_inference_containers).
     ///
-    /// <p>Information about the inference container definitions.</p>
+    /// <p>Information about the recommended inference container definitions.</p>
     pub fn inference_containers(mut self, input: crate::types::AutoMlContainerDefinition) -> Self {
         let mut v = self.inference_containers.unwrap_or_default();
         v.push(input);
         self.inference_containers = Some(v);
         self
     }
-    /// <p>Information about the inference container definitions.</p>
+    /// <p>Information about the recommended inference container definitions.</p>
     pub fn set_inference_containers(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
@@ -266,6 +291,34 @@ impl AutoMlCandidateBuilder {
         self.candidate_properties = input;
         self
     }
+    /// Adds a key-value pair to `inference_container_definitions`.
+    ///
+    /// To override the contents of this collection use [`set_inference_container_definitions`](Self::set_inference_container_definitions).
+    ///
+    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
+    pub fn inference_container_definitions(
+        mut self,
+        k: crate::types::AutoMlProcessingUnit,
+        v: std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+    ) -> Self {
+        let mut hash_map = self.inference_container_definitions.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.inference_container_definitions = Some(hash_map);
+        self
+    }
+    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
+    pub fn set_inference_container_definitions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                crate::types::AutoMlProcessingUnit,
+                std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+            >,
+        >,
+    ) -> Self {
+        self.inference_container_definitions = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AutoMlCandidate`](crate::types::AutoMlCandidate).
     pub fn build(self) -> crate::types::AutoMlCandidate {
         crate::types::AutoMlCandidate {
@@ -280,6 +333,7 @@ impl AutoMlCandidateBuilder {
             last_modified_time: self.last_modified_time,
             failure_reason: self.failure_reason,
             candidate_properties: self.candidate_properties,
+            inference_container_definitions: self.inference_container_definitions,
         }
     }
 }

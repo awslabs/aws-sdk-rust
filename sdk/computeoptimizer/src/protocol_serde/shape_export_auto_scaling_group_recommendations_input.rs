@@ -45,19 +45,17 @@ pub fn ser_export_auto_scaling_group_recommendations_input(
     if let Some(var_13) = &input.file_format {
         object.key("fileFormat").string(var_13.as_str());
     }
-    if input.include_member_accounts {
-        object
-            .key("includeMemberAccounts")
-            .boolean(input.include_member_accounts);
+    if let Some(var_14) = &input.include_member_accounts {
+        object.key("includeMemberAccounts").boolean(*var_14);
     }
-    if let Some(var_14) = &input.recommendation_preferences {
+    if let Some(var_15) = &input.recommendation_preferences {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("recommendationPreferences").start_object();
+        let mut object_16 = object.key("recommendationPreferences").start_object();
         crate::protocol_serde::shape_recommendation_preferences::ser_recommendation_preferences(
-            &mut object_15,
-            var_14,
+            &mut object_16,
+            var_15,
         )?;
-        object_15.finish();
+        object_16.finish();
     }
     Ok(())
 }

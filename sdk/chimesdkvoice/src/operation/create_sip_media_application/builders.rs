@@ -5,6 +5,7 @@ pub use crate::operation::create_sip_media_application::_create_sip_media_applic
 
 /// Fluent builder constructing a request to `CreateSipMediaApplication`.
 ///
+/// <p>Creates a SIP media application. For more information about SIP media applications, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSipMediaApplicationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -68,22 +69,22 @@ impl CreateSipMediaApplicationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region assigned to the SIP media application.</p>
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_region(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region assigned to the SIP media application.</p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_aws_region(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
@@ -92,12 +93,12 @@ impl CreateSipMediaApplicationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
     pub fn endpoints(mut self, input: crate::types::SipMediaApplicationEndpoint) -> Self {
         self.inner = self.inner.endpoints(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
     pub fn set_endpoints(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,

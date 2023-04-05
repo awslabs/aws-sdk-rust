@@ -15,6 +15,8 @@ pub struct CreateMeetingInput {
     #[doc(hidden)]
     pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     #[doc(hidden)]
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
@@ -39,7 +41,7 @@ pub struct CreateMeetingInput {
     /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
     /// </important>
     /// <p> <b>Minimum permissions</b> </p>
-    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+    /// <p>In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
     /// <p> <code>tag:TagResources</code> </p>
     /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
     /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
@@ -63,6 +65,8 @@ impl CreateMeetingInput {
         self.meeting_host_id.as_deref()
     }
     /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn external_meeting_id(&self) -> std::option::Option<&str> {
         self.external_meeting_id.as_deref()
     }
@@ -96,7 +100,7 @@ impl CreateMeetingInput {
     /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
     /// </important>
     /// <p> <b>Minimum permissions</b> </p>
-    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+    /// <p>In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
     /// <p> <code>tag:TagResources</code> </p>
     /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
     /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
@@ -184,11 +188,15 @@ impl CreateMeetingInputBuilder {
         self
     }
     /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.external_meeting_id = Some(input.into());
         self
     }
     /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn set_external_meeting_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -271,7 +279,7 @@ impl CreateMeetingInputBuilder {
     /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
     /// </important>
     /// <p> <b>Minimum permissions</b> </p>
-    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+    /// <p>In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
     /// <p> <code>tag:TagResources</code> </p>
     /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
     /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
@@ -292,7 +300,7 @@ impl CreateMeetingInputBuilder {
     /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
     /// </important>
     /// <p> <b>Minimum permissions</b> </p>
-    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+    /// <p>In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
     /// <p> <code>tag:TagResources</code> </p>
     /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
     /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>

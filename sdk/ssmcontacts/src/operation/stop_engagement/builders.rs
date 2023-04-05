@@ -75,12 +75,12 @@ impl StopEngagementFluentBuilder {
         self.inner = self.inner.set_engagement_id(input);
         self
     }
-    /// <p>The reason that you're stopping the engagement. </p>
+    /// <p>The reason that you're stopping the engagement.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
         self
     }
-    /// <p>The reason that you're stopping the engagement. </p>
+    /// <p>The reason that you're stopping the engagement.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self

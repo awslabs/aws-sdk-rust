@@ -14,6 +14,7 @@
 /// match resourcemappingtype {
 ///     ResourceMappingType::AppRegistryApp => { /* ... */ },
 ///     ResourceMappingType::CfnStack => { /* ... */ },
+///     ResourceMappingType::Eks => { /* ... */ },
 ///     ResourceMappingType::Resource => { /* ... */ },
 ///     ResourceMappingType::ResourceGroup => { /* ... */ },
 ///     ResourceMappingType::Terraform => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum ResourceMappingType {
     #[allow(missing_docs)] // documentation missing in model
     CfnStack,
     #[allow(missing_docs)] // documentation missing in model
+    Eks,
+    #[allow(missing_docs)] // documentation missing in model
     Resource,
     #[allow(missing_docs)] // documentation missing in model
     ResourceGroup,
@@ -68,6 +71,7 @@ impl std::convert::From<&str> for ResourceMappingType {
         match s {
             "AppRegistryApp" => ResourceMappingType::AppRegistryApp,
             "CfnStack" => ResourceMappingType::CfnStack,
+            "EKS" => ResourceMappingType::Eks,
             "Resource" => ResourceMappingType::Resource,
             "ResourceGroup" => ResourceMappingType::ResourceGroup,
             "Terraform" => ResourceMappingType::Terraform,
@@ -90,6 +94,7 @@ impl ResourceMappingType {
         match self {
             ResourceMappingType::AppRegistryApp => "AppRegistryApp",
             ResourceMappingType::CfnStack => "CfnStack",
+            ResourceMappingType::Eks => "EKS",
             ResourceMappingType::Resource => "Resource",
             ResourceMappingType::ResourceGroup => "ResourceGroup",
             ResourceMappingType::Terraform => "Terraform",
@@ -101,6 +106,7 @@ impl ResourceMappingType {
         &[
             "AppRegistryApp",
             "CfnStack",
+            "EKS",
             "Resource",
             "ResourceGroup",
             "Terraform",

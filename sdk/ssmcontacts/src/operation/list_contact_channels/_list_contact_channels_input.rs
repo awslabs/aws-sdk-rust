@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactChannelsInput {
-    /// <p>The Amazon Resource Name (ARN) of the contact. </p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
@@ -14,7 +14,7 @@ pub struct ListContactChannelsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListContactChannelsInput {
-    /// <p>The Amazon Resource Name (ARN) of the contact. </p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
@@ -45,12 +45,12 @@ pub struct ListContactChannelsInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
 }
 impl ListContactChannelsInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the contact. </p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.contact_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact. </p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.contact_id = input;
         self

@@ -62,6 +62,9 @@ pub fn ser_kafka_settings(
     if let Some(var_18) = &input.no_hex_prefix {
         object.key("NoHexPrefix").boolean(*var_18);
     }
+    if let Some(var_19) = &input.sasl_mechanism {
+        object.key("SaslMechanism").string(var_19.as_str());
+    }
     Ok(())
 }
 
@@ -243,6 +246,19 @@ where
                                     aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            "SaslMechanism" => {
+                                builder = builder.set_sasl_mechanism(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::KafkaSaslMechanism::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

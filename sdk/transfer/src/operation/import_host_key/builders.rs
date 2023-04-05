@@ -75,13 +75,13 @@ impl ImportHostKeyFluentBuilder {
         self.inner = self.inner.set_server_id(input);
         self
     }
-    /// <p>The public key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn host_key_body(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.host_key_body(input.into());
         self
     }
-    /// <p>The public key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn set_host_key_body(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_host_key_body(input);

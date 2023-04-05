@@ -4,73 +4,73 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationSmbInput {
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-    /// </note>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
+    /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
+    /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
-    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     #[doc(hidden)]
     pub server_hostname: std::option::Option<std::string::String>,
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
+    /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
-    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
+    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The mount options used by DataSync to access the SMB server.</p>
+    /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
     #[doc(hidden)]
     pub mount_options: std::option::Option<crate::types::SmbMountOptions>,
-    /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl CreateLocationSmbInput {
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-    /// </note>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
+    /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
+    /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn subdirectory(&self) -> std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub fn server_hostname(&self) -> std::option::Option<&str> {
         self.server_hostname.as_deref()
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
+    /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn user(&self) -> std::option::Option<&str> {
         self.user.as_deref()
     }
-    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
+    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_arns.as_deref()
     }
-    /// <p>The mount options used by DataSync to access the SMB server.</p>
+    /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
     pub fn mount_options(&self) -> std::option::Option<&crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
-    /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::types::TagListEntry]> {
         self.tags.as_deref()
     }
@@ -111,64 +111,64 @@ pub struct CreateLocationSmbInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl CreateLocationSmbInputBuilder {
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-    /// </note>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
+    /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
+    /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
         self.subdirectory = Some(input.into());
         self
     }
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-    /// </note>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
+    /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
+    /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.subdirectory = input;
         self
     }
-    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
         self.server_hostname = Some(input.into());
         self
     }
-    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub fn set_server_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.server_hostname = input;
         self
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
+    /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
         self.user = Some(input.into());
         self
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
+    /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user = input;
         self
     }
-    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain = Some(input.into());
         self
     }
-    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
         self.password = Some(input.into());
         self
     }
-    /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.password = input;
         self
@@ -177,14 +177,14 @@ impl CreateLocationSmbInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
+    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
+    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     pub fn set_agent_arns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -192,12 +192,12 @@ impl CreateLocationSmbInputBuilder {
         self.agent_arns = input;
         self
     }
-    /// <p>The mount options used by DataSync to access the SMB server.</p>
+    /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
         self.mount_options = Some(input);
         self
     }
-    /// <p>The mount options used by DataSync to access the SMB server.</p>
+    /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
     pub fn set_mount_options(
         mut self,
         input: std::option::Option<crate::types::SmbMountOptions>,
@@ -209,14 +209,14 @@ impl CreateLocationSmbInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = Some(v);
         self
     }
-    /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,

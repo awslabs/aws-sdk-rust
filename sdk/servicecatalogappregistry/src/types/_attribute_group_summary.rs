@@ -22,6 +22,9 @@ pub struct AttributeGroupSummary {
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
     #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The service principal that created the attribute group.</p>
+    #[doc(hidden)]
+    pub created_by: std::option::Option<std::string::String>,
 }
 impl AttributeGroupSummary {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
@@ -48,6 +51,10 @@ impl AttributeGroupSummary {
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
 }
 impl AttributeGroupSummary {
     /// Creates a new builder-style object to manufacture [`AttributeGroupSummary`](crate::types::AttributeGroupSummary).
@@ -66,6 +73,7 @@ pub struct AttributeGroupSummaryBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) created_by: std::option::Option<std::string::String>,
 }
 impl AttributeGroupSummaryBuilder {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
@@ -134,6 +142,16 @@ impl AttributeGroupSummaryBuilder {
         self.last_update_time = input;
         self
     }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
+        self.created_by = Some(input.into());
+        self
+    }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.created_by = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AttributeGroupSummary`](crate::types::AttributeGroupSummary).
     pub fn build(self) -> crate::types::AttributeGroupSummary {
         crate::types::AttributeGroupSummary {
@@ -143,6 +161,7 @@ impl AttributeGroupSummaryBuilder {
             description: self.description,
             creation_time: self.creation_time,
             last_update_time: self.last_update_time,
+            created_by: self.created_by,
         }
     }
 }

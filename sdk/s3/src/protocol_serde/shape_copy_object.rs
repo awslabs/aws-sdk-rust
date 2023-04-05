@@ -441,11 +441,11 @@ pub fn ser_copy_object_headers(
             builder = builder.header("x-amz-server-side-encryption-context", header_value);
         }
     }
-    if input.bucket_key_enabled {
-        let mut encoder = aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled);
-        let formatted_55 = encoder.encode();
-        if !formatted_55.is_empty() {
-            let header_value = formatted_55;
+    if let Some(inner_55) = &input.bucket_key_enabled {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_55);
+        let formatted_56 = encoder.encode();
+        if !formatted_56.is_empty() {
+            let header_value = formatted_56;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "bucket_key_enabled",
@@ -461,10 +461,10 @@ pub fn ser_copy_object_headers(
             );
         }
     }
-    if let Some(inner_56) = &input.copy_source_sse_customer_algorithm {
-        let formatted_57 = inner_56.as_str();
-        if !formatted_57.is_empty() {
-            let header_value = formatted_57;
+    if let Some(inner_57) = &input.copy_source_sse_customer_algorithm {
+        let formatted_58 = inner_57.as_str();
+        if !formatted_58.is_empty() {
+            let header_value = formatted_58;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "copy_source_sse_customer_algorithm",
@@ -480,10 +480,10 @@ pub fn ser_copy_object_headers(
             );
         }
     }
-    if let Some(inner_58) = &input.copy_source_sse_customer_key {
-        let formatted_59 = inner_58.as_str();
-        if !formatted_59.is_empty() {
-            let header_value = formatted_59;
+    if let Some(inner_59) = &input.copy_source_sse_customer_key {
+        let formatted_60 = inner_59.as_str();
+        if !formatted_60.is_empty() {
+            let header_value = formatted_60;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "copy_source_sse_customer_key",
@@ -499,10 +499,10 @@ pub fn ser_copy_object_headers(
             );
         }
     }
-    if let Some(inner_60) = &input.copy_source_sse_customer_key_md5 {
-        let formatted_61 = inner_60.as_str();
-        if !formatted_61.is_empty() {
-            let header_value = formatted_61;
+    if let Some(inner_61) = &input.copy_source_sse_customer_key_md5 {
+        let formatted_62 = inner_61.as_str();
+        if !formatted_62.is_empty() {
+            let header_value = formatted_62;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "copy_source_sse_customer_key_md5",
@@ -518,10 +518,10 @@ pub fn ser_copy_object_headers(
             );
         }
     }
-    if let Some(inner_62) = &input.request_payer {
-        let formatted_63 = inner_62.as_str();
-        if !formatted_63.is_empty() {
-            let header_value = formatted_63;
+    if let Some(inner_63) = &input.request_payer {
+        let formatted_64 = inner_63.as_str();
+        if !formatted_64.is_empty() {
+            let header_value = formatted_64;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
@@ -534,10 +534,10 @@ pub fn ser_copy_object_headers(
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
-    if let Some(inner_64) = &input.tagging {
-        let formatted_65 = inner_64.as_str();
-        if !formatted_65.is_empty() {
-            let header_value = formatted_65;
+    if let Some(inner_65) = &input.tagging {
+        let formatted_66 = inner_65.as_str();
+        if !formatted_66.is_empty() {
+            let header_value = formatted_66;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "tagging",
@@ -550,10 +550,10 @@ pub fn ser_copy_object_headers(
             builder = builder.header("x-amz-tagging", header_value);
         }
     }
-    if let Some(inner_66) = &input.object_lock_mode {
-        let formatted_67 = inner_66.as_str();
-        if !formatted_67.is_empty() {
-            let header_value = formatted_67;
+    if let Some(inner_67) = &input.object_lock_mode {
+        let formatted_68 = inner_67.as_str();
+        if !formatted_68.is_empty() {
+            let header_value = formatted_68;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_mode",
@@ -566,10 +566,10 @@ pub fn ser_copy_object_headers(
             builder = builder.header("x-amz-object-lock-mode", header_value);
         }
     }
-    if let Some(inner_68) = &input.object_lock_retain_until_date {
-        let formatted_69 = inner_68.fmt(aws_smithy_types::date_time::Format::DateTime)?;
-        if !formatted_69.is_empty() {
-            let header_value = formatted_69;
+    if let Some(inner_69) = &input.object_lock_retain_until_date {
+        let formatted_70 = inner_69.fmt(aws_smithy_types::date_time::Format::DateTime)?;
+        if !formatted_70.is_empty() {
+            let header_value = formatted_70;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_retain_until_date",
@@ -582,10 +582,10 @@ pub fn ser_copy_object_headers(
             builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
         }
     }
-    if let Some(inner_70) = &input.object_lock_legal_hold_status {
-        let formatted_71 = inner_70.as_str();
-        if !formatted_71.is_empty() {
-            let header_value = formatted_71;
+    if let Some(inner_71) = &input.object_lock_legal_hold_status {
+        let formatted_72 = inner_71.as_str();
+        if !formatted_72.is_empty() {
+            let header_value = formatted_72;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_legal_hold_status",
@@ -598,10 +598,10 @@ pub fn ser_copy_object_headers(
             builder = builder.header("x-amz-object-lock-legal-hold", header_value);
         }
     }
-    if let Some(inner_72) = &input.expected_bucket_owner {
-        let formatted_73 = inner_72.as_str();
-        if !formatted_73.is_empty() {
-            let header_value = formatted_73;
+    if let Some(inner_73) = &input.expected_bucket_owner {
+        let formatted_74 = inner_73.as_str();
+        if !formatted_74.is_empty() {
+            let header_value = formatted_74;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
@@ -614,10 +614,10 @@ pub fn ser_copy_object_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
-    if let Some(inner_74) = &input.expected_source_bucket_owner {
-        let formatted_75 = inner_74.as_str();
-        if !formatted_75.is_empty() {
-            let header_value = formatted_75;
+    if let Some(inner_75) = &input.expected_source_bucket_owner {
+        let formatted_76 = inner_75.as_str();
+        if !formatted_76.is_empty() {
+            let header_value = formatted_76;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_source_bucket_owner",
@@ -630,9 +630,9 @@ pub fn ser_copy_object_headers(
             builder = builder.header("x-amz-source-expected-bucket-owner", header_value);
         }
     }
-    if let Some(inner_76) = &input.metadata {
+    if let Some(inner_77) = &input.metadata {
         {
-            for (k, v) in inner_76 {
+            for (k, v) in inner_77 {
                 use std::str::FromStr;
                 let header_name =
                     http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))

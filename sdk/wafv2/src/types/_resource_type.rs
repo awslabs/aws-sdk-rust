@@ -15,6 +15,7 @@
 ///     ResourceType::ApiGateway => { /* ... */ },
 ///     ResourceType::ApplicationLoadBalancer => { /* ... */ },
 ///     ResourceType::Appsync => { /* ... */ },
+///     ResourceType::AppRunnerService => { /* ... */ },
 ///     ResourceType::CognitioUserPool => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Appsync,
     #[allow(missing_docs)] // documentation missing in model
+    AppRunnerService,
+    #[allow(missing_docs)] // documentation missing in model
     CognitioUserPool,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -66,6 +69,7 @@ impl std::convert::From<&str> for ResourceType {
             "API_GATEWAY" => ResourceType::ApiGateway,
             "APPLICATION_LOAD_BALANCER" => ResourceType::ApplicationLoadBalancer,
             "APPSYNC" => ResourceType::Appsync,
+            "APP_RUNNER_SERVICE" => ResourceType::AppRunnerService,
             "COGNITO_USER_POOL" => ResourceType::CognitioUserPool,
             other => {
                 ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -87,6 +91,7 @@ impl ResourceType {
             ResourceType::ApiGateway => "API_GATEWAY",
             ResourceType::ApplicationLoadBalancer => "APPLICATION_LOAD_BALANCER",
             ResourceType::Appsync => "APPSYNC",
+            ResourceType::AppRunnerService => "APP_RUNNER_SERVICE",
             ResourceType::CognitioUserPool => "COGNITO_USER_POOL",
             ResourceType::Unknown(value) => value.as_str(),
         }
@@ -97,6 +102,7 @@ impl ResourceType {
             "API_GATEWAY",
             "APPLICATION_LOAD_BALANCER",
             "APPSYNC",
+            "APP_RUNNER_SERVICE",
             "COGNITO_USER_POOL",
         ]
     }

@@ -21,5 +21,8 @@ pub fn ser_update_vocabulary_input(
     if let Some(var_6) = &input.vocabulary_file_uri {
         object.key("VocabularyFileUri").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.data_access_role_arn {
+        object.key("DataAccessRoleArn").string(var_7.as_str());
+    }
     Ok(())
 }

@@ -30,6 +30,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS CloudFormation | [aws-sdk-cloudformation](https://crates.io/crates/aws-sdk-cloudformation) ([docs](https://docs.rs/aws-sdk-cloudformation)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cloudformation)) |
 | AWS CloudHSM V2 | [aws-sdk-cloudhsmv2](https://crates.io/crates/aws-sdk-cloudhsmv2) ([docs](https://docs.rs/aws-sdk-cloudhsmv2)) |
 | AWS CloudTrail | [aws-sdk-cloudtrail](https://crates.io/crates/aws-sdk-cloudtrail) ([docs](https://docs.rs/aws-sdk-cloudtrail)) |
+| AWS CloudTrail Data Service | [aws-sdk-cloudtraildata](https://crates.io/crates/aws-sdk-cloudtraildata) ([docs](https://docs.rs/aws-sdk-cloudtraildata)) |
 | AWS CodeBuild | [aws-sdk-codebuild](https://crates.io/crates/aws-sdk-codebuild) ([docs](https://docs.rs/aws-sdk-codebuild)) |
 | AWS CodeCommit | [aws-sdk-codecommit](https://crates.io/crates/aws-sdk-codecommit) ([docs](https://docs.rs/aws-sdk-codecommit)) |
 | AWS CodeDeploy | [aws-sdk-codedeploy](https://crates.io/crates/aws-sdk-codedeploy) ([docs](https://docs.rs/aws-sdk-codedeploy)) |
@@ -143,6 +144,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Systems Manager Incident Manager | [aws-sdk-ssmincidents](https://crates.io/crates/aws-sdk-ssmincidents) ([docs](https://docs.rs/aws-sdk-ssmincidents)) |
 | AWS Systems Manager Incident Manager Contacts | [aws-sdk-ssmcontacts](https://crates.io/crates/aws-sdk-ssmcontacts) ([docs](https://docs.rs/aws-sdk-ssmcontacts)) |
 | AWS Systems Manager for SAP | [aws-sdk-ssmsap](https://crates.io/crates/aws-sdk-ssmsap) ([docs](https://docs.rs/aws-sdk-ssmsap)) |
+| AWS Telco Network Builder | [aws-sdk-tnb](https://crates.io/crates/aws-sdk-tnb) ([docs](https://docs.rs/aws-sdk-tnb)) |
 | AWS Transfer Family | [aws-sdk-transfer](https://crates.io/crates/aws-sdk-transfer) ([docs](https://docs.rs/aws-sdk-transfer)) |
 | AWS WAF | [aws-sdk-waf](https://crates.io/crates/aws-sdk-waf) ([docs](https://docs.rs/aws-sdk-waf)) |
 | AWS WAF Regional | [aws-sdk-wafregional](https://crates.io/crates/aws-sdk-wafregional) ([docs](https://docs.rs/aws-sdk-wafregional)) |
@@ -178,6 +180,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon CloudWatch Application Insights | [aws-sdk-applicationinsights](https://crates.io/crates/aws-sdk-applicationinsights) ([docs](https://docs.rs/aws-sdk-applicationinsights)) |
 | Amazon CloudWatch Events | [aws-sdk-cloudwatchevents](https://crates.io/crates/aws-sdk-cloudwatchevents) ([docs](https://docs.rs/aws-sdk-cloudwatchevents)) |
 | Amazon CloudWatch Evidently | [aws-sdk-evidently](https://crates.io/crates/aws-sdk-evidently) ([docs](https://docs.rs/aws-sdk-evidently)) |
+| Amazon CloudWatch Internet Monitor | [aws-sdk-internetmonitor](https://crates.io/crates/aws-sdk-internetmonitor) ([docs](https://docs.rs/aws-sdk-internetmonitor)) |
 | Amazon CloudWatch Logs | [aws-sdk-cloudwatchlogs](https://crates.io/crates/aws-sdk-cloudwatchlogs) ([docs](https://docs.rs/aws-sdk-cloudwatchlogs)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cloudwatchlogs)) |
 | Amazon CodeCatalyst | [aws-sdk-codecatalyst](https://crates.io/crates/aws-sdk-codecatalyst) ([docs](https://docs.rs/aws-sdk-codecatalyst)) |
 | Amazon CodeGuru Profiler | [aws-sdk-codeguruprofiler](https://crates.io/crates/aws-sdk-codeguruprofiler) ([docs](https://docs.rs/aws-sdk-codeguruprofiler)) |
@@ -229,6 +232,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Inspector | [aws-sdk-inspector](https://crates.io/crates/aws-sdk-inspector) ([docs](https://docs.rs/aws-sdk-inspector)) |
 | Amazon Interactive Video Service | [aws-sdk-ivs](https://crates.io/crates/aws-sdk-ivs) ([docs](https://docs.rs/aws-sdk-ivs)) |
 | Amazon Interactive Video Service Chat | [aws-sdk-ivschat](https://crates.io/crates/aws-sdk-ivschat) ([docs](https://docs.rs/aws-sdk-ivschat)) |
+| Amazon Interactive Video Service RealTime | [aws-sdk-ivsrealtime](https://crates.io/crates/aws-sdk-ivsrealtime) ([docs](https://docs.rs/aws-sdk-ivsrealtime)) |
 | Amazon Kendra Intelligent Ranking | [aws-sdk-kendraranking](https://crates.io/crates/aws-sdk-kendraranking) ([docs](https://docs.rs/aws-sdk-kendraranking)) |
 | Amazon Keyspaces | [aws-sdk-keyspaces](https://crates.io/crates/aws-sdk-keyspaces) ([docs](https://docs.rs/aws-sdk-keyspaces)) |
 | Amazon Kinesis | [aws-sdk-kinesis](https://crates.io/crates/aws-sdk-kinesis) ([docs](https://docs.rs/aws-sdk-kinesis)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/kinesis)) |
@@ -297,6 +301,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Transcribe Service | [aws-sdk-transcribe](https://crates.io/crates/aws-sdk-transcribe) ([docs](https://docs.rs/aws-sdk-transcribe)) |
 | Amazon Transcribe Streaming Service | [aws-sdk-transcribestreaming](https://crates.io/crates/aws-sdk-transcribestreaming) ([docs](https://docs.rs/aws-sdk-transcribestreaming)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/transcribestreaming)) |
 | Amazon Translate | [aws-sdk-translate](https://crates.io/crates/aws-sdk-translate) ([docs](https://docs.rs/aws-sdk-translate)) |
+| Amazon VPC Lattice | [aws-sdk-vpclattice](https://crates.io/crates/aws-sdk-vpclattice) ([docs](https://docs.rs/aws-sdk-vpclattice)) |
 | Amazon Voice ID | [aws-sdk-voiceid](https://crates.io/crates/aws-sdk-voiceid) ([docs](https://docs.rs/aws-sdk-voiceid)) |
 | Amazon WorkDocs | [aws-sdk-workdocs](https://crates.io/crates/aws-sdk-workdocs) ([docs](https://docs.rs/aws-sdk-workdocs)) |
 | Amazon WorkLink | [aws-sdk-worklink](https://crates.io/crates/aws-sdk-worklink) ([docs](https://docs.rs/aws-sdk-worklink)) |

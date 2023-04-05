@@ -65,5 +65,8 @@ pub fn ser_update_form_data(
         crate::protocol_serde::shape_form_cta::ser_form_cta(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.label_decorator {
+        object.key("labelDecorator").string(var_20.as_str());
+    }
     Ok(())
 }

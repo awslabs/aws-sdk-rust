@@ -6,15 +6,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PointInTimeRecovery {
     /// <p>The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::PointInTimeRecoveryStatus>,
 }
 impl PointInTimeRecovery {
     /// <p>The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::types::PointInTimeRecoveryStatus> {
         self.status.as_ref()
     }
@@ -34,15 +38,19 @@ pub struct PointInTimeRecoveryBuilder {
 }
 impl PointInTimeRecoveryBuilder {
     /// <p>The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::PointInTimeRecoveryStatus) -> Self {
         self.status = Some(input);
         self
     }
     /// <p>The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
     pub fn set_status(
         mut self,
         input: std::option::Option<crate::types::PointInTimeRecoveryStatus>,

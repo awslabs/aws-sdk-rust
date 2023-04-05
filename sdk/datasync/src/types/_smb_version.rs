@@ -13,7 +13,9 @@
 /// # let smbversion = unimplemented!();
 /// match smbversion {
 ///     SmbVersion::Automatic => { /* ... */ },
+///     SmbVersion::Smb1 => { /* ... */ },
 ///     SmbVersion::Smb2 => { /* ... */ },
+///     SmbVersion::Smb20 => { /* ... */ },
 ///     SmbVersion::Smb3 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,7 +53,11 @@ pub enum SmbVersion {
     #[allow(missing_docs)] // documentation missing in model
     Automatic,
     #[allow(missing_docs)] // documentation missing in model
+    Smb1,
+    #[allow(missing_docs)] // documentation missing in model
     Smb2,
+    #[allow(missing_docs)] // documentation missing in model
+    Smb20,
     #[allow(missing_docs)] // documentation missing in model
     Smb3,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -61,7 +67,9 @@ impl std::convert::From<&str> for SmbVersion {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATIC" => SmbVersion::Automatic,
+            "SMB1" => SmbVersion::Smb1,
             "SMB2" => SmbVersion::Smb2,
+            "SMB2_0" => SmbVersion::Smb20,
             "SMB3" => SmbVersion::Smb3,
             other => SmbVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -79,14 +87,16 @@ impl SmbVersion {
     pub fn as_str(&self) -> &str {
         match self {
             SmbVersion::Automatic => "AUTOMATIC",
+            SmbVersion::Smb1 => "SMB1",
             SmbVersion::Smb2 => "SMB2",
+            SmbVersion::Smb20 => "SMB2_0",
             SmbVersion::Smb3 => "SMB3",
             SmbVersion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTOMATIC", "SMB2", "SMB3"]
+        &["AUTOMATIC", "SMB1", "SMB2", "SMB2_0", "SMB3"]
     }
 }
 impl AsRef<str> for SmbVersion {

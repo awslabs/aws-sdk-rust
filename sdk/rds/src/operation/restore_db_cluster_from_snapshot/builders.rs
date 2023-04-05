@@ -10,7 +10,7 @@ pub use crate::operation::restore_db_cluster_from_snapshot::_restore_db_cluster_
 /// <p>This action only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the <code>CreateDBInstance</code> action to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code> action has completed and the DB cluster is available.</p>
 /// </note>
 /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
-/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreDBClusterFromSnapshotFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -163,9 +163,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The version of the database engine to use for the new DB cluster.</p>
-    /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p>The version of the database engine to use for the new DB cluster. If you don't specify an engine version, the default version for the database engine in the Amazon Web Services Region is used.</p>
     /// <p>To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
@@ -175,11 +173,11 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p> <b>Aurora PostgreSQL</b> </p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p> <b>MySQL</b> </p>
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">Amazon RDS for MySQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -187,9 +185,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The version of the database engine to use for the new DB cluster.</p>
-    /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p>The version of the database engine to use for the new DB cluster. If you don't specify an engine version, the default version for the database engine in the Amazon Web Services Region is used.</p>
     /// <p>To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
@@ -199,11 +195,11 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p> <b>Aurora PostgreSQL</b> </p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p> <b>MySQL</b> </p>
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">Amazon RDS for MySQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>

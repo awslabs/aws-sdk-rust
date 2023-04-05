@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNamespaceInput {
-    /// <p>The name of the namespace.</p>
+    /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
     #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
-    /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     #[doc(hidden)]
     pub admin_user_password: std::option::Option<std::string::String>,
-    /// <p>The username of the administrator for the first database created in the namespace.</p>
+    /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
     #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
     #[doc(hidden)]
     pub default_iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>A list of IAM roles to associate with the namespace.</p>
+    /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
     #[doc(hidden)]
     pub iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The types of logs the namespace can export. The export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
@@ -26,15 +26,15 @@ pub struct UpdateNamespaceInput {
     pub log_exports: std::option::Option<std::vec::Vec<crate::types::LogExport>>,
 }
 impl UpdateNamespaceInput {
-    /// <p>The name of the namespace.</p>
+    /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
     pub fn namespace_name(&self) -> std::option::Option<&str> {
         self.namespace_name.as_deref()
     }
-    /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     pub fn admin_user_password(&self) -> std::option::Option<&str> {
         self.admin_user_password.as_deref()
     }
-    /// <p>The username of the administrator for the first database created in the namespace.</p>
+    /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
     pub fn admin_username(&self) -> std::option::Option<&str> {
         self.admin_username.as_deref()
     }
@@ -42,11 +42,11 @@ impl UpdateNamespaceInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
     pub fn default_iam_role_arn(&self) -> std::option::Option<&str> {
         self.default_iam_role_arn.as_deref()
     }
-    /// <p>A list of IAM roles to associate with the namespace.</p>
+    /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
     pub fn iam_roles(&self) -> std::option::Option<&[std::string::String]> {
         self.iam_roles.as_deref()
     }
@@ -88,22 +88,22 @@ pub struct UpdateNamespaceInputBuilder {
     pub(crate) log_exports: std::option::Option<std::vec::Vec<crate::types::LogExport>>,
 }
 impl UpdateNamespaceInputBuilder {
-    /// <p>The name of the namespace.</p>
+    /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
     pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace_name = Some(input.into());
         self
     }
-    /// <p>The name of the namespace.</p>
+    /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
     pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
-    /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     pub fn admin_user_password(mut self, input: impl Into<std::string::String>) -> Self {
         self.admin_user_password = Some(input.into());
         self
     }
-    /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     pub fn set_admin_user_password(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -111,12 +111,12 @@ impl UpdateNamespaceInputBuilder {
         self.admin_user_password = input;
         self
     }
-    /// <p>The username of the administrator for the first database created in the namespace.</p>
+    /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
     pub fn admin_username(mut self, input: impl Into<std::string::String>) -> Self {
         self.admin_username = Some(input.into());
         self
     }
-    /// <p>The username of the administrator for the first database created in the namespace.</p>
+    /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
     pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.admin_username = input;
         self
@@ -131,12 +131,12 @@ impl UpdateNamespaceInputBuilder {
         self.kms_key_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
     pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.default_iam_role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
     pub fn set_default_iam_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -148,14 +148,14 @@ impl UpdateNamespaceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
     ///
-    /// <p>A list of IAM roles to associate with the namespace.</p>
+    /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
     pub fn iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.iam_roles.unwrap_or_default();
         v.push(input.into());
         self.iam_roles = Some(v);
         self
     }
-    /// <p>A list of IAM roles to associate with the namespace.</p>
+    /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
     pub fn set_iam_roles(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

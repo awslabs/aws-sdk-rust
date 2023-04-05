@@ -23,10 +23,10 @@ pub struct DescribeQuerySuggestionsConfigOutput {
     /// <p>The minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
     #[doc(hidden)]
     pub minimum_query_count: std::option::Option<i32>,
-    /// <p>The date-time query suggestions for an index was last updated.</p>
+    /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
     #[doc(hidden)]
     pub last_suggestions_build_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date-time query suggestions for an index was last cleared.</p>
+    /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
     #[doc(hidden)]
     pub last_clear_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -63,11 +63,11 @@ impl DescribeQuerySuggestionsConfigOutput {
     pub fn minimum_query_count(&self) -> std::option::Option<i32> {
         self.minimum_query_count
     }
-    /// <p>The date-time query suggestions for an index was last updated.</p>
+    /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
     pub fn last_suggestions_build_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_suggestions_build_time.as_ref()
     }
-    /// <p>The date-time query suggestions for an index was last cleared.</p>
+    /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
     pub fn last_clear_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_clear_time.as_ref()
@@ -179,12 +179,12 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
         self.minimum_query_count = input;
         self
     }
-    /// <p>The date-time query suggestions for an index was last updated.</p>
+    /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
     pub fn last_suggestions_build_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_suggestions_build_time = Some(input);
         self
     }
-    /// <p>The date-time query suggestions for an index was last updated.</p>
+    /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
     pub fn set_last_suggestions_build_time(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -192,13 +192,13 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
         self.last_suggestions_build_time = input;
         self
     }
-    /// <p>The date-time query suggestions for an index was last cleared.</p>
+    /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
     pub fn last_clear_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_clear_time = Some(input);
         self
     }
-    /// <p>The date-time query suggestions for an index was last cleared.</p>
+    /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
     pub fn set_last_clear_time(
         mut self,

@@ -6,8 +6,10 @@ pub fn ser_describe_trusted_advisor_check_summaries_input(
     if let Some(var_1) = &input.check_ids {
         let mut array_2 = object.key("checkIds").start_array();
         for item_3 in var_1 {
-            {
-                array_2.value().string(item_3.as_str());
+            if let Some(var_4) = item_3 {
+                array_2.value().string(var_4.as_str());
+            } else {
+                array_2.value().null();
             }
         }
         array_2.finish();

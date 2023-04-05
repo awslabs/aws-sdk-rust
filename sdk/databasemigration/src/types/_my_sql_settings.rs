@@ -8,7 +8,7 @@ pub struct MySqlSettings {
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
     #[doc(hidden)]
     pub after_connect_script: std::option::Option<std::string::String>,
-    /// <p>Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction backups, set this attribute to <code>false</code>.</p>
+    /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance. </p>
     #[doc(hidden)]
     pub clean_source_metadata_on_mismatch: std::option::Option<bool>,
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
@@ -37,7 +37,9 @@ pub struct MySqlSettings {
     /// <p>Endpoint TCP port.</p>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>The host name of the endpoint database. </p>
+    /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
+    /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
     /// <p>Specifies the time zone for the source MySQL database.</p>
@@ -63,7 +65,7 @@ impl MySqlSettings {
     pub fn after_connect_script(&self) -> std::option::Option<&str> {
         self.after_connect_script.as_deref()
     }
-    /// <p>Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction backups, set this attribute to <code>false</code>.</p>
+    /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance. </p>
     pub fn clean_source_metadata_on_mismatch(&self) -> std::option::Option<bool> {
         self.clean_source_metadata_on_mismatch
     }
@@ -100,7 +102,9 @@ impl MySqlSettings {
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>The host name of the endpoint database. </p>
+    /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
+    /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
@@ -193,12 +197,12 @@ impl MySqlSettingsBuilder {
         self.after_connect_script = input;
         self
     }
-    /// <p>Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction backups, set this attribute to <code>false</code>.</p>
+    /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance. </p>
     pub fn clean_source_metadata_on_mismatch(mut self, input: bool) -> Self {
         self.clean_source_metadata_on_mismatch = Some(input);
         self
     }
-    /// <p>Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction backups, set this attribute to <code>false</code>.</p>
+    /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance. </p>
     pub fn set_clean_source_metadata_on_mismatch(
         mut self,
         input: std::option::Option<bool>,
@@ -289,12 +293,16 @@ impl MySqlSettingsBuilder {
         self.port = input;
         self
     }
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>The host name of the endpoint database. </p>
+    /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
+    /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.server_name = Some(input.into());
         self
     }
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>The host name of the endpoint database. </p>
+    /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
+    /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.server_name = input;
         self

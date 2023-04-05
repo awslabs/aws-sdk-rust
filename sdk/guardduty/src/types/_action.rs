@@ -22,6 +22,9 @@ pub struct Action {
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
     #[doc(hidden)]
     pub kubernetes_api_call_action: std::option::Option<crate::types::KubernetesApiCallAction>,
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    #[doc(hidden)]
+    pub rds_login_attempt_action: std::option::Option<crate::types::RdsLoginAttemptAction>,
 }
 impl Action {
     /// <p>The GuardDuty finding activity type.</p>
@@ -52,6 +55,12 @@ impl Action {
     ) -> std::option::Option<&crate::types::KubernetesApiCallAction> {
         self.kubernetes_api_call_action.as_ref()
     }
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    pub fn rds_login_attempt_action(
+        &self,
+    ) -> std::option::Option<&crate::types::RdsLoginAttemptAction> {
+        self.rds_login_attempt_action.as_ref()
+    }
 }
 impl Action {
     /// Creates a new builder-style object to manufacture [`Action`](crate::types::Action).
@@ -72,6 +81,7 @@ pub struct ActionBuilder {
     pub(crate) port_probe_action: std::option::Option<crate::types::PortProbeAction>,
     pub(crate) kubernetes_api_call_action:
         std::option::Option<crate::types::KubernetesApiCallAction>,
+    pub(crate) rds_login_attempt_action: std::option::Option<crate::types::RdsLoginAttemptAction>,
 }
 impl ActionBuilder {
     /// <p>The GuardDuty finding activity type.</p>
@@ -155,6 +165,19 @@ impl ActionBuilder {
         self.kubernetes_api_call_action = input;
         self
     }
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    pub fn rds_login_attempt_action(mut self, input: crate::types::RdsLoginAttemptAction) -> Self {
+        self.rds_login_attempt_action = Some(input);
+        self
+    }
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    pub fn set_rds_login_attempt_action(
+        mut self,
+        input: std::option::Option<crate::types::RdsLoginAttemptAction>,
+    ) -> Self {
+        self.rds_login_attempt_action = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
@@ -164,6 +187,7 @@ impl ActionBuilder {
             network_connection_action: self.network_connection_action,
             port_probe_action: self.port_probe_action,
             kubernetes_api_call_action: self.kubernetes_api_call_action,
+            rds_login_attempt_action: self.rds_login_attempt_action,
         }
     }
 }

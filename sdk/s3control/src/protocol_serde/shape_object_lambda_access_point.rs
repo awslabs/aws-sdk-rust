@@ -32,6 +32,16 @@ pub fn de_object_lambda_access_point(
                 builder = builder.set_object_lambda_access_point_arn(var_2);
             }
             ,
+            s if s.matches("Alias") /* Alias com.amazonaws.s3control#ObjectLambdaAccessPoint$Alias */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_object_lambda_access_point_alias::de_object_lambda_access_point_alias(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_alias(var_3);
+            }
+            ,
             _ => {}
         }
     }

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`status(Option<TaskStatus>)`](crate::operation::get_run_task::GetRunTaskOutput::status): <p>The task's status.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::name): <p>The task's name.</p>
     ///   - [`cpus(Option<i32>)`](crate::operation::get_run_task::GetRunTaskOutput::cpus): <p>The task's CPU usage.</p>
-    ///   - [`memory(Option<i32>)`](crate::operation::get_run_task::GetRunTaskOutput::memory): <p>The task's memory setting.</p>
+    ///   - [`memory(Option<i32>)`](crate::operation::get_run_task::GetRunTaskOutput::memory): <p>The task's memory use in gigabytes.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_run_task::GetRunTaskOutput::creation_time): <p>When the task was created.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::get_run_task::GetRunTaskOutput::start_time): <p>The task's start time.</p>
     ///   - [`stop_time(Option<DateTime>)`](crate::operation::get_run_task::GetRunTaskOutput::stop_time): <p>The task's stop time.</p>

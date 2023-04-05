@@ -5,7 +5,7 @@ pub use crate::operation::start_read_set_activation_job::_start_read_set_activat
 
 /// Fluent builder constructing a request to `StartReadSetActivationJob`.
 ///
-/// <p>Starts a read set activation job.</p>
+/// <p>Activates an archived read set. To reduce storage charges, Amazon Omics archives unused read sets after 30 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartReadSetActivationJobFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -96,12 +96,12 @@ impl StartReadSetActivationJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::StartReadSetActivationJobSourceItem) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<

@@ -92,9 +92,26 @@ pub(crate) fn de_describe_organization_configuration(value: &[u8], mut builder: 
                             )?,
                         );
                     }
+                    "autoEnableOrganizationMembers" => {
+                        builder = builder.set_auto_enable_organization_members(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::types::AutoEnableMembers::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "dataSources" => {
                         builder = builder.set_data_sources(
                             crate::protocol_serde::shape_organization_data_source_configurations_result::de_organization_data_source_configurations_result(tokens)?
+                        );
+                    }
+                    "features" => {
+                        builder = builder.set_features(
+                            crate::protocol_serde::shape_organization_features_configurations_results::de_organization_features_configurations_results(tokens)?
                         );
                     }
                     "memberAccountLimitReached" => {
@@ -102,6 +119,15 @@ pub(crate) fn de_describe_organization_configuration(value: &[u8], mut builder: 
                             aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
+                        );
+                    }
+                    "nextToken" => {
+                        builder = builder.set_next_token(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

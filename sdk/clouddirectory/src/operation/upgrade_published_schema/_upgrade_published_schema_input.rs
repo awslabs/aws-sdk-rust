@@ -14,7 +14,7 @@ pub struct UpgradePublishedSchemaInput {
     pub minor_version: std::option::Option<std::string::String>,
     /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
     #[doc(hidden)]
-    pub dry_run: bool,
+    pub dry_run: std::option::Option<bool>,
 }
 impl UpgradePublishedSchemaInput {
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
@@ -30,7 +30,7 @@ impl UpgradePublishedSchemaInput {
         self.minor_version.as_deref()
     }
     /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -111,7 +111,7 @@ impl UpgradePublishedSchemaInputBuilder {
                 development_schema_arn: self.development_schema_arn,
                 published_schema_arn: self.published_schema_arn,
                 minor_version: self.minor_version,
-                dry_run: self.dry_run.unwrap_or_default(),
+                dry_run: self.dry_run,
             },
         )
     }

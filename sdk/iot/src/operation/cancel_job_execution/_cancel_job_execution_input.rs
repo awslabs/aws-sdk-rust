@@ -12,7 +12,7 @@ pub struct CancelJobExecutionInput {
     /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
     /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     #[doc(hidden)]
-    pub force: bool,
+    pub force: std::option::Option<bool>,
     /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
     #[doc(hidden)]
     pub expected_version: std::option::Option<i64>,
@@ -32,7 +32,7 @@ impl CancelJobExecutionInput {
     }
     /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
     /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> std::option::Option<bool> {
         self.force
     }
     /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
@@ -145,7 +145,7 @@ impl CancelJobExecutionInputBuilder {
             crate::operation::cancel_job_execution::CancelJobExecutionInput {
                 job_id: self.job_id,
                 thing_name: self.thing_name,
-                force: self.force.unwrap_or_default(),
+                force: self.force,
                 expected_version: self.expected_version,
                 status_details: self.status_details,
             },

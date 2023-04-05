@@ -192,6 +192,11 @@ pub(crate) fn de_get_scene(
                             .transpose()?,
                         );
                     }
+                    "generatedSceneMetadata" => {
+                        builder = builder.set_generated_scene_metadata(
+                            crate::protocol_serde::shape_generated_scene_metadata_map::de_generated_scene_metadata_map(tokens)?
+                        );
+                    }
                     "sceneId" => {
                         builder = builder.set_scene_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -199,6 +204,13 @@ pub(crate) fn de_get_scene(
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                        );
+                    }
+                    "sceneMetadata" => {
+                        builder = builder.set_scene_metadata(
+                            crate::protocol_serde::shape_scene_metadata_map::de_scene_metadata_map(
+                                tokens,
+                            )?,
                         );
                     }
                     "updateDateTime" => {

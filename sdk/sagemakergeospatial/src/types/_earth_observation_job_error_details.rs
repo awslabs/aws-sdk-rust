@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EarthObservationJobErrorDetails {
-    /// <p></p>
+    /// <p>The type of error in an Earth Observation job.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::EarthObservationJobErrorType>,
-    /// <p></p>
+    /// <p>A detailed message describing the error in an Earth Observation job.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EarthObservationJobErrorDetails {
-    /// <p></p>
+    /// <p>The type of error in an Earth Observation job.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::types::EarthObservationJobErrorType> {
         self.r#type.as_ref()
     }
-    /// <p></p>
+    /// <p>A detailed message describing the error in an Earth Observation job.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -36,12 +36,12 @@ pub struct EarthObservationJobErrorDetailsBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
 }
 impl EarthObservationJobErrorDetailsBuilder {
-    /// <p></p>
+    /// <p>The type of error in an Earth Observation job.</p>
     pub fn r#type(mut self, input: crate::types::EarthObservationJobErrorType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The type of error in an Earth Observation job.</p>
     pub fn set_type(
         mut self,
         input: std::option::Option<crate::types::EarthObservationJobErrorType>,
@@ -49,12 +49,12 @@ impl EarthObservationJobErrorDetailsBuilder {
         self.r#type = input;
         self
     }
-    /// <p></p>
+    /// <p>A detailed message describing the error in an Earth Observation job.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
         self.message = Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>A detailed message describing the error in an Earth Observation job.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.message = input;
         self

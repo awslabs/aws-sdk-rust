@@ -17,6 +17,8 @@ pub use crate::types::_instance_monitoring::InstanceMonitoringBuilder;
 
 pub use crate::types::_monitoring::MonitoringBuilder;
 
+pub use crate::types::_nat_gateway_address::NatGatewayAddressBuilder;
+
 pub use crate::types::_instance_state_change::InstanceStateChangeBuilder;
 
 pub use crate::types::_instance_state::InstanceStateBuilder;
@@ -33,13 +35,17 @@ pub use crate::types::_alternate_path_hint::AlternatePathHintBuilder;
 
 pub use crate::types::_explanation::ExplanationBuilder;
 
+pub use crate::types::_firewall_stateful_rule::FirewallStatefulRuleBuilder;
+
+pub use crate::types::_port_range::PortRangeBuilder;
+
+pub use crate::types::_firewall_stateless_rule::FirewallStatelessRuleBuilder;
+
 pub use crate::types::_analysis_component::AnalysisComponentBuilder;
 
 pub use crate::types::_transit_gateway_route_table_route::TransitGatewayRouteTableRouteBuilder;
 
 pub use crate::types::_analysis_security_group_rule::AnalysisSecurityGroupRuleBuilder;
-
-pub use crate::types::_port_range::PortRangeBuilder;
 
 pub use crate::types::_analysis_route_table_route::AnalysisRouteTableRouteBuilder;
 
@@ -52,6 +58,12 @@ pub use crate::types::_analysis_acl_rule::AnalysisAclRuleBuilder;
 pub use crate::types::_path_component::PathComponentBuilder;
 
 pub use crate::types::_additional_detail::AdditionalDetailBuilder;
+
+pub use crate::types::_rule_group_rule_options_pair::RuleGroupRuleOptionsPairBuilder;
+
+pub use crate::types::_rule_option::RuleOptionBuilder;
+
+pub use crate::types::_rule_group_type_pair::RuleGroupTypePairBuilder;
 
 pub use crate::types::_analysis_packet_header::AnalysisPacketHeaderBuilder;
 
@@ -461,6 +473,14 @@ pub use crate::types::_launch_template::LaunchTemplateBuilder;
 
 pub use crate::types::_ipam_scope::IpamScopeBuilder;
 
+pub use crate::types::_ipam_resource_discovery::IpamResourceDiscoveryBuilder;
+
+pub use crate::types::_ipam_operating_region::IpamOperatingRegionBuilder;
+
+pub use crate::types::_remove_ipam_operating_region::RemoveIpamOperatingRegionBuilder;
+
+pub use crate::types::_add_ipam_operating_region::AddIpamOperatingRegionBuilder;
+
 pub use crate::types::_ipam_resource_cidr::IpamResourceCidrBuilder;
 
 pub use crate::types::_ipam_resource_tag::IpamResourceTagBuilder;
@@ -470,12 +490,6 @@ pub use crate::types::_ipam_pool::IpamPoolBuilder;
 pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTagBuilder;
 
 pub use crate::types::_ipam::IpamBuilder;
-
-pub use crate::types::_ipam_operating_region::IpamOperatingRegionBuilder;
-
-pub use crate::types::_remove_ipam_operating_region::RemoveIpamOperatingRegionBuilder;
-
-pub use crate::types::_add_ipam_operating_region::AddIpamOperatingRegionBuilder;
 
 pub use crate::types::_instance_event_window::InstanceEventWindowBuilder;
 
@@ -595,6 +609,8 @@ pub use crate::types::_import_image_license_configuration_request::ImportImageLi
 
 pub use crate::types::_image_disk_container::ImageDiskContainerBuilder;
 
+pub use crate::types::_maintenance_details::MaintenanceDetailsBuilder;
+
 pub use crate::types::_vpn_connection_device_type::VpnConnectionDeviceTypeBuilder;
 
 pub use crate::types::_transit_gateway_route_table_propagation::TransitGatewayRouteTablePropagationBuilder;
@@ -695,6 +711,12 @@ pub use crate::types::_launch_template_iam_instance_profile_specification::Launc
 
 pub use crate::types::_ipam_pool_allocation::IpamPoolAllocationBuilder;
 
+pub use crate::types::_ipam_discovered_resource_cidr::IpamDiscoveredResourceCidrBuilder;
+
+pub use crate::types::_ipam_discovered_account::IpamDiscoveredAccountBuilder;
+
+pub use crate::types::_ipam_discovery_failure_reason::IpamDiscoveryFailureReasonBuilder;
+
 pub use crate::types::_ipam_address_history_record::IpamAddressHistoryRecordBuilder;
 
 pub use crate::types::_instance_type_info_from_instance_requirements::InstanceTypeInfoFromInstanceRequirementsBuilder;
@@ -756,6 +778,8 @@ pub use crate::types::_transit_gateway_association::TransitGatewayAssociationBui
 pub use crate::types::_subnet_ipv6_cidr_block_association::SubnetIpv6CidrBlockAssociationBuilder;
 
 pub use crate::types::_subnet_cidr_block_state::SubnetCidrBlockStateBuilder;
+
+pub use crate::types::_ipam_resource_discovery_association::IpamResourceDiscoveryAssociationBuilder;
 
 pub use crate::types::_instance_event_window_disassociation_request::InstanceEventWindowDisassociationRequestBuilder;
 
@@ -971,6 +995,10 @@ pub use crate::types::_network_interface_permission_state::NetworkInterfacePermi
 
 pub use crate::types::_network_insights_path::NetworkInsightsPathBuilder;
 
+pub use crate::types::_path_filter::PathFilterBuilder;
+
+pub use crate::types::_filter_port_range::FilterPortRangeBuilder;
+
 pub use crate::types::_network_insights_access_scope::NetworkInsightsAccessScopeBuilder;
 
 pub use crate::types::_network_acl::NetworkAclBuilder;
@@ -982,8 +1010,6 @@ pub use crate::types::_network_acl_association::NetworkAclAssociationBuilder;
 pub use crate::types::_nat_gateway::NatGatewayBuilder;
 
 pub use crate::types::_provisioned_bandwidth::ProvisionedBandwidthBuilder;
-
-pub use crate::types::_nat_gateway_address::NatGatewayAddressBuilder;
 
 pub use crate::types::_moving_address_status::MovingAddressStatusBuilder;
 
@@ -1270,6 +1296,10 @@ pub use crate::types::_snapshot_info::SnapshotInfoBuilder;
 pub use crate::types::_instance_specification::InstanceSpecificationBuilder;
 
 pub use crate::types::_price_schedule_specification::PriceScheduleSpecificationBuilder;
+
+pub use crate::types::_path_request_filter::PathRequestFilterBuilder;
+
+pub use crate::types::_request_filter_port_range::RequestFilterPortRangeBuilder;
 
 pub use crate::types::_access_scope_path_request::AccessScopePathRequestBuilder;
 

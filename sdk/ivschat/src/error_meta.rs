@@ -752,6 +752,7 @@ impl From<crate::operation::update_logging_configuration::UpdateLoggingConfigura
     ) -> Self {
         match err {
             crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::PendingVerification(inner) => Error::PendingVerification(inner),
             crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::ValidationException(inner) => Error::ValidationException(inner),

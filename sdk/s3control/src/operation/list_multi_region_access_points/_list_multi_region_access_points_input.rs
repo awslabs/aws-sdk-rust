@@ -11,7 +11,7 @@ pub struct ListMultiRegionAccessPointsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Not currently used. Do not use this parameter.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListMultiRegionAccessPointsInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -23,7 +23,7 @@ impl ListMultiRegionAccessPointsInput {
         self.next_token.as_deref()
     }
     /// <p>Not currently used. Do not use this parameter.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -84,7 +84,7 @@ impl ListMultiRegionAccessPointsInputBuilder {
             crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput {
                 account_id: self.account_id,
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
             },
         )
     }

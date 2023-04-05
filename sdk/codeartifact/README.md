@@ -27,6 +27,7 @@ CodeArtifact supports these operations:
   - CreateRepository: Creates a CodeArtifact repository in a domain.
   - DeleteDomain: Deletes a domain. You cannot delete a domain that contains repositories.
   - DeleteDomainPermissionsPolicy: Deletes the resource policy that is set on a domain.
+  - DeletePackage: Deletes a package and all associated package versions.
   - DeletePackageVersions: Deletes versions of a package. After a package has been deleted, it can be republished, but its assets and metadata cannot be restored because they have been permanently removed from storage.
   - DeleteRepository: Deletes a repository.
   - DeleteRepositoryPermissionsPolicy: Deletes the resource policy that is set on a repository.
@@ -54,6 +55,7 @@ CodeArtifact supports these operations:
   - ListPackageVersions: Returns a list of package versions for a specified package in a repository.
   - ListRepositories: Returns a list of repositories owned by the Amazon Web Services account that called this method.
   - ListRepositoriesInDomain: Returns a list of the repositories in a domain.
+  - PublishPackageVersion: Creates a new package version containing one or more assets.
   - PutDomainPermissionsPolicy: Attaches a resource policy to a domain.
   - PutPackageOriginConfiguration: Sets the package origin configuration for a package, which determine how new versions of the package can be added to a specific repository.
   - PutRepositoryPermissionsPolicy: Sets the resource policy on a repository that specifies permissions to access it.
@@ -72,7 +74,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-codeartifact = "0.25.0"
+aws-sdk-codeartifact = "0.25.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

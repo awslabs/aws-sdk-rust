@@ -65,12 +65,12 @@ impl UpdateBotFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
         self
     }
-    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
@@ -130,6 +130,33 @@ impl UpdateBotFluentBuilder {
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
+        self
+    }
+    /// <p>The type of the bot to be updated.</p>
+    pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
+        self.inner = self.inner.bot_type(input);
+        self
+    }
+    /// <p>The type of the bot to be updated.</p>
+    pub fn set_bot_type(mut self, input: std::option::Option<crate::types::BotType>) -> Self {
+        self.inner = self.inner.set_bot_type(input);
+        self
+    }
+    /// Appends an item to `botMembers`.
+    ///
+    /// To override the contents of this collection use [`set_bot_members`](Self::set_bot_members).
+    ///
+    /// <p>The list of bot members in the network associated with the update action.</p>
+    pub fn bot_members(mut self, input: crate::types::BotMember) -> Self {
+        self.inner = self.inner.bot_members(input);
+        self
+    }
+    /// <p>The list of bot members in the network associated with the update action.</p>
+    pub fn set_bot_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
+    ) -> Self {
+        self.inner = self.inner.set_bot_members(input);
         self
     }
 }

@@ -21,6 +21,11 @@ pub struct UpdateVocabularyInput {
     /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
     #[doc(hidden)]
     pub vocabulary_file_uri: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    #[doc(hidden)]
+    pub data_access_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateVocabularyInput {
     /// <p>The name of the custom vocabulary you want to update. Custom vocabulary names are case sensitive.</p>
@@ -45,6 +50,12 @@ impl UpdateVocabularyInput {
     pub fn vocabulary_file_uri(&self) -> std::option::Option<&str> {
         self.vocabulary_file_uri.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
 }
 impl UpdateVocabularyInput {
     /// Creates a new builder-style object to manufacture [`UpdateVocabularyInput`](crate::operation::update_vocabulary::UpdateVocabularyInput).
@@ -62,6 +73,7 @@ pub struct UpdateVocabularyInputBuilder {
     pub(crate) language_code: std::option::Option<crate::types::LanguageCode>,
     pub(crate) phrases: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) vocabulary_file_uri: std::option::Option<std::string::String>,
+    pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateVocabularyInputBuilder {
     /// <p>The name of the custom vocabulary you want to update. Custom vocabulary names are case sensitive.</p>
@@ -131,6 +143,23 @@ impl UpdateVocabularyInputBuilder {
         self.vocabulary_file_uri = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.data_access_role_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_access_role_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateVocabularyInput`](crate::operation::update_vocabulary::UpdateVocabularyInput).
     pub fn build(
         self,
@@ -143,6 +172,7 @@ impl UpdateVocabularyInputBuilder {
             language_code: self.language_code,
             phrases: self.phrases,
             vocabulary_file_uri: self.vocabulary_file_uri,
+            data_access_role_arn: self.data_access_role_arn,
         })
     }
 }

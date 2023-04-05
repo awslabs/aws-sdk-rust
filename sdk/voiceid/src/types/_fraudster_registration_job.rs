@@ -13,7 +13,7 @@ pub struct FraudsterRegistrationJob {
     /// <p>The current status of the fraudster registration job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
-    /// <p>The identifier of the domain containing the fraudster registration job.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
@@ -28,10 +28,10 @@ pub struct FraudsterRegistrationJob {
     /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS key ID in order to encrypt the file.</p>
     #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::types::OutputDataConfig>,
-    /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
+    /// <p>A timestamp of when the fraudster registration job was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A timestamp showing when the fraudster registration job ended.</p>
+    /// <p>A timestamp of when the fraudster registration job ended.</p>
     #[doc(hidden)]
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
@@ -54,7 +54,7 @@ impl FraudsterRegistrationJob {
     pub fn job_status(&self) -> std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The identifier of the domain containing the fraudster registration job.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -74,11 +74,11 @@ impl FraudsterRegistrationJob {
     pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
+    /// <p>A timestamp of when the fraudster registration job was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>A timestamp showing when the fraudster registration job ended.</p>
+    /// <p>A timestamp of when the fraudster registration job ended.</p>
     pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
@@ -167,12 +167,12 @@ impl FraudsterRegistrationJobBuilder {
         self.job_status = input;
         self
     }
-    /// <p>The identifier of the domain containing the fraudster registration job.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the domain containing the fraudster registration job.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.domain_id = input;
         self
@@ -229,12 +229,12 @@ impl FraudsterRegistrationJobBuilder {
         self.output_data_config = input;
         self
     }
-    /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
+    /// <p>A timestamp of when the fraudster registration job was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
+    /// <p>A timestamp of when the fraudster registration job was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -242,12 +242,12 @@ impl FraudsterRegistrationJobBuilder {
         self.created_at = input;
         self
     }
-    /// <p>A timestamp showing when the fraudster registration job ended.</p>
+    /// <p>A timestamp of when the fraudster registration job ended.</p>
     pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.ended_at = Some(input);
         self
     }
-    /// <p>A timestamp showing when the fraudster registration job ended.</p>
+    /// <p>A timestamp of when the fraudster registration job ended.</p>
     pub fn set_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self

@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContactInput {
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
-    /// <p>The full name of the contact or escalation plan. </p>
+    /// <p>The full name of the contact or escalation plan.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ContactType>,
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
     #[doc(hidden)]
     pub plan: std::option::Option<crate::types::Plan>,
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -23,11 +23,11 @@ pub struct CreateContactInput {
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateContactInput {
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>The full name of the contact or escalation plan. </p>
+    /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -35,11 +35,11 @@ impl CreateContactInput {
     pub fn r#type(&self) -> std::option::Option<&crate::types::ContactType> {
         self.r#type.as_ref()
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
     pub fn plan(&self) -> std::option::Option<&crate::types::Plan> {
         self.plan.as_ref()
     }
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
@@ -67,22 +67,22 @@ pub struct CreateContactInputBuilder {
     pub(crate) idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateContactInputBuilder {
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.alias = Some(input.into());
         self
     }
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.alias = input;
         self
     }
-    /// <p>The full name of the contact or escalation plan. </p>
+    /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.display_name = Some(input.into());
         self
     }
-    /// <p>The full name of the contact or escalation plan. </p>
+    /// <p>The full name of the contact or escalation plan.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.display_name = input;
         self
@@ -97,12 +97,12 @@ impl CreateContactInputBuilder {
         self.r#type = input;
         self
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
         self.plan = Some(input);
         self
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
     pub fn set_plan(mut self, input: std::option::Option<crate::types::Plan>) -> Self {
         self.plan = input;
         self
@@ -111,14 +111,14 @@ impl CreateContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = Some(v);
         self
     }
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,

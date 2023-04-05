@@ -161,7 +161,7 @@ pub type CancelInstanceRefreshErrorKind = CancelInstanceRefreshError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelInstanceRefreshError {
-    /// <p>The request failed because an active instance refresh for the specified Auto Scaling group was not found. </p>
+    /// <p>The request failed because an active instance refresh or rollback for the specified Auto Scaling group was not found.</p>
     ActiveInstanceRefreshNotFoundFault(crate::types::error::ActiveInstanceRefreshNotFoundFault),
     /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::types::error::LimitExceededFault),

@@ -5,7 +5,7 @@ pub use crate::operation::remove_tags_from_resource::_remove_tags_from_resource_
 
 /// Fluent builder constructing a request to `RemoveTagsFromResource`.
 ///
-/// <p>Removes metadata tags from an DMS resource, including replication instance, endpoint, security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type description.</p>
+/// <p>Removes metadata tags from an DMS resource, including replication instance, endpoint, subnet group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type description.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

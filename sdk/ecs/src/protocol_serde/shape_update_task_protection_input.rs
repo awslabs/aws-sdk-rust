@@ -15,15 +15,13 @@ pub fn ser_update_task_protection_input(
         }
         array_3.finish();
     }
-    {
-        object
-            .key("protectionEnabled")
-            .boolean(input.protection_enabled);
+    if let Some(var_5) = &input.protection_enabled {
+        object.key("protectionEnabled").boolean(*var_5);
     }
-    if let Some(var_5) = &input.expires_in_minutes {
+    if let Some(var_6) = &input.expires_in_minutes {
         object.key("expiresInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

@@ -37,6 +37,12 @@ pub struct CustomLineItemVersionListElement {
     /// <p>The end billing period of the custom line item version.</p>
     #[doc(hidden)]
     pub end_billing_period: std::option::Option<std::string::String>,
+    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p> The inclusive start time. </p>
+    #[doc(hidden)]
+    pub start_time: i64,
 }
 impl CustomLineItemVersionListElement {
     /// <p>The name of the custom line item.</p>
@@ -85,6 +91,14 @@ impl CustomLineItemVersionListElement {
     pub fn end_billing_period(&self) -> std::option::Option<&str> {
         self.end_billing_period.as_deref()
     }
+    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The inclusive start time. </p>
+    pub fn start_time(&self) -> i64 {
+        self.start_time
+    }
 }
 impl std::fmt::Debug for CustomLineItemVersionListElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -100,6 +114,8 @@ impl std::fmt::Debug for CustomLineItemVersionListElement {
         formatter.field("association_size", &self.association_size);
         formatter.field("start_billing_period", &self.start_billing_period);
         formatter.field("end_billing_period", &self.end_billing_period);
+        formatter.field("arn", &self.arn);
+        formatter.field("start_time", &self.start_time);
         formatter.finish()
     }
 }
@@ -125,6 +141,8 @@ pub struct CustomLineItemVersionListElementBuilder {
     pub(crate) association_size: std::option::Option<i64>,
     pub(crate) start_billing_period: std::option::Option<std::string::String>,
     pub(crate) end_billing_period: std::option::Option<std::string::String>,
+    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) start_time: std::option::Option<i64>,
 }
 impl CustomLineItemVersionListElementBuilder {
     /// <p>The name of the custom line item.</p>
@@ -252,6 +270,26 @@ impl CustomLineItemVersionListElementBuilder {
         self.end_billing_period = input;
         self
     }
+    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.arn = Some(input.into());
+        self
+    }
+    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p> The inclusive start time. </p>
+    pub fn start_time(mut self, input: i64) -> Self {
+        self.start_time = Some(input);
+        self
+    }
+    /// <p> The inclusive start time. </p>
+    pub fn set_start_time(mut self, input: std::option::Option<i64>) -> Self {
+        self.start_time = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CustomLineItemVersionListElement`](crate::types::CustomLineItemVersionListElement).
     pub fn build(self) -> crate::types::CustomLineItemVersionListElement {
         crate::types::CustomLineItemVersionListElement {
@@ -266,6 +304,8 @@ impl CustomLineItemVersionListElementBuilder {
             association_size: self.association_size.unwrap_or_default(),
             start_billing_period: self.start_billing_period,
             end_billing_period: self.end_billing_period,
+            arn: self.arn,
+            start_time: self.start_time.unwrap_or_default(),
         }
     }
 }
@@ -283,6 +323,8 @@ impl std::fmt::Debug for CustomLineItemVersionListElementBuilder {
         formatter.field("association_size", &self.association_size);
         formatter.field("start_billing_period", &self.start_billing_period);
         formatter.field("end_billing_period", &self.end_billing_period);
+        formatter.field("arn", &self.arn);
+        formatter.field("start_time", &self.start_time);
         formatter.finish()
     }
 }

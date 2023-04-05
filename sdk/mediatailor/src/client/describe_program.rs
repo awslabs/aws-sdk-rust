@@ -15,6 +15,8 @@ impl super::Client {
     ///   - [`scheduled_start_time(Option<DateTime>)`](crate::operation::describe_program::DescribeProgramOutput::scheduled_start_time): <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
     ///   - [`source_location_name(Option<String>)`](crate::operation::describe_program::DescribeProgramOutput::source_location_name): <p>The source location name.</p>
     ///   - [`vod_source_name(Option<String>)`](crate::operation::describe_program::DescribeProgramOutput::vod_source_name): <p>The name that's used to refer to a VOD source.</p>
+    ///   - [`clip_range(Option<ClipRange>)`](crate::operation::describe_program::DescribeProgramOutput::clip_range): <p>The clip range configuration settings.</p>
+    ///   - [`duration_millis(Option<i64>)`](crate::operation::describe_program::DescribeProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
     /// - On failure, responds with [`SdkError<DescribeProgramError>`](crate::operation::describe_program::DescribeProgramError)
     pub fn describe_program(
         &self,

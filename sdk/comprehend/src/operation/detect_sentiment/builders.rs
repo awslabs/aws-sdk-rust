@@ -65,16 +65,12 @@ impl DetectSentimentFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p>
     pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
         self
     }
-    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
-    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
-    /// </note>
+    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self

@@ -145,6 +145,8 @@ pub use crate::types::_input_config_output::InputConfigOutput;
 
 pub use crate::types::_raster_data_collection_query_output::RasterDataCollectionQueryOutput;
 
+pub use crate::types::_time_range_filter_output::TimeRangeFilterOutput;
+
 pub use crate::types::_eoj_data_source_config_input::EojDataSourceConfigInput;
 
 pub use crate::types::_s3_data_input::S3DataInput;
@@ -296,6 +298,8 @@ mod _temporal_statistics;
 mod _temporal_statistics_config_input;
 
 mod _time_range_filter_input;
+
+mod _time_range_filter_output;
 
 mod _unit;
 

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPhoneNumberOrderInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number order .</p>
     #[doc(hidden)]
     pub phone_number_order_id: std::option::Option<std::string::String>,
 }
 impl GetPhoneNumberOrderInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number order .</p>
     pub fn phone_number_order_id(&self) -> std::option::Option<&str> {
         self.phone_number_order_id.as_deref()
     }
@@ -29,12 +29,12 @@ pub struct GetPhoneNumberOrderInputBuilder {
     pub(crate) phone_number_order_id: std::option::Option<std::string::String>,
 }
 impl GetPhoneNumberOrderInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number order .</p>
     pub fn phone_number_order_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.phone_number_order_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number order .</p>
     pub fn set_phone_number_order_id(
         mut self,
         input: std::option::Option<std::string::String>,

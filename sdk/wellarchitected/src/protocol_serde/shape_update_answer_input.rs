@@ -19,23 +19,23 @@ pub fn ser_update_answer_input(
         }
         object_2.finish();
     }
-    if input.is_applicable {
-        object.key("IsApplicable").boolean(input.is_applicable);
+    if let Some(var_6) = &input.is_applicable {
+        object.key("IsApplicable").boolean(*var_6);
     }
-    if let Some(var_6) = &input.notes {
-        object.key("Notes").string(var_6.as_str());
+    if let Some(var_7) = &input.notes {
+        object.key("Notes").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.reason {
-        object.key("Reason").string(var_7.as_str());
+    if let Some(var_8) = &input.reason {
+        object.key("Reason").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.selected_choices {
-        let mut array_9 = object.key("SelectedChoices").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.selected_choices {
+        let mut array_10 = object.key("SelectedChoices").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
     Ok(())
 }

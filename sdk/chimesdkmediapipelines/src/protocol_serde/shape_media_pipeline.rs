@@ -38,6 +38,11 @@ where
                                     crate::protocol_serde::shape_media_concatenation_pipeline::de_media_concatenation_pipeline(tokens)?
                                 );
                             }
+                            "MediaInsightsPipeline" => {
+                                builder = builder.set_media_insights_pipeline(
+                                    crate::protocol_serde::shape_media_insights_pipeline::de_media_insights_pipeline(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

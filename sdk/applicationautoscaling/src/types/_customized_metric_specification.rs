@@ -7,12 +7,11 @@
 /// <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li>
 /// <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases. </p> </li>
 /// </ul>
-/// <p>For an example of how creating new metrics can be useful, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-using-sqs-queue.html">Scaling based on Amazon SQS</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. This topic mentions Auto Scaling groups, but the same scenario for Amazon SQS can apply to the target tracking scaling policies that you create for a Spot Fleet by using the Application Auto Scaling API.</p>
 /// <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomizedMetricSpecification {
-    /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
+    /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the metric.</p>
@@ -28,9 +27,12 @@ pub struct CustomizedMetricSpecification {
     /// <p>The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
+    /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
+    #[doc(hidden)]
+    pub metrics: std::option::Option<std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
 }
 impl CustomizedMetricSpecification {
-    /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
+    /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -51,6 +53,10 @@ impl CustomizedMetricSpecification {
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
     }
+    /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
+    pub fn metrics(&self) -> std::option::Option<&[crate::types::TargetTrackingMetricDataQuery]> {
+        self.metrics.as_deref()
+    }
 }
 impl CustomizedMetricSpecification {
     /// Creates a new builder-style object to manufacture [`CustomizedMetricSpecification`](crate::types::CustomizedMetricSpecification).
@@ -68,14 +74,16 @@ pub struct CustomizedMetricSpecificationBuilder {
     pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::types::MetricDimension>>,
     pub(crate) statistic: std::option::Option<crate::types::MetricStatistic>,
     pub(crate) unit: std::option::Option<std::string::String>,
+    pub(crate) metrics:
+        std::option::Option<std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
 }
 impl CustomizedMetricSpecificationBuilder {
-    /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
+    /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.metric_name = Some(input.into());
         self
     }
-    /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
+    /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.metric_name = input;
         self
@@ -134,6 +142,25 @@ impl CustomizedMetricSpecificationBuilder {
         self.unit = input;
         self
     }
+    /// Appends an item to `metrics`.
+    ///
+    /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+    ///
+    /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
+    pub fn metrics(mut self, input: crate::types::TargetTrackingMetricDataQuery) -> Self {
+        let mut v = self.metrics.unwrap_or_default();
+        v.push(input);
+        self.metrics = Some(v);
+        self
+    }
+    /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
+    pub fn set_metrics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
+    ) -> Self {
+        self.metrics = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CustomizedMetricSpecification`](crate::types::CustomizedMetricSpecification).
     pub fn build(self) -> crate::types::CustomizedMetricSpecification {
         crate::types::CustomizedMetricSpecification {
@@ -142,6 +169,7 @@ impl CustomizedMetricSpecificationBuilder {
             dimensions: self.dimensions,
             statistic: self.statistic,
             unit: self.unit,
+            metrics: self.metrics,
         }
     }
 }

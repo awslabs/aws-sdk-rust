@@ -5,6 +5,7 @@ pub use crate::operation::delete_sip_media_application::_delete_sip_media_applic
 
 /// Fluent builder constructing a request to `DeleteSipMediaApplication`.
 ///
+/// <p>Deletes a SIP media application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSipMediaApplicationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl DeleteSipMediaApplicationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn set_sip_media_application_id(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -5,7 +5,7 @@ pub use crate::operation::create_standby_workspaces::_create_standby_workspaces_
 
 /// Fluent builder constructing a request to `CreateStandbyWorkspaces`.
 ///
-/// <p>Creates a Standby WorkSpace in a secondary region.</p>
+/// <p>Creates a standby WorkSpace in a secondary Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -84,12 +84,12 @@ impl CreateStandbyWorkspacesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_standby_workspaces`](Self::set_standby_workspaces).
     ///
-    /// <p>Information about the Standby WorkSpace to be created.</p>
+    /// <p>Information about the standby WorkSpace to be created.</p>
     pub fn standby_workspaces(mut self, input: crate::types::StandbyWorkspace) -> Self {
         self.inner = self.inner.standby_workspaces(input);
         self
     }
-    /// <p>Information about the Standby WorkSpace to be created.</p>
+    /// <p>Information about the standby WorkSpace to be created.</p>
     pub fn set_standby_workspaces(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::StandbyWorkspace>>,

@@ -15,57 +15,53 @@ pub fn ser_start_task_input(
         }
         array_3.finish();
     }
-    if input.enable_ecs_managed_tags {
-        object
-            .key("enableECSManagedTags")
-            .boolean(input.enable_ecs_managed_tags);
+    if let Some(var_5) = &input.enable_ecs_managed_tags {
+        object.key("enableECSManagedTags").boolean(*var_5);
     }
-    if input.enable_execute_command {
-        object
-            .key("enableExecuteCommand")
-            .boolean(input.enable_execute_command);
+    if let Some(var_6) = &input.enable_execute_command {
+        object.key("enableExecuteCommand").boolean(*var_6);
     }
-    if let Some(var_5) = &input.group {
-        object.key("group").string(var_5.as_str());
+    if let Some(var_7) = &input.group {
+        object.key("group").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.network_configuration {
+    if let Some(var_8) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("networkConfiguration").start_object();
+        let mut object_9 = object.key("networkConfiguration").start_object();
         crate::protocol_serde::shape_network_configuration::ser_network_configuration(
-            &mut object_7,
-            var_6,
+            &mut object_9,
+            var_8,
         )?;
-        object_7.finish();
-    }
-    if let Some(var_8) = &input.overrides {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("overrides").start_object();
-        crate::protocol_serde::shape_task_override::ser_task_override(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.propagate_tags {
-        object.key("propagateTags").string(var_10.as_str());
+    if let Some(var_10) = &input.overrides {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("overrides").start_object();
+        crate::protocol_serde::shape_task_override::ser_task_override(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.reference_id {
-        object.key("referenceId").string(var_11.as_str());
+    if let Some(var_12) = &input.propagate_tags {
+        object.key("propagateTags").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.started_by {
-        object.key("startedBy").string(var_12.as_str());
+    if let Some(var_13) = &input.reference_id {
+        object.key("referenceId").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.tags {
-        let mut array_14 = object.key("tags").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.started_by {
+        object.key("startedBy").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.tags {
+        let mut array_16 = object.key("tags").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_17) = &input.task_definition {
-        object.key("taskDefinition").string(var_17.as_str());
+    if let Some(var_19) = &input.task_definition {
+        object.key("taskDefinition").string(var_19.as_str());
     }
     Ok(())
 }

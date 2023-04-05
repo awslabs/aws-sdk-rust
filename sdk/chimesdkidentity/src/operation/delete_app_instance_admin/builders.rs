@@ -5,7 +5,7 @@ pub use crate::operation::delete_app_instance_admin::_delete_app_instance_admin_
 
 /// Fluent builder constructing a request to `DeleteAppInstanceAdmin`.
 ///
-/// <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the user.</p>
+/// <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>. This action does not delete the user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAppInstanceAdminFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

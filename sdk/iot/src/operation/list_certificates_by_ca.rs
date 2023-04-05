@@ -86,11 +86,13 @@ impl ListCertificatesByCaInput {
                         query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.ascending_order {
-                    query.push_kv(
-                        "isAscendingOrder",
-                        aws_smithy_types::primitive::Encoder::from(_input.ascending_order).encode(),
-                    );
+                if let Some(inner_4) = &_input.ascending_order {
+                    if *inner_4 {
+                        query.push_kv(
+                            "isAscendingOrder",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

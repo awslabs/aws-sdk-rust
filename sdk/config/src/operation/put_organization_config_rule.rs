@@ -178,7 +178,7 @@ pub enum PutOrganizationConfigRuleError {
     /// </ul> </li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>You have reached the limit of the number of organization Config rules you can create. For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     MaxNumberOfOrganizationConfigRulesExceededException(
@@ -210,7 +210,7 @@ pub enum PutOrganizationConfigRuleError {
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// <p>The requested action is invalid.</p>
+    /// <p>The requested action is not valid.</p>
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::types::error::ValidationException),

@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRelatedItemsInput {
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>Details about the item you are adding or deleting.</p>
+    /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     #[doc(hidden)]
     pub related_items_update: std::option::Option<crate::types::RelatedItemsUpdate>,
 }
 impl UpdateRelatedItemsInput {
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
-    /// <p>Details about the item you are adding or deleting.</p>
+    /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     pub fn related_items_update(&self) -> std::option::Option<&crate::types::RelatedItemsUpdate> {
         self.related_items_update.as_ref()
     }
@@ -44,22 +44,22 @@ pub struct UpdateRelatedItemsInputBuilder {
     pub(crate) related_items_update: std::option::Option<crate::types::RelatedItemsUpdate>,
 }
 impl UpdateRelatedItemsInputBuilder {
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
     pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.incident_record_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
     pub fn set_incident_record_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -67,12 +67,12 @@ impl UpdateRelatedItemsInputBuilder {
         self.incident_record_arn = input;
         self
     }
-    /// <p>Details about the item you are adding or deleting.</p>
+    /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     pub fn related_items_update(mut self, input: crate::types::RelatedItemsUpdate) -> Self {
         self.related_items_update = Some(input);
         self
     }
-    /// <p>Details about the item you are adding or deleting.</p>
+    /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     pub fn set_related_items_update(
         mut self,
         input: std::option::Option<crate::types::RelatedItemsUpdate>,

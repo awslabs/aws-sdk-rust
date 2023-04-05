@@ -6,22 +6,22 @@
 pub struct EngineConfiguration {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
     #[doc(hidden)]
-    pub coordinator_dpu_size: i32,
+    pub coordinator_dpu_size: std::option::Option<i32>,
     /// <p>The maximum number of DPUs that can run concurrently.</p>
     #[doc(hidden)]
     pub max_concurrent_dpus: i32,
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
     #[doc(hidden)]
-    pub default_executor_dpu_size: i32,
+    pub default_executor_dpu_size: std::option::Option<i32>,
     /// <p>Contains additional notebook engine <code>MAP
-    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of the Amazon S3 URI.</p>
+    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     #[doc(hidden)]
     pub additional_configs:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl EngineConfiguration {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
-    pub fn coordinator_dpu_size(&self) -> i32 {
+    pub fn coordinator_dpu_size(&self) -> std::option::Option<i32> {
         self.coordinator_dpu_size
     }
     /// <p>The maximum number of DPUs that can run concurrently.</p>
@@ -29,11 +29,11 @@ impl EngineConfiguration {
         self.max_concurrent_dpus
     }
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
-    pub fn default_executor_dpu_size(&self) -> i32 {
+    pub fn default_executor_dpu_size(&self) -> std::option::Option<i32> {
         self.default_executor_dpu_size
     }
     /// <p>Contains additional notebook engine <code>MAP
-    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of the Amazon S3 URI.</p>
+    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     pub fn additional_configs(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -94,7 +94,7 @@ impl EngineConfigurationBuilder {
     /// To override the contents of this collection use [`set_additional_configs`](Self::set_additional_configs).
     ///
     /// <p>Contains additional notebook engine <code>MAP
-    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of the Amazon S3 URI.</p>
+    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     pub fn additional_configs(
         mut self,
         k: impl Into<std::string::String>,
@@ -106,7 +106,7 @@ impl EngineConfigurationBuilder {
         self
     }
     /// <p>Contains additional notebook engine <code>MAP
-    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of the Amazon S3 URI.</p>
+    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     pub fn set_additional_configs(
         mut self,
         input: std::option::Option<
@@ -119,9 +119,9 @@ impl EngineConfigurationBuilder {
     /// Consumes the builder and constructs a [`EngineConfiguration`](crate::types::EngineConfiguration).
     pub fn build(self) -> crate::types::EngineConfiguration {
         crate::types::EngineConfiguration {
-            coordinator_dpu_size: self.coordinator_dpu_size.unwrap_or_default(),
+            coordinator_dpu_size: self.coordinator_dpu_size,
             max_concurrent_dpus: self.max_concurrent_dpus.unwrap_or_default(),
-            default_executor_dpu_size: self.default_executor_dpu_size.unwrap_or_default(),
+            default_executor_dpu_size: self.default_executor_dpu_size,
             additional_configs: self.additional_configs,
         }
     }

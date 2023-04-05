@@ -98,12 +98,12 @@ impl PutRuleFluentBuilder {
         self.inner = self.inner.set_schedule_expression(input);
         self
     }
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.event_pattern(input.into());
         self
     }
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_event_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_event_pattern(input);
         self

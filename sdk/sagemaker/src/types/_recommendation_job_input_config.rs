@@ -59,6 +59,9 @@ pub struct RecommendationJobInputConfig {
     /// <p>Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.</p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::types::RecommendationJobVpcConfig>,
+    /// <p>The name of the created model.</p>
+    #[doc(hidden)]
+    pub model_name: std::option::Option<std::string::String>,
 }
 impl RecommendationJobInputConfig {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
@@ -130,6 +133,10 @@ impl RecommendationJobInputConfig {
     pub fn vpc_config(&self) -> std::option::Option<&crate::types::RecommendationJobVpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>The name of the created model.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
 }
 impl RecommendationJobInputConfig {
     /// Creates a new builder-style object to manufacture [`RecommendationJobInputConfig`](crate::types::RecommendationJobInputConfig).
@@ -153,6 +160,7 @@ pub struct RecommendationJobInputConfigBuilder {
         std::option::Option<crate::types::RecommendationJobContainerConfig>,
     pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::types::EndpointInfo>>,
     pub(crate) vpc_config: std::option::Option<crate::types::RecommendationJobVpcConfig>,
+    pub(crate) model_name: std::option::Option<std::string::String>,
 }
 impl RecommendationJobInputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
@@ -341,6 +349,16 @@ impl RecommendationJobInputConfigBuilder {
         self.vpc_config = input;
         self
     }
+    /// <p>The name of the created model.</p>
+    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.model_name = Some(input.into());
+        self
+    }
+    /// <p>The name of the created model.</p>
+    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecommendationJobInputConfig`](crate::types::RecommendationJobInputConfig).
     pub fn build(self) -> crate::types::RecommendationJobInputConfig {
         crate::types::RecommendationJobInputConfig {
@@ -353,6 +371,7 @@ impl RecommendationJobInputConfigBuilder {
             container_config: self.container_config,
             endpoints: self.endpoints,
             vpc_config: self.vpc_config,
+            model_name: self.model_name,
         }
     }
 }

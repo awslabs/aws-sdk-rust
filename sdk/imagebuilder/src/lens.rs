@@ -89,6 +89,26 @@ pub(crate) fn reflens_list_image_recipes_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_image_scan_finding_aggregations_output_next_token(
+    input: &crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_image_scan_findings_output_next_token(
+    input: &crate::operation::list_image_scan_findings::ListImageScanFindingsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_images_output_next_token(
     input: &crate::operation::list_images::ListImagesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -101,6 +121,26 @@ pub(crate) fn reflens_list_images_output_next_token(
 
 pub(crate) fn reflens_list_infrastructure_configurations_output_next_token(
     input: &crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_workflow_executions_output_next_token(
+    input: &crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_workflow_step_executions_output_next_token(
+    input: &crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -199,6 +239,26 @@ pub(crate) fn lens_list_image_recipes_output_image_recipe_summary_list(
     Some(input)
 }
 
+pub(crate) fn lens_list_image_scan_finding_aggregations_output_responses(
+    input: crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ImageScanFindingAggregation>> {
+    let input = match input.responses {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_image_scan_findings_output_findings(
+    input: crate::operation::list_image_scan_findings::ListImageScanFindingsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ImageScanFinding>> {
+    let input = match input.findings {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_list_images_output_image_version_list(
     input: crate::operation::list_images::ListImagesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::ImageVersion>> {
@@ -213,6 +273,26 @@ pub(crate) fn lens_list_infrastructure_configurations_output_infrastructure_conf
     input: crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::InfrastructureConfigurationSummary>> {
     let input = match input.infrastructure_configuration_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_workflow_executions_output_workflow_executions(
+    input: crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionMetadata>> {
+    let input = match input.workflow_executions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_workflow_step_executions_output_steps(
+    input: crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::WorkflowStepMetadata>> {
+    let input = match input.steps {
         None => return None,
         Some(t) => t,
     };

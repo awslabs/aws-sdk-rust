@@ -11,6 +11,8 @@ pub struct Meeting {
     #[doc(hidden)]
     pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     #[doc(hidden)]
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
@@ -20,7 +22,7 @@ pub struct Meeting {
     /// <p>The media placement for the meeting.</p>
     #[doc(hidden)]
     pub media_placement: std::option::Option<crate::types::MediaPlacement>,
-    /// <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+    /// <p>The features available to a meeting, such as echo reduction.</p>
     #[doc(hidden)]
     pub meeting_features: std::option::Option<crate::types::MeetingFeaturesConfiguration>,
     /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
@@ -43,6 +45,8 @@ impl Meeting {
         self.meeting_host_id.as_deref()
     }
     /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn external_meeting_id(&self) -> std::option::Option<&str> {
         self.external_meeting_id.as_deref()
     }
@@ -55,7 +59,7 @@ impl Meeting {
     pub fn media_placement(&self) -> std::option::Option<&crate::types::MediaPlacement> {
         self.media_placement.as_ref()
     }
-    /// <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+    /// <p>The features available to a meeting, such as echo reduction.</p>
     pub fn meeting_features(
         &self,
     ) -> std::option::Option<&crate::types::MeetingFeaturesConfiguration> {
@@ -132,11 +136,15 @@ impl MeetingBuilder {
         self
     }
     /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.external_meeting_id = Some(input.into());
         self
     }
     /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn set_external_meeting_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -169,12 +177,12 @@ impl MeetingBuilder {
         self.media_placement = input;
         self
     }
-    /// <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+    /// <p>The features available to a meeting, such as echo reduction.</p>
     pub fn meeting_features(mut self, input: crate::types::MeetingFeaturesConfiguration) -> Self {
         self.meeting_features = Some(input);
         self
     }
-    /// <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+    /// <p>The features available to a meeting, such as echo reduction.</p>
     pub fn set_meeting_features(
         mut self,
         input: std::option::Option<crate::types::MeetingFeaturesConfiguration>,

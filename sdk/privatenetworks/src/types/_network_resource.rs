@@ -49,6 +49,9 @@ pub struct NetworkResource {
     /// <p>The creation time of the network resource.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Information about a request to return the network resource.</p>
+    #[doc(hidden)]
+    pub return_information: std::option::Option<crate::types::ReturnInformation>,
 }
 impl NetworkResource {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
@@ -111,6 +114,10 @@ impl NetworkResource {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>Information about a request to return the network resource.</p>
+    pub fn return_information(&self) -> std::option::Option<&crate::types::ReturnInformation> {
+        self.return_information.as_ref()
+    }
 }
 impl NetworkResource {
     /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::types::NetworkResource).
@@ -138,6 +145,7 @@ pub struct NetworkResourceBuilder {
     pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
     pub(crate) position: std::option::Option<crate::types::Position>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) return_information: std::option::Option<crate::types::ReturnInformation>,
 }
 impl NetworkResourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
@@ -311,6 +319,19 @@ impl NetworkResourceBuilder {
         self.created_at = input;
         self
     }
+    /// <p>Information about a request to return the network resource.</p>
+    pub fn return_information(mut self, input: crate::types::ReturnInformation) -> Self {
+        self.return_information = Some(input);
+        self
+    }
+    /// <p>Information about a request to return the network resource.</p>
+    pub fn set_return_information(
+        mut self,
+        input: std::option::Option<crate::types::ReturnInformation>,
+    ) -> Self {
+        self.return_information = input;
+        self
+    }
     /// Consumes the builder and constructs a [`NetworkResource`](crate::types::NetworkResource).
     pub fn build(self) -> crate::types::NetworkResource {
         crate::types::NetworkResource {
@@ -329,6 +350,7 @@ impl NetworkResourceBuilder {
             attributes: self.attributes,
             position: self.position,
             created_at: self.created_at,
+            return_information: self.return_information,
         }
     }
 }

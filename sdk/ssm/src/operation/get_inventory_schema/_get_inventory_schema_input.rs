@@ -14,7 +14,7 @@ pub struct GetInventorySchemaInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
     #[doc(hidden)]
-    pub aggregator: bool,
+    pub aggregator: std::option::Option<bool>,
     /// <p>Returns the sub-type schema for a specified inventory type.</p>
     #[doc(hidden)]
     pub sub_type: std::option::Option<bool>,
@@ -33,7 +33,7 @@ impl GetInventorySchemaInput {
         self.max_results
     }
     /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
-    pub fn aggregator(&self) -> bool {
+    pub fn aggregator(&self) -> std::option::Option<bool> {
         self.aggregator
     }
     /// <p>Returns the sub-type schema for a specified inventory type.</p>
@@ -122,7 +122,7 @@ impl GetInventorySchemaInputBuilder {
                 type_name: self.type_name,
                 next_token: self.next_token,
                 max_results: self.max_results,
-                aggregator: self.aggregator.unwrap_or_default(),
+                aggregator: self.aggregator,
                 sub_type: self.sub_type,
             },
         )

@@ -78,6 +78,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "metadata" => {
+                                builder = builder.set_metadata(
+                                    crate::protocol_serde::shape_eks_metadata::de_eks_metadata(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

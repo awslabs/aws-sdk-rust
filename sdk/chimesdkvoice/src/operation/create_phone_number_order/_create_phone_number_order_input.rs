@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePhoneNumberOrderInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     #[doc(hidden)]
     pub product_type: std::option::Option<crate::types::PhoneNumberProductType>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     #[doc(hidden)]
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreatePhoneNumberOrderInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn product_type(&self) -> std::option::Option<&crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
         self.e164_phone_numbers.as_deref()
     }
@@ -37,12 +37,12 @@ pub struct CreatePhoneNumberOrderInputBuilder {
     pub(crate) e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreatePhoneNumberOrderInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.product_type = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn set_product_type(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberProductType>,
@@ -54,13 +54,14 @@ impl CreatePhoneNumberOrderInputBuilder {
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
     ///
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
         v.push(input.into());
         self.e164_phone_numbers = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn set_e164_phone_numbers(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

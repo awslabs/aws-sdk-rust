@@ -5,7 +5,7 @@ pub use crate::operation::get_component::_get_component_input::GetComponentInput
 
 /// Fluent builder constructing a request to `GetComponent`.
 ///
-/// <p> Gets a component object.</p>
+/// <p>Gets a component object.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetComponentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,12 +65,12 @@ impl GetComponentFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
     pub fn component_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.component_build_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
     pub fn set_component_build_version_arn(
         mut self,
         input: std::option::Option<std::string::String>,

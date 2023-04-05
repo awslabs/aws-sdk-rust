@@ -5,7 +5,7 @@ pub use crate::operation::put_account_setting_default::_put_account_setting_defa
 
 /// Fluent builder constructing a request to `PutAccountSettingDefault`.
 ///
-/// <p>Modifies an account setting for all IAM users on an account for whom no individual account setting has been specified. Account settings are set on a per-Region basis.</p>
+/// <p>Modifies an account setting for all users on an account for whom no individual account setting has been specified. Account settings are set on a per-Region basis.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAccountSettingDefaultFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

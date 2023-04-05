@@ -7,6 +7,9 @@ pub struct H264Settings {
     /// Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
     #[doc(hidden)]
     pub adaptive_quantization: std::option::Option<crate::types::H264AdaptiveQuantization>,
+    /// The Bandwidth reduction filter increases the video quality of your output relative to its bitrate. Use to lower the bitrate of your constant quality QVBR output, with little or no perceptual decrease in quality. Or, use to increase the video quality of outputs with other rate control modes relative to the bitrate that you specify. Bandwidth reduction increases further when your input is low quality or noisy. Outputs that use this feature incur pro-tier pricing. When you include Bandwidth reduction filter, you cannot include the Noise reducer preprocessor.
+    #[doc(hidden)]
+    pub bandwidth_reduction_filter: std::option::Option<crate::types::BandwidthReductionFilter>,
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
     #[doc(hidden)]
     pub bitrate: i32,
@@ -138,6 +141,12 @@ impl H264Settings {
         &self,
     ) -> std::option::Option<&crate::types::H264AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
+    }
+    /// The Bandwidth reduction filter increases the video quality of your output relative to its bitrate. Use to lower the bitrate of your constant quality QVBR output, with little or no perceptual decrease in quality. Or, use to increase the video quality of outputs with other rate control modes relative to the bitrate that you specify. Bandwidth reduction increases further when your input is low quality or noisy. Outputs that use this feature incur pro-tier pricing. When you include Bandwidth reduction filter, you cannot include the Noise reducer preprocessor.
+    pub fn bandwidth_reduction_filter(
+        &self,
+    ) -> std::option::Option<&crate::types::BandwidthReductionFilter> {
+        self.bandwidth_reduction_filter.as_ref()
     }
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
     pub fn bitrate(&self) -> i32 {
@@ -326,6 +335,8 @@ impl H264Settings {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct H264SettingsBuilder {
     pub(crate) adaptive_quantization: std::option::Option<crate::types::H264AdaptiveQuantization>,
+    pub(crate) bandwidth_reduction_filter:
+        std::option::Option<crate::types::BandwidthReductionFilter>,
     pub(crate) bitrate: std::option::Option<i32>,
     pub(crate) codec_level: std::option::Option<crate::types::H264CodecLevel>,
     pub(crate) codec_profile: std::option::Option<crate::types::H264CodecProfile>,
@@ -385,6 +396,22 @@ impl H264SettingsBuilder {
         input: std::option::Option<crate::types::H264AdaptiveQuantization>,
     ) -> Self {
         self.adaptive_quantization = input;
+        self
+    }
+    /// The Bandwidth reduction filter increases the video quality of your output relative to its bitrate. Use to lower the bitrate of your constant quality QVBR output, with little or no perceptual decrease in quality. Or, use to increase the video quality of outputs with other rate control modes relative to the bitrate that you specify. Bandwidth reduction increases further when your input is low quality or noisy. Outputs that use this feature incur pro-tier pricing. When you include Bandwidth reduction filter, you cannot include the Noise reducer preprocessor.
+    pub fn bandwidth_reduction_filter(
+        mut self,
+        input: crate::types::BandwidthReductionFilter,
+    ) -> Self {
+        self.bandwidth_reduction_filter = Some(input);
+        self
+    }
+    /// The Bandwidth reduction filter increases the video quality of your output relative to its bitrate. Use to lower the bitrate of your constant quality QVBR output, with little or no perceptual decrease in quality. Or, use to increase the video quality of outputs with other rate control modes relative to the bitrate that you specify. Bandwidth reduction increases further when your input is low quality or noisy. Outputs that use this feature incur pro-tier pricing. When you include Bandwidth reduction filter, you cannot include the Noise reducer preprocessor.
+    pub fn set_bandwidth_reduction_filter(
+        mut self,
+        input: std::option::Option<crate::types::BandwidthReductionFilter>,
+    ) -> Self {
+        self.bandwidth_reduction_filter = input;
         self
     }
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
@@ -878,6 +905,7 @@ impl H264SettingsBuilder {
     pub fn build(self) -> crate::types::H264Settings {
         crate::types::H264Settings {
             adaptive_quantization: self.adaptive_quantization,
+            bandwidth_reduction_filter: self.bandwidth_reduction_filter,
             bitrate: self.bitrate.unwrap_or_default(),
             codec_level: self.codec_level,
             codec_profile: self.codec_profile,

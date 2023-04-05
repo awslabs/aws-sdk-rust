@@ -21,7 +21,7 @@ pub struct UpdateSubscriptionNotificationConfigurationInput {
     /// <p>Create a new subscription notification for the specified subscription ID in Amazon Security Lake.</p>
     #[doc(hidden)]
     pub create_sqs: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
+    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. For more information about ARNs and how to use them in policies, see, see the <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a>in the Amazon Security Lake User Guide.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
@@ -50,7 +50,7 @@ impl UpdateSubscriptionNotificationConfigurationInput {
     pub fn create_sqs(&self) -> std::option::Option<bool> {
         self.create_sqs
     }
-    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
+    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. For more information about ARNs and how to use them in policies, see, see the <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a>in the Amazon Security Lake User Guide.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -147,12 +147,12 @@ impl UpdateSubscriptionNotificationConfigurationInputBuilder {
         self.create_sqs = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
+    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. For more information about ARNs and how to use them in policies, see, see the <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a>in the Amazon Security Lake User Guide.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
+    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. For more information about ARNs and how to use them in policies, see, see the <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a>in the Amazon Security Lake User Guide.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.role_arn = input;
         self

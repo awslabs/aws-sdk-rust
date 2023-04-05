@@ -138,6 +138,10 @@ pub fn de_recognize_utterance_http_response(
                 )
             })?,
         );
+        output = output.set_recognized_bot_member(
+            crate::protocol_serde::shape_recognize_utterance_output::de_recognized_bot_member_header(response.headers())
+                                    .map_err(|_|crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled("Failed to parse recognizedBotMember from header `x-amz-lex-recognized-bot-member"))?
+        );
         output = output.set_request_attributes(
             crate::protocol_serde::shape_recognize_utterance_output::de_request_attributes_header(
                 response.headers(),

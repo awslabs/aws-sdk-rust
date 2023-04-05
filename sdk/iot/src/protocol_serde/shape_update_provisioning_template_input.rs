@@ -12,23 +12,23 @@ pub fn ser_update_provisioning_template_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if input.enabled {
-        object.key("enabled").boolean(input.enabled);
+    if let Some(var_3) = &input.enabled {
+        object.key("enabled").boolean(*var_3);
     }
-    if let Some(var_3) = &input.pre_provisioning_hook {
+    if let Some(var_4) = &input.pre_provisioning_hook {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("preProvisioningHook").start_object();
+        let mut object_5 = object.key("preProvisioningHook").start_object();
         crate::protocol_serde::shape_provisioning_hook::ser_provisioning_hook(
-            &mut object_4,
-            var_3,
+            &mut object_5,
+            var_4,
         )?;
-        object_4.finish();
+        object_5.finish();
     }
-    if let Some(var_5) = &input.provisioning_role_arn {
-        object.key("provisioningRoleArn").string(var_5.as_str());
+    if let Some(var_6) = &input.provisioning_role_arn {
+        object.key("provisioningRoleArn").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.remove_pre_provisioning_hook {
-        object.key("removePreProvisioningHook").boolean(*var_6);
+    if let Some(var_7) = &input.remove_pre_provisioning_hook {
+        object.key("removePreProvisioningHook").boolean(*var_7);
     }
     Ok(())
 }

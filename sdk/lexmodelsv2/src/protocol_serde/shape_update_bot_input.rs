@@ -3,26 +3,41 @@ pub fn ser_update_bot_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_bot::UpdateBotInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bot_name {
-        object.key("botName").string(var_1.as_str());
+    if let Some(var_1) = &input.bot_members {
+        let mut array_2 = object.key("botMembers").start_array();
+        for item_3 in var_1 {
+            {
+                #[allow(unused_mut)]
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_bot_member::ser_bot_member(&mut object_4, item_3)?;
+                object_4.finish();
+            }
+        }
+        array_2.finish();
     }
-    if let Some(var_2) = &input.data_privacy {
+    if let Some(var_5) = &input.bot_name {
+        object.key("botName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.bot_type {
+        object.key("botType").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.data_privacy {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("dataPrivacy").start_object();
-        crate::protocol_serde::shape_data_privacy::ser_data_privacy(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_8 = object.key("dataPrivacy").start_object();
+        crate::protocol_serde::shape_data_privacy::ser_data_privacy(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
+    if let Some(var_9) = &input.description {
+        object.key("description").string(var_9.as_str());
     }
-    if let Some(var_5) = &input.idle_session_ttl_in_seconds {
+    if let Some(var_10) = &input.idle_session_ttl_in_seconds {
         object.key("idleSessionTTLInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_6) = &input.role_arn {
-        object.key("roleArn").string(var_6.as_str());
+    if let Some(var_11) = &input.role_arn {
+        object.key("roleArn").string(var_11.as_str());
     }
     Ok(())
 }

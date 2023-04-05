@@ -8,7 +8,7 @@ pub struct GetConformancePackComplianceSummaryInput {
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of conformance packs returned on each page.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl GetConformancePackComplianceSummaryInput {
         self.conformance_pack_names.as_deref()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -89,7 +89,6 @@ impl GetConformancePackComplianceSummaryInputBuilder {
                 conformance_pack_names: self.conformance_pack_names
                 ,
                 limit: self.limit
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

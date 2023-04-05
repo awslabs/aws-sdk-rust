@@ -73,18 +73,21 @@ impl DeleteOtaUpdateInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.delete_stream {
-                    query.push_kv(
-                        "deleteStream",
-                        aws_smithy_types::primitive::Encoder::from(_input.delete_stream).encode(),
-                    );
+                if let Some(inner_2) = &_input.delete_stream {
+                    if *inner_2 {
+                        query.push_kv(
+                            "deleteStream",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
+                    }
                 }
-                if _input.force_delete_aws_job {
-                    query.push_kv(
-                        "forceDeleteAWSJob",
-                        aws_smithy_types::primitive::Encoder::from(_input.force_delete_aws_job)
-                            .encode(),
-                    );
+                if let Some(inner_3) = &_input.force_delete_aws_job {
+                    if *inner_3 {
+                        query.push_kv(
+                            "forceDeleteAWSJob",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

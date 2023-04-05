@@ -188,4 +188,50 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// Adds a key-value pair to `externalParameters`.
+    ///
+    /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
+    ///
+    /// <p>Source server post migration custom action external parameters.</p>
+    pub fn external_parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::SsmExternalParameter,
+    ) -> Self {
+        self.inner = self.inner.external_parameters(k.into(), v);
+        self
+    }
+    /// <p>Source server post migration custom action external parameters.</p>
+    pub fn set_external_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::SsmExternalParameter>,
+        >,
+    ) -> Self {
+        self.inner = self.inner.set_external_parameters(input);
+        self
+    }
+    /// <p>Source server post migration custom action description.</p>
+    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
+        self
+    }
+    /// <p>Source server post migration custom action description.</p>
+    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
+        self
+    }
+    /// <p>Source server post migration custom action category.</p>
+    pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
+        self.inner = self.inner.category(input);
+        self
+    }
+    /// <p>Source server post migration custom action category.</p>
+    pub fn set_category(
+        mut self,
+        input: std::option::Option<crate::types::ActionCategory>,
+    ) -> Self {
+        self.inner = self.inner.set_category(input);
+        self
+    }
 }

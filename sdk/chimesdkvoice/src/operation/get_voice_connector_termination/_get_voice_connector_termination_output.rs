@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination setting details.</p>
     #[doc(hidden)]
     pub termination: std::option::Option<crate::types::Termination>,
     _request_id: Option<String>,
 }
 impl GetVoiceConnectorTerminationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination setting details.</p>
     pub fn termination(&self) -> std::option::Option<&crate::types::Termination> {
         self.termination.as_ref()
     }
@@ -34,12 +34,12 @@ pub struct GetVoiceConnectorTerminationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetVoiceConnectorTerminationOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination setting details.</p>
     pub fn termination(mut self, input: crate::types::Termination) -> Self {
         self.termination = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination setting details.</p>
     pub fn set_termination(
         mut self,
         input: std::option::Option<crate::types::Termination>,

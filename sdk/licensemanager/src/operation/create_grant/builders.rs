@@ -5,7 +5,7 @@ pub use crate::operation::create_grant::_create_grant_input::CreateGrantInputBui
 
 /// Fluent builder constructing a request to `CreateGrant`.
 ///
-/// <p>Creates a grant for the specified license. A grant shares the use of license entitlements with specific Amazon Web Services accounts.</p>
+/// <p>Creates a grant for the specified license. A grant shares the use of license entitlements with a specific Amazon Web Services account, an organization, or an organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted licenses in License Manager</a> in the <i>License Manager User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGrantFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -99,12 +99,30 @@ impl CreateGrantFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
     ///
-    /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account, which includes only the account specified.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organizational unit (OU), which includes all accounts in the OU.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
+    /// </ul>
     pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.principals(input.into());
         self
     }
-    /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account, which includes only the account specified.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organizational unit (OU), which includes all accounts in the OU.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
+    /// </ul>
     pub fn set_principals(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

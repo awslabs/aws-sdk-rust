@@ -12,6 +12,9 @@ pub struct DescribeProtectedResourceOutput {
     /// <p>The date and time that a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
     pub last_backup_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    #[doc(hidden)]
+    pub resource_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeProtectedResourceOutput {
@@ -26,6 +29,10 @@ impl DescribeProtectedResourceOutput {
     /// <p>The date and time that a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_backup_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_backup_time.as_ref()
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProtectedResourceOutput {
@@ -47,6 +54,7 @@ pub struct DescribeProtectedResourceOutputBuilder {
     pub(crate) resource_arn: std::option::Option<std::string::String>,
     pub(crate) resource_type: std::option::Option<std::string::String>,
     pub(crate) last_backup_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) resource_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeProtectedResourceOutputBuilder {
@@ -83,6 +91,16 @@ impl DescribeProtectedResourceOutputBuilder {
         self.last_backup_time = input;
         self
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_name = Some(input.into());
+        self
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_name = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -100,6 +118,7 @@ impl DescribeProtectedResourceOutputBuilder {
             resource_arn: self.resource_arn,
             resource_type: self.resource_type,
             last_backup_time: self.last_backup_time,
+            resource_name: self.resource_name,
             _request_id: self._request_id,
         }
     }

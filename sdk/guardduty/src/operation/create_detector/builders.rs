@@ -6,6 +6,7 @@ pub use crate::operation::create_detector::_create_detector_input::CreateDetecto
 /// Fluent builder constructing a request to `CreateDetector`.
 ///
 /// <p>Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only one detector per account per Region. All data sources are enabled in a new detector by default.</p>
+/// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDetectorFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -102,11 +103,15 @@ impl CreateDetectorFluentBuilder {
         self
     }
     /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurations) -> Self {
         self.inner = self.inner.data_sources(input);
         self
     }
     /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn set_data_sources(
         mut self,
         input: std::option::Option<crate::types::DataSourceConfigurations>,
@@ -135,6 +140,23 @@ impl CreateDetectorFluentBuilder {
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// Appends an item to `Features`.
+    ///
+    /// To override the contents of this collection use [`set_features`](Self::set_features).
+    ///
+    /// <p>A list of features that will be configured for the detector.</p>
+    pub fn features(mut self, input: crate::types::DetectorFeatureConfiguration) -> Self {
+        self.inner = self.inner.features(input);
+        self
+    }
+    /// <p>A list of features that will be configured for the detector.</p>
+    pub fn set_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
+    ) -> Self {
+        self.inner = self.inner.set_features(input);
         self
     }
 }

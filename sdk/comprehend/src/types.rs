@@ -5,11 +5,33 @@ pub use crate::types::_invalid_request_detail_reason::InvalidRequestDetailReason
 
 pub use crate::types::_invalid_request_reason::InvalidRequestReason;
 
+pub use crate::types::_flywheel_properties::FlywheelProperties;
+
+pub use crate::types::_model_type::ModelType;
+
+pub use crate::types::_flywheel_status::FlywheelStatus;
+
+pub use crate::types::_data_security_config::DataSecurityConfig;
+
+pub use crate::types::_vpc_config::VpcConfig;
+
+pub use crate::types::_task_config::TaskConfig;
+
+pub use crate::types::_entity_recognition_config::EntityRecognitionConfig;
+
+pub use crate::types::_entity_types_list_item::EntityTypesListItem;
+
+pub use crate::types::_document_classification_config::DocumentClassificationConfig;
+
+pub use crate::types::_document_classifier_mode::DocumentClassifierMode;
+
+pub use crate::types::_language_code::LanguageCode;
+
+pub use crate::types::_update_data_security_config::UpdateDataSecurityConfig;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_job_status::JobStatus;
-
-pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_output_data_config::OutputDataConfig;
 
@@ -24,8 +46,6 @@ pub use crate::types::_document_read_mode::DocumentReadMode;
 pub use crate::types::_document_read_action::DocumentReadAction;
 
 pub use crate::types::_input_format::InputFormat;
-
-pub use crate::types::_language_code::LanguageCode;
 
 pub use crate::types::_redaction_config::RedactionConfig;
 
@@ -57,6 +77,18 @@ pub use crate::types::_key_phrases_detection_job_properties::KeyPhrasesDetection
 
 pub use crate::types::_key_phrases_detection_job_filter::KeyPhrasesDetectionJobFilter;
 
+pub use crate::types::_flywheel_summary::FlywheelSummary;
+
+pub use crate::types::_flywheel_filter::FlywheelFilter;
+
+pub use crate::types::_flywheel_iteration_properties::FlywheelIterationProperties;
+
+pub use crate::types::_flywheel_model_evaluation_metrics::FlywheelModelEvaluationMetrics;
+
+pub use crate::types::_flywheel_iteration_status::FlywheelIterationStatus;
+
+pub use crate::types::_flywheel_iteration_filter::FlywheelIterationFilter;
+
 pub use crate::types::_events_detection_job_properties::EventsDetectionJobProperties;
 
 pub use crate::types::_events_detection_job_filter::EventsDetectionJobFilter;
@@ -66,6 +98,8 @@ pub use crate::types::_entity_recognizer_summary::EntityRecognizerSummary;
 pub use crate::types::_model_status::ModelStatus;
 
 pub use crate::types::_entity_recognizer_properties::EntityRecognizerProperties;
+
+pub use crate::types::_entity_recognizer_output_data_config::EntityRecognizerOutputDataConfig;
 
 pub use crate::types::_entity_recognizer_metadata::EntityRecognizerMetadata;
 
@@ -89,8 +123,6 @@ pub use crate::types::_entity_recognizer_annotations::EntityRecognizerAnnotation
 
 pub use crate::types::_entity_recognizer_documents::EntityRecognizerDocuments;
 
-pub use crate::types::_entity_types_list_item::EntityTypesListItem;
-
 pub use crate::types::_entity_recognizer_data_format::EntityRecognizerDataFormat;
 
 pub use crate::types::_entity_recognizer_filter::EntityRecognizerFilter;
@@ -113,8 +145,6 @@ pub use crate::types::_document_classifier_summary::DocumentClassifierSummary;
 
 pub use crate::types::_document_classifier_properties::DocumentClassifierProperties;
 
-pub use crate::types::_document_classifier_mode::DocumentClassifierMode;
-
 pub use crate::types::_classifier_metadata::ClassifierMetadata;
 
 pub use crate::types::_classifier_evaluation_metrics::ClassifierEvaluationMetrics;
@@ -130,6 +160,14 @@ pub use crate::types::_document_classifier_filter::DocumentClassifierFilter;
 pub use crate::types::_document_classification_job_properties::DocumentClassificationJobProperties;
 
 pub use crate::types::_document_classification_job_filter::DocumentClassificationJobFilter;
+
+pub use crate::types::_dataset_properties::DatasetProperties;
+
+pub use crate::types::_dataset_status::DatasetStatus;
+
+pub use crate::types::_dataset_type::DatasetType;
+
+pub use crate::types::_dataset_filter::DatasetFilter;
 
 pub use crate::types::_targeted_sentiment_entity::TargetedSentimentEntity;
 
@@ -191,6 +229,22 @@ pub use crate::types::_entity_type::EntityType;
 
 pub use crate::types::_dominant_language::DominantLanguage;
 
+pub use crate::types::_dataset_input_data_config::DatasetInputDataConfig;
+
+pub use crate::types::_dataset_entity_recognizer_input_data_config::DatasetEntityRecognizerInputDataConfig;
+
+pub use crate::types::_dataset_entity_recognizer_entity_list::DatasetEntityRecognizerEntityList;
+
+pub use crate::types::_dataset_entity_recognizer_documents::DatasetEntityRecognizerDocuments;
+
+pub use crate::types::_dataset_entity_recognizer_annotations::DatasetEntityRecognizerAnnotations;
+
+pub use crate::types::_dataset_document_classifier_input_data_config::DatasetDocumentClassifierInputDataConfig;
+
+pub use crate::types::_dataset_data_format::DatasetDataFormat;
+
+pub use crate::types::_dataset_augmented_manifests_list_item::DatasetAugmentedManifestsListItem;
+
 pub use crate::types::_entity_label::EntityLabel;
 
 pub use crate::types::_document_label::DocumentLabel;
@@ -243,7 +297,35 @@ mod _classifier_evaluation_metrics;
 
 mod _classifier_metadata;
 
+mod _data_security_config;
+
+mod _dataset_augmented_manifests_list_item;
+
+mod _dataset_data_format;
+
+mod _dataset_document_classifier_input_data_config;
+
+mod _dataset_entity_recognizer_annotations;
+
+mod _dataset_entity_recognizer_documents;
+
+mod _dataset_entity_recognizer_entity_list;
+
+mod _dataset_entity_recognizer_input_data_config;
+
+mod _dataset_filter;
+
+mod _dataset_input_data_config;
+
+mod _dataset_properties;
+
+mod _dataset_status;
+
+mod _dataset_type;
+
 mod _document_class;
+
+mod _document_classification_config;
 
 mod _document_classification_job_filter;
 
@@ -299,6 +381,8 @@ mod _entity;
 
 mod _entity_label;
 
+mod _entity_recognition_config;
+
 mod _entity_recognizer_annotations;
 
 mod _entity_recognizer_data_format;
@@ -317,6 +401,8 @@ mod _entity_recognizer_metadata;
 
 mod _entity_recognizer_metadata_entity_types_list_item;
 
+mod _entity_recognizer_output_data_config;
+
 mod _entity_recognizer_properties;
 
 mod _entity_recognizer_summary;
@@ -334,6 +420,22 @@ mod _events_detection_job_filter;
 mod _events_detection_job_properties;
 
 mod _extracted_characters_list_item;
+
+mod _flywheel_filter;
+
+mod _flywheel_iteration_filter;
+
+mod _flywheel_iteration_properties;
+
+mod _flywheel_iteration_status;
+
+mod _flywheel_model_evaluation_metrics;
+
+mod _flywheel_properties;
+
+mod _flywheel_status;
+
+mod _flywheel_summary;
 
 mod _geometry;
 
@@ -360,6 +462,8 @@ mod _language_code;
 mod _mention_sentiment;
 
 mod _model_status;
+
+mod _model_type;
 
 mod _output_data_config;
 
@@ -417,9 +521,13 @@ mod _targeted_sentiment_entity_type;
 
 mod _targeted_sentiment_mention;
 
+mod _task_config;
+
 mod _topics_detection_job_filter;
 
 mod _topics_detection_job_properties;
+
+mod _update_data_security_config;
 
 mod _vpc_config;
 

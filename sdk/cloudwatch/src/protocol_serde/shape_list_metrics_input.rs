@@ -38,13 +38,13 @@ pub fn ser_list_metrics_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("IncludeLinkedAccounts");
-    if input.include_linked_accounts {
-        scope_14.boolean(input.include_linked_accounts);
+    if let Some(var_15) = &input.include_linked_accounts {
+        scope_14.boolean(*var_15);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("OwningAccount");
-    if let Some(var_16) = &input.owning_account {
-        scope_15.string(var_16);
+    let mut scope_16 = writer.prefix("OwningAccount");
+    if let Some(var_17) = &input.owning_account {
+        scope_16.string(var_17);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

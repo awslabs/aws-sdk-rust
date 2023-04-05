@@ -9,33 +9,33 @@ pub fn ser_get_relational_database_metric_data_input(
     if let Some(var_2) = &input.metric_name {
         object.key("metricName").string(var_2.as_str());
     }
-    {
+    if let Some(var_3) = &input.period {
         object.key("period").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.period).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.start_time {
+    if let Some(var_4) = &input.start_time {
         object
             .key("startTime")
-            .date_time(var_3, aws_smithy_types::date_time::Format::EpochSeconds)?;
-    }
-    if let Some(var_4) = &input.end_time {
-        object
-            .key("endTime")
             .date_time(var_4, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.unit {
-        object.key("unit").string(var_5.as_str());
+    if let Some(var_5) = &input.end_time {
+        object
+            .key("endTime")
+            .date_time(var_5, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.statistics {
-        let mut array_7 = object.key("statistics").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.unit {
+        object.key("unit").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.statistics {
+        let mut array_8 = object.key("statistics").start_array();
+        for item_9 in var_7 {
             {
-                array_7.value().string(item_8.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
     Ok(())
 }

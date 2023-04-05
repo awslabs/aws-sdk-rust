@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportComponentInput {
-    /// <p> The name of the component.</p>
+    /// <p>The name of the component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
@@ -26,7 +26,7 @@ pub struct ImportComponentInput {
     /// <p>The description of the component. Describes the contents of the component.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
     #[doc(hidden)]
     pub change_description: std::option::Option<std::string::String>,
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
@@ -56,7 +56,7 @@ pub struct ImportComponentInput {
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ImportComponentInput {
-    /// <p> The name of the component.</p>
+    /// <p>The name of the component.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -82,7 +82,7 @@ impl ImportComponentInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn change_description(&self) -> std::option::Option<&str> {
         self.change_description.as_deref()
     }
@@ -148,12 +148,12 @@ pub struct ImportComponentInputBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl ImportComponentInputBuilder {
-    /// <p> The name of the component.</p>
+    /// <p>The name of the component.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p> The name of the component.</p>
+    /// <p>The name of the component.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
@@ -206,12 +206,12 @@ impl ImportComponentInputBuilder {
         self.description = input;
         self
     }
-    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
         self.change_description = Some(input.into());
         self
     }
-    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn set_change_description(
         mut self,
         input: std::option::Option<std::string::String>,

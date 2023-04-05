@@ -26,6 +26,9 @@ pub struct CreateChannelInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    #[doc(hidden)]
+    pub insecure_ingest: bool,
 }
 impl CreateChannelInput {
     /// <p>Channel name.</p>
@@ -59,6 +62,10 @@ impl CreateChannelInput {
     {
         self.tags.as_ref()
     }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn insecure_ingest(&self) -> bool {
+        self.insecure_ingest
+    }
 }
 impl CreateChannelInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
@@ -78,6 +85,7 @@ pub struct CreateChannelInputBuilder {
     pub(crate) recording_configuration_arn: std::option::Option<std::string::String>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) insecure_ingest: std::option::Option<bool>,
 }
 impl CreateChannelInputBuilder {
     /// <p>Channel name.</p>
@@ -169,6 +177,16 @@ impl CreateChannelInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn insecure_ingest(mut self, input: bool) -> Self {
+        self.insecure_ingest = Some(input);
+        self
+    }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn set_insecure_ingest(mut self, input: std::option::Option<bool>) -> Self {
+        self.insecure_ingest = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
@@ -183,6 +201,7 @@ impl CreateChannelInputBuilder {
             authorized: self.authorized.unwrap_or_default(),
             recording_configuration_arn: self.recording_configuration_arn,
             tags: self.tags,
+            insecure_ingest: self.insecure_ingest.unwrap_or_default(),
         })
     }
 }

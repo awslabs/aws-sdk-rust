@@ -11,7 +11,7 @@ pub struct GetConnectionsInput {
     pub filter: std::option::Option<crate::types::GetConnectionsFilter>,
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     #[doc(hidden)]
-    pub hide_password: bool,
+    pub hide_password: std::option::Option<bool>,
     /// <p>A continuation token, if this is a continuation call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ impl GetConnectionsInput {
         self.filter.as_ref()
     }
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
-    pub fn hide_password(&self) -> bool {
+    pub fn hide_password(&self) -> std::option::Option<bool> {
         self.hide_password
     }
     /// <p>A continuation token, if this is a continuation call.</p>
@@ -122,7 +122,7 @@ impl GetConnectionsInputBuilder {
         Ok(crate::operation::get_connections::GetConnectionsInput {
             catalog_id: self.catalog_id,
             filter: self.filter,
-            hide_password: self.hide_password.unwrap_or_default(),
+            hide_password: self.hide_password,
             next_token: self.next_token,
             max_results: self.max_results,
         })

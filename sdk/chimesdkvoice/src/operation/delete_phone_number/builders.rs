@@ -5,6 +5,8 @@ pub use crate::operation::delete_phone_number::_delete_phone_number_input::Delet
 
 /// Fluent builder constructing a request to `DeletePhoneNumber`.
 ///
+/// <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any users or Amazon Chime SDK Voice Connectors before it can be deleted.</p>
+/// <p>Deleted phone numbers remain in the <b>Deletion queue</b> queue for 7 days before they are deleted permanently.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePhoneNumberFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +70,12 @@ impl DeletePhoneNumberFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.phone_number_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number_id(input);
         self

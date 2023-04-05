@@ -56,6 +56,12 @@ impl DescribeNotificationSubscriptionsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_notification_subscriptions::paginator::DescribeNotificationSubscriptionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_notification_subscriptions::paginator::DescribeNotificationSubscriptionsPaginator{
+        crate::operation::describe_notification_subscriptions::paginator::DescribeNotificationSubscriptionsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the organization.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());

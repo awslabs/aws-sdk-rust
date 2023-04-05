@@ -5,7 +5,7 @@ pub use crate::operation::get_image_pipeline::_get_image_pipeline_input::GetImag
 
 /// Fluent builder constructing a request to `GetImagePipeline`.
 ///
-/// <p> Gets an image pipeline.</p>
+/// <p>Gets an image pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetImagePipelineFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

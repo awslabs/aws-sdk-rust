@@ -22,8 +22,10 @@ pub struct GetTableOutput {
     #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::types::SchemaDefinition>,
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> </p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub capacity_specification: std::option::Option<crate::types::CapacitySpecificationSummary>,
     /// <p>The encryption settings of the specified table.</p>
@@ -35,12 +37,15 @@ pub struct GetTableOutput {
     /// <p>The custom Time to Live settings of the specified table.</p>
     #[doc(hidden)]
     pub ttl: std::option::Option<crate::types::TimeToLive>,
-    /// <p>The default Time to Live settings of the specified table.</p>
+    /// <p>The default Time to Live settings in seconds of the specified table.</p>
     #[doc(hidden)]
     pub default_time_to_live: std::option::Option<i32>,
     /// <p>The the description of the specified table.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::types::Comment>,
+    /// <p> The client-side timestamps setting of the table.</p>
+    #[doc(hidden)]
+    pub client_side_timestamps: std::option::Option<crate::types::ClientSideTimestamps>,
     _request_id: Option<String>,
 }
 impl GetTableOutput {
@@ -69,8 +74,10 @@ impl GetTableOutput {
         self.schema_definition.as_ref()
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> </p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>
+    /// </ul>
     pub fn capacity_specification(
         &self,
     ) -> std::option::Option<&crate::types::CapacitySpecificationSummary> {
@@ -92,13 +99,19 @@ impl GetTableOutput {
     pub fn ttl(&self) -> std::option::Option<&crate::types::TimeToLive> {
         self.ttl.as_ref()
     }
-    /// <p>The default Time to Live settings of the specified table.</p>
+    /// <p>The default Time to Live settings in seconds of the specified table.</p>
     pub fn default_time_to_live(&self) -> std::option::Option<i32> {
         self.default_time_to_live
     }
     /// <p>The the description of the specified table.</p>
     pub fn comment(&self) -> std::option::Option<&crate::types::Comment> {
         self.comment.as_ref()
+    }
+    /// <p> The client-side timestamps setting of the table.</p>
+    pub fn client_side_timestamps(
+        &self,
+    ) -> std::option::Option<&crate::types::ClientSideTimestamps> {
+        self.client_side_timestamps.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetTableOutput {
@@ -131,6 +144,7 @@ pub struct GetTableOutputBuilder {
     pub(crate) ttl: std::option::Option<crate::types::TimeToLive>,
     pub(crate) default_time_to_live: std::option::Option<i32>,
     pub(crate) comment: std::option::Option<crate::types::Comment>,
+    pub(crate) client_side_timestamps: std::option::Option<crate::types::ClientSideTimestamps>,
     _request_id: Option<String>,
 }
 impl GetTableOutputBuilder {
@@ -201,8 +215,10 @@ impl GetTableOutputBuilder {
         self
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> </p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>
+    /// </ul>
     pub fn capacity_specification(
         mut self,
         input: crate::types::CapacitySpecificationSummary,
@@ -211,8 +227,10 @@ impl GetTableOutputBuilder {
         self
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> </p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>
+    /// </ul>
     pub fn set_capacity_specification(
         mut self,
         input: std::option::Option<crate::types::CapacitySpecificationSummary>,
@@ -262,12 +280,12 @@ impl GetTableOutputBuilder {
         self.ttl = input;
         self
     }
-    /// <p>The default Time to Live settings of the specified table.</p>
+    /// <p>The default Time to Live settings in seconds of the specified table.</p>
     pub fn default_time_to_live(mut self, input: i32) -> Self {
         self.default_time_to_live = Some(input);
         self
     }
-    /// <p>The default Time to Live settings of the specified table.</p>
+    /// <p>The default Time to Live settings in seconds of the specified table.</p>
     pub fn set_default_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
         self.default_time_to_live = input;
         self
@@ -280,6 +298,19 @@ impl GetTableOutputBuilder {
     /// <p>The the description of the specified table.</p>
     pub fn set_comment(mut self, input: std::option::Option<crate::types::Comment>) -> Self {
         self.comment = input;
+        self
+    }
+    /// <p> The client-side timestamps setting of the table.</p>
+    pub fn client_side_timestamps(mut self, input: crate::types::ClientSideTimestamps) -> Self {
+        self.client_side_timestamps = Some(input);
+        self
+    }
+    /// <p> The client-side timestamps setting of the table.</p>
+    pub fn set_client_side_timestamps(
+        mut self,
+        input: std::option::Option<crate::types::ClientSideTimestamps>,
+    ) -> Self {
+        self.client_side_timestamps = input;
         self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -306,6 +337,7 @@ impl GetTableOutputBuilder {
             ttl: self.ttl,
             default_time_to_live: self.default_time_to_live,
             comment: self.comment,
+            client_side_timestamps: self.client_side_timestamps,
             _request_id: self._request_id,
         }
     }

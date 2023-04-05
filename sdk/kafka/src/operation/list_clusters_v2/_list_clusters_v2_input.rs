@@ -11,7 +11,7 @@ pub struct ListClustersV2Input {
     pub cluster_type_filter: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ impl ListClustersV2Input {
         self.cluster_type_filter.as_deref()
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
@@ -107,7 +107,7 @@ impl ListClustersV2InputBuilder {
         Ok(crate::operation::list_clusters_v2::ListClustersV2Input {
             cluster_name_filter: self.cluster_name_filter,
             cluster_type_filter: self.cluster_type_filter,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

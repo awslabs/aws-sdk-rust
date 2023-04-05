@@ -59,6 +59,9 @@ pub struct Host {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which the Dedicated Host is allocated.</p>
     #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
+    /// <p>Indicates whether host maintenance is enabled or disabled for the Dedicated Host.</p>
+    #[doc(hidden)]
+    pub host_maintenance: std::option::Option<crate::types::HostMaintenance>,
 }
 impl Host {
     /// <p>Whether auto-placement is on or off.</p>
@@ -135,6 +138,10 @@ impl Host {
     pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
+    /// <p>Indicates whether host maintenance is enabled or disabled for the Dedicated Host.</p>
+    pub fn host_maintenance(&self) -> std::option::Option<&crate::types::HostMaintenance> {
+        self.host_maintenance.as_ref()
+    }
 }
 impl Host {
     /// Creates a new builder-style object to manufacture [`Host`](crate::types::Host).
@@ -166,6 +173,7 @@ pub struct HostBuilder {
     pub(crate) availability_zone_id: std::option::Option<std::string::String>,
     pub(crate) member_of_service_linked_resource_group: std::option::Option<bool>,
     pub(crate) outpost_arn: std::option::Option<std::string::String>,
+    pub(crate) host_maintenance: std::option::Option<crate::types::HostMaintenance>,
 }
 impl HostBuilder {
     /// <p>Whether auto-placement is on or off.</p>
@@ -402,6 +410,19 @@ impl HostBuilder {
         self.outpost_arn = input;
         self
     }
+    /// <p>Indicates whether host maintenance is enabled or disabled for the Dedicated Host.</p>
+    pub fn host_maintenance(mut self, input: crate::types::HostMaintenance) -> Self {
+        self.host_maintenance = Some(input);
+        self
+    }
+    /// <p>Indicates whether host maintenance is enabled or disabled for the Dedicated Host.</p>
+    pub fn set_host_maintenance(
+        mut self,
+        input: std::option::Option<crate::types::HostMaintenance>,
+    ) -> Self {
+        self.host_maintenance = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Host`](crate::types::Host).
     pub fn build(self) -> crate::types::Host {
         crate::types::Host {
@@ -423,6 +444,7 @@ impl HostBuilder {
             availability_zone_id: self.availability_zone_id,
             member_of_service_linked_resource_group: self.member_of_service_linked_resource_group,
             outpost_arn: self.outpost_arn,
+            host_maintenance: self.host_maintenance,
         }
     }
 }

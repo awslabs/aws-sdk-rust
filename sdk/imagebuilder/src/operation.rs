@@ -79,6 +79,12 @@ pub mod get_image_recipe_policy;
 /// Types for the `GetInfrastructureConfiguration` operation.
 pub mod get_infrastructure_configuration;
 
+/// Types for the `GetWorkflowExecution` operation.
+pub mod get_workflow_execution;
+
+/// Types for the `GetWorkflowStepExecution` operation.
+pub mod get_workflow_step_execution;
+
 /// Types for the `ImportComponent` operation.
 pub mod import_component;
 
@@ -112,6 +118,12 @@ pub mod list_image_pipelines;
 /// Types for the `ListImageRecipes` operation.
 pub mod list_image_recipes;
 
+/// Types for the `ListImageScanFindingAggregations` operation.
+pub mod list_image_scan_finding_aggregations;
+
+/// Types for the `ListImageScanFindings` operation.
+pub mod list_image_scan_findings;
+
 /// Types for the `ListImages` operation.
 pub mod list_images;
 
@@ -120,6 +132,12 @@ pub mod list_infrastructure_configurations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListWorkflowExecutions` operation.
+pub mod list_workflow_executions;
+
+/// Types for the `ListWorkflowStepExecutions` operation.
+pub mod list_workflow_step_executions;
 
 /// Types for the `PutComponentPolicy` operation.
 pub mod put_component_policy;

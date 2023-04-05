@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
@@ -11,10 +11,10 @@ pub struct GetDocumentInput {
     pub document_id: std::option::Option<std::string::String>,
     /// <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
     #[doc(hidden)]
-    pub include_custom_metadata: bool,
+    pub include_custom_metadata: std::option::Option<bool>,
 }
 impl GetDocumentInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -23,7 +23,7 @@ impl GetDocumentInput {
         self.document_id.as_deref()
     }
     /// <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
-    pub fn include_custom_metadata(&self) -> bool {
+    pub fn include_custom_metadata(&self) -> std::option::Option<bool> {
         self.include_custom_metadata
     }
 }
@@ -52,12 +52,12 @@ pub struct GetDocumentInputBuilder {
     pub(crate) include_custom_metadata: std::option::Option<bool>,
 }
 impl GetDocumentInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -95,7 +95,7 @@ impl GetDocumentInputBuilder {
         Ok(crate::operation::get_document::GetDocumentInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,
-            include_custom_metadata: self.include_custom_metadata.unwrap_or_default(),
+            include_custom_metadata: self.include_custom_metadata,
         })
     }
 }

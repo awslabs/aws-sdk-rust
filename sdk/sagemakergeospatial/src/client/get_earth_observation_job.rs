@@ -10,10 +10,10 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::creation_time): <p>The creation time of the initiated Earth Observation job.</p>
     ///   - [`duration_in_seconds(Option<i32>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::duration_in_seconds): <p>The duration of Earth Observation job, in seconds.</p>
     ///   - [`status(Option<EarthObservationJobStatus>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::status): <p>The status of a previously initiated Earth Observation job.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::kms_key_id): <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::kms_key_id): <p>The Key Management Service key ID for server-side encryption.</p>
     ///   - [`input_config(Option<InputConfigOutput>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::input_config): <p>Input data for the Earth Observation job.</p>
     ///   - [`job_config(Option<JobConfigInput>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::job_config): <p>An object containing information about the job configuration.</p>
-    ///   - [`output_bands(Option<Vec<OutputBand>>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::output_bands): <p></p>
+    ///   - [`output_bands(Option<Vec<OutputBand>>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::output_bands): <p>Bands available in the output of an operation.</p>
     ///   - [`execution_role_arn(Option<String>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     ///   - [`error_details(Option<EarthObservationJobErrorDetails>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::error_details): <p>Details about the errors generated during the Earth Observation job.</p>
     ///   - [`export_status(Option<EarthObservationJobExportStatus>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::export_status): <p>The status of the Earth Observation job.</p>

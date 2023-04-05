@@ -31,6 +31,7 @@
 ///     ValidationExceptionReason::IllegalEndedBillinggroup => { /* ... */ },
 ///     ValidationExceptionReason::IllegalExpression => { /* ... */ },
 ///     ValidationExceptionReason::IllegalModifierPercentage => { /* ... */ },
+///     ValidationExceptionReason::IllegalOperation => { /* ... */ },
 ///     ValidationExceptionReason::IllegalPrimaryAccount => { /* ... */ },
 ///     ValidationExceptionReason::IllegalResourceArns => { /* ... */ },
 ///     ValidationExceptionReason::IllegalScope => { /* ... */ },
@@ -38,11 +39,14 @@
 ///     ValidationExceptionReason::IllegalTieringInput => { /* ... */ },
 ///     ValidationExceptionReason::IllegalType => { /* ... */ },
 ///     ValidationExceptionReason::IllegalUpdateChargeDetails => { /* ... */ },
+///     ValidationExceptionReason::IllegalUsageType => { /* ... */ },
 ///     ValidationExceptionReason::InvalidArn => { /* ... */ },
 ///     ValidationExceptionReason::InvalidBillingviewArn => { /* ... */ },
 ///     ValidationExceptionReason::InvalidBillingGroup => { /* ... */ },
 ///     ValidationExceptionReason::InvalidBillingGroupStatus => { /* ... */ },
 ///     ValidationExceptionReason::InvalidBillingPeriodForOperation => { /* ... */ },
+///     ValidationExceptionReason::InvalidFilter => { /* ... */ },
+///     ValidationExceptionReason::InvalidSkuCombo => { /* ... */ },
 ///     ValidationExceptionReason::InvalidTimeRange => { /* ... */ },
 ///     ValidationExceptionReason::MismatchedBillinggroupArn => { /* ... */ },
 ///     ValidationExceptionReason::MismatchedBillingviewArn => { /* ... */ },
@@ -137,6 +141,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     IllegalModifierPercentage,
     #[allow(missing_docs)] // documentation missing in model
+    IllegalOperation,
+    #[allow(missing_docs)] // documentation missing in model
     IllegalPrimaryAccount,
     #[allow(missing_docs)] // documentation missing in model
     IllegalResourceArns,
@@ -151,6 +157,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     IllegalUpdateChargeDetails,
     #[allow(missing_docs)] // documentation missing in model
+    IllegalUsageType,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidArn,
     #[allow(missing_docs)] // documentation missing in model
     InvalidBillingviewArn,
@@ -160,6 +168,10 @@ pub enum ValidationExceptionReason {
     InvalidBillingGroupStatus,
     #[allow(missing_docs)] // documentation missing in model
     InvalidBillingPeriodForOperation,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidFilter,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidSkuCombo,
     #[allow(missing_docs)] // documentation missing in model
     InvalidTimeRange,
     #[allow(missing_docs)] // documentation missing in model
@@ -237,6 +249,7 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "ILLEGAL_ENDED_BILLINGGROUP" => ValidationExceptionReason::IllegalEndedBillinggroup,
             "ILLEGAL_EXPRESSION" => ValidationExceptionReason::IllegalExpression,
             "ILLEGAL_MODIFIER_PERCENTAGE" => ValidationExceptionReason::IllegalModifierPercentage,
+            "ILLEGAL_OPERATION" => ValidationExceptionReason::IllegalOperation,
             "ILLEGAL_PRIMARY_ACCOUNT" => ValidationExceptionReason::IllegalPrimaryAccount,
             "ILLEGAL_RESOURCE_ARNS" => ValidationExceptionReason::IllegalResourceArns,
             "ILLEGAL_SCOPE" => ValidationExceptionReason::IllegalScope,
@@ -246,6 +259,7 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "ILLEGAL_UPDATE_CHARGE_DETAILS" => {
                 ValidationExceptionReason::IllegalUpdateChargeDetails
             }
+            "ILLEGAL_USAGE_TYPE" => ValidationExceptionReason::IllegalUsageType,
             "INVALID_ARN" => ValidationExceptionReason::InvalidArn,
             "INVALID_BILLINGVIEW_ARN" => ValidationExceptionReason::InvalidBillingviewArn,
             "INVALID_BILLING_GROUP" => ValidationExceptionReason::InvalidBillingGroup,
@@ -253,6 +267,8 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "INVALID_BILLING_PERIOD_FOR_OPERATION" => {
                 ValidationExceptionReason::InvalidBillingPeriodForOperation
             }
+            "INVALID_FILTER" => ValidationExceptionReason::InvalidFilter,
+            "INVALID_SKU_COMBO" => ValidationExceptionReason::InvalidSkuCombo,
             "INVALID_TIME_RANGE" => ValidationExceptionReason::InvalidTimeRange,
             "MISMATCHED_BILLINGGROUP_ARN" => ValidationExceptionReason::MismatchedBillinggroupArn,
             "MISMATCHED_BILLINGVIEW_ARN" => ValidationExceptionReason::MismatchedBillingviewArn,
@@ -325,6 +341,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::IllegalEndedBillinggroup => "ILLEGAL_ENDED_BILLINGGROUP",
             ValidationExceptionReason::IllegalExpression => "ILLEGAL_EXPRESSION",
             ValidationExceptionReason::IllegalModifierPercentage => "ILLEGAL_MODIFIER_PERCENTAGE",
+            ValidationExceptionReason::IllegalOperation => "ILLEGAL_OPERATION",
             ValidationExceptionReason::IllegalPrimaryAccount => "ILLEGAL_PRIMARY_ACCOUNT",
             ValidationExceptionReason::IllegalResourceArns => "ILLEGAL_RESOURCE_ARNS",
             ValidationExceptionReason::IllegalScope => "ILLEGAL_SCOPE",
@@ -334,6 +351,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::IllegalUpdateChargeDetails => {
                 "ILLEGAL_UPDATE_CHARGE_DETAILS"
             }
+            ValidationExceptionReason::IllegalUsageType => "ILLEGAL_USAGE_TYPE",
             ValidationExceptionReason::InvalidArn => "INVALID_ARN",
             ValidationExceptionReason::InvalidBillingviewArn => "INVALID_BILLINGVIEW_ARN",
             ValidationExceptionReason::InvalidBillingGroup => "INVALID_BILLING_GROUP",
@@ -341,6 +359,8 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidBillingPeriodForOperation => {
                 "INVALID_BILLING_PERIOD_FOR_OPERATION"
             }
+            ValidationExceptionReason::InvalidFilter => "INVALID_FILTER",
+            ValidationExceptionReason::InvalidSkuCombo => "INVALID_SKU_COMBO",
             ValidationExceptionReason::InvalidTimeRange => "INVALID_TIME_RANGE",
             ValidationExceptionReason::MismatchedBillinggroupArn => "MISMATCHED_BILLINGGROUP_ARN",
             ValidationExceptionReason::MismatchedBillingviewArn => "MISMATCHED_BILLINGVIEW_ARN",
@@ -394,6 +414,7 @@ impl ValidationExceptionReason {
             "ILLEGAL_ENDED_BILLINGGROUP",
             "ILLEGAL_EXPRESSION",
             "ILLEGAL_MODIFIER_PERCENTAGE",
+            "ILLEGAL_OPERATION",
             "ILLEGAL_PRIMARY_ACCOUNT",
             "ILLEGAL_RESOURCE_ARNS",
             "ILLEGAL_SCOPE",
@@ -401,11 +422,14 @@ impl ValidationExceptionReason {
             "ILLEGAL_TIERING_INPUT",
             "ILLEGAL_TYPE",
             "ILLEGAL_UPDATE_CHARGE_DETAILS",
+            "ILLEGAL_USAGE_TYPE",
             "INVALID_ARN",
             "INVALID_BILLINGVIEW_ARN",
             "INVALID_BILLING_GROUP",
             "INVALID_BILLING_GROUP_STATUS",
             "INVALID_BILLING_PERIOD_FOR_OPERATION",
+            "INVALID_FILTER",
+            "INVALID_SKU_COMBO",
             "INVALID_TIME_RANGE",
             "MISMATCHED_BILLINGGROUP_ARN",
             "MISMATCHED_BILLINGVIEW_ARN",

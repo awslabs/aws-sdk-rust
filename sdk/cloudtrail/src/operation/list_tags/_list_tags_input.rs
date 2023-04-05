@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
-    /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
+    /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     #[doc(hidden)]
     pub resource_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Reserved for future use.</p>
@@ -12,7 +12,7 @@ pub struct ListTagsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
-    /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
+    /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     pub fn resource_id_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_id_list.as_deref()
     }
@@ -40,14 +40,14 @@ impl ListTagsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
     ///
-    /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
+    /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     pub fn resource_id_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_id_list.unwrap_or_default();
         v.push(input.into());
         self.resource_id_list = Some(v);
         self
     }
-    /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
+    /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     pub fn set_resource_id_list(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

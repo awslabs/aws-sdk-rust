@@ -49,59 +49,61 @@ impl ListWirelessDevicesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
-                if let Some(inner_1) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_1));
-                    }
-                }
-                if let Some(inner_2) = &_input.destination_name {
-                    {
+                if let Some(inner_1) = &_input.max_results {
+                    if *inner_1 != 0 {
                         query.push_kv(
-                            "destinationName",
-                            &aws_smithy_http::query::fmt_string(&inner_2),
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_1).encode(),
                         );
                     }
                 }
-                if let Some(inner_3) = &_input.device_profile_id {
+                if let Some(inner_2) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
+                }
+                if let Some(inner_3) = &_input.destination_name {
                     {
                         query.push_kv(
-                            "deviceProfileId",
+                            "destinationName",
                             &aws_smithy_http::query::fmt_string(&inner_3),
                         );
                     }
                 }
-                if let Some(inner_4) = &_input.service_profile_id {
+                if let Some(inner_4) = &_input.device_profile_id {
                     {
                         query.push_kv(
-                            "serviceProfileId",
+                            "deviceProfileId",
                             &aws_smithy_http::query::fmt_string(&inner_4),
                         );
                     }
                 }
-                if let Some(inner_5) = &_input.wireless_device_type {
+                if let Some(inner_5) = &_input.service_profile_id {
                     {
                         query.push_kv(
-                            "wirelessDeviceType",
+                            "serviceProfileId",
                             &aws_smithy_http::query::fmt_string(&inner_5),
                         );
                     }
                 }
-                if let Some(inner_6) = &_input.fuota_task_id {
+                if let Some(inner_6) = &_input.wireless_device_type {
                     {
-                        query.push_kv("fuotaTaskId", &aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv(
+                            "wirelessDeviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
                     }
                 }
-                if let Some(inner_7) = &_input.multicast_group_id {
+                if let Some(inner_7) = &_input.fuota_task_id {
+                    {
+                        query.push_kv("fuotaTaskId", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
+                }
+                if let Some(inner_8) = &_input.multicast_group_id {
                     {
                         query.push_kv(
                             "multicastGroupId",
-                            &aws_smithy_http::query::fmt_string(&inner_7),
+                            &aws_smithy_http::query::fmt_string(&inner_8),
                         );
                     }
                 }

@@ -93,12 +93,12 @@ impl ListVirtualClustersFluentBuilder {
         self.inner = self.inner.set_container_provider_id(input);
         self
     }
-    /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
+    /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
     pub fn container_provider_type(mut self, input: crate::types::ContainerProviderType) -> Self {
         self.inner = self.inner.container_provider_type(input);
         self
     }
-    /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
+    /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
     pub fn set_container_provider_type(
         mut self,
         input: std::option::Option<crate::types::ContainerProviderType>,

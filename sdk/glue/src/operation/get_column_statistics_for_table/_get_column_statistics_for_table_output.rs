@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetColumnStatisticsForTableOutput {
-    /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    /// <p>List of ColumnStatistics.</p>
     #[doc(hidden)]
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::types::ColumnStatistics>>,
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
@@ -12,7 +12,7 @@ pub struct GetColumnStatisticsForTableOutput {
     _request_id: Option<String>,
 }
 impl GetColumnStatisticsForTableOutput {
-    /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    /// <p>List of ColumnStatistics.</p>
     pub fn column_statistics_list(&self) -> std::option::Option<&[crate::types::ColumnStatistics]> {
         self.column_statistics_list.as_deref()
     }
@@ -47,14 +47,14 @@ impl GetColumnStatisticsForTableOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
     ///
-    /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    /// <p>List of ColumnStatistics.</p>
     pub fn column_statistics_list(mut self, input: crate::types::ColumnStatistics) -> Self {
         let mut v = self.column_statistics_list.unwrap_or_default();
         v.push(input);
         self.column_statistics_list = Some(v);
         self
     }
-    /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    /// <p>List of ColumnStatistics.</p>
     pub fn set_column_statistics_list(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ColumnStatistics>>,

@@ -330,6 +330,60 @@ impl From<crate::operation::delete_domain_permissions_policy::DeleteDomainPermis
     }
 }
 impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_package::DeletePackageError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_package::DeletePackageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_package::DeletePackageError> for Error {
+    fn from(err: crate::operation::delete_package::DeletePackageError) -> Self {
+        match err {
+            crate::operation::delete_package::DeletePackageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_package::DeletePackageError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_package::DeletePackageError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::delete_package::DeletePackageError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_package::DeletePackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_package::DeletePackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_package::DeletePackageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<
         aws_smithy_http::result::SdkError<
             crate::operation::delete_package_versions::DeletePackageVersionsError,
@@ -1332,6 +1386,51 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::publish_package_version::PublishPackageVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::publish_package_version::PublishPackageVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::publish_package_version::PublishPackageVersionError> for Error {
+    fn from(err: crate::operation::publish_package_version::PublishPackageVersionError) -> Self {
+        match err {
+            crate::operation::publish_package_version::PublishPackageVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::publish_package_version::PublishPackageVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::publish_package_version::PublishPackageVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::publish_package_version::PublishPackageVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::publish_package_version::PublishPackageVersionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::publish_package_version::PublishPackageVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::publish_package_version::PublishPackageVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::publish_package_version::PublishPackageVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

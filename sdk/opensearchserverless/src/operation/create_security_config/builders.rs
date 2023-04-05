@@ -102,12 +102,12 @@ impl CreateSecurityConfigFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Describes SAML options in in the form of a key-value map.</p>
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn saml_options(mut self, input: crate::types::SamlConfigOptions) -> Self {
         self.inner = self.inner.saml_options(input);
         self
     }
-    /// <p>Describes SAML options in in the form of a key-value map.</p>
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn set_saml_options(
         mut self,
         input: std::option::Option<crate::types::SamlConfigOptions>,

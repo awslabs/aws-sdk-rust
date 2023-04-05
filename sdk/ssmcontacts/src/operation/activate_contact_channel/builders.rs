@@ -82,12 +82,12 @@ impl ActivateContactChannelFluentBuilder {
         self.inner = self.inner.set_contact_channel_id(input);
         self
     }
-    /// <p>The code sent to the contact channel when it was created in the contact. </p>
+    /// <p>The code sent to the contact channel when it was created in the contact.</p>
     pub fn activation_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.activation_code(input.into());
         self
     }
-    /// <p>The code sent to the contact channel when it was created in the contact. </p>
+    /// <p>The code sent to the contact channel when it was created in the contact.</p>
     pub fn set_activation_code(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_activation_code(input);
         self

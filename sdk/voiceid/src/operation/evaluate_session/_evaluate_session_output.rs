@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluateSessionOutput {
-    /// <p>The identifier of the domain containing the session.</p>
+    /// <p>The identifier of the domain that contains the session.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier of the session.</p>
@@ -24,7 +24,7 @@ pub struct EvaluateSessionOutput {
     _request_id: Option<String>,
 }
 impl EvaluateSessionOutput {
-    /// <p>The identifier of the domain containing the session.</p>
+    /// <p>The identifier of the domain that contains the session.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -78,12 +78,12 @@ pub struct EvaluateSessionOutputBuilder {
     _request_id: Option<String>,
 }
 impl EvaluateSessionOutputBuilder {
-    /// <p>The identifier of the domain containing the session.</p>
+    /// <p>The identifier of the domain that contains the session.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the domain containing the session.</p>
+    /// <p>The identifier of the domain that contains the session.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.domain_id = input;
         self

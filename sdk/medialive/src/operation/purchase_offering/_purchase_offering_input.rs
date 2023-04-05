@@ -6,7 +6,7 @@
 pub struct PurchaseOfferingInput {
     /// Number of resources
     #[doc(hidden)]
-    pub count: i32,
+    pub count: std::option::Option<i32>,
     /// Name for the new reservation
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ pub struct PurchaseOfferingInput {
 }
 impl PurchaseOfferingInput {
     /// Number of resources
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> std::option::Option<i32> {
         self.count
     }
     /// Name for the new reservation
@@ -178,7 +178,7 @@ impl PurchaseOfferingInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             name: self.name,
             offering_id: self.offering_id,
             renewal_settings: self.renewal_settings,

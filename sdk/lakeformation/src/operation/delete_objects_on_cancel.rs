@@ -163,7 +163,7 @@ pub type DeleteObjectsOnCancelErrorKind = DeleteObjectsOnCancelError;
 pub enum DeleteObjectsOnCancelError {
     /// <p>Two processes are trying to modify a resource simultaneously.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>A specified entity does not exist</p>
+    /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::types::error::InternalServiceException),

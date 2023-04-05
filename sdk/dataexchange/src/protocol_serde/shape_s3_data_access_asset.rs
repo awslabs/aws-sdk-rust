@@ -60,6 +60,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "KmsKeysToGrant" => {
+                                builder = builder.set_kms_keys_to_grant(
+                                    crate::protocol_serde::shape_list_of_kms_keys_to_grant::de_list_of_kms_keys_to_grant(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

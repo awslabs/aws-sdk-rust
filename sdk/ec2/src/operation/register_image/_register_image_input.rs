@@ -52,7 +52,10 @@ pub struct RegisterImageInput {
     /// <p>Default: <code>paravirtual</code> </p>
     #[doc(hidden)]
     pub virtualization_type: std::option::Option<std::string::String>,
-    /// <p>The boot mode of the AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
+    /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
     pub boot_mode: std::option::Option<crate::types::BootModeValues>,
     /// <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -131,7 +134,10 @@ impl RegisterImageInput {
     pub fn virtualization_type(&self) -> std::option::Option<&str> {
         self.virtualization_type.as_deref()
     }
-    /// <p>The boot mode of the AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
+    /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn boot_mode(&self) -> std::option::Option<&crate::types::BootModeValues> {
         self.boot_mode.as_ref()
     }
@@ -356,12 +362,18 @@ impl RegisterImageInputBuilder {
         self.virtualization_type = input;
         self
     }
-    /// <p>The boot mode of the AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
+    /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn boot_mode(mut self, input: crate::types::BootModeValues) -> Self {
         self.boot_mode = Some(input);
         self
     }
-    /// <p>The boot mode of the AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
+    /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_boot_mode(
         mut self,
         input: std::option::Option<crate::types::BootModeValues>,

@@ -26,6 +26,9 @@ pub struct EksPodPropertiesDetail {
     /// <p>The name of the node for this job.</p>
     #[doc(hidden)]
     pub node_name: std::option::Option<std::string::String>,
+    /// <p>Describes and uniquely identifies Kubernetes resources. For example, the compute environment that a pod runs in or the <code>jobID</code> for a job running in the pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+    #[doc(hidden)]
+    pub metadata: std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodPropertiesDetail {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
@@ -57,6 +60,10 @@ impl EksPodPropertiesDetail {
     pub fn node_name(&self) -> std::option::Option<&str> {
         self.node_name.as_deref()
     }
+    /// <p>Describes and uniquely identifies Kubernetes resources. For example, the compute environment that a pod runs in or the <code>jobID</code> for a job running in the pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::types::EksMetadata> {
+        self.metadata.as_ref()
+    }
 }
 impl EksPodPropertiesDetail {
     /// Creates a new builder-style object to manufacture [`EksPodPropertiesDetail`](crate::types::EksPodPropertiesDetail).
@@ -76,6 +83,7 @@ pub struct EksPodPropertiesDetailBuilder {
     pub(crate) volumes: std::option::Option<std::vec::Vec<crate::types::EksVolume>>,
     pub(crate) pod_name: std::option::Option<std::string::String>,
     pub(crate) node_name: std::option::Option<std::string::String>,
+    pub(crate) metadata: std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodPropertiesDetailBuilder {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
@@ -171,6 +179,16 @@ impl EksPodPropertiesDetailBuilder {
         self.node_name = input;
         self
     }
+    /// <p>Describes and uniquely identifies Kubernetes resources. For example, the compute environment that a pod runs in or the <code>jobID</code> for a job running in the pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn metadata(mut self, input: crate::types::EksMetadata) -> Self {
+        self.metadata = Some(input);
+        self
+    }
+    /// <p>Describes and uniquely identifies Kubernetes resources. For example, the compute environment that a pod runs in or the <code>jobID</code> for a job running in the pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn set_metadata(mut self, input: std::option::Option<crate::types::EksMetadata>) -> Self {
+        self.metadata = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EksPodPropertiesDetail`](crate::types::EksPodPropertiesDetail).
     pub fn build(self) -> crate::types::EksPodPropertiesDetail {
         crate::types::EksPodPropertiesDetail {
@@ -181,6 +199,7 @@ impl EksPodPropertiesDetailBuilder {
             volumes: self.volumes,
             pod_name: self.pod_name,
             node_name: self.node_name,
+            metadata: self.metadata,
         }
     }
 }

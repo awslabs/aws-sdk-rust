@@ -146,6 +146,47 @@ pub fn de_ipam(
                 builder = builder.set_tags(var_11);
             }
             ,
+            s if s.matches("defaultResourceDiscoveryId") /* DefaultResourceDiscoveryId com.amazonaws.ec2#Ipam$DefaultResourceDiscoveryId */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_default_resource_discovery_id(var_12);
+            }
+            ,
+            s if s.matches("defaultResourceDiscoveryAssociationId") /* DefaultResourceDiscoveryAssociationId com.amazonaws.ec2#Ipam$DefaultResourceDiscoveryAssociationId */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_default_resource_discovery_association_id(var_13);
+            }
+            ,
+            s if s.matches("resourceDiscoveryAssociationCount") /* ResourceDiscoveryAssociationCount com.amazonaws.ec2#Ipam$ResourceDiscoveryAssociationCount */ =>  {
+                let var_14 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_resource_discovery_association_count(var_14);
+            }
+            ,
             _ => {}
         }
     }

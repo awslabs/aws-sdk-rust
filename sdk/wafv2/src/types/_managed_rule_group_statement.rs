@@ -25,6 +25,7 @@ pub struct ManagedRuleGroupStatement {
     #[doc(hidden)]
     pub scope_down_statement: std::option::Option<std::boxed::Box<crate::types::Statement>>,
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
+    /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object for the account takeover prevention managed rule group, to provide information such as the sign-in page of your application and the type of content to accept or reject from the client. </p>
     /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p>
     #[doc(hidden)]
     pub managed_rule_group_configs:
@@ -58,6 +59,7 @@ impl ManagedRuleGroupStatement {
         self.scope_down_statement.as_deref()
     }
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
+    /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object for the account takeover prevention managed rule group, to provide information such as the sign-in page of your application and the type of content to accept or reject from the client. </p>
     /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p>
     pub fn managed_rule_group_configs(
         &self,
@@ -168,6 +170,7 @@ impl ManagedRuleGroupStatementBuilder {
     /// To override the contents of this collection use [`set_managed_rule_group_configs`](Self::set_managed_rule_group_configs).
     ///
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
+    /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object for the account takeover prevention managed rule group, to provide information such as the sign-in page of your application and the type of content to accept or reject from the client. </p>
     /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p>
     pub fn managed_rule_group_configs(
         mut self,
@@ -179,6 +182,7 @@ impl ManagedRuleGroupStatementBuilder {
         self
     }
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
+    /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object for the account takeover prevention managed rule group, to provide information such as the sign-in page of your application and the type of content to accept or reject from the client. </p>
     /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p>
     pub fn set_managed_rule_group_configs(
         mut self,

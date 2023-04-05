@@ -79,11 +79,25 @@ pub use crate::types::_rule_action_override::RuleActionOverrideBuilder;
 
 pub use crate::types::_managed_rule_group_config::ManagedRuleGroupConfigBuilder;
 
-pub use crate::types::_aws_managed_rules_bot_control_rule_set::AwsManagedRulesBotControlRuleSetBuilder;
+pub use crate::types::_aws_managed_rules_atp_rule_set::AwsManagedRulesAtpRuleSetBuilder;
+
+pub use crate::types::_response_inspection::ResponseInspectionBuilder;
+
+pub use crate::types::_response_inspection_json::ResponseInspectionJsonBuilder;
+
+pub use crate::types::_response_inspection_body_contains::ResponseInspectionBodyContainsBuilder;
+
+pub use crate::types::_response_inspection_header::ResponseInspectionHeaderBuilder;
+
+pub use crate::types::_response_inspection_status_code::ResponseInspectionStatusCodeBuilder;
+
+pub use crate::types::_request_inspection::RequestInspectionBuilder;
 
 pub use crate::types::_password_field::PasswordFieldBuilder;
 
 pub use crate::types::_username_field::UsernameFieldBuilder;
+
+pub use crate::types::_aws_managed_rules_bot_control_rule_set::AwsManagedRulesBotControlRuleSetBuilder;
 
 pub use crate::types::_excluded_rule::ExcludedRuleBuilder;
 

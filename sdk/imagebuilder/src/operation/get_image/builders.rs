@@ -5,7 +5,7 @@ pub use crate::operation::get_image::_get_image_input::GetImageInputBuilder;
 
 /// Fluent builder constructing a request to `GetImage`.
 ///
-/// <p> Gets an image.</p>
+/// <p>Gets an image.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetImageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,12 +65,12 @@ impl GetImageFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.image_build_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
     pub fn set_image_build_version_arn(
         mut self,
         input: std::option::Option<std::string::String>,

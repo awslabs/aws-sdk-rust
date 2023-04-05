@@ -181,6 +181,39 @@ pub fn de_path_component(
                 builder = builder.set_elastic_load_balancer_listener(var_17);
             }
             ,
+            s if s.matches("firewallStatelessRule") /* FirewallStatelessRule com.amazonaws.ec2#PathComponent$FirewallStatelessRule */ =>  {
+                let var_18 =
+                    Some(
+                        crate::protocol_serde::shape_firewall_stateless_rule::de_firewall_stateless_rule(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_firewall_stateless_rule(var_18);
+            }
+            ,
+            s if s.matches("firewallStatefulRule") /* FirewallStatefulRule com.amazonaws.ec2#PathComponent$FirewallStatefulRule */ =>  {
+                let var_19 =
+                    Some(
+                        crate::protocol_serde::shape_firewall_stateful_rule::de_firewall_stateful_rule(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_firewall_stateful_rule(var_19);
+            }
+            ,
+            s if s.matches("serviceName") /* ServiceName com.amazonaws.ec2#PathComponent$ServiceName */ =>  {
+                let var_20 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_name(var_20);
+            }
+            ,
             _ => {}
         }
     }

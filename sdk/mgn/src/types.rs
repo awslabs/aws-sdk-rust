@@ -87,6 +87,8 @@ pub use crate::types::_post_launch_actions::PostLaunchActions;
 
 pub use crate::types::_ssm_document::SsmDocument;
 
+pub use crate::types::_ssm_external_parameter::SsmExternalParameter;
+
 pub use crate::types::_ssm_parameter_store_parameter::SsmParameterStoreParameter;
 
 pub use crate::types::_ssm_parameter_store_parameter_type::SsmParameterStoreParameterType;
@@ -100,6 +102,8 @@ pub use crate::types::_licensing::Licensing;
 pub use crate::types::_target_instance_type_right_sizing_method::TargetInstanceTypeRightSizingMethod;
 
 pub use crate::types::_launch_disposition::LaunchDisposition;
+
+pub use crate::types::_action_category::ActionCategory;
 
 pub use crate::types::_source_server_action_document::SourceServerActionDocument;
 
@@ -153,6 +157,40 @@ pub use crate::types::_job_log_event::JobLogEvent;
 
 pub use crate::types::_describe_jobs_request_filters::DescribeJobsRequestFilters;
 
+pub use crate::types::_import_task_error::ImportTaskError;
+
+pub use crate::types::_import_error_data::ImportErrorData;
+
+pub use crate::types::_import_error_type::ImportErrorType;
+
+pub use crate::types::_import_task::ImportTask;
+
+pub use crate::types::_import_task_summary::ImportTaskSummary;
+
+pub use crate::types::_import_task_summary_servers::ImportTaskSummaryServers;
+
+pub use crate::types::_import_task_summary_applications::ImportTaskSummaryApplications;
+
+pub use crate::types::_import_task_summary_waves::ImportTaskSummaryWaves;
+
+pub use crate::types::_import_status::ImportStatus;
+
+pub use crate::types::_s3_bucket_source::S3BucketSource;
+
+pub use crate::types::_list_imports_request_filters::ListImportsRequestFilters;
+
+pub use crate::types::_export_task_error::ExportTaskError;
+
+pub use crate::types::_export_error_data::ExportErrorData;
+
+pub use crate::types::_export_task::ExportTask;
+
+pub use crate::types::_export_task_summary::ExportTaskSummary;
+
+pub use crate::types::_export_status::ExportStatus;
+
+pub use crate::types::_list_exports_request_filters::ListExportsRequestFilters;
+
 pub use crate::types::_application_aggregated_status::ApplicationAggregatedStatus;
 
 pub use crate::types::_application_progress_status::ApplicationProgressStatus;
@@ -162,6 +200,8 @@ pub use crate::types::_application_health_status::ApplicationHealthStatus;
 pub use crate::types::_application::Application;
 
 pub use crate::types::_list_applications_request_filters::ListApplicationsRequestFilters;
+
+mod _action_category;
 
 mod _application;
 
@@ -205,9 +245,37 @@ mod _disk;
 
 mod _error_details;
 
+mod _export_error_data;
+
+mod _export_status;
+
+mod _export_task;
+
+mod _export_task_error;
+
+mod _export_task_summary;
+
 mod _first_boot;
 
 mod _identification_hints;
+
+mod _import_error_data;
+
+mod _import_error_type;
+
+mod _import_status;
+
+mod _import_task;
+
+mod _import_task_error;
+
+mod _import_task_summary;
+
+mod _import_task_summary_applications;
+
+mod _import_task_summary_servers;
+
+mod _import_task_summary_waves;
 
 mod _initiated_by;
 
@@ -259,6 +327,10 @@ mod _life_cycle_state;
 
 mod _list_applications_request_filters;
 
+mod _list_exports_request_filters;
+
+mod _list_imports_request_filters;
+
 mod _list_waves_request_filters;
 
 mod _network_interface;
@@ -289,6 +361,8 @@ mod _replication_configuration_template;
 
 mod _replication_type;
 
+mod _s3_bucket_source;
+
 mod _source_properties;
 
 mod _source_server;
@@ -300,6 +374,8 @@ mod _source_server_actions_request_filters;
 mod _ssm_document;
 
 mod _ssm_document_type;
+
+mod _ssm_external_parameter;
 
 mod _ssm_parameter_store_parameter;
 

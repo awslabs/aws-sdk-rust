@@ -12,22 +12,44 @@ pub fn ser_put_template_action_input(
     if let Some(var_3) = &input.active {
         object.key("active").boolean(*var_3);
     }
-    if let Some(var_4) = &input.document_identifier {
-        object.key("documentIdentifier").string(var_4.as_str());
+    if let Some(var_4) = &input.category {
+        object.key("category").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.document_version {
-        object.key("documentVersion").string(var_5.as_str());
+    if let Some(var_5) = &input.description {
+        object.key("description").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.launch_configuration_template_id {
+    if let Some(var_6) = &input.document_identifier {
+        object.key("documentIdentifier").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.document_version {
+        object.key("documentVersion").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.external_parameters {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("externalParameters").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = object_9.key(key_10.as_str()).start_object();
+                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(
+                    &mut object_12,
+                    value_11,
+                )?;
+                object_12.finish();
+            }
+        }
+        object_9.finish();
+    }
+    if let Some(var_13) = &input.launch_configuration_template_id {
         object
             .key("launchConfigurationTemplateID")
-            .string(var_6.as_str());
+            .string(var_13.as_str());
     }
-    if let Some(var_7) = &input.must_succeed_for_cutover {
-        object.key("mustSucceedForCutover").boolean(*var_7);
+    if let Some(var_14) = &input.must_succeed_for_cutover {
+        object.key("mustSucceedForCutover").boolean(*var_14);
     }
-    if let Some(var_8) = &input.operating_system {
-        object.key("operatingSystem").string(var_8.as_str());
+    if let Some(var_15) = &input.operating_system {
+        object.key("operatingSystem").string(var_15.as_str());
     }
     {
         object.key("order").number(
@@ -35,24 +57,24 @@ pub fn ser_put_template_action_input(
             aws_smithy_types::Number::NegInt((input.order).into()),
         );
     }
-    if let Some(var_9) = &input.parameters {
+    if let Some(var_16) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("parameters").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_17 = object.key("parameters").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                let mut array_13 = object_10.key(key_11.as_str()).start_array();
-                for item_14 in value_12 {
+                let mut array_20 = object_17.key(key_18.as_str()).start_array();
+                for item_21 in value_19 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_15 = array_13.value().start_object();
-                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_15, item_14)?;
-                        object_15.finish();
+                        let mut object_22 = array_20.value().start_object();
+                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_22, item_21)?;
+                        object_22.finish();
                     }
                 }
-                array_13.finish();
+                array_20.finish();
             }
         }
-        object_10.finish();
+        object_17.finish();
     }
     if input.timeout_seconds != 0 {
         object.key("timeoutSeconds").number(

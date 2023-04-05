@@ -5,17 +5,17 @@
 pub enum Error {
     /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
+    /// <p>This exception occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Resilience Hub service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The specified resource could not be found.</p>
+    /// <p>This exception occurs when the specified resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>This exception occurs when you have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The limit on the number of requests per second was exceeded.</p>
+    /// <p>This exception occurs when you have exceeded the limit on the number of requests per second.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>Indicates that a request was not valid.</p>
+    /// <p>This exception occurs when a request is not valid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
@@ -116,6 +116,102 @@ impl From<crate::operation::create_app::CreateAppError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError,
+    ) -> Self {
+        match err {
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_app_version_resource::CreateAppVersionResourceError> for Error {
+    fn from(
+        err: crate::operation::create_app_version_resource::CreateAppVersionResourceError,
+    ) -> Self {
+        match err {
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::create_recommendation_template::CreateRecommendationTemplateError,
             R,
         >,
@@ -155,6 +251,7 @@ impl From<crate::operation::create_recommendation_template::CreateRecommendation
             crate::operation::create_recommendation_template::CreateRecommendationTemplateError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_recommendation_template::CreateRecommendationTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_recommendation_template::CreateRecommendationTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_recommendation_template::CreateRecommendationTemplateError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_recommendation_template::CreateRecommendationTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_recommendation_template::CreateRecommendationTemplateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_recommendation_template::CreateRecommendationTemplateError::Unhandled(inner) => Error::Unhandled(inner),
@@ -293,6 +390,144 @@ impl From<crate::operation::delete_app_assessment::DeleteAppAssessmentError> for
             crate::operation::delete_app_assessment::DeleteAppAssessmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_app_assessment::DeleteAppAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_app_assessment::DeleteAppAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_input_source::DeleteAppInputSourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_input_source::DeleteAppInputSourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_app_input_source::DeleteAppInputSourceError> for Error {
+    fn from(err: crate::operation::delete_app_input_source::DeleteAppInputSourceError) -> Self {
+        match err {
+            crate::operation::delete_app_input_source::DeleteAppInputSourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_app_input_source::DeleteAppInputSourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_app_input_source::DeleteAppInputSourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_app_input_source::DeleteAppInputSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_app_input_source::DeleteAppInputSourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_app_input_source::DeleteAppInputSourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_app_input_source::DeleteAppInputSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_app_version_resource::DeleteAppVersionResourceError> for Error {
+    fn from(
+        err: crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -474,6 +709,127 @@ impl From<crate::operation::describe_app_assessment::DescribeAppAssessmentError>
             crate::operation::describe_app_assessment::DescribeAppAssessmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_app_assessment::DescribeAppAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_app_assessment::DescribeAppAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_version::DescribeAppVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_version::DescribeAppVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_app_version::DescribeAppVersionError> for Error {
+    fn from(err: crate::operation::describe_app_version::DescribeAppVersionError) -> Self {
+        match err {
+            crate::operation::describe_app_version::DescribeAppVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_app_version::DescribeAppVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_app_version::DescribeAppVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_app_version::DescribeAppVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_app_version::DescribeAppVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_app_version::DescribeAppVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_app_version_resource::DescribeAppVersionResourceError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_app_version_resource::DescribeAppVersionResourceError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -810,6 +1166,49 @@ impl
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_app_input_sources::ListAppInputSourcesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_app_input_sources::ListAppInputSourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_app_input_sources::ListAppInputSourcesError> for Error {
+    fn from(err: crate::operation::list_app_input_sources::ListAppInputSourcesError) -> Self {
+        match err {
+            crate::operation::list_app_input_sources::ListAppInputSourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_app_input_sources::ListAppInputSourcesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_app_input_sources::ListAppInputSourcesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_app_input_sources::ListAppInputSourcesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_app_input_sources::ListAppInputSourcesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_app_input_sources::ListAppInputSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, R>>
     for Error
 where
@@ -849,6 +1248,54 @@ impl From<crate::operation::list_apps::ListAppsError> for Error {
                 Error::ValidationException(inner)
             }
             crate::operation::list_apps::ListAppsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1603,6 +2050,145 @@ impl From<crate::operation::update_app::UpdateAppError> for Error {
             crate::operation::update_app::UpdateAppError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_app_version::UpdateAppVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_app_version::UpdateAppVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_app_version::UpdateAppVersionError> for Error {
+    fn from(err: crate::operation::update_app_version::UpdateAppVersionError) -> Self {
+        match err {
+            crate::operation::update_app_version::UpdateAppVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_app_version::UpdateAppVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_app_version::UpdateAppVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_app_version::UpdateAppVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_app_version::UpdateAppVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_app_version::UpdateAppVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_app_version::UpdateAppVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError,
+    ) -> Self {
+        match err {
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_app_version_resource::UpdateAppVersionResourceError> for Error {
+    fn from(
+        err: crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
+    ) -> Self {
+        match err {
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

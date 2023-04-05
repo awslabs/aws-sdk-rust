@@ -12,13 +12,13 @@ pub struct CreateExplainabilityInput {
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     #[doc(hidden)]
     pub explainability_config: std::option::Option<crate::types::ExplainabilityConfig>,
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<crate::types::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
     #[doc(hidden)]
     pub schema: std::option::Option<crate::types::Schema>,
-    /// <p>Create an Explainability visualization that is viewable within the AWS console.</p>
+    /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     #[doc(hidden)]
     pub enable_visualization: std::option::Option<bool>,
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
@@ -57,7 +57,7 @@ impl CreateExplainabilityInput {
     ) -> std::option::Option<&crate::types::ExplainabilityConfig> {
         self.explainability_config.as_ref()
     }
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
@@ -65,7 +65,7 @@ impl CreateExplainabilityInput {
     pub fn schema(&self) -> std::option::Option<&crate::types::Schema> {
         self.schema.as_ref()
     }
-    /// <p>Create an Explainability visualization that is viewable within the AWS console.</p>
+    /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     pub fn enable_visualization(&self) -> std::option::Option<bool> {
         self.enable_visualization
     }
@@ -153,12 +153,12 @@ impl CreateExplainabilityInputBuilder {
         self.explainability_config = input;
         self
     }
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = Some(input);
         self
     }
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
@@ -173,12 +173,12 @@ impl CreateExplainabilityInputBuilder {
         self.schema = input;
         self
     }
-    /// <p>Create an Explainability visualization that is viewable within the AWS console.</p>
+    /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     pub fn enable_visualization(mut self, input: bool) -> Self {
         self.enable_visualization = Some(input);
         self
     }
-    /// <p>Create an Explainability visualization that is viewable within the AWS console.</p>
+    /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     pub fn set_enable_visualization(mut self, input: std::option::Option<bool>) -> Self {
         self.enable_visualization = input;
         self

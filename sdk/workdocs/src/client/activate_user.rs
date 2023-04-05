@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`user_id(impl Into<String>)`](crate::operation::activate_user::builders::ActivateUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::activate_user::builders::ActivateUserFluentBuilder::set_user_id): <p>The ID of the user.</p>
-    ///   - [`authentication_token(impl Into<String>)`](crate::operation::activate_user::builders::ActivateUserFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::activate_user::builders::ActivateUserFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::operation::activate_user::builders::ActivateUserFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::activate_user::builders::ActivateUserFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     /// - On success, responds with [`ActivateUserOutput`](crate::operation::activate_user::ActivateUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::activate_user::ActivateUserOutput::user): <p>The user information.</p>
     /// - On failure, responds with [`SdkError<ActivateUserError>`](crate::operation::activate_user::ActivateUserError)

@@ -24,6 +24,9 @@ pub struct MetricDefinition {
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
     #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
+    /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
 }
 impl MetricDefinition {
     /// <p>The ID of this metric definition.</p>
@@ -54,6 +57,10 @@ impl MetricDefinition {
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
+    /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl MetricDefinition {
     /// Creates a new builder-style object to manufacture [`MetricDefinition`](crate::types::MetricDefinition).
@@ -73,6 +80,7 @@ pub struct MetricDefinitionBuilder {
     pub(crate) dimension_keys:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) event_pattern: std::option::Option<std::string::String>,
+    pub(crate) namespace: std::option::Option<std::string::String>,
 }
 impl MetricDefinitionBuilder {
     /// <p>The ID of this metric definition.</p>
@@ -155,6 +163,16 @@ impl MetricDefinitionBuilder {
         self.event_pattern = input;
         self
     }
+    /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
+    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+        self.namespace = Some(input.into());
+        self
+    }
+    /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
+    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.namespace = input;
+        self
+    }
     /// Consumes the builder and constructs a [`MetricDefinition`](crate::types::MetricDefinition).
     pub fn build(self) -> crate::types::MetricDefinition {
         crate::types::MetricDefinition {
@@ -164,6 +182,7 @@ impl MetricDefinitionBuilder {
             unit_label: self.unit_label,
             dimension_keys: self.dimension_keys,
             event_pattern: self.event_pattern,
+            namespace: self.namespace,
         }
     }
 }

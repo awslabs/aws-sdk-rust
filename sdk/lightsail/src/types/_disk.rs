@@ -61,6 +61,11 @@ pub struct Disk {
     #[deprecated]
     #[doc(hidden)]
     pub gb_in_use: std::option::Option<i32>,
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub auto_mount_status: std::option::Option<crate::types::AutoMountStatus>,
 }
 impl Disk {
     /// <p>The unique name of the disk.</p>
@@ -137,6 +142,12 @@ impl Disk {
     pub fn gb_in_use(&self) -> std::option::Option<i32> {
         self.gb_in_use
     }
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn auto_mount_status(&self) -> std::option::Option<&crate::types::AutoMountStatus> {
+        self.auto_mount_status.as_ref()
+    }
 }
 impl Disk {
     /// Creates a new builder-style object to manufacture [`Disk`](crate::types::Disk).
@@ -166,6 +177,7 @@ pub struct DiskBuilder {
     pub(crate) is_attached: std::option::Option<bool>,
     pub(crate) attachment_state: std::option::Option<std::string::String>,
     pub(crate) gb_in_use: std::option::Option<i32>,
+    pub(crate) auto_mount_status: std::option::Option<crate::types::AutoMountStatus>,
 }
 impl DiskBuilder {
     /// <p>The unique name of the disk.</p>
@@ -377,6 +389,23 @@ impl DiskBuilder {
         self.gb_in_use = input;
         self
     }
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn auto_mount_status(mut self, input: crate::types::AutoMountStatus) -> Self {
+        self.auto_mount_status = Some(input);
+        self
+    }
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn set_auto_mount_status(
+        mut self,
+        input: std::option::Option<crate::types::AutoMountStatus>,
+    ) -> Self {
+        self.auto_mount_status = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Disk`](crate::types::Disk).
     pub fn build(self) -> crate::types::Disk {
         crate::types::Disk {
@@ -397,6 +426,7 @@ impl DiskBuilder {
             is_attached: self.is_attached,
             attachment_state: self.attachment_state,
             gb_in_use: self.gb_in_use,
+            auto_mount_status: self.auto_mount_status,
         }
     }
 }

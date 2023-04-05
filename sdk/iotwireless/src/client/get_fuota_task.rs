@@ -14,6 +14,9 @@ impl super::Client {
     ///   - [`firmware_update_image(Option<String>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::firmware_update_image): <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
     ///   - [`firmware_update_role(Option<String>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::firmware_update_role): <p>The firmware update role that is to be used with a FUOTA task.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::created_at): <p>Created at timestamp for the resource.</p>
+    ///   - [`redundancy_percent(Option<i32>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::redundancy_percent): <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
+    ///   - [`fragment_size_bytes(Option<i32>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::fragment_size_bytes): <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
+    ///   - [`fragment_interval_ms(Option<i32>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::fragment_interval_ms): <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
     /// - On failure, responds with [`SdkError<GetFuotaTaskError>`](crate::operation::get_fuota_task::GetFuotaTaskError)
     pub fn get_fuota_task(
         &self,

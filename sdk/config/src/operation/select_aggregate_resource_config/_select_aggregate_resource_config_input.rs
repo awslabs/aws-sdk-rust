@@ -11,10 +11,10 @@ pub struct SelectAggregateResourceConfigInput {
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of query results returned on each page. </p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -29,11 +29,11 @@ impl SelectAggregateResourceConfigInput {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>The maximum number of query results returned on each page. </p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
@@ -126,10 +126,8 @@ impl SelectAggregateResourceConfigInputBuilder {
                 configuration_aggregator_name: self.configuration_aggregator_name
                 ,
                 limit: self.limit
-                    .unwrap_or_default()
                 ,
                 max_results: self.max_results
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

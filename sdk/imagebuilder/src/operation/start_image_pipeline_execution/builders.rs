@@ -5,7 +5,7 @@ pub use crate::operation::start_image_pipeline_execution::_start_image_pipeline_
 
 /// Fluent builder constructing a request to `StartImagePipelineExecution`.
 ///
-/// <p> Manually triggers a pipeline to create an image.</p>
+/// <p>Manually triggers a pipeline to create an image.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartImagePipelineExecutionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

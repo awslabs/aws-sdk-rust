@@ -26,7 +26,7 @@ pub struct StartIncidentInput {
     /// <p>Details of what created the incident record in Incident Manager.</p>
     #[doc(hidden)]
     pub trigger_details: std::option::Option<crate::types::TriggerDetails>,
-    /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     #[doc(hidden)]
     pub related_items: std::option::Option<std::vec::Vec<crate::types::RelatedItem>>,
 }
@@ -59,7 +59,7 @@ impl StartIncidentInput {
     pub fn trigger_details(&self) -> std::option::Option<&crate::types::TriggerDetails> {
         self.trigger_details.as_ref()
     }
-    /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn related_items(&self) -> std::option::Option<&[crate::types::RelatedItem]> {
         self.related_items.as_deref()
     }
@@ -159,14 +159,14 @@ impl StartIncidentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
     ///
-    /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn related_items(mut self, input: crate::types::RelatedItem) -> Self {
         let mut v = self.related_items.unwrap_or_default();
         v.push(input);
         self.related_items = Some(v);
         self
     }
-    /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn set_related_items(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::RelatedItem>>,

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChimeSdkMeetingConfiguration {
-    /// <p>The source configuration for a specified media pipline.</p>
+    /// <p>The source configuration for a specified media pipeline.</p>
     #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::types::SourceConfiguration>,
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
@@ -12,7 +12,7 @@ pub struct ChimeSdkMeetingConfiguration {
     pub artifacts_configuration: std::option::Option<crate::types::ArtifactsConfiguration>,
 }
 impl ChimeSdkMeetingConfiguration {
-    /// <p>The source configuration for a specified media pipline.</p>
+    /// <p>The source configuration for a specified media pipeline.</p>
     pub fn source_configuration(&self) -> std::option::Option<&crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
@@ -38,12 +38,12 @@ pub struct ChimeSdkMeetingConfigurationBuilder {
     pub(crate) artifacts_configuration: std::option::Option<crate::types::ArtifactsConfiguration>,
 }
 impl ChimeSdkMeetingConfigurationBuilder {
-    /// <p>The source configuration for a specified media pipline.</p>
+    /// <p>The source configuration for a specified media pipeline.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
         self.source_configuration = Some(input);
         self
     }
-    /// <p>The source configuration for a specified media pipline.</p>
+    /// <p>The source configuration for a specified media pipeline.</p>
     pub fn set_source_configuration(
         mut self,
         input: std::option::Option<crate::types::SourceConfiguration>,

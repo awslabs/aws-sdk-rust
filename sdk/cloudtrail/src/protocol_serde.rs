@@ -12,11 +12,17 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_cancel_query;
 
+pub(crate) mod shape_create_channel;
+
 pub(crate) mod shape_create_event_data_store;
 
 pub(crate) mod shape_create_trail;
 
+pub(crate) mod shape_delete_channel;
+
 pub(crate) mod shape_delete_event_data_store;
+
+pub(crate) mod shape_delete_resource_policy;
 
 pub(crate) mod shape_delete_trail;
 
@@ -37,6 +43,8 @@ pub(crate) mod shape_get_import;
 pub(crate) mod shape_get_insight_selectors;
 
 pub(crate) mod shape_get_query_results;
+
+pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_get_trail;
 
@@ -64,6 +72,8 @@ pub(crate) mod shape_put_event_selectors;
 
 pub(crate) mod shape_put_insight_selectors;
 
+pub(crate) mod shape_put_resource_policy;
+
 pub(crate) mod shape_register_organization_delegated_admin;
 
 pub(crate) mod shape_remove_tags;
@@ -79,6 +89,8 @@ pub(crate) mod shape_start_query;
 pub(crate) mod shape_stop_import;
 
 pub(crate) mod shape_stop_logging;
+
+pub(crate) mod shape_update_channel;
 
 pub(crate) mod shape_update_event_data_store;
 
@@ -106,7 +118,13 @@ pub(crate) mod shape_cancel_query_input;
 
 pub(crate) mod shape_cannot_delegate_management_account_exception;
 
+pub(crate) mod shape_channel_already_exists_exception;
+
 pub(crate) mod shape_channel_arn_invalid_exception;
+
+pub(crate) mod shape_channel_exists_for_eds_exception;
+
+pub(crate) mod shape_channel_max_limit_exceeded_exception;
 
 pub(crate) mod shape_channel_not_found_exception;
 
@@ -120,13 +138,19 @@ pub(crate) mod shape_cloud_watch_logs_delivery_unavailable_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_channel_input;
+
 pub(crate) mod shape_create_event_data_store_input;
 
 pub(crate) mod shape_create_trail_input;
 
 pub(crate) mod shape_delegated_admin_account_limit_exceeded_exception;
 
+pub(crate) mod shape_delete_channel_input;
+
 pub(crate) mod shape_delete_event_data_store_input;
+
+pub(crate) mod shape_delete_resource_policy_input;
 
 pub(crate) mod shape_delete_trail_input;
 
@@ -159,6 +183,8 @@ pub(crate) mod shape_get_import_input;
 pub(crate) mod shape_get_insight_selectors_input;
 
 pub(crate) mod shape_get_query_results_input;
+
+pub(crate) mod shape_get_resource_policy_input;
 
 pub(crate) mod shape_get_trail_input;
 
@@ -222,6 +248,8 @@ pub(crate) mod shape_invalid_s3_prefix_exception;
 
 pub(crate) mod shape_invalid_sns_topic_name_exception;
 
+pub(crate) mod shape_invalid_source_exception;
+
 pub(crate) mod shape_invalid_tag_parameter_exception;
 
 pub(crate) mod shape_invalid_time_range_exception;
@@ -274,13 +302,21 @@ pub(crate) mod shape_put_event_selectors_input;
 
 pub(crate) mod shape_put_insight_selectors_input;
 
+pub(crate) mod shape_put_resource_policy_input;
+
 pub(crate) mod shape_query_id_not_found_exception;
 
 pub(crate) mod shape_register_organization_delegated_admin_input;
 
 pub(crate) mod shape_remove_tags_input;
 
+pub(crate) mod shape_resource_arn_not_valid_exception;
+
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_resource_policy_not_found_exception;
+
+pub(crate) mod shape_resource_policy_not_valid_exception;
 
 pub(crate) mod shape_resource_type_not_supported_exception;
 
@@ -308,6 +344,8 @@ pub(crate) mod shape_trail_not_provided_exception;
 
 pub(crate) mod shape_unsupported_operation_exception;
 
+pub(crate) mod shape_update_channel_input;
+
 pub(crate) mod shape_update_event_data_store_input;
 
 pub(crate) mod shape_update_trail_input;
@@ -317,6 +355,8 @@ pub(crate) mod shape_advanced_event_selector;
 pub(crate) mod shape_advanced_event_selectors;
 
 pub(crate) mod shape_channels;
+
+pub(crate) mod shape_destination;
 
 pub(crate) mod shape_destinations;
 
@@ -337,6 +377,8 @@ pub(crate) mod shape_import_source;
 pub(crate) mod shape_import_statistics;
 
 pub(crate) mod shape_imports_list;
+
+pub(crate) mod shape_ingestion_status;
 
 pub(crate) mod shape_insight_selector;
 
@@ -373,8 +415,6 @@ pub(crate) mod shape_advanced_field_selector;
 pub(crate) mod shape_channel;
 
 pub(crate) mod shape_data_resource;
-
-pub(crate) mod shape_destination;
 
 pub(crate) mod shape_event;
 

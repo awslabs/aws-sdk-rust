@@ -10,7 +10,7 @@ pub struct PutEmailIdentityDkimAttributesInput {
     /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     #[doc(hidden)]
-    pub signing_enabled: bool,
+    pub signing_enabled: std::option::Option<bool>,
 }
 impl PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity.</p>
@@ -19,7 +19,7 @@ impl PutEmailIdentityDkimAttributesInput {
     }
     /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
-    pub fn signing_enabled(&self) -> bool {
+    pub fn signing_enabled(&self) -> std::option::Option<bool> {
         self.signing_enabled
     }
 }
@@ -72,7 +72,6 @@ impl PutEmailIdentityDkimAttributesInputBuilder {
                 email_identity: self.email_identity
                 ,
                 signing_enabled: self.signing_enabled
-                    .unwrap_or_default()
                 ,
             }
         )

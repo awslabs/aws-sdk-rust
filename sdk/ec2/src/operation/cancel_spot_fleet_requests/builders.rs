@@ -6,7 +6,8 @@ pub use crate::operation::cancel_spot_fleet_requests::_cancel_spot_fleet_request
 /// Fluent builder constructing a request to `CancelSpotFleetRequests`.
 ///
 /// <p>Cancels the specified Spot Fleet requests.</p>
-/// <p>After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances. You must specify whether the Spot Fleet should also terminate its Spot Instances. If you terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you terminate them manually.</p>
+/// <p>After you cancel a Spot Fleet request, the Spot Fleet launches no new instances.</p>
+/// <p>You must also specify whether a canceled Spot Fleet request should terminate its instances. If you choose to terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you terminate them manually.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -98,12 +99,14 @@ impl CancelSpotFleetRequestsFluentBuilder {
         self.inner = self.inner.set_spot_fleet_request_ids(input);
         self
     }
-    /// <p>Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.</p>
+    /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
     pub fn terminate_instances(mut self, input: bool) -> Self {
         self.inner = self.inner.terminate_instances(input);
         self
     }
-    /// <p>Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.</p>
+    /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
     pub fn set_terminate_instances(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_terminate_instances(input);
         self

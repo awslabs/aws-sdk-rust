@@ -204,6 +204,11 @@ pub(crate) fn de_describe_job_template(
                             .transpose()?,
                         );
                     }
+                    "maintenanceWindows" => {
+                        builder = builder.set_maintenance_windows(
+                            crate::protocol_serde::shape_maintenance_windows::de_maintenance_windows(tokens)?
+                        );
+                    }
                     "presignedUrlConfig" => {
                         builder = builder.set_presigned_url_config(
                             crate::protocol_serde::shape_presigned_url_config::de_presigned_url_config(tokens)?

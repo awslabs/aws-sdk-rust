@@ -65,12 +65,12 @@ impl ImportComponentFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p> The name of the component.</p>
+    /// <p>The name of the component.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The name of the component.</p>
+    /// <p>The name of the component.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
@@ -123,12 +123,12 @@ impl ImportComponentFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.change_description(input.into());
         self
     }
-    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn set_change_description(
         mut self,
         input: std::option::Option<std::string::String>,

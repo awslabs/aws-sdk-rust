@@ -21,7 +21,7 @@ pub struct StartJobRunInput {
     /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     #[doc(hidden)]
-    pub allocated_capacity: i32,
+    pub allocated_capacity: std::option::Option<i32>,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
     /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
     #[doc(hidden)]
@@ -82,7 +82,7 @@ impl StartJobRunInput {
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
-    pub fn allocated_capacity(&self) -> i32 {
+    pub fn allocated_capacity(&self) -> std::option::Option<i32> {
         self.allocated_capacity
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
@@ -343,7 +343,7 @@ impl StartJobRunInputBuilder {
             job_name: self.job_name,
             job_run_id: self.job_run_id,
             arguments: self.arguments,
-            allocated_capacity: self.allocated_capacity.unwrap_or_default(),
+            allocated_capacity: self.allocated_capacity,
             timeout: self.timeout,
             max_capacity: self.max_capacity,
             security_configuration: self.security_configuration,

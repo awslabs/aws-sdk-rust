@@ -53,6 +53,12 @@ pub struct JobRun {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The configuration of the retry policy that the job runs on.</p>
+    #[doc(hidden)]
+    pub retry_policy_configuration: std::option::Option<crate::types::RetryPolicyConfiguration>,
+    /// <p>The current status of the retry policy executed on the job.</p>
+    #[doc(hidden)]
+    pub retry_policy_execution: std::option::Option<crate::types::RetryPolicyExecution>,
 }
 impl JobRun {
     /// <p>The ID of the job run.</p>
@@ -124,6 +130,18 @@ impl JobRun {
     {
         self.tags.as_ref()
     }
+    /// <p>The configuration of the retry policy that the job runs on.</p>
+    pub fn retry_policy_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::RetryPolicyConfiguration> {
+        self.retry_policy_configuration.as_ref()
+    }
+    /// <p>The current status of the retry policy executed on the job.</p>
+    pub fn retry_policy_execution(
+        &self,
+    ) -> std::option::Option<&crate::types::RetryPolicyExecution> {
+        self.retry_policy_execution.as_ref()
+    }
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::types::JobRun).
@@ -153,6 +171,9 @@ pub struct JobRunBuilder {
     pub(crate) failure_reason: std::option::Option<crate::types::FailureReason>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) retry_policy_configuration:
+        std::option::Option<crate::types::RetryPolicyConfiguration>,
+    pub(crate) retry_policy_execution: std::option::Option<crate::types::RetryPolicyExecution>,
 }
 impl JobRunBuilder {
     /// <p>The ID of the job run.</p>
@@ -348,6 +369,35 @@ impl JobRunBuilder {
         self.tags = input;
         self
     }
+    /// <p>The configuration of the retry policy that the job runs on.</p>
+    pub fn retry_policy_configuration(
+        mut self,
+        input: crate::types::RetryPolicyConfiguration,
+    ) -> Self {
+        self.retry_policy_configuration = Some(input);
+        self
+    }
+    /// <p>The configuration of the retry policy that the job runs on.</p>
+    pub fn set_retry_policy_configuration(
+        mut self,
+        input: std::option::Option<crate::types::RetryPolicyConfiguration>,
+    ) -> Self {
+        self.retry_policy_configuration = input;
+        self
+    }
+    /// <p>The current status of the retry policy executed on the job.</p>
+    pub fn retry_policy_execution(mut self, input: crate::types::RetryPolicyExecution) -> Self {
+        self.retry_policy_execution = Some(input);
+        self
+    }
+    /// <p>The current status of the retry policy executed on the job.</p>
+    pub fn set_retry_policy_execution(
+        mut self,
+        input: std::option::Option<crate::types::RetryPolicyExecution>,
+    ) -> Self {
+        self.retry_policy_execution = input;
+        self
+    }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     pub fn build(self) -> crate::types::JobRun {
         crate::types::JobRun {
@@ -367,6 +417,8 @@ impl JobRunBuilder {
             state_details: self.state_details,
             failure_reason: self.failure_reason,
             tags: self.tags,
+            retry_policy_configuration: self.retry_policy_configuration,
+            retry_policy_execution: self.retry_policy_execution,
         }
     }
 }

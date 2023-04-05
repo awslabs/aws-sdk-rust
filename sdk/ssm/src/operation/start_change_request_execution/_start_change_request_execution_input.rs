@@ -30,7 +30,7 @@ pub struct StartChangeRequestExecutionInput {
     /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
     /// </note>
     #[doc(hidden)]
-    pub auto_approve: bool,
+    pub auto_approve: std::option::Option<bool>,
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
@@ -85,7 +85,7 @@ impl StartChangeRequestExecutionInput {
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
     /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
     /// </note>
-    pub fn auto_approve(&self) -> bool {
+    pub fn auto_approve(&self) -> std::option::Option<bool> {
         self.auto_approve
     }
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
@@ -326,7 +326,7 @@ impl StartChangeRequestExecutionInputBuilder {
                 parameters: self.parameters,
                 change_request_name: self.change_request_name,
                 client_token: self.client_token,
-                auto_approve: self.auto_approve.unwrap_or_default(),
+                auto_approve: self.auto_approve,
                 runbooks: self.runbooks,
                 tags: self.tags,
                 scheduled_end_time: self.scheduled_end_time,

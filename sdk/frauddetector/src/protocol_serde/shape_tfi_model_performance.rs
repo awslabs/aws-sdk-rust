@@ -31,6 +31,11 @@ where
                                     .map(|v| v.to_f32_lossy()),
                                 );
                             }
+                            "uncertaintyRange" => {
+                                builder = builder.set_uncertainty_range(
+                                    crate::protocol_serde::shape_uncertainty_range::de_uncertainty_range(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

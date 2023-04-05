@@ -170,6 +170,8 @@ pub(crate) mod shape_eks_pod_properties;
 
 pub(crate) mod shape_eks_pod_properties_override;
 
+pub(crate) mod shape_ephemeral_storage;
+
 pub(crate) mod shape_evaluate_on_exit;
 
 pub(crate) mod shape_fargate_platform_configuration;
@@ -233,6 +235,8 @@ pub(crate) mod shape_eks_attempt_details;
 pub(crate) mod shape_eks_container;
 
 pub(crate) mod shape_eks_container_override;
+
+pub(crate) mod shape_eks_metadata;
 
 pub(crate) mod shape_eks_properties_detail;
 
@@ -323,6 +327,8 @@ pub(crate) mod shape_tmpfs_list;
 pub(crate) mod shape_eks_attempt_container_detail;
 
 pub(crate) mod shape_eks_container_detail;
+
+pub(crate) mod shape_eks_labels_map;
 
 pub(crate) mod shape_device_cgroup_permissions;
 

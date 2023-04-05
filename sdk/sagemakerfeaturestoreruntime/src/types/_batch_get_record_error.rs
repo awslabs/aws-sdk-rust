@@ -10,10 +10,10 @@ pub struct BatchGetRecordError {
     /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.</p>
     #[doc(hidden)]
     pub record_identifier_value_as_string: std::option::Option<std::string::String>,
-    /// <p>The error code of an error that has occured when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
+    /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>The error message of an error that has occured when attempting to retrieve a record in the batch.</p>
+    /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
@@ -26,11 +26,11 @@ impl BatchGetRecordError {
     pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
         self.record_identifier_value_as_string.as_deref()
     }
-    /// <p>The error code of an error that has occured when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
+    /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>The error message of an error that has occured when attempting to retrieve a record in the batch.</p>
+    /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -81,22 +81,22 @@ impl BatchGetRecordErrorBuilder {
         self.record_identifier_value_as_string = input;
         self
     }
-    /// <p>The error code of an error that has occured when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
+    /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.error_code = Some(input.into());
         self
     }
-    /// <p>The error code of an error that has occured when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
+    /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.error_code = input;
         self
     }
-    /// <p>The error message of an error that has occured when attempting to retrieve a record in the batch.</p>
+    /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
         self.error_message = Some(input.into());
         self
     }
-    /// <p>The error message of an error that has occured when attempting to retrieve a record in the batch.</p>
+    /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.error_message = input;
         self

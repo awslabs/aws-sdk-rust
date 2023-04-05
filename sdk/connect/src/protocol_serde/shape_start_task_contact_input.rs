@@ -47,13 +47,16 @@ pub fn ser_start_task_contact_input(
         }
         object_13.finish();
     }
-    if let Some(var_17) = &input.scheduled_time {
+    if let Some(var_17) = &input.related_contact_id {
+        object.key("RelatedContactId").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.scheduled_time {
         object
             .key("ScheduledTime")
-            .date_time(var_17, aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_18, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_18) = &input.task_template_id {
-        object.key("TaskTemplateId").string(var_18.as_str());
+    if let Some(var_19) = &input.task_template_id {
+        object.key("TaskTemplateId").string(var_19.as_str());
     }
     Ok(())
 }

@@ -10,7 +10,7 @@ pub struct TestRecommendation {
     /// <p>The reference identifier for the test recommendation.</p>
     #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
-    /// <p>The name of the application component.</p>
+    /// <p>The name of the Application Component.</p>
     #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The name of the test recommendation.</p>
@@ -47,7 +47,7 @@ impl TestRecommendation {
     pub fn reference_id(&self) -> std::option::Option<&str> {
         self.reference_id.as_deref()
     }
-    /// <p>The name of the application component.</p>
+    /// <p>The name of the Application Component.</p>
     pub fn app_component_name(&self) -> std::option::Option<&str> {
         self.app_component_name.as_deref()
     }
@@ -131,12 +131,12 @@ impl TestRecommendationBuilder {
         self.reference_id = input;
         self
     }
-    /// <p>The name of the application component.</p>
+    /// <p>The name of the Application Component.</p>
     pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.app_component_name = Some(input.into());
         self
     }
-    /// <p>The name of the application component.</p>
+    /// <p>The name of the Application Component.</p>
     pub fn set_app_component_name(
         mut self,
         input: std::option::Option<std::string::String>,

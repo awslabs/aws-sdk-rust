@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSipMediaApplicationAlexaSkillConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Returns the Alexa Skill configuration.</p>
     #[doc(hidden)]
     pub sip_media_application_alexa_skill_configuration:
         std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,
     _request_id: Option<String>,
 }
 impl GetSipMediaApplicationAlexaSkillConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Returns the Alexa Skill configuration.</p>
     pub fn sip_media_application_alexa_skill_configuration(
         &self,
     ) -> std::option::Option<&crate::types::SipMediaApplicationAlexaSkillConfiguration> {
@@ -39,7 +39,7 @@ pub struct GetSipMediaApplicationAlexaSkillConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSipMediaApplicationAlexaSkillConfigurationOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Returns the Alexa Skill configuration.</p>
     pub fn sip_media_application_alexa_skill_configuration(
         mut self,
         input: crate::types::SipMediaApplicationAlexaSkillConfiguration,
@@ -47,7 +47,7 @@ impl GetSipMediaApplicationAlexaSkillConfigurationOutputBuilder {
         self.sip_media_application_alexa_skill_configuration = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Returns the Alexa Skill configuration.</p>
     pub fn set_sip_media_application_alexa_skill_configuration(
         mut self,
         input: std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,

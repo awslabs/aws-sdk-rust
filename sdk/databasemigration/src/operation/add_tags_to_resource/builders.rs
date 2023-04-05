@@ -5,7 +5,7 @@ pub use crate::operation::add_tags_to_resource::_add_tags_to_resource_input::Add
 
 /// Fluent builder constructing a request to `AddTagsToResource`.
 ///
-/// <p>Adds metadata tags to an DMS resource, including replication instance, endpoint, security group, and migration task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or used in a Condition statement in an IAM policy for DMS. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type description.</p>
+/// <p>Adds metadata tags to an DMS resource, including replication instance, endpoint, subnet group, and migration task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or used in a Condition statement in an IAM policy for DMS. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type description.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddTagsToResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

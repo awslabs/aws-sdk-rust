@@ -13,10 +13,10 @@ pub struct Member {
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The email address for the account.</p>
+    /// <p>The email address for the account. This value is null if the account is associated with the administrator account through Organizations.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie membership invitation hasn't been sent to the account.</p>
     #[doc(hidden)]
     pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
@@ -46,11 +46,11 @@ impl Member {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The email address for the account.</p>
+    /// <p>The email address for the account. This value is null if the account is associated with the administrator account through Organizations.</p>
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie membership invitation hasn't been sent to the account.</p>
     pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
@@ -130,22 +130,22 @@ impl MemberBuilder {
         self.arn = input;
         self
     }
-    /// <p>The email address for the account.</p>
+    /// <p>The email address for the account. This value is null if the account is associated with the administrator account through Organizations.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
         self.email = Some(input.into());
         self
     }
-    /// <p>The email address for the account.</p>
+    /// <p>The email address for the account. This value is null if the account is associated with the administrator account through Organizations.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.email = input;
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie membership invitation hasn't been sent to the account.</p>
     pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.invited_at = Some(input);
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie membership invitation hasn't been sent to the account.</p>
     pub fn set_invited_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

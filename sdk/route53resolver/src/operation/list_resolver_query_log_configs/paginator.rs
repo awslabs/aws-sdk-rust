@@ -27,6 +27,14 @@ impl ListResolverQueryLogConfigsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `resolver_query_log_configs`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_resolver_query_log_configs::paginator::ListResolverQueryLogConfigsPaginatorItems{
+        crate::operation::list_resolver_query_log_configs::paginator::ListResolverQueryLogConfigsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -107,6 +115,37 @@ impl ListResolverQueryLogConfigsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListResolverQueryLogConfigsPaginator`
+///
+/// This is created with [`.items()`](ListResolverQueryLogConfigsPaginator::items)
+pub struct ListResolverQueryLogConfigsPaginatorItems(ListResolverQueryLogConfigsPaginator);
+
+impl ListResolverQueryLogConfigsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::types::ResolverQueryLogConfig,
+            aws_smithy_http::result::SdkError<
+                crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError,
+            >,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_resolver_query_log_configs_output_resolver_query_log_configs(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
         })
     }
 }

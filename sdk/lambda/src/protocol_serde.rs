@@ -302,6 +302,8 @@ pub(crate) mod shape_dead_letter_config;
 
 pub(crate) mod shape_destination_config;
 
+pub(crate) mod shape_document_db_event_source_config;
+
 pub(crate) mod shape_environment;
 
 pub(crate) mod shape_environment_response;

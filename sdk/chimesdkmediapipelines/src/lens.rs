@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_media_capture_pipelines_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_media_insights_pipeline_configurations_output_next_token(
+    input: &crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_media_pipelines_output_next_token(
     input: &crate::operation::list_media_pipelines::ListMediaPipelinesOutput,
 ) -> std::option::Option<&std::string::String> {

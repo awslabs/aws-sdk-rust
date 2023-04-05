@@ -5,9 +5,11 @@ pub use crate::operation::provision_product::_provision_product_input::Provision
 
 /// Fluent builder constructing a request to `ProvisionProduct`.
 ///
-/// <p>Provisions the specified product.</p>
-/// <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <code>DescribeRecord</code>.</p>
-/// <p>If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".</p>
+/// <p> Provisions the specified product. </p>
+/// <p> A provisioned product is a resourced instance of a product. For example, provisioning a product that's based on an CloudFormation template launches an CloudFormation stack and its underlying resources. You can check the status of this request using <code>DescribeRecord</code>. </p>
+/// <p> If the request contains a tag key with an empty list of values, there's a tag conflict for that key. Don't include conflicted keys as tags, or this will cause the error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>". </p> <note>
+/// <p> When provisioning a product that's been added to a portfolio, you must grant your user, group, or role access to the portfolio. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting users access</a> in the <i>Service Catalog User Guide</i>. </p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ProvisionProductFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -73,7 +75,6 @@ impl ProvisionProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -83,7 +84,6 @@ impl ProvisionProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>

@@ -69,6 +69,16 @@ where
                                     crate::protocol_serde::shape_container::de_container(tokens)?,
                                 );
                             }
+                            "rdsDbInstanceDetails" => {
+                                builder = builder.set_rds_db_instance_details(
+                                    crate::protocol_serde::shape_rds_db_instance_details::de_rds_db_instance_details(tokens)?
+                                );
+                            }
+                            "rdsDbUserDetails" => {
+                                builder = builder.set_rds_db_user_details(
+                                    crate::protocol_serde::shape_rds_db_user_details::de_rds_db_user_details(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

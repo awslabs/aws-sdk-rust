@@ -14,7 +14,7 @@ pub struct S3HudiSource {
     #[doc(hidden)]
     pub additional_hudi_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+    /// <p>Specifies additional options for the connector.</p>
     #[doc(hidden)]
     pub additional_options: std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     /// <p>Specifies the data schema for the Hudi source.</p>
@@ -37,7 +37,7 @@ impl S3HudiSource {
     {
         self.additional_hudi_options.as_ref()
     }
-    /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+    /// <p>Specifies additional options for the connector.</p>
     pub fn additional_options(
         &self,
     ) -> std::option::Option<&crate::types::S3DirectSourceAdditionalOptions> {
@@ -122,7 +122,7 @@ impl S3HudiSourceBuilder {
         self.additional_hudi_options = input;
         self
     }
-    /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+    /// <p>Specifies additional options for the connector.</p>
     pub fn additional_options(
         mut self,
         input: crate::types::S3DirectSourceAdditionalOptions,
@@ -130,7 +130,7 @@ impl S3HudiSourceBuilder {
         self.additional_options = Some(input);
         self
     }
-    /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+    /// <p>Specifies additional options for the connector.</p>
     pub fn set_additional_options(
         mut self,
         input: std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,

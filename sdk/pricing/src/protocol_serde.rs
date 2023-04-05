@@ -12,7 +12,11 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_get_attribute_values;
 
+pub(crate) mod shape_get_price_list_file_url;
+
 pub(crate) mod shape_get_products;
+
+pub(crate) mod shape_list_price_lists;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -22,11 +26,15 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_access_denied_exception;
+
 pub(crate) mod shape_describe_services_input;
 
 pub(crate) mod shape_expired_next_token_exception;
 
 pub(crate) mod shape_get_attribute_values_input;
+
+pub(crate) mod shape_get_price_list_file_url_input;
 
 pub(crate) mod shape_get_products_input;
 
@@ -36,6 +44,8 @@ pub(crate) mod shape_invalid_next_token_exception;
 
 pub(crate) mod shape_invalid_parameter_exception;
 
+pub(crate) mod shape_list_price_lists_input;
+
 pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_attribute_value_list;
@@ -44,10 +54,16 @@ pub(crate) mod shape_filter;
 
 pub(crate) mod shape_price_list_json_items;
 
+pub(crate) mod shape_price_lists;
+
 pub(crate) mod shape_service_list;
 
 pub(crate) mod shape_attribute_value;
 
+pub(crate) mod shape_price_list;
+
 pub(crate) mod shape_service;
 
 pub(crate) mod shape_attribute_name_list;
+
+pub(crate) mod shape_file_formats;

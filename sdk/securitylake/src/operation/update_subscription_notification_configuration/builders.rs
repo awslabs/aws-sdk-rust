@@ -5,7 +5,7 @@ pub use crate::operation::update_subscription_notification_configuration::_updat
 
 /// Fluent builder constructing a request to `UpdateSubscriptionNotificationConfiguration`.
 ///
-/// <p>Creates a new subscription notification or adds the existing subscription notification setting for the specified subscription ID.</p>
+/// <p>Updates an existing notification method for the subscription (SQS or HTTPs endpoint) or switches the notification subscription endpoint for a subscriber.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSubscriptionNotificationConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -128,12 +128,12 @@ impl UpdateSubscriptionNotificationConfigurationFluentBuilder {
         self.inner = self.inner.set_create_sqs(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
+    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. For more information about ARNs and how to use them in policies, see, see the <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a>in the Amazon Security Lake User Guide.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
+    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. For more information about ARNs and how to use them in policies, see, see the <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a>in the Amazon Security Lake User Guide.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self

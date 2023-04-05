@@ -5,7 +5,7 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input:
 
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type description.</p>
+/// <p>Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, subnet group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type description.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

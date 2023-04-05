@@ -5,7 +5,6 @@
 pub struct RejectPortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -27,7 +26,6 @@ pub struct RejectPortfolioShareInput {
 impl RejectPortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -68,7 +66,6 @@ pub struct RejectPortfolioShareInputBuilder {
 impl RejectPortfolioShareInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -78,7 +75,6 @@ impl RejectPortfolioShareInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>

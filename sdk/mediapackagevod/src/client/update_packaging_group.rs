@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`approximate_asset_count(i32)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::approximate_asset_count): The approximate asset count of the PackagingGroup.
     ///   - [`arn(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::arn): The ARN of the PackagingGroup.
     ///   - [`authorization(Option<Authorization>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::authorization): CDN Authorization credentials
+    ///   - [`created_at(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::created_at): The time the PackagingGroup was created.
     ///   - [`domain_name(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
     ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::egress_access_logs): Configure egress access logging.
     ///   - [`id(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::id): The ID of the PackagingGroup.

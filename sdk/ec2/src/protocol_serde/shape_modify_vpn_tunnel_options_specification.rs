@@ -159,5 +159,10 @@ pub fn ser_modify_vpn_tunnel_options_specification(
     if let Some(var_59) = &input.log_options {
         crate::protocol_serde::shape_vpn_tunnel_log_options_specification::ser_vpn_tunnel_log_options_specification(scope_58, var_59)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_60 = writer.prefix("EnableTunnelLifecycleControl");
+    if let Some(var_61) = &input.enable_tunnel_lifecycle_control {
+        scope_60.boolean(*var_61);
+    }
     Ok(())
 }

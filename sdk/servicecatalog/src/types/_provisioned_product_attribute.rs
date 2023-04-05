@@ -74,10 +74,10 @@ pub struct ProvisionedProductAttribute {
     /// <p>The name of the provisioning artifact.</p>
     #[doc(hidden)]
     pub provisioning_artifact_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
+    /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
     #[doc(hidden)]
     pub user_arn_session: std::option::Option<std::string::String>,
 }
@@ -169,11 +169,11 @@ impl ProvisionedProductAttribute {
     pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
+    /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
     pub fn user_arn_session(&self) -> std::option::Option<&str> {
         self.user_arn_session.as_deref()
     }
@@ -451,22 +451,22 @@ impl ProvisionedProductAttributeBuilder {
         self.provisioning_artifact_name = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_arn = input;
         self
     }
-    /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
+    /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
     pub fn user_arn_session(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_arn_session = Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
+    /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
     pub fn set_user_arn_session(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_arn_session = input;
         self

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::description): <p>The custom description of the template.</p>
     ///   - [`excludes(Option<SensitivityInspectionTemplateExcludes>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::excludes): <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
     ///   - [`includes(Option<SensitivityInspectionTemplateIncludes>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::includes): <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::name): <p>The name of the template.</p>
+    ///   - [`name(Option<String>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::name): <p>The name of the template: automated-sensitive-data-discovery.</p>
     ///   - [`sensitivity_inspection_template_id(Option<String>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::sensitivity_inspection_template_id): <p>The unique identifier for the template.</p>
     /// - On failure, responds with [`SdkError<GetSensitivityInspectionTemplateError>`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateError)
     pub fn get_sensitivity_inspection_template(&self) -> crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateFluentBuilder{

@@ -27,11 +27,11 @@ pub struct BatchUpdateFindingsInput {
     /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
     #[doc(hidden)]
-    pub confidence: i32,
+    pub confidence: std::option::Option<i32>,
     /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
     #[doc(hidden)]
-    pub criticality: i32,
+    pub criticality: std::option::Option<i32>,
     /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
@@ -84,12 +84,12 @@ impl BatchUpdateFindingsInput {
     }
     /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn confidence(&self) -> i32 {
+    pub fn confidence(&self) -> std::option::Option<i32> {
         self.confidence
     }
     /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
-    pub fn criticality(&self) -> i32 {
+    pub fn criticality(&self) -> std::option::Option<i32> {
         self.criticality
     }
     /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
@@ -353,8 +353,8 @@ impl BatchUpdateFindingsInputBuilder {
                 note: self.note,
                 severity: self.severity,
                 verification_state: self.verification_state,
-                confidence: self.confidence.unwrap_or_default(),
-                criticality: self.criticality.unwrap_or_default(),
+                confidence: self.confidence,
+                criticality: self.criticality,
                 types: self.types,
                 user_defined_fields: self.user_defined_fields,
                 workflow: self.workflow,

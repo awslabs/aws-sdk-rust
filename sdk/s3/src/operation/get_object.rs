@@ -130,11 +130,13 @@ impl GetObjectInput {
                         query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_8));
                     }
                 }
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
-                    );
+                if let Some(inner_9) = &_input.part_number {
+                    if *inner_9 != 0 {
+                        query.push_kv(
+                            "partNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -300,15 +302,15 @@ impl GetObjectInput {
                 output: &mut String,
             ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
             {
-                let input_9 = &_input.key;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
+                let input_10 = &_input.key;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_9,
+                    input_10,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -328,67 +330,69 @@ impl GetObjectInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "GetObject");
-                if let Some(inner_10) = &_input.response_cache_control {
+                if let Some(inner_11) = &_input.response_cache_control {
                     {
                         query.push_kv(
                             "response-cache-control",
-                            &aws_smithy_http::query::fmt_string(&inner_10),
-                        );
-                    }
-                }
-                if let Some(inner_11) = &_input.response_content_disposition {
-                    {
-                        query.push_kv(
-                            "response-content-disposition",
                             &aws_smithy_http::query::fmt_string(&inner_11),
                         );
                     }
                 }
-                if let Some(inner_12) = &_input.response_content_encoding {
+                if let Some(inner_12) = &_input.response_content_disposition {
                     {
                         query.push_kv(
-                            "response-content-encoding",
+                            "response-content-disposition",
                             &aws_smithy_http::query::fmt_string(&inner_12),
                         );
                     }
                 }
-                if let Some(inner_13) = &_input.response_content_language {
+                if let Some(inner_13) = &_input.response_content_encoding {
                     {
                         query.push_kv(
-                            "response-content-language",
+                            "response-content-encoding",
                             &aws_smithy_http::query::fmt_string(&inner_13),
                         );
                     }
                 }
-                if let Some(inner_14) = &_input.response_content_type {
+                if let Some(inner_14) = &_input.response_content_language {
                     {
                         query.push_kv(
-                            "response-content-type",
+                            "response-content-language",
                             &aws_smithy_http::query::fmt_string(&inner_14),
                         );
                     }
                 }
-                if let Some(inner_15) = &_input.response_expires {
+                if let Some(inner_15) = &_input.response_content_type {
+                    {
+                        query.push_kv(
+                            "response-content-type",
+                            &aws_smithy_http::query::fmt_string(&inner_15),
+                        );
+                    }
+                }
+                if let Some(inner_16) = &_input.response_expires {
                     {
                         query.push_kv(
                             "response-expires",
                             &aws_smithy_http::query::fmt_timestamp(
-                                inner_15,
+                                inner_16,
                                 aws_smithy_types::date_time::Format::HttpDate,
                             )?,
                         );
                     }
                 }
-                if let Some(inner_16) = &_input.version_id {
+                if let Some(inner_17) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_16));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_17));
                     }
                 }
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
-                    );
+                if let Some(inner_18) = &_input.part_number {
+                    if *inner_18 != 0 {
+                        query.push_kv(
+                            "partNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

@@ -65,12 +65,12 @@ impl UpdateUserFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -151,12 +151,12 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_locale(input);
         self
     }
-    /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
+    /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     pub fn grant_poweruser_privileges(mut self, input: crate::types::BooleanEnumType) -> Self {
         self.inner = self.inner.grant_poweruser_privileges(input);
         self
     }
-    /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
+    /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     pub fn set_grant_poweruser_privileges(
         mut self,
         input: std::option::Option<crate::types::BooleanEnumType>,

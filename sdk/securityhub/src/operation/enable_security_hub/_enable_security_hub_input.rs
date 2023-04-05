@@ -9,7 +9,12 @@ pub struct EnableSecurityHubInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     #[doc(hidden)]
-    pub enable_default_standards: bool,
+    pub enable_default_standards: std::option::Option<bool>,
+    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    #[doc(hidden)]
+    pub control_finding_generator: std::option::Option<crate::types::ControlFindingGenerator>,
 }
 impl EnableSecurityHubInput {
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
@@ -20,8 +25,16 @@ impl EnableSecurityHubInput {
         self.tags.as_ref()
     }
     /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
-    pub fn enable_default_standards(&self) -> bool {
+    pub fn enable_default_standards(&self) -> std::option::Option<bool> {
         self.enable_default_standards
+    }
+    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn control_finding_generator(
+        &self,
+    ) -> std::option::Option<&crate::types::ControlFindingGenerator> {
+        self.control_finding_generator.as_ref()
     }
 }
 impl EnableSecurityHubInput {
@@ -39,6 +52,8 @@ pub struct EnableSecurityHubInputBuilder {
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) enable_default_standards: std::option::Option<bool>,
+    pub(crate) control_finding_generator:
+        std::option::Option<crate::types::ControlFindingGenerator>,
 }
 impl EnableSecurityHubInputBuilder {
     /// Adds a key-value pair to `tags`.
@@ -76,6 +91,26 @@ impl EnableSecurityHubInputBuilder {
         self.enable_default_standards = input;
         self
     }
+    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn control_finding_generator(
+        mut self,
+        input: crate::types::ControlFindingGenerator,
+    ) -> Self {
+        self.control_finding_generator = Some(input);
+        self
+    }
+    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn set_control_finding_generator(
+        mut self,
+        input: std::option::Option<crate::types::ControlFindingGenerator>,
+    ) -> Self {
+        self.control_finding_generator = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EnableSecurityHubInput`](crate::operation::enable_security_hub::EnableSecurityHubInput).
     pub fn build(
         self,
@@ -86,7 +121,8 @@ impl EnableSecurityHubInputBuilder {
         Ok(
             crate::operation::enable_security_hub::EnableSecurityHubInput {
                 tags: self.tags,
-                enable_default_standards: self.enable_default_standards.unwrap_or_default(),
+                enable_default_standards: self.enable_default_standards,
+                control_finding_generator: self.control_finding_generator,
             },
         )
     }

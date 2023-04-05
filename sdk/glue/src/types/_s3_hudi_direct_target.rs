@@ -22,7 +22,7 @@ pub struct S3HudiDirectTarget {
     /// <p>Specifies the data output format for the target.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::TargetFormat>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies additional connection options for the connector.</p>
     #[doc(hidden)]
     pub additional_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -55,7 +55,7 @@ impl S3HudiDirectTarget {
     pub fn format(&self) -> std::option::Option<&crate::types::TargetFormat> {
         self.format.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies additional connection options for the connector.</p>
     pub fn additional_options(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -177,6 +177,7 @@ impl S3HudiDirectTargetBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
     ///
+    /// <p>Specifies additional connection options for the connector.</p>
     pub fn additional_options(
         mut self,
         k: impl Into<std::string::String>,
@@ -187,7 +188,7 @@ impl S3HudiDirectTargetBuilder {
         self.additional_options = Some(hash_map);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies additional connection options for the connector.</p>
     pub fn set_additional_options(
         mut self,
         input: std::option::Option<

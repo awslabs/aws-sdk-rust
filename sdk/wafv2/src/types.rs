@@ -95,15 +95,29 @@ pub use crate::types::_rule_action_override::RuleActionOverride;
 
 pub use crate::types::_managed_rule_group_config::ManagedRuleGroupConfig;
 
-pub use crate::types::_aws_managed_rules_bot_control_rule_set::AwsManagedRulesBotControlRuleSet;
+pub use crate::types::_aws_managed_rules_atp_rule_set::AwsManagedRulesAtpRuleSet;
 
-pub use crate::types::_inspection_level::InspectionLevel;
+pub use crate::types::_response_inspection::ResponseInspection;
+
+pub use crate::types::_response_inspection_json::ResponseInspectionJson;
+
+pub use crate::types::_response_inspection_body_contains::ResponseInspectionBodyContains;
+
+pub use crate::types::_response_inspection_header::ResponseInspectionHeader;
+
+pub use crate::types::_response_inspection_status_code::ResponseInspectionStatusCode;
+
+pub use crate::types::_request_inspection::RequestInspection;
 
 pub use crate::types::_password_field::PasswordField;
 
 pub use crate::types::_username_field::UsernameField;
 
 pub use crate::types::_payload_type::PayloadType;
+
+pub use crate::types::_aws_managed_rules_bot_control_rule_set::AwsManagedRulesBotControlRuleSet;
+
+pub use crate::types::_inspection_level::InspectionLevel;
 
 pub use crate::types::_excluded_rule::ExcludedRule;
 
@@ -250,6 +264,8 @@ mod _all_query_arguments;
 mod _allow_action;
 
 mod _and_statement;
+
+mod _aws_managed_rules_atp_rule_set;
 
 mod _aws_managed_rules_bot_control_rule_set;
 
@@ -421,9 +437,21 @@ mod _regex_pattern_set_summary;
 
 mod _release_summary;
 
+mod _request_inspection;
+
 mod _resource_type;
 
 mod _response_content_type;
+
+mod _response_inspection;
+
+mod _response_inspection_body_contains;
+
+mod _response_inspection_header;
+
+mod _response_inspection_json;
+
+mod _response_inspection_status_code;
 
 mod _rule;
 

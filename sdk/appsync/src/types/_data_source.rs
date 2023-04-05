@@ -19,6 +19,7 @@ pub struct DataSource {
     /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
     /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
     /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
+    /// <li> <p> <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p> </li>
     /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li>
     /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
     /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
@@ -48,6 +49,9 @@ pub struct DataSource {
     #[doc(hidden)]
     pub relational_database_config:
         std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
+    /// <p>Amazon EventBridge settings.</p>
+    #[doc(hidden)]
+    pub event_bridge_config: std::option::Option<crate::types::EventBridgeDataSourceConfig>,
 }
 impl DataSource {
     /// <p>The data source Amazon Resource Name (ARN).</p>
@@ -68,6 +72,7 @@ impl DataSource {
     /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
     /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
     /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
+    /// <li> <p> <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p> </li>
     /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li>
     /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
     /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
@@ -109,6 +114,12 @@ impl DataSource {
     ) -> std::option::Option<&crate::types::RelationalDatabaseDataSourceConfig> {
         self.relational_database_config.as_ref()
     }
+    /// <p>Amazon EventBridge settings.</p>
+    pub fn event_bridge_config(
+        &self,
+    ) -> std::option::Option<&crate::types::EventBridgeDataSourceConfig> {
+        self.event_bridge_config.as_ref()
+    }
 }
 impl DataSource {
     /// Creates a new builder-style object to manufacture [`DataSource`](crate::types::DataSource).
@@ -135,6 +146,7 @@ pub struct DataSourceBuilder {
     pub(crate) http_config: std::option::Option<crate::types::HttpDataSourceConfig>,
     pub(crate) relational_database_config:
         std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
+    pub(crate) event_bridge_config: std::option::Option<crate::types::EventBridgeDataSourceConfig>,
 }
 impl DataSourceBuilder {
     /// <p>The data source Amazon Resource Name (ARN).</p>
@@ -173,6 +185,7 @@ impl DataSourceBuilder {
     /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
     /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
     /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
+    /// <li> <p> <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p> </li>
     /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li>
     /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
     /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
@@ -187,6 +200,7 @@ impl DataSourceBuilder {
     /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
     /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
     /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
+    /// <li> <p> <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p> </li>
     /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li>
     /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
     /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
@@ -292,6 +306,19 @@ impl DataSourceBuilder {
         self.relational_database_config = input;
         self
     }
+    /// <p>Amazon EventBridge settings.</p>
+    pub fn event_bridge_config(mut self, input: crate::types::EventBridgeDataSourceConfig) -> Self {
+        self.event_bridge_config = Some(input);
+        self
+    }
+    /// <p>Amazon EventBridge settings.</p>
+    pub fn set_event_bridge_config(
+        mut self,
+        input: std::option::Option<crate::types::EventBridgeDataSourceConfig>,
+    ) -> Self {
+        self.event_bridge_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
@@ -306,6 +333,7 @@ impl DataSourceBuilder {
             open_search_service_config: self.open_search_service_config,
             http_config: self.http_config,
             relational_database_config: self.relational_database_config,
+            event_bridge_config: self.event_bridge_config,
         }
     }
 }

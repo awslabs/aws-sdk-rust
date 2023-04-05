@@ -13,6 +13,7 @@
 /// # let resourcesharetype = unimplemented!();
 /// match resourcesharetype {
 ///     ResourceShareType::All => { /* ... */ },
+///     ResourceShareType::Federated => { /* ... */ },
 ///     ResourceShareType::Foreign => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum ResourceShareType {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
+    Federated,
+    #[allow(missing_docs)] // documentation missing in model
     Foreign,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl std::convert::From<&str> for ResourceShareType {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => ResourceShareType::All,
+            "FEDERATED" => ResourceShareType::Federated,
             "FOREIGN" => ResourceShareType::Foreign,
             other => {
                 ResourceShareType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -77,13 +81,14 @@ impl ResourceShareType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareType::All => "ALL",
+            ResourceShareType::Federated => "FEDERATED",
             ResourceShareType::Foreign => "FOREIGN",
             ResourceShareType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "FOREIGN"]
+        &["ALL", "FEDERATED", "FOREIGN"]
     }
 }
 impl AsRef<str> for ResourceShareType {

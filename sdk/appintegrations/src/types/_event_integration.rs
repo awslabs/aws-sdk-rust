@@ -19,7 +19,7 @@ pub struct EventIntegration {
     /// <p>The Amazon EventBridge bus for the event integration.</p>
     #[doc(hidden)]
     pub event_bridge_bus: std::option::Option<std::string::String>,
-    /// <p>The tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -45,7 +45,7 @@ impl EventIntegration {
     pub fn event_bridge_bus(&self) -> std::option::Option<&str> {
         self.event_bridge_bus.as_deref()
     }
-    /// <p>The tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -133,7 +133,7 @@ impl EventIntegrationBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -144,7 +144,7 @@ impl EventIntegrationBuilder {
         self.tags = Some(hash_map);
         self
     }
-    /// <p>The tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<

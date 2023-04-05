@@ -5,7 +5,7 @@ pub use crate::operation::get_search_suggestions::_get_search_suggestions_input:
 
 /// Fluent builder constructing a request to `GetSearchSuggestions`.
 ///
-/// <p>An auto-complete API for the search functionality in the Amazon SageMaker console. It returns suggestions of possible matches for the property name to use in <code>Search</code> queries. Provides suggestions for <code>HyperParameters</code>, <code>Tags</code>, and <code>Metrics</code>.</p>
+/// <p>An auto-complete API for the search functionality in the SageMaker console. It returns suggestions of possible matches for the property name to use in <code>Search</code> queries. Provides suggestions for <code>HyperParameters</code>, <code>Tags</code>, and <code>Metrics</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSearchSuggestionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +69,12 @@ impl GetSearchSuggestionsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     pub fn resource(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource(input);
         self
     }
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     pub fn set_resource(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource(input);
         self

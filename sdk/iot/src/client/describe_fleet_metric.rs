@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`index_name(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::index_name): <p>The name of the index to search.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::creation_date): <p>The date when the fleet metric is created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::last_modified_date): <p>The date when the fleet metric is last modified.</p>
-    ///   - [`unit(Option<FleetMetricUnit>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::unit): <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    ///   - [`unit(Option<FleetMetricUnit>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::unit): <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     ///   - [`version(i64)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::version): <p>The version of the fleet metric.</p>
     ///   - [`metric_arn(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::metric_arn): <p>The ARN of the fleet metric to describe.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetMetricError>`](crate::operation::describe_fleet_metric::DescribeFleetMetricError)

@@ -63,7 +63,7 @@ pub use crate::operation::put_bucket_acl::_put_bucket_acl_input::PutBucketAclInp
 /// <grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail">
 /// <emailaddress>
 /// &lt;&gt;Grantees@email.com&lt;&gt;
-/// </emailaddress>lt;/Grantee&gt;
+/// </emailaddress>&amp;
 /// </grantee></code> </p> <p>The grantee is resolved to the CanonicalUser and, in a response to a GET Object acl request, appears as the CanonicalUser. </p> <note>
 /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
 /// <ul>

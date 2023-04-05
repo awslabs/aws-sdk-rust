@@ -15,23 +15,23 @@ pub fn ser_allocate_hosted_connection_input(
     if let Some(var_4) = &input.connection_name {
         object.key("connectionName").string(var_4.as_str());
     }
-    {
+    if let Some(var_5) = &input.vlan {
         object.key("vlan").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.vlan).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.tags {
-        let mut array_6 = object.key("tags").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("tags").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }

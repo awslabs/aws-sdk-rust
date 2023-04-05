@@ -150,6 +150,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "WisdomInfo" => {
+                                builder = builder.set_wisdom_info(
+                                    crate::protocol_serde::shape_wisdom_info::de_wisdom_info(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -78,5 +78,8 @@ pub fn ser_update_table_input(
     if let Some(var_21) = &input.table_class {
         object.key("TableClass").string(var_21.as_str());
     }
+    if let Some(var_22) = &input.deletion_protection_enabled {
+        object.key("DeletionProtectionEnabled").boolean(*var_22);
+    }
     Ok(())
 }

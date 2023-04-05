@@ -8,13 +8,13 @@ pub struct ListServerNeighborsInput {
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
     #[doc(hidden)]
-    pub port_information_needed: bool,
+    pub port_information_needed: std::option::Option<bool>,
     /// <p>List of configuration IDs to test for one-hop-away.</p>
     #[doc(hidden)]
     pub neighbor_configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maximum number of results to return in a single page of output.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ impl ListServerNeighborsInput {
         self.configuration_id.as_deref()
     }
     /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
-    pub fn port_information_needed(&self) -> bool {
+    pub fn port_information_needed(&self) -> std::option::Option<bool> {
         self.port_information_needed
     }
     /// <p>List of configuration IDs to test for one-hop-away.</p>
@@ -33,7 +33,7 @@ impl ListServerNeighborsInput {
         self.neighbor_configuration_ids.as_deref()
     }
     /// <p>Maximum number of results to return in a single page of output.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
@@ -130,9 +130,9 @@ impl ListServerNeighborsInputBuilder {
         Ok(
             crate::operation::list_server_neighbors::ListServerNeighborsInput {
                 configuration_id: self.configuration_id,
-                port_information_needed: self.port_information_needed.unwrap_or_default(),
+                port_information_needed: self.port_information_needed,
                 neighbor_configuration_ids: self.neighbor_configuration_ids,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

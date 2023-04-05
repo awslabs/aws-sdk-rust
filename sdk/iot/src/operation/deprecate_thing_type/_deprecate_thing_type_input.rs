@@ -9,7 +9,7 @@ pub struct DeprecateThingTypeInput {
     pub thing_type_name: std::option::Option<std::string::String>,
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     #[doc(hidden)]
-    pub undo_deprecate: bool,
+    pub undo_deprecate: std::option::Option<bool>,
 }
 impl DeprecateThingTypeInput {
     /// <p>The name of the thing type to deprecate.</p>
@@ -17,7 +17,7 @@ impl DeprecateThingTypeInput {
         self.thing_type_name.as_deref()
     }
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
-    pub fn undo_deprecate(&self) -> bool {
+    pub fn undo_deprecate(&self) -> std::option::Option<bool> {
         self.undo_deprecate
     }
 }
@@ -67,7 +67,7 @@ impl DeprecateThingTypeInputBuilder {
         Ok(
             crate::operation::deprecate_thing_type::DeprecateThingTypeInput {
                 thing_type_name: self.thing_type_name,
-                undo_deprecate: self.undo_deprecate.unwrap_or_default(),
+                undo_deprecate: self.undo_deprecate,
             },
         )
     }

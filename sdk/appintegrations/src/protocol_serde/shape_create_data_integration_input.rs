@@ -9,33 +9,65 @@ pub fn ser_create_data_integration_input(
     if let Some(var_2) = &input.description {
         object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.kms_key {
-        object.key("KmsKey").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.schedule_config {
+    if let Some(var_3) = &input.file_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ScheduleConfig").start_object();
-        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(
-            &mut object_6,
-            var_5,
+        let mut object_4 = object.key("FileConfiguration").start_object();
+        crate::protocol_serde::shape_file_configuration::ser_file_configuration(
+            &mut object_4,
+            var_3,
         )?;
-        object_6.finish();
+        object_4.finish();
     }
-    if let Some(var_7) = &input.source_uri {
-        object.key("SourceURI").string(var_7.as_str());
+    if let Some(var_5) = &input.kms_key {
+        object.key("KmsKey").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_6) = &input.name {
+        object.key("Name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.object_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_8 = object.key("ObjectConfiguration").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                #[allow(unused_mut)]
+                let mut object_11 = object_8.key(key_9.as_str()).start_object();
+                for (key_12, value_13) in value_10 {
+                    {
+                        let mut array_14 = object_11.key(key_12.as_str()).start_array();
+                        for item_15 in value_13 {
+                            {
+                                array_14.value().string(item_15.as_str());
+                            }
+                        }
+                        array_14.finish();
+                    }
+                }
+                object_11.finish();
             }
         }
-        object_9.finish();
+        object_8.finish();
+    }
+    if let Some(var_16) = &input.schedule_config {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("ScheduleConfig").start_object();
+        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(
+            &mut object_17,
+            var_16,
+        )?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.source_uri {
+        object.key("SourceURI").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("Tags").start_object();
+        for (key_21, value_22) in var_19 {
+            {
+                object_20.key(key_21.as_str()).string(value_22.as_str());
+            }
+        }
+        object_20.finish();
     }
     Ok(())
 }

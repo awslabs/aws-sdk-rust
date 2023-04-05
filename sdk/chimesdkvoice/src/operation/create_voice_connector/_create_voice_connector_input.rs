@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVoiceConnectorInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     #[doc(hidden)]
     pub aws_region: std::option::Option<crate::types::VoiceConnectorAwsRegion>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Enables or disables encryption for the Voice Connector.</p>
     #[doc(hidden)]
     pub require_encryption: std::option::Option<bool>,
 }
 impl CreateVoiceConnectorInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn aws_region(&self) -> std::option::Option<&crate::types::VoiceConnectorAwsRegion> {
         self.aws_region.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Enables or disables encryption for the Voice Connector.</p>
     pub fn require_encryption(&self) -> std::option::Option<bool> {
         self.require_encryption
     }
@@ -44,22 +44,22 @@ pub struct CreateVoiceConnectorInputBuilder {
     pub(crate) require_encryption: std::option::Option<bool>,
 }
 impl CreateVoiceConnectorInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn aws_region(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
         self.aws_region = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn set_aws_region(
         mut self,
         input: std::option::Option<crate::types::VoiceConnectorAwsRegion>,
@@ -67,12 +67,12 @@ impl CreateVoiceConnectorInputBuilder {
         self.aws_region = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Enables or disables encryption for the Voice Connector.</p>
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.require_encryption = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Enables or disables encryption for the Voice Connector.</p>
     pub fn set_require_encryption(mut self, input: std::option::Option<bool>) -> Self {
         self.require_encryption = input;
         self

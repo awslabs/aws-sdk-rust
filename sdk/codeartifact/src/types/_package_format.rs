@@ -12,6 +12,7 @@
 /// ```text
 /// # let packageformat = unimplemented!();
 /// match packageformat {
+///     PackageFormat::Generic => { /* ... */ },
 ///     PackageFormat::Maven => { /* ... */ },
 ///     PackageFormat::Npm => { /* ... */ },
 ///     PackageFormat::Nuget => { /* ... */ },
@@ -50,6 +51,8 @@
 )]
 pub enum PackageFormat {
     #[allow(missing_docs)] // documentation missing in model
+    Generic,
+    #[allow(missing_docs)] // documentation missing in model
     Maven,
     #[allow(missing_docs)] // documentation missing in model
     Npm,
@@ -63,6 +66,7 @@ pub enum PackageFormat {
 impl std::convert::From<&str> for PackageFormat {
     fn from(s: &str) -> Self {
         match s {
+            "generic" => PackageFormat::Generic,
             "maven" => PackageFormat::Maven,
             "npm" => PackageFormat::Npm,
             "nuget" => PackageFormat::Nuget,
@@ -84,6 +88,7 @@ impl PackageFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PackageFormat::Generic => "generic",
             PackageFormat::Maven => "maven",
             PackageFormat::Npm => "npm",
             PackageFormat::Nuget => "nuget",
@@ -93,7 +98,7 @@ impl PackageFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["maven", "npm", "nuget", "pypi"]
+        &["generic", "maven", "npm", "nuget", "pypi"]
     }
 }
 impl AsRef<str> for PackageFormat {

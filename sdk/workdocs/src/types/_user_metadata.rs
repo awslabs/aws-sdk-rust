@@ -46,9 +46,9 @@ impl std::fmt::Debug for UserMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserMetadata");
         formatter.field("id", &self.id);
-        formatter.field("username", &self.username);
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
+        formatter.field("username", &"*** Sensitive Data Redacted ***");
+        formatter.field("given_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("surname", &"*** Sensitive Data Redacted ***");
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -136,9 +136,9 @@ impl std::fmt::Debug for UserMetadataBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserMetadataBuilder");
         formatter.field("id", &self.id);
-        formatter.field("username", &self.username);
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
+        formatter.field("username", &"*** Sensitive Data Redacted ***");
+        formatter.field("given_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("surname", &"*** Sensitive Data Redacted ***");
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

@@ -46,6 +46,15 @@ pub struct AnalysisRouteTableRoute {
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
+    /// <p>The ID of a carrier gateway.</p>
+    #[doc(hidden)]
+    pub carrier_gateway_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a core network.</p>
+    #[doc(hidden)]
+    pub core_network_arn: std::option::Option<std::string::String>,
+    /// <p>The ID of a local gateway.</p>
+    #[doc(hidden)]
+    pub local_gateway_id: std::option::Option<std::string::String>,
 }
 impl AnalysisRouteTableRoute {
     /// <p>The destination IPv4 address, in CIDR notation.</p>
@@ -101,6 +110,18 @@ impl AnalysisRouteTableRoute {
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
+    /// <p>The ID of a carrier gateway.</p>
+    pub fn carrier_gateway_id(&self) -> std::option::Option<&str> {
+        self.carrier_gateway_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a core network.</p>
+    pub fn core_network_arn(&self) -> std::option::Option<&str> {
+        self.core_network_arn.as_deref()
+    }
+    /// <p>The ID of a local gateway.</p>
+    pub fn local_gateway_id(&self) -> std::option::Option<&str> {
+        self.local_gateway_id.as_deref()
+    }
 }
 impl AnalysisRouteTableRoute {
     /// Creates a new builder-style object to manufacture [`AnalysisRouteTableRoute`](crate::types::AnalysisRouteTableRoute).
@@ -124,6 +145,9 @@ pub struct AnalysisRouteTableRouteBuilder {
     pub(crate) transit_gateway_id: std::option::Option<std::string::String>,
     pub(crate) vpc_peering_connection_id: std::option::Option<std::string::String>,
     pub(crate) state: std::option::Option<std::string::String>,
+    pub(crate) carrier_gateway_id: std::option::Option<std::string::String>,
+    pub(crate) core_network_arn: std::option::Option<std::string::String>,
+    pub(crate) local_gateway_id: std::option::Option<std::string::String>,
 }
 impl AnalysisRouteTableRouteBuilder {
     /// <p>The destination IPv4 address, in CIDR notation.</p>
@@ -272,6 +296,39 @@ impl AnalysisRouteTableRouteBuilder {
         self.state = input;
         self
     }
+    /// <p>The ID of a carrier gateway.</p>
+    pub fn carrier_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.carrier_gateway_id = Some(input.into());
+        self
+    }
+    /// <p>The ID of a carrier gateway.</p>
+    pub fn set_carrier_gateway_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.carrier_gateway_id = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a core network.</p>
+    pub fn core_network_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.core_network_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a core network.</p>
+    pub fn set_core_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.core_network_arn = input;
+        self
+    }
+    /// <p>The ID of a local gateway.</p>
+    pub fn local_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.local_gateway_id = Some(input.into());
+        self
+    }
+    /// <p>The ID of a local gateway.</p>
+    pub fn set_local_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.local_gateway_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AnalysisRouteTableRoute`](crate::types::AnalysisRouteTableRoute).
     pub fn build(self) -> crate::types::AnalysisRouteTableRoute {
         crate::types::AnalysisRouteTableRoute {
@@ -286,6 +343,9 @@ impl AnalysisRouteTableRouteBuilder {
             transit_gateway_id: self.transit_gateway_id,
             vpc_peering_connection_id: self.vpc_peering_connection_id,
             state: self.state,
+            carrier_gateway_id: self.carrier_gateway_id,
+            core_network_arn: self.core_network_arn,
+            local_gateway_id: self.local_gateway_id,
         }
     }
 }

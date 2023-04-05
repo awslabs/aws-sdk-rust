@@ -6,20 +6,20 @@ pub fn ser_create_model_card_export_job_input(
     if let Some(var_1) = &input.model_card_name {
         object.key("ModelCardName").string(var_1.as_str());
     }
-    if input.model_card_version != 0 {
+    if let Some(var_2) = &input.model_card_version {
         object.key("ModelCardVersion").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.model_card_version).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.model_card_export_job_name {
-        object.key("ModelCardExportJobName").string(var_2.as_str());
+    if let Some(var_3) = &input.model_card_export_job_name {
+        object.key("ModelCardExportJobName").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.output_config {
+    if let Some(var_4) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("OutputConfig").start_object();
-        crate::protocol_serde::shape_model_card_export_output_config::ser_model_card_export_output_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("OutputConfig").start_object();
+        crate::protocol_serde::shape_model_card_export_output_config::ser_model_card_export_output_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

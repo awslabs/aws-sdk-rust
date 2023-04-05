@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of requested partitions.</p>
     #[doc(hidden)]
     pub unfiltered_partitions:
         std::option::Option<std::vec::Vec<crate::types::UnfilteredPartition>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUnfilteredPartitionsMetadataOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of requested partitions.</p>
     pub fn unfiltered_partitions(
         &self,
     ) -> std::option::Option<&[crate::types::UnfilteredPartition]> {
         self.unfiltered_partitions.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50,13 +50,14 @@ impl GetUnfilteredPartitionsMetadataOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unfiltered_partitions`](Self::set_unfiltered_partitions).
     ///
+    /// <p>A list of requested partitions.</p>
     pub fn unfiltered_partitions(mut self, input: crate::types::UnfilteredPartition) -> Self {
         let mut v = self.unfiltered_partitions.unwrap_or_default();
         v.push(input);
         self.unfiltered_partitions = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of requested partitions.</p>
     pub fn set_unfiltered_partitions(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::UnfilteredPartition>>,
@@ -64,12 +65,12 @@ impl GetUnfilteredPartitionsMetadataOutputBuilder {
         self.unfiltered_partitions = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

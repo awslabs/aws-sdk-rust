@@ -6,7 +6,7 @@ pub struct CreateStandbyWorkspacesInput {
     /// <p>The Region of the primary WorkSpace.</p>
     #[doc(hidden)]
     pub primary_region: std::option::Option<std::string::String>,
-    /// <p>Information about the Standby WorkSpace to be created.</p>
+    /// <p>Information about the standby WorkSpace to be created.</p>
     #[doc(hidden)]
     pub standby_workspaces: std::option::Option<std::vec::Vec<crate::types::StandbyWorkspace>>,
 }
@@ -15,7 +15,7 @@ impl CreateStandbyWorkspacesInput {
     pub fn primary_region(&self) -> std::option::Option<&str> {
         self.primary_region.as_deref()
     }
-    /// <p>Information about the Standby WorkSpace to be created.</p>
+    /// <p>Information about the standby WorkSpace to be created.</p>
     pub fn standby_workspaces(&self) -> std::option::Option<&[crate::types::StandbyWorkspace]> {
         self.standby_workspaces.as_deref()
     }
@@ -52,14 +52,14 @@ impl CreateStandbyWorkspacesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_standby_workspaces`](Self::set_standby_workspaces).
     ///
-    /// <p>Information about the Standby WorkSpace to be created.</p>
+    /// <p>Information about the standby WorkSpace to be created.</p>
     pub fn standby_workspaces(mut self, input: crate::types::StandbyWorkspace) -> Self {
         let mut v = self.standby_workspaces.unwrap_or_default();
         v.push(input);
         self.standby_workspaces = Some(v);
         self
     }
-    /// <p>Information about the Standby WorkSpace to be created.</p>
+    /// <p>Information about the standby WorkSpace to be created.</p>
     pub fn set_standby_workspaces(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::StandbyWorkspace>>,

@@ -22,7 +22,7 @@ pub struct CreatePolicyVersionInput {
     /// <p>When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
-    pub set_as_default: bool,
+    pub set_as_default: std::option::Option<bool>,
 }
 impl CreatePolicyVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
@@ -45,7 +45,7 @@ impl CreatePolicyVersionInput {
     /// <p>Specifies whether to set this version as the policy's default version.</p>
     /// <p>When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_as_default(&self) -> bool {
+    pub fn set_as_default(&self) -> std::option::Option<bool> {
         self.set_as_default
     }
 }
@@ -130,7 +130,7 @@ impl CreatePolicyVersionInputBuilder {
             crate::operation::create_policy_version::CreatePolicyVersionInput {
                 policy_arn: self.policy_arn,
                 policy_document: self.policy_document,
-                set_as_default: self.set_as_default.unwrap_or_default(),
+                set_as_default: self.set_as_default,
             },
         )
     }

@@ -100,13 +100,13 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
-    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p>
+    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
-    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p>
+    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn set_snapshot_identifier(
         mut self,
@@ -115,22 +115,22 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
     pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.snapshot_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
     pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_arn(input);
         self
     }
-    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.snapshot_cluster_identifier(input.into());
         self
     }
-    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn set_snapshot_cluster_identifier(
         mut self,
         input: std::option::Option<std::string::String>,

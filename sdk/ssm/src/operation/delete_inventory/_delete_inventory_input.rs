@@ -13,7 +13,7 @@ pub struct DeleteInventoryInput {
     pub schema_delete_option: std::option::Option<crate::types::InventorySchemaDeleteOption>,
     /// <p>Use this option to view a summary of the deletion request without deleting any data or the data type. This option is useful when you only want to understand what will be deleted. Once you validate that the data to be deleted is what you intend to delete, you can run the same command without specifying the <code>DryRun</code> option.</p>
     #[doc(hidden)]
-    pub dry_run: bool,
+    pub dry_run: std::option::Option<bool>,
     /// <p>User-provided idempotency token.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -32,7 +32,7 @@ impl DeleteInventoryInput {
         self.schema_delete_option.as_ref()
     }
     /// <p>Use this option to view a summary of the deletion request without deleting any data or the data type. This option is useful when you only want to understand what will be deleted. Once you validate that the data to be deleted is what you intend to delete, you can run the same command without specifying the <code>DryRun</code> option.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
     /// <p>User-provided idempotency token.</p>
@@ -117,7 +117,7 @@ impl DeleteInventoryInputBuilder {
         Ok(crate::operation::delete_inventory::DeleteInventoryInput {
             type_name: self.type_name,
             schema_delete_option: self.schema_delete_option,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
             client_token: self.client_token,
         })
     }

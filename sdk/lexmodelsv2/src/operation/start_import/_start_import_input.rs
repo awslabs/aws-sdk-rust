@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportInput {
-    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
@@ -17,7 +17,7 @@ pub struct StartImportInput {
     pub file_password: std::option::Option<std::string::String>,
 }
 impl StartImportInput {
-    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
     pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
@@ -64,12 +64,12 @@ pub struct StartImportInputBuilder {
     pub(crate) file_password: std::option::Option<std::string::String>,
 }
 impl StartImportInputBuilder {
-    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
     pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.import_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.import_id = input;
         self

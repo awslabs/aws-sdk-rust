@@ -11,7 +11,7 @@ pub struct ListRegionalBucketsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The ID of the Outposts resource.</p> <note>
     /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -28,7 +28,7 @@ impl ListRegionalBucketsInput {
         self.next_token.as_deref()
     }
     /// <p></p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The ID of the Outposts resource.</p> <note>
@@ -112,7 +112,7 @@ impl ListRegionalBucketsInputBuilder {
             crate::operation::list_regional_buckets::ListRegionalBucketsInput {
                 account_id: self.account_id,
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 outpost_id: self.outpost_id,
             },
         )

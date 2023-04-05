@@ -5,7 +5,7 @@ pub use crate::operation::get_component_policy::_get_component_policy_input::Get
 
 /// Fluent builder constructing a request to `GetComponentPolicy`.
 ///
-/// <p> Gets a component policy.</p>
+/// <p>Gets a component policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetComponentPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

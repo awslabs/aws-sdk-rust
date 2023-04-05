@@ -61,6 +61,12 @@ impl DescribeConfigurationRevisionInput {
                     );
                 }
                 let input_2 = &_input.revision;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "revision",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mut revision_encoder = aws_smithy_types::primitive::Encoder::from(*input_2);
                 let revision = revision_encoder.encode();
                 if revision.is_empty() {

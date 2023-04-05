@@ -18,13 +18,11 @@ pub fn ser_update_thing_input(
             aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.remove_thing_type {
-        object
-            .key("removeThingType")
-            .boolean(input.remove_thing_type);
+    if let Some(var_4) = &input.remove_thing_type {
+        object.key("removeThingType").boolean(*var_4);
     }
-    if let Some(var_4) = &input.thing_type_name {
-        object.key("thingTypeName").string(var_4.as_str());
+    if let Some(var_5) = &input.thing_type_name {
+        object.key("thingTypeName").string(var_5.as_str());
     }
     Ok(())
 }

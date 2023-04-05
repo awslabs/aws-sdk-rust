@@ -6,7 +6,7 @@ pub struct UpdateGeofenceCollectionOutput {
     /// <p>The name of the updated geofence collection.</p>
     #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
@@ -22,7 +22,7 @@ impl UpdateGeofenceCollectionOutput {
     pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
@@ -68,7 +68,7 @@ impl UpdateGeofenceCollectionOutputBuilder {
         self.collection_name = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
@@ -76,7 +76,7 @@ impl UpdateGeofenceCollectionOutputBuilder {
         self.collection_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>

@@ -65,7 +65,7 @@ impl CreateDocumentFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
+    /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
@@ -76,7 +76,7 @@ impl CreateDocumentFluentBuilder {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
+    /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>

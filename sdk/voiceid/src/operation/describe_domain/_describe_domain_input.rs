@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainInput {
-    /// <p>The identifier of the domain you are describing.</p>
+    /// <p>The identifier of the domain that you are describing.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
-    /// <p>The identifier of the domain you are describing.</p>
+    /// <p>The identifier of the domain that you are describing.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -27,12 +27,12 @@ pub struct DescribeDomainInputBuilder {
     pub(crate) domain_id: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInputBuilder {
-    /// <p>The identifier of the domain you are describing.</p>
+    /// <p>The identifier of the domain that you are describing.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the domain you are describing.</p>
+    /// <p>The identifier of the domain that you are describing.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.domain_id = input;
         self

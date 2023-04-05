@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`id(impl Into<String>)`](crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`GetClassificationScopeOutput`](crate::operation::get_classification_scope::GetClassificationScopeOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_classification_scope::GetClassificationScopeOutput::id): <p>The unique identifier for the classification scope.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_classification_scope::GetClassificationScopeOutput::name): <p>The name of the classification scope.</p>
+    ///   - [`name(Option<String>)`](crate::operation::get_classification_scope::GetClassificationScopeOutput::name): <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     ///   - [`s3(Option<S3ClassificationScope>)`](crate::operation::get_classification_scope::GetClassificationScopeOutput::s3): <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
     /// - On failure, responds with [`SdkError<GetClassificationScopeError>`](crate::operation::get_classification_scope::GetClassificationScopeError)
     pub fn get_classification_scope(

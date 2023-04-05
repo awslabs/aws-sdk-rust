@@ -214,6 +214,8 @@ mod calculate_route_matrix;
 
 mod create_geofence_collection;
 
+mod create_key;
+
 mod create_map;
 
 mod create_place_index;
@@ -228,6 +230,8 @@ pub mod customize;
 
 mod delete_geofence_collection;
 
+mod delete_key;
+
 mod delete_map;
 
 mod delete_place_index;
@@ -237,6 +241,8 @@ mod delete_route_calculator;
 mod delete_tracker;
 
 mod describe_geofence_collection;
+
+mod describe_key;
 
 mod describe_map;
 
@@ -270,6 +276,8 @@ mod list_geofence_collections;
 
 mod list_geofences;
 
+mod list_keys;
+
 mod list_maps;
 
 mod list_place_indexes;
@@ -295,6 +303,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_geofence_collection;
+
+mod update_key;
 
 mod update_map;
 

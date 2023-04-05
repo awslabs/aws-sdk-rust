@@ -14,6 +14,7 @@
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
 ///     ValidationExceptionReason::InvalidConfiguration => { /* ... */ },
+///     ValidationExceptionReason::InvalidQuery => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum ValidationExceptionReason {
     FieldValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
     InvalidConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidQuery,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl std::convert::From<&str> for ValidationExceptionReason {
         match s {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "INVALID_CONFIGURATION" => ValidationExceptionReason::InvalidConfiguration,
+            "INVALID_QUERY" => ValidationExceptionReason::InvalidQuery,
             other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -78,12 +82,17 @@ impl ValidationExceptionReason {
         match self {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::InvalidConfiguration => "INVALID_CONFIGURATION",
+            ValidationExceptionReason::InvalidQuery => "INVALID_QUERY",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIELD_VALIDATION_FAILED", "INVALID_CONFIGURATION"]
+        &[
+            "FIELD_VALIDATION_FAILED",
+            "INVALID_CONFIGURATION",
+            "INVALID_QUERY",
+        ]
     }
 }
 impl AsRef<str> for ValidationExceptionReason {

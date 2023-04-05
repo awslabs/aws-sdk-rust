@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_global_settings::builders::GetGlobalSettingsFluentBuilder::send) it.
     /// - On success, responds with [`GetGlobalSettingsOutput`](crate::operation::get_global_settings::GetGlobalSettingsOutput) with field(s):
-    ///   - [`voice_connector(Option<VoiceConnectorSettings>)`](crate::operation::get_global_settings::GetGlobalSettingsOutput::voice_connector): (undocumented)
+    ///   - [`voice_connector(Option<VoiceConnectorSettings>)`](crate::operation::get_global_settings::GetGlobalSettingsOutput::voice_connector): <p>The Voice Connector settings.</p>
     /// - On failure, responds with [`SdkError<GetGlobalSettingsError>`](crate::operation::get_global_settings::GetGlobalSettingsError)
     pub fn get_global_settings(
         &self,

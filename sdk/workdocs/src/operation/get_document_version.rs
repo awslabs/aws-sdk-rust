@@ -98,12 +98,13 @@ impl GetDocumentVersionInput {
                         query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.include_custom_metadata {
-                    query.push_kv(
-                        "includeCustomMetadata",
-                        aws_smithy_types::primitive::Encoder::from(_input.include_custom_metadata)
-                            .encode(),
-                    );
+                if let Some(inner_4) = &_input.include_custom_metadata {
+                    if *inner_4 {
+                        query.push_kv(
+                            "includeCustomMetadata",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -218,7 +219,7 @@ pub type GetDocumentVersionErrorKind = GetDocumentVersionError;
 pub enum GetDocumentVersionError {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::types::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>The password is invalid.</p>
     InvalidPasswordException(crate::types::error::InvalidPasswordException),

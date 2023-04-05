@@ -12,6 +12,9 @@ pub struct CreateAccessTokenOutput {
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
     #[doc(hidden)]
     pub expires_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The system-generated unique ID of the access token.</p>
+    #[doc(hidden)]
+    pub access_token_id: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAccessTokenOutput {
@@ -27,6 +30,10 @@ impl CreateAccessTokenOutput {
     pub fn expires_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_time.as_ref()
     }
+    /// <p>The system-generated unique ID of the access token.</p>
+    pub fn access_token_id(&self) -> std::option::Option<&str> {
+        self.access_token_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAccessTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34,6 +41,7 @@ impl std::fmt::Debug for CreateAccessTokenOutput {
         formatter.field("secret", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("expires_time", &self.expires_time);
+        formatter.field("access_token_id", &self.access_token_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -58,6 +66,7 @@ pub struct CreateAccessTokenOutputBuilder {
     pub(crate) secret: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) expires_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) access_token_id: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAccessTokenOutputBuilder {
@@ -94,6 +103,16 @@ impl CreateAccessTokenOutputBuilder {
         self.expires_time = input;
         self
     }
+    /// <p>The system-generated unique ID of the access token.</p>
+    pub fn access_token_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.access_token_id = Some(input.into());
+        self
+    }
+    /// <p>The system-generated unique ID of the access token.</p>
+    pub fn set_access_token_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.access_token_id = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -109,6 +128,7 @@ impl CreateAccessTokenOutputBuilder {
             secret: self.secret,
             name: self.name,
             expires_time: self.expires_time,
+            access_token_id: self.access_token_id,
             _request_id: self._request_id,
         }
     }
@@ -119,6 +139,7 @@ impl std::fmt::Debug for CreateAccessTokenOutputBuilder {
         formatter.field("secret", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("expires_time", &self.expires_time);
+        formatter.field("access_token_id", &self.access_token_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

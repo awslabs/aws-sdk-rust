@@ -9,29 +9,29 @@ pub fn ser_get_findings_input(
         crate::protocol_serde::shape_aws_security_finding_filters::ser_aws_security_finding_filters(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_3) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("NextToken").string(var_3.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("NextToken").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.sort_criteria {
-        let mut array_5 = object.key("SortCriteria").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.sort_criteria {
+        let mut array_6 = object.key("SortCriteria").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
+                let mut object_8 = array_6.value().start_object();
                 crate::protocol_serde::shape_sort_criterion::ser_sort_criterion(
-                    &mut object_7,
-                    item_6,
+                    &mut object_8,
+                    item_7,
                 )?;
-                object_7.finish();
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }

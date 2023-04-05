@@ -244,4 +244,8 @@ mod describe_services;
 
 mod get_attribute_values;
 
+mod get_price_list_file_url;
+
 mod get_products;
+
+mod list_price_lists;

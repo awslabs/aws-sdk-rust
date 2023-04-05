@@ -5,7 +5,9 @@ pub use crate::operation::import_hub_content::_import_hub_content_input::ImportH
 
 /// Fluent builder constructing a request to `ImportHubContent`.
 ///
-/// <p>Import hub content.</p>
+/// <p>Import hub content.</p> <note>
+/// <p>Hub APIs are only callable through SageMaker Studio.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportHubContentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -154,12 +156,12 @@ impl ImportHubContentFluentBuilder {
         self.inner = self.inner.set_hub_content_description(input);
         self
     }
-    /// <p>Markdown files associated with the hub content to import.</p>
+    /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
     pub fn hub_content_markdown(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hub_content_markdown(input.into());
         self
     }
-    /// <p>Markdown files associated with the hub content to import.</p>
+    /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
     pub fn set_hub_content_markdown(
         mut self,
         input: std::option::Option<std::string::String>,

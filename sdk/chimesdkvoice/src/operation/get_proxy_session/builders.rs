@@ -5,6 +5,7 @@ pub use crate::operation::get_proxy_session::_get_proxy_session_input::GetProxyS
 
 /// Fluent builder constructing a request to `GetProxySession`.
 ///
+/// <p>Retrieves the specified proxy session details for the specified Amazon Chime SDK Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProxySessionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl GetProxySessionFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -81,12 +82,12 @@ impl GetProxySessionFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.proxy_session_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn set_proxy_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_proxy_session_id(input);
         self

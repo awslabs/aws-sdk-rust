@@ -24,10 +24,21 @@ pub struct GetDataIntegrationOutput {
     /// <p>The name of the data and how often it should be pulled from the source.</p>
     #[doc(hidden)]
     pub schedule_configuration: std::option::Option<crate::types::ScheduleConfiguration>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    #[doc(hidden)]
+    pub file_configuration: std::option::Option<crate::types::FileConfiguration>,
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    #[doc(hidden)]
+    pub object_configuration: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
     _request_id: Option<String>,
 }
 impl GetDataIntegrationOutput {
@@ -61,12 +72,27 @@ impl GetDataIntegrationOutput {
     ) -> std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    pub fn file_configuration(&self) -> std::option::Option<&crate::types::FileConfiguration> {
+        self.file_configuration.as_ref()
+    }
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    pub fn object_configuration(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    > {
+        self.object_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDataIntegrationOutput {
@@ -95,6 +121,13 @@ pub struct GetDataIntegrationOutputBuilder {
     pub(crate) schedule_configuration: std::option::Option<crate::types::ScheduleConfiguration>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) file_configuration: std::option::Option<crate::types::FileConfiguration>,
+    pub(crate) object_configuration: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
     _request_id: Option<String>,
 }
 impl GetDataIntegrationOutputBuilder {
@@ -175,7 +208,7 @@ impl GetDataIntegrationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -186,7 +219,7 @@ impl GetDataIntegrationOutputBuilder {
         self.tags = Some(hash_map);
         self
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<
@@ -194,6 +227,47 @@ impl GetDataIntegrationOutputBuilder {
         >,
     ) -> Self {
         self.tags = input;
+        self
+    }
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    pub fn file_configuration(mut self, input: crate::types::FileConfiguration) -> Self {
+        self.file_configuration = Some(input);
+        self
+    }
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    pub fn set_file_configuration(
+        mut self,
+        input: std::option::Option<crate::types::FileConfiguration>,
+    ) -> Self {
+        self.file_configuration = input;
+        self
+    }
+    /// Adds a key-value pair to `object_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_object_configuration`](Self::set_object_configuration).
+    ///
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    pub fn object_configuration(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        let mut hash_map = self.object_configuration.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.object_configuration = Some(hash_map);
+        self
+    }
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    pub fn set_object_configuration(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
+    ) -> Self {
+        self.object_configuration = input;
         self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -216,6 +290,8 @@ impl GetDataIntegrationOutputBuilder {
             source_uri: self.source_uri,
             schedule_configuration: self.schedule_configuration,
             tags: self.tags,
+            file_configuration: self.file_configuration,
+            object_configuration: self.object_configuration,
             _request_id: self._request_id,
         }
     }

@@ -5,7 +5,7 @@ pub use crate::operation::update_resource_position::_update_resource_position_in
 
 /// Fluent builder constructing a request to `UpdateResourcePosition`.
 ///
-/// <p>Update the position information of a given wireless device or a wireless gateway resource. The postion coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.</p>
+/// <p>Update the position information of a given wireless device or a wireless gateway resource. The position coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResourcePositionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +69,12 @@ impl UpdateResourcePositionFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
-    /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     pub fn set_resource_identifier(
         mut self,
         input: std::option::Option<std::string::String>,

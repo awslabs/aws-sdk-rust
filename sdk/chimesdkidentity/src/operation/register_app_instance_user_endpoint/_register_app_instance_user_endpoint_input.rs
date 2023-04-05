@@ -24,7 +24,7 @@ pub struct RegisterAppInstanceUserEndpointInput {
     /// <p>The attributes of an <code>Endpoint</code>.</p>
     #[doc(hidden)]
     pub endpoint_attributes: std::option::Option<crate::types::EndpointAttributes>,
-    /// <p>The idempotency token for each client request. </p>
+    /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
@@ -58,7 +58,7 @@ impl RegisterAppInstanceUserEndpointInput {
     pub fn endpoint_attributes(&self) -> std::option::Option<&crate::types::EndpointAttributes> {
         self.endpoint_attributes.as_ref()
     }
-    /// <p>The idempotency token for each client request. </p>
+    /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -73,9 +73,9 @@ impl std::fmt::Debug for RegisterAppInstanceUserEndpointInput {
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
-        formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.field("endpoint_attributes", &self.endpoint_attributes);
-        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_request_token", &self.client_request_token);
         formatter.field("allow_messages", &self.allow_messages);
         formatter.finish()
     }
@@ -171,12 +171,12 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         self.endpoint_attributes = input;
         self
     }
-    /// <p>The idempotency token for each client request. </p>
+    /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>The idempotency token for each client request. </p>
+    /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -230,9 +230,9 @@ impl std::fmt::Debug for RegisterAppInstanceUserEndpointInputBuilder {
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
-        formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.field("endpoint_attributes", &self.endpoint_attributes);
-        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_request_token", &self.client_request_token);
         formatter.field("allow_messages", &self.allow_messages);
         formatter.finish()
     }

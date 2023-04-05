@@ -382,6 +382,12 @@ mod list_stack_instances_for_provisioned_product;
 
 mod list_tag_options;
 
+mod notify_provision_product_engine_workflow_result;
+
+mod notify_terminate_provisioned_product_engine_workflow_result;
+
+mod notify_update_provisioned_product_engine_workflow_result;
+
 mod provision_product;
 
 mod reject_portfolio_share;

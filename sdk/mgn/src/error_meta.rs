@@ -1182,6 +1182,159 @@ impl From<crate::operation::list_applications::ListApplicationsError> for Error 
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::list_export_errors::ListExportErrorsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_export_errors::ListExportErrorsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_export_errors::ListExportErrorsError> for Error {
+    fn from(err: crate::operation::list_export_errors::ListExportErrorsError) -> Self {
+        match err {
+            crate::operation::list_export_errors::ListExportErrorsError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::list_export_errors::ListExportErrorsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_export_errors::ListExportErrorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_exports::ListExportsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_exports::ListExportsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_exports::ListExportsError> for Error {
+    fn from(err: crate::operation::list_exports::ListExportsError) -> Self {
+        match err {
+            crate::operation::list_exports::ListExportsError::UninitializedAccountException(
+                inner,
+            ) => Error::UninitializedAccountException(inner),
+            crate::operation::list_exports::ListExportsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_import_errors::ListImportErrorsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_import_errors::ListImportErrorsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_import_errors::ListImportErrorsError> for Error {
+    fn from(err: crate::operation::list_import_errors::ListImportErrorsError) -> Self {
+        match err {
+            crate::operation::list_import_errors::ListImportErrorsError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::list_import_errors::ListImportErrorsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_import_errors::ListImportErrorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_imports::ListImportsError> for Error {
+    fn from(err: crate::operation::list_imports::ListImportsError) -> Self {
+        match err {
+            crate::operation::list_imports::ListImportsError::UninitializedAccountException(
+                inner,
+            ) => Error::UninitializedAccountException(inner),
+            crate::operation::list_imports::ListImportsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_imports::ListImportsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::list_source_server_actions::ListSourceServerActionsError,
             R,
         >,
@@ -1629,6 +1782,94 @@ impl From<crate::operation::start_cutover::StartCutoverError> for Error {
                 Error::ValidationException(inner)
             }
             crate::operation::start_cutover::StartCutoverError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_export::StartExportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::start_export::StartExportError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_export::StartExportError> for Error {
+    fn from(err: crate::operation::start_export::StartExportError) -> Self {
+        match err {
+            crate::operation::start_export::StartExportError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_export::StartExportError::UninitializedAccountException(
+                inner,
+            ) => Error::UninitializedAccountException(inner),
+            crate::operation::start_export::StartExportError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_export::StartExportError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_import::StartImportError> for Error {
+    fn from(err: crate::operation::start_import::StartImportError) -> Self {
+        match err {
+            crate::operation::start_import::StartImportError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_import::StartImportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_import::StartImportError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_import::StartImportError::UninitializedAccountException(
+                inner,
+            ) => Error::UninitializedAccountException(inner),
+            crate::operation::start_import::StartImportError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_import::StartImportError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

@@ -18,5 +18,11 @@ pub fn ser_eks_pod_properties_override(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.metadata {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("metadata").start_object();
+        crate::protocol_serde::shape_eks_metadata::ser_eks_metadata(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

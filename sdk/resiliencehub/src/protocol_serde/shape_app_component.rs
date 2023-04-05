@@ -38,6 +38,20 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "id" => {
+                                builder = builder.set_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "additionalInfo" => {
+                                builder = builder.set_additional_info(
+                                    crate::protocol_serde::shape_additional_info_map::de_additional_info_map(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

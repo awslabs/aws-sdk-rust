@@ -9,7 +9,7 @@ pub struct AcceptCertificateTransferInput {
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the certificate is active.</p>
     #[doc(hidden)]
-    pub set_as_active: bool,
+    pub set_as_active: std::option::Option<bool>,
 }
 impl AcceptCertificateTransferInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
@@ -17,7 +17,7 @@ impl AcceptCertificateTransferInput {
         self.certificate_id.as_deref()
     }
     /// <p>Specifies whether the certificate is active.</p>
-    pub fn set_as_active(&self) -> bool {
+    pub fn set_as_active(&self) -> std::option::Option<bool> {
         self.set_as_active
     }
 }
@@ -66,7 +66,7 @@ impl AcceptCertificateTransferInputBuilder {
         Ok(
             crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput {
                 certificate_id: self.certificate_id,
-                set_as_active: self.set_as_active.unwrap_or_default(),
+                set_as_active: self.set_as_active,
             },
         )
     }

@@ -5,7 +5,7 @@ pub use crate::operation::list_image_build_versions::_list_image_build_versions_
 
 /// Fluent builder constructing a request to `ListImageBuildVersions`.
 ///
-/// <p> Returns a list of image build versions.</p>
+/// <p>Returns a list of image build versions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImageBuildVersionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

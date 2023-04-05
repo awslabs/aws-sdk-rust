@@ -5,7 +5,7 @@ pub use crate::operation::list_route_calculators::_list_route_calculators_input:
 
 /// Fluent builder constructing a request to `ListRouteCalculators`.
 ///
-/// <p>Lists route calculator resources in your AWS account.</p>
+/// <p>Lists route calculator resources in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRouteCalculatorsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

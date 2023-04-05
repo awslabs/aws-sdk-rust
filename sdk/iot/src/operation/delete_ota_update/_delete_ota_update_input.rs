@@ -8,10 +8,10 @@ pub struct DeleteOtaUpdateInput {
     pub ota_update_id: std::option::Option<std::string::String>,
     /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
     #[doc(hidden)]
-    pub delete_stream: bool,
+    pub delete_stream: std::option::Option<bool>,
     /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     #[doc(hidden)]
-    pub force_delete_aws_job: bool,
+    pub force_delete_aws_job: std::option::Option<bool>,
 }
 impl DeleteOtaUpdateInput {
     /// <p>The ID of the OTA update to delete.</p>
@@ -19,11 +19,11 @@ impl DeleteOtaUpdateInput {
         self.ota_update_id.as_deref()
     }
     /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
-    pub fn delete_stream(&self) -> bool {
+    pub fn delete_stream(&self) -> std::option::Option<bool> {
         self.delete_stream
     }
     /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
-    pub fn force_delete_aws_job(&self) -> bool {
+    pub fn force_delete_aws_job(&self) -> std::option::Option<bool> {
         self.force_delete_aws_job
     }
 }
@@ -82,8 +82,8 @@ impl DeleteOtaUpdateInputBuilder {
     > {
         Ok(crate::operation::delete_ota_update::DeleteOtaUpdateInput {
             ota_update_id: self.ota_update_id,
-            delete_stream: self.delete_stream.unwrap_or_default(),
-            force_delete_aws_job: self.force_delete_aws_job.unwrap_or_default(),
+            delete_stream: self.delete_stream,
+            force_delete_aws_job: self.force_delete_aws_job,
         })
     }
 }

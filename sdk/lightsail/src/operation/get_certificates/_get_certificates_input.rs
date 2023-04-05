@@ -11,7 +11,7 @@ pub struct GetCertificatesInput {
     /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
     #[doc(hidden)]
-    pub include_certificate_details: bool,
+    pub include_certificate_details: std::option::Option<bool>,
     /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
     #[doc(hidden)]
@@ -26,7 +26,7 @@ impl GetCertificatesInput {
     }
     /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
-    pub fn include_certificate_details(&self) -> bool {
+    pub fn include_certificate_details(&self) -> std::option::Option<bool> {
         self.include_certificate_details
     }
     /// <p>The name for the certificate for which to return information.</p>
@@ -108,7 +108,7 @@ impl GetCertificatesInputBuilder {
     > {
         Ok(crate::operation::get_certificates::GetCertificatesInput {
             certificate_statuses: self.certificate_statuses,
-            include_certificate_details: self.include_certificate_details.unwrap_or_default(),
+            include_certificate_details: self.include_certificate_details,
             certificate_name: self.certificate_name,
         })
     }

@@ -8,7 +8,7 @@ pub struct ListSharedEndpointsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The ID of the Amazon Web Services Outpost.</p>
     #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl ListSharedEndpointsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The ID of the Amazon Web Services Outpost.</p>
@@ -85,7 +85,7 @@ impl ListSharedEndpointsInputBuilder {
         Ok(
             crate::operation::list_shared_endpoints::ListSharedEndpointsInput {
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 outpost_id: self.outpost_id,
             },
         )

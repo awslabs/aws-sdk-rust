@@ -50,10 +50,8 @@ pub fn ser_create_secret_input(
         }
         array_12.finish();
     }
-    if input.force_overwrite_replica_secret {
-        object
-            .key("ForceOverwriteReplicaSecret")
-            .boolean(input.force_overwrite_replica_secret);
+    if let Some(var_15) = &input.force_overwrite_replica_secret {
+        object.key("ForceOverwriteReplicaSecret").boolean(*var_15);
     }
     Ok(())
 }

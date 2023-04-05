@@ -136,6 +136,7 @@
 ///     InstanceType::C6in4xlarge => { /* ... */ },
 ///     InstanceType::C6in8xlarge => { /* ... */ },
 ///     InstanceType::C6inLarge => { /* ... */ },
+///     InstanceType::C6inMetal => { /* ... */ },
 ///     InstanceType::C6inXlarge => { /* ... */ },
 ///     InstanceType::C7g12xlarge => { /* ... */ },
 ///     InstanceType::C7g16xlarge => { /* ... */ },
@@ -144,6 +145,7 @@
 ///     InstanceType::C7g8xlarge => { /* ... */ },
 ///     InstanceType::C7gLarge => { /* ... */ },
 ///     InstanceType::C7gMedium => { /* ... */ },
+///     InstanceType::C7gMetal => { /* ... */ },
 ///     InstanceType::C7gXlarge => { /* ... */ },
 ///     InstanceType::Cc14xlarge => { /* ... */ },
 ///     InstanceType::Cc28xlarge => { /* ... */ },
@@ -383,6 +385,7 @@
 ///     InstanceType::M6idn4xlarge => { /* ... */ },
 ///     InstanceType::M6idn8xlarge => { /* ... */ },
 ///     InstanceType::M6idnLarge => { /* ... */ },
+///     InstanceType::M6idnMetal => { /* ... */ },
 ///     InstanceType::M6idnXlarge => { /* ... */ },
 ///     InstanceType::M6in12xlarge => { /* ... */ },
 ///     InstanceType::M6in16xlarge => { /* ... */ },
@@ -392,7 +395,17 @@
 ///     InstanceType::M6in4xlarge => { /* ... */ },
 ///     InstanceType::M6in8xlarge => { /* ... */ },
 ///     InstanceType::M6inLarge => { /* ... */ },
+///     InstanceType::M6inMetal => { /* ... */ },
 ///     InstanceType::M6inXlarge => { /* ... */ },
+///     InstanceType::M7g12xlarge => { /* ... */ },
+///     InstanceType::M7g16xlarge => { /* ... */ },
+///     InstanceType::M7g2xlarge => { /* ... */ },
+///     InstanceType::M7g4xlarge => { /* ... */ },
+///     InstanceType::M7g8xlarge => { /* ... */ },
+///     InstanceType::M7gLarge => { /* ... */ },
+///     InstanceType::M7gMedium => { /* ... */ },
+///     InstanceType::M7gMetal => { /* ... */ },
+///     InstanceType::M7gXlarge => { /* ... */ },
 ///     InstanceType::Mac1Metal => { /* ... */ },
 ///     InstanceType::Mac2Metal => { /* ... */ },
 ///     InstanceType::P216xlarge => { /* ... */ },
@@ -533,6 +546,7 @@
 ///     InstanceType::R6idn4xlarge => { /* ... */ },
 ///     InstanceType::R6idn8xlarge => { /* ... */ },
 ///     InstanceType::R6idnLarge => { /* ... */ },
+///     InstanceType::R6idnMetal => { /* ... */ },
 ///     InstanceType::R6idnXlarge => { /* ... */ },
 ///     InstanceType::R6in12xlarge => { /* ... */ },
 ///     InstanceType::R6in16xlarge => { /* ... */ },
@@ -542,7 +556,17 @@
 ///     InstanceType::R6in4xlarge => { /* ... */ },
 ///     InstanceType::R6in8xlarge => { /* ... */ },
 ///     InstanceType::R6inLarge => { /* ... */ },
+///     InstanceType::R6inMetal => { /* ... */ },
 ///     InstanceType::R6inXlarge => { /* ... */ },
+///     InstanceType::R7g12xlarge => { /* ... */ },
+///     InstanceType::R7g16xlarge => { /* ... */ },
+///     InstanceType::R7g2xlarge => { /* ... */ },
+///     InstanceType::R7g4xlarge => { /* ... */ },
+///     InstanceType::R7g8xlarge => { /* ... */ },
+///     InstanceType::R7gLarge => { /* ... */ },
+///     InstanceType::R7gMedium => { /* ... */ },
+///     InstanceType::R7gMetal => { /* ... */ },
+///     InstanceType::R7gXlarge => { /* ... */ },
 ///     InstanceType::T1Micro => { /* ... */ },
 ///     InstanceType::T22xlarge => { /* ... */ },
 ///     InstanceType::T2Large => { /* ... */ },
@@ -913,6 +937,8 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     C6inLarge,
     #[allow(missing_docs)] // documentation missing in model
+    C6inMetal,
+    #[allow(missing_docs)] // documentation missing in model
     C6inXlarge,
     #[allow(missing_docs)] // documentation missing in model
     C7g12xlarge,
@@ -928,6 +954,8 @@ pub enum InstanceType {
     C7gLarge,
     #[allow(missing_docs)] // documentation missing in model
     C7gMedium,
+    #[allow(missing_docs)] // documentation missing in model
+    C7gMetal,
     #[allow(missing_docs)] // documentation missing in model
     C7gXlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -1407,6 +1435,8 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     M6idnLarge,
     #[allow(missing_docs)] // documentation missing in model
+    M6idnMetal,
+    #[allow(missing_docs)] // documentation missing in model
     M6idnXlarge,
     #[allow(missing_docs)] // documentation missing in model
     M6in12xlarge,
@@ -1425,7 +1455,27 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     M6inLarge,
     #[allow(missing_docs)] // documentation missing in model
+    M6inMetal,
+    #[allow(missing_docs)] // documentation missing in model
     M6inXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M7g12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M7g16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M7g2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M7g4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M7g8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M7gLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M7gMedium,
+    #[allow(missing_docs)] // documentation missing in model
+    M7gMetal,
+    #[allow(missing_docs)] // documentation missing in model
+    M7gXlarge,
     #[allow(missing_docs)] // documentation missing in model
     Mac1Metal,
     #[allow(missing_docs)] // documentation missing in model
@@ -1707,6 +1757,8 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     R6idnLarge,
     #[allow(missing_docs)] // documentation missing in model
+    R6idnMetal,
+    #[allow(missing_docs)] // documentation missing in model
     R6idnXlarge,
     #[allow(missing_docs)] // documentation missing in model
     R6in12xlarge,
@@ -1725,7 +1777,27 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     R6inLarge,
     #[allow(missing_docs)] // documentation missing in model
+    R6inMetal,
+    #[allow(missing_docs)] // documentation missing in model
     R6inXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7g12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7g16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7g2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7g4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7g8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7gLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7gMedium,
+    #[allow(missing_docs)] // documentation missing in model
+    R7gMetal,
+    #[allow(missing_docs)] // documentation missing in model
+    R7gXlarge,
     #[allow(missing_docs)] // documentation missing in model
     T1Micro,
     #[allow(missing_docs)] // documentation missing in model
@@ -2032,6 +2104,7 @@ impl std::convert::From<&str> for InstanceType {
             "c6in.4xlarge" => InstanceType::C6in4xlarge,
             "c6in.8xlarge" => InstanceType::C6in8xlarge,
             "c6in.large" => InstanceType::C6inLarge,
+            "c6in.metal" => InstanceType::C6inMetal,
             "c6in.xlarge" => InstanceType::C6inXlarge,
             "c7g.12xlarge" => InstanceType::C7g12xlarge,
             "c7g.16xlarge" => InstanceType::C7g16xlarge,
@@ -2040,6 +2113,7 @@ impl std::convert::From<&str> for InstanceType {
             "c7g.8xlarge" => InstanceType::C7g8xlarge,
             "c7g.large" => InstanceType::C7gLarge,
             "c7g.medium" => InstanceType::C7gMedium,
+            "c7g.metal" => InstanceType::C7gMetal,
             "c7g.xlarge" => InstanceType::C7gXlarge,
             "cc1.4xlarge" => InstanceType::Cc14xlarge,
             "cc2.8xlarge" => InstanceType::Cc28xlarge,
@@ -2279,6 +2353,7 @@ impl std::convert::From<&str> for InstanceType {
             "m6idn.4xlarge" => InstanceType::M6idn4xlarge,
             "m6idn.8xlarge" => InstanceType::M6idn8xlarge,
             "m6idn.large" => InstanceType::M6idnLarge,
+            "m6idn.metal" => InstanceType::M6idnMetal,
             "m6idn.xlarge" => InstanceType::M6idnXlarge,
             "m6in.12xlarge" => InstanceType::M6in12xlarge,
             "m6in.16xlarge" => InstanceType::M6in16xlarge,
@@ -2288,7 +2363,17 @@ impl std::convert::From<&str> for InstanceType {
             "m6in.4xlarge" => InstanceType::M6in4xlarge,
             "m6in.8xlarge" => InstanceType::M6in8xlarge,
             "m6in.large" => InstanceType::M6inLarge,
+            "m6in.metal" => InstanceType::M6inMetal,
             "m6in.xlarge" => InstanceType::M6inXlarge,
+            "m7g.12xlarge" => InstanceType::M7g12xlarge,
+            "m7g.16xlarge" => InstanceType::M7g16xlarge,
+            "m7g.2xlarge" => InstanceType::M7g2xlarge,
+            "m7g.4xlarge" => InstanceType::M7g4xlarge,
+            "m7g.8xlarge" => InstanceType::M7g8xlarge,
+            "m7g.large" => InstanceType::M7gLarge,
+            "m7g.medium" => InstanceType::M7gMedium,
+            "m7g.metal" => InstanceType::M7gMetal,
+            "m7g.xlarge" => InstanceType::M7gXlarge,
             "mac1.metal" => InstanceType::Mac1Metal,
             "mac2.metal" => InstanceType::Mac2Metal,
             "p2.16xlarge" => InstanceType::P216xlarge,
@@ -2429,6 +2514,7 @@ impl std::convert::From<&str> for InstanceType {
             "r6idn.4xlarge" => InstanceType::R6idn4xlarge,
             "r6idn.8xlarge" => InstanceType::R6idn8xlarge,
             "r6idn.large" => InstanceType::R6idnLarge,
+            "r6idn.metal" => InstanceType::R6idnMetal,
             "r6idn.xlarge" => InstanceType::R6idnXlarge,
             "r6in.12xlarge" => InstanceType::R6in12xlarge,
             "r6in.16xlarge" => InstanceType::R6in16xlarge,
@@ -2438,7 +2524,17 @@ impl std::convert::From<&str> for InstanceType {
             "r6in.4xlarge" => InstanceType::R6in4xlarge,
             "r6in.8xlarge" => InstanceType::R6in8xlarge,
             "r6in.large" => InstanceType::R6inLarge,
+            "r6in.metal" => InstanceType::R6inMetal,
             "r6in.xlarge" => InstanceType::R6inXlarge,
+            "r7g.12xlarge" => InstanceType::R7g12xlarge,
+            "r7g.16xlarge" => InstanceType::R7g16xlarge,
+            "r7g.2xlarge" => InstanceType::R7g2xlarge,
+            "r7g.4xlarge" => InstanceType::R7g4xlarge,
+            "r7g.8xlarge" => InstanceType::R7g8xlarge,
+            "r7g.large" => InstanceType::R7gLarge,
+            "r7g.medium" => InstanceType::R7gMedium,
+            "r7g.metal" => InstanceType::R7gMetal,
+            "r7g.xlarge" => InstanceType::R7gXlarge,
             "t1.micro" => InstanceType::T1Micro,
             "t2.2xlarge" => InstanceType::T22xlarge,
             "t2.large" => InstanceType::T2Large,
@@ -2668,6 +2764,7 @@ impl InstanceType {
             InstanceType::C6in4xlarge => "c6in.4xlarge",
             InstanceType::C6in8xlarge => "c6in.8xlarge",
             InstanceType::C6inLarge => "c6in.large",
+            InstanceType::C6inMetal => "c6in.metal",
             InstanceType::C6inXlarge => "c6in.xlarge",
             InstanceType::C7g12xlarge => "c7g.12xlarge",
             InstanceType::C7g16xlarge => "c7g.16xlarge",
@@ -2676,6 +2773,7 @@ impl InstanceType {
             InstanceType::C7g8xlarge => "c7g.8xlarge",
             InstanceType::C7gLarge => "c7g.large",
             InstanceType::C7gMedium => "c7g.medium",
+            InstanceType::C7gMetal => "c7g.metal",
             InstanceType::C7gXlarge => "c7g.xlarge",
             InstanceType::Cc14xlarge => "cc1.4xlarge",
             InstanceType::Cc28xlarge => "cc2.8xlarge",
@@ -2915,6 +3013,7 @@ impl InstanceType {
             InstanceType::M6idn4xlarge => "m6idn.4xlarge",
             InstanceType::M6idn8xlarge => "m6idn.8xlarge",
             InstanceType::M6idnLarge => "m6idn.large",
+            InstanceType::M6idnMetal => "m6idn.metal",
             InstanceType::M6idnXlarge => "m6idn.xlarge",
             InstanceType::M6in12xlarge => "m6in.12xlarge",
             InstanceType::M6in16xlarge => "m6in.16xlarge",
@@ -2924,7 +3023,17 @@ impl InstanceType {
             InstanceType::M6in4xlarge => "m6in.4xlarge",
             InstanceType::M6in8xlarge => "m6in.8xlarge",
             InstanceType::M6inLarge => "m6in.large",
+            InstanceType::M6inMetal => "m6in.metal",
             InstanceType::M6inXlarge => "m6in.xlarge",
+            InstanceType::M7g12xlarge => "m7g.12xlarge",
+            InstanceType::M7g16xlarge => "m7g.16xlarge",
+            InstanceType::M7g2xlarge => "m7g.2xlarge",
+            InstanceType::M7g4xlarge => "m7g.4xlarge",
+            InstanceType::M7g8xlarge => "m7g.8xlarge",
+            InstanceType::M7gLarge => "m7g.large",
+            InstanceType::M7gMedium => "m7g.medium",
+            InstanceType::M7gMetal => "m7g.metal",
+            InstanceType::M7gXlarge => "m7g.xlarge",
             InstanceType::Mac1Metal => "mac1.metal",
             InstanceType::Mac2Metal => "mac2.metal",
             InstanceType::P216xlarge => "p2.16xlarge",
@@ -3065,6 +3174,7 @@ impl InstanceType {
             InstanceType::R6idn4xlarge => "r6idn.4xlarge",
             InstanceType::R6idn8xlarge => "r6idn.8xlarge",
             InstanceType::R6idnLarge => "r6idn.large",
+            InstanceType::R6idnMetal => "r6idn.metal",
             InstanceType::R6idnXlarge => "r6idn.xlarge",
             InstanceType::R6in12xlarge => "r6in.12xlarge",
             InstanceType::R6in16xlarge => "r6in.16xlarge",
@@ -3074,7 +3184,17 @@ impl InstanceType {
             InstanceType::R6in4xlarge => "r6in.4xlarge",
             InstanceType::R6in8xlarge => "r6in.8xlarge",
             InstanceType::R6inLarge => "r6in.large",
+            InstanceType::R6inMetal => "r6in.metal",
             InstanceType::R6inXlarge => "r6in.xlarge",
+            InstanceType::R7g12xlarge => "r7g.12xlarge",
+            InstanceType::R7g16xlarge => "r7g.16xlarge",
+            InstanceType::R7g2xlarge => "r7g.2xlarge",
+            InstanceType::R7g4xlarge => "r7g.4xlarge",
+            InstanceType::R7g8xlarge => "r7g.8xlarge",
+            InstanceType::R7gLarge => "r7g.large",
+            InstanceType::R7gMedium => "r7g.medium",
+            InstanceType::R7gMetal => "r7g.metal",
+            InstanceType::R7gXlarge => "r7g.xlarge",
             InstanceType::T1Micro => "t1.micro",
             InstanceType::T22xlarge => "t2.2xlarge",
             InstanceType::T2Large => "t2.large",
@@ -3293,6 +3413,7 @@ impl InstanceType {
             "c6in.4xlarge",
             "c6in.8xlarge",
             "c6in.large",
+            "c6in.metal",
             "c6in.xlarge",
             "c7g.12xlarge",
             "c7g.16xlarge",
@@ -3301,6 +3422,7 @@ impl InstanceType {
             "c7g.8xlarge",
             "c7g.large",
             "c7g.medium",
+            "c7g.metal",
             "c7g.xlarge",
             "cc1.4xlarge",
             "cc2.8xlarge",
@@ -3540,6 +3662,7 @@ impl InstanceType {
             "m6idn.4xlarge",
             "m6idn.8xlarge",
             "m6idn.large",
+            "m6idn.metal",
             "m6idn.xlarge",
             "m6in.12xlarge",
             "m6in.16xlarge",
@@ -3549,7 +3672,17 @@ impl InstanceType {
             "m6in.4xlarge",
             "m6in.8xlarge",
             "m6in.large",
+            "m6in.metal",
             "m6in.xlarge",
+            "m7g.12xlarge",
+            "m7g.16xlarge",
+            "m7g.2xlarge",
+            "m7g.4xlarge",
+            "m7g.8xlarge",
+            "m7g.large",
+            "m7g.medium",
+            "m7g.metal",
+            "m7g.xlarge",
             "mac1.metal",
             "mac2.metal",
             "p2.16xlarge",
@@ -3690,6 +3823,7 @@ impl InstanceType {
             "r6idn.4xlarge",
             "r6idn.8xlarge",
             "r6idn.large",
+            "r6idn.metal",
             "r6idn.xlarge",
             "r6in.12xlarge",
             "r6in.16xlarge",
@@ -3699,7 +3833,17 @@ impl InstanceType {
             "r6in.4xlarge",
             "r6in.8xlarge",
             "r6in.large",
+            "r6in.metal",
             "r6in.xlarge",
+            "r7g.12xlarge",
+            "r7g.16xlarge",
+            "r7g.2xlarge",
+            "r7g.4xlarge",
+            "r7g.8xlarge",
+            "r7g.large",
+            "r7g.medium",
+            "r7g.metal",
+            "r7g.xlarge",
             "t1.micro",
             "t2.2xlarge",
             "t2.large",

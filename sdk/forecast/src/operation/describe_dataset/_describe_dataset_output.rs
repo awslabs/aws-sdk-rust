@@ -22,7 +22,7 @@ pub struct DescribeDatasetOutput {
     /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
     #[doc(hidden)]
     pub schema: std::option::Option<crate::types::Schema>,
-    /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>The Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::types::EncryptionConfig>,
     /// <p>The status of the dataset. States include:</p>
@@ -71,7 +71,7 @@ impl DescribeDatasetOutput {
     pub fn schema(&self) -> std::option::Option<&crate::types::Schema> {
         self.schema.as_ref()
     }
-    /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>The Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
@@ -191,12 +191,12 @@ impl DescribeDatasetOutputBuilder {
         self.schema = input;
         self
     }
-    /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>The Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = Some(input);
         self
     }
-    /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>The Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn set_encryption_config(
         mut self,
         input: std::option::Option<crate::types::EncryptionConfig>,

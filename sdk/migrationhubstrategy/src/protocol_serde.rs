@@ -168,6 +168,8 @@ pub(crate) mod shape_management_preference;
 
 pub(crate) mod shape_recommendation_set;
 
+pub(crate) mod shape_result_list;
+
 pub(crate) mod shape_s3_keys;
 
 pub(crate) mod shape_s3_object;
@@ -204,6 +206,8 @@ pub(crate) mod shape_no_management_preference;
 
 pub(crate) mod shape_os_info;
 
+pub(crate) mod shape_result;
+
 pub(crate) mod shape_self_manage_resources;
 
 pub(crate) mod shape_server_status_summary;
@@ -215,6 +219,10 @@ pub(crate) mod shape_source_code_repository;
 pub(crate) mod shape_strategy_summary;
 
 pub(crate) mod shape_transformation_tool;
+
+pub(crate) mod shape_analysis_status_union;
+
+pub(crate) mod shape_antipattern_report_result_list;
 
 pub(crate) mod shape_aws_managed_target_destinations;
 
@@ -240,6 +248,8 @@ pub(crate) mod shape_vcenter_based_remote_info_list;
 
 pub(crate) mod shape_version_control_info_list;
 
+pub(crate) mod shape_antipattern_report_result;
+
 pub(crate) mod shape_ip_address_based_remote_info;
 
 pub(crate) mod shape_pipeline_info;
@@ -247,3 +257,5 @@ pub(crate) mod shape_pipeline_info;
 pub(crate) mod shape_vcenter_based_remote_info;
 
 pub(crate) mod shape_version_control_info;
+
+pub(crate) mod shape_analyzer_name_union;

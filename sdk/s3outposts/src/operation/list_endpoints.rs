@@ -54,11 +54,13 @@ impl ListEndpointsInput {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                if let Some(inner_2) = &_input.max_results {
+                    if *inner_2 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -172,6 +174,8 @@ pub enum ListEndpointsError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -195,6 +199,7 @@ impl std::fmt::Display for ListEndpointsError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -210,6 +215,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ListEndpointsEr
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ResourceNotFoundException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ThrottlingException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ValidationException(_inner) => {
@@ -263,6 +271,7 @@ impl ListEndpointsError {
             Self::AccessDeniedException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -279,6 +288,10 @@ impl ListEndpointsError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `ListEndpointsError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `ListEndpointsError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -290,6 +303,7 @@ impl std::error::Error for ListEndpointsError {
             Self::AccessDeniedException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
+            Self::ThrottlingException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }

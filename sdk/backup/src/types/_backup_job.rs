@@ -72,6 +72,9 @@ pub struct BackupJob {
     /// <p>This is a boolean value indicating this is a parent (composite) backup job.</p>
     #[doc(hidden)]
     pub is_parent: bool,
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    #[doc(hidden)]
+    pub resource_name: std::option::Option<std::string::String>,
 }
 impl BackupJob {
     /// <p>The account ID that owns the backup job.</p>
@@ -166,6 +169,10 @@ impl BackupJob {
     pub fn is_parent(&self) -> bool {
         self.is_parent
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl BackupJob {
     /// Creates a new builder-style object to manufacture [`BackupJob`](crate::types::BackupJob).
@@ -201,6 +208,7 @@ pub struct BackupJobBuilder {
     pub(crate) backup_type: std::option::Option<std::string::String>,
     pub(crate) parent_job_id: std::option::Option<std::string::String>,
     pub(crate) is_parent: std::option::Option<bool>,
+    pub(crate) resource_name: std::option::Option<std::string::String>,
 }
 impl BackupJobBuilder {
     /// <p>The account ID that owns the backup job.</p>
@@ -458,6 +466,16 @@ impl BackupJobBuilder {
         self.is_parent = input;
         self
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_name = Some(input.into());
+        self
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`BackupJob`](crate::types::BackupJob).
     pub fn build(self) -> crate::types::BackupJob {
         crate::types::BackupJob {
@@ -483,6 +501,7 @@ impl BackupJobBuilder {
             backup_type: self.backup_type,
             parent_job_id: self.parent_job_id,
             is_parent: self.is_parent.unwrap_or_default(),
+            resource_name: self.resource_name,
         }
     }
 }

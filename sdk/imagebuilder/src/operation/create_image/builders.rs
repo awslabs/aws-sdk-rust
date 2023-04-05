@@ -5,7 +5,7 @@ pub use crate::operation::create_image::_create_image_input::CreateImageInputBui
 
 /// Fluent builder constructing a request to `CreateImage`.
 ///
-/// <p> Creates a new image. This request will create a new image along with all of the configured output resources defined in the distribution configuration. You must specify exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.</p>
+/// <p>Creates a new image. This request will create a new image along with all of the configured output resources defined in the distribution configuration. You must specify exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateImageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,12 +65,12 @@ impl CreateImageFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
     pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.image_recipe_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
     pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_image_recipe_arn(input);
         self
@@ -88,12 +88,12 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.set_container_recipe_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
     pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.distribution_configuration_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
     pub fn set_distribution_configuration_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -101,7 +101,7 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
     pub fn infrastructure_configuration_arn(
         mut self,
         input: impl Into<std::string::String>,
@@ -109,7 +109,7 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.infrastructure_configuration_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
     pub fn set_infrastructure_configuration_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -117,7 +117,7 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.set_infrastructure_configuration_arn(input);
         self
     }
-    /// <p> The image tests configuration of the image.</p>
+    /// <p>The image tests configuration of the image.</p>
     pub fn image_tests_configuration(
         mut self,
         input: crate::types::ImageTestsConfiguration,
@@ -125,7 +125,7 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.image_tests_configuration(input);
         self
     }
-    /// <p> The image tests configuration of the image.</p>
+    /// <p>The image tests configuration of the image.</p>
     pub fn set_image_tests_configuration(
         mut self,
         input: std::option::Option<crate::types::ImageTestsConfiguration>,
@@ -133,12 +133,12 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.set_image_tests_configuration(input);
         self
     }
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enhanced_image_metadata_enabled(input);
         self
     }
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enhanced_image_metadata_enabled(input);
         self
@@ -147,7 +147,7 @@ impl CreateImageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags of the image.</p>
+    /// <p>The tags of the image.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -156,7 +156,7 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p> The tags of the image.</p>
+    /// <p>The tags of the image.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<
@@ -166,14 +166,30 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p> The idempotency token used to make this request idempotent.</p>
+    /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p> The idempotency token used to make this request idempotent.</p>
+    /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn image_scanning_configuration(
+        mut self,
+        input: crate::types::ImageScanningConfiguration,
+    ) -> Self {
+        self.inner = self.inner.image_scanning_configuration(input);
+        self
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn set_image_scanning_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ImageScanningConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_image_scanning_configuration(input);
         self
     }
 }

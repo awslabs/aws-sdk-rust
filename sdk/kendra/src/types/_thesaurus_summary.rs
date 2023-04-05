@@ -13,10 +13,10 @@ pub struct ThesaurusSummary {
     /// <p>The status of the thesaurus.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ThesaurusStatus>,
-    /// <p>The Unix datetime that the thesaurus was created.</p>
+    /// <p>The Unix timestamp when the thesaurus was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -33,11 +33,11 @@ impl ThesaurusSummary {
     pub fn status(&self) -> std::option::Option<&crate::types::ThesaurusStatus> {
         self.status.as_ref()
     }
-    /// <p>The Unix datetime that the thesaurus was created.</p>
+    /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -90,12 +90,12 @@ impl ThesaurusSummaryBuilder {
         self.status = input;
         self
     }
-    /// <p>The Unix datetime that the thesaurus was created.</p>
+    /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The Unix datetime that the thesaurus was created.</p>
+    /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -103,12 +103,12 @@ impl ThesaurusSummaryBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

@@ -27,7 +27,7 @@ pub struct StartRunInput {
     /// <p>Parameters for the run.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<aws_smithy_types::Document>,
-    /// <p>A storage capacity for the run.</p>
+    /// <p>A storage capacity for the run in gigabytes.</p>
     #[doc(hidden)]
     pub storage_capacity: std::option::Option<i32>,
     /// <p>An output URI for the run.</p>
@@ -40,7 +40,7 @@ pub struct StartRunInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A request ID for the run.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
@@ -77,7 +77,7 @@ impl StartRunInput {
     pub fn parameters(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.parameters.as_ref()
     }
-    /// <p>A storage capacity for the run.</p>
+    /// <p>A storage capacity for the run in gigabytes.</p>
     pub fn storage_capacity(&self) -> std::option::Option<i32> {
         self.storage_capacity
     }
@@ -96,7 +96,7 @@ impl StartRunInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A request ID for the run.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -214,12 +214,12 @@ impl StartRunInputBuilder {
         self.parameters = input;
         self
     }
-    /// <p>A storage capacity for the run.</p>
+    /// <p>A storage capacity for the run in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = Some(input);
         self
     }
-    /// <p>A storage capacity for the run.</p>
+    /// <p>A storage capacity for the run in gigabytes.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
@@ -269,12 +269,12 @@ impl StartRunInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>A request ID for the run.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.request_id = Some(input.into());
         self
     }
-    /// <p>A request ID for the run.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.request_id = input;
         self

@@ -8,7 +8,7 @@ pub struct DeleteConnectorProfileInput {
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
     #[doc(hidden)]
-    pub force_delete: bool,
+    pub force_delete: std::option::Option<bool>,
 }
 impl DeleteConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
@@ -16,7 +16,7 @@ impl DeleteConnectorProfileInput {
         self.connector_profile_name.as_deref()
     }
     /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
-    pub fn force_delete(&self) -> bool {
+    pub fn force_delete(&self) -> std::option::Option<bool> {
         self.force_delete
     }
 }
@@ -70,7 +70,7 @@ impl DeleteConnectorProfileInputBuilder {
         Ok(
             crate::operation::delete_connector_profile::DeleteConnectorProfileInput {
                 connector_profile_name: self.connector_profile_name,
-                force_delete: self.force_delete.unwrap_or_default(),
+                force_delete: self.force_delete,
             },
         )
     }

@@ -168,4 +168,17 @@ impl CreateResolverEndpointFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
+        self.inner = self.inner.resolver_endpoint_type(input);
+        self
+    }
+    /// <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    pub fn set_resolver_endpoint_type(
+        mut self,
+        input: std::option::Option<crate::types::ResolverEndpointType>,
+    ) -> Self {
+        self.inner = self.inner.set_resolver_endpoint_type(input);
+        self
+    }
 }

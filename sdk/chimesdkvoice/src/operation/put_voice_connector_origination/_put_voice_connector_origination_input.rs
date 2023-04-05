@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorOriginationInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The origination settings being updated.</p>
     #[doc(hidden)]
     pub origination: std::option::Option<crate::types::Origination>,
 }
 impl PutVoiceConnectorOriginationInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The origination settings being updated.</p>
     pub fn origination(&self) -> std::option::Option<&crate::types::Origination> {
         self.origination.as_ref()
     }
@@ -35,12 +35,12 @@ pub struct PutVoiceConnectorOriginationInputBuilder {
     pub(crate) origination: std::option::Option<crate::types::Origination>,
 }
 impl PutVoiceConnectorOriginationInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -48,12 +48,12 @@ impl PutVoiceConnectorOriginationInputBuilder {
         self.voice_connector_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The origination settings being updated.</p>
     pub fn origination(mut self, input: crate::types::Origination) -> Self {
         self.origination = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The origination settings being updated.</p>
     pub fn set_origination(
         mut self,
         input: std::option::Option<crate::types::Origination>,

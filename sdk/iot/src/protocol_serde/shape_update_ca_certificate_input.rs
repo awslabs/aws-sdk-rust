@@ -12,10 +12,8 @@ pub fn ser_update_ca_certificate_input(
         )?;
         object_2.finish();
     }
-    if input.remove_auto_registration {
-        object
-            .key("removeAutoRegistration")
-            .boolean(input.remove_auto_registration);
+    if let Some(var_3) = &input.remove_auto_registration {
+        object.key("removeAutoRegistration").boolean(*var_3);
     }
     Ok(())
 }

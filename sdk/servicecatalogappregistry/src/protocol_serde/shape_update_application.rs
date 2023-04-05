@@ -90,6 +90,24 @@ pub fn de_update_application_http_error(
                 },
             )
         }
+        "ThrottlingException" => {
+            crate::operation::update_application::UpdateApplicationError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_application::UpdateApplicationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ValidationException" => {
             crate::operation::update_application::UpdateApplicationError::ValidationException({
                 #[allow(unused_mut)]

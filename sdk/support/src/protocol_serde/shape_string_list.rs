@@ -2,7 +2,7 @@
 pub(crate) fn de_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<std::string::String>>,
+    Option<std::vec::Vec<std::option::Option<std::string::String>>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -24,14 +24,13 @@ where
                         break;
                     }
                     _ => {
-                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
-                            tokens.next(),
-                        )?
-                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                        .transpose()?;
-                        if let Some(value) = value {
-                            items.push(value);
-                        }
+                        items.push(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
                     }
                 }
             }

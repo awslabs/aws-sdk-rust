@@ -13,6 +13,9 @@ pub struct RegisterResourceInput {
     /// <p>The identifier for the role that registers the resource.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
+    /// <p>Whether or not the resource is a federated resource.</p>
+    #[doc(hidden)]
+    pub with_federation: std::option::Option<bool>,
 }
 impl RegisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
@@ -27,6 +30,10 @@ impl RegisterResourceInput {
     /// <p>The identifier for the role that registers the resource.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn with_federation(&self) -> std::option::Option<bool> {
+        self.with_federation
     }
 }
 impl RegisterResourceInput {
@@ -44,6 +51,7 @@ pub struct RegisterResourceInputBuilder {
     pub(crate) resource_arn: std::option::Option<std::string::String>,
     pub(crate) use_service_linked_role: std::option::Option<bool>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) with_federation: std::option::Option<bool>,
 }
 impl RegisterResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
@@ -78,6 +86,16 @@ impl RegisterResourceInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn with_federation(mut self, input: bool) -> Self {
+        self.with_federation = Some(input);
+        self
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn set_with_federation(mut self, input: std::option::Option<bool>) -> Self {
+        self.with_federation = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
     pub fn build(
         self,
@@ -89,6 +107,7 @@ impl RegisterResourceInputBuilder {
             resource_arn: self.resource_arn,
             use_service_linked_role: self.use_service_linked_role,
             role_arn: self.role_arn,
+            with_federation: self.with_federation,
         })
     }
 }

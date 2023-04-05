@@ -8,7 +8,7 @@ pub struct ListAttachedPoliciesInput {
     pub target: std::option::Option<std::string::String>,
     /// <p>When true, recursively list attached policies.</p>
     #[doc(hidden)]
-    pub recursive: bool,
+    pub recursive: std::option::Option<bool>,
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ impl ListAttachedPoliciesInput {
         self.target.as_deref()
     }
     /// <p>When true, recursively list attached policies.</p>
-    pub fn recursive(&self) -> bool {
+    pub fn recursive(&self) -> std::option::Option<bool> {
         self.recursive
     }
     /// <p>The token to retrieve the next set of results.</p>
@@ -102,7 +102,7 @@ impl ListAttachedPoliciesInputBuilder {
         Ok(
             crate::operation::list_attached_policies::ListAttachedPoliciesInput {
                 target: self.target,
-                recursive: self.recursive.unwrap_or_default(),
+                recursive: self.recursive,
                 marker: self.marker,
                 page_size: self.page_size,
             },

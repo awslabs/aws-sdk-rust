@@ -12,7 +12,7 @@ pub struct ListReservationsInput {
     pub codec: std::option::Option<std::string::String>,
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
     #[doc(hidden)]
     pub maximum_bitrate: std::option::Option<std::string::String>,
@@ -45,7 +45,7 @@ impl ListReservationsInput {
         self.codec.as_deref()
     }
     /// Placeholder documentation for MaxResults
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
@@ -214,7 +214,7 @@ impl ListReservationsInputBuilder {
         Ok(crate::operation::list_reservations::ListReservationsInput {
             channel_class: self.channel_class,
             codec: self.codec,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             maximum_bitrate: self.maximum_bitrate,
             maximum_framerate: self.maximum_framerate,
             next_token: self.next_token,

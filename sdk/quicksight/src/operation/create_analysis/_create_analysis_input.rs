@@ -20,6 +20,7 @@ pub struct CreateAnalysisInput {
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     #[doc(hidden)]
     pub source_entity: std::option::Option<crate::types::AnalysisSourceEntity>,
     /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
@@ -30,6 +31,7 @@ pub struct CreateAnalysisInput {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::types::AnalysisDefinition>,
 }
@@ -56,6 +58,7 @@ impl CreateAnalysisInput {
         self.permissions.as_deref()
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn source_entity(&self) -> std::option::Option<&crate::types::AnalysisSourceEntity> {
         self.source_entity.as_ref()
     }
@@ -69,6 +72,7 @@ impl CreateAnalysisInput {
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn definition(&self) -> std::option::Option<&crate::types::AnalysisDefinition> {
         self.definition.as_ref()
     }
@@ -157,11 +161,13 @@ impl CreateAnalysisInputBuilder {
         self
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn source_entity(mut self, input: crate::types::AnalysisSourceEntity) -> Self {
         self.source_entity = Some(input);
         self
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn set_source_entity(
         mut self,
         input: std::option::Option<crate::types::AnalysisSourceEntity>,
@@ -200,12 +206,14 @@ impl CreateAnalysisInputBuilder {
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn definition(mut self, input: crate::types::AnalysisDefinition) -> Self {
         self.definition = Some(input);
         self
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn set_definition(
         mut self,
         input: std::option::Option<crate::types::AnalysisDefinition>,

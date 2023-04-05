@@ -3,22 +3,20 @@ pub fn ser_create_comment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_comment::CreateCommentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.notify_collaborators {
-        object
-            .key("NotifyCollaborators")
-            .boolean(input.notify_collaborators);
+    if let Some(var_1) = &input.notify_collaborators {
+        object.key("NotifyCollaborators").boolean(*var_1);
     }
-    if let Some(var_1) = &input.parent_id {
-        object.key("ParentId").string(var_1.as_str());
+    if let Some(var_2) = &input.parent_id {
+        object.key("ParentId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.text {
-        object.key("Text").string(var_2.as_str());
+    if let Some(var_3) = &input.text {
+        object.key("Text").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.thread_id {
-        object.key("ThreadId").string(var_3.as_str());
+    if let Some(var_4) = &input.thread_id {
+        object.key("ThreadId").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.visibility {
-        object.key("Visibility").string(var_4.as_str());
+    if let Some(var_5) = &input.visibility {
+        object.key("Visibility").string(var_5.as_str());
     }
     Ok(())
 }

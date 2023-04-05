@@ -51,6 +51,11 @@ pub fn ser_pivot_table_options(
         )?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.collapsed_row_dimensions_visibility {
+        object
+            .key("CollapsedRowDimensionsVisibility")
+            .string(var_15.as_str());
+    }
     Ok(())
 }
 
@@ -152,6 +157,18 @@ where
                             "RowAlternateColorOptions" => {
                                 builder = builder.set_row_alternate_color_options(
                                     crate::protocol_serde::shape_row_alternate_color_options::de_row_alternate_color_options(tokens)?
+                                );
+                            }
+                            "CollapsedRowDimensionsVisibility" => {
+                                builder = builder.set_collapsed_row_dimensions_visibility(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::Visibility::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFolderInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The name of the new folder.</p>
@@ -14,7 +14,7 @@ pub struct CreateFolderInput {
     pub parent_folder_id: std::option::Option<std::string::String>,
 }
 impl CreateFolderInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -31,7 +31,7 @@ impl std::fmt::Debug for CreateFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFolderInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("name", &self.name);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("parent_folder_id", &self.parent_folder_id);
         formatter.finish()
     }
@@ -52,12 +52,12 @@ pub struct CreateFolderInputBuilder {
     pub(crate) parent_folder_id: std::option::Option<std::string::String>,
 }
 impl CreateFolderInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -103,7 +103,7 @@ impl std::fmt::Debug for CreateFolderInputBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFolderInputBuilder");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("name", &self.name);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("parent_folder_id", &self.parent_folder_id);
         formatter.finish()
     }

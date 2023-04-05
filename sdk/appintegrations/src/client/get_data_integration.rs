@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`kms_key(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::kms_key): <p>The KMS key for the DataIntegration.</p>
     ///   - [`source_uri(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::source_uri): <p>The URI of the data source.</p>
     ///   - [`schedule_configuration(Option<ScheduleConfiguration>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::schedule_configuration): <p>The name of the data and how often it should be pulled from the source.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::tags): <p>One or more tags.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    ///   - [`file_configuration(Option<FileConfiguration>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::file_configuration): <p>The configuration for what files should be pulled from the source.</p>
+    ///   - [`object_configuration(Option<HashMap<String, HashMap<String, Vec<String>>>>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::object_configuration): <p>The configuration for what data should be pulled from the source.</p>
     /// - On failure, responds with [`SdkError<GetDataIntegrationError>`](crate::operation::get_data_integration::GetDataIntegrationError)
     pub fn get_data_integration(
         &self,

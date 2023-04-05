@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAppComponentCompliancesOutput {
-    /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
+    /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
     #[doc(hidden)]
     pub component_compliances:
         std::option::Option<std::vec::Vec<crate::types::AppComponentCompliance>>,
@@ -13,7 +13,7 @@ pub struct ListAppComponentCompliancesOutput {
     _request_id: Option<String>,
 }
 impl ListAppComponentCompliancesOutput {
-    /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
+    /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
     pub fn component_compliances(
         &self,
     ) -> std::option::Option<&[crate::types::AppComponentCompliance]> {
@@ -50,14 +50,14 @@ impl ListAppComponentCompliancesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_component_compliances`](Self::set_component_compliances).
     ///
-    /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
+    /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
     pub fn component_compliances(mut self, input: crate::types::AppComponentCompliance) -> Self {
         let mut v = self.component_compliances.unwrap_or_default();
         v.push(input);
         self.component_compliances = Some(v);
         self
     }
-    /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
+    /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
     pub fn set_component_compliances(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::AppComponentCompliance>>,

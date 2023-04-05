@@ -5,7 +5,7 @@ pub use crate::operation::list_trackers::_list_trackers_input::ListTrackersInput
 
 /// Fluent builder constructing a request to `ListTrackers`.
 ///
-/// <p>Lists tracker resources in your AWS account.</p>
+/// <p>Lists tracker resources in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrackersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

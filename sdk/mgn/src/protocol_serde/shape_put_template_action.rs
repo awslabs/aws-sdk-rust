@@ -172,6 +172,27 @@ pub(crate) fn de_put_template_action(
                             )?,
                         );
                     }
+                    "category" => {
+                        builder = builder.set_category(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::types::ActionCategory::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
+                    "description" => {
+                        builder = builder.set_description(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "documentIdentifier" => {
                         builder = builder.set_document_identifier(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -188,6 +209,11 @@ pub(crate) fn de_put_template_action(
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                        );
+                    }
+                    "externalParameters" => {
+                        builder = builder.set_external_parameters(
+                            crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(tokens)?
                         );
                     }
                     "mustSucceedForCutover" => {

@@ -65,6 +65,10 @@ pub use crate::types::_issuer_details::IssuerDetails;
 
 pub use crate::types::_grant::Grant;
 
+pub use crate::types::_options::Options;
+
+pub use crate::types::_activation_override_behavior::ActivationOverrideBehavior;
+
 pub use crate::types::_license::License;
 
 pub use crate::types::_report_generator::ReportGenerator;
@@ -108,6 +112,8 @@ pub use crate::types::_entitlement_data::EntitlementData;
 pub use crate::types::_checkout_type::CheckoutType;
 
 pub use crate::types::_digital_signature_method::DigitalSignatureMethod;
+
+mod _activation_override_behavior;
 
 mod _allowed_operation;
 
@@ -182,6 +188,8 @@ mod _license_usage;
 mod _managed_resource_summary;
 
 mod _metadata;
+
+mod _options;
 
 mod _organization_configuration;
 

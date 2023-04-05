@@ -70,12 +70,12 @@ impl DeleteActionTargetFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The ARN of the custom action target to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
     pub fn action_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.action_target_arn(input.into());
         self
     }
-    /// <p>The ARN of the custom action target to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
     pub fn set_action_target_arn(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -71,6 +71,23 @@ pub fn de_create_security_config_http_error(
                                                     }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::create_security_config::CreateSecurityConfigError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_security_config::CreateSecurityConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "ValidationException" => crate::operation::create_security_config::CreateSecurityConfigError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp =

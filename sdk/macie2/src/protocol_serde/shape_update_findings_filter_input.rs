@@ -21,10 +21,10 @@ pub fn ser_update_findings_filter_input(
     if let Some(var_6) = &input.name {
         object.key("name").string(var_6.as_str());
     }
-    if input.position != 0 {
+    if let Some(var_7) = &input.position {
         object.key("position").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.position).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     Ok(())

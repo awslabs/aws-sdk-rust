@@ -9,8 +9,9 @@ pub use crate::operation::simulate_custom_policy::_simulate_custom_policy_input:
 /// <p>The simulation does not perform the API operations; it only checks the authorization to determine if the simulated policies allow or deny the operations. You can simulate resources that don't exist in your account.</p>
 /// <p>If you want to simulate existing policies that are attached to an IAM user, group, or role, use <code>SimulatePrincipalPolicy</code> instead.</p>
 /// <p>Context keys are variables that are maintained by Amazon Web Services and its services and which provide details about the context of an API query request. You can use the <code>Condition</code> element of an IAM policy to evaluate context keys. To get the list of context keys that the policies require for correct simulation, use <code>GetContextKeysForCustomPolicy</code>.</p>
-/// <p>If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters to paginate the results.</p>
-/// <p>For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.</p>
+/// <p>If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters to paginate the results.</p> <note>
+/// <p>The IAM policy simulator evaluates statements in the identity-based policy and the inputs that you provide during simulation. The policy simulator results can differ from your live Amazon Web Services environment. We recommend that you check your policies against your live Amazon Web Services environment after testing using the policy simulator to confirm that you have the desired results. For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SimulateCustomPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -176,7 +177,9 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <p>A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not provided, then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each combination and reports it in the response. You can simulate resources that don't exist in your account.</p>
     /// <p>The simulation does not automatically retrieve policies for the specified resources. If you want to include a resource policy in the simulation, then you must include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
     /// <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to all of the resources included in the simulation or you receive an invalid input error.</p>
-    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p> <note>
+    /// <p>Simulation of resource-based policies isn't supported for IAM roles.</p>
+    /// </note>
     pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
@@ -184,7 +187,9 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <p>A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not provided, then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each combination and reports it in the response. You can simulate resources that don't exist in your account.</p>
     /// <p>The simulation does not automatically retrieve policies for the specified resources. If you want to include a resource policy in the simulation, then you must include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
     /// <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to all of the resources included in the simulation or you receive an invalid input error.</p>
-    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p> <note>
+    /// <p>Simulation of resource-based policies isn't supported for IAM roles.</p>
+    /// </note>
     pub fn set_resource_arns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -199,7 +204,9 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>Simulation of resource-based policies isn't supported for IAM roles.</p>
+    /// </note>
     pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_policy(input.into());
         self
@@ -211,7 +218,9 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>Simulation of resource-based policies isn't supported for IAM roles.</p>
+    /// </note>
     pub fn set_resource_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_policy(input);
         self

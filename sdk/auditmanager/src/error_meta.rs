@@ -2188,6 +2188,7 @@ impl From<crate::operation::update_assessment_framework_share::UpdateAssessmentF
             crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::Unhandled(inner) => Error::Unhandled(inner),
         }

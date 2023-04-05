@@ -15,7 +15,7 @@ pub struct UpdateEnrollmentStatusInput {
     pub status: std::option::Option<crate::types::Status>,
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account of an organization.</p>
     #[doc(hidden)]
-    pub include_member_accounts: bool,
+    pub include_member_accounts: std::option::Option<bool>,
 }
 impl UpdateEnrollmentStatusInput {
     /// <p>The new enrollment status of the account.</p>
@@ -30,7 +30,7 @@ impl UpdateEnrollmentStatusInput {
         self.status.as_ref()
     }
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account of an organization.</p>
-    pub fn include_member_accounts(&self) -> bool {
+    pub fn include_member_accounts(&self) -> std::option::Option<bool> {
         self.include_member_accounts
     }
 }
@@ -95,7 +95,7 @@ impl UpdateEnrollmentStatusInputBuilder {
         Ok(
             crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput {
                 status: self.status,
-                include_member_accounts: self.include_member_accounts.unwrap_or_default(),
+                include_member_accounts: self.include_member_accounts,
             },
         )
     }

@@ -15,6 +15,12 @@ pub fn ser_resource_limits(
             aws_smithy_types::Number::NegInt((input.max_parallel_training_jobs).into()),
         );
     }
+    if let Some(var_2) = &input.max_runtime_in_seconds {
+        object.key("MaxRuntimeInSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
     Ok(())
 }
 
@@ -53,6 +59,15 @@ where
                             }
                             "MaxParallelTrainingJobs" => {
                                 builder = builder.set_max_parallel_training_jobs(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "MaxRuntimeInSeconds" => {
+                                builder = builder.set_max_runtime_in_seconds(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?

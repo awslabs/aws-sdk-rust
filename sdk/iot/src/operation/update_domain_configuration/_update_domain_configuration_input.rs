@@ -14,7 +14,7 @@ pub struct UpdateDomainConfigurationInput {
     pub domain_configuration_status: std::option::Option<crate::types::DomainConfigurationStatus>,
     /// <p>Removes the authorization configuration from a domain.</p>
     #[doc(hidden)]
-    pub remove_authorizer_config: bool,
+    pub remove_authorizer_config: std::option::Option<bool>,
 }
 impl UpdateDomainConfigurationInput {
     /// <p>The name of the domain configuration to be updated.</p>
@@ -32,7 +32,7 @@ impl UpdateDomainConfigurationInput {
         self.domain_configuration_status.as_ref()
     }
     /// <p>Removes the authorization configuration from a domain.</p>
-    pub fn remove_authorizer_config(&self) -> bool {
+    pub fn remove_authorizer_config(&self) -> std::option::Option<bool> {
         self.remove_authorizer_config
     }
 }
@@ -118,7 +118,7 @@ impl UpdateDomainConfigurationInputBuilder {
                 domain_configuration_name: self.domain_configuration_name,
                 authorizer_config: self.authorizer_config,
                 domain_configuration_status: self.domain_configuration_status,
-                remove_authorizer_config: self.remove_authorizer_config.unwrap_or_default(),
+                remove_authorizer_config: self.remove_authorizer_config,
             },
         )
     }

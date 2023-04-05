@@ -16,14 +16,16 @@ pub struct As2ConnectorConfig {
     /// <p>Specifies whether the AS2 file is compressed.</p>
     #[doc(hidden)]
     pub compression: std::option::Option<crate::types::CompressionEnum>,
-    /// <p>The algorithm that is used to encrypt the file.</p>
+    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
+    /// </note>
     #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::types::EncryptionAlg>,
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::types::SigningAlg>,
     /// <p>The signing algorithm for the MDN response.</p> <note>
-    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     #[doc(hidden)]
     pub mdn_signing_algorithm: std::option::Option<crate::types::MdnSigningAlg>,
@@ -52,7 +54,9 @@ impl As2ConnectorConfig {
     pub fn compression(&self) -> std::option::Option<&crate::types::CompressionEnum> {
         self.compression.as_ref()
     }
-    /// <p>The algorithm that is used to encrypt the file.</p>
+    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
+    /// </note>
     pub fn encryption_algorithm(&self) -> std::option::Option<&crate::types::EncryptionAlg> {
         self.encryption_algorithm.as_ref()
     }
@@ -61,7 +65,7 @@ impl As2ConnectorConfig {
         self.signing_algorithm.as_ref()
     }
     /// <p>The signing algorithm for the MDN response.</p> <note>
-    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub fn mdn_signing_algorithm(&self) -> std::option::Option<&crate::types::MdnSigningAlg> {
         self.mdn_signing_algorithm.as_ref()
@@ -142,12 +146,16 @@ impl As2ConnectorConfigBuilder {
         self.compression = input;
         self
     }
-    /// <p>The algorithm that is used to encrypt the file.</p>
+    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
+    /// </note>
     pub fn encryption_algorithm(mut self, input: crate::types::EncryptionAlg) -> Self {
         self.encryption_algorithm = Some(input);
         self
     }
-    /// <p>The algorithm that is used to encrypt the file.</p>
+    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
+    /// </note>
     pub fn set_encryption_algorithm(
         mut self,
         input: std::option::Option<crate::types::EncryptionAlg>,
@@ -169,14 +177,14 @@ impl As2ConnectorConfigBuilder {
         self
     }
     /// <p>The signing algorithm for the MDN response.</p> <note>
-    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub fn mdn_signing_algorithm(mut self, input: crate::types::MdnSigningAlg) -> Self {
         self.mdn_signing_algorithm = Some(input);
         self
     }
     /// <p>The signing algorithm for the MDN response.</p> <note>
-    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub fn set_mdn_signing_algorithm(
         mut self,

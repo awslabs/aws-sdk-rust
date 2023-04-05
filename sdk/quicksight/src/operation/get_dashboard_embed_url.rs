@@ -109,44 +109,46 @@ impl GetDashboardEmbedUrlInput {
                         );
                     }
                 }
-                if _input.undo_redo_disabled {
-                    query.push_kv(
-                        "undo-redo-disabled",
-                        aws_smithy_types::primitive::Encoder::from(_input.undo_redo_disabled)
-                            .encode(),
-                    );
-                }
-                if _input.reset_disabled {
-                    query.push_kv(
-                        "reset-disabled",
-                        aws_smithy_types::primitive::Encoder::from(_input.reset_disabled).encode(),
-                    );
-                }
-                if _input.state_persistence_enabled {
-                    query.push_kv(
-                        "state-persistence-enabled",
-                        aws_smithy_types::primitive::Encoder::from(
-                            _input.state_persistence_enabled,
-                        )
-                        .encode(),
-                    );
-                }
-                if let Some(inner_5) = &_input.user_arn {
-                    {
-                        query.push_kv("user-arn", &aws_smithy_http::query::fmt_string(&inner_5));
+                if let Some(inner_5) = &_input.undo_redo_disabled {
+                    if *inner_5 {
+                        query.push_kv(
+                            "undo-redo-disabled",
+                            aws_smithy_types::primitive::Encoder::from(*inner_5).encode(),
+                        );
                     }
                 }
-                if let Some(inner_6) = &_input.namespace {
-                    {
-                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_6));
+                if let Some(inner_6) = &_input.reset_disabled {
+                    if *inner_6 {
+                        query.push_kv(
+                            "reset-disabled",
+                            aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
+                        );
                     }
                 }
-                if let Some(inner_7) = &_input.additional_dashboard_ids {
+                if let Some(inner_7) = &_input.state_persistence_enabled {
+                    if *inner_7 {
+                        query.push_kv(
+                            "state-persistence-enabled",
+                            aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_8) = &_input.user_arn {
                     {
-                        for inner_8 in inner_7 {
+                        query.push_kv("user-arn", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
+                }
+                if let Some(inner_9) = &_input.namespace {
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
+                }
+                if let Some(inner_10) = &_input.additional_dashboard_ids {
+                    {
+                        for inner_11 in inner_10 {
                             query.push_kv(
                                 "additional-dashboard-ids",
-                                &aws_smithy_http::query::fmt_string(&inner_8),
+                                &aws_smithy_http::query::fmt_string(&inner_11),
                             );
                         }
                     }
@@ -257,7 +259,7 @@ pub type GetDashboardEmbedUrlErrorKind = GetDashboardEmbedUrlError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDashboardEmbedUrlError {
-    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct credentials.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be added to the approved list by an Amazon QuickSight admin.</p>
     DomainNotWhitelistedException(crate::types::error::DomainNotWhitelistedException),

@@ -26,6 +26,8 @@ pub(crate) mod shape_delete_cluster;
 
 pub(crate) mod shape_delete_service;
 
+pub(crate) mod shape_delete_task_definitions;
+
 pub(crate) mod shape_delete_task_set;
 
 pub(crate) mod shape_deregister_container_instance;
@@ -159,6 +161,8 @@ pub(crate) mod shape_delete_capacity_provider_input;
 pub(crate) mod shape_delete_cluster_input;
 
 pub(crate) mod shape_delete_service_input;
+
+pub(crate) mod shape_delete_task_definitions_input;
 
 pub(crate) mod shape_delete_task_set_input;
 
@@ -377,6 +381,8 @@ pub(crate) mod shape_tags;
 pub(crate) mod shape_task;
 
 pub(crate) mod shape_task_definition;
+
+pub(crate) mod shape_task_definition_list;
 
 pub(crate) mod shape_task_definition_placement_constraint;
 

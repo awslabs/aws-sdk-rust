@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyLatestValue {
-    /// <p>An object that specifies information about a property.&gt;</p>
+    /// <p>An object that specifies information about a property.</p>
     #[doc(hidden)]
     pub property_reference: std::option::Option<crate::types::EntityPropertyReference>,
     /// <p>The value of the property.</p>
@@ -12,7 +12,7 @@ pub struct PropertyLatestValue {
     pub property_value: std::option::Option<crate::types::DataValue>,
 }
 impl PropertyLatestValue {
-    /// <p>An object that specifies information about a property.&gt;</p>
+    /// <p>An object that specifies information about a property.</p>
     pub fn property_reference(
         &self,
     ) -> std::option::Option<&crate::types::EntityPropertyReference> {
@@ -38,12 +38,12 @@ pub struct PropertyLatestValueBuilder {
     pub(crate) property_value: std::option::Option<crate::types::DataValue>,
 }
 impl PropertyLatestValueBuilder {
-    /// <p>An object that specifies information about a property.&gt;</p>
+    /// <p>An object that specifies information about a property.</p>
     pub fn property_reference(mut self, input: crate::types::EntityPropertyReference) -> Self {
         self.property_reference = Some(input);
         self
     }
-    /// <p>An object that specifies information about a property.&gt;</p>
+    /// <p>An object that specifies information about a property.</p>
     pub fn set_property_reference(
         mut self,
         input: std::option::Option<crate::types::EntityPropertyReference>,

@@ -19,7 +19,7 @@ pub struct AlarmRecommendation {
     /// <p>The type of alarm recommendation.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::AlarmType>,
-    /// <p>The application component for the CloudWatch alarm recommendation.</p>
+    /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
     #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The list of CloudWatch alarm recommendations.</p>
@@ -50,7 +50,7 @@ impl AlarmRecommendation {
     pub fn r#type(&self) -> std::option::Option<&crate::types::AlarmType> {
         self.r#type.as_ref()
     }
-    /// <p>The application component for the CloudWatch alarm recommendation.</p>
+    /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
     pub fn app_component_name(&self) -> std::option::Option<&str> {
         self.app_component_name.as_deref()
     }
@@ -137,12 +137,12 @@ impl AlarmRecommendationBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The application component for the CloudWatch alarm recommendation.</p>
+    /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
     pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.app_component_name = Some(input.into());
         self
     }
-    /// <p>The application component for the CloudWatch alarm recommendation.</p>
+    /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
     pub fn set_app_component_name(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -51,6 +51,9 @@ pub struct CreateIpamPoolInput {
     /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
     #[doc(hidden)]
     pub aws_service: std::option::Option<crate::types::IpamPoolAwsService>,
+    /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    #[doc(hidden)]
+    pub public_ip_source: std::option::Option<crate::types::IpamPoolPublicIpSource>,
 }
 impl CreateIpamPoolInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -117,6 +120,10 @@ impl CreateIpamPoolInput {
     pub fn aws_service(&self) -> std::option::Option<&crate::types::IpamPoolAwsService> {
         self.aws_service.as_ref()
     }
+    /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn public_ip_source(&self) -> std::option::Option<&crate::types::IpamPoolPublicIpSource> {
+        self.public_ip_source.as_ref()
+    }
 }
 impl CreateIpamPoolInput {
     /// Creates a new builder-style object to manufacture [`CreateIpamPoolInput`](crate::operation::create_ipam_pool::CreateIpamPoolInput).
@@ -146,6 +153,7 @@ pub struct CreateIpamPoolInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) aws_service: std::option::Option<crate::types::IpamPoolAwsService>,
+    pub(crate) public_ip_source: std::option::Option<crate::types::IpamPoolPublicIpSource>,
 }
 impl CreateIpamPoolInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -332,6 +340,19 @@ impl CreateIpamPoolInputBuilder {
         self.aws_service = input;
         self
     }
+    /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn public_ip_source(mut self, input: crate::types::IpamPoolPublicIpSource) -> Self {
+        self.public_ip_source = Some(input);
+        self
+    }
+    /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn set_public_ip_source(
+        mut self,
+        input: std::option::Option<crate::types::IpamPoolPublicIpSource>,
+    ) -> Self {
+        self.public_ip_source = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateIpamPoolInput`](crate::operation::create_ipam_pool::CreateIpamPoolInput).
     pub fn build(
         self,
@@ -355,6 +376,7 @@ impl CreateIpamPoolInputBuilder {
             tag_specifications: self.tag_specifications,
             client_token: self.client_token,
             aws_service: self.aws_service,
+            public_ip_source: self.public_ip_source,
         })
     }
 }

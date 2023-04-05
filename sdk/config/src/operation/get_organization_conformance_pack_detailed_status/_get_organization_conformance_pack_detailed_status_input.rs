@@ -11,7 +11,7 @@ pub struct GetOrganizationConformancePackDetailedStatusInput {
     pub filters: std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>,
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -28,7 +28,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
         self.filters.as_ref()
     }
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -115,7 +115,6 @@ impl GetOrganizationConformancePackDetailedStatusInputBuilder {
                 filters: self.filters
                 ,
                 limit: self.limit
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

@@ -9,13 +9,13 @@ pub struct PublishInput {
     pub topic: std::option::Option<std::string::String>,
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
     #[doc(hidden)]
-    pub qos: i32,
+    pub qos: std::option::Option<i32>,
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default value: <code>false</code> </p>
     #[doc(hidden)]
-    pub retain: bool,
+    pub retain: std::option::Option<bool>,
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     #[doc(hidden)]
@@ -39,7 +39,7 @@ pub struct PublishInput {
     pub correlation_data: std::option::Option<std::string::String>,
     /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
     #[doc(hidden)]
-    pub message_expiry: i64,
+    pub message_expiry: std::option::Option<i64>,
 }
 impl PublishInput {
     /// <p>The name of the MQTT topic.</p>
@@ -47,14 +47,14 @@ impl PublishInput {
         self.topic.as_deref()
     }
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
-    pub fn qos(&self) -> i32 {
+    pub fn qos(&self) -> std::option::Option<i32> {
         self.qos
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default value: <code>false</code> </p>
-    pub fn retain(&self) -> bool {
+    pub fn retain(&self) -> std::option::Option<bool> {
         self.retain
     }
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
@@ -87,7 +87,7 @@ impl PublishInput {
         self.correlation_data.as_deref()
     }
     /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
-    pub fn message_expiry(&self) -> i64 {
+    pub fn message_expiry(&self) -> std::option::Option<i64> {
         self.message_expiry
     }
 }
@@ -238,15 +238,15 @@ impl PublishInputBuilder {
     > {
         Ok(crate::operation::publish::PublishInput {
             topic: self.topic,
-            qos: self.qos.unwrap_or_default(),
-            retain: self.retain.unwrap_or_default(),
+            qos: self.qos,
+            retain: self.retain,
             payload: self.payload,
             user_properties: self.user_properties,
             payload_format_indicator: self.payload_format_indicator,
             content_type: self.content_type,
             response_topic: self.response_topic,
             correlation_data: self.correlation_data,
-            message_expiry: self.message_expiry.unwrap_or_default(),
+            message_expiry: self.message_expiry,
         })
     }
 }

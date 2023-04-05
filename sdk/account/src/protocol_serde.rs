@@ -10,9 +10,17 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response.body(), response.headers())
 }
 
+pub(crate) mod shape_disable_region;
+
+pub(crate) mod shape_enable_region;
+
 pub(crate) mod shape_get_alternate_contact;
 
 pub(crate) mod shape_get_contact_information;
+
+pub(crate) mod shape_get_region_opt_status;
+
+pub(crate) mod shape_list_regions;
 
 pub(crate) mod shape_put_alternate_contact;
 
@@ -28,13 +36,23 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_delete_alternate_contact_input;
+
+pub(crate) mod shape_disable_region_input;
+
+pub(crate) mod shape_enable_region_input;
 
 pub(crate) mod shape_get_alternate_contact_input;
 
 pub(crate) mod shape_get_contact_information_input;
 
+pub(crate) mod shape_get_region_opt_status_input;
+
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_regions_input;
 
 pub(crate) mod shape_put_alternate_contact_input;
 
@@ -49,3 +67,11 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_alternate_contact;
 
 pub(crate) mod shape_contact_information;
+
+pub(crate) mod shape_region_opt_list;
+
+pub(crate) mod shape_validation_exception_field_list;
+
+pub(crate) mod shape_region;
+
+pub(crate) mod shape_validation_exception_field;

@@ -12,7 +12,7 @@ pub struct StartReadSetImportJobInput {
     /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Source files to import.</p>
+    /// <p>The job's source files.</p>
     #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>>,
 }
@@ -29,7 +29,7 @@ impl StartReadSetImportJobInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Source files to import.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::types::StartReadSetImportJobSourceItem]> {
         self.sources.as_deref()
     }
@@ -91,14 +91,14 @@ impl StartReadSetImportJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>Source files to import.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::StartReadSetImportJobSourceItem) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
         self.sources = Some(v);
         self
     }
-    /// <p>Source files to import.</p>
+    /// <p>The job's source files.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>>,

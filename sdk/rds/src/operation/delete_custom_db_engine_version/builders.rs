@@ -13,7 +13,7 @@ pub use crate::operation::delete_custom_db_engine_version::_delete_custom_db_eng
 /// <p>Typically, deletion takes a few minutes.</p> <note>
 /// <p>The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated with Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in CloudTrail, calls to the <code>DeleteCustomDbEngineVersion</code> event aren't logged. However, you might see calls from the API gateway that accesses your Amazon S3 bucket. These calls originate from the MediaImport service for the <code>DeleteCustomDbEngineVersion</code> event.</p>
 /// </note>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete"> Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCustomDBEngineVersionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

@@ -10,7 +10,7 @@ pub struct Ipam {
     /// <p>The ID of the IPAM.</p>
     #[doc(hidden)]
     pub ipam_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IPAM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IPAM.</p>
     #[doc(hidden)]
     pub ipam_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region of the IPAM.</p>
@@ -38,6 +38,15 @@ pub struct Ipam {
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    /// <p>The IPAM's default resource discovery ID.</p>
+    #[doc(hidden)]
+    pub default_resource_discovery_id: std::option::Option<std::string::String>,
+    /// <p>The IPAM's default resource discovery association ID.</p>
+    #[doc(hidden)]
+    pub default_resource_discovery_association_id: std::option::Option<std::string::String>,
+    /// <p>The IPAM's resource discovery association count.</p>
+    #[doc(hidden)]
+    pub resource_discovery_association_count: std::option::Option<i32>,
 }
 impl Ipam {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
@@ -48,7 +57,7 @@ impl Ipam {
     pub fn ipam_id(&self) -> std::option::Option<&str> {
         self.ipam_id.as_deref()
     }
-    /// <p>The ARN of the IPAM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IPAM.</p>
     pub fn ipam_arn(&self) -> std::option::Option<&str> {
         self.ipam_arn.as_deref()
     }
@@ -85,6 +94,18 @@ impl Ipam {
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The IPAM's default resource discovery ID.</p>
+    pub fn default_resource_discovery_id(&self) -> std::option::Option<&str> {
+        self.default_resource_discovery_id.as_deref()
+    }
+    /// <p>The IPAM's default resource discovery association ID.</p>
+    pub fn default_resource_discovery_association_id(&self) -> std::option::Option<&str> {
+        self.default_resource_discovery_association_id.as_deref()
+    }
+    /// <p>The IPAM's resource discovery association count.</p>
+    pub fn resource_discovery_association_count(&self) -> std::option::Option<i32> {
+        self.resource_discovery_association_count
+    }
 }
 impl Ipam {
     /// Creates a new builder-style object to manufacture [`Ipam`](crate::types::Ipam).
@@ -109,6 +130,9 @@ pub struct IpamBuilder {
         std::option::Option<std::vec::Vec<crate::types::IpamOperatingRegion>>,
     pub(crate) state: std::option::Option<crate::types::IpamState>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) default_resource_discovery_id: std::option::Option<std::string::String>,
+    pub(crate) default_resource_discovery_association_id: std::option::Option<std::string::String>,
+    pub(crate) resource_discovery_association_count: std::option::Option<i32>,
 }
 impl IpamBuilder {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
@@ -131,12 +155,12 @@ impl IpamBuilder {
         self.ipam_id = input;
         self
     }
-    /// <p>The ARN of the IPAM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IPAM.</p>
     pub fn ipam_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.ipam_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the IPAM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IPAM.</p>
     pub fn set_ipam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.ipam_arn = input;
         self
@@ -247,6 +271,48 @@ impl IpamBuilder {
         self.tags = input;
         self
     }
+    /// <p>The IPAM's default resource discovery ID.</p>
+    pub fn default_resource_discovery_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.default_resource_discovery_id = Some(input.into());
+        self
+    }
+    /// <p>The IPAM's default resource discovery ID.</p>
+    pub fn set_default_resource_discovery_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_resource_discovery_id = input;
+        self
+    }
+    /// <p>The IPAM's default resource discovery association ID.</p>
+    pub fn default_resource_discovery_association_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        self.default_resource_discovery_association_id = Some(input.into());
+        self
+    }
+    /// <p>The IPAM's default resource discovery association ID.</p>
+    pub fn set_default_resource_discovery_association_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_resource_discovery_association_id = input;
+        self
+    }
+    /// <p>The IPAM's resource discovery association count.</p>
+    pub fn resource_discovery_association_count(mut self, input: i32) -> Self {
+        self.resource_discovery_association_count = Some(input);
+        self
+    }
+    /// <p>The IPAM's resource discovery association count.</p>
+    pub fn set_resource_discovery_association_count(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.resource_discovery_association_count = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Ipam`](crate::types::Ipam).
     pub fn build(self) -> crate::types::Ipam {
         crate::types::Ipam {
@@ -261,6 +327,10 @@ impl IpamBuilder {
             operating_regions: self.operating_regions,
             state: self.state,
             tags: self.tags,
+            default_resource_discovery_id: self.default_resource_discovery_id,
+            default_resource_discovery_association_id: self
+                .default_resource_discovery_association_id,
+            resource_discovery_association_count: self.resource_discovery_association_count,
         }
     }
 }

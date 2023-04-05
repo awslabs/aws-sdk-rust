@@ -39,6 +39,9 @@ pub struct CreateDataSourceInput {
     #[doc(hidden)]
     pub relational_database_config:
         std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
+    /// <p>Amazon EventBridge settings.</p>
+    #[doc(hidden)]
+    pub event_bridge_config: std::option::Option<crate::types::EventBridgeDataSourceConfig>,
 }
 impl CreateDataSourceInput {
     /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
@@ -92,6 +95,12 @@ impl CreateDataSourceInput {
     ) -> std::option::Option<&crate::types::RelationalDatabaseDataSourceConfig> {
         self.relational_database_config.as_ref()
     }
+    /// <p>Amazon EventBridge settings.</p>
+    pub fn event_bridge_config(
+        &self,
+    ) -> std::option::Option<&crate::types::EventBridgeDataSourceConfig> {
+        self.event_bridge_config.as_ref()
+    }
 }
 impl CreateDataSourceInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
@@ -119,6 +128,7 @@ pub struct CreateDataSourceInputBuilder {
     pub(crate) http_config: std::option::Option<crate::types::HttpDataSourceConfig>,
     pub(crate) relational_database_config:
         std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
+    pub(crate) event_bridge_config: std::option::Option<crate::types::EventBridgeDataSourceConfig>,
 }
 impl CreateDataSourceInputBuilder {
     /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
@@ -260,6 +270,19 @@ impl CreateDataSourceInputBuilder {
         self.relational_database_config = input;
         self
     }
+    /// <p>Amazon EventBridge settings.</p>
+    pub fn event_bridge_config(mut self, input: crate::types::EventBridgeDataSourceConfig) -> Self {
+        self.event_bridge_config = Some(input);
+        self
+    }
+    /// <p>Amazon EventBridge settings.</p>
+    pub fn set_event_bridge_config(
+        mut self,
+        input: std::option::Option<crate::types::EventBridgeDataSourceConfig>,
+    ) -> Self {
+        self.event_bridge_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
     pub fn build(
         self,
@@ -280,6 +303,7 @@ impl CreateDataSourceInputBuilder {
                 open_search_service_config: self.open_search_service_config,
                 http_config: self.http_config,
                 relational_database_config: self.relational_database_config,
+                event_bridge_config: self.event_bridge_config,
             },
         )
     }

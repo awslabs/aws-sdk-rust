@@ -8,7 +8,7 @@ pub struct GetUsageStatisticsInput {
     pub filter_by: std::option::Option<std::vec::Vec<crate::types::UsageStatisticsFilter>>,
     /// <p>The maximum number of items to include in each page of the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ impl GetUsageStatisticsInput {
         self.filter_by.as_deref()
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -132,7 +132,7 @@ impl GetUsageStatisticsInputBuilder {
         Ok(
             crate::operation::get_usage_statistics::GetUsageStatisticsInput {
                 filter_by: self.filter_by,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
                 sort_by: self.sort_by,
                 time_range: self.time_range,

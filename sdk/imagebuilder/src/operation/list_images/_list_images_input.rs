@@ -18,7 +18,7 @@ pub struct ListImagesInput {
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
     /// <p>Requests a list of images with a specific recipe name.</p>
     #[doc(hidden)]
-    pub by_name: bool,
+    pub by_name: std::option::Option<bool>,
     /// <p>The maximum items to return in a request.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -46,7 +46,7 @@ impl ListImagesInput {
         self.filters.as_deref()
     }
     /// <p>Requests a list of images with a specific recipe name.</p>
-    pub fn by_name(&self) -> bool {
+    pub fn by_name(&self) -> std::option::Option<bool> {
         self.by_name
     }
     /// <p>The maximum items to return in a request.</p>
@@ -174,7 +174,7 @@ impl ListImagesInputBuilder {
         Ok(crate::operation::list_images::ListImagesInput {
             owner: self.owner,
             filters: self.filters,
-            by_name: self.by_name.unwrap_or_default(),
+            by_name: self.by_name,
             max_results: self.max_results,
             next_token: self.next_token,
             include_deprecated: self.include_deprecated,

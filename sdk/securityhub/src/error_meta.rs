@@ -211,6 +211,74 @@ impl From<crate::operation::batch_enable_standards::BatchEnableStandardsError> f
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_security_controls::BatchGetSecurityControlsError> for Error {
+    fn from(
+        err: crate::operation::batch_get_security_controls::BatchGetSecurityControlsError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::batch_get_security_controls::BatchGetSecurityControlsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError> for Error {
+    fn from(err: crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError) -> Self {
+        match err {
+            crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::batch_import_findings::BatchImportFindingsError,
             R,
         >,
@@ -289,6 +357,30 @@ impl From<crate::operation::batch_update_findings::BatchUpdateFindingsError> for
             crate::operation::batch_update_findings::BatchUpdateFindingsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::batch_update_findings::BatchUpdateFindingsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::batch_update_findings::BatchUpdateFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError> for Error {
+    fn from(err: crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError) -> Self {
+        match err {
+            crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1999,6 +2091,58 @@ impl From<crate::operation::list_organization_admin_accounts::ListOrganizationAd
             crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError> for Error {
+    fn from(err: crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError) -> Self {
+        match err {
+            crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

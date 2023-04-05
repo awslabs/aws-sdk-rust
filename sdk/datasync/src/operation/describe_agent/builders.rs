@@ -5,7 +5,7 @@ pub use crate::operation::describe_agent::_describe_agent_input::DescribeAgentIn
 
 /// Fluent builder constructing a request to `DescribeAgent`.
 ///
-/// <p>Returns metadata such as the name, the network interfaces, and the status (that is, whether the agent is running or not) for an agent. To specify which agent to describe, use the Amazon Resource Name (ARN) of the agent in your request. </p>
+/// <p>Returns metadata about an DataSync agent, such as its name, endpoint type, and status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAgentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,12 +65,12 @@ impl DescribeAgentFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     pub fn agent_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.agent_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_agent_arn(input);
         self

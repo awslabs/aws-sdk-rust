@@ -12,13 +12,25 @@ pub fn ser_update_detector_input(
         )?;
         object_2.finish();
     }
-    if input.enable {
-        object.key("enable").boolean(input.enable);
+    if let Some(var_3) = &input.enable {
+        object.key("enable").boolean(*var_3);
     }
-    if let Some(var_3) = &input.finding_publishing_frequency {
+    if let Some(var_4) = &input.features {
+        let mut array_5 = object.key("features").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_detector_feature_configuration::ser_detector_feature_configuration(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_8) = &input.finding_publishing_frequency {
         object
             .key("findingPublishingFrequency")
-            .string(var_3.as_str());
+            .string(var_8.as_str());
     }
     Ok(())
 }

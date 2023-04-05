@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`channel_id(impl Into<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_channel_id): Id of the channel whose schedule is being updated.
-    ///   - [`max_results(i32)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`max_results(i32)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_max_results): Placeholder documentation for MaxResults
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_next_token): Placeholder documentation for __string
     /// - On success, responds with [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::next_token): The next token; for use in pagination.

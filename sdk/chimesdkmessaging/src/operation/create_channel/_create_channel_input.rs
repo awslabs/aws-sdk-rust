@@ -24,7 +24,7 @@ pub struct CreateChannelInput {
     /// <p>The tags for the creation request.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>The ID of the channel in the request.</p>
@@ -40,6 +40,9 @@ pub struct CreateChannelInput {
     #[doc(hidden)]
     pub elastic_channel_configuration:
         std::option::Option<crate::types::ElasticChannelConfiguration>,
+    /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
+    #[doc(hidden)]
+    pub expiration_settings: std::option::Option<crate::types::ExpirationSettings>,
 }
 impl CreateChannelInput {
     /// <p>The ARN of the channel request.</p>
@@ -70,7 +73,7 @@ impl CreateChannelInput {
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
@@ -92,6 +95,10 @@ impl CreateChannelInput {
     ) -> std::option::Option<&crate::types::ElasticChannelConfiguration> {
         self.elastic_channel_configuration.as_ref()
     }
+    /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
+    pub fn expiration_settings(&self) -> std::option::Option<&crate::types::ExpirationSettings> {
+        self.expiration_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -111,6 +118,7 @@ impl std::fmt::Debug for CreateChannelInput {
             "elastic_channel_configuration",
             &self.elastic_channel_configuration,
         );
+        formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
 }
@@ -138,6 +146,7 @@ pub struct CreateChannelInputBuilder {
     pub(crate) moderator_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) elastic_channel_configuration:
         std::option::Option<crate::types::ElasticChannelConfiguration>,
+    pub(crate) expiration_settings: std::option::Option<crate::types::ExpirationSettings>,
 }
 impl CreateChannelInputBuilder {
     /// <p>The ARN of the channel request.</p>
@@ -222,12 +231,12 @@ impl CreateChannelInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.chime_bearer = Some(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.chime_bearer = input;
         self
@@ -296,6 +305,19 @@ impl CreateChannelInputBuilder {
         self.elastic_channel_configuration = input;
         self
     }
+    /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
+    pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
+        self.expiration_settings = Some(input);
+        self
+    }
+    /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
+    pub fn set_expiration_settings(
+        mut self,
+        input: std::option::Option<crate::types::ExpirationSettings>,
+    ) -> Self {
+        self.expiration_settings = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
@@ -316,6 +338,7 @@ impl CreateChannelInputBuilder {
             member_arns: self.member_arns,
             moderator_arns: self.moderator_arns,
             elastic_channel_configuration: self.elastic_channel_configuration,
+            expiration_settings: self.expiration_settings,
         })
     }
 }
@@ -337,6 +360,7 @@ impl std::fmt::Debug for CreateChannelInputBuilder {
             "elastic_channel_configuration",
             &self.elastic_channel_configuration,
         );
+        formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
 }

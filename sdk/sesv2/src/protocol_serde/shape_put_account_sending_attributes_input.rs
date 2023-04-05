@@ -3,8 +3,8 @@ pub fn ser_put_account_sending_attributes_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.sending_enabled {
-        object.key("SendingEnabled").boolean(input.sending_enabled);
+    if let Some(var_1) = &input.sending_enabled {
+        object.key("SendingEnabled").boolean(*var_1);
     }
     Ok(())
 }

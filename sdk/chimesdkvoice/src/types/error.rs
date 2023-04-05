@@ -13,11 +13,15 @@ pub use crate::types::error::_forbidden_exception::ForbiddenException;
 
 pub use crate::types::error::_bad_request_exception::BadRequestException;
 
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
+pub use crate::types::error::_gone_exception::GoneException;
+
 pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededException;
 
-pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+pub use crate::types::error::_unprocessable_entity_exception::UnprocessableEntityException;
 
 mod _access_denied_exception;
 
@@ -26,6 +30,8 @@ mod _bad_request_exception;
 mod _conflict_exception;
 
 mod _forbidden_exception;
+
+mod _gone_exception;
 
 mod _not_found_exception;
 
@@ -38,6 +44,8 @@ mod _service_unavailable_exception;
 mod _throttled_client_exception;
 
 mod _unauthorized_client_exception;
+
+mod _unprocessable_entity_exception;
 
 /// Builders
 pub mod builders;

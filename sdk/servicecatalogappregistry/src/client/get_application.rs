@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application) / [`set_application(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application): <p>The name or ID of the application.</p>
+    ///   - [`application(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application) / [`set_application(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application): <p> The name, ID, or ARN of the application. </p>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::id): <p>The identifier of the application.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::arn): <p>The Amazon resource name (ARN) that specifies the application across services.</p>

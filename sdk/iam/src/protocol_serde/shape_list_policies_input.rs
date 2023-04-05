@@ -12,30 +12,30 @@ pub fn ser_list_policies_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("OnlyAttached");
-    if input.only_attached {
-        scope_3.boolean(input.only_attached);
+    if let Some(var_4) = &input.only_attached {
+        scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("PathPrefix");
-    if let Some(var_5) = &input.path_prefix {
-        scope_4.string(var_5);
+    let mut scope_5 = writer.prefix("PathPrefix");
+    if let Some(var_6) = &input.path_prefix {
+        scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("PolicyUsageFilter");
-    if let Some(var_7) = &input.policy_usage_filter {
-        scope_6.string(var_7.as_str());
+    let mut scope_7 = writer.prefix("PolicyUsageFilter");
+    if let Some(var_8) = &input.policy_usage_filter {
+        scope_7.string(var_8.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("Marker");
-    if let Some(var_9) = &input.marker {
-        scope_8.string(var_9);
+    let mut scope_9 = writer.prefix("Marker");
+    if let Some(var_10) = &input.marker {
+        scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("MaxItems");
-    if let Some(var_11) = &input.max_items {
-        scope_10.number(
+    let mut scope_11 = writer.prefix("MaxItems");
+    if let Some(var_12) = &input.max_items {
+        scope_11.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_11).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
     writer.finish();

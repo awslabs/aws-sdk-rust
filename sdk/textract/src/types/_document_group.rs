@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentGroup {
-    /// <p>The type of document that Amazon Textract has detected. See LINK for a list of all types returned by Textract.</p>
+    /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>An array that contains information about the pages of a document, defined by logical boundary.</p>
@@ -19,7 +19,7 @@ pub struct DocumentGroup {
         std::option::Option<std::vec::Vec<crate::types::UndetectedSignature>>,
 }
 impl DocumentGroup {
-    /// <p>The type of document that Amazon Textract has detected. See LINK for a list of all types returned by Textract.</p>
+    /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -57,12 +57,12 @@ pub struct DocumentGroupBuilder {
         std::option::Option<std::vec::Vec<crate::types::UndetectedSignature>>,
 }
 impl DocumentGroupBuilder {
-    /// <p>The type of document that Amazon Textract has detected. See LINK for a list of all types returned by Textract.</p>
+    /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.r#type = Some(input.into());
         self
     }
-    /// <p>The type of document that Amazon Textract has detected. See LINK for a list of all types returned by Textract.</p>
+    /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.r#type = input;
         self

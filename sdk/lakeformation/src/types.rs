@@ -7,6 +7,14 @@ pub use crate::types::_delete_object_input::DeleteObjectInput;
 
 pub use crate::types::_add_object_input::AddObjectInput;
 
+pub use crate::types::_data_cells_filter::DataCellsFilter;
+
+pub use crate::types::_column_wildcard::ColumnWildcard;
+
+pub use crate::types::_row_filter::RowFilter;
+
+pub use crate::types::_all_rows_wildcard::AllRowsWildcard;
+
 pub use crate::types::_transaction_type::TransactionType;
 
 pub use crate::types::_query_planning_context::QueryPlanningContext;
@@ -43,8 +51,6 @@ pub use crate::types::_data_location_resource::DataLocationResource;
 
 pub use crate::types::_table_with_columns_resource::TableWithColumnsResource;
 
-pub use crate::types::_column_wildcard::ColumnWildcard;
-
 pub use crate::types::_catalog_resource::CatalogResource;
 
 pub use crate::types::_data_lake_principal::DataLakePrincipal;
@@ -80,12 +86,6 @@ pub use crate::types::_details_map::DetailsMap;
 pub use crate::types::_data_lake_resource_type::DataLakeResourceType;
 
 pub use crate::types::_resource_share_type::ResourceShareType;
-
-pub use crate::types::_data_cells_filter::DataCellsFilter;
-
-pub use crate::types::_row_filter::RowFilter;
-
-pub use crate::types::_all_rows_wildcard::AllRowsWildcard;
 
 pub use crate::types::_work_unit_range::WorkUnitRange;
 

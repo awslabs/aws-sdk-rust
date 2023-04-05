@@ -45,10 +45,8 @@ pub fn ser_export_ebs_volume_recommendations_input(
     if let Some(var_13) = &input.file_format {
         object.key("fileFormat").string(var_13.as_str());
     }
-    if input.include_member_accounts {
-        object
-            .key("includeMemberAccounts")
-            .boolean(input.include_member_accounts);
+    if let Some(var_14) = &input.include_member_accounts {
+        object.key("includeMemberAccounts").boolean(*var_14);
     }
     Ok(())
 }

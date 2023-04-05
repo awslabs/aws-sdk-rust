@@ -3,6 +3,14 @@ pub use crate::types::_resiliency_policy::ResiliencyPolicyBuilder;
 
 pub use crate::types::_failure_policy::FailurePolicyBuilder;
 
+pub use crate::types::_physical_resource::PhysicalResourceBuilder;
+
+pub use crate::types::_app_component::AppComponentBuilder;
+
+pub use crate::types::_physical_resource_id::PhysicalResourceIdBuilder;
+
+pub use crate::types::_logical_resource_id::LogicalResourceIdBuilder;
+
 pub use crate::types::_app::AppBuilder;
 
 pub use crate::types::_app_assessment::AppAssessmentBuilder;
@@ -19,10 +27,6 @@ pub use crate::types::_cost::CostBuilder;
 
 pub use crate::types::_unsupported_resource::UnsupportedResourceBuilder;
 
-pub use crate::types::_physical_resource_id::PhysicalResourceIdBuilder;
-
-pub use crate::types::_logical_resource_id::LogicalResourceIdBuilder;
-
 pub use crate::types::_test_recommendation::TestRecommendationBuilder;
 
 pub use crate::types::_recommendation_item::RecommendationItemBuilder;
@@ -35,13 +39,15 @@ pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_app_version_summary::AppVersionSummaryBuilder;
 
-pub use crate::types::_physical_resource::PhysicalResourceBuilder;
-
-pub use crate::types::_app_component::AppComponentBuilder;
-
 pub use crate::types::_resource_mapping::ResourceMappingBuilder;
 
 pub use crate::types::_app_summary::AppSummaryBuilder;
+
+pub use crate::types::_app_input_source::AppInputSourceBuilder;
+
+pub use crate::types::_eks_source_cluster_namespace::EksSourceClusterNamespaceBuilder;
+
+pub use crate::types::_terraform_source::TerraformSourceBuilder;
 
 pub use crate::types::_component_recommendation::ComponentRecommendationBuilder;
 
@@ -55,4 +61,4 @@ pub use crate::types::_app_assessment_summary::AppAssessmentSummaryBuilder;
 
 pub use crate::types::_alarm_recommendation::AlarmRecommendationBuilder;
 
-pub use crate::types::_terraform_source::TerraformSourceBuilder;
+pub use crate::types::_eks_source::EksSourceBuilder;

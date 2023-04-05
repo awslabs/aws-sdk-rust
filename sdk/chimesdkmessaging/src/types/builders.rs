@@ -17,11 +17,15 @@ pub use crate::types::_channel_summary::ChannelSummaryBuilder;
 
 pub use crate::types::_search_field::SearchFieldBuilder;
 
+pub use crate::types::_streaming_configuration::StreamingConfigurationBuilder;
+
 pub use crate::types::_channel_membership_preferences::ChannelMembershipPreferencesBuilder;
 
 pub use crate::types::_push_notification_preferences::PushNotificationPreferencesBuilder;
 
 pub use crate::types::_identity::IdentityBuilder;
+
+pub use crate::types::_expiration_settings::ExpirationSettingsBuilder;
 
 pub use crate::types::_sub_channel_summary::SubChannelSummaryBuilder;
 

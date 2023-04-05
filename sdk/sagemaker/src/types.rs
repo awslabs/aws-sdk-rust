@@ -255,6 +255,8 @@ pub use crate::types::_model_card::ModelCard;
 
 pub use crate::types::_user_context::UserContext;
 
+pub use crate::types::_iam_identity::IamIdentity;
+
 pub use crate::types::_model_card_security_config::ModelCardSecurityConfig;
 
 pub use crate::types::_model_dashboard_model::ModelDashboardModel;
@@ -334,6 +336,10 @@ pub use crate::types::_repository_auth_config::RepositoryAuthConfig;
 pub use crate::types::_repository_access_mode::RepositoryAccessMode;
 
 pub use crate::types::_hyper_parameter_tuning_job_search_entity::HyperParameterTuningJobSearchEntity;
+
+pub use crate::types::_hyper_parameter_tuning_job_consumed_resources::HyperParameterTuningJobConsumedResources;
+
+pub use crate::types::_hyper_parameter_tuning_job_completion_details::HyperParameterTuningJobCompletionDetails;
 
 pub use crate::types::_hyper_parameter_tuning_job_warm_start_config::HyperParameterTuningJobWarmStartConfig;
 
@@ -418,6 +424,12 @@ pub use crate::types::_hyper_parameter_tuning_job_objective::HyperParameterTunin
 pub use crate::types::_hyper_parameter_tuning_job_config::HyperParameterTuningJobConfig;
 
 pub use crate::types::_tuning_job_completion_criteria::TuningJobCompletionCriteria;
+
+pub use crate::types::_convergence_detected::ConvergenceDetected;
+
+pub use crate::types::_complete_on_convergence::CompleteOnConvergence;
+
+pub use crate::types::_best_objective_not_improving::BestObjectiveNotImproving;
 
 pub use crate::types::_training_job_early_stopping_type::TrainingJobEarlyStoppingType;
 
@@ -616,6 +628,12 @@ pub use crate::types::_secondary_status_transition::SecondaryStatusTransition;
 pub use crate::types::_secondary_status::SecondaryStatus;
 
 pub use crate::types::_algorithm_specification::AlgorithmSpecification;
+
+pub use crate::types::_training_image_config::TrainingImageConfig;
+
+pub use crate::types::_training_repository_auth_config::TrainingRepositoryAuthConfig;
+
+pub use crate::types::_training_repository_access_mode::TrainingRepositoryAccessMode;
 
 pub use crate::types::_model_artifacts::ModelArtifacts;
 
@@ -873,6 +891,8 @@ pub use crate::types::_inference_recommendations_job_step::InferenceRecommendati
 
 pub use crate::types::_recommendation_job_inference_benchmark::RecommendationJobInferenceBenchmark;
 
+pub use crate::types::_inference_metrics::InferenceMetrics;
+
 pub use crate::types::_model_configuration::ModelConfiguration;
 
 pub use crate::types::_environment_parameter::EnvironmentParameter;
@@ -1009,6 +1029,10 @@ pub use crate::types::_code_repository_sort_by::CodeRepositorySortBy;
 
 pub use crate::types::_auto_ml_candidate::AutoMlCandidate;
 
+pub use crate::types::_auto_ml_container_definition::AutoMlContainerDefinition;
+
+pub use crate::types::_auto_ml_processing_unit::AutoMlProcessingUnit;
+
 pub use crate::types::_candidate_properties::CandidateProperties;
 
 pub use crate::types::_metric_datum::MetricDatum;
@@ -1020,8 +1044,6 @@ pub use crate::types::_metric_set_source::MetricSetSource;
 pub use crate::types::_auto_ml_metric_enum::AutoMlMetricEnum;
 
 pub use crate::types::_candidate_artifact_locations::CandidateArtifactLocations;
-
-pub use crate::types::_auto_ml_container_definition::AutoMlContainerDefinition;
 
 pub use crate::types::_candidate_status::CandidateStatus;
 
@@ -1161,8 +1183,6 @@ pub use crate::types::_endpoint_performance::EndpointPerformance;
 
 pub use crate::types::_endpoint_info::EndpointInfo;
 
-pub use crate::types::_inference_metrics::InferenceMetrics;
-
 pub use crate::types::_inference_recommendation::InferenceRecommendation;
 
 pub use crate::types::_recommendation_job_stopping_conditions::RecommendationJobStoppingConditions;
@@ -1247,6 +1267,8 @@ pub use crate::types::_async_inference_output_config::AsyncInferenceOutputConfig
 
 pub use crate::types::_async_inference_notification_config::AsyncInferenceNotificationConfig;
 
+pub use crate::types::_async_notification_topic_types::AsyncNotificationTopicTypes;
+
 pub use crate::types::_async_inference_client_config::AsyncInferenceClientConfig;
 
 pub use crate::types::_data_capture_config::DataCaptureConfig;
@@ -1307,17 +1329,39 @@ pub use crate::types::_framework::Framework;
 
 pub use crate::types::_model_digests::ModelDigests;
 
+pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfig;
+
+pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfig;
+
 pub use crate::types::_model_deploy_result::ModelDeployResult;
 
 pub use crate::types::_model_deploy_config::ModelDeployConfig;
 
-pub use crate::types::_resolved_attributes::ResolvedAttributes;
+pub use crate::types::_auto_ml_problem_type_config::AutoMlProblemTypeConfig;
+
+pub use crate::types::_text_classification_job_config::TextClassificationJobConfig;
 
 pub use crate::types::_auto_ml_job_completion_criteria::AutoMlJobCompletionCriteria;
 
-pub use crate::types::_problem_type::ProblemType;
+pub use crate::types::_image_classification_job_config::ImageClassificationJobConfig;
 
 pub use crate::types::_auto_ml_job_objective::AutoMlJobObjective;
+
+pub use crate::types::_auto_ml_output_data_config::AutoMlOutputDataConfig;
+
+pub use crate::types::_auto_ml_job_channel::AutoMlJobChannel;
+
+pub use crate::types::_auto_ml_data_source::AutoMlDataSource;
+
+pub use crate::types::_auto_mls3_data_source::AutoMls3DataSource;
+
+pub use crate::types::_auto_mls3_data_type::AutoMls3DataType;
+
+pub use crate::types::_auto_ml_channel_type::AutoMlChannelType;
+
+pub use crate::types::_resolved_attributes::ResolvedAttributes;
+
+pub use crate::types::_problem_type::ProblemType;
 
 pub use crate::types::_auto_ml_job_artifacts::AutoMlJobArtifacts;
 
@@ -1327,21 +1371,11 @@ pub use crate::types::_auto_ml_mode::AutoMlMode;
 
 pub use crate::types::_auto_ml_candidate_generation_config::AutoMlCandidateGenerationConfig;
 
-pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfig;
+pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfig;
 
-pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfig;
-
-pub use crate::types::_auto_ml_output_data_config::AutoMlOutputDataConfig;
+pub use crate::types::_auto_ml_algorithm::AutoMlAlgorithm;
 
 pub use crate::types::_auto_ml_channel::AutoMlChannel;
-
-pub use crate::types::_auto_ml_channel_type::AutoMlChannelType;
-
-pub use crate::types::_auto_ml_data_source::AutoMlDataSource;
-
-pub use crate::types::_auto_mls3_data_source::AutoMls3DataSource;
-
-pub use crate::types::_auto_mls3_data_type::AutoMls3DataType;
 
 pub use crate::types::_algorithm_status_details::AlgorithmStatusDetails;
 
@@ -1457,6 +1491,8 @@ mod _async_inference_notification_config;
 
 mod _async_inference_output_config;
 
+mod _async_notification_topic_types;
+
 mod _athena_dataset_definition;
 
 mod _athena_result_compression_type;
@@ -1464,6 +1500,10 @@ mod _athena_result_compression_type;
 mod _athena_result_format;
 
 mod _auth_mode;
+
+mod _auto_ml_algorithm;
+
+mod _auto_ml_algorithm_config;
 
 mod _auto_ml_candidate;
 
@@ -1482,6 +1522,8 @@ mod _auto_ml_data_source;
 mod _auto_ml_data_split_config;
 
 mod _auto_ml_job_artifacts;
+
+mod _auto_ml_job_channel;
 
 mod _auto_ml_job_completion_criteria;
 
@@ -1509,6 +1551,10 @@ mod _auto_ml_output_data_config;
 
 mod _auto_ml_partial_failure_reason;
 
+mod _auto_ml_problem_type_config;
+
+mod _auto_ml_processing_unit;
+
 mod _auto_ml_security_config;
 
 mod _auto_ml_sort_by;
@@ -1532,6 +1578,8 @@ mod _batch_describe_model_package_summary;
 mod _batch_strategy;
 
 mod _batch_transform_input;
+
+mod _best_objective_not_improving;
 
 mod _bias;
 
@@ -1615,6 +1663,8 @@ mod _compilation_job_status;
 
 mod _compilation_job_summary;
 
+mod _complete_on_convergence;
+
 mod _compression_type;
 
 mod _condition_outcome;
@@ -1634,6 +1684,8 @@ mod _context_summary;
 mod _continuous_parameter_range;
 
 mod _continuous_parameter_range_specification;
+
+mod _convergence_detected;
 
 mod _custom_image;
 
@@ -1889,7 +1941,11 @@ mod _hyper_parameter_tuning_allocation_strategy;
 
 mod _hyper_parameter_tuning_instance_config;
 
+mod _hyper_parameter_tuning_job_completion_details;
+
 mod _hyper_parameter_tuning_job_config;
+
+mod _hyper_parameter_tuning_job_consumed_resources;
 
 mod _hyper_parameter_tuning_job_objective;
 
@@ -1915,7 +1971,11 @@ mod _hyper_parameter_tuning_resource_config;
 
 mod _hyperband_strategy_config;
 
+mod _iam_identity;
+
 mod _image;
+
+mod _image_classification_job_config;
 
 mod _image_config;
 
@@ -2643,6 +2703,8 @@ mod _tensor_board_app_settings;
 
 mod _tensor_board_output_config;
 
+mod _text_classification_job_config;
+
 mod _time_series_forecasting_settings;
 
 mod _traffic_pattern;
@@ -2652,6 +2714,8 @@ mod _traffic_routing_config;
 mod _traffic_routing_config_type;
 
 mod _traffic_type;
+
+mod _training_image_config;
 
 mod _training_input_mode;
 
@@ -2672,6 +2736,10 @@ mod _training_job_status_counters;
 mod _training_job_step_metadata;
 
 mod _training_job_summary;
+
+mod _training_repository_access_mode;
+
+mod _training_repository_auth_config;
 
 mod _training_specification;
 

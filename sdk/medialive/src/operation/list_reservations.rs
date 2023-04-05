@@ -62,59 +62,61 @@ impl ListReservationsInput {
                         query.push_kv("codec", &aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
-                if let Some(inner_3) = &_input.maximum_bitrate {
-                    {
+                if let Some(inner_3) = &_input.max_results {
+                    if *inner_3 != 0 {
                         query.push_kv(
-                            "maximumBitrate",
-                            &aws_smithy_http::query::fmt_string(&inner_3),
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
                         );
                     }
                 }
-                if let Some(inner_4) = &_input.maximum_framerate {
+                if let Some(inner_4) = &_input.maximum_bitrate {
                     {
                         query.push_kv(
-                            "maximumFramerate",
+                            "maximumBitrate",
                             &aws_smithy_http::query::fmt_string(&inner_4),
                         );
                     }
                 }
-                if let Some(inner_5) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_5));
-                    }
-                }
-                if let Some(inner_6) = &_input.resolution {
-                    {
-                        query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_6));
-                    }
-                }
-                if let Some(inner_7) = &_input.resource_type {
+                if let Some(inner_5) = &_input.maximum_framerate {
                     {
                         query.push_kv(
-                            "resourceType",
-                            &aws_smithy_http::query::fmt_string(&inner_7),
+                            "maximumFramerate",
+                            &aws_smithy_http::query::fmt_string(&inner_5),
                         );
                     }
                 }
-                if let Some(inner_8) = &_input.special_feature {
+                if let Some(inner_6) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                    }
+                }
+                if let Some(inner_7) = &_input.resolution {
+                    {
+                        query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
+                }
+                if let Some(inner_8) = &_input.resource_type {
                     {
                         query.push_kv(
-                            "specialFeature",
+                            "resourceType",
                             &aws_smithy_http::query::fmt_string(&inner_8),
                         );
                     }
                 }
-                if let Some(inner_9) = &_input.video_quality {
+                if let Some(inner_9) = &_input.special_feature {
+                    {
+                        query.push_kv(
+                            "specialFeature",
+                            &aws_smithy_http::query::fmt_string(&inner_9),
+                        );
+                    }
+                }
+                if let Some(inner_10) = &_input.video_quality {
                     {
                         query.push_kv(
                             "videoQuality",
-                            &aws_smithy_http::query::fmt_string(&inner_9),
+                            &aws_smithy_http::query::fmt_string(&inner_10),
                         );
                     }
                 }

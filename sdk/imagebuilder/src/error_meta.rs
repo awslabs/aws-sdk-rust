@@ -19,7 +19,7 @@ pub enum Error {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The value that you provided for the specified parameter is invalid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>You have made a request for an action that is not supported by the service.</p>
+    /// <p>You have requested an action that that the service doesn't support.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>Your version number is out of bounds or does not follow the required syntax.</p>
     InvalidVersionNumberException(crate::types::error::InvalidVersionNumberException),
@@ -1211,6 +1211,96 @@ impl From<crate::operation::get_infrastructure_configuration::GetInfrastructureC
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_workflow_execution::GetWorkflowExecutionError> for Error {
+    fn from(err: crate::operation::get_workflow_execution::GetWorkflowExecutionError) -> Self {
+        match err {
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError> for Error {
+    fn from(
+        err: crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
+    ) -> Self {
+        match err {
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::import_component::ImportComponentError,
             R,
         >,
@@ -1772,6 +1862,78 @@ impl From<crate::operation::list_images::ListImagesError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError> for Error {
+    fn from(err: crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError) -> Self {
+        match err {
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_image_scan_findings::ListImageScanFindingsError> for Error {
+    fn from(err: crate::operation::list_image_scan_findings::ListImageScanFindingsError) -> Self {
+        match err {
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError, R>) -> Self {
         match err {
@@ -1843,6 +2005,100 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_workflow_executions::ListWorkflowExecutionsError> for Error {
+    fn from(err: crate::operation::list_workflow_executions::ListWorkflowExecutionsError) -> Self {
+        match err {
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

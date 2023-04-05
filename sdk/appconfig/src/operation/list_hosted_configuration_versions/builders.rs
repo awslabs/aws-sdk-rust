@@ -105,4 +105,14 @@ impl ListHostedConfigurationVersionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
+    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.version_label(input.into());
+        self
+    }
+    /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
+    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_version_label(input);
+        self
+    }
 }

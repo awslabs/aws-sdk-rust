@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput::name): <p>The name of the Object Lambda Access Point.</p>
     ///   - [`public_access_block_configuration(Option<PublicAccessBlockConfiguration>)`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput::public_access_block_configuration): <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput::creation_date): <p>The date and time when the specified Object Lambda Access Point was created.</p>
+    ///   - [`alias(Option<ObjectLambdaAccessPointAlias>)`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput::alias): <p>The alias of the Object Lambda Access Point.</p>
     /// - On failure, responds with [`SdkError<GetAccessPointForObjectLambdaError>`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaError)
     pub fn get_access_point_for_object_lambda(&self) -> crate::operation::get_access_point_for_object_lambda::builders::GetAccessPointForObjectLambdaFluentBuilder{
         crate::operation::get_access_point_for_object_lambda::builders::GetAccessPointForObjectLambdaFluentBuilder::new(self.handle.clone())

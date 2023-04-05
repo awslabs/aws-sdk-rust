@@ -26,6 +26,12 @@ pub struct CreateMissionProfileInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>KMS key to use for encrypting streams.</p>
+    #[doc(hidden)]
+    pub streams_kms_key: std::option::Option<crate::types::KmsKey>,
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    #[doc(hidden)]
+    pub streams_kms_role: std::option::Option<std::string::String>,
 }
 impl CreateMissionProfileInput {
     /// <p>Name of a mission profile.</p>
@@ -59,6 +65,14 @@ impl CreateMissionProfileInput {
     {
         self.tags.as_ref()
     }
+    /// <p>KMS key to use for encrypting streams.</p>
+    pub fn streams_kms_key(&self) -> std::option::Option<&crate::types::KmsKey> {
+        self.streams_kms_key.as_ref()
+    }
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    pub fn streams_kms_role(&self) -> std::option::Option<&str> {
+        self.streams_kms_role.as_deref()
+    }
 }
 impl CreateMissionProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateMissionProfileInput`](crate::operation::create_mission_profile::CreateMissionProfileInput).
@@ -81,6 +95,8 @@ pub struct CreateMissionProfileInputBuilder {
     pub(crate) tracking_config_arn: std::option::Option<std::string::String>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) streams_kms_key: std::option::Option<crate::types::KmsKey>,
+    pub(crate) streams_kms_role: std::option::Option<std::string::String>,
 }
 impl CreateMissionProfileInputBuilder {
     /// <p>Name of a mission profile.</p>
@@ -189,6 +205,26 @@ impl CreateMissionProfileInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>KMS key to use for encrypting streams.</p>
+    pub fn streams_kms_key(mut self, input: crate::types::KmsKey) -> Self {
+        self.streams_kms_key = Some(input);
+        self
+    }
+    /// <p>KMS key to use for encrypting streams.</p>
+    pub fn set_streams_kms_key(mut self, input: std::option::Option<crate::types::KmsKey>) -> Self {
+        self.streams_kms_key = input;
+        self
+    }
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    pub fn streams_kms_role(mut self, input: impl Into<std::string::String>) -> Self {
+        self.streams_kms_role = Some(input.into());
+        self
+    }
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    pub fn set_streams_kms_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.streams_kms_role = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateMissionProfileInput`](crate::operation::create_mission_profile::CreateMissionProfileInput).
     pub fn build(
         self,
@@ -206,6 +242,8 @@ impl CreateMissionProfileInputBuilder {
                 dataflow_edges: self.dataflow_edges,
                 tracking_config_arn: self.tracking_config_arn,
                 tags: self.tags,
+                streams_kms_key: self.streams_kms_key,
+                streams_kms_role: self.streams_kms_role,
             },
         )
     }

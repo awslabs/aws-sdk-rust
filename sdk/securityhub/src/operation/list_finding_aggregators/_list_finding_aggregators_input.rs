@@ -8,7 +8,7 @@ pub struct ListFindingAggregatorsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. This operation currently only returns a single result.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListFindingAggregatorsInput {
     /// <p>The token returned with the previous set of results. Identifies the next set of results to return.</p>
@@ -16,7 +16,7 @@ impl ListFindingAggregatorsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return. This operation currently only returns a single result.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -67,7 +67,7 @@ impl ListFindingAggregatorsInputBuilder {
         Ok(
             crate::operation::list_finding_aggregators::ListFindingAggregatorsInput {
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
             },
         )
     }

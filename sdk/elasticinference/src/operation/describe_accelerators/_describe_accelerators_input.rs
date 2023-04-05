@@ -11,7 +11,7 @@ pub struct DescribeAcceleratorsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
     /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ impl DescribeAcceleratorsInput {
         self.filters.as_deref()
     }
     /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
@@ -122,7 +122,7 @@ impl DescribeAcceleratorsInputBuilder {
             crate::operation::describe_accelerators::DescribeAcceleratorsInput {
                 accelerator_ids: self.accelerator_ids,
                 filters: self.filters,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

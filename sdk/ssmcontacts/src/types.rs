@@ -3,6 +3,20 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_dependent_entity::DependentEntity;
+
+pub use crate::types::_recurrence_settings::RecurrenceSettings;
+
+pub use crate::types::_coverage_time::CoverageTime;
+
+pub use crate::types::_hand_off_time::HandOffTime;
+
+pub use crate::types::_day_of_week::DayOfWeek;
+
+pub use crate::types::_weekly_setting::WeeklySetting;
+
+pub use crate::types::_monthly_setting::MonthlySetting;
+
 pub use crate::types::_contact_channel_address::ContactChannelAddress;
 
 pub use crate::types::_plan::Plan;
@@ -17,7 +31,23 @@ pub use crate::types::_channel_target_info::ChannelTargetInfo;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_rotation_shift::RotationShift;
+
+pub use crate::types::_shift_details::ShiftDetails;
+
+pub use crate::types::_shift_type::ShiftType;
+
+pub use crate::types::_rotation::Rotation;
+
+pub use crate::types::_rotation_override::RotationOverride;
+
+pub use crate::types::_preview_override::PreviewOverride;
+
 pub use crate::types::_page::Page;
+
+pub use crate::types::_resolution_contact::ResolutionContact;
+
+pub use crate::types::_contact_type::ContactType;
 
 pub use crate::types::_receipt::Receipt;
 
@@ -28,8 +58,6 @@ pub use crate::types::_engagement::Engagement;
 pub use crate::types::_time_range::TimeRange;
 
 pub use crate::types::_contact::Contact;
-
-pub use crate::types::_contact_type::ContactType;
 
 pub use crate::types::_contact_channel::ContactChannel;
 
@@ -61,15 +89,41 @@ mod _contact_target_info;
 
 mod _contact_type;
 
+mod _coverage_time;
+
+mod _day_of_week;
+
+mod _dependent_entity;
+
 mod _engagement;
+
+mod _hand_off_time;
+
+mod _monthly_setting;
 
 mod _page;
 
 mod _plan;
 
+mod _preview_override;
+
 mod _receipt;
 
 mod _receipt_type;
+
+mod _recurrence_settings;
+
+mod _resolution_contact;
+
+mod _rotation;
+
+mod _rotation_override;
+
+mod _rotation_shift;
+
+mod _shift_details;
+
+mod _shift_type;
 
 mod _stage;
 
@@ -82,6 +136,8 @@ mod _time_range;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _weekly_setting;
 
 /// Builders
 pub mod builders;

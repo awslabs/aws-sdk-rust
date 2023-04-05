@@ -7,6 +7,12 @@ pub mod add_draft_app_version_resource_mappings;
 /// Types for the `CreateApp` operation.
 pub mod create_app;
 
+/// Types for the `CreateAppVersionAppComponent` operation.
+pub mod create_app_version_app_component;
+
+/// Types for the `CreateAppVersionResource` operation.
+pub mod create_app_version_resource;
+
 /// Types for the `CreateRecommendationTemplate` operation.
 pub mod create_recommendation_template;
 
@@ -19,6 +25,15 @@ pub mod delete_app;
 /// Types for the `DeleteAppAssessment` operation.
 pub mod delete_app_assessment;
 
+/// Types for the `DeleteAppInputSource` operation.
+pub mod delete_app_input_source;
+
+/// Types for the `DeleteAppVersionAppComponent` operation.
+pub mod delete_app_version_app_component;
+
+/// Types for the `DeleteAppVersionResource` operation.
+pub mod delete_app_version_resource;
+
 /// Types for the `DeleteRecommendationTemplate` operation.
 pub mod delete_recommendation_template;
 
@@ -30,6 +45,15 @@ pub mod describe_app;
 
 /// Types for the `DescribeAppAssessment` operation.
 pub mod describe_app_assessment;
+
+/// Types for the `DescribeAppVersion` operation.
+pub mod describe_app_version;
+
+/// Types for the `DescribeAppVersionAppComponent` operation.
+pub mod describe_app_version_app_component;
+
+/// Types for the `DescribeAppVersionResource` operation.
+pub mod describe_app_version_resource;
 
 /// Types for the `DescribeAppVersionResourcesResolutionStatus` operation.
 pub mod describe_app_version_resources_resolution_status;
@@ -57,6 +81,12 @@ pub mod list_app_component_compliances;
 
 /// Types for the `ListAppComponentRecommendations` operation.
 pub mod list_app_component_recommendations;
+
+/// Types for the `ListAppInputSources` operation.
+pub mod list_app_input_sources;
+
+/// Types for the `ListAppVersionAppComponents` operation.
+pub mod list_app_version_app_components;
 
 /// Types for the `ListAppVersionResourceMappings` operation.
 pub mod list_app_version_resource_mappings;
@@ -114,6 +144,15 @@ pub mod untag_resource;
 
 /// Types for the `UpdateApp` operation.
 pub mod update_app;
+
+/// Types for the `UpdateAppVersion` operation.
+pub mod update_app_version;
+
+/// Types for the `UpdateAppVersionAppComponent` operation.
+pub mod update_app_version_app_component;
+
+/// Types for the `UpdateAppVersionResource` operation.
+pub mod update_app_version_resource;
 
 /// Types for the `UpdateResiliencyPolicy` operation.
 pub mod update_resiliency_policy;

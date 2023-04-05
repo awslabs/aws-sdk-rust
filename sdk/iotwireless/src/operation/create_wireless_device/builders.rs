@@ -168,4 +168,17 @@ impl CreateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_positioning(input);
         self
     }
+    /// <p>The device configuration information to use to create the Sidewalk device.</p>
+    pub fn sidewalk(mut self, input: crate::types::SidewalkCreateWirelessDevice) -> Self {
+        self.inner = self.inner.sidewalk(input);
+        self
+    }
+    /// <p>The device configuration information to use to create the Sidewalk device.</p>
+    pub fn set_sidewalk(
+        mut self,
+        input: std::option::Option<crate::types::SidewalkCreateWirelessDevice>,
+    ) -> Self {
+        self.inner = self.inner.set_sidewalk(input);
+        self
+    }
 }

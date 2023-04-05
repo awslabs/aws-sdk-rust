@@ -11,7 +11,7 @@ pub struct PutEmailIdentityFeedbackAttributesInput {
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
     #[doc(hidden)]
-    pub email_forwarding_enabled: bool,
+    pub email_forwarding_enabled: std::option::Option<bool>,
 }
 impl PutEmailIdentityFeedbackAttributesInput {
     /// <p>The email identity.</p>
@@ -21,7 +21,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
-    pub fn email_forwarding_enabled(&self) -> bool {
+    pub fn email_forwarding_enabled(&self) -> std::option::Option<bool> {
         self.email_forwarding_enabled
     }
 }
@@ -71,7 +71,6 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
                 email_identity: self.email_identity
                 ,
                 email_forwarding_enabled: self.email_forwarding_enabled
-                    .unwrap_or_default()
                 ,
             }
         )

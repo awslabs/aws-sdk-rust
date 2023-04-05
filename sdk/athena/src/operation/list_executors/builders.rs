@@ -5,7 +5,7 @@ pub use crate::operation::list_executors::_list_executors_input::ListExecutorsIn
 
 /// Fluent builder constructing a request to `ListExecutors`.
 ///
-/// <p>Lists, in descending order, the executors that have been submitted to a session. Newer executors are listed first; older executors are listed later. The result can be optionally filtered by state.</p>
+/// <p>Lists, in descending order, the executors that joined a session. Newer executors are listed first; older executors are listed later. The result can be optionally filtered by state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListExecutorsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

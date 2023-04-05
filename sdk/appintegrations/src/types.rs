@@ -9,6 +9,8 @@ pub use crate::types::_data_integration_summary::DataIntegrationSummary;
 
 pub use crate::types::_data_integration_association_summary::DataIntegrationAssociationSummary;
 
+pub use crate::types::_file_configuration::FileConfiguration;
+
 pub use crate::types::_schedule_configuration::ScheduleConfiguration;
 
 mod _data_integration_association_summary;
@@ -20,6 +22,8 @@ mod _event_filter;
 mod _event_integration;
 
 mod _event_integration_association;
+
+mod _file_configuration;
 
 mod _schedule_configuration;
 

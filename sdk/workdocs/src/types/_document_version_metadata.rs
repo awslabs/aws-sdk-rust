@@ -2,7 +2,7 @@
 
 /// <p>Describes a version of a document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentVersionMetadata {
     /// <p>The ID of the version.</p>
     #[doc(hidden)]
@@ -110,6 +110,28 @@ impl DocumentVersionMetadata {
         self.source.as_ref()
     }
 }
+impl std::fmt::Debug for DocumentVersionMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentVersionMetadata");
+        formatter.field("id", &self.id);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("content_type", &self.content_type);
+        formatter.field("size", &self.size);
+        formatter.field("signature", &self.signature);
+        formatter.field("status", &self.status);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("modified_timestamp", &self.modified_timestamp);
+        formatter.field("content_created_timestamp", &self.content_created_timestamp);
+        formatter.field(
+            "content_modified_timestamp",
+            &self.content_modified_timestamp,
+        );
+        formatter.field("creator_id", &self.creator_id);
+        formatter.field("thumbnail", &self.thumbnail);
+        formatter.field("source", &self.source);
+        formatter.finish()
+    }
+}
 impl DocumentVersionMetadata {
     /// Creates a new builder-style object to manufacture [`DocumentVersionMetadata`](crate::types::DocumentVersionMetadata).
     pub fn builder() -> crate::types::builders::DocumentVersionMetadataBuilder {
@@ -119,7 +141,7 @@ impl DocumentVersionMetadata {
 
 /// A builder for [`DocumentVersionMetadata`](crate::types::DocumentVersionMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct DocumentVersionMetadataBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
@@ -332,5 +354,27 @@ impl DocumentVersionMetadataBuilder {
             thumbnail: self.thumbnail,
             source: self.source,
         }
+    }
+}
+impl std::fmt::Debug for DocumentVersionMetadataBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentVersionMetadataBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("content_type", &self.content_type);
+        formatter.field("size", &self.size);
+        formatter.field("signature", &self.signature);
+        formatter.field("status", &self.status);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("modified_timestamp", &self.modified_timestamp);
+        formatter.field("content_created_timestamp", &self.content_created_timestamp);
+        formatter.field(
+            "content_modified_timestamp",
+            &self.content_modified_timestamp,
+        );
+        formatter.field("creator_id", &self.creator_id);
+        formatter.field("thumbnail", &self.thumbnail);
+        formatter.field("source", &self.source);
+        formatter.finish()
     }
 }

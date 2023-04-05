@@ -197,6 +197,18 @@ pub use crate::types::_lex_v2_bot::LexV2BotBuilder;
 
 pub use crate::types::_agent_status_summary::AgentStatusSummaryBuilder;
 
+pub use crate::types::_metric_result_v2::MetricResultV2Builder;
+
+pub use crate::types::_metric_data_v2::MetricDataV2Builder;
+
+pub use crate::types::_metric_v2::MetricV2Builder;
+
+pub use crate::types::_metric_filter_v2::MetricFilterV2Builder;
+
+pub use crate::types::_threshold_v2::ThresholdV2Builder;
+
+pub use crate::types::_filter_v2::FilterV2Builder;
+
 pub use crate::types::_historical_metric_result::HistoricalMetricResultBuilder;
 
 pub use crate::types::_historical_metric_data::HistoricalMetricDataBuilder;
@@ -276,6 +288,8 @@ pub use crate::types::_contact_flow_module::ContactFlowModuleBuilder;
 pub use crate::types::_contact_flow::ContactFlowBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
+
+pub use crate::types::_wisdom_info::WisdomInfoBuilder;
 
 pub use crate::types::_agent_info::AgentInfoBuilder;
 

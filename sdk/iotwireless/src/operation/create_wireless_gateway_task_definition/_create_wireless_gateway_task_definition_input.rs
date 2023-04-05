@@ -5,7 +5,7 @@
 pub struct CreateWirelessGatewayTaskDefinitionInput {
     /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
     #[doc(hidden)]
-    pub auto_create_tasks: bool,
+    pub auto_create_tasks: std::option::Option<bool>,
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct CreateWirelessGatewayTaskDefinitionInput {
 }
 impl CreateWirelessGatewayTaskDefinitionInput {
     /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
-    pub fn auto_create_tasks(&self) -> bool {
+    pub fn auto_create_tasks(&self) -> std::option::Option<bool> {
         self.auto_create_tasks
     }
     /// <p>The name of the new resource.</p>
@@ -129,7 +129,6 @@ impl CreateWirelessGatewayTaskDefinitionInputBuilder {
         Ok(
             crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionInput {
                 auto_create_tasks: self.auto_create_tasks
-                    .unwrap_or_default()
                 ,
                 name: self.name
                 ,

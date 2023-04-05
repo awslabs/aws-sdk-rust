@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationHealthOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination health details.</p>
     #[doc(hidden)]
     pub termination_health: std::option::Option<crate::types::TerminationHealth>,
     _request_id: Option<String>,
 }
 impl GetVoiceConnectorTerminationHealthOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination health details.</p>
     pub fn termination_health(&self) -> std::option::Option<&crate::types::TerminationHealth> {
         self.termination_health.as_ref()
     }
@@ -34,12 +34,12 @@ pub struct GetVoiceConnectorTerminationHealthOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetVoiceConnectorTerminationHealthOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination health details.</p>
     pub fn termination_health(mut self, input: crate::types::TerminationHealth) -> Self {
         self.termination_health = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination health details.</p>
     pub fn set_termination_health(
         mut self,
         input: std::option::Option<crate::types::TerminationHealth>,

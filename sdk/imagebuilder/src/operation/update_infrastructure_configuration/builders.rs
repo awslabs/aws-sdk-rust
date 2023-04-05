@@ -5,7 +5,7 @@ pub use crate::operation::update_infrastructure_configuration::_update_infrastru
 
 /// Fluent builder constructing a request to `UpdateInfrastructureConfiguration`.
 ///
-/// <p> Updates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested.</p>
+/// <p>Updates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateInfrastructureConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

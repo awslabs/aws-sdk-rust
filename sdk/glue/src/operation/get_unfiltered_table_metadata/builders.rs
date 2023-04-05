@@ -5,6 +5,8 @@ pub use crate::operation::get_unfiltered_table_metadata::_get_unfiltered_table_m
 
 /// Fluent builder constructing a request to `GetUnfilteredTableMetadata`.
 ///
+/// <p>Retrieves table metadata from the Data Catalog that contains unfiltered metadata.</p>
+/// <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetTable</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUnfilteredTableMetadataFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -68,42 +70,42 @@ impl GetUnfilteredTableMetadataFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The catalog ID where the table resides.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The catalog ID where the table resides.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a database that contains the table.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a database that contains the table.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A structure containing information for audit.</p>
+    /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
         self.inner = self.inner.audit_context(input);
         self
     }
-    /// <p>A structure containing information for audit.</p>
+    /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn set_audit_context(
         mut self,
         input: std::option::Option<crate::types::AuditContext>,
@@ -115,12 +117,12 @@ impl GetUnfilteredTableMetadataFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn supported_permission_types(mut self, input: crate::types::PermissionType) -> Self {
         self.inner = self.inner.supported_permission_types(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn set_supported_permission_types(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,

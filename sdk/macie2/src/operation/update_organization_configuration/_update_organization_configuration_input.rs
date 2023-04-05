@@ -5,11 +5,11 @@
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
     #[doc(hidden)]
-    pub auto_enable: bool,
+    pub auto_enable: std::option::Option<bool>,
 }
 impl UpdateOrganizationConfigurationInput {
     /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
-    pub fn auto_enable(&self) -> bool {
+    pub fn auto_enable(&self) -> std::option::Option<bool> {
         self.auto_enable
     }
 }
@@ -47,7 +47,6 @@ impl UpdateOrganizationConfigurationInputBuilder {
         Ok(
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput {
                 auto_enable: self.auto_enable
-                    .unwrap_or_default()
                 ,
             }
         )

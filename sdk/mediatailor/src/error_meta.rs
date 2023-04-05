@@ -16,6 +16,46 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError> for Error {
+    fn from(
+        err: crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
+    ) -> Self {
+        match err {
+            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError, R>) -> Self {
         match err {
@@ -1544,6 +1584,42 @@ impl From<crate::operation::update_live_source::UpdateLiveSourceError> for Error
     fn from(err: crate::operation::update_live_source::UpdateLiveSourceError) -> Self {
         match err {
             crate::operation::update_live_source::UpdateLiveSourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_program::UpdateProgramError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_program::UpdateProgramError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_program::UpdateProgramError> for Error {
+    fn from(err: crate::operation::update_program::UpdateProgramError) -> Self {
+        match err {
+            crate::operation::update_program::UpdateProgramError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

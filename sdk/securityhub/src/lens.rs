@@ -119,6 +119,26 @@ pub(crate) fn reflens_list_organization_admin_accounts_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_security_control_definitions_output_next_token(
+    input: &crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_standards_control_associations_output_next_token(
+    input: &crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_describe_action_targets_output_action_targets(
     input: crate::operation::describe_action_targets::DescribeActionTargetsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::ActionTarget>> {
@@ -233,6 +253,26 @@ pub(crate) fn lens_list_organization_admin_accounts_output_admin_accounts(
     input: crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::AdminAccount>> {
     let input = match input.admin_accounts {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_security_control_definitions_output_security_control_definitions(
+    input: crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::SecurityControlDefinition>> {
+    let input = match input.security_control_definitions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_standards_control_associations_output_standards_control_association_summaries(
+    input: crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::StandardsControlAssociationSummary>> {
+    let input = match input.standards_control_association_summaries {
         None => return None,
         Some(t) => t,
     };

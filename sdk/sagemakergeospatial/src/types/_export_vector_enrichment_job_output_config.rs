@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportVectorEnrichmentJobOutputConfig {
-    /// <p></p>
+    /// <p>The input structure for Amazon S3 data; representing the Amazon S3 location of the input data objects.</p>
     #[doc(hidden)]
     pub s3_data: std::option::Option<crate::types::VectorEnrichmentJobS3Data>,
 }
 impl ExportVectorEnrichmentJobOutputConfig {
-    /// <p></p>
+    /// <p>The input structure for Amazon S3 data; representing the Amazon S3 location of the input data objects.</p>
     pub fn s3_data(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobS3Data> {
         self.s3_data.as_ref()
     }
@@ -28,12 +28,12 @@ pub struct ExportVectorEnrichmentJobOutputConfigBuilder {
     pub(crate) s3_data: std::option::Option<crate::types::VectorEnrichmentJobS3Data>,
 }
 impl ExportVectorEnrichmentJobOutputConfigBuilder {
-    /// <p></p>
+    /// <p>The input structure for Amazon S3 data; representing the Amazon S3 location of the input data objects.</p>
     pub fn s3_data(mut self, input: crate::types::VectorEnrichmentJobS3Data) -> Self {
         self.s3_data = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The input structure for Amazon S3 data; representing the Amazon S3 location of the input data objects.</p>
     pub fn set_s3_data(
         mut self,
         input: std::option::Option<crate::types::VectorEnrichmentJobS3Data>,

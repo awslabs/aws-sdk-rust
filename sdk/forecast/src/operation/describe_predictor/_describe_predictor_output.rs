@@ -25,7 +25,7 @@ pub struct DescribePredictorOutput {
     #[doc(hidden)]
     pub perform_auto_ml: std::option::Option<bool>,
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -50,7 +50,7 @@ pub struct DescribePredictorOutput {
     /// <p>The featurization configuration.</p>
     #[doc(hidden)]
     pub featurization_config: std::option::Option<crate::types::FeaturizationConfig>,
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::types::EncryptionConfig>,
     /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You specify the number of backtests to perform when you call the operation.</p>
@@ -127,7 +127,7 @@ impl DescribePredictorOutput {
         self.perform_auto_ml
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -165,7 +165,7 @@ impl DescribePredictorOutput {
     pub fn featurization_config(&self) -> std::option::Option<&crate::types::FeaturizationConfig> {
         self.featurization_config.as_ref()
     }
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
@@ -358,7 +358,7 @@ impl DescribePredictorOutputBuilder {
         self
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -370,7 +370,7 @@ impl DescribePredictorOutputBuilder {
         self
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -468,12 +468,12 @@ impl DescribePredictorOutputBuilder {
         self.featurization_config = input;
         self
     }
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = Some(input);
         self
     }
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn set_encryption_config(
         mut self,
         input: std::option::Option<crate::types::EncryptionConfig>,

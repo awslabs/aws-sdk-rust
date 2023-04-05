@@ -3,6 +3,8 @@ pub use crate::types::_advanced_event_selector::AdvancedEventSelectorBuilder;
 
 pub use crate::types::_advanced_field_selector::AdvancedFieldSelectorBuilder;
 
+pub use crate::types::_destination::DestinationBuilder;
+
 pub use crate::types::_import_statistics::ImportStatisticsBuilder;
 
 pub use crate::types::_import_source::ImportSourceBuilder;
@@ -43,7 +45,7 @@ pub use crate::types::_trail::TrailBuilder;
 
 pub use crate::types::_query_statistics::QueryStatisticsBuilder;
 
-pub use crate::types::_destination::DestinationBuilder;
+pub use crate::types::_ingestion_status::IngestionStatusBuilder;
 
 pub use crate::types::_source_config::SourceConfigBuilder;
 

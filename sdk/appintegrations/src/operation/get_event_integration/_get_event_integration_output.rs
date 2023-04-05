@@ -18,7 +18,7 @@ pub struct GetEventIntegrationOutput {
     /// <p>The event filter.</p>
     #[doc(hidden)]
     pub event_filter: std::option::Option<crate::types::EventFilter>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -45,7 +45,7 @@ impl GetEventIntegrationOutput {
     pub fn event_filter(&self) -> std::option::Option<&crate::types::EventFilter> {
         self.event_filter.as_ref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -141,7 +141,7 @@ impl GetEventIntegrationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -152,7 +152,7 @@ impl GetEventIntegrationOutputBuilder {
         self.tags = Some(hash_map);
         self
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<

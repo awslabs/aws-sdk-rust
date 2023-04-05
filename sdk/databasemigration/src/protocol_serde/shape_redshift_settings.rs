@@ -115,6 +115,9 @@ pub fn ser_redshift_settings(
     if let Some(var_30) = &input.secrets_manager_secret_id {
         object.key("SecretsManagerSecretId").string(var_30.as_str());
     }
+    if let Some(var_31) = &input.map_boolean_as_boolean {
+        object.key("MapBooleanAsBoolean").boolean(*var_31);
+    }
     Ok(())
 }
 
@@ -398,6 +401,13 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "MapBooleanAsBoolean" => {
+                                builder = builder.set_map_boolean_as_boolean(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

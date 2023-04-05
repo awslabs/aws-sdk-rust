@@ -9,10 +9,10 @@ pub fn ser_describe_edge_deployment_plan_input(
     if let Some(var_2) = &input.next_token {
         object.key("NextToken").string(var_2.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_3) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

@@ -5,7 +5,7 @@ pub use crate::operation::list_received_grants::_list_received_grants_input::Lis
 
 /// Fluent builder constructing a request to `ListReceivedGrants`.
 ///
-/// <p>Lists grants that are received but not accepted.</p>
+/// <p>Lists grants that are received. Received grants are grants created while specifying the recipient as this Amazon Web Services account, your organization, or an organizational unit (OU) to which this member account belongs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReceivedGrantsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

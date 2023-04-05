@@ -37,5 +37,8 @@ pub fn ser_channel_message_callback(
     if let Some(var_11) = &input.sub_channel_id {
         object.key("SubChannelId").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.content_type {
+        object.key("ContentType").string(var_12.as_str());
+    }
     Ok(())
 }

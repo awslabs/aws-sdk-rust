@@ -156,12 +156,12 @@ impl CreateComponentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
     ///
-    /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
     pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.supported_os_versions(input.into());
         self
     }
-    /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
     pub fn set_supported_os_versions(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

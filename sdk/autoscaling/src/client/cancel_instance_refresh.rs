@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
     /// - On success, responds with [`CancelInstanceRefreshOutput`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshOutput) with field(s):
-    ///   - [`instance_refresh_id(Option<String>)`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshOutput::instance_refresh_id): <p>The instance refresh ID.</p>
+    ///   - [`instance_refresh_id(Option<String>)`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshOutput::instance_refresh_id): <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
     /// - On failure, responds with [`SdkError<CancelInstanceRefreshError>`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshError)
     pub fn cancel_instance_refresh(
         &self,

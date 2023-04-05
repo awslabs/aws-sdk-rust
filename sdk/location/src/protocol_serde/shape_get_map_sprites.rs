@@ -131,6 +131,16 @@ pub fn de_get_map_sprites_http_response(
                 response.body().as_ref(),
             )?,
         );
+        output = output.set_cache_control(
+            crate::protocol_serde::shape_get_map_sprites_output::de_cache_control_header(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::operation::get_map_sprites::GetMapSpritesError::unhandled(
+                    "Failed to parse CacheControl from header `Cache-Control",
+                )
+            })?,
+        );
         output = output.set_content_type(
             crate::protocol_serde::shape_get_map_sprites_output::de_content_type_header(
                 response.headers(),

@@ -163,7 +163,7 @@ pub type SearchTablesByLFTagsErrorKind = SearchTablesByLFTagsError;
 pub enum SearchTablesByLFTagsError {
     /// <p>Access to a resource was denied.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>A specified entity does not exist</p>
+    /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An encryption operation failed.</p>
     GlueEncryptionException(crate::types::error::GlueEncryptionException),

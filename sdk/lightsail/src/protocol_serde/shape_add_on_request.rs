@@ -12,5 +12,11 @@ pub fn ser_add_on_request(
         crate::protocol_serde::shape_auto_snapshot_add_on_request::ser_auto_snapshot_add_on_request(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.stop_instance_on_idle_request {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("stopInstanceOnIdleRequest").start_object();
+        crate::protocol_serde::shape_stop_instance_on_idle_request::ser_stop_instance_on_idle_request(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

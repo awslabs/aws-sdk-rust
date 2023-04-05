@@ -21,6 +21,11 @@ pub fn ser_aws_eks_cluster_resources_vpc_config_details(
         }
         array_5.finish();
     }
+    if input.endpoint_public_access {
+        object
+            .key("EndpointPublicAccess")
+            .boolean(input.endpoint_public_access);
+    }
     Ok(())
 }
 
@@ -57,6 +62,13 @@ where
                             "SubnetIds" => {
                                 builder = builder.set_subnet_ids(
                                     crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
+                                );
+                            }
+                            "EndpointPublicAccess" => {
+                                builder = builder.set_endpoint_public_access(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

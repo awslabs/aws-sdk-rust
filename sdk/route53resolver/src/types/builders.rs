@@ -7,6 +7,8 @@ pub use crate::types::_resolver_rule_config::ResolverRuleConfigBuilder;
 
 pub use crate::types::_resolver_endpoint::ResolverEndpointBuilder;
 
+pub use crate::types::_update_ip_address::UpdateIpAddressBuilder;
+
 pub use crate::types::_resolver_dnssec_config::ResolverDnssecConfigBuilder;
 
 pub use crate::types::_resolver_config::ResolverConfigBuilder;

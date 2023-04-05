@@ -176,7 +176,7 @@ pub enum CreateTrailError {
     CloudWatchLogsDeliveryUnavailableException(
         crate::types::error::CloudWatchLogsDeliveryUnavailableException,
     ),
-    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
@@ -248,7 +248,7 @@ pub enum CreateTrailError {
     OrganizationsNotInUseException(crate::types::error::OrganizationsNotInUseException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
     S3BucketDoesNotExistException(crate::types::error::S3BucketDoesNotExistException),
-    /// <p>The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.</p>
+    /// <p>The number of tags per trail, event data store, or channel has exceeded the permitted amount. Currently, the limit is 50.</p>
     TagsLimitExceededException(crate::types::error::TagsLimitExceededException),
     /// <p>This exception is thrown when the specified trail already exists.</p>
     TrailAlreadyExistsException(crate::types::error::TrailAlreadyExistsException),

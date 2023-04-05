@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorProxyOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy configuration details.</p>
     #[doc(hidden)]
     pub proxy: std::option::Option<crate::types::Proxy>,
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorProxyOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy configuration details.</p>
     pub fn proxy(&self) -> std::option::Option<&crate::types::Proxy> {
         self.proxy.as_ref()
     }
@@ -36,12 +36,12 @@ pub struct PutVoiceConnectorProxyOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorProxyOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy configuration details.</p>
     pub fn proxy(mut self, input: crate::types::Proxy) -> Self {
         self.proxy = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy configuration details.</p>
     pub fn set_proxy(mut self, input: std::option::Option<crate::types::Proxy>) -> Self {
         self.proxy = input;
         self

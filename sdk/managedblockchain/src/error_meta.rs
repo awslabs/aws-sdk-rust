@@ -83,6 +83,7 @@ impl From<crate::operation::create_accessor::CreateAccessorError> for Error {
             crate::operation::create_accessor::CreateAccessorError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
             crate::operation::create_accessor::CreateAccessorError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
             crate::operation::create_accessor::CreateAccessorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_accessor::CreateAccessorError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::create_accessor::CreateAccessorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

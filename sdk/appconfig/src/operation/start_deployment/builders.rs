@@ -111,12 +111,12 @@ impl StartDeploymentFluentBuilder {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
     }
-    /// <p>The configuration version to deploy.</p>
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
     pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.configuration_version(input.into());
         self
     }
-    /// <p>The configuration version to deploy.</p>
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
     pub fn set_configuration_version(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -155,6 +155,19 @@ impl StartDeploymentFluentBuilder {
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn kms_key_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.kms_key_identifier(input.into());
+        self
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn set_kms_key_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_kms_key_identifier(input);
         self
     }
 }

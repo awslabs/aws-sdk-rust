@@ -3,14 +3,16 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The request failed because an active instance refresh for the specified Auto Scaling group was not found. </p>
+    /// <p>The request failed because an active instance refresh or rollback for the specified Auto Scaling group was not found.</p>
     ActiveInstanceRefreshNotFoundFault(crate::types::error::ActiveInstanceRefreshNotFoundFault),
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::types::error::AlreadyExistsFault),
-    /// <p>The request failed because an active instance refresh operation already exists for the specified Auto Scaling group.</p>
+    /// <p>The request failed because an active instance refresh already exists for the specified Auto Scaling group.</p>
     InstanceRefreshInProgressFault(crate::types::error::InstanceRefreshInProgressFault),
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::types::error::InvalidNextToken),
+    /// <p>The request failed because a desired configuration was not found or an incompatible launch template (uses a Systems Manager parameter instead of an AMI ID) or launch template version (<code>$Latest</code> or <code>$Default</code>) is present on the Auto Scaling group.</p>
+    IrreversibleInstanceRefreshFault(crate::types::error::IrreversibleInstanceRefreshFault),
     /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
@@ -31,6 +33,7 @@ impl std::fmt::Display for Error {
             Error::AlreadyExistsFault(inner) => inner.fmt(f),
             Error::InstanceRefreshInProgressFault(inner) => inner.fmt(f),
             Error::InvalidNextToken(inner) => inner.fmt(f),
+            Error::IrreversibleInstanceRefreshFault(inner) => inner.fmt(f),
             Error::LimitExceededFault(inner) => inner.fmt(f),
             Error::ResourceContentionFault(inner) => inner.fmt(f),
             Error::ResourceInUseFault(inner) => inner.fmt(f),
@@ -2243,6 +2246,50 @@ impl From<crate::operation::resume_processes::ResumeProcessesError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError> for Error {
+    fn from(
+        err: crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError,
+    ) -> Self {
+        match err {
+            crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError::ActiveInstanceRefreshNotFoundFault(inner) => Error::ActiveInstanceRefreshNotFoundFault(inner),
+            crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError::IrreversibleInstanceRefreshFault(inner) => Error::IrreversibleInstanceRefreshFault(inner),
+            crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
+            crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::set_desired_capacity::SetDesiredCapacityError,
             R,
         >,
@@ -2517,6 +2564,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::AlreadyExistsFault(e) => e.request_id(),
             Self::InstanceRefreshInProgressFault(e) => e.request_id(),
             Self::InvalidNextToken(e) => e.request_id(),
+            Self::IrreversibleInstanceRefreshFault(e) => e.request_id(),
             Self::LimitExceededFault(e) => e.request_id(),
             Self::ResourceContentionFault(e) => e.request_id(),
             Self::ResourceInUseFault(e) => e.request_id(),

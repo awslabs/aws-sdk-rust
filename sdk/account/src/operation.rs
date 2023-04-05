@@ -4,11 +4,23 @@ pub use aws_http::request_id::RequestId;
 /// Types for the `DeleteAlternateContact` operation.
 pub mod delete_alternate_contact;
 
+/// Types for the `DisableRegion` operation.
+pub mod disable_region;
+
+/// Types for the `EnableRegion` operation.
+pub mod enable_region;
+
 /// Types for the `GetAlternateContact` operation.
 pub mod get_alternate_contact;
 
 /// Types for the `GetContactInformation` operation.
 pub mod get_contact_information;
+
+/// Types for the `GetRegionOptStatus` operation.
+pub mod get_region_opt_status;
+
+/// Types for the `ListRegions` operation.
+pub mod list_regions;
 
 /// Types for the `PutAlternateContact` operation.
 pub mod put_alternate_contact;

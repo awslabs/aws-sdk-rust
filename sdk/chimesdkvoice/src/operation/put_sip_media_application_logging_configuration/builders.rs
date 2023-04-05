@@ -5,6 +5,7 @@ pub use crate::operation::put_sip_media_application_logging_configuration::_put_
 
 /// Fluent builder constructing a request to `PutSipMediaApplicationLoggingConfiguration`.
 ///
+/// <p>Updates the logging configuration for the specified SIP media application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutSipMediaApplicationLoggingConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl PutSipMediaApplicationLoggingConfigurationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn set_sip_media_application_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -68,7 +69,7 @@ impl PutSipMediaApplicationLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The logging configuration for the specified SIP media application.</p>
     pub fn sip_media_application_logging_configuration(
         mut self,
         input: crate::types::SipMediaApplicationLoggingConfiguration,
@@ -78,7 +79,7 @@ impl PutSipMediaApplicationLoggingConfigurationFluentBuilder {
             .sip_media_application_logging_configuration(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The logging configuration for the specified SIP media application.</p>
     pub fn set_sip_media_application_logging_configuration(
         mut self,
         input: std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,

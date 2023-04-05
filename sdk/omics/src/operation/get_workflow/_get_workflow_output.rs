@@ -38,7 +38,7 @@ pub struct GetWorkflowOutput {
     pub parameter_template: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>,
     >,
-    /// <p>The workflow's storage capacity.</p>
+    /// <p>The workflow's storage capacity in gigabytes.</p>
     #[doc(hidden)]
     pub storage_capacity: std::option::Option<i32>,
     /// <p>When the workflow was created.</p>
@@ -102,7 +102,7 @@ impl GetWorkflowOutput {
     > {
         self.parameter_template.as_ref()
     }
-    /// <p>The workflow's storage capacity.</p>
+    /// <p>The workflow's storage capacity in gigabytes.</p>
     pub fn storage_capacity(&self) -> std::option::Option<i32> {
         self.storage_capacity
     }
@@ -284,12 +284,12 @@ impl GetWorkflowOutputBuilder {
         self.parameter_template = input;
         self
     }
-    /// <p>The workflow's storage capacity.</p>
+    /// <p>The workflow's storage capacity in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = Some(input);
         self
     }
-    /// <p>The workflow's storage capacity.</p>
+    /// <p>The workflow's storage capacity in gigabytes.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self

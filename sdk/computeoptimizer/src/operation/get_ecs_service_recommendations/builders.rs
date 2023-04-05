@@ -74,14 +74,14 @@ impl GetECSServiceRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_service_arns`](Self::set_service_arns).
     ///
-    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn service_arns(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_arns(input.into());
         self
     }
-    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn set_service_arns(
@@ -91,23 +91,23 @@ impl GetECSServiceRecommendationsFluentBuilder {
         self.inner = self.inner.set_service_arns(input);
         self
     }
-    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The maximum number of ECS service recommendations to return with a single request. </p>
+    /// <p> The maximum number of Amazon ECS service recommendations to return with a single request. </p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of ECS service recommendations to return with a single request. </p>
+    /// <p> The maximum number of Amazon ECS service recommendations to return with a single request. </p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
@@ -117,12 +117,12 @@ impl GetECSServiceRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>
+    /// <p> An array of objects to specify a filter that returns a more specific list of Amazon ECS service recommendations. </p>
     pub fn filters(mut self, input: crate::types::EcsServiceRecommendationFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>
+    /// <p> An array of objects to specify a filter that returns a more specific list of Amazon ECS service recommendations. </p>
     pub fn set_filters(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>,
@@ -134,15 +134,15 @@ impl GetECSServiceRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p>
-    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p>
+    /// <p> Return the Amazon ECS service recommendations to the specified Amazon Web Services account IDs. </p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon ECS service recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p>
-    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p>
+    /// <p> Return the Amazon ECS service recommendations to the specified Amazon Web Services account IDs. </p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon ECS service recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
     pub fn set_account_ids(
         mut self,

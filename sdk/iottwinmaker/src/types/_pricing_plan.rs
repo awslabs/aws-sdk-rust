@@ -19,7 +19,7 @@ pub struct PricingPlan {
     /// <p>The set date and time for updating a pricing plan.</p>
     #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The update reason, for changing a pricing plan.</p>
+    /// <p>The update reason for changing a pricing plan.</p>
     #[doc(hidden)]
     pub update_reason: std::option::Option<crate::types::UpdateReason>,
 }
@@ -44,7 +44,7 @@ impl PricingPlan {
     pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
-    /// <p>The update reason, for changing a pricing plan.</p>
+    /// <p>The update reason for changing a pricing plan.</p>
     pub fn update_reason(&self) -> std::option::Option<&crate::types::UpdateReason> {
         self.update_reason.as_ref()
     }
@@ -130,12 +130,12 @@ impl PricingPlanBuilder {
         self.update_date_time = input;
         self
     }
-    /// <p>The update reason, for changing a pricing plan.</p>
+    /// <p>The update reason for changing a pricing plan.</p>
     pub fn update_reason(mut self, input: crate::types::UpdateReason) -> Self {
         self.update_reason = Some(input);
         self
     }
-    /// <p>The update reason, for changing a pricing plan.</p>
+    /// <p>The update reason for changing a pricing plan.</p>
     pub fn set_update_reason(
         mut self,
         input: std::option::Option<crate::types::UpdateReason>,

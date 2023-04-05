@@ -12,7 +12,7 @@ pub struct GetInsightsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl GetInsightsInput {
     /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
@@ -25,7 +25,7 @@ impl GetInsightsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -96,7 +96,7 @@ impl GetInsightsInputBuilder {
         Ok(crate::operation::get_insights::GetInsightsInput {
             insight_arns: self.insight_arns,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

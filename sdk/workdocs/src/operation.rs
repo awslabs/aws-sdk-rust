@@ -118,6 +118,9 @@ pub mod remove_resource_permission;
 /// Types for the `RestoreDocumentVersions` operation.
 pub mod restore_document_versions;
 
+/// Types for the `SearchResources` operation.
+pub mod search_resources;
+
 /// Types for the `UpdateDocument` operation.
 pub mod update_document;
 

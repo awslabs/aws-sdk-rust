@@ -3422,6 +3422,49 @@ impl From<crate::operation::get_metric_data::GetMetricDataError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::get_metric_data_v2::GetMetricDataV2Error,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_metric_data_v2::GetMetricDataV2Error,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_metric_data_v2::GetMetricDataV2Error> for Error {
+    fn from(err: crate::operation::get_metric_data_v2::GetMetricDataV2Error) -> Self {
+        match err {
+            crate::operation::get_metric_data_v2::GetMetricDataV2Error::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_metric_data_v2::GetMetricDataV2Error::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_metric_data_v2::GetMetricDataV2Error::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_metric_data_v2::GetMetricDataV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_metric_data_v2::GetMetricDataV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_metric_data_v2::GetMetricDataV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::get_task_template::GetTaskTemplateError,
             R,
         >,

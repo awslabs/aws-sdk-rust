@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::set_tags): A collection of tags associated with a resource
     /// - On success, responds with [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_channel::CreateChannelOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
+    ///   - [`created_at(Option<String>)`](crate::operation::create_channel::CreateChannelOutput::created_at): The date and time the Channel was created.
     ///   - [`description(Option<String>)`](crate::operation::create_channel::CreateChannelOutput::description): A short text description of the Channel.
     ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::create_channel::CreateChannelOutput::egress_access_logs): Configure egress access logging.
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::create_channel::CreateChannelOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.

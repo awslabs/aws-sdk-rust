@@ -8,7 +8,7 @@ pub struct DescribeConformancePacksInput {
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of conformance packs returned on each page.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl DescribeConformancePacksInput {
         self.conformance_pack_names.as_deref()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -94,7 +94,7 @@ impl DescribeConformancePacksInputBuilder {
         Ok(
             crate::operation::describe_conformance_packs::DescribeConformancePacksInput {
                 conformance_pack_names: self.conformance_pack_names,
-                limit: self.limit.unwrap_or_default(),
+                limit: self.limit,
                 next_token: self.next_token,
             },
         )

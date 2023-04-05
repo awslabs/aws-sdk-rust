@@ -43,6 +43,8 @@ pub use crate::types::_issuer_details::IssuerDetailsBuilder;
 
 pub use crate::types::_grant::GrantBuilder;
 
+pub use crate::types::_options::OptionsBuilder;
+
 pub use crate::types::_license::LicenseBuilder;
 
 pub use crate::types::_report_generator::ReportGeneratorBuilder;

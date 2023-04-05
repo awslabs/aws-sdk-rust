@@ -3,7 +3,16 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterScalableTargetOutput {
+    /// <p>The ARN of the scalable target.</p>
+    #[doc(hidden)]
+    pub scalable_target_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
+}
+impl RegisterScalableTargetOutput {
+    /// <p>The ARN of the scalable target.</p>
+    pub fn scalable_target_arn(&self) -> std::option::Option<&str> {
+        self.scalable_target_arn.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for RegisterScalableTargetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -23,9 +32,23 @@ impl RegisterScalableTargetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RegisterScalableTargetOutputBuilder {
+    pub(crate) scalable_target_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterScalableTargetOutputBuilder {
+    /// <p>The ARN of the scalable target.</p>
+    pub fn scalable_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.scalable_target_arn = Some(input.into());
+        self
+    }
+    /// <p>The ARN of the scalable target.</p>
+    pub fn set_scalable_target_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.scalable_target_arn = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -38,6 +61,7 @@ impl RegisterScalableTargetOutputBuilder {
     /// Consumes the builder and constructs a [`RegisterScalableTargetOutput`](crate::operation::register_scalable_target::RegisterScalableTargetOutput).
     pub fn build(self) -> crate::operation::register_scalable_target::RegisterScalableTargetOutput {
         crate::operation::register_scalable_target::RegisterScalableTargetOutput {
+            scalable_target_arn: self.scalable_target_arn,
             _request_id: self._request_id,
         }
     }

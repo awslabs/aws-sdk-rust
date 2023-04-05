@@ -26,6 +26,19 @@ pub fn ser_provision_ipam_pool_cidr_input_input(
     if let Some(var_8) = &input.cidr_authorization_context {
         crate::protocol_serde::shape_ipam_cidr_authorization_context::ser_ipam_cidr_authorization_context(scope_7, var_8)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("NetmaskLength");
+    if let Some(var_10) = &input.netmask_length {
+        scope_9.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("ClientToken");
+    if let Some(var_12) = &input.client_token {
+        scope_11.string(var_12);
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

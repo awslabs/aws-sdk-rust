@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`authorization(Option<Authorization>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::authorization): CDN Authorization credentials
     ///   - [`channel_id(Option<String>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::channel_id): The ID of the Channel the OriginEndpoint is associated with.
     ///   - [`cmaf_package(Option<CmafPackage>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::cmaf_package): A Common Media Application Format (CMAF) packaging configuration.
+    ///   - [`created_at(Option<String>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::created_at): The date and time the OriginEndpoint was created.
     ///   - [`dash_package(Option<DashPackage>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::dash_package): A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     ///   - [`description(Option<String>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::description): A short text description of the OriginEndpoint.
     ///   - [`hls_package(Option<HlsPackage>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::hls_package): An HTTP Live Streaming (HLS) packaging configuration.

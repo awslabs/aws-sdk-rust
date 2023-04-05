@@ -254,8 +254,14 @@ mod describe_scaling_policies;
 
 mod describe_scheduled_actions;
 
+mod list_tags_for_resource;
+
 mod put_scaling_policy;
 
 mod put_scheduled_action;
 
 mod register_scalable_target;
+
+mod tag_resource;
+
+mod untag_resource;

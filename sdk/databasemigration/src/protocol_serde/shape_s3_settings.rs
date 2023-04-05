@@ -148,6 +148,9 @@ pub fn ser_s3_settings(
     if let Some(var_40) = &input.expected_bucket_owner {
         object.key("ExpectedBucketOwner").string(var_40.as_str());
     }
+    if let Some(var_41) = &input.glue_catalog_generation {
+        object.key("GlueCatalogGeneration").boolean(*var_41);
+    }
     Ok(())
 }
 
@@ -542,6 +545,13 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "GlueCatalogGeneration" => {
+                                builder = builder.set_glue_catalog_generation(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

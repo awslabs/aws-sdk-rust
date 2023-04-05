@@ -176,6 +176,10 @@ pub enum StartImportError {
     ImportNotFoundException(crate::types::error::ImportNotFoundException),
     /// <p>The event data store is inactive.</p>
     InactiveEventDataStoreException(crate::types::error::InactiveEventDataStoreException),
+    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
+    InsufficientEncryptionPolicyException(
+        crate::types::error::InsufficientEncryptionPolicyException,
+    ),
     /// <p>This exception is thrown when event categories of specified event data stores are not valid.</p>
     InvalidEventDataStoreCategoryException(
         crate::types::error::InvalidEventDataStoreCategoryException,
@@ -213,6 +217,7 @@ impl std::fmt::Display for StartImportError {
             Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             Self::ImportNotFoundException(_inner) => _inner.fmt(f),
             Self::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
+            Self::InsufficientEncryptionPolicyException(_inner) => _inner.fmt(f),
             Self::InvalidEventDataStoreCategoryException(_inner) => _inner.fmt(f),
             Self::InvalidEventDataStoreStatusException(_inner) => _inner.fmt(f),
             Self::InvalidImportSourceException(_inner) => _inner.fmt(f),
@@ -239,6 +244,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for StartImportErro
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InactiveEventDataStoreException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InsufficientEncryptionPolicyException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidEventDataStoreCategoryException(_inner) => {
@@ -309,6 +317,7 @@ impl StartImportError {
             Self::EventDataStoreNotFoundException(e) => e.meta(),
             Self::ImportNotFoundException(e) => e.meta(),
             Self::InactiveEventDataStoreException(e) => e.meta(),
+            Self::InsufficientEncryptionPolicyException(e) => e.meta(),
             Self::InvalidEventDataStoreCategoryException(e) => e.meta(),
             Self::InvalidEventDataStoreStatusException(e) => e.meta(),
             Self::InvalidImportSourceException(e) => e.meta(),
@@ -337,6 +346,10 @@ impl StartImportError {
     /// Returns `true` if the error kind is `StartImportError::InactiveEventDataStoreException`.
     pub fn is_inactive_event_data_store_exception(&self) -> bool {
         matches!(self, Self::InactiveEventDataStoreException(_))
+    }
+    /// Returns `true` if the error kind is `StartImportError::InsufficientEncryptionPolicyException`.
+    pub fn is_insufficient_encryption_policy_exception(&self) -> bool {
+        matches!(self, Self::InsufficientEncryptionPolicyException(_))
     }
     /// Returns `true` if the error kind is `StartImportError::InvalidEventDataStoreCategoryException`.
     pub fn is_invalid_event_data_store_category_exception(&self) -> bool {
@@ -371,6 +384,7 @@ impl std::error::Error for StartImportError {
             Self::EventDataStoreNotFoundException(_inner) => Some(_inner),
             Self::ImportNotFoundException(_inner) => Some(_inner),
             Self::InactiveEventDataStoreException(_inner) => Some(_inner),
+            Self::InsufficientEncryptionPolicyException(_inner) => Some(_inner),
             Self::InvalidEventDataStoreCategoryException(_inner) => Some(_inner),
             Self::InvalidEventDataStoreStatusException(_inner) => Some(_inner),
             Self::InvalidImportSourceException(_inner) => Some(_inner),

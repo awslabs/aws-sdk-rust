@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSipMediaApplicationsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of SIP media applications and application details.</p>
     #[doc(hidden)]
     pub sip_media_applications:
         std::option::Option<std::vec::Vec<crate::types::SipMediaApplication>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSipMediaApplicationsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of SIP media applications and application details.</p>
     pub fn sip_media_applications(
         &self,
     ) -> std::option::Option<&[crate::types::SipMediaApplication]> {
         self.sip_media_applications.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50,13 +50,14 @@ impl ListSipMediaApplicationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sip_media_applications`](Self::set_sip_media_applications).
     ///
+    /// <p>The list of SIP media applications and application details.</p>
     pub fn sip_media_applications(mut self, input: crate::types::SipMediaApplication) -> Self {
         let mut v = self.sip_media_applications.unwrap_or_default();
         v.push(input);
         self.sip_media_applications = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of SIP media applications and application details.</p>
     pub fn set_sip_media_applications(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplication>>,
@@ -64,12 +65,12 @@ impl ListSipMediaApplicationsOutputBuilder {
         self.sip_media_applications = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

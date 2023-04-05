@@ -17,6 +17,8 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_workspace_description::WorkspaceDescription;
 
+pub use crate::types::_network_access_configuration::NetworkAccessConfiguration;
+
 pub use crate::types::_vpc_configuration::VpcConfiguration;
 
 pub use crate::types::_license_type::LicenseType;
@@ -72,6 +74,8 @@ mod _data_source_type;
 mod _idp_metadata;
 
 mod _license_type;
+
+mod _network_access_configuration;
 
 mod _notification_destination_type;
 

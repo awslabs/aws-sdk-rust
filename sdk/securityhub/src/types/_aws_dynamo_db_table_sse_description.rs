@@ -5,7 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsDynamoDbTableSseDescription {
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub inaccessible_encryption_date_time: std::option::Option<std::string::String>,
     /// <p>The status of the server-side encryption.</p>
@@ -20,7 +20,7 @@ pub struct AwsDynamoDbTableSseDescription {
 }
 impl AwsDynamoDbTableSseDescription {
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn inaccessible_encryption_date_time(&self) -> std::option::Option<&str> {
         self.inaccessible_encryption_date_time.as_deref()
     }
@@ -55,7 +55,7 @@ pub struct AwsDynamoDbTableSseDescriptionBuilder {
 }
 impl AwsDynamoDbTableSseDescriptionBuilder {
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn inaccessible_encryption_date_time(
         mut self,
         input: impl Into<std::string::String>,
@@ -64,7 +64,7 @@ impl AwsDynamoDbTableSseDescriptionBuilder {
         self
     }
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_inaccessible_encryption_date_time(
         mut self,
         input: std::option::Option<std::string::String>,

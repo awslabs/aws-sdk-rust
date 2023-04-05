@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum VectorEnrichmentJobConfig {
-    /// <p></p>
+    /// <p>The input structure for Map Matching operation type.</p>
     MapMatchingConfig(crate::types::MapMatchingConfig),
-    /// <p></p>
+    /// <p>The input structure for Reverse Geocoding operation type.</p>
     ReverseGeocodingConfig(crate::types::ReverseGeocodingConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

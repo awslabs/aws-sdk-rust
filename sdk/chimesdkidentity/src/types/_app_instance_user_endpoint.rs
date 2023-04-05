@@ -96,7 +96,7 @@ impl std::fmt::Debug for AppInstanceUserEndpoint {
         formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
-        formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.field("endpoint_attributes", &self.endpoint_attributes);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
@@ -284,7 +284,7 @@ impl std::fmt::Debug for AppInstanceUserEndpointBuilder {
         formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
-        formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.field("endpoint_attributes", &self.endpoint_attributes);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("last_updated_timestamp", &self.last_updated_timestamp);

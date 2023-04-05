@@ -236,6 +236,20 @@ pub fn de_host(
                 builder = builder.set_outpost_arn(var_18);
             }
             ,
+            s if s.matches("hostMaintenance") /* HostMaintenance com.amazonaws.ec2#Host$HostMaintenance */ =>  {
+                let var_19 =
+                    Some(
+                        Result::<crate::types::HostMaintenance, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::HostMaintenance::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_host_maintenance(var_19);
+            }
+            ,
             _ => {}
         }
     }

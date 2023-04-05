@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetRuntimeManagementConfigOutput`](crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput) with field(s):
     ///   - [`update_runtime_on(Option<UpdateRuntimeOn>)`](crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput::update_runtime_on): <p>The current runtime update mode of the function.</p>
     ///   - [`runtime_version_arn(Option<String>)`](crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput::runtime_version_arn): <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+    ///   - [`function_arn(Option<String>)`](crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput::function_arn): <p>The Amazon Resource Name (ARN) of your function.</p>
     /// - On failure, responds with [`SdkError<GetRuntimeManagementConfigError>`](crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError)
     pub fn get_runtime_management_config(&self) -> crate::operation::get_runtime_management_config::builders::GetRuntimeManagementConfigFluentBuilder{
         crate::operation::get_runtime_management_config::builders::GetRuntimeManagementConfigFluentBuilder::new(self.handle.clone())

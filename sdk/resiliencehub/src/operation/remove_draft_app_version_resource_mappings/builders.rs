@@ -56,12 +56,12 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
@@ -70,12 +70,12 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_names`](Self::set_resource_names).
     ///
-    /// <p>The names of the resources to remove from the resource mappings.</p>
+    /// <p>The names of the resources you want to remove from the resource mappings.</p>
     pub fn resource_names(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_names(input.into());
         self
     }
-    /// <p>The names of the resources to remove from the resource mappings.</p>
+    /// <p>The names of the resources you want to remove from the resource mappings.</p>
     pub fn set_resource_names(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -87,12 +87,12 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_logical_stack_names`](Self::set_logical_stack_names).
     ///
-    /// <p>The names of the CloudFormation stacks to remove from the resource mappings.</p>
+    /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
     pub fn logical_stack_names(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.logical_stack_names(input.into());
         self
     }
-    /// <p>The names of the CloudFormation stacks to remove from the resource mappings.</p>
+    /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
     pub fn set_logical_stack_names(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -104,12 +104,12 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_app_registry_app_names`](Self::set_app_registry_app_names).
     ///
-    /// <p>The names of the registered applications to remove from the resource mappings.</p>
+    /// <p>The names of the registered applications you want to remove from the resource mappings.</p>
     pub fn app_registry_app_names(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_registry_app_names(input.into());
         self
     }
-    /// <p>The names of the registered applications to remove from the resource mappings.</p>
+    /// <p>The names of the registered applications you want to remove from the resource mappings.</p>
     pub fn set_app_registry_app_names(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -121,12 +121,12 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_group_names`](Self::set_resource_group_names).
     ///
-    /// <p>The names of the resource groups to remove from the resource mappings.</p>
+    /// <p>The names of the resource groups you want to remove from the resource mappings.</p>
     pub fn resource_group_names(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_group_names(input.into());
         self
     }
-    /// <p>The names of the resource groups to remove from the resource mappings.</p>
+    /// <p>The names of the resource groups you want to remove from the resource mappings.</p>
     pub fn set_resource_group_names(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -138,17 +138,38 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_terraform_source_names`](Self::set_terraform_source_names).
     ///
-    /// <p> </p>
+    /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
     pub fn terraform_source_names(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.terraform_source_names(input.into());
         self
     }
-    /// <p> </p>
+    /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
     pub fn set_terraform_source_names(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_terraform_source_names(input);
+        self
+    }
+    /// Appends an item to `eksSourceNames`.
+    ///
+    /// To override the contents of this collection use [`set_eks_source_names`](Self::set_eks_source_names).
+    ///
+    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note>
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// </note>
+    pub fn eks_source_names(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.eks_source_names(input.into());
+        self
+    }
+    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note>
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// </note>
+    pub fn set_eks_source_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_eks_source_names(input);
         self
     }
 }

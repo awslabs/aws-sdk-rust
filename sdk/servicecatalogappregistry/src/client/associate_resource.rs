@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateResource`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application(impl Into<String>)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::application) / [`set_application(Option<String>)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::set_application): <p>The name or ID of the application.</p>
+    ///   - [`application(impl Into<String>)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::application) / [`set_application(Option<String>)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::set_application): <p> The name, ID, or ARN of the application. </p>
     ///   - [`resource_type(ResourceType)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::set_resource_type): <p>The type of resource of which the application will be associated.</p>
     ///   - [`resource(impl Into<String>)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::set_resource): <p>The name or ID of the resource of which the application will be associated.</p>
     /// - On success, responds with [`AssociateResourceOutput`](crate::operation::associate_resource::AssociateResourceOutput) with field(s):

@@ -14,7 +14,7 @@ pub struct CreateProvisioningTemplateInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>True to enable the provisioning template, otherwise false.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     #[doc(hidden)]
     pub provisioning_role_arn: std::option::Option<std::string::String>,
@@ -46,7 +46,7 @@ impl CreateProvisioningTemplateInput {
         self.template_body.as_deref()
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
@@ -206,7 +206,7 @@ impl CreateProvisioningTemplateInputBuilder {
                 template_name: self.template_name,
                 description: self.description,
                 template_body: self.template_body,
-                enabled: self.enabled.unwrap_or_default(),
+                enabled: self.enabled,
                 provisioning_role_arn: self.provisioning_role_arn,
                 pre_provisioning_hook: self.pre_provisioning_hook,
                 tags: self.tags,

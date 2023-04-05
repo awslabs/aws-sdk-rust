@@ -97,6 +97,16 @@ where
                                     crate::protocol_serde::shape_change_progress_details::de_change_progress_details(tokens)?
                                 );
                             }
+                            "OffPeakWindowOptions" => {
+                                builder = builder.set_off_peak_window_options(
+                                    crate::protocol_serde::shape_off_peak_window_options_status::de_off_peak_window_options_status(tokens)?
+                                );
+                            }
+                            "SoftwareUpdateOptions" => {
+                                builder = builder.set_software_update_options(
+                                    crate::protocol_serde::shape_software_update_options_status::de_software_update_options_status(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -171,7 +171,7 @@ pub enum PutRolePolicyError {
     NoSuchEntityException(crate::types::error::NoSuchEntityException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
+    /// <p>The request was rejected because service-linked roles are protected Amazon Web Services resources. Only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::types::error::UnmodifiableEntityException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

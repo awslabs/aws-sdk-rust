@@ -6,7 +6,7 @@ pub use crate::operation::modify_activity_stream::_modify_activity_stream_input:
 /// Fluent builder constructing a request to `ModifyActivityStream`.
 ///
 /// <p>Changes the audit policy state of a database activity stream to either locked (default) or unlocked. A locked policy is read-only, whereas an unlocked policy is read/write. If your activity stream is started and locked, you can unlock it, customize your audit policy, and then lock your activity stream. Restarting the activity stream isn't required. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html"> Modifying a database activity stream</a> in the <i>Amazon RDS User Guide</i>. </p>
-/// <p>This operation is supported for RDS for Oracle only.</p>
+/// <p>This operation is supported for RDS for Oracle and Microsoft SQL Server.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyActivityStreamFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -70,12 +70,12 @@ impl ModifyActivityStreamFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self

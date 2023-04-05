@@ -15,7 +15,7 @@ pub struct ListPrincipalPoliciesInput {
     pub page_size: std::option::Option<i32>,
     /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
     #[doc(hidden)]
-    pub ascending_order: bool,
+    pub ascending_order: std::option::Option<bool>,
 }
 impl ListPrincipalPoliciesInput {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
@@ -31,7 +31,7 @@ impl ListPrincipalPoliciesInput {
         self.page_size
     }
     /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
-    pub fn ascending_order(&self) -> bool {
+    pub fn ascending_order(&self) -> std::option::Option<bool> {
         self.ascending_order
     }
 }
@@ -106,7 +106,7 @@ impl ListPrincipalPoliciesInputBuilder {
                 principal: self.principal,
                 marker: self.marker,
                 page_size: self.page_size,
-                ascending_order: self.ascending_order.unwrap_or_default(),
+                ascending_order: self.ascending_order,
             },
         )
     }

@@ -5,12 +5,12 @@ pub use crate::operation::create_app_instance_admin::_create_app_instance_admin_
 
 /// Fluent builder constructing a request to `CreateAppInstanceAdmin`.
 ///
-/// <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the following actions. </p>
+/// <p>Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>. The promoted entity can perform the following actions. </p>
 /// <ul>
 /// <li> <p> <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p> </li>
 /// <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li>
 /// </ul>
-/// <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
+/// <p>Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAppInstanceAdminFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

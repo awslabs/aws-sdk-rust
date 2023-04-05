@@ -130,6 +130,18 @@ where
                                     crate::protocol_serde::shape_inferred_workload_types::de_inferred_workload_types(tokens)?
                                 );
                             }
+                            "instanceState" => {
+                                builder = builder.set_instance_state(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::InstanceState::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

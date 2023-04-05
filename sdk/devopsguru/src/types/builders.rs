@@ -139,6 +139,8 @@ pub use crate::types::_proactive_anomaly_summary::ProactiveAnomalySummaryBuilder
 
 pub use crate::types::_anomaly_source_metadata::AnomalySourceMetadataBuilder;
 
+pub use crate::types::_list_anomalies_for_insight_filters::ListAnomaliesForInsightFiltersBuilder;
+
 pub use crate::types::_resource_collection_filter::ResourceCollectionFilterBuilder;
 
 pub use crate::types::_tag_collection_filter::TagCollectionFilterBuilder;

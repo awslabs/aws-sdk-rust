@@ -5,6 +5,12 @@ pub use crate::types::_candidate_address::CandidateAddress;
 
 pub use crate::types::_address::Address;
 
+pub use crate::types::_voice_profile_domain::VoiceProfileDomain;
+
+pub use crate::types::_server_side_encryption_configuration::ServerSideEncryptionConfiguration;
+
+pub use crate::types::_voice_profile::VoiceProfile;
+
 pub use crate::types::_voice_connector_group::VoiceConnectorGroup;
 
 pub use crate::types::_voice_connector_item::VoiceConnectorItem;
@@ -57,11 +63,27 @@ pub use crate::types::_phone_number_type::PhoneNumberType;
 
 pub use crate::types::_voice_connector_settings::VoiceConnectorSettings;
 
+pub use crate::types::_tag::Tag;
+
+pub use crate::types::_voice_tone_analysis_task::VoiceToneAnalysisTask;
+
+pub use crate::types::_call_details::CallDetails;
+
+pub use crate::types::_language_code::LanguageCode;
+
+pub use crate::types::_speaker_search_task::SpeakerSearchTask;
+
+pub use crate::types::_speaker_search_details::SpeakerSearchDetails;
+
+pub use crate::types::_speaker_search_result::SpeakerSearchResult;
+
 pub use crate::types::_credential::Credential;
 
 pub use crate::types::_termination::Termination;
 
 pub use crate::types::_streaming_configuration::StreamingConfiguration;
+
+pub use crate::types::_media_insights_configuration::MediaInsightsConfiguration;
 
 pub use crate::types::_streaming_notification_target::StreamingNotificationTarget;
 
@@ -87,6 +109,10 @@ pub use crate::types::_sip_media_application_alexa_skill_configuration::SipMedia
 
 pub use crate::types::_alexa_skill_status::AlexaSkillStatus;
 
+pub use crate::types::_voice_profile_summary::VoiceProfileSummary;
+
+pub use crate::types::_voice_profile_domain_summary::VoiceProfileDomainSummary;
+
 pub use crate::types::_phone_number_country::PhoneNumberCountry;
 
 pub use crate::types::_phone_number_order::PhoneNumberOrder;
@@ -109,6 +135,8 @@ mod _address;
 
 mod _alexa_skill_status;
 
+mod _call_details;
+
 mod _calling_name_status;
 
 mod _candidate_address;
@@ -127,7 +155,11 @@ mod _geo_match_level;
 
 mod _geo_match_params;
 
+mod _language_code;
+
 mod _logging_configuration;
+
+mod _media_insights_configuration;
 
 mod _notification_target;
 
@@ -175,6 +207,8 @@ mod _proxy_session;
 
 mod _proxy_session_status;
 
+mod _server_side_encryption_configuration;
+
 mod _sip_media_application;
 
 mod _sip_media_application_alexa_skill_configuration;
@@ -191,9 +225,17 @@ mod _sip_rule_target_application;
 
 mod _sip_rule_trigger_type;
 
+mod _speaker_search_details;
+
+mod _speaker_search_result;
+
+mod _speaker_search_task;
+
 mod _streaming_configuration;
 
 mod _streaming_notification_target;
+
+mod _tag;
 
 mod _termination;
 
@@ -210,6 +252,16 @@ mod _voice_connector_group;
 mod _voice_connector_item;
 
 mod _voice_connector_settings;
+
+mod _voice_profile;
+
+mod _voice_profile_domain;
+
+mod _voice_profile_domain_summary;
+
+mod _voice_profile_summary;
+
+mod _voice_tone_analysis_task;
 
 /// Builders
 pub mod builders;

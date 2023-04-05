@@ -15,7 +15,7 @@ pub struct GetContactChannelOutput {
     /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ChannelType>,
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     #[doc(hidden)]
     pub delivery_address: std::option::Option<crate::types::ContactChannelAddress>,
     /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
@@ -40,7 +40,7 @@ impl GetContactChannelOutput {
     pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelType> {
         self.r#type.as_ref()
     }
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn delivery_address(&self) -> std::option::Option<&crate::types::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
@@ -118,12 +118,12 @@ impl GetContactChannelOutputBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn delivery_address(mut self, input: crate::types::ContactChannelAddress) -> Self {
         self.delivery_address = Some(input);
         self
     }
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn set_delivery_address(
         mut self,
         input: std::option::Option<crate::types::ContactChannelAddress>,

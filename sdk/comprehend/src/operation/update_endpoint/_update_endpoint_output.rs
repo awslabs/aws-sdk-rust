@@ -3,7 +3,16 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEndpointOutput {
+    /// <p>The Amazon Resource Number (ARN) of the new model.</p>
+    #[doc(hidden)]
+    pub desired_model_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
+}
+impl UpdateEndpointOutput {
+    /// <p>The Amazon Resource Number (ARN) of the new model.</p>
+    pub fn desired_model_arn(&self) -> std::option::Option<&str> {
+        self.desired_model_arn.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for UpdateEndpointOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +30,23 @@ impl UpdateEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEndpointOutputBuilder {
+    pub(crate) desired_model_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateEndpointOutputBuilder {
+    /// <p>The Amazon Resource Number (ARN) of the new model.</p>
+    pub fn desired_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.desired_model_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the new model.</p>
+    pub fn set_desired_model_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.desired_model_arn = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +59,7 @@ impl UpdateEndpointOutputBuilder {
     /// Consumes the builder and constructs a [`UpdateEndpointOutput`](crate::operation::update_endpoint::UpdateEndpointOutput).
     pub fn build(self) -> crate::operation::update_endpoint::UpdateEndpointOutput {
         crate::operation::update_endpoint::UpdateEndpointOutput {
+            desired_model_arn: self.desired_model_arn,
             _request_id: self._request_id,
         }
     }

@@ -7,10 +7,10 @@ pub struct SyncResourceSummary {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::SyncResourceType>,
-    /// <p>The external Id.</p>
+    /// <p>The external ID.</p>
     #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
-    /// <p>The resource Id.</p>
+    /// <p>The resource ID.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The sync resource summary status.</p>
@@ -25,11 +25,11 @@ impl SyncResourceSummary {
     pub fn resource_type(&self) -> std::option::Option<&crate::types::SyncResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The external Id.</p>
+    /// <p>The external ID.</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
-    /// <p>The resource Id.</p>
+    /// <p>The resource ID.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -73,22 +73,22 @@ impl SyncResourceSummaryBuilder {
         self.resource_type = input;
         self
     }
-    /// <p>The external Id.</p>
+    /// <p>The external ID.</p>
     pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.external_id = Some(input.into());
         self
     }
-    /// <p>The external Id.</p>
+    /// <p>The external ID.</p>
     pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.external_id = input;
         self
     }
-    /// <p>The resource Id.</p>
+    /// <p>The resource ID.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.resource_id = Some(input.into());
         self
     }
-    /// <p>The resource Id.</p>
+    /// <p>The resource ID.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.resource_id = input;
         self

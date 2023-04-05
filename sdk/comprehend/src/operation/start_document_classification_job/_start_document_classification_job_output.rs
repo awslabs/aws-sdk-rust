@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDocumentClassificationJobOutput {
-    /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
+    /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeDocumentClassificationJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -27,20 +27,23 @@ pub struct StartDocumentClassificationJobOutput {
     /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>
     /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.</p> </li>
     /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
     /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::types::JobStatus>,
+    /// <p>The ARN of the custom classification model.</p>
+    #[doc(hidden)]
+    pub document_classifier_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl StartDocumentClassificationJobOutput {
-    /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
+    /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeDocumentClassificationJob</code> operation.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -62,12 +65,16 @@ impl StartDocumentClassificationJobOutput {
     /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>
     /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.</p> </li>
     /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
     /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
     /// </ul>
     pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
+    }
+    /// <p>The ARN of the custom classification model.</p>
+    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+        self.document_classifier_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartDocumentClassificationJobOutput {
@@ -89,20 +96,21 @@ pub struct StartDocumentClassificationJobOutputBuilder {
     pub(crate) job_id: std::option::Option<std::string::String>,
     pub(crate) job_arn: std::option::Option<std::string::String>,
     pub(crate) job_status: std::option::Option<crate::types::JobStatus>,
+    pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl StartDocumentClassificationJobOutputBuilder {
-    /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
+    /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeDocumentClassificationJob</code> operation.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.job_id = Some(input.into());
         self
     }
-    /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
+    /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeDocumentClassificationJob</code> operation.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -120,7 +128,7 @@ impl StartDocumentClassificationJobOutputBuilder {
         self.job_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -143,7 +151,7 @@ impl StartDocumentClassificationJobOutputBuilder {
     /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>
     /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.</p> </li>
     /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
     /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
     /// </ul>
@@ -156,12 +164,25 @@ impl StartDocumentClassificationJobOutputBuilder {
     /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>
     /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.</p> </li>
     /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
     /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
     /// </ul>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
+        self
+    }
+    /// <p>The ARN of the custom classification model.</p>
+    pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.document_classifier_arn = Some(input.into());
+        self
+    }
+    /// <p>The ARN of the custom classification model.</p>
+    pub fn set_document_classifier_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.document_classifier_arn = input;
         self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -182,6 +203,7 @@ impl StartDocumentClassificationJobOutputBuilder {
             job_id: self.job_id,
             job_arn: self.job_arn,
             job_status: self.job_status,
+            document_classifier_arn: self.document_classifier_arn,
             _request_id: self._request_id,
         }
     }

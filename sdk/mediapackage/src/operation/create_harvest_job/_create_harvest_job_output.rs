@@ -9,7 +9,7 @@ pub struct CreateHarvestJobOutput {
     /// The ID of the Channel that the HarvestJob will harvest from.
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
-    /// The time the HarvestJob was submitted
+    /// The date and time the HarvestJob was submitted.
     #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// The end of the time-window which will be harvested.
@@ -41,7 +41,7 @@ impl CreateHarvestJobOutput {
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
     }
-    /// The time the HarvestJob was submitted
+    /// The date and time the HarvestJob was submitted.
     pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
     }
@@ -119,12 +119,12 @@ impl CreateHarvestJobOutputBuilder {
         self.channel_id = input;
         self
     }
-    /// The time the HarvestJob was submitted
+    /// The date and time the HarvestJob was submitted.
     pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.created_at = Some(input.into());
         self
     }
-    /// The time the HarvestJob was submitted
+    /// The date and time the HarvestJob was submitted.
     pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.created_at = input;
         self

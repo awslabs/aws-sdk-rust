@@ -9,7 +9,9 @@ pub struct CreateConnectionInput {
     /// <p>A description for the connection to create.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of authorization to use for the connection.</p>
+    /// <p>The type of authorization to use for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::types::ConnectionAuthorizationType>,
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
@@ -25,7 +27,9 @@ impl CreateConnectionInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of authorization to use for the connection.</p>
+    /// <p>The type of authorization to use for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     pub fn authorization_type(
         &self,
     ) -> std::option::Option<&crate::types::ConnectionAuthorizationType> {
@@ -77,12 +81,16 @@ impl CreateConnectionInputBuilder {
         self.description = input;
         self
     }
-    /// <p>The type of authorization to use for the connection.</p>
+    /// <p>The type of authorization to use for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     pub fn authorization_type(mut self, input: crate::types::ConnectionAuthorizationType) -> Self {
         self.authorization_type = Some(input);
         self
     }
-    /// <p>The type of authorization to use for the connection.</p>
+    /// <p>The type of authorization to use for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     pub fn set_authorization_type(
         mut self,
         input: std::option::Option<crate::types::ConnectionAuthorizationType>,

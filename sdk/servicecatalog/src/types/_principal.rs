@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Principal {
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
@@ -12,7 +12,7 @@ pub struct Principal {
     pub principal_type: std::option::Option<crate::types::PrincipalType>,
 }
 impl Principal {
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
@@ -36,12 +36,12 @@ pub struct PrincipalBuilder {
     pub(crate) principal_type: std::option::Option<crate::types::PrincipalType>,
 }
 impl PrincipalBuilder {
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.principal_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.principal_arn = input;
         self

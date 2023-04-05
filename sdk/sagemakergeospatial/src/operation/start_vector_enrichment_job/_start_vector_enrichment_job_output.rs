@@ -21,7 +21,7 @@ pub struct StartVectorEnrichmentJobOutput {
     /// <p>The status of the Vector Enrichment job being started.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::VectorEnrichmentJobStatus>,
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Input configuration information for starting the Vector Enrichment job.</p>
@@ -64,7 +64,7 @@ impl StartVectorEnrichmentJobOutput {
     pub fn status(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -190,12 +190,12 @@ impl StartVectorEnrichmentJobOutputBuilder {
         self.status = input;
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.kms_key_id = input;
         self

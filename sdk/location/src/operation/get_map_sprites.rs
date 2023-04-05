@@ -88,6 +88,18 @@ impl GetMapSpritesInput {
                 .expect("formatting should succeed");
                 Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::get_map_sprites::GetMapSpritesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_3) = &_input.key {
+                    {
+                        query.push_kv("key", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
+                Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_map_sprites::GetMapSpritesInput,
@@ -98,6 +110,7 @@ impl GetMapSpritesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;

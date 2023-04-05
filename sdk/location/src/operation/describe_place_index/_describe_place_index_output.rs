@@ -6,7 +6,7 @@ pub struct DescribePlaceIndexOutput {
     /// <p>The name of the place index resource being described.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
@@ -51,7 +51,7 @@ impl DescribePlaceIndexOutput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
@@ -143,7 +143,7 @@ impl DescribePlaceIndexOutputBuilder {
         self.index_name = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
@@ -151,7 +151,7 @@ impl DescribePlaceIndexOutputBuilder {
         self.index_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>

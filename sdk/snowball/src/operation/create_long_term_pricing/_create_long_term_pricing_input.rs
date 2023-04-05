@@ -6,7 +6,6 @@ pub struct CreateLongTermPricingInput {
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
     #[doc(hidden)]
     pub long_term_pricing_type: std::option::Option<crate::types::LongTermPricingType>,
-    /// <p>snowballty</p>
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     #[doc(hidden)]
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
@@ -21,7 +20,6 @@ impl CreateLongTermPricingInput {
     ) -> std::option::Option<&crate::types::LongTermPricingType> {
         self.long_term_pricing_type.as_ref()
     }
-    /// <p>snowballty</p>
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub fn is_long_term_pricing_auto_renew(&self) -> std::option::Option<bool> {
         self.is_long_term_pricing_auto_renew
@@ -62,13 +60,11 @@ impl CreateLongTermPricingInputBuilder {
         self.long_term_pricing_type = input;
         self
     }
-    /// <p>snowballty</p>
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
         self.is_long_term_pricing_auto_renew = Some(input);
         self
     }
-    /// <p>snowballty</p>
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub fn set_is_long_term_pricing_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
         self.is_long_term_pricing_auto_renew = input;

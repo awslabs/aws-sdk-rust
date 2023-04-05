@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolvedAttributes {
-    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    /// <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code> only.</p>
     #[doc(hidden)]
     pub auto_ml_job_objective: std::option::Option<crate::types::AutoMlJobObjective>,
     /// <p>The problem type.</p>
@@ -15,7 +15,7 @@ pub struct ResolvedAttributes {
     pub completion_criteria: std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
 }
 impl ResolvedAttributes {
-    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    /// <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code> only.</p>
     pub fn auto_ml_job_objective(&self) -> std::option::Option<&crate::types::AutoMlJobObjective> {
         self.auto_ml_job_objective.as_ref()
     }
@@ -46,12 +46,12 @@ pub struct ResolvedAttributesBuilder {
     pub(crate) completion_criteria: std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
 }
 impl ResolvedAttributesBuilder {
-    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    /// <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code> only.</p>
     pub fn auto_ml_job_objective(mut self, input: crate::types::AutoMlJobObjective) -> Self {
         self.auto_ml_job_objective = Some(input);
         self
     }
-    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    /// <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code> only.</p>
     pub fn set_auto_ml_job_objective(
         mut self,
         input: std::option::Option<crate::types::AutoMlJobObjective>,

@@ -17,7 +17,7 @@ pub struct GetFindingStatisticsInput {
     pub group_by: std::option::Option<crate::types::GroupBy>,
     /// <p>The maximum number of items to include in each page of the response.</p>
     #[doc(hidden)]
-    pub size: i32,
+    pub size: std::option::Option<i32>,
     /// <p>The criteria to use to sort the query results.</p>
     #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::types::FindingStatisticsSortCriteria>,
@@ -38,7 +38,7 @@ impl GetFindingStatisticsInput {
         self.group_by.as_ref()
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
-    pub fn size(&self) -> i32 {
+    pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
     /// <p>The criteria to use to sort the query results.</p>
@@ -135,7 +135,7 @@ impl GetFindingStatisticsInputBuilder {
             crate::operation::get_finding_statistics::GetFindingStatisticsInput {
                 finding_criteria: self.finding_criteria,
                 group_by: self.group_by,
-                size: self.size.unwrap_or_default(),
+                size: self.size,
                 sort_criteria: self.sort_criteria,
             },
         )

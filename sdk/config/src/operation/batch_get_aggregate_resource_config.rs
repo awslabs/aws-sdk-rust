@@ -161,7 +161,7 @@ pub enum BatchGetAggregateResourceConfigError {
     NoSuchConfigurationAggregatorException(
         crate::types::error::NoSuchConfigurationAggregatorException,
     ),
-    /// <p>The requested action is invalid.</p>
+    /// <p>The requested action is not valid.</p>
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::types::error::ValidationException),

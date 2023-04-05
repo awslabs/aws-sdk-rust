@@ -18,6 +18,7 @@
 ///     BotStatus::Failed => { /* ... */ },
 ///     BotStatus::Importing => { /* ... */ },
 ///     BotStatus::Inactive => { /* ... */ },
+///     BotStatus::Updating => { /* ... */ },
 ///     BotStatus::Versioning => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum BotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    #[allow(missing_docs)] // documentation missing in model
     Versioning,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -78,6 +81,7 @@ impl std::convert::From<&str> for BotStatus {
             "Failed" => BotStatus::Failed,
             "Importing" => BotStatus::Importing,
             "Inactive" => BotStatus::Inactive,
+            "Updating" => BotStatus::Updating,
             "Versioning" => BotStatus::Versioning,
             other => BotStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -100,6 +104,7 @@ impl BotStatus {
             BotStatus::Failed => "Failed",
             BotStatus::Importing => "Importing",
             BotStatus::Inactive => "Inactive",
+            BotStatus::Updating => "Updating",
             BotStatus::Versioning => "Versioning",
             BotStatus::Unknown(value) => value.as_str(),
         }
@@ -113,6 +118,7 @@ impl BotStatus {
             "Failed",
             "Importing",
             "Inactive",
+            "Updating",
             "Versioning",
         ]
     }

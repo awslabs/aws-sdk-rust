@@ -610,6 +610,15 @@ pub fn ser_resource_details(
         crate::protocol_serde::shape_aws_wafv2_rule_group_details::ser_aws_wafv2_rule_group_details(&mut object_168, var_167)?;
         object_168.finish();
     }
+    if let Some(var_169) = &input.aws_ec2_route_table {
+        #[allow(unused_mut)]
+        let mut object_170 = object.key("AwsEc2RouteTable").start_object();
+        crate::protocol_serde::shape_aws_ec2_route_table_details::ser_aws_ec2_route_table_details(
+            &mut object_170,
+            var_169,
+        )?;
+        object_170.finish();
+    }
     Ok(())
 }
 
@@ -1050,6 +1059,11 @@ where
                             "AwsWafv2RuleGroup" => {
                                 builder = builder.set_aws_wafv2_rule_group(
                                     crate::protocol_serde::shape_aws_wafv2_rule_group_details::de_aws_wafv2_rule_group_details(tokens)?
+                                );
+                            }
+                            "AwsEc2RouteTable" => {
+                                builder = builder.set_aws_ec2_route_table(
+                                    crate::protocol_serde::shape_aws_ec2_route_table_details::de_aws_ec2_route_table_details(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

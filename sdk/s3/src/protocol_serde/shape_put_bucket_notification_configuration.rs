@@ -19,12 +19,11 @@ pub fn ser_put_bucket_notification_configuration_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
-    if input.skip_destination_validation {
-        let mut encoder =
-            aws_smithy_types::primitive::Encoder::from(input.skip_destination_validation);
-        let formatted_3 = encoder.encode();
-        if !formatted_3.is_empty() {
-            let header_value = formatted_3;
+    if let Some(inner_3) = &input.skip_destination_validation {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_3);
+        let formatted_4 = encoder.encode();
+        if !formatted_4.is_empty() {
+            let header_value = formatted_4;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "skip_destination_validation",

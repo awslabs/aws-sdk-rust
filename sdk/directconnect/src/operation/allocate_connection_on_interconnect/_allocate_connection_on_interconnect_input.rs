@@ -17,7 +17,7 @@ pub struct AllocateConnectionOnInterconnectInput {
     pub interconnect_id: std::option::Option<std::string::String>,
     /// <p>The dedicated VLAN provisioned to the connection.</p>
     #[doc(hidden)]
-    pub vlan: i32,
+    pub vlan: std::option::Option<i32>,
 }
 impl AllocateConnectionOnInterconnectInput {
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
@@ -37,7 +37,7 @@ impl AllocateConnectionOnInterconnectInput {
         self.interconnect_id.as_deref()
     }
     /// <p>The dedicated VLAN provisioned to the connection.</p>
-    pub fn vlan(&self) -> i32 {
+    pub fn vlan(&self) -> std::option::Option<i32> {
         self.vlan
     }
 }
@@ -122,7 +122,6 @@ impl AllocateConnectionOnInterconnectInputBuilder {
                 interconnect_id: self.interconnect_id
                 ,
                 vlan: self.vlan
-                    .unwrap_or_default()
                 ,
             }
         )

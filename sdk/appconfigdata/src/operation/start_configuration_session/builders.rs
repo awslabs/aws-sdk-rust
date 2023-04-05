@@ -5,7 +5,7 @@ pub use crate::operation::start_configuration_session::_start_configuration_sess
 
 /// Fluent builder constructing a request to `StartConfigurationSession`.
 ///
-/// <p>Starts a configuration session used to retrieve a deployed configuration. For more information about this API action and to view example CLI commands that show how to use it with the <code>GetLatestConfiguration</code> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the configuration</a> in the <i>AppConfig User Guide</i>. </p>
+/// <p>Starts a configuration session used to retrieve a deployed configuration. For more information about this API action and to view example CLI commands that show how to use it with the <code>GetLatestConfiguration</code> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving the configuration</a> in the <i>AppConfig User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartConfigurationSessionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -111,12 +111,12 @@ impl StartConfigurationSessionFluentBuilder {
         self.inner = self.inner.set_configuration_profile_identifier(input);
         self
     }
-    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn required_minimum_poll_interval_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.required_minimum_poll_interval_in_seconds(input);
         self
     }
-    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn set_required_minimum_poll_interval_in_seconds(
         mut self,
         input: std::option::Option<i32>,

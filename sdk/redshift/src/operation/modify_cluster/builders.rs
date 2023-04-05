@@ -173,7 +173,7 @@ impl ModifyClusterFluentBuilder {
         self
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
-    /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
+    /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>
@@ -189,7 +189,7 @@ impl ModifyClusterFluentBuilder {
         self
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
-    /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
+    /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>

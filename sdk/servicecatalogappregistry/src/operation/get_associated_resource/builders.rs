@@ -69,12 +69,12 @@ impl GetAssociatedResourceFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
         self
     }
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_application(input);
         self

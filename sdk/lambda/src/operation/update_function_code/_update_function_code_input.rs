@@ -30,10 +30,10 @@ pub struct UpdateFunctionCodeInput {
     pub image_uri: std::option::Option<std::string::String>,
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     #[doc(hidden)]
-    pub publish: bool,
+    pub publish: std::option::Option<bool>,
     /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
     #[doc(hidden)]
-    pub dry_run: bool,
+    pub dry_run: std::option::Option<bool>,
     /// <p>Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
@@ -74,11 +74,11 @@ impl UpdateFunctionCodeInput {
         self.image_uri.as_deref()
     }
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
-    pub fn publish(&self) -> bool {
+    pub fn publish(&self) -> std::option::Option<bool> {
         self.publish
     }
     /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
     /// <p>Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
@@ -271,8 +271,8 @@ impl UpdateFunctionCodeInputBuilder {
                 s3_key: self.s3_key,
                 s3_object_version: self.s3_object_version,
                 image_uri: self.image_uri,
-                publish: self.publish.unwrap_or_default(),
-                dry_run: self.dry_run.unwrap_or_default(),
+                publish: self.publish,
+                dry_run: self.dry_run,
                 revision_id: self.revision_id,
                 architectures: self.architectures,
             },

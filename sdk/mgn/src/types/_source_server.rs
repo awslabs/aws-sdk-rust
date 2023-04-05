@@ -37,6 +37,12 @@ pub struct SourceServer {
     /// <p>Source server application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
+    /// <p>Source server user provided ID.</p>
+    #[doc(hidden)]
+    pub user_provided_id: std::option::Option<std::string::String>,
+    /// <p>Source server fqdn for action framework.</p>
+    #[doc(hidden)]
+    pub fqdn_for_action_framework: std::option::Option<std::string::String>,
 }
 impl SourceServer {
     /// <p>Source server ID.</p>
@@ -86,6 +92,14 @@ impl SourceServer {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
+    /// <p>Source server user provided ID.</p>
+    pub fn user_provided_id(&self) -> std::option::Option<&str> {
+        self.user_provided_id.as_deref()
+    }
+    /// <p>Source server fqdn for action framework.</p>
+    pub fn fqdn_for_action_framework(&self) -> std::option::Option<&str> {
+        self.fqdn_for_action_framework.as_deref()
+    }
 }
 impl std::fmt::Debug for SourceServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -101,6 +115,8 @@ impl std::fmt::Debug for SourceServer {
         formatter.field("replication_type", &self.replication_type);
         formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.field("application_id", &self.application_id);
+        formatter.field("user_provided_id", &self.user_provided_id);
+        formatter.field("fqdn_for_action_framework", &self.fqdn_for_action_framework);
         formatter.finish()
     }
 }
@@ -127,6 +143,8 @@ pub struct SourceServerBuilder {
     pub(crate) replication_type: std::option::Option<crate::types::ReplicationType>,
     pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
     pub(crate) application_id: std::option::Option<std::string::String>,
+    pub(crate) user_provided_id: std::option::Option<std::string::String>,
+    pub(crate) fqdn_for_action_framework: std::option::Option<std::string::String>,
 }
 impl SourceServerBuilder {
     /// <p>Source server ID.</p>
@@ -269,6 +287,29 @@ impl SourceServerBuilder {
         self.application_id = input;
         self
     }
+    /// <p>Source server user provided ID.</p>
+    pub fn user_provided_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.user_provided_id = Some(input.into());
+        self
+    }
+    /// <p>Source server user provided ID.</p>
+    pub fn set_user_provided_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.user_provided_id = input;
+        self
+    }
+    /// <p>Source server fqdn for action framework.</p>
+    pub fn fqdn_for_action_framework(mut self, input: impl Into<std::string::String>) -> Self {
+        self.fqdn_for_action_framework = Some(input.into());
+        self
+    }
+    /// <p>Source server fqdn for action framework.</p>
+    pub fn set_fqdn_for_action_framework(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.fqdn_for_action_framework = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SourceServer`](crate::types::SourceServer).
     pub fn build(self) -> crate::types::SourceServer {
         crate::types::SourceServer {
@@ -283,6 +324,8 @@ impl SourceServerBuilder {
             replication_type: self.replication_type,
             vcenter_client_id: self.vcenter_client_id,
             application_id: self.application_id,
+            user_provided_id: self.user_provided_id,
+            fqdn_for_action_framework: self.fqdn_for_action_framework,
         }
     }
 }
@@ -300,6 +343,8 @@ impl std::fmt::Debug for SourceServerBuilder {
         formatter.field("replication_type", &self.replication_type);
         formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.field("application_id", &self.application_id);
+        formatter.field("user_provided_id", &self.user_provided_id);
+        formatter.field("fqdn_for_action_framework", &self.fqdn_for_action_framework);
         formatter.finish()
     }
 }

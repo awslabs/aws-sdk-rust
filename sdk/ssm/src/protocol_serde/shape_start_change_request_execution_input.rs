@@ -36,40 +36,40 @@ pub fn ser_start_change_request_execution_input(
     if let Some(var_11) = &input.client_token {
         object.key("ClientToken").string(var_11.as_str());
     }
-    if input.auto_approve {
-        object.key("AutoApprove").boolean(input.auto_approve);
+    if let Some(var_12) = &input.auto_approve {
+        object.key("AutoApprove").boolean(*var_12);
     }
-    if let Some(var_12) = &input.runbooks {
-        let mut array_13 = object.key("Runbooks").start_array();
-        for item_14 in var_12 {
+    if let Some(var_13) = &input.runbooks {
+        let mut array_14 = object.key("Runbooks").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_runbook::ser_runbook(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_runbook::ser_runbook(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_16) = &input.tags {
-        let mut array_17 = object.key("Tags").start_array();
-        for item_18 in var_16 {
+    if let Some(var_17) = &input.tags {
+        let mut array_18 = object.key("Tags").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_17.finish();
+        array_18.finish();
     }
-    if let Some(var_20) = &input.scheduled_end_time {
+    if let Some(var_21) = &input.scheduled_end_time {
         object
             .key("ScheduledEndTime")
-            .date_time(var_20, aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_21, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_21) = &input.change_details {
-        object.key("ChangeDetails").string(var_21.as_str());
+    if let Some(var_22) = &input.change_details {
+        object.key("ChangeDetails").string(var_22.as_str());
     }
     Ok(())
 }

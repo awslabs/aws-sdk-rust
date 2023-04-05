@@ -21,10 +21,10 @@ pub struct DescribeDataSourceOutput {
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::types::DataSourceVpcConfiguration>,
-    /// <p>The Unix timestamp of when the data source connector was created.</p>
+    /// <p>The Unix timestamp when the data source connector was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Unix timestamp of when the data source connector was last updated.</p>
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the data source connector.</p>
@@ -79,11 +79,11 @@ impl DescribeDataSourceOutput {
     ) -> std::option::Option<&crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
-    /// <p>The Unix timestamp of when the data source connector was created.</p>
+    /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix timestamp of when the data source connector was last updated.</p>
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -221,12 +221,12 @@ impl DescribeDataSourceOutputBuilder {
         self.vpc_configuration = input;
         self
     }
-    /// <p>The Unix timestamp of when the data source connector was created.</p>
+    /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The Unix timestamp of when the data source connector was created.</p>
+    /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -234,12 +234,12 @@ impl DescribeDataSourceOutputBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The Unix timestamp of when the data source connector was last updated.</p>
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The Unix timestamp of when the data source connector was last updated.</p>
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

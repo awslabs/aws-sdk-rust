@@ -6,7 +6,7 @@
 pub struct DescribeEndpointsInput {
     /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
     #[doc(hidden)]
     pub mode: std::option::Option<crate::types::DescribeEndpointsMode>,
@@ -16,7 +16,7 @@ pub struct DescribeEndpointsInput {
 }
 impl DescribeEndpointsInput {
     /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
@@ -87,7 +87,7 @@ impl DescribeEndpointsInputBuilder {
     > {
         Ok(
             crate::operation::describe_endpoints::DescribeEndpointsInput {
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 mode: self.mode,
                 next_token: self.next_token,
             },

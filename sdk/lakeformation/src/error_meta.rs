@@ -9,7 +9,7 @@ pub enum Error {
     AlreadyExistsException(crate::types::error::AlreadyExistsException),
     /// <p>Two processes are trying to modify a resource simultaneously.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>A specified entity does not exist</p>
+    /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>Contains details about an error where the query request expired.</p>
     ExpiredException(crate::types::error::ExpiredException),
@@ -720,6 +720,49 @@ impl From<crate::operation::extend_transaction::ExtendTransactionError> for Erro
             crate::operation::extend_transaction::ExtendTransactionError::TransactionCommitInProgressException(inner) => Error::TransactionCommitInProgressException(inner),
             crate::operation::extend_transaction::ExtendTransactionError::TransactionCommittedException(inner) => Error::TransactionCommittedException(inner),
             crate::operation::extend_transaction::ExtendTransactionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_data_cells_filter::GetDataCellsFilterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_data_cells_filter::GetDataCellsFilterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_data_cells_filter::GetDataCellsFilterError> for Error {
+    fn from(err: crate::operation::get_data_cells_filter::GetDataCellsFilterError) -> Self {
+        match err {
+            crate::operation::get_data_cells_filter::GetDataCellsFilterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_data_cells_filter::GetDataCellsFilterError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_data_cells_filter::GetDataCellsFilterError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_data_cells_filter::GetDataCellsFilterError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_data_cells_filter::GetDataCellsFilterError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::get_data_cells_filter::GetDataCellsFilterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1817,6 +1860,50 @@ impl From<crate::operation::start_transaction::StartTransactionError> for Error 
             crate::operation::start_transaction::StartTransactionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::start_transaction::StartTransactionError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::start_transaction::StartTransactionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_data_cells_filter::UpdateDataCellsFilterError> for Error {
+    fn from(err: crate::operation::update_data_cells_filter::UpdateDataCellsFilterError) -> Self {
+        match err {
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

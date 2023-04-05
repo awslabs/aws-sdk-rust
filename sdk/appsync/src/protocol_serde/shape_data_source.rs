@@ -98,6 +98,11 @@ where
                                     crate::protocol_serde::shape_relational_database_data_source_config::de_relational_database_data_source_config(tokens)?
                                 );
                             }
+                            "eventBridgeConfig" => {
+                                builder = builder.set_event_bridge_config(
+                                    crate::protocol_serde::shape_event_bridge_data_source_config::de_event_bridge_data_source_config(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

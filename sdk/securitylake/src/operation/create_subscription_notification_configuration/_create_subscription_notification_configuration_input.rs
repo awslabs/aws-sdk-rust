@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSubscriptionNotificationConfigurationInput {
-    /// <p>The subscription ID for the notification subscription/</p>
+    /// <p>The subscription ID for the notification subscription.</p>
     #[doc(hidden)]
     pub subscription_id: std::option::Option<std::string::String>,
     /// <p>The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this field.</p>
@@ -21,12 +21,12 @@ pub struct CreateSubscriptionNotificationConfigurationInput {
     /// <p>Create an Amazon Simple Queue Service queue.</p>
     #[doc(hidden)]
     pub create_sqs: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CreateSubscriptionNotificationConfigurationInput {
-    /// <p>The subscription ID for the notification subscription/</p>
+    /// <p>The subscription ID for the notification subscription.</p>
     pub fn subscription_id(&self) -> std::option::Option<&str> {
         self.subscription_id.as_deref()
     }
@@ -50,7 +50,7 @@ impl CreateSubscriptionNotificationConfigurationInput {
     pub fn create_sqs(&self) -> std::option::Option<bool> {
         self.create_sqs
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -75,12 +75,12 @@ pub struct CreateSubscriptionNotificationConfigurationInputBuilder {
     pub(crate) role_arn: std::option::Option<std::string::String>,
 }
 impl CreateSubscriptionNotificationConfigurationInputBuilder {
-    /// <p>The subscription ID for the notification subscription/</p>
+    /// <p>The subscription ID for the notification subscription.</p>
     pub fn subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.subscription_id = Some(input.into());
         self
     }
-    /// <p>The subscription ID for the notification subscription/</p>
+    /// <p>The subscription ID for the notification subscription.</p>
     pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.subscription_id = input;
         self
@@ -147,12 +147,12 @@ impl CreateSubscriptionNotificationConfigurationInputBuilder {
         self.create_sqs = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.role_arn = input;
         self

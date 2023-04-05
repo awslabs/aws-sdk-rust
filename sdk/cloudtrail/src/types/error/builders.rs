@@ -53,6 +53,8 @@ pub use crate::types::error::_insufficient_encryption_policy_exception::Insuffic
 
 pub use crate::types::error::_insufficient_dependency_service_access_permission_exception::InsufficientDependencyServiceAccessPermissionExceptionBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_cloud_watch_logs_delivery_unavailable_exception::CloudWatchLogsDeliveryUnavailableExceptionBuilder;
 
 pub use crate::types::error::_cloud_trail_invalid_client_token_id_exception::CloudTrailInvalidClientTokenIdExceptionBuilder;
@@ -69,6 +71,14 @@ pub use crate::types::error::_event_data_store_has_ongoing_import_exception::Eve
 
 pub use crate::types::error::_event_data_store_arn_invalid_exception::EventDataStoreArnInvalidExceptionBuilder;
 
+pub use crate::types::error::_invalid_event_data_store_category_exception::InvalidEventDataStoreCategoryExceptionBuilder;
+
+pub use crate::types::error::_channel_not_found_exception::ChannelNotFoundExceptionBuilder;
+
+pub use crate::types::error::_channel_arn_invalid_exception::ChannelArnInvalidExceptionBuilder;
+
+pub use crate::types::error::_channel_already_exists_exception::ChannelAlreadyExistsExceptionBuilder;
+
 pub use crate::types::error::_import_not_found_exception::ImportNotFoundExceptionBuilder;
 
 pub use crate::types::error::_max_concurrent_queries_exception::MaxConcurrentQueriesExceptionBuilder;
@@ -78,8 +88,6 @@ pub use crate::types::error::_invalid_query_statement_exception::InvalidQuerySta
 pub use crate::types::error::_invalid_import_source_exception::InvalidImportSourceExceptionBuilder;
 
 pub use crate::types::error::_invalid_event_data_store_status_exception::InvalidEventDataStoreStatusExceptionBuilder;
-
-pub use crate::types::error::_invalid_event_data_store_category_exception::InvalidEventDataStoreCategoryExceptionBuilder;
 
 pub use crate::types::error::_account_has_ongoing_import_exception::AccountHasOngoingImportExceptionBuilder;
 
@@ -101,6 +109,10 @@ pub use crate::types::error::_account_registered_exception::AccountRegisteredExc
 
 pub use crate::types::error::_account_not_found_exception::AccountNotFoundExceptionBuilder;
 
+pub use crate::types::error::_resource_policy_not_valid_exception::ResourcePolicyNotValidExceptionBuilder;
+
+pub use crate::types::error::_resource_arn_not_valid_exception::ResourceArnNotValidExceptionBuilder;
+
 pub use crate::types::error::_invalid_insight_selectors_exception::InvalidInsightSelectorsExceptionBuilder;
 
 pub use crate::types::error::_invalid_time_range_exception::InvalidTimeRangeExceptionBuilder;
@@ -119,19 +131,17 @@ pub use crate::types::error::_invalid_query_status_exception::InvalidQueryStatus
 
 pub use crate::types::error::_invalid_date_range_exception::InvalidDateRangeExceptionBuilder;
 
+pub use crate::types::error::_resource_policy_not_found_exception::ResourcePolicyNotFoundExceptionBuilder;
+
 pub use crate::types::error::_query_id_not_found_exception::QueryIdNotFoundExceptionBuilder;
 
 pub use crate::types::error::_insight_not_enabled_exception::InsightNotEnabledExceptionBuilder;
 
-pub use crate::types::error::_channel_not_found_exception::ChannelNotFoundExceptionBuilder;
-
-pub use crate::types::error::_channel_arn_invalid_exception::ChannelArnInvalidExceptionBuilder;
-
 pub use crate::types::error::_account_not_registered_exception::AccountNotRegisteredExceptionBuilder;
 
-pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
-
 pub use crate::types::error::_event_data_store_termination_protected_exception::EventDataStoreTerminationProtectedExceptionBuilder;
+
+pub use crate::types::error::_channel_exists_for_eds_exception::ChannelExistsForEdsExceptionBuilder;
 
 pub use crate::types::error::_trail_already_exists_exception::TrailAlreadyExistsExceptionBuilder;
 
@@ -140,5 +150,9 @@ pub use crate::types::error::_tags_limit_exceeded_exception::TagsLimitExceededEx
 pub use crate::types::error::_maximum_number_of_trails_exceeded_exception::MaximumNumberOfTrailsExceededExceptionBuilder;
 
 pub use crate::types::error::_event_data_store_already_exists_exception::EventDataStoreAlreadyExistsExceptionBuilder;
+
+pub use crate::types::error::_invalid_source_exception::InvalidSourceExceptionBuilder;
+
+pub use crate::types::error::_channel_max_limit_exceeded_exception::ChannelMaxLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_inactive_query_exception::InactiveQueryExceptionBuilder;

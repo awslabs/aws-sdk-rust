@@ -8,7 +8,7 @@ pub struct DeleteFlowInput {
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     #[doc(hidden)]
-    pub force_delete: bool,
+    pub force_delete: std::option::Option<bool>,
 }
 impl DeleteFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
@@ -16,7 +16,7 @@ impl DeleteFlowInput {
         self.flow_name.as_deref()
     }
     /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
-    pub fn force_delete(&self) -> bool {
+    pub fn force_delete(&self) -> std::option::Option<bool> {
         self.force_delete
     }
 }
@@ -64,7 +64,7 @@ impl DeleteFlowInputBuilder {
     > {
         Ok(crate::operation::delete_flow::DeleteFlowInput {
             flow_name: self.flow_name,
-            force_delete: self.force_delete.unwrap_or_default(),
+            force_delete: self.force_delete,
         })
     }
 }

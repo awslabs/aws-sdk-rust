@@ -106,12 +106,12 @@ impl StartReadSetImportJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>Source files to import.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::StartReadSetImportJobSourceItem) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    /// <p>Source files to import.</p>
+    /// <p>The job's source files.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>>,

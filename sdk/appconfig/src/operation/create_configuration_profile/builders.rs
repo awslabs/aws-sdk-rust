@@ -5,7 +5,16 @@ pub use crate::operation::create_configuration_profile::_create_configuration_pr
 
 /// Fluent builder constructing a request to `CreateConfigurationProfile`.
 ///
-/// <p>Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the AppConfig hosted configuration store, Amazon Web Services Systems Manager (SSM) documents, SSM Parameter Store parameters, Amazon S3 objects, or any <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration source action</a> supported by CodePipeline. A configuration profile includes the following information:</p>
+/// <p>Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the following:</p>
+/// <ul>
+/// <li> <p>Configuration data in YAML, JSON, and other formats stored in the AppConfig hosted configuration store</p> </li>
+/// <li> <p>Configuration data stored as objects in an Amazon Simple Storage Service (Amazon S3) bucket</p> </li>
+/// <li> <p>Pipelines stored in CodePipeline</p> </li>
+/// <li> <p>Secrets stored in Secrets Manager</p> </li>
+/// <li> <p>Standard and secure string parameters stored in Amazon Web Services Systems Manager Parameter Store</p> </li>
+/// <li> <p>Configuration data in SSM documents stored in the Systems Manager document store</p> </li>
+/// </ul>
+/// <p>A configuration profile includes the following information:</p>
 /// <ul>
 /// <li> <p>The URI location of the configuration data.</p> </li>
 /// <li> <p>The Identity and Access Management (IAM) role that provides access to the configuration data.</p> </li>
@@ -105,26 +114,44 @@ impl CreateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+    /// <p>A URI to locate the configuration. You can specify the following:</p>
+    /// <ul>
+    /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
+    /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
+    /// <parameter name></parameter></code> or the ARN.</p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// .
+    /// </secret></p> </li>
+    /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
     /// <bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li>
+    /// <li> <p>For an SSM document, specify either the document name in the format <code>ssm-document://
+    /// <document name></document></code> or the Amazon Resource Name (ARN).</p> </li>
+    /// </ul>
     pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.location_uri(input.into());
         self
     }
-    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+    /// <p>A URI to locate the configuration. You can specify the following:</p>
+    /// <ul>
+    /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
+    /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
+    /// <parameter name></parameter></code> or the ARN.</p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// .
+    /// </secret></p> </li>
+    /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
     /// <bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li>
+    /// <li> <p>For an SSM document, specify either the document name in the format <code>ssm-document://
+    /// <document name></document></code> or the Amazon Resource Name (ARN).</p> </li>
+    /// </ul>
     pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_location_uri(input);
         self

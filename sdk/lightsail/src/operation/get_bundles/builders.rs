@@ -90,4 +90,21 @@ impl GetBundlesFluentBuilder {
         self.inner = self.inner.set_page_token(input);
         self
     }
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
+    /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
+    /// </important>
+    pub fn app_category(mut self, input: crate::types::AppCategory) -> Self {
+        self.inner = self.inner.app_category(input);
+        self
+    }
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
+    /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
+    /// </important>
+    pub fn set_app_category(
+        mut self,
+        input: std::option::Option<crate::types::AppCategory>,
+    ) -> Self {
+        self.inner = self.inner.set_app_category(input);
+        self
+    }
 }

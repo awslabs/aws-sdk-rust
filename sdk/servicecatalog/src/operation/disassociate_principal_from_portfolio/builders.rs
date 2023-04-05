@@ -60,7 +60,6 @@ impl DisassociatePrincipalFromPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -70,7 +69,6 @@ impl DisassociatePrincipalFromPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -88,12 +86,12 @@ impl DisassociatePrincipalFromPortfolioFluentBuilder {
         self.inner = self.inner.set_portfolio_id(input);
         self
     }
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self

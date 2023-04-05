@@ -28,7 +28,7 @@ pub struct UpdateComponentTypeInput {
     pub functions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::FunctionRequest>,
     >,
-    /// <p>The property groups</p>
+    /// <p>The property groups.</p>
     #[doc(hidden)]
     pub property_groups: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::PropertyGroupRequest>,
@@ -74,7 +74,7 @@ impl UpdateComponentTypeInput {
     > {
         self.functions.as_ref()
     }
-    /// <p>The property groups</p>
+    /// <p>The property groups.</p>
     pub fn property_groups(
         &self,
     ) -> std::option::Option<
@@ -233,7 +233,7 @@ impl UpdateComponentTypeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
     ///
-    /// <p>The property groups</p>
+    /// <p>The property groups.</p>
     pub fn property_groups(
         mut self,
         k: impl Into<std::string::String>,
@@ -244,7 +244,7 @@ impl UpdateComponentTypeInputBuilder {
         self.property_groups = Some(hash_map);
         self
     }
-    /// <p>The property groups</p>
+    /// <p>The property groups.</p>
     pub fn set_property_groups(
         mut self,
         input: std::option::Option<

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The configuration being updated.</p>
     #[doc(hidden)]
     pub emergency_calling_configuration:
         std::option::Option<crate::types::EmergencyCallingConfiguration>,
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The configuration being updated.</p>
     pub fn emergency_calling_configuration(
         &self,
     ) -> std::option::Option<&crate::types::EmergencyCallingConfiguration> {
@@ -39,12 +39,12 @@ pub struct PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         std::option::Option<crate::types::EmergencyCallingConfiguration>,
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -52,7 +52,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         self.voice_connector_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The configuration being updated.</p>
     pub fn emergency_calling_configuration(
         mut self,
         input: crate::types::EmergencyCallingConfiguration,
@@ -60,7 +60,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         self.emergency_calling_configuration = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The configuration being updated.</p>
     pub fn set_emergency_calling_configuration(
         mut self,
         input: std::option::Option<crate::types::EmergencyCallingConfiguration>,

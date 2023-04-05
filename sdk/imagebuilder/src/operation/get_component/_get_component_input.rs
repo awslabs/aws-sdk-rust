@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComponentInput {
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
     #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetComponentInput {
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
     pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
         self.component_build_version_arn.as_deref()
     }
@@ -27,12 +27,12 @@ pub struct GetComponentInputBuilder {
     pub(crate) component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetComponentInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
     pub fn component_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.component_build_version_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
     pub fn set_component_build_version_arn(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -3,10 +3,8 @@ pub fn ser_put_configuration_set_reputation_options_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.reputation_metrics_enabled {
-        object
-            .key("ReputationMetricsEnabled")
-            .boolean(input.reputation_metrics_enabled);
+    if let Some(var_1) = &input.reputation_metrics_enabled {
+        object.key("ReputationMetricsEnabled").boolean(*var_1);
     }
     Ok(())
 }

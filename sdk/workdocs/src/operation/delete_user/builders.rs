@@ -5,7 +5,9 @@ pub use crate::operation::delete_user::_delete_user_input::DeleteUserInputBuilde
 
 /// Fluent builder constructing a request to `DeleteUser`.
 ///
-/// <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p>
+/// <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p> <important>
+/// <p>Deleting a user immediately and permanently deletes all content in that user's folder structure. Site retention policies do NOT apply to this type of deletion.</p>
+/// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUserFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,12 +67,12 @@ impl DeleteUserFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,

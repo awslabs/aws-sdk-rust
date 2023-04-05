@@ -3,44 +3,44 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDistributionConfigurationInput {
-    /// <p> The name of the distribution configuration.</p>
+    /// <p>The name of the distribution configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p> The description of the distribution configuration.</p>
+    /// <p>The description of the distribution configuration.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p> The distributions of the distribution configuration.</p>
+    /// <p>The distributions of the distribution configuration.</p>
     #[doc(hidden)]
     pub distributions: std::option::Option<std::vec::Vec<crate::types::Distribution>>,
-    /// <p> The tags of the distribution configuration.</p>
+    /// <p>The tags of the distribution configuration.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p> The idempotency token of the distribution configuration.</p>
+    /// <p>The idempotency token of the distribution configuration.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDistributionConfigurationInput {
-    /// <p> The name of the distribution configuration.</p>
+    /// <p>The name of the distribution configuration.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The description of the distribution configuration.</p>
+    /// <p>The description of the distribution configuration.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The distributions of the distribution configuration.</p>
+    /// <p>The distributions of the distribution configuration.</p>
     pub fn distributions(&self) -> std::option::Option<&[crate::types::Distribution]> {
         self.distributions.as_deref()
     }
-    /// <p> The tags of the distribution configuration.</p>
+    /// <p>The tags of the distribution configuration.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p> The idempotency token of the distribution configuration.</p>
+    /// <p>The idempotency token of the distribution configuration.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -64,22 +64,22 @@ pub struct CreateDistributionConfigurationInputBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl CreateDistributionConfigurationInputBuilder {
-    /// <p> The name of the distribution configuration.</p>
+    /// <p>The name of the distribution configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p> The name of the distribution configuration.</p>
+    /// <p>The name of the distribution configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The description of the distribution configuration.</p>
+    /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p> The description of the distribution configuration.</p>
+    /// <p>The description of the distribution configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
         self
@@ -88,14 +88,14 @@ impl CreateDistributionConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
     ///
-    /// <p> The distributions of the distribution configuration.</p>
+    /// <p>The distributions of the distribution configuration.</p>
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
         v.push(input);
         self.distributions = Some(v);
         self
     }
-    /// <p> The distributions of the distribution configuration.</p>
+    /// <p>The distributions of the distribution configuration.</p>
     pub fn set_distributions(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Distribution>>,
@@ -107,7 +107,7 @@ impl CreateDistributionConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags of the distribution configuration.</p>
+    /// <p>The tags of the distribution configuration.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -118,7 +118,7 @@ impl CreateDistributionConfigurationInputBuilder {
         self.tags = Some(hash_map);
         self
     }
-    /// <p> The tags of the distribution configuration.</p>
+    /// <p>The tags of the distribution configuration.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<
@@ -128,12 +128,12 @@ impl CreateDistributionConfigurationInputBuilder {
         self.tags = input;
         self
     }
-    /// <p> The idempotency token of the distribution configuration.</p>
+    /// <p>The idempotency token of the distribution configuration.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p> The idempotency token of the distribution configuration.</p>
+    /// <p>The idempotency token of the distribution configuration.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.client_token = input;
         self

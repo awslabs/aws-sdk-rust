@@ -24,7 +24,7 @@ pub struct ContactChannel {
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     #[doc(hidden)]
     pub delivery_address: std::option::Option<crate::types::ContactChannelAddress>,
-    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
+    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
     #[doc(hidden)]
     pub activation_status: std::option::Option<crate::types::ActivationStatus>,
 }
@@ -54,7 +54,7 @@ impl ContactChannel {
     pub fn delivery_address(&self) -> std::option::Option<&crate::types::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
-    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
+    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
     pub fn activation_status(&self) -> std::option::Option<&crate::types::ActivationStatus> {
         self.activation_status.as_ref()
     }
@@ -144,12 +144,12 @@ impl ContactChannelBuilder {
         self.delivery_address = input;
         self
     }
-    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
+    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
     pub fn activation_status(mut self, input: crate::types::ActivationStatus) -> Self {
         self.activation_status = Some(input);
         self
     }
-    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
+    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
     pub fn set_activation_status(
         mut self,
         input: std::option::Option<crate::types::ActivationStatus>,

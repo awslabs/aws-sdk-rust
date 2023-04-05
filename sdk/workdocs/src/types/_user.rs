@@ -116,10 +116,10 @@ impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("id", &self.id);
-        formatter.field("username", &self.username);
+        formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
+        formatter.field("given_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("surname", &"*** Sensitive Data Redacted ***");
         formatter.field("organization_id", &self.organization_id);
         formatter.field("root_folder_id", &self.root_folder_id);
         formatter.field("recycle_bin_folder_id", &self.recycle_bin_folder_id);
@@ -348,10 +348,10 @@ impl std::fmt::Debug for UserBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserBuilder");
         formatter.field("id", &self.id);
-        formatter.field("username", &self.username);
+        formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
+        formatter.field("given_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("surname", &"*** Sensitive Data Redacted ***");
         formatter.field("organization_id", &self.organization_id);
         formatter.field("root_folder_id", &self.root_folder_id);
         formatter.field("recycle_bin_folder_id", &self.recycle_bin_folder_id);

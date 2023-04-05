@@ -15,10 +15,10 @@ pub fn ser_list_portfolio_access_input(
     if let Some(var_4) = &input.page_token {
         object.key("PageToken").string(var_4.as_str());
     }
-    if input.page_size != 0 {
+    if let Some(var_5) = &input.page_size {
         object.key("PageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.page_size).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

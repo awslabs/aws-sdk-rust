@@ -23,7 +23,7 @@ pub struct GetContainerServiceMetricDataInput {
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All container service metric data is available in 5-minute (300 seconds) granularity.</p>
     #[doc(hidden)]
-    pub period: i32,
+    pub period: std::option::Option<i32>,
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
@@ -60,7 +60,7 @@ impl GetContainerServiceMetricDataInput {
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All container service metric data is available in 5-minute (300 seconds) granularity.</p>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p>The statistic for the metric.</p>
@@ -216,7 +216,6 @@ impl GetContainerServiceMetricDataInputBuilder {
                 end_time: self.end_time
                 ,
                 period: self.period
-                    .unwrap_or_default()
                 ,
                 statistics: self.statistics
                 ,

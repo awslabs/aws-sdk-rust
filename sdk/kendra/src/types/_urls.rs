@@ -2,12 +2,12 @@
 
 /// <p>Provides the configuration information of the URLs to crawl.</p>
 /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-/// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
+/// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Urls {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
-    /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the webpages link to.</p>
+    /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
     #[doc(hidden)]
     pub seed_url_configuration: std::option::Option<crate::types::SeedUrlConfiguration>,
@@ -18,7 +18,7 @@ pub struct Urls {
 }
 impl Urls {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
-    /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the webpages link to.</p>
+    /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
     pub fn seed_url_configuration(
         &self,
@@ -49,14 +49,14 @@ pub struct UrlsBuilder {
 }
 impl UrlsBuilder {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
-    /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the webpages link to.</p>
+    /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
     pub fn seed_url_configuration(mut self, input: crate::types::SeedUrlConfiguration) -> Self {
         self.seed_url_configuration = Some(input);
         self
     }
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
-    /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the webpages link to.</p>
+    /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
     pub fn set_seed_url_configuration(
         mut self,

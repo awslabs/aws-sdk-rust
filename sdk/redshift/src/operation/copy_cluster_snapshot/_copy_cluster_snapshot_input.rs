@@ -11,7 +11,7 @@ pub struct CopyClusterSnapshotInput {
     /// </ul>
     #[doc(hidden)]
     pub source_snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
@@ -44,7 +44,7 @@ impl CopyClusterSnapshotInput {
     pub fn source_snapshot_identifier(&self) -> std::option::Option<&str> {
         self.source_snapshot_identifier.as_deref()
     }
-    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
@@ -111,7 +111,7 @@ impl CopyClusterSnapshotInputBuilder {
         self.source_snapshot_identifier = input;
         self
     }
-    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
@@ -123,7 +123,7 @@ impl CopyClusterSnapshotInputBuilder {
         self.source_snapshot_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be the identifier for a valid cluster.</p> </li>

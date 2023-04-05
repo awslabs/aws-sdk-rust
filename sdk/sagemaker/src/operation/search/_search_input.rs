@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchInput {
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<crate::types::ResourceType>,
     /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
@@ -23,7 +23,7 @@ pub struct SearchInput {
     pub max_results: std::option::Option<i32>,
 }
 impl SearchInput {
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     pub fn resource(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource.as_ref()
     }
@@ -67,12 +67,12 @@ pub struct SearchInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
 }
 impl SearchInputBuilder {
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     pub fn resource(mut self, input: crate::types::ResourceType) -> Self {
         self.resource = Some(input);
         self
     }
-    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    /// <p>The name of the SageMaker resource to search for.</p>
     pub fn set_resource(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource = input;
         self

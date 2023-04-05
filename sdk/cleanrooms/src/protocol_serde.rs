@@ -62,7 +62,13 @@ pub(crate) mod shape_list_protected_queries;
 
 pub(crate) mod shape_list_schemas;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_start_protected_query;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_collaboration;
 
@@ -107,6 +113,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_protected_query_input;
+
+pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
@@ -169,6 +177,8 @@ pub(crate) mod shape_schema_list;
 pub(crate) mod shape_schema_summary_list;
 
 pub(crate) mod shape_table_reference;
+
+pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_validation_exception_field_list;
 

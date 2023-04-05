@@ -19,6 +19,12 @@ pub struct OutboundConnection {
     /// <p>Status of the connection.</p>
     #[doc(hidden)]
     pub connection_status: std::option::Option<crate::types::OutboundConnectionStatus>,
+    /// <p>The connection mode.</p>
+    #[doc(hidden)]
+    pub connection_mode: std::option::Option<crate::types::ConnectionMode>,
+    /// <p>Properties for the outbound connection.</p>
+    #[doc(hidden)]
+    pub connection_properties: std::option::Option<crate::types::ConnectionProperties>,
 }
 impl OutboundConnection {
     /// <p>Information about the source (local) domain.</p>
@@ -47,6 +53,16 @@ impl OutboundConnection {
     ) -> std::option::Option<&crate::types::OutboundConnectionStatus> {
         self.connection_status.as_ref()
     }
+    /// <p>The connection mode.</p>
+    pub fn connection_mode(&self) -> std::option::Option<&crate::types::ConnectionMode> {
+        self.connection_mode.as_ref()
+    }
+    /// <p>Properties for the outbound connection.</p>
+    pub fn connection_properties(
+        &self,
+    ) -> std::option::Option<&crate::types::ConnectionProperties> {
+        self.connection_properties.as_ref()
+    }
 }
 impl OutboundConnection {
     /// Creates a new builder-style object to manufacture [`OutboundConnection`](crate::types::OutboundConnection).
@@ -64,6 +80,8 @@ pub struct OutboundConnectionBuilder {
     pub(crate) connection_id: std::option::Option<std::string::String>,
     pub(crate) connection_alias: std::option::Option<std::string::String>,
     pub(crate) connection_status: std::option::Option<crate::types::OutboundConnectionStatus>,
+    pub(crate) connection_mode: std::option::Option<crate::types::ConnectionMode>,
+    pub(crate) connection_properties: std::option::Option<crate::types::ConnectionProperties>,
 }
 impl OutboundConnectionBuilder {
     /// <p>Information about the source (local) domain.</p>
@@ -125,6 +143,32 @@ impl OutboundConnectionBuilder {
         self.connection_status = input;
         self
     }
+    /// <p>The connection mode.</p>
+    pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
+        self.connection_mode = Some(input);
+        self
+    }
+    /// <p>The connection mode.</p>
+    pub fn set_connection_mode(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionMode>,
+    ) -> Self {
+        self.connection_mode = input;
+        self
+    }
+    /// <p>Properties for the outbound connection.</p>
+    pub fn connection_properties(mut self, input: crate::types::ConnectionProperties) -> Self {
+        self.connection_properties = Some(input);
+        self
+    }
+    /// <p>Properties for the outbound connection.</p>
+    pub fn set_connection_properties(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionProperties>,
+    ) -> Self {
+        self.connection_properties = input;
+        self
+    }
     /// Consumes the builder and constructs a [`OutboundConnection`](crate::types::OutboundConnection).
     pub fn build(self) -> crate::types::OutboundConnection {
         crate::types::OutboundConnection {
@@ -133,6 +177,8 @@ impl OutboundConnectionBuilder {
             connection_id: self.connection_id,
             connection_alias: self.connection_alias,
             connection_status: self.connection_status,
+            connection_mode: self.connection_mode,
+            connection_properties: self.connection_properties,
         }
     }
 }

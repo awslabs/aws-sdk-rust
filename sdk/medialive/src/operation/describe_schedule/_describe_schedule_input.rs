@@ -9,7 +9,7 @@ pub struct DescribeScheduleInput {
     pub channel_id: std::option::Option<std::string::String>,
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// Placeholder documentation for __string
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ impl DescribeScheduleInput {
         self.channel_id.as_deref()
     }
     /// Placeholder documentation for MaxResults
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// Placeholder documentation for __string
@@ -84,7 +84,7 @@ impl DescribeScheduleInputBuilder {
     > {
         Ok(crate::operation::describe_schedule::DescribeScheduleInput {
             channel_id: self.channel_id,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

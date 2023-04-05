@@ -220,6 +220,10 @@ mod create_contact;
 
 mod create_contact_channel;
 
+mod create_rotation;
+
+mod create_rotation_override;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -254,6 +258,10 @@ mod delete_contact;
 
 mod delete_contact_channel;
 
+mod delete_rotation;
+
+mod delete_rotation_override;
+
 mod describe_engagement;
 
 mod describe_page;
@@ -264,6 +272,10 @@ mod get_contact_channel;
 
 mod get_contact_policy;
 
+mod get_rotation;
+
+mod get_rotation_override;
+
 mod list_contact_channels;
 
 mod list_contacts;
@@ -272,9 +284,19 @@ mod list_engagements;
 
 mod list_page_receipts;
 
+mod list_page_resolutions;
+
 mod list_pages_by_contact;
 
 mod list_pages_by_engagement;
+
+mod list_preview_rotation_shifts;
+
+mod list_rotation_overrides;
+
+mod list_rotation_shifts;
+
+mod list_rotations;
 
 mod list_tags_for_resource;
 
@@ -293,3 +315,5 @@ mod untag_resource;
 mod update_contact;
 
 mod update_contact_channel;
+
+mod update_rotation;

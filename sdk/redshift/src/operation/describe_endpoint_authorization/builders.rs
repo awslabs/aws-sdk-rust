@@ -88,12 +88,12 @@ impl DescribeEndpointAuthorizationFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
-    /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account(input.into());
         self
     }
-    /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_account(input);
         self

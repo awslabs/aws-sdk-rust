@@ -6,6 +6,7 @@ pub use crate::operation::delete_members::_delete_members_input::DeleteMembersIn
 /// Fluent builder constructing a request to `DeleteMembers`.
 ///
 /// <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p>
+/// <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty for a member account in your organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMembersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

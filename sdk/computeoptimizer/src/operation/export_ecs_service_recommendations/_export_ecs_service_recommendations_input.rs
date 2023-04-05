@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportEcsServiceRecommendationsInput {
-    /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
     /// <p>You can specify multiple account IDs per request.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>,
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -30,10 +30,10 @@ pub struct ExportEcsServiceRecommendationsInput {
     /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
     /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
     #[doc(hidden)]
-    pub include_member_accounts: bool,
+    pub include_member_accounts: std::option::Option<bool>,
 }
 impl ExportEcsServiceRecommendationsInput {
-    /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -41,7 +41,7 @@ impl ExportEcsServiceRecommendationsInput {
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
-    /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::types::EcsServiceRecommendationFilter]> {
         self.filters.as_deref()
     }
@@ -65,7 +65,7 @@ impl ExportEcsServiceRecommendationsInput {
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
     /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
-    pub fn include_member_accounts(&self) -> bool {
+    pub fn include_member_accounts(&self) -> std::option::Option<bool> {
         self.include_member_accounts
     }
 }
@@ -94,7 +94,7 @@ impl ExportEcsServiceRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -105,7 +105,7 @@ impl ExportEcsServiceRecommendationsInputBuilder {
         self.account_ids = Some(v);
         self
     }
-    /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -121,14 +121,14 @@ impl ExportEcsServiceRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     pub fn filters(mut self, input: crate::types::EcsServiceRecommendationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = Some(v);
         self
     }
-    /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     pub fn set_filters(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>,
@@ -218,7 +218,6 @@ impl ExportEcsServiceRecommendationsInputBuilder {
                 file_format: self.file_format
                 ,
                 include_member_accounts: self.include_member_accounts
-                    .unwrap_or_default()
                 ,
             }
         )

@@ -15,6 +15,9 @@ pub struct DeleteRecordInput {
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
     #[doc(hidden)]
     pub target_stores: std::option::Option<std::vec::Vec<crate::types::TargetStore>>,
+    /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
+    #[doc(hidden)]
+    pub deletion_mode: std::option::Option<crate::types::DeletionMode>,
 }
 impl DeleteRecordInput {
     /// <p>The name of the feature group to delete the record from. </p>
@@ -33,6 +36,10 @@ impl DeleteRecordInput {
     pub fn target_stores(&self) -> std::option::Option<&[crate::types::TargetStore]> {
         self.target_stores.as_deref()
     }
+    /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
+    pub fn deletion_mode(&self) -> std::option::Option<&crate::types::DeletionMode> {
+        self.deletion_mode.as_ref()
+    }
 }
 impl DeleteRecordInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecordInput`](crate::operation::delete_record::DeleteRecordInput).
@@ -49,6 +56,7 @@ pub struct DeleteRecordInputBuilder {
     pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,
     pub(crate) event_time: std::option::Option<std::string::String>,
     pub(crate) target_stores: std::option::Option<std::vec::Vec<crate::types::TargetStore>>,
+    pub(crate) deletion_mode: std::option::Option<crate::types::DeletionMode>,
 }
 impl DeleteRecordInputBuilder {
     /// <p>The name of the feature group to delete the record from. </p>
@@ -109,6 +117,19 @@ impl DeleteRecordInputBuilder {
         self.target_stores = input;
         self
     }
+    /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
+    pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
+        self.deletion_mode = Some(input);
+        self
+    }
+    /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
+    pub fn set_deletion_mode(
+        mut self,
+        input: std::option::Option<crate::types::DeletionMode>,
+    ) -> Self {
+        self.deletion_mode = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteRecordInput`](crate::operation::delete_record::DeleteRecordInput).
     pub fn build(
         self,
@@ -121,6 +142,7 @@ impl DeleteRecordInputBuilder {
             record_identifier_value_as_string: self.record_identifier_value_as_string,
             event_time: self.event_time,
             target_stores: self.target_stores,
+            deletion_mode: self.deletion_mode,
         })
     }
 }

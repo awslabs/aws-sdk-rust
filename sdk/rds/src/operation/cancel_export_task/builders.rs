@@ -5,7 +5,7 @@ pub use crate::operation::cancel_export_task::_cancel_export_task_input::CancelE
 
 /// Fluent builder constructing a request to `CancelExportTask`.
 ///
-/// <p>Cancels an export task in progress that is exporting a snapshot to Amazon S3. Any data that has already been written to the S3 bucket isn't removed.</p>
+/// <p>Cancels an export task in progress that is exporting a snapshot or cluster to Amazon S3. Any data that has already been written to the S3 bucket isn't removed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelExportTaskFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +69,12 @@ impl CancelExportTaskFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The identifier of the snapshot export task to cancel.</p>
+    /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
     pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.export_task_identifier(input.into());
         self
     }
-    /// <p>The identifier of the snapshot export task to cancel.</p>
+    /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
     pub fn set_export_task_identifier(
         mut self,
         input: std::option::Option<std::string::String>,

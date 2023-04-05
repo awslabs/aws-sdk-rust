@@ -18,6 +18,10 @@ pub struct UpdateSceneInput {
     /// <p>A list of capabilities that the scene uses to render.</p>
     #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The scene metadata.</p>
+    #[doc(hidden)]
+    pub scene_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
@@ -40,6 +44,13 @@ impl UpdateSceneInput {
     pub fn capabilities(&self) -> std::option::Option<&[std::string::String]> {
         self.capabilities.as_deref()
     }
+    /// <p>The scene metadata.</p>
+    pub fn scene_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.scene_metadata.as_ref()
+    }
 }
 impl UpdateSceneInput {
     /// Creates a new builder-style object to manufacture [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
@@ -57,6 +68,8 @@ pub struct UpdateSceneInputBuilder {
     pub(crate) content_location: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) scene_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateSceneInputBuilder {
     /// <p>The ID of the workspace that contains the scene.</p>
@@ -118,6 +131,31 @@ impl UpdateSceneInputBuilder {
         self.capabilities = input;
         self
     }
+    /// Adds a key-value pair to `scene_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_scene_metadata`](Self::set_scene_metadata).
+    ///
+    /// <p>The scene metadata.</p>
+    pub fn scene_metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.scene_metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.scene_metadata = Some(hash_map);
+        self
+    }
+    /// <p>The scene metadata.</p>
+    pub fn set_scene_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.scene_metadata = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
     pub fn build(
         self,
@@ -131,6 +169,7 @@ impl UpdateSceneInputBuilder {
             content_location: self.content_location,
             description: self.description,
             capabilities: self.capabilities,
+            scene_metadata: self.scene_metadata,
         })
     }
 }

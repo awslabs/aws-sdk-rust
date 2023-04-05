@@ -47,6 +47,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "IamIdentity" => {
+                                builder = builder.set_iam_identity(
+                                    crate::protocol_serde::shape_iam_identity::de_iam_identity(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

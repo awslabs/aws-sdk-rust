@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeclineInvitationsInput {
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
+    /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeclineInvitationsInput {
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
+    /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -32,14 +32,14 @@ impl DeclineInvitationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
+    /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
         self.account_ids = Some(v);
         self
     }
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
+    /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
     pub fn set_account_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -4,7 +4,8 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetLaunchTemplateOverridesRequest {
-    /// <p>The instance type.</p> <note>
+    /// <p>The instance type.</p>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     #[doc(hidden)]
@@ -42,7 +43,8 @@ pub struct FleetLaunchTemplateOverridesRequest {
     pub image_id: std::option::Option<std::string::String>,
 }
 impl FleetLaunchTemplateOverridesRequest {
-    /// <p>The instance type.</p> <note>
+    /// <p>The instance type.</p>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
@@ -113,14 +115,16 @@ pub struct FleetLaunchTemplateOverridesRequestBuilder {
     pub(crate) image_id: std::option::Option<std::string::String>,
 }
 impl FleetLaunchTemplateOverridesRequestBuilder {
-    /// <p>The instance type.</p> <note>
+    /// <p>The instance type.</p>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = Some(input);
         self
     }
-    /// <p>The instance type.</p> <note>
+    /// <p>The instance type.</p>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     pub fn set_instance_type(

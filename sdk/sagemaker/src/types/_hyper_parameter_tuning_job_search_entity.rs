@@ -61,6 +61,14 @@ pub struct HyperParameterTuningJobSearchEntity {
     /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    /// <p>Information about either a current or completed hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub tuning_job_completion_details:
+        std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
+    /// <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub consumed_resources:
+        std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
 }
 impl HyperParameterTuningJobSearchEntity {
     /// <p>The name of a hyperparameter tuning job.</p>
@@ -150,6 +158,18 @@ impl HyperParameterTuningJobSearchEntity {
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Information about either a current or completed hyperparameter tuning job.</p>
+    pub fn tuning_job_completion_details(
+        &self,
+    ) -> std::option::Option<&crate::types::HyperParameterTuningJobCompletionDetails> {
+        self.tuning_job_completion_details.as_ref()
+    }
+    /// <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+    pub fn consumed_resources(
+        &self,
+    ) -> std::option::Option<&crate::types::HyperParameterTuningJobConsumedResources> {
+        self.consumed_resources.as_ref()
+    }
 }
 impl HyperParameterTuningJobSearchEntity {
     /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobSearchEntity`](crate::types::HyperParameterTuningJobSearchEntity).
@@ -187,6 +207,10 @@ pub struct HyperParameterTuningJobSearchEntityBuilder {
         std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
     pub(crate) failure_reason: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tuning_job_completion_details:
+        std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
+    pub(crate) consumed_resources:
+        std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
 }
 impl HyperParameterTuningJobSearchEntityBuilder {
     /// <p>The name of a hyperparameter tuning job.</p>
@@ -444,6 +468,38 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.tags = input;
         self
     }
+    /// <p>Information about either a current or completed hyperparameter tuning job.</p>
+    pub fn tuning_job_completion_details(
+        mut self,
+        input: crate::types::HyperParameterTuningJobCompletionDetails,
+    ) -> Self {
+        self.tuning_job_completion_details = Some(input);
+        self
+    }
+    /// <p>Information about either a current or completed hyperparameter tuning job.</p>
+    pub fn set_tuning_job_completion_details(
+        mut self,
+        input: std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
+    ) -> Self {
+        self.tuning_job_completion_details = input;
+        self
+    }
+    /// <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+    pub fn consumed_resources(
+        mut self,
+        input: crate::types::HyperParameterTuningJobConsumedResources,
+    ) -> Self {
+        self.consumed_resources = Some(input);
+        self
+    }
+    /// <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+    pub fn set_consumed_resources(
+        mut self,
+        input: std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
+    ) -> Self {
+        self.consumed_resources = input;
+        self
+    }
     /// Consumes the builder and constructs a [`HyperParameterTuningJobSearchEntity`](crate::types::HyperParameterTuningJobSearchEntity).
     pub fn build(self) -> crate::types::HyperParameterTuningJobSearchEntity {
         crate::types::HyperParameterTuningJobSearchEntity {
@@ -463,6 +519,8 @@ impl HyperParameterTuningJobSearchEntityBuilder {
             warm_start_config: self.warm_start_config,
             failure_reason: self.failure_reason,
             tags: self.tags,
+            tuning_job_completion_details: self.tuning_job_completion_details,
+            consumed_resources: self.consumed_resources,
         }
     }
 }

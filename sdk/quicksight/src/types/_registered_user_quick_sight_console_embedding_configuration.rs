@@ -16,6 +16,10 @@ pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub initial_path: std::option::Option<std::string::String>,
+    /// <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
+    #[doc(hidden)]
+    pub feature_configurations:
+        std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
 }
 impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
@@ -31,6 +35,12 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     pub fn initial_path(&self) -> std::option::Option<&str> {
         self.initial_path.as_deref()
     }
+    /// <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
+    pub fn feature_configurations(
+        &self,
+    ) -> std::option::Option<&crate::types::RegisteredUserConsoleFeatureConfigurations> {
+        self.feature_configurations.as_ref()
+    }
 }
 impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// Creates a new builder-style object to manufacture [`RegisteredUserQuickSightConsoleEmbeddingConfiguration`](crate::types::RegisteredUserQuickSightConsoleEmbeddingConfiguration).
@@ -45,6 +55,8 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
     pub(crate) initial_path: std::option::Option<std::string::String>,
+    pub(crate) feature_configurations:
+        std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
 }
 impl RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
@@ -75,10 +87,27 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
         self.initial_path = input;
         self
     }
+    /// <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
+    pub fn feature_configurations(
+        mut self,
+        input: crate::types::RegisteredUserConsoleFeatureConfigurations,
+    ) -> Self {
+        self.feature_configurations = Some(input);
+        self
+    }
+    /// <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
+    pub fn set_feature_configurations(
+        mut self,
+        input: std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
+    ) -> Self {
+        self.feature_configurations = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RegisteredUserQuickSightConsoleEmbeddingConfiguration`](crate::types::RegisteredUserQuickSightConsoleEmbeddingConfiguration).
     pub fn build(self) -> crate::types::RegisteredUserQuickSightConsoleEmbeddingConfiguration {
         crate::types::RegisteredUserQuickSightConsoleEmbeddingConfiguration {
             initial_path: self.initial_path,
+            feature_configurations: self.feature_configurations,
         }
     }
 }

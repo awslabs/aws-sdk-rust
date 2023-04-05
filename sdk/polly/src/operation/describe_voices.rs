@@ -62,18 +62,17 @@ impl DescribeVoicesInput {
                         );
                     }
                 }
-                if _input.include_additional_language_codes {
-                    query.push_kv(
-                        "IncludeAdditionalLanguageCodes",
-                        aws_smithy_types::primitive::Encoder::from(
-                            _input.include_additional_language_codes,
-                        )
-                        .encode(),
-                    );
+                if let Some(inner_3) = &_input.include_additional_language_codes {
+                    if *inner_3 {
+                        query.push_kv(
+                            "IncludeAdditionalLanguageCodes",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_3) = &_input.next_token {
+                if let Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_4));
                     }
                 }
                 Ok(())

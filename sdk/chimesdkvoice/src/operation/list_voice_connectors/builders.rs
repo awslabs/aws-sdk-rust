@@ -5,6 +5,7 @@ pub use crate::operation::list_voice_connectors::_list_voice_connectors_input::L
 
 /// Fluent builder constructing a request to `ListVoiceConnectors`.
 ///
+/// <p>Lists the Amazon Chime SDK Voice Connectors in the administrators AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVoiceConnectorsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -79,22 +80,22 @@ impl ListVoiceConnectorsFluentBuilder {
             self.inner,
         )
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self

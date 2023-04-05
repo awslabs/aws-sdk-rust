@@ -29,7 +29,7 @@ pub struct AwsEc2InstanceDetails {
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>Indicates when the instance was launched.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub launched_at: std::option::Option<std::string::String>,
     /// <p>The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
@@ -42,6 +42,9 @@ pub struct AwsEc2InstanceDetails {
     /// <p>Details about the metadata options for the Amazon EC2 instance. </p>
     #[doc(hidden)]
     pub metadata_options: std::option::Option<crate::types::AwsEc2InstanceMetadataOptions>,
+    /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
+    #[doc(hidden)]
+    pub monitoring: std::option::Option<crate::types::AwsEc2InstanceMonitoringDetails>,
 }
 impl AwsEc2InstanceDetails {
     /// <p>The instance type of the instance. </p>
@@ -77,7 +80,7 @@ impl AwsEc2InstanceDetails {
         self.subnet_id.as_deref()
     }
     /// <p>Indicates when the instance was launched.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn launched_at(&self) -> std::option::Option<&str> {
         self.launched_at.as_deref()
     }
@@ -96,6 +99,12 @@ impl AwsEc2InstanceDetails {
         &self,
     ) -> std::option::Option<&crate::types::AwsEc2InstanceMetadataOptions> {
         self.metadata_options.as_ref()
+    }
+    /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
+    pub fn monitoring(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsEc2InstanceMonitoringDetails> {
+        self.monitoring.as_ref()
     }
 }
 impl AwsEc2InstanceDetails {
@@ -122,6 +131,7 @@ pub struct AwsEc2InstanceDetailsBuilder {
         std::option::Option<std::vec::Vec<crate::types::AwsEc2InstanceNetworkInterfacesDetails>>,
     pub(crate) virtualization_type: std::option::Option<std::string::String>,
     pub(crate) metadata_options: std::option::Option<crate::types::AwsEc2InstanceMetadataOptions>,
+    pub(crate) monitoring: std::option::Option<crate::types::AwsEc2InstanceMonitoringDetails>,
 }
 impl AwsEc2InstanceDetailsBuilder {
     /// <p>The instance type of the instance. </p>
@@ -226,13 +236,13 @@ impl AwsEc2InstanceDetailsBuilder {
         self
     }
     /// <p>Indicates when the instance was launched.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn launched_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.launched_at = Some(input.into());
         self
     }
     /// <p>Indicates when the instance was launched.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_launched_at(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.launched_at = input;
         self
@@ -287,6 +297,19 @@ impl AwsEc2InstanceDetailsBuilder {
         self.metadata_options = input;
         self
     }
+    /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
+    pub fn monitoring(mut self, input: crate::types::AwsEc2InstanceMonitoringDetails) -> Self {
+        self.monitoring = Some(input);
+        self
+    }
+    /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
+    pub fn set_monitoring(
+        mut self,
+        input: std::option::Option<crate::types::AwsEc2InstanceMonitoringDetails>,
+    ) -> Self {
+        self.monitoring = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AwsEc2InstanceDetails`](crate::types::AwsEc2InstanceDetails).
     pub fn build(self) -> crate::types::AwsEc2InstanceDetails {
         crate::types::AwsEc2InstanceDetails {
@@ -302,6 +325,7 @@ impl AwsEc2InstanceDetailsBuilder {
             network_interfaces: self.network_interfaces,
             virtualization_type: self.virtualization_type,
             metadata_options: self.metadata_options,
+            monitoring: self.monitoring,
         }
     }
 }

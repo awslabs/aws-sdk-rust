@@ -20,7 +20,7 @@ pub struct UpdateJobTemplateInput {
     pub name: std::option::Option<std::string::String>,
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
     /// The new queue for the job template, if you are changing it.
     #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
@@ -55,7 +55,7 @@ impl UpdateJobTemplateInput {
         self.name.as_deref()
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
     /// The new queue for the job template, if you are changing it.
@@ -218,7 +218,7 @@ impl UpdateJobTemplateInputBuilder {
                 description: self.description,
                 hop_destinations: self.hop_destinations,
                 name: self.name,
-                priority: self.priority.unwrap_or_default(),
+                priority: self.priority,
                 queue: self.queue,
                 settings: self.settings,
                 status_update_interval: self.status_update_interval,

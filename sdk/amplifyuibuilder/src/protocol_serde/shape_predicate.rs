@@ -36,6 +36,9 @@ pub fn ser_predicate(
     if let Some(var_11) = &input.operand {
         object.key("operand").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.operand_type {
+        object.key("operandType").string(var_12.as_str());
+    }
     Ok(())
 }
 
@@ -94,6 +97,15 @@ where
                             }
                             "operand" => {
                                 builder = builder.set_operand(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "operandType" => {
+                                builder = builder.set_operand_type(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

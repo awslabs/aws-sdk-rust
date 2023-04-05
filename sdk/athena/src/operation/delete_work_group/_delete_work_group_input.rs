@@ -6,7 +6,7 @@ pub struct DeleteWorkGroupInput {
     /// <p>The unique name of the workgroup to delete.</p>
     #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     #[doc(hidden)]
     pub recursive_delete_option: std::option::Option<bool>,
 }
@@ -15,7 +15,7 @@ impl DeleteWorkGroupInput {
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub fn recursive_delete_option(&self) -> std::option::Option<bool> {
         self.recursive_delete_option
     }
@@ -45,12 +45,12 @@ impl DeleteWorkGroupInputBuilder {
         self.work_group = input;
         self
     }
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub fn recursive_delete_option(mut self, input: bool) -> Self {
         self.recursive_delete_option = Some(input);
         self
     }
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub fn set_recursive_delete_option(mut self, input: std::option::Option<bool>) -> Self {
         self.recursive_delete_option = input;
         self

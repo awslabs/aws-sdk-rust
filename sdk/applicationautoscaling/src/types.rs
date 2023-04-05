@@ -13,6 +13,14 @@ pub use crate::types::_target_tracking_scaling_policy_configuration::TargetTrack
 
 pub use crate::types::_customized_metric_specification::CustomizedMetricSpecification;
 
+pub use crate::types::_target_tracking_metric_data_query::TargetTrackingMetricDataQuery;
+
+pub use crate::types::_target_tracking_metric_stat::TargetTrackingMetricStat;
+
+pub use crate::types::_target_tracking_metric::TargetTrackingMetric;
+
+pub use crate::types::_target_tracking_metric_dimension::TargetTrackingMetricDimension;
+
 pub use crate::types::_metric_statistic::MetricStatistic;
 
 pub use crate::types::_metric_dimension::MetricDimension;
@@ -84,6 +92,14 @@ mod _step_adjustment;
 mod _step_scaling_policy_configuration;
 
 mod _suspended_state;
+
+mod _target_tracking_metric;
+
+mod _target_tracking_metric_data_query;
+
+mod _target_tracking_metric_dimension;
+
+mod _target_tracking_metric_stat;
 
 mod _target_tracking_scaling_policy_configuration;
 

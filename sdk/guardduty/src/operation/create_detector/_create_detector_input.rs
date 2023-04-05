@@ -5,7 +5,7 @@
 pub struct CreateDetectorInput {
     /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
     #[doc(hidden)]
-    pub enable: bool,
+    pub enable: std::option::Option<bool>,
     /// <p>The idempotency token for the create request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -13,16 +13,21 @@ pub struct CreateDetectorInput {
     #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::types::FindingPublishingFrequency>,
     /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     #[doc(hidden)]
     pub data_sources: std::option::Option<crate::types::DataSourceConfigurations>,
     /// <p>The tags to be added to a new detector resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A list of features that will be configured for the detector.</p>
+    #[doc(hidden)]
+    pub features: std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
 }
 impl CreateDetectorInput {
     /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
-    pub fn enable(&self) -> bool {
+    pub fn enable(&self) -> std::option::Option<bool> {
         self.enable
     }
     /// <p>The idempotency token for the create request.</p>
@@ -36,6 +41,8 @@ impl CreateDetectorInput {
         self.finding_publishing_frequency.as_ref()
     }
     /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(&self) -> std::option::Option<&crate::types::DataSourceConfigurations> {
         self.data_sources.as_ref()
     }
@@ -45,6 +52,10 @@ impl CreateDetectorInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>A list of features that will be configured for the detector.</p>
+    pub fn features(&self) -> std::option::Option<&[crate::types::DetectorFeatureConfiguration]> {
+        self.features.as_deref()
     }
 }
 impl CreateDetectorInput {
@@ -65,6 +76,8 @@ pub struct CreateDetectorInputBuilder {
     pub(crate) data_sources: std::option::Option<crate::types::DataSourceConfigurations>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) features:
+        std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
 }
 impl CreateDetectorInputBuilder {
     /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
@@ -104,11 +117,15 @@ impl CreateDetectorInputBuilder {
         self
     }
     /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurations) -> Self {
         self.data_sources = Some(input);
         self
     }
     /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn set_data_sources(
         mut self,
         input: std::option::Option<crate::types::DataSourceConfigurations>,
@@ -141,6 +158,25 @@ impl CreateDetectorInputBuilder {
         self.tags = input;
         self
     }
+    /// Appends an item to `features`.
+    ///
+    /// To override the contents of this collection use [`set_features`](Self::set_features).
+    ///
+    /// <p>A list of features that will be configured for the detector.</p>
+    pub fn features(mut self, input: crate::types::DetectorFeatureConfiguration) -> Self {
+        let mut v = self.features.unwrap_or_default();
+        v.push(input);
+        self.features = Some(v);
+        self
+    }
+    /// <p>A list of features that will be configured for the detector.</p>
+    pub fn set_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
+    ) -> Self {
+        self.features = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDetectorInput`](crate::operation::create_detector::CreateDetectorInput).
     pub fn build(
         self,
@@ -149,11 +185,12 @@ impl CreateDetectorInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::create_detector::CreateDetectorInput {
-            enable: self.enable.unwrap_or_default(),
+            enable: self.enable,
             client_token: self.client_token,
             finding_publishing_frequency: self.finding_publishing_frequency,
             data_sources: self.data_sources,
             tags: self.tags,
+            features: self.features,
         })
     }
 }

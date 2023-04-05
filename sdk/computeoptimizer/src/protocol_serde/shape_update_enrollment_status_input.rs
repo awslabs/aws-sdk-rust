@@ -6,10 +6,8 @@ pub fn ser_update_enrollment_status_input(
     if let Some(var_1) = &input.status {
         object.key("status").string(var_1.as_str());
     }
-    if input.include_member_accounts {
-        object
-            .key("includeMemberAccounts")
-            .boolean(input.include_member_accounts);
+    if let Some(var_2) = &input.include_member_accounts {
+        object.key("includeMemberAccounts").boolean(*var_2);
     }
     Ok(())
 }

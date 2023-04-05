@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchRasterDataCollectionOutput {
-    /// <p></p>
+    /// <p>Approximate number of results in the response.</p>
     #[doc(hidden)]
     pub approximate_result_count: std::option::Option<i32>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>List of items matching the Raster DataCollectionQuery.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::ItemSource>>,
     _request_id: Option<String>,
 }
 impl SearchRasterDataCollectionOutput {
-    /// <p></p>
+    /// <p>Approximate number of results in the response.</p>
     pub fn approximate_result_count(&self) -> std::option::Option<i32> {
         self.approximate_result_count
     }
@@ -23,7 +23,7 @@ impl SearchRasterDataCollectionOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p></p>
+    /// <p>List of items matching the Raster DataCollectionQuery.</p>
     pub fn items(&self) -> std::option::Option<&[crate::types::ItemSource]> {
         self.items.as_deref()
     }
@@ -60,12 +60,12 @@ pub struct SearchRasterDataCollectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl SearchRasterDataCollectionOutputBuilder {
-    /// <p></p>
+    /// <p>Approximate number of results in the response.</p>
     pub fn approximate_result_count(mut self, input: i32) -> Self {
         self.approximate_result_count = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Approximate number of results in the response.</p>
     pub fn set_approximate_result_count(mut self, input: std::option::Option<i32>) -> Self {
         self.approximate_result_count = input;
         self
@@ -84,14 +84,14 @@ impl SearchRasterDataCollectionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p></p>
+    /// <p>List of items matching the Raster DataCollectionQuery.</p>
     pub fn items(mut self, input: crate::types::ItemSource) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = Some(v);
         self
     }
-    /// <p></p>
+    /// <p>List of items matching the Raster DataCollectionQuery.</p>
     pub fn set_items(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ItemSource>>,

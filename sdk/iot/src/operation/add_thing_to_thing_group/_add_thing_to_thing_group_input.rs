@@ -17,7 +17,7 @@ pub struct AddThingToThingGroupInput {
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     #[doc(hidden)]
-    pub override_dynamic_groups: bool,
+    pub override_dynamic_groups: std::option::Option<bool>,
 }
 impl AddThingToThingGroupInput {
     /// <p>The name of the group to which you are adding a thing.</p>
@@ -37,7 +37,7 @@ impl AddThingToThingGroupInput {
         self.thing_arn.as_deref()
     }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
-    pub fn override_dynamic_groups(&self) -> bool {
+    pub fn override_dynamic_groups(&self) -> std::option::Option<bool> {
         self.override_dynamic_groups
     }
 }
@@ -124,7 +124,7 @@ impl AddThingToThingGroupInputBuilder {
                 thing_group_arn: self.thing_group_arn,
                 thing_name: self.thing_name,
                 thing_arn: self.thing_arn,
-                override_dynamic_groups: self.override_dynamic_groups.unwrap_or_default(),
+                override_dynamic_groups: self.override_dynamic_groups,
             },
         )
     }

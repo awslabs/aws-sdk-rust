@@ -8,7 +8,7 @@ pub struct DescribeConfigurationRevisionInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
     #[doc(hidden)]
-    pub revision: i64,
+    pub revision: std::option::Option<i64>,
 }
 impl DescribeConfigurationRevisionInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
@@ -16,7 +16,7 @@ impl DescribeConfigurationRevisionInput {
         self.arn.as_deref()
     }
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
-    pub fn revision(&self) -> i64 {
+    pub fn revision(&self) -> std::option::Option<i64> {
         self.revision
     }
 }
@@ -65,7 +65,7 @@ impl DescribeConfigurationRevisionInputBuilder {
         Ok(
             crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput {
                 arn: self.arn,
-                revision: self.revision.unwrap_or_default(),
+                revision: self.revision,
             },
         )
     }

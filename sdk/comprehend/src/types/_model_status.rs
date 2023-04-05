@@ -18,6 +18,7 @@
 ///     ModelStatus::StopRequested => { /* ... */ },
 ///     ModelStatus::Submitted => { /* ... */ },
 ///     ModelStatus::Trained => { /* ... */ },
+///     ModelStatus::TrainedWithWarning => { /* ... */ },
 ///     ModelStatus::Training => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum ModelStatus {
     #[allow(missing_docs)] // documentation missing in model
     Trained,
     #[allow(missing_docs)] // documentation missing in model
+    TrainedWithWarning,
+    #[allow(missing_docs)] // documentation missing in model
     Training,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -78,6 +81,7 @@ impl std::convert::From<&str> for ModelStatus {
             "STOP_REQUESTED" => ModelStatus::StopRequested,
             "SUBMITTED" => ModelStatus::Submitted,
             "TRAINED" => ModelStatus::Trained,
+            "TRAINED_WITH_WARNING" => ModelStatus::TrainedWithWarning,
             "TRAINING" => ModelStatus::Training,
             other => ModelStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -100,6 +104,7 @@ impl ModelStatus {
             ModelStatus::StopRequested => "STOP_REQUESTED",
             ModelStatus::Submitted => "SUBMITTED",
             ModelStatus::Trained => "TRAINED",
+            ModelStatus::TrainedWithWarning => "TRAINED_WITH_WARNING",
             ModelStatus::Training => "TRAINING",
             ModelStatus::Unknown(value) => value.as_str(),
         }
@@ -113,6 +118,7 @@ impl ModelStatus {
             "STOP_REQUESTED",
             "SUBMITTED",
             "TRAINED",
+            "TRAINED_WITH_WARNING",
             "TRAINING",
         ]
     }

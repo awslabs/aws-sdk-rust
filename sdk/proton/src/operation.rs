@@ -100,6 +100,9 @@ pub mod get_repository;
 /// Types for the `GetRepositorySyncStatus` operation.
 pub mod get_repository_sync_status;
 
+/// Types for the `GetResourcesSummary` operation.
+pub mod get_resources_summary;
+
 /// Types for the `GetService` operation.
 pub mod get_service;
 

@@ -36,7 +36,7 @@ pub struct StartCallAnalyticsJobInput {
     /// </ol>
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     #[doc(hidden)]
     pub output_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
@@ -88,7 +88,7 @@ impl StartCallAnalyticsJobInput {
     /// </ol>
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(&self) -> std::option::Option<&str> {
         self.output_encryption_kms_key_id.as_deref()
     }
@@ -196,7 +196,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// </ol>
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.output_encryption_kms_key_id = Some(input.into());
         self
@@ -216,7 +216,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// </ol>
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(
         mut self,
         input: std::option::Option<std::string::String>,

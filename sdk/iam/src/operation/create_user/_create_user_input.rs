@@ -12,7 +12,9 @@ pub struct CreateUserInput {
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the user.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the user.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
     pub permissions_boundary: std::option::Option<std::string::String>,
     /// <p>A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>
@@ -33,7 +35,9 @@ impl CreateUserInput {
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the user.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the user.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub fn permissions_boundary(&self) -> std::option::Option<&str> {
         self.permissions_boundary.as_deref()
     }
@@ -87,12 +91,16 @@ impl CreateUserInputBuilder {
         self.user_name = input;
         self
     }
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the user.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the user.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
         self.permissions_boundary = Some(input.into());
         self
     }
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the user.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the user.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub fn set_permissions_boundary(
         mut self,
         input: std::option::Option<std::string::String>,

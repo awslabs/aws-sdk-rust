@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceInput {
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The type of resource of which the application will be associated.</p>
@@ -14,7 +14,7 @@ pub struct AssociateResourceInput {
     pub resource: std::option::Option<std::string::String>,
 }
 impl AssociateResourceInput {
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
@@ -44,12 +44,12 @@ pub struct AssociateResourceInputBuilder {
     pub(crate) resource: std::option::Option<std::string::String>,
 }
 impl AssociateResourceInputBuilder {
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
         self.application = Some(input.into());
         self
     }
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.application = input;
         self

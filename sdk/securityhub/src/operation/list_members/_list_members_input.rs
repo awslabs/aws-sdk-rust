@@ -7,10 +7,10 @@ pub struct ListMembersInput {
     /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
     /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
     #[doc(hidden)]
-    pub only_associated: bool,
+    pub only_associated: std::option::Option<bool>,
     /// <p>The maximum number of items to return in the response. </p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     #[doc(hidden)]
@@ -20,11 +20,11 @@ impl ListMembersInput {
     /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
     /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
     /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
-    pub fn only_associated(&self) -> bool {
+    pub fn only_associated(&self) -> std::option::Option<bool> {
         self.only_associated
     }
     /// <p>The maximum number of items to return in the response. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -93,8 +93,8 @@ impl ListMembersInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::list_members::ListMembersInput {
-            only_associated: self.only_associated.unwrap_or_default(),
-            max_results: self.max_results.unwrap_or_default(),
+            only_associated: self.only_associated,
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

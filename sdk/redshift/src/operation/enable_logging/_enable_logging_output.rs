@@ -25,7 +25,7 @@ pub struct EnableLoggingOutput {
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     #[doc(hidden)]
     pub log_destination_type: std::option::Option<crate::types::LogDestinationType>,
-    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     #[doc(hidden)]
     pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     _request_id: Option<String>,
@@ -61,7 +61,7 @@ impl EnableLoggingOutput {
     pub fn log_destination_type(&self) -> std::option::Option<&crate::types::LogDestinationType> {
         self.log_destination_type.as_ref()
     }
-    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     pub fn log_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.log_exports.as_deref()
     }
@@ -179,14 +179,14 @@ impl EnableLoggingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
     ///
-    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     pub fn log_exports(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.log_exports.unwrap_or_default();
         v.push(input.into());
         self.log_exports = Some(v);
         self
     }
-    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     pub fn set_log_exports(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

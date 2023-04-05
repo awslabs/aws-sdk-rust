@@ -30,6 +30,10 @@ pub(crate) mod shape_create_voice_connector;
 
 pub(crate) mod shape_create_voice_connector_group;
 
+pub(crate) mod shape_create_voice_profile;
+
+pub(crate) mod shape_create_voice_profile_domain;
+
 pub(crate) mod shape_delete_phone_number;
 
 pub(crate) mod shape_delete_proxy_session;
@@ -54,6 +58,10 @@ pub(crate) mod shape_delete_voice_connector_termination;
 
 pub(crate) mod shape_delete_voice_connector_termination_credentials;
 
+pub(crate) mod shape_delete_voice_profile;
+
+pub(crate) mod shape_delete_voice_profile_domain;
+
 pub(crate) mod shape_disassociate_phone_numbers_from_voice_connector;
 
 pub(crate) mod shape_disassociate_phone_numbers_from_voice_connector_group;
@@ -76,6 +84,8 @@ pub(crate) mod shape_get_sip_media_application_logging_configuration;
 
 pub(crate) mod shape_get_sip_rule;
 
+pub(crate) mod shape_get_speaker_search_task;
+
 pub(crate) mod shape_get_voice_connector;
 
 pub(crate) mod shape_get_voice_connector_emergency_calling_configuration;
@@ -94,6 +104,12 @@ pub(crate) mod shape_get_voice_connector_termination;
 
 pub(crate) mod shape_get_voice_connector_termination_health;
 
+pub(crate) mod shape_get_voice_profile;
+
+pub(crate) mod shape_get_voice_profile_domain;
+
+pub(crate) mod shape_get_voice_tone_analysis_task;
+
 pub(crate) mod shape_list_available_voice_connector_regions;
 
 pub(crate) mod shape_list_phone_number_orders;
@@ -108,11 +124,17 @@ pub(crate) mod shape_list_sip_rules;
 
 pub(crate) mod shape_list_supported_phone_number_countries;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_list_voice_connector_groups;
 
 pub(crate) mod shape_list_voice_connector_termination_credentials;
 
 pub(crate) mod shape_list_voice_connectors;
+
+pub(crate) mod shape_list_voice_profile_domains;
+
+pub(crate) mod shape_list_voice_profiles;
 
 pub(crate) mod shape_put_sip_media_application_alexa_skill_configuration;
 
@@ -136,6 +158,18 @@ pub(crate) mod shape_restore_phone_number;
 
 pub(crate) mod shape_search_available_phone_numbers;
 
+pub(crate) mod shape_start_speaker_search_task;
+
+pub(crate) mod shape_start_voice_tone_analysis_task;
+
+pub(crate) mod shape_stop_speaker_search_task;
+
+pub(crate) mod shape_stop_voice_tone_analysis_task;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
 pub(crate) mod shape_update_global_settings;
 
 pub(crate) mod shape_update_phone_number;
@@ -153,6 +187,10 @@ pub(crate) mod shape_update_sip_rule;
 pub(crate) mod shape_update_voice_connector;
 
 pub(crate) mod shape_update_voice_connector_group;
+
+pub(crate) mod shape_update_voice_profile;
+
+pub(crate) mod shape_update_voice_profile_domain;
 
 pub(crate) mod shape_validate_e911_address;
 
@@ -192,6 +230,10 @@ pub(crate) mod shape_create_voice_connector_group_input;
 
 pub(crate) mod shape_create_voice_connector_input;
 
+pub(crate) mod shape_create_voice_profile_domain_input;
+
+pub(crate) mod shape_create_voice_profile_input;
+
 pub(crate) mod shape_delete_voice_connector_termination_credentials_input;
 
 pub(crate) mod shape_disassociate_phone_numbers_from_voice_connector_group_input;
@@ -199,6 +241,8 @@ pub(crate) mod shape_disassociate_phone_numbers_from_voice_connector_group_input
 pub(crate) mod shape_disassociate_phone_numbers_from_voice_connector_input;
 
 pub(crate) mod shape_forbidden_exception;
+
+pub(crate) mod shape_gone_exception;
 
 pub(crate) mod shape_not_found_exception;
 
@@ -226,9 +270,19 @@ pub(crate) mod shape_service_failure_exception;
 
 pub(crate) mod shape_service_unavailable_exception;
 
+pub(crate) mod shape_start_speaker_search_task_input;
+
+pub(crate) mod shape_start_voice_tone_analysis_task_input;
+
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttled_client_exception;
 
 pub(crate) mod shape_unauthorized_client_exception;
+
+pub(crate) mod shape_unprocessable_entity_exception;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_global_settings_input;
 
@@ -247,6 +301,10 @@ pub(crate) mod shape_update_sip_rule_input;
 pub(crate) mod shape_update_voice_connector_group_input;
 
 pub(crate) mod shape_update_voice_connector_input;
+
+pub(crate) mod shape_update_voice_profile_domain_input;
+
+pub(crate) mod shape_update_voice_profile_input;
 
 pub(crate) mod shape_validate_e911_address_input;
 
@@ -286,6 +344,8 @@ pub(crate) mod shape_proxy_sessions;
 
 pub(crate) mod shape_sensitive_string_list;
 
+pub(crate) mod shape_server_side_encryption_configuration;
+
 pub(crate) mod shape_sip_media_application;
 
 pub(crate) mod shape_sip_media_application_alexa_skill_configuration;
@@ -304,7 +364,13 @@ pub(crate) mod shape_sip_rule_list;
 
 pub(crate) mod shape_sip_rule_target_application;
 
+pub(crate) mod shape_speaker_search_task;
+
 pub(crate) mod shape_streaming_configuration;
+
+pub(crate) mod shape_tag;
+
+pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_termination;
 
@@ -326,7 +392,19 @@ pub(crate) mod shape_voice_connector_list;
 
 pub(crate) mod shape_voice_connector_settings;
 
+pub(crate) mod shape_voice_profile;
+
+pub(crate) mod shape_voice_profile_domain;
+
+pub(crate) mod shape_voice_profile_domain_summary_list;
+
+pub(crate) mod shape_voice_profile_summary_list;
+
+pub(crate) mod shape_voice_tone_analysis_task;
+
 pub(crate) mod shape_alexa_skill_id_list;
+
+pub(crate) mod shape_call_details;
 
 pub(crate) mod shape_calling_region_list;
 
@@ -337,6 +415,8 @@ pub(crate) mod shape_capability_list;
 pub(crate) mod shape_dnis_emergency_calling_configuration;
 
 pub(crate) mod shape_dnis_emergency_calling_configuration_list;
+
+pub(crate) mod shape_media_insights_configuration;
 
 pub(crate) mod shape_ordered_phone_number_list;
 
@@ -358,6 +438,8 @@ pub(crate) mod shape_sip_media_application_endpoint_list;
 
 pub(crate) mod shape_sip_rule_target_application_list;
 
+pub(crate) mod shape_speaker_search_details;
+
 pub(crate) mod shape_streaming_notification_target;
 
 pub(crate) mod shape_streaming_notification_target_list;
@@ -366,6 +448,10 @@ pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_voice_connector_item_list;
 
+pub(crate) mod shape_voice_profile_domain_summary;
+
+pub(crate) mod shape_voice_profile_summary;
+
 pub(crate) mod shape_ordered_phone_number;
 
 pub(crate) mod shape_participant;
@@ -373,3 +459,7 @@ pub(crate) mod shape_participant;
 pub(crate) mod shape_phone_number_association;
 
 pub(crate) mod shape_phone_number_type_list;
+
+pub(crate) mod shape_speaker_search_result_list;
+
+pub(crate) mod shape_speaker_search_result;

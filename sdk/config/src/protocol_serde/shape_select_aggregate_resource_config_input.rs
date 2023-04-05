@@ -11,20 +11,20 @@ pub fn ser_select_aggregate_resource_config_input(
             .key("ConfigurationAggregatorName")
             .string(var_2.as_str());
     }
-    if input.limit != 0 {
+    if let Some(var_3) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.limit).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.max_results != 0 {
+    if let Some(var_4) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("NextToken").string(var_3.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("NextToken").string(var_5.as_str());
     }
     Ok(())
 }

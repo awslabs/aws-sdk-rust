@@ -25,6 +25,9 @@ pub mod classify_document;
 /// Types for the `ContainsPiiEntities` operation.
 pub mod contains_pii_entities;
 
+/// Types for the `CreateDataset` operation.
+pub mod create_dataset;
+
 /// Types for the `CreateDocumentClassifier` operation.
 pub mod create_document_classifier;
 
@@ -33,6 +36,9 @@ pub mod create_endpoint;
 
 /// Types for the `CreateEntityRecognizer` operation.
 pub mod create_entity_recognizer;
+
+/// Types for the `CreateFlywheel` operation.
+pub mod create_flywheel;
 
 /// Types for the `DeleteDocumentClassifier` operation.
 pub mod delete_document_classifier;
@@ -43,8 +49,14 @@ pub mod delete_endpoint;
 /// Types for the `DeleteEntityRecognizer` operation.
 pub mod delete_entity_recognizer;
 
+/// Types for the `DeleteFlywheel` operation.
+pub mod delete_flywheel;
+
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
+
+/// Types for the `DescribeDataset` operation.
+pub mod describe_dataset;
 
 /// Types for the `DescribeDocumentClassificationJob` operation.
 pub mod describe_document_classification_job;
@@ -66,6 +78,12 @@ pub mod describe_entity_recognizer;
 
 /// Types for the `DescribeEventsDetectionJob` operation.
 pub mod describe_events_detection_job;
+
+/// Types for the `DescribeFlywheel` operation.
+pub mod describe_flywheel;
+
+/// Types for the `DescribeFlywheelIteration` operation.
+pub mod describe_flywheel_iteration;
 
 /// Types for the `DescribeKeyPhrasesDetectionJob` operation.
 pub mod describe_key_phrases_detection_job;
@@ -109,6 +127,9 @@ pub mod detect_targeted_sentiment;
 /// Types for the `ImportModel` operation.
 pub mod import_model;
 
+/// Types for the `ListDatasets` operation.
+pub mod list_datasets;
+
 /// Types for the `ListDocumentClassificationJobs` operation.
 pub mod list_document_classification_jobs;
 
@@ -135,6 +156,12 @@ pub mod list_entity_recognizers;
 
 /// Types for the `ListEventsDetectionJobs` operation.
 pub mod list_events_detection_jobs;
+
+/// Types for the `ListFlywheelIterationHistory` operation.
+pub mod list_flywheel_iteration_history;
+
+/// Types for the `ListFlywheels` operation.
+pub mod list_flywheels;
 
 /// Types for the `ListKeyPhrasesDetectionJobs` operation.
 pub mod list_key_phrases_detection_jobs;
@@ -168,6 +195,9 @@ pub mod start_entities_detection_job;
 
 /// Types for the `StartEventsDetectionJob` operation.
 pub mod start_events_detection_job;
+
+/// Types for the `StartFlywheelIteration` operation.
+pub mod start_flywheel_iteration;
 
 /// Types for the `StartKeyPhrasesDetectionJob` operation.
 pub mod start_key_phrases_detection_job;
@@ -219,3 +249,6 @@ pub mod untag_resource;
 
 /// Types for the `UpdateEndpoint` operation.
 pub mod update_endpoint;
+
+/// Types for the `UpdateFlywheel` operation.
+pub mod update_flywheel;

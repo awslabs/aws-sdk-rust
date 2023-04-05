@@ -12,6 +12,7 @@
 /// ```text
 /// # let unlabeledeventstreatment = unimplemented!();
 /// match unlabeledeventstreatment {
+///     UnlabeledEventsTreatment::Auto => { /* ... */ },
 ///     UnlabeledEventsTreatment::Fraud => { /* ... */ },
 ///     UnlabeledEventsTreatment::Ignore => { /* ... */ },
 ///     UnlabeledEventsTreatment::Legit => { /* ... */ },
@@ -49,6 +50,8 @@
 )]
 pub enum UnlabeledEventsTreatment {
     #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Fraud,
     #[allow(missing_docs)] // documentation missing in model
     Ignore,
@@ -60,6 +63,7 @@ pub enum UnlabeledEventsTreatment {
 impl std::convert::From<&str> for UnlabeledEventsTreatment {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => UnlabeledEventsTreatment::Auto,
             "FRAUD" => UnlabeledEventsTreatment::Fraud,
             "IGNORE" => UnlabeledEventsTreatment::Ignore,
             "LEGIT" => UnlabeledEventsTreatment::Legit,
@@ -80,6 +84,7 @@ impl UnlabeledEventsTreatment {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UnlabeledEventsTreatment::Auto => "AUTO",
             UnlabeledEventsTreatment::Fraud => "FRAUD",
             UnlabeledEventsTreatment::Ignore => "IGNORE",
             UnlabeledEventsTreatment::Legit => "LEGIT",
@@ -88,7 +93,7 @@ impl UnlabeledEventsTreatment {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FRAUD", "IGNORE", "LEGIT"]
+        &["AUTO", "FRAUD", "IGNORE", "LEGIT"]
     }
 }
 impl AsRef<str> for UnlabeledEventsTreatment {

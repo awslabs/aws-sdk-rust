@@ -10,7 +10,7 @@ pub struct DeleteBlueGreenDeploymentInput {
     /// </ul>
     #[doc(hidden)]
     pub blue_green_deployment_identifier: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     #[doc(hidden)]
     pub delete_target: std::option::Option<bool>,
 }
@@ -23,7 +23,7 @@ impl DeleteBlueGreenDeploymentInput {
     pub fn blue_green_deployment_identifier(&self) -> std::option::Option<&str> {
         self.blue_green_deployment_identifier.as_deref()
     }
-    /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn delete_target(&self) -> std::option::Option<bool> {
         self.delete_target
     }
@@ -67,12 +67,12 @@ impl DeleteBlueGreenDeploymentInputBuilder {
         self.blue_green_deployment_identifier = input;
         self
     }
-    /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn delete_target(mut self, input: bool) -> Self {
         self.delete_target = Some(input);
         self
     }
-    /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn set_delete_target(mut self, input: std::option::Option<bool>) -> Self {
         self.delete_target = input;
         self

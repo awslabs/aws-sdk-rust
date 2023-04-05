@@ -9,12 +9,12 @@ pub struct StartResourceEvaluationInput {
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
     #[doc(hidden)]
     pub evaluation_context: std::option::Option<crate::types::EvaluationContext>,
-    /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
     #[doc(hidden)]
     pub evaluation_mode: std::option::Option<crate::types::EvaluationMode>,
     /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
-    pub evaluation_timeout: i32,
+    pub evaluation_timeout: std::option::Option<i32>,
     /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
     /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
     /// </note>
@@ -30,12 +30,12 @@ impl StartResourceEvaluationInput {
     pub fn evaluation_context(&self) -> std::option::Option<&crate::types::EvaluationContext> {
         self.evaluation_context.as_ref()
     }
-    /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
     pub fn evaluation_mode(&self) -> std::option::Option<&crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
     /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
-    pub fn evaluation_timeout(&self) -> i32 {
+    pub fn evaluation_timeout(&self) -> std::option::Option<i32> {
         self.evaluation_timeout
     }
     /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
@@ -91,12 +91,12 @@ impl StartResourceEvaluationInputBuilder {
         self.evaluation_context = input;
         self
     }
-    /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
         self.evaluation_mode = Some(input);
         self
     }
-    /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
     pub fn set_evaluation_mode(
         mut self,
         input: std::option::Option<crate::types::EvaluationMode>,
@@ -140,7 +140,7 @@ impl StartResourceEvaluationInputBuilder {
                 resource_details: self.resource_details,
                 evaluation_context: self.evaluation_context,
                 evaluation_mode: self.evaluation_mode,
-                evaluation_timeout: self.evaluation_timeout.unwrap_or_default(),
+                evaluation_timeout: self.evaluation_timeout,
                 client_token: self.client_token,
             },
         )

@@ -281,4 +281,14 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn auto_replicate_new_disks(mut self, input: bool) -> Self {
+        self.inner = self.inner.auto_replicate_new_disks(input);
+        self
+    }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn set_auto_replicate_new_disks(mut self, input: std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_auto_replicate_new_disks(input);
+        self
+    }
 }

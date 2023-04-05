@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::set_max_results): <p>The maximum number of results to return in this operation.</p>
     /// - On success, responds with [`ListFuotaTasksOutput`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`fuota_task_list(Option<Vec<FuotaTask>>)`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput::fuota_task_list): <p>Lists the FUOTA tasks registered to your AWS account.</p>

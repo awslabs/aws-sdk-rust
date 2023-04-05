@@ -32,6 +32,9 @@ pub struct UpdateFormData {
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
     #[doc(hidden)]
     pub cta: std::option::Option<crate::types::FormCta>,
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    #[doc(hidden)]
+    pub label_decorator: std::option::Option<crate::types::LabelDecorator>,
 }
 impl UpdateFormData {
     /// <p>The name of the form.</p>
@@ -74,6 +77,10 @@ impl UpdateFormData {
     pub fn cta(&self) -> std::option::Option<&crate::types::FormCta> {
         self.cta.as_ref()
     }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn label_decorator(&self) -> std::option::Option<&crate::types::LabelDecorator> {
+        self.label_decorator.as_ref()
+    }
 }
 impl UpdateFormData {
     /// Creates a new builder-style object to manufacture [`UpdateFormData`](crate::types::UpdateFormData).
@@ -98,6 +105,7 @@ pub struct UpdateFormDataBuilder {
     >,
     pub(crate) schema_version: std::option::Option<std::string::String>,
     pub(crate) cta: std::option::Option<crate::types::FormCta>,
+    pub(crate) label_decorator: std::option::Option<crate::types::LabelDecorator>,
 }
 impl UpdateFormDataBuilder {
     /// <p>The name of the form.</p>
@@ -216,6 +224,19 @@ impl UpdateFormDataBuilder {
         self.cta = input;
         self
     }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn label_decorator(mut self, input: crate::types::LabelDecorator) -> Self {
+        self.label_decorator = Some(input);
+        self
+    }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn set_label_decorator(
+        mut self,
+        input: std::option::Option<crate::types::LabelDecorator>,
+    ) -> Self {
+        self.label_decorator = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateFormData`](crate::types::UpdateFormData).
     pub fn build(self) -> crate::types::UpdateFormData {
         crate::types::UpdateFormData {
@@ -227,6 +248,7 @@ impl UpdateFormDataBuilder {
             sectional_elements: self.sectional_elements,
             schema_version: self.schema_version,
             cta: self.cta,
+            label_decorator: self.label_decorator,
         }
     }
 }

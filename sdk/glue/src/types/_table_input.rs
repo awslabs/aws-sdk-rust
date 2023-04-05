@@ -10,7 +10,7 @@ pub struct TableInput {
     /// <p>A description of the table.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The table owner.</p>
+    /// <p>The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The last time that the table was accessed.</p>
@@ -30,13 +30,28 @@ pub struct TableInput {
     /// <p> <code>"PartitionKeys": []</code> </p>
     #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<crate::types::Column>>,
-    /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     #[doc(hidden)]
     pub view_original_text: std::option::Option<std::string::String>,
-    /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     #[doc(hidden)]
     pub view_expanded_text: std::option::Option<std::string::String>,
-    /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
+    /// <p>Glue related table types:</p>
+    /// <dl>
+    /// <dt>
+    /// EXTERNAL_TABLE
+    /// </dt>
+    /// <dd>
+    /// <p>Hive compatible attribute - indicates a non-Hive managed table.</p>
+    /// </dd>
+    /// <dt>
+    /// GOVERNED
+    /// </dt>
+    /// <dd>
+    /// <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p>
+    /// </dd>
+    /// </dl>
     #[doc(hidden)]
     pub table_type: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define properties associated with the table.</p>
@@ -56,7 +71,7 @@ impl TableInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The table owner.</p>
+    /// <p>The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -82,15 +97,30 @@ impl TableInput {
     pub fn partition_keys(&self) -> std::option::Option<&[crate::types::Column]> {
         self.partition_keys.as_deref()
     }
-    /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     pub fn view_original_text(&self) -> std::option::Option<&str> {
         self.view_original_text.as_deref()
     }
-    /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub fn view_expanded_text(&self) -> std::option::Option<&str> {
         self.view_expanded_text.as_deref()
     }
-    /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
+    /// <p>Glue related table types:</p>
+    /// <dl>
+    /// <dt>
+    /// EXTERNAL_TABLE
+    /// </dt>
+    /// <dd>
+    /// <p>Hive compatible attribute - indicates a non-Hive managed table.</p>
+    /// </dd>
+    /// <dt>
+    /// GOVERNED
+    /// </dt>
+    /// <dd>
+    /// <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p>
+    /// </dd>
+    /// </dl>
     pub fn table_type(&self) -> std::option::Option<&str> {
         self.table_type.as_deref()
     }
@@ -153,12 +183,12 @@ impl TableInputBuilder {
         self.description = input;
         self
     }
-    /// <p>The table owner.</p>
+    /// <p>The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
         self.owner = Some(input.into());
         self
     }
-    /// <p>The table owner.</p>
+    /// <p>The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.owner = input;
         self
@@ -235,12 +265,12 @@ impl TableInputBuilder {
         self.partition_keys = input;
         self
     }
-    /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     pub fn view_original_text(mut self, input: impl Into<std::string::String>) -> Self {
         self.view_original_text = Some(input.into());
         self
     }
-    /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     pub fn set_view_original_text(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -248,12 +278,12 @@ impl TableInputBuilder {
         self.view_original_text = input;
         self
     }
-    /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub fn view_expanded_text(mut self, input: impl Into<std::string::String>) -> Self {
         self.view_expanded_text = Some(input.into());
         self
     }
-    /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub fn set_view_expanded_text(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -261,12 +291,42 @@ impl TableInputBuilder {
         self.view_expanded_text = input;
         self
     }
-    /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
+    /// <p>Glue related table types:</p>
+    /// <dl>
+    /// <dt>
+    /// EXTERNAL_TABLE
+    /// </dt>
+    /// <dd>
+    /// <p>Hive compatible attribute - indicates a non-Hive managed table.</p>
+    /// </dd>
+    /// <dt>
+    /// GOVERNED
+    /// </dt>
+    /// <dd>
+    /// <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p>
+    /// </dd>
+    /// </dl>
     pub fn table_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.table_type = Some(input.into());
         self
     }
-    /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
+    /// <p>Glue related table types:</p>
+    /// <dl>
+    /// <dt>
+    /// EXTERNAL_TABLE
+    /// </dt>
+    /// <dd>
+    /// <p>Hive compatible attribute - indicates a non-Hive managed table.</p>
+    /// </dd>
+    /// <dt>
+    /// GOVERNED
+    /// </dt>
+    /// <dd>
+    /// <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_table_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.table_type = input;
         self

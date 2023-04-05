@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainSummary {
-    /// <p>The service-generated identifier for the domain.</p>
+    /// <p>The identifier of the domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the domain.</p>
@@ -13,7 +13,7 @@ pub struct DomainSummary {
     /// <p>The client-provided name for the domain.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The client-provided description of the domain.</p>
+    /// <p>The description of the domain.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the domain.</p>
@@ -23,19 +23,22 @@ pub struct DomainSummary {
     #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    /// <p>The timestamp showing when the domain is created.</p>
+    /// <p>The timestamp of when the domain was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp showing the domain's last update.</p>
+    /// <p>The timestamp of when the domain was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
     #[doc(hidden)]
     pub server_side_encryption_update_details:
         std::option::Option<crate::types::ServerSideEncryptionUpdateDetails>,
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    #[doc(hidden)]
+    pub watchlist_details: std::option::Option<crate::types::WatchlistDetails>,
 }
 impl DomainSummary {
-    /// <p>The service-generated identifier for the domain.</p>
+    /// <p>The identifier of the domain.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -47,7 +50,7 @@ impl DomainSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The client-provided description of the domain.</p>
+    /// <p>The description of the domain.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -61,11 +64,11 @@ impl DomainSummary {
     ) -> std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
-    /// <p>The timestamp showing when the domain is created.</p>
+    /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The timestamp showing the domain's last update.</p>
+    /// <p>The timestamp of when the domain was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -74,6 +77,10 @@ impl DomainSummary {
         &self,
     ) -> std::option::Option<&crate::types::ServerSideEncryptionUpdateDetails> {
         self.server_side_encryption_update_details.as_ref()
+    }
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    pub fn watchlist_details(&self) -> std::option::Option<&crate::types::WatchlistDetails> {
+        self.watchlist_details.as_ref()
     }
 }
 impl std::fmt::Debug for DomainSummary {
@@ -94,6 +101,7 @@ impl std::fmt::Debug for DomainSummary {
             "server_side_encryption_update_details",
             &self.server_side_encryption_update_details,
         );
+        formatter.field("watchlist_details", &self.watchlist_details);
         formatter.finish()
     }
 }
@@ -119,14 +127,15 @@ pub struct DomainSummaryBuilder {
     pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) server_side_encryption_update_details:
         std::option::Option<crate::types::ServerSideEncryptionUpdateDetails>,
+    pub(crate) watchlist_details: std::option::Option<crate::types::WatchlistDetails>,
 }
 impl DomainSummaryBuilder {
-    /// <p>The service-generated identifier for the domain.</p>
+    /// <p>The identifier of the domain.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain_id = Some(input.into());
         self
     }
-    /// <p>The service-generated identifier for the domain.</p>
+    /// <p>The identifier of the domain.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.domain_id = input;
         self
@@ -151,12 +160,12 @@ impl DomainSummaryBuilder {
         self.name = input;
         self
     }
-    /// <p>The client-provided description of the domain.</p>
+    /// <p>The description of the domain.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>The client-provided description of the domain.</p>
+    /// <p>The description of the domain.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
         self
@@ -190,12 +199,12 @@ impl DomainSummaryBuilder {
         self.server_side_encryption_configuration = input;
         self
     }
-    /// <p>The timestamp showing when the domain is created.</p>
+    /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The timestamp showing when the domain is created.</p>
+    /// <p>The timestamp of when the domain was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -203,12 +212,12 @@ impl DomainSummaryBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp showing the domain's last update.</p>
+    /// <p>The timestamp of when the domain was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The timestamp showing the domain's last update.</p>
+    /// <p>The timestamp of when the domain was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -232,6 +241,19 @@ impl DomainSummaryBuilder {
         self.server_side_encryption_update_details = input;
         self
     }
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    pub fn watchlist_details(mut self, input: crate::types::WatchlistDetails) -> Self {
+        self.watchlist_details = Some(input);
+        self
+    }
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    pub fn set_watchlist_details(
+        mut self,
+        input: std::option::Option<crate::types::WatchlistDetails>,
+    ) -> Self {
+        self.watchlist_details = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
     pub fn build(self) -> crate::types::DomainSummary {
         crate::types::DomainSummary {
@@ -244,6 +266,7 @@ impl DomainSummaryBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             server_side_encryption_update_details: self.server_side_encryption_update_details,
+            watchlist_details: self.watchlist_details,
         }
     }
 }
@@ -265,6 +288,7 @@ impl std::fmt::Debug for DomainSummaryBuilder {
             "server_side_encryption_update_details",
             &self.server_side_encryption_update_details,
         );
+        formatter.field("watchlist_details", &self.watchlist_details);
         formatter.finish()
     }
 }

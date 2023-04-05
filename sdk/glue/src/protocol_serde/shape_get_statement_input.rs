@@ -6,14 +6,14 @@ pub fn ser_get_statement_input(
     if let Some(var_1) = &input.session_id {
         object.key("SessionId").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.id {
         object.key("Id").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.id).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.request_origin {
-        object.key("RequestOrigin").string(var_2.as_str());
+    if let Some(var_3) = &input.request_origin {
+        object.key("RequestOrigin").string(var_3.as_str());
     }
     Ok(())
 }

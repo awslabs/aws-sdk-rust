@@ -21,6 +21,7 @@ pub struct FleetData {
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Indicates whether running instances should be terminated if the target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     #[doc(hidden)]
     pub excess_capacity_termination_policy:
         std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
@@ -95,6 +96,7 @@ impl FleetData {
         self.client_token.as_deref()
     }
     /// <p>Indicates whether running instances should be terminated if the target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         &self,
     ) -> std::option::Option<&crate::types::FleetExcessCapacityTerminationPolicy> {
@@ -264,6 +266,7 @@ impl FleetDataBuilder {
         self
     }
     /// <p>Indicates whether running instances should be terminated if the target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         mut self,
         input: crate::types::FleetExcessCapacityTerminationPolicy,
@@ -272,6 +275,7 @@ impl FleetDataBuilder {
         self
     }
     /// <p>Indicates whether running instances should be terminated if the target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(
         mut self,
         input: std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,

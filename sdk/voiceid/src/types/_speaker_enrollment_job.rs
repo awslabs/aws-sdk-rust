@@ -28,10 +28,10 @@ pub struct SpeakerEnrollmentJob {
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::types::OutputDataConfig>,
-    /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
+    /// <p>A timestamp of when the speaker enrollment job was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A timestamp showing when the speaker enrollment job ended. </p>
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
     #[doc(hidden)]
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
@@ -74,11 +74,11 @@ impl SpeakerEnrollmentJob {
     pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
+    /// <p>A timestamp of when the speaker enrollment job was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>A timestamp showing when the speaker enrollment job ended. </p>
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
     pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
@@ -229,12 +229,12 @@ impl SpeakerEnrollmentJobBuilder {
         self.output_data_config = input;
         self
     }
-    /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
+    /// <p>A timestamp of when the speaker enrollment job was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
+    /// <p>A timestamp of when the speaker enrollment job was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -242,12 +242,12 @@ impl SpeakerEnrollmentJobBuilder {
         self.created_at = input;
         self
     }
-    /// <p>A timestamp showing when the speaker enrollment job ended. </p>
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
     pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.ended_at = Some(input);
         self
     }
-    /// <p>A timestamp showing when the speaker enrollment job ended. </p>
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
     pub fn set_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self

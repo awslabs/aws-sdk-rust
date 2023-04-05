@@ -9,10 +9,8 @@ pub fn ser_update_account_settings_input(
     if let Some(var_2) = &input.notification_email {
         object.key("NotificationEmail").string(var_2.as_str());
     }
-    if input.termination_protection_enabled {
-        object
-            .key("TerminationProtectionEnabled")
-            .boolean(input.termination_protection_enabled);
+    if let Some(var_3) = &input.termination_protection_enabled {
+        object.key("TerminationProtectionEnabled").boolean(*var_3);
     }
     Ok(())
 }

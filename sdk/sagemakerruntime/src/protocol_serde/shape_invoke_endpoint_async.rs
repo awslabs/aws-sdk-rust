@@ -100,6 +100,23 @@ pub fn ser_invoke_endpoint_async_headers(
             builder = builder.header("X-Amzn-SageMaker-RequestTTLSeconds", header_value);
         }
     }
+    if let Some(inner_13) = &input.invocation_timeout_seconds {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_13);
+        let formatted_14 = encoder.encode();
+        if !formatted_14.is_empty() {
+            let header_value = formatted_14;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "invocation_timeout_seconds",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
+            builder = builder.header("X-Amzn-SageMaker-InvocationTimeoutSeconds", header_value);
+        }
+    }
     Ok(builder)
 }
 
@@ -202,6 +219,16 @@ pub fn de_invoke_endpoint_async_http_response(
             output,
         )
         .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+        output = output.set_failure_location(
+            crate::protocol_serde::shape_invoke_endpoint_async_output::de_failure_location_header(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled(
+                    "Failed to parse FailureLocation from header `X-Amzn-SageMaker-FailureLocation",
+                )
+            })?,
+        );
         output = output.set_output_location(
             crate::protocol_serde::shape_invoke_endpoint_async_output::de_output_location_header(
                 response.headers(),

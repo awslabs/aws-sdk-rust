@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTargetedSentimentDetectionJobOutput {
-    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeTargetedSentimentDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -27,18 +27,18 @@ pub struct StartTargetedSentimentDetectionJobOutput {
     /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
     /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code> operation.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }
 impl StartTargetedSentimentDetectionJobOutput {
-    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeTargetedSentimentDetectionJob</code> operation.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -60,7 +60,7 @@ impl StartTargetedSentimentDetectionJobOutput {
     /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
     /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code> operation.</p> </li>
     /// </ul>
     pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
@@ -88,17 +88,17 @@ pub struct StartTargetedSentimentDetectionJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartTargetedSentimentDetectionJobOutputBuilder {
-    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeTargetedSentimentDetectionJob</code> operation.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.job_id = Some(input.into());
         self
     }
-    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeTargetedSentimentDetectionJob</code> operation.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -116,7 +116,7 @@ impl StartTargetedSentimentDetectionJobOutputBuilder {
         self.job_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -139,7 +139,7 @@ impl StartTargetedSentimentDetectionJobOutputBuilder {
     /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
     /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code> operation.</p> </li>
     /// </ul>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = Some(input);
@@ -150,7 +150,7 @@ impl StartTargetedSentimentDetectionJobOutputBuilder {
     /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
     /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code> operation.</p> </li>
     /// </ul>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;

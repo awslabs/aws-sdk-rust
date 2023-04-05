@@ -179,7 +179,7 @@ impl UpdateComponentTypeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
     ///
-    /// <p>The property groups</p>
+    /// <p>The property groups.</p>
     pub fn property_groups(
         mut self,
         k: impl Into<std::string::String>,
@@ -188,7 +188,7 @@ impl UpdateComponentTypeFluentBuilder {
         self.inner = self.inner.property_groups(k.into(), v);
         self
     }
-    /// <p>The property groups</p>
+    /// <p>The property groups.</p>
     pub fn set_property_groups(
         mut self,
         input: std::option::Option<

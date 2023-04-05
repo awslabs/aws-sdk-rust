@@ -107,12 +107,12 @@ impl StartReferenceImportJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>Sources for the job.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::StartReferenceImportJobSourceItem) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    /// <p>Sources for the job.</p>
+    /// <p>The job's source files.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::StartReferenceImportJobSourceItem>>,

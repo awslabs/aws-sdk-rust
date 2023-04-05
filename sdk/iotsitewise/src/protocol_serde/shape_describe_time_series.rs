@@ -182,6 +182,15 @@ pub(crate) fn de_describe_time_series(
                             .transpose()?,
                         );
                     }
+                    "timeSeriesArn" => {
+                        builder = builder.set_time_series_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "timeSeriesCreationDate" => {
                         builder = builder.set_time_series_creation_date(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(

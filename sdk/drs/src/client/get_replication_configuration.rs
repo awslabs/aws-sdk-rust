@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`create_public_ip(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::create_public_ip): <p>Whether to create a Public IP for the Recovery Instance by default.</p>
     ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
     ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    ///   - [`auto_replicate_new_disks(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::auto_replicate_new_disks): <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
     /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::operation::get_replication_configuration::GetReplicationConfigurationError)
     pub fn get_replication_configuration(&self) -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder{
         crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::new(self.handle.clone())

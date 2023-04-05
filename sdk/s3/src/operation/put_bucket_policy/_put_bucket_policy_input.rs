@@ -16,7 +16,7 @@ pub struct PutBucketPolicyInput {
     pub checksum_algorithm: std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
     #[doc(hidden)]
-    pub confirm_remove_self_bucket_access: bool,
+    pub confirm_remove_self_bucket_access: std::option::Option<bool>,
     /// <p>The bucket policy as a JSON document.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -40,7 +40,7 @@ impl PutBucketPolicyInput {
         self.checksum_algorithm.as_ref()
     }
     /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
-    pub fn confirm_remove_self_bucket_access(&self) -> bool {
+    pub fn confirm_remove_self_bucket_access(&self) -> std::option::Option<bool> {
         self.confirm_remove_self_bucket_access
     }
     /// <p>The bucket policy as a JSON document.</p>
@@ -155,9 +155,7 @@ impl PutBucketPolicyInputBuilder {
             bucket: self.bucket,
             content_md5: self.content_md5,
             checksum_algorithm: self.checksum_algorithm,
-            confirm_remove_self_bucket_access: self
-                .confirm_remove_self_bucket_access
-                .unwrap_or_default(),
+            confirm_remove_self_bucket_access: self.confirm_remove_self_bucket_access,
             policy: self.policy,
             expected_bucket_owner: self.expected_bucket_owner,
         })

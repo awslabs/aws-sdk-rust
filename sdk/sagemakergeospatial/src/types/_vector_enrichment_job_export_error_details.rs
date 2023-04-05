@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VectorEnrichmentJobExportErrorDetails {
-    /// <p></p>
+    /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
@@ -12,7 +12,7 @@ pub struct VectorEnrichmentJobExportErrorDetails {
     pub message: std::option::Option<std::string::String>,
 }
 impl VectorEnrichmentJobExportErrorDetails {
-    /// <p></p>
+    /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobExportErrorType> {
         self.r#type.as_ref()
     }
@@ -36,12 +36,12 @@ pub struct VectorEnrichmentJobExportErrorDetailsBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
 }
 impl VectorEnrichmentJobExportErrorDetailsBuilder {
-    /// <p></p>
+    /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
     pub fn r#type(mut self, input: crate::types::VectorEnrichmentJobExportErrorType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
     pub fn set_type(
         mut self,
         input: std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,

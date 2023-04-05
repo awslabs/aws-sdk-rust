@@ -56,6 +56,9 @@ pub struct UpdateReplicationConfigurationOutput {
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
     #[doc(hidden)]
     pub pit_policy: std::option::Option<std::vec::Vec<crate::types::PitPolicyRule>>,
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    #[doc(hidden)]
+    pub auto_replicate_new_disks: std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateReplicationConfigurationOutput {
@@ -137,6 +140,10 @@ impl UpdateReplicationConfigurationOutput {
     pub fn pit_policy(&self) -> std::option::Option<&[crate::types::PitPolicyRule]> {
         self.pit_policy.as_deref()
     }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn auto_replicate_new_disks(&self) -> std::option::Option<bool> {
+        self.auto_replicate_new_disks
+    }
 }
 impl std::fmt::Debug for UpdateReplicationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -172,6 +179,7 @@ impl std::fmt::Debug for UpdateReplicationConfigurationOutput {
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
+        formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -214,6 +222,7 @@ pub struct UpdateReplicationConfigurationOutputBuilder {
     pub(crate) staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) pit_policy: std::option::Option<std::vec::Vec<crate::types::PitPolicyRule>>,
+    pub(crate) auto_replicate_new_disks: std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateReplicationConfigurationOutputBuilder {
@@ -467,6 +476,16 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.pit_policy = input;
         self
     }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn auto_replicate_new_disks(mut self, input: bool) -> Self {
+        self.auto_replicate_new_disks = Some(input);
+        self
+    }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn set_auto_replicate_new_disks(mut self, input: std::option::Option<bool>) -> Self {
+        self.auto_replicate_new_disks = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -498,6 +517,7 @@ impl UpdateReplicationConfigurationOutputBuilder {
             create_public_ip: self.create_public_ip,
             staging_area_tags: self.staging_area_tags,
             pit_policy: self.pit_policy,
+            auto_replicate_new_disks: self.auto_replicate_new_disks,
             _request_id: self._request_id,
         }
     }
@@ -536,6 +556,7 @@ impl std::fmt::Debug for UpdateReplicationConfigurationOutputBuilder {
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
+        formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

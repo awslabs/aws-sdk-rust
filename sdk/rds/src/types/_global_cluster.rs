@@ -31,7 +31,7 @@ pub struct GlobalCluster {
     /// <p>The deletion protection setting for the new global database cluster.</p>
     #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item.</p>
+    /// <p>The list of primary and secondary clusters within the global database cluster.</p>
     #[doc(hidden)]
     pub global_cluster_members:
         std::option::Option<std::vec::Vec<crate::types::GlobalClusterMember>>,
@@ -76,7 +76,7 @@ impl GlobalCluster {
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item.</p>
+    /// <p>The list of primary and secondary clusters within the global database cluster.</p>
     pub fn global_cluster_members(
         &self,
     ) -> std::option::Option<&[crate::types::GlobalClusterMember]> {
@@ -215,14 +215,14 @@ impl GlobalClusterBuilder {
     ///
     /// To override the contents of this collection use [`set_global_cluster_members`](Self::set_global_cluster_members).
     ///
-    /// <p>The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item.</p>
+    /// <p>The list of primary and secondary clusters within the global database cluster.</p>
     pub fn global_cluster_members(mut self, input: crate::types::GlobalClusterMember) -> Self {
         let mut v = self.global_cluster_members.unwrap_or_default();
         v.push(input);
         self.global_cluster_members = Some(v);
         self
     }
-    /// <p>The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item.</p>
+    /// <p>The list of primary and secondary clusters within the global database cluster.</p>
     pub fn set_global_cluster_members(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::GlobalClusterMember>>,

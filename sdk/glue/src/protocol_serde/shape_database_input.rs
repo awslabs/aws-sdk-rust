@@ -46,5 +46,14 @@ pub fn ser_database_input(
         )?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.federated_database {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("FederatedDatabase").start_object();
+        crate::protocol_serde::shape_federated_database::ser_federated_database(
+            &mut object_15,
+            var_14,
+        )?;
+        object_15.finish();
+    }
     Ok(())
 }

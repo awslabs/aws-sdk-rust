@@ -3,8 +3,8 @@ pub fn ser_put_configuration_set_sending_options_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.sending_enabled {
-        object.key("SendingEnabled").boolean(input.sending_enabled);
+    if let Some(var_1) = &input.sending_enabled {
+        object.key("SendingEnabled").boolean(*var_1);
     }
     Ok(())
 }

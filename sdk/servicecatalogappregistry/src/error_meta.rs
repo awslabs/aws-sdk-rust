@@ -9,8 +9,10 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The maximum number of resources per account has been reached.</p>
+    /// <p> The maximum number of resources per account has been reached.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p> The maximum number of API requests has been exceeded. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has invalid or missing parameters.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -23,6 +25,7 @@ impl std::fmt::Display for Error {
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -111,6 +114,7 @@ impl From<crate::operation::associate_resource::AssociateResourceError> for Erro
             crate::operation::associate_resource::AssociateResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::associate_resource::AssociateResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::associate_resource::AssociateResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::associate_resource::AssociateResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_resource::AssociateResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::associate_resource::AssociateResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -153,6 +157,7 @@ impl From<crate::operation::create_application::CreateApplicationError> for Erro
             crate::operation::create_application::CreateApplicationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_application::CreateApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_application::CreateApplicationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_application::CreateApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_application::CreateApplicationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_application::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -363,6 +368,7 @@ impl From<crate::operation::disassociate_resource::DisassociateResourceError> fo
         match err {
             crate::operation::disassociate_resource::DisassociateResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::disassociate_resource::DisassociateResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_resource::DisassociateResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disassociate_resource::DisassociateResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::disassociate_resource::DisassociateResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -872,6 +878,12 @@ impl From<crate::operation::sync_resource::SyncResourceError> for Error {
             crate::operation::sync_resource::SyncResourceError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
+            crate::operation::sync_resource::SyncResourceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::sync_resource::SyncResourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::sync_resource::SyncResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -1001,6 +1013,7 @@ impl From<crate::operation::update_application::UpdateApplicationError> for Erro
             crate::operation::update_application::UpdateApplicationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_application::UpdateApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_application::UpdateApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_application::UpdateApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_application::UpdateApplicationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_application::UpdateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1056,6 +1069,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }

@@ -5,7 +5,7 @@ pub use crate::operation::list_page_receipts::_list_page_receipts_input::ListPag
 
 /// Fluent builder constructing a request to `ListPageReceipts`.
 ///
-/// <p>Lists all of the engagements to contact channels that have been acknowledged. </p>
+/// <p>Lists all of the engagements to contact channels that have been acknowledged.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPageReceiptsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

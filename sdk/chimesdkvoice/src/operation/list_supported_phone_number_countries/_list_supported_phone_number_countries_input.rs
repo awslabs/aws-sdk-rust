@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     #[doc(hidden)]
     pub product_type: std::option::Option<crate::types::PhoneNumberProductType>,
 }
 impl ListSupportedPhoneNumberCountriesInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn product_type(&self) -> std::option::Option<&crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
@@ -27,12 +27,12 @@ pub struct ListSupportedPhoneNumberCountriesInputBuilder {
     pub(crate) product_type: std::option::Option<crate::types::PhoneNumberProductType>,
 }
 impl ListSupportedPhoneNumberCountriesInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.product_type = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product type.</p>
     pub fn set_product_type(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberProductType>,

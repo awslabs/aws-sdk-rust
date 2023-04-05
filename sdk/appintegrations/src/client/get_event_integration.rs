@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`event_integration_arn(Option<String>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::event_integration_arn): <p>The Amazon Resource Name (ARN) for the event integration.</p>
     ///   - [`event_bridge_bus(Option<String>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::event_bridge_bus): <p>The EventBridge bus.</p>
     ///   - [`event_filter(Option<EventFilter>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::event_filter): <p>The event filter.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::tags): <p>One or more tags.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On failure, responds with [`SdkError<GetEventIntegrationError>`](crate::operation::get_event_integration::GetEventIntegrationError)
     pub fn get_event_integration(
         &self,

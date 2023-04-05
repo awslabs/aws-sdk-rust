@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSpeakerEnrollmentJobInput {
-    /// <p>The identifier of the domain containing the speaker enrollment job.</p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the speaker enrollment job you are describing.</p>
@@ -11,7 +11,7 @@ pub struct DescribeSpeakerEnrollmentJobInput {
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeSpeakerEnrollmentJobInput {
-    /// <p>The identifier of the domain containing the speaker enrollment job.</p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -35,12 +35,12 @@ pub struct DescribeSpeakerEnrollmentJobInputBuilder {
     pub(crate) job_id: std::option::Option<std::string::String>,
 }
 impl DescribeSpeakerEnrollmentJobInputBuilder {
-    /// <p>The identifier of the domain containing the speaker enrollment job.</p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the domain containing the speaker enrollment job.</p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.domain_id = input;
         self

@@ -150,24 +150,20 @@ pub fn ser_create_service_input(
         }
         array_38.finish();
     }
-    if input.enable_ecs_managed_tags {
-        object
-            .key("enableECSManagedTags")
-            .boolean(input.enable_ecs_managed_tags);
+    if let Some(var_41) = &input.enable_ecs_managed_tags {
+        object.key("enableECSManagedTags").boolean(*var_41);
     }
-    if let Some(var_41) = &input.propagate_tags {
-        object.key("propagateTags").string(var_41.as_str());
+    if let Some(var_42) = &input.propagate_tags {
+        object.key("propagateTags").string(var_42.as_str());
     }
-    if input.enable_execute_command {
-        object
-            .key("enableExecuteCommand")
-            .boolean(input.enable_execute_command);
+    if let Some(var_43) = &input.enable_execute_command {
+        object.key("enableExecuteCommand").boolean(*var_43);
     }
-    if let Some(var_42) = &input.service_connect_configuration {
+    if let Some(var_44) = &input.service_connect_configuration {
         #[allow(unused_mut)]
-        let mut object_43 = object.key("serviceConnectConfiguration").start_object();
-        crate::protocol_serde::shape_service_connect_configuration::ser_service_connect_configuration(&mut object_43, var_42)?;
-        object_43.finish();
+        let mut object_45 = object.key("serviceConnectConfiguration").start_object();
+        crate::protocol_serde::shape_service_connect_configuration::ser_service_connect_configuration(&mut object_45, var_44)?;
+        object_45.finish();
     }
     Ok(())
 }

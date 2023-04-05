@@ -15,29 +15,29 @@ pub fn ser_query_lineage_input(
     if let Some(var_4) = &input.direction {
         object.key("Direction").string(var_4.as_str());
     }
-    if input.include_edges {
-        object.key("IncludeEdges").boolean(input.include_edges);
+    if let Some(var_5) = &input.include_edges {
+        object.key("IncludeEdges").boolean(*var_5);
     }
-    if let Some(var_5) = &input.filters {
+    if let Some(var_6) = &input.filters {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Filters").start_object();
-        crate::protocol_serde::shape_query_filters::ser_query_filters(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("Filters").start_object();
+        crate::protocol_serde::shape_query_filters::ser_query_filters(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.max_depth {
+    if let Some(var_8) = &input.max_depth {
         object.key("MaxDepth").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_7).into()),
-        );
-    }
-    if let Some(var_8) = &input.max_results {
-        object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_9) = &input.next_token {
-        object.key("NextToken").string(var_9.as_str());
+    if let Some(var_9) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
+    if let Some(var_10) = &input.next_token {
+        object.key("NextToken").string(var_10.as_str());
     }
     Ok(())
 }

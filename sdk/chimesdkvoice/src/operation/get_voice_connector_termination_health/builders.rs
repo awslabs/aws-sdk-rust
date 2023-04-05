@@ -5,6 +5,7 @@ pub use crate::operation::get_voice_connector_termination_health::_get_voice_con
 
 /// Fluent builder constructing a request to `GetVoiceConnectorTerminationHealth`.
 ///
+/// <p>Retrieves information about the last time a <code>SIP OPTIONS</code> ping was received from your SIP infrastructure for the specified Amazon Chime SDK Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationHealthFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl GetVoiceConnectorTerminationHealthFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,

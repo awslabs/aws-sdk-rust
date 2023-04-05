@@ -15,7 +15,7 @@ pub struct GetPositionEstimateInput {
     /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
     #[doc(hidden)]
     pub gnss: std::option::Option<crate::types::Gnss>,
-    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -36,7 +36,7 @@ impl GetPositionEstimateInput {
     pub fn gnss(&self) -> std::option::Option<&crate::types::Gnss> {
         self.gnss.as_ref()
     }
-    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
@@ -111,12 +111,12 @@ impl GetPositionEstimateInputBuilder {
         self.gnss = input;
         self
     }
-    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.timestamp = Some(input);
         self
     }
-    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self

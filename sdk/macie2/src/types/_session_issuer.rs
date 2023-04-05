@@ -7,7 +7,7 @@ pub struct SessionIssuer {
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was used to get the credentials.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
@@ -25,7 +25,7 @@ impl SessionIssuer {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was used to get the credentials.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -70,12 +70,12 @@ impl SessionIssuerBuilder {
         self.account_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was used to get the credentials.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was used to get the credentials.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.arn = input;
         self

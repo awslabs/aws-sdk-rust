@@ -35,6 +35,7 @@
 ///     ExportableVolumeField::RecommendationOptionsMonthlyPrice => { /* ... */ },
 ///     ExportableVolumeField::RecommendationOptionsPerformanceRisk => { /* ... */ },
 ///     ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
+///     ExportableVolumeField::RootVolume => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => { /* ... */ },
@@ -120,6 +121,8 @@ pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
+    RootVolume,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsVolumeReadBytesPerSecondMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsVolumeReadOpsPerSecondMaximum,
@@ -192,6 +195,7 @@ impl std::convert::From<&str> for ExportableVolumeField {
             "RecommendationOptionsSavingsOpportunityPercentage" => {
                 ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage
             }
+            "RootVolume" => ExportableVolumeField::RootVolume,
             "UtilizationMetricsVolumeReadBytesPerSecondMaximum" => {
                 ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum
             }
@@ -279,6 +283,7 @@ impl ExportableVolumeField {
             ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => {
                 "RecommendationOptionsSavingsOpportunityPercentage"
             }
+            ExportableVolumeField::RootVolume => "RootVolume",
             ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => {
                 "UtilizationMetricsVolumeReadBytesPerSecondMaximum"
             }
@@ -321,6 +326,7 @@ impl ExportableVolumeField {
             "RecommendationOptionsMonthlyPrice",
             "RecommendationOptionsPerformanceRisk",
             "RecommendationOptionsSavingsOpportunityPercentage",
+            "RootVolume",
             "UtilizationMetricsVolumeReadBytesPerSecondMaximum",
             "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
             "UtilizationMetricsVolumeWriteBytesPerSecondMaximum",

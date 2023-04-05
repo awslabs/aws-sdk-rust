@@ -6,8 +6,8 @@ pub fn ser_delete_flow_input(
     if let Some(var_1) = &input.flow_name {
         object.key("flowName").string(var_1.as_str());
     }
-    if input.force_delete {
-        object.key("forceDelete").boolean(input.force_delete);
+    if let Some(var_2) = &input.force_delete {
+        object.key("forceDelete").boolean(*var_2);
     }
     Ok(())
 }

@@ -308,6 +308,10 @@ pub(crate) fn de_update_input_device(
                             .transpose()?,
                         );
                     }
+                    "tags" => {
+                        builder =
+                            builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    }
                     "type" => {
                         builder = builder.set_type(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

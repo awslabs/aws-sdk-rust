@@ -111,6 +111,10 @@ pub use crate::types::_resource_sync_event::ResourceSyncEvent;
 
 pub use crate::types::_resource_sync_status::ResourceSyncStatus;
 
+pub use crate::types::_counts_summary::CountsSummary;
+
+pub use crate::types::_resource_counts_summary::ResourceCountsSummary;
+
 pub use crate::types::_repository_sync_attempt::RepositorySyncAttempt;
 
 pub use crate::types::_repository_sync_event::RepositorySyncEvent;
@@ -128,6 +132,8 @@ mod _component;
 mod _component_deployment_update_type;
 
 mod _component_summary;
+
+mod _counts_summary;
 
 mod _deployment_status;
 
@@ -186,6 +192,8 @@ mod _repository_sync_definition;
 mod _repository_sync_event;
 
 mod _repository_sync_status;
+
+mod _resource_counts_summary;
 
 mod _resource_deployment_status;
 

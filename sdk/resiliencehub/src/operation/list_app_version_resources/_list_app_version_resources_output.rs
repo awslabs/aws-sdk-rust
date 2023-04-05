@@ -6,7 +6,7 @@ pub struct ListAppVersionResourcesOutput {
     /// <p>The physical resources in the application version.</p>
     #[doc(hidden)]
     pub physical_resources: std::option::Option<std::vec::Vec<crate::types::PhysicalResource>>,
-    /// <p>The identifier for a specific resolution.</p>
+    /// <p>The ID for a specific resolution.</p>
     #[doc(hidden)]
     pub resolution_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -19,7 +19,7 @@ impl ListAppVersionResourcesOutput {
     pub fn physical_resources(&self) -> std::option::Option<&[crate::types::PhysicalResource]> {
         self.physical_resources.as_deref()
     }
-    /// <p>The identifier for a specific resolution.</p>
+    /// <p>The ID for a specific resolution.</p>
     pub fn resolution_id(&self) -> std::option::Option<&str> {
         self.resolution_id.as_deref()
     }
@@ -72,12 +72,12 @@ impl ListAppVersionResourcesOutputBuilder {
         self.physical_resources = input;
         self
     }
-    /// <p>The identifier for a specific resolution.</p>
+    /// <p>The ID for a specific resolution.</p>
     pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.resolution_id = Some(input.into());
         self
     }
-    /// <p>The identifier for a specific resolution.</p>
+    /// <p>The ID for a specific resolution.</p>
     pub fn set_resolution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.resolution_id = input;
         self

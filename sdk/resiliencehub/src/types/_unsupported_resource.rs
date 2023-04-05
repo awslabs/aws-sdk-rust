@@ -13,6 +13,9 @@ pub struct UnsupportedResource {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The status of the unsupported resource.</p>
+    #[doc(hidden)]
+    pub unsupported_resource_status: std::option::Option<std::string::String>,
 }
 impl UnsupportedResource {
     /// <p>The logical resource identifier for the unsupported resource.</p>
@@ -26,6 +29,10 @@ impl UnsupportedResource {
     /// <p>The type of resource.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
+    }
+    /// <p>The status of the unsupported resource.</p>
+    pub fn unsupported_resource_status(&self) -> std::option::Option<&str> {
+        self.unsupported_resource_status.as_deref()
     }
 }
 impl UnsupportedResource {
@@ -42,6 +49,7 @@ pub struct UnsupportedResourceBuilder {
     pub(crate) logical_resource_id: std::option::Option<crate::types::LogicalResourceId>,
     pub(crate) physical_resource_id: std::option::Option<crate::types::PhysicalResourceId>,
     pub(crate) resource_type: std::option::Option<std::string::String>,
+    pub(crate) unsupported_resource_status: std::option::Option<std::string::String>,
 }
 impl UnsupportedResourceBuilder {
     /// <p>The logical resource identifier for the unsupported resource.</p>
@@ -80,12 +88,26 @@ impl UnsupportedResourceBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The status of the unsupported resource.</p>
+    pub fn unsupported_resource_status(mut self, input: impl Into<std::string::String>) -> Self {
+        self.unsupported_resource_status = Some(input.into());
+        self
+    }
+    /// <p>The status of the unsupported resource.</p>
+    pub fn set_unsupported_resource_status(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.unsupported_resource_status = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UnsupportedResource`](crate::types::UnsupportedResource).
     pub fn build(self) -> crate::types::UnsupportedResource {
         crate::types::UnsupportedResource {
             logical_resource_id: self.logical_resource_id,
             physical_resource_id: self.physical_resource_id,
             resource_type: self.resource_type,
+            unsupported_resource_status: self.unsupported_resource_status,
         }
     }
 }

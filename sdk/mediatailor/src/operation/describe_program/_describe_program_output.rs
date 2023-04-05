@@ -30,6 +30,12 @@ pub struct DescribeProgramOutput {
     /// <p>The name that's used to refer to a VOD source.</p>
     #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
+    /// <p>The clip range configuration settings.</p>
+    #[doc(hidden)]
+    pub clip_range: std::option::Option<crate::types::ClipRange>,
+    /// <p>The duration of the live program in milliseconds.</p>
+    #[doc(hidden)]
+    pub duration_millis: std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl DescribeProgramOutput {
@@ -69,6 +75,14 @@ impl DescribeProgramOutput {
     pub fn vod_source_name(&self) -> std::option::Option<&str> {
         self.vod_source_name.as_deref()
     }
+    /// <p>The clip range configuration settings.</p>
+    pub fn clip_range(&self) -> std::option::Option<&crate::types::ClipRange> {
+        self.clip_range.as_ref()
+    }
+    /// <p>The duration of the live program in milliseconds.</p>
+    pub fn duration_millis(&self) -> std::option::Option<i64> {
+        self.duration_millis
+    }
 }
 impl aws_http::request_id::RequestId for DescribeProgramOutput {
     fn request_id(&self) -> Option<&str> {
@@ -95,6 +109,8 @@ pub struct DescribeProgramOutputBuilder {
     pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) source_location_name: std::option::Option<std::string::String>,
     pub(crate) vod_source_name: std::option::Option<std::string::String>,
+    pub(crate) clip_range: std::option::Option<crate::types::ClipRange>,
+    pub(crate) duration_millis: std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl DescribeProgramOutputBuilder {
@@ -206,6 +222,26 @@ impl DescribeProgramOutputBuilder {
         self.vod_source_name = input;
         self
     }
+    /// <p>The clip range configuration settings.</p>
+    pub fn clip_range(mut self, input: crate::types::ClipRange) -> Self {
+        self.clip_range = Some(input);
+        self
+    }
+    /// <p>The clip range configuration settings.</p>
+    pub fn set_clip_range(mut self, input: std::option::Option<crate::types::ClipRange>) -> Self {
+        self.clip_range = input;
+        self
+    }
+    /// <p>The duration of the live program in milliseconds.</p>
+    pub fn duration_millis(mut self, input: i64) -> Self {
+        self.duration_millis = Some(input);
+        self
+    }
+    /// <p>The duration of the live program in milliseconds.</p>
+    pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
+        self.duration_millis = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -227,6 +263,8 @@ impl DescribeProgramOutputBuilder {
             scheduled_start_time: self.scheduled_start_time,
             source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,
+            clip_range: self.clip_range,
+            duration_millis: self.duration_millis,
             _request_id: self._request_id,
         }
     }

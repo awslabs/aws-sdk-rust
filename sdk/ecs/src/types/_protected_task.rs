@@ -7,7 +7,7 @@ pub struct ProtectedTask {
     /// <p>The task ARN.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+    /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
     #[doc(hidden)]
     pub protection_enabled: bool,
     /// <p>The epoch time when protection for the task will expire.</p>
@@ -19,7 +19,7 @@ impl ProtectedTask {
     pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+    /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
     pub fn protection_enabled(&self) -> bool {
         self.protection_enabled
     }
@@ -54,12 +54,12 @@ impl ProtectedTaskBuilder {
         self.task_arn = input;
         self
     }
-    /// <p>The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+    /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
     pub fn protection_enabled(mut self, input: bool) -> Self {
         self.protection_enabled = Some(input);
         self
     }
-    /// <p>The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+    /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
     pub fn set_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.protection_enabled = input;
         self

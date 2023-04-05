@@ -15,6 +15,8 @@ impl super::Client {
     ///   - [`dataflow_edges(Option<Vec<Vec<String>>>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::dataflow_edges): <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
     ///   - [`tracking_config_arn(Option<String>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::tracking_config_arn): <p>ARN of a tracking <code>Config</code>.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::tags): <p>Tags assigned to a mission profile.</p>
+    ///   - [`streams_kms_key(Option<KmsKey>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::streams_kms_key): <p>KMS key to use for encrypting streams.</p>
+    ///   - [`streams_kms_role(Option<String>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::streams_kms_role): <p>Role to use for encrypting streams with KMS key.</p>
     /// - On failure, responds with [`SdkError<GetMissionProfileError>`](crate::operation::get_mission_profile::GetMissionProfileError)
     pub fn get_mission_profile(
         &self,

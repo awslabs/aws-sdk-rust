@@ -97,26 +97,25 @@ impl DescribeActivitiesInput {
                         query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
-                if _input.include_indirect_activities {
-                    query.push_kv(
-                        "includeIndirectActivities",
-                        aws_smithy_types::primitive::Encoder::from(
-                            _input.include_indirect_activities,
-                        )
-                        .encode(),
-                    );
-                }
-                if let Some(inner_7) = &_input.limit {
-                    if *inner_7 != 0 {
+                if let Some(inner_7) = &_input.include_indirect_activities {
+                    if *inner_7 {
                         query.push_kv(
-                            "limit",
+                            "includeIndirectActivities",
                             aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),
                         );
                     }
                 }
-                if let Some(inner_8) = &_input.marker {
+                if let Some(inner_8) = &_input.limit {
+                    if *inner_8 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_9) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_9));
                     }
                 }
                 Ok(())
@@ -230,7 +229,7 @@ pub type DescribeActivitiesErrorKind = DescribeActivitiesError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeActivitiesError {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
@@ -384,3 +383,6 @@ mod _describe_activities_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

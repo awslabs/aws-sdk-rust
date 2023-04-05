@@ -284,6 +284,8 @@ mod start_dev_environment_session;
 
 mod stop_dev_environment;
 
+mod stop_dev_environment_session;
+
 mod update_dev_environment;
 
 mod verify_session;

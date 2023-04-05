@@ -97,6 +97,34 @@ pub use crate::types::_job_log_event_data::JobLogEventDataBuilder;
 
 pub use crate::types::_describe_jobs_request_filters::DescribeJobsRequestFiltersBuilder;
 
+pub use crate::types::_import_task_error::ImportTaskErrorBuilder;
+
+pub use crate::types::_import_error_data::ImportErrorDataBuilder;
+
+pub use crate::types::_import_task::ImportTaskBuilder;
+
+pub use crate::types::_import_task_summary::ImportTaskSummaryBuilder;
+
+pub use crate::types::_import_task_summary_servers::ImportTaskSummaryServersBuilder;
+
+pub use crate::types::_import_task_summary_applications::ImportTaskSummaryApplicationsBuilder;
+
+pub use crate::types::_import_task_summary_waves::ImportTaskSummaryWavesBuilder;
+
+pub use crate::types::_s3_bucket_source::S3BucketSourceBuilder;
+
+pub use crate::types::_list_imports_request_filters::ListImportsRequestFiltersBuilder;
+
+pub use crate::types::_export_task_error::ExportTaskErrorBuilder;
+
+pub use crate::types::_export_error_data::ExportErrorDataBuilder;
+
+pub use crate::types::_export_task::ExportTaskBuilder;
+
+pub use crate::types::_export_task_summary::ExportTaskSummaryBuilder;
+
+pub use crate::types::_list_exports_request_filters::ListExportsRequestFiltersBuilder;
+
 pub use crate::types::_application_aggregated_status::ApplicationAggregatedStatusBuilder;
 
 pub use crate::types::_application::ApplicationBuilder;

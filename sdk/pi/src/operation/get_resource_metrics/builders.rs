@@ -205,4 +205,17 @@ impl GetResourceMetricsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
+    pub fn period_alignment(mut self, input: crate::types::PeriodAlignment) -> Self {
+        self.inner = self.inner.period_alignment(input);
+        self
+    }
+    /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
+    pub fn set_period_alignment(
+        mut self,
+        input: std::option::Option<crate::types::PeriodAlignment>,
+    ) -> Self {
+        self.inner = self.inner.set_period_alignment(input);
+        self
+    }
 }

@@ -83,11 +83,11 @@ pub fn ser_put_object_headers(
             builder = builder.header("Content-Language", header_value);
         }
     }
-    if input.content_length != 0 {
-        let mut encoder = aws_smithy_types::primitive::Encoder::from(input.content_length);
-        let formatted_11 = encoder.encode();
-        if !formatted_11.is_empty() {
-            let header_value = formatted_11;
+    if let Some(inner_11) = &input.content_length {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_11);
+        let formatted_12 = encoder.encode();
+        if !formatted_12.is_empty() {
+            let header_value = formatted_12;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_length",
@@ -100,10 +100,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("Content-Length", header_value);
         }
     }
-    if let Some(inner_12) = &input.content_md5 {
-        let formatted_13 = inner_12.as_str();
-        if !formatted_13.is_empty() {
-            let header_value = formatted_13;
+    if let Some(inner_13) = &input.content_md5 {
+        let formatted_14 = inner_13.as_str();
+        if !formatted_14.is_empty() {
+            let header_value = formatted_14;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_md5",
@@ -116,10 +116,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("Content-MD5", header_value);
         }
     }
-    if let Some(inner_14) = &input.content_type {
-        let formatted_15 = inner_14.as_str();
-        if !formatted_15.is_empty() {
-            let header_value = formatted_15;
+    if let Some(inner_15) = &input.content_type {
+        let formatted_16 = inner_15.as_str();
+        if !formatted_16.is_empty() {
+            let header_value = formatted_16;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_type",
@@ -132,10 +132,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("Content-Type", header_value);
         }
     }
-    if let Some(inner_16) = &input.checksum_algorithm {
-        let formatted_17 = inner_16.as_str();
-        if !formatted_17.is_empty() {
-            let header_value = formatted_17;
+    if let Some(inner_17) = &input.checksum_algorithm {
+        let formatted_18 = inner_17.as_str();
+        if !formatted_18.is_empty() {
+            let header_value = formatted_18;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_algorithm",
@@ -148,10 +148,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
-    if let Some(inner_18) = &input.checksum_crc32 {
-        let formatted_19 = inner_18.as_str();
-        if !formatted_19.is_empty() {
-            let header_value = formatted_19;
+    if let Some(inner_19) = &input.checksum_crc32 {
+        let formatted_20 = inner_19.as_str();
+        if !formatted_20.is_empty() {
+            let header_value = formatted_20;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_crc32",
@@ -164,10 +164,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-checksum-crc32", header_value);
         }
     }
-    if let Some(inner_20) = &input.checksum_crc32_c {
-        let formatted_21 = inner_20.as_str();
-        if !formatted_21.is_empty() {
-            let header_value = formatted_21;
+    if let Some(inner_21) = &input.checksum_crc32_c {
+        let formatted_22 = inner_21.as_str();
+        if !formatted_22.is_empty() {
+            let header_value = formatted_22;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_crc32_c",
@@ -180,10 +180,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-checksum-crc32c", header_value);
         }
     }
-    if let Some(inner_22) = &input.checksum_sha1 {
-        let formatted_23 = inner_22.as_str();
-        if !formatted_23.is_empty() {
-            let header_value = formatted_23;
+    if let Some(inner_23) = &input.checksum_sha1 {
+        let formatted_24 = inner_23.as_str();
+        if !formatted_24.is_empty() {
+            let header_value = formatted_24;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_sha1",
@@ -196,10 +196,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-checksum-sha1", header_value);
         }
     }
-    if let Some(inner_24) = &input.checksum_sha256 {
-        let formatted_25 = inner_24.as_str();
-        if !formatted_25.is_empty() {
-            let header_value = formatted_25;
+    if let Some(inner_25) = &input.checksum_sha256 {
+        let formatted_26 = inner_25.as_str();
+        if !formatted_26.is_empty() {
+            let header_value = formatted_26;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_sha256",
@@ -212,10 +212,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-checksum-sha256", header_value);
         }
     }
-    if let Some(inner_26) = &input.expires {
-        let formatted_27 = inner_26.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-        if !formatted_27.is_empty() {
-            let header_value = formatted_27;
+    if let Some(inner_27) = &input.expires {
+        let formatted_28 = inner_27.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
+        if !formatted_28.is_empty() {
+            let header_value = formatted_28;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expires",
@@ -228,10 +228,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("Expires", header_value);
         }
     }
-    if let Some(inner_28) = &input.grant_full_control {
-        let formatted_29 = inner_28.as_str();
-        if !formatted_29.is_empty() {
-            let header_value = formatted_29;
+    if let Some(inner_29) = &input.grant_full_control {
+        let formatted_30 = inner_29.as_str();
+        if !formatted_30.is_empty() {
+            let header_value = formatted_30;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "grant_full_control",
@@ -244,10 +244,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-grant-full-control", header_value);
         }
     }
-    if let Some(inner_30) = &input.grant_read {
-        let formatted_31 = inner_30.as_str();
-        if !formatted_31.is_empty() {
-            let header_value = formatted_31;
+    if let Some(inner_31) = &input.grant_read {
+        let formatted_32 = inner_31.as_str();
+        if !formatted_32.is_empty() {
+            let header_value = formatted_32;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "grant_read",
@@ -260,10 +260,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-grant-read", header_value);
         }
     }
-    if let Some(inner_32) = &input.grant_read_acp {
-        let formatted_33 = inner_32.as_str();
-        if !formatted_33.is_empty() {
-            let header_value = formatted_33;
+    if let Some(inner_33) = &input.grant_read_acp {
+        let formatted_34 = inner_33.as_str();
+        if !formatted_34.is_empty() {
+            let header_value = formatted_34;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "grant_read_acp",
@@ -276,10 +276,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-grant-read-acp", header_value);
         }
     }
-    if let Some(inner_34) = &input.grant_write_acp {
-        let formatted_35 = inner_34.as_str();
-        if !formatted_35.is_empty() {
-            let header_value = formatted_35;
+    if let Some(inner_35) = &input.grant_write_acp {
+        let formatted_36 = inner_35.as_str();
+        if !formatted_36.is_empty() {
+            let header_value = formatted_36;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "grant_write_acp",
@@ -292,10 +292,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-grant-write-acp", header_value);
         }
     }
-    if let Some(inner_36) = &input.server_side_encryption {
-        let formatted_37 = inner_36.as_str();
-        if !formatted_37.is_empty() {
-            let header_value = formatted_37;
+    if let Some(inner_37) = &input.server_side_encryption {
+        let formatted_38 = inner_37.as_str();
+        if !formatted_38.is_empty() {
+            let header_value = formatted_38;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "server_side_encryption",
@@ -308,10 +308,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-server-side-encryption", header_value);
         }
     }
-    if let Some(inner_38) = &input.storage_class {
-        let formatted_39 = inner_38.as_str();
-        if !formatted_39.is_empty() {
-            let header_value = formatted_39;
+    if let Some(inner_39) = &input.storage_class {
+        let formatted_40 = inner_39.as_str();
+        if !formatted_40.is_empty() {
+            let header_value = formatted_40;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "storage_class",
@@ -324,10 +324,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-storage-class", header_value);
         }
     }
-    if let Some(inner_40) = &input.website_redirect_location {
-        let formatted_41 = inner_40.as_str();
-        if !formatted_41.is_empty() {
-            let header_value = formatted_41;
+    if let Some(inner_41) = &input.website_redirect_location {
+        let formatted_42 = inner_41.as_str();
+        if !formatted_42.is_empty() {
+            let header_value = formatted_42;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "website_redirect_location",
@@ -340,10 +340,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-website-redirect-location", header_value);
         }
     }
-    if let Some(inner_42) = &input.sse_customer_algorithm {
-        let formatted_43 = inner_42.as_str();
-        if !formatted_43.is_empty() {
-            let header_value = formatted_43;
+    if let Some(inner_43) = &input.sse_customer_algorithm {
+        let formatted_44 = inner_43.as_str();
+        if !formatted_44.is_empty() {
+            let header_value = formatted_44;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_algorithm",
@@ -359,10 +359,10 @@ pub fn ser_put_object_headers(
             );
         }
     }
-    if let Some(inner_44) = &input.sse_customer_key {
-        let formatted_45 = inner_44.as_str();
-        if !formatted_45.is_empty() {
-            let header_value = formatted_45;
+    if let Some(inner_45) = &input.sse_customer_key {
+        let formatted_46 = inner_45.as_str();
+        if !formatted_46.is_empty() {
+            let header_value = formatted_46;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key",
@@ -375,10 +375,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
-    if let Some(inner_46) = &input.sse_customer_key_md5 {
-        let formatted_47 = inner_46.as_str();
-        if !formatted_47.is_empty() {
-            let header_value = formatted_47;
+    if let Some(inner_47) = &input.sse_customer_key_md5 {
+        let formatted_48 = inner_47.as_str();
+        if !formatted_48.is_empty() {
+            let header_value = formatted_48;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key_md5",
@@ -394,10 +394,10 @@ pub fn ser_put_object_headers(
             );
         }
     }
-    if let Some(inner_48) = &input.ssekms_key_id {
-        let formatted_49 = inner_48.as_str();
-        if !formatted_49.is_empty() {
-            let header_value = formatted_49;
+    if let Some(inner_49) = &input.ssekms_key_id {
+        let formatted_50 = inner_49.as_str();
+        if !formatted_50.is_empty() {
+            let header_value = formatted_50;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "ssekms_key_id",
@@ -410,10 +410,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
         }
     }
-    if let Some(inner_50) = &input.ssekms_encryption_context {
-        let formatted_51 = inner_50.as_str();
-        if !formatted_51.is_empty() {
-            let header_value = formatted_51;
+    if let Some(inner_51) = &input.ssekms_encryption_context {
+        let formatted_52 = inner_51.as_str();
+        if !formatted_52.is_empty() {
+            let header_value = formatted_52;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "ssekms_encryption_context",
@@ -426,11 +426,11 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-server-side-encryption-context", header_value);
         }
     }
-    if input.bucket_key_enabled {
-        let mut encoder = aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled);
-        let formatted_52 = encoder.encode();
-        if !formatted_52.is_empty() {
-            let header_value = formatted_52;
+    if let Some(inner_53) = &input.bucket_key_enabled {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_53);
+        let formatted_54 = encoder.encode();
+        if !formatted_54.is_empty() {
+            let header_value = formatted_54;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "bucket_key_enabled",
@@ -446,10 +446,10 @@ pub fn ser_put_object_headers(
             );
         }
     }
-    if let Some(inner_53) = &input.request_payer {
-        let formatted_54 = inner_53.as_str();
-        if !formatted_54.is_empty() {
-            let header_value = formatted_54;
+    if let Some(inner_55) = &input.request_payer {
+        let formatted_56 = inner_55.as_str();
+        if !formatted_56.is_empty() {
+            let header_value = formatted_56;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
@@ -462,10 +462,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
-    if let Some(inner_55) = &input.tagging {
-        let formatted_56 = inner_55.as_str();
-        if !formatted_56.is_empty() {
-            let header_value = formatted_56;
+    if let Some(inner_57) = &input.tagging {
+        let formatted_58 = inner_57.as_str();
+        if !formatted_58.is_empty() {
+            let header_value = formatted_58;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "tagging",
@@ -478,10 +478,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-tagging", header_value);
         }
     }
-    if let Some(inner_57) = &input.object_lock_mode {
-        let formatted_58 = inner_57.as_str();
-        if !formatted_58.is_empty() {
-            let header_value = formatted_58;
+    if let Some(inner_59) = &input.object_lock_mode {
+        let formatted_60 = inner_59.as_str();
+        if !formatted_60.is_empty() {
+            let header_value = formatted_60;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_mode",
@@ -494,10 +494,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-object-lock-mode", header_value);
         }
     }
-    if let Some(inner_59) = &input.object_lock_retain_until_date {
-        let formatted_60 = inner_59.fmt(aws_smithy_types::date_time::Format::DateTime)?;
-        if !formatted_60.is_empty() {
-            let header_value = formatted_60;
+    if let Some(inner_61) = &input.object_lock_retain_until_date {
+        let formatted_62 = inner_61.fmt(aws_smithy_types::date_time::Format::DateTime)?;
+        if !formatted_62.is_empty() {
+            let header_value = formatted_62;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_retain_until_date",
@@ -510,10 +510,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
         }
     }
-    if let Some(inner_61) = &input.object_lock_legal_hold_status {
-        let formatted_62 = inner_61.as_str();
-        if !formatted_62.is_empty() {
-            let header_value = formatted_62;
+    if let Some(inner_63) = &input.object_lock_legal_hold_status {
+        let formatted_64 = inner_63.as_str();
+        if !formatted_64.is_empty() {
+            let header_value = formatted_64;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_legal_hold_status",
@@ -526,10 +526,10 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-object-lock-legal-hold", header_value);
         }
     }
-    if let Some(inner_63) = &input.expected_bucket_owner {
-        let formatted_64 = inner_63.as_str();
-        if !formatted_64.is_empty() {
-            let header_value = formatted_64;
+    if let Some(inner_65) = &input.expected_bucket_owner {
+        let formatted_66 = inner_65.as_str();
+        if !formatted_66.is_empty() {
+            let header_value = formatted_66;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
@@ -542,9 +542,9 @@ pub fn ser_put_object_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
-    if let Some(inner_65) = &input.metadata {
+    if let Some(inner_67) = &input.metadata {
         {
-            for (k, v) in inner_65 {
+            for (k, v) in inner_67 {
                 use std::str::FromStr;
                 let header_name =
                     http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))

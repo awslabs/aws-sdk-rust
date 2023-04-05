@@ -16,6 +16,8 @@ impl super::Client {
     ///   - [`replication_type(Option<ReplicationType>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::application_id): <p>Source server application ID.</p>
+    ///   - [`user_provided_id(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::user_provided_id): <p>Source server user provided ID.</p>
+    ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<MarkAsArchivedError>`](crate::operation::mark_as_archived::MarkAsArchivedError)
     pub fn mark_as_archived(
         &self,

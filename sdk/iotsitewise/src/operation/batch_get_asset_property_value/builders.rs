@@ -79,12 +79,12 @@ impl BatchGetAssetPropertyValueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
     pub fn entries(mut self, input: crate::types::BatchGetAssetPropertyValueEntry) -> Self {
         self.inner = self.inner.entries(input);
         self
     }
-    /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
     pub fn set_entries(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>>,

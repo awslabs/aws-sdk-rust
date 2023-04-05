@@ -75,6 +75,9 @@ pub struct DescribeRecoveryPointOutput {
     /// <p>This returns the boolean value that a recovery point is a parent (composite) job.</p>
     #[doc(hidden)]
     pub is_parent: bool,
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    #[doc(hidden)]
+    pub resource_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRecoveryPointOutput {
@@ -172,6 +175,10 @@ impl DescribeRecoveryPointOutput {
     pub fn is_parent(&self) -> bool {
         self.is_parent
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeRecoveryPointOutput {
     fn request_id(&self) -> Option<&str> {
@@ -213,6 +220,7 @@ pub struct DescribeRecoveryPointOutputBuilder {
     pub(crate) parent_recovery_point_arn: std::option::Option<std::string::String>,
     pub(crate) composite_member_identifier: std::option::Option<std::string::String>,
     pub(crate) is_parent: std::option::Option<bool>,
+    pub(crate) resource_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRecoveryPointOutputBuilder {
@@ -487,6 +495,16 @@ impl DescribeRecoveryPointOutputBuilder {
         self.is_parent = input;
         self
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_name = Some(input.into());
+        self
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_name = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -521,6 +539,7 @@ impl DescribeRecoveryPointOutputBuilder {
             parent_recovery_point_arn: self.parent_recovery_point_arn,
             composite_member_identifier: self.composite_member_identifier,
             is_parent: self.is_parent.unwrap_or_default(),
+            resource_name: self.resource_name,
             _request_id: self._request_id,
         }
     }

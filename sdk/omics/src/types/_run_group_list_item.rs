@@ -19,7 +19,7 @@ pub struct RunGroupListItem {
     /// <p>The group's maximum concurrent run setting.</p>
     #[doc(hidden)]
     pub max_runs: std::option::Option<i32>,
-    /// <p>The group's maximum duration setting.</p>
+    /// <p>The group's maximum duration setting in minutes.</p>
     #[doc(hidden)]
     pub max_duration: std::option::Option<i32>,
     /// <p>When the group was created.</p>
@@ -47,7 +47,7 @@ impl RunGroupListItem {
     pub fn max_runs(&self) -> std::option::Option<i32> {
         self.max_runs
     }
-    /// <p>The group's maximum duration setting.</p>
+    /// <p>The group's maximum duration setting in minutes.</p>
     pub fn max_duration(&self) -> std::option::Option<i32> {
         self.max_duration
     }
@@ -126,12 +126,12 @@ impl RunGroupListItemBuilder {
         self.max_runs = input;
         self
     }
-    /// <p>The group's maximum duration setting.</p>
+    /// <p>The group's maximum duration setting in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
         self.max_duration = Some(input);
         self
     }
-    /// <p>The group's maximum duration setting.</p>
+    /// <p>The group's maximum duration setting in minutes.</p>
     pub fn set_max_duration(mut self, input: std::option::Option<i32>) -> Self {
         self.max_duration = input;
         self

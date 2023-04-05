@@ -109,6 +109,9 @@ pub mod list_instance_type_details;
 /// Types for the `ListPackagesForDomain` operation.
 pub mod list_packages_for_domain;
 
+/// Types for the `ListScheduledActions` operation.
+pub mod list_scheduled_actions;
+
 /// Types for the `ListTags` operation.
 pub mod list_tags;
 
@@ -144,6 +147,9 @@ pub mod update_domain_config;
 
 /// Types for the `UpdatePackage` operation.
 pub mod update_package;
+
+/// Types for the `UpdateScheduledAction` operation.
+pub mod update_scheduled_action;
 
 /// Types for the `UpdateVpcEndpoint` operation.
 pub mod update_vpc_endpoint;

@@ -12,10 +12,8 @@ pub fn ser_update_subnet_change_protection_input(
     if let Some(var_3) = &input.firewall_name {
         object.key("FirewallName").string(var_3.as_str());
     }
-    {
-        object
-            .key("SubnetChangeProtection")
-            .boolean(input.subnet_change_protection);
+    if let Some(var_4) = &input.subnet_change_protection {
+        object.key("SubnetChangeProtection").boolean(*var_4);
     }
     Ok(())
 }

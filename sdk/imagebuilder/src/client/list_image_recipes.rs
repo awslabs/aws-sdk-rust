@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ListImageRecipesOutput`](crate::operation::list_image_recipes::ListImageRecipesOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::list_image_recipes::ListImageRecipesOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_recipe_summary_list(Option<Vec<ImageRecipeSummary>>)`](crate::operation::list_image_recipes::ListImageRecipesOutput::image_recipe_summary_list): <p>The list of image pipelines.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_image_recipes::ListImageRecipesOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_image_recipes::ListImageRecipesOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListImageRecipesError>`](crate::operation::list_image_recipes::ListImageRecipesError)
     pub fn list_image_recipes(
         &self,

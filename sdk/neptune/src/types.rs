@@ -3,6 +3,10 @@ pub use crate::types::_db_cluster::DbCluster;
 
 pub use crate::types::_serverless_v2_scaling_configuration_info::ServerlessV2ScalingConfigurationInfo;
 
+pub use crate::types::_cluster_pending_modified_values::ClusterPendingModifiedValues;
+
+pub use crate::types::_pending_cloudwatch_logs_exports::PendingCloudwatchLogsExports;
+
 pub use crate::types::_db_cluster_role::DbClusterRole;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership;
@@ -34,8 +38,6 @@ pub use crate::types::_db_instance_status_info::DbInstanceStatusInfo;
 pub use crate::types::_option_group_membership::OptionGroupMembership;
 
 pub use crate::types::_pending_modified_values::PendingModifiedValues;
-
-pub use crate::types::_pending_cloudwatch_logs_exports::PendingCloudwatchLogsExports;
 
 pub use crate::types::_db_subnet_group::DbSubnetGroup;
 
@@ -102,6 +104,8 @@ mod _availability_zone;
 mod _character_set;
 
 mod _cloudwatch_logs_export_configuration;
+
+mod _cluster_pending_modified_values;
 
 mod _db_cluster;
 

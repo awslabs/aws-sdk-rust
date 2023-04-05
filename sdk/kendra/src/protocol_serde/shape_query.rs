@@ -221,6 +221,11 @@ pub(crate) fn de_query(
                             crate::protocol_serde::shape_spell_corrected_query_list::de_spell_corrected_query_list(tokens)?
                         );
                     }
+                    "FeaturedResultsItems" => {
+                        builder = builder.set_featured_results_items(
+                            crate::protocol_serde::shape_featured_results_item_list::de_featured_results_item_list(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::set_max_results): Upper bound on number of records to return.
+    ///   - [`max_results(i32)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::set_max_results): Upper bound on number of records to return.
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListPackagingGroupsOutput`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput::next_token): A token that can be used to resume pagination from the end of the collection.

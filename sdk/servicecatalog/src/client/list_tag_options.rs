@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`filters(ListTagOptionsFilters)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::filters) / [`set_filters(Option<ListTagOptionsFilters>)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::set_filters): <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
-    ///   - [`page_size(i32)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::page_size) / [`set_page_size(i32)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::set_page_size): <p>The maximum number of items to return with this call.</p>
+    ///   - [`page_size(i32)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::set_page_size): <p>The maximum number of items to return with this call.</p>
     ///   - [`page_token(impl Into<String>)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::page_token) / [`set_page_token(Option<String>)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     /// - On success, responds with [`ListTagOptionsOutput`](crate::operation::list_tag_options::ListTagOptionsOutput) with field(s):
     ///   - [`tag_option_details(Option<Vec<TagOptionDetail>>)`](crate::operation::list_tag_options::ListTagOptionsOutput::tag_option_details): <p>Information about the TagOptions.</p>

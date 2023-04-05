@@ -485,6 +485,8 @@ pub(crate) mod shape_valid_db_instance_modifications_message;
 
 pub(crate) mod shape_availability_zones;
 
+pub(crate) mod shape_cluster_pending_modified_values;
+
 pub(crate) mod shape_db_cluster_endpoint;
 
 pub(crate) mod shape_db_cluster_member_list;

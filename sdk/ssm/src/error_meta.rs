@@ -49,7 +49,7 @@ pub enum Error {
     DocumentAlreadyExists(crate::types::error::DocumentAlreadyExists),
     /// <p>You can have at most 500 active SSM documents.</p>
     DocumentLimitExceeded(crate::types::error::DocumentLimitExceeded),
-    /// <p>The document can't be shared with more Amazon Web Services user accounts. You can specify a maximum of 20 accounts per API operation to share a private document.</p>
+    /// <p>The document can't be shared with more Amazon Web Services accounts. You can specify a maximum of 20 accounts per API operation to share a private document.</p>
     /// <p>By default, you can share a private document with a maximum of 1,000 accounts and publicly share up to five documents.</p>
     /// <p>If you need to increase the quota for privately or publicly shared Systems Manager documents, contact Amazon Web Services Support.</p>
     DocumentPermissionLimit(crate::types::error::DocumentPermissionLimit),

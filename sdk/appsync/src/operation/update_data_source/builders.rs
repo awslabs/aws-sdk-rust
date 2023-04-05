@@ -208,4 +208,17 @@ impl UpdateDataSourceFluentBuilder {
         self.inner = self.inner.set_relational_database_config(input);
         self
     }
+    /// <p>The new Amazon EventBridge settings.</p>
+    pub fn event_bridge_config(mut self, input: crate::types::EventBridgeDataSourceConfig) -> Self {
+        self.inner = self.inner.event_bridge_config(input);
+        self
+    }
+    /// <p>The new Amazon EventBridge settings.</p>
+    pub fn set_event_bridge_config(
+        mut self,
+        input: std::option::Option<crate::types::EventBridgeDataSourceConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_event_bridge_config(input);
+        self
+    }
 }

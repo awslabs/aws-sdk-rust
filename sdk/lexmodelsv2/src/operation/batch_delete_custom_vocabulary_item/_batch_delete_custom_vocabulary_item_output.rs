@@ -3,41 +3,41 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteCustomVocabularyItemOutput {
-    /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the bot associated with this custom vocabulary.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
+    /// <p>A list of custom vocabulary items that failed to delete during the operation. The reason for the error is contained within each error object.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::FailedCustomVocabularyItem>>,
-    /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
+    /// <p>A list of custom vocabulary items that were successfully deleted during the operation.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteCustomVocabularyItemOutput {
-    /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the bot associated with this custom vocabulary.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
+    /// <p>A list of custom vocabulary items that failed to delete during the operation. The reason for the error is contained within each error object.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::types::FailedCustomVocabularyItem]> {
         self.errors.as_deref()
     }
-    /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
+    /// <p>A list of custom vocabulary items that were successfully deleted during the operation.</p>
     pub fn resources(&self) -> std::option::Option<&[crate::types::CustomVocabularyItem]> {
         self.resources.as_deref()
     }
@@ -66,32 +66,32 @@ pub struct BatchDeleteCustomVocabularyItemOutputBuilder {
     _request_id: Option<String>,
 }
 impl BatchDeleteCustomVocabularyItemOutputBuilder {
-    /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the bot associated with this custom vocabulary.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.bot_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the bot associated with this custom vocabulary.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.bot_id = input;
         self
     }
-    /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.bot_version = Some(input.into());
         self
     }
-    /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.bot_version = input;
         self
     }
-    /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.locale_id = Some(input.into());
         self
     }
-    /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.locale_id = input;
         self
@@ -100,14 +100,14 @@ impl BatchDeleteCustomVocabularyItemOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
+    /// <p>A list of custom vocabulary items that failed to delete during the operation. The reason for the error is contained within each error object.</p>
     pub fn errors(mut self, input: crate::types::FailedCustomVocabularyItem) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = Some(v);
         self
     }
-    /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
+    /// <p>A list of custom vocabulary items that failed to delete during the operation. The reason for the error is contained within each error object.</p>
     pub fn set_errors(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::FailedCustomVocabularyItem>>,
@@ -119,14 +119,14 @@ impl BatchDeleteCustomVocabularyItemOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
     ///
-    /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
+    /// <p>A list of custom vocabulary items that were successfully deleted during the operation.</p>
     pub fn resources(mut self, input: crate::types::CustomVocabularyItem) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
         self.resources = Some(v);
         self
     }
-    /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
+    /// <p>A list of custom vocabulary items that were successfully deleted during the operation.</p>
     pub fn set_resources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,

@@ -15,10 +15,10 @@ pub struct GetInstanceTypesFromInstanceRequirementsInput {
     /// <p>The attributes required for the instance types.</p>
     #[doc(hidden)]
     pub instance_requirements: std::option::Option<crate::types::InstanceRequirementsRequest>,
-    /// <p>The maximum number of results to return in a single call. Specify a value between 1 and  1000. The default value is 1000. To retrieve the remaining results, make another call with  the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token for the next set of results.</p>
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -41,11 +41,11 @@ impl GetInstanceTypesFromInstanceRequirementsInput {
     ) -> std::option::Option<&crate::types::InstanceRequirementsRequest> {
         self.instance_requirements.as_ref()
     }
-    /// <p>The maximum number of results to return in a single call. Specify a value between 1 and  1000. The default value is 1000. To retrieve the remaining results, make another call with  the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -136,22 +136,22 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
         self.instance_requirements = input;
         self
     }
-    /// <p>The maximum number of results to return in a single call. Specify a value between 1 and  1000. The default value is 1000. To retrieve the remaining results, make another call with  the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. Specify a value between 1 and  1000. The default value is 1000. To retrieve the remaining results, make another call with  the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

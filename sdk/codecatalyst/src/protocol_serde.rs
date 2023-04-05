@@ -52,6 +52,8 @@ pub(crate) mod shape_start_dev_environment_session;
 
 pub(crate) mod shape_stop_dev_environment;
 
+pub(crate) mod shape_stop_dev_environment_session;
+
 pub(crate) mod shape_update_dev_environment;
 
 pub(crate) mod shape_verify_session;

@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAgentInput {
-    /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAgentInput {
-    /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     pub fn agent_arn(&self) -> std::option::Option<&str> {
         self.agent_arn.as_deref()
     }
@@ -28,12 +28,12 @@ pub struct DescribeAgentInputBuilder {
     pub(crate) agent_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAgentInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     pub fn agent_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.agent_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.agent_arn = input;
         self

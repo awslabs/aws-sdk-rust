@@ -5,7 +5,7 @@ pub use crate::operation::create_filter::_create_filter_input::CreateFilterInput
 
 /// Fluent builder constructing a request to `CreateFilter`.
 ///
-/// <p>Creates a filter using the specified finding criteria.</p>
+/// <p>Creates a filter using the specified finding criteria. The maximum number of saved filters per Amazon Web Services account per Region is 100. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html">Quotas for GuardDuty</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFilterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -85,12 +85,12 @@ impl CreateFilterFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
@@ -120,7 +120,6 @@ impl CreateFilterFluentBuilder {
     /// <ul>
     /// <li> <p>accountId</p> </li>
     /// <li> <p>region</p> </li>
-    /// <li> <p>confidence</p> </li>
     /// <li> <p>id</p> </li>
     /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
     /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
@@ -170,7 +169,6 @@ impl CreateFilterFluentBuilder {
     /// <li> <p>resource.s3BucketDetails.tags.key</p> </li>
     /// <li> <p>resource.s3BucketDetails.tags.value</p> </li>
     /// <li> <p>resource.s3BucketDetails.type</p> </li>
-    /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
     /// <li> <p>service.resourceRole</p> </li>
     /// <li> <p>severity</p> </li>
     /// <li> <p>type</p> </li>
@@ -185,7 +183,6 @@ impl CreateFilterFluentBuilder {
     /// <ul>
     /// <li> <p>accountId</p> </li>
     /// <li> <p>region</p> </li>
-    /// <li> <p>confidence</p> </li>
     /// <li> <p>id</p> </li>
     /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
     /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
@@ -235,7 +232,6 @@ impl CreateFilterFluentBuilder {
     /// <li> <p>resource.s3BucketDetails.tags.key</p> </li>
     /// <li> <p>resource.s3BucketDetails.tags.value</p> </li>
     /// <li> <p>resource.s3BucketDetails.type</p> </li>
-    /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
     /// <li> <p>service.resourceRole</p> </li>
     /// <li> <p>severity</p> </li>
     /// <li> <p>type</p> </li>

@@ -122,4 +122,16 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    pub fn skip_tunnel_replacement(mut self, input: bool) -> Self {
+        self.inner = self.inner.skip_tunnel_replacement(input);
+        self
+    }
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    pub fn set_skip_tunnel_replacement(mut self, input: std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_skip_tunnel_replacement(input);
+        self
+    }
 }

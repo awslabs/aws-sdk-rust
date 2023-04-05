@@ -15,6 +15,7 @@
 ///     PricingRuleScope::BillingEntity => { /* ... */ },
 ///     PricingRuleScope::Global => { /* ... */ },
 ///     PricingRuleScope::Service => { /* ... */ },
+///     PricingRuleScope::Sku => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum PricingRuleScope {
     Global,
     #[allow(missing_docs)] // documentation missing in model
     Service,
+    #[allow(missing_docs)] // documentation missing in model
+    Sku,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -63,6 +66,7 @@ impl std::convert::From<&str> for PricingRuleScope {
             "BILLING_ENTITY" => PricingRuleScope::BillingEntity,
             "GLOBAL" => PricingRuleScope::Global,
             "SERVICE" => PricingRuleScope::Service,
+            "SKU" => PricingRuleScope::Sku,
             other => {
                 PricingRuleScope::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -83,12 +87,13 @@ impl PricingRuleScope {
             PricingRuleScope::BillingEntity => "BILLING_ENTITY",
             PricingRuleScope::Global => "GLOBAL",
             PricingRuleScope::Service => "SERVICE",
+            PricingRuleScope::Sku => "SKU",
             PricingRuleScope::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BILLING_ENTITY", "GLOBAL", "SERVICE"]
+        &["BILLING_ENTITY", "GLOBAL", "SERVICE", "SKU"]
     }
 }
 impl AsRef<str> for PricingRuleScope {

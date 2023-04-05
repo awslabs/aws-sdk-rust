@@ -15,8 +15,8 @@ pub fn ser_channel_flow_callback_input(
         )?;
         object_3.finish();
     }
-    if input.delete_resource {
-        object.key("DeleteResource").boolean(input.delete_resource);
+    if let Some(var_4) = &input.delete_resource {
+        object.key("DeleteResource").boolean(*var_4);
     }
     Ok(())
 }

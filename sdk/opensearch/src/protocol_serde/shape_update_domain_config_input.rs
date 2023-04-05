@@ -95,20 +95,38 @@ pub fn ser_update_domain_config_input(
         crate::protocol_serde::shape_node_to_node_encryption_options::ser_node_to_node_encryption_options(&mut object_28, var_27)?;
         object_28.finish();
     }
-    if let Some(var_29) = &input.snapshot_options {
+    if let Some(var_29) = &input.off_peak_window_options {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("SnapshotOptions").start_object();
-        crate::protocol_serde::shape_snapshot_options::ser_snapshot_options(
+        let mut object_30 = object.key("OffPeakWindowOptions").start_object();
+        crate::protocol_serde::shape_off_peak_window_options::ser_off_peak_window_options(
             &mut object_30,
             var_29,
         )?;
         object_30.finish();
     }
-    if let Some(var_31) = &input.vpc_options {
+    if let Some(var_31) = &input.snapshot_options {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("VPCOptions").start_object();
-        crate::protocol_serde::shape_vpc_options::ser_vpc_options(&mut object_32, var_31)?;
+        let mut object_32 = object.key("SnapshotOptions").start_object();
+        crate::protocol_serde::shape_snapshot_options::ser_snapshot_options(
+            &mut object_32,
+            var_31,
+        )?;
         object_32.finish();
+    }
+    if let Some(var_33) = &input.software_update_options {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("SoftwareUpdateOptions").start_object();
+        crate::protocol_serde::shape_software_update_options::ser_software_update_options(
+            &mut object_34,
+            var_33,
+        )?;
+        object_34.finish();
+    }
+    if let Some(var_35) = &input.vpc_options {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("VPCOptions").start_object();
+        crate::protocol_serde::shape_vpc_options::ser_vpc_options(&mut object_36, var_35)?;
+        object_36.finish();
     }
     Ok(())
 }

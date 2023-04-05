@@ -94,6 +94,12 @@ impl DeleteDocumentVersionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_3 = &_input.delete_prior_versions;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "delete_prior_versions",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 query.push_kv(
                     "deletePriorVersions",
                     aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
@@ -211,7 +217,7 @@ pub enum DeleteDocumentVersionError {
     ConflictingOperationException(crate::types::error::ConflictingOperationException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::types::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>The operation is invalid.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),

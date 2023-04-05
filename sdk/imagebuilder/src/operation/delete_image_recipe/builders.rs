@@ -5,7 +5,7 @@ pub use crate::operation::delete_image_recipe::_delete_image_recipe_input::Delet
 
 /// Fluent builder constructing a request to `DeleteImageRecipe`.
 ///
-/// <p> Deletes an image recipe.</p>
+/// <p>Deletes an image recipe.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteImageRecipeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

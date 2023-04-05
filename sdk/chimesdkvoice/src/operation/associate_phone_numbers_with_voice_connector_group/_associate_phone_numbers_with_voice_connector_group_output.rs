@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::types::PhoneNumberError>>,
     _request_id: Option<String>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub fn phone_number_errors(&self) -> std::option::Option<&[crate::types::PhoneNumberError]> {
         self.phone_number_errors.as_deref()
     }
@@ -39,13 +39,14 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_phone_number_errors`](Self::set_phone_number_errors).
     ///
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub fn phone_number_errors(mut self, input: crate::types::PhoneNumberError) -> Self {
         let mut v = self.phone_number_errors.unwrap_or_default();
         v.push(input);
         self.phone_number_errors = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub fn set_phone_number_errors(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberError>>,

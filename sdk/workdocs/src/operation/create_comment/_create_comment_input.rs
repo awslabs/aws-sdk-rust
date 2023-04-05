@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCommentInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
@@ -26,10 +26,10 @@ pub struct CreateCommentInput {
     pub visibility: std::option::Option<crate::types::CommentVisibilityType>,
     /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     #[doc(hidden)]
-    pub notify_collaborators: bool,
+    pub notify_collaborators: std::option::Option<bool>,
 }
 impl CreateCommentInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -58,7 +58,7 @@ impl CreateCommentInput {
         self.visibility.as_ref()
     }
     /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
-    pub fn notify_collaborators(&self) -> bool {
+    pub fn notify_collaborators(&self) -> std::option::Option<bool> {
         self.notify_collaborators
     }
 }
@@ -97,12 +97,12 @@ pub struct CreateCommentInputBuilder {
     pub(crate) notify_collaborators: std::option::Option<bool>,
 }
 impl CreateCommentInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -198,7 +198,7 @@ impl CreateCommentInputBuilder {
             thread_id: self.thread_id,
             text: self.text,
             visibility: self.visibility,
-            notify_collaborators: self.notify_collaborators.unwrap_or_default(),
+            notify_collaborators: self.notify_collaborators,
         })
     }
 }

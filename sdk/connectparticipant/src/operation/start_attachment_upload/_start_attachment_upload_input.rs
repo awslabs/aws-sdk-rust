@@ -8,7 +8,7 @@ pub struct StartAttachmentUploadInput {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The size of the attachment in bytes.</p>
     #[doc(hidden)]
-    pub attachment_size_in_bytes: i64,
+    pub attachment_size_in_bytes: std::option::Option<i64>,
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
     #[doc(hidden)]
     pub attachment_name: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ impl StartAttachmentUploadInput {
         self.content_type.as_deref()
     }
     /// <p>The size of the attachment in bytes.</p>
-    pub fn attachment_size_in_bytes(&self) -> i64 {
+    pub fn attachment_size_in_bytes(&self) -> std::option::Option<i64> {
         self.attachment_size_in_bytes
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
@@ -121,7 +121,7 @@ impl StartAttachmentUploadInputBuilder {
         Ok(
             crate::operation::start_attachment_upload::StartAttachmentUploadInput {
                 content_type: self.content_type,
-                attachment_size_in_bytes: self.attachment_size_in_bytes.unwrap_or_default(),
+                attachment_size_in_bytes: self.attachment_size_in_bytes,
                 attachment_name: self.attachment_name,
                 client_token: self.client_token,
                 connection_token: self.connection_token,

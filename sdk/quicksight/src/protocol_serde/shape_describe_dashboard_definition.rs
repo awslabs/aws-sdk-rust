@@ -197,6 +197,11 @@ pub(crate) fn de_describe_dashboard_definition(value: &[u8], mut builder: crate:
                             .transpose()?,
                         );
                     }
+                    "DashboardPublishOptions" => {
+                        builder = builder.set_dashboard_publish_options(
+                            crate::protocol_serde::shape_dashboard_publish_options::de_dashboard_publish_options(tokens)?
+                        );
+                    }
                     "Definition" => {
                         builder = builder.set_definition(
                             crate::protocol_serde::shape_dashboard_version_definition::de_dashboard_version_definition(tokens)?

@@ -8,7 +8,7 @@ pub struct Occurrences {
     /// <p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
     #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<crate::types::Cell>>,
-    /// <p>An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
+    /// <p>An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
     /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
     #[doc(hidden)]
     pub line_ranges: std::option::Option<std::vec::Vec<crate::types::Range>>,
@@ -30,7 +30,7 @@ impl Occurrences {
     pub fn cells(&self) -> std::option::Option<&[crate::types::Cell]> {
         self.cells.as_deref()
     }
-    /// <p>An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
+    /// <p>An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
     /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
     pub fn line_ranges(&self) -> std::option::Option<&[crate::types::Range]> {
         self.line_ranges.as_deref()
@@ -93,7 +93,7 @@ impl OccurrencesBuilder {
     ///
     /// To override the contents of this collection use [`set_line_ranges`](Self::set_line_ranges).
     ///
-    /// <p>An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
+    /// <p>An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
     /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
     pub fn line_ranges(mut self, input: crate::types::Range) -> Self {
         let mut v = self.line_ranges.unwrap_or_default();
@@ -101,7 +101,7 @@ impl OccurrencesBuilder {
         self.line_ranges = Some(v);
         self
     }
-    /// <p>An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
+    /// <p>An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
     /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
     pub fn set_line_ranges(
         mut self,

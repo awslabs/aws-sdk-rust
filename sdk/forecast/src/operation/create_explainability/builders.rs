@@ -148,12 +148,12 @@ impl CreateExplainabilityFluentBuilder {
         self.inner = self.inner.set_explainability_config(input);
         self
     }
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.inner = self.inner.data_source(input);
         self
     }
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
         self.inner = self.inner.set_data_source(input);
         self
@@ -168,12 +168,12 @@ impl CreateExplainabilityFluentBuilder {
         self.inner = self.inner.set_schema(input);
         self
     }
-    /// <p>Create an Explainability visualization that is viewable within the AWS console.</p>
+    /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     pub fn enable_visualization(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_visualization(input);
         self
     }
-    /// <p>Create an Explainability visualization that is viewable within the AWS console.</p>
+    /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     pub fn set_enable_visualization(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_visualization(input);
         self

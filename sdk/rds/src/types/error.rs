@@ -225,6 +225,8 @@ pub use crate::types::error::_custom_db_engine_version_quota_exceeded_fault::Cus
 
 pub use crate::types::error::_custom_db_engine_version_already_exists_fault::CustomDbEngineVersionAlreadyExistsFault;
 
+pub use crate::types::error::_create_custom_db_engine_version_fault::CreateCustomDbEngineVersionFault;
+
 pub use crate::types::error::_source_database_not_supported_fault::SourceDatabaseNotSupportedFault;
 
 pub use crate::types::error::_source_cluster_not_supported_fault::SourceClusterNotSupportedFault;
@@ -260,6 +262,8 @@ mod _blue_green_deployment_already_exists_fault;
 mod _blue_green_deployment_not_found_fault;
 
 mod _certificate_not_found_fault;
+
+mod _create_custom_db_engine_version_fault;
 
 mod _custom_availability_zone_not_found_fault;
 

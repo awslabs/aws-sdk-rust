@@ -233,6 +233,10 @@ pub(crate) mod shape_resume_processes;
 
 pub(crate) mod shape_resume_processes_input;
 
+pub(crate) mod shape_rollback_instance_refresh;
+
+pub(crate) mod shape_rollback_instance_refresh_input;
+
 pub(crate) mod shape_set_desired_capacity;
 
 pub(crate) mod shape_set_desired_capacity_input;
@@ -280,6 +284,8 @@ pub(crate) mod shape_instance_refresh_in_progress_fault;
 pub(crate) mod shape_instance_reuse_policy;
 
 pub(crate) mod shape_invalid_next_token;
+
+pub(crate) mod shape_irreversible_instance_refresh_fault;
 
 pub(crate) mod shape_launch_template_specification;
 
@@ -452,6 +458,8 @@ pub(crate) mod shape_instance_requirements;
 pub(crate) mod shape_load_balancer_names;
 
 pub(crate) mod shape_metric_data_query;
+
+pub(crate) mod shape_rollback_details;
 
 pub(crate) mod shape_security_groups;
 

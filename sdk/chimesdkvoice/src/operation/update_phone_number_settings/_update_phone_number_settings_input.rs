@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberSettingsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     #[doc(hidden)]
     pub calling_name: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberSettingsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     pub fn calling_name(&self) -> std::option::Option<&str> {
         self.calling_name.as_deref()
     }
@@ -34,12 +34,12 @@ pub struct UpdatePhoneNumberSettingsInputBuilder {
     pub(crate) calling_name: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberSettingsInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.calling_name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.calling_name = input;
         self

@@ -69,12 +69,12 @@ impl UpdateIncidentRecordFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
@@ -109,7 +109,7 @@ impl UpdateIncidentRecordFluentBuilder {
         self.inner = self.inner.set_summary(input);
         self
     }
-    /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+    /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
     /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
@@ -122,7 +122,7 @@ impl UpdateIncidentRecordFluentBuilder {
         self.inner = self.inner.impact(input);
         self
     }
-    /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+    /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
     /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
@@ -135,12 +135,12 @@ impl UpdateIncidentRecordFluentBuilder {
         self.inner = self.inner.set_impact(input);
         self
     }
-    /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+    /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
     pub fn status(mut self, input: crate::types::IncidentRecordStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+    /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
     pub fn set_status(
         mut self,
         input: std::option::Option<crate::types::IncidentRecordStatus>,
@@ -165,13 +165,13 @@ impl UpdateIncidentRecordFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
     ///
-    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     pub fn notification_targets(mut self, input: crate::types::NotificationTargetItem) -> Self {
         self.inner = self.inner.notification_targets(input);
         self
     }
-    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     pub fn set_notification_targets(
         mut self,

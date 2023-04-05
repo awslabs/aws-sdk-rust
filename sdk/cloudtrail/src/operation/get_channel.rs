@@ -168,7 +168,7 @@ pub type GetChannelErrorKind = GetChannelError;
 pub enum GetChannelError {
     /// <p>This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.</p>
     ChannelArnInvalidException(crate::types::error::ChannelArnInvalidException),
-    /// <p> The specified channel was not found. </p>
+    /// <p>This exception is thrown when CloudTrail cannot find the specified channel.</p>
     ChannelNotFoundException(crate::types::error::ChannelNotFoundException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),

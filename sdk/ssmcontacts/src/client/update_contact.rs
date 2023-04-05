@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`contact_id(impl Into<String>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
     ///   - [`display_name(impl Into<String>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::display_name) / [`set_display_name(Option<String>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::set_display_name): <p>The full name of the contact or escalation plan.</p>
-    ///   - [`plan(Plan)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::plan) / [`set_plan(Option<Plan>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::set_plan): <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+    ///   - [`plan(Plan)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::plan) / [`set_plan(Option<Plan>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::set_plan): <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     /// - On success, responds with [`UpdateContactOutput`](crate::operation::update_contact::UpdateContactOutput)
     /// - On failure, responds with [`SdkError<UpdateContactError>`](crate::operation::update_contact::UpdateContactError)
     pub fn update_contact(

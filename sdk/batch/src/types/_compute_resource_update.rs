@@ -18,6 +18,9 @@ pub struct ComputeResourceUpdate {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
+    /// </note> <note>
+    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values. </p>
+    /// <p>Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current <code>desiredvCpus</code> value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting Batch</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
     pub desiredv_cpus: std::option::Option<i32>,
@@ -145,6 +148,9 @@ impl ComputeResourceUpdate {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
+    /// </note> <note>
+    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values. </p>
+    /// <p>Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current <code>desiredvCpus</code> value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting Batch</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn desiredv_cpus(&self) -> std::option::Option<i32> {
         self.desiredv_cpus
@@ -340,6 +346,9 @@ impl ComputeResourceUpdateBuilder {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
+    /// </note> <note>
+    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values. </p>
+    /// <p>Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current <code>desiredvCpus</code> value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting Batch</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn desiredv_cpus(mut self, input: i32) -> Self {
         self.desiredv_cpus = Some(input);
@@ -349,6 +358,9 @@ impl ComputeResourceUpdateBuilder {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
+    /// </note> <note>
+    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values. </p>
+    /// <p>Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current <code>desiredvCpus</code> value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting Batch</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn set_desiredv_cpus(mut self, input: std::option::Option<i32>) -> Self {
         self.desiredv_cpus = input;

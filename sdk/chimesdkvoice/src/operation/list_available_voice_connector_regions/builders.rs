@@ -5,6 +5,7 @@ pub use crate::operation::list_available_voice_connector_regions::_list_availabl
 
 /// Fluent builder constructing a request to `ListAvailableVoiceConnectorRegions`.
 ///
+/// <p>Lists the available AWS Regions in which you can create an Amazon Chime SDK Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAvailableVoiceConnectorRegionsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

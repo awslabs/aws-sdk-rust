@@ -13,7 +13,7 @@ pub struct AwsBackupBackupVaultNotificationsDetails {
     /// </ul>
     #[doc(hidden)]
     pub backup_vault_events: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
 }
@@ -28,7 +28,7 @@ impl AwsBackupBackupVaultNotificationsDetails {
     pub fn backup_vault_events(&self) -> std::option::Option<&[std::string::String]> {
         self.backup_vault_events.as_deref()
     }
-    /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -79,12 +79,12 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
         self.backup_vault_events = input;
         self
     }
-    /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
     pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.sns_topic_arn = Some(input.into());
         self
     }
-    /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
     pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self

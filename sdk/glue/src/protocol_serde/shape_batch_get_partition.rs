@@ -35,125 +35,143 @@ pub fn de_batch_get_partition_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityNotFoundException" => {
-            crate::operation::batch_get_partition::BatchGetPartitionError::EntityNotFoundException(
-                {
+        "EntityNotFoundException" => crate::operation::batch_get_partition::BatchGetPartitionError::EntityNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::EntityNotFoundExceptionBuilder::default(
-                            );
-                        let _ = response;
-                        output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "GlueEncryptionException" => {
-            crate::operation::batch_get_partition::BatchGetPartitionError::GlueEncryptionException(
-                {
+                    let mut output = crate::types::error::builders::EntityNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "FederationSourceException" => crate::operation::batch_get_partition::BatchGetPartitionError::FederationSourceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::GlueEncryptionExceptionBuilder::default(
-                            );
-                        let _ = response;
-                        output = crate::protocol_serde::shape_glue_encryption_exception::de_glue_encryption_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "InternalServiceException" => {
-            crate::operation::batch_get_partition::BatchGetPartitionError::InternalServiceException(
-                {
+                    let mut output = crate::types::error::builders::FederationSourceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_federation_source_exception::de_federation_source_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "FederationSourceRetryableException" => crate::operation::batch_get_partition::BatchGetPartitionError::FederationSourceRetryableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::InternalServiceExceptionBuilder::default(
-                            );
-                        let _ = response;
-                        output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "InvalidInputException" => {
-            crate::operation::batch_get_partition::BatchGetPartitionError::InvalidInputException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut output = crate::types::error::builders::FederationSourceRetryableExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_federation_source_retryable_exception::de_federation_source_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "GlueEncryptionException" => crate::operation::batch_get_partition::BatchGetPartitionError::GlueEncryptionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::GlueEncryptionExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_glue_encryption_exception::de_glue_encryption_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServiceException" => crate::operation::batch_get_partition::BatchGetPartitionError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidInputException" => crate::operation::batch_get_partition::BatchGetPartitionError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidStateException" => {
-            crate::operation::batch_get_partition::BatchGetPartitionError::InvalidStateException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidStateException" => crate::operation::batch_get_partition::BatchGetPartitionError::InvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidStateExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::InvalidStateExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_invalid_state_exception::de_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OperationTimeoutException" => {
-            crate::operation::batch_get_partition::BatchGetPartitionError::OperationTimeoutException(
-                {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OperationTimeoutException" => crate::operation::batch_get_partition::BatchGetPartitionError::OperationTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationTimeoutExceptionBuilder::default();
-                        let _ = response;
-                        output = crate::protocol_serde::shape_operation_timeout_exception::de_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        _ => crate::operation::batch_get_partition::BatchGetPartitionError::generic(generic),
+                    let _ = response;
+                    output = crate::protocol_serde::shape_operation_timeout_exception::de_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_partition::BatchGetPartitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::batch_get_partition::BatchGetPartitionError::generic(generic)
     })
 }
 

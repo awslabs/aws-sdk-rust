@@ -12,10 +12,10 @@ pub struct ListDomainsInput {
     pub registration_status: std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     #[doc(hidden)]
-    pub maximum_page_size: i32,
+    pub maximum_page_size: std::option::Option<i32>,
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
     #[doc(hidden)]
-    pub reverse_order: bool,
+    pub reverse_order: std::option::Option<bool>,
 }
 impl ListDomainsInput {
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
@@ -28,11 +28,11 @@ impl ListDomainsInput {
         self.registration_status.as_ref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
-    pub fn maximum_page_size(&self) -> i32 {
+    pub fn maximum_page_size(&self) -> std::option::Option<i32> {
         self.maximum_page_size
     }
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
-    pub fn reverse_order(&self) -> bool {
+    pub fn reverse_order(&self) -> std::option::Option<bool> {
         self.reverse_order
     }
 }
@@ -108,8 +108,8 @@ impl ListDomainsInputBuilder {
         Ok(crate::operation::list_domains::ListDomainsInput {
             next_page_token: self.next_page_token,
             registration_status: self.registration_status,
-            maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-            reverse_order: self.reverse_order.unwrap_or_default(),
+            maximum_page_size: self.maximum_page_size,
+            reverse_order: self.reverse_order,
         })
     }
 }

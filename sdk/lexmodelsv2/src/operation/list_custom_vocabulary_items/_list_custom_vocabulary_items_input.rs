@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomVocabularyItemsInput {
-    /// <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The bot version of the bot to the list custom vocabulary request.</p>
     #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The maximum results to the list custom vocabulary request.</p>
+    /// <p>The maximum number of items returned by the list operation.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The nextToken identifier to the list custom vocabulary request.</p>
@@ -20,7 +20,7 @@ pub struct ListCustomVocabularyItemsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomVocabularyItemsInput {
-    /// <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
@@ -28,11 +28,11 @@ impl ListCustomVocabularyItemsInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The maximum results to the list custom vocabulary request.</p>
+    /// <p>The maximum number of items returned by the list operation.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -59,12 +59,12 @@ pub struct ListCustomVocabularyItemsInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomVocabularyItemsInputBuilder {
-    /// <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.bot_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.bot_id = input;
         self
@@ -79,22 +79,22 @@ impl ListCustomVocabularyItemsInputBuilder {
         self.bot_version = input;
         self
     }
-    /// <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.locale_id = Some(input.into());
         self
     }
-    /// <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.locale_id = input;
         self
     }
-    /// <p>The maximum results to the list custom vocabulary request.</p>
+    /// <p>The maximum number of items returned by the list operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum results to the list custom vocabulary request.</p>
+    /// <p>The maximum number of items returned by the list operation.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

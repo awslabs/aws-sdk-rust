@@ -18,10 +18,10 @@ pub fn ser_update_storage_input(
     if let Some(var_4) = &input.storage_mode {
         object.key("storageMode").string(var_4.as_str());
     }
-    if input.volume_size_gb != 0 {
+    if let Some(var_5) = &input.volume_size_gb {
         object.key("volumeSizeGB").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.volume_size_gb).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

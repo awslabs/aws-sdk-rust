@@ -9,39 +9,42 @@ pub fn ser_send_channel_message_input(
     if let Some(var_2) = &input.content {
         object.key("Content").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.message_attributes {
+    if let Some(var_3) = &input.content_type {
+        object.key("ContentType").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.message_attributes {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("MessageAttributes").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_5 = object.key("MessageAttributes").start_object();
+        for (key_6, value_7) in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = object_4.key(key_5.as_str()).start_object();
+                let mut object_8 = object_5.key(key_6.as_str()).start_object();
                 crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(
-                    &mut object_7,
-                    value_6,
+                    &mut object_8,
+                    value_7,
                 )?;
-                object_7.finish();
+                object_8.finish();
             }
         }
-        object_4.finish();
+        object_5.finish();
     }
-    if let Some(var_8) = &input.metadata {
-        object.key("Metadata").string(var_8.as_str());
+    if let Some(var_9) = &input.metadata {
+        object.key("Metadata").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.persistence {
-        object.key("Persistence").string(var_9.as_str());
+    if let Some(var_10) = &input.persistence {
+        object.key("Persistence").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.push_notification {
+    if let Some(var_11) = &input.push_notification {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("PushNotification").start_object();
-        crate::protocol_serde::shape_push_notification_configuration::ser_push_notification_configuration(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("PushNotification").start_object();
+        crate::protocol_serde::shape_push_notification_configuration::ser_push_notification_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_12) = &input.sub_channel_id {
-        object.key("SubChannelId").string(var_12.as_str());
+    if let Some(var_13) = &input.sub_channel_id {
+        object.key("SubChannelId").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.r#type {
-        object.key("Type").string(var_13.as_str());
+    if let Some(var_14) = &input.r#type {
+        object.key("Type").string(var_14.as_str());
     }
     Ok(())
 }

@@ -3,47 +3,47 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumbersInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of your organization's phone numbers.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product types.</p>
     #[doc(hidden)]
     pub product_type: std::option::Option<crate::types::PhoneNumberProductType>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The filter to limit the number of results.</p>
     #[doc(hidden)]
     pub filter_name: std::option::Option<crate::types::PhoneNumberAssociationName>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The filter value.</p>
     #[doc(hidden)]
     pub filter_value: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumbersInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of your organization's phone numbers.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product types.</p>
     pub fn product_type(&self) -> std::option::Option<&crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The filter to limit the number of results.</p>
     pub fn filter_name(&self) -> std::option::Option<&crate::types::PhoneNumberAssociationName> {
         self.filter_name.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The filter value.</p>
     pub fn filter_value(&self) -> std::option::Option<&str> {
         self.filter_value.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -68,22 +68,22 @@ pub struct ListPhoneNumbersInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumbersInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of your organization's phone numbers.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of your organization's phone numbers.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.status = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product types.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.product_type = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number product types.</p>
     pub fn set_product_type(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberProductType>,
@@ -91,12 +91,12 @@ impl ListPhoneNumbersInputBuilder {
         self.product_type = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The filter to limit the number of results.</p>
     pub fn filter_name(mut self, input: crate::types::PhoneNumberAssociationName) -> Self {
         self.filter_name = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The filter to limit the number of results.</p>
     pub fn set_filter_name(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberAssociationName>,
@@ -104,32 +104,32 @@ impl ListPhoneNumbersInputBuilder {
         self.filter_name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The filter value.</p>
     pub fn filter_value(mut self, input: impl Into<std::string::String>) -> Self {
         self.filter_value = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The filter value.</p>
     pub fn set_filter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.filter_value = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

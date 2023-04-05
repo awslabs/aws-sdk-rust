@@ -10,38 +10,38 @@ pub struct EventDataStore {
     /// <p>The name of the event data store.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>
+    /// <p>Indicates whether the event data store is protected from termination.</p>
     #[deprecated(
         note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
     )]
     #[doc(hidden)]
     pub termination_protection_enabled: std::option::Option<bool>,
-    /// <p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::EventDataStoreStatus>,
-    /// <p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>
+    /// <p>The advanced event selectors that were used to select events for the data store.</p>
     #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    /// <p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub multi_region_enabled: std::option::Option<bool>,
-    /// <p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>
+    /// <p>Indicates that an event data store is collecting logged events for an organization.</p>
     #[deprecated(note = "OrganizationEnabled is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub organization_enabled: std::option::Option<bool>,
-    /// <p>This field is being deprecated. The retention period, in days.</p>
+    /// <p>The retention period, in days.</p>
     #[deprecated(note = "RetentionPeriod is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
-    /// <p>This field is being deprecated. The timestamp of the event data store's creation.</p>
+    /// <p>The timestamp of the event data store's creation.</p>
     #[deprecated(note = "CreatedTimestamp is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    /// <p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[deprecated(note = "UpdatedTimestamp is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -55,46 +55,46 @@ impl EventDataStore {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>
+    /// <p>Indicates whether the event data store is protected from termination.</p>
     #[deprecated(
         note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
     )]
     pub fn termination_protection_enabled(&self) -> std::option::Option<bool> {
         self.termination_protection_enabled
     }
-    /// <p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
     pub fn status(&self) -> std::option::Option<&crate::types::EventDataStoreStatus> {
         self.status.as_ref()
     }
-    /// <p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>
+    /// <p>The advanced event selectors that were used to select events for the data store.</p>
     #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
     pub fn advanced_event_selectors(
         &self,
     ) -> std::option::Option<&[crate::types::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
     }
-    /// <p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     pub fn multi_region_enabled(&self) -> std::option::Option<bool> {
         self.multi_region_enabled
     }
-    /// <p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>
+    /// <p>Indicates that an event data store is collecting logged events for an organization.</p>
     #[deprecated(note = "OrganizationEnabled is no longer returned by ListEventDataStores")]
     pub fn organization_enabled(&self) -> std::option::Option<bool> {
         self.organization_enabled
     }
-    /// <p>This field is being deprecated. The retention period, in days.</p>
+    /// <p>The retention period, in days.</p>
     #[deprecated(note = "RetentionPeriod is no longer returned by ListEventDataStores")]
     pub fn retention_period(&self) -> std::option::Option<i32> {
         self.retention_period
     }
-    /// <p>This field is being deprecated. The timestamp of the event data store's creation.</p>
+    /// <p>The timestamp of the event data store's creation.</p>
     #[deprecated(note = "CreatedTimestamp is no longer returned by ListEventDataStores")]
     pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
-    /// <p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    /// <p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[deprecated(note = "UpdatedTimestamp is no longer returned by ListEventDataStores")]
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
@@ -147,7 +147,7 @@ impl EventDataStoreBuilder {
         self.name = input;
         self
     }
-    /// <p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>
+    /// <p>Indicates whether the event data store is protected from termination.</p>
     #[deprecated(
         note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
     )]
@@ -155,7 +155,7 @@ impl EventDataStoreBuilder {
         self.termination_protection_enabled = Some(input);
         self
     }
-    /// <p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>
+    /// <p>Indicates whether the event data store is protected from termination.</p>
     #[deprecated(
         note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
     )]
@@ -163,13 +163,13 @@ impl EventDataStoreBuilder {
         self.termination_protection_enabled = input;
         self
     }
-    /// <p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
     pub fn status(mut self, input: crate::types::EventDataStoreStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
     pub fn set_status(
         mut self,
@@ -182,7 +182,7 @@ impl EventDataStoreBuilder {
     ///
     /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
     ///
-    /// <p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>
+    /// <p>The advanced event selectors that were used to select events for the data store.</p>
     #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
     pub fn advanced_event_selectors(mut self, input: crate::types::AdvancedEventSelector) -> Self {
         let mut v = self.advanced_event_selectors.unwrap_or_default();
@@ -190,7 +190,7 @@ impl EventDataStoreBuilder {
         self.advanced_event_selectors = Some(v);
         self
     }
-    /// <p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>
+    /// <p>The advanced event selectors that were used to select events for the data store.</p>
     #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
     pub fn set_advanced_event_selectors(
         mut self,
@@ -199,49 +199,49 @@ impl EventDataStoreBuilder {
         self.advanced_event_selectors = input;
         self
     }
-    /// <p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
         self.multi_region_enabled = Some(input);
         self
     }
-    /// <p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.multi_region_enabled = input;
         self
     }
-    /// <p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>
+    /// <p>Indicates that an event data store is collecting logged events for an organization.</p>
     #[deprecated(note = "OrganizationEnabled is no longer returned by ListEventDataStores")]
     pub fn organization_enabled(mut self, input: bool) -> Self {
         self.organization_enabled = Some(input);
         self
     }
-    /// <p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>
+    /// <p>Indicates that an event data store is collecting logged events for an organization.</p>
     #[deprecated(note = "OrganizationEnabled is no longer returned by ListEventDataStores")]
     pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.organization_enabled = input;
         self
     }
-    /// <p>This field is being deprecated. The retention period, in days.</p>
+    /// <p>The retention period, in days.</p>
     #[deprecated(note = "RetentionPeriod is no longer returned by ListEventDataStores")]
     pub fn retention_period(mut self, input: i32) -> Self {
         self.retention_period = Some(input);
         self
     }
-    /// <p>This field is being deprecated. The retention period, in days.</p>
+    /// <p>The retention period, in days.</p>
     #[deprecated(note = "RetentionPeriod is no longer returned by ListEventDataStores")]
     pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
         self.retention_period = input;
         self
     }
-    /// <p>This field is being deprecated. The timestamp of the event data store's creation.</p>
+    /// <p>The timestamp of the event data store's creation.</p>
     #[deprecated(note = "CreatedTimestamp is no longer returned by ListEventDataStores")]
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = Some(input);
         self
     }
-    /// <p>This field is being deprecated. The timestamp of the event data store's creation.</p>
+    /// <p>The timestamp of the event data store's creation.</p>
     #[deprecated(note = "CreatedTimestamp is no longer returned by ListEventDataStores")]
     pub fn set_created_timestamp(
         mut self,
@@ -250,13 +250,13 @@ impl EventDataStoreBuilder {
         self.created_timestamp = input;
         self
     }
-    /// <p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    /// <p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[deprecated(note = "UpdatedTimestamp is no longer returned by ListEventDataStores")]
     pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = Some(input);
         self
     }
-    /// <p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    /// <p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[deprecated(note = "UpdatedTimestamp is no longer returned by ListEventDataStores")]
     pub fn set_updated_timestamp(
         mut self,

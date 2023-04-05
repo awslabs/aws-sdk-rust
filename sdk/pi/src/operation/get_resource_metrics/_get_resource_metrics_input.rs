@@ -42,6 +42,9 @@ pub struct GetResourceMetricsInput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
+    #[doc(hidden)]
+    pub period_alignment: std::option::Option<crate::types::PeriodAlignment>,
 }
 impl GetResourceMetricsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
@@ -91,6 +94,10 @@ impl GetResourceMetricsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
+    pub fn period_alignment(&self) -> std::option::Option<&crate::types::PeriodAlignment> {
+        self.period_alignment.as_ref()
+    }
 }
 impl GetResourceMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetResourceMetricsInput`](crate::operation::get_resource_metrics::GetResourceMetricsInput).
@@ -112,6 +119,7 @@ pub struct GetResourceMetricsInputBuilder {
     pub(crate) period_in_seconds: std::option::Option<i32>,
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) period_alignment: std::option::Option<crate::types::PeriodAlignment>,
 }
 impl GetResourceMetricsInputBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
@@ -239,6 +247,19 @@ impl GetResourceMetricsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
+    pub fn period_alignment(mut self, input: crate::types::PeriodAlignment) -> Self {
+        self.period_alignment = Some(input);
+        self
+    }
+    /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
+    pub fn set_period_alignment(
+        mut self,
+        input: std::option::Option<crate::types::PeriodAlignment>,
+    ) -> Self {
+        self.period_alignment = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetResourceMetricsInput`](crate::operation::get_resource_metrics::GetResourceMetricsInput).
     pub fn build(
         self,
@@ -256,6 +277,7 @@ impl GetResourceMetricsInputBuilder {
                 period_in_seconds: self.period_in_seconds,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                period_alignment: self.period_alignment,
             },
         )
     }

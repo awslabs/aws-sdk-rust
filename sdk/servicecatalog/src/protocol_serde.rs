@@ -150,6 +150,12 @@ pub(crate) mod shape_list_stack_instances_for_provisioned_product;
 
 pub(crate) mod shape_list_tag_options;
 
+pub(crate) mod shape_notify_provision_product_engine_workflow_result;
+
+pub(crate) mod shape_notify_terminate_provisioned_product_engine_workflow_result;
+
+pub(crate) mod shape_notify_update_provisioned_product_engine_workflow_result;
+
 pub(crate) mod shape_provision_product;
 
 pub(crate) mod shape_reject_portfolio_share;
@@ -334,6 +340,12 @@ pub(crate) mod shape_list_stack_instances_for_provisioned_product_input;
 
 pub(crate) mod shape_list_tag_options_input;
 
+pub(crate) mod shape_notify_provision_product_engine_workflow_result_input;
+
+pub(crate) mod shape_notify_terminate_provisioned_product_engine_workflow_result_input;
+
+pub(crate) mod shape_notify_update_provisioned_product_engine_workflow_result_input;
+
 pub(crate) mod shape_operation_not_supported_exception;
 
 pub(crate) mod shape_provision_product_input;
@@ -387,6 +399,8 @@ pub(crate) mod shape_constraint_detail;
 pub(crate) mod shape_constraint_details;
 
 pub(crate) mod shape_constraint_summaries;
+
+pub(crate) mod shape_engine_workflow_resource_identifier;
 
 pub(crate) mod shape_execution_parameters;
 
@@ -462,6 +476,8 @@ pub(crate) mod shape_record_detail;
 
 pub(crate) mod shape_record_details;
 
+pub(crate) mod shape_record_output;
+
 pub(crate) mod shape_record_outputs;
 
 pub(crate) mod shape_resource_changes;
@@ -534,8 +550,6 @@ pub(crate) mod shape_provisioning_artifact_view;
 
 pub(crate) mod shape_record_errors;
 
-pub(crate) mod shape_record_output;
-
 pub(crate) mod shape_record_tags;
 
 pub(crate) mod shape_resource_change;
@@ -561,6 +575,8 @@ pub(crate) mod shape_stack_set_regions;
 pub(crate) mod shape_successful_shares;
 
 pub(crate) mod shape_tag_option_summary;
+
+pub(crate) mod shape_unique_tag_resource_identifier;
 
 pub(crate) mod shape_update_provisioning_parameters;
 

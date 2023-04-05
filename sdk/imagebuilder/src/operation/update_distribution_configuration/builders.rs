@@ -5,7 +5,7 @@ pub use crate::operation::update_distribution_configuration::_update_distributio
 
 /// Fluent builder constructing a request to `UpdateDistributionConfiguration`.
 ///
-/// <p> Updates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline.</p>
+/// <p>Updates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDistributionConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

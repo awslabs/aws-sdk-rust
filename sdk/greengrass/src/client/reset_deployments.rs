@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`amzn_client_token(impl Into<String>)`](crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::amzn_client_token) / [`set_amzn_client_token(Option<String>)`](crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::set_amzn_client_token): A client token used to correlate requests and responses.
-    ///   - [`force(bool)`](crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::force) / [`set_force(bool)`](crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::set_force): If true, performs a best-effort only core reset.
+    ///   - [`force(bool)`](crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::force) / [`set_force(Option<bool>)`](crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::set_force): If true, performs a best-effort only core reset.
     ///   - [`group_id(impl Into<String>)`](crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::set_group_id): The ID of the Greengrass group.
     /// - On success, responds with [`ResetDeploymentsOutput`](crate::operation::reset_deployments::ResetDeploymentsOutput) with field(s):
     ///   - [`deployment_arn(Option<String>)`](crate::operation::reset_deployments::ResetDeploymentsOutput::deployment_arn): The ARN of the deployment.

@@ -16,6 +16,9 @@ pub mod create_firewall_policy;
 /// Types for the `CreateRuleGroup` operation.
 pub mod create_rule_group;
 
+/// Types for the `CreateTLSInspectionConfiguration` operation.
+pub mod create_tls_inspection_configuration;
+
 /// Types for the `DeleteFirewall` operation.
 pub mod delete_firewall;
 
@@ -27,6 +30,9 @@ pub mod delete_resource_policy;
 
 /// Types for the `DeleteRuleGroup` operation.
 pub mod delete_rule_group;
+
+/// Types for the `DeleteTLSInspectionConfiguration` operation.
+pub mod delete_tls_inspection_configuration;
 
 /// Types for the `DescribeFirewall` operation.
 pub mod describe_firewall;
@@ -46,6 +52,9 @@ pub mod describe_rule_group;
 /// Types for the `DescribeRuleGroupMetadata` operation.
 pub mod describe_rule_group_metadata;
 
+/// Types for the `DescribeTLSInspectionConfiguration` operation.
+pub mod describe_tls_inspection_configuration;
+
 /// Types for the `DisassociateSubnets` operation.
 pub mod disassociate_subnets;
 
@@ -60,6 +69,9 @@ pub mod list_rule_groups;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTLSInspectionConfigurations` operation.
+pub mod list_tls_inspection_configurations;
 
 /// Types for the `PutResourcePolicy` operation.
 pub mod put_resource_policy;
@@ -93,3 +105,6 @@ pub mod update_rule_group;
 
 /// Types for the `UpdateSubnetChangeProtection` operation.
 pub mod update_subnet_change_protection;
+
+/// Types for the `UpdateTLSInspectionConfiguration` operation.
+pub mod update_tls_inspection_configuration;

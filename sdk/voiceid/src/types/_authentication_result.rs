@@ -7,10 +7,10 @@ pub struct AuthenticationResult {
     /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
     #[doc(hidden)]
     pub authentication_result_id: std::option::Option<std::string::String>,
-    /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
+    /// <p>A timestamp of when audio aggregation started for this authentication result.</p>
     #[doc(hidden)]
     pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
+    /// <p>A timestamp of when audio aggregation ended for this authentication result.</p>
     #[doc(hidden)]
     pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
@@ -34,11 +34,11 @@ impl AuthenticationResult {
     pub fn authentication_result_id(&self) -> std::option::Option<&str> {
         self.authentication_result_id.as_deref()
     }
-    /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
+    /// <p>A timestamp of when audio aggregation started for this authentication result.</p>
     pub fn audio_aggregation_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.audio_aggregation_started_at.as_ref()
     }
-    /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
+    /// <p>A timestamp of when audio aggregation ended for this authentication result.</p>
     pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.audio_aggregation_ended_at.as_ref()
     }
@@ -117,12 +117,12 @@ impl AuthenticationResultBuilder {
         self.authentication_result_id = input;
         self
     }
-    /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
+    /// <p>A timestamp of when audio aggregation started for this authentication result.</p>
     pub fn audio_aggregation_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.audio_aggregation_started_at = Some(input);
         self
     }
-    /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
+    /// <p>A timestamp of when audio aggregation started for this authentication result.</p>
     pub fn set_audio_aggregation_started_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -130,12 +130,12 @@ impl AuthenticationResultBuilder {
         self.audio_aggregation_started_at = input;
         self
     }
-    /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
+    /// <p>A timestamp of when audio aggregation ended for this authentication result.</p>
     pub fn audio_aggregation_ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.audio_aggregation_ended_at = Some(input);
         self
     }
-    /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
+    /// <p>A timestamp of when audio aggregation ended for this authentication result.</p>
     pub fn set_audio_aggregation_ended_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

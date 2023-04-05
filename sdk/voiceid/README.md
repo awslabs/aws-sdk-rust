@@ -3,7 +3,7 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Amazon Connect Voice ID provides real-time caller authentication and fraud screening. This guide describes the APIs used for this service.
+Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection, which make voice interactions in contact centers more secure and efficient.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-voiceid = "0.25.0"
+aws-sdk-voiceid = "0.25.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

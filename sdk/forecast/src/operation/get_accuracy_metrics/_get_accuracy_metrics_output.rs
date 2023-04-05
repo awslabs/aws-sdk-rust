@@ -11,7 +11,7 @@ pub struct GetAccuracyMetricsOutput {
     #[doc(hidden)]
     pub is_auto_predictor: std::option::Option<bool>,
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -34,7 +34,7 @@ impl GetAccuracyMetricsOutput {
         self.is_auto_predictor
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -103,7 +103,7 @@ impl GetAccuracyMetricsOutputBuilder {
         self
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -115,7 +115,7 @@ impl GetAccuracyMetricsOutputBuilder {
         self
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>

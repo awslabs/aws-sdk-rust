@@ -23,6 +23,14 @@ pub enum Error {
     CrawlerStoppingException(crate::types::error::CrawlerStoppingException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
+    /// <p>A federated resource already exists.</p>
+    FederatedResourceAlreadyExistsException(
+        crate::types::error::FederatedResourceAlreadyExistsException,
+    ),
+    /// <p>A federation source failed.</p>
+    FederationSourceException(crate::types::error::FederationSourceException),
+    #[allow(missing_docs)] // documentation missing in model
+    FederationSourceRetryableException(crate::types::error::FederationSourceRetryableException),
     /// <p>An encryption operation failed.</p>
     GlueEncryptionException(crate::types::error::GlueEncryptionException),
     /// <p>The same unique identifier was associated with two different records.</p>
@@ -45,7 +53,7 @@ pub enum Error {
     NoScheduleException(crate::types::error::NoScheduleException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::types::error::OperationTimeoutException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The operation timed out.</p>
     PermissionTypeMismatchException(crate::types::error::PermissionTypeMismatchException),
     /// <p>A resource was not ready for a transaction.</p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
@@ -77,6 +85,9 @@ impl std::fmt::Display for Error {
             Error::CrawlerRunningException(inner) => inner.fmt(f),
             Error::CrawlerStoppingException(inner) => inner.fmt(f),
             Error::EntityNotFoundException(inner) => inner.fmt(f),
+            Error::FederatedResourceAlreadyExistsException(inner) => inner.fmt(f),
+            Error::FederationSourceException(inner) => inner.fmt(f),
+            Error::FederationSourceRetryableException(inner) => inner.fmt(f),
             Error::GlueEncryptionException(inner) => inner.fmt(f),
             Error::IdempotentParameterMismatchException(inner) => inner.fmt(f),
             Error::IllegalBlueprintStateException(inner) => inner.fmt(f),
@@ -608,6 +619,8 @@ impl From<crate::operation::batch_get_partition::BatchGetPartitionError> for Err
     fn from(err: crate::operation::batch_get_partition::BatchGetPartitionError) -> Self {
         match err {
             crate::operation::batch_get_partition::BatchGetPartitionError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::batch_get_partition::BatchGetPartitionError::FederationSourceException(inner) => Error::FederationSourceException(inner),
+            crate::operation::batch_get_partition::BatchGetPartitionError::FederationSourceRetryableException(inner) => Error::FederationSourceRetryableException(inner),
             crate::operation::batch_get_partition::BatchGetPartitionError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
             crate::operation::batch_get_partition::BatchGetPartitionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::batch_get_partition::BatchGetPartitionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
@@ -1208,6 +1221,7 @@ impl From<crate::operation::create_database::CreateDatabaseError> for Error {
         match err {
             crate::operation::create_database::CreateDatabaseError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
             crate::operation::create_database::CreateDatabaseError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::create_database::CreateDatabaseError::FederatedResourceAlreadyExistsException(inner) => Error::FederatedResourceAlreadyExistsException(inner),
             crate::operation::create_database::CreateDatabaseError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
             crate::operation::create_database::CreateDatabaseError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::create_database::CreateDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
@@ -3558,6 +3572,9 @@ impl From<crate::operation::get_database::GetDatabaseError> for Error {
             crate::operation::get_database::GetDatabaseError::EntityNotFoundException(inner) => {
                 Error::EntityNotFoundException(inner)
             }
+            crate::operation::get_database::GetDatabaseError::FederationSourceException(inner) => {
+                Error::FederationSourceException(inner)
+            }
             crate::operation::get_database::GetDatabaseError::GlueEncryptionException(inner) => {
                 Error::GlueEncryptionException(inner)
             }
@@ -4408,24 +4425,14 @@ where
 impl From<crate::operation::get_partition::GetPartitionError> for Error {
     fn from(err: crate::operation::get_partition::GetPartitionError) -> Self {
         match err {
-            crate::operation::get_partition::GetPartitionError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::get_partition::GetPartitionError::GlueEncryptionException(inner) => {
-                Error::GlueEncryptionException(inner)
-            }
-            crate::operation::get_partition::GetPartitionError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::operation::get_partition::GetPartitionError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::get_partition::GetPartitionError::OperationTimeoutException(
-                inner,
-            ) => Error::OperationTimeoutException(inner),
-            crate::operation::get_partition::GetPartitionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_partition::GetPartitionError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_partition::GetPartitionError::FederationSourceException(inner) => Error::FederationSourceException(inner),
+            crate::operation::get_partition::GetPartitionError::FederationSourceRetryableException(inner) => Error::FederationSourceRetryableException(inner),
+            crate::operation::get_partition::GetPartitionError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
+            crate::operation::get_partition::GetPartitionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_partition::GetPartitionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_partition::GetPartitionError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::get_partition::GetPartitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4502,30 +4509,16 @@ where
 impl From<crate::operation::get_partitions::GetPartitionsError> for Error {
     fn from(err: crate::operation::get_partitions::GetPartitionsError) -> Self {
         match err {
-            crate::operation::get_partitions::GetPartitionsError::EntityNotFoundException(
-                inner,
-            ) => Error::EntityNotFoundException(inner),
-            crate::operation::get_partitions::GetPartitionsError::GlueEncryptionException(
-                inner,
-            ) => Error::GlueEncryptionException(inner),
-            crate::operation::get_partitions::GetPartitionsError::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::operation::get_partitions::GetPartitionsError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::get_partitions::GetPartitionsError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::operation::get_partitions::GetPartitionsError::OperationTimeoutException(
-                inner,
-            ) => Error::OperationTimeoutException(inner),
-            crate::operation::get_partitions::GetPartitionsError::ResourceNotReadyException(
-                inner,
-            ) => Error::ResourceNotReadyException(inner),
-            crate::operation::get_partitions::GetPartitionsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_partitions::GetPartitionsError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_partitions::GetPartitionsError::FederationSourceException(inner) => Error::FederationSourceException(inner),
+            crate::operation::get_partitions::GetPartitionsError::FederationSourceRetryableException(inner) => Error::FederationSourceRetryableException(inner),
+            crate::operation::get_partitions::GetPartitionsError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
+            crate::operation::get_partitions::GetPartitionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_partitions::GetPartitionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_partitions::GetPartitionsError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::get_partitions::GetPartitionsError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::get_partitions::GetPartitionsError::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+            crate::operation::get_partitions::GetPartitionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5084,6 +5077,12 @@ impl From<crate::operation::get_table::GetTableError> for Error {
             crate::operation::get_table::GetTableError::EntityNotFoundException(inner) => {
                 Error::EntityNotFoundException(inner)
             }
+            crate::operation::get_table::GetTableError::FederationSourceException(inner) => {
+                Error::FederationSourceException(inner)
+            }
+            crate::operation::get_table::GetTableError::FederationSourceRetryableException(
+                inner,
+            ) => Error::FederationSourceRetryableException(inner),
             crate::operation::get_table::GetTableError::GlueEncryptionException(inner) => {
                 Error::GlueEncryptionException(inner)
             }
@@ -5132,6 +5131,12 @@ impl From<crate::operation::get_tables::GetTablesError> for Error {
             crate::operation::get_tables::GetTablesError::EntityNotFoundException(inner) => {
                 Error::EntityNotFoundException(inner)
             }
+            crate::operation::get_tables::GetTablesError::FederationSourceException(inner) => {
+                Error::FederationSourceException(inner)
+            }
+            crate::operation::get_tables::GetTablesError::FederationSourceRetryableException(
+                inner,
+            ) => Error::FederationSourceRetryableException(inner),
             crate::operation::get_tables::GetTablesError::GlueEncryptionException(inner) => {
                 Error::GlueEncryptionException(inner)
             }
@@ -5387,6 +5392,8 @@ impl From<crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPart
     ) -> Self {
         match err {
             crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataError::FederationSourceException(inner) => Error::FederationSourceException(inner),
+            crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataError::FederationSourceRetryableException(inner) => Error::FederationSourceRetryableException(inner),
             crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
             crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
@@ -5418,6 +5425,8 @@ impl
     ) -> Self {
         match err {
             crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError::FederationSourceException(inner) => Error::FederationSourceException(inner),
+            crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError::FederationSourceRetryableException(inner) => Error::FederationSourceRetryableException(inner),
             crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
             crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
@@ -5466,6 +5475,8 @@ impl From<crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMet
     ) -> Self {
         match err {
             crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError::FederationSourceException(inner) => Error::FederationSourceException(inner),
+            crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError::FederationSourceRetryableException(inner) => Error::FederationSourceRetryableException(inner),
             crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
             crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
@@ -8708,6 +8719,9 @@ impl aws_http::request_id::RequestId for Error {
             Self::CrawlerRunningException(e) => e.request_id(),
             Self::CrawlerStoppingException(e) => e.request_id(),
             Self::EntityNotFoundException(e) => e.request_id(),
+            Self::FederatedResourceAlreadyExistsException(e) => e.request_id(),
+            Self::FederationSourceException(e) => e.request_id(),
+            Self::FederationSourceRetryableException(e) => e.request_id(),
             Self::GlueEncryptionException(e) => e.request_id(),
             Self::IdempotentParameterMismatchException(e) => e.request_id(),
             Self::IllegalBlueprintStateException(e) => e.request_id(),

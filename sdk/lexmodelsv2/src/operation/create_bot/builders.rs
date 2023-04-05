@@ -168,4 +168,31 @@ impl CreateBotFluentBuilder {
         self.inner = self.inner.set_test_bot_alias_tags(input);
         self
     }
+    /// <p>The type of a bot to create.</p>
+    pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
+        self.inner = self.inner.bot_type(input);
+        self
+    }
+    /// <p>The type of a bot to create.</p>
+    pub fn set_bot_type(mut self, input: std::option::Option<crate::types::BotType>) -> Self {
+        self.inner = self.inner.set_bot_type(input);
+        self
+    }
+    /// Appends an item to `botMembers`.
+    ///
+    /// To override the contents of this collection use [`set_bot_members`](Self::set_bot_members).
+    ///
+    /// <p>The list of bot members in a network to be created.</p>
+    pub fn bot_members(mut self, input: crate::types::BotMember) -> Self {
+        self.inner = self.inner.bot_members(input);
+        self
+    }
+    /// <p>The list of bot members in a network to be created.</p>
+    pub fn set_bot_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
+    ) -> Self {
+        self.inner = self.inner.set_bot_members(input);
+        self
+    }
 }

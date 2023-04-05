@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClusterSessionCredentialsOutput {
-    /// <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
+    /// <p>The credentials that you can use to connect to cluster endpoints that support username and password authentication.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::types::Credentials>,
     /// <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
@@ -12,7 +12,7 @@ pub struct GetClusterSessionCredentialsOutput {
     _request_id: Option<String>,
 }
 impl GetClusterSessionCredentialsOutput {
-    /// <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
+    /// <p>The credentials that you can use to connect to cluster endpoints that support username and password authentication.</p>
     pub fn credentials(&self) -> std::option::Option<&crate::types::Credentials> {
         self.credentials.as_ref()
     }
@@ -42,12 +42,12 @@ pub struct GetClusterSessionCredentialsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetClusterSessionCredentialsOutputBuilder {
-    /// <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
+    /// <p>The credentials that you can use to connect to cluster endpoints that support username and password authentication.</p>
     pub fn credentials(mut self, input: crate::types::Credentials) -> Self {
         self.credentials = Some(input);
         self
     }
-    /// <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
+    /// <p>The credentials that you can use to connect to cluster endpoints that support username and password authentication.</p>
     pub fn set_credentials(
         mut self,
         input: std::option::Option<crate::types::Credentials>,

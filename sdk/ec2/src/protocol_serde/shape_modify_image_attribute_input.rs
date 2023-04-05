@@ -96,6 +96,11 @@ pub fn ser_modify_image_attribute_input_input(
         }
         list_38.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_40 = writer.prefix("ImdsSupport");
+    if let Some(var_41) = &input.imds_support {
+        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_40, var_41)?;
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

@@ -38,12 +38,12 @@ pub struct CreateJobInput {
     pub connections: std::option::Option<crate::types::ConnectionsList>,
     /// <p>The maximum number of times to retry this job if it fails.</p>
     #[doc(hidden)]
-    pub max_retries: i32,
+    pub max_retries: std::option::Option<i32>,
     /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     #[doc(hidden)]
-    pub allocated_capacity: i32,
+    pub allocated_capacity: std::option::Option<i32>,
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
@@ -146,13 +146,13 @@ impl CreateJobInput {
         self.connections.as_ref()
     }
     /// <p>The maximum number of times to retry this job if it fails.</p>
-    pub fn max_retries(&self) -> i32 {
+    pub fn max_retries(&self) -> std::option::Option<i32> {
         self.max_retries
     }
     /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
-    pub fn allocated_capacity(&self) -> i32 {
+    pub fn allocated_capacity(&self) -> std::option::Option<i32> {
         self.allocated_capacity
     }
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
@@ -660,8 +660,8 @@ impl CreateJobInputBuilder {
             default_arguments: self.default_arguments,
             non_overridable_arguments: self.non_overridable_arguments,
             connections: self.connections,
-            max_retries: self.max_retries.unwrap_or_default(),
-            allocated_capacity: self.allocated_capacity.unwrap_or_default(),
+            max_retries: self.max_retries,
+            allocated_capacity: self.allocated_capacity,
             timeout: self.timeout,
             max_capacity: self.max_capacity,
             security_configuration: self.security_configuration,

@@ -51,33 +51,33 @@ pub fn ser_create_cluster_input(
         crate::protocol_serde::shape_logging_info::ser_logging_info(&mut object_13, var_12)?;
         object_13.finish();
     }
-    {
+    if let Some(var_14) = &input.number_of_broker_nodes {
         object.key("numberOfBrokerNodes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.number_of_broker_nodes).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.open_monitoring {
+    if let Some(var_15) = &input.open_monitoring {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("openMonitoring").start_object();
+        let mut object_16 = object.key("openMonitoring").start_object();
         crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(
-            &mut object_15,
-            var_14,
+            &mut object_16,
+            var_15,
         )?;
-        object_15.finish();
+        object_16.finish();
     }
-    if let Some(var_16) = &input.storage_mode {
-        object.key("storageMode").string(var_16.as_str());
+    if let Some(var_17) = &input.storage_mode {
+        object.key("storageMode").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.tags {
+    if let Some(var_18) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("tags").start_object();
-        for (key_19, value_20) in var_17 {
+        let mut object_19 = object.key("tags").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_18.key(key_19.as_str()).string(value_20.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_18.finish();
+        object_19.finish();
     }
     Ok(())
 }

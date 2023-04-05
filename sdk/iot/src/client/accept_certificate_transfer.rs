@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`certificate_id(impl Into<String>)`](crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    ///   - [`set_as_active(bool)`](crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder::set_as_active) / [`set_set_as_active(bool)`](crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder::set_set_as_active): <p>Specifies whether the certificate is active.</p>
+    ///   - [`set_as_active(bool)`](crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder::set_as_active) / [`set_set_as_active(Option<bool>)`](crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder::set_set_as_active): <p>Specifies whether the certificate is active.</p>
     /// - On success, responds with [`AcceptCertificateTransferOutput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput)
     /// - On failure, responds with [`SdkError<AcceptCertificateTransferError>`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferError)
     pub fn accept_certificate_transfer(&self) -> crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder{

@@ -14,7 +14,7 @@ pub struct ExecuteCommandInput {
     pub command: std::option::Option<std::string::String>,
     /// <p>Use this flag to run your command in interactive mode.</p>
     #[doc(hidden)]
-    pub interactive: bool,
+    pub interactive: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
     #[doc(hidden)]
     pub task: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ impl ExecuteCommandInput {
         self.command.as_deref()
     }
     /// <p>Use this flag to run your command in interactive mode.</p>
-    pub fn interactive(&self) -> bool {
+    pub fn interactive(&self) -> std::option::Option<bool> {
         self.interactive
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
@@ -120,7 +120,7 @@ impl ExecuteCommandInputBuilder {
             cluster: self.cluster,
             container: self.container,
             command: self.command,
-            interactive: self.interactive.unwrap_or_default(),
+            interactive: self.interactive,
             task: self.task,
         })
     }

@@ -5,7 +5,7 @@ pub use crate::operation::stop_auto_ml_job::_stop_auto_ml_job_input::StopAutoMlJ
 
 /// Fluent builder constructing a request to `StopAutoMLJob`.
 ///
-/// <p>A method for forcing the termination of a running job.</p>
+/// <p>A method for forcing a running job to shut down.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopAutoMLJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

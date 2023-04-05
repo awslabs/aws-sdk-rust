@@ -216,7 +216,7 @@ pub type ListIAMPolicyAssignmentsForUserErrorKind = ListIAMPolicyAssignmentsForU
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIAMPolicyAssignmentsForUserError {
-    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct credentials.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A resource is already in a state that indicates an operation is happening that must complete before a new update can be applied.</p>
     ConcurrentUpdatingException(crate::types::error::ConcurrentUpdatingException),

@@ -30,7 +30,7 @@ pub struct ListIntegrationItem {
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
-    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    /// <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     #[doc(hidden)]
     pub is_unstructured: std::option::Option<bool>,
 }
@@ -73,7 +73,7 @@ impl ListIntegrationItem {
     pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
-    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    /// <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     pub fn is_unstructured(&self) -> std::option::Option<bool> {
         self.is_unstructured
     }
@@ -218,12 +218,12 @@ impl ListIntegrationItemBuilder {
         self.workflow_id = input;
         self
     }
-    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    /// <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     pub fn is_unstructured(mut self, input: bool) -> Self {
         self.is_unstructured = Some(input);
         self
     }
-    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    /// <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     pub fn set_is_unstructured(mut self, input: std::option::Option<bool>) -> Self {
         self.is_unstructured = input;
         self

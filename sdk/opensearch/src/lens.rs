@@ -109,6 +109,16 @@ pub(crate) fn reflens_list_packages_for_domain_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_scheduled_actions_output_next_token(
+    input: &crate::operation::list_scheduled_actions::ListScheduledActionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_versions_output_next_token(
     input: &crate::operation::list_versions::ListVersionsOutput,
 ) -> std::option::Option<&std::string::String> {

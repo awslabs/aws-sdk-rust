@@ -46,6 +46,11 @@ where
                                     )?,
                                 );
                             }
+                            "WatchlistIds" => {
+                                builder = builder.set_watchlist_ids(
+                                    crate::protocol_serde::shape_response_watchlist_ids::de_response_watchlist_ids(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -42,7 +42,7 @@ pub struct GetRunOutput {
     /// <p>The run's parameters.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<aws_smithy_types::Document>,
-    /// <p>The run's storage capacity.</p>
+    /// <p>The run's storage capacity in gigabytes.</p>
     #[doc(hidden)]
     pub storage_capacity: std::option::Option<i32>,
     /// <p>The run's output URI.</p>
@@ -129,7 +129,7 @@ impl GetRunOutput {
     pub fn parameters(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.parameters.as_ref()
     }
-    /// <p>The run's storage capacity.</p>
+    /// <p>The run's storage capacity in gigabytes.</p>
     pub fn storage_capacity(&self) -> std::option::Option<i32> {
         self.storage_capacity
     }
@@ -356,12 +356,12 @@ impl GetRunOutputBuilder {
         self.parameters = input;
         self
     }
-    /// <p>The run's storage capacity.</p>
+    /// <p>The run's storage capacity in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = Some(input);
         self
     }
-    /// <p>The run's storage capacity.</p>
+    /// <p>The run's storage capacity in gigabytes.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self

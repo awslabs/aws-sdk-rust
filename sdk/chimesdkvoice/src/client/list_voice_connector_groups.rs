@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::set_next_token): (undocumented)
-    ///   - [`max_results(i32)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::set_max_results): (undocumented)
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::set_next_token): <p>The token used to return the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::set_max_results): <p>The maximum number of results to return in a single call. </p>
     /// - On success, responds with [`ListVoiceConnectorGroupsOutput`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput) with field(s):
-    ///   - [`voice_connector_groups(Option<Vec<VoiceConnectorGroup>>)`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput::voice_connector_groups): (undocumented)
-    ///   - [`next_token(Option<String>)`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput::next_token): (undocumented)
+    ///   - [`voice_connector_groups(Option<Vec<VoiceConnectorGroup>>)`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput::voice_connector_groups): <p>The details of the Voice Connector groups.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput::next_token): <p>The token used to return the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListVoiceConnectorGroupsError>`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError)
     pub fn list_voice_connector_groups(&self) -> crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder{
         crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::new(self.handle.clone())

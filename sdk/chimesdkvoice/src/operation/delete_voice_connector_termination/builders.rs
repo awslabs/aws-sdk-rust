@@ -5,6 +5,9 @@ pub use crate::operation::delete_voice_connector_termination::_delete_voice_conn
 
 /// Fluent builder constructing a request to `DeleteVoiceConnectorTermination`.
 ///
+/// <p>Deletes the termination settings for the specified Amazon Chime SDK Voice Connector.</p> <note>
+/// <p>If emergency calling is configured for the Voice Connector, it must be deleted prior to deleting the termination settings.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +58,12 @@ impl DeleteVoiceConnectorTerminationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,

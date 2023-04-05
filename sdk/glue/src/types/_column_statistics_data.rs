@@ -14,7 +14,7 @@ pub struct ColumnStatisticsData {
     /// <p>Date column statistics data.</p>
     #[doc(hidden)]
     pub date_column_statistics_data: std::option::Option<crate::types::DateColumnStatisticsData>,
-    /// <p>Decimal column statistics data.</p>
+    /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     #[doc(hidden)]
     pub decimal_column_statistics_data:
         std::option::Option<crate::types::DecimalColumnStatisticsData>,
@@ -51,7 +51,7 @@ impl ColumnStatisticsData {
     ) -> std::option::Option<&crate::types::DateColumnStatisticsData> {
         self.date_column_statistics_data.as_ref()
     }
-    /// <p>Decimal column statistics data.</p>
+    /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub fn decimal_column_statistics_data(
         &self,
     ) -> std::option::Option<&crate::types::DecimalColumnStatisticsData> {
@@ -155,7 +155,7 @@ impl ColumnStatisticsDataBuilder {
         self.date_column_statistics_data = input;
         self
     }
-    /// <p>Decimal column statistics data.</p>
+    /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub fn decimal_column_statistics_data(
         mut self,
         input: crate::types::DecimalColumnStatisticsData,
@@ -163,7 +163,7 @@ impl ColumnStatisticsDataBuilder {
         self.decimal_column_statistics_data = Some(input);
         self
     }
-    /// <p>Decimal column statistics data.</p>
+    /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub fn set_decimal_column_statistics_data(
         mut self,
         input: std::option::Option<crate::types::DecimalColumnStatisticsData>,

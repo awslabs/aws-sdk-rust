@@ -80,11 +80,13 @@ impl DeleteLabelsInput {
                         }
                     }
                 }
-                if _input.delete_all {
-                    query.push_kv(
-                        "deleteAll",
-                        aws_smithy_types::primitive::Encoder::from(_input.delete_all).encode(),
-                    );
+                if let Some(inner_4) = &_input.delete_all {
+                    if *inner_4 {
+                        query.push_kv(
+                            "deleteAll",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -198,7 +200,7 @@ pub type DeleteLabelsErrorKind = DeleteLabelsError;
 pub enum DeleteLabelsError {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::types::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::types::error::ProhibitedStateException),

@@ -12,6 +12,9 @@ pub fn ser_target_address(
             aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.ipv6 {
+        object.key("Ipv6").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -54,6 +57,15 @@ where
                                         tokens.next(),
                                     )?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "Ipv6" => {
+                                builder = builder.set_ipv6(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }

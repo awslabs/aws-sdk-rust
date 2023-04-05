@@ -5,7 +5,6 @@
 pub struct DescribeProvisioningParametersInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -33,7 +32,6 @@ pub struct DescribeProvisioningParametersInput {
 impl DescribeProvisioningParametersInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -87,7 +85,6 @@ pub struct DescribeProvisioningParametersInputBuilder {
 impl DescribeProvisioningParametersInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -97,7 +94,6 @@ impl DescribeProvisioningParametersInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>

@@ -7,7 +7,9 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A conflict occurred with the request. Please fix any inconsistences with your resources and try again.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for help.</p>
+    /// <p>An error message with a list of conflicting queries used across different sets of featured results. This occurred with the request for a new featured results set. Check that the queries you specified for featured results are unique per featured results set for each index.</p>
+    FeaturedResultsConflictException(crate::types::error::FeaturedResultsConflictException),
+    /// <p>An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The input to the request is not valid. Please provide the correct input and try again.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
@@ -19,7 +21,7 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The resource you want to use isn't available. Please check you have provided the correct resource and try again.</p>
     ResourceUnavailableException(crate::types::error::ResourceUnavailableException),
-    /// <p>You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> to inquire about an increase of limits.</p>
+    /// <p>You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a> for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> to inquire about an increase of limits.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling. Please reduce the number of requests and try again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
@@ -33,6 +35,7 @@ impl std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::FeaturedResultsConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::ResourceAlreadyExistException(inner) => inner.fmt(f),
@@ -183,6 +186,53 @@ impl From<crate::operation::batch_delete_document::BatchDeleteDocumentError> for
             crate::operation::batch_delete_document::BatchDeleteDocumentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_delete_document::BatchDeleteDocumentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_delete_document::BatchDeleteDocumentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError>
+    for Error
+{
+    fn from(
+        err: crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -487,6 +537,53 @@ impl From<crate::operation::create_faq::CreateFaqError> for Error {
             crate::operation::create_faq::CreateFaqError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_featured_results_set::CreateFeaturedResultsSetError> for Error {
+    fn from(
+        err: crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
+    ) -> Self {
+        match err {
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError::FeaturedResultsConflictException(inner) => Error::FeaturedResultsConflictException(inner),
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1124,6 +1221,53 @@ impl From<crate::operation::describe_faq::DescribeFaqError> for Error {
             crate::operation::describe_faq::DescribeFaqError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1768,6 +1912,51 @@ impl From<crate::operation::list_faqs::ListFaqsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError> for Error {
+    fn from(
+        err: crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdError, R>) -> Self {
         match err {
@@ -2407,6 +2596,52 @@ impl From<crate::operation::update_experience::UpdateExperienceError> for Error 
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError> for Error {
+    fn from(
+        err: crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
+    ) -> Self {
+        match err {
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError::FeaturedResultsConflictException(inner) => Error::FeaturedResultsConflictException(inner),
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_index::UpdateIndexError, R>>
     for Error
 where
@@ -2604,6 +2839,7 @@ impl aws_http::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::FeaturedResultsConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
             Self::ResourceAlreadyExistException(e) => e.request_id(),

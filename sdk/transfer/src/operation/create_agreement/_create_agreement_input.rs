@@ -16,7 +16,7 @@ pub struct CreateAgreementInput {
     #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
     #[doc(hidden)]
     pub base_directory: std::option::Option<std::string::String>,
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
@@ -47,7 +47,7 @@ impl CreateAgreementInput {
         self.partner_profile_id.as_deref()
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
     pub fn base_directory(&self) -> std::option::Option<&str> {
         self.base_directory.as_deref()
     }
@@ -129,13 +129,13 @@ impl CreateAgreementInputBuilder {
         self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
     pub fn base_directory(mut self, input: impl Into<std::string::String>) -> Self {
         self.base_directory = Some(input.into());
         self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
     pub fn set_base_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.base_directory = input;
         self

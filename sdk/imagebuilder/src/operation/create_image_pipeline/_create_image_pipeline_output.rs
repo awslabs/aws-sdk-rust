@@ -3,27 +3,27 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImagePipelineOutput {
-    /// <p> The request ID that uniquely identifies this request.</p>
+    /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
-    /// <p> The idempotency token used to make this request idempotent.</p>
+    /// <p>The idempotency token used to make this request idempotent.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateImagePipelineOutput {
-    /// <p> The request ID that uniquely identifies this request.</p>
+    /// <p>The request ID that uniquely identifies this request.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p> The idempotency token used to make this request idempotent.</p>
+    /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
     pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
         self.image_pipeline_arn.as_deref()
     }
@@ -52,32 +52,32 @@ pub struct CreateImagePipelineOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateImagePipelineOutputBuilder {
-    /// <p> The request ID that uniquely identifies this request.</p>
+    /// <p>The request ID that uniquely identifies this request.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.request_id = Some(input.into());
         self
     }
-    /// <p> The request ID that uniquely identifies this request.</p>
+    /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.request_id = input;
         self
     }
-    /// <p> The idempotency token used to make this request idempotent.</p>
+    /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p> The idempotency token used to make this request idempotent.</p>
+    /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
     pub fn image_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.image_pipeline_arn = Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
     pub fn set_image_pipeline_arn(
         mut self,
         input: std::option::Option<std::string::String>,

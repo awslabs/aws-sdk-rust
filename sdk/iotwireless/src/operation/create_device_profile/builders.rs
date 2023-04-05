@@ -122,4 +122,17 @@ impl CreateDeviceProfileFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
+    pub fn sidewalk(mut self, input: crate::types::SidewalkCreateDeviceProfile) -> Self {
+        self.inner = self.inner.sidewalk(input);
+        self
+    }
+    /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
+    pub fn set_sidewalk(
+        mut self,
+        input: std::option::Option<crate::types::SidewalkCreateDeviceProfile>,
+    ) -> Self {
+        self.inner = self.inner.set_sidewalk(input);
+        self
+    }
 }

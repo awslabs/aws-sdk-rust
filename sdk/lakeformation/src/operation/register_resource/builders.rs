@@ -106,4 +106,14 @@ impl RegisterResourceFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn with_federation(mut self, input: bool) -> Self {
+        self.inner = self.inner.with_federation(input);
+        self
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn set_with_federation(mut self, input: std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_with_federation(input);
+        self
+    }
 }

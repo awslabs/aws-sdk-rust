@@ -15,5 +15,14 @@ pub fn ser_list_billing_groups_filter(
     if let Some(var_4) = &input.pricing_plan {
         object.key("PricingPlan").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.statuses {
+        let mut array_6 = object.key("Statuses").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }

@@ -36,6 +36,8 @@ pub(crate) mod shape_delete_channel_message;
 
 pub(crate) mod shape_delete_channel_moderator;
 
+pub(crate) mod shape_delete_messaging_streaming_configurations;
+
 pub(crate) mod shape_describe_channel;
 
 pub(crate) mod shape_describe_channel_ban;
@@ -60,6 +62,8 @@ pub(crate) mod shape_get_channel_message_status;
 
 pub(crate) mod shape_get_messaging_session_endpoint;
 
+pub(crate) mod shape_get_messaging_streaming_configurations;
+
 pub(crate) mod shape_list_channel_bans;
 
 pub(crate) mod shape_list_channel_flows;
@@ -82,7 +86,11 @@ pub(crate) mod shape_list_sub_channels;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_put_channel_expiration_settings;
+
 pub(crate) mod shape_put_channel_membership_preferences;
+
+pub(crate) mod shape_put_messaging_streaming_configurations;
 
 pub(crate) mod shape_redact_channel_message;
 
@@ -134,7 +142,11 @@ pub(crate) mod shape_forbidden_exception;
 
 pub(crate) mod shape_not_found_exception;
 
+pub(crate) mod shape_put_channel_expiration_settings_input;
+
 pub(crate) mod shape_put_channel_membership_preferences_input;
+
+pub(crate) mod shape_put_messaging_streaming_configurations_input;
 
 pub(crate) mod shape_redact_channel_message_input;
 
@@ -210,6 +222,8 @@ pub(crate) mod shape_channel_summary_list;
 
 pub(crate) mod shape_elastic_channel_configuration;
 
+pub(crate) mod shape_expiration_settings;
+
 pub(crate) mod shape_identity;
 
 pub(crate) mod shape_message_attribute_value;
@@ -221,6 +235,10 @@ pub(crate) mod shape_processor;
 pub(crate) mod shape_push_notification_configuration;
 
 pub(crate) mod shape_search_field;
+
+pub(crate) mod shape_streaming_configuration;
+
+pub(crate) mod shape_streaming_configuration_list;
 
 pub(crate) mod shape_sub_channel_summary_list;
 

@@ -83,6 +83,10 @@ pub struct Job {
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
     #[doc(hidden)]
     pub scheduling_config: std::option::Option<crate::types::SchedulingConfig>,
+    /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
+    #[doc(hidden)]
+    pub scheduled_job_rollouts:
+        std::option::Option<std::vec::Vec<crate::types::ScheduledJobRollout>>,
 }
 impl Job {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -192,6 +196,12 @@ impl Job {
     pub fn scheduling_config(&self) -> std::option::Option<&crate::types::SchedulingConfig> {
         self.scheduling_config.as_ref()
     }
+    /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
+    pub fn scheduled_job_rollouts(
+        &self,
+    ) -> std::option::Option<&[crate::types::ScheduledJobRollout]> {
+        self.scheduled_job_rollouts.as_deref()
+    }
 }
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::types::Job).
@@ -230,6 +240,8 @@ pub struct JobBuilder {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) is_concurrent: std::option::Option<bool>,
     pub(crate) scheduling_config: std::option::Option<crate::types::SchedulingConfig>,
+    pub(crate) scheduled_job_rollouts:
+        std::option::Option<std::vec::Vec<crate::types::ScheduledJobRollout>>,
 }
 impl JobBuilder {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -541,6 +553,25 @@ impl JobBuilder {
         self.scheduling_config = input;
         self
     }
+    /// Appends an item to `scheduled_job_rollouts`.
+    ///
+    /// To override the contents of this collection use [`set_scheduled_job_rollouts`](Self::set_scheduled_job_rollouts).
+    ///
+    /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
+    pub fn scheduled_job_rollouts(mut self, input: crate::types::ScheduledJobRollout) -> Self {
+        let mut v = self.scheduled_job_rollouts.unwrap_or_default();
+        v.push(input);
+        self.scheduled_job_rollouts = Some(v);
+        self
+    }
+    /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
+    pub fn set_scheduled_job_rollouts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ScheduledJobRollout>>,
+    ) -> Self {
+        self.scheduled_job_rollouts = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
@@ -567,6 +598,7 @@ impl JobBuilder {
             document_parameters: self.document_parameters,
             is_concurrent: self.is_concurrent,
             scheduling_config: self.scheduling_config,
+            scheduled_job_rollouts: self.scheduled_job_rollouts,
         }
     }
 }

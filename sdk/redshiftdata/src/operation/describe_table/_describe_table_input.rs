@@ -30,7 +30,7 @@ pub struct DescribeTableInput {
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     #[doc(hidden)]
     pub max_results: i32,
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
 }
@@ -71,7 +71,7 @@ impl DescribeTableInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
@@ -195,12 +195,12 @@ impl DescribeTableInputBuilder {
         self.max_results = input;
         self
     }
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.workgroup_name = Some(input.into());
         self
     }
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.workgroup_name = input;
         self

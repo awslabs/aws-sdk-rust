@@ -8,7 +8,7 @@ pub struct ListEndpointsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListEndpointsInput {
     /// <p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p>
@@ -16,7 +16,7 @@ impl ListEndpointsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -64,7 +64,7 @@ impl ListEndpointsInputBuilder {
     > {
         Ok(crate::operation::list_endpoints::ListEndpointsInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

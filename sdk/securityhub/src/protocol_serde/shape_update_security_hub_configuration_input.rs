@@ -3,10 +3,11 @@ pub fn ser_update_security_hub_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.auto_enable_controls {
-        object
-            .key("AutoEnableControls")
-            .boolean(input.auto_enable_controls);
+    if let Some(var_1) = &input.auto_enable_controls {
+        object.key("AutoEnableControls").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.control_finding_generator {
+        object.key("ControlFindingGenerator").string(var_2.as_str());
     }
     Ok(())
 }

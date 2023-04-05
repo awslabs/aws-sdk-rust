@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateVoiceConnectorGroup`](crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder::set_name): (undocumented)
-    ///   - [`voice_connector_items(Vec<VoiceConnectorItem>)`](crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder::voice_connector_items) / [`set_voice_connector_items(Option<Vec<VoiceConnectorItem>>)`](crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder::set_voice_connector_items): (undocumented)
+    ///   - [`name(impl Into<String>)`](crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder::set_name): <p>The name of the Voice Connector group.</p>
+    ///   - [`voice_connector_items(Vec<VoiceConnectorItem>)`](crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder::voice_connector_items) / [`set_voice_connector_items(Option<Vec<VoiceConnectorItem>>)`](crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder::set_voice_connector_items): <p>Lists the Voice Connectors that inbound calls are routed to.</p>
     /// - On success, responds with [`CreateVoiceConnectorGroupOutput`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput) with field(s):
-    ///   - [`voice_connector_group(Option<VoiceConnectorGroup>)`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput::voice_connector_group): (undocumented)
+    ///   - [`voice_connector_group(Option<VoiceConnectorGroup>)`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput::voice_connector_group): <p>The details of the Voice Connector group.</p>
     /// - On failure, responds with [`SdkError<CreateVoiceConnectorGroupError>`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError)
     pub fn create_voice_connector_group(&self) -> crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder{
         crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupFluentBuilder::new(self.handle.clone())

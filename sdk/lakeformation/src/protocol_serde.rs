@@ -38,6 +38,8 @@ pub(crate) mod shape_describe_transaction;
 
 pub(crate) mod shape_extend_transaction;
 
+pub(crate) mod shape_get_data_cells_filter;
+
 pub(crate) mod shape_get_data_lake_settings;
 
 pub(crate) mod shape_get_effective_permissions_for_path;
@@ -89,6 +91,8 @@ pub(crate) mod shape_search_tables_by_lf_tags;
 pub(crate) mod shape_start_query_planning;
 
 pub(crate) mod shape_start_transaction;
+
+pub(crate) mod shape_update_data_cells_filter;
 
 pub(crate) mod shape_update_lf_tag;
 
@@ -145,6 +149,8 @@ pub(crate) mod shape_entity_not_found_exception;
 pub(crate) mod shape_expired_exception;
 
 pub(crate) mod shape_extend_transaction_input;
+
+pub(crate) mod shape_get_data_cells_filter_input;
 
 pub(crate) mod shape_get_data_lake_settings_input;
 
@@ -223,6 +229,8 @@ pub(crate) mod shape_transaction_canceled_exception;
 pub(crate) mod shape_transaction_commit_in_progress_exception;
 
 pub(crate) mod shape_transaction_committed_exception;
+
+pub(crate) mod shape_update_data_cells_filter_input;
 
 pub(crate) mod shape_update_lf_tag_input;
 
@@ -308,6 +316,8 @@ pub(crate) mod shape_catalog_resource;
 
 pub(crate) mod shape_column_lf_tag;
 
+pub(crate) mod shape_column_names;
+
 pub(crate) mod shape_column_wildcard;
 
 pub(crate) mod shape_data_cells_filter_resource;
@@ -353,8 +363,6 @@ pub(crate) mod shape_trusted_resource_owners;
 pub(crate) mod shape_work_unit_range;
 
 pub(crate) mod shape_all_rows_wildcard;
-
-pub(crate) mod shape_column_names;
 
 pub(crate) mod shape_details_map;
 

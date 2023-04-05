@@ -5,7 +5,7 @@ pub use crate::operation::get_object_torrent::_get_object_torrent_input::GetObje
 
 /// Fluent builder constructing a request to `GetObjectTorrent`.
 ///
-/// <p>Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're distributing large files. For more information about BitTorrent, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Using BitTorrent with Amazon S3</a>.</p> <note>
+/// <p>Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're distributing large files.</p> <note>
 /// <p>You can get torrent only for objects that are less than 5 GB in size, and that are not encrypted using server-side encryption with a customer-provided encryption key.</p>
 /// </note>
 /// <p>To use GET, you must have READ access to the object.</p>

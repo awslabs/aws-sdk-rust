@@ -10,7 +10,7 @@ pub struct ExperiencesSummary {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The date-time your Amazon Kendra experience was created.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The processing status of your Amazon Kendra experience.</p>
@@ -29,7 +29,7 @@ impl ExperiencesSummary {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The date-time your Amazon Kendra experience was created.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -80,12 +80,12 @@ impl ExperiencesSummaryBuilder {
         self.id = input;
         self
     }
-    /// <p>The date-time your Amazon Kendra experience was created.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The date-time your Amazon Kendra experience was created.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

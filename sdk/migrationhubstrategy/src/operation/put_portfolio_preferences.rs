@@ -161,7 +161,7 @@ pub type PutPortfolioPreferencesErrorKind = PutPortfolioPreferencesError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutPortfolioPreferencesError {
-    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The user does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this user.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p> Exception to indicate that there is an ongoing task when a new task is created. Return when once the existing tasks are complete. </p>
     ConflictException(crate::types::error::ConflictException),

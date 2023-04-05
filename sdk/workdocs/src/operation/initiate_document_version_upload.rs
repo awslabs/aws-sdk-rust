@@ -169,8 +169,10 @@ pub enum InitiateDocumentVersionUploadError {
     EntityAlreadyExistsException(crate::types::error::EntityAlreadyExistsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::types::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
+    /// <p>The pagination marker or limit fields are not valid.</p>
+    InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The password is invalid.</p>
     InvalidPasswordException(crate::types::error::InvalidPasswordException),
     /// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
@@ -211,6 +213,7 @@ impl std::fmt::Display for InitiateDocumentVersionUploadError {
             Self::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::EntityNotExistsException(_inner) => _inner.fmt(f),
             Self::FailedDependencyException(_inner) => _inner.fmt(f),
+            Self::InvalidArgumentException(_inner) => _inner.fmt(f),
             Self::InvalidPasswordException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ProhibitedStateException(_inner) => _inner.fmt(f),
@@ -239,6 +242,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::FailedDependencyException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidArgumentException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidPasswordException(_inner) => {
@@ -319,6 +325,7 @@ impl InitiateDocumentVersionUploadError {
             Self::EntityAlreadyExistsException(e) => e.meta(),
             Self::EntityNotExistsException(e) => e.meta(),
             Self::FailedDependencyException(e) => e.meta(),
+            Self::InvalidArgumentException(e) => e.meta(),
             Self::InvalidPasswordException(e) => e.meta(),
             Self::LimitExceededException(e) => e.meta(),
             Self::ProhibitedStateException(e) => e.meta(),
@@ -346,6 +353,10 @@ impl InitiateDocumentVersionUploadError {
     /// Returns `true` if the error kind is `InitiateDocumentVersionUploadError::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(self, Self::FailedDependencyException(_))
+    }
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadError::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(self, Self::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `InitiateDocumentVersionUploadError::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
@@ -391,6 +402,7 @@ impl std::error::Error for InitiateDocumentVersionUploadError {
             Self::EntityAlreadyExistsException(_inner) => Some(_inner),
             Self::EntityNotExistsException(_inner) => Some(_inner),
             Self::FailedDependencyException(_inner) => Some(_inner),
+            Self::InvalidArgumentException(_inner) => Some(_inner),
             Self::InvalidPasswordException(_inner) => Some(_inner),
             Self::LimitExceededException(_inner) => Some(_inner),
             Self::ProhibitedStateException(_inner) => Some(_inner),

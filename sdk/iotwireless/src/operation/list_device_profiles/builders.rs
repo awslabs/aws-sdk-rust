@@ -100,4 +100,17 @@ impl ListDeviceProfilesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+    pub fn device_profile_type(mut self, input: crate::types::DeviceProfileType) -> Self {
+        self.inner = self.inner.device_profile_type(input);
+        self
+    }
+    /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+    pub fn set_device_profile_type(
+        mut self,
+        input: std::option::Option<crate::types::DeviceProfileType>,
+    ) -> Self {
+        self.inner = self.inner.set_device_profile_type(input);
+        self
+    }
 }

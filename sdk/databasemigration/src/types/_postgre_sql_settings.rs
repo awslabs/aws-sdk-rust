@@ -46,7 +46,9 @@ pub struct PostgreSqlSettings {
     /// <p>Endpoint TCP port. The default is 5432.</p>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>The host name of the endpoint database. </p>
+    /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
+    /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
     /// <p>Endpoint connection user name.</p>
@@ -71,6 +73,9 @@ pub struct PostgreSqlSettings {
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     #[doc(hidden)]
     pub trim_space_in_char: std::option::Option<bool>,
+    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+    #[doc(hidden)]
+    pub map_boolean_as_boolean: std::option::Option<bool>,
 }
 impl PostgreSqlSettings {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -127,7 +132,9 @@ impl PostgreSqlSettings {
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>The host name of the endpoint database. </p>
+    /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
+    /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
@@ -159,6 +166,10 @@ impl PostgreSqlSettings {
     pub fn trim_space_in_char(&self) -> std::option::Option<bool> {
         self.trim_space_in_char
     }
+    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+    pub fn map_boolean_as_boolean(&self) -> std::option::Option<bool> {
+        self.map_boolean_as_boolean
+    }
 }
 impl std::fmt::Debug for PostgreSqlSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -188,6 +199,7 @@ impl std::fmt::Debug for PostgreSqlSettings {
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
+        formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
         formatter.finish()
     }
 }
@@ -221,6 +233,7 @@ pub struct PostgreSqlSettingsBuilder {
     pub(crate) secrets_manager_access_role_arn: std::option::Option<std::string::String>,
     pub(crate) secrets_manager_secret_id: std::option::Option<std::string::String>,
     pub(crate) trim_space_in_char: std::option::Option<bool>,
+    pub(crate) map_boolean_as_boolean: std::option::Option<bool>,
 }
 impl PostgreSqlSettingsBuilder {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -361,12 +374,16 @@ impl PostgreSqlSettingsBuilder {
         self.port = input;
         self
     }
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>The host name of the endpoint database. </p>
+    /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
+    /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.server_name = Some(input.into());
         self
     }
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>The host name of the endpoint database. </p>
+    /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
+    /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.server_name = input;
         self
@@ -451,6 +468,16 @@ impl PostgreSqlSettingsBuilder {
         self.trim_space_in_char = input;
         self
     }
+    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+    pub fn map_boolean_as_boolean(mut self, input: bool) -> Self {
+        self.map_boolean_as_boolean = Some(input);
+        self
+    }
+    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+    pub fn set_map_boolean_as_boolean(mut self, input: std::option::Option<bool>) -> Self {
+        self.map_boolean_as_boolean = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PostgreSqlSettings`](crate::types::PostgreSqlSettings).
     pub fn build(self) -> crate::types::PostgreSqlSettings {
         crate::types::PostgreSqlSettings {
@@ -473,6 +500,7 @@ impl PostgreSqlSettingsBuilder {
             secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
             secrets_manager_secret_id: self.secrets_manager_secret_id,
             trim_space_in_char: self.trim_space_in_char,
+            map_boolean_as_boolean: self.map_boolean_as_boolean,
         }
     }
 }
@@ -504,6 +532,7 @@ impl std::fmt::Debug for PostgreSqlSettingsBuilder {
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
+        formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
         formatter.finish()
     }
 }

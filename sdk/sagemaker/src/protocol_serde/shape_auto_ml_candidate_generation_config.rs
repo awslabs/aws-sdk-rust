@@ -8,6 +8,18 @@ pub fn ser_auto_ml_candidate_generation_config(
             .key("FeatureSpecificationS3Uri")
             .string(var_1.as_str());
     }
+    if let Some(var_2) = &input.algorithms_config {
+        let mut array_3 = object.key("AlgorithmsConfig").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_auto_ml_algorithm_config::ser_auto_ml_algorithm_config(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }
 
@@ -43,6 +55,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "AlgorithmsConfig" => {
+                                builder = builder.set_algorithms_config(
+                                    crate::protocol_serde::shape_auto_ml_algorithms_config::de_auto_ml_algorithms_config(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

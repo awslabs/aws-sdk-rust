@@ -5,7 +5,7 @@ pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBui
 
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Tags a contact or escalation plan. You can tag only contacts and escalation plans in the first region of your replication set. </p>
+/// <p>Tags a contact or escalation plan. You can tag only contacts and escalation plans in the first region of your replication set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

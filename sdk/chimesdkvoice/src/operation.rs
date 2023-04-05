@@ -34,6 +34,12 @@ pub mod create_voice_connector;
 /// Types for the `CreateVoiceConnectorGroup` operation.
 pub mod create_voice_connector_group;
 
+/// Types for the `CreateVoiceProfile` operation.
+pub mod create_voice_profile;
+
+/// Types for the `CreateVoiceProfileDomain` operation.
+pub mod create_voice_profile_domain;
+
 /// Types for the `DeletePhoneNumber` operation.
 pub mod delete_phone_number;
 
@@ -70,6 +76,12 @@ pub mod delete_voice_connector_termination;
 /// Types for the `DeleteVoiceConnectorTerminationCredentials` operation.
 pub mod delete_voice_connector_termination_credentials;
 
+/// Types for the `DeleteVoiceProfile` operation.
+pub mod delete_voice_profile;
+
+/// Types for the `DeleteVoiceProfileDomain` operation.
+pub mod delete_voice_profile_domain;
+
 /// Types for the `DisassociatePhoneNumbersFromVoiceConnector` operation.
 pub mod disassociate_phone_numbers_from_voice_connector;
 
@@ -103,6 +115,9 @@ pub mod get_sip_media_application_logging_configuration;
 /// Types for the `GetSipRule` operation.
 pub mod get_sip_rule;
 
+/// Types for the `GetSpeakerSearchTask` operation.
+pub mod get_speaker_search_task;
+
 /// Types for the `GetVoiceConnector` operation.
 pub mod get_voice_connector;
 
@@ -130,6 +145,15 @@ pub mod get_voice_connector_termination;
 /// Types for the `GetVoiceConnectorTerminationHealth` operation.
 pub mod get_voice_connector_termination_health;
 
+/// Types for the `GetVoiceProfile` operation.
+pub mod get_voice_profile;
+
+/// Types for the `GetVoiceProfileDomain` operation.
+pub mod get_voice_profile_domain;
+
+/// Types for the `GetVoiceToneAnalysisTask` operation.
+pub mod get_voice_tone_analysis_task;
+
 /// Types for the `ListAvailableVoiceConnectorRegions` operation.
 pub mod list_available_voice_connector_regions;
 
@@ -151,6 +175,9 @@ pub mod list_sip_rules;
 /// Types for the `ListSupportedPhoneNumberCountries` operation.
 pub mod list_supported_phone_number_countries;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `ListVoiceConnectorGroups` operation.
 pub mod list_voice_connector_groups;
 
@@ -159,6 +186,12 @@ pub mod list_voice_connector_termination_credentials;
 
 /// Types for the `ListVoiceConnectors` operation.
 pub mod list_voice_connectors;
+
+/// Types for the `ListVoiceProfileDomains` operation.
+pub mod list_voice_profile_domains;
+
+/// Types for the `ListVoiceProfiles` operation.
+pub mod list_voice_profiles;
 
 /// Types for the `PutSipMediaApplicationAlexaSkillConfiguration` operation.
 pub mod put_sip_media_application_alexa_skill_configuration;
@@ -193,6 +226,24 @@ pub mod restore_phone_number;
 /// Types for the `SearchAvailablePhoneNumbers` operation.
 pub mod search_available_phone_numbers;
 
+/// Types for the `StartSpeakerSearchTask` operation.
+pub mod start_speaker_search_task;
+
+/// Types for the `StartVoiceToneAnalysisTask` operation.
+pub mod start_voice_tone_analysis_task;
+
+/// Types for the `StopSpeakerSearchTask` operation.
+pub mod stop_speaker_search_task;
+
+/// Types for the `StopVoiceToneAnalysisTask` operation.
+pub mod stop_voice_tone_analysis_task;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
+
 /// Types for the `UpdateGlobalSettings` operation.
 pub mod update_global_settings;
 
@@ -219,6 +270,12 @@ pub mod update_voice_connector;
 
 /// Types for the `UpdateVoiceConnectorGroup` operation.
 pub mod update_voice_connector_group;
+
+/// Types for the `UpdateVoiceProfile` operation.
+pub mod update_voice_profile;
+
+/// Types for the `UpdateVoiceProfileDomain` operation.
+pub mod update_voice_profile_domain;
 
 /// Types for the `ValidateE911Address` operation.
 pub mod validate_e911_address;

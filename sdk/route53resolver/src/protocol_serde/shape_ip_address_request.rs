@@ -9,5 +9,8 @@ pub fn ser_ip_address_request(
     if let Some(var_2) = &input.ip {
         object.key("Ip").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.ipv6 {
+        object.key("Ipv6").string(var_3.as_str());
+    }
     Ok(())
 }

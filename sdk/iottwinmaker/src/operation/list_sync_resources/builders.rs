@@ -90,15 +90,15 @@ impl ListSyncResourcesFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// <p>The sync soucre.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sync_source(input.into());
         self
     }
-    /// <p>The sync soucre.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_sync_source(input);
@@ -109,11 +109,23 @@ impl ListSyncResourcesFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>A list of objects that filter the request.</p>
+    /// <p>The following filter combinations are supported:</p>
+    /// <ul>
+    /// <li> <p>Filter with state</p> </li>
+    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
+    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// </ul>
     pub fn filters(mut self, input: crate::types::SyncResourceFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p>A list of objects that filter the request.</p>
+    /// <p>The following filter combinations are supported:</p>
+    /// <ul>
+    /// <li> <p>Filter with state</p> </li>
+    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
+    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// </ul>
     pub fn set_filters(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::SyncResourceFilter>>,

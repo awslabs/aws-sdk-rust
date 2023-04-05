@@ -5,6 +5,9 @@ pub use crate::operation::detach_load_balancer_target_groups::_detach_load_balan
 
 /// Fluent builder constructing a request to `DetachLoadBalancerTargetGroups`.
 ///
+/// <note>
+/// <p>This API operation is superseded by <code>DetachTrafficSources</code>, which can detach multiple traffic sources types. We recommend using <code>DetachTrafficSources</code> to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancerTargetGroups</code>. You can use both the original <code>DetachLoadBalancerTargetGroups</code> API operation and <code>DetachTrafficSources</code> on the same Auto Scaling group.</p>
+/// </note>
 /// <p>Detaches one or more target groups from the specified Auto Scaling group.</p>
 /// <p>When you detach a target group, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the target group using the <code>DescribeLoadBalancerTargetGroups</code> API call. The instances remain running.</p> <note>
 /// <p>You can use this operation to detach target groups that were attached by using <code>AttachLoadBalancerTargetGroups</code>, but not for target groups that were attached by using <code>AttachTrafficSources</code>.</p>

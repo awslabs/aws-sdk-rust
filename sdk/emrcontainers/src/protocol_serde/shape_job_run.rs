@@ -156,6 +156,16 @@ where
                                     crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?,
                                 );
                             }
+                            "retryPolicyConfiguration" => {
+                                builder = builder.set_retry_policy_configuration(
+                                    crate::protocol_serde::shape_retry_policy_configuration::de_retry_policy_configuration(tokens)?
+                                );
+                            }
+                            "retryPolicyExecution" => {
+                                builder = builder.set_retry_policy_execution(
+                                    crate::protocol_serde::shape_retry_policy_execution::de_retry_policy_execution(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

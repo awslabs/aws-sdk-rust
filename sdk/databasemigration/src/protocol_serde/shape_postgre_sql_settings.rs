@@ -74,6 +74,9 @@ pub fn ser_postgre_sql_settings(
     if let Some(var_19) = &input.trim_space_in_char {
         object.key("TrimSpaceInChar").boolean(*var_19);
     }
+    if let Some(var_20) = &input.map_boolean_as_boolean {
+        object.key("MapBooleanAsBoolean").boolean(*var_20);
+    }
     Ok(())
 }
 
@@ -263,6 +266,13 @@ where
                             }
                             "TrimSpaceInChar" => {
                                 builder = builder.set_trim_space_in_char(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "MapBooleanAsBoolean" => {
+                                builder = builder.set_map_boolean_as_boolean(
                                     aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,

@@ -168,7 +168,7 @@ pub type DeleteFirewallDomainListErrorKind = DeleteFirewallDomainListError;
 pub enum DeleteFirewallDomainListError {
     /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p></p>
+    /// <p>The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is in the process of being deleted, or you can't import domains into a domain list that is in the process of being deleted.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>We encountered an unknown error. Try again in a few minutes.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),

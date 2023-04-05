@@ -8,10 +8,10 @@ pub struct DescribeSpotFleetRequestHistoryOutput {
     #[doc(hidden)]
     pub history_records: std::option::Option<std::vec::Vec<crate::types::HistoryRecord>>,
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
     #[doc(hidden)]
     pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
@@ -28,11 +28,11 @@ impl DescribeSpotFleetRequestHistoryOutput {
         self.history_records.as_deref()
     }
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
     pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_time.as_ref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -89,13 +89,13 @@ impl DescribeSpotFleetRequestHistoryOutputBuilder {
         self
     }
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
     pub fn last_evaluated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_evaluated_time = Some(input);
         self
     }
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
     pub fn set_last_evaluated_time(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -103,12 +103,12 @@ impl DescribeSpotFleetRequestHistoryOutputBuilder {
         self.last_evaluated_time = input;
         self
     }
-    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

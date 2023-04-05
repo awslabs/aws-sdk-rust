@@ -13,7 +13,7 @@ pub struct HlsMediaStoreSettings {
     /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
     #[doc(hidden)]
     pub media_store_storage_class: std::option::Option<crate::types::HlsMediaStoreStorageClass>,
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     #[doc(hidden)]
     pub num_retries: i32,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
@@ -35,7 +35,7 @@ impl HlsMediaStoreSettings {
     ) -> std::option::Option<&crate::types::HlsMediaStoreStorageClass> {
         self.media_store_storage_class.as_ref()
     }
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(&self) -> i32 {
         self.num_retries
     }
@@ -99,12 +99,12 @@ impl HlsMediaStoreSettingsBuilder {
         self.media_store_storage_class = input;
         self
     }
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(mut self, input: i32) -> Self {
         self.num_retries = Some(input);
         self
     }
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
         self.num_retries = input;
         self

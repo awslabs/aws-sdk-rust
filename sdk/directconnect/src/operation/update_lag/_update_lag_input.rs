@@ -11,7 +11,7 @@ pub struct UpdateLagInput {
     pub lag_name: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
     #[doc(hidden)]
-    pub minimum_links: i32,
+    pub minimum_links: std::option::Option<i32>,
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
     #[doc(hidden)]
@@ -27,7 +27,7 @@ impl UpdateLagInput {
         self.lag_name.as_deref()
     }
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
-    pub fn minimum_links(&self) -> i32 {
+    pub fn minimum_links(&self) -> std::option::Option<i32> {
         self.minimum_links
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
@@ -105,7 +105,7 @@ impl UpdateLagInputBuilder {
         Ok(crate::operation::update_lag::UpdateLagInput {
             lag_id: self.lag_id,
             lag_name: self.lag_name,
-            minimum_links: self.minimum_links.unwrap_or_default(),
+            minimum_links: self.minimum_links,
             encryption_mode: self.encryption_mode,
         })
     }

@@ -9,14 +9,14 @@ pub struct ListAccountSettingsInput {
     /// <p>The value of the account settings to filter results with. You must also specify an account setting name to use this parameter.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
-    /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>Determines whether to return the effective settings. If <code>true</code>, the account settings for the root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account settings for the <code>principalArn</code> are returned if they're set. Otherwise, no account settings are returned.</p>
     #[doc(hidden)]
-    pub effective_settings: bool,
+    pub effective_settings: std::option::Option<bool>,
     /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
@@ -24,7 +24,7 @@ pub struct ListAccountSettingsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of account setting results returned by <code>ListAccountSettings</code> in paginated output. When this parameter is used, <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAccountSettings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter isn't used, then <code>ListAccountSettings</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListAccountSettingsInput {
     /// <p>The name of the account setting you want to list the settings for.</p>
@@ -35,14 +35,14 @@ impl ListAccountSettingsInput {
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
     /// <p>Determines whether to return the effective settings. If <code>true</code>, the account settings for the root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account settings for the <code>principalArn</code> are returned if they're set. Otherwise, no account settings are returned.</p>
-    pub fn effective_settings(&self) -> bool {
+    pub fn effective_settings(&self) -> std::option::Option<bool> {
         self.effective_settings
     }
     /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
@@ -52,7 +52,7 @@ impl ListAccountSettingsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of account setting results returned by <code>ListAccountSettings</code> in paginated output. When this parameter is used, <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAccountSettings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter isn't used, then <code>ListAccountSettings</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -97,14 +97,14 @@ impl ListAccountSettingsInputBuilder {
         self.value = input;
         self
     }
-    /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.principal_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -157,9 +157,9 @@ impl ListAccountSettingsInputBuilder {
                 name: self.name,
                 value: self.value,
                 principal_arn: self.principal_arn,
-                effective_settings: self.effective_settings.unwrap_or_default(),
+                effective_settings: self.effective_settings,
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
             },
         )
     }

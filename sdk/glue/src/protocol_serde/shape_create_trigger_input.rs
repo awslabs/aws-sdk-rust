@@ -36,29 +36,27 @@ pub fn ser_create_trigger_input(
     if let Some(var_11) = &input.description {
         object.key("Description").string(var_11.as_str());
     }
-    if input.start_on_creation {
-        object
-            .key("StartOnCreation")
-            .boolean(input.start_on_creation);
+    if let Some(var_12) = &input.start_on_creation {
+        object.key("StartOnCreation").boolean(*var_12);
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("Tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_16) = &input.event_batching_condition {
+    if let Some(var_17) = &input.event_batching_condition {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("EventBatchingCondition").start_object();
+        let mut object_18 = object.key("EventBatchingCondition").start_object();
         crate::protocol_serde::shape_event_batching_condition::ser_event_batching_condition(
-            &mut object_17,
-            var_16,
+            &mut object_18,
+            var_17,
         )?;
-        object_17.finish();
+        object_18.finish();
     }
     Ok(())
 }

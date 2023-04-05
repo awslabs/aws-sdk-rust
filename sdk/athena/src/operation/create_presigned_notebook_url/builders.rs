@@ -5,7 +5,7 @@ pub use crate::operation::create_presigned_notebook_url::_create_presigned_noteb
 
 /// Fluent builder constructing a request to `CreatePresignedNotebookUrl`.
 ///
-/// <p>Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token.</p>
+/// <p>Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token. For information about granting programmatic access, see <a href="https://docs.aws.amazon.com/athena/latest/ug/setting-up.html#setting-up-grant-programmatic-access">Grant programmatic access</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePresignedNotebookUrlFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

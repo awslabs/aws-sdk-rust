@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSipMediaApplicationInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region assigned to the SIP media application.</p>
     #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
 }
 impl CreateSipMediaApplicationInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region assigned to the SIP media application.</p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application's name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
     pub fn endpoints(&self) -> std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
         self.endpoints.as_deref()
     }
@@ -44,22 +44,22 @@ pub struct CreateSipMediaApplicationInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
 }
 impl CreateSipMediaApplicationInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region assigned to the SIP media application.</p>
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
         self.aws_region = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region assigned to the SIP media application.</p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.aws_region = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
@@ -68,13 +68,14 @@ impl CreateSipMediaApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
     ///
+    /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
     pub fn endpoints(mut self, input: crate::types::SipMediaApplicationEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
         v.push(input);
         self.endpoints = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
     pub fn set_endpoints(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,

@@ -103,6 +103,7 @@ pub struct OracleSettings {
     #[doc(hidden)]
     pub security_db_encryption_name: std::option::Option<std::string::String>,
     /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
     /// <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own custom function that mimics the operation of <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
@@ -143,6 +144,9 @@ pub struct OracleSettings {
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     #[doc(hidden)]
     pub trim_space_in_char: std::option::Option<bool>,
+    /// <p>When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.</p>
+    #[doc(hidden)]
+    pub convert_timestamp_with_zone_to_utc: std::option::Option<bool>,
 }
 impl OracleSettings {
     /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
@@ -273,6 +277,7 @@ impl OracleSettings {
         self.security_db_encryption_name.as_deref()
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
@@ -325,6 +330,10 @@ impl OracleSettings {
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     pub fn trim_space_in_char(&self) -> std::option::Option<bool> {
         self.trim_space_in_char
+    }
+    /// <p>When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.</p>
+    pub fn convert_timestamp_with_zone_to_utc(&self) -> std::option::Option<bool> {
+        self.convert_timestamp_with_zone_to_utc
     }
 }
 impl std::fmt::Debug for OracleSettings {
@@ -404,6 +413,10 @@ impl std::fmt::Debug for OracleSettings {
             &self.secrets_manager_oracle_asm_secret_id,
         );
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
+        formatter.field(
+            "convert_timestamp_with_zone_to_utc",
+            &self.convert_timestamp_with_zone_to_utc,
+        );
         formatter.finish()
     }
 }
@@ -460,6 +473,7 @@ pub struct OracleSettingsBuilder {
     pub(crate) secrets_manager_oracle_asm_access_role_arn: std::option::Option<std::string::String>,
     pub(crate) secrets_manager_oracle_asm_secret_id: std::option::Option<std::string::String>,
     pub(crate) trim_space_in_char: std::option::Option<bool>,
+    pub(crate) convert_timestamp_with_zone_to_utc: std::option::Option<bool>,
 }
 impl OracleSettingsBuilder {
     /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
@@ -796,11 +810,13 @@ impl OracleSettingsBuilder {
         self
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.server_name = Some(input.into());
         self
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.server_name = input;
         self
@@ -952,6 +968,19 @@ impl OracleSettingsBuilder {
         self.trim_space_in_char = input;
         self
     }
+    /// <p>When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.</p>
+    pub fn convert_timestamp_with_zone_to_utc(mut self, input: bool) -> Self {
+        self.convert_timestamp_with_zone_to_utc = Some(input);
+        self
+    }
+    /// <p>When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.</p>
+    pub fn set_convert_timestamp_with_zone_to_utc(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.convert_timestamp_with_zone_to_utc = input;
+        self
+    }
     /// Consumes the builder and constructs a [`OracleSettings`](crate::types::OracleSettings).
     pub fn build(self) -> crate::types::OracleSettings {
         crate::types::OracleSettings {
@@ -998,6 +1027,7 @@ impl OracleSettingsBuilder {
                 .secrets_manager_oracle_asm_access_role_arn,
             secrets_manager_oracle_asm_secret_id: self.secrets_manager_oracle_asm_secret_id,
             trim_space_in_char: self.trim_space_in_char,
+            convert_timestamp_with_zone_to_utc: self.convert_timestamp_with_zone_to_utc,
         }
     }
 }
@@ -1078,6 +1108,10 @@ impl std::fmt::Debug for OracleSettingsBuilder {
             &self.secrets_manager_oracle_asm_secret_id,
         );
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
+        formatter.field(
+            "convert_timestamp_with_zone_to_utc",
+            &self.convert_timestamp_with_zone_to_utc,
+        );
         formatter.finish()
     }
 }

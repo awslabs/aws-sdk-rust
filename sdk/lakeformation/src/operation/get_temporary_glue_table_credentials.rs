@@ -146,7 +146,7 @@ pub type GetTemporaryGlueTableCredentialsErrorKind = GetTemporaryGlueTableCreden
 pub enum GetTemporaryGlueTableCredentialsError {
     /// <p>Access to a resource was denied.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>A specified entity does not exist</p>
+    /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::types::error::InternalServiceException),

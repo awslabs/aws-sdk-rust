@@ -2,7 +2,7 @@
 
 /// <p>Describes the launch specification for an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestSpotLaunchSpecification {
     /// <p>One or more security group IDs.</p>
     #[doc(hidden)]
@@ -52,7 +52,7 @@ pub struct RequestSpotLaunchSpecification {
     /// <p>The ID of the subnet in which to launch the instance.</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>The Base64-encoded user data for the instance. User data is limited to 16 KB.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     #[doc(hidden)]
     pub user_data: std::option::Option<std::string::String>,
 }
@@ -125,9 +125,31 @@ impl RequestSpotLaunchSpecification {
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The Base64-encoded user data for the instance. User data is limited to 16 KB.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn user_data(&self) -> std::option::Option<&str> {
         self.user_data.as_deref()
+    }
+}
+impl std::fmt::Debug for RequestSpotLaunchSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RequestSpotLaunchSpecification");
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("addressing_type", &self.addressing_type);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("placement", &self.placement);
+        formatter.field("ramdisk_id", &self.ramdisk_id);
+        formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl RequestSpotLaunchSpecification {
@@ -139,7 +161,7 @@ impl RequestSpotLaunchSpecification {
 
 /// A builder for [`RequestSpotLaunchSpecification`](crate::types::RequestSpotLaunchSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct RequestSpotLaunchSpecificationBuilder {
     pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -372,12 +394,12 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.subnet_id = input;
         self
     }
-    /// <p>The Base64-encoded user data for the instance. User data is limited to 16 KB.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_data = Some(input.into());
         self
     }
-    /// <p>The Base64-encoded user data for the instance. User data is limited to 16 KB.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_data = input;
         self
@@ -402,5 +424,27 @@ impl RequestSpotLaunchSpecificationBuilder {
             subnet_id: self.subnet_id,
             user_data: self.user_data,
         }
+    }
+}
+impl std::fmt::Debug for RequestSpotLaunchSpecificationBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RequestSpotLaunchSpecificationBuilder");
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("addressing_type", &self.addressing_type);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("placement", &self.placement);
+        formatter.field("ramdisk_id", &self.ramdisk_id);
+        formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -14,10 +14,12 @@
 /// match conflicttype {
 ///     ConflictType::AnotherActiveStream => { /* ... */ },
 ///     ConflictType::CannotChangeSpeakerAfterEnrollment => { /* ... */ },
+///     ConflictType::CannotDeleteNonEmptyWatchlist => { /* ... */ },
 ///     ConflictType::ConcurrentChanges => { /* ... */ },
 ///     ConflictType::DomainLockedFromEncryptionUpdates => { /* ... */ },
 ///     ConflictType::DomainNotActive => { /* ... */ },
 ///     ConflictType::EnrollmentAlreadyExists => { /* ... */ },
+///     ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => { /* ... */ },
 ///     ConflictType::SpeakerNotSet => { /* ... */ },
 ///     ConflictType::SpeakerOptedOut => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -58,6 +60,8 @@ pub enum ConflictType {
     #[allow(missing_docs)] // documentation missing in model
     CannotChangeSpeakerAfterEnrollment,
     #[allow(missing_docs)] // documentation missing in model
+    CannotDeleteNonEmptyWatchlist,
+    #[allow(missing_docs)] // documentation missing in model
     ConcurrentChanges,
     #[allow(missing_docs)] // documentation missing in model
     DomainLockedFromEncryptionUpdates,
@@ -65,6 +69,8 @@ pub enum ConflictType {
     DomainNotActive,
     #[allow(missing_docs)] // documentation missing in model
     EnrollmentAlreadyExists,
+    #[allow(missing_docs)] // documentation missing in model
+    FraudsterMustBelongToAtLeastOneWatchlist,
     #[allow(missing_docs)] // documentation missing in model
     SpeakerNotSet,
     #[allow(missing_docs)] // documentation missing in model
@@ -79,12 +85,16 @@ impl std::convert::From<&str> for ConflictType {
             "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT" => {
                 ConflictType::CannotChangeSpeakerAfterEnrollment
             }
+            "CANNOT_DELETE_NON_EMPTY_WATCHLIST" => ConflictType::CannotDeleteNonEmptyWatchlist,
             "CONCURRENT_CHANGES" => ConflictType::ConcurrentChanges,
             "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES" => {
                 ConflictType::DomainLockedFromEncryptionUpdates
             }
             "DOMAIN_NOT_ACTIVE" => ConflictType::DomainNotActive,
             "ENROLLMENT_ALREADY_EXISTS" => ConflictType::EnrollmentAlreadyExists,
+            "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST" => {
+                ConflictType::FraudsterMustBelongToAtLeastOneWatchlist
+            }
             "SPEAKER_NOT_SET" => ConflictType::SpeakerNotSet,
             "SPEAKER_OPTED_OUT" => ConflictType::SpeakerOptedOut,
             other => {
@@ -108,12 +118,16 @@ impl ConflictType {
             ConflictType::CannotChangeSpeakerAfterEnrollment => {
                 "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT"
             }
+            ConflictType::CannotDeleteNonEmptyWatchlist => "CANNOT_DELETE_NON_EMPTY_WATCHLIST",
             ConflictType::ConcurrentChanges => "CONCURRENT_CHANGES",
             ConflictType::DomainLockedFromEncryptionUpdates => {
                 "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES"
             }
             ConflictType::DomainNotActive => "DOMAIN_NOT_ACTIVE",
             ConflictType::EnrollmentAlreadyExists => "ENROLLMENT_ALREADY_EXISTS",
+            ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => {
+                "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST"
+            }
             ConflictType::SpeakerNotSet => "SPEAKER_NOT_SET",
             ConflictType::SpeakerOptedOut => "SPEAKER_OPTED_OUT",
             ConflictType::Unknown(value) => value.as_str(),
@@ -124,10 +138,12 @@ impl ConflictType {
         &[
             "ANOTHER_ACTIVE_STREAM",
             "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT",
+            "CANNOT_DELETE_NON_EMPTY_WATCHLIST",
             "CONCURRENT_CHANGES",
             "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES",
             "DOMAIN_NOT_ACTIVE",
             "ENROLLMENT_ALREADY_EXISTS",
+            "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST",
             "SPEAKER_NOT_SET",
             "SPEAKER_OPTED_OUT",
         ]

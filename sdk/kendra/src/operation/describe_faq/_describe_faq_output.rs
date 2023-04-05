@@ -15,10 +15,10 @@ pub struct DescribeFaqOutput {
     /// <p>The description of the FAQ that you provided when it was created.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The date and time that the FAQ was created.</p>
+    /// <p>The Unix timestamp when the FAQ was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time that the FAQ was last updated.</p>
+    /// <p>The Unix timestamp when the FAQ was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
@@ -58,11 +58,11 @@ impl DescribeFaqOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The date and time that the FAQ was created.</p>
+    /// <p>The Unix timestamp when the FAQ was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date and time that the FAQ was last updated.</p>
+    /// <p>The Unix timestamp when the FAQ was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -162,12 +162,12 @@ impl DescribeFaqOutputBuilder {
         self.description = input;
         self
     }
-    /// <p>The date and time that the FAQ was created.</p>
+    /// <p>The Unix timestamp when the FAQ was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The date and time that the FAQ was created.</p>
+    /// <p>The Unix timestamp when the FAQ was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -175,12 +175,12 @@ impl DescribeFaqOutputBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The date and time that the FAQ was last updated.</p>
+    /// <p>The Unix timestamp when the FAQ was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The date and time that the FAQ was last updated.</p>
+    /// <p>The Unix timestamp when the FAQ was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

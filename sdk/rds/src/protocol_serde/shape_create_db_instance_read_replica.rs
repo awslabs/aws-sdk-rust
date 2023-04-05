@@ -17,6 +17,23 @@ pub fn de_create_db_instance_read_replica_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DBClusterNotFoundFault" => crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "DBInstanceAlreadyExists" => crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbInstanceAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp =
@@ -178,6 +195,23 @@ pub fn de_create_db_instance_read_replica_http_error(
                     let mut output = crate::types::error::builders::InsufficientDbInstanceCapacityFaultBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_insufficient_db_instance_capacity_fault::de_insufficient_db_instance_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBClusterStateFault" => crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InvalidDbClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

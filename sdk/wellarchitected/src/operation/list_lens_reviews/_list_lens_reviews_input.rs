@@ -10,13 +10,13 @@ pub struct ListLensReviewsInput {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
-    pub milestone_number: i32,
+    pub milestone_number: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListLensReviewsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -25,7 +25,7 @@ impl ListLensReviewsInput {
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub fn milestone_number(&self) -> i32 {
+    pub fn milestone_number(&self) -> std::option::Option<i32> {
         self.milestone_number
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -33,7 +33,7 @@ impl ListLensReviewsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -105,9 +105,9 @@ impl ListLensReviewsInputBuilder {
     > {
         Ok(crate::operation::list_lens_reviews::ListLensReviewsInput {
             workload_id: self.workload_id,
-            milestone_number: self.milestone_number.unwrap_or_default(),
+            milestone_number: self.milestone_number,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

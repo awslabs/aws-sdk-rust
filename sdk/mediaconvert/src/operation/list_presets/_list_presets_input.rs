@@ -11,7 +11,7 @@ pub struct ListPresetsInput {
     pub list_by: std::option::Option<crate::types::PresetListBy>,
     /// Optional. Number of presets, up to twenty, that will be returned at one time
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// Use this string, provided with the response to a previous request, to request the next batch of presets.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ impl ListPresetsInput {
         self.list_by.as_ref()
     }
     /// Optional. Number of presets, up to twenty, that will be returned at one time
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of presets.
@@ -119,7 +119,7 @@ impl ListPresetsInputBuilder {
         Ok(crate::operation::list_presets::ListPresetsInput {
             category: self.category,
             list_by: self.list_by,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             order: self.order,
         })

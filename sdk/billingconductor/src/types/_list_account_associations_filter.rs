@@ -15,6 +15,9 @@ pub struct ListAccountAssociationsFilter {
     /// <p> The Amazon Web Services account ID to filter on. </p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
+    /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
+    #[doc(hidden)]
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListAccountAssociationsFilter {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
@@ -26,6 +29,10 @@ impl ListAccountAssociationsFilter {
     /// <p> The Amazon Web Services account ID to filter on. </p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
+    }
+    /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
     }
 }
 impl ListAccountAssociationsFilter {
@@ -41,6 +48,7 @@ impl ListAccountAssociationsFilter {
 pub struct ListAccountAssociationsFilterBuilder {
     pub(crate) association: std::option::Option<std::string::String>,
     pub(crate) account_id: std::option::Option<std::string::String>,
+    pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListAccountAssociationsFilterBuilder {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
@@ -67,11 +75,31 @@ impl ListAccountAssociationsFilterBuilder {
         self.account_id = input;
         self
     }
+    /// Appends an item to `account_ids`.
+    ///
+    /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+    ///
+    /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
+    pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+        let mut v = self.account_ids.unwrap_or_default();
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
+    }
+    /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAccountAssociationsFilter`](crate::types::ListAccountAssociationsFilter).
     pub fn build(self) -> crate::types::ListAccountAssociationsFilter {
         crate::types::ListAccountAssociationsFilter {
             association: self.association,
             account_id: self.account_id,
+            account_ids: self.account_ids,
         }
     }
 }

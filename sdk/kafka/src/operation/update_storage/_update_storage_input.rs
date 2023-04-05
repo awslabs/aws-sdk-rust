@@ -18,7 +18,7 @@ pub struct UpdateStorageInput {
     pub storage_mode: std::option::Option<crate::types::StorageMode>,
     /// <p>size of the EBS volume to update.</p>
     #[doc(hidden)]
-    pub volume_size_gb: i32,
+    pub volume_size_gb: std::option::Option<i32>,
 }
 impl UpdateStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
@@ -40,7 +40,7 @@ impl UpdateStorageInput {
         self.storage_mode.as_ref()
     }
     /// <p>size of the EBS volume to update.</p>
-    pub fn volume_size_gb(&self) -> i32 {
+    pub fn volume_size_gb(&self) -> std::option::Option<i32> {
         self.volume_size_gb
     }
 }
@@ -130,7 +130,7 @@ impl UpdateStorageInputBuilder {
             current_version: self.current_version,
             provisioned_throughput: self.provisioned_throughput,
             storage_mode: self.storage_mode,
-            volume_size_gb: self.volume_size_gb.unwrap_or_default(),
+            volume_size_gb: self.volume_size_gb,
         })
     }
 }

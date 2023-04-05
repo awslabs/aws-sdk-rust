@@ -182,6 +182,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "FederatedTable" => {
+                                builder = builder.set_federated_table(
+                                    crate::protocol_serde::shape_federated_table::de_federated_table(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

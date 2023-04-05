@@ -7,11 +7,18 @@ pub struct Region {
     /// <p>The name of the associated bucket for the Region.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    #[doc(hidden)]
+    pub bucket_account_id: std::option::Option<std::string::String>,
 }
 impl Region {
     /// <p>The name of the associated bucket for the Region.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    pub fn bucket_account_id(&self) -> std::option::Option<&str> {
+        self.bucket_account_id.as_deref()
     }
 }
 impl Region {
@@ -26,6 +33,7 @@ impl Region {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RegionBuilder {
     pub(crate) bucket: std::option::Option<std::string::String>,
+    pub(crate) bucket_account_id: std::option::Option<std::string::String>,
 }
 impl RegionBuilder {
     /// <p>The name of the associated bucket for the Region.</p>
@@ -38,10 +46,24 @@ impl RegionBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.bucket_account_id = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    pub fn set_bucket_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.bucket_account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
     pub fn build(self) -> crate::types::Region {
         crate::types::Region {
             bucket: self.bucket,
+            bucket_account_id: self.bucket_account_id,
         }
     }
 }

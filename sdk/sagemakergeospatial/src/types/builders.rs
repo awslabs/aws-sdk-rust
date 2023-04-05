@@ -89,6 +89,8 @@ pub use crate::types::_input_config_output::InputConfigOutputBuilder;
 
 pub use crate::types::_raster_data_collection_query_output::RasterDataCollectionQueryOutputBuilder;
 
+pub use crate::types::_time_range_filter_output::TimeRangeFilterOutputBuilder;
+
 pub use crate::types::_s3_data_input::S3DataInputBuilder;
 
 pub use crate::types::_input_config_input::InputConfigInputBuilder;

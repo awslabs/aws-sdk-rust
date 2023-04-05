@@ -17,7 +17,7 @@
 //!
 //! Welcome to the _AWS Clean Rooms API Reference_.
 //!
-//! AWS Clean Rooms is an AWS service that helps multiple parties to join their data together in a secure collaboration workspace. In the collaboration, members who can query and receive results can get insights into the combined data without either party getting access to the other party's raw data.
+//! AWS Clean Rooms is an AWS service that helps multiple parties to join their data together in a secure collaboration workspace. In the collaboration, members who can query and receive results can get insights into the collective datasets without either party getting access to the other party's raw data.
 //!
 //! To learn more about AWS Clean Rooms concepts, procedures, and best practices, see the [AWS Clean Rooms User Guide](https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html).
 //!
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-cleanrooms = "0.2.0"
+//! aws-sdk-cleanrooms = "0.2.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -147,6 +147,24 @@ pub use config::Config;
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
+/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.list_tags_for_resource()
+///     .resource_arn("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 pub mod client;
 
 /// Configuration for AWS Clean Rooms Service.

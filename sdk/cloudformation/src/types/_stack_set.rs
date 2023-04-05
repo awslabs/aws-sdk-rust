@@ -60,6 +60,9 @@ pub struct StackSet {
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     #[doc(hidden)]
     pub managed_execution: std::option::Option<crate::types::ManagedExecution>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StackSet {
     /// <p>The name that's associated with the stack set.</p>
@@ -135,6 +138,10 @@ impl StackSet {
     pub fn managed_execution(&self) -> std::option::Option<&crate::types::ManagedExecution> {
         self.managed_execution.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
 }
 impl StackSet {
     /// Creates a new builder-style object to manufacture [`StackSet`](crate::types::StackSet).
@@ -164,6 +171,7 @@ pub struct StackSetBuilder {
     pub(crate) permission_model: std::option::Option<crate::types::PermissionModels>,
     pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) managed_execution: std::option::Option<crate::types::ManagedExecution>,
+    pub(crate) regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StackSetBuilder {
     /// <p>The name that's associated with the stack set.</p>
@@ -397,6 +405,24 @@ impl StackSetBuilder {
         self.managed_execution = input;
         self
     }
+    /// Appends an item to `regions`.
+    ///
+    /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+    ///
+    pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+        let mut v = self.regions.unwrap_or_default();
+        v.push(input.into());
+        self.regions = Some(v);
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn set_regions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.regions = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StackSet`](crate::types::StackSet).
     pub fn build(self) -> crate::types::StackSet {
         crate::types::StackSet {
@@ -416,6 +442,7 @@ impl StackSetBuilder {
             permission_model: self.permission_model,
             organizational_unit_ids: self.organizational_unit_ids,
             managed_execution: self.managed_execution,
+            regions: self.regions,
         }
     }
 }

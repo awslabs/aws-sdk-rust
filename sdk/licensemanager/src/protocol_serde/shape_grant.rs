@@ -109,6 +109,11 @@ where
                                     crate::protocol_serde::shape_allowed_operation_list::de_allowed_operation_list(tokens)?
                                 );
                             }
+                            "Options" => {
+                                builder = builder.set_options(
+                                    crate::protocol_serde::shape_options::de_options(tokens)?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

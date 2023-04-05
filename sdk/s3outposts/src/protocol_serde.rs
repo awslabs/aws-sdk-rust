@@ -14,6 +14,8 @@ pub(crate) mod shape_delete_endpoint;
 
 pub(crate) mod shape_list_endpoints;
 
+pub(crate) mod shape_list_outposts_with_s3;
+
 pub(crate) mod shape_list_shared_endpoints;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -32,13 +34,23 @@ pub(crate) mod shape_create_endpoint_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_outpost_offline_exception;
+
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_endpoints;
 
+pub(crate) mod shape_outposts;
+
 pub(crate) mod shape_endpoint;
+
+pub(crate) mod shape_outpost;
+
+pub(crate) mod shape_failed_reason;
 
 pub(crate) mod shape_network_interfaces;
 

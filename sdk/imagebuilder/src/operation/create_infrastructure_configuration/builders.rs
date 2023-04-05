@@ -5,7 +5,7 @@ pub use crate::operation::create_infrastructure_configuration::_create_infrastru
 
 /// Fluent builder constructing a request to `CreateInfrastructureConfiguration`.
 ///
-/// <p> Creates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested.</p>
+/// <p>Creates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInfrastructureConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

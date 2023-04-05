@@ -31,6 +31,9 @@ pub struct RecoveryPointByResource {
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     #[doc(hidden)]
     pub parent_recovery_point_arn: std::option::Option<std::string::String>,
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    #[doc(hidden)]
+    pub resource_name: std::option::Option<std::string::String>,
 }
 impl RecoveryPointByResource {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -69,6 +72,10 @@ impl RecoveryPointByResource {
     pub fn parent_recovery_point_arn(&self) -> std::option::Option<&str> {
         self.parent_recovery_point_arn.as_deref()
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl RecoveryPointByResource {
     /// Creates a new builder-style object to manufacture [`RecoveryPointByResource`](crate::types::RecoveryPointByResource).
@@ -90,6 +97,7 @@ pub struct RecoveryPointByResourceBuilder {
     pub(crate) backup_vault_name: std::option::Option<std::string::String>,
     pub(crate) is_parent: std::option::Option<bool>,
     pub(crate) parent_recovery_point_arn: std::option::Option<std::string::String>,
+    pub(crate) resource_name: std::option::Option<std::string::String>,
 }
 impl RecoveryPointByResourceBuilder {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -200,6 +208,16 @@ impl RecoveryPointByResourceBuilder {
         self.parent_recovery_point_arn = input;
         self
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_name = Some(input.into());
+        self
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecoveryPointByResource`](crate::types::RecoveryPointByResource).
     pub fn build(self) -> crate::types::RecoveryPointByResource {
         crate::types::RecoveryPointByResource {
@@ -212,6 +230,7 @@ impl RecoveryPointByResourceBuilder {
             backup_vault_name: self.backup_vault_name,
             is_parent: self.is_parent.unwrap_or_default(),
             parent_recovery_point_arn: self.parent_recovery_point_arn,
+            resource_name: self.resource_name,
         }
     }
 }

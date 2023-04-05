@@ -44,5 +44,8 @@ pub fn ser_create_dataset_import_job_input(
     if let Some(var_12) = &input.format {
         object.key("Format").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.import_mode {
+        object.key("ImportMode").string(var_13.as_str());
+    }
     Ok(())
 }

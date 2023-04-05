@@ -82,13 +82,11 @@ impl CreateLongTermPricingFluentBuilder {
         self.inner = self.inner.set_long_term_pricing_type(input);
         self
     }
-    /// <p>snowballty</p>
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
         self.inner = self.inner.is_long_term_pricing_auto_renew(input);
         self
     }
-    /// <p>snowballty</p>
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub fn set_is_long_term_pricing_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_long_term_pricing_auto_renew(input);

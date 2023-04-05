@@ -9,7 +9,7 @@ pub struct UpdateEndpointInput {
     /// <p>A description for the endpoint.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    /// <p>Configure the routing policy, including the health check and secondary Region.</p>
     #[doc(hidden)]
     pub routing_config: std::option::Option<crate::types::RoutingConfig>,
     /// <p>Whether event replication was enabled or disabled by this request.</p>
@@ -31,7 +31,7 @@ impl UpdateEndpointInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    /// <p>Configure the routing policy, including the health check and secondary Region.</p>
     pub fn routing_config(&self) -> std::option::Option<&crate::types::RoutingConfig> {
         self.routing_config.as_ref()
     }
@@ -87,12 +87,12 @@ impl UpdateEndpointInputBuilder {
         self.description = input;
         self
     }
-    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    /// <p>Configure the routing policy, including the health check and secondary Region.</p>
     pub fn routing_config(mut self, input: crate::types::RoutingConfig) -> Self {
         self.routing_config = Some(input);
         self
     }
-    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    /// <p>Configure the routing policy, including the health check and secondary Region.</p>
     pub fn set_routing_config(
         mut self,
         input: std::option::Option<crate::types::RoutingConfig>,

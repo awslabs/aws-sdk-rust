@@ -174,11 +174,11 @@ pub type PutDeliveryChannelErrorKind = PutDeliveryChannelError;
 pub enum PutDeliveryChannelError {
     /// <p>Your Amazon S3 bucket policy does not permit Config to write to it.</p>
     InsufficientDeliveryPolicyException(crate::types::error::InsufficientDeliveryPolicyException),
-    /// <p>The specified delivery channel name is invalid.</p>
+    /// <p>The specified delivery channel name is not valid.</p>
     InvalidDeliveryChannelNameException(crate::types::error::InvalidDeliveryChannelNameException),
-    /// <p>The specified Amazon S3 key prefix is invalid.</p>
+    /// <p>The specified Amazon S3 key prefix is not valid.</p>
     InvalidS3KeyPrefixException(crate::types::error::InvalidS3KeyPrefixException),
-    /// <p>The specified Amazon KMS Key ARN is invalid.</p>
+    /// <p>The specified Amazon KMS Key ARN is not valid.</p>
     InvalidS3KmsKeyArnException(crate::types::error::InvalidS3KmsKeyArnException),
     /// <p>The specified Amazon SNS topic does not exist.</p>
     InvalidSnsTopicArnException(crate::types::error::InvalidSnsTopicArnException),

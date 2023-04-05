@@ -5,7 +5,7 @@ pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_input:
 
 /// Fluent builder constructing a request to `ListManagedEndpoints`.
 ///
-/// <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.</p>
+/// <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListManagedEndpointsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

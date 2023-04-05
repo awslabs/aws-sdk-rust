@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`virtual_interface_id(impl Into<String>)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::virtual_interface_id) / [`set_virtual_interface_id(Option<String>)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::set_virtual_interface_id): <p>The ID of the virtual interface.</p>
-    ///   - [`asn(i32)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::asn) / [`set_asn(i32)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::set_asn): <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    ///   - [`asn(i32)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::asn) / [`set_asn(Option<i32>)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::set_asn): <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     ///   - [`customer_address(impl Into<String>)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::customer_address) / [`set_customer_address(Option<String>)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::set_customer_address): <p>The IP address assigned to the customer interface.</p>
     ///   - [`bgp_peer_id(impl Into<String>)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::bgp_peer_id) / [`set_bgp_peer_id(Option<String>)`](crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::set_bgp_peer_id): <p>The ID of the BGP peer.</p>
     /// - On success, responds with [`DeleteBgpPeerOutput`](crate::operation::delete_bgp_peer::DeleteBgpPeerOutput) with field(s):

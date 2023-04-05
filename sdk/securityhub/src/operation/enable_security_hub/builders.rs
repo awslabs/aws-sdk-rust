@@ -7,13 +7,13 @@ pub use crate::operation::enable_security_hub::_enable_security_hub_input::Enabl
 ///
 /// <p>Enables Security Hub for your account in the current Region or the Region you specify in the request.</p>
 /// <p>When you enable Security Hub, you grant to Security Hub the permissions necessary to gather findings from other services that are integrated with Security Hub.</p>
-/// <p>When you use the <code>EnableSecurityHub</code> operation to enable Security Hub, you also automatically enable the following standards.</p>
+/// <p>When you use the <code>EnableSecurityHub</code> operation to enable Security Hub, you also automatically enable the following standards:</p>
 /// <ul>
-/// <li> <p>CIS Amazon Web Services Foundations</p> </li>
+/// <li> <p>Center for Internet Security (CIS) Amazon Web Services Foundations Benchmark v1.2.0</p> </li>
 /// <li> <p>Amazon Web Services Foundational Security Best Practices</p> </li>
 /// </ul>
-/// <p>You do not enable the Payment Card Industry Data Security Standard (PCI DSS) standard. </p>
-/// <p>To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+/// <p>Other standards are not automatically enabled. </p>
+/// <p>To opt out of automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
 /// <p>After you enable Security Hub, to enable a standard, use the <code>BatchEnableStandards</code> operation. To disable a standard, use the <code>BatchDisableStandards</code> operation.</p>
 /// <p>To learn more, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup information</a> in the <i>Security Hub User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -110,6 +110,26 @@ impl EnableSecurityHubFluentBuilder {
     /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub fn set_enable_default_standards(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_default_standards(input);
+        self
+    }
+    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn control_finding_generator(
+        mut self,
+        input: crate::types::ControlFindingGenerator,
+    ) -> Self {
+        self.inner = self.inner.control_finding_generator(input);
+        self
+    }
+    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn set_control_finding_generator(
+        mut self,
+        input: std::option::Option<crate::types::ControlFindingGenerator>,
+    ) -> Self {
+        self.inner = self.inner.set_control_finding_generator(input);
         self
     }
 }

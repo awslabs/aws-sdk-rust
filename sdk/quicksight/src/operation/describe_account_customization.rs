@@ -78,11 +78,13 @@ impl DescribeAccountCustomizationInput {
                         query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
-                if _input.resolved {
-                    query.push_kv(
-                        "resolved",
-                        aws_smithy_types::primitive::Encoder::from(_input.resolved).encode(),
-                    );
+                if let Some(inner_3) = &_input.resolved {
+                    if *inner_3 {
+                        query.push_kv(
+                            "resolved",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -190,7 +192,7 @@ pub type DescribeAccountCustomizationErrorKind = DescribeAccountCustomizationErr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountCustomizationError {
-    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct credentials.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::types::error::InternalFailureException),

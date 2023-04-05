@@ -19,6 +19,9 @@ pub struct HostedConfigurationVersionSummary {
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    #[doc(hidden)]
+    pub version_label: std::option::Option<std::string::String>,
 }
 impl HostedConfigurationVersionSummary {
     /// <p>The application ID.</p>
@@ -41,6 +44,10 @@ impl HostedConfigurationVersionSummary {
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
 }
 impl HostedConfigurationVersionSummary {
     /// Creates a new builder-style object to manufacture [`HostedConfigurationVersionSummary`](crate::types::HostedConfigurationVersionSummary).
@@ -58,6 +65,7 @@ pub struct HostedConfigurationVersionSummaryBuilder {
     pub(crate) version_number: std::option::Option<i32>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) content_type: std::option::Option<std::string::String>,
+    pub(crate) version_label: std::option::Option<std::string::String>,
 }
 impl HostedConfigurationVersionSummaryBuilder {
     /// <p>The application ID.</p>
@@ -113,6 +121,16 @@ impl HostedConfigurationVersionSummaryBuilder {
         self.content_type = input;
         self
     }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
+        self.version_label = Some(input.into());
+        self
+    }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.version_label = input;
+        self
+    }
     /// Consumes the builder and constructs a [`HostedConfigurationVersionSummary`](crate::types::HostedConfigurationVersionSummary).
     pub fn build(self) -> crate::types::HostedConfigurationVersionSummary {
         crate::types::HostedConfigurationVersionSummary {
@@ -121,6 +139,7 @@ impl HostedConfigurationVersionSummaryBuilder {
             version_number: self.version_number.unwrap_or_default(),
             description: self.description,
             content_type: self.content_type,
+            version_label: self.version_label,
         }
     }
 }

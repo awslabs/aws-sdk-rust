@@ -50,6 +50,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_ping;
 
+pub(crate) mod shape_start_network_resource_update;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -98,6 +100,8 @@ pub(crate) mod shape_list_orders_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_start_network_resource_update_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -143,6 +147,8 @@ pub(crate) mod shape_name_value_pair;
 pub(crate) mod shape_name_value_pairs;
 
 pub(crate) mod shape_network_resource_definition;
+
+pub(crate) mod shape_return_information;
 
 pub(crate) mod shape_tracking_information_list;
 

@@ -222,6 +222,8 @@ mod create_firewall_policy;
 
 mod create_rule_group;
 
+mod create_tls_inspection_configuration;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -258,6 +260,8 @@ mod delete_resource_policy;
 
 mod delete_rule_group;
 
+mod delete_tls_inspection_configuration;
+
 mod describe_firewall;
 
 mod describe_firewall_policy;
@@ -270,6 +274,8 @@ mod describe_rule_group;
 
 mod describe_rule_group_metadata;
 
+mod describe_tls_inspection_configuration;
+
 mod disassociate_subnets;
 
 mod list_firewall_policies;
@@ -279,6 +285,8 @@ mod list_firewalls;
 mod list_rule_groups;
 
 mod list_tags_for_resource;
+
+mod list_tls_inspection_configurations;
 
 mod put_resource_policy;
 
@@ -301,3 +309,5 @@ mod update_logging_configuration;
 mod update_rule_group;
 
 mod update_subnet_change_protection;
+
+mod update_tls_inspection_configuration;

@@ -68,12 +68,12 @@ impl SendMessageFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
         self
     }
-    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
@@ -82,6 +82,7 @@ impl SendMessageFluentBuilder {
     /// <ul>
     /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
     /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
     /// </ul>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -91,6 +92,7 @@ impl SendMessageFluentBuilder {
     /// <ul>
     /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
     /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
     /// </ul>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);

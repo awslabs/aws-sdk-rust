@@ -6,7 +6,7 @@ pub struct CreateAnnotationStoreOutput {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The store's genome reference.</p>
+    /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
     #[doc(hidden)]
     pub reference: std::option::Option<crate::types::ReferenceItem>,
     /// <p>The annotation file format of the store.</p>
@@ -31,7 +31,7 @@ impl CreateAnnotationStoreOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The store's genome reference.</p>
+    /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
     pub fn reference(&self) -> std::option::Option<&crate::types::ReferenceItem> {
         self.reference.as_ref()
     }
@@ -94,12 +94,12 @@ impl CreateAnnotationStoreOutputBuilder {
         self.id = input;
         self
     }
-    /// <p>The store's genome reference.</p>
+    /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
         self.reference = Some(input);
         self
     }
-    /// <p>The store's genome reference.</p>
+    /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
     pub fn set_reference(
         mut self,
         input: std::option::Option<crate::types::ReferenceItem>,

@@ -5,6 +5,7 @@ pub use crate::operation::put_voice_connector_termination_credentials::_put_voic
 
 /// Fluent builder constructing a request to `PutVoiceConnectorTerminationCredentials`.
 ///
+/// <p>Updates a Voice Connector's termination credentials.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentialsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl PutVoiceConnectorTerminationCredentialsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -72,12 +73,12 @@ impl PutVoiceConnectorTerminationCredentialsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination credentials being updated.</p>
     pub fn credentials(mut self, input: crate::types::Credential) -> Self {
         self.inner = self.inner.credentials(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The termination credentials being updated.</p>
     pub fn set_credentials(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Credential>>,

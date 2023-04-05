@@ -9,6 +9,10 @@ pub use crate::types::_endpoint_attributes::EndpointAttributes;
 
 pub use crate::types::_app_instance_user_endpoint_type::AppInstanceUserEndpointType;
 
+pub use crate::types::_expiration_settings::ExpirationSettings;
+
+pub use crate::types::_expiration_criterion::ExpirationCriterion;
+
 pub use crate::types::_app_instance_retention_settings::AppInstanceRetentionSettings;
 
 pub use crate::types::_channel_retention_settings::ChannelRetentionSettings;
@@ -25,6 +29,8 @@ pub use crate::types::_endpoint_status::EndpointStatus;
 
 pub use crate::types::_app_instance_summary::AppInstanceSummary;
 
+pub use crate::types::_app_instance_bot_summary::AppInstanceBotSummary;
+
 pub use crate::types::_app_instance_admin_summary::AppInstanceAdminSummary;
 
 pub use crate::types::_identity::Identity;
@@ -32,6 +38,14 @@ pub use crate::types::_identity::Identity;
 pub use crate::types::_app_instance_user_endpoint::AppInstanceUserEndpoint;
 
 pub use crate::types::_app_instance_user::AppInstanceUser;
+
+pub use crate::types::_app_instance_bot::AppInstanceBot;
+
+pub use crate::types::_configuration::Configuration;
+
+pub use crate::types::_lex_configuration::LexConfiguration;
+
+pub use crate::types::_responds_to::RespondsTo;
 
 pub use crate::types::_app_instance_admin::AppInstanceAdmin;
 
@@ -44,6 +58,10 @@ mod _app_instance;
 mod _app_instance_admin;
 
 mod _app_instance_admin_summary;
+
+mod _app_instance_bot;
+
+mod _app_instance_bot_summary;
 
 mod _app_instance_retention_settings;
 
@@ -61,6 +79,8 @@ mod _app_instance_user_summary;
 
 mod _channel_retention_settings;
 
+mod _configuration;
+
 mod _endpoint_attributes;
 
 mod _endpoint_state;
@@ -71,7 +91,15 @@ mod _endpoint_status_reason;
 
 mod _error_code;
 
+mod _expiration_criterion;
+
+mod _expiration_settings;
+
 mod _identity;
+
+mod _lex_configuration;
+
+mod _responds_to;
 
 mod _tag;
 

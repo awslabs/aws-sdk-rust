@@ -12,7 +12,7 @@ pub struct UpdateNotebookInput {
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::NotebookType>,
-    /// <p>The ID of the session in which the notebook will be updated.</p>
+    /// <p>The active notebook session ID. Required if the notebook has an active session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
@@ -34,7 +34,7 @@ impl UpdateNotebookInput {
     pub fn r#type(&self) -> std::option::Option<&crate::types::NotebookType> {
         self.r#type.as_ref()
     }
-    /// <p>The ID of the session in which the notebook will be updated.</p>
+    /// <p>The active notebook session ID. Required if the notebook has an active session.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
@@ -93,12 +93,12 @@ impl UpdateNotebookInputBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The ID of the session in which the notebook will be updated.</p>
+    /// <p>The active notebook session ID. Required if the notebook has an active session.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.session_id = Some(input.into());
         self
     }
-    /// <p>The ID of the session in which the notebook will be updated.</p>
+    /// <p>The active notebook session ID. Required if the notebook has an active session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.session_id = input;
         self

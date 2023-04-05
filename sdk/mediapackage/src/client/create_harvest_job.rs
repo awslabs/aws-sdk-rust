@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateHarvestJobOutput`](crate::operation::create_harvest_job::CreateHarvestJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_harvest_job::CreateHarvestJobOutput::arn): The Amazon Resource Name (ARN) assigned to the HarvestJob.
     ///   - [`channel_id(Option<String>)`](crate::operation::create_harvest_job::CreateHarvestJobOutput::channel_id): The ID of the Channel that the HarvestJob will harvest from.
-    ///   - [`created_at(Option<String>)`](crate::operation::create_harvest_job::CreateHarvestJobOutput::created_at): The time the HarvestJob was submitted
+    ///   - [`created_at(Option<String>)`](crate::operation::create_harvest_job::CreateHarvestJobOutput::created_at): The date and time the HarvestJob was submitted.
     ///   - [`end_time(Option<String>)`](crate::operation::create_harvest_job::CreateHarvestJobOutput::end_time): The end of the time-window which will be harvested.
     ///   - [`id(Option<String>)`](crate::operation::create_harvest_job::CreateHarvestJobOutput::id): The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
     ///   - [`origin_endpoint_id(Option<String>)`](crate::operation::create_harvest_job::CreateHarvestJobOutput::origin_endpoint_id): The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.

@@ -32,6 +32,32 @@ pub fn de_traffic_source_state(
                 builder = builder.set_state(var_2);
             }
             ,
+            s if s.matches("Identifier") /* Identifier com.amazonaws.autoscaling#TrafficSourceState$Identifier */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_identifier(var_3);
+            }
+            ,
+            s if s.matches("Type") /* Type com.amazonaws.autoscaling#TrafficSourceState$Type */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_type(var_4);
+            }
+            ,
             _ => {}
         }
     }

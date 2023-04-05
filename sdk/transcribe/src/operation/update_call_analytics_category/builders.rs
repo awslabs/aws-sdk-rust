@@ -97,12 +97,12 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
         self.inner = self.inner.set_rules(input);
         self
     }
-    /// <p>Choose whether you want to update a streaming or a batch Call Analytics category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
+    /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
     pub fn input_type(mut self, input: crate::types::InputType) -> Self {
         self.inner = self.inner.input_type(input);
         self
     }
-    /// <p>Choose whether you want to update a streaming or a batch Call Analytics category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
+    /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
     pub fn set_input_type(mut self, input: std::option::Option<crate::types::InputType>) -> Self {
         self.inner = self.inner.set_input_type(input);
         self

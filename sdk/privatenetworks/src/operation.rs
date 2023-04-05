@@ -64,6 +64,9 @@ pub mod list_tags_for_resource;
 /// Types for the `Ping` operation.
 pub mod ping;
 
+/// Types for the `StartNetworkResourceUpdate` operation.
+pub mod start_network_resource_update;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

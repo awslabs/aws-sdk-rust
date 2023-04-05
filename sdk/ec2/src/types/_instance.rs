@@ -95,7 +95,7 @@ pub struct Instance {
     #[doc(hidden)]
     pub elastic_gpu_associations:
         std::option::Option<std::vec::Vec<crate::types::ElasticGpuAssociation>>,
-    /// <p> The elastic inference accelerator associated with the instance.</p>
+    /// <p>The elastic inference accelerator associated with the instance.</p>
     #[doc(hidden)]
     pub elastic_inference_accelerator_associations:
         std::option::Option<std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>>,
@@ -155,7 +155,10 @@ pub struct Instance {
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     #[doc(hidden)]
     pub enclave_options: std::option::Option<crate::types::EnclaveOptions>,
-    /// <p>The boot mode of the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code> parameter is the boot mode that is used to boot the instance at launch or start.</p> <note>
+    /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
     pub boot_mode: std::option::Option<crate::types::BootModeValues>,
     /// <p>The platform details value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -179,6 +182,9 @@ pub struct Instance {
     /// <p>Provides information on the recovery and maintenance options of your instance.</p>
     #[doc(hidden)]
     pub maintenance_options: std::option::Option<crate::types::InstanceMaintenanceOptions>,
+    /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    #[doc(hidden)]
+    pub current_instance_boot_mode: std::option::Option<crate::types::InstanceBootModeValues>,
 }
 impl Instance {
     /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
@@ -303,7 +309,7 @@ impl Instance {
     ) -> std::option::Option<&[crate::types::ElasticGpuAssociation]> {
         self.elastic_gpu_associations.as_deref()
     }
-    /// <p> The elastic inference accelerator associated with the instance.</p>
+    /// <p>The elastic inference accelerator associated with the instance.</p>
     pub fn elastic_inference_accelerator_associations(
         &self,
     ) -> std::option::Option<&[crate::types::ElasticInferenceAcceleratorAssociation]> {
@@ -387,7 +393,10 @@ impl Instance {
     pub fn enclave_options(&self) -> std::option::Option<&crate::types::EnclaveOptions> {
         self.enclave_options.as_ref()
     }
-    /// <p>The boot mode of the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code> parameter is the boot mode that is used to boot the instance at launch or start.</p> <note>
+    /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn boot_mode(&self) -> std::option::Option<&crate::types::BootModeValues> {
         self.boot_mode.as_ref()
     }
@@ -422,6 +431,12 @@ impl Instance {
         &self,
     ) -> std::option::Option<&crate::types::InstanceMaintenanceOptions> {
         self.maintenance_options.as_ref()
+    }
+    /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn current_instance_boot_mode(
+        &self,
+    ) -> std::option::Option<&crate::types::InstanceBootModeValues> {
+        self.current_instance_boot_mode.as_ref()
     }
 }
 impl Instance {
@@ -497,6 +512,8 @@ pub struct InstanceBuilder {
     pub(crate) ipv6_address: std::option::Option<std::string::String>,
     pub(crate) tpm_support: std::option::Option<std::string::String>,
     pub(crate) maintenance_options: std::option::Option<crate::types::InstanceMaintenanceOptions>,
+    pub(crate) current_instance_boot_mode:
+        std::option::Option<crate::types::InstanceBootModeValues>,
 }
 impl InstanceBuilder {
     /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
@@ -857,7 +874,7 @@ impl InstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_elastic_inference_accelerator_associations`](Self::set_elastic_inference_accelerator_associations).
     ///
-    /// <p> The elastic inference accelerator associated with the instance.</p>
+    /// <p>The elastic inference accelerator associated with the instance.</p>
     pub fn elastic_inference_accelerator_associations(
         mut self,
         input: crate::types::ElasticInferenceAcceleratorAssociation,
@@ -869,7 +886,7 @@ impl InstanceBuilder {
         self.elastic_inference_accelerator_associations = Some(v);
         self
     }
-    /// <p> The elastic inference accelerator associated with the instance.</p>
+    /// <p>The elastic inference accelerator associated with the instance.</p>
     pub fn set_elastic_inference_accelerator_associations(
         mut self,
         input: std::option::Option<
@@ -1131,12 +1148,18 @@ impl InstanceBuilder {
         self.enclave_options = input;
         self
     }
-    /// <p>The boot mode of the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code> parameter is the boot mode that is used to boot the instance at launch or start.</p> <note>
+    /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn boot_mode(mut self, input: crate::types::BootModeValues) -> Self {
         self.boot_mode = Some(input);
         self
     }
-    /// <p>The boot mode of the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code> parameter is the boot mode that is used to boot the instance at launch or start.</p> <note>
+    /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_boot_mode(
         mut self,
         input: std::option::Option<crate::types::BootModeValues>,
@@ -1226,6 +1249,22 @@ impl InstanceBuilder {
         self.maintenance_options = input;
         self
     }
+    /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn current_instance_boot_mode(
+        mut self,
+        input: crate::types::InstanceBootModeValues,
+    ) -> Self {
+        self.current_instance_boot_mode = Some(input);
+        self
+    }
+    /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_current_instance_boot_mode(
+        mut self,
+        input: std::option::Option<crate::types::InstanceBootModeValues>,
+    ) -> Self {
+        self.current_instance_boot_mode = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
@@ -1286,6 +1325,7 @@ impl InstanceBuilder {
             ipv6_address: self.ipv6_address,
             tpm_support: self.tpm_support,
             maintenance_options: self.maintenance_options,
+            current_instance_boot_mode: self.current_instance_boot_mode,
         }
     }
 }

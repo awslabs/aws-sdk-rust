@@ -16,9 +16,15 @@ pub(crate) mod shape_batch_disable_standards;
 
 pub(crate) mod shape_batch_enable_standards;
 
+pub(crate) mod shape_batch_get_security_controls;
+
+pub(crate) mod shape_batch_get_standards_control_associations;
+
 pub(crate) mod shape_batch_import_findings;
 
 pub(crate) mod shape_batch_update_findings;
+
+pub(crate) mod shape_batch_update_standards_control_associations;
 
 pub(crate) mod shape_create_action_target;
 
@@ -100,6 +106,10 @@ pub(crate) mod shape_list_members;
 
 pub(crate) mod shape_list_organization_admin_accounts;
 
+pub(crate) mod shape_list_security_control_definitions;
+
+pub(crate) mod shape_list_standards_control_associations;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_tag_resource;
@@ -138,9 +148,15 @@ pub(crate) mod shape_batch_disable_standards_input;
 
 pub(crate) mod shape_batch_enable_standards_input;
 
+pub(crate) mod shape_batch_get_security_controls_input;
+
+pub(crate) mod shape_batch_get_standards_control_associations_input;
+
 pub(crate) mod shape_batch_import_findings_input;
 
 pub(crate) mod shape_batch_update_findings_input;
+
+pub(crate) mod shape_batch_update_standards_control_associations_input;
 
 pub(crate) mod shape_create_action_target_input;
 
@@ -248,11 +264,23 @@ pub(crate) mod shape_related_finding;
 
 pub(crate) mod shape_result_list;
 
+pub(crate) mod shape_security_control_definitions;
+
+pub(crate) mod shape_security_controls;
+
 pub(crate) mod shape_severity_update;
 
 pub(crate) mod shape_sort_criterion;
 
 pub(crate) mod shape_standards;
+
+pub(crate) mod shape_standards_control_association_details;
+
+pub(crate) mod shape_standards_control_association_id;
+
+pub(crate) mod shape_standards_control_association_summaries;
+
+pub(crate) mod shape_standards_control_association_update;
 
 pub(crate) mod shape_standards_controls;
 
@@ -263,6 +291,12 @@ pub(crate) mod shape_standards_subscriptions;
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_unprocessed_security_controls;
+
+pub(crate) mod shape_unprocessed_standards_control_association_updates;
+
+pub(crate) mod shape_unprocessed_standards_control_associations;
 
 pub(crate) mod shape_workflow_update;
 
@@ -320,11 +354,19 @@ pub(crate) mod shape_resource;
 
 pub(crate) mod shape_result;
 
+pub(crate) mod shape_security_control;
+
+pub(crate) mod shape_security_control_definition;
+
 pub(crate) mod shape_severity;
 
 pub(crate) mod shape_standard;
 
 pub(crate) mod shape_standards_control;
+
+pub(crate) mod shape_standards_control_association_detail;
+
+pub(crate) mod shape_standards_control_association_summary;
 
 pub(crate) mod shape_standards_subscription;
 
@@ -334,9 +376,17 @@ pub(crate) mod shape_threat;
 
 pub(crate) mod shape_threat_intel_indicator;
 
+pub(crate) mod shape_unprocessed_security_control;
+
+pub(crate) mod shape_unprocessed_standards_control_association;
+
+pub(crate) mod shape_unprocessed_standards_control_association_update;
+
 pub(crate) mod shape_vulnerability;
 
 pub(crate) mod shape_workflow;
+
+pub(crate) mod shape_associated_standard;
 
 pub(crate) mod shape_aws_api_call_action;
 
@@ -384,6 +434,8 @@ pub(crate) mod shape_resource_list;
 
 pub(crate) mod shape_software_package;
 
+pub(crate) mod shape_standards_control_arn_list;
+
 pub(crate) mod shape_standards_input_parameter_map;
 
 pub(crate) mod shape_standards_managed_by;
@@ -409,6 +461,8 @@ pub(crate) mod shape_action_remote_ip_details;
 pub(crate) mod shape_action_remote_port_details;
 
 pub(crate) mod shape_adjustment;
+
+pub(crate) mod shape_associated_standards_list;
 
 pub(crate) mod shape_aws_api_call_action_domain_details;
 
@@ -453,6 +507,8 @@ pub(crate) mod shape_aws_ec2_launch_template_details;
 pub(crate) mod shape_aws_ec2_network_acl_details;
 
 pub(crate) mod shape_aws_ec2_network_interface_details;
+
+pub(crate) mod shape_aws_ec2_route_table_details;
 
 pub(crate) mod shape_aws_ec2_security_group_details;
 
@@ -600,6 +656,8 @@ pub(crate) mod shape_string_filter_list;
 
 pub(crate) mod shape_action_local_ip_details;
 
+pub(crate) mod shape_association_set_details;
+
 pub(crate) mod shape_availability_zone;
 
 pub(crate) mod shape_aws_api_gateway_access_log_settings;
@@ -695,6 +753,8 @@ pub(crate) mod shape_aws_dynamo_db_table_sse_description;
 pub(crate) mod shape_aws_dynamo_db_table_stream_specification;
 
 pub(crate) mod shape_aws_ec2_instance_metadata_options;
+
+pub(crate) mod shape_aws_ec2_instance_monitoring_details;
 
 pub(crate) mod shape_aws_ec2_instance_network_interfaces_details;
 
@@ -926,6 +986,8 @@ pub(crate) mod shape_aws_s3_bucket_logging_configuration;
 
 pub(crate) mod shape_aws_s3_bucket_notification_configuration;
 
+pub(crate) mod shape_aws_s3_bucket_object_lock_configuration;
+
 pub(crate) mod shape_aws_s3_bucket_server_side_encryption_configuration;
 
 pub(crate) mod shape_aws_s3_bucket_website_configuration;
@@ -988,6 +1050,10 @@ pub(crate) mod shape_load_balancer_state;
 
 pub(crate) mod shape_port_probe_detail_list;
 
+pub(crate) mod shape_propagating_vgw_set_details;
+
+pub(crate) mod shape_route_set_details;
+
 pub(crate) mod shape_rule_group_details;
 
 pub(crate) mod shape_sensitive_data_result;
@@ -995,6 +1061,8 @@ pub(crate) mod shape_sensitive_data_result;
 pub(crate) mod shape_software_package_list;
 
 pub(crate) mod shape_volume_mount;
+
+pub(crate) mod shape_association_state_details;
 
 pub(crate) mod shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details;
 
@@ -1170,6 +1238,8 @@ pub(crate) mod shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_details;
 
 pub(crate) mod shape_aws_s3_bucket_notification_configuration_detail;
 
+pub(crate) mod shape_aws_s3_bucket_object_lock_configuration_rule_details;
+
 pub(crate) mod shape_aws_s3_bucket_server_side_encryption_rule;
 
 pub(crate) mod shape_aws_s3_bucket_website_configuration_redirect_to;
@@ -1225,6 +1295,8 @@ pub(crate) mod shape_waf_excluded_rule;
 pub(crate) mod shape_waf_override_action;
 
 pub(crate) mod shape_adjustment_list;
+
+pub(crate) mod shape_association_set_list;
 
 pub(crate) mod shape_availability_zones;
 
@@ -1438,6 +1510,8 @@ pub(crate) mod shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_transiti
 
 pub(crate) mod shape_aws_s3_bucket_notification_configuration_filter;
 
+pub(crate) mod shape_aws_s3_bucket_object_lock_configuration_rule_default_retention_details;
+
 pub(crate) mod shape_aws_s3_bucket_server_side_encryption_by_default;
 
 pub(crate) mod shape_aws_s3_bucket_website_configuration_routing_rule_condition;
@@ -1481,6 +1555,10 @@ pub(crate) mod shape_non_empty_string_list;
 pub(crate) mod shape_occurrences;
 
 pub(crate) mod shape_port_range_list;
+
+pub(crate) mod shape_propagating_vgw_set_list;
+
+pub(crate) mod shape_route_set_list;
 
 pub(crate) mod shape_rule_group_source_list_details;
 

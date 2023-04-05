@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartInstanceRefreshOutput {
-    /// <p>A unique ID for tracking the progress of the request.</p>
+    /// <p>A unique ID for tracking the progress of the instance refresh.</p>
     #[doc(hidden)]
     pub instance_refresh_id: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl StartInstanceRefreshOutput {
-    /// <p>A unique ID for tracking the progress of the request.</p>
+    /// <p>A unique ID for tracking the progress of the instance refresh.</p>
     pub fn instance_refresh_id(&self) -> std::option::Option<&str> {
         self.instance_refresh_id.as_deref()
     }
@@ -35,12 +35,12 @@ pub struct StartInstanceRefreshOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartInstanceRefreshOutputBuilder {
-    /// <p>A unique ID for tracking the progress of the request.</p>
+    /// <p>A unique ID for tracking the progress of the instance refresh.</p>
     pub fn instance_refresh_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_refresh_id = Some(input.into());
         self
     }
-    /// <p>A unique ID for tracking the progress of the request.</p>
+    /// <p>A unique ID for tracking the progress of the instance refresh.</p>
     pub fn set_instance_refresh_id(
         mut self,
         input: std::option::Option<std::string::String>,

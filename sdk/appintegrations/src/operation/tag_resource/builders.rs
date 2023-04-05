@@ -79,7 +79,7 @@ impl TagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more tags. </p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -88,7 +88,7 @@ impl TagResourceFluentBuilder {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>One or more tags. </p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<

@@ -8,7 +8,7 @@ pub struct CreateLoadBalancerInput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The instance port where you're creating your load balancer.</p>
     #[doc(hidden)]
-    pub instance_port: i32,
+    pub instance_port: std::option::Option<i32>,
     /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
     #[doc(hidden)]
@@ -45,7 +45,7 @@ impl CreateLoadBalancerInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The instance port where you're creating your load balancer.</p>
-    pub fn instance_port(&self) -> i32 {
+    pub fn instance_port(&self) -> std::option::Option<i32> {
         self.instance_port
     }
     /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
@@ -255,7 +255,7 @@ impl CreateLoadBalancerInputBuilder {
         Ok(
             crate::operation::create_load_balancer::CreateLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name,
-                instance_port: self.instance_port.unwrap_or_default(),
+                instance_port: self.instance_port,
                 health_check_path: self.health_check_path,
                 certificate_name: self.certificate_name,
                 certificate_domain_name: self.certificate_domain_name,

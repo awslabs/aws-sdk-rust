@@ -3,84 +3,84 @@ pub fn ser_batch_update_findings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_update_findings::BatchUpdateFindingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.confidence != 0 {
+    if let Some(var_1) = &input.confidence {
         object.key("Confidence").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.confidence).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.criticality != 0 {
+    if let Some(var_2) = &input.criticality {
         object.key("Criticality").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.criticality).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.finding_identifiers {
-        let mut array_2 = object.key("FindingIdentifiers").start_array();
-        for item_3 in var_1 {
+    if let Some(var_3) = &input.finding_identifiers {
+        let mut array_4 = object.key("FindingIdentifiers").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_aws_security_finding_identifier::ser_aws_security_finding_identifier(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_aws_security_finding_identifier::ser_aws_security_finding_identifier(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.note {
+    if let Some(var_7) = &input.note {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Note").start_object();
-        crate::protocol_serde::shape_note_update::ser_note_update(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_8 = object.key("Note").start_object();
+        crate::protocol_serde::shape_note_update::ser_note_update(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_7) = &input.related_findings {
-        let mut array_8 = object.key("RelatedFindings").start_array();
-        for item_9 in var_7 {
+    if let Some(var_9) = &input.related_findings {
+        let mut array_10 = object.key("RelatedFindings").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
+                let mut object_12 = array_10.value().start_object();
                 crate::protocol_serde::shape_related_finding::ser_related_finding(
-                    &mut object_10,
-                    item_9,
+                    &mut object_12,
+                    item_11,
                 )?;
-                object_10.finish();
+                object_12.finish();
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.severity {
+    if let Some(var_13) = &input.severity {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("Severity").start_object();
-        crate::protocol_serde::shape_severity_update::ser_severity_update(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_14 = object.key("Severity").start_object();
+        crate::protocol_serde::shape_severity_update::ser_severity_update(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_13) = &input.types {
-        let mut array_14 = object.key("Types").start_array();
-        for item_15 in var_13 {
+    if let Some(var_15) = &input.types {
+        let mut array_16 = object.key("Types").start_array();
+        for item_17 in var_15 {
             {
-                array_14.value().string(item_15.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_16) = &input.user_defined_fields {
+    if let Some(var_18) = &input.user_defined_fields {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("UserDefinedFields").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_19 = object.key("UserDefinedFields").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_17.finish();
+        object_19.finish();
     }
-    if let Some(var_20) = &input.verification_state {
-        object.key("VerificationState").string(var_20.as_str());
+    if let Some(var_22) = &input.verification_state {
+        object.key("VerificationState").string(var_22.as_str());
     }
-    if let Some(var_21) = &input.workflow {
+    if let Some(var_23) = &input.workflow {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("Workflow").start_object();
-        crate::protocol_serde::shape_workflow_update::ser_workflow_update(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_24 = object.key("Workflow").start_object();
+        crate::protocol_serde::shape_workflow_update::ser_workflow_update(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }

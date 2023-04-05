@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_page_receipts_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_page_resolutions_output_next_token(
+    input: &crate::operation::list_page_resolutions::ListPageResolutionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_pages_by_contact_output_next_token(
     input: &crate::operation::list_pages_by_contact::ListPagesByContactOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -51,6 +61,46 @@ pub(crate) fn reflens_list_pages_by_contact_output_next_token(
 
 pub(crate) fn reflens_list_pages_by_engagement_output_next_token(
     input: &crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_preview_rotation_shifts_output_next_token(
+    input: &crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_rotation_overrides_output_next_token(
+    input: &crate::operation::list_rotation_overrides::ListRotationOverridesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_rotation_shifts_output_next_token(
+    input: &crate::operation::list_rotation_shifts::ListRotationShiftsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_rotations_output_next_token(
+    input: &crate::operation::list_rotations::ListRotationsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -99,6 +149,16 @@ pub(crate) fn lens_list_page_receipts_output_receipts(
     Some(input)
 }
 
+pub(crate) fn lens_list_page_resolutions_output_page_resolutions(
+    input: crate::operation::list_page_resolutions::ListPageResolutionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ResolutionContact>> {
+    let input = match input.page_resolutions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_list_pages_by_contact_output_pages(
     input: crate::operation::list_pages_by_contact::ListPagesByContactOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::Page>> {
@@ -113,6 +173,46 @@ pub(crate) fn lens_list_pages_by_engagement_output_pages(
     input: crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::Page>> {
     let input = match input.pages {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_preview_rotation_shifts_output_rotation_shifts(
+    input: crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::RotationShift>> {
+    let input = match input.rotation_shifts {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_rotation_overrides_output_rotation_overrides(
+    input: crate::operation::list_rotation_overrides::ListRotationOverridesOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::RotationOverride>> {
+    let input = match input.rotation_overrides {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_rotation_shifts_output_rotation_shifts(
+    input: crate::operation::list_rotation_shifts::ListRotationShiftsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::RotationShift>> {
+    let input = match input.rotation_shifts {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_rotations_output_rotations(
+    input: crate::operation::list_rotations::ListRotationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::Rotation>> {
+    let input = match input.rotations {
         None => return None,
         Some(t) => t,
     };

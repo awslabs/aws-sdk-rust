@@ -469,6 +469,56 @@ impl From<crate::operation::create_geofence_collection::CreateGeofenceCollection
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_key::CreateKeyError> for Error {
+    fn from(err: crate::operation::create_key::CreateKeyError) -> Self {
+        match err {
+            crate::operation::create_key::CreateKeyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_key::CreateKeyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_key::CreateKeyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_key::CreateKeyError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_key::CreateKeyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_key::CreateKeyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_key::CreateKeyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_map::CreateMapError, R>>
     for Error
 where
@@ -703,6 +753,53 @@ impl From<crate::operation::delete_geofence_collection::DeleteGeofenceCollection
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_key::DeleteKeyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_key::DeleteKeyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_key::DeleteKeyError> for Error {
+    fn from(err: crate::operation::delete_key::DeleteKeyError) -> Self {
+        match err {
+            crate::operation::delete_key::DeleteKeyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_key::DeleteKeyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_key::DeleteKeyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_key::DeleteKeyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_key::DeleteKeyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_key::DeleteKeyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_map::DeleteMapError, R>>
     for Error
 where
@@ -931,6 +1028,53 @@ impl From<crate::operation::describe_geofence_collection::DescribeGeofenceCollec
             crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_key::DescribeKeyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::describe_key::DescribeKeyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_key::DescribeKeyError> for Error {
+    fn from(err: crate::operation::describe_key::DescribeKeyError) -> Self {
+        match err {
+            crate::operation::describe_key::DescribeKeyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_key::DescribeKeyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_key::DescribeKeyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_key::DescribeKeyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_key::DescribeKeyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_key::DescribeKeyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1681,6 +1825,48 @@ impl From<crate::operation::list_geofences::ListGeofencesError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_keys::ListKeysError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_keys::ListKeysError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_keys::ListKeysError> for Error {
+    fn from(err: crate::operation::list_keys::ListKeysError) -> Self {
+        match err {
+            crate::operation::list_keys::ListKeysError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_keys::ListKeysError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_keys::ListKeysError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_keys::ListKeysError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_keys::ListKeysError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_maps::ListMapsError, R>>
     for Error
 where
@@ -2252,6 +2438,53 @@ impl From<crate::operation::update_geofence_collection::UpdateGeofenceCollection
             crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_key::UpdateKeyError> for Error {
+    fn from(err: crate::operation::update_key::UpdateKeyError) -> Self {
+        match err {
+            crate::operation::update_key::UpdateKeyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_key::UpdateKeyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_key::UpdateKeyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_key::UpdateKeyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_key::UpdateKeyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_key::UpdateKeyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

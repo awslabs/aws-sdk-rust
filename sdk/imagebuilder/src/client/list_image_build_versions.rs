@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ListImageBuildVersionsOutput`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_summary_list(Option<Vec<ImageSummary>>)`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput::image_summary_list): <p>The list of image build versions.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListImageBuildVersionsError>`](crate::operation::list_image_build_versions::ListImageBuildVersionsError)
     pub fn list_image_build_versions(
         &self,

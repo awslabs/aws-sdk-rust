@@ -59,6 +59,9 @@ pub fn ser_production_variant(
                 aws_smithy_types::Number::NegInt((*var_13).into()),
             );
     }
+    if let Some(var_14) = &input.enable_ssm_access {
+        object.key("EnableSSMAccess").boolean(*var_14);
+    }
     Ok(())
 }
 
@@ -188,6 +191,13 @@ where
                                         .map(i32::try_from)
                                         .transpose()?,
                                     );
+                            }
+                            "EnableSSMAccess" => {
+                                builder = builder.set_enable_ssm_access(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }

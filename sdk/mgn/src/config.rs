@@ -17,6 +17,7 @@
 /// The service config can also be constructed manually using its builder.
 ///
 pub struct Config {
+    pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
     pub(crate) endpoint_resolver:
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
@@ -43,6 +44,12 @@ impl Config {
     /// Constructs a config builder.
     pub fn builder() -> Builder {
         Builder::default()
+    }
+    /// Returns a copy of the idempotency token provider.
+    /// If a random token provider was configured,
+    /// a newly-randomized token provider will be returned.
+    pub fn make_token(&self) -> crate::idempotency_token::IdempotencyTokenProvider {
+        self.make_token.clone()
     }
     /// Returns the endpoint resolver.
     pub fn endpoint_resolver(
@@ -101,6 +108,7 @@ impl Config {
 /// Builder for creating a `Config`.
 #[derive(Default)]
 pub struct Builder {
+    make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
     endpoint_resolver: Option<
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
     >,
@@ -120,6 +128,23 @@ impl Builder {
     /// Constructs a config builder.
     pub fn new() -> Self {
         Self::default()
+    }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn make_token(
+        mut self,
+        make_token: impl Into<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> Self {
+        self.set_make_token(Some(make_token.into()));
+        self
+    }
+
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn set_make_token(
+        &mut self,
+        make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> &mut Self {
+        self.make_token = make_token;
+        self
     }
     /// Sets the endpoint resolver to use when making requests.
 
@@ -520,6 +545,7 @@ impl Builder {
     #[allow(unused_mut)]
     /// Apply test defaults to the builder
     pub fn set_test_defaults(&mut self) -> &mut Self {
+        self.set_make_token(Some("00000000-0000-4000-8000-000000000000".into()));
         self.set_credentials_provider(Some(
             aws_credential_types::provider::SharedCredentialsProvider::new(
                 aws_credential_types::Credentials::for_tests(),
@@ -537,6 +563,9 @@ impl Builder {
     /// Builds a [`Config`].
     pub fn build(self) -> Config {
         Config {
+            make_token: self
+                .make_token
+                .unwrap_or_else(crate::idempotency_token::default_provider),
             endpoint_resolver: self
                 .endpoint_resolver
                 .unwrap_or_else(|| std::sync::Arc::new(crate::endpoint::DefaultResolver::new())),

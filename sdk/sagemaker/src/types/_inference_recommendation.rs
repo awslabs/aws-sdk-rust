@@ -13,6 +13,9 @@ pub struct InferenceRecommendation {
     /// <p>Defines the model configuration.</p>
     #[doc(hidden)]
     pub model_configuration: std::option::Option<crate::types::ModelConfiguration>,
+    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    #[doc(hidden)]
+    pub recommendation_id: std::option::Option<std::string::String>,
 }
 impl InferenceRecommendation {
     /// <p>The metrics used to decide what recommendation to make.</p>
@@ -28,6 +31,10 @@ impl InferenceRecommendation {
     /// <p>Defines the model configuration.</p>
     pub fn model_configuration(&self) -> std::option::Option<&crate::types::ModelConfiguration> {
         self.model_configuration.as_ref()
+    }
+    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
     }
 }
 impl InferenceRecommendation {
@@ -45,6 +52,7 @@ pub struct InferenceRecommendationBuilder {
     pub(crate) endpoint_configuration:
         std::option::Option<crate::types::EndpointOutputConfiguration>,
     pub(crate) model_configuration: std::option::Option<crate::types::ModelConfiguration>,
+    pub(crate) recommendation_id: std::option::Option<std::string::String>,
 }
 impl InferenceRecommendationBuilder {
     /// <p>The metrics used to decide what recommendation to make.</p>
@@ -89,12 +97,26 @@ impl InferenceRecommendationBuilder {
         self.model_configuration = input;
         self
     }
+    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.recommendation_id = Some(input.into());
+        self
+    }
+    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    pub fn set_recommendation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recommendation_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InferenceRecommendation`](crate::types::InferenceRecommendation).
     pub fn build(self) -> crate::types::InferenceRecommendation {
         crate::types::InferenceRecommendation {
             metrics: self.metrics,
             endpoint_configuration: self.endpoint_configuration,
             model_configuration: self.model_configuration,
+            recommendation_id: self.recommendation_id,
         }
     }
 }

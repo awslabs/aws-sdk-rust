@@ -6,6 +6,9 @@ pub struct ExportVectorEnrichmentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
     #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
@@ -17,6 +20,10 @@ impl ExportVectorEnrichmentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
@@ -41,6 +48,7 @@ impl ExportVectorEnrichmentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ExportVectorEnrichmentJobInputBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) execution_role_arn: std::option::Option<std::string::String>,
     pub(crate) output_config:
         std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
@@ -54,6 +62,16 @@ impl ExportVectorEnrichmentJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.arn = input;
+        self
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+        self.client_token = Some(input.into());
+        self
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_token = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
@@ -95,6 +113,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
         Ok(
             crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput {
                 arn: self.arn,
+                client_token: self.client_token,
                 execution_role_arn: self.execution_role_arn,
                 output_config: self.output_config,
             },

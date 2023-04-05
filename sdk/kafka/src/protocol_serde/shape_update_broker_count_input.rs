@@ -6,10 +6,10 @@ pub fn ser_update_broker_count_input(
     if let Some(var_1) = &input.current_version {
         object.key("currentVersion").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.target_number_of_broker_nodes {
         object.key("targetNumberOfBrokerNodes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.target_number_of_broker_nodes).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

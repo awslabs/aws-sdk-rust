@@ -225,7 +225,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     #[doc(hidden)]
     pub storage_throughput: std::option::Option<i32>,
     /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
-    /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     #[doc(hidden)]
     pub allocated_storage: std::option::Option<i32>,
@@ -490,7 +490,7 @@ impl RestoreDbInstanceToPointInTimeInput {
         self.storage_throughput
     }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
-    /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
@@ -1227,14 +1227,14 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
         self
     }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
-    /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = Some(input);
         self
     }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
-    /// <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
         self.allocated_storage = input;

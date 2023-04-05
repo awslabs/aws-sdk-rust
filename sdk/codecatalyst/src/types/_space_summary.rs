@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpaceSummary {
-    /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
+    /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the space exists.</p>
@@ -18,7 +18,7 @@ pub struct SpaceSummary {
     pub description: std::option::Option<std::string::String>,
 }
 impl SpaceSummary {
-    /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
+    /// <p>The name of the space.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -52,12 +52,12 @@ pub struct SpaceSummaryBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
 }
 impl SpaceSummaryBuilder {
-    /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
+    /// <p>The name of the space.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
+    /// <p>The name of the space.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self

@@ -574,6 +574,12 @@ pub(crate) mod shape_delete_workflow_input;
 
 pub(crate) mod shape_entity_not_found_exception;
 
+pub(crate) mod shape_federated_resource_already_exists_exception;
+
+pub(crate) mod shape_federation_source_exception;
+
+pub(crate) mod shape_federation_source_retryable_exception;
+
 pub(crate) mod shape_get_blueprint_input;
 
 pub(crate) mod shape_get_blueprint_run_input;
@@ -1228,6 +1234,8 @@ pub(crate) mod shape_batch_update_partition_failure_entry;
 
 pub(crate) mod shape_blueprint_details;
 
+pub(crate) mod shape_catalog_delta_source;
+
 pub(crate) mod shape_catalog_hudi_source;
 
 pub(crate) mod shape_catalog_kafka_source;
@@ -1290,6 +1298,8 @@ pub(crate) mod shape_database_identifier;
 
 pub(crate) mod shape_delta_target;
 
+pub(crate) mod shape_direct_jdbc_source;
+
 pub(crate) mod shape_direct_kafka_source;
 
 pub(crate) mod shape_direct_kinesis_source;
@@ -1313,6 +1323,10 @@ pub(crate) mod shape_error_detail;
 pub(crate) mod shape_evaluate_data_quality;
 
 pub(crate) mod shape_export_labels_task_run_properties;
+
+pub(crate) mod shape_federated_database;
+
+pub(crate) mod shape_federated_table;
 
 pub(crate) mod shape_fill_missing_values;
 
@@ -1416,6 +1430,8 @@ pub(crate) mod shape_resource_uri;
 
 pub(crate) mod shape_resource_uri_list;
 
+pub(crate) mod shape_s3_catalog_delta_source;
+
 pub(crate) mod shape_s3_catalog_hudi_source;
 
 pub(crate) mod shape_s3_catalog_source;
@@ -1423,6 +1439,12 @@ pub(crate) mod shape_s3_catalog_source;
 pub(crate) mod shape_s3_catalog_target;
 
 pub(crate) mod shape_s3_csv_source;
+
+pub(crate) mod shape_s3_delta_catalog_target;
+
+pub(crate) mod shape_s3_delta_direct_target;
+
+pub(crate) mod shape_s3_delta_source;
 
 pub(crate) mod shape_s3_direct_target;
 

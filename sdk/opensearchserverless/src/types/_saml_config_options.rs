@@ -13,7 +13,7 @@ pub struct SamlConfigOptions {
     /// <p>The group attribute for this SAML integration.</p>
     #[doc(hidden)]
     pub group_attribute: std::option::Option<std::string::String>,
-    /// <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440 minutes (24 hours or 1 day). Default is 60 minutes.</p>
+    /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     #[doc(hidden)]
     pub session_timeout: std::option::Option<i32>,
 }
@@ -30,7 +30,7 @@ impl SamlConfigOptions {
     pub fn group_attribute(&self) -> std::option::Option<&str> {
         self.group_attribute.as_deref()
     }
-    /// <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440 minutes (24 hours or 1 day). Default is 60 minutes.</p>
+    /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub fn session_timeout(&self) -> std::option::Option<i32> {
         self.session_timeout
     }
@@ -82,12 +82,12 @@ impl SamlConfigOptionsBuilder {
         self.group_attribute = input;
         self
     }
-    /// <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440 minutes (24 hours or 1 day). Default is 60 minutes.</p>
+    /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub fn session_timeout(mut self, input: i32) -> Self {
         self.session_timeout = Some(input);
         self
     }
-    /// <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440 minutes (24 hours or 1 day). Default is 60 minutes.</p>
+    /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub fn set_session_timeout(mut self, input: std::option::Option<i32>) -> Self {
         self.session_timeout = input;
         self

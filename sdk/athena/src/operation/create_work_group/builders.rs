@@ -5,7 +5,7 @@ pub use crate::operation::create_work_group::_create_work_group_input::CreateWor
 
 /// Fluent builder constructing a request to `CreateWorkGroup`.
 ///
-/// <p>Creates a workgroup with the specified name. Only one of <code>Configurations</code> or <code>Configuration</code> can be specified; <code>Configurations</code> for a workgroup with multi engine support (for example, an Apache Spark enabled workgroup) or <code>Configuration</code> for an Athena SQL workgroup.</p>
+/// <p>Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled workgroup or an Athena SQL workgroup.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWorkGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -79,12 +79,12 @@ impl CreateWorkGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    /// <p>Contains configuration information for creating an Athena SQL workgroup or Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn configuration(mut self, input: crate::types::WorkGroupConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    /// <p>Contains configuration information for creating an Athena SQL workgroup or Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn set_configuration(
         mut self,
         input: std::option::Option<crate::types::WorkGroupConfiguration>,

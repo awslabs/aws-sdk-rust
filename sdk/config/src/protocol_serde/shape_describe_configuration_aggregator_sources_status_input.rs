@@ -20,10 +20,10 @@ pub fn ser_describe_configuration_aggregator_sources_status_input(
     if let Some(var_5) = &input.next_token {
         object.key("NextToken").string(var_5.as_str());
     }
-    if input.limit != 0 {
+    if let Some(var_6) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.limit).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

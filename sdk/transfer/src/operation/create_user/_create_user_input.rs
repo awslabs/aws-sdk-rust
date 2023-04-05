@@ -37,7 +37,15 @@ pub struct CreateUserInput {
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
+    /// <p>The three standard SSH public key format elements are <code>
+    /// <key type></key></code>, <code></code>, and an optional <code>
+    /// <comment></comment></code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    /// <ul>
+    /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
+    /// <li> <p>For ED25519 keys, the key type is <code>ssh-ed25519</code>.</p> </li>
+    /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub ssh_public_key_body: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
@@ -90,7 +98,15 @@ impl CreateUserInput {
         self.server_id.as_deref()
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
+    /// <p>The three standard SSH public key format elements are <code>
+    /// <key type></key></code>, <code></code>, and an optional <code>
+    /// <comment></comment></code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    /// <ul>
+    /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
+    /// <li> <p>For ED25519 keys, the key type is <code>ssh-ed25519</code>.</p> </li>
+    /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// </ul>
     pub fn ssh_public_key_body(&self) -> std::option::Option<&str> {
         self.ssh_public_key_body.as_deref()
     }
@@ -235,13 +251,29 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
+    /// <p>The three standard SSH public key format elements are <code>
+    /// <key type></key></code>, <code></code>, and an optional <code>
+    /// <comment></comment></code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    /// <ul>
+    /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
+    /// <li> <p>For ED25519 keys, the key type is <code>ssh-ed25519</code>.</p> </li>
+    /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// </ul>
     pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
         self.ssh_public_key_body = Some(input.into());
         self
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
+    /// <p>The three standard SSH public key format elements are <code>
+    /// <key type></key></code>, <code></code>, and an optional <code>
+    /// <comment></comment></code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    /// <ul>
+    /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
+    /// <li> <p>For ED25519 keys, the key type is <code>ssh-ed25519</code>.</p> </li>
+    /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// </ul>
     pub fn set_ssh_public_key_body(
         mut self,
         input: std::option::Option<std::string::String>,

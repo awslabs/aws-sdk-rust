@@ -29,6 +29,9 @@ pub struct RepositoryDescription {
     #[doc(hidden)]
     pub external_connections:
         std::option::Option<std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>,
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    #[doc(hidden)]
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RepositoryDescription {
     /// <p> The name of the repository. </p>
@@ -65,6 +68,10 @@ impl RepositoryDescription {
     ) -> std::option::Option<&[crate::types::RepositoryExternalConnectionInfo]> {
         self.external_connections.as_deref()
     }
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
 }
 impl RepositoryDescription {
     /// Creates a new builder-style object to manufacture [`RepositoryDescription`](crate::types::RepositoryDescription).
@@ -86,6 +93,7 @@ pub struct RepositoryDescriptionBuilder {
     pub(crate) upstreams: std::option::Option<std::vec::Vec<crate::types::UpstreamRepositoryInfo>>,
     pub(crate) external_connections:
         std::option::Option<std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>,
+    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RepositoryDescriptionBuilder {
     /// <p> The name of the repository. </p>
@@ -192,6 +200,19 @@ impl RepositoryDescriptionBuilder {
         self.external_connections = input;
         self
     }
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+        self.created_time = Some(input);
+        self
+    }
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RepositoryDescription`](crate::types::RepositoryDescription).
     pub fn build(self) -> crate::types::RepositoryDescription {
         crate::types::RepositoryDescription {
@@ -203,6 +224,7 @@ impl RepositoryDescriptionBuilder {
             description: self.description,
             upstreams: self.upstreams,
             external_connections: self.external_connections,
+            created_time: self.created_time,
         }
     }
 }

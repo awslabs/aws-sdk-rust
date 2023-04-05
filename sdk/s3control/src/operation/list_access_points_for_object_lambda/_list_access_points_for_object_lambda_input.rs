@@ -11,7 +11,7 @@ pub struct ListAccessPointsForObjectLambdaInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListAccessPointsForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -23,7 +23,7 @@ impl ListAccessPointsForObjectLambdaInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -82,7 +82,6 @@ impl ListAccessPointsForObjectLambdaInputBuilder {
                 next_token: self.next_token
                 ,
                 max_results: self.max_results
-                    .unwrap_or_default()
                 ,
             }
         )

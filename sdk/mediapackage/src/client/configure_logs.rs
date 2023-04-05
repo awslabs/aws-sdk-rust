@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`ingress_access_logs(IngressAccessLogs)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::ingress_access_logs) / [`set_ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::set_ingress_access_logs): Configure ingress access logging.
     /// - On success, responds with [`ConfigureLogsOutput`](crate::operation::configure_logs::ConfigureLogsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
+    ///   - [`created_at(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::created_at): The date and time the Channel was created.
     ///   - [`description(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::description): A short text description of the Channel.
     ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::configure_logs::ConfigureLogsOutput::egress_access_logs): Configure egress access logging.
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::configure_logs::ConfigureLogsOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.

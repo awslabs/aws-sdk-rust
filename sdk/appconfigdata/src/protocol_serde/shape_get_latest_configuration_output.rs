@@ -45,3 +45,13 @@ pub(crate) fn de_next_poll_interval_in_seconds_header(
         Ok(var_1.pop())
     }
 }
+
+pub(crate) fn de_version_label_header(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Version-Label").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}

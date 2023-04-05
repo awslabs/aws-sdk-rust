@@ -181,6 +181,13 @@ pub(crate) fn de_import_resources_to_draft_app_version(value: &[u8], mut builder
                             .transpose()?,
                         );
                     }
+                    "eksSources" => {
+                        builder = builder.set_eks_sources(
+                            crate::protocol_serde::shape_eks_source_list::de_eks_source_list(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "sourceArns" => {
                         builder = builder.set_source_arns(
                             crate::protocol_serde::shape_arn_list::de_arn_list(tokens)?,

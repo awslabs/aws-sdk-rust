@@ -3,34 +3,34 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUnfilteredTableMetadataOutput {
-    /// <p>Represents a collection of related data organized in columns and rows.</p>
+    /// <p>A Table object containing the table metadata.</p>
     #[doc(hidden)]
     pub table: std::option::Option<crate::types::Table>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of column names that the user has been granted access to.</p>
     #[doc(hidden)]
     pub authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of column row filters.</p>
     #[doc(hidden)]
     pub cell_filters: std::option::Option<std::vec::Vec<crate::types::ColumnRowFilter>>,
     _request_id: Option<String>,
 }
 impl GetUnfilteredTableMetadataOutput {
-    /// <p>Represents a collection of related data organized in columns and rows.</p>
+    /// <p>A Table object containing the table metadata.</p>
     pub fn table(&self) -> std::option::Option<&crate::types::Table> {
         self.table.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of column names that the user has been granted access to.</p>
     pub fn authorized_columns(&self) -> std::option::Option<&[std::string::String]> {
         self.authorized_columns.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(&self) -> bool {
         self.is_registered_with_lake_formation
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of column row filters.</p>
     pub fn cell_filters(&self) -> std::option::Option<&[crate::types::ColumnRowFilter]> {
         self.cell_filters.as_deref()
     }
@@ -58,12 +58,12 @@ pub struct GetUnfilteredTableMetadataOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetUnfilteredTableMetadataOutputBuilder {
-    /// <p>Represents a collection of related data organized in columns and rows.</p>
+    /// <p>A Table object containing the table metadata.</p>
     pub fn table(mut self, input: crate::types::Table) -> Self {
         self.table = Some(input);
         self
     }
-    /// <p>Represents a collection of related data organized in columns and rows.</p>
+    /// <p>A Table object containing the table metadata.</p>
     pub fn set_table(mut self, input: std::option::Option<crate::types::Table>) -> Self {
         self.table = input;
         self
@@ -72,13 +72,14 @@ impl GetUnfilteredTableMetadataOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_authorized_columns`](Self::set_authorized_columns).
     ///
+    /// <p>A list of column names that the user has been granted access to.</p>
     pub fn authorized_columns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.authorized_columns.unwrap_or_default();
         v.push(input.into());
         self.authorized_columns = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of column names that the user has been granted access to.</p>
     pub fn set_authorized_columns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -86,12 +87,12 @@ impl GetUnfilteredTableMetadataOutputBuilder {
         self.authorized_columns = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
         self.is_registered_with_lake_formation = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn set_is_registered_with_lake_formation(
         mut self,
         input: std::option::Option<bool>,
@@ -103,13 +104,14 @@ impl GetUnfilteredTableMetadataOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cell_filters`](Self::set_cell_filters).
     ///
+    /// <p>A list of column row filters.</p>
     pub fn cell_filters(mut self, input: crate::types::ColumnRowFilter) -> Self {
         let mut v = self.cell_filters.unwrap_or_default();
         v.push(input);
         self.cell_filters = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of column row filters.</p>
     pub fn set_cell_filters(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ColumnRowFilter>>,

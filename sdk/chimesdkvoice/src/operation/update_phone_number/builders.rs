@@ -5,6 +5,9 @@ pub use crate::operation::update_phone_number::_update_phone_number_input::Updat
 
 /// Fluent builder constructing a request to `UpdatePhoneNumber`.
 ///
+/// <p>Updates phone number details, such as product type or calling name, for the specified phone number ID. You can update one phone number detail at a time. For example, you can update either the product type or the calling name in one action.</p>
+/// <p>For numbers outside the U.S., you must use the Amazon Chime SDK SIP Media Application Dial-In product type.</p>
+/// <p>Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePhoneNumberFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -68,22 +71,22 @@ impl UpdatePhoneNumberFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.phone_number_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.inner = self.inner.product_type(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The product type.</p>
     pub fn set_product_type(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberProductType>,
@@ -91,12 +94,12 @@ impl UpdatePhoneNumberFluentBuilder {
         self.inner = self.inner.set_product_type(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The outbound calling name associated with the phone number.</p>
     pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.calling_name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The outbound calling name associated with the phone number.</p>
     pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_calling_name(input);
         self

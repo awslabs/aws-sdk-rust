@@ -19,7 +19,10 @@ pub struct Block {
     /// <li> <p> <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
     /// <li> <p> <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p> </li>
     /// <li> <p> <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each. </p> </li>
+    /// <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table. </p> </li>
+    /// <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table. </p> </li>
     /// <li> <p> <i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p> </li>
+    /// <li> <p> <i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p> </li>
     /// <li> <p> <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p> </li>
     /// <li> <p> <i>SIGNATURE</i> - The location and confidene score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p> </li>
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
@@ -42,10 +45,10 @@ pub struct Block {
     /// <p>The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     #[doc(hidden)]
     pub column_index: std::option::Option<i32>,
-    /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     #[doc(hidden)]
     pub row_span: std::option::Option<i32>,
-    /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
+    /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
     #[doc(hidden)]
     pub column_span: std::option::Option<i32>,
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information. </p>
@@ -54,17 +57,24 @@ pub struct Block {
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks. The list size can be the following:</p>
-    /// <ul>
-    /// <li> <p>0 - The block has no child blocks.</p> </li>
-    /// <li> <p>1 - The block has child blocks.</p> </li>
-    /// </ul>
+    /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
     #[doc(hidden)]
     pub relationships: std::option::Option<std::vec::Vec<crate::types::Relationship>>,
-    /// <p>The type of entity. The following can be returned:</p>
+    /// <p>The type of entity. </p>
+    /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
     /// <li> <p> <i>KEY</i> - An identifier for a field on the document.</p> </li>
     /// <li> <p> <i>VALUE</i> - The field text.</p> </li>
+    /// </ul>
+    /// <p>The following entity types can be returned by TABLES analysis:</p>
+    /// <ul>
+    /// <li> <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p> </li>
+    /// <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the table. </p> </li>
+    /// <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section. </p> </li>
+    /// <li> <p> <i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table. </p> </li>
+    /// <li> <p> <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table. </p> </li>
+    /// <li> <p> <i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers. </p> </li>
+    /// <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. </p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     #[doc(hidden)]
@@ -72,7 +82,7 @@ pub struct Block {
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
     #[doc(hidden)]
     pub selection_status: std::option::Option<crate::types::SelectionStatus>,
-    /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
+    /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
     #[doc(hidden)]
     pub page: std::option::Option<i32>,
     /// <p></p>
@@ -93,7 +103,10 @@ impl Block {
     /// <li> <p> <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
     /// <li> <p> <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p> </li>
     /// <li> <p> <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each. </p> </li>
+    /// <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table. </p> </li>
+    /// <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table. </p> </li>
     /// <li> <p> <i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p> </li>
+    /// <li> <p> <i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p> </li>
     /// <li> <p> <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p> </li>
     /// <li> <p> <i>SIGNATURE</i> - The location and confidene score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p> </li>
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
@@ -122,11 +135,11 @@ impl Block {
     pub fn column_index(&self) -> std::option::Option<i32> {
         self.column_index
     }
-    /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn row_span(&self) -> std::option::Option<i32> {
         self.row_span
     }
-    /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
+    /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
     pub fn column_span(&self) -> std::option::Option<i32> {
         self.column_span
     }
@@ -138,18 +151,25 @@ impl Block {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks. The list size can be the following:</p>
-    /// <ul>
-    /// <li> <p>0 - The block has no child blocks.</p> </li>
-    /// <li> <p>1 - The block has child blocks.</p> </li>
-    /// </ul>
+    /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
     pub fn relationships(&self) -> std::option::Option<&[crate::types::Relationship]> {
         self.relationships.as_deref()
     }
-    /// <p>The type of entity. The following can be returned:</p>
+    /// <p>The type of entity. </p>
+    /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
     /// <li> <p> <i>KEY</i> - An identifier for a field on the document.</p> </li>
     /// <li> <p> <i>VALUE</i> - The field text.</p> </li>
+    /// </ul>
+    /// <p>The following entity types can be returned by TABLES analysis:</p>
+    /// <ul>
+    /// <li> <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p> </li>
+    /// <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the table. </p> </li>
+    /// <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section. </p> </li>
+    /// <li> <p> <i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table. </p> </li>
+    /// <li> <p> <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table. </p> </li>
+    /// <li> <p> <i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers. </p> </li>
+    /// <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. </p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn entity_types(&self) -> std::option::Option<&[crate::types::EntityType]> {
@@ -159,7 +179,7 @@ impl Block {
     pub fn selection_status(&self) -> std::option::Option<&crate::types::SelectionStatus> {
         self.selection_status.as_ref()
     }
-    /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
+    /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
     pub fn page(&self) -> std::option::Option<i32> {
         self.page
     }
@@ -209,7 +229,10 @@ impl BlockBuilder {
     /// <li> <p> <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
     /// <li> <p> <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p> </li>
     /// <li> <p> <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each. </p> </li>
+    /// <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table. </p> </li>
+    /// <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table. </p> </li>
     /// <li> <p> <i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p> </li>
+    /// <li> <p> <i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p> </li>
     /// <li> <p> <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p> </li>
     /// <li> <p> <i>SIGNATURE</i> - The location and confidene score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p> </li>
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
@@ -232,7 +255,10 @@ impl BlockBuilder {
     /// <li> <p> <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
     /// <li> <p> <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p> </li>
     /// <li> <p> <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each. </p> </li>
+    /// <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table. </p> </li>
+    /// <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table. </p> </li>
     /// <li> <p> <i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p> </li>
+    /// <li> <p> <i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p> </li>
     /// <li> <p> <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p> </li>
     /// <li> <p> <i>SIGNATURE</i> - The location and confidene score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p> </li>
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
@@ -292,22 +318,22 @@ impl BlockBuilder {
         self.column_index = input;
         self
     }
-    /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn row_span(mut self, input: i32) -> Self {
         self.row_span = Some(input);
         self
     }
-    /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn set_row_span(mut self, input: std::option::Option<i32>) -> Self {
         self.row_span = input;
         self
     }
-    /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
+    /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
     pub fn column_span(mut self, input: i32) -> Self {
         self.column_span = Some(input);
         self
     }
-    /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
+    /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
     pub fn set_column_span(mut self, input: std::option::Option<i32>) -> Self {
         self.column_span = input;
         self
@@ -336,22 +362,14 @@ impl BlockBuilder {
     ///
     /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
     ///
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks. The list size can be the following:</p>
-    /// <ul>
-    /// <li> <p>0 - The block has no child blocks.</p> </li>
-    /// <li> <p>1 - The block has child blocks.</p> </li>
-    /// </ul>
+    /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
     pub fn relationships(mut self, input: crate::types::Relationship) -> Self {
         let mut v = self.relationships.unwrap_or_default();
         v.push(input);
         self.relationships = Some(v);
         self
     }
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks. The list size can be the following:</p>
-    /// <ul>
-    /// <li> <p>0 - The block has no child blocks.</p> </li>
-    /// <li> <p>1 - The block has child blocks.</p> </li>
-    /// </ul>
+    /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
     pub fn set_relationships(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Relationship>>,
@@ -363,10 +381,21 @@ impl BlockBuilder {
     ///
     /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
     ///
-    /// <p>The type of entity. The following can be returned:</p>
+    /// <p>The type of entity. </p>
+    /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
     /// <li> <p> <i>KEY</i> - An identifier for a field on the document.</p> </li>
     /// <li> <p> <i>VALUE</i> - The field text.</p> </li>
+    /// </ul>
+    /// <p>The following entity types can be returned by TABLES analysis:</p>
+    /// <ul>
+    /// <li> <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p> </li>
+    /// <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the table. </p> </li>
+    /// <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section. </p> </li>
+    /// <li> <p> <i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table. </p> </li>
+    /// <li> <p> <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table. </p> </li>
+    /// <li> <p> <i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers. </p> </li>
+    /// <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. </p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn entity_types(mut self, input: crate::types::EntityType) -> Self {
@@ -375,10 +404,21 @@ impl BlockBuilder {
         self.entity_types = Some(v);
         self
     }
-    /// <p>The type of entity. The following can be returned:</p>
+    /// <p>The type of entity. </p>
+    /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
     /// <li> <p> <i>KEY</i> - An identifier for a field on the document.</p> </li>
     /// <li> <p> <i>VALUE</i> - The field text.</p> </li>
+    /// </ul>
+    /// <p>The following entity types can be returned by TABLES analysis:</p>
+    /// <ul>
+    /// <li> <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p> </li>
+    /// <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the table. </p> </li>
+    /// <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section. </p> </li>
+    /// <li> <p> <i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table. </p> </li>
+    /// <li> <p> <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table. </p> </li>
+    /// <li> <p> <i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers. </p> </li>
+    /// <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. </p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn set_entity_types(
@@ -401,12 +441,12 @@ impl BlockBuilder {
         self.selection_status = input;
         self
     }
-    /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
+    /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
     pub fn page(mut self, input: i32) -> Self {
         self.page = Some(input);
         self
     }
-    /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
+    /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
     pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
         self.page = input;
         self

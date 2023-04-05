@@ -125,6 +125,15 @@ pub(crate) fn de_get_runtime_management_config(value: &[u8], mut builder: crate:
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "FunctionArn" => {
+                        builder = builder.set_function_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "RuntimeVersionArn" => {
                         builder = builder.set_runtime_version_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

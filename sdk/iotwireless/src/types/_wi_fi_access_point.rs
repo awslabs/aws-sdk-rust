@@ -7,7 +7,7 @@ pub struct WiFiAccessPoint {
     /// <p>Wi-Fi MAC Address.</p>
     #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
-    /// <p>Recived signal strength of the WLAN measurement data.</p>
+    /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     #[doc(hidden)]
     pub rss: std::option::Option<i32>,
 }
@@ -16,7 +16,7 @@ impl WiFiAccessPoint {
     pub fn mac_address(&self) -> std::option::Option<&str> {
         self.mac_address.as_deref()
     }
-    /// <p>Recived signal strength of the WLAN measurement data.</p>
+    /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn rss(&self) -> std::option::Option<i32> {
         self.rss
     }
@@ -46,12 +46,12 @@ impl WiFiAccessPointBuilder {
         self.mac_address = input;
         self
     }
-    /// <p>Recived signal strength of the WLAN measurement data.</p>
+    /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn rss(mut self, input: i32) -> Self {
         self.rss = Some(input);
         self
     }
-    /// <p>Recived signal strength of the WLAN measurement data.</p>
+    /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn set_rss(mut self, input: std::option::Option<i32>) -> Self {
         self.rss = input;
         self

@@ -214,6 +214,15 @@ pub mod list_stack_instances_for_provisioned_product;
 /// Types for the `ListTagOptions` operation.
 pub mod list_tag_options;
 
+/// Types for the `NotifyProvisionProductEngineWorkflowResult` operation.
+pub mod notify_provision_product_engine_workflow_result;
+
+/// Types for the `NotifyTerminateProvisionedProductEngineWorkflowResult` operation.
+pub mod notify_terminate_provisioned_product_engine_workflow_result;
+
+/// Types for the `NotifyUpdateProvisionedProductEngineWorkflowResult` operation.
+pub mod notify_update_provisioned_product_engine_workflow_result;
+
 /// Types for the `ProvisionProduct` operation.
 pub mod provision_product;
 

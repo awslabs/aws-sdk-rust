@@ -33,6 +33,9 @@ pub fn ser_recommendation_job_container_config(
         }
         array_9.finish();
     }
+    if let Some(var_11) = &input.data_input_config {
+        object.key("DataInputConfig").string(var_11.as_str());
+    }
     Ok(())
 }
 
@@ -114,6 +117,15 @@ where
                             "SupportedInstanceTypes" => {
                                 builder = builder.set_supported_instance_types(
                                     crate::protocol_serde::shape_recommendation_job_supported_instance_types::de_recommendation_job_supported_instance_types(tokens)?
+                                );
+                            }
+                            "DataInputConfig" => {
+                                builder = builder.set_data_input_config(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

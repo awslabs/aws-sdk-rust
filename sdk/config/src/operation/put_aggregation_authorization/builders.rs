@@ -5,7 +5,9 @@ pub use crate::operation::put_aggregation_authorization::_put_aggregation_author
 
 /// Fluent builder constructing a request to `PutAggregationAuthorization`.
 ///
-/// <p>Authorizes the aggregator account and region to collect data from the source account and region. </p>
+/// <p>Authorizes the aggregator account and region to collect data from the source account and region. </p> <note>
+/// <p> <code>PutAggregationAuthorization</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different <code>tags</code> values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAggregationAuthorizationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

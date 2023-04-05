@@ -188,4 +188,17 @@ impl GetTileFluentBuilder {
         self.inner = self.inner.set_output_data_type(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+    pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.execution_role_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+    pub fn set_execution_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_execution_role_arn(input);
+        self
+    }
 }

@@ -13,7 +13,7 @@ pub struct IamUser {
     /// <p>The unique identifier for the IAM user who performed the action.</p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
-    /// <p>The user name of the IAM user who performed the action.</p>
+    /// <p>The username of the IAM user who performed the action.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
@@ -30,7 +30,7 @@ impl IamUser {
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
-    /// <p>The user name of the IAM user who performed the action.</p>
+    /// <p>The username of the IAM user who performed the action.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -82,12 +82,12 @@ impl IamUserBuilder {
         self.principal_id = input;
         self
     }
-    /// <p>The user name of the IAM user who performed the action.</p>
+    /// <p>The username of the IAM user who performed the action.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The user name of the IAM user who performed the action.</p>
+    /// <p>The username of the IAM user who performed the action.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_name = input;
         self

@@ -8,7 +8,7 @@ pub struct DescribeAssetModelInput {
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p> Whether or not to exclude asset model properties from the response. </p>
     #[doc(hidden)]
-    pub exclude_properties: bool,
+    pub exclude_properties: std::option::Option<bool>,
 }
 impl DescribeAssetModelInput {
     /// <p>The ID of the asset model.</p>
@@ -16,7 +16,7 @@ impl DescribeAssetModelInput {
         self.asset_model_id.as_deref()
     }
     /// <p> Whether or not to exclude asset model properties from the response. </p>
-    pub fn exclude_properties(&self) -> bool {
+    pub fn exclude_properties(&self) -> std::option::Option<bool> {
         self.exclude_properties
     }
 }
@@ -66,7 +66,7 @@ impl DescribeAssetModelInputBuilder {
         Ok(
             crate::operation::describe_asset_model::DescribeAssetModelInput {
                 asset_model_id: self.asset_model_id,
-                exclude_properties: self.exclude_properties.unwrap_or_default(),
+                exclude_properties: self.exclude_properties,
             },
         )
     }

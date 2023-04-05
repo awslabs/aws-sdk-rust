@@ -6,6 +6,24 @@ pub fn ser_form_input_value_property(
     if let Some(var_1) = &input.value {
         object.key("value").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.binding_properties {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("bindingProperties").start_object();
+        crate::protocol_serde::shape_form_input_value_property_binding_properties::ser_form_input_value_property_binding_properties(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.concat {
+        let mut array_5 = object.key("concat").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_form_input_value_property::ser_form_input_value_property(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +58,16 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "bindingProperties" => {
+                                builder = builder.set_binding_properties(
+                                    crate::protocol_serde::shape_form_input_value_property_binding_properties::de_form_input_value_property_binding_properties(tokens)?
+                                );
+                            }
+                            "concat" => {
+                                builder = builder.set_concat(
+                                    crate::protocol_serde::shape_form_input_value_property_list::de_form_input_value_property_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

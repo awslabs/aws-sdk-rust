@@ -21,14 +21,14 @@ pub fn ser_list_record_history_input(
         crate::protocol_serde::shape_list_record_history_search_filter::ser_list_record_history_search_filter(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if input.page_size != 0 {
+    if let Some(var_6) = &input.page_size {
         object.key("PageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.page_size).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.page_token {
-        object.key("PageToken").string(var_6.as_str());
+    if let Some(var_7) = &input.page_token {
+        object.key("PageToken").string(var_7.as_str());
     }
     Ok(())
 }

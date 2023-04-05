@@ -15,7 +15,7 @@ pub struct AcceptPageInput {
     /// <p>Information provided by the user when the user acknowledges the page.</p>
     #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
-    /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+    /// <p>A 6-digit code used to acknowledge the page.</p>
     #[doc(hidden)]
     pub accept_code: std::option::Option<std::string::String>,
     /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
@@ -40,7 +40,7 @@ impl AcceptPageInput {
     pub fn note(&self) -> std::option::Option<&str> {
         self.note.as_deref()
     }
-    /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+    /// <p>A 6-digit code used to acknowledge the page.</p>
     pub fn accept_code(&self) -> std::option::Option<&str> {
         self.accept_code.as_deref()
     }
@@ -114,12 +114,12 @@ impl AcceptPageInputBuilder {
         self.note = input;
         self
     }
-    /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+    /// <p>A 6-digit code used to acknowledge the page.</p>
     pub fn accept_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_code = Some(input.into());
         self
     }
-    /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+    /// <p>A 6-digit code used to acknowledge the page.</p>
     pub fn set_accept_code(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.accept_code = input;
         self

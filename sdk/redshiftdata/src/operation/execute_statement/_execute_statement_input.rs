@@ -27,7 +27,7 @@ pub struct ExecuteStatementInput {
     /// <p>The parameters for the SQL statement.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::types::SqlParameter>>,
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -67,7 +67,7 @@ impl ExecuteStatementInput {
     pub fn parameters(&self) -> std::option::Option<&[crate::types::SqlParameter]> {
         self.parameters.as_deref()
     }
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
@@ -192,12 +192,12 @@ impl ExecuteStatementInputBuilder {
         self.parameters = input;
         self
     }
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.workgroup_name = Some(input.into());
         self
     }
-    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.workgroup_name = input;
         self

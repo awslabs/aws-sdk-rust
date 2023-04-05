@@ -66,7 +66,7 @@ impl CreateTransitGatewayRouteTableAttachmentFluentBuilder {
         self.inner = self.inner.set_peering_id(input);
         self
     }
-    /// <p>The ARN of the transit gateway route table for the attachment request.</p>
+    /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn transit_gateway_route_table_arn(
         mut self,
         input: impl Into<std::string::String>,
@@ -74,7 +74,7 @@ impl CreateTransitGatewayRouteTableAttachmentFluentBuilder {
         self.inner = self.inner.transit_gateway_route_table_arn(input.into());
         self
     }
-    /// <p>The ARN of the transit gateway route table for the attachment request.</p>
+    /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn set_transit_gateway_route_table_arn(
         mut self,
         input: std::option::Option<std::string::String>,

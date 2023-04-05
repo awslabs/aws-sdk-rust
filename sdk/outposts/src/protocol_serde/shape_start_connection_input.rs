@@ -12,10 +12,10 @@ pub fn ser_start_connection_input(
     if let Some(var_3) = &input.device_serial_number {
         object.key("DeviceSerialNumber").string(var_3.as_str());
     }
-    {
+    if let Some(var_4) = &input.network_interface_device_index {
         object.key("NetworkInterfaceDeviceIndex").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.network_interface_device_index).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

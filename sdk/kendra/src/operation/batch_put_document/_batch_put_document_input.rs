@@ -6,17 +6,16 @@ pub struct BatchPutDocumentInput {
     /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li> <p>5 MB total size for inline documents</p> </li>
-    /// <li> <p>50 MB total size for files from an S3 bucket</p> </li>
+    /// <li> <p>50 MB total size for any file</p> </li>
     /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
-    /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     #[doc(hidden)]
     pub documents: std::option::Option<std::vec::Vec<crate::types::Document>>,
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
@@ -30,18 +29,17 @@ impl BatchPutDocumentInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li> <p>5 MB total size for inline documents</p> </li>
-    /// <li> <p>50 MB total size for files from an S3 bucket</p> </li>
+    /// <li> <p>50 MB total size for any file</p> </li>
     /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
-    /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn documents(&self) -> std::option::Option<&[crate::types::Document]> {
         self.documents.as_deref()
     }
@@ -82,12 +80,12 @@ impl BatchPutDocumentInputBuilder {
         self.index_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.role_arn = input;
         self
@@ -99,11 +97,10 @@ impl BatchPutDocumentInputBuilder {
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li> <p>5 MB total size for inline documents</p> </li>
-    /// <li> <p>50 MB total size for files from an S3 bucket</p> </li>
+    /// <li> <p>50 MB total size for any file</p> </li>
     /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
-    /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn documents(mut self, input: crate::types::Document) -> Self {
         let mut v = self.documents.unwrap_or_default();
         v.push(input);
@@ -113,11 +110,10 @@ impl BatchPutDocumentInputBuilder {
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li> <p>5 MB total size for inline documents</p> </li>
-    /// <li> <p>50 MB total size for files from an S3 bucket</p> </li>
+    /// <li> <p>50 MB total size for any file</p> </li>
     /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
-    /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn set_documents(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Document>>,

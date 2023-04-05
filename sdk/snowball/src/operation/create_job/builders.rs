@@ -43,11 +43,6 @@ pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 /// <li> <p>Capacity: T100</p> </li>
 /// <li> <p>Description: Snowball Edge Storage Optimized with EC2 Compute</p> </li>
 /// </ul> <p></p> </li>
-/// <li> <p>Device type: <b>V3_5C</b> </p>
-/// <ul>
-/// <li> <p>Capacity: T32</p> </li>
-/// <li> <p>Description: Snowball Edge Compute Optimized without GPU</p> </li>
-/// </ul> <p></p> </li>
 /// <li> <p>Device type: <b>STANDARD</b> </p>
 /// <ul>
 /// <li> <p>Capacity: T50</p> </li>

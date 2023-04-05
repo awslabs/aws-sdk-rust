@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelExportTaskInput {
-    /// <p>The identifier of the snapshot export task to cancel.</p>
+    /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
     #[doc(hidden)]
     pub export_task_identifier: std::option::Option<std::string::String>,
 }
 impl CancelExportTaskInput {
-    /// <p>The identifier of the snapshot export task to cancel.</p>
+    /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
     pub fn export_task_identifier(&self) -> std::option::Option<&str> {
         self.export_task_identifier.as_deref()
     }
@@ -28,12 +28,12 @@ pub struct CancelExportTaskInputBuilder {
     pub(crate) export_task_identifier: std::option::Option<std::string::String>,
 }
 impl CancelExportTaskInputBuilder {
-    /// <p>The identifier of the snapshot export task to cancel.</p>
+    /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
     pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.export_task_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier of the snapshot export task to cancel.</p>
+    /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
     pub fn set_export_task_identifier(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ pub use crate::operation::get_voice_connector_origination::_get_voice_connector_
 
 /// Fluent builder constructing a request to `GetVoiceConnectorOrigination`.
 ///
+/// <p>Retrieves the origination settings for the specified Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceConnectorOriginationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl GetVoiceConnectorOriginationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -12,6 +12,9 @@ pub struct DeleteLocalGatewayRouteInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
+    /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    #[doc(hidden)]
+    pub destination_prefix_list_id: std::option::Option<std::string::String>,
 }
 impl DeleteLocalGatewayRouteInput {
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
@@ -25,6 +28,10 @@ impl DeleteLocalGatewayRouteInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
+    }
+    /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn destination_prefix_list_id(&self) -> std::option::Option<&str> {
+        self.destination_prefix_list_id.as_deref()
     }
 }
 impl DeleteLocalGatewayRouteInput {
@@ -43,6 +50,7 @@ pub struct DeleteLocalGatewayRouteInputBuilder {
     pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
     pub(crate) local_gateway_route_table_id: std::option::Option<std::string::String>,
     pub(crate) dry_run: std::option::Option<bool>,
+    pub(crate) destination_prefix_list_id: std::option::Option<std::string::String>,
 }
 impl DeleteLocalGatewayRouteInputBuilder {
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
@@ -81,6 +89,19 @@ impl DeleteLocalGatewayRouteInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.destination_prefix_list_id = Some(input.into());
+        self
+    }
+    /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn set_destination_prefix_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_prefix_list_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteInput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput).
     pub fn build(
         self,
@@ -93,6 +114,7 @@ impl DeleteLocalGatewayRouteInputBuilder {
                 destination_cidr_block: self.destination_cidr_block,
                 local_gateway_route_table_id: self.local_gateway_route_table_id,
                 dry_run: self.dry_run,
+                destination_prefix_list_id: self.destination_prefix_list_id,
             },
         )
     }

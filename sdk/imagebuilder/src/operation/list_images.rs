@@ -169,7 +169,7 @@ pub enum ListImagesError {
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>You have provided an invalid pagination token in your request.</p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
-    /// <p>You have made a request for an action that is not supported by the service.</p>
+    /// <p>You have requested an action that that the service doesn't support.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::types::error::ServiceException),

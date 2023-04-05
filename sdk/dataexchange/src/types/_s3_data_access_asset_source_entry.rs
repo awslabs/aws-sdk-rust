@@ -13,6 +13,9 @@ pub struct S3DataAccessAssetSourceEntry {
     /// <p>The keys used to create the Amazon S3 data access.</p>
     #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset.</p>
+    #[doc(hidden)]
+    pub kms_keys_to_grant: std::option::Option<std::vec::Vec<crate::types::KmsKeyToGrant>>,
 }
 impl S3DataAccessAssetSourceEntry {
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
@@ -26,6 +29,10 @@ impl S3DataAccessAssetSourceEntry {
     /// <p>The keys used to create the Amazon S3 data access.</p>
     pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
         self.keys.as_deref()
+    }
+    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset.</p>
+    pub fn kms_keys_to_grant(&self) -> std::option::Option<&[crate::types::KmsKeyToGrant]> {
+        self.kms_keys_to_grant.as_deref()
     }
 }
 impl S3DataAccessAssetSourceEntry {
@@ -42,6 +49,7 @@ pub struct S3DataAccessAssetSourceEntryBuilder {
     pub(crate) bucket: std::option::Option<std::string::String>,
     pub(crate) key_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) kms_keys_to_grant: std::option::Option<std::vec::Vec<crate::types::KmsKeyToGrant>>,
 }
 impl S3DataAccessAssetSourceEntryBuilder {
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
@@ -92,12 +100,32 @@ impl S3DataAccessAssetSourceEntryBuilder {
         self.keys = input;
         self
     }
+    /// Appends an item to `kms_keys_to_grant`.
+    ///
+    /// To override the contents of this collection use [`set_kms_keys_to_grant`](Self::set_kms_keys_to_grant).
+    ///
+    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset.</p>
+    pub fn kms_keys_to_grant(mut self, input: crate::types::KmsKeyToGrant) -> Self {
+        let mut v = self.kms_keys_to_grant.unwrap_or_default();
+        v.push(input);
+        self.kms_keys_to_grant = Some(v);
+        self
+    }
+    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset.</p>
+    pub fn set_kms_keys_to_grant(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::KmsKeyToGrant>>,
+    ) -> Self {
+        self.kms_keys_to_grant = input;
+        self
+    }
     /// Consumes the builder and constructs a [`S3DataAccessAssetSourceEntry`](crate::types::S3DataAccessAssetSourceEntry).
     pub fn build(self) -> crate::types::S3DataAccessAssetSourceEntry {
         crate::types::S3DataAccessAssetSourceEntry {
             bucket: self.bucket,
             key_prefixes: self.key_prefixes,
             keys: self.keys,
+            kms_keys_to_grant: self.kms_keys_to_grant,
         }
     }
 }

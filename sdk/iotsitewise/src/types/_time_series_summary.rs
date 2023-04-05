@@ -30,6 +30,10 @@ pub struct TimeSeriesSummary {
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
     #[doc(hidden)]
     pub time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    #[doc(hidden)]
+    pub time_series_arn: std::option::Option<std::string::String>,
 }
 impl TimeSeriesSummary {
     /// <p>The ID of the asset in which the asset property was created.</p>
@@ -66,6 +70,11 @@ impl TimeSeriesSummary {
     pub fn time_series_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_series_last_update_date.as_ref()
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    pub fn time_series_arn(&self) -> std::option::Option<&str> {
+        self.time_series_arn.as_deref()
+    }
 }
 impl TimeSeriesSummary {
     /// Creates a new builder-style object to manufacture [`TimeSeriesSummary`](crate::types::TimeSeriesSummary).
@@ -86,6 +95,7 @@ pub struct TimeSeriesSummaryBuilder {
     pub(crate) data_type_spec: std::option::Option<std::string::String>,
     pub(crate) time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) time_series_arn: std::option::Option<std::string::String>,
 }
 impl TimeSeriesSummaryBuilder {
     /// <p>The ID of the asset in which the asset property was created.</p>
@@ -181,6 +191,18 @@ impl TimeSeriesSummaryBuilder {
         self.time_series_last_update_date = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    pub fn time_series_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.time_series_arn = Some(input.into());
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    pub fn set_time_series_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.time_series_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TimeSeriesSummary`](crate::types::TimeSeriesSummary).
     pub fn build(self) -> crate::types::TimeSeriesSummary {
         crate::types::TimeSeriesSummary {
@@ -192,6 +214,7 @@ impl TimeSeriesSummaryBuilder {
             data_type_spec: self.data_type_spec,
             time_series_creation_date: self.time_series_creation_date,
             time_series_last_update_date: self.time_series_last_update_date,
+            time_series_arn: self.time_series_arn,
         }
     }
 }

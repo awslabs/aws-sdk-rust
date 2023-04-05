@@ -9,5 +9,8 @@ pub fn ser_get_blueprints_input(
     if let Some(var_2) = &input.page_token {
         object.key("pageToken").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.app_category {
+        object.key("appCategory").string(var_3.as_str());
+    }
     Ok(())
 }

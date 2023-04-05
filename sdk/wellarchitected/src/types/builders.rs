@@ -66,3 +66,13 @@ pub use crate::types::_question_difference::QuestionDifferenceBuilder;
 pub use crate::types::_lens_review_report::LensReviewReportBuilder;
 
 pub use crate::types::_lens::LensBuilder;
+
+pub use crate::types::_consolidated_report_metric::ConsolidatedReportMetricBuilder;
+
+pub use crate::types::_lens_metric::LensMetricBuilder;
+
+pub use crate::types::_pillar_metric::PillarMetricBuilder;
+
+pub use crate::types::_question_metric::QuestionMetricBuilder;
+
+pub use crate::types::_best_practice::BestPracticeBuilder;

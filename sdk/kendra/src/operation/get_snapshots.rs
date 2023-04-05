@@ -168,7 +168,7 @@ pub type GetSnapshotsErrorKind = GetSnapshotsError;
 pub enum GetSnapshotsError {
     /// <p>You don't have sufficient access to perform this action. Please ensure you have the required permission policies and user accounts and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for help.</p>
+    /// <p>An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The input to the request is not valid. Please provide the correct input and try again.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),

@@ -48,6 +48,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "EndpointMetrics" => {
+                                builder = builder.set_endpoint_metrics(
+                                    crate::protocol_serde::shape_inference_metrics::de_inference_metrics(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

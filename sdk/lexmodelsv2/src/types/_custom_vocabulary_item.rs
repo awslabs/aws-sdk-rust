@@ -13,7 +13,7 @@ pub struct CustomVocabularyItem {
     /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
     #[doc(hidden)]
     pub weight: std::option::Option<i32>,
-    /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
+    /// <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary list.</p>
     #[doc(hidden)]
     pub display_as: std::option::Option<std::string::String>,
 }
@@ -30,7 +30,7 @@ impl CustomVocabularyItem {
     pub fn weight(&self) -> std::option::Option<i32> {
         self.weight
     }
-    /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
+    /// <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn display_as(&self) -> std::option::Option<&str> {
         self.display_as.as_deref()
     }
@@ -82,12 +82,12 @@ impl CustomVocabularyItemBuilder {
         self.weight = input;
         self
     }
-    /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
+    /// <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn display_as(mut self, input: impl Into<std::string::String>) -> Self {
         self.display_as = Some(input.into());
         self
     }
-    /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
+    /// <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_display_as(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.display_as = input;
         self

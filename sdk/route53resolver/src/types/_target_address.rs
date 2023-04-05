@@ -4,21 +4,28 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetAddress {
-    /// <p>One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.</p>
+    /// <p>One IPv4 address that you want to forward DNS queries to.</p>
     #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
+    #[doc(hidden)]
+    pub ipv6: std::option::Option<std::string::String>,
 }
 impl TargetAddress {
-    /// <p>One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.</p>
+    /// <p>One IPv4 address that you want to forward DNS queries to.</p>
     pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
+    }
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
+    pub fn ipv6(&self) -> std::option::Option<&str> {
+        self.ipv6.as_deref()
     }
 }
 impl TargetAddress {
@@ -34,14 +41,15 @@ impl TargetAddress {
 pub struct TargetAddressBuilder {
     pub(crate) ip: std::option::Option<std::string::String>,
     pub(crate) port: std::option::Option<i32>,
+    pub(crate) ipv6: std::option::Option<std::string::String>,
 }
 impl TargetAddressBuilder {
-    /// <p>One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.</p>
+    /// <p>One IPv4 address that you want to forward DNS queries to.</p>
     pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.ip = Some(input.into());
         self
     }
-    /// <p>One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.</p>
+    /// <p>One IPv4 address that you want to forward DNS queries to.</p>
     pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.ip = input;
         self
@@ -56,11 +64,22 @@ impl TargetAddressBuilder {
         self.port = input;
         self
     }
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
+    pub fn ipv6(mut self, input: impl Into<std::string::String>) -> Self {
+        self.ipv6 = Some(input.into());
+        self
+    }
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
+    pub fn set_ipv6(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ipv6 = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TargetAddress`](crate::types::TargetAddress).
     pub fn build(self) -> crate::types::TargetAddress {
         crate::types::TargetAddress {
             ip: self.ip,
             port: self.port,
+            ipv6: self.ipv6,
         }
     }
 }

@@ -118,6 +118,23 @@ pub fn de_initiate_document_version_upload_http_error(
                                                     }
             tmp
         }),
+        "InvalidArgumentException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::InvalidArgumentException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "InvalidPasswordException" => crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError::InvalidPasswordException({
             #[allow(unused_mut)]
             let mut tmp =

@@ -13,10 +13,10 @@ pub struct FaqSummary {
     /// <p>The current status of the FAQ. When the status is <code>ACTIVE</code> the FAQ is ready for use.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::FaqStatus>,
-    /// <p>The UNIX datetime that the FAQ was added to the index.</p>
+    /// <p>The Unix timestamp when the FAQ was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The UNIX datetime that the FAQ was last updated.</p>
+    /// <p>The Unix timestamp when the FAQ was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The file type used to create the FAQ. </p>
@@ -39,11 +39,11 @@ impl FaqSummary {
     pub fn status(&self) -> std::option::Option<&crate::types::FaqStatus> {
         self.status.as_ref()
     }
-    /// <p>The UNIX datetime that the FAQ was added to the index.</p>
+    /// <p>The Unix timestamp when the FAQ was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The UNIX datetime that the FAQ was last updated.</p>
+    /// <p>The Unix timestamp when the FAQ was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -106,12 +106,12 @@ impl FaqSummaryBuilder {
         self.status = input;
         self
     }
-    /// <p>The UNIX datetime that the FAQ was added to the index.</p>
+    /// <p>The Unix timestamp when the FAQ was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The UNIX datetime that the FAQ was added to the index.</p>
+    /// <p>The Unix timestamp when the FAQ was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -119,12 +119,12 @@ impl FaqSummaryBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The UNIX datetime that the FAQ was last updated.</p>
+    /// <p>The Unix timestamp when the FAQ was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The UNIX datetime that the FAQ was last updated.</p>
+    /// <p>The Unix timestamp when the FAQ was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

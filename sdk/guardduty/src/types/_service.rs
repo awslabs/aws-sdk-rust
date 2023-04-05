@@ -43,6 +43,9 @@ pub struct Service {
     /// <p>Returns details from the malware scan that created a finding.</p>
     #[doc(hidden)]
     pub ebs_volume_scan_details: std::option::Option<crate::types::EbsVolumeScanDetails>,
+    /// <p>Information about the process and any required context values for a specific finding</p>
+    #[doc(hidden)]
+    pub runtime_details: std::option::Option<crate::types::RuntimeDetails>,
 }
 impl Service {
     /// <p>Information about the activity that is described in a finding.</p>
@@ -99,6 +102,10 @@ impl Service {
     ) -> std::option::Option<&crate::types::EbsVolumeScanDetails> {
         self.ebs_volume_scan_details.as_ref()
     }
+    /// <p>Information about the process and any required context values for a specific finding</p>
+    pub fn runtime_details(&self) -> std::option::Option<&crate::types::RuntimeDetails> {
+        self.runtime_details.as_ref()
+    }
 }
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::types::Service).
@@ -124,6 +131,7 @@ pub struct ServiceBuilder {
     pub(crate) additional_info: std::option::Option<crate::types::ServiceAdditionalInfo>,
     pub(crate) feature_name: std::option::Option<std::string::String>,
     pub(crate) ebs_volume_scan_details: std::option::Option<crate::types::EbsVolumeScanDetails>,
+    pub(crate) runtime_details: std::option::Option<crate::types::RuntimeDetails>,
 }
 impl ServiceBuilder {
     /// <p>Information about the activity that is described in a finding.</p>
@@ -262,6 +270,19 @@ impl ServiceBuilder {
         self.ebs_volume_scan_details = input;
         self
     }
+    /// <p>Information about the process and any required context values for a specific finding</p>
+    pub fn runtime_details(mut self, input: crate::types::RuntimeDetails) -> Self {
+        self.runtime_details = Some(input);
+        self
+    }
+    /// <p>Information about the process and any required context values for a specific finding</p>
+    pub fn set_runtime_details(
+        mut self,
+        input: std::option::Option<crate::types::RuntimeDetails>,
+    ) -> Self {
+        self.runtime_details = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {
         crate::types::Service {
@@ -278,6 +299,7 @@ impl ServiceBuilder {
             additional_info: self.additional_info,
             feature_name: self.feature_name,
             ebs_volume_scan_details: self.ebs_volume_scan_details,
+            runtime_details: self.runtime_details,
         }
     }
 }

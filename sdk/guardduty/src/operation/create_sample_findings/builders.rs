@@ -5,7 +5,7 @@ pub use crate::operation::create_sample_findings::_create_sample_findings_input:
 
 /// Fluent builder constructing a request to `CreateSampleFindings`.
 ///
-/// <p>Generates example findings of types specified by the list of finding types. If 'NULL' is specified for <code>findingTypes</code>, the API generates example findings of all supported finding types.</p>
+/// <p>Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for <code>findingTypes</code>, the API generates sample findings of all supported finding types.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSampleFindingsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

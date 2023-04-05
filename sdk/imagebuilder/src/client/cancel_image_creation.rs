@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelImageCreation`](crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_build_version_arn(impl Into<String>)`](crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder::image_build_version_arn) / [`set_image_build_version_arn(Option<String>)`](crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder::set_image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    ///   - [`image_build_version_arn(impl Into<String>)`](crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder::image_build_version_arn) / [`set_image_build_version_arn(Option<String>)`](crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder::set_image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     ///   - [`client_token(impl Into<String>)`](crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder::set_client_token): <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// - On success, responds with [`CancelImageCreationOutput`](crate::operation::cancel_image_creation::CancelImageCreationOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::client_token): <p>The idempotency token that was used for this request.</p>
-    ///   - [`image_build_version_arn(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image whose creation has been cancelled.</p>
+    ///   - [`image_build_version_arn(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::image_build_version_arn): <p>The ARN of the image whose creation this request canceled.</p>
     /// - On failure, responds with [`SdkError<CancelImageCreationError>`](crate::operation::cancel_image_creation::CancelImageCreationError)
     pub fn cancel_image_creation(
         &self,

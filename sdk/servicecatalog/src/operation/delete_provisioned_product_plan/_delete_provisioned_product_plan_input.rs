@@ -5,7 +5,6 @@
 pub struct DeleteProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -16,12 +15,11 @@ pub struct DeleteProvisionedProductPlanInput {
     pub plan_id: std::option::Option<std::string::String>,
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     #[doc(hidden)]
-    pub ignore_errors: bool,
+    pub ignore_errors: std::option::Option<bool>,
 }
 impl DeleteProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -33,7 +31,7 @@ impl DeleteProvisionedProductPlanInput {
         self.plan_id.as_deref()
     }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
-    pub fn ignore_errors(&self) -> bool {
+    pub fn ignore_errors(&self) -> std::option::Option<bool> {
         self.ignore_errors
     }
 }
@@ -55,7 +53,6 @@ pub struct DeleteProvisionedProductPlanInputBuilder {
 impl DeleteProvisionedProductPlanInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -65,7 +62,6 @@ impl DeleteProvisionedProductPlanInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -104,7 +100,7 @@ impl DeleteProvisionedProductPlanInputBuilder {
             crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput {
                 accept_language: self.accept_language,
                 plan_id: self.plan_id,
-                ignore_errors: self.ignore_errors.unwrap_or_default(),
+                ignore_errors: self.ignore_errors,
             },
         )
     }

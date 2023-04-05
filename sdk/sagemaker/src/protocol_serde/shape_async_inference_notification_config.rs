@@ -9,6 +9,15 @@ pub fn ser_async_inference_notification_config(
     if let Some(var_2) = &input.error_topic {
         object.key("ErrorTopic").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.include_inference_response_in {
+        let mut array_4 = object.key("IncludeInferenceResponseIn").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }
 
@@ -53,6 +62,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "IncludeInferenceResponseIn" => {
+                                builder = builder.set_include_inference_response_in(
+                                    crate::protocol_serde::shape_async_notification_topic_type_list::de_async_notification_topic_type_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

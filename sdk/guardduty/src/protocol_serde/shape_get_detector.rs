@@ -118,6 +118,11 @@ pub(crate) fn de_get_detector(
                             crate::protocol_serde::shape_data_source_configurations_result::de_data_source_configurations_result(tokens)?
                         );
                     }
+                    "features" => {
+                        builder = builder.set_features(
+                            crate::protocol_serde::shape_detector_feature_configurations_results::de_detector_feature_configurations_results(tokens)?
+                        );
+                    }
                     "findingPublishingFrequency" => {
                         builder = builder.set_finding_publishing_frequency(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

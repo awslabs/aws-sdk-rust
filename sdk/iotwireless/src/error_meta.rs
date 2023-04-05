@@ -1000,6 +1000,36 @@ impl From<crate::operation::delete_wireless_device::DeleteWirelessDeviceError> f
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -1112,6 +1142,50 @@ impl From<crate::operation::delete_wireless_gateway_task_definition::DeleteWirel
             crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError> for Error {
+    fn from(
+        err: crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError,
+    ) -> Self {
+        match err {
+            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2070,6 +2144,54 @@ impl From<crate::operation::get_wireless_device::GetWirelessDeviceError> for Err
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError,
+    ) -> Self {
+        match err {
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsError,
             R,
         >,
@@ -2435,6 +2557,32 @@ impl From<crate::operation::list_device_profiles::ListDeviceProfilesError> for E
             crate::operation::list_device_profiles::ListDeviceProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_device_profiles::ListDeviceProfilesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_device_profiles::ListDeviceProfilesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError> for Error {
+    fn from(err: crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError) -> Self {
+        match err {
+            crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2843,6 +2991,54 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError,
+    ) -> Self {
+        match err {
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3375,6 +3571,80 @@ impl From<crate::operation::start_multicast_group_session::StartMulticastGroupSe
             crate::operation::start_multicast_group_session::StartMulticastGroupSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_multicast_group_session::StartMulticastGroupSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_multicast_group_session::StartMulticastGroupSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError> for Error {
+    fn from(err: crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError) -> Self {
+        match err {
+            crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError,
+    ) -> Self {
+        match err {
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3938,6 +4208,36 @@ impl From<crate::operation::update_wireless_device::UpdateWirelessDeviceError> f
             crate::operation::update_wireless_device::UpdateWirelessDeviceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_wireless_device::UpdateWirelessDeviceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_wireless_device::UpdateWirelessDeviceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError,
+    ) -> Self {
+        match err {
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

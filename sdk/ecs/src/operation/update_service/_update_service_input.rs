@@ -45,7 +45,7 @@ pub struct UpdateServiceInput {
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.</p>
     #[doc(hidden)]
-    pub force_new_deployment: bool,
+    pub force_new_deployment: std::option::Option<bool>,
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
     #[doc(hidden)]
     pub health_check_grace_period_seconds: std::option::Option<i32>,
@@ -138,7 +138,7 @@ impl UpdateServiceInput {
         self.platform_version.as_deref()
     }
     /// <p>Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.</p>
-    pub fn force_new_deployment(&self) -> bool {
+    pub fn force_new_deployment(&self) -> std::option::Option<bool> {
         self.force_new_deployment
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
@@ -524,7 +524,7 @@ impl UpdateServiceInputBuilder {
             placement_constraints: self.placement_constraints,
             placement_strategy: self.placement_strategy,
             platform_version: self.platform_version,
-            force_new_deployment: self.force_new_deployment.unwrap_or_default(),
+            force_new_deployment: self.force_new_deployment,
             health_check_grace_period_seconds: self.health_check_grace_period_seconds,
             enable_execute_command: self.enable_execute_command,
             enable_ecs_managed_tags: self.enable_ecs_managed_tags,

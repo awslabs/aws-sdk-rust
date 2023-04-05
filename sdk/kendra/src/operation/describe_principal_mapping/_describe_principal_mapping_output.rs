@@ -14,11 +14,11 @@ pub struct DescribePrincipalMappingOutput {
     pub group_id: std::option::Option<std::string::String>,
     /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
     /// <ul>
-    /// <li> <p>Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>
-    /// <li> <p>Last updated – the last date-time an action was updated.</p> </li>
-    /// <li> <p>Received – the last date-time an action was received or submitted.</p> </li>
-    /// <li> <p>Ordering ID – the latest action that should process and apply after other actions.</p> </li>
-    /// <li> <p>Failure reason – the reason an action could not be processed.</p> </li>
+    /// <li> <p>Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>
+    /// <li> <p>Last updated—the last date-time an action was updated.</p> </li>
+    /// <li> <p>Received—the last date-time an action was received or submitted.</p> </li>
+    /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
+    /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub group_ordering_id_summaries:
@@ -40,11 +40,11 @@ impl DescribePrincipalMappingOutput {
     }
     /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
     /// <ul>
-    /// <li> <p>Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>
-    /// <li> <p>Last updated – the last date-time an action was updated.</p> </li>
-    /// <li> <p>Received – the last date-time an action was received or submitted.</p> </li>
-    /// <li> <p>Ordering ID – the latest action that should process and apply after other actions.</p> </li>
-    /// <li> <p>Failure reason – the reason an action could not be processed.</p> </li>
+    /// <li> <p>Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>
+    /// <li> <p>Last updated—the last date-time an action was updated.</p> </li>
+    /// <li> <p>Received—the last date-time an action was received or submitted.</p> </li>
+    /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
+    /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
     pub fn group_ordering_id_summaries(
         &self,
@@ -114,11 +114,11 @@ impl DescribePrincipalMappingOutputBuilder {
     ///
     /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
     /// <ul>
-    /// <li> <p>Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>
-    /// <li> <p>Last updated – the last date-time an action was updated.</p> </li>
-    /// <li> <p>Received – the last date-time an action was received or submitted.</p> </li>
-    /// <li> <p>Ordering ID – the latest action that should process and apply after other actions.</p> </li>
-    /// <li> <p>Failure reason – the reason an action could not be processed.</p> </li>
+    /// <li> <p>Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>
+    /// <li> <p>Last updated—the last date-time an action was updated.</p> </li>
+    /// <li> <p>Received—the last date-time an action was received or submitted.</p> </li>
+    /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
+    /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
     pub fn group_ordering_id_summaries(
         mut self,
@@ -131,11 +131,11 @@ impl DescribePrincipalMappingOutputBuilder {
     }
     /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
     /// <ul>
-    /// <li> <p>Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>
-    /// <li> <p>Last updated – the last date-time an action was updated.</p> </li>
-    /// <li> <p>Received – the last date-time an action was received or submitted.</p> </li>
-    /// <li> <p>Ordering ID – the latest action that should process and apply after other actions.</p> </li>
-    /// <li> <p>Failure reason – the reason an action could not be processed.</p> </li>
+    /// <li> <p>Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>
+    /// <li> <p>Last updated—the last date-time an action was updated.</p> </li>
+    /// <li> <p>Received—the last date-time an action was received or submitted.</p> </li>
+    /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
+    /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
     pub fn set_group_ordering_id_summaries(
         mut self,

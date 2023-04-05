@@ -28,6 +28,8 @@ pub(crate) mod shape_calculate_route_matrix;
 
 pub(crate) mod shape_create_geofence_collection;
 
+pub(crate) mod shape_create_key;
+
 pub(crate) mod shape_create_map;
 
 pub(crate) mod shape_create_place_index;
@@ -38,6 +40,8 @@ pub(crate) mod shape_create_tracker;
 
 pub(crate) mod shape_delete_geofence_collection;
 
+pub(crate) mod shape_delete_key;
+
 pub(crate) mod shape_delete_map;
 
 pub(crate) mod shape_delete_place_index;
@@ -47,6 +51,8 @@ pub(crate) mod shape_delete_route_calculator;
 pub(crate) mod shape_delete_tracker;
 
 pub(crate) mod shape_describe_geofence_collection;
+
+pub(crate) mod shape_describe_key;
 
 pub(crate) mod shape_describe_map;
 
@@ -80,6 +86,8 @@ pub(crate) mod shape_list_geofence_collections;
 
 pub(crate) mod shape_list_geofences;
 
+pub(crate) mod shape_list_keys;
+
 pub(crate) mod shape_list_maps;
 
 pub(crate) mod shape_list_place_indexes;
@@ -105,6 +113,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_geofence_collection;
+
+pub(crate) mod shape_update_key;
 
 pub(crate) mod shape_update_map;
 
@@ -146,6 +156,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_geofence_collection_input;
 
+pub(crate) mod shape_create_key_input;
+
 pub(crate) mod shape_create_map_input;
 
 pub(crate) mod shape_create_place_index_input;
@@ -171,6 +183,8 @@ pub(crate) mod shape_list_device_positions_input;
 pub(crate) mod shape_list_geofence_collections_input;
 
 pub(crate) mod shape_list_geofences_input;
+
+pub(crate) mod shape_list_keys_input;
 
 pub(crate) mod shape_list_maps_input;
 
@@ -200,6 +214,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_geofence_collection_input;
 
+pub(crate) mod shape_update_key_input;
+
 pub(crate) mod shape_update_map_input;
 
 pub(crate) mod shape_update_place_index_input;
@@ -209,6 +225,10 @@ pub(crate) mod shape_update_route_calculator_input;
 pub(crate) mod shape_update_tracker_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_api_key_filter;
+
+pub(crate) mod shape_api_key_restrictions;
 
 pub(crate) mod shape_arn_list;
 
@@ -252,6 +272,8 @@ pub(crate) mod shape_list_geofence_collections_response_entry_list;
 
 pub(crate) mod shape_list_geofence_response_entry_list;
 
+pub(crate) mod shape_list_keys_response_entry_list;
+
 pub(crate) mod shape_list_maps_response_entry_list;
 
 pub(crate) mod shape_list_place_indexes_response_entry_list;
@@ -290,6 +312,8 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_api_key_action_list;
+
 pub(crate) mod shape_batch_delete_device_position_history_error;
 
 pub(crate) mod shape_batch_delete_geofence_error;
@@ -312,6 +336,8 @@ pub(crate) mod shape_country_code_list;
 
 pub(crate) mod shape_device_position;
 
+pub(crate) mod shape_geo_arn_list;
+
 pub(crate) mod shape_leg;
 
 pub(crate) mod shape_linear_rings;
@@ -322,6 +348,8 @@ pub(crate) mod shape_list_geofence_collections_response_entry;
 
 pub(crate) mod shape_list_geofence_response_entry;
 
+pub(crate) mod shape_list_keys_response_entry;
+
 pub(crate) mod shape_list_maps_response_entry;
 
 pub(crate) mod shape_list_place_indexes_response_entry;
@@ -331,6 +359,8 @@ pub(crate) mod shape_list_route_calculators_response_entry;
 pub(crate) mod shape_list_trackers_response_entry;
 
 pub(crate) mod shape_place_geometry;
+
+pub(crate) mod shape_referer_pattern_list;
 
 pub(crate) mod shape_route_matrix_row;
 

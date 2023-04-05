@@ -39,6 +39,12 @@ pub fn ser_eks_pod_properties(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.metadata {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("metadata").start_object();
+        crate::protocol_serde::shape_eks_metadata::ser_eks_metadata(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }
 
@@ -101,6 +107,13 @@ where
                             "volumes" => {
                                 builder = builder.set_volumes(
                                     crate::protocol_serde::shape_eks_volumes::de_eks_volumes(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "metadata" => {
+                                builder = builder.set_metadata(
+                                    crate::protocol_serde::shape_eks_metadata::de_eks_metadata(
                                         tokens,
                                     )?,
                                 );

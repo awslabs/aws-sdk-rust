@@ -24,11 +24,15 @@ pub(crate) mod shape_classify_document;
 
 pub(crate) mod shape_contains_pii_entities;
 
+pub(crate) mod shape_create_dataset;
+
 pub(crate) mod shape_create_document_classifier;
 
 pub(crate) mod shape_create_endpoint;
 
 pub(crate) mod shape_create_entity_recognizer;
+
+pub(crate) mod shape_create_flywheel;
 
 pub(crate) mod shape_delete_document_classifier;
 
@@ -36,7 +40,11 @@ pub(crate) mod shape_delete_endpoint;
 
 pub(crate) mod shape_delete_entity_recognizer;
 
+pub(crate) mod shape_delete_flywheel;
+
 pub(crate) mod shape_delete_resource_policy;
+
+pub(crate) mod shape_describe_dataset;
 
 pub(crate) mod shape_describe_document_classification_job;
 
@@ -51,6 +59,10 @@ pub(crate) mod shape_describe_entities_detection_job;
 pub(crate) mod shape_describe_entity_recognizer;
 
 pub(crate) mod shape_describe_events_detection_job;
+
+pub(crate) mod shape_describe_flywheel;
+
+pub(crate) mod shape_describe_flywheel_iteration;
 
 pub(crate) mod shape_describe_key_phrases_detection_job;
 
@@ -80,6 +92,8 @@ pub(crate) mod shape_detect_targeted_sentiment;
 
 pub(crate) mod shape_import_model;
 
+pub(crate) mod shape_list_datasets;
+
 pub(crate) mod shape_list_document_classification_jobs;
 
 pub(crate) mod shape_list_document_classifier_summaries;
@@ -97,6 +111,10 @@ pub(crate) mod shape_list_entity_recognizer_summaries;
 pub(crate) mod shape_list_entity_recognizers;
 
 pub(crate) mod shape_list_events_detection_jobs;
+
+pub(crate) mod shape_list_flywheel_iteration_history;
+
+pub(crate) mod shape_list_flywheels;
 
 pub(crate) mod shape_list_key_phrases_detection_jobs;
 
@@ -119,6 +137,8 @@ pub(crate) mod shape_start_dominant_language_detection_job;
 pub(crate) mod shape_start_entities_detection_job;
 
 pub(crate) mod shape_start_events_detection_job;
+
+pub(crate) mod shape_start_flywheel_iteration;
 
 pub(crate) mod shape_start_key_phrases_detection_job;
 
@@ -154,6 +174,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_endpoint;
 
+pub(crate) mod shape_update_flywheel;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -182,11 +204,15 @@ pub(crate) mod shape_concurrent_modification_exception;
 
 pub(crate) mod shape_contains_pii_entities_input;
 
+pub(crate) mod shape_create_dataset_input;
+
 pub(crate) mod shape_create_document_classifier_input;
 
 pub(crate) mod shape_create_endpoint_input;
 
 pub(crate) mod shape_create_entity_recognizer_input;
+
+pub(crate) mod shape_create_flywheel_input;
 
 pub(crate) mod shape_delete_document_classifier_input;
 
@@ -194,7 +220,11 @@ pub(crate) mod shape_delete_endpoint_input;
 
 pub(crate) mod shape_delete_entity_recognizer_input;
 
+pub(crate) mod shape_delete_flywheel_input;
+
 pub(crate) mod shape_delete_resource_policy_input;
+
+pub(crate) mod shape_describe_dataset_input;
 
 pub(crate) mod shape_describe_document_classification_job_input;
 
@@ -209,6 +239,10 @@ pub(crate) mod shape_describe_entities_detection_job_input;
 pub(crate) mod shape_describe_entity_recognizer_input;
 
 pub(crate) mod shape_describe_events_detection_job_input;
+
+pub(crate) mod shape_describe_flywheel_input;
+
+pub(crate) mod shape_describe_flywheel_iteration_input;
 
 pub(crate) mod shape_describe_key_phrases_detection_job_input;
 
@@ -248,6 +282,8 @@ pub(crate) mod shape_job_not_found_exception;
 
 pub(crate) mod shape_kms_key_validation_exception;
 
+pub(crate) mod shape_list_datasets_input;
+
 pub(crate) mod shape_list_document_classification_jobs_input;
 
 pub(crate) mod shape_list_document_classifier_summaries_input;
@@ -265,6 +301,10 @@ pub(crate) mod shape_list_entity_recognizer_summaries_input;
 pub(crate) mod shape_list_entity_recognizers_input;
 
 pub(crate) mod shape_list_events_detection_jobs_input;
+
+pub(crate) mod shape_list_flywheel_iteration_history_input;
+
+pub(crate) mod shape_list_flywheels_input;
 
 pub(crate) mod shape_list_key_phrases_detection_jobs_input;
 
@@ -295,6 +335,8 @@ pub(crate) mod shape_start_dominant_language_detection_job_input;
 pub(crate) mod shape_start_entities_detection_job_input;
 
 pub(crate) mod shape_start_events_detection_job_input;
+
+pub(crate) mod shape_start_flywheel_iteration_input;
 
 pub(crate) mod shape_start_key_phrases_detection_job_input;
 
@@ -340,7 +382,19 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_endpoint_input;
 
+pub(crate) mod shape_update_flywheel_input;
+
 pub(crate) mod shape_batch_item_error_list;
+
+pub(crate) mod shape_data_security_config;
+
+pub(crate) mod shape_dataset_filter;
+
+pub(crate) mod shape_dataset_input_data_config;
+
+pub(crate) mod shape_dataset_properties;
+
+pub(crate) mod shape_dataset_properties_list;
 
 pub(crate) mod shape_document_classification_job_filter;
 
@@ -397,6 +451,18 @@ pub(crate) mod shape_events_detection_job_filter;
 pub(crate) mod shape_events_detection_job_properties;
 
 pub(crate) mod shape_events_detection_job_properties_list;
+
+pub(crate) mod shape_flywheel_filter;
+
+pub(crate) mod shape_flywheel_iteration_filter;
+
+pub(crate) mod shape_flywheel_iteration_properties;
+
+pub(crate) mod shape_flywheel_iteration_properties_list;
+
+pub(crate) mod shape_flywheel_properties;
+
+pub(crate) mod shape_flywheel_summary_list;
 
 pub(crate) mod shape_input_data_config;
 
@@ -472,11 +538,15 @@ pub(crate) mod shape_targeted_sentiment_detection_job_properties;
 
 pub(crate) mod shape_targeted_sentiment_detection_job_properties_list;
 
+pub(crate) mod shape_task_config;
+
 pub(crate) mod shape_topics_detection_job_filter;
 
 pub(crate) mod shape_topics_detection_job_properties;
 
 pub(crate) mod shape_topics_detection_job_properties_list;
+
+pub(crate) mod shape_update_data_security_config;
 
 pub(crate) mod shape_vpc_config;
 
@@ -500,7 +570,15 @@ pub(crate) mod shape_block;
 
 pub(crate) mod shape_classifier_metadata;
 
+pub(crate) mod shape_dataset_augmented_manifests_list_item;
+
+pub(crate) mod shape_dataset_document_classifier_input_data_config;
+
+pub(crate) mod shape_dataset_entity_recognizer_input_data_config;
+
 pub(crate) mod shape_document_class;
+
+pub(crate) mod shape_document_classification_config;
 
 pub(crate) mod shape_document_classifier_summary;
 
@@ -514,6 +592,8 @@ pub(crate) mod shape_entity;
 
 pub(crate) mod shape_entity_label;
 
+pub(crate) mod shape_entity_recognition_config;
+
 pub(crate) mod shape_entity_recognizer_annotations;
 
 pub(crate) mod shape_entity_recognizer_documents;
@@ -522,11 +602,17 @@ pub(crate) mod shape_entity_recognizer_entity_list;
 
 pub(crate) mod shape_entity_recognizer_metadata;
 
+pub(crate) mod shape_entity_recognizer_output_data_config;
+
 pub(crate) mod shape_entity_recognizer_summary;
 
 pub(crate) mod shape_entity_types_list_item;
 
 pub(crate) mod shape_errors_list_item;
+
+pub(crate) mod shape_flywheel_model_evaluation_metrics;
+
+pub(crate) mod shape_flywheel_summary;
 
 pub(crate) mod shape_key_phrase;
 
@@ -543,6 +629,12 @@ pub(crate) mod shape_target_event_types;
 pub(crate) mod shape_targeted_sentiment_entity;
 
 pub(crate) mod shape_classifier_evaluation_metrics;
+
+pub(crate) mod shape_dataset_entity_recognizer_annotations;
+
+pub(crate) mod shape_dataset_entity_recognizer_documents;
+
+pub(crate) mod shape_dataset_entity_recognizer_entity_list;
 
 pub(crate) mod shape_document_classifier_augmented_manifests_list;
 
@@ -579,6 +671,8 @@ pub(crate) mod shape_block_reference;
 pub(crate) mod shape_bounding_box;
 
 pub(crate) mod shape_entity_recognizer_metadata_entity_types_list_item;
+
+pub(crate) mod shape_labels_list;
 
 pub(crate) mod shape_list_of_document_read_feature_types;
 

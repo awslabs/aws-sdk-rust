@@ -5,7 +5,7 @@ pub use crate::operation::get_ipam_resource_cidrs::_get_ipam_resource_cidrs_inpu
 
 /// Fluent builder constructing a request to `GetIpamResourceCidrs`.
 ///
-/// <p>Get information about the resources in a scope.</p>
+/// <p>Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated with more than one resource discovery, the resource CIDRs across all of the resource discoveries is returned. A resource discovery is an IPAM component that enables IPAM to manage and monitor resources that belong to the owning account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIpamResourceCidrsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

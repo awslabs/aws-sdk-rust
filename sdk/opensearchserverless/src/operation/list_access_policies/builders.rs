@@ -94,12 +94,12 @@ impl ListAccessPoliciesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource`](Self::set_resource).
     ///
-    /// <p>Resource filters (can be collection or indexes) that policies can apply to.</p>
+    /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
     pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource(input.into());
         self
     }
-    /// <p>Resource filters (can be collection or indexes) that policies can apply to.</p>
+    /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
     pub fn set_resource(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

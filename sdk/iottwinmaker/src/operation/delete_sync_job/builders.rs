@@ -65,25 +65,25 @@ impl DeleteSyncJobFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The workspace Id.</p>
+    /// <p>The workspace ID.</p>
     pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
-    /// <p>The workspace Id.</p>
+    /// <p>The workspace ID.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
     /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sync_source(input.into());
         self
     }
     /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_sync_source(input);

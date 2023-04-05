@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateProxySession`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::set_voice_connector_id): (undocumented)
-    ///   - [`proxy_session_id(impl Into<String>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::set_proxy_session_id): (undocumented)
-    ///   - [`capabilities(Vec<Capability>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::capabilities) / [`set_capabilities(Option<Vec<Capability>>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::set_capabilities): (undocumented)
-    ///   - [`expiry_minutes(i32)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::expiry_minutes) / [`set_expiry_minutes(Option<i32>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::set_expiry_minutes): (undocumented)
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
+    ///   - [`proxy_session_id(impl Into<String>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::set_proxy_session_id): <p>The proxy session ID.</p>
+    ///   - [`capabilities(Vec<Capability>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::capabilities) / [`set_capabilities(Option<Vec<Capability>>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::set_capabilities): <p>The proxy session capabilities.</p>
+    ///   - [`expiry_minutes(i32)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::expiry_minutes) / [`set_expiry_minutes(Option<i32>)`](crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::set_expiry_minutes): <p>The number of minutes allowed for the proxy session.</p>
     /// - On success, responds with [`UpdateProxySessionOutput`](crate::operation::update_proxy_session::UpdateProxySessionOutput) with field(s):
-    ///   - [`proxy_session(Option<ProxySession>)`](crate::operation::update_proxy_session::UpdateProxySessionOutput::proxy_session): (undocumented)
+    ///   - [`proxy_session(Option<ProxySession>)`](crate::operation::update_proxy_session::UpdateProxySessionOutput::proxy_session): <p>The updated proxy session details.</p>
     /// - On failure, responds with [`SdkError<UpdateProxySessionError>`](crate::operation::update_proxy_session::UpdateProxySessionError)
     pub fn update_proxy_session(
         &self,

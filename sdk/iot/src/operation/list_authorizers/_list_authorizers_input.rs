@@ -11,7 +11,7 @@ pub struct ListAuthorizersInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Return the list of authorizers in ascending alphabetical order.</p>
     #[doc(hidden)]
-    pub ascending_order: bool,
+    pub ascending_order: std::option::Option<bool>,
     /// <p>The status of the list authorizers request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AuthorizerStatus>,
@@ -26,7 +26,7 @@ impl ListAuthorizersInput {
         self.marker.as_deref()
     }
     /// <p>Return the list of authorizers in ascending alphabetical order.</p>
-    pub fn ascending_order(&self) -> bool {
+    pub fn ascending_order(&self) -> std::option::Option<bool> {
         self.ascending_order
     }
     /// <p>The status of the list authorizers request.</p>
@@ -104,7 +104,7 @@ impl ListAuthorizersInputBuilder {
         Ok(crate::operation::list_authorizers::ListAuthorizersInput {
             page_size: self.page_size,
             marker: self.marker,
-            ascending_order: self.ascending_order.unwrap_or_default(),
+            ascending_order: self.ascending_order,
             status: self.status,
         })
     }

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVoiceConnectorGroupsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The details of the Voice Connector groups.</p>
     #[doc(hidden)]
     pub voice_connector_groups:
         std::option::Option<std::vec::Vec<crate::types::VoiceConnectorGroup>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVoiceConnectorGroupsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The details of the Voice Connector groups.</p>
     pub fn voice_connector_groups(
         &self,
     ) -> std::option::Option<&[crate::types::VoiceConnectorGroup]> {
         self.voice_connector_groups.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50,13 +50,14 @@ impl ListVoiceConnectorGroupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_voice_connector_groups`](Self::set_voice_connector_groups).
     ///
+    /// <p>The details of the Voice Connector groups.</p>
     pub fn voice_connector_groups(mut self, input: crate::types::VoiceConnectorGroup) -> Self {
         let mut v = self.voice_connector_groups.unwrap_or_default();
         v.push(input);
         self.voice_connector_groups = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The details of the Voice Connector groups.</p>
     pub fn set_voice_connector_groups(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorGroup>>,
@@ -64,12 +65,12 @@ impl ListVoiceConnectorGroupsOutputBuilder {
         self.voice_connector_groups = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

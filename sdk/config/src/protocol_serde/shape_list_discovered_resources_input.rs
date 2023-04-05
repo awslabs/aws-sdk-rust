@@ -18,19 +18,17 @@ pub fn ser_list_discovered_resources_input(
     if let Some(var_5) = &input.resource_name {
         object.key("resourceName").string(var_5.as_str());
     }
-    if input.limit != 0 {
+    if let Some(var_6) = &input.limit {
         object.key("limit").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.limit).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.include_deleted_resources {
-        object
-            .key("includeDeletedResources")
-            .boolean(input.include_deleted_resources);
+    if let Some(var_7) = &input.include_deleted_resources {
+        object.key("includeDeletedResources").boolean(*var_7);
     }
-    if let Some(var_6) = &input.next_token {
-        object.key("nextToken").string(var_6.as_str());
+    if let Some(var_8) = &input.next_token {
+        object.key("nextToken").string(var_8.as_str());
     }
     Ok(())
 }

@@ -10,7 +10,8 @@ pub struct CancelSpotFleetRequestsInput {
     /// <p>The IDs of the Spot Fleet requests.</p>
     #[doc(hidden)]
     pub spot_fleet_request_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.</p>
+    /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
     #[doc(hidden)]
     pub terminate_instances: std::option::Option<bool>,
 }
@@ -23,7 +24,8 @@ impl CancelSpotFleetRequestsInput {
     pub fn spot_fleet_request_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.spot_fleet_request_ids.as_deref()
     }
-    /// <p>Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.</p>
+    /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
     pub fn terminate_instances(&self) -> std::option::Option<bool> {
         self.terminate_instances
     }
@@ -75,12 +77,14 @@ impl CancelSpotFleetRequestsInputBuilder {
         self.spot_fleet_request_ids = input;
         self
     }
-    /// <p>Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.</p>
+    /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
     pub fn terminate_instances(mut self, input: bool) -> Self {
         self.terminate_instances = Some(input);
         self
     }
-    /// <p>Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.</p>
+    /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
     pub fn set_terminate_instances(mut self, input: std::option::Option<bool>) -> Self {
         self.terminate_instances = input;
         self

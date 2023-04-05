@@ -5,7 +5,6 @@
 pub struct DescribeProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -25,12 +24,11 @@ pub struct DescribeProvisioningArtifactInput {
     pub product_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether a verbose level of detail is enabled.</p>
     #[doc(hidden)]
-    pub verbose: bool,
+    pub verbose: std::option::Option<bool>,
 }
 impl DescribeProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -54,7 +52,7 @@ impl DescribeProvisioningArtifactInput {
         self.product_name.as_deref()
     }
     /// <p>Indicates whether a verbose level of detail is enabled.</p>
-    pub fn verbose(&self) -> bool {
+    pub fn verbose(&self) -> std::option::Option<bool> {
         self.verbose
     }
 }
@@ -79,7 +77,6 @@ pub struct DescribeProvisioningArtifactInputBuilder {
 impl DescribeProvisioningArtifactInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -89,7 +86,6 @@ impl DescribeProvisioningArtifactInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -167,7 +163,7 @@ impl DescribeProvisioningArtifactInputBuilder {
                 product_id: self.product_id,
                 provisioning_artifact_name: self.provisioning_artifact_name,
                 product_name: self.product_name,
-                verbose: self.verbose.unwrap_or_default(),
+                verbose: self.verbose,
             },
         )
     }

@@ -5,7 +5,6 @@
 pub struct ScanProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -16,7 +15,7 @@ pub struct ScanProvisionedProductsInput {
     pub access_level_filter: std::option::Option<crate::types::AccessLevelFilter>,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: std::option::Option<i32>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
@@ -24,7 +23,6 @@ pub struct ScanProvisionedProductsInput {
 impl ScanProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -36,7 +34,7 @@ impl ScanProvisionedProductsInput {
         self.access_level_filter.as_ref()
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -65,7 +63,6 @@ pub struct ScanProvisionedProductsInputBuilder {
 impl ScanProvisionedProductsInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -75,7 +72,6 @@ impl ScanProvisionedProductsInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -127,7 +123,7 @@ impl ScanProvisionedProductsInputBuilder {
             crate::operation::scan_provisioned_products::ScanProvisionedProductsInput {
                 accept_language: self.accept_language,
                 access_level_filter: self.access_level_filter,
-                page_size: self.page_size.unwrap_or_default(),
+                page_size: self.page_size,
                 page_token: self.page_token,
             },
         )

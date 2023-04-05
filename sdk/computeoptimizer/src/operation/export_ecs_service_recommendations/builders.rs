@@ -62,7 +62,7 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -71,7 +71,7 @@ impl ExportECSServiceRecommendationsFluentBuilder {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p> The Amazon Web Services account IDs for the export ECS service recommendations. </p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -87,12 +87,12 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     pub fn filters(mut self, input: crate::types::EcsServiceRecommendationFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     pub fn set_filters(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>,

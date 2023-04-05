@@ -9,7 +9,7 @@ pub struct DeleteBotAliasInput {
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
+    /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
     #[doc(hidden)]
     pub skip_resource_in_use_check: bool,
 }
@@ -22,7 +22,7 @@ impl DeleteBotAliasInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
+    /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
     pub fn skip_resource_in_use_check(&self) -> bool {
         self.skip_resource_in_use_check
     }
@@ -63,12 +63,12 @@ impl DeleteBotAliasInputBuilder {
         self.bot_id = input;
         self
     }
-    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
+    /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
     pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
         self.skip_resource_in_use_check = Some(input);
         self
     }
-    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
+    /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
     pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
         self.skip_resource_in_use_check = input;
         self

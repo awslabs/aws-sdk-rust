@@ -34,6 +34,9 @@ pub struct AllocateHostsInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.</p>
     #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    #[doc(hidden)]
+    pub host_maintenance: std::option::Option<crate::types::HostMaintenance>,
 }
 impl AllocateHostsInput {
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -76,6 +79,10 @@ impl AllocateHostsInput {
     pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn host_maintenance(&self) -> std::option::Option<&crate::types::HostMaintenance> {
+        self.host_maintenance.as_ref()
+    }
 }
 impl AllocateHostsInput {
     /// Creates a new builder-style object to manufacture [`AllocateHostsInput`](crate::operation::allocate_hosts::AllocateHostsInput).
@@ -98,6 +105,7 @@ pub struct AllocateHostsInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) host_recovery: std::option::Option<crate::types::HostRecovery>,
     pub(crate) outpost_arn: std::option::Option<std::string::String>,
+    pub(crate) host_maintenance: std::option::Option<crate::types::HostMaintenance>,
 }
 impl AllocateHostsInputBuilder {
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -216,6 +224,19 @@ impl AllocateHostsInputBuilder {
         self.outpost_arn = input;
         self
     }
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn host_maintenance(mut self, input: crate::types::HostMaintenance) -> Self {
+        self.host_maintenance = Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_host_maintenance(
+        mut self,
+        input: std::option::Option<crate::types::HostMaintenance>,
+    ) -> Self {
+        self.host_maintenance = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AllocateHostsInput`](crate::operation::allocate_hosts::AllocateHostsInput).
     pub fn build(
         self,
@@ -233,6 +254,7 @@ impl AllocateHostsInputBuilder {
             tag_specifications: self.tag_specifications,
             host_recovery: self.host_recovery,
             outpost_arn: self.outpost_arn,
+            host_maintenance: self.host_maintenance,
         })
     }
 }

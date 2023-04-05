@@ -47,6 +47,10 @@ pub use crate::types::_auto_enable_new_region_configuration::AutoEnableNewRegion
 
 pub use crate::types::_lake_configuration_response::LakeConfigurationResponse;
 
+pub use crate::types::_update_status::UpdateStatus;
+
+pub use crate::types::_last_update_failure::LastUpdateFailure;
+
 pub use crate::types::_settings_status::SettingsStatus;
 
 mod _access_type;
@@ -71,6 +75,8 @@ mod _lake_configuration_request;
 
 mod _lake_configuration_response;
 
+mod _last_update_failure;
+
 mod _logs_status;
 
 mod _ocsf_event_class;
@@ -94,6 +100,8 @@ mod _subscriber_resource;
 mod _subscription_protocol_type;
 
 mod _subscription_status;
+
+mod _update_status;
 
 mod _validation_exception_field;
 

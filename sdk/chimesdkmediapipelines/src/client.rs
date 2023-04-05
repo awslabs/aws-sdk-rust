@@ -216,6 +216,10 @@ mod create_media_capture_pipeline;
 
 mod create_media_concatenation_pipeline;
 
+mod create_media_insights_pipeline;
+
+mod create_media_insights_pipeline_configuration;
+
 mod create_media_live_connector_pipeline;
 
 /// Operation customization and supporting types.
@@ -248,13 +252,19 @@ pub mod customize;
 
 mod delete_media_capture_pipeline;
 
+mod delete_media_insights_pipeline_configuration;
+
 mod delete_media_pipeline;
 
 mod get_media_capture_pipeline;
 
+mod get_media_insights_pipeline_configuration;
+
 mod get_media_pipeline;
 
 mod list_media_capture_pipelines;
+
+mod list_media_insights_pipeline_configurations;
 
 mod list_media_pipelines;
 
@@ -263,3 +273,7 @@ mod list_tags_for_resource;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_media_insights_pipeline_configuration;
+
+mod update_media_insights_pipeline_status;

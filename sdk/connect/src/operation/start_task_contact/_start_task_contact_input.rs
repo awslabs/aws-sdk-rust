@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTaskContactInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the previous chat, voice, or task contact. </p>
@@ -41,9 +41,12 @@ pub struct StartTaskContactInput {
     /// <p>The identifier for the quick connect.</p>
     #[doc(hidden)]
     pub quick_connect_id: std::option::Option<std::string::String>,
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    #[doc(hidden)]
+    pub related_contact_id: std::option::Option<std::string::String>,
 }
 impl StartTaskContactInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -95,6 +98,10 @@ impl StartTaskContactInput {
     pub fn quick_connect_id(&self) -> std::option::Option<&str> {
         self.quick_connect_id.as_deref()
     }
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    pub fn related_contact_id(&self) -> std::option::Option<&str> {
+        self.related_contact_id.as_deref()
+    }
 }
 impl StartTaskContactInput {
     /// Creates a new builder-style object to manufacture [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
@@ -122,14 +129,15 @@ pub struct StartTaskContactInputBuilder {
     pub(crate) scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) task_template_id: std::option::Option<std::string::String>,
     pub(crate) quick_connect_id: std::option::Option<std::string::String>,
+    pub(crate) related_contact_id: std::option::Option<std::string::String>,
 }
 impl StartTaskContactInputBuilder {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.instance_id = input;
         self
@@ -274,6 +282,19 @@ impl StartTaskContactInputBuilder {
         self.quick_connect_id = input;
         self
     }
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    pub fn related_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.related_contact_id = Some(input.into());
+        self
+    }
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    pub fn set_related_contact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.related_contact_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
     pub fn build(
         self,
@@ -294,6 +315,7 @@ impl StartTaskContactInputBuilder {
                 scheduled_time: self.scheduled_time,
                 task_template_id: self.task_template_id,
                 quick_connect_id: self.quick_connect_id,
+                related_contact_id: self.related_contact_id,
             },
         )
     }

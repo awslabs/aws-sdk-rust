@@ -18,13 +18,24 @@ pub struct CreateDataIntegrationInput {
     /// <p>The name of the data and how often it should be pulled from the source.</p>
     #[doc(hidden)]
     pub schedule_config: std::option::Option<crate::types::ScheduleConfiguration>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    #[doc(hidden)]
+    pub file_configuration: std::option::Option<crate::types::FileConfiguration>,
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    #[doc(hidden)]
+    pub object_configuration: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
 }
 impl CreateDataIntegrationInput {
     /// <p>The name of the DataIntegration.</p>
@@ -47,16 +58,31 @@ impl CreateDataIntegrationInput {
     pub fn schedule_config(&self) -> std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_config.as_ref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    pub fn file_configuration(&self) -> std::option::Option<&crate::types::FileConfiguration> {
+        self.file_configuration.as_ref()
+    }
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    pub fn object_configuration(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    > {
+        self.object_configuration.as_ref()
     }
 }
 impl CreateDataIntegrationInput {
@@ -80,6 +106,13 @@ pub struct CreateDataIntegrationInputBuilder {
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
+    pub(crate) file_configuration: std::option::Option<crate::types::FileConfiguration>,
+    pub(crate) object_configuration: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
 }
 impl CreateDataIntegrationInputBuilder {
     /// <p>The name of the DataIntegration.</p>
@@ -139,7 +172,7 @@ impl CreateDataIntegrationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -150,7 +183,7 @@ impl CreateDataIntegrationInputBuilder {
         self.tags = Some(hash_map);
         self
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<
@@ -160,14 +193,55 @@ impl CreateDataIntegrationInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.client_token = input;
+        self
+    }
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    pub fn file_configuration(mut self, input: crate::types::FileConfiguration) -> Self {
+        self.file_configuration = Some(input);
+        self
+    }
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    pub fn set_file_configuration(
+        mut self,
+        input: std::option::Option<crate::types::FileConfiguration>,
+    ) -> Self {
+        self.file_configuration = input;
+        self
+    }
+    /// Adds a key-value pair to `object_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_object_configuration`](Self::set_object_configuration).
+    ///
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    pub fn object_configuration(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        let mut hash_map = self.object_configuration.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.object_configuration = Some(hash_map);
+        self
+    }
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    pub fn set_object_configuration(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
+    ) -> Self {
+        self.object_configuration = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateDataIntegrationInput`](crate::operation::create_data_integration::CreateDataIntegrationInput).
@@ -186,6 +260,8 @@ impl CreateDataIntegrationInputBuilder {
                 schedule_config: self.schedule_config,
                 tags: self.tags,
                 client_token: self.client_token,
+                file_configuration: self.file_configuration,
+                object_configuration: self.object_configuration,
             },
         )
     }

@@ -3,78 +3,76 @@ pub fn ser_put_profile_object_type_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_profile_object_type::PutProfileObjectTypeInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.allow_profile_creation {
-        object
-            .key("AllowProfileCreation")
-            .boolean(input.allow_profile_creation);
+    if let Some(var_1) = &input.allow_profile_creation {
+        object.key("AllowProfileCreation").boolean(*var_1);
     }
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.encryption_key {
-        object.key("EncryptionKey").string(var_2.as_str());
+    if let Some(var_3) = &input.encryption_key {
+        object.key("EncryptionKey").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.expiration_days {
+    if let Some(var_4) = &input.expiration_days {
         object.key("ExpirationDays").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_3).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.fields {
+    if let Some(var_5) = &input.fields {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Fields").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_6 = object.key("Fields").start_object();
+        for (key_7, value_8) in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = object_5.key(key_6.as_str()).start_object();
+                let mut object_9 = object_6.key(key_7.as_str()).start_object();
                 crate::protocol_serde::shape_object_type_field::ser_object_type_field(
-                    &mut object_8,
-                    value_7,
+                    &mut object_9,
+                    value_8,
                 )?;
-                object_8.finish();
+                object_9.finish();
             }
         }
-        object_5.finish();
+        object_6.finish();
     }
-    if let Some(var_9) = &input.keys {
+    if let Some(var_10) = &input.keys {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Keys").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("Keys").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                let mut array_13 = object_10.key(key_11.as_str()).start_array();
-                for item_14 in value_12 {
+                let mut array_14 = object_11.key(key_12.as_str()).start_array();
+                for item_15 in value_13 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_15 = array_13.value().start_object();
+                        let mut object_16 = array_14.value().start_object();
                         crate::protocol_serde::shape_object_type_key::ser_object_type_key(
-                            &mut object_15,
-                            item_14,
+                            &mut object_16,
+                            item_15,
                         )?;
-                        object_15.finish();
+                        object_16.finish();
                     }
                 }
-                array_13.finish();
+                array_14.finish();
             }
         }
-        object_10.finish();
+        object_11.finish();
     }
-    if let Some(var_16) = &input.source_last_updated_timestamp_format {
+    if let Some(var_17) = &input.source_last_updated_timestamp_format {
         object
             .key("SourceLastUpdatedTimestampFormat")
-            .string(var_16.as_str());
+            .string(var_17.as_str());
     }
-    if let Some(var_17) = &input.tags {
+    if let Some(var_18) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("Tags").start_object();
-        for (key_19, value_20) in var_17 {
+        let mut object_19 = object.key("Tags").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_18.key(key_19.as_str()).string(value_20.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_18.finish();
+        object_19.finish();
     }
-    if let Some(var_21) = &input.template_id {
-        object.key("TemplateId").string(var_21.as_str());
+    if let Some(var_22) = &input.template_id {
+        object.key("TemplateId").string(var_22.as_str());
     }
     Ok(())
 }

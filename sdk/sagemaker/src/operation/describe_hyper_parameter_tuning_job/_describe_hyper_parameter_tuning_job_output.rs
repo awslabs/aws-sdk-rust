@@ -54,6 +54,14 @@ pub struct DescribeHyperParameterTuningJobOutput {
     /// <p>If the tuning job failed, the reason it failed.</p>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
+    #[doc(hidden)]
+    pub tuning_job_completion_details:
+        std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
+    /// <p>The total resources consumed by your hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub consumed_resources:
+        std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
     _request_id: Option<String>,
 }
 impl DescribeHyperParameterTuningJobOutput {
@@ -137,6 +145,18 @@ impl DescribeHyperParameterTuningJobOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
+    pub fn tuning_job_completion_details(
+        &self,
+    ) -> std::option::Option<&crate::types::HyperParameterTuningJobCompletionDetails> {
+        self.tuning_job_completion_details.as_ref()
+    }
+    /// <p>The total resources consumed by your hyperparameter tuning job.</p>
+    pub fn consumed_resources(
+        &self,
+    ) -> std::option::Option<&crate::types::HyperParameterTuningJobConsumedResources> {
+        self.consumed_resources.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeHyperParameterTuningJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -178,6 +198,10 @@ pub struct DescribeHyperParameterTuningJobOutputBuilder {
     pub(crate) warm_start_config:
         std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
     pub(crate) failure_reason: std::option::Option<std::string::String>,
+    pub(crate) tuning_job_completion_details:
+        std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
+    pub(crate) consumed_resources:
+        std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
     _request_id: Option<String>,
 }
 impl DescribeHyperParameterTuningJobOutputBuilder {
@@ -411,6 +435,38 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
+    pub fn tuning_job_completion_details(
+        mut self,
+        input: crate::types::HyperParameterTuningJobCompletionDetails,
+    ) -> Self {
+        self.tuning_job_completion_details = Some(input);
+        self
+    }
+    /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
+    pub fn set_tuning_job_completion_details(
+        mut self,
+        input: std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
+    ) -> Self {
+        self.tuning_job_completion_details = input;
+        self
+    }
+    /// <p>The total resources consumed by your hyperparameter tuning job.</p>
+    pub fn consumed_resources(
+        mut self,
+        input: crate::types::HyperParameterTuningJobConsumedResources,
+    ) -> Self {
+        self.consumed_resources = Some(input);
+        self
+    }
+    /// <p>The total resources consumed by your hyperparameter tuning job.</p>
+    pub fn set_consumed_resources(
+        mut self,
+        input: std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
+    ) -> Self {
+        self.consumed_resources = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -455,6 +511,10 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
             warm_start_config: self.warm_start_config
             ,
             failure_reason: self.failure_reason
+            ,
+            tuning_job_completion_details: self.tuning_job_completion_details
+            ,
+            consumed_resources: self.consumed_resources
             ,
             _request_id: self._request_id,
         }

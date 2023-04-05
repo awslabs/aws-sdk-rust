@@ -163,7 +163,7 @@ pub type GetDataLakeSettingsErrorKind = GetDataLakeSettingsError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDataLakeSettingsError {
-    /// <p>A specified entity does not exist</p>
+    /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::types::error::InternalServiceException),

@@ -5,6 +5,10 @@ pub use crate::types::_logging::LoggingBuilder;
 
 pub use crate::types::_s3_logs::S3LogsBuilder;
 
+pub use crate::types::_image_scanning_configuration::ImageScanningConfigurationBuilder;
+
+pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
+
 pub use crate::types::_schedule::ScheduleBuilder;
 
 pub use crate::types::_image_tests_configuration::ImageTestsConfigurationBuilder;
@@ -29,9 +33,45 @@ pub use crate::types::_ami_distribution_configuration::AmiDistributionConfigurat
 
 pub use crate::types::_launch_permission_configuration::LaunchPermissionConfigurationBuilder;
 
+pub use crate::types::_workflow_step_metadata::WorkflowStepMetadataBuilder;
+
+pub use crate::types::_workflow_execution_metadata::WorkflowExecutionMetadataBuilder;
+
 pub use crate::types::_infrastructure_configuration_summary::InfrastructureConfigurationSummaryBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
+
+pub use crate::types::_image_scan_finding::ImageScanFindingBuilder;
+
+pub use crate::types::_package_vulnerability_details::PackageVulnerabilityDetailsBuilder;
+
+pub use crate::types::_cvss_score::CvssScoreBuilder;
+
+pub use crate::types::_vulnerable_package::VulnerablePackageBuilder;
+
+pub use crate::types::_inspector_score_details::InspectorScoreDetailsBuilder;
+
+pub use crate::types::_cvss_score_details::CvssScoreDetailsBuilder;
+
+pub use crate::types::_cvss_score_adjustment::CvssScoreAdjustmentBuilder;
+
+pub use crate::types::_remediation::RemediationBuilder;
+
+pub use crate::types::_remediation_recommendation::RemediationRecommendationBuilder;
+
+pub use crate::types::_image_scan_findings_filter::ImageScanFindingsFilterBuilder;
+
+pub use crate::types::_image_scan_finding_aggregation::ImageScanFindingAggregationBuilder;
+
+pub use crate::types::_vulnerability_id_aggregation::VulnerabilityIdAggregationBuilder;
+
+pub use crate::types::_severity_counts::SeverityCountsBuilder;
+
+pub use crate::types::_image_pipeline_aggregation::ImagePipelineAggregationBuilder;
+
+pub use crate::types::_image_aggregation::ImageAggregationBuilder;
+
+pub use crate::types::_account_aggregation::AccountAggregationBuilder;
 
 pub use crate::types::_image_version::ImageVersionBuilder;
 
@@ -78,6 +118,8 @@ pub use crate::types::_component_configuration::ComponentConfigurationBuilder;
 pub use crate::types::_component_parameter::ComponentParameterBuilder;
 
 pub use crate::types::_image::ImageBuilder;
+
+pub use crate::types::_image_scan_state::ImageScanStateBuilder;
 
 pub use crate::types::_distribution_configuration::DistributionConfigurationBuilder;
 

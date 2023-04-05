@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`playback_mode(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::playback_mode): <p>The channel's playback mode.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_channel::DescribeChannelOutput::tags): <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`tier(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::tier): <p>The channel's tier.</p>
+    ///   - [`log_configuration(Option<LogConfigurationForChannel>)`](crate::operation::describe_channel::DescribeChannelOutput::log_configuration): <p>The log configuration for the channel.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)
     pub fn describe_channel(
         &self,

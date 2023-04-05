@@ -19,20 +19,20 @@ pub fn ser_get_container_service_metric_data_input(
             .key("endTime")
             .date_time(var_4, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    {
+    if let Some(var_5) = &input.period {
         object.key("period").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.period).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.statistics {
-        let mut array_6 = object.key("statistics").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.statistics {
+        let mut array_7 = object.key("statistics").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }

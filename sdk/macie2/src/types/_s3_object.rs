@@ -25,7 +25,7 @@ pub struct S3Object {
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
     #[doc(hidden)]
     pub public_access: bool,
-    /// <p>The type of server-side encryption that's used to encrypt the object.</p>
+    /// <p>The type of server-side encryption that was used to encrypt the object.</p>
     #[doc(hidden)]
     pub server_side_encryption: std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>The total storage size, in bytes, of the object.</p>
@@ -70,7 +70,7 @@ impl S3Object {
     pub fn public_access(&self) -> bool {
         self.public_access
     }
-    /// <p>The type of server-side encryption that's used to encrypt the object.</p>
+    /// <p>The type of server-side encryption that was used to encrypt the object.</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::types::ServerSideEncryption> {
@@ -191,12 +191,12 @@ impl S3ObjectBuilder {
         self.public_access = input;
         self
     }
-    /// <p>The type of server-side encryption that's used to encrypt the object.</p>
+    /// <p>The type of server-side encryption that was used to encrypt the object.</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.server_side_encryption = Some(input);
         self
     }
-    /// <p>The type of server-side encryption that's used to encrypt the object.</p>
+    /// <p>The type of server-side encryption that was used to encrypt the object.</p>
     pub fn set_server_side_encryption(
         mut self,
         input: std::option::Option<crate::types::ServerSideEncryption>,

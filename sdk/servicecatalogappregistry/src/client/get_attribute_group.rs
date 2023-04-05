@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAttributeGroup`](crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`attribute_group(impl Into<String>)`](crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder::attribute_group) / [`set_attribute_group(Option<String>)`](crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder::set_attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    ///   - [`attribute_group(impl Into<String>)`](crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder::attribute_group) / [`set_attribute_group(Option<String>)`](crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder::set_attribute_group): <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     /// - On success, responds with [`GetAttributeGroupOutput`](crate::operation::get_attribute_group::GetAttributeGroupOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::id): <p>The identifier of the attribute group.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::arn): <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::creation_time): <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
     ///   - [`last_update_time(Option<DateTime>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::last_update_time): <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::tags): <p>Key-value pairs associated with the attribute group.</p>
+    ///   - [`created_by(Option<String>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::created_by): <p>The service principal that created the attribute group.</p>
     /// - On failure, responds with [`SdkError<GetAttributeGroupError>`](crate::operation::get_attribute_group::GetAttributeGroupError)
     pub fn get_attribute_group(
         &self,

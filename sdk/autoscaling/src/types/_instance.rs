@@ -16,7 +16,7 @@ pub struct Instance {
     /// <p>A description of the current lifecycle state. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     #[doc(hidden)]
     pub lifecycle_state: std::option::Option<crate::types::LifecycleState>,
-    /// <p>The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
+    /// <p>The last reported health status of the instance. <code>Healthy</code> means that the instance is healthy and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
     #[doc(hidden)]
     pub health_status: std::option::Option<std::string::String>,
     /// <p>The launch configuration associated with the instance.</p>
@@ -50,7 +50,7 @@ impl Instance {
     pub fn lifecycle_state(&self) -> std::option::Option<&crate::types::LifecycleState> {
         self.lifecycle_state.as_ref()
     }
-    /// <p>The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
+    /// <p>The last reported health status of the instance. <code>Healthy</code> means that the instance is healthy and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
     pub fn health_status(&self) -> std::option::Option<&str> {
         self.health_status.as_deref()
     }
@@ -142,12 +142,12 @@ impl InstanceBuilder {
         self.lifecycle_state = input;
         self
     }
-    /// <p>The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
+    /// <p>The last reported health status of the instance. <code>Healthy</code> means that the instance is healthy and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
     pub fn health_status(mut self, input: impl Into<std::string::String>) -> Self {
         self.health_status = Some(input.into());
         self
     }
-    /// <p>The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
+    /// <p>The last reported health status of the instance. <code>Healthy</code> means that the instance is healthy and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
     pub fn set_health_status(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.health_status = input;
         self

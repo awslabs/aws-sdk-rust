@@ -9,7 +9,7 @@ pub struct ExecuteCommandLogConfiguration {
     /// </note>
     #[doc(hidden)]
     pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
-    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
+    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be off.</p>
     #[doc(hidden)]
     pub cloud_watch_encryption_enabled: bool,
     /// <p>The name of the S3 bucket to send logs to.</p> <note>
@@ -31,7 +31,7 @@ impl ExecuteCommandLogConfiguration {
     pub fn cloud_watch_log_group_name(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_name.as_deref()
     }
-    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
+    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be off.</p>
     pub fn cloud_watch_encryption_enabled(&self) -> bool {
         self.cloud_watch_encryption_enabled
     }
@@ -85,12 +85,12 @@ impl ExecuteCommandLogConfigurationBuilder {
         self.cloud_watch_log_group_name = input;
         self
     }
-    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
+    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be off.</p>
     pub fn cloud_watch_encryption_enabled(mut self, input: bool) -> Self {
         self.cloud_watch_encryption_enabled = Some(input);
         self
     }
-    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
+    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be off.</p>
     pub fn set_cloud_watch_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.cloud_watch_encryption_enabled = input;
         self

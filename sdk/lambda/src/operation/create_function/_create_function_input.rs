@@ -13,7 +13,8 @@ pub struct CreateFunctionInput {
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     #[doc(hidden)]
     pub runtime: std::option::Option<crate::types::Runtime>,
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
@@ -36,7 +37,7 @@ pub struct CreateFunctionInput {
     pub memory_size: std::option::Option<i32>,
     /// <p>Set to true to publish the first version of the function during creation.</p>
     #[doc(hidden)]
-    pub publish: bool,
+    pub publish: std::option::Option<bool>,
     /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::types::VpcConfig>,
@@ -49,7 +50,7 @@ pub struct CreateFunctionInput {
     /// <p>Environment variables that are accessible from function code during execution.</p>
     #[doc(hidden)]
     pub environment: std::option::Option<crate::types::Environment>,
-    /// <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda uses a default service key.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
@@ -93,7 +94,8 @@ impl CreateFunctionInput {
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn runtime(&self) -> std::option::Option<&crate::types::Runtime> {
         self.runtime.as_ref()
     }
@@ -122,7 +124,7 @@ impl CreateFunctionInput {
         self.memory_size
     }
     /// <p>Set to true to publish the first version of the function during creation.</p>
-    pub fn publish(&self) -> bool {
+    pub fn publish(&self) -> std::option::Option<bool> {
         self.publish
     }
     /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
@@ -141,7 +143,7 @@ impl CreateFunctionInput {
     pub fn environment(&self) -> std::option::Option<&crate::types::Environment> {
         self.environment.as_ref()
     }
-    /// <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda uses a default service key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -247,12 +249,14 @@ impl CreateFunctionInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn runtime(mut self, input: crate::types::Runtime) -> Self {
         self.runtime = Some(input);
         self
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn set_runtime(mut self, input: std::option::Option<crate::types::Runtime>) -> Self {
         self.runtime = input;
         self
@@ -376,12 +380,12 @@ impl CreateFunctionInputBuilder {
         self.environment = input;
         self
     }
-    /// <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda uses a default service key.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda uses a default service key.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
@@ -546,7 +550,7 @@ impl CreateFunctionInputBuilder {
             description: self.description,
             timeout: self.timeout,
             memory_size: self.memory_size,
-            publish: self.publish.unwrap_or_default(),
+            publish: self.publish,
             vpc_config: self.vpc_config,
             package_type: self.package_type,
             dead_letter_config: self.dead_letter_config,

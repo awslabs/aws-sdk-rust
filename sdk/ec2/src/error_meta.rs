@@ -473,6 +473,30 @@ impl From<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddresse
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError>
+    for Error
+{
+    fn from(
+        err: crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
+    ) -> Self {
+        match err {
+            crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -680,6 +704,72 @@ impl From<crate::operation::associate_instance_event_window::AssociateInstanceEv
     ) -> Self {
         match err {
             crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryError,
+    ) -> Self {
+        match err {
+            crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError>
+    for Error
+{
+    fn from(
+        err: crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError,
+    ) -> Self {
+        match err {
+            crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2588,6 +2678,48 @@ impl From<crate::operation::create_ipam_pool::CreateIpamPoolError> for Error {
             crate::operation::create_ipam_pool::CreateIpamPoolError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError,
+    ) -> Self {
+        match err {
+            crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5203,6 +5335,48 @@ impl From<crate::operation::delete_ipam_pool::DeleteIpamPoolError> for Error {
             crate::operation::delete_ipam_pool::DeleteIpamPoolError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -9389,6 +9563,51 @@ impl From<crate::operation::describe_ipam_pools::DescribeIpamPoolsError> for Err
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError> for Error {
+    fn from(err: crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::operation::describe_ipams::DescribeIpamsError, R>>
     for Error
@@ -12972,6 +13191,68 @@ impl
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryError> for Error {
+    fn from(err: crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryError) -> Self {
+        match err {
+            crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError>
+    for Error
+{
+    fn from(
+        err: crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
+    ) -> Self {
+        match err {
+            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -14346,6 +14627,72 @@ impl From<crate::operation::get_ipam_address_history::GetIpamAddressHistoryError
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
+    ) -> Self {
+        match err {
+            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError,
+    ) -> Self {
+        match err {
+            crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError,
             R,
         >,
@@ -15056,6 +15403,48 @@ impl From<crate::operation::get_vpn_connection_device_types::GetVpnConnectionDev
     ) -> Self {
         match err {
             crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError,
+    ) -> Self {
+        match err {
+            crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -16193,6 +16582,48 @@ impl From<crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrErr
             crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError::Unhandled(
                 inner,
             ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -18486,6 +18917,46 @@ impl From<crate::operation::replace_transit_gateway_route::ReplaceTransitGateway
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError> for Error {
+    fn from(err: crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError) -> Self {
+        match err {
+            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::report_instance_status::ReportInstanceStatusError,
             R,
         >,
@@ -19718,6 +20189,26 @@ impl From<crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddr
     ) -> Self {
         match err {
             crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError> for Error {
+    fn from(err: crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError) -> Self {
+        match err {
+            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -5,7 +5,7 @@ pub use crate::operation::delete_component::_delete_component_input::DeleteCompo
 
 /// Fluent builder constructing a request to `DeleteComponent`.
 ///
-/// <p> Deletes a component build version.</p>
+/// <p>Deletes a component build version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteComponentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

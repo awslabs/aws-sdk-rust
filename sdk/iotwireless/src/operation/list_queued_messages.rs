@@ -74,17 +74,19 @@ impl ListQueuedMessagesInput {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                if let Some(inner_3) = &_input.max_results {
+                    if *inner_3 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_3) = &_input.wireless_device_type {
+                if let Some(inner_4) = &_input.wireless_device_type {
                     {
                         query.push_kv(
                             "WirelessDeviceType",
-                            &aws_smithy_http::query::fmt_string(&inner_3),
+                            &aws_smithy_http::query::fmt_string(&inner_4),
                         );
                     }
                 }

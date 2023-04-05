@@ -18,5 +18,11 @@ pub fn ser_instance_fleet_modify_config(
             aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.resize_specifications {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ResizeSpecifications").start_object();
+        crate::protocol_serde::shape_instance_fleet_resizing_specifications::ser_instance_fleet_resizing_specifications(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

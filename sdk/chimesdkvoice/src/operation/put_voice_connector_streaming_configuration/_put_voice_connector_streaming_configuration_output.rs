@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorStreamingConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated streaming settings.</p>
     #[doc(hidden)]
     pub streaming_configuration: std::option::Option<crate::types::StreamingConfiguration>,
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorStreamingConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated streaming settings.</p>
     pub fn streaming_configuration(
         &self,
     ) -> std::option::Option<&crate::types::StreamingConfiguration> {
@@ -36,12 +36,12 @@ pub struct PutVoiceConnectorStreamingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorStreamingConfigurationOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated streaming settings.</p>
     pub fn streaming_configuration(mut self, input: crate::types::StreamingConfiguration) -> Self {
         self.streaming_configuration = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated streaming settings.</p>
     pub fn set_streaming_configuration(
         mut self,
         input: std::option::Option<crate::types::StreamingConfiguration>,

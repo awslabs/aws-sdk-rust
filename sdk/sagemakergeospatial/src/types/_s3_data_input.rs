@@ -7,10 +7,10 @@ pub struct S3DataInput {
     /// <p>The URL to the Amazon S3 input.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
     #[doc(hidden)]
     pub metadata_provider: std::option::Option<crate::types::MetadataProvider>,
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
@@ -19,11 +19,11 @@ impl S3DataInput {
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
-    /// <p></p>
+    /// <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
     pub fn metadata_provider(&self) -> std::option::Option<&crate::types::MetadataProvider> {
         self.metadata_provider.as_ref()
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -54,12 +54,12 @@ impl S3DataInputBuilder {
         self.s3_uri = input;
         self
     }
-    /// <p></p>
+    /// <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
     pub fn metadata_provider(mut self, input: crate::types::MetadataProvider) -> Self {
         self.metadata_provider = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
     pub fn set_metadata_provider(
         mut self,
         input: std::option::Option<crate::types::MetadataProvider>,
@@ -67,12 +67,12 @@ impl S3DataInputBuilder {
         self.metadata_provider = input;
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.kms_key_id = input;
         self

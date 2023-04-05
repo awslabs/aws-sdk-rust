@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNetworkInsightsPathInput {
-    /// <p>The IP address of the Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The IP address of the source.</p>
     #[doc(hidden)]
     pub source_ip: std::option::Option<std::string::String>,
-    /// <p>The IP address of the Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The IP address of the destination.</p>
     #[doc(hidden)]
     pub destination_ip: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
     /// <p>The protocol.</p>
@@ -30,21 +30,27 @@ pub struct CreateNetworkInsightsPathInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
+    #[doc(hidden)]
+    pub filter_at_source: std::option::Option<crate::types::PathRequestFilter>,
+    /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
+    #[doc(hidden)]
+    pub filter_at_destination: std::option::Option<crate::types::PathRequestFilter>,
 }
 impl CreateNetworkInsightsPathInput {
-    /// <p>The IP address of the Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The IP address of the source.</p>
     pub fn source_ip(&self) -> std::option::Option<&str> {
         self.source_ip.as_deref()
     }
-    /// <p>The IP address of the Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The IP address of the destination.</p>
     pub fn destination_ip(&self) -> std::option::Option<&str> {
         self.destination_ip.as_deref()
     }
-    /// <p>The Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>The Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
@@ -68,6 +74,14 @@ impl CreateNetworkInsightsPathInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
+    pub fn filter_at_source(&self) -> std::option::Option<&crate::types::PathRequestFilter> {
+        self.filter_at_source.as_ref()
+    }
+    /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
+    pub fn filter_at_destination(&self) -> std::option::Option<&crate::types::PathRequestFilter> {
+        self.filter_at_destination.as_ref()
+    }
 }
 impl CreateNetworkInsightsPathInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInsightsPathInput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput).
@@ -90,44 +104,46 @@ pub struct CreateNetworkInsightsPathInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: std::option::Option<bool>,
     pub(crate) client_token: std::option::Option<std::string::String>,
+    pub(crate) filter_at_source: std::option::Option<crate::types::PathRequestFilter>,
+    pub(crate) filter_at_destination: std::option::Option<crate::types::PathRequestFilter>,
 }
 impl CreateNetworkInsightsPathInputBuilder {
-    /// <p>The IP address of the Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The IP address of the source.</p>
     pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_ip = Some(input.into());
         self
     }
-    /// <p>The IP address of the Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The IP address of the source.</p>
     pub fn set_source_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.source_ip = input;
         self
     }
-    /// <p>The IP address of the Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The IP address of the destination.</p>
     pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.destination_ip = Some(input.into());
         self
     }
-    /// <p>The IP address of the Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The IP address of the destination.</p>
     pub fn set_destination_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.destination_ip = input;
         self
     }
-    /// <p>The Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
         self.source = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.source = input;
         self
     }
-    /// <p>The Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.</p>
     pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
         self.destination = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.destination = input;
         self
@@ -191,6 +207,32 @@ impl CreateNetworkInsightsPathInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
+    pub fn filter_at_source(mut self, input: crate::types::PathRequestFilter) -> Self {
+        self.filter_at_source = Some(input);
+        self
+    }
+    /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
+    pub fn set_filter_at_source(
+        mut self,
+        input: std::option::Option<crate::types::PathRequestFilter>,
+    ) -> Self {
+        self.filter_at_source = input;
+        self
+    }
+    /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
+    pub fn filter_at_destination(mut self, input: crate::types::PathRequestFilter) -> Self {
+        self.filter_at_destination = Some(input);
+        self
+    }
+    /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
+    pub fn set_filter_at_destination(
+        mut self,
+        input: std::option::Option<crate::types::PathRequestFilter>,
+    ) -> Self {
+        self.filter_at_destination = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateNetworkInsightsPathInput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput).
     pub fn build(
         self,
@@ -209,6 +251,8 @@ impl CreateNetworkInsightsPathInputBuilder {
                 tag_specifications: self.tag_specifications,
                 dry_run: self.dry_run,
                 client_token: self.client_token,
+                filter_at_source: self.filter_at_source,
+                filter_at_destination: self.filter_at_destination,
             },
         )
     }

@@ -3,22 +3,29 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMapGlyphsOutput {
-    /// <p>The blob's content type.</p>
+    /// <p>The glyph, as binary blob.</p>
     #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
+    /// <p>The HTTP Cache-Control directive for the value.</p>
+    #[doc(hidden)]
+    pub cache_control: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMapGlyphsOutput {
-    /// <p>The blob's content type.</p>
+    /// <p>The glyph, as binary blob.</p>
     pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
     /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
+    }
+    /// <p>The HTTP Cache-Control directive for the value.</p>
+    pub fn cache_control(&self) -> std::option::Option<&str> {
+        self.cache_control.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMapGlyphsOutput {
@@ -39,15 +46,16 @@ impl GetMapGlyphsOutput {
 pub struct GetMapGlyphsOutputBuilder {
     pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
     pub(crate) content_type: std::option::Option<std::string::String>,
+    pub(crate) cache_control: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMapGlyphsOutputBuilder {
-    /// <p>The blob's content type.</p>
+    /// <p>The glyph, as binary blob.</p>
     pub fn blob(mut self, input: aws_smithy_types::Blob) -> Self {
         self.blob = Some(input);
         self
     }
-    /// <p>The blob's content type.</p>
+    /// <p>The glyph, as binary blob.</p>
     pub fn set_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
         self.blob = input;
         self
@@ -60,6 +68,16 @@ impl GetMapGlyphsOutputBuilder {
     /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.content_type = input;
+        self
+    }
+    /// <p>The HTTP Cache-Control directive for the value.</p>
+    pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
+        self.cache_control = Some(input.into());
+        self
+    }
+    /// <p>The HTTP Cache-Control directive for the value.</p>
+    pub fn set_cache_control(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cache_control = input;
         self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -76,6 +94,7 @@ impl GetMapGlyphsOutputBuilder {
         crate::operation::get_map_glyphs::GetMapGlyphsOutput {
             blob: self.blob,
             content_type: self.content_type,
+            cache_control: self.cache_control,
             _request_id: self._request_id,
         }
     }

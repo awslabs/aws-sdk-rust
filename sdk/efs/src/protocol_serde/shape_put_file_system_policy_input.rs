@@ -3,13 +3,11 @@ pub fn ser_put_file_system_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_file_system_policy::PutFileSystemPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bypass_policy_lockout_safety_check {
-        object
-            .key("BypassPolicyLockoutSafetyCheck")
-            .boolean(input.bypass_policy_lockout_safety_check);
+    if let Some(var_1) = &input.bypass_policy_lockout_safety_check {
+        object.key("BypassPolicyLockoutSafetyCheck").boolean(*var_1);
     }
-    if let Some(var_1) = &input.policy {
-        object.key("Policy").string(var_1.as_str());
+    if let Some(var_2) = &input.policy {
+        object.key("Policy").string(var_2.as_str());
     }
     Ok(())
 }

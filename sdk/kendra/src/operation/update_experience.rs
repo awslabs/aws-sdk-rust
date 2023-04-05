@@ -174,7 +174,7 @@ pub enum UpdateExperienceError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A conflict occurred with the request. Please fix any inconsistences with your resources and try again.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for help.</p>
+    /// <p>An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource you want to use doesn’t exist. Please check you have provided the correct resource and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

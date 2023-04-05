@@ -6,11 +6,11 @@ pub struct CreateQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>A user friendly name for the block list.</p>
-    /// <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
+    /// <p>A name for the block list.</p>
+    /// <p>For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>A user-friendly description for the block list.</p>
+    /// <p>A description for the block list.</p>
     /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -22,11 +22,10 @@ pub struct CreateQuerySuggestionsBlockListInput {
     /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-    /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
+    /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
@@ -35,12 +34,12 @@ impl CreateQuerySuggestionsBlockListInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>A user friendly name for the block list.</p>
-    /// <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
+    /// <p>A name for the block list.</p>
+    /// <p>For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A user-friendly description for the block list.</p>
+    /// <p>A description for the block list.</p>
     /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
@@ -55,12 +54,11 @@ impl CreateQuerySuggestionsBlockListInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-    /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
+    /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
@@ -95,25 +93,25 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
         self.index_id = input;
         self
     }
-    /// <p>A user friendly name for the block list.</p>
-    /// <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
+    /// <p>A name for the block list.</p>
+    /// <p>For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>A user friendly name for the block list.</p>
-    /// <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
+    /// <p>A name for the block list.</p>
+    /// <p>For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A user-friendly description for the block list.</p>
+    /// <p>A description for the block list.</p>
     /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A user-friendly description for the block list.</p>
+    /// <p>A description for the block list.</p>
     /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
@@ -143,14 +141,12 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
         self.client_token = input;
         self
     }
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-    /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.role_arn = Some(input.into());
         self
     }
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-    /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.role_arn = input;
         self
@@ -159,14 +155,14 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
+    /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = Some(v);
         self
     }
-    /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
+    /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,

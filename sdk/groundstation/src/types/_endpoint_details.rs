@@ -10,6 +10,10 @@ pub struct EndpointDetails {
     /// <p>A dataflow endpoint.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<crate::types::DataflowEndpoint>,
+    /// <p>An agent endpoint.</p>
+    #[doc(hidden)]
+    pub aws_ground_station_agent_endpoint:
+        std::option::Option<crate::types::AwsGroundStationAgentEndpoint>,
 }
 impl EndpointDetails {
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
@@ -19,6 +23,12 @@ impl EndpointDetails {
     /// <p>A dataflow endpoint.</p>
     pub fn endpoint(&self) -> std::option::Option<&crate::types::DataflowEndpoint> {
         self.endpoint.as_ref()
+    }
+    /// <p>An agent endpoint.</p>
+    pub fn aws_ground_station_agent_endpoint(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsGroundStationAgentEndpoint> {
+        self.aws_ground_station_agent_endpoint.as_ref()
     }
 }
 impl EndpointDetails {
@@ -34,6 +44,8 @@ impl EndpointDetails {
 pub struct EndpointDetailsBuilder {
     pub(crate) security_details: std::option::Option<crate::types::SecurityDetails>,
     pub(crate) endpoint: std::option::Option<crate::types::DataflowEndpoint>,
+    pub(crate) aws_ground_station_agent_endpoint:
+        std::option::Option<crate::types::AwsGroundStationAgentEndpoint>,
 }
 impl EndpointDetailsBuilder {
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
@@ -62,11 +74,28 @@ impl EndpointDetailsBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>An agent endpoint.</p>
+    pub fn aws_ground_station_agent_endpoint(
+        mut self,
+        input: crate::types::AwsGroundStationAgentEndpoint,
+    ) -> Self {
+        self.aws_ground_station_agent_endpoint = Some(input);
+        self
+    }
+    /// <p>An agent endpoint.</p>
+    pub fn set_aws_ground_station_agent_endpoint(
+        mut self,
+        input: std::option::Option<crate::types::AwsGroundStationAgentEndpoint>,
+    ) -> Self {
+        self.aws_ground_station_agent_endpoint = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EndpointDetails`](crate::types::EndpointDetails).
     pub fn build(self) -> crate::types::EndpointDetails {
         crate::types::EndpointDetails {
             security_details: self.security_details,
             endpoint: self.endpoint,
+            aws_ground_station_agent_endpoint: self.aws_ground_station_agent_endpoint,
         }
     }
 }

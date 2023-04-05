@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUploadUrlOutput {
-    /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a> operation.</p>
+    /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a> operation.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
     /// <p>A pre-signed S3 write URL. Upload the zip archive file that contains the definition of your bot or bot locale.</p>
@@ -12,7 +12,7 @@ pub struct CreateUploadUrlOutput {
     _request_id: Option<String>,
 }
 impl CreateUploadUrlOutput {
-    /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a> operation.</p>
+    /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a> operation.</p>
     pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
@@ -43,12 +43,12 @@ pub struct CreateUploadUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateUploadUrlOutputBuilder {
-    /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a> operation.</p>
+    /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a> operation.</p>
     pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.import_id = Some(input.into());
         self
     }
-    /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a> operation.</p>
+    /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a> operation.</p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.import_id = input;
         self

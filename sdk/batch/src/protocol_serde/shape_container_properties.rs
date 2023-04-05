@@ -156,6 +156,15 @@ pub fn ser_container_properties(
         crate::protocol_serde::shape_fargate_platform_configuration::ser_fargate_platform_configuration(&mut object_44, var_43)?;
         object_44.finish();
     }
+    if let Some(var_45) = &input.ephemeral_storage {
+        #[allow(unused_mut)]
+        let mut object_46 = object.key("ephemeralStorage").start_object();
+        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(
+            &mut object_46,
+            var_45,
+        )?;
+        object_46.finish();
+    }
     Ok(())
 }
 
@@ -319,6 +328,11 @@ where
                             "fargatePlatformConfiguration" => {
                                 builder = builder.set_fargate_platform_configuration(
                                     crate::protocol_serde::shape_fargate_platform_configuration::de_fargate_platform_configuration(tokens)?
+                                );
+                            }
+                            "ephemeralStorage" => {
+                                builder = builder.set_ephemeral_storage(
+                                    crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::set_max_results): The maximum number of items to return.
+    ///   - [`max_results(i32)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::set_max_results): The maximum number of items to return.
     ///   - [`multiplex_id(impl Into<String>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::set_multiplex_id): The ID of the multiplex that the programs belong to.
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::set_next_token): The token to retrieve the next page of results.
     /// - On success, responds with [`ListMultiplexProgramsOutput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput) with field(s):

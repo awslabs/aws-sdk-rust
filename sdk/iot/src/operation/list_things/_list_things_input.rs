@@ -22,7 +22,7 @@ pub struct ListThingsInput {
     /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
     /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
     #[doc(hidden)]
-    pub use_prefix_attribute_value: bool,
+    pub use_prefix_attribute_value: std::option::Option<bool>,
 }
 impl ListThingsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -47,7 +47,7 @@ impl ListThingsInput {
     }
     /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
     /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
-    pub fn use_prefix_attribute_value(&self) -> bool {
+    pub fn use_prefix_attribute_value(&self) -> std::option::Option<bool> {
         self.use_prefix_attribute_value
     }
 }
@@ -145,7 +145,7 @@ impl ListThingsInputBuilder {
             attribute_name: self.attribute_name,
             attribute_value: self.attribute_value,
             thing_type_name: self.thing_type_name,
-            use_prefix_attribute_value: self.use_prefix_attribute_value.unwrap_or_default(),
+            use_prefix_attribute_value: self.use_prefix_attribute_value,
         })
     }
 }

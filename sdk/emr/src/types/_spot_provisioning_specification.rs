@@ -8,7 +8,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpotProvisioningSpecification {
-    /// <p>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
+    /// <p>The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     #[doc(hidden)]
     pub timeout_duration_minutes: std::option::Option<i32>,
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
@@ -24,7 +24,7 @@ pub struct SpotProvisioningSpecification {
     pub allocation_strategy: std::option::Option<crate::types::SpotProvisioningAllocationStrategy>,
 }
 impl SpotProvisioningSpecification {
-    /// <p>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
+    /// <p>The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     pub fn timeout_duration_minutes(&self) -> std::option::Option<i32> {
         self.timeout_duration_minutes
     }
@@ -65,12 +65,12 @@ pub struct SpotProvisioningSpecificationBuilder {
         std::option::Option<crate::types::SpotProvisioningAllocationStrategy>,
 }
 impl SpotProvisioningSpecificationBuilder {
-    /// <p>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
+    /// <p>The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     pub fn timeout_duration_minutes(mut self, input: i32) -> Self {
         self.timeout_duration_minutes = Some(input);
         self
     }
-    /// <p>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
+    /// <p>The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     pub fn set_timeout_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.timeout_duration_minutes = input;
         self

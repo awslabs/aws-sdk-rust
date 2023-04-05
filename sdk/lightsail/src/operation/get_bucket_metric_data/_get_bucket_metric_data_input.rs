@@ -26,7 +26,7 @@ pub struct GetBucketMetricDataInput {
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
     #[doc(hidden)]
-    pub period: i32,
+    pub period: std::option::Option<i32>,
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
@@ -70,7 +70,7 @@ impl GetBucketMetricDataInput {
     /// <p>The granularity, in seconds, of the returned data points.</p> <note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p>The statistic for the metric.</p>
@@ -247,7 +247,7 @@ impl GetBucketMetricDataInputBuilder {
                 metric_name: self.metric_name,
                 start_time: self.start_time,
                 end_time: self.end_time,
-                period: self.period.unwrap_or_default(),
+                period: self.period,
                 statistics: self.statistics,
                 unit: self.unit,
             },

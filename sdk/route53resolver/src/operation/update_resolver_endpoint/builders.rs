@@ -5,7 +5,7 @@ pub use crate::operation::update_resolver_endpoint::_update_resolver_endpoint_in
 
 /// Fluent builder constructing a request to `UpdateResolverEndpoint`.
 ///
-/// <p>Updates the name of an inbound or an outbound Resolver endpoint. </p>
+/// <p>Updates the name, or enpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResolverEndpointFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -90,6 +90,36 @@ impl UpdateResolverEndpointFluentBuilder {
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
+        self
+    }
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+    pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
+        self.inner = self.inner.resolver_endpoint_type(input);
+        self
+    }
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+    pub fn set_resolver_endpoint_type(
+        mut self,
+        input: std::option::Option<crate::types::ResolverEndpointType>,
+    ) -> Self {
+        self.inner = self.inner.set_resolver_endpoint_type(input);
+        self
+    }
+    /// Appends an item to `UpdateIpAddresses`.
+    ///
+    /// To override the contents of this collection use [`set_update_ip_addresses`](Self::set_update_ip_addresses).
+    ///
+    /// <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+    pub fn update_ip_addresses(mut self, input: crate::types::UpdateIpAddress) -> Self {
+        self.inner = self.inner.update_ip_addresses(input);
+        self
+    }
+    /// <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+    pub fn set_update_ip_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdateIpAddress>>,
+    ) -> Self {
+        self.inner = self.inner.set_update_ip_addresses(input);
         self
     }
 }

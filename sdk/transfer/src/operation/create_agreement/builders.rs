@@ -110,13 +110,13 @@ impl CreateAgreementFluentBuilder {
         self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
     pub fn base_directory(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.base_directory(input.into());
         self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
     pub fn set_base_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_base_directory(input);
         self

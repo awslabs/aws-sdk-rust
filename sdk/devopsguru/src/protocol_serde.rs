@@ -152,6 +152,8 @@ pub(crate) mod shape_events;
 
 pub(crate) mod shape_insight_feedback;
 
+pub(crate) mod shape_list_anomalies_for_insight_filters;
+
 pub(crate) mod shape_list_events_filters;
 
 pub(crate) mod shape_list_insights_status_filter;

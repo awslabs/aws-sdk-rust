@@ -8,7 +8,7 @@ pub struct ListThingsInThingGroupInput {
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>When true, list things in this thing group and in all child groups as well.</p>
     #[doc(hidden)]
-    pub recursive: bool,
+    pub recursive: std::option::Option<bool>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ impl ListThingsInThingGroupInput {
         self.thing_group_name.as_deref()
     }
     /// <p>When true, list things in this thing group and in all child groups as well.</p>
-    pub fn recursive(&self) -> bool {
+    pub fn recursive(&self) -> std::option::Option<bool> {
         self.recursive
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -103,7 +103,7 @@ impl ListThingsInThingGroupInputBuilder {
         Ok(
             crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput {
                 thing_group_name: self.thing_group_name,
-                recursive: self.recursive.unwrap_or_default(),
+                recursive: self.recursive,
                 next_token: self.next_token,
                 max_results: self.max_results,
             },

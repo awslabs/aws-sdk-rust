@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportLensOutput {
-    /// <p>The JSON for the lens.</p>
+    /// <p>The JSON representation of a lens.</p>
     #[doc(hidden)]
     pub lens_json: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl ExportLensOutput {
-    /// <p>The JSON for the lens.</p>
+    /// <p>The JSON representation of a lens.</p>
     pub fn lens_json(&self) -> std::option::Option<&str> {
         self.lens_json.as_deref()
     }
@@ -34,12 +34,12 @@ pub struct ExportLensOutputBuilder {
     _request_id: Option<String>,
 }
 impl ExportLensOutputBuilder {
-    /// <p>The JSON for the lens.</p>
+    /// <p>The JSON representation of a lens.</p>
     pub fn lens_json(mut self, input: impl Into<std::string::String>) -> Self {
         self.lens_json = Some(input.into());
         self
     }
-    /// <p>The JSON for the lens.</p>
+    /// <p>The JSON representation of a lens.</p>
     pub fn set_lens_json(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.lens_json = input;
         self

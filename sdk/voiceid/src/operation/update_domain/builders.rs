@@ -85,12 +85,12 @@ impl UpdateDomainFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description about this domain.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description about this domain.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self

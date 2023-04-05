@@ -84,6 +84,12 @@ pub struct DomainStatus {
     /// <p>Information about a configuration change happening on the domain.</p>
     #[doc(hidden)]
     pub change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
+    /// <p>Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on the domain.</p>
+    #[doc(hidden)]
+    pub off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
+    /// <p>Service software update options for the domain.</p>
+    #[doc(hidden)]
+    pub software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl DomainStatus {
     /// <p>Unique identifier for the domain.</p>
@@ -208,6 +214,18 @@ impl DomainStatus {
     ) -> std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
+    /// <p>Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on the domain.</p>
+    pub fn off_peak_window_options(
+        &self,
+    ) -> std::option::Option<&crate::types::OffPeakWindowOptions> {
+        self.off_peak_window_options.as_ref()
+    }
+    /// <p>Service software update options for the domain.</p>
+    pub fn software_update_options(
+        &self,
+    ) -> std::option::Option<&crate::types::SoftwareUpdateOptions> {
+        self.software_update_options.as_ref()
+    }
 }
 impl DomainStatus {
     /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::types::DomainStatus).
@@ -252,6 +270,8 @@ pub struct DomainStatusBuilder {
         std::option::Option<crate::types::AdvancedSecurityOptions>,
     pub(crate) auto_tune_options: std::option::Option<crate::types::AutoTuneOptionsOutput>,
     pub(crate) change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
+    pub(crate) off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
+    pub(crate) software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl DomainStatusBuilder {
     /// <p>Unique identifier for the domain.</p>
@@ -591,6 +611,32 @@ impl DomainStatusBuilder {
         self.change_progress_details = input;
         self
     }
+    /// <p>Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on the domain.</p>
+    pub fn off_peak_window_options(mut self, input: crate::types::OffPeakWindowOptions) -> Self {
+        self.off_peak_window_options = Some(input);
+        self
+    }
+    /// <p>Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on the domain.</p>
+    pub fn set_off_peak_window_options(
+        mut self,
+        input: std::option::Option<crate::types::OffPeakWindowOptions>,
+    ) -> Self {
+        self.off_peak_window_options = input;
+        self
+    }
+    /// <p>Service software update options for the domain.</p>
+    pub fn software_update_options(mut self, input: crate::types::SoftwareUpdateOptions) -> Self {
+        self.software_update_options = Some(input);
+        self
+    }
+    /// <p>Service software update options for the domain.</p>
+    pub fn set_software_update_options(
+        mut self,
+        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+    ) -> Self {
+        self.software_update_options = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DomainStatus`](crate::types::DomainStatus).
     pub fn build(self) -> crate::types::DomainStatus {
         crate::types::DomainStatus {
@@ -619,6 +665,8 @@ impl DomainStatusBuilder {
             advanced_security_options: self.advanced_security_options,
             auto_tune_options: self.auto_tune_options,
             change_progress_details: self.change_progress_details,
+            off_peak_window_options: self.off_peak_window_options,
+            software_update_options: self.software_update_options,
         }
     }
 }

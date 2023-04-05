@@ -114,6 +114,11 @@ where
                                     crate::protocol_serde::shape_elastic_channel_configuration::de_elastic_channel_configuration(tokens)?
                                 );
                             }
+                            "ExpirationSettings" => {
+                                builder = builder.set_expiration_settings(
+                                    crate::protocol_serde::shape_expiration_settings::de_expiration_settings(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

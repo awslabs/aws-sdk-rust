@@ -15,16 +15,16 @@ pub fn ser_get_connections_input(
         )?;
         object_3.finish();
     }
-    if input.hide_password {
-        object.key("HidePassword").boolean(input.hide_password);
+    if let Some(var_4) = &input.hide_password {
+        object.key("HidePassword").boolean(*var_4);
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("NextToken").string(var_4.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("NextToken").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.max_results {
+    if let Some(var_6) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

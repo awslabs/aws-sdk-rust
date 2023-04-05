@@ -6,7 +6,7 @@ pub use crate::operation::create_network_insights_path::_create_network_insights
 /// Fluent builder constructing a request to `CreateNetworkInsightsPath`.
 ///
 /// <p>Creates a path to analyze for reachability.</p>
-/// <p>Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.</p>
+/// <p>Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual private cloud (VPC). For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">Reachability Analyzer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNetworkInsightsPathFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -70,42 +70,42 @@ impl CreateNetworkInsightsPathFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The IP address of the Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The IP address of the source.</p>
     pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_ip(input.into());
         self
     }
-    /// <p>The IP address of the Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The IP address of the source.</p>
     pub fn set_source_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_source_ip(input);
         self
     }
-    /// <p>The IP address of the Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The IP address of the destination.</p>
     pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.destination_ip(input.into());
         self
     }
-    /// <p>The IP address of the Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The IP address of the destination.</p>
     pub fn set_destination_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_destination_ip(input);
         self
     }
-    /// <p>The Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
         self
     }
-    /// <p>The Amazon Web Services resource that is the source of the path.</p>
+    /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
-    /// <p>The Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.</p>
     pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.destination(input.into());
         self
     }
-    /// <p>The Amazon Web Services resource that is the destination of the path.</p>
+    /// <p>The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
@@ -165,6 +165,32 @@ impl CreateNetworkInsightsPathFluentBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
+    pub fn filter_at_source(mut self, input: crate::types::PathRequestFilter) -> Self {
+        self.inner = self.inner.filter_at_source(input);
+        self
+    }
+    /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
+    pub fn set_filter_at_source(
+        mut self,
+        input: std::option::Option<crate::types::PathRequestFilter>,
+    ) -> Self {
+        self.inner = self.inner.set_filter_at_source(input);
+        self
+    }
+    /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
+    pub fn filter_at_destination(mut self, input: crate::types::PathRequestFilter) -> Self {
+        self.inner = self.inner.filter_at_destination(input);
+        self
+    }
+    /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
+    pub fn set_filter_at_destination(
+        mut self,
+        input: std::option::Option<crate::types::PathRequestFilter>,
+    ) -> Self {
+        self.inner = self.inner.set_filter_at_destination(input);
         self
     }
 }

@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVoiceConnectorInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>When enabled, requires encryption for the Voice Connector.</p>
     #[doc(hidden)]
     pub require_encryption: std::option::Option<bool>,
 }
 impl UpdateVoiceConnectorInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>When enabled, requires encryption for the Voice Connector.</p>
     pub fn require_encryption(&self) -> std::option::Option<bool> {
         self.require_encryption
     }
@@ -44,12 +44,12 @@ pub struct UpdateVoiceConnectorInputBuilder {
     pub(crate) require_encryption: std::option::Option<bool>,
 }
 impl UpdateVoiceConnectorInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -57,22 +57,22 @@ impl UpdateVoiceConnectorInputBuilder {
         self.voice_connector_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>When enabled, requires encryption for the Voice Connector.</p>
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.require_encryption = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>When enabled, requires encryption for the Voice Connector.</p>
     pub fn set_require_encryption(mut self, input: std::option::Option<bool>) -> Self {
         self.require_encryption = input;
         self

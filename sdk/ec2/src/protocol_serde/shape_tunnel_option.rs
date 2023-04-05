@@ -254,6 +254,21 @@ pub fn de_tunnel_option(
                 builder = builder.set_log_options(var_20);
             }
             ,
+            s if s.matches("enableTunnelLifecycleControl") /* EnableTunnelLifecycleControl com.amazonaws.ec2#TunnelOption$EnableTunnelLifecycleControl */ =>  {
+                let var_21 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_enable_tunnel_lifecycle_control(var_21);
+            }
+            ,
             _ => {}
         }
     }

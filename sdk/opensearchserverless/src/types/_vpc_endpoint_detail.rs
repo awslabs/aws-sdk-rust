@@ -10,7 +10,7 @@ pub struct VpcEndpointDetail {
     /// <p>The name of the endpoint.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the VPC from which you access OpenSearch Serverless</p>
+    /// <p>The ID of the VPC from which you access OpenSearch Serverless.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
@@ -35,7 +35,7 @@ impl VpcEndpointDetail {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ID of the VPC from which you access OpenSearch Serverless</p>
+    /// <p>The ID of the VPC from which you access OpenSearch Serverless.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -96,12 +96,12 @@ impl VpcEndpointDetailBuilder {
         self.name = input;
         self
     }
-    /// <p>The ID of the VPC from which you access OpenSearch Serverless</p>
+    /// <p>The ID of the VPC from which you access OpenSearch Serverless.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.vpc_id = Some(input.into());
         self
     }
-    /// <p>The ID of the VPC from which you access OpenSearch Serverless</p>
+    /// <p>The ID of the VPC from which you access OpenSearch Serverless.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.vpc_id = input;
         self

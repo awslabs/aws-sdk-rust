@@ -6,11 +6,14 @@ pub fn ser_update_channel_message_input(
     if let Some(var_1) = &input.content {
         object.key("Content").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.metadata {
-        object.key("Metadata").string(var_2.as_str());
+    if let Some(var_2) = &input.content_type {
+        object.key("ContentType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.sub_channel_id {
-        object.key("SubChannelId").string(var_3.as_str());
+    if let Some(var_3) = &input.metadata {
+        object.key("Metadata").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.sub_channel_id {
+        object.key("SubChannelId").string(var_4.as_str());
     }
     Ok(())
 }

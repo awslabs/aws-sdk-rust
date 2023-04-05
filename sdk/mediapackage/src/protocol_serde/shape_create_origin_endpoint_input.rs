@@ -48,36 +48,36 @@ pub fn ser_create_origin_endpoint_input(
     if let Some(var_15) = &input.origination {
         object.key("origination").string(var_15.as_str());
     }
-    if input.startover_window_seconds != 0 {
+    if let Some(var_16) = &input.startover_window_seconds {
         object.key("startoverWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.startover_window_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_16) = &input.tags {
+    if let Some(var_17) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_17.finish();
+        object_18.finish();
     }
-    if input.time_delay_seconds != 0 {
+    if let Some(var_21) = &input.time_delay_seconds {
         object.key("timeDelaySeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.time_delay_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_20) = &input.whitelist {
-        let mut array_21 = object.key("whitelist").start_array();
-        for item_22 in var_20 {
+    if let Some(var_22) = &input.whitelist {
+        let mut array_23 = object.key("whitelist").start_array();
+        for item_24 in var_22 {
             {
-                array_21.value().string(item_22.as_str());
+                array_23.value().string(item_24.as_str());
             }
         }
-        array_21.finish();
+        array_23.finish();
     }
     Ok(())
 }

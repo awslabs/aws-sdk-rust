@@ -101,6 +101,13 @@ where
                                 builder = builder
                                     .set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                             }
+                            "insecureIngest" => {
+                                builder = builder.set_insecure_ingest(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

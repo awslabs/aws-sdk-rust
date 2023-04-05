@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDominantLanguageDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartDominantLanguageDetectionJob</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeDominantLanguageDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartDominantLanguageDetectionJob</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -27,12 +27,12 @@ pub struct DescribeDominantLanguageDetectionJobInputBuilder {
     pub(crate) job_id: std::option::Option<std::string::String>,
 }
 impl DescribeDominantLanguageDetectionJobInputBuilder {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartDominantLanguageDetectionJob</code> operation returns this identifier in its response.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.job_id = Some(input.into());
         self
     }
-    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartDominantLanguageDetectionJob</code> operation returns this identifier in its response.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.job_id = input;
         self

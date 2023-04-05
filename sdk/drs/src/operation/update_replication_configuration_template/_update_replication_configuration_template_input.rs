@@ -52,6 +52,9 @@ pub struct UpdateReplicationConfigurationTemplateInput {
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
     #[doc(hidden)]
     pub pit_policy: std::option::Option<std::vec::Vec<crate::types::PitPolicyRule>>,
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    #[doc(hidden)]
+    pub auto_replicate_new_disks: std::option::Option<bool>,
 }
 impl UpdateReplicationConfigurationTemplateInput {
     /// <p>The Replication Configuration Template ID.</p>
@@ -126,6 +129,10 @@ impl UpdateReplicationConfigurationTemplateInput {
     pub fn pit_policy(&self) -> std::option::Option<&[crate::types::PitPolicyRule]> {
         self.pit_policy.as_deref()
     }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn auto_replicate_new_disks(&self) -> std::option::Option<bool> {
+        self.auto_replicate_new_disks
+    }
 }
 impl std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -163,6 +170,7 @@ impl std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
+        formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
         formatter.finish()
     }
 }
@@ -197,6 +205,7 @@ pub struct UpdateReplicationConfigurationTemplateInputBuilder {
     pub(crate) staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) pit_policy: std::option::Option<std::vec::Vec<crate::types::PitPolicyRule>>,
+    pub(crate) auto_replicate_new_disks: std::option::Option<bool>,
 }
 impl UpdateReplicationConfigurationTemplateInputBuilder {
     /// <p>The Replication Configuration Template ID.</p>
@@ -431,6 +440,16 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
         self.pit_policy = input;
         self
     }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn auto_replicate_new_disks(mut self, input: bool) -> Self {
+        self.auto_replicate_new_disks = Some(input);
+        self
+    }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn set_auto_replicate_new_disks(mut self, input: std::option::Option<bool>) -> Self {
+        self.auto_replicate_new_disks = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationTemplateInput`](crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateInput).
     pub fn build(self) -> Result<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
@@ -465,6 +484,8 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
                 staging_area_tags: self.staging_area_tags
                 ,
                 pit_policy: self.pit_policy
+                ,
+                auto_replicate_new_disks: self.auto_replicate_new_disks
                 ,
             }
         )
@@ -506,6 +527,7 @@ impl std::fmt::Debug for UpdateReplicationConfigurationTemplateInputBuilder {
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
+        formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
         formatter.finish()
     }
 }

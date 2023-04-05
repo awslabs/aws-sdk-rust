@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAgentsOutput {
-    /// <p>A list of agents in your account.</p>
+    /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
     pub agents: std::option::Option<std::vec::Vec<crate::types::AgentListEntry>>,
-    /// <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
+    /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAgentsOutput {
-    /// <p>A list of agents in your account.</p>
+    /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
     pub fn agents(&self) -> std::option::Option<&[crate::types::AgentListEntry]> {
         self.agents.as_deref()
     }
-    /// <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
+    /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,14 +47,14 @@ impl ListAgentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_agents`](Self::set_agents).
     ///
-    /// <p>A list of agents in your account.</p>
+    /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
     pub fn agents(mut self, input: crate::types::AgentListEntry) -> Self {
         let mut v = self.agents.unwrap_or_default();
         v.push(input);
         self.agents = Some(v);
         self
     }
-    /// <p>A list of agents in your account.</p>
+    /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
     pub fn set_agents(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::AgentListEntry>>,
@@ -62,12 +62,12 @@ impl ListAgentsOutputBuilder {
         self.agents = input;
         self
     }
-    /// <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
+    /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
+    /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

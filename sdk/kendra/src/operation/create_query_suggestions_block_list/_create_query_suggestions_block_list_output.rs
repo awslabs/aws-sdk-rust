@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQuerySuggestionsBlockListOutput {
-    /// <p>The identifier of the created block list.</p>
+    /// <p>The identifier of the block list.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateQuerySuggestionsBlockListOutput {
-    /// <p>The identifier of the created block list.</p>
+    /// <p>The identifier of the block list.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -34,12 +34,12 @@ pub struct CreateQuerySuggestionsBlockListOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateQuerySuggestionsBlockListOutputBuilder {
-    /// <p>The identifier of the created block list.</p>
+    /// <p>The identifier of the block list.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The identifier of the created block list.</p>
+    /// <p>The identifier of the block list.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.id = input;
         self

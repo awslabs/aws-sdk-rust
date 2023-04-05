@@ -13,6 +13,8 @@ pub use crate::types::error::_base_exception::BaseException;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_slot_not_available_exception::SlotNotAvailableException;
+
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
@@ -40,6 +42,8 @@ mod _limit_exceeded_exception;
 mod _resource_already_exists_exception;
 
 mod _resource_not_found_exception;
+
+mod _slot_not_available_exception;
 
 mod _validation_exception;
 

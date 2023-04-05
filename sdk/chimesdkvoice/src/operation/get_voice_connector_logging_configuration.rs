@@ -154,19 +154,19 @@ pub type GetVoiceConnectorLoggingConfigurationErrorKind =
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetVoiceConnectorLoggingConfigurationError {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The requested resource couldn't be found.</p>
     NotFoundException(crate::types::error::NotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottledClientException(crate::types::error::ThrottledClientException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The client isn't authorized to request a resource.</p>
     UnauthorizedClientException(crate::types::error::UnauthorizedClientException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

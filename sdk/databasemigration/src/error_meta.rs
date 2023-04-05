@@ -172,6 +172,49 @@ impl From<crate::operation::apply_pending_maintenance_action::ApplyPendingMainte
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_start_recommendations::BatchStartRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_start_recommendations::BatchStartRecommendationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_start_recommendations::BatchStartRecommendationsError> for Error {
+    fn from(
+        err: crate::operation::batch_start_recommendations::BatchStartRecommendationsError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_start_recommendations::BatchStartRecommendationsError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::batch_start_recommendations::BatchStartRecommendationsError::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
+            crate::operation::batch_start_recommendations::BatchStartRecommendationsError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::batch_start_recommendations::BatchStartRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunError, R>) -> Self {
         match err {
@@ -1488,6 +1531,68 @@ impl From<crate::operation::describe_pending_maintenance_actions::DescribePendin
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsError> for Error {
+    fn from(err: crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsError) -> Self {
+        match err {
+            crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsError::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
+            crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_recommendations::DescribeRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_recommendations::DescribeRecommendationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_recommendations::DescribeRecommendationsError> for Error {
+    fn from(err: crate::operation::describe_recommendations::DescribeRecommendationsError) -> Self {
+        match err {
+            crate::operation::describe_recommendations::DescribeRecommendationsError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::describe_recommendations::DescribeRecommendationsError::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
+            crate::operation::describe_recommendations::DescribeRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -2395,6 +2500,47 @@ impl From<crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAn
             crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
             crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
             crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_recommendations::StartRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_recommendations::StartRecommendationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_recommendations::StartRecommendationsError> for Error {
+    fn from(err: crate::operation::start_recommendations::StartRecommendationsError) -> Self {
+        match err {
+            crate::operation::start_recommendations::StartRecommendationsError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::start_recommendations::StartRecommendationsError::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
+            crate::operation::start_recommendations::StartRecommendationsError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::start_recommendations::StartRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

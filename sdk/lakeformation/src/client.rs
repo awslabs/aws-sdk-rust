@@ -270,6 +270,8 @@ mod describe_transaction;
 
 mod extend_transaction;
 
+mod get_data_cells_filter;
+
 mod get_data_lake_settings;
 
 mod get_effective_permissions_for_path;
@@ -321,6 +323,8 @@ mod search_tables_by_lf_tags;
 mod start_query_planning;
 
 mod start_transaction;
+
+mod update_data_cells_filter;
 
 mod update_lf_tag;
 

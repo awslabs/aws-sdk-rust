@@ -23,41 +23,47 @@ pub fn ser_create_image_pipeline_input(
     if let Some(var_6) = &input.image_recipe_arn {
         object.key("imageRecipeArn").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.image_tests_configuration {
+    if let Some(var_7) = &input.image_scanning_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        let mut object_8 = object.key("imageScanningConfiguration").start_object();
+        crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.infrastructure_configuration_arn {
+    if let Some(var_9) = &input.image_tests_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("imageTestsConfiguration").start_object();
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(
+            &mut object_10,
+            var_9,
+        )?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.infrastructure_configuration_arn {
         object
             .key("infrastructureConfigurationArn")
-            .string(var_9.as_str());
+            .string(var_11.as_str());
     }
-    if let Some(var_10) = &input.name {
-        object.key("name").string(var_10.as_str());
+    if let Some(var_12) = &input.name {
+        object.key("name").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.schedule {
+    if let Some(var_13) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("schedule").start_object();
-        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_14 = object.key("schedule").start_object();
+        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_13) = &input.status {
-        object.key("status").string(var_13.as_str());
+    if let Some(var_15) = &input.status {
+        object.key("status").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_16) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_15.finish();
+        object_17.finish();
     }
     Ok(())
 }

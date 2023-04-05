@@ -5,7 +5,7 @@
 pub struct ListWirelessDevicesInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -30,7 +30,7 @@ pub struct ListWirelessDevicesInput {
 }
 impl ListWirelessDevicesInput {
     /// <p>The maximum number of results to return in this operation.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -186,7 +186,7 @@ impl ListWirelessDevicesInputBuilder {
     > {
         Ok(
             crate::operation::list_wireless_devices::ListWirelessDevicesInput {
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
                 destination_name: self.destination_name,
                 device_profile_id: self.device_profile_id,

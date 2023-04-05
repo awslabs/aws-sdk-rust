@@ -9,7 +9,7 @@ pub struct UpdateFilterInput {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub filter_name: std::option::Option<std::string::String>,
-    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -17,7 +17,7 @@ pub struct UpdateFilterInput {
     pub action: std::option::Option<crate::types::FilterAction>,
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     #[doc(hidden)]
-    pub rank: i32,
+    pub rank: std::option::Option<i32>,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::types::FindingCriteria>,
@@ -31,7 +31,7 @@ impl UpdateFilterInput {
     pub fn filter_name(&self) -> std::option::Option<&str> {
         self.filter_name.as_deref()
     }
-    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -40,7 +40,7 @@ impl UpdateFilterInput {
         self.action.as_ref()
     }
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
-    pub fn rank(&self) -> i32 {
+    pub fn rank(&self) -> std::option::Option<i32> {
         self.rank
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
@@ -87,12 +87,12 @@ impl UpdateFilterInputBuilder {
         self.filter_name = input;
         self
     }
-    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
         self
@@ -142,7 +142,7 @@ impl UpdateFilterInputBuilder {
             filter_name: self.filter_name,
             description: self.description,
             action: self.action,
-            rank: self.rank.unwrap_or_default(),
+            rank: self.rank,
             finding_criteria: self.finding_criteria,
         })
     }

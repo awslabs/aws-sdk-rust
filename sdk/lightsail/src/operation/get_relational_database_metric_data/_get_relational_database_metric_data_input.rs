@@ -21,7 +21,7 @@ pub struct GetRelationalDatabaseMetricDataInput {
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
     #[doc(hidden)]
-    pub period: i32,
+    pub period: std::option::Option<i32>,
     /// <p>The start of the time interval from which to get metric data.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -73,7 +73,7 @@ impl GetRelationalDatabaseMetricDataInput {
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p>The start of the time interval from which to get metric data.</p>
@@ -289,7 +289,6 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
                 metric_name: self.metric_name
                 ,
                 period: self.period
-                    .unwrap_or_default()
                 ,
                 start_time: self.start_time
                 ,

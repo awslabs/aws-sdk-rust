@@ -166,10 +166,12 @@ pub type CreateWorkloadErrorKind = CreateWorkloadError;
 pub enum CreateWorkloadError {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The resource already exists.</p>
+    /// <p>The resource has already been processed, was deleted, or is too large.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The user has reached their resource quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Request was denied due to request throttling.</p>
@@ -197,6 +199,7 @@ impl std::fmt::Display for CreateWorkloadError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -214,6 +217,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateWorkloadE
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ResourceNotFoundException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ServiceQuotaExceededException(_inner) => {
@@ -273,6 +279,7 @@ impl CreateWorkloadError {
             Self::AccessDeniedException(e) => e.meta(),
             Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
+            Self::ResourceNotFoundException(e) => e.meta(),
             Self::ServiceQuotaExceededException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
@@ -290,6 +297,10 @@ impl CreateWorkloadError {
     /// Returns `true` if the error kind is `CreateWorkloadError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `CreateWorkloadError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateWorkloadError::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
@@ -310,6 +321,7 @@ impl std::error::Error for CreateWorkloadError {
             Self::AccessDeniedException(_inner) => Some(_inner),
             Self::ConflictException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
+            Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => Some(_inner),
             Self::ThrottlingException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),

@@ -3,13 +3,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessageInput {
-    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The content of the message. </p>
     /// <ul>
     /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
     /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
@@ -21,7 +22,7 @@ pub struct SendMessageInput {
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl SendMessageInput {
-    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -29,6 +30,7 @@ impl SendMessageInput {
     /// <ul>
     /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
     /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
     /// </ul>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
@@ -59,12 +61,12 @@ pub struct SendMessageInputBuilder {
     pub(crate) connection_token: std::option::Option<std::string::String>,
 }
 impl SendMessageInputBuilder {
-    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.content_type = Some(input.into());
         self
     }
-    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.content_type = input;
         self
@@ -73,6 +75,7 @@ impl SendMessageInputBuilder {
     /// <ul>
     /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
     /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
     /// </ul>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
         self.content = Some(input.into());
@@ -82,6 +85,7 @@ impl SendMessageInputBuilder {
     /// <ul>
     /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
     /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
     /// </ul>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.content = input;

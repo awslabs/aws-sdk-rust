@@ -9,7 +9,7 @@ pub struct ListLensesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The type of lenses to be returned.</p>
     #[doc(hidden)]
     pub lens_type: std::option::Option<crate::types::LensType>,
@@ -26,7 +26,7 @@ impl ListLensesInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The type of lenses to be returned.</p>
@@ -122,7 +122,7 @@ impl ListLensesInputBuilder {
     > {
         Ok(crate::operation::list_lenses::ListLensesInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             lens_type: self.lens_type,
             lens_status: self.lens_status,
             lens_name: self.lens_name,

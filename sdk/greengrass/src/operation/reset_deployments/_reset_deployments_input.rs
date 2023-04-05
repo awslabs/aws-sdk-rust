@@ -9,7 +9,7 @@ pub struct ResetDeploymentsInput {
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// If true, performs a best-effort only core reset.
     #[doc(hidden)]
-    pub force: bool,
+    pub force: std::option::Option<bool>,
     /// The ID of the Greengrass group.
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ impl ResetDeploymentsInput {
         self.amzn_client_token.as_deref()
     }
     /// If true, performs a best-effort only core reset.
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> std::option::Option<bool> {
         self.force
     }
     /// The ID of the Greengrass group.
@@ -87,7 +87,7 @@ impl ResetDeploymentsInputBuilder {
     > {
         Ok(crate::operation::reset_deployments::ResetDeploymentsInput {
             amzn_client_token: self.amzn_client_token,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
             group_id: self.group_id,
         })
     }

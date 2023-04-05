@@ -14,7 +14,7 @@ pub struct DeleteDocumentInput {
     pub version_name: std::option::Option<std::string::String>,
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
     #[doc(hidden)]
-    pub force: bool,
+    pub force: std::option::Option<bool>,
 }
 impl DeleteDocumentInput {
     /// <p>The name of the document.</p>
@@ -30,7 +30,7 @@ impl DeleteDocumentInput {
         self.version_name.as_deref()
     }
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> std::option::Option<bool> {
         self.force
     }
 }
@@ -102,7 +102,7 @@ impl DeleteDocumentInputBuilder {
             name: self.name,
             document_version: self.document_version,
             version_name: self.version_name,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

@@ -29,7 +29,7 @@ pub struct UpdateLocationSmbInput {
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
     #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     #[doc(hidden)]
     pub mount_options: std::option::Option<crate::types::SmbMountOptions>,
 }
@@ -66,7 +66,7 @@ impl UpdateLocationSmbInput {
     pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_arns.as_deref()
     }
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn mount_options(&self) -> std::option::Option<&crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
@@ -190,12 +190,12 @@ impl UpdateLocationSmbInputBuilder {
         self.agent_arns = input;
         self
     }
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
         self.mount_options = Some(input);
         self
     }
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn set_mount_options(
         mut self,
         input: std::option::Option<crate::types::SmbMountOptions>,

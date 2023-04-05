@@ -7,11 +7,11 @@
 pub struct CreateKeysAndCertificateInput {
     /// <p>Specifies whether the certificate is active.</p>
     #[doc(hidden)]
-    pub set_as_active: bool,
+    pub set_as_active: std::option::Option<bool>,
 }
 impl CreateKeysAndCertificateInput {
     /// <p>Specifies whether the certificate is active.</p>
-    pub fn set_as_active(&self) -> bool {
+    pub fn set_as_active(&self) -> std::option::Option<bool> {
         self.set_as_active
     }
 }
@@ -50,7 +50,7 @@ impl CreateKeysAndCertificateInputBuilder {
     > {
         Ok(
             crate::operation::create_keys_and_certificate::CreateKeysAndCertificateInput {
-                set_as_active: self.set_as_active.unwrap_or_default(),
+                set_as_active: self.set_as_active,
             },
         )
     }

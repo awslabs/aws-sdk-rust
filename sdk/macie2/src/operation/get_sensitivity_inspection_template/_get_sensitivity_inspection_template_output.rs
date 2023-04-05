@@ -12,7 +12,7 @@ pub struct GetSensitivityInspectionTemplateOutput {
     /// <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
     #[doc(hidden)]
     pub includes: std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>,
-    /// <p>The name of the template.</p>
+    /// <p>The name of the template: automated-sensitive-data-discovery.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the template.</p>
@@ -37,7 +37,7 @@ impl GetSensitivityInspectionTemplateOutput {
     ) -> std::option::Option<&crate::types::SensitivityInspectionTemplateIncludes> {
         self.includes.as_ref()
     }
-    /// <p>The name of the template.</p>
+    /// <p>The name of the template: automated-sensitive-data-discovery.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -106,12 +106,12 @@ impl GetSensitivityInspectionTemplateOutputBuilder {
         self.includes = input;
         self
     }
-    /// <p>The name of the template.</p>
+    /// <p>The name of the template: automated-sensitive-data-discovery.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the template.</p>
+    /// <p>The name of the template: automated-sensitive-data-discovery.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self

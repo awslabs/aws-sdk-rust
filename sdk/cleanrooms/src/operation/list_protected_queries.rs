@@ -201,6 +201,8 @@ pub enum ListProtectedQueriesError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Unexpected error during processing of request.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>Request references a resource which does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the specified constraints.</p>
@@ -225,6 +227,7 @@ impl std::fmt::Display for ListProtectedQueriesError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -238,6 +241,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ListProtectedQu
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ResourceNotFoundException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ThrottlingException(_inner) => {
@@ -295,6 +301,7 @@ impl ListProtectedQueriesError {
         match self {
             Self::AccessDeniedException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
+            Self::ResourceNotFoundException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -307,6 +314,10 @@ impl ListProtectedQueriesError {
     /// Returns `true` if the error kind is `ListProtectedQueriesError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ListProtectedQueriesError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListProtectedQueriesError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -322,6 +333,7 @@ impl std::error::Error for ListProtectedQueriesError {
         match self {
             Self::AccessDeniedException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
+            Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ThrottlingException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),

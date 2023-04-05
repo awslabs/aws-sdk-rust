@@ -49,6 +49,9 @@ pub struct Contact {
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
     #[doc(hidden)]
     pub related_contact_id: std::option::Option<std::string::String>,
+    /// <p>Information about Amazon Connect Wisdom.</p>
+    #[doc(hidden)]
+    pub wisdom_info: std::option::Option<crate::types::WisdomInfo>,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -111,6 +114,10 @@ impl Contact {
     pub fn related_contact_id(&self) -> std::option::Option<&str> {
         self.related_contact_id.as_deref()
     }
+    /// <p>Information about Amazon Connect Wisdom.</p>
+    pub fn wisdom_info(&self) -> std::option::Option<&crate::types::WisdomInfo> {
+        self.wisdom_info.as_ref()
+    }
 }
 impl Contact {
     /// Creates a new builder-style object to manufacture [`Contact`](crate::types::Contact).
@@ -138,6 +145,7 @@ pub struct ContactBuilder {
     pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) scheduled_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) related_contact_id: std::option::Option<std::string::String>,
+    pub(crate) wisdom_info: std::option::Option<crate::types::WisdomInfo>,
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -314,6 +322,16 @@ impl ContactBuilder {
         self.related_contact_id = input;
         self
     }
+    /// <p>Information about Amazon Connect Wisdom.</p>
+    pub fn wisdom_info(mut self, input: crate::types::WisdomInfo) -> Self {
+        self.wisdom_info = Some(input);
+        self
+    }
+    /// <p>Information about Amazon Connect Wisdom.</p>
+    pub fn set_wisdom_info(mut self, input: std::option::Option<crate::types::WisdomInfo>) -> Self {
+        self.wisdom_info = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
@@ -332,6 +350,7 @@ impl ContactBuilder {
             last_update_timestamp: self.last_update_timestamp,
             scheduled_timestamp: self.scheduled_timestamp,
             related_contact_id: self.related_contact_id,
+            wisdom_info: self.wisdom_info,
         }
     }
 }

@@ -6,7 +6,7 @@ pub use crate::operation::delete_channel::_delete_channel_input::DeleteChannelIn
 /// Fluent builder constructing a request to `DeleteChannel`.
 ///
 /// <p>Deletes the specified channel and its associated stream keys.</p>
-/// <p>If you try to delete a live channel, you will get an error (409 ConflictException). To delete a channel that is live, call <code>StopStream</code>, wait for the Amazon EventBridge "Stream End" event (to verify that the stream's state was changed from Live to Offline), then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html"> Using EventBridge with Amazon IVS</a>.) </p>
+/// <p>If you try to delete a live channel, you will get an error (409 ConflictException). To delete a channel that is live, call <code>StopStream</code>, wait for the Amazon EventBridge "Stream End" event (to verify that the stream's state is no longer Live), then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html"> Using EventBridge with Amazon IVS</a>.) </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannelFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

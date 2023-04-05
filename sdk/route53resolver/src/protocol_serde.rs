@@ -366,6 +366,8 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_target_address;
 
+pub(crate) mod shape_update_ip_address;
+
 pub(crate) mod shape_firewall_domain_list_metadata;
 
 pub(crate) mod shape_firewall_rule_group_metadata;

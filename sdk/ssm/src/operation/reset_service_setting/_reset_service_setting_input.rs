@@ -6,6 +6,7 @@
 pub struct ResetServiceSettingInput {
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
@@ -20,6 +21,7 @@ pub struct ResetServiceSettingInput {
 impl ResetServiceSettingInput {
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
@@ -50,6 +52,7 @@ pub struct ResetServiceSettingInputBuilder {
 impl ResetServiceSettingInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
@@ -64,6 +67,7 @@ impl ResetServiceSettingInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>

@@ -456,6 +456,46 @@ impl From<crate::operation::delete_bucket_policy::DeleteBucketPolicyError> for E
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_replication::DeleteBucketReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_replication::DeleteBucketReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_bucket_replication::DeleteBucketReplicationError> for Error {
+    fn from(
+        err: crate::operation::delete_bucket_replication::DeleteBucketReplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_bucket_replication::DeleteBucketReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
             R,
         >,
@@ -1024,6 +1064,46 @@ impl From<crate::operation::get_bucket_policy::GetBucketPolicyError> for Error {
             crate::operation::get_bucket_policy::GetBucketPolicyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_replication::GetBucketReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_replication::GetBucketReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_bucket_replication::GetBucketReplicationError> for Error {
+    fn from(err: crate::operation::get_bucket_replication::GetBucketReplicationError) -> Self {
+        match err {
+            crate::operation::get_bucket_replication::GetBucketReplicationError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }
@@ -1721,6 +1801,46 @@ impl From<crate::operation::put_bucket_policy::PutBucketPolicyError> for Error {
             crate::operation::put_bucket_policy::PutBucketPolicyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_replication::PutBucketReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_replication::PutBucketReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_bucket_replication::PutBucketReplicationError> for Error {
+    fn from(err: crate::operation::put_bucket_replication::PutBucketReplicationError) -> Self {
+        match err {
+            crate::operation::put_bucket_replication::PutBucketReplicationError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }

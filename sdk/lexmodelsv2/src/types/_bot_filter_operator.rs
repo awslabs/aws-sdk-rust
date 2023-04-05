@@ -14,6 +14,7 @@
 /// match botfilteroperator {
 ///     BotFilterOperator::Contains => { /* ... */ },
 ///     BotFilterOperator::Equals => { /* ... */ },
+///     BotFilterOperator::NotEquals => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum BotFilterOperator {
     Contains,
     #[allow(missing_docs)] // documentation missing in model
     Equals,
+    #[allow(missing_docs)] // documentation missing in model
+    NotEquals,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl std::convert::From<&str> for BotFilterOperator {
         match s {
             "CO" => BotFilterOperator::Contains,
             "EQ" => BotFilterOperator::Equals,
+            "NE" => BotFilterOperator::NotEquals,
             other => {
                 BotFilterOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -78,12 +82,13 @@ impl BotFilterOperator {
         match self {
             BotFilterOperator::Contains => "CO",
             BotFilterOperator::Equals => "EQ",
+            BotFilterOperator::NotEquals => "NE",
             BotFilterOperator::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CO", "EQ"]
+        &["CO", "EQ", "NE"]
     }
 }
 impl AsRef<str> for BotFilterOperator {

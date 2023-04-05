@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIncidentRecordInput {
-    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
@@ -15,7 +15,7 @@ pub struct UpdateIncidentRecordInput {
     /// <p>A longer description of what occurred during the incident.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
-    /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+    /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
     /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
@@ -26,20 +26,20 @@ pub struct UpdateIncidentRecordInput {
     /// </ul>
     #[doc(hidden)]
     pub impact: std::option::Option<i32>,
-    /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+    /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::IncidentRecordStatus>,
     /// <p>The Chatbot chat channel where responders can collaborate.</p>
     #[doc(hidden)]
     pub chat_channel: std::option::Option<crate::types::ChatChannel>,
-    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     #[doc(hidden)]
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::types::NotificationTargetItem>>,
 }
 impl UpdateIncidentRecordInput {
-    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -55,7 +55,7 @@ impl UpdateIncidentRecordInput {
     pub fn summary(&self) -> std::option::Option<&str> {
         self.summary.as_deref()
     }
-    /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+    /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
     /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
@@ -67,7 +67,7 @@ impl UpdateIncidentRecordInput {
     pub fn impact(&self) -> std::option::Option<i32> {
         self.impact
     }
-    /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+    /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::types::IncidentRecordStatus> {
         self.status.as_ref()
     }
@@ -75,7 +75,7 @@ impl UpdateIncidentRecordInput {
     pub fn chat_channel(&self) -> std::option::Option<&crate::types::ChatChannel> {
         self.chat_channel.as_ref()
     }
-    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     pub fn notification_targets(
         &self,
@@ -106,12 +106,12 @@ pub struct UpdateIncidentRecordInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::NotificationTargetItem>>,
 }
 impl UpdateIncidentRecordInputBuilder {
-    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.client_token = input;
         self
@@ -146,7 +146,7 @@ impl UpdateIncidentRecordInputBuilder {
         self.summary = input;
         self
     }
-    /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+    /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
     /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
@@ -159,7 +159,7 @@ impl UpdateIncidentRecordInputBuilder {
         self.impact = Some(input);
         self
     }
-    /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+    /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
     /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
@@ -172,12 +172,12 @@ impl UpdateIncidentRecordInputBuilder {
         self.impact = input;
         self
     }
-    /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+    /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
     pub fn status(mut self, input: crate::types::IncidentRecordStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+    /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
     pub fn set_status(
         mut self,
         input: std::option::Option<crate::types::IncidentRecordStatus>,
@@ -202,7 +202,7 @@ impl UpdateIncidentRecordInputBuilder {
     ///
     /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
     ///
-    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     pub fn notification_targets(mut self, input: crate::types::NotificationTargetItem) -> Self {
         let mut v = self.notification_targets.unwrap_or_default();
@@ -210,7 +210,7 @@ impl UpdateIncidentRecordInputBuilder {
         self.notification_targets = Some(v);
         self
     }
-    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     pub fn set_notification_targets(
         mut self,

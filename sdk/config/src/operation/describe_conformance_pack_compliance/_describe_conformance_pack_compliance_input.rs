@@ -11,7 +11,7 @@ pub struct DescribeConformancePackComplianceInput {
     pub filters: std::option::Option<crate::types::ConformancePackComplianceFilters>,
     /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ impl DescribeConformancePackComplianceInput {
         self.filters.as_ref()
     }
     /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -106,7 +106,6 @@ impl DescribeConformancePackComplianceInputBuilder {
                 filters: self.filters
                 ,
                 limit: self.limit
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

@@ -12,6 +12,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_apply_pending_maintenance_action;
 
+pub(crate) mod shape_batch_start_recommendations;
+
 pub(crate) mod shape_cancel_replication_task_assessment_run;
 
 pub(crate) mod shape_create_endpoint;
@@ -80,6 +82,10 @@ pub(crate) mod shape_describe_orderable_replication_instances;
 
 pub(crate) mod shape_describe_pending_maintenance_actions;
 
+pub(crate) mod shape_describe_recommendation_limitations;
+
+pub(crate) mod shape_describe_recommendations;
+
 pub(crate) mod shape_describe_refresh_schemas_status;
 
 pub(crate) mod shape_describe_replication_instance_task_logs;
@@ -126,6 +132,8 @@ pub(crate) mod shape_remove_tags_from_resource;
 
 pub(crate) mod shape_run_fleet_advisor_lsa_analysis;
 
+pub(crate) mod shape_start_recommendations;
+
 pub(crate) mod shape_start_replication_task;
 
 pub(crate) mod shape_start_replication_task_assessment;
@@ -151,6 +159,8 @@ pub(crate) mod shape_access_denied_fault;
 pub(crate) mod shape_add_tags_to_resource_input;
 
 pub(crate) mod shape_apply_pending_maintenance_action_input;
+
+pub(crate) mod shape_batch_start_recommendations_input;
 
 pub(crate) mod shape_cancel_replication_task_assessment_run_input;
 
@@ -219,6 +229,10 @@ pub(crate) mod shape_describe_fleet_advisor_schemas_input;
 pub(crate) mod shape_describe_orderable_replication_instances_input;
 
 pub(crate) mod shape_describe_pending_maintenance_actions_input;
+
+pub(crate) mod shape_describe_recommendation_limitations_input;
+
+pub(crate) mod shape_describe_recommendations_input;
 
 pub(crate) mod shape_describe_refresh_schemas_status_input;
 
@@ -304,6 +318,8 @@ pub(crate) mod shape_sns_invalid_topic_fault;
 
 pub(crate) mod shape_sns_no_authorization_fault;
 
+pub(crate) mod shape_start_recommendations_input;
+
 pub(crate) mod shape_start_replication_task_assessment_input;
 
 pub(crate) mod shape_start_replication_task_assessment_run_input;
@@ -323,6 +339,8 @@ pub(crate) mod shape_update_subscriptions_to_event_bridge_input;
 pub(crate) mod shape_upgrade_dependency_failure_fault;
 
 pub(crate) mod shape_account_quota_list;
+
+pub(crate) mod shape_batch_start_recommendations_error_entry_list;
 
 pub(crate) mod shape_certificate;
 
@@ -376,6 +394,8 @@ pub(crate) mod shape_kafka_settings;
 
 pub(crate) mod shape_kinesis_settings;
 
+pub(crate) mod shape_limitation_list;
+
 pub(crate) mod shape_microsoft_sql_server_settings;
 
 pub(crate) mod shape_mongo_db_settings;
@@ -391,6 +411,10 @@ pub(crate) mod shape_orderable_replication_instance_list;
 pub(crate) mod shape_pending_maintenance_actions;
 
 pub(crate) mod shape_postgre_sql_settings;
+
+pub(crate) mod shape_recommendation_list;
+
+pub(crate) mod shape_recommendation_settings;
 
 pub(crate) mod shape_redis_settings;
 
@@ -426,6 +450,8 @@ pub(crate) mod shape_s3_settings;
 
 pub(crate) mod shape_schema_list;
 
+pub(crate) mod shape_start_recommendations_request_entry;
+
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_supported_endpoint_type_list;
@@ -441,6 +467,8 @@ pub(crate) mod shape_tag;
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_account_quota;
+
+pub(crate) mod shape_batch_start_recommendations_error_entry;
 
 pub(crate) mod shape_collector_response;
 
@@ -458,9 +486,13 @@ pub(crate) mod shape_fleet_advisor_lsa_analysis_response;
 
 pub(crate) mod shape_fleet_advisor_schema_object_response;
 
+pub(crate) mod shape_limitation;
+
 pub(crate) mod shape_orderable_replication_instance;
 
 pub(crate) mod shape_pending_maintenance_action_details;
+
+pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_replication_instance_ipv6_address_list;
 
@@ -510,6 +542,8 @@ pub(crate) mod shape_inventory_data;
 
 pub(crate) mod shape_pending_maintenance_action;
 
+pub(crate) mod shape_recommendation_data;
+
 pub(crate) mod shape_schema_short_info_response;
 
 pub(crate) mod shape_server_short_info_response;
@@ -521,3 +555,9 @@ pub(crate) mod shape_vpc_security_group_membership;
 pub(crate) mod shape_availability_zone;
 
 pub(crate) mod shape_collector_short_info_response;
+
+pub(crate) mod shape_rds_recommendation;
+
+pub(crate) mod shape_rds_configuration;
+
+pub(crate) mod shape_rds_requirements;

@@ -164,4 +164,24 @@ impl UpdateMissionProfileFluentBuilder {
         self.inner = self.inner.set_tracking_config_arn(input);
         self
     }
+    /// <p>KMS key to use for encrypting streams.</p>
+    pub fn streams_kms_key(mut self, input: crate::types::KmsKey) -> Self {
+        self.inner = self.inner.streams_kms_key(input);
+        self
+    }
+    /// <p>KMS key to use for encrypting streams.</p>
+    pub fn set_streams_kms_key(mut self, input: std::option::Option<crate::types::KmsKey>) -> Self {
+        self.inner = self.inner.set_streams_kms_key(input);
+        self
+    }
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    pub fn streams_kms_role(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.streams_kms_role(input.into());
+        self
+    }
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    pub fn set_streams_kms_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_streams_kms_role(input);
+        self
+    }
 }

@@ -5,10 +5,7 @@ pub use crate::operation::create_accessor::_create_accessor_input::CreateAccesso
 
 /// Fluent builder constructing a request to `CreateAccessor`.
 ///
-/// <important>
-/// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p>
-/// </important>
-/// <p>Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor object is a container that has the information required for token based access to your Ethereum nodes.</p>
+/// <p>Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor contains information required for token based access to your Ethereum nodes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAccessorFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -96,6 +93,33 @@ impl CreateAccessorFluentBuilder {
         input: std::option::Option<crate::types::AccessorType>,
     ) -> Self {
         self.inner = self.inner.set_accessor_type(input);
+        self
+    }
+    /// Adds a key-value pair to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Tags to assign to the Accessor.</p>
+    /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.tags(k.into(), v.into());
+        self
+    }
+    /// <p>Tags to assign to the Accessor.</p>
+    /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.inner = self.inner.set_tags(input);
         self
     }
 }

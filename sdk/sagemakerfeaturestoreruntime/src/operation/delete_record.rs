@@ -118,6 +118,14 @@ impl DeleteRecordInput {
                         }
                     }
                 }
+                if let Some(inner_6) = &_input.deletion_mode {
+                    {
+                        query.push_kv(
+                            "DeletionMode",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
+                }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

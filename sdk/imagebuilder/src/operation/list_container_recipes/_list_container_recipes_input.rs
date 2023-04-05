@@ -15,10 +15,10 @@ pub struct ListContainerRecipesInput {
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p>The maximum number of results to return in the list.</p>
+    /// <p>The maximum items to return in a request.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -37,11 +37,11 @@ impl ListContainerRecipesInput {
     pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of results to return in the list.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -105,22 +105,22 @@ impl ListContainerRecipesInputBuilder {
         self.filters = input;
         self
     }
-    /// <p>The maximum number of results to return in the list.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return in the list.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

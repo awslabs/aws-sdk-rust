@@ -89,12 +89,12 @@ impl StartEarthObservationJobFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self

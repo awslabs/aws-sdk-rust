@@ -576,7 +576,7 @@ pub struct Error {
     /// <li>
     /// <ul>
     /// <li> <p> <i>Code:</i> ServiceUnavailable</p> </li>
-    /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+    /// <li> <p> <i>Description:</i> Service is unable to handle request.</p> </li>
     /// <li> <p> <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li>
     /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
     /// </ul> </li>
@@ -1212,7 +1212,7 @@ impl Error {
     /// <li>
     /// <ul>
     /// <li> <p> <i>Code:</i> ServiceUnavailable</p> </li>
-    /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+    /// <li> <p> <i>Description:</i> Service is unable to handle request.</p> </li>
     /// <li> <p> <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li>
     /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
     /// </ul> </li>
@@ -1878,7 +1878,7 @@ impl ErrorBuilder {
     /// <li>
     /// <ul>
     /// <li> <p> <i>Code:</i> ServiceUnavailable</p> </li>
-    /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+    /// <li> <p> <i>Description:</i> Service is unable to handle request.</p> </li>
     /// <li> <p> <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li>
     /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
     /// </ul> </li>
@@ -2503,7 +2503,7 @@ impl ErrorBuilder {
     /// <li>
     /// <ul>
     /// <li> <p> <i>Code:</i> ServiceUnavailable</p> </li>
-    /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+    /// <li> <p> <i>Description:</i> Service is unable to handle request.</p> </li>
     /// <li> <p> <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li>
     /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
     /// </ul> </li>

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVoiceConnectorTerminationCredentialsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of user names.</p>
     #[doc(hidden)]
     pub usernames: std::option::Option<std::vec::Vec<std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListVoiceConnectorTerminationCredentialsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of user names.</p>
     pub fn usernames(&self) -> std::option::Option<&[std::string::String]> {
         self.usernames.as_deref()
     }
@@ -38,13 +38,14 @@ impl ListVoiceConnectorTerminationCredentialsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_usernames`](Self::set_usernames).
     ///
+    /// <p>A list of user names.</p>
     pub fn usernames(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.usernames.unwrap_or_default();
         v.push(input.into());
         self.usernames = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of user names.</p>
     pub fn set_usernames(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

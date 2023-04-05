@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFraudsterRegistrationJobInput {
-    /// <p>The identifier for the domain containing the fraudster registration job.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the fraudster registration job you are describing.</p>
+    /// <p>The identifier of the fraudster registration job you are describing.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeFraudsterRegistrationJobInput {
-    /// <p>The identifier for the domain containing the fraudster registration job.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The identifier for the fraudster registration job you are describing.</p>
+    /// <p>The identifier of the fraudster registration job you are describing.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -35,22 +35,22 @@ pub struct DescribeFraudsterRegistrationJobInputBuilder {
     pub(crate) job_id: std::option::Option<std::string::String>,
 }
 impl DescribeFraudsterRegistrationJobInputBuilder {
-    /// <p>The identifier for the domain containing the fraudster registration job.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain_id = Some(input.into());
         self
     }
-    /// <p>The identifier for the domain containing the fraudster registration job.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p>The identifier for the fraudster registration job you are describing.</p>
+    /// <p>The identifier of the fraudster registration job you are describing.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.job_id = Some(input.into());
         self
     }
-    /// <p>The identifier for the fraudster registration job you are describing.</p>
+    /// <p>The identifier of the fraudster registration job you are describing.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.job_id = input;
         self

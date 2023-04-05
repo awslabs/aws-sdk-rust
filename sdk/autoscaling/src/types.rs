@@ -53,6 +53,10 @@ pub use crate::types::_scaling_activity_status_code::ScalingActivityStatusCode;
 
 pub use crate::types::_refresh_preferences::RefreshPreferences;
 
+pub use crate::types::_standby_instances::StandbyInstances;
+
+pub use crate::types::_scale_in_protected_instances::ScaleInProtectedInstances;
+
 pub use crate::types::_desired_configuration::DesiredConfiguration;
 
 pub use crate::types::_refresh_strategy::RefreshStrategy;
@@ -166,6 +170,8 @@ pub use crate::types::_block_device_mapping::BlockDeviceMapping;
 pub use crate::types::_ebs::Ebs;
 
 pub use crate::types::_instance_refresh::InstanceRefresh;
+
+pub use crate::types::_rollback_details::RollbackDetails;
 
 pub use crate::types::_instance_refresh_progress_details::InstanceRefreshProgressDetails;
 
@@ -351,6 +357,10 @@ mod _refresh_preferences;
 
 mod _refresh_strategy;
 
+mod _rollback_details;
+
+mod _scale_in_protected_instances;
+
 mod _scaling_activity_status_code;
 
 mod _scaling_policy;
@@ -358,6 +368,8 @@ mod _scaling_policy;
 mod _scheduled_update_group_action;
 
 mod _scheduled_update_group_action_request;
+
+mod _standby_instances;
 
 mod _step_adjustment;
 

@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesOutput {
-    /// <p>Information about the Standby WorkSpace that could not be created. </p>
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
     #[doc(hidden)]
     pub failed_standby_requests:
         std::option::Option<std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
-    /// <p>Information about the Standby WorkSpace that was created.</p>
+    /// <p>Information about the standby WorkSpace that was created.</p>
     #[doc(hidden)]
     pub pending_standby_requests:
         std::option::Option<std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>,
     _request_id: Option<String>,
 }
 impl CreateStandbyWorkspacesOutput {
-    /// <p>Information about the Standby WorkSpace that could not be created. </p>
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
     pub fn failed_standby_requests(
         &self,
     ) -> std::option::Option<&[crate::types::FailedCreateStandbyWorkspacesRequest]> {
         self.failed_standby_requests.as_deref()
     }
-    /// <p>Information about the Standby WorkSpace that was created.</p>
+    /// <p>Information about the standby WorkSpace that was created.</p>
     pub fn pending_standby_requests(
         &self,
     ) -> std::option::Option<&[crate::types::PendingCreateStandbyWorkspacesRequest]> {
@@ -56,7 +56,7 @@ impl CreateStandbyWorkspacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_standby_requests`](Self::set_failed_standby_requests).
     ///
-    /// <p>Information about the Standby WorkSpace that could not be created. </p>
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
     pub fn failed_standby_requests(
         mut self,
         input: crate::types::FailedCreateStandbyWorkspacesRequest,
@@ -66,7 +66,7 @@ impl CreateStandbyWorkspacesOutputBuilder {
         self.failed_standby_requests = Some(v);
         self
     }
-    /// <p>Information about the Standby WorkSpace that could not be created. </p>
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
     pub fn set_failed_standby_requests(
         mut self,
         input: std::option::Option<
@@ -80,7 +80,7 @@ impl CreateStandbyWorkspacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pending_standby_requests`](Self::set_pending_standby_requests).
     ///
-    /// <p>Information about the Standby WorkSpace that was created.</p>
+    /// <p>Information about the standby WorkSpace that was created.</p>
     pub fn pending_standby_requests(
         mut self,
         input: crate::types::PendingCreateStandbyWorkspacesRequest,
@@ -90,7 +90,7 @@ impl CreateStandbyWorkspacesOutputBuilder {
         self.pending_standby_requests = Some(v);
         self
     }
-    /// <p>Information about the Standby WorkSpace that was created.</p>
+    /// <p>Information about the standby WorkSpace that was created.</p>
     pub fn set_pending_standby_requests(
         mut self,
         input: std::option::Option<

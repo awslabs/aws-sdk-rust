@@ -11,7 +11,7 @@ pub struct DescribeConfigurationAggregatorsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
 }
 impl DescribeConfigurationAggregatorsInput {
     /// <p>The name of the configuration aggregators.</p>
@@ -23,7 +23,7 @@ impl DescribeConfigurationAggregatorsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
 }
@@ -97,7 +97,6 @@ impl DescribeConfigurationAggregatorsInputBuilder {
                 next_token: self.next_token
                 ,
                 limit: self.limit
-                    .unwrap_or_default()
                 ,
             }
         )

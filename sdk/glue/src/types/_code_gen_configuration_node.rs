@@ -31,10 +31,10 @@ pub struct CodeGenConfigurationNode {
     /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
     #[doc(hidden)]
     pub s3_parquet_source: std::option::Option<crate::types::S3ParquetSource>,
-    /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+    /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
     #[doc(hidden)]
     pub relational_catalog_source: std::option::Option<crate::types::RelationalCatalogSource>,
-    /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+    /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
     #[doc(hidden)]
     pub dynamo_db_catalog_source: std::option::Option<crate::types::DynamoDbCatalogSource>,
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
@@ -162,7 +162,7 @@ pub struct CodeGenConfigurationNode {
     /// <p>Specifies your data quality evaluation criteria.</p>
     #[doc(hidden)]
     pub evaluate_data_quality: std::option::Option<crate::types::EvaluateDataQuality>,
-    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.</p>
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     #[doc(hidden)]
     pub s3_catalog_hudi_source: std::option::Option<crate::types::S3CatalogHudiSource>,
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
@@ -177,6 +177,24 @@ pub struct CodeGenConfigurationNode {
     /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
     #[doc(hidden)]
     pub s3_hudi_direct_target: std::option::Option<crate::types::S3HudiDirectTarget>,
+    /// <p>Specifies the direct JDBC source connection.</p>
+    #[doc(hidden)]
+    pub direct_jdbc_source: std::option::Option<crate::types::DirectJdbcSource>,
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
+    #[doc(hidden)]
+    pub s3_catalog_delta_source: std::option::Option<crate::types::S3CatalogDeltaSource>,
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub catalog_delta_source: std::option::Option<crate::types::CatalogDeltaSource>,
+    /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+    #[doc(hidden)]
+    pub s3_delta_source: std::option::Option<crate::types::S3DeltaSource>,
+    /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub s3_delta_catalog_target: std::option::Option<crate::types::S3DeltaCatalogTarget>,
+    /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+    #[doc(hidden)]
+    pub s3_delta_direct_target: std::option::Option<crate::types::S3DeltaDirectTarget>,
 }
 impl CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -219,13 +237,13 @@ impl CodeGenConfigurationNode {
     pub fn s3_parquet_source(&self) -> std::option::Option<&crate::types::S3ParquetSource> {
         self.s3_parquet_source.as_ref()
     }
-    /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+    /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
     pub fn relational_catalog_source(
         &self,
     ) -> std::option::Option<&crate::types::RelationalCatalogSource> {
         self.relational_catalog_source.as_ref()
     }
-    /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+    /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
     pub fn dynamo_db_catalog_source(
         &self,
     ) -> std::option::Option<&crate::types::DynamoDbCatalogSource> {
@@ -419,7 +437,7 @@ impl CodeGenConfigurationNode {
     pub fn evaluate_data_quality(&self) -> std::option::Option<&crate::types::EvaluateDataQuality> {
         self.evaluate_data_quality.as_ref()
     }
-    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.</p>
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn s3_catalog_hudi_source(
         &self,
     ) -> std::option::Option<&crate::types::S3CatalogHudiSource> {
@@ -442,6 +460,36 @@ impl CodeGenConfigurationNode {
     /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
     pub fn s3_hudi_direct_target(&self) -> std::option::Option<&crate::types::S3HudiDirectTarget> {
         self.s3_hudi_direct_target.as_ref()
+    }
+    /// <p>Specifies the direct JDBC source connection.</p>
+    pub fn direct_jdbc_source(&self) -> std::option::Option<&crate::types::DirectJdbcSource> {
+        self.direct_jdbc_source.as_ref()
+    }
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
+    pub fn s3_catalog_delta_source(
+        &self,
+    ) -> std::option::Option<&crate::types::S3CatalogDeltaSource> {
+        self.s3_catalog_delta_source.as_ref()
+    }
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
+    pub fn catalog_delta_source(&self) -> std::option::Option<&crate::types::CatalogDeltaSource> {
+        self.catalog_delta_source.as_ref()
+    }
+    /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+    pub fn s3_delta_source(&self) -> std::option::Option<&crate::types::S3DeltaSource> {
+        self.s3_delta_source.as_ref()
+    }
+    /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
+    pub fn s3_delta_catalog_target(
+        &self,
+    ) -> std::option::Option<&crate::types::S3DeltaCatalogTarget> {
+        self.s3_delta_catalog_target.as_ref()
+    }
+    /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+    pub fn s3_delta_direct_target(
+        &self,
+    ) -> std::option::Option<&crate::types::S3DeltaDirectTarget> {
+        self.s3_delta_direct_target.as_ref()
     }
 }
 impl CodeGenConfigurationNode {
@@ -517,6 +565,12 @@ pub struct CodeGenConfigurationNodeBuilder {
     pub(crate) s3_hudi_source: std::option::Option<crate::types::S3HudiSource>,
     pub(crate) s3_hudi_catalog_target: std::option::Option<crate::types::S3HudiCatalogTarget>,
     pub(crate) s3_hudi_direct_target: std::option::Option<crate::types::S3HudiDirectTarget>,
+    pub(crate) direct_jdbc_source: std::option::Option<crate::types::DirectJdbcSource>,
+    pub(crate) s3_catalog_delta_source: std::option::Option<crate::types::S3CatalogDeltaSource>,
+    pub(crate) catalog_delta_source: std::option::Option<crate::types::CatalogDeltaSource>,
+    pub(crate) s3_delta_source: std::option::Option<crate::types::S3DeltaSource>,
+    pub(crate) s3_delta_catalog_target: std::option::Option<crate::types::S3DeltaCatalogTarget>,
+    pub(crate) s3_delta_direct_target: std::option::Option<crate::types::S3DeltaDirectTarget>,
 }
 impl CodeGenConfigurationNodeBuilder {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -636,7 +690,7 @@ impl CodeGenConfigurationNodeBuilder {
         self.s3_parquet_source = input;
         self
     }
-    /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+    /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
     pub fn relational_catalog_source(
         mut self,
         input: crate::types::RelationalCatalogSource,
@@ -644,7 +698,7 @@ impl CodeGenConfigurationNodeBuilder {
         self.relational_catalog_source = Some(input);
         self
     }
-    /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+    /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
     pub fn set_relational_catalog_source(
         mut self,
         input: std::option::Option<crate::types::RelationalCatalogSource>,
@@ -652,12 +706,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.relational_catalog_source = input;
         self
     }
-    /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+    /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
     pub fn dynamo_db_catalog_source(mut self, input: crate::types::DynamoDbCatalogSource) -> Self {
         self.dynamo_db_catalog_source = Some(input);
         self
     }
-    /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+    /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
     pub fn set_dynamo_db_catalog_source(
         mut self,
         input: std::option::Option<crate::types::DynamoDbCatalogSource>,
@@ -1189,12 +1243,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.evaluate_data_quality = input;
         self
     }
-    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.</p>
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn s3_catalog_hudi_source(mut self, input: crate::types::S3CatalogHudiSource) -> Self {
         self.s3_catalog_hudi_source = Some(input);
         self
     }
-    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.</p>
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn set_s3_catalog_hudi_source(
         mut self,
         input: std::option::Option<crate::types::S3CatalogHudiSource>,
@@ -1252,6 +1306,84 @@ impl CodeGenConfigurationNodeBuilder {
         input: std::option::Option<crate::types::S3HudiDirectTarget>,
     ) -> Self {
         self.s3_hudi_direct_target = input;
+        self
+    }
+    /// <p>Specifies the direct JDBC source connection.</p>
+    pub fn direct_jdbc_source(mut self, input: crate::types::DirectJdbcSource) -> Self {
+        self.direct_jdbc_source = Some(input);
+        self
+    }
+    /// <p>Specifies the direct JDBC source connection.</p>
+    pub fn set_direct_jdbc_source(
+        mut self,
+        input: std::option::Option<crate::types::DirectJdbcSource>,
+    ) -> Self {
+        self.direct_jdbc_source = input;
+        self
+    }
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
+    pub fn s3_catalog_delta_source(mut self, input: crate::types::S3CatalogDeltaSource) -> Self {
+        self.s3_catalog_delta_source = Some(input);
+        self
+    }
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
+    pub fn set_s3_catalog_delta_source(
+        mut self,
+        input: std::option::Option<crate::types::S3CatalogDeltaSource>,
+    ) -> Self {
+        self.s3_catalog_delta_source = input;
+        self
+    }
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
+    pub fn catalog_delta_source(mut self, input: crate::types::CatalogDeltaSource) -> Self {
+        self.catalog_delta_source = Some(input);
+        self
+    }
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
+    pub fn set_catalog_delta_source(
+        mut self,
+        input: std::option::Option<crate::types::CatalogDeltaSource>,
+    ) -> Self {
+        self.catalog_delta_source = input;
+        self
+    }
+    /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+    pub fn s3_delta_source(mut self, input: crate::types::S3DeltaSource) -> Self {
+        self.s3_delta_source = Some(input);
+        self
+    }
+    /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+    pub fn set_s3_delta_source(
+        mut self,
+        input: std::option::Option<crate::types::S3DeltaSource>,
+    ) -> Self {
+        self.s3_delta_source = input;
+        self
+    }
+    /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
+    pub fn s3_delta_catalog_target(mut self, input: crate::types::S3DeltaCatalogTarget) -> Self {
+        self.s3_delta_catalog_target = Some(input);
+        self
+    }
+    /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
+    pub fn set_s3_delta_catalog_target(
+        mut self,
+        input: std::option::Option<crate::types::S3DeltaCatalogTarget>,
+    ) -> Self {
+        self.s3_delta_catalog_target = input;
+        self
+    }
+    /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+    pub fn s3_delta_direct_target(mut self, input: crate::types::S3DeltaDirectTarget) -> Self {
+        self.s3_delta_direct_target = Some(input);
+        self
+    }
+    /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+    pub fn set_s3_delta_direct_target(
+        mut self,
+        input: std::option::Option<crate::types::S3DeltaDirectTarget>,
+    ) -> Self {
+        self.s3_delta_direct_target = input;
         self
     }
     /// Consumes the builder and constructs a [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
@@ -1314,6 +1446,12 @@ impl CodeGenConfigurationNodeBuilder {
             s3_hudi_source: self.s3_hudi_source,
             s3_hudi_catalog_target: self.s3_hudi_catalog_target,
             s3_hudi_direct_target: self.s3_hudi_direct_target,
+            direct_jdbc_source: self.direct_jdbc_source,
+            s3_catalog_delta_source: self.s3_catalog_delta_source,
+            catalog_delta_source: self.catalog_delta_source,
+            s3_delta_source: self.s3_delta_source,
+            s3_delta_catalog_target: self.s3_delta_catalog_target,
+            s3_delta_direct_target: self.s3_delta_direct_target,
         }
     }
 }

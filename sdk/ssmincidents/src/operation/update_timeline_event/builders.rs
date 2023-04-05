@@ -69,12 +69,12 @@ impl UpdateTimelineEventFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
@@ -92,12 +92,12 @@ impl UpdateTimelineEventFluentBuilder {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.event_id(input.into());
         self
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self
@@ -115,12 +115,12 @@ impl UpdateTimelineEventFluentBuilder {
         self.inner = self.inner.set_event_time(input);
         self
     }
-    /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
     pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.event_type(input.into());
         self
     }
-    /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
     pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_event_type(input);
         self
@@ -139,15 +139,15 @@ impl UpdateTimelineEventFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
     ///
-    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
-    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
     pub fn event_references(mut self, input: crate::types::EventReference) -> Self {
         self.inner = self.inner.event_references(input);
         self
     }
-    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
-    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
     pub fn set_event_references(
         mut self,

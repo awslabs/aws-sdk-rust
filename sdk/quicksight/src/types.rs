@@ -283,7 +283,23 @@ pub use crate::types::_sheet_text_box::SheetTextBox;
 
 pub use crate::types::_visual::Visual;
 
-pub use crate::types::_empty_visual::EmptyVisual;
+pub use crate::types::_radar_chart_visual::RadarChartVisual;
+
+pub use crate::types::_column_hierarchy::ColumnHierarchy;
+
+pub use crate::types::_predefined_hierarchy::PredefinedHierarchy;
+
+pub use crate::types::_drill_down_filter::DrillDownFilter;
+
+pub use crate::types::_time_range_drill_down_filter::TimeRangeDrillDownFilter;
+
+pub use crate::types::_category_drill_down_filter::CategoryDrillDownFilter;
+
+pub use crate::types::_numeric_equality_drill_down_filter::NumericEqualityDrillDownFilter;
+
+pub use crate::types::_date_time_hierarchy::DateTimeHierarchy;
+
+pub use crate::types::_explicit_hierarchy::ExplicitHierarchy;
 
 pub use crate::types::_visual_custom_action::VisualCustomAction;
 
@@ -323,29 +339,13 @@ pub use crate::types::_selected_field_options::SelectedFieldOptions;
 
 pub use crate::types::_visual_custom_action_trigger::VisualCustomActionTrigger;
 
-pub use crate::types::_custom_content_visual::CustomContentVisual;
+pub use crate::types::_radar_chart_configuration::RadarChartConfiguration;
 
-pub use crate::types::_custom_content_configuration::CustomContentConfiguration;
+pub use crate::types::_legend_options::LegendOptions;
 
-pub use crate::types::_custom_content_image_scaling_configuration::CustomContentImageScalingConfiguration;
+pub use crate::types::_legend_position::LegendPosition;
 
-pub use crate::types::_custom_content_type::CustomContentType;
-
-pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptions;
-
-pub use crate::types::_long_format_text::LongFormatText;
-
-pub use crate::types::_visual_title_label_options::VisualTitleLabelOptions;
-
-pub use crate::types::_short_format_text::ShortFormatText;
-
-pub use crate::types::_sankey_diagram_visual::SankeyDiagramVisual;
-
-pub use crate::types::_sankey_diagram_chart_configuration::SankeyDiagramChartConfiguration;
-
-pub use crate::types::_data_label_options::DataLabelOptions;
-
-pub use crate::types::_data_label_overlap::DataLabelOverlap;
+pub use crate::types::_label_options::LabelOptions;
 
 pub use crate::types::_font_configuration::FontConfiguration;
 
@@ -360,6 +360,112 @@ pub use crate::types::_font_decoration::FontDecoration;
 pub use crate::types::_font_size::FontSize;
 
 pub use crate::types::_relative_font_size::RelativeFontSize;
+
+pub use crate::types::_chart_axis_label_options::ChartAxisLabelOptions;
+
+pub use crate::types::_axis_label_options::AxisLabelOptions;
+
+pub use crate::types::_axis_label_reference_options::AxisLabelReferenceOptions;
+
+pub use crate::types::_axis_display_options::AxisDisplayOptions;
+
+pub use crate::types::_scroll_bar_options::ScrollBarOptions;
+
+pub use crate::types::_visible_range_options::VisibleRangeOptions;
+
+pub use crate::types::_percent_visible_range::PercentVisibleRange;
+
+pub use crate::types::_axis_data_options::AxisDataOptions;
+
+pub use crate::types::_date_axis_options::DateAxisOptions;
+
+pub use crate::types::_numeric_axis_options::NumericAxisOptions;
+
+pub use crate::types::_axis_display_range::AxisDisplayRange;
+
+pub use crate::types::_axis_display_data_driven_range::AxisDisplayDataDrivenRange;
+
+pub use crate::types::_axis_display_min_max_range::AxisDisplayMinMaxRange;
+
+pub use crate::types::_axis_scale::AxisScale;
+
+pub use crate::types::_axis_logarithmic_scale::AxisLogarithmicScale;
+
+pub use crate::types::_axis_linear_scale::AxisLinearScale;
+
+pub use crate::types::_axis_tick_label_options::AxisTickLabelOptions;
+
+pub use crate::types::_visual_palette::VisualPalette;
+
+pub use crate::types::_data_path_color::DataPathColor;
+
+pub use crate::types::_data_path_value::DataPathValue;
+
+pub use crate::types::_radar_chart_series_settings::RadarChartSeriesSettings;
+
+pub use crate::types::_radar_chart_area_style_settings::RadarChartAreaStyleSettings;
+
+pub use crate::types::_radar_chart_shape::RadarChartShape;
+
+pub use crate::types::_radar_chart_sort_configuration::RadarChartSortConfiguration;
+
+pub use crate::types::_items_limit_configuration::ItemsLimitConfiguration;
+
+pub use crate::types::_other_categories::OtherCategories;
+
+pub use crate::types::_field_sort_options::FieldSortOptions;
+
+pub use crate::types::_column_sort::ColumnSort;
+
+pub use crate::types::_field_sort::FieldSort;
+
+pub use crate::types::_radar_chart_field_wells::RadarChartFieldWells;
+
+pub use crate::types::_radar_chart_aggregated_field_wells::RadarChartAggregatedFieldWells;
+
+pub use crate::types::_measure_field::MeasureField;
+
+pub use crate::types::_calculated_measure_field::CalculatedMeasureField;
+
+pub use crate::types::_date_measure_field::DateMeasureField;
+
+pub use crate::types::_categorical_measure_field::CategoricalMeasureField;
+
+pub use crate::types::_numerical_measure_field::NumericalMeasureField;
+
+pub use crate::types::_dimension_field::DimensionField;
+
+pub use crate::types::_date_dimension_field::DateDimensionField;
+
+pub use crate::types::_categorical_dimension_field::CategoricalDimensionField;
+
+pub use crate::types::_numerical_dimension_field::NumericalDimensionField;
+
+pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptions;
+
+pub use crate::types::_long_format_text::LongFormatText;
+
+pub use crate::types::_visual_title_label_options::VisualTitleLabelOptions;
+
+pub use crate::types::_short_format_text::ShortFormatText;
+
+pub use crate::types::_empty_visual::EmptyVisual;
+
+pub use crate::types::_custom_content_visual::CustomContentVisual;
+
+pub use crate::types::_custom_content_configuration::CustomContentConfiguration;
+
+pub use crate::types::_custom_content_image_scaling_configuration::CustomContentImageScalingConfiguration;
+
+pub use crate::types::_custom_content_type::CustomContentType;
+
+pub use crate::types::_sankey_diagram_visual::SankeyDiagramVisual;
+
+pub use crate::types::_sankey_diagram_chart_configuration::SankeyDiagramChartConfiguration;
+
+pub use crate::types::_data_label_options::DataLabelOptions;
+
+pub use crate::types::_data_label_overlap::DataLabelOverlap;
 
 pub use crate::types::_data_label_content::DataLabelContent;
 
@@ -379,37 +485,9 @@ pub use crate::types::_field_label_type::FieldLabelType;
 
 pub use crate::types::_sankey_diagram_sort_configuration::SankeyDiagramSortConfiguration;
 
-pub use crate::types::_items_limit_configuration::ItemsLimitConfiguration;
-
-pub use crate::types::_other_categories::OtherCategories;
-
-pub use crate::types::_field_sort_options::FieldSortOptions;
-
-pub use crate::types::_column_sort::ColumnSort;
-
-pub use crate::types::_field_sort::FieldSort;
-
 pub use crate::types::_sankey_diagram_field_wells::SankeyDiagramFieldWells;
 
 pub use crate::types::_sankey_diagram_aggregated_field_wells::SankeyDiagramAggregatedFieldWells;
-
-pub use crate::types::_measure_field::MeasureField;
-
-pub use crate::types::_calculated_measure_field::CalculatedMeasureField;
-
-pub use crate::types::_date_measure_field::DateMeasureField;
-
-pub use crate::types::_categorical_measure_field::CategoricalMeasureField;
-
-pub use crate::types::_numerical_measure_field::NumericalMeasureField;
-
-pub use crate::types::_dimension_field::DimensionField;
-
-pub use crate::types::_date_dimension_field::DateDimensionField;
-
-pub use crate::types::_categorical_dimension_field::CategoricalDimensionField;
-
-pub use crate::types::_numerical_dimension_field::NumericalDimensionField;
 
 pub use crate::types::_insight_visual::InsightVisual;
 
@@ -449,22 +527,6 @@ pub use crate::types::_top_bottom_ranked_computation::TopBottomRankedComputation
 
 pub use crate::types::_word_cloud_visual::WordCloudVisual;
 
-pub use crate::types::_column_hierarchy::ColumnHierarchy;
-
-pub use crate::types::_predefined_hierarchy::PredefinedHierarchy;
-
-pub use crate::types::_drill_down_filter::DrillDownFilter;
-
-pub use crate::types::_time_range_drill_down_filter::TimeRangeDrillDownFilter;
-
-pub use crate::types::_category_drill_down_filter::CategoryDrillDownFilter;
-
-pub use crate::types::_numeric_equality_drill_down_filter::NumericEqualityDrillDownFilter;
-
-pub use crate::types::_date_time_hierarchy::DateTimeHierarchy;
-
-pub use crate::types::_explicit_hierarchy::ExplicitHierarchy;
-
 pub use crate::types::_word_cloud_chart_configuration::WordCloudChartConfiguration;
 
 pub use crate::types::_word_cloud_options::WordCloudOptions;
@@ -479,12 +541,6 @@ pub use crate::types::_word_cloud_word_scaling::WordCloudWordScaling;
 
 pub use crate::types::_word_cloud_word_orientation::WordCloudWordOrientation;
 
-pub use crate::types::_chart_axis_label_options::ChartAxisLabelOptions;
-
-pub use crate::types::_axis_label_options::AxisLabelOptions;
-
-pub use crate::types::_axis_label_reference_options::AxisLabelReferenceOptions;
-
 pub use crate::types::_word_cloud_sort_configuration::WordCloudSortConfiguration;
 
 pub use crate::types::_word_cloud_field_wells::WordCloudFieldWells;
@@ -494,12 +550,6 @@ pub use crate::types::_word_cloud_aggregated_field_wells::WordCloudAggregatedFie
 pub use crate::types::_histogram_visual::HistogramVisual;
 
 pub use crate::types::_histogram_configuration::HistogramConfiguration;
-
-pub use crate::types::_visual_palette::VisualPalette;
-
-pub use crate::types::_data_path_color::DataPathColor;
-
-pub use crate::types::_data_path_value::DataPathValue;
 
 pub use crate::types::_tooltip_options::TooltipOptions;
 
@@ -523,36 +573,6 @@ pub use crate::types::_bin_count_options::BinCountOptions;
 
 pub use crate::types::_histogram_bin_type::HistogramBinType;
 
-pub use crate::types::_axis_display_options::AxisDisplayOptions;
-
-pub use crate::types::_scroll_bar_options::ScrollBarOptions;
-
-pub use crate::types::_visible_range_options::VisibleRangeOptions;
-
-pub use crate::types::_percent_visible_range::PercentVisibleRange;
-
-pub use crate::types::_axis_data_options::AxisDataOptions;
-
-pub use crate::types::_date_axis_options::DateAxisOptions;
-
-pub use crate::types::_numeric_axis_options::NumericAxisOptions;
-
-pub use crate::types::_axis_display_range::AxisDisplayRange;
-
-pub use crate::types::_axis_display_data_driven_range::AxisDisplayDataDrivenRange;
-
-pub use crate::types::_axis_display_min_max_range::AxisDisplayMinMaxRange;
-
-pub use crate::types::_axis_scale::AxisScale;
-
-pub use crate::types::_axis_logarithmic_scale::AxisLogarithmicScale;
-
-pub use crate::types::_axis_linear_scale::AxisLinearScale;
-
-pub use crate::types::_axis_tick_label_options::AxisTickLabelOptions;
-
-pub use crate::types::_label_options::LabelOptions;
-
 pub use crate::types::_histogram_field_wells::HistogramFieldWells;
 
 pub use crate::types::_histogram_aggregated_field_wells::HistogramAggregatedFieldWells;
@@ -560,10 +580,6 @@ pub use crate::types::_histogram_aggregated_field_wells::HistogramAggregatedFiel
 pub use crate::types::_waterfall_visual::WaterfallVisual;
 
 pub use crate::types::_waterfall_chart_configuration::WaterfallChartConfiguration;
-
-pub use crate::types::_legend_options::LegendOptions;
-
-pub use crate::types::_legend_position::LegendPosition;
 
 pub use crate::types::_waterfall_chart_options::WaterfallChartOptions;
 
@@ -1257,11 +1273,25 @@ pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclara
 
 pub use crate::types::_dashboard_publish_options::DashboardPublishOptions;
 
+pub use crate::types::_data_point_tooltip_option::DataPointTooltipOption;
+
+pub use crate::types::_dashboard_behavior::DashboardBehavior;
+
+pub use crate::types::_data_point_menu_label_option::DataPointMenuLabelOption;
+
+pub use crate::types::_data_point_drill_up_down_option::DataPointDrillUpDownOption;
+
+pub use crate::types::_export_with_hidden_fields_option::ExportWithHiddenFieldsOption;
+
+pub use crate::types::_visual_axis_sort_option::VisualAxisSortOption;
+
+pub use crate::types::_visual_menu_option::VisualMenuOption;
+
+pub use crate::types::_sheet_layout_element_maximization_option::SheetLayoutElementMaximizationOption;
+
 pub use crate::types::_dashboard_visual_publish_options::DashboardVisualPublishOptions;
 
 pub use crate::types::_export_hidden_fields_option::ExportHiddenFieldsOption;
-
-pub use crate::types::_dashboard_behavior::DashboardBehavior;
 
 pub use crate::types::_sheet_controls_option::SheetControlsOption;
 
@@ -1401,7 +1431,13 @@ pub use crate::types::_registered_user_q_search_bar_embedding_configuration::Reg
 
 pub use crate::types::_registered_user_quick_sight_console_embedding_configuration::RegisteredUserQuickSightConsoleEmbeddingConfiguration;
 
+pub use crate::types::_registered_user_console_feature_configurations::RegisteredUserConsoleFeatureConfigurations;
+
+pub use crate::types::_state_persistence_configurations::StatePersistenceConfigurations;
+
 pub use crate::types::_registered_user_dashboard_embedding_configuration::RegisteredUserDashboardEmbeddingConfiguration;
+
+pub use crate::types::_registered_user_dashboard_feature_configurations::RegisteredUserDashboardFeatureConfigurations;
 
 pub use crate::types::_anonymous_user_embedding_experience_configuration::AnonymousUserEmbeddingExperienceConfiguration;
 
@@ -1813,6 +1849,12 @@ mod _data_path_sort;
 
 mod _data_path_value;
 
+mod _data_point_drill_up_down_option;
+
+mod _data_point_menu_label_option;
+
+mod _data_point_tooltip_option;
+
 mod _data_set;
 
 mod _data_set_configuration;
@@ -1932,6 +1974,8 @@ mod _explicit_hierarchy;
 mod _export_hidden_fields_option;
 
 mod _export_to_csv_option;
+
+mod _export_with_hidden_fields_option;
 
 mod _field_based_tooltip;
 
@@ -2481,6 +2525,22 @@ mod _project_operation;
 
 mod _queue_info;
 
+mod _radar_chart_aggregated_field_wells;
+
+mod _radar_chart_area_style_settings;
+
+mod _radar_chart_configuration;
+
+mod _radar_chart_field_wells;
+
+mod _radar_chart_series_settings;
+
+mod _radar_chart_shape;
+
+mod _radar_chart_sort_configuration;
+
+mod _radar_chart_visual;
+
 mod _range_ends_label_type;
 
 mod _rds_parameters;
@@ -2511,7 +2571,11 @@ mod _reference_line_value_label_configuration;
 
 mod _reference_line_value_label_relative_position;
 
+mod _registered_user_console_feature_configurations;
+
 mod _registered_user_dashboard_embedding_configuration;
+
+mod _registered_user_dashboard_feature_configurations;
 
 mod _registered_user_dashboard_visual_embedding_configuration;
 
@@ -2641,6 +2705,8 @@ mod _sheet_element_configuration_overrides;
 
 mod _sheet_element_rendering_rule;
 
+mod _sheet_layout_element_maximization_option;
+
 mod _sheet_style;
 
 mod _sheet_text_box;
@@ -2670,6 +2736,8 @@ mod _spark_parameters;
 mod _sql_server_parameters;
 
 mod _ssl_properties;
+
+mod _state_persistence_configurations;
 
 mod _status;
 
@@ -2889,11 +2957,15 @@ mod _visible_range_options;
 
 mod _visual;
 
+mod _visual_axis_sort_option;
+
 mod _visual_custom_action;
 
 mod _visual_custom_action_operation;
 
 mod _visual_custom_action_trigger;
+
+mod _visual_menu_option;
 
 mod _visual_palette;
 

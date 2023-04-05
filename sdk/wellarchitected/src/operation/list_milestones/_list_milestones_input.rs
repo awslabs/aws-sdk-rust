@@ -12,7 +12,7 @@ pub struct ListMilestonesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListMilestonesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -24,7 +24,7 @@ impl ListMilestonesInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -84,7 +84,7 @@ impl ListMilestonesInputBuilder {
         Ok(crate::operation::list_milestones::ListMilestonesInput {
             workload_id: self.workload_id,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

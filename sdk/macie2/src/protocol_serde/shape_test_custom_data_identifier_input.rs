@@ -21,17 +21,17 @@ pub fn ser_test_custom_data_identifier_input(
         }
         array_5.finish();
     }
-    if input.maximum_match_distance != 0 {
+    if let Some(var_7) = &input.maximum_match_distance {
         object.key("maximumMatchDistance").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_match_distance).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.regex {
-        object.key("regex").string(var_7.as_str());
+    if let Some(var_8) = &input.regex {
+        object.key("regex").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.sample_text {
-        object.key("sampleText").string(var_8.as_str());
+    if let Some(var_9) = &input.sample_text {
+        object.key("sampleText").string(var_9.as_str());
     }
     Ok(())
 }

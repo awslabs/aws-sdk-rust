@@ -18,47 +18,56 @@ pub fn ser_create_channel_input(
         crate::protocol_serde::shape_elastic_channel_configuration::ser_elastic_channel_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.member_arns {
-        let mut array_7 = object.key("MemberArns").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.expiration_settings {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ExpirationSettings").start_object();
+        crate::protocol_serde::shape_expiration_settings::ser_expiration_settings(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.member_arns {
+        let mut array_9 = object.key("MemberArns").start_array();
+        for item_10 in var_8 {
             {
-                array_7.value().string(item_8.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_9) = &input.metadata {
-        object.key("Metadata").string(var_9.as_str());
+    if let Some(var_11) = &input.metadata {
+        object.key("Metadata").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.mode {
-        object.key("Mode").string(var_10.as_str());
+    if let Some(var_12) = &input.mode {
+        object.key("Mode").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.moderator_arns {
-        let mut array_12 = object.key("ModeratorArns").start_array();
-        for item_13 in var_11 {
+    if let Some(var_13) = &input.moderator_arns {
+        let mut array_14 = object.key("ModeratorArns").start_array();
+        for item_15 in var_13 {
             {
-                array_12.value().string(item_13.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_14) = &input.name {
-        object.key("Name").string(var_14.as_str());
+    if let Some(var_16) = &input.name {
+        object.key("Name").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.privacy {
-        object.key("Privacy").string(var_15.as_str());
+    if let Some(var_17) = &input.privacy {
+        object.key("Privacy").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.tags {
-        let mut array_17 = object.key("Tags").start_array();
-        for item_18 in var_16 {
+    if let Some(var_18) = &input.tags {
+        let mut array_19 = object.key("Tags").start_array();
+        for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
-        array_17.finish();
+        array_19.finish();
     }
     Ok(())
 }

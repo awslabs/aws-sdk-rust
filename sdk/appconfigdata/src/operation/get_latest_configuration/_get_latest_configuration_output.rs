@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLatestConfigurationOutput {
-    /// <p>The latest token describing the current state of the configuration session. This MUST be provided to the next call to <code>GetLatestConfiguration.</code> </p>
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
+    /// </important>
     #[doc(hidden)]
     pub next_poll_configuration_token: std::option::Option<std::string::String>,
     /// <p>The amount of time the client should wait before polling for configuration updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.</p>
@@ -15,10 +17,15 @@ pub struct GetLatestConfigurationOutput {
     /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
+    #[doc(hidden)]
+    pub version_label: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetLatestConfigurationOutput {
-    /// <p>The latest token describing the current state of the configuration session. This MUST be provided to the next call to <code>GetLatestConfiguration.</code> </p>
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
+    /// </important>
     pub fn next_poll_configuration_token(&self) -> std::option::Option<&str> {
         self.next_poll_configuration_token.as_deref()
     }
@@ -34,6 +41,10 @@ impl GetLatestConfigurationOutput {
     pub fn configuration(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.configuration.as_ref()
     }
+    /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLatestConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48,6 +59,7 @@ impl std::fmt::Debug for GetLatestConfigurationOutput {
         );
         formatter.field("content_type", &self.content_type);
         formatter.field("configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("version_label", &self.version_label);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -74,15 +86,20 @@ pub struct GetLatestConfigurationOutputBuilder {
     pub(crate) next_poll_interval_in_seconds: std::option::Option<i32>,
     pub(crate) content_type: std::option::Option<std::string::String>,
     pub(crate) configuration: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) version_label: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetLatestConfigurationOutputBuilder {
-    /// <p>The latest token describing the current state of the configuration session. This MUST be provided to the next call to <code>GetLatestConfiguration.</code> </p>
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
+    /// </important>
     pub fn next_poll_configuration_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_poll_configuration_token = Some(input.into());
         self
     }
-    /// <p>The latest token describing the current state of the configuration session. This MUST be provided to the next call to <code>GetLatestConfiguration.</code> </p>
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
+    /// </important>
     pub fn set_next_poll_configuration_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -120,6 +137,16 @@ impl GetLatestConfigurationOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
+    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
+        self.version_label = Some(input.into());
+        self
+    }
+    /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
+    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.version_label = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -136,6 +163,7 @@ impl GetLatestConfigurationOutputBuilder {
             next_poll_interval_in_seconds: self.next_poll_interval_in_seconds.unwrap_or_default(),
             content_type: self.content_type,
             configuration: self.configuration,
+            version_label: self.version_label,
             _request_id: self._request_id,
         }
     }
@@ -153,6 +181,7 @@ impl std::fmt::Debug for GetLatestConfigurationOutputBuilder {
         );
         formatter.field("content_type", &self.content_type);
         formatter.field("configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("version_label", &self.version_label);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

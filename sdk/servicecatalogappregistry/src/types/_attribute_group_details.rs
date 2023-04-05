@@ -19,6 +19,9 @@ pub struct AttributeGroupDetails {
     )]
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    /// <p>The service principal that created the attribute group.</p>
+    #[doc(hidden)]
+    pub created_by: std::option::Option<std::string::String>,
 }
 impl AttributeGroupDetails {
     /// <p>The unique identifier of the attribute group.</p>
@@ -39,6 +42,10 @@ impl AttributeGroupDetails {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
 }
 impl AttributeGroupDetails {
     /// Creates a new builder-style object to manufacture [`AttributeGroupDetails`](crate::types::AttributeGroupDetails).
@@ -54,6 +61,7 @@ pub struct AttributeGroupDetailsBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) created_by: std::option::Option<std::string::String>,
 }
 impl AttributeGroupDetailsBuilder {
     /// <p>The unique identifier of the attribute group.</p>
@@ -98,12 +106,23 @@ impl AttributeGroupDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
+        self.created_by = Some(input.into());
+        self
+    }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.created_by = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AttributeGroupDetails`](crate::types::AttributeGroupDetails).
     pub fn build(self) -> crate::types::AttributeGroupDetails {
         crate::types::AttributeGroupDetails {
             id: self.id,
             arn: self.arn,
             name: self.name,
+            created_by: self.created_by,
         }
     }
 }

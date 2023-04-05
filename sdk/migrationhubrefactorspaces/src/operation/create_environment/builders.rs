@@ -5,7 +5,8 @@ pub use crate::operation::create_environment::_create_environment_input::CreateE
 
 /// Fluent builder constructing a request to `CreateEnvironment`.
 ///
-/// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The caller owns the environment resource, and all Refactor Spaces applications, services, and routes created within the environment. They are referred to as the <i>environment owner</i>. The environment owner has cross-account visibility and control of Refactor Spaces resources that are added to the environment by other accounts that the environment is shared with. When creating an environment, Refactor Spaces provisions a transit gateway in your account.</p>
+/// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The caller owns the environment resource, and all Refactor Spaces applications, services, and routes created within the environment. They are referred to as the <i>environment owner</i>. The environment owner has cross-account visibility and control of Refactor Spaces resources that are added to the environment by other accounts that the environment is shared with.</p>
+/// <p>When creating an environment with a network fabric type of <code>TRANSIT_GATEWAY</code>, Refactor Spaces provisions a transit gateway in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEnvironmentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

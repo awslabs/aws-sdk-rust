@@ -171,17 +171,17 @@ pub type DeletePackageErrorKind = DeletePackageError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePackageError {
-    /// <p>An error occurred because user does not have permissions to access the resource. Returns HTTP status code 403.</p>
+    /// <p>An error occurred because you don't have permissions to access the resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::types::error::BaseException),
-    /// <p>An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP status code 409.</p>
+    /// <p>An error occurred because the client attempts to remove a resource that is currently in use.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),
-    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    /// <p>An exception for accessing or deleting a resource that does not exist..</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

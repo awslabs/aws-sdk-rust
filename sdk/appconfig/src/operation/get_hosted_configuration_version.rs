@@ -80,6 +80,12 @@ impl GetHostedConfigurationVersionInput {
                     );
                 }
                 let input_3 = &_input.version_number;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "version_number",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mut version_number_encoder =
                     aws_smithy_types::primitive::Encoder::from(*input_3);
                 let version_number = version_number_encoder.encode();

@@ -166,9 +166,9 @@ pub type DescribeComplianceByResourceErrorKind = DescribeComplianceByResourceErr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeComplianceByResourceError {
-    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
+    /// <p>The specified next token is not valid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

@@ -5,7 +5,7 @@ feedback purposes only. Do not use this SDK for production workloads.**
 
 Welcome to the _AWS Clean Rooms API Reference_.
 
-AWS Clean Rooms is an AWS service that helps multiple parties to join their data together in a secure collaboration workspace. In the collaboration, members who can query and receive results can get insights into the combined data without either party getting access to the other party's raw data.
+AWS Clean Rooms is an AWS service that helps multiple parties to join their data together in a secure collaboration workspace. In the collaboration, members who can query and receive results can get insights into the collective datasets without either party getting access to the other party's raw data.
 
 To learn more about AWS Clean Rooms concepts, procedures, and best practices, see the [AWS Clean Rooms User Guide](https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html).
 
@@ -21,7 +21,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-cleanrooms = "0.2.0"
+aws-sdk-cleanrooms = "0.2.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

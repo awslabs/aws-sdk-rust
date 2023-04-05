@@ -292,6 +292,10 @@ mod get_image_recipe_policy;
 
 mod get_infrastructure_configuration;
 
+mod get_workflow_execution;
+
+mod get_workflow_step_execution;
+
 mod import_component;
 
 mod import_vm_image;
@@ -314,11 +318,19 @@ mod list_image_pipelines;
 
 mod list_image_recipes;
 
+mod list_image_scan_finding_aggregations;
+
+mod list_image_scan_findings;
+
 mod list_images;
 
 mod list_infrastructure_configurations;
 
 mod list_tags_for_resource;
+
+mod list_workflow_executions;
+
+mod list_workflow_step_executions;
 
 mod put_component_policy;
 

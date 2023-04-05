@@ -13,6 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePackagingConfigurationOutput`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput::arn): The ARN of the PackagingConfiguration.
     ///   - [`cmaf_package(Option<CmafPackage>)`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput::cmaf_package): A CMAF packaging configuration.
+    ///   - [`created_at(Option<String>)`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput::created_at): The time the PackagingConfiguration was created.
     ///   - [`dash_package(Option<DashPackage>)`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput::dash_package): A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     ///   - [`hls_package(Option<HlsPackage>)`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput::hls_package): An HTTP Live Streaming (HLS) packaging configuration.
     ///   - [`id(Option<String>)`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput::id): The ID of the PackagingConfiguration.

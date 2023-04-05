@@ -5,7 +5,9 @@ pub use crate::operation::create_dev_environment::_create_dev_environment_input:
 
 /// Fluent builder constructing a request to `CreateDevEnvironment`.
 ///
-/// <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development Dev Environment that you can use to quickly work on the code stored in the source repositories of your project. By default, a Dev Environment is configured to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. </p>
+/// <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development Dev Environment that you can use to quickly work on the code stored in the source repositories of your project. </p> <note>
+/// <p>When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these defaults apply to a Dev Environment created programmatically.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDevEnvironmentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -170,8 +172,8 @@ impl CreateDevEnvironmentFluentBuilder {
         self.inner = self.inner.set_inactivity_timeout_minutes(input);
         self
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p> <note>
-    /// <p>Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn persistent_storage(
         mut self,
@@ -180,8 +182,8 @@ impl CreateDevEnvironmentFluentBuilder {
         self.inner = self.inner.persistent_storage(input);
         self
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p> <note>
-    /// <p>Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn set_persistent_storage(
         mut self,

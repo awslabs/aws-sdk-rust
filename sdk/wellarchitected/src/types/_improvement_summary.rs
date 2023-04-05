@@ -17,8 +17,9 @@ pub struct ImprovementSummary {
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     #[doc(hidden)]
     pub risk: std::option::Option<crate::types::Risk>,
-    /// <p>The improvement plan URL for a question.</p>
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
     #[doc(hidden)]
     pub improvement_plan_url: std::option::Option<std::string::String>,
     /// <p>The improvement plan details.</p>
@@ -43,8 +44,9 @@ impl ImprovementSummary {
     pub fn risk(&self) -> std::option::Option<&crate::types::Risk> {
         self.risk.as_ref()
     }
-    /// <p>The improvement plan URL for a question.</p>
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
     pub fn improvement_plan_url(&self) -> std::option::Option<&str> {
         self.improvement_plan_url.as_deref()
     }
@@ -115,14 +117,16 @@ impl ImprovementSummaryBuilder {
         self.risk = input;
         self
     }
-    /// <p>The improvement plan URL for a question.</p>
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
     pub fn improvement_plan_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.improvement_plan_url = Some(input.into());
         self
     }
-    /// <p>The improvement plan URL for a question.</p>
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
     pub fn set_improvement_plan_url(
         mut self,
         input: std::option::Option<std::string::String>,

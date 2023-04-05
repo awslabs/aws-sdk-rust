@@ -79,16 +79,6 @@ impl UpdateDataQualityRulesetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The new name of the ruleset, if you are renaming it.</p>
-    pub fn updated_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inner = self.inner.updated_name(input.into());
-        self
-    }
-    /// <p>The new name of the ruleset, if you are renaming it.</p>
-    pub fn set_updated_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.inner = self.inner.set_updated_name(input);
-        self
-    }
     /// <p>A description of the ruleset.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

@@ -9,7 +9,7 @@ pub struct DeleteCertificateInput {
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     #[doc(hidden)]
-    pub force_delete: bool,
+    pub force_delete: std::option::Option<bool>,
 }
 impl DeleteCertificateInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
@@ -17,7 +17,7 @@ impl DeleteCertificateInput {
         self.certificate_id.as_deref()
     }
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
-    pub fn force_delete(&self) -> bool {
+    pub fn force_delete(&self) -> std::option::Option<bool> {
         self.force_delete
     }
 }
@@ -67,7 +67,7 @@ impl DeleteCertificateInputBuilder {
         Ok(
             crate::operation::delete_certificate::DeleteCertificateInput {
                 certificate_id: self.certificate_id,
-                force_delete: self.force_delete.unwrap_or_default(),
+                force_delete: self.force_delete,
             },
         )
     }

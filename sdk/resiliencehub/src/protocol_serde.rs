@@ -12,6 +12,10 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_app;
 
+pub(crate) mod shape_create_app_version_app_component;
+
+pub(crate) mod shape_create_app_version_resource;
+
 pub(crate) mod shape_create_recommendation_template;
 
 pub(crate) mod shape_create_resiliency_policy;
@@ -20,6 +24,12 @@ pub(crate) mod shape_delete_app;
 
 pub(crate) mod shape_delete_app_assessment;
 
+pub(crate) mod shape_delete_app_input_source;
+
+pub(crate) mod shape_delete_app_version_app_component;
+
+pub(crate) mod shape_delete_app_version_resource;
+
 pub(crate) mod shape_delete_recommendation_template;
 
 pub(crate) mod shape_delete_resiliency_policy;
@@ -27,6 +37,12 @@ pub(crate) mod shape_delete_resiliency_policy;
 pub(crate) mod shape_describe_app;
 
 pub(crate) mod shape_describe_app_assessment;
+
+pub(crate) mod shape_describe_app_version;
+
+pub(crate) mod shape_describe_app_version_app_component;
+
+pub(crate) mod shape_describe_app_version_resource;
 
 pub(crate) mod shape_describe_app_version_resources_resolution_status;
 
@@ -45,6 +61,10 @@ pub(crate) mod shape_list_app_assessments;
 pub(crate) mod shape_list_app_component_compliances;
 
 pub(crate) mod shape_list_app_component_recommendations;
+
+pub(crate) mod shape_list_app_input_sources;
+
+pub(crate) mod shape_list_app_version_app_components;
 
 pub(crate) mod shape_list_app_version_resource_mappings;
 
@@ -84,6 +104,12 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_app;
 
+pub(crate) mod shape_update_app_version;
+
+pub(crate) mod shape_update_app_version_app_component;
+
+pub(crate) mod shape_update_app_version_resource;
+
 pub(crate) mod shape_update_resiliency_policy;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -102,6 +128,10 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_app_input;
 
+pub(crate) mod shape_create_app_version_app_component_input;
+
+pub(crate) mod shape_create_app_version_resource_input;
+
 pub(crate) mod shape_create_recommendation_template_input;
 
 pub(crate) mod shape_create_resiliency_policy_input;
@@ -110,6 +140,12 @@ pub(crate) mod shape_delete_app_assessment_input;
 
 pub(crate) mod shape_delete_app_input;
 
+pub(crate) mod shape_delete_app_input_source_input;
+
+pub(crate) mod shape_delete_app_version_app_component_input;
+
+pub(crate) mod shape_delete_app_version_resource_input;
+
 pub(crate) mod shape_delete_recommendation_template_input;
 
 pub(crate) mod shape_delete_resiliency_policy_input;
@@ -117,6 +153,12 @@ pub(crate) mod shape_delete_resiliency_policy_input;
 pub(crate) mod shape_describe_app_assessment_input;
 
 pub(crate) mod shape_describe_app_input;
+
+pub(crate) mod shape_describe_app_version_app_component_input;
+
+pub(crate) mod shape_describe_app_version_input;
+
+pub(crate) mod shape_describe_app_version_resource_input;
 
 pub(crate) mod shape_describe_app_version_resources_resolution_status_input;
 
@@ -135,6 +177,10 @@ pub(crate) mod shape_list_alarm_recommendations_input;
 pub(crate) mod shape_list_app_component_compliances_input;
 
 pub(crate) mod shape_list_app_component_recommendations_input;
+
+pub(crate) mod shape_list_app_input_sources_input;
+
+pub(crate) mod shape_list_app_version_app_components_input;
 
 pub(crate) mod shape_list_app_version_resource_mappings_input;
 
@@ -168,9 +214,17 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_app_input;
 
+pub(crate) mod shape_update_app_version_app_component_input;
+
+pub(crate) mod shape_update_app_version_input;
+
+pub(crate) mod shape_update_app_version_resource_input;
+
 pub(crate) mod shape_update_resiliency_policy_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_additional_info_map;
 
 pub(crate) mod shape_alarm_recommendation_list;
 
@@ -179,6 +233,14 @@ pub(crate) mod shape_app;
 pub(crate) mod shape_app_assessment;
 
 pub(crate) mod shape_app_assessment_summary_list;
+
+pub(crate) mod shape_app_component;
+
+pub(crate) mod shape_app_component_list;
+
+pub(crate) mod shape_app_input_source;
+
+pub(crate) mod shape_app_input_source_list;
 
 pub(crate) mod shape_app_summary_list;
 
@@ -190,7 +252,17 @@ pub(crate) mod shape_component_compliances_list;
 
 pub(crate) mod shape_component_recommendation_list;
 
+pub(crate) mod shape_eks_source;
+
+pub(crate) mod shape_eks_source_cluster_namespace;
+
+pub(crate) mod shape_eks_source_list;
+
 pub(crate) mod shape_failure_policy;
+
+pub(crate) mod shape_logical_resource_id;
+
+pub(crate) mod shape_physical_resource;
 
 pub(crate) mod shape_physical_resource_list;
 
@@ -218,6 +290,8 @@ pub(crate) mod shape_test_recommendation_list;
 
 pub(crate) mod shape_unsupported_resource_list;
 
+pub(crate) mod shape_additional_info_value_list;
+
 pub(crate) mod shape_alarm_recommendation;
 
 pub(crate) mod shape_app_assessment_summary;
@@ -235,8 +309,6 @@ pub(crate) mod shape_component_recommendation;
 pub(crate) mod shape_cost;
 
 pub(crate) mod shape_disruption_policy;
-
-pub(crate) mod shape_physical_resource;
 
 pub(crate) mod shape_physical_resource_id;
 
@@ -258,21 +330,17 @@ pub(crate) mod shape_unsupported_resource;
 
 pub(crate) mod shape_alarm_reference_id_list;
 
-pub(crate) mod shape_app_component_list;
-
 pub(crate) mod shape_config_recommendation_list;
 
 pub(crate) mod shape_disruption_compliance;
 
 pub(crate) mod shape_disruption_resiliency_score;
 
-pub(crate) mod shape_logical_resource_id;
+pub(crate) mod shape_eks_namespace_list;
 
 pub(crate) mod shape_recommendation_item_list;
 
 pub(crate) mod shape_resource_error_list;
-
-pub(crate) mod shape_app_component;
 
 pub(crate) mod shape_config_recommendation;
 

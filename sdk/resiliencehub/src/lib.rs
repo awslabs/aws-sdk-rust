@@ -15,7 +15,7 @@
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! AWS Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions. Resilience Hub offers continuous resiliency assessment and validation that integrates into your software development lifecycle. This enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point objective (RPO) targets for your applications are met, and resolve issues before they are released into production.
+//! Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions. It offers continual resiliency assessment and validation that integrates into your software development lifecycle. This enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point objective (RPO) targets for your applications are met, and resolve issues before they are released into production.
 //!
 //! ## Getting Started
 //!
@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-resiliencehub = "0.25.0"
+//! aws-sdk-resiliencehub = "0.25.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

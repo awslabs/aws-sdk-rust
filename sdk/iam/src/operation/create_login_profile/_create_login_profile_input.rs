@@ -13,7 +13,7 @@ pub struct CreateLoginProfileInput {
     pub password: std::option::Option<std::string::String>,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     #[doc(hidden)]
-    pub password_reset_required: bool,
+    pub password_reset_required: std::option::Option<bool>,
 }
 impl CreateLoginProfileInput {
     /// <p>The name of the IAM user to create a password for. The user must already exist.</p>
@@ -27,7 +27,7 @@ impl CreateLoginProfileInput {
         self.password.as_deref()
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
-    pub fn password_reset_required(&self) -> bool {
+    pub fn password_reset_required(&self) -> std::option::Option<bool> {
         self.password_reset_required
     }
 }
@@ -102,7 +102,7 @@ impl CreateLoginProfileInputBuilder {
             crate::operation::create_login_profile::CreateLoginProfileInput {
                 user_name: self.user_name,
                 password: self.password,
-                password_reset_required: self.password_reset_required.unwrap_or_default(),
+                password_reset_required: self.password_reset_required,
             },
         )
     }

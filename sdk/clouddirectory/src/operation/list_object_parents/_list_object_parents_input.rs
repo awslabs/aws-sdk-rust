@@ -20,7 +20,7 @@ pub struct ListObjectParentsInput {
     pub consistency_level: std::option::Option<crate::types::ConsistencyLevel>,
     /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
     #[doc(hidden)]
-    pub include_all_links_to_each_parent: bool,
+    pub include_all_links_to_each_parent: std::option::Option<bool>,
 }
 impl ListObjectParentsInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
@@ -44,7 +44,7 @@ impl ListObjectParentsInput {
         self.consistency_level.as_ref()
     }
     /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
-    pub fn include_all_links_to_each_parent(&self) -> bool {
+    pub fn include_all_links_to_each_parent(&self) -> std::option::Option<bool> {
         self.include_all_links_to_each_parent
     }
 }
@@ -151,9 +151,7 @@ impl ListObjectParentsInputBuilder {
                 next_token: self.next_token,
                 max_results: self.max_results,
                 consistency_level: self.consistency_level,
-                include_all_links_to_each_parent: self
-                    .include_all_links_to_each_parent
-                    .unwrap_or_default(),
+                include_all_links_to_each_parent: self.include_all_links_to_each_parent,
             },
         )
     }

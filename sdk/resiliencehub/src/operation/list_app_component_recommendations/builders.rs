@@ -5,7 +5,7 @@ pub use crate::operation::list_app_component_recommendations::_list_app_componen
 
 /// Fluent builder constructing a request to `ListAppComponentRecommendations`.
 ///
-/// <p>Lists the recommendations for an AWS Resilience Hub component.</p>
+/// <p>Lists the recommendations for an Resilience Hub Application Component.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAppComponentRecommendationsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -62,12 +62,12 @@ impl ListAppComponentRecommendationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_app_component_recommendations::paginator::ListAppComponentRecommendationsPaginator{
         crate::operation::list_app_component_recommendations::paginator::ListAppComponentRecommendationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assessment_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_assessment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_arn(input);
         self

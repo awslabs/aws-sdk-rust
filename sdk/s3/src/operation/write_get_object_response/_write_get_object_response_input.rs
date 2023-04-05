@@ -29,7 +29,7 @@ pub struct WriteGetObjectResponseInput {
     /// <li> <p> <code>503 - Service Unavailable</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status_code: i32,
+    pub status_code: std::option::Option<i32>,
     /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -57,7 +57,7 @@ pub struct WriteGetObjectResponseInput {
     pub content_language: std::option::Option<std::string::String>,
     /// <p>The size of the content body in bytes.</p>
     #[doc(hidden)]
-    pub content_length: i64,
+    pub content_length: std::option::Option<i64>,
     /// <p>The portion of the object returned in the response.</p>
     #[doc(hidden)]
     pub content_range: std::option::Option<std::string::String>,
@@ -83,7 +83,7 @@ pub struct WriteGetObjectResponseInput {
     pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
     #[doc(hidden)]
-    pub delete_marker: bool,
+    pub delete_marker: std::option::Option<bool>,
     /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
     #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
@@ -98,7 +98,7 @@ pub struct WriteGetObjectResponseInput {
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     #[doc(hidden)]
-    pub missing_meta: i32,
+    pub missing_meta: std::option::Option<i32>,
     /// <p>A map of metadata to store with the object in S3.</p>
     #[doc(hidden)]
     pub metadata:
@@ -114,7 +114,7 @@ pub struct WriteGetObjectResponseInput {
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The count of parts this object has.</p>
     #[doc(hidden)]
-    pub parts_count: i32,
+    pub parts_count: std::option::Option<i32>,
     /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
     #[doc(hidden)]
     pub replication_status: std::option::Option<crate::types::ReplicationStatus>,
@@ -124,13 +124,13 @@ pub struct WriteGetObjectResponseInput {
     /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
     #[doc(hidden)]
     pub restore: std::option::Option<std::string::String>,
-    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     #[doc(hidden)]
     pub server_side_encryption: std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
     #[doc(hidden)]
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     #[doc(hidden)]
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
@@ -142,13 +142,13 @@ pub struct WriteGetObjectResponseInput {
     pub storage_class: std::option::Option<crate::types::StorageClass>,
     /// <p>The number of tags, if any, on the object.</p>
     #[doc(hidden)]
-    pub tag_count: i32,
+    pub tag_count: std::option::Option<i32>,
     /// <p>An ID used to reference a specific version of the object.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     #[doc(hidden)]
-    pub bucket_key_enabled: bool,
+    pub bucket_key_enabled: std::option::Option<bool>,
 }
 impl WriteGetObjectResponseInput {
     /// <p>Route prefix to the HTTP URL generated.</p>
@@ -181,7 +181,7 @@ impl WriteGetObjectResponseInput {
     /// <li> <p> <code>500 - Internal Server Error</code> </p> </li>
     /// <li> <p> <code>503 - Service Unavailable</code> </p> </li>
     /// </ul>
-    pub fn status_code(&self) -> i32 {
+    pub fn status_code(&self) -> std::option::Option<i32> {
         self.status_code
     }
     /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
@@ -217,7 +217,7 @@ impl WriteGetObjectResponseInput {
         self.content_language.as_deref()
     }
     /// <p>The size of the content body in bytes.</p>
-    pub fn content_length(&self) -> i64 {
+    pub fn content_length(&self) -> std::option::Option<i64> {
         self.content_length
     }
     /// <p>The portion of the object returned in the response.</p>
@@ -250,7 +250,7 @@ impl WriteGetObjectResponseInput {
         self.checksum_sha256.as_deref()
     }
     /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
-    pub fn delete_marker(&self) -> bool {
+    pub fn delete_marker(&self) -> std::option::Option<bool> {
         self.delete_marker
     }
     /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
@@ -270,7 +270,7 @@ impl WriteGetObjectResponseInput {
         self.last_modified.as_ref()
     }
     /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
-    pub fn missing_meta(&self) -> i32 {
+    pub fn missing_meta(&self) -> std::option::Option<i32> {
         self.missing_meta
     }
     /// <p>A map of metadata to store with the object in S3.</p>
@@ -297,7 +297,7 @@ impl WriteGetObjectResponseInput {
         self.object_lock_retain_until_date.as_ref()
     }
     /// <p>The count of parts this object has.</p>
-    pub fn parts_count(&self) -> i32 {
+    pub fn parts_count(&self) -> std::option::Option<i32> {
         self.parts_count
     }
     /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
@@ -312,7 +312,7 @@ impl WriteGetObjectResponseInput {
     pub fn restore(&self) -> std::option::Option<&str> {
         self.restore.as_deref()
     }
-    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::types::ServerSideEncryption> {
@@ -322,7 +322,7 @@ impl WriteGetObjectResponseInput {
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
@@ -336,7 +336,7 @@ impl WriteGetObjectResponseInput {
         self.storage_class.as_ref()
     }
     /// <p>The number of tags, if any, on the object.</p>
-    pub fn tag_count(&self) -> i32 {
+    pub fn tag_count(&self) -> std::option::Option<i32> {
         self.tag_count
     }
     /// <p>An ID used to reference a specific version of the object.</p>
@@ -344,7 +344,7 @@ impl WriteGetObjectResponseInput {
         self.version_id.as_deref()
     }
     /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
-    pub fn bucket_key_enabled(&self) -> bool {
+    pub fn bucket_key_enabled(&self) -> std::option::Option<bool> {
         self.bucket_key_enabled
     }
 }
@@ -871,12 +871,12 @@ impl WriteGetObjectResponseInputBuilder {
         self.restore = input;
         self
     }
-    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.server_side_encryption = Some(input);
         self
     }
-    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn set_server_side_encryption(
         mut self,
         input: std::option::Option<crate::types::ServerSideEncryption>,
@@ -897,12 +897,12 @@ impl WriteGetObjectResponseInputBuilder {
         self.sse_customer_algorithm = input;
         self
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.ssekms_key_id = Some(input.into());
         self
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn set_ssekms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.ssekms_key_id = input;
         self
@@ -977,7 +977,7 @@ impl WriteGetObjectResponseInputBuilder {
                 request_route: self.request_route,
                 request_token: self.request_token,
                 body: self.body.unwrap_or_default(),
-                status_code: self.status_code.unwrap_or_default(),
+                status_code: self.status_code,
                 error_code: self.error_code,
                 error_message: self.error_message,
                 accept_ranges: self.accept_ranges,
@@ -985,24 +985,24 @@ impl WriteGetObjectResponseInputBuilder {
                 content_disposition: self.content_disposition,
                 content_encoding: self.content_encoding,
                 content_language: self.content_language,
-                content_length: self.content_length.unwrap_or_default(),
+                content_length: self.content_length,
                 content_range: self.content_range,
                 content_type: self.content_type,
                 checksum_crc32: self.checksum_crc32,
                 checksum_crc32_c: self.checksum_crc32_c,
                 checksum_sha1: self.checksum_sha1,
                 checksum_sha256: self.checksum_sha256,
-                delete_marker: self.delete_marker.unwrap_or_default(),
+                delete_marker: self.delete_marker,
                 e_tag: self.e_tag,
                 expires: self.expires,
                 expiration: self.expiration,
                 last_modified: self.last_modified,
-                missing_meta: self.missing_meta.unwrap_or_default(),
+                missing_meta: self.missing_meta,
                 metadata: self.metadata,
                 object_lock_mode: self.object_lock_mode,
                 object_lock_legal_hold_status: self.object_lock_legal_hold_status,
                 object_lock_retain_until_date: self.object_lock_retain_until_date,
-                parts_count: self.parts_count.unwrap_or_default(),
+                parts_count: self.parts_count,
                 replication_status: self.replication_status,
                 request_charged: self.request_charged,
                 restore: self.restore,
@@ -1011,9 +1011,9 @@ impl WriteGetObjectResponseInputBuilder {
                 ssekms_key_id: self.ssekms_key_id,
                 sse_customer_key_md5: self.sse_customer_key_md5,
                 storage_class: self.storage_class,
-                tag_count: self.tag_count.unwrap_or_default(),
+                tag_count: self.tag_count,
                 version_id: self.version_id,
-                bucket_key_enabled: self.bucket_key_enabled.unwrap_or_default(),
+                bucket_key_enabled: self.bucket_key_enabled,
             },
         )
     }

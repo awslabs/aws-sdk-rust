@@ -25,7 +25,7 @@ pub struct CreateDevEndpointInput {
     pub public_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
     #[doc(hidden)]
-    pub number_of_nodes: i32,
+    pub number_of_nodes: std::option::Option<i32>,
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
     /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
@@ -93,7 +93,7 @@ impl CreateDevEndpointInput {
         self.public_keys.as_deref()
     }
     /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
-    pub fn number_of_nodes(&self) -> i32 {
+    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
         self.number_of_nodes
     }
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
@@ -428,7 +428,7 @@ impl CreateDevEndpointInputBuilder {
                 subnet_id: self.subnet_id,
                 public_key: self.public_key,
                 public_keys: self.public_keys,
-                number_of_nodes: self.number_of_nodes.unwrap_or_default(),
+                number_of_nodes: self.number_of_nodes,
                 worker_type: self.worker_type,
                 glue_version: self.glue_version,
                 number_of_workers: self.number_of_workers,

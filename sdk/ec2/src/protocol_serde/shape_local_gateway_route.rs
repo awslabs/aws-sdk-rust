@@ -138,6 +138,19 @@ pub fn de_local_gateway_route(
                 builder = builder.set_network_interface_id(var_10);
             }
             ,
+            s if s.matches("destinationPrefixListId") /* DestinationPrefixListId com.amazonaws.ec2#LocalGatewayRoute$DestinationPrefixListId */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_destination_prefix_list_id(var_11);
+            }
+            ,
             _ => {}
         }
     }

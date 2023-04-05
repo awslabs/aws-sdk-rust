@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-privatenetworks = "0.8.0"
+aws-sdk-privatenetworks = "0.8.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

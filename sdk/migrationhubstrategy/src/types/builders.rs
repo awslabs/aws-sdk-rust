@@ -65,6 +65,10 @@ pub use crate::types::_vcenter_based_remote_info::VcenterBasedRemoteInfoBuilder;
 
 pub use crate::types::_application_component_detail::ApplicationComponentDetailBuilder;
 
+pub use crate::types::_result::ResultBuilder;
+
+pub use crate::types::_antipattern_report_result::AntipatternReportResultBuilder;
+
 pub use crate::types::_app_unit_error::AppUnitErrorBuilder;
 
 pub use crate::types::_source_code_repository::SourceCodeRepositoryBuilder;

@@ -5,7 +5,7 @@ pub use crate::operation::delete_image_pipeline::_delete_image_pipeline_input::D
 
 /// Fluent builder constructing a request to `DeleteImagePipeline`.
 ///
-/// <p> Deletes an image pipeline.</p>
+/// <p>Deletes an image pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteImagePipelineFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

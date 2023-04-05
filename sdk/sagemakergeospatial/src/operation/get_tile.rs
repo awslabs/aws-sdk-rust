@@ -175,6 +175,14 @@ impl GetTileInput {
                         );
                     }
                 }
+                if let Some(inner_13) = &_input.execution_role_arn {
+                    {
+                        query.push_kv(
+                            "ExecutionRoleArn",
+                            &aws_smithy_http::query::fmt_string(&inner_13),
+                        );
+                    }
+                }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -291,7 +299,7 @@ pub enum GetTileError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p></p>
+    /// <p>The request references a resource which does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

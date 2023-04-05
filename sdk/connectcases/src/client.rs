@@ -256,6 +256,8 @@ mod create_template;
 /// ```
 pub mod customize;
 
+mod delete_domain;
+
 mod get_case;
 
 mod get_case_event_configuration;

@@ -5,6 +5,7 @@ pub use crate::operation::get_phone_number::_get_phone_number_input::GetPhoneNum
 
 /// Fluent builder constructing a request to `GetPhoneNumber`.
 ///
+/// <p>Retrieves details for the specified phone number ID, such as associations, capabilities, and product type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPhoneNumberFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -64,12 +65,12 @@ impl GetPhoneNumberFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.phone_number_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number ID.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number_id(input);
         self

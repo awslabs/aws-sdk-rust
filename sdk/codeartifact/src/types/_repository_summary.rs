@@ -22,6 +22,9 @@ pub struct RepositorySummary {
     /// <p> The description of the repository. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    #[doc(hidden)]
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RepositorySummary {
     /// <p> The name of the repository. </p>
@@ -48,6 +51,10 @@ impl RepositorySummary {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
 }
 impl RepositorySummary {
     /// Creates a new builder-style object to manufacture [`RepositorySummary`](crate::types::RepositorySummary).
@@ -66,6 +73,7 @@ pub struct RepositorySummaryBuilder {
     pub(crate) domain_owner: std::option::Option<std::string::String>,
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RepositorySummaryBuilder {
     /// <p> The name of the repository. </p>
@@ -131,6 +139,19 @@ impl RepositorySummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+        self.created_time = Some(input);
+        self
+    }
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RepositorySummary`](crate::types::RepositorySummary).
     pub fn build(self) -> crate::types::RepositorySummary {
         crate::types::RepositorySummary {
@@ -140,6 +161,7 @@ impl RepositorySummaryBuilder {
             domain_owner: self.domain_owner,
             arn: self.arn,
             description: self.description,
+            created_time: self.created_time,
         }
     }
 }

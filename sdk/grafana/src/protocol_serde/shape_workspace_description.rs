@@ -214,6 +214,11 @@ where
                                     crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens)?
                                 );
                             }
+                            "networkAccessControl" => {
+                                builder = builder.set_network_access_control(
+                                    crate::protocol_serde::shape_network_access_configuration::de_network_access_configuration(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

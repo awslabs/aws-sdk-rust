@@ -7,7 +7,7 @@ pub struct DescribeEgressOnlyInternetGatewaysOutput {
     #[doc(hidden)]
     pub egress_only_internet_gateways:
         std::option::Option<std::vec::Vec<crate::types::EgressOnlyInternetGateway>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -19,7 +19,7 @@ impl DescribeEgressOnlyInternetGatewaysOutput {
     ) -> std::option::Option<&[crate::types::EgressOnlyInternetGateway]> {
         self.egress_only_internet_gateways.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -68,12 +68,12 @@ impl DescribeEgressOnlyInternetGatewaysOutputBuilder {
         self.egress_only_internet_gateways = input;
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAttributeGroupInput {
-    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     #[doc(hidden)]
     pub attribute_group: std::option::Option<std::string::String>,
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
@@ -18,7 +18,7 @@ pub struct UpdateAttributeGroupInput {
     pub attributes: std::option::Option<std::string::String>,
 }
 impl UpdateAttributeGroupInput {
-    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn attribute_group(&self) -> std::option::Option<&str> {
         self.attribute_group.as_deref()
     }
@@ -54,12 +54,12 @@ pub struct UpdateAttributeGroupInputBuilder {
     pub(crate) attributes: std::option::Option<std::string::String>,
 }
 impl UpdateAttributeGroupInputBuilder {
-    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn attribute_group(mut self, input: impl Into<std::string::String>) -> Self {
         self.attribute_group = Some(input.into());
         self
     }
-    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn set_attribute_group(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.attribute_group = input;
         self

@@ -12,18 +12,16 @@ pub fn ser_list_account_settings_input(
     if let Some(var_3) = &input.principal_arn {
         object.key("principalArn").string(var_3.as_str());
     }
-    if input.effective_settings {
-        object
-            .key("effectiveSettings")
-            .boolean(input.effective_settings);
+    if let Some(var_4) = &input.effective_settings {
+        object.key("effectiveSettings").boolean(*var_4);
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_6) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

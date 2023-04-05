@@ -21,6 +21,8 @@ pub enum Error {
     BlueGreenDeploymentNotFoundFault(crate::types::error::BlueGreenDeploymentNotFoundFault),
     /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
+    /// <p>An error occurred while trying to create the CEV.</p>
+    CreateCustomDbEngineVersionFault(crate::types::error::CreateCustomDbEngineVersionFault),
     /// <p> <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.</p>
     CustomAvailabilityZoneNotFoundFault(crate::types::error::CustomAvailabilityZoneNotFoundFault),
     /// <p>A CEV with the specified name already exists.</p>
@@ -286,6 +288,7 @@ impl std::fmt::Display for Error {
             Error::BlueGreenDeploymentAlreadyExistsFault(inner) => inner.fmt(f),
             Error::BlueGreenDeploymentNotFoundFault(inner) => inner.fmt(f),
             Error::CertificateNotFoundFault(inner) => inner.fmt(f),
+            Error::CreateCustomDbEngineVersionFault(inner) => inner.fmt(f),
             Error::CustomAvailabilityZoneNotFoundFault(inner) => inner.fmt(f),
             Error::CustomDbEngineVersionAlreadyExistsFault(inner) => inner.fmt(f),
             Error::CustomDbEngineVersionNotFoundFault(inner) => inner.fmt(f),
@@ -1018,6 +1021,7 @@ impl From<crate::operation::create_custom_db_engine_version::CreateCustomDBEngin
         err: crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError,
     ) -> Self {
         match err {
+            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CreateCustomDbEngineVersionFault(inner) => Error::CreateCustomDbEngineVersionFault(inner),
             crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionAlreadyExistsFault(inner) => Error::CustomDbEngineVersionAlreadyExistsFault(inner),
             crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionQuotaExceededFault(inner) => Error::CustomDbEngineVersionQuotaExceededFault(inner),
             crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::Ec2ImagePropertiesNotSupportedFault(inner) => Error::Ec2ImagePropertiesNotSupportedFault(inner),
@@ -1314,6 +1318,7 @@ impl From<crate::operation::create_db_instance_read_replica::CreateDBInstanceRea
         err: crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError,
     ) -> Self {
         match err {
+            crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbInstanceAlreadyExistsFault(inner) => Error::DbInstanceAlreadyExistsFault(inner),
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
@@ -1324,6 +1329,7 @@ impl From<crate::operation::create_db_instance_read_replica::CreateDBInstanceRea
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DomainNotFoundFault(inner) => Error::DomainNotFoundFault(inner),
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InstanceQuotaExceededFault(inner) => Error::InstanceQuotaExceededFault(inner),
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InsufficientDbInstanceCapacityFault(inner) => Error::InsufficientDbInstanceCapacityFault(inner),
+            crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InvalidDbSubnetGroupFault(inner) => Error::InvalidDbSubnetGroupFault(inner),
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
@@ -6175,6 +6181,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::BlueGreenDeploymentAlreadyExistsFault(e) => e.request_id(),
             Self::BlueGreenDeploymentNotFoundFault(e) => e.request_id(),
             Self::CertificateNotFoundFault(e) => e.request_id(),
+            Self::CreateCustomDbEngineVersionFault(e) => e.request_id(),
             Self::CustomAvailabilityZoneNotFoundFault(e) => e.request_id(),
             Self::CustomDbEngineVersionAlreadyExistsFault(e) => e.request_id(),
             Self::CustomDbEngineVersionNotFoundFault(e) => e.request_id(),

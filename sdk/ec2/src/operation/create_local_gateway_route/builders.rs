@@ -143,4 +143,17 @@ impl CreateLocalGatewayRouteFluentBuilder {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.destination_prefix_list_id(input.into());
+        self
+    }
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn set_destination_prefix_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_destination_prefix_list_id(input);
+        self
+    }
 }

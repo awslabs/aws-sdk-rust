@@ -5,7 +5,9 @@ pub use crate::operation::describe_product::_describe_product_input::DescribePro
 
 /// Fluent builder constructing a request to `DescribeProduct`.
 ///
-/// <p>Gets information about the specified product.</p>
+/// <p>Gets information about the specified product.</p> <note>
+/// <p> Running this operation with administrator access results in a failure. <code>DescribeProductAsAdmin</code> should be used instead. </p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeProductFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -67,7 +69,6 @@ impl DescribeProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -77,7 +78,6 @@ impl DescribeProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>

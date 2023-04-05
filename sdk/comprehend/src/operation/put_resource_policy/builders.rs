@@ -5,7 +5,7 @@ pub use crate::operation::put_resource_policy::_put_resource_policy_input::PutRe
 
 /// Fluent builder constructing a request to `PutResourcePolicy`.
 ///
-/// <p>Attaches a resource-based policy to a custom model. You can use this policy to authorize an entity in another AWS account to import the custom model, which replicates it in Amazon Comprehend in their account.</p>
+/// <p>Attaches a resource-based policy to a custom model. You can use this policy to authorize an entity in another Amazon Web Services account to import the custom model, which replicates it in Amazon Comprehend in their account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutResourcePolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

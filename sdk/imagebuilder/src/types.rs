@@ -5,6 +5,10 @@ pub use crate::types::_logging::Logging;
 
 pub use crate::types::_s3_logs::S3Logs;
 
+pub use crate::types::_image_scanning_configuration::ImageScanningConfiguration;
+
+pub use crate::types::_ecr_configuration::EcrConfiguration;
+
 pub use crate::types::_pipeline_status::PipelineStatus;
 
 pub use crate::types::_schedule::Schedule;
@@ -37,9 +41,53 @@ pub use crate::types::_ami_distribution_configuration::AmiDistributionConfigurat
 
 pub use crate::types::_launch_permission_configuration::LaunchPermissionConfiguration;
 
+pub use crate::types::_workflow_step_metadata::WorkflowStepMetadata;
+
+pub use crate::types::_workflow_step_execution_rollback_status::WorkflowStepExecutionRollbackStatus;
+
+pub use crate::types::_workflow_step_execution_status::WorkflowStepExecutionStatus;
+
+pub use crate::types::_workflow_execution_metadata::WorkflowExecutionMetadata;
+
+pub use crate::types::_workflow_execution_status::WorkflowExecutionStatus;
+
+pub use crate::types::_workflow_type::WorkflowType;
+
 pub use crate::types::_infrastructure_configuration_summary::InfrastructureConfigurationSummary;
 
 pub use crate::types::_filter::Filter;
+
+pub use crate::types::_image_scan_finding::ImageScanFinding;
+
+pub use crate::types::_package_vulnerability_details::PackageVulnerabilityDetails;
+
+pub use crate::types::_cvss_score::CvssScore;
+
+pub use crate::types::_vulnerable_package::VulnerablePackage;
+
+pub use crate::types::_inspector_score_details::InspectorScoreDetails;
+
+pub use crate::types::_cvss_score_details::CvssScoreDetails;
+
+pub use crate::types::_cvss_score_adjustment::CvssScoreAdjustment;
+
+pub use crate::types::_remediation::Remediation;
+
+pub use crate::types::_remediation_recommendation::RemediationRecommendation;
+
+pub use crate::types::_image_scan_findings_filter::ImageScanFindingsFilter;
+
+pub use crate::types::_image_scan_finding_aggregation::ImageScanFindingAggregation;
+
+pub use crate::types::_vulnerability_id_aggregation::VulnerabilityIdAggregation;
+
+pub use crate::types::_severity_counts::SeverityCounts;
+
+pub use crate::types::_image_pipeline_aggregation::ImagePipelineAggregation;
+
+pub use crate::types::_image_aggregation::ImageAggregation;
+
+pub use crate::types::_account_aggregation::AccountAggregation;
 
 pub use crate::types::_image_version::ImageVersion;
 
@@ -109,6 +157,10 @@ pub use crate::types::_component_parameter::ComponentParameter;
 
 pub use crate::types::_image::Image;
 
+pub use crate::types::_image_scan_state::ImageScanState;
+
+pub use crate::types::_image_scan_status::ImageScanStatus;
+
 pub use crate::types::_distribution_configuration::DistributionConfiguration;
 
 pub use crate::types::_container_recipe::ContainerRecipe;
@@ -118,6 +170,8 @@ pub use crate::types::_instance_configuration::InstanceConfiguration;
 pub use crate::types::_component::Component;
 
 pub use crate::types::_component_parameter_detail::ComponentParameterDetail;
+
+mod _account_aggregation;
 
 mod _additional_instance_configuration;
 
@@ -159,6 +213,12 @@ mod _container_repository_service;
 
 mod _container_type;
 
+mod _cvss_score;
+
+mod _cvss_score_adjustment;
+
+mod _cvss_score_details;
+
 mod _disk_image_format;
 
 mod _distribution;
@@ -171,6 +231,8 @@ mod _ebs_instance_block_device_specification;
 
 mod _ebs_volume_type;
 
+mod _ecr_configuration;
+
 mod _fast_launch_configuration;
 
 mod _fast_launch_launch_template_specification;
@@ -181,13 +243,29 @@ mod _filter;
 
 mod _image;
 
+mod _image_aggregation;
+
 mod _image_package;
 
 mod _image_pipeline;
 
+mod _image_pipeline_aggregation;
+
 mod _image_recipe;
 
 mod _image_recipe_summary;
+
+mod _image_scan_finding;
+
+mod _image_scan_finding_aggregation;
+
+mod _image_scan_findings_filter;
+
+mod _image_scan_state;
+
+mod _image_scan_status;
+
+mod _image_scanning_configuration;
 
 mod _image_source;
 
@@ -207,6 +285,8 @@ mod _infrastructure_configuration;
 
 mod _infrastructure_configuration_summary;
 
+mod _inspector_score_details;
+
 mod _instance_block_device_mapping;
 
 mod _instance_configuration;
@@ -223,11 +303,17 @@ mod _output_resources;
 
 mod _ownership;
 
+mod _package_vulnerability_details;
+
 mod _pipeline_execution_start_condition;
 
 mod _pipeline_status;
 
 mod _platform;
+
+mod _remediation;
+
+mod _remediation_recommendation;
 
 mod _s3_export_configuration;
 
@@ -235,9 +321,27 @@ mod _s3_logs;
 
 mod _schedule;
 
+mod _severity_counts;
+
 mod _systems_manager_agent;
 
 mod _target_container_repository;
+
+mod _vulnerability_id_aggregation;
+
+mod _vulnerable_package;
+
+mod _workflow_execution_metadata;
+
+mod _workflow_execution_status;
+
+mod _workflow_step_execution_rollback_status;
+
+mod _workflow_step_execution_status;
+
+mod _workflow_step_metadata;
+
+mod _workflow_type;
 
 /// Builders
 pub mod builders;

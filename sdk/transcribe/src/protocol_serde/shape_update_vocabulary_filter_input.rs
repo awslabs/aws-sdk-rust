@@ -18,5 +18,8 @@ pub fn ser_update_vocabulary_filter_input(
     if let Some(var_5) = &input.vocabulary_filter_file_uri {
         object.key("VocabularyFilterFileUri").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.data_access_role_arn {
+        object.key("DataAccessRoleArn").string(var_6.as_str());
+    }
     Ok(())
 }

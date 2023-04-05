@@ -105,6 +105,11 @@ pub fn ser_create_ipam_pool_input_input(
     if let Some(var_36) = &input.aws_service {
         scope_35.string(var_36.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_37 = writer.prefix("PublicIpSource");
+    if let Some(var_38) = &input.public_ip_source {
+        scope_37.string(var_38.as_str());
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

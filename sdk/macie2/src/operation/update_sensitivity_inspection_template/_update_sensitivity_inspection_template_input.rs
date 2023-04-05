@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSensitivityInspectionTemplateInput {
-    /// <p>A custom description of the template.</p>
+    /// <p>A custom description of the template. The description can contain as many as 200 characters.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
@@ -18,7 +18,7 @@ pub struct UpdateSensitivityInspectionTemplateInput {
     pub includes: std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>,
 }
 impl UpdateSensitivityInspectionTemplateInput {
-    /// <p>A custom description of the template.</p>
+    /// <p>A custom description of the template. The description can contain as many as 200 characters.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -57,12 +57,12 @@ pub struct UpdateSensitivityInspectionTemplateInputBuilder {
     pub(crate) includes: std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>,
 }
 impl UpdateSensitivityInspectionTemplateInputBuilder {
-    /// <p>A custom description of the template.</p>
+    /// <p>A custom description of the template. The description can contain as many as 200 characters.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A custom description of the template.</p>
+    /// <p>A custom description of the template. The description can contain as many as 200 characters.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
         self

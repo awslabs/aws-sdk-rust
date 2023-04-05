@@ -5,7 +5,7 @@
 /// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
 /// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
 /// <ul>
-/// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
+/// <li> <p>An IP match statement with an IP set that specifies the address 192.0.2.44.</p> </li>
 /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
 /// </ul>
 /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are not counted towards the rate limit and are not affected by this rule.</p>

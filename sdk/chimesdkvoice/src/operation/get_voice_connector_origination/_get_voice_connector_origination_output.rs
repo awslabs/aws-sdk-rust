@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorOriginationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The origination setting details.</p>
     #[doc(hidden)]
     pub origination: std::option::Option<crate::types::Origination>,
     _request_id: Option<String>,
 }
 impl GetVoiceConnectorOriginationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The origination setting details.</p>
     pub fn origination(&self) -> std::option::Option<&crate::types::Origination> {
         self.origination.as_ref()
     }
@@ -34,12 +34,12 @@ pub struct GetVoiceConnectorOriginationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetVoiceConnectorOriginationOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The origination setting details.</p>
     pub fn origination(mut self, input: crate::types::Origination) -> Self {
         self.origination = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The origination setting details.</p>
     pub fn set_origination(
         mut self,
         input: std::option::Option<crate::types::Origination>,

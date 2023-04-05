@@ -5,6 +5,7 @@ pub use crate::operation::delete_voice_connector_termination_credentials::_delet
 
 /// Fluent builder constructing a request to `DeleteVoiceConnectorTerminationCredentials`.
 ///
+/// <p>Deletes the specified SIP credentials used by your equipment to authenticate during call termination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationCredentialsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl DeleteVoiceConnectorTerminationCredentialsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -72,12 +73,12 @@ impl DeleteVoiceConnectorTerminationCredentialsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_usernames`](Self::set_usernames).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     pub fn usernames(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.usernames(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     pub fn set_usernames(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

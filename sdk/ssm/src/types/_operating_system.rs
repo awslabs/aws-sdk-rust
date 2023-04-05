@@ -12,9 +12,11 @@
 /// ```text
 /// # let operatingsystem = unimplemented!();
 /// match operatingsystem {
+///     OperatingSystem::AlmaLinux => { /* ... */ },
 ///     OperatingSystem::AmazonLinux => { /* ... */ },
 ///     OperatingSystem::AmazonLinux2 => { /* ... */ },
 ///     OperatingSystem::AmazonLinux2022 => { /* ... */ },
+///     OperatingSystem::AmazonLinux2023 => { /* ... */ },
 ///     OperatingSystem::CentOs => { /* ... */ },
 ///     OperatingSystem::Debian => { /* ... */ },
 ///     OperatingSystem::MacOs => { /* ... */ },
@@ -59,11 +61,15 @@
 )]
 pub enum OperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
+    AlmaLinux,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonLinux,
     #[allow(missing_docs)] // documentation missing in model
     AmazonLinux2,
     #[allow(missing_docs)] // documentation missing in model
     AmazonLinux2022,
+    #[allow(missing_docs)] // documentation missing in model
+    AmazonLinux2023,
     #[allow(missing_docs)] // documentation missing in model
     CentOs,
     #[allow(missing_docs)] // documentation missing in model
@@ -90,9 +96,11 @@ pub enum OperatingSystem {
 impl std::convert::From<&str> for OperatingSystem {
     fn from(s: &str) -> Self {
         match s {
+            "ALMA_LINUX" => OperatingSystem::AlmaLinux,
             "AMAZON_LINUX" => OperatingSystem::AmazonLinux,
             "AMAZON_LINUX_2" => OperatingSystem::AmazonLinux2,
             "AMAZON_LINUX_2022" => OperatingSystem::AmazonLinux2022,
+            "AMAZON_LINUX_2023" => OperatingSystem::AmazonLinux2023,
             "CENTOS" => OperatingSystem::CentOs,
             "DEBIAN" => OperatingSystem::Debian,
             "MACOS" => OperatingSystem::MacOs,
@@ -120,9 +128,11 @@ impl OperatingSystem {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OperatingSystem::AlmaLinux => "ALMA_LINUX",
             OperatingSystem::AmazonLinux => "AMAZON_LINUX",
             OperatingSystem::AmazonLinux2 => "AMAZON_LINUX_2",
             OperatingSystem::AmazonLinux2022 => "AMAZON_LINUX_2022",
+            OperatingSystem::AmazonLinux2023 => "AMAZON_LINUX_2023",
             OperatingSystem::CentOs => "CENTOS",
             OperatingSystem::Debian => "DEBIAN",
             OperatingSystem::MacOs => "MACOS",
@@ -139,9 +149,11 @@ impl OperatingSystem {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ALMA_LINUX",
             "AMAZON_LINUX",
             "AMAZON_LINUX_2",
             "AMAZON_LINUX_2022",
+            "AMAZON_LINUX_2023",
             "CENTOS",
             "DEBIAN",
             "MACOS",

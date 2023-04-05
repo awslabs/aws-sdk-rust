@@ -34,6 +34,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "id3" => {
+                                builder = builder.set_id3(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -63,6 +72,9 @@ pub fn ser_hls_id3_segment_tagging_schedule_action_settings(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tag {
         object.key("tag").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.id3 {
+        object.key("id3").string(var_2.as_str());
     }
     Ok(())
 }

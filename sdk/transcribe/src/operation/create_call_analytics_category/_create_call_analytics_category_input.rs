@@ -10,10 +10,10 @@ pub struct CreateCallAnalyticsCategoryInput {
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::types::Rule>>,
-    /// <p>Choose whether you want to create a streaming or a batch category for your Call Analytics transcription.</p>
-    /// <p>Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
-    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to batch (post-call) transcriptions.</p>
-    /// <p>If you do not include <code>InputType</code>, your category is created as a batch category by default.</p>
+    /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
+    /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
+    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
+    /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
     #[doc(hidden)]
     pub input_type: std::option::Option<crate::types::InputType>,
 }
@@ -27,10 +27,10 @@ impl CreateCallAnalyticsCategoryInput {
     pub fn rules(&self) -> std::option::Option<&[crate::types::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>Choose whether you want to create a streaming or a batch category for your Call Analytics transcription.</p>
-    /// <p>Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
-    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to batch (post-call) transcriptions.</p>
-    /// <p>If you do not include <code>InputType</code>, your category is created as a batch category by default.</p>
+    /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
+    /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
+    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
+    /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
     pub fn input_type(&self) -> std::option::Option<&crate::types::InputType> {
         self.input_type.as_ref()
     }
@@ -82,18 +82,18 @@ impl CreateCallAnalyticsCategoryInputBuilder {
         self.rules = input;
         self
     }
-    /// <p>Choose whether you want to create a streaming or a batch category for your Call Analytics transcription.</p>
-    /// <p>Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
-    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to batch (post-call) transcriptions.</p>
-    /// <p>If you do not include <code>InputType</code>, your category is created as a batch category by default.</p>
+    /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
+    /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
+    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
+    /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
     pub fn input_type(mut self, input: crate::types::InputType) -> Self {
         self.input_type = Some(input);
         self
     }
-    /// <p>Choose whether you want to create a streaming or a batch category for your Call Analytics transcription.</p>
-    /// <p>Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
-    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to batch (post-call) transcriptions.</p>
-    /// <p>If you do not include <code>InputType</code>, your category is created as a batch category by default.</p>
+    /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
+    /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
+    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
+    /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
     pub fn set_input_type(mut self, input: std::option::Option<crate::types::InputType>) -> Self {
         self.input_type = input;
         self

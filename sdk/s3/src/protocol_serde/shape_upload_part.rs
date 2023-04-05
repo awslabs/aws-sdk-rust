@@ -3,11 +3,11 @@ pub fn ser_upload_part_headers(
     input: &crate::operation::upload_part::UploadPartInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
-    if input.content_length != 0 {
-        let mut encoder = aws_smithy_types::primitive::Encoder::from(input.content_length);
-        let formatted_1 = encoder.encode();
-        if !formatted_1.is_empty() {
-            let header_value = formatted_1;
+    if let Some(inner_1) = &input.content_length {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_1);
+        let formatted_2 = encoder.encode();
+        if !formatted_2.is_empty() {
+            let header_value = formatted_2;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_length",
@@ -20,10 +20,10 @@ pub fn ser_upload_part_headers(
             builder = builder.header("Content-Length", header_value);
         }
     }
-    if let Some(inner_2) = &input.content_md5 {
-        let formatted_3 = inner_2.as_str();
-        if !formatted_3.is_empty() {
-            let header_value = formatted_3;
+    if let Some(inner_3) = &input.content_md5 {
+        let formatted_4 = inner_3.as_str();
+        if !formatted_4.is_empty() {
+            let header_value = formatted_4;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_md5",
@@ -36,10 +36,10 @@ pub fn ser_upload_part_headers(
             builder = builder.header("Content-MD5", header_value);
         }
     }
-    if let Some(inner_4) = &input.checksum_algorithm {
-        let formatted_5 = inner_4.as_str();
-        if !formatted_5.is_empty() {
-            let header_value = formatted_5;
+    if let Some(inner_5) = &input.checksum_algorithm {
+        let formatted_6 = inner_5.as_str();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_algorithm",
@@ -52,10 +52,10 @@ pub fn ser_upload_part_headers(
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
-    if let Some(inner_6) = &input.checksum_crc32 {
-        let formatted_7 = inner_6.as_str();
-        if !formatted_7.is_empty() {
-            let header_value = formatted_7;
+    if let Some(inner_7) = &input.checksum_crc32 {
+        let formatted_8 = inner_7.as_str();
+        if !formatted_8.is_empty() {
+            let header_value = formatted_8;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_crc32",
@@ -68,10 +68,10 @@ pub fn ser_upload_part_headers(
             builder = builder.header("x-amz-checksum-crc32", header_value);
         }
     }
-    if let Some(inner_8) = &input.checksum_crc32_c {
-        let formatted_9 = inner_8.as_str();
-        if !formatted_9.is_empty() {
-            let header_value = formatted_9;
+    if let Some(inner_9) = &input.checksum_crc32_c {
+        let formatted_10 = inner_9.as_str();
+        if !formatted_10.is_empty() {
+            let header_value = formatted_10;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_crc32_c",
@@ -84,10 +84,10 @@ pub fn ser_upload_part_headers(
             builder = builder.header("x-amz-checksum-crc32c", header_value);
         }
     }
-    if let Some(inner_10) = &input.checksum_sha1 {
-        let formatted_11 = inner_10.as_str();
-        if !formatted_11.is_empty() {
-            let header_value = formatted_11;
+    if let Some(inner_11) = &input.checksum_sha1 {
+        let formatted_12 = inner_11.as_str();
+        if !formatted_12.is_empty() {
+            let header_value = formatted_12;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_sha1",
@@ -100,10 +100,10 @@ pub fn ser_upload_part_headers(
             builder = builder.header("x-amz-checksum-sha1", header_value);
         }
     }
-    if let Some(inner_12) = &input.checksum_sha256 {
-        let formatted_13 = inner_12.as_str();
-        if !formatted_13.is_empty() {
-            let header_value = formatted_13;
+    if let Some(inner_13) = &input.checksum_sha256 {
+        let formatted_14 = inner_13.as_str();
+        if !formatted_14.is_empty() {
+            let header_value = formatted_14;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_sha256",
@@ -116,10 +116,10 @@ pub fn ser_upload_part_headers(
             builder = builder.header("x-amz-checksum-sha256", header_value);
         }
     }
-    if let Some(inner_14) = &input.sse_customer_algorithm {
-        let formatted_15 = inner_14.as_str();
-        if !formatted_15.is_empty() {
-            let header_value = formatted_15;
+    if let Some(inner_15) = &input.sse_customer_algorithm {
+        let formatted_16 = inner_15.as_str();
+        if !formatted_16.is_empty() {
+            let header_value = formatted_16;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_algorithm",
@@ -135,10 +135,10 @@ pub fn ser_upload_part_headers(
             );
         }
     }
-    if let Some(inner_16) = &input.sse_customer_key {
-        let formatted_17 = inner_16.as_str();
-        if !formatted_17.is_empty() {
-            let header_value = formatted_17;
+    if let Some(inner_17) = &input.sse_customer_key {
+        let formatted_18 = inner_17.as_str();
+        if !formatted_18.is_empty() {
+            let header_value = formatted_18;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key",
@@ -151,10 +151,10 @@ pub fn ser_upload_part_headers(
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
-    if let Some(inner_18) = &input.sse_customer_key_md5 {
-        let formatted_19 = inner_18.as_str();
-        if !formatted_19.is_empty() {
-            let header_value = formatted_19;
+    if let Some(inner_19) = &input.sse_customer_key_md5 {
+        let formatted_20 = inner_19.as_str();
+        if !formatted_20.is_empty() {
+            let header_value = formatted_20;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key_md5",
@@ -170,10 +170,10 @@ pub fn ser_upload_part_headers(
             );
         }
     }
-    if let Some(inner_20) = &input.request_payer {
-        let formatted_21 = inner_20.as_str();
-        if !formatted_21.is_empty() {
-            let header_value = formatted_21;
+    if let Some(inner_21) = &input.request_payer {
+        let formatted_22 = inner_21.as_str();
+        if !formatted_22.is_empty() {
+            let header_value = formatted_22;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
@@ -186,10 +186,10 @@ pub fn ser_upload_part_headers(
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
-    if let Some(inner_22) = &input.expected_bucket_owner {
-        let formatted_23 = inner_22.as_str();
-        if !formatted_23.is_empty() {
-            let header_value = formatted_23;
+    if let Some(inner_23) = &input.expected_bucket_owner {
+        let formatted_24 = inner_23.as_str();
+        if !formatted_24.is_empty() {
+            let header_value = formatted_24;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",

@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::set_resource_id): <p>The ID of the resource.</p>
-    ///   - [`authentication_token(impl Into<String>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     ///   - [`labels(Vec<String>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::labels) / [`set_labels(Option<Vec<String>>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::set_labels): <p>List of labels to delete from the resource.</p>
-    ///   - [`delete_all(bool)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::delete_all) / [`set_delete_all(bool)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::set_delete_all): <p>Flag to request removal of all labels from the specified resource.</p>
+    ///   - [`delete_all(bool)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::delete_all) / [`set_delete_all(Option<bool>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::set_delete_all): <p>Flag to request removal of all labels from the specified resource.</p>
     /// - On success, responds with [`DeleteLabelsOutput`](crate::operation::delete_labels::DeleteLabelsOutput)
     /// - On failure, responds with [`SdkError<DeleteLabelsError>`](crate::operation::delete_labels::DeleteLabelsError)
     pub fn delete_labels(

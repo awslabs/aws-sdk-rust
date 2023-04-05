@@ -15,7 +15,7 @@ pub struct StartActivityStreamInput {
     /// <p>Specifies whether or not the database activity stream is to start as soon as possible, regardless of the maintenance window for the database.</p>
     #[doc(hidden)]
     pub apply_immediately: std::option::Option<bool>,
-    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies to an Oracle DB instance. By default, no engine-native audit fields are included.</p>
+    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     #[doc(hidden)]
     pub engine_native_audit_fields_included: std::option::Option<bool>,
 }
@@ -36,7 +36,7 @@ impl StartActivityStreamInput {
     pub fn apply_immediately(&self) -> std::option::Option<bool> {
         self.apply_immediately
     }
-    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies to an Oracle DB instance. By default, no engine-native audit fields are included.</p>
+    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     pub fn engine_native_audit_fields_included(&self) -> std::option::Option<bool> {
         self.engine_native_audit_fields_included
     }
@@ -104,12 +104,12 @@ impl StartActivityStreamInputBuilder {
         self.apply_immediately = input;
         self
     }
-    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies to an Oracle DB instance. By default, no engine-native audit fields are included.</p>
+    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
         self.engine_native_audit_fields_included = Some(input);
         self
     }
-    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies to an Oracle DB instance. By default, no engine-native audit fields are included.</p>
+    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     pub fn set_engine_native_audit_fields_included(
         mut self,
         input: std::option::Option<bool>,

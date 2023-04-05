@@ -34,6 +34,9 @@ pub struct LocalGatewayRoute {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
+    /// <p> The ID of the prefix list. </p>
+    #[doc(hidden)]
+    pub destination_prefix_list_id: std::option::Option<std::string::String>,
 }
 impl LocalGatewayRoute {
     /// <p>The CIDR block used for destination matches.</p>
@@ -76,6 +79,10 @@ impl LocalGatewayRoute {
     pub fn network_interface_id(&self) -> std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
+    /// <p> The ID of the prefix list. </p>
+    pub fn destination_prefix_list_id(&self) -> std::option::Option<&str> {
+        self.destination_prefix_list_id.as_deref()
+    }
 }
 impl LocalGatewayRoute {
     /// Creates a new builder-style object to manufacture [`LocalGatewayRoute`](crate::types::LocalGatewayRoute).
@@ -98,6 +105,7 @@ pub struct LocalGatewayRouteBuilder {
     pub(crate) subnet_id: std::option::Option<std::string::String>,
     pub(crate) coip_pool_id: std::option::Option<std::string::String>,
     pub(crate) network_interface_id: std::option::Option<std::string::String>,
+    pub(crate) destination_prefix_list_id: std::option::Option<std::string::String>,
 }
 impl LocalGatewayRouteBuilder {
     /// <p>The CIDR block used for destination matches.</p>
@@ -224,6 +232,19 @@ impl LocalGatewayRouteBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p> The ID of the prefix list. </p>
+    pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.destination_prefix_list_id = Some(input.into());
+        self
+    }
+    /// <p> The ID of the prefix list. </p>
+    pub fn set_destination_prefix_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_prefix_list_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`LocalGatewayRoute`](crate::types::LocalGatewayRoute).
     pub fn build(self) -> crate::types::LocalGatewayRoute {
         crate::types::LocalGatewayRoute {
@@ -237,6 +258,7 @@ impl LocalGatewayRouteBuilder {
             subnet_id: self.subnet_id,
             coip_pool_id: self.coip_pool_id,
             network_interface_id: self.network_interface_id,
+            destination_prefix_list_id: self.destination_prefix_list_id,
         }
     }
 }

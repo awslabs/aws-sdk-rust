@@ -60,14 +60,14 @@ pub fn ser_list_closed_workflow_executions_input(
     if let Some(var_14) = &input.next_page_token {
         object.key("nextPageToken").string(var_14.as_str());
     }
-    if input.maximum_page_size != 0 {
+    if let Some(var_15) = &input.maximum_page_size {
         object.key("maximumPageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_page_size).into()),
+            aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if input.reverse_order {
-        object.key("reverseOrder").boolean(input.reverse_order);
+    if let Some(var_16) = &input.reverse_order {
+        object.key("reverseOrder").boolean(*var_16);
     }
     Ok(())
 }

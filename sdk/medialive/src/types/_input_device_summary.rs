@@ -40,6 +40,10 @@ pub struct InputDeviceSummary {
     /// Settings that describe an input device that is type UHD.
     #[doc(hidden)]
     pub uhd_device_settings: std::option::Option<crate::types::InputDeviceUhdSettings>,
+    /// A collection of key-value pairs.
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl InputDeviceSummary {
     /// The unique ARN of the input device.
@@ -98,6 +102,13 @@ impl InputDeviceSummary {
     ) -> std::option::Option<&crate::types::InputDeviceUhdSettings> {
         self.uhd_device_settings.as_ref()
     }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl InputDeviceSummary {
     /// Creates a new builder-style object to manufacture [`InputDeviceSummary`](crate::types::InputDeviceSummary).
@@ -123,6 +134,8 @@ pub struct InputDeviceSummaryBuilder {
     pub(crate) serial_number: std::option::Option<std::string::String>,
     pub(crate) r#type: std::option::Option<crate::types::InputDeviceType>,
     pub(crate) uhd_device_settings: std::option::Option<crate::types::InputDeviceUhdSettings>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl InputDeviceSummaryBuilder {
     /// The unique ARN of the input device.
@@ -266,6 +279,31 @@ impl InputDeviceSummaryBuilder {
         self.uhd_device_settings = input;
         self
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A collection of key-value pairs.
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
+    }
+    /// A collection of key-value pairs.
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InputDeviceSummary`](crate::types::InputDeviceSummary).
     pub fn build(self) -> crate::types::InputDeviceSummary {
         crate::types::InputDeviceSummary {
@@ -281,6 +319,7 @@ impl InputDeviceSummaryBuilder {
             serial_number: self.serial_number,
             r#type: self.r#type,
             uhd_device_settings: self.uhd_device_settings,
+            tags: self.tags,
         }
     }
 }

@@ -9,7 +9,7 @@ pub struct CreateComponentOutput {
     /// <p>The idempotency token used to make this request idempotent.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the component that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that this request created.</p>
     #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -23,7 +23,7 @@ impl CreateComponentOutput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that this request created.</p>
     pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
         self.component_build_version_arn.as_deref()
     }
@@ -70,12 +70,12 @@ impl CreateComponentOutputBuilder {
         self.client_token = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that this request created.</p>
     pub fn component_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.component_build_version_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that this request created.</p>
     pub fn set_component_build_version_arn(
         mut self,
         input: std::option::Option<std::string::String>,

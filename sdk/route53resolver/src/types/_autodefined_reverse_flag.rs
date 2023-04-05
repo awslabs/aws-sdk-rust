@@ -14,6 +14,7 @@
 /// match autodefinedreverseflag {
 ///     AutodefinedReverseFlag::Disable => { /* ... */ },
 ///     AutodefinedReverseFlag::Enable => { /* ... */ },
+///     AutodefinedReverseFlag::UseLocalResourceSetting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum AutodefinedReverseFlag {
     Disable,
     #[allow(missing_docs)] // documentation missing in model
     Enable,
+    #[allow(missing_docs)] // documentation missing in model
+    UseLocalResourceSetting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl std::convert::From<&str> for AutodefinedReverseFlag {
         match s {
             "DISABLE" => AutodefinedReverseFlag::Disable,
             "ENABLE" => AutodefinedReverseFlag::Enable,
+            "USE_LOCAL_RESOURCE_SETTING" => AutodefinedReverseFlag::UseLocalResourceSetting,
             other => AutodefinedReverseFlag::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -78,12 +82,13 @@ impl AutodefinedReverseFlag {
         match self {
             AutodefinedReverseFlag::Disable => "DISABLE",
             AutodefinedReverseFlag::Enable => "ENABLE",
+            AutodefinedReverseFlag::UseLocalResourceSetting => "USE_LOCAL_RESOURCE_SETTING",
             AutodefinedReverseFlag::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLE", "ENABLE"]
+        &["DISABLE", "ENABLE", "USE_LOCAL_RESOURCE_SETTING"]
     }
 }
 impl AsRef<str> for AutodefinedReverseFlag {

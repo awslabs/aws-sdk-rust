@@ -78,13 +78,13 @@ impl DescribeClusterSecurityGroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_cluster_security_groups::paginator::DescribeClusterSecurityGroupsPaginator{
         crate::operation::describe_cluster_security_groups::paginator::DescribeClusterSecurityGroupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
+    /// <p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
     /// <p> Example: <code>securitygroup1</code> </p>
     pub fn cluster_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_security_group_name(input.into());
         self
     }
-    /// <p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
+    /// <p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
     /// <p> Example: <code>securitygroup1</code> </p>
     pub fn set_cluster_security_group_name(
         mut self,
@@ -108,13 +108,13 @@ impl DescribeClusterSecurityGroupsFluentBuilder {
         self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSecurityGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    /// <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    /// <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSecurityGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    /// <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    /// <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self

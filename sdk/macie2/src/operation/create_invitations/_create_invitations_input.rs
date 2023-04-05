@@ -8,7 +8,7 @@ pub struct CreateInvitationsInput {
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
     #[doc(hidden)]
-    pub disable_email_notification: bool,
+    pub disable_email_notification: std::option::Option<bool>,
     /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl CreateInvitationsInput {
         self.account_ids.as_deref()
     }
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
-    pub fn disable_email_notification(&self) -> bool {
+    pub fn disable_email_notification(&self) -> std::option::Option<bool> {
         self.disable_email_notification
     }
     /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
@@ -93,7 +93,7 @@ impl CreateInvitationsInputBuilder {
         Ok(
             crate::operation::create_invitations::CreateInvitationsInput {
                 account_ids: self.account_ids,
-                disable_email_notification: self.disable_email_notification.unwrap_or_default(),
+                disable_email_notification: self.disable_email_notification,
                 message: self.message,
             },
         )

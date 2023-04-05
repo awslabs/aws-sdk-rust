@@ -18,8 +18,8 @@ pub fn ser_create_login_profile_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("PasswordResetRequired");
-    if input.password_reset_required {
-        scope_5.boolean(input.password_reset_required);
+    if let Some(var_6) = &input.password_reset_required {
+        scope_5.boolean(*var_6);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

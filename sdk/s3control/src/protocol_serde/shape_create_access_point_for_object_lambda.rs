@@ -87,8 +87,18 @@ pub fn de_create_access_point_for_object_lambda(inp: &[u8], mut builder: crate::
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("ObjectLambdaAccessPointArn") /* ObjectLambdaAccessPointArn com.amazonaws.s3control.synthetic#CreateAccessPointForObjectLambdaOutput$ObjectLambdaAccessPointArn */ =>  {
+            s if s.matches("Alias") /* Alias com.amazonaws.s3control.synthetic#CreateAccessPointForObjectLambdaOutput$Alias */ =>  {
                 let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_object_lambda_access_point_alias::de_object_lambda_access_point_alias(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_alias(var_3);
+            }
+            ,
+            s if s.matches("ObjectLambdaAccessPointArn") /* ObjectLambdaAccessPointArn com.amazonaws.s3control.synthetic#CreateAccessPointForObjectLambdaOutput$ObjectLambdaAccessPointArn */ =>  {
+                let var_4 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -97,7 +107,7 @@ pub fn de_create_access_point_for_object_lambda(inp: &[u8], mut builder: crate::
                         ?
                     )
                 ;
-                builder = builder.set_object_lambda_access_point_arn(var_3);
+                builder = builder.set_object_lambda_access_point_arn(var_4);
             }
             ,
             _ => {}

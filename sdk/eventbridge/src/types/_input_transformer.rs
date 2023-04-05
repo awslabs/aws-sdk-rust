@@ -10,7 +10,7 @@ pub struct InputTransformer {
     #[doc(hidden)]
     pub input_paths_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
+    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; </p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
     /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
@@ -67,7 +67,7 @@ impl InputTransformer {
     {
         self.input_paths_map.as_ref()
     }
-    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
+    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; </p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
     /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
@@ -160,7 +160,7 @@ impl InputTransformerBuilder {
         self.input_paths_map = input;
         self
     }
-    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
+    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; </p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
     /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
@@ -208,7 +208,7 @@ impl InputTransformerBuilder {
         self.input_template = Some(input.into());
         self
     }
-    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
+    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; </p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
     /// <li> <p>The placeholder cannot be used as an object key.</p> </li>

@@ -9,10 +9,10 @@ pub struct CreateAppInstanceInput {
     /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
-    /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// <p>Tags assigned to the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
@@ -25,11 +25,11 @@ impl CreateAppInstanceInput {
     pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
-    /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// <p>Tags assigned to the <code>AppInstance</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
@@ -39,7 +39,7 @@ impl std::fmt::Debug for CreateAppInstanceInput {
         let mut formatter = f.debug_struct("CreateAppInstanceInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
-        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_request_token", &self.client_request_token);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -82,12 +82,12 @@ impl CreateAppInstanceInputBuilder {
         self.metadata = input;
         self
     }
-    /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -99,14 +99,14 @@ impl CreateAppInstanceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// <p>Tags assigned to the <code>AppInstance</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = Some(v);
         self
     }
-    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// <p>Tags assigned to the <code>AppInstance</code>.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -136,7 +136,7 @@ impl std::fmt::Debug for CreateAppInstanceInputBuilder {
         let mut formatter = f.debug_struct("CreateAppInstanceInputBuilder");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
-        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_request_token", &self.client_request_token);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

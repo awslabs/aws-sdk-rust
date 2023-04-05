@@ -5,7 +5,7 @@ pub use crate::operation::list_geofence_collections::_list_geofence_collections_
 
 /// Fluent builder constructing a request to `ListGeofenceCollections`.
 ///
-/// <p>Lists geofence collections in your AWS account.</p>
+/// <p>Lists geofence collections in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGeofenceCollectionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

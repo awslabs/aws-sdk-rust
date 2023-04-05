@@ -82,12 +82,12 @@ impl DeleteTimelineEventFluentBuilder {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.event_id(input.into());
         self
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self

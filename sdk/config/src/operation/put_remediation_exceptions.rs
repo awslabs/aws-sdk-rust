@@ -178,7 +178,7 @@ pub enum PutRemediationExceptionsError {
     /// </ul> </li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

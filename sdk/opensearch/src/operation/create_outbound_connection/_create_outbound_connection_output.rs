@@ -19,6 +19,12 @@ pub struct CreateOutboundConnectionOutput {
     /// <p>The unique identifier for the created outbound connection, which is used for subsequent operations on the connection.</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
+    /// <p>The connection mode.</p>
+    #[doc(hidden)]
+    pub connection_mode: std::option::Option<crate::types::ConnectionMode>,
+    /// <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+    #[doc(hidden)]
+    pub connection_properties: std::option::Option<crate::types::ConnectionProperties>,
     _request_id: Option<String>,
 }
 impl CreateOutboundConnectionOutput {
@@ -48,6 +54,16 @@ impl CreateOutboundConnectionOutput {
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
+    /// <p>The connection mode.</p>
+    pub fn connection_mode(&self) -> std::option::Option<&crate::types::ConnectionMode> {
+        self.connection_mode.as_ref()
+    }
+    /// <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+    pub fn connection_properties(
+        &self,
+    ) -> std::option::Option<&crate::types::ConnectionProperties> {
+        self.connection_properties.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for CreateOutboundConnectionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -72,6 +88,8 @@ pub struct CreateOutboundConnectionOutputBuilder {
     pub(crate) connection_alias: std::option::Option<std::string::String>,
     pub(crate) connection_status: std::option::Option<crate::types::OutboundConnectionStatus>,
     pub(crate) connection_id: std::option::Option<std::string::String>,
+    pub(crate) connection_mode: std::option::Option<crate::types::ConnectionMode>,
+    pub(crate) connection_properties: std::option::Option<crate::types::ConnectionProperties>,
     _request_id: Option<String>,
 }
 impl CreateOutboundConnectionOutputBuilder {
@@ -134,6 +152,32 @@ impl CreateOutboundConnectionOutputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The connection mode.</p>
+    pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
+        self.connection_mode = Some(input);
+        self
+    }
+    /// <p>The connection mode.</p>
+    pub fn set_connection_mode(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionMode>,
+    ) -> Self {
+        self.connection_mode = input;
+        self
+    }
+    /// <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+    pub fn connection_properties(mut self, input: crate::types::ConnectionProperties) -> Self {
+        self.connection_properties = Some(input);
+        self
+    }
+    /// <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+    pub fn set_connection_properties(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionProperties>,
+    ) -> Self {
+        self.connection_properties = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -153,6 +197,8 @@ impl CreateOutboundConnectionOutputBuilder {
             connection_alias: self.connection_alias,
             connection_status: self.connection_status,
             connection_id: self.connection_id,
+            connection_mode: self.connection_mode,
+            connection_properties: self.connection_properties,
             _request_id: self._request_id,
         }
     }

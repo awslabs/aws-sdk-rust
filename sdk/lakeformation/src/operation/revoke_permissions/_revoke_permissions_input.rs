@@ -12,7 +12,7 @@ pub struct RevokePermissionsInput {
     /// <p>The resource to which permissions are to be revoked.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<crate::types::Resource>,
-    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::types::Permission>>,
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
@@ -32,7 +32,7 @@ impl RevokePermissionsInput {
     pub fn resource(&self) -> std::option::Option<&crate::types::Resource> {
         self.resource.as_ref()
     }
-    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::types::Permission]> {
         self.permissions.as_deref()
     }
@@ -100,14 +100,14 @@ impl RevokePermissionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
     ///
-    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
         v.push(input);
         self.permissions = Some(v);
         self
     }
-    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
     pub fn set_permissions(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Permission>>,

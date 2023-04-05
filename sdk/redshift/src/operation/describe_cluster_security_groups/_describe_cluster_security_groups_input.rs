@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClusterSecurityGroupsInput {
-    /// <p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
+    /// <p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
     /// <p> Example: <code>securitygroup1</code> </p>
     #[doc(hidden)]
     pub cluster_security_group_name: std::option::Option<std::string::String>,
@@ -14,7 +14,7 @@ pub struct DescribeClusterSecurityGroupsInput {
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSecurityGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    /// <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    /// <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.</p>
@@ -25,7 +25,7 @@ pub struct DescribeClusterSecurityGroupsInput {
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeClusterSecurityGroupsInput {
-    /// <p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
+    /// <p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
     /// <p> Example: <code>securitygroup1</code> </p>
     pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
         self.cluster_security_group_name.as_deref()
@@ -37,7 +37,7 @@ impl DescribeClusterSecurityGroupsInput {
         self.max_records
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSecurityGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    /// <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    /// <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -68,13 +68,13 @@ pub struct DescribeClusterSecurityGroupsInputBuilder {
     pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeClusterSecurityGroupsInputBuilder {
-    /// <p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
+    /// <p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
     /// <p> Example: <code>securitygroup1</code> </p>
     pub fn cluster_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.cluster_security_group_name = Some(input.into());
         self
     }
-    /// <p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
+    /// <p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
     /// <p> Example: <code>securitygroup1</code> </p>
     pub fn set_cluster_security_group_name(
         mut self,
@@ -98,13 +98,13 @@ impl DescribeClusterSecurityGroupsInputBuilder {
         self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSecurityGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    /// <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    /// <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.marker = Some(input.into());
         self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSecurityGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    /// <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    /// <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.marker = input;
         self

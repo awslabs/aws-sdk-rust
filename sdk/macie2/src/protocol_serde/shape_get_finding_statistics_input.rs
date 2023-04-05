@@ -12,17 +12,17 @@ pub fn ser_get_finding_statistics_input(
     if let Some(var_3) = &input.group_by {
         object.key("groupBy").string(var_3.as_str());
     }
-    if input.size != 0 {
+    if let Some(var_4) = &input.size {
         object.key("size").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.size).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.sort_criteria {
+    if let Some(var_5) = &input.sort_criteria {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("sortCriteria").start_object();
-        crate::protocol_serde::shape_finding_statistics_sort_criteria::ser_finding_statistics_sort_criteria(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("sortCriteria").start_object();
+        crate::protocol_serde::shape_finding_statistics_sort_criteria::ser_finding_statistics_sort_criteria(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

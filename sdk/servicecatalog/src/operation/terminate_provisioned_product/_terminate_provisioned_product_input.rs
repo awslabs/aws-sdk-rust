@@ -14,10 +14,9 @@ pub struct TerminateProvisionedProductInput {
     pub terminate_token: std::option::Option<std::string::String>,
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     #[doc(hidden)]
-    pub ignore_errors: bool,
+    pub ignore_errors: std::option::Option<bool>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -25,7 +24,7 @@ pub struct TerminateProvisionedProductInput {
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
     #[doc(hidden)]
-    pub retain_physical_resources: bool,
+    pub retain_physical_resources: std::option::Option<bool>,
 }
 impl TerminateProvisionedProductInput {
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
@@ -41,12 +40,11 @@ impl TerminateProvisionedProductInput {
         self.terminate_token.as_deref()
     }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
-    pub fn ignore_errors(&self) -> bool {
+    pub fn ignore_errors(&self) -> std::option::Option<bool> {
         self.ignore_errors
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -54,7 +52,7 @@ impl TerminateProvisionedProductInput {
         self.accept_language.as_deref()
     }
     /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
-    pub fn retain_physical_resources(&self) -> bool {
+    pub fn retain_physical_resources(&self) -> std::option::Option<bool> {
         self.retain_physical_resources
     }
 }
@@ -125,7 +123,6 @@ impl TerminateProvisionedProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -135,7 +132,6 @@ impl TerminateProvisionedProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -165,9 +161,9 @@ impl TerminateProvisionedProductInputBuilder {
                 provisioned_product_name: self.provisioned_product_name,
                 provisioned_product_id: self.provisioned_product_id,
                 terminate_token: self.terminate_token,
-                ignore_errors: self.ignore_errors.unwrap_or_default(),
+                ignore_errors: self.ignore_errors,
                 accept_language: self.accept_language,
-                retain_physical_resources: self.retain_physical_resources.unwrap_or_default(),
+                retain_physical_resources: self.retain_physical_resources,
             },
         )
     }

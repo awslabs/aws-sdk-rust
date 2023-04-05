@@ -10,6 +10,13 @@ pub struct LabelSchema {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The action to take for unlabeled events.</p>
+    /// <ul>
+    /// <li> <p>Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the majority of the events in the dataset are labeled.</p> </li>
+    /// <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when most of the events in your dataset are fraudulent.</p> </li>
+    /// <li> <p>Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when most of the events in your dataset are legitimate.</p> </li>
+    /// <li> <p>Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is recommended when there is significant unlabeled events in the dataset.</p> </li>
+    /// </ul>
+    /// <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
     #[doc(hidden)]
     pub unlabeled_events_treatment: std::option::Option<crate::types::UnlabeledEventsTreatment>,
 }
@@ -23,6 +30,13 @@ impl LabelSchema {
         self.label_mapper.as_ref()
     }
     /// <p>The action to take for unlabeled events.</p>
+    /// <ul>
+    /// <li> <p>Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the majority of the events in the dataset are labeled.</p> </li>
+    /// <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when most of the events in your dataset are fraudulent.</p> </li>
+    /// <li> <p>Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when most of the events in your dataset are legitimate.</p> </li>
+    /// <li> <p>Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is recommended when there is significant unlabeled events in the dataset.</p> </li>
+    /// </ul>
+    /// <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
     pub fn unlabeled_events_treatment(
         &self,
     ) -> std::option::Option<&crate::types::UnlabeledEventsTreatment> {
@@ -73,6 +87,13 @@ impl LabelSchemaBuilder {
         self
     }
     /// <p>The action to take for unlabeled events.</p>
+    /// <ul>
+    /// <li> <p>Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the majority of the events in the dataset are labeled.</p> </li>
+    /// <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when most of the events in your dataset are fraudulent.</p> </li>
+    /// <li> <p>Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when most of the events in your dataset are legitimate.</p> </li>
+    /// <li> <p>Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is recommended when there is significant unlabeled events in the dataset.</p> </li>
+    /// </ul>
+    /// <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
     pub fn unlabeled_events_treatment(
         mut self,
         input: crate::types::UnlabeledEventsTreatment,
@@ -81,6 +102,13 @@ impl LabelSchemaBuilder {
         self
     }
     /// <p>The action to take for unlabeled events.</p>
+    /// <ul>
+    /// <li> <p>Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the majority of the events in the dataset are labeled.</p> </li>
+    /// <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when most of the events in your dataset are fraudulent.</p> </li>
+    /// <li> <p>Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when most of the events in your dataset are legitimate.</p> </li>
+    /// <li> <p>Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is recommended when there is significant unlabeled events in the dataset.</p> </li>
+    /// </ul>
+    /// <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
     pub fn set_unlabeled_events_treatment(
         mut self,
         input: std::option::Option<crate::types::UnlabeledEventsTreatment>,

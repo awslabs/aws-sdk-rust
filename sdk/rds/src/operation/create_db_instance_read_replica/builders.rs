@@ -5,10 +5,10 @@ pub use crate::operation::create_db_instance_read_replica::_create_db_instance_r
 
 /// Fluent builder constructing a request to `CreateDBInstanceReadReplica`.
 ///
-/// <p>Creates a new DB instance that acts as a read replica for an existing source DB instance. You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with Read Replicas</a> in the <i>Amazon RDS User Guide</i>.</p>
+/// <p>Creates a new DB instance that acts as a read replica for an existing source DB instance or Multi-AZ DB cluster. You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon RDS User Guide</i>.</p>
 /// <p>Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code> operation to create a DB instance for an Aurora DB cluster.</p>
-/// <p>All read replica DB instances are created with backups disabled. All other DB instance attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance, except as specified.</p> <important>
-/// <p>Your source DB instance must have backup retention enabled.</p>
+/// <p>All read replica DB instances are created with backups disabled. All other attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance or cluster, except as specified.</p> <important>
+/// <p>Your source DB instance or cluster must have backup retention enabled.</p>
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDBInstanceReadReplicaFluentBuilder {
@@ -86,14 +86,13 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
-    /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.</p>
+    /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
-    /// <li> <p>Can specify a DB instance that is a MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
-    /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
-    /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.Limitations.html">Read Replica Limitations with Microsoft SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
-    /// <li> <p>Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-Region replication).</p> </li>
+    /// <li> <p>Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p> </li>
+    /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
+    /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
     /// <li> <p>The specified DB instance must have automatic backups enabled, that is, its backup retention period must be greater than 0.</p> </li>
     /// <li> <p>If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier.</p> </li>
     /// <li> <p>If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support cross-Region replicas.</p> </li>
@@ -102,14 +101,13 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self.inner = self.inner.source_db_instance_identifier(input.into());
         self
     }
-    /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.</p>
+    /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
-    /// <li> <p>Can specify a DB instance that is a MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
-    /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
-    /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.Limitations.html">Read Replica Limitations with Microsoft SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
-    /// <li> <p>Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-Region replication).</p> </li>
+    /// <li> <p>Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p> </li>
+    /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
+    /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
     /// <li> <p>The specified DB instance must have automatic backups enabled, that is, its backup retention period must be greater than 0.</p> </li>
     /// <li> <p>If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier.</p> </li>
     /// <li> <p>If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support cross-Region replicas.</p> </li>
@@ -168,14 +166,14 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self
     }
     /// <p>A value that indicates whether the read replica is in a Multi-AZ deployment.</p>
-    /// <p>You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB instance is independent of whether the source database is a Multi-AZ DB instance.</p>
+    /// <p>You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB instance is independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_az(input);
         self
     }
     /// <p>A value that indicates whether the read replica is in a Multi-AZ deployment.</p>
-    /// <p>You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB instance is independent of whether the source database is a Multi-AZ DB instance.</p>
+    /// <p>You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB instance is independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_az(input);
@@ -205,16 +203,16 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self.inner = self.inner.set_iops(input);
         self
     }
-    /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance is used.</p> <note>
-    /// <p>For SQL Server, you must use the option group associated with the source instance.</p>
+    /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance or cluster is used.</p> <note>
+    /// <p>For SQL Server, you must use the option group associated with the source.</p>
     /// </note>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
-    /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance is used.</p> <note>
-    /// <p>For SQL Server, you must use the option group associated with the source instance.</p>
+    /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance or cluster is used.</p> <note>
+    /// <p>For SQL Server, you must use the option group associated with the source.</p>
     /// </note>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_option_group_name(
@@ -405,9 +403,9 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance, then do not specify a value for this parameter. A read replica in the same Amazon Web Services Region is always encrypted with the same KMS key as the source DB instance.</p>
+    /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, don't specify a value for this parameter. A read replica in the same Amazon Web Services Region is always encrypted with the same KMS key as the source DB instance or cluster.</p>
     /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
-    /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
+    /// <p>You can't create an encrypted read replica from an unencrypted DB instance or Multi-AZ DB cluster.</p>
     /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary replica.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -415,9 +413,9 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance, then do not specify a value for this parameter. A read replica in the same Amazon Web Services Region is always encrypted with the same KMS key as the source DB instance.</p>
+    /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, don't specify a value for this parameter. A read replica in the same Amazon Web Services Region is always encrypted with the same KMS key as the source DB instance or cluster.</p>
     /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
-    /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
+    /// <p>You can't create an encrypted read replica from an unencrypted DB instance or Multi-AZ DB cluster.</p>
     /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary replica.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
@@ -425,6 +423,7 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     }
     /// <p>When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from one China Amazon Web Services Region to another, the URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web Services Region that contains the source DB instance.</p>
     /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions. It's ignored in other Amazon Web Services Regions.</p>
+    /// <p>This setting applies only when replicating from a source DB <i>instance</i>. Source DB clusters aren't supported in Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions.</p>
     /// <p>You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the same Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
@@ -443,6 +442,7 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     }
     /// <p>When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from one China Amazon Web Services Region to another, the URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web Services Region that contains the source DB instance.</p>
     /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions. It's ignored in other Amazon Web Services Regions.</p>
+    /// <p>This setting applies only when replicating from a source DB <i>instance</i>. Source DB clusters aren't supported in Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions.</p>
     /// <p>You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the same Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
@@ -627,13 +627,13 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_iam_role_name(input.into());
         self
     }
-    /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_domain_iam_role_name(
         mut self,
@@ -757,17 +757,44 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self
     }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
-    /// <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.inner = self.inner.allocated_storage(input);
         self
     }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
-    /// <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed. You can also allocate additional memory for future growth.</p>
+    /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocated_storage(input);
+        self
+    }
+    /// <p>The identifier of the Multi-AZ DB cluster that will act as the source for the read replica. Each DB cluster can have up to 15 read replicas.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier of an existing Multi-AZ DB cluster.</p> </li>
+    /// <li> <p>Can't be specified if the <code>SourceDBInstanceIdentifier</code> parameter is also specified.</p> </li>
+    /// <li> <p>The specified DB cluster must have automatic backups enabled, that is, its backup retention period must be greater than 0.</p> </li>
+    /// <li> <p>The source DB cluster must be in the same Amazon Web Services Region as the read replica. Cross-Region replication isn't supported.</p> </li>
+    /// </ul>
+    pub fn source_db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.source_db_cluster_identifier(input.into());
+        self
+    }
+    /// <p>The identifier of the Multi-AZ DB cluster that will act as the source for the read replica. Each DB cluster can have up to 15 read replicas.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier of an existing Multi-AZ DB cluster.</p> </li>
+    /// <li> <p>Can't be specified if the <code>SourceDBInstanceIdentifier</code> parameter is also specified.</p> </li>
+    /// <li> <p>The specified DB cluster must have automatic backups enabled, that is, its backup retention period must be greater than 0.</p> </li>
+    /// <li> <p>The source DB cluster must be in the same Amazon Web Services Region as the read replica. Cross-Region replication isn't supported.</p> </li>
+    /// </ul>
+    pub fn set_source_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_source_db_cluster_identifier(input);
         self
     }
 }

@@ -8,13 +8,13 @@ pub struct PutAccountSendingAttributesInput {
     /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
     #[doc(hidden)]
-    pub sending_enabled: bool,
+    pub sending_enabled: std::option::Option<bool>,
 }
 impl PutAccountSendingAttributesInput {
     /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
-    pub fn sending_enabled(&self) -> bool {
+    pub fn sending_enabled(&self) -> std::option::Option<bool> {
         self.sending_enabled
     }
 }
@@ -55,7 +55,7 @@ impl PutAccountSendingAttributesInputBuilder {
     > {
         Ok(
             crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput {
-                sending_enabled: self.sending_enabled.unwrap_or_default(),
+                sending_enabled: self.sending_enabled,
             },
         )
     }

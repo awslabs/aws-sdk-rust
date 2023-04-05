@@ -9,8 +9,28 @@ pub(crate) fn reflens_describe_malware_scans_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_describe_organization_configuration_output_next_token(
+    input: &crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_get_usage_statistics_output_next_token(
     input: &crate::operation::get_usage_statistics::GetUsageStatisticsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_coverage_output_next_token(
+    input: &crate::operation::list_coverage::ListCoverageOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -113,6 +133,16 @@ pub(crate) fn lens_describe_malware_scans_output_scans(
     input: crate::operation::describe_malware_scans::DescribeMalwareScansOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::Scan>> {
     let input = match input.scans {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_coverage_output_resources(
+    input: crate::operation::list_coverage::ListCoverageOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::CoverageResource>> {
+    let input = match input.resources {
         None => return None,
         Some(t) => t,
     };

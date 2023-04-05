@@ -310,6 +310,9 @@ pub struct DbInstance {
     /// <p>The details of the DB instance's server certificate.</p>
     #[doc(hidden)]
     pub certificate_details: std::option::Option<crate::types::CertificateDetails>,
+    /// <p>Contains the identifier of the source DB cluster if this DB instance is a read replica.</p>
+    #[doc(hidden)]
+    pub read_replica_source_db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DbInstance {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -711,6 +714,10 @@ impl DbInstance {
     pub fn certificate_details(&self) -> std::option::Option<&crate::types::CertificateDetails> {
         self.certificate_details.as_ref()
     }
+    /// <p>Contains the identifier of the source DB cluster if this DB instance is a read replica.</p>
+    pub fn read_replica_source_db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.read_replica_source_db_cluster_identifier.as_deref()
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -814,6 +821,7 @@ pub struct DbInstanceBuilder {
     pub(crate) db_system_id: std::option::Option<std::string::String>,
     pub(crate) master_user_secret: std::option::Option<crate::types::MasterUserSecret>,
     pub(crate) certificate_details: std::option::Option<crate::types::CertificateDetails>,
+    pub(crate) read_replica_source_db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DbInstanceBuilder {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -1991,6 +1999,22 @@ impl DbInstanceBuilder {
         self.certificate_details = input;
         self
     }
+    /// <p>Contains the identifier of the source DB cluster if this DB instance is a read replica.</p>
+    pub fn read_replica_source_db_cluster_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        self.read_replica_source_db_cluster_identifier = Some(input.into());
+        self
+    }
+    /// <p>Contains the identifier of the source DB cluster if this DB instance is a read replica.</p>
+    pub fn set_read_replica_source_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.read_replica_source_db_cluster_identifier = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -2079,6 +2103,8 @@ impl DbInstanceBuilder {
             db_system_id: self.db_system_id,
             master_user_secret: self.master_user_secret,
             certificate_details: self.certificate_details,
+            read_replica_source_db_cluster_identifier: self
+                .read_replica_source_db_cluster_identifier,
         }
     }
 }

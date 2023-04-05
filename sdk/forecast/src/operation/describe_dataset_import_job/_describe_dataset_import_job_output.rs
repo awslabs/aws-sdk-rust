@@ -28,8 +28,8 @@ pub struct DescribeDatasetImportJobOutput {
     /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
     #[doc(hidden)]
     pub geolocation_format: std::option::Option<std::string::String>,
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
-    /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<crate::types::DataSource>,
     /// <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
@@ -71,6 +71,9 @@ pub struct DescribeDatasetImportJobOutput {
     /// <p>The format of the imported data, CSV or PARQUET.</p>
     #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
+    /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+    #[doc(hidden)]
+    pub import_mode: std::option::Option<crate::types::ImportMode>,
     _request_id: Option<String>,
 }
 impl DescribeDatasetImportJobOutput {
@@ -106,8 +109,8 @@ impl DescribeDatasetImportJobOutput {
     pub fn geolocation_format(&self) -> std::option::Option<&str> {
         self.geolocation_format.as_deref()
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
-    /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
@@ -160,6 +163,10 @@ impl DescribeDatasetImportJobOutput {
     pub fn format(&self) -> std::option::Option<&str> {
         self.format.as_deref()
     }
+    /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+    pub fn import_mode(&self) -> std::option::Option<&crate::types::ImportMode> {
+        self.import_mode.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeDatasetImportJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -195,6 +202,7 @@ pub struct DescribeDatasetImportJobOutputBuilder {
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) format: std::option::Option<std::string::String>,
+    pub(crate) import_mode: std::option::Option<crate::types::ImportMode>,
     _request_id: Option<String>,
 }
 impl DescribeDatasetImportJobOutputBuilder {
@@ -285,14 +293,14 @@ impl DescribeDatasetImportJobOutputBuilder {
         self.geolocation_format = input;
         self
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
-    /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = Some(input);
         self
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
-    /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
@@ -427,6 +435,16 @@ impl DescribeDatasetImportJobOutputBuilder {
         self.format = input;
         self
     }
+    /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+    pub fn import_mode(mut self, input: crate::types::ImportMode) -> Self {
+        self.import_mode = Some(input);
+        self
+    }
+    /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+    pub fn set_import_mode(mut self, input: std::option::Option<crate::types::ImportMode>) -> Self {
+        self.import_mode = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -457,6 +475,7 @@ impl DescribeDatasetImportJobOutputBuilder {
             creation_time: self.creation_time,
             last_modification_time: self.last_modification_time,
             format: self.format,
+            import_mode: self.import_mode,
             _request_id: self._request_id,
         }
     }

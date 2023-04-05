@@ -9,6 +9,8 @@ pub use crate::types::_replication_task_assessment_run::ReplicationTaskAssessmen
 
 pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgressBuilder;
 
+pub use crate::types::_recommendation_settings::RecommendationSettingsBuilder;
+
 pub use crate::types::_table_to_reload::TableToReloadBuilder;
 
 pub use crate::types::_refresh_schemas_status::RefreshSchemasStatusBuilder;
@@ -79,6 +81,18 @@ pub use crate::types::_replication_task_assessment_result::ReplicationTaskAssess
 
 pub use crate::types::_replication_instance_task_log::ReplicationInstanceTaskLogBuilder;
 
+pub use crate::types::_recommendation::RecommendationBuilder;
+
+pub use crate::types::_recommendation_data::RecommendationDataBuilder;
+
+pub use crate::types::_rds_recommendation::RdsRecommendationBuilder;
+
+pub use crate::types::_rds_configuration::RdsConfigurationBuilder;
+
+pub use crate::types::_rds_requirements::RdsRequirementsBuilder;
+
+pub use crate::types::_limitation::LimitationBuilder;
+
 pub use crate::types::_resource_pending_maintenance_actions::ResourcePendingMaintenanceActionsBuilder;
 
 pub use crate::types::_pending_maintenance_action::PendingMaintenanceActionBuilder;
@@ -118,3 +132,7 @@ pub use crate::types::_supported_endpoint_type::SupportedEndpointTypeBuilder;
 pub use crate::types::_endpoint_setting::EndpointSettingBuilder;
 
 pub use crate::types::_account_quota::AccountQuotaBuilder;
+
+pub use crate::types::_batch_start_recommendations_error_entry::BatchStartRecommendationsErrorEntryBuilder;
+
+pub use crate::types::_start_recommendations_request_entry::StartRecommendationsRequestEntryBuilder;

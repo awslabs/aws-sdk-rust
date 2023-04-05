@@ -58,6 +58,61 @@ pub fn de_nat_gateway_address(
                 builder = builder.set_public_ip(var_4);
             }
             ,
+            s if s.matches("associationId") /* AssociationId com.amazonaws.ec2#NatGatewayAddress$AssociationId */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_association_id(var_5);
+            }
+            ,
+            s if s.matches("isPrimary") /* IsPrimary com.amazonaws.ec2#NatGatewayAddress$IsPrimary */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_primary(var_6);
+            }
+            ,
+            s if s.matches("failureMessage") /* FailureMessage com.amazonaws.ec2#NatGatewayAddress$FailureMessage */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_failure_message(var_7);
+            }
+            ,
+            s if s.matches("status") /* Status com.amazonaws.ec2#NatGatewayAddress$Status */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<crate::types::NatGatewayAddressStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::NatGatewayAddressStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_8);
+            }
+            ,
             _ => {}
         }
     }

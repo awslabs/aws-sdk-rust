@@ -5,7 +5,7 @@ pub use crate::operation::delete_app::_delete_app_input::DeleteAppInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteApp`.
 ///
-/// <p>Deletes an AWS Resilience Hub application. This is a destructive action that can't be undone.</p>
+/// <p>Deletes an Resilience Hub application. This is a destructive action that can't be undone.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAppFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,22 +65,22 @@ impl DeleteAppFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
     }
-    /// <p>A boolean option to force the deletion of a Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete(input);
         self
     }
-    /// <p>A boolean option to force the deletion of a Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
     pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete(input);
         self

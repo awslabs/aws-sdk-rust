@@ -24,6 +24,8 @@ pub(crate) mod shape_create_related_item;
 
 pub(crate) mod shape_create_template;
 
+pub(crate) mod shape_delete_domain;
+
 pub(crate) mod shape_get_case;
 
 pub(crate) mod shape_get_case_event_configuration;

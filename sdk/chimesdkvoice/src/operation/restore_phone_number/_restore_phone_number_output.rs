@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestorePhoneNumberOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The restored phone number.</p>
     #[doc(hidden)]
     pub phone_number: std::option::Option<crate::types::PhoneNumber>,
     _request_id: Option<String>,
 }
 impl RestorePhoneNumberOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The restored phone number.</p>
     pub fn phone_number(&self) -> std::option::Option<&crate::types::PhoneNumber> {
         self.phone_number.as_ref()
     }
@@ -35,12 +35,12 @@ pub struct RestorePhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }
 impl RestorePhoneNumberOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The restored phone number.</p>
     pub fn phone_number(mut self, input: crate::types::PhoneNumber) -> Self {
         self.phone_number = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The restored phone number.</p>
     pub fn set_phone_number(
         mut self,
         input: std::option::Option<crate::types::PhoneNumber>,

@@ -85,12 +85,12 @@ impl DeleteBotAliasFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
-    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
+    /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
     pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_resource_in_use_check(input);
         self
     }
-    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
+    /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
     pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_resource_in_use_check(input);
         self

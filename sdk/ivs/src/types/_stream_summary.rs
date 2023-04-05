@@ -10,7 +10,7 @@ pub struct StreamSummary {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
-    /// <p>The stream’s state.</p>
+    /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::StreamState>,
     /// <p>The stream’s health.</p>
@@ -32,7 +32,7 @@ impl StreamSummary {
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
-    /// <p>The stream’s state.</p>
+    /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
     pub fn state(&self) -> std::option::Option<&crate::types::StreamState> {
         self.state.as_ref()
     }
@@ -88,12 +88,12 @@ impl StreamSummaryBuilder {
         self.stream_id = input;
         self
     }
-    /// <p>The stream’s state.</p>
+    /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
     pub fn state(mut self, input: crate::types::StreamState) -> Self {
         self.state = Some(input);
         self
     }
-    /// <p>The stream’s state.</p>
+    /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::StreamState>) -> Self {
         self.state = input;
         self

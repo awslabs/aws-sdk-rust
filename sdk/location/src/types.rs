@@ -107,6 +107,18 @@ pub use crate::types::_batch_delete_geofence_error::BatchDeleteGeofenceError;
 
 pub use crate::types::_list_geofence_collections_response_entry::ListGeofenceCollectionsResponseEntry;
 
+pub use crate::types::_list_keys_response_entry::ListKeysResponseEntry;
+
+pub use crate::types::_api_key_restrictions::ApiKeyRestrictions;
+
+pub use crate::types::_api_key_filter::ApiKeyFilter;
+
+pub use crate::types::_status::Status;
+
+mod _api_key_filter;
+
+mod _api_key_restrictions;
+
 mod _batch_delete_device_position_history_error;
 
 mod _batch_delete_geofence_error;
@@ -161,6 +173,8 @@ mod _list_geofence_collections_response_entry;
 
 mod _list_geofence_response_entry;
 
+mod _list_keys_response_entry;
+
 mod _list_maps_response_entry;
 
 mod _list_place_indexes_response_entry;
@@ -198,6 +212,8 @@ mod _search_place_index_for_position_summary;
 mod _search_place_index_for_suggestions_summary;
 
 mod _search_place_index_for_text_summary;
+
+mod _status;
 
 mod _step;
 

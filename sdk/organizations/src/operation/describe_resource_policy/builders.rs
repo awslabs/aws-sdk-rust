@@ -6,7 +6,7 @@ pub use crate::operation::describe_resource_policy::_describe_resource_policy_in
 /// Fluent builder constructing a request to `DescribeResourcePolicy`.
 ///
 /// <p>Retrieves information about a resource policy.</p>
-/// <p>You can only call this operation from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+/// <p>You can only call this operation from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeResourcePolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

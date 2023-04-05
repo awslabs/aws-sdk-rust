@@ -28,7 +28,7 @@ pub struct DescribeAutoPredictorOutput {
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
     #[doc(hidden)]
     pub data_config: std::option::Option<crate::types::DataConfig>,
-    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
+    /// <p>An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
     #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::types::EncryptionConfig>,
     /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
@@ -110,7 +110,7 @@ impl DescribeAutoPredictorOutput {
     pub fn data_config(&self) -> std::option::Option<&crate::types::DataConfig> {
         self.data_config.as_ref()
     }
-    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
+    /// <p>An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
@@ -325,12 +325,12 @@ impl DescribeAutoPredictorOutputBuilder {
         self.data_config = input;
         self
     }
-    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
+    /// <p>An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = Some(input);
         self
     }
-    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
+    /// <p>An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
     pub fn set_encryption_config(
         mut self,
         input: std::option::Option<crate::types::EncryptionConfig>,

@@ -54,31 +54,31 @@ pub fn ser_create_auto_ml_job_input(
     if let Some(var_13) = &input.role_arn {
         object.key("RoleArn").string(var_13.as_str());
     }
-    if input.generate_candidate_definitions_only {
+    if let Some(var_14) = &input.generate_candidate_definitions_only {
         object
             .key("GenerateCandidateDefinitionsOnly")
-            .boolean(input.generate_candidate_definitions_only);
+            .boolean(*var_14);
     }
-    if let Some(var_14) = &input.tags {
-        let mut array_15 = object.key("Tags").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.tags {
+        let mut array_16 = object.key("Tags").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_18) = &input.model_deploy_config {
+    if let Some(var_19) = &input.model_deploy_config {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("ModelDeployConfig").start_object();
+        let mut object_20 = object.key("ModelDeployConfig").start_object();
         crate::protocol_serde::shape_model_deploy_config::ser_model_deploy_config(
-            &mut object_19,
-            var_18,
+            &mut object_20,
+            var_19,
         )?;
-        object_19.finish();
+        object_20.finish();
     }
     Ok(())
 }

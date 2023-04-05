@@ -9,5 +9,11 @@ pub fn ser_schedule_configuration(
         crate::protocol_serde::shape_transition::ser_transition(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.clip_range {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ClipRange").start_object();
+        crate::protocol_serde::shape_clip_range::ser_clip_range(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

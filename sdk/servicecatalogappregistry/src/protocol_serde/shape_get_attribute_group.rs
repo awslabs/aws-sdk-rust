@@ -160,6 +160,15 @@ pub(crate) fn de_get_attribute_group(
                             .transpose()?,
                         );
                     }
+                    "createdBy" => {
+                        builder = builder.set_created_by(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "creationTime" => {
                         builder = builder.set_creation_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(

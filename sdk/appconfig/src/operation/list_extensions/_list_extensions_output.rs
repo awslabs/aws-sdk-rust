@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExtensionsOutput {
-    /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
+    /// <p>The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::ExtensionSummary>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -12,7 +12,7 @@ pub struct ListExtensionsOutput {
     _request_id: Option<String>,
 }
 impl ListExtensionsOutput {
-    /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
+    /// <p>The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.</p>
     pub fn items(&self) -> std::option::Option<&[crate::types::ExtensionSummary]> {
         self.items.as_deref()
     }
@@ -46,14 +46,14 @@ impl ListExtensionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
+    /// <p>The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.</p>
     pub fn items(mut self, input: crate::types::ExtensionSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = Some(v);
         self
     }
-    /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
+    /// <p>The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.</p>
     pub fn set_items(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ExtensionSummary>>,

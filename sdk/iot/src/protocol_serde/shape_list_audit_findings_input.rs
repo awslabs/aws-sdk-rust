@@ -11,36 +11,34 @@ pub fn ser_list_audit_findings_input(
             .key("endTime")
             .date_time(var_2, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if input.list_suppressed_findings {
-        object
-            .key("listSuppressedFindings")
-            .boolean(input.list_suppressed_findings);
+    if let Some(var_3) = &input.list_suppressed_findings {
+        object.key("listSuppressedFindings").boolean(*var_3);
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_4) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_3).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.resource_identifier {
+    if let Some(var_6) = &input.resource_identifier {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("resourceIdentifier").start_object();
+        let mut object_7 = object.key("resourceIdentifier").start_object();
         crate::protocol_serde::shape_resource_identifier::ser_resource_identifier(
-            &mut object_6,
-            var_5,
+            &mut object_7,
+            var_6,
         )?;
-        object_6.finish();
+        object_7.finish();
     }
-    if let Some(var_7) = &input.start_time {
+    if let Some(var_8) = &input.start_time {
         object
             .key("startTime")
-            .date_time(var_7, aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_8, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_8) = &input.task_id {
-        object.key("taskId").string(var_8.as_str());
+    if let Some(var_9) = &input.task_id {
+        object.key("taskId").string(var_9.as_str());
     }
     Ok(())
 }

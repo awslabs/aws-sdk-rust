@@ -3,33 +3,33 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProxySessionsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ProxySessionStatus>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProxySessionsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session status.</p>
     pub fn status(&self) -> std::option::Option<&crate::types::ProxySessionStatus> {
         self.status.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -52,12 +52,12 @@ pub struct ListProxySessionsInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
 }
 impl ListProxySessionsInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -65,12 +65,12 @@ impl ListProxySessionsInputBuilder {
         self.voice_connector_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session status.</p>
     pub fn status(mut self, input: crate::types::ProxySessionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session status.</p>
     pub fn set_status(
         mut self,
         input: std::option::Option<crate::types::ProxySessionStatus>,
@@ -78,22 +78,22 @@ impl ListProxySessionsInputBuilder {
         self.status = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

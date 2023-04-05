@@ -9,7 +9,7 @@ pub struct CreateCertificateFromCsrInput {
     pub certificate_signing_request: std::option::Option<std::string::String>,
     /// <p>Specifies whether the certificate is active.</p>
     #[doc(hidden)]
-    pub set_as_active: bool,
+    pub set_as_active: std::option::Option<bool>,
 }
 impl CreateCertificateFromCsrInput {
     /// <p>The certificate signing request (CSR).</p>
@@ -17,7 +17,7 @@ impl CreateCertificateFromCsrInput {
         self.certificate_signing_request.as_deref()
     }
     /// <p>Specifies whether the certificate is active.</p>
-    pub fn set_as_active(&self) -> bool {
+    pub fn set_as_active(&self) -> std::option::Option<bool> {
         self.set_as_active
     }
 }
@@ -71,7 +71,7 @@ impl CreateCertificateFromCsrInputBuilder {
         Ok(
             crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput {
                 certificate_signing_request: self.certificate_signing_request,
-                set_as_active: self.set_as_active.unwrap_or_default(),
+                set_as_active: self.set_as_active,
             },
         )
     }

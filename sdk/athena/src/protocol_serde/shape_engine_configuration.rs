@@ -84,10 +84,10 @@ pub fn ser_engine_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EngineConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.coordinator_dpu_size != 0 {
+    if let Some(var_1) = &input.coordinator_dpu_size {
         object.key("CoordinatorDpuSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.coordinator_dpu_size).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     {
@@ -96,21 +96,21 @@ pub fn ser_engine_configuration(
             aws_smithy_types::Number::NegInt((input.max_concurrent_dpus).into()),
         );
     }
-    if input.default_executor_dpu_size != 0 {
+    if let Some(var_2) = &input.default_executor_dpu_size {
         object.key("DefaultExecutorDpuSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.default_executor_dpu_size).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.additional_configs {
+    if let Some(var_3) = &input.additional_configs {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("AdditionalConfigs").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_4 = object.key("AdditionalConfigs").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_2.finish();
+        object_4.finish();
     }
     Ok(())
 }

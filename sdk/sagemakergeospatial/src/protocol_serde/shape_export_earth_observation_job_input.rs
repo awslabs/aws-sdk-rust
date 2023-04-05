@@ -6,20 +6,23 @@ pub fn ser_export_earth_observation_job_input(
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_2.as_str());
+    if let Some(var_2) = &input.client_token {
+        object.key("ClientToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.export_source_images {
-        object.key("ExportSourceImages").boolean(*var_3);
+    if let Some(var_3) = &input.execution_role_arn {
+        object.key("ExecutionRoleArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.output_config {
+    if let Some(var_4) = &input.export_source_images {
+        object.key("ExportSourceImages").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("OutputConfig").start_object();
+        let mut object_6 = object.key("OutputConfig").start_object();
         crate::protocol_serde::shape_output_config_input::ser_output_config_input(
-            &mut object_5,
-            var_4,
+            &mut object_6,
+            var_5,
         )?;
-        object_5.finish();
+        object_6.finish();
     }
     Ok(())
 }

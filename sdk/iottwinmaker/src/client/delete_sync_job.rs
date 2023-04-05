@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSyncJob`](crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::set_workspace_id): <p>The workspace Id.</p>
-    ///   - [`sync_source(impl Into<String>)`](crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::sync_source) / [`set_sync_source(Option<String>)`](crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::set_sync_source): <p>The sync source.</p> <note>   <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>  </note>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::set_workspace_id): <p>The workspace ID.</p>
+    ///   - [`sync_source(impl Into<String>)`](crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::sync_source) / [`set_sync_source(Option<String>)`](crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::set_sync_source): <p>The sync source.</p> <note>   <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>  </note>
     /// - On success, responds with [`DeleteSyncJobOutput`](crate::operation::delete_sync_job::DeleteSyncJobOutput) with field(s):
     ///   - [`state(Option<SyncJobState>)`](crate::operation::delete_sync_job::DeleteSyncJobOutput::state): <p>The SyncJob response state.</p>
     /// - On failure, responds with [`SdkError<DeleteSyncJobError>`](crate::operation::delete_sync_job::DeleteSyncJobError)

@@ -6,6 +6,7 @@ pub use crate::operation::stop_monitoring_members::_stop_monitoring_members_inpu
 /// Fluent builder constructing a request to `StopMonitoringMembers`.
 ///
 /// <p>Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code> operation to restart monitoring for those accounts.</p>
+/// <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to stop monitoring the member accounts in your organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopMonitoringMembersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

@@ -19,11 +19,7 @@ pub use crate::types::_resource_state_type::ResourceStateType;
 
 pub use crate::types::_document_version_status::DocumentVersionStatus;
 
-pub use crate::types::_principal_type::PrincipalType;
-
-pub use crate::types::_upload_metadata::UploadMetadata;
-
-pub use crate::types::_document_metadata::DocumentMetadata;
+pub use crate::types::_response_item::ResponseItem;
 
 pub use crate::types::_document_version_metadata::DocumentVersionMetadata;
 
@@ -33,7 +29,47 @@ pub use crate::types::_document_thumbnail_type::DocumentThumbnailType;
 
 pub use crate::types::_document_status_type::DocumentStatusType;
 
+pub use crate::types::_comment_metadata::CommentMetadata;
+
+pub use crate::types::_comment_status_type::CommentStatusType;
+
 pub use crate::types::_folder_metadata::FolderMetadata;
+
+pub use crate::types::_document_metadata::DocumentMetadata;
+
+pub use crate::types::_response_item_type::ResponseItemType;
+
+pub use crate::types::_search_sort_result::SearchSortResult;
+
+pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_order_by_field_type::OrderByFieldType;
+
+pub use crate::types::_filters::Filters;
+
+pub use crate::types::_date_range_type::DateRangeType;
+
+pub use crate::types::_long_range_type::LongRangeType;
+
+pub use crate::types::_search_collection_type::SearchCollectionType;
+
+pub use crate::types::_search_principal_type::SearchPrincipalType;
+
+pub use crate::types::_principal_role_type::PrincipalRoleType;
+
+pub use crate::types::_search_resource_type::SearchResourceType;
+
+pub use crate::types::_content_category_type::ContentCategoryType;
+
+pub use crate::types::_language_code_type::LanguageCodeType;
+
+pub use crate::types::_additional_response_field_type::AdditionalResponseFieldType;
+
+pub use crate::types::_search_query_scope_type::SearchQueryScopeType;
+
+pub use crate::types::_principal_type::PrincipalType;
+
+pub use crate::types::_upload_metadata::UploadMetadata;
 
 pub use crate::types::_resource_collection_type::ResourceCollectionType;
 
@@ -69,11 +105,7 @@ pub use crate::types::_comment::Comment;
 
 pub use crate::types::_comment_visibility_type::CommentVisibilityType;
 
-pub use crate::types::_comment_status_type::CommentStatusType;
-
 pub use crate::types::_activity::Activity;
-
-pub use crate::types::_comment_metadata::CommentMetadata;
 
 pub use crate::types::_resource_metadata::ResourceMetadata;
 
@@ -99,6 +131,8 @@ mod _activity;
 
 mod _activity_type;
 
+mod _additional_response_field_type;
+
 mod _boolean_enum_type;
 
 mod _comment;
@@ -108,6 +142,10 @@ mod _comment_metadata;
 mod _comment_status_type;
 
 mod _comment_visibility_type;
+
+mod _content_category_type;
+
+mod _date_range_type;
 
 mod _document_metadata;
 
@@ -121,15 +159,23 @@ mod _document_version_metadata;
 
 mod _document_version_status;
 
+mod _filters;
+
 mod _folder_content_type;
 
 mod _folder_metadata;
 
 mod _group_metadata;
 
+mod _language_code_type;
+
 mod _locale_type;
 
+mod _long_range_type;
+
 mod _notification_options;
+
+mod _order_by_field_type;
 
 mod _order_type;
 
@@ -138,6 +184,8 @@ mod _participants;
 mod _permission_info;
 
 mod _principal;
+
+mod _principal_role_type;
 
 mod _principal_type;
 
@@ -155,15 +203,31 @@ mod _resource_state_type;
 
 mod _resource_type;
 
+mod _response_item;
+
+mod _response_item_type;
+
 mod _role_permission_type;
 
 mod _role_type;
+
+mod _search_collection_type;
+
+mod _search_principal_type;
+
+mod _search_query_scope_type;
+
+mod _search_resource_type;
+
+mod _search_sort_result;
 
 mod _share_principal;
 
 mod _share_result;
 
 mod _share_status_type;
+
+mod _sort_order;
 
 mod _storage_rule_type;
 

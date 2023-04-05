@@ -13,6 +13,7 @@
 /// # let originrequestpolicycookiebehavior = unimplemented!();
 /// match originrequestpolicycookiebehavior {
 ///     OriginRequestPolicyCookieBehavior::All => { /* ... */ },
+///     OriginRequestPolicyCookieBehavior::AllExcept => { /* ... */ },
 ///     OriginRequestPolicyCookieBehavior::None => { /* ... */ },
 ///     OriginRequestPolicyCookieBehavior::Whitelist => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -51,6 +52,8 @@ pub enum OriginRequestPolicyCookieBehavior {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
+    AllExcept,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
@@ -61,6 +64,7 @@ impl std::convert::From<&str> for OriginRequestPolicyCookieBehavior {
     fn from(s: &str) -> Self {
         match s {
             "all" => OriginRequestPolicyCookieBehavior::All,
+            "allExcept" => OriginRequestPolicyCookieBehavior::AllExcept,
             "none" => OriginRequestPolicyCookieBehavior::None,
             "whitelist" => OriginRequestPolicyCookieBehavior::Whitelist,
             other => OriginRequestPolicyCookieBehavior::Unknown(
@@ -81,6 +85,7 @@ impl OriginRequestPolicyCookieBehavior {
     pub fn as_str(&self) -> &str {
         match self {
             OriginRequestPolicyCookieBehavior::All => "all",
+            OriginRequestPolicyCookieBehavior::AllExcept => "allExcept",
             OriginRequestPolicyCookieBehavior::None => "none",
             OriginRequestPolicyCookieBehavior::Whitelist => "whitelist",
             OriginRequestPolicyCookieBehavior::Unknown(value) => value.as_str(),
@@ -88,7 +93,7 @@ impl OriginRequestPolicyCookieBehavior {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["all", "none", "whitelist"]
+        &["all", "allExcept", "none", "whitelist"]
     }
 }
 impl AsRef<str> for OriginRequestPolicyCookieBehavior {

@@ -52,6 +52,22 @@ pub fn ser_create_hosted_configuration_version_headers(
             builder = builder.header("Latest-Version-Number", header_value);
         }
     }
+    if let Some(inner_7) = &input.version_label {
+        let formatted_8 = inner_7.as_str();
+        if !formatted_8.is_empty() {
+            let header_value = formatted_8;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "version_label",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
+            builder = builder.header("VersionLabel", header_value);
+        }
+    }
     Ok(builder)
 }
 
@@ -208,6 +224,10 @@ pub fn de_create_hosted_configuration_version_http_response(
         output = output.set_description(
             crate::protocol_serde::shape_create_hosted_configuration_version_output::de_description_header(response.headers())
                                     .map_err(|_|crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled("Failed to parse Description from header `Description"))?
+        );
+        output = output.set_version_label(
+            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_label_header(response.headers())
+                                    .map_err(|_|crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled("Failed to parse VersionLabel from header `VersionLabel"))?
         );
         output = output.set_version_number(
             crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_number_header(response.headers())

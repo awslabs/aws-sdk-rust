@@ -17,14 +17,14 @@ pub struct AccessDetail {
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an authenticated principal last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
-    /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
+    /// <p>This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     #[doc(hidden)]
     pub entity_path: std::option::Option<std::string::String>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated principal most recently attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     #[doc(hidden)]
     pub last_authenticated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to access the service in the tracking period.</p>
+    /// <p>The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted to access the service in the tracking period.</p>
     #[doc(hidden)]
     pub total_authenticated_entities: std::option::Option<i32>,
 }
@@ -44,7 +44,7 @@ impl AccessDetail {
         self.region.as_deref()
     }
     /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an authenticated principal last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
-    /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
+    /// <p>This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub fn entity_path(&self) -> std::option::Option<&str> {
         self.entity_path.as_deref()
     }
@@ -53,7 +53,7 @@ impl AccessDetail {
     pub fn last_authenticated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authenticated_time.as_ref()
     }
-    /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to access the service in the tracking period.</p>
+    /// <p>The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted to access the service in the tracking period.</p>
     pub fn total_authenticated_entities(&self) -> std::option::Option<i32> {
         self.total_authenticated_entities
     }
@@ -115,13 +115,13 @@ impl AccessDetailBuilder {
         self
     }
     /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an authenticated principal last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
-    /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
+    /// <p>This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub fn entity_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.entity_path = Some(input.into());
         self
     }
     /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an authenticated principal last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
-    /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
+    /// <p>This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub fn set_entity_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.entity_path = input;
         self
@@ -141,12 +141,12 @@ impl AccessDetailBuilder {
         self.last_authenticated_time = input;
         self
     }
-    /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to access the service in the tracking period.</p>
+    /// <p>The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted to access the service in the tracking period.</p>
     pub fn total_authenticated_entities(mut self, input: i32) -> Self {
         self.total_authenticated_entities = Some(input);
         self
     }
-    /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to access the service in the tracking period.</p>
+    /// <p>The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted to access the service in the tracking period.</p>
     pub fn set_total_authenticated_entities(mut self, input: std::option::Option<i32>) -> Self {
         self.total_authenticated_entities = input;
         self

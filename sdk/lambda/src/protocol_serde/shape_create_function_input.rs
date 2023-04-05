@@ -96,48 +96,48 @@ pub fn ser_create_function_input(
     if let Some(var_27) = &input.package_type {
         object.key("PackageType").string(var_27.as_str());
     }
-    if input.publish {
-        object.key("Publish").boolean(input.publish);
+    if let Some(var_28) = &input.publish {
+        object.key("Publish").boolean(*var_28);
     }
-    if let Some(var_28) = &input.role {
-        object.key("Role").string(var_28.as_str());
+    if let Some(var_29) = &input.role {
+        object.key("Role").string(var_29.as_str());
     }
-    if let Some(var_29) = &input.runtime {
-        object.key("Runtime").string(var_29.as_str());
+    if let Some(var_30) = &input.runtime {
+        object.key("Runtime").string(var_30.as_str());
     }
-    if let Some(var_30) = &input.snap_start {
+    if let Some(var_31) = &input.snap_start {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("SnapStart").start_object();
-        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_31, var_30)?;
-        object_31.finish();
+        let mut object_32 = object.key("SnapStart").start_object();
+        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_32, var_31)?;
+        object_32.finish();
     }
-    if let Some(var_32) = &input.tags {
+    if let Some(var_33) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("Tags").start_object();
-        for (key_34, value_35) in var_32 {
+        let mut object_34 = object.key("Tags").start_object();
+        for (key_35, value_36) in var_33 {
             {
-                object_33.key(key_34.as_str()).string(value_35.as_str());
+                object_34.key(key_35.as_str()).string(value_36.as_str());
             }
         }
-        object_33.finish();
+        object_34.finish();
     }
-    if let Some(var_36) = &input.timeout {
+    if let Some(var_37) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_36).into()),
+            aws_smithy_types::Number::NegInt((*var_37).into()),
         );
     }
-    if let Some(var_37) = &input.tracing_config {
+    if let Some(var_38) = &input.tracing_config {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("TracingConfig").start_object();
-        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_38, var_37)?;
-        object_38.finish();
+        let mut object_39 = object.key("TracingConfig").start_object();
+        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_39, var_38)?;
+        object_39.finish();
     }
-    if let Some(var_39) = &input.vpc_config {
+    if let Some(var_40) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_40, var_39)?;
-        object_40.finish();
+        let mut object_41 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_41, var_40)?;
+        object_41.finish();
     }
     Ok(())
 }

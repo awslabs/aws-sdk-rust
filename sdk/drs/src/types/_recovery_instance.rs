@@ -42,9 +42,12 @@ pub struct RecoveryInstance {
     /// <p>Whether this Recovery Instance was created for a drill or for an actual Recovery event.</p>
     #[doc(hidden)]
     pub is_drill: std::option::Option<bool>,
-    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from. </p>
+    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
     #[doc(hidden)]
     pub origin_environment: std::option::Option<crate::types::OriginEnvironment>,
+    /// <p>AWS availability zone associated with the recovery instance.</p>
+    #[doc(hidden)]
+    pub origin_availability_zone: std::option::Option<std::string::String>,
 }
 impl RecoveryInstance {
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
@@ -102,9 +105,13 @@ impl RecoveryInstance {
     pub fn is_drill(&self) -> std::option::Option<bool> {
         self.is_drill
     }
-    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from. </p>
+    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
     pub fn origin_environment(&self) -> std::option::Option<&crate::types::OriginEnvironment> {
         self.origin_environment.as_ref()
+    }
+    /// <p>AWS availability zone associated with the recovery instance.</p>
+    pub fn origin_availability_zone(&self) -> std::option::Option<&str> {
+        self.origin_availability_zone.as_deref()
     }
 }
 impl std::fmt::Debug for RecoveryInstance {
@@ -129,6 +136,7 @@ impl std::fmt::Debug for RecoveryInstance {
         );
         formatter.field("is_drill", &self.is_drill);
         formatter.field("origin_environment", &self.origin_environment);
+        formatter.field("origin_availability_zone", &self.origin_availability_zone);
         formatter.finish()
     }
 }
@@ -159,6 +167,7 @@ pub struct RecoveryInstanceBuilder {
     pub(crate) point_in_time_snapshot_date_time: std::option::Option<std::string::String>,
     pub(crate) is_drill: std::option::Option<bool>,
     pub(crate) origin_environment: std::option::Option<crate::types::OriginEnvironment>,
+    pub(crate) origin_availability_zone: std::option::Option<std::string::String>,
 }
 impl RecoveryInstanceBuilder {
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
@@ -323,17 +332,30 @@ impl RecoveryInstanceBuilder {
         self.is_drill = input;
         self
     }
-    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from. </p>
+    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
     pub fn origin_environment(mut self, input: crate::types::OriginEnvironment) -> Self {
         self.origin_environment = Some(input);
         self
     }
-    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from. </p>
+    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
     pub fn set_origin_environment(
         mut self,
         input: std::option::Option<crate::types::OriginEnvironment>,
     ) -> Self {
         self.origin_environment = input;
+        self
+    }
+    /// <p>AWS availability zone associated with the recovery instance.</p>
+    pub fn origin_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+        self.origin_availability_zone = Some(input.into());
+        self
+    }
+    /// <p>AWS availability zone associated with the recovery instance.</p>
+    pub fn set_origin_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.origin_availability_zone = input;
         self
     }
     /// Consumes the builder and constructs a [`RecoveryInstance`](crate::types::RecoveryInstance).
@@ -352,6 +374,7 @@ impl RecoveryInstanceBuilder {
             point_in_time_snapshot_date_time: self.point_in_time_snapshot_date_time,
             is_drill: self.is_drill,
             origin_environment: self.origin_environment,
+            origin_availability_zone: self.origin_availability_zone,
         }
     }
 }
@@ -377,6 +400,7 @@ impl std::fmt::Debug for RecoveryInstanceBuilder {
         );
         formatter.field("is_drill", &self.is_drill);
         formatter.field("origin_environment", &self.origin_environment);
+        formatter.field("origin_availability_zone", &self.origin_availability_zone);
         formatter.finish()
     }
 }

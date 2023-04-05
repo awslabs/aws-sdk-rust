@@ -12,7 +12,7 @@ pub struct CreateChannelMembershipInput {
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ChannelMembershipType>,
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>The ID of the SubChannel in the request.</p> <note>
@@ -34,7 +34,7 @@ impl CreateChannelMembershipInput {
     pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelMembershipType> {
         self.r#type.as_ref()
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
@@ -98,12 +98,12 @@ impl CreateChannelMembershipInputBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.chime_bearer = Some(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.chime_bearer = input;
         self

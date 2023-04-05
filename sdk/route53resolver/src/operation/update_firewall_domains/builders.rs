@@ -109,7 +109,9 @@ impl UpdateFirewallDomainsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
     ///
-    /// <p>A list of domains to use in the update operation.</p>
+    /// <p>A list of domains to use in the update operation.</p> <important>
+    /// <p>There is a limit of 1000 domains per request.</p>
+    /// </important>
     /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
     /// <ul>
     /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
@@ -120,7 +122,9 @@ impl UpdateFirewallDomainsFluentBuilder {
         self.inner = self.inner.domains(input.into());
         self
     }
-    /// <p>A list of domains to use in the update operation.</p>
+    /// <p>A list of domains to use in the update operation.</p> <important>
+    /// <p>There is a limit of 1000 domains per request.</p>
+    /// </important>
     /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
     /// <ul>
     /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>

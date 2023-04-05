@@ -34,6 +34,12 @@ pub struct Order {
     /// <p>The fulfillment date of the order.</p>
     #[doc(hidden)]
     pub order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The payment term.</p>
+    #[doc(hidden)]
+    pub payment_term: std::option::Option<crate::types::PaymentTerm>,
+    /// <p>The type of order.</p>
+    #[doc(hidden)]
+    pub order_type: std::option::Option<crate::types::OrderType>,
 }
 impl Order {
     /// <p> The ID of the Outpost in the order. </p>
@@ -73,6 +79,14 @@ impl Order {
     pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
     }
+    /// <p>The payment term.</p>
+    pub fn payment_term(&self) -> std::option::Option<&crate::types::PaymentTerm> {
+        self.payment_term.as_ref()
+    }
+    /// <p>The type of order.</p>
+    pub fn order_type(&self) -> std::option::Option<&crate::types::OrderType> {
+        self.order_type.as_ref()
+    }
 }
 impl Order {
     /// Creates a new builder-style object to manufacture [`Order`](crate::types::Order).
@@ -92,6 +106,8 @@ pub struct OrderBuilder {
     pub(crate) payment_option: std::option::Option<crate::types::PaymentOption>,
     pub(crate) order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) payment_term: std::option::Option<crate::types::PaymentTerm>,
+    pub(crate) order_type: std::option::Option<crate::types::OrderType>,
 }
 impl OrderBuilder {
     /// <p> The ID of the Outpost in the order. </p>
@@ -200,6 +216,29 @@ impl OrderBuilder {
         self.order_fulfilled_date = input;
         self
     }
+    /// <p>The payment term.</p>
+    pub fn payment_term(mut self, input: crate::types::PaymentTerm) -> Self {
+        self.payment_term = Some(input);
+        self
+    }
+    /// <p>The payment term.</p>
+    pub fn set_payment_term(
+        mut self,
+        input: std::option::Option<crate::types::PaymentTerm>,
+    ) -> Self {
+        self.payment_term = input;
+        self
+    }
+    /// <p>The type of order.</p>
+    pub fn order_type(mut self, input: crate::types::OrderType) -> Self {
+        self.order_type = Some(input);
+        self
+    }
+    /// <p>The type of order.</p>
+    pub fn set_order_type(mut self, input: std::option::Option<crate::types::OrderType>) -> Self {
+        self.order_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Order`](crate::types::Order).
     pub fn build(self) -> crate::types::Order {
         crate::types::Order {
@@ -210,6 +249,8 @@ impl OrderBuilder {
             payment_option: self.payment_option,
             order_submission_date: self.order_submission_date,
             order_fulfilled_date: self.order_fulfilled_date,
+            payment_term: self.payment_term,
+            order_type: self.order_type,
         }
     }
 }

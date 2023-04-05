@@ -231,6 +231,94 @@ impl From<crate::operation::create_contact_channel::CreateContactChannelError> f
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::create_rotation::CreateRotationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_rotation::CreateRotationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_rotation::CreateRotationError> for Error {
+    fn from(err: crate::operation::create_rotation::CreateRotationError) -> Self {
+        match err {
+            crate::operation::create_rotation::CreateRotationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_rotation::CreateRotationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_rotation::CreateRotationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_rotation::CreateRotationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_rotation::CreateRotationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_rotation::CreateRotationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_rotation::CreateRotationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_rotation_override::CreateRotationOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_rotation_override::CreateRotationOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_rotation_override::CreateRotationOverrideError> for Error {
+    fn from(err: crate::operation::create_rotation_override::CreateRotationOverrideError) -> Self {
+        match err {
+            crate::operation::create_rotation_override::CreateRotationOverrideError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_rotation_override::CreateRotationOverrideError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_rotation_override::CreateRotationOverrideError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_rotation_override::CreateRotationOverrideError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_rotation_override::CreateRotationOverrideError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_rotation_override::CreateRotationOverrideError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_rotation_override::CreateRotationOverrideError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::deactivate_contact_channel::DeactivateContactChannelError,
             R,
         >,
@@ -306,6 +394,9 @@ impl From<crate::operation::delete_contact::DeleteContactError> for Error {
             crate::operation::delete_contact::DeleteContactError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::delete_contact::DeleteContactError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::delete_contact::DeleteContactError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
@@ -364,6 +455,107 @@ impl From<crate::operation::delete_contact_channel::DeleteContactChannelError> f
             crate::operation::delete_contact_channel::DeleteContactChannelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_contact_channel::DeleteContactChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_contact_channel::DeleteContactChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_rotation::DeleteRotationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_rotation::DeleteRotationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_rotation::DeleteRotationError> for Error {
+    fn from(err: crate::operation::delete_rotation::DeleteRotationError) -> Self {
+        match err {
+            crate::operation::delete_rotation::DeleteRotationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::delete_rotation::DeleteRotationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_rotation::DeleteRotationError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::delete_rotation::DeleteRotationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_rotation::DeleteRotationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_rotation::DeleteRotationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_rotation::DeleteRotationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_rotation_override::DeleteRotationOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_rotation_override::DeleteRotationOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_rotation_override::DeleteRotationOverrideError> for Error {
+    fn from(err: crate::operation::delete_rotation_override::DeleteRotationOverrideError) -> Self {
+        match err {
+            crate::operation::delete_rotation_override::DeleteRotationOverrideError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_rotation_override::DeleteRotationOverrideError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_rotation_override::DeleteRotationOverrideError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_rotation_override::DeleteRotationOverrideError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_rotation_override::DeleteRotationOverrideError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_rotation_override::DeleteRotationOverrideError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -602,6 +794,96 @@ impl From<crate::operation::get_contact_policy::GetContactPolicyError> for Error
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_rotation::GetRotationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_rotation::GetRotationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_rotation::GetRotationError> for Error {
+    fn from(err: crate::operation::get_rotation::GetRotationError) -> Self {
+        match err {
+            crate::operation::get_rotation::GetRotationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_rotation::GetRotationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_rotation::GetRotationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_rotation::GetRotationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_rotation::GetRotationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_rotation::GetRotationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_rotation_override::GetRotationOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_rotation_override::GetRotationOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_rotation_override::GetRotationOverrideError> for Error {
+    fn from(err: crate::operation::get_rotation_override::GetRotationOverrideError) -> Self {
+        match err {
+            crate::operation::get_rotation_override::GetRotationOverrideError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_rotation_override::GetRotationOverrideError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_rotation_override::GetRotationOverrideError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_rotation_override::GetRotationOverrideError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_rotation_override::GetRotationOverrideError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_rotation_override::GetRotationOverrideError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -792,6 +1074,49 @@ impl From<crate::operation::list_page_receipts::ListPageReceiptsError> for Error
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::list_page_resolutions::ListPageResolutionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_page_resolutions::ListPageResolutionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_page_resolutions::ListPageResolutionsError> for Error {
+    fn from(err: crate::operation::list_page_resolutions::ListPageResolutionsError) -> Self {
+        match err {
+            crate::operation::list_page_resolutions::ListPageResolutionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_page_resolutions::ListPageResolutionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_page_resolutions::ListPageResolutionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_page_resolutions::ListPageResolutionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_page_resolutions::ListPageResolutionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_page_resolutions::ListPageResolutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::list_pages_by_contact::ListPagesByContactError,
             R,
         >,
@@ -872,6 +1197,190 @@ impl From<crate::operation::list_pages_by_engagement::ListPagesByEngagementError
             crate::operation::list_pages_by_engagement::ListPagesByEngagementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_pages_by_engagement::ListPagesByEngagementError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_pages_by_engagement::ListPagesByEngagementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_rotation_overrides::ListRotationOverridesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_rotation_overrides::ListRotationOverridesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_rotation_overrides::ListRotationOverridesError> for Error {
+    fn from(err: crate::operation::list_rotation_overrides::ListRotationOverridesError) -> Self {
+        match err {
+            crate::operation::list_rotation_overrides::ListRotationOverridesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_rotation_overrides::ListRotationOverridesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_rotation_overrides::ListRotationOverridesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_rotation_overrides::ListRotationOverridesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_rotation_overrides::ListRotationOverridesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_rotation_overrides::ListRotationOverridesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_rotations::ListRotationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_rotations::ListRotationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_rotations::ListRotationsError> for Error {
+    fn from(err: crate::operation::list_rotations::ListRotationsError) -> Self {
+        match err {
+            crate::operation::list_rotations::ListRotationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_rotations::ListRotationsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_rotations::ListRotationsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_rotations::ListRotationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_rotations::ListRotationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_rotations::ListRotationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_rotation_shifts::ListRotationShiftsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_rotation_shifts::ListRotationShiftsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_rotation_shifts::ListRotationShiftsError> for Error {
+    fn from(err: crate::operation::list_rotation_shifts::ListRotationShiftsError) -> Self {
+        match err {
+            crate::operation::list_rotation_shifts::ListRotationShiftsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_rotation_shifts::ListRotationShiftsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_rotation_shifts::ListRotationShiftsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_rotation_shifts::ListRotationShiftsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_rotation_shifts::ListRotationShiftsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_rotation_shifts::ListRotationShiftsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_rotation_shifts::ListRotationShiftsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1320,6 +1829,64 @@ impl From<crate::operation::update_contact_channel::UpdateContactChannelError> f
             crate::operation::update_contact_channel::UpdateContactChannelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_contact_channel::UpdateContactChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_contact_channel::UpdateContactChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_rotation::UpdateRotationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_rotation::UpdateRotationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_rotation::UpdateRotationError> for Error {
+    fn from(err: crate::operation::update_rotation::UpdateRotationError) -> Self {
+        match err {
+            crate::operation::update_rotation::UpdateRotationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::update_rotation::UpdateRotationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_rotation::UpdateRotationError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::update_rotation::UpdateRotationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_rotation::UpdateRotationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_rotation::UpdateRotationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_rotation::UpdateRotationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

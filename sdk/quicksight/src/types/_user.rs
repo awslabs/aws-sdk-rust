@@ -26,7 +26,7 @@ pub struct User {
     /// <p>The type of identity authentication used by the user.</p>
     #[doc(hidden)]
     pub identity_type: std::option::Option<crate::types::IdentityType>,
-    /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
+    /// <p>The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
     #[doc(hidden)]
     pub active: bool,
     /// <p>The principal ID of the user.</p>
@@ -77,7 +77,7 @@ impl User {
     pub fn identity_type(&self) -> std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
-    /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
+    /// <p>The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
     pub fn active(&self) -> bool {
         self.active
     }
@@ -197,12 +197,12 @@ impl UserBuilder {
         self.identity_type = input;
         self
     }
-    /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
+    /// <p>The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = Some(input);
         self
     }
-    /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
+    /// <p>The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
     pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
         self.active = input;
         self

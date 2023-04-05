@@ -139,4 +139,14 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_recording_configuration_arn(input);
         self
     }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn insecure_ingest(mut self, input: bool) -> Self {
+        self.inner = self.inner.insecure_ingest(input);
+        self
+    }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn set_insecure_ingest(mut self, input: std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_insecure_ingest(input);
+        self
+    }
 }

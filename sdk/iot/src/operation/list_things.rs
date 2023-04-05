@@ -86,14 +86,13 @@ impl ListThingsInput {
                         );
                     }
                 }
-                if _input.use_prefix_attribute_value {
-                    query.push_kv(
-                        "usePrefixAttributeValue",
-                        aws_smithy_types::primitive::Encoder::from(
-                            _input.use_prefix_attribute_value,
-                        )
-                        .encode(),
-                    );
+                if let Some(inner_6) = &_input.use_prefix_attribute_value {
+                    if *inner_6 {
+                        query.push_kv(
+                            "usePrefixAttributeValue",
+                            aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

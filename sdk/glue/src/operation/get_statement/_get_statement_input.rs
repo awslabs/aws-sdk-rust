@@ -8,7 +8,7 @@ pub struct GetStatementInput {
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The Id of the statement.</p>
     #[doc(hidden)]
-    pub id: i32,
+    pub id: std::option::Option<i32>,
     /// <p>The origin of the request.</p>
     #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl GetStatementInput {
         self.session_id.as_deref()
     }
     /// <p>The Id of the statement.</p>
-    pub fn id(&self) -> i32 {
+    pub fn id(&self) -> std::option::Option<i32> {
         self.id
     }
     /// <p>The origin of the request.</p>
@@ -82,7 +82,7 @@ impl GetStatementInputBuilder {
     > {
         Ok(crate::operation::get_statement::GetStatementInput {
             session_id: self.session_id,
-            id: self.id.unwrap_or_default(),
+            id: self.id,
             request_origin: self.request_origin,
         })
     }

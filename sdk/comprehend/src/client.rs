@@ -228,11 +228,15 @@ mod classify_document;
 
 mod contains_pii_entities;
 
+mod create_dataset;
+
 mod create_document_classifier;
 
 mod create_endpoint;
 
 mod create_entity_recognizer;
+
+mod create_flywheel;
 
 /// Operation customization and supporting types.
 ///
@@ -268,7 +272,11 @@ mod delete_endpoint;
 
 mod delete_entity_recognizer;
 
+mod delete_flywheel;
+
 mod delete_resource_policy;
+
+mod describe_dataset;
 
 mod describe_document_classification_job;
 
@@ -283,6 +291,10 @@ mod describe_entities_detection_job;
 mod describe_entity_recognizer;
 
 mod describe_events_detection_job;
+
+mod describe_flywheel;
+
+mod describe_flywheel_iteration;
 
 mod describe_key_phrases_detection_job;
 
@@ -312,6 +324,8 @@ mod detect_targeted_sentiment;
 
 mod import_model;
 
+mod list_datasets;
+
 mod list_document_classification_jobs;
 
 mod list_document_classifier_summaries;
@@ -329,6 +343,10 @@ mod list_entity_recognizer_summaries;
 mod list_entity_recognizers;
 
 mod list_events_detection_jobs;
+
+mod list_flywheel_iteration_history;
+
+mod list_flywheels;
 
 mod list_key_phrases_detection_jobs;
 
@@ -351,6 +369,8 @@ mod start_dominant_language_detection_job;
 mod start_entities_detection_job;
 
 mod start_events_detection_job;
+
+mod start_flywheel_iteration;
 
 mod start_key_phrases_detection_job;
 
@@ -385,3 +405,5 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_endpoint;
+
+mod update_flywheel;

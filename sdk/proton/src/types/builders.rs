@@ -73,6 +73,10 @@ pub use crate::types::_resource_sync_attempt::ResourceSyncAttemptBuilder;
 
 pub use crate::types::_resource_sync_event::ResourceSyncEventBuilder;
 
+pub use crate::types::_counts_summary::CountsSummaryBuilder;
+
+pub use crate::types::_resource_counts_summary::ResourceCountsSummaryBuilder;
+
 pub use crate::types::_repository_sync_attempt::RepositorySyncAttemptBuilder;
 
 pub use crate::types::_repository_sync_event::RepositorySyncEventBuilder;

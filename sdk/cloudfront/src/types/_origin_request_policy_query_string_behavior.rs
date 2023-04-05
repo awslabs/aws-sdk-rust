@@ -13,6 +13,7 @@
 /// # let originrequestpolicyquerystringbehavior = unimplemented!();
 /// match originrequestpolicyquerystringbehavior {
 ///     OriginRequestPolicyQueryStringBehavior::All => { /* ... */ },
+///     OriginRequestPolicyQueryStringBehavior::AllExcept => { /* ... */ },
 ///     OriginRequestPolicyQueryStringBehavior::None => { /* ... */ },
 ///     OriginRequestPolicyQueryStringBehavior::Whitelist => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -51,6 +52,8 @@ pub enum OriginRequestPolicyQueryStringBehavior {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
+    AllExcept,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
@@ -61,6 +64,7 @@ impl std::convert::From<&str> for OriginRequestPolicyQueryStringBehavior {
     fn from(s: &str) -> Self {
         match s {
             "all" => OriginRequestPolicyQueryStringBehavior::All,
+            "allExcept" => OriginRequestPolicyQueryStringBehavior::AllExcept,
             "none" => OriginRequestPolicyQueryStringBehavior::None,
             "whitelist" => OriginRequestPolicyQueryStringBehavior::Whitelist,
             other => OriginRequestPolicyQueryStringBehavior::Unknown(
@@ -81,6 +85,7 @@ impl OriginRequestPolicyQueryStringBehavior {
     pub fn as_str(&self) -> &str {
         match self {
             OriginRequestPolicyQueryStringBehavior::All => "all",
+            OriginRequestPolicyQueryStringBehavior::AllExcept => "allExcept",
             OriginRequestPolicyQueryStringBehavior::None => "none",
             OriginRequestPolicyQueryStringBehavior::Whitelist => "whitelist",
             OriginRequestPolicyQueryStringBehavior::Unknown(value) => value.as_str(),
@@ -88,7 +93,7 @@ impl OriginRequestPolicyQueryStringBehavior {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["all", "none", "whitelist"]
+        &["all", "allExcept", "none", "whitelist"]
     }
 }
 impl AsRef<str> for OriginRequestPolicyQueryStringBehavior {

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`work_group(impl Into<String>)`](crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::work_group) / [`set_work_group(Option<String>)`](crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::set_work_group): <p>The unique name of the workgroup to delete.</p>
-    ///   - [`recursive_delete_option(bool)`](crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::recursive_delete_option) / [`set_recursive_delete_option(Option<bool>)`](crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::set_recursive_delete_option): <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+    ///   - [`recursive_delete_option(bool)`](crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::recursive_delete_option) / [`set_recursive_delete_option(Option<bool>)`](crate::operation::delete_work_group::builders::DeleteWorkGroupFluentBuilder::set_recursive_delete_option): <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     /// - On success, responds with [`DeleteWorkGroupOutput`](crate::operation::delete_work_group::DeleteWorkGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkGroupError>`](crate::operation::delete_work_group::DeleteWorkGroupError)
     pub fn delete_work_group(

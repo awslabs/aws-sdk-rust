@@ -15,7 +15,7 @@ pub struct StartDeploymentInput {
     /// <p>The configuration profile ID.</p>
     #[doc(hidden)]
     pub configuration_profile_id: std::option::Option<std::string::String>,
-    /// <p>The configuration version to deploy.</p>
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
     #[doc(hidden)]
     pub configuration_version: std::option::Option<std::string::String>,
     /// <p>A description of the deployment.</p>
@@ -25,6 +25,9 @@ pub struct StartDeploymentInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    #[doc(hidden)]
+    pub kms_key_identifier: std::option::Option<std::string::String>,
 }
 impl StartDeploymentInput {
     /// <p>The application ID.</p>
@@ -43,7 +46,7 @@ impl StartDeploymentInput {
     pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
-    /// <p>The configuration version to deploy.</p>
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
     pub fn configuration_version(&self) -> std::option::Option<&str> {
         self.configuration_version.as_deref()
     }
@@ -57,6 +60,10 @@ impl StartDeploymentInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn kms_key_identifier(&self) -> std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
     }
 }
 impl StartDeploymentInput {
@@ -78,6 +85,7 @@ pub struct StartDeploymentInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) kms_key_identifier: std::option::Option<std::string::String>,
 }
 impl StartDeploymentInputBuilder {
     /// <p>The application ID.</p>
@@ -126,12 +134,12 @@ impl StartDeploymentInputBuilder {
         self.configuration_profile_id = input;
         self
     }
-    /// <p>The configuration version to deploy.</p>
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
     pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.configuration_version = Some(input.into());
         self
     }
-    /// <p>The configuration version to deploy.</p>
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
     pub fn set_configuration_version(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -174,6 +182,19 @@ impl StartDeploymentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn kms_key_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+        self.kms_key_identifier = Some(input.into());
+        self
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn set_kms_key_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
     pub fn build(
         self,
@@ -189,6 +210,7 @@ impl StartDeploymentInputBuilder {
             configuration_version: self.configuration_version,
             description: self.description,
             tags: self.tags,
+            kms_key_identifier: self.kms_key_identifier,
         })
     }
 }

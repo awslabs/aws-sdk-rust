@@ -13,7 +13,9 @@
 /// # let voiceid = unimplemented!();
 /// match voiceid {
 ///     VoiceId::Aditi => { /* ... */ },
+///     VoiceId::Adriano => { /* ... */ },
 ///     VoiceId::Amy => { /* ... */ },
+///     VoiceId::Andres => { /* ... */ },
 ///     VoiceId::Aria => { /* ... */ },
 ///     VoiceId::Arlet => { /* ... */ },
 ///     VoiceId::Arthur => { /* ... */ },
@@ -53,6 +55,7 @@
 ///     VoiceId::Justin => { /* ... */ },
 ///     VoiceId::Kajal => { /* ... */ },
 ///     VoiceId::Karl => { /* ... */ },
+///     VoiceId::Kazuha => { /* ... */ },
 ///     VoiceId::Kendra => { /* ... */ },
 ///     VoiceId::Kevin => { /* ... */ },
 ///     VoiceId::Kimberly => { /* ... */ },
@@ -79,14 +82,20 @@
 ///     VoiceId::Pedro => { /* ... */ },
 ///     VoiceId::Penelope => { /* ... */ },
 ///     VoiceId::Raveena => { /* ... */ },
+///     VoiceId::Remi => { /* ... */ },
 ///     VoiceId::Ricardo => { /* ... */ },
 ///     VoiceId::Ruben => { /* ... */ },
 ///     VoiceId::Russell => { /* ... */ },
+///     VoiceId::Ruth => { /* ... */ },
 ///     VoiceId::Salli => { /* ... */ },
 ///     VoiceId::Seoyeon => { /* ... */ },
+///     VoiceId::Sergio => { /* ... */ },
+///     VoiceId::Stephen => { /* ... */ },
 ///     VoiceId::Suvi => { /* ... */ },
 ///     VoiceId::Takumi => { /* ... */ },
 ///     VoiceId::Tatyana => { /* ... */ },
+///     VoiceId::Thiago => { /* ... */ },
+///     VoiceId::Tomoko => { /* ... */ },
 ///     VoiceId::Vicki => { /* ... */ },
 ///     VoiceId::Vitoria => { /* ... */ },
 ///     VoiceId::Zeina => { /* ... */ },
@@ -127,7 +136,11 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Aditi,
     #[allow(missing_docs)] // documentation missing in model
+    Adriano,
+    #[allow(missing_docs)] // documentation missing in model
     Amy,
+    #[allow(missing_docs)] // documentation missing in model
+    Andres,
     #[allow(missing_docs)] // documentation missing in model
     Aria,
     #[allow(missing_docs)] // documentation missing in model
@@ -207,6 +220,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Karl,
     #[allow(missing_docs)] // documentation missing in model
+    Kazuha,
+    #[allow(missing_docs)] // documentation missing in model
     Kendra,
     #[allow(missing_docs)] // documentation missing in model
     Kevin,
@@ -259,21 +274,33 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Raveena,
     #[allow(missing_docs)] // documentation missing in model
+    Remi,
+    #[allow(missing_docs)] // documentation missing in model
     Ricardo,
     #[allow(missing_docs)] // documentation missing in model
     Ruben,
     #[allow(missing_docs)] // documentation missing in model
     Russell,
     #[allow(missing_docs)] // documentation missing in model
+    Ruth,
+    #[allow(missing_docs)] // documentation missing in model
     Salli,
     #[allow(missing_docs)] // documentation missing in model
     Seoyeon,
+    #[allow(missing_docs)] // documentation missing in model
+    Sergio,
+    #[allow(missing_docs)] // documentation missing in model
+    Stephen,
     #[allow(missing_docs)] // documentation missing in model
     Suvi,
     #[allow(missing_docs)] // documentation missing in model
     Takumi,
     #[allow(missing_docs)] // documentation missing in model
     Tatyana,
+    #[allow(missing_docs)] // documentation missing in model
+    Thiago,
+    #[allow(missing_docs)] // documentation missing in model
+    Tomoko,
     #[allow(missing_docs)] // documentation missing in model
     Vicki,
     #[allow(missing_docs)] // documentation missing in model
@@ -289,7 +316,9 @@ impl std::convert::From<&str> for VoiceId {
     fn from(s: &str) -> Self {
         match s {
             "Aditi" => VoiceId::Aditi,
+            "Adriano" => VoiceId::Adriano,
             "Amy" => VoiceId::Amy,
+            "Andres" => VoiceId::Andres,
             "Aria" => VoiceId::Aria,
             "Arlet" => VoiceId::Arlet,
             "Arthur" => VoiceId::Arthur,
@@ -329,6 +358,7 @@ impl std::convert::From<&str> for VoiceId {
             "Justin" => VoiceId::Justin,
             "Kajal" => VoiceId::Kajal,
             "Karl" => VoiceId::Karl,
+            "Kazuha" => VoiceId::Kazuha,
             "Kendra" => VoiceId::Kendra,
             "Kevin" => VoiceId::Kevin,
             "Kimberly" => VoiceId::Kimberly,
@@ -355,14 +385,20 @@ impl std::convert::From<&str> for VoiceId {
             "Pedro" => VoiceId::Pedro,
             "Penelope" => VoiceId::Penelope,
             "Raveena" => VoiceId::Raveena,
+            "Remi" => VoiceId::Remi,
             "Ricardo" => VoiceId::Ricardo,
             "Ruben" => VoiceId::Ruben,
             "Russell" => VoiceId::Russell,
+            "Ruth" => VoiceId::Ruth,
             "Salli" => VoiceId::Salli,
             "Seoyeon" => VoiceId::Seoyeon,
+            "Sergio" => VoiceId::Sergio,
+            "Stephen" => VoiceId::Stephen,
             "Suvi" => VoiceId::Suvi,
             "Takumi" => VoiceId::Takumi,
             "Tatyana" => VoiceId::Tatyana,
+            "Thiago" => VoiceId::Thiago,
+            "Tomoko" => VoiceId::Tomoko,
             "Vicki" => VoiceId::Vicki,
             "Vitoria" => VoiceId::Vitoria,
             "Zeina" => VoiceId::Zeina,
@@ -383,7 +419,9 @@ impl VoiceId {
     pub fn as_str(&self) -> &str {
         match self {
             VoiceId::Aditi => "Aditi",
+            VoiceId::Adriano => "Adriano",
             VoiceId::Amy => "Amy",
+            VoiceId::Andres => "Andres",
             VoiceId::Aria => "Aria",
             VoiceId::Arlet => "Arlet",
             VoiceId::Arthur => "Arthur",
@@ -423,6 +461,7 @@ impl VoiceId {
             VoiceId::Justin => "Justin",
             VoiceId::Kajal => "Kajal",
             VoiceId::Karl => "Karl",
+            VoiceId::Kazuha => "Kazuha",
             VoiceId::Kendra => "Kendra",
             VoiceId::Kevin => "Kevin",
             VoiceId::Kimberly => "Kimberly",
@@ -449,14 +488,20 @@ impl VoiceId {
             VoiceId::Pedro => "Pedro",
             VoiceId::Penelope => "Penelope",
             VoiceId::Raveena => "Raveena",
+            VoiceId::Remi => "Remi",
             VoiceId::Ricardo => "Ricardo",
             VoiceId::Ruben => "Ruben",
             VoiceId::Russell => "Russell",
+            VoiceId::Ruth => "Ruth",
             VoiceId::Salli => "Salli",
             VoiceId::Seoyeon => "Seoyeon",
+            VoiceId::Sergio => "Sergio",
+            VoiceId::Stephen => "Stephen",
             VoiceId::Suvi => "Suvi",
             VoiceId::Takumi => "Takumi",
             VoiceId::Tatyana => "Tatyana",
+            VoiceId::Thiago => "Thiago",
+            VoiceId::Tomoko => "Tomoko",
             VoiceId::Vicki => "Vicki",
             VoiceId::Vitoria => "Vitoria",
             VoiceId::Zeina => "Zeina",
@@ -468,7 +513,9 @@ impl VoiceId {
     pub const fn values() -> &'static [&'static str] {
         &[
             "Aditi",
+            "Adriano",
             "Amy",
+            "Andres",
             "Aria",
             "Arlet",
             "Arthur",
@@ -508,6 +555,7 @@ impl VoiceId {
             "Justin",
             "Kajal",
             "Karl",
+            "Kazuha",
             "Kendra",
             "Kevin",
             "Kimberly",
@@ -534,14 +582,20 @@ impl VoiceId {
             "Pedro",
             "Penelope",
             "Raveena",
+            "Remi",
             "Ricardo",
             "Ruben",
             "Russell",
+            "Ruth",
             "Salli",
             "Seoyeon",
+            "Sergio",
+            "Stephen",
             "Suvi",
             "Takumi",
             "Tatyana",
+            "Thiago",
+            "Tomoko",
             "Vicki",
             "Vitoria",
             "Zeina",

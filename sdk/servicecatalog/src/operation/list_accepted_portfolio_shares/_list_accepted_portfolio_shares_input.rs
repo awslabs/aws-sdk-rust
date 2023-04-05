@@ -5,7 +5,6 @@
 pub struct ListAcceptedPortfolioSharesInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -16,7 +15,7 @@ pub struct ListAcceptedPortfolioSharesInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: std::option::Option<i32>,
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
     /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
@@ -29,7 +28,6 @@ pub struct ListAcceptedPortfolioSharesInput {
 impl ListAcceptedPortfolioSharesInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -41,7 +39,7 @@ impl ListAcceptedPortfolioSharesInput {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
@@ -73,7 +71,6 @@ pub struct ListAcceptedPortfolioSharesInputBuilder {
 impl ListAcceptedPortfolioSharesInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -83,7 +80,6 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -145,7 +141,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
             crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput {
                 accept_language: self.accept_language,
                 page_token: self.page_token,
-                page_size: self.page_size.unwrap_or_default(),
+                page_size: self.page_size,
                 portfolio_share_type: self.portfolio_share_type,
             },
         )

@@ -20,29 +20,35 @@ pub fn ser_create_image_input(
     if let Some(var_5) = &input.image_recipe_arn {
         object.key("imageRecipeArn").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.image_tests_configuration {
+    if let Some(var_6) = &input.image_scanning_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(
-            &mut object_7,
-            var_6,
-        )?;
+        let mut object_7 = object.key("imageScanningConfiguration").start_object();
+        crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.infrastructure_configuration_arn {
+    if let Some(var_8) = &input.image_tests_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("imageTestsConfiguration").start_object();
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(
+            &mut object_9,
+            var_8,
+        )?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.infrastructure_configuration_arn {
         object
             .key("infrastructureConfigurationArn")
-            .string(var_8.as_str());
+            .string(var_10.as_str());
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_10.finish();
+        object_12.finish();
     }
     Ok(())
 }

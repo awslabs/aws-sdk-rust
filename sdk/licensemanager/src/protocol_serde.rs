@@ -302,6 +302,8 @@ pub(crate) mod shape_metadata;
 
 pub(crate) mod shape_metadata_list;
 
+pub(crate) mod shape_options;
+
 pub(crate) mod shape_organization_configuration;
 
 pub(crate) mod shape_product_information;

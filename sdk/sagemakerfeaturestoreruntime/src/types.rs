@@ -3,6 +3,8 @@ pub use crate::types::_target_store::TargetStore;
 
 pub use crate::types::_feature_value::FeatureValue;
 
+pub use crate::types::_deletion_mode::DeletionMode;
+
 pub use crate::types::_batch_get_record_identifier::BatchGetRecordIdentifier;
 
 pub use crate::types::_batch_get_record_error::BatchGetRecordError;
@@ -14,6 +16,8 @@ mod _batch_get_record_error;
 mod _batch_get_record_identifier;
 
 mod _batch_get_record_result_detail;
+
+mod _deletion_mode;
 
 mod _feature_value;
 

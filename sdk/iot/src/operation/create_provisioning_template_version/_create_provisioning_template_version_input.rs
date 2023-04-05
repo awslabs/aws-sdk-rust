@@ -11,7 +11,7 @@ pub struct CreateProvisioningTemplateVersionInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>Sets a fleet provision template version as the default version.</p>
     #[doc(hidden)]
-    pub set_as_default: bool,
+    pub set_as_default: std::option::Option<bool>,
 }
 impl CreateProvisioningTemplateVersionInput {
     /// <p>The name of the provisioning template.</p>
@@ -23,7 +23,7 @@ impl CreateProvisioningTemplateVersionInput {
         self.template_body.as_deref()
     }
     /// <p>Sets a fleet provision template version as the default version.</p>
-    pub fn set_as_default(&self) -> bool {
+    pub fn set_as_default(&self) -> std::option::Option<bool> {
         self.set_as_default
     }
 }
@@ -82,7 +82,6 @@ impl CreateProvisioningTemplateVersionInputBuilder {
                 template_body: self.template_body
                 ,
                 set_as_default: self.set_as_default
-                    .unwrap_or_default()
                 ,
             }
         )

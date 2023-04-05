@@ -38,7 +38,7 @@ pub struct UpdateUserInput {
     pub custom_permissions_name: std::option::Option<std::string::String>,
     /// <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
     #[doc(hidden)]
-    pub unapply_custom_permissions: bool,
+    pub unapply_custom_permissions: std::option::Option<bool>,
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
     /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
@@ -95,7 +95,7 @@ impl UpdateUserInput {
         self.custom_permissions_name.as_deref()
     }
     /// <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
-    pub fn unapply_custom_permissions(&self) -> bool {
+    pub fn unapply_custom_permissions(&self) -> std::option::Option<bool> {
         self.unapply_custom_permissions
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
@@ -308,7 +308,7 @@ impl UpdateUserInputBuilder {
             email: self.email,
             role: self.role,
             custom_permissions_name: self.custom_permissions_name,
-            unapply_custom_permissions: self.unapply_custom_permissions.unwrap_or_default(),
+            unapply_custom_permissions: self.unapply_custom_permissions,
             external_login_federation_provider_type: self.external_login_federation_provider_type,
             custom_federation_provider_url: self.custom_federation_provider_url,
             external_login_id: self.external_login_id,

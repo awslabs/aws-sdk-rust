@@ -5,6 +5,7 @@ pub use crate::operation::batch_update_phone_number::_batch_update_phone_number_
 
 /// Fluent builder constructing a request to `BatchUpdatePhoneNumber`.
 ///
+/// <p>Updates one or more phone numbers.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -73,7 +74,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_update_phone_number_request_items`](Self::set_update_phone_number_request_items).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Lists the phone numbers in the update request.</p>
     pub fn update_phone_number_request_items(
         mut self,
         input: crate::types::UpdatePhoneNumberRequestItem,
@@ -81,7 +82,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
         self.inner = self.inner.update_phone_number_request_items(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Lists the phone numbers in the update request.</p>
     pub fn set_update_phone_number_request_items(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,

@@ -79,6 +79,9 @@ pub mod delete_service_profile;
 /// Types for the `DeleteWirelessDevice` operation.
 pub mod delete_wireless_device;
 
+/// Types for the `DeleteWirelessDeviceImportTask` operation.
+pub mod delete_wireless_device_import_task;
+
 /// Types for the `DeleteWirelessGateway` operation.
 pub mod delete_wireless_gateway;
 
@@ -87,6 +90,9 @@ pub mod delete_wireless_gateway_task;
 
 /// Types for the `DeleteWirelessGatewayTaskDefinition` operation.
 pub mod delete_wireless_gateway_task_definition;
+
+/// Types for the `DeregisterWirelessDevice` operation.
+pub mod deregister_wireless_device;
 
 /// Types for the `DisassociateAwsAccountFromPartnerAccount` operation.
 pub mod disassociate_aws_account_from_partner_account;
@@ -163,6 +169,9 @@ pub mod get_service_profile;
 /// Types for the `GetWirelessDevice` operation.
 pub mod get_wireless_device;
 
+/// Types for the `GetWirelessDeviceImportTask` operation.
+pub mod get_wireless_device_import_task;
+
 /// Types for the `GetWirelessDeviceStatistics` operation.
 pub mod get_wireless_device_statistics;
 
@@ -189,6 +198,9 @@ pub mod list_destinations;
 
 /// Types for the `ListDeviceProfiles` operation.
 pub mod list_device_profiles;
+
+/// Types for the `ListDevicesForWirelessDeviceImportTask` operation.
+pub mod list_devices_for_wireless_device_import_task;
 
 /// Types for the `ListEventConfigurations` operation.
 pub mod list_event_configurations;
@@ -219,6 +231,9 @@ pub mod list_service_profiles;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListWirelessDeviceImportTasks` operation.
+pub mod list_wireless_device_import_tasks;
 
 /// Types for the `ListWirelessDevices` operation.
 pub mod list_wireless_devices;
@@ -258,6 +273,12 @@ pub mod start_fuota_task;
 
 /// Types for the `StartMulticastGroupSession` operation.
 pub mod start_multicast_group_session;
+
+/// Types for the `StartSingleWirelessDeviceImportTask` operation.
+pub mod start_single_wireless_device_import_task;
+
+/// Types for the `StartWirelessDeviceImportTask` operation.
+pub mod start_wireless_device_import_task;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
@@ -300,6 +321,9 @@ pub mod update_resource_position;
 
 /// Types for the `UpdateWirelessDevice` operation.
 pub mod update_wireless_device;
+
+/// Types for the `UpdateWirelessDeviceImportTask` operation.
+pub mod update_wireless_device_import_task;
 
 /// Types for the `UpdateWirelessGateway` operation.
 pub mod update_wireless_gateway;

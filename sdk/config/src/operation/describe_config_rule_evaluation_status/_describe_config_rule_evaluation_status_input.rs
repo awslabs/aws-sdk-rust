@@ -14,7 +14,7 @@ pub struct DescribeConfigRuleEvaluationStatusInput {
     /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
 }
 impl DescribeConfigRuleEvaluationStatusInput {
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
@@ -28,7 +28,7 @@ impl DescribeConfigRuleEvaluationStatusInput {
     /// <p>The number of rule evaluation results that you want returned.</p>
     /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
 }
@@ -100,7 +100,6 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
                 next_token: self.next_token
                 ,
                 limit: self.limit
-                    .unwrap_or_default()
                 ,
             }
         )

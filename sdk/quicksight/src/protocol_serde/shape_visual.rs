@@ -174,6 +174,15 @@ pub fn ser_visual(
         crate::protocol_serde::shape_empty_visual::ser_empty_visual(&mut object_44, var_43)?;
         object_44.finish();
     }
+    if let Some(var_45) = &input.radar_chart_visual {
+        #[allow(unused_mut)]
+        let mut object_46 = object.key("RadarChartVisual").start_object();
+        crate::protocol_serde::shape_radar_chart_visual::ser_radar_chart_visual(
+            &mut object_46,
+            var_45,
+        )?;
+        object_46.finish();
+    }
     Ok(())
 }
 
@@ -312,6 +321,11 @@ where
                                     crate::protocol_serde::shape_empty_visual::de_empty_visual(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "RadarChartVisual" => {
+                                builder = builder.set_radar_chart_visual(
+                                    crate::protocol_serde::shape_radar_chart_visual::de_radar_chart_visual(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

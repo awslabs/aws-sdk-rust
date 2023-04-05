@@ -12,7 +12,7 @@ pub struct StartReferenceImportJobInput {
     /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Sources for the job.</p>
+    /// <p>The job's source files.</p>
     #[doc(hidden)]
     pub sources:
         std::option::Option<std::vec::Vec<crate::types::StartReferenceImportJobSourceItem>>,
@@ -30,7 +30,7 @@ impl StartReferenceImportJobInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Sources for the job.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(
         &self,
     ) -> std::option::Option<&[crate::types::StartReferenceImportJobSourceItem]> {
@@ -94,14 +94,14 @@ impl StartReferenceImportJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>Sources for the job.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::StartReferenceImportJobSourceItem) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
         self.sources = Some(v);
         self
     }
-    /// <p>Sources for the job.</p>
+    /// <p>The job's source files.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::StartReferenceImportJobSourceItem>>,

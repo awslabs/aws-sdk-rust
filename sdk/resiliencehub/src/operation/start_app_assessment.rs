@@ -172,17 +172,17 @@ pub type StartAppAssessmentErrorKind = StartAppAssessmentError;
 pub enum StartAppAssessmentError {
     /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
+    /// <p>This exception occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Resilience Hub service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The specified resource could not be found.</p>
+    /// <p>This exception occurs when the specified resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>This exception occurs when you have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The limit on the number of requests per second was exceeded.</p>
+    /// <p>This exception occurs when you have exceeded the limit on the number of requests per second.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>Indicates that a request was not valid.</p>
+    /// <p>This exception occurs when a request is not valid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

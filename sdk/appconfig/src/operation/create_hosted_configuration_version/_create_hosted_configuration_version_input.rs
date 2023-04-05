@@ -21,6 +21,9 @@ pub struct CreateHostedConfigurationVersionInput {
     /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
     #[doc(hidden)]
     pub latest_version_number: std::option::Option<i32>,
+    /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
+    #[doc(hidden)]
+    pub version_label: std::option::Option<std::string::String>,
 }
 impl CreateHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
@@ -47,6 +50,10 @@ impl CreateHostedConfigurationVersionInput {
     pub fn latest_version_number(&self) -> std::option::Option<i32> {
         self.latest_version_number
     }
+    /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateHostedConfigurationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57,6 +64,7 @@ impl std::fmt::Debug for CreateHostedConfigurationVersionInput {
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
         formatter.field("latest_version_number", &self.latest_version_number);
+        formatter.field("version_label", &self.version_label);
         formatter.finish()
     }
 }
@@ -77,6 +85,7 @@ pub struct CreateHostedConfigurationVersionInputBuilder {
     pub(crate) content: std::option::Option<aws_smithy_types::Blob>,
     pub(crate) content_type: std::option::Option<std::string::String>,
     pub(crate) latest_version_number: std::option::Option<i32>,
+    pub(crate) version_label: std::option::Option<std::string::String>,
 }
 impl CreateHostedConfigurationVersionInputBuilder {
     /// <p>The application ID.</p>
@@ -142,6 +151,16 @@ impl CreateHostedConfigurationVersionInputBuilder {
         self.latest_version_number = input;
         self
     }
+    /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
+    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
+        self.version_label = Some(input.into());
+        self
+    }
+    /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
+    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.version_label = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateHostedConfigurationVersionInput`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput).
     pub fn build(self) -> Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
@@ -158,6 +177,8 @@ impl CreateHostedConfigurationVersionInputBuilder {
                 ,
                 latest_version_number: self.latest_version_number
                 ,
+                version_label: self.version_label
+                ,
             }
         )
     }
@@ -171,6 +192,7 @@ impl std::fmt::Debug for CreateHostedConfigurationVersionInputBuilder {
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
         formatter.field("latest_version_number", &self.latest_version_number);
+        formatter.field("version_label", &self.version_label);
         formatter.finish()
     }
 }

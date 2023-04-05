@@ -15,6 +15,12 @@ pub fn ser_on_device_service_configuration(
         crate::protocol_serde::shape_tgw_on_device_service_configuration::ser_tgw_on_device_service_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.eks_on_device_service {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("EKSOnDeviceService").start_object();
+        crate::protocol_serde::shape_eks_on_device_service_configuration::ser_eks_on_device_service_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -51,6 +57,11 @@ where
                             "TGWOnDeviceService" => {
                                 builder = builder.set_tgw_on_device_service(
                                     crate::protocol_serde::shape_tgw_on_device_service_configuration::de_tgw_on_device_service_configuration(tokens)?
+                                );
+                            }
+                            "EKSOnDeviceService" => {
+                                builder = builder.set_eks_on_device_service(
+                                    crate::protocol_serde::shape_eks_on_device_service_configuration::de_eks_on_device_service_configuration(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

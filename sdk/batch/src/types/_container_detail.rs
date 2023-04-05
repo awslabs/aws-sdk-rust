@@ -100,6 +100,9 @@ pub struct ContainerDetail {
     #[doc(hidden)]
     pub fargate_platform_configuration:
         std::option::Option<crate::types::FargatePlatformConfiguration>,
+    /// <p>The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
+    #[doc(hidden)]
+    pub ephemeral_storage: std::option::Option<crate::types::EphemeralStorage>,
 }
 impl ContainerDetail {
     /// <p>The image used to start the container.</p>
@@ -228,6 +231,10 @@ impl ContainerDetail {
     ) -> std::option::Option<&crate::types::FargatePlatformConfiguration> {
         self.fargate_platform_configuration.as_ref()
     }
+    /// <p>The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::types::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl ContainerDetail {
     /// Creates a new builder-style object to manufacture [`ContainerDetail`](crate::types::ContainerDetail).
@@ -269,6 +276,7 @@ pub struct ContainerDetailBuilder {
     pub(crate) network_configuration: std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) fargate_platform_configuration:
         std::option::Option<crate::types::FargatePlatformConfiguration>,
+    pub(crate) ephemeral_storage: std::option::Option<crate::types::EphemeralStorage>,
 }
 impl ContainerDetailBuilder {
     /// <p>The image used to start the container.</p>
@@ -656,6 +664,19 @@ impl ContainerDetailBuilder {
         self.fargate_platform_configuration = input;
         self
     }
+    /// <p>The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
+    pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
+        self.ephemeral_storage = Some(input);
+        self
+    }
+    /// <p>The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
+    pub fn set_ephemeral_storage(
+        mut self,
+        input: std::option::Option<crate::types::EphemeralStorage>,
+    ) -> Self {
+        self.ephemeral_storage = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ContainerDetail`](crate::types::ContainerDetail).
     pub fn build(self) -> crate::types::ContainerDetail {
         crate::types::ContainerDetail {
@@ -685,6 +706,7 @@ impl ContainerDetailBuilder {
             secrets: self.secrets,
             network_configuration: self.network_configuration,
             fargate_platform_configuration: self.fargate_platform_configuration,
+            ephemeral_storage: self.ephemeral_storage,
         }
     }
 }

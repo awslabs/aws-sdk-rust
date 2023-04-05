@@ -20,7 +20,7 @@ pub struct UpdateDevEndpointInput {
     pub custom_libraries: std::option::Option<crate::types::DevEndpointCustomLibraries>,
     /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
     #[doc(hidden)]
-    pub update_etl_libraries: bool,
+    pub update_etl_libraries: std::option::Option<bool>,
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     #[doc(hidden)]
     pub delete_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -58,7 +58,7 @@ impl UpdateDevEndpointInput {
         self.custom_libraries.as_ref()
     }
     /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
-    pub fn update_etl_libraries(&self) -> bool {
+    pub fn update_etl_libraries(&self) -> std::option::Option<bool> {
         self.update_etl_libraries
     }
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
@@ -250,7 +250,7 @@ impl UpdateDevEndpointInputBuilder {
                 add_public_keys: self.add_public_keys,
                 delete_public_keys: self.delete_public_keys,
                 custom_libraries: self.custom_libraries,
-                update_etl_libraries: self.update_etl_libraries.unwrap_or_default(),
+                update_etl_libraries: self.update_etl_libraries,
                 delete_arguments: self.delete_arguments,
                 add_arguments: self.add_arguments,
             },

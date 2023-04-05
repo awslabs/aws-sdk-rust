@@ -22,6 +22,7 @@
 ///     IpAddressStatus::FailedResourceGone => { /* ... */ },
 ///     IpAddressStatus::RemapAttaching => { /* ... */ },
 ///     IpAddressStatus::RemapDetaching => { /* ... */ },
+///     IpAddressStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -75,6 +76,8 @@ pub enum IpAddressStatus {
     RemapAttaching,
     #[allow(missing_docs)] // documentation missing in model
     RemapDetaching,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -91,6 +94,7 @@ impl std::convert::From<&str> for IpAddressStatus {
             "FAILED_RESOURCE_GONE" => IpAddressStatus::FailedResourceGone,
             "REMAP_ATTACHING" => IpAddressStatus::RemapAttaching,
             "REMAP_DETACHING" => IpAddressStatus::RemapDetaching,
+            "UPDATING" => IpAddressStatus::Updating,
             other => {
                 IpAddressStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -118,6 +122,7 @@ impl IpAddressStatus {
             IpAddressStatus::FailedResourceGone => "FAILED_RESOURCE_GONE",
             IpAddressStatus::RemapAttaching => "REMAP_ATTACHING",
             IpAddressStatus::RemapDetaching => "REMAP_DETACHING",
+            IpAddressStatus::Updating => "UPDATING",
             IpAddressStatus::Unknown(value) => value.as_str(),
         }
     }
@@ -134,6 +139,7 @@ impl IpAddressStatus {
             "FAILED_RESOURCE_GONE",
             "REMAP_ATTACHING",
             "REMAP_DETACHING",
+            "UPDATING",
         ]
     }
 }

@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailConfiguration {
-    /// Ad avail settings.
+    /// Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.
     #[doc(hidden)]
     pub avail_settings: std::option::Option<crate::types::AvailSettings>,
 }
 impl AvailConfiguration {
-    /// Ad avail settings.
+    /// Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.
     pub fn avail_settings(&self) -> std::option::Option<&crate::types::AvailSettings> {
         self.avail_settings.as_ref()
     }
@@ -28,12 +28,12 @@ pub struct AvailConfigurationBuilder {
     pub(crate) avail_settings: std::option::Option<crate::types::AvailSettings>,
 }
 impl AvailConfigurationBuilder {
-    /// Ad avail settings.
+    /// Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.
     pub fn avail_settings(mut self, input: crate::types::AvailSettings) -> Self {
         self.avail_settings = Some(input);
         self
     }
-    /// Ad avail settings.
+    /// Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.
     pub fn set_avail_settings(
         mut self,
         input: std::option::Option<crate::types::AvailSettings>,

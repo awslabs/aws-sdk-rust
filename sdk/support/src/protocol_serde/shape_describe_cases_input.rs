@@ -21,25 +21,23 @@ pub fn ser_describe_cases_input(
     if let Some(var_6) = &input.before_time {
         object.key("beforeTime").string(var_6.as_str());
     }
-    if input.include_resolved_cases {
-        object
-            .key("includeResolvedCases")
-            .boolean(input.include_resolved_cases);
+    if let Some(var_7) = &input.include_resolved_cases {
+        object.key("includeResolvedCases").boolean(*var_7);
     }
-    if let Some(var_7) = &input.next_token {
-        object.key("nextToken").string(var_7.as_str());
+    if let Some(var_8) = &input.next_token {
+        object.key("nextToken").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.max_results {
+    if let Some(var_9) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_8).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.language {
-        object.key("language").string(var_9.as_str());
+    if let Some(var_10) = &input.language {
+        object.key("language").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.include_communications {
-        object.key("includeCommunications").boolean(*var_10);
+    if let Some(var_11) = &input.include_communications {
+        object.key("includeCommunications").boolean(*var_11);
     }
     Ok(())
 }

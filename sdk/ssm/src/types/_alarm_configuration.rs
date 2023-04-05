@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmConfiguration {
-    /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
+    /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     #[doc(hidden)]
     pub ignore_poll_alarm_failure: bool,
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
@@ -12,7 +12,7 @@ pub struct AlarmConfiguration {
     pub alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
 }
 impl AlarmConfiguration {
-    /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
+    /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     pub fn ignore_poll_alarm_failure(&self) -> bool {
         self.ignore_poll_alarm_failure
     }
@@ -36,12 +36,12 @@ pub struct AlarmConfigurationBuilder {
     pub(crate) alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
 }
 impl AlarmConfigurationBuilder {
-    /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
+    /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     pub fn ignore_poll_alarm_failure(mut self, input: bool) -> Self {
         self.ignore_poll_alarm_failure = Some(input);
         self
     }
-    /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
+    /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     pub fn set_ignore_poll_alarm_failure(mut self, input: std::option::Option<bool>) -> Self {
         self.ignore_poll_alarm_failure = input;
         self

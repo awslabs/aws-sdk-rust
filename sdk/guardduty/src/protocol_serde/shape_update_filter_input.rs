@@ -15,10 +15,10 @@ pub fn ser_update_filter_input(
         crate::protocol_serde::shape_finding_criteria::ser_finding_criteria(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if input.rank != 0 {
+    if let Some(var_5) = &input.rank {
         object.key("rank").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.rank).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

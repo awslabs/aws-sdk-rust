@@ -587,6 +587,8 @@ pub(crate) mod shape_cloudwatch_logs_export_configuration;
 
 pub(crate) mod shape_connection_pool_configuration;
 
+pub(crate) mod shape_create_custom_db_engine_version_fault;
+
 pub(crate) mod shape_custom_availability_zone_not_found_fault;
 
 pub(crate) mod shape_custom_db_engine_version_already_exists_fault;

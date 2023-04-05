@@ -170,6 +170,8 @@ pub(crate) mod shape_function_request;
 
 pub(crate) mod shape_functions_response;
 
+pub(crate) mod shape_generated_scene_metadata_map;
+
 pub(crate) mod shape_interpolation_parameters;
 
 pub(crate) mod shape_list_component_types_filter;
@@ -199,6 +201,8 @@ pub(crate) mod shape_property_value_list;
 pub(crate) mod shape_rows;
 
 pub(crate) mod shape_scene_capabilities;
+
+pub(crate) mod shape_scene_metadata_map;
 
 pub(crate) mod shape_scene_summaries;
 

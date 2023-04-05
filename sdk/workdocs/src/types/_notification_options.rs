@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationOptions {
-    /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
+    /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
     #[doc(hidden)]
     pub send_email: bool,
     /// <p>Text value to be included in the email body.</p>
@@ -12,7 +12,7 @@ pub struct NotificationOptions {
     pub email_message: std::option::Option<std::string::String>,
 }
 impl NotificationOptions {
-    /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
+    /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
     pub fn send_email(&self) -> bool {
         self.send_email
     }
@@ -44,12 +44,12 @@ pub struct NotificationOptionsBuilder {
     pub(crate) email_message: std::option::Option<std::string::String>,
 }
 impl NotificationOptionsBuilder {
-    /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
+    /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
     pub fn send_email(mut self, input: bool) -> Self {
         self.send_email = Some(input);
         self
     }
-    /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
+    /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
     pub fn set_send_email(mut self, input: std::option::Option<bool>) -> Self {
         self.send_email = input;
         self

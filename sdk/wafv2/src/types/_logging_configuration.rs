@@ -21,7 +21,7 @@ pub struct LoggingConfiguration {
     /// </note>
     #[doc(hidden)]
     pub log_destination_configs: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p> <note>
+    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>. </p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
     #[doc(hidden)]
@@ -44,7 +44,7 @@ impl LoggingConfiguration {
     pub fn log_destination_configs(&self) -> std::option::Option<&[std::string::String]> {
         self.log_destination_configs.as_deref()
     }
-    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p> <note>
+    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>. </p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
     pub fn redacted_fields(&self) -> std::option::Option<&[crate::types::FieldToMatch]> {
@@ -114,7 +114,7 @@ impl LoggingConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_redacted_fields`](Self::set_redacted_fields).
     ///
-    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p> <note>
+    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>. </p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
     pub fn redacted_fields(mut self, input: crate::types::FieldToMatch) -> Self {
@@ -123,7 +123,7 @@ impl LoggingConfigurationBuilder {
         self.redacted_fields = Some(v);
         self
     }
-    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p> <note>
+    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>. </p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
     pub fn set_redacted_fields(

@@ -199,6 +199,11 @@ where
                                     crate::protocol_serde::shape_scheduling_config::de_scheduling_config(tokens)?
                                 );
                             }
+                            "scheduledJobRollouts" => {
+                                builder = builder.set_scheduled_job_rollouts(
+                                    crate::protocol_serde::shape_scheduled_job_rollout_list::de_scheduled_job_rollout_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -9,7 +9,7 @@ pub use crate::operation::delete_db_cluster_snapshot::_delete_db_cluster_snapsho
 /// <p>The DB cluster snapshot must be in the <code>available</code> state to be deleted.</p>
 /// </note>
 /// <p>For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
-/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>
+/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDBClusterSnapshotFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

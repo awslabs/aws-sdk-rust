@@ -49,12 +49,13 @@ impl DeleteAccountAuditConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.delete_scheduled_audits {
-                    query.push_kv(
-                        "deleteScheduledAudits",
-                        aws_smithy_types::primitive::Encoder::from(_input.delete_scheduled_audits)
-                            .encode(),
-                    );
+                if let Some(inner_1) = &_input.delete_scheduled_audits {
+                    if *inner_1 {
+                        query.push_kv(
+                            "deleteScheduledAudits",
+                            aws_smithy_types::primitive::Encoder::from(*inner_1).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

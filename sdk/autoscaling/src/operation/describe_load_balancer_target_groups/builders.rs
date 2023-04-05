@@ -5,6 +5,9 @@ pub use crate::operation::describe_load_balancer_target_groups::_describe_load_b
 
 /// Fluent builder constructing a request to `DescribeLoadBalancerTargetGroups`.
 ///
+/// <note>
+/// <p>This API operation is superseded by <code>DescribeTrafficSources</code>, which can describe multiple traffic sources types. We recommend using <code>DetachTrafficSources</code> to simplify how you manage traffic sources. However, we continue to support <code>DescribeLoadBalancerTargetGroups</code>. You can use both the original <code>DescribeLoadBalancerTargetGroups</code> API operation and <code>DescribeTrafficSources</code> on the same Auto Scaling group.</p>
+/// </note>
 /// <p>Gets information about the Elastic Load Balancing target groups for the specified Auto Scaling group.</p>
 /// <p>To determine the attachment status of the target group, use the <code>State</code> element in the response. When you attach a target group to an Auto Scaling group, the initial <code>State</code> value is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic Load Balancing health checks are enabled for the Auto Scaling group, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. When the target group is in the <code>InService</code> state, Amazon EC2 Auto Scaling can terminate and replace any instances that are reported as unhealthy. If no registered instances pass the health checks, the target group doesn't enter the <code>InService</code> state. </p>
 /// <p>Target groups also have an <code>InService</code> state if you attach them in the <code>CreateAutoScalingGroup</code> API call. If your target group state is <code>InService</code>, but it is not working properly, check the scaling activities by calling <code>DescribeScalingActivities</code> and take any corrective actions necessary.</p>

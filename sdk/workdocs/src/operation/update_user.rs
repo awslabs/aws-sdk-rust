@@ -188,7 +188,7 @@ pub enum UpdateUserError {
     DeactivatingLastSystemUserException(crate::types::error::DeactivatingLastSystemUserException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::types::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>The user is undergoing transfer of ownership.</p>
     IllegalUserStateException(crate::types::error::IllegalUserStateException),

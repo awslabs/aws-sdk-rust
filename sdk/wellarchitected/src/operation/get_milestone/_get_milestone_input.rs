@@ -10,7 +10,7 @@ pub struct GetMilestoneInput {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
-    pub milestone_number: i32,
+    pub milestone_number: std::option::Option<i32>,
 }
 impl GetMilestoneInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -19,7 +19,7 @@ impl GetMilestoneInput {
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub fn milestone_number(&self) -> i32 {
+    pub fn milestone_number(&self) -> std::option::Option<i32> {
         self.milestone_number
     }
 }
@@ -69,7 +69,7 @@ impl GetMilestoneInputBuilder {
     > {
         Ok(crate::operation::get_milestone::GetMilestoneInput {
             workload_id: self.workload_id,
-            milestone_number: self.milestone_number.unwrap_or_default(),
+            milestone_number: self.milestone_number,
         })
     }
 }

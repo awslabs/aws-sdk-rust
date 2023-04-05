@@ -40,16 +40,18 @@ pub struct CreateClusterInput {
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
     #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
-    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
+    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Must not contain a colon (:) or a slash (/).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub master_username: std::option::Option<std::string::String>,
-    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -224,17 +226,19 @@ impl CreateClusterInput {
     pub fn node_type(&self) -> std::option::Option<&str> {
         self.node_type.as_deref()
     }
-    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
+    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Must not contain a colon (:) or a slash (/).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
     pub fn master_username(&self) -> std::option::Option<&str> {
         self.master_username.as_deref()
     }
-    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -538,29 +542,33 @@ impl CreateClusterInputBuilder {
         self.node_type = input;
         self
     }
-    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
+    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Must not contain a colon (:) or a slash (/).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
     pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
         self.master_username = Some(input.into());
         self
     }
-    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
+    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Must not contain a colon (:) or a slash (/).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
     pub fn set_master_username(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.master_username = input;
         self
     }
-    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -573,7 +581,7 @@ impl CreateClusterInputBuilder {
         self.master_user_password = Some(input.into());
         self
     }
-    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>

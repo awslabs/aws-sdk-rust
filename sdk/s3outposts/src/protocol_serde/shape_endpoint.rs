@@ -121,6 +121,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "FailedReason" => {
+                                builder = builder.set_failed_reason(
+                                    crate::protocol_serde::shape_failed_reason::de_failed_reason(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

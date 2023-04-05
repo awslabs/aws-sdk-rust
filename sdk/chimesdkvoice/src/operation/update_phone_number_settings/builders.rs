@@ -5,6 +5,7 @@ pub use crate::operation::update_phone_number_settings::_update_phone_number_set
 
 /// Fluent builder constructing a request to `UpdatePhoneNumberSettings`.
 ///
+/// <p>Updates the phone number settings for the administrator's AWS account, such as the default outbound calling name. You can update the default outbound calling name once every seven days. Outbound calling names can take up to 72 hours to update.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePhoneNumberSettingsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl UpdatePhoneNumberSettingsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.calling_name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_calling_name(input);
         self

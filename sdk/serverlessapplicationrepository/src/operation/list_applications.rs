@@ -49,15 +49,17 @@ impl ListApplicationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.max_items != 0 {
-                    query.push_kv(
-                        "maxItems",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_items).encode(),
-                    );
+                if let Some(inner_1) = &_input.max_items {
+                    if *inner_1 != 0 {
+                        query.push_kv(
+                            "maxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_1).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_1) = &_input.next_token {
+                if let Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
                 Ok(())

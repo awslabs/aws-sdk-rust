@@ -6,14 +6,14 @@ pub struct CreateDomainInput {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description of this domain.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
     #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of tags you want added to the domain.</p>
@@ -25,7 +25,7 @@ impl CreateDomainInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description of this domain.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -35,7 +35,7 @@ impl CreateDomainInput {
     ) -> std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -87,12 +87,12 @@ impl CreateDomainInputBuilder {
         self.name = input;
         self
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description of this domain.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description of this domain.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
         self
@@ -113,12 +113,12 @@ impl CreateDomainInputBuilder {
         self.server_side_encryption_configuration = input;
         self
     }
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.client_token = input;
         self

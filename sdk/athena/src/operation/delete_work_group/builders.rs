@@ -79,12 +79,12 @@ impl DeleteWorkGroupFluentBuilder {
         self.inner = self.inner.set_work_group(input);
         self
     }
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub fn recursive_delete_option(mut self, input: bool) -> Self {
         self.inner = self.inner.recursive_delete_option(input);
         self
     }
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub fn set_recursive_delete_option(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive_delete_option(input);
         self

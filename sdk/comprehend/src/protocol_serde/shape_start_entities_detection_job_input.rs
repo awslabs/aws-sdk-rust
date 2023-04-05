@@ -57,5 +57,8 @@ pub fn ser_start_entities_detection_job_input(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.flywheel_arn {
+        object.key("FlywheelArn").string(var_17.as_str());
+    }
     Ok(())
 }

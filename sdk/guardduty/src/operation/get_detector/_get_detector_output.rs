@@ -19,12 +19,17 @@ pub struct GetDetectorOutput {
     #[doc(hidden)]
     pub updated_at: std::option::Option<std::string::String>,
     /// <p>Describes which data sources are enabled for the detector.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     #[doc(hidden)]
     pub data_sources: std::option::Option<crate::types::DataSourceConfigurationsResult>,
     /// <p>The tags of the detector resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Describes the features that have been enabled for the detector.</p>
+    #[doc(hidden)]
+    pub features:
+        std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>,
     _request_id: Option<String>,
 }
 impl GetDetectorOutput {
@@ -51,6 +56,7 @@ impl GetDetectorOutput {
         self.updated_at.as_deref()
     }
     /// <p>Describes which data sources are enabled for the detector.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(
         &self,
     ) -> std::option::Option<&crate::types::DataSourceConfigurationsResult> {
@@ -62,6 +68,12 @@ impl GetDetectorOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>Describes the features that have been enabled for the detector.</p>
+    pub fn features(
+        &self,
+    ) -> std::option::Option<&[crate::types::DetectorFeatureConfigurationResult]> {
+        self.features.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDetectorOutput {
@@ -89,6 +101,8 @@ pub struct GetDetectorOutputBuilder {
     pub(crate) data_sources: std::option::Option<crate::types::DataSourceConfigurationsResult>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) features:
+        std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>,
     _request_id: Option<String>,
 }
 impl GetDetectorOutputBuilder {
@@ -149,11 +163,13 @@ impl GetDetectorOutputBuilder {
         self
     }
     /// <p>Describes which data sources are enabled for the detector.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurationsResult) -> Self {
         self.data_sources = Some(input);
         self
     }
     /// <p>Describes which data sources are enabled for the detector.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn set_data_sources(
         mut self,
         input: std::option::Option<crate::types::DataSourceConfigurationsResult>,
@@ -186,6 +202,25 @@ impl GetDetectorOutputBuilder {
         self.tags = input;
         self
     }
+    /// Appends an item to `features`.
+    ///
+    /// To override the contents of this collection use [`set_features`](Self::set_features).
+    ///
+    /// <p>Describes the features that have been enabled for the detector.</p>
+    pub fn features(mut self, input: crate::types::DetectorFeatureConfigurationResult) -> Self {
+        let mut v = self.features.unwrap_or_default();
+        v.push(input);
+        self.features = Some(v);
+        self
+    }
+    /// <p>Describes the features that have been enabled for the detector.</p>
+    pub fn set_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>,
+    ) -> Self {
+        self.features = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -205,6 +240,7 @@ impl GetDetectorOutputBuilder {
             updated_at: self.updated_at,
             data_sources: self.data_sources,
             tags: self.tags,
+            features: self.features,
             _request_id: self._request_id,
         }
     }

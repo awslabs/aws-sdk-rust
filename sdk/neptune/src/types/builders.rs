@@ -3,6 +3,10 @@ pub use crate::types::_db_cluster::DbClusterBuilder;
 
 pub use crate::types::_serverless_v2_scaling_configuration_info::ServerlessV2ScalingConfigurationInfoBuilder;
 
+pub use crate::types::_cluster_pending_modified_values::ClusterPendingModifiedValuesBuilder;
+
+pub use crate::types::_pending_cloudwatch_logs_exports::PendingCloudwatchLogsExportsBuilder;
+
 pub use crate::types::_db_cluster_role::DbClusterRoleBuilder;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembershipBuilder;
@@ -32,8 +36,6 @@ pub use crate::types::_db_instance_status_info::DbInstanceStatusInfoBuilder;
 pub use crate::types::_option_group_membership::OptionGroupMembershipBuilder;
 
 pub use crate::types::_pending_modified_values::PendingModifiedValuesBuilder;
-
-pub use crate::types::_pending_cloudwatch_logs_exports::PendingCloudwatchLogsExportsBuilder;
 
 pub use crate::types::_db_subnet_group::DbSubnetGroupBuilder;
 

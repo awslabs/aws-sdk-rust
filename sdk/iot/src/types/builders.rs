@@ -357,11 +357,15 @@ pub use crate::types::_role_alias_description::RoleAliasDescriptionBuilder;
 
 pub use crate::types::_document_parameter::DocumentParameterBuilder;
 
+pub use crate::types::_maintenance_window::MaintenanceWindowBuilder;
+
 pub use crate::types::_job_execution::JobExecutionBuilder;
 
 pub use crate::types::_job_execution_status_details::JobExecutionStatusDetailsBuilder;
 
 pub use crate::types::_job::JobBuilder;
+
+pub use crate::types::_scheduled_job_rollout::ScheduledJobRolloutBuilder;
 
 pub use crate::types::_scheduling_config::SchedulingConfigBuilder;
 

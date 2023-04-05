@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`ListFindingsFiltersOutput`](crate::operation::list_findings_filters::ListFindingsFiltersOutput) with field(s):
     ///   - [`findings_filter_list_items(Option<Vec<FindingsFilterListItem>>)`](crate::operation::list_findings_filters::ListFindingsFiltersOutput::findings_filter_list_items): <p>An array of objects, one for each filter that's associated with the account.</p>

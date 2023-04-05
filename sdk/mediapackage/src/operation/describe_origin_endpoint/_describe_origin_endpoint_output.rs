@@ -15,6 +15,9 @@ pub struct DescribeOriginEndpointOutput {
     /// A Common Media Application Format (CMAF) packaging configuration.
     #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::types::CmafPackage>,
+    /// The date and time the OriginEndpoint was created.
+    #[doc(hidden)]
+    pub created_at: std::option::Option<std::string::String>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     #[doc(hidden)]
     pub dash_package: std::option::Option<crate::types::DashPackage>,
@@ -70,6 +73,10 @@ impl DescribeOriginEndpointOutput {
     /// A Common Media Application Format (CMAF) packaging configuration.
     pub fn cmaf_package(&self) -> std::option::Option<&crate::types::CmafPackage> {
         self.cmaf_package.as_ref()
+    }
+    /// The date and time the OriginEndpoint was created.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     pub fn dash_package(&self) -> std::option::Option<&crate::types::DashPackage> {
@@ -145,6 +152,7 @@ pub struct DescribeOriginEndpointOutputBuilder {
     pub(crate) authorization: std::option::Option<crate::types::Authorization>,
     pub(crate) channel_id: std::option::Option<std::string::String>,
     pub(crate) cmaf_package: std::option::Option<crate::types::CmafPackage>,
+    pub(crate) created_at: std::option::Option<std::string::String>,
     pub(crate) dash_package: std::option::Option<crate::types::DashPackage>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) hls_package: std::option::Option<crate::types::HlsPackage>,
@@ -205,6 +213,16 @@ impl DescribeOriginEndpointOutputBuilder {
         input: std::option::Option<crate::types::CmafPackage>,
     ) -> Self {
         self.cmaf_package = input;
+        self
+    }
+    /// The date and time the OriginEndpoint was created.
+    pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
+        self.created_at = Some(input.into());
+        self
+    }
+    /// The date and time the OriginEndpoint was created.
+    pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.created_at = input;
         self
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
@@ -373,6 +391,7 @@ impl DescribeOriginEndpointOutputBuilder {
             authorization: self.authorization,
             channel_id: self.channel_id,
             cmaf_package: self.cmaf_package,
+            created_at: self.created_at,
             dash_package: self.dash_package,
             description: self.description,
             hls_package: self.hls_package,

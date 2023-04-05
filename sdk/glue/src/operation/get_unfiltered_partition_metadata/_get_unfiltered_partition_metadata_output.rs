@@ -3,27 +3,27 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUnfilteredPartitionMetadataOutput {
-    /// <p>Represents a slice of table data.</p>
+    /// <p>A Partition object containing the partition metadata.</p>
     #[doc(hidden)]
     pub partition: std::option::Option<crate::types::Partition>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of column names that the user has been granted access to.</p>
     #[doc(hidden)]
     pub authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
     _request_id: Option<String>,
 }
 impl GetUnfilteredPartitionMetadataOutput {
-    /// <p>Represents a slice of table data.</p>
+    /// <p>A Partition object containing the partition metadata.</p>
     pub fn partition(&self) -> std::option::Option<&crate::types::Partition> {
         self.partition.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of column names that the user has been granted access to.</p>
     pub fn authorized_columns(&self) -> std::option::Option<&[std::string::String]> {
         self.authorized_columns.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(&self) -> bool {
         self.is_registered_with_lake_formation
     }
@@ -50,12 +50,12 @@ pub struct GetUnfilteredPartitionMetadataOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetUnfilteredPartitionMetadataOutputBuilder {
-    /// <p>Represents a slice of table data.</p>
+    /// <p>A Partition object containing the partition metadata.</p>
     pub fn partition(mut self, input: crate::types::Partition) -> Self {
         self.partition = Some(input);
         self
     }
-    /// <p>Represents a slice of table data.</p>
+    /// <p>A Partition object containing the partition metadata.</p>
     pub fn set_partition(mut self, input: std::option::Option<crate::types::Partition>) -> Self {
         self.partition = input;
         self
@@ -64,13 +64,14 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_authorized_columns`](Self::set_authorized_columns).
     ///
+    /// <p>A list of column names that the user has been granted access to.</p>
     pub fn authorized_columns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.authorized_columns.unwrap_or_default();
         v.push(input.into());
         self.authorized_columns = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of column names that the user has been granted access to.</p>
     pub fn set_authorized_columns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -78,12 +79,12 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
         self.authorized_columns = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
         self.is_registered_with_lake_formation = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn set_is_registered_with_lake_formation(
         mut self,
         input: std::option::Option<bool>,

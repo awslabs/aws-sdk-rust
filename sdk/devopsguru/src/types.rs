@@ -181,6 +181,8 @@ pub use crate::types::_proactive_anomaly_summary::ProactiveAnomalySummary;
 
 pub use crate::types::_anomaly_source_metadata::AnomalySourceMetadata;
 
+pub use crate::types::_list_anomalies_for_insight_filters::ListAnomaliesForInsightFilters;
+
 pub use crate::types::_resource_collection_filter::ResourceCollectionFilter;
 
 pub use crate::types::_tag_collection_filter::TagCollectionFilter;
@@ -306,6 +308,8 @@ mod _insight_status;
 mod _insight_time_range;
 
 mod _insight_type;
+
+mod _list_anomalies_for_insight_filters;
 
 mod _list_events_filters;
 

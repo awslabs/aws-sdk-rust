@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::get_resolver_config::builders::GetResolverConfigFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::get_resolver_config::builders::GetResolverConfigFluentBuilder::set_resource_id): <p>Resource ID of the Amazon VPC that you want to get information about.</p>
     /// - On success, responds with [`GetResolverConfigOutput`](crate::operation::get_resolver_config::GetResolverConfigOutput) with field(s):
-    ///   - [`resolver_config(Option<ResolverConfig>)`](crate::operation::get_resolver_config::GetResolverConfigOutput::resolver_config): <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
+    ///   - [`resolver_config(Option<ResolverConfig>)`](crate::operation::get_resolver_config::GetResolverConfigOutput::resolver_config): <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     /// - On failure, responds with [`SdkError<GetResolverConfigError>`](crate::operation::get_resolver_config::GetResolverConfigError)
     pub fn get_resolver_config(
         &self,

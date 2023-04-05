@@ -33,7 +33,7 @@ pub struct CreateModelPackageInput {
     /// <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
     /// <p>This parameter is optional for unversioned models, and does not apply to versioned models.</p>
     #[doc(hidden)]
-    pub certify_for_marketplace: bool,
+    pub certify_for_marketplace: std::option::Option<bool>,
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -65,7 +65,7 @@ pub struct CreateModelPackageInput {
     /// <p>Specify "OTHER" if none of the tasks listed fit your use case.</p>
     #[doc(hidden)]
     pub task: std::option::Option<std::string::String>,
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally used in the load test. Each file in the archive must satisfy the size constraints of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a> call.</p>
     #[doc(hidden)]
     pub sample_payload_url: std::option::Option<std::string::String>,
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
@@ -114,7 +114,7 @@ impl CreateModelPackageInput {
     }
     /// <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
     /// <p>This parameter is optional for unversioned models, and does not apply to versioned models.</p>
-    pub fn certify_for_marketplace(&self) -> bool {
+    pub fn certify_for_marketplace(&self) -> std::option::Option<bool> {
         self.certify_for_marketplace
     }
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -159,7 +159,7 @@ impl CreateModelPackageInput {
     pub fn task(&self) -> std::option::Option<&str> {
         self.task.as_deref()
     }
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally used in the load test. Each file in the archive must satisfy the size constraints of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a> call.</p>
     pub fn sample_payload_url(&self) -> std::option::Option<&str> {
         self.sample_payload_url.as_deref()
     }
@@ -449,12 +449,12 @@ impl CreateModelPackageInputBuilder {
         self.task = input;
         self
     }
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally used in the load test. Each file in the archive must satisfy the size constraints of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a> call.</p>
     pub fn sample_payload_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.sample_payload_url = Some(input.into());
         self
     }
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally used in the load test. Each file in the archive must satisfy the size constraints of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a> call.</p>
     pub fn set_sample_payload_url(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -501,7 +501,7 @@ impl CreateModelPackageInputBuilder {
                 inference_specification: self.inference_specification,
                 validation_specification: self.validation_specification,
                 source_algorithm_specification: self.source_algorithm_specification,
-                certify_for_marketplace: self.certify_for_marketplace.unwrap_or_default(),
+                certify_for_marketplace: self.certify_for_marketplace,
                 tags: self.tags,
                 model_approval_status: self.model_approval_status,
                 metadata_properties: self.metadata_properties,

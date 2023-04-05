@@ -7,7 +7,7 @@ pub struct LiveConnectorSinkConfiguration {
     /// <p>The sink configuration's sink type.</p>
     #[doc(hidden)]
     pub sink_type: std::option::Option<crate::types::LiveConnectorSinkType>,
-    /// <p>The sink configuration's RTMP configuration setttings.</p>
+    /// <p>The sink configuration's RTMP configuration settings.</p>
     #[doc(hidden)]
     pub rtmp_configuration: std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,
 }
@@ -16,7 +16,7 @@ impl LiveConnectorSinkConfiguration {
     pub fn sink_type(&self) -> std::option::Option<&crate::types::LiveConnectorSinkType> {
         self.sink_type.as_ref()
     }
-    /// <p>The sink configuration's RTMP configuration setttings.</p>
+    /// <p>The sink configuration's RTMP configuration settings.</p>
     pub fn rtmp_configuration(
         &self,
     ) -> std::option::Option<&crate::types::LiveConnectorRtmpConfiguration> {
@@ -52,7 +52,7 @@ impl LiveConnectorSinkConfigurationBuilder {
         self.sink_type = input;
         self
     }
-    /// <p>The sink configuration's RTMP configuration setttings.</p>
+    /// <p>The sink configuration's RTMP configuration settings.</p>
     pub fn rtmp_configuration(
         mut self,
         input: crate::types::LiveConnectorRtmpConfiguration,
@@ -60,7 +60,7 @@ impl LiveConnectorSinkConfigurationBuilder {
         self.rtmp_configuration = Some(input);
         self
     }
-    /// <p>The sink configuration's RTMP configuration setttings.</p>
+    /// <p>The sink configuration's RTMP configuration settings.</p>
     pub fn set_rtmp_configuration(
         mut self,
         input: std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,

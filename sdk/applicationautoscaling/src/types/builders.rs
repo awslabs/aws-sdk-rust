@@ -9,6 +9,14 @@ pub use crate::types::_target_tracking_scaling_policy_configuration::TargetTrack
 
 pub use crate::types::_customized_metric_specification::CustomizedMetricSpecificationBuilder;
 
+pub use crate::types::_target_tracking_metric_data_query::TargetTrackingMetricDataQueryBuilder;
+
+pub use crate::types::_target_tracking_metric_stat::TargetTrackingMetricStatBuilder;
+
+pub use crate::types::_target_tracking_metric::TargetTrackingMetricBuilder;
+
+pub use crate::types::_target_tracking_metric_dimension::TargetTrackingMetricDimensionBuilder;
+
 pub use crate::types::_metric_dimension::MetricDimensionBuilder;
 
 pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecificationBuilder;

@@ -5,7 +5,6 @@
 pub struct ListOrganizationPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -27,12 +26,11 @@ pub struct ListOrganizationPortfolioAccessInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: std::option::Option<i32>,
 }
 impl ListOrganizationPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -59,7 +57,7 @@ impl ListOrganizationPortfolioAccessInput {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
 }
@@ -83,7 +81,6 @@ pub struct ListOrganizationPortfolioAccessInputBuilder {
 impl ListOrganizationPortfolioAccessInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -93,7 +90,6 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -172,7 +168,6 @@ impl ListOrganizationPortfolioAccessInputBuilder {
                 page_token: self.page_token
                 ,
                 page_size: self.page_size
-                    .unwrap_or_default()
                 ,
             }
         )

@@ -153,7 +153,7 @@ pub type GetOrganizationConformancePackDetailedStatusErrorKind =
 pub enum GetOrganizationConformancePackDetailedStatusError {
     /// <p>The specified limit is outside the allowable range.</p>
     InvalidLimitException(crate::types::error::InvalidLimitException),
-    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
+    /// <p>The specified next token is not valid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>Config organization conformance pack that you passed in the filter does not exist.</p>
     /// <p>For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not exist.</p>

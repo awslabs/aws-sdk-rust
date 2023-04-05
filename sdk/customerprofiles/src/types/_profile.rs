@@ -80,6 +80,12 @@ pub struct Profile {
     /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
     #[doc(hidden)]
     pub found_by_items: std::option::Option<std::vec::Vec<crate::types::FoundByKeyValue>>,
+    /// <p>An alternative to PartyType which accepts any string as input.</p>
+    #[doc(hidden)]
+    pub party_type_string: std::option::Option<std::string::String>,
+    /// <p>An alternative to Gender which accepts any string as input.</p>
+    #[doc(hidden)]
+    pub gender_string: std::option::Option<std::string::String>,
 }
 impl Profile {
     /// <p>The unique identifier of a customer profile.</p>
@@ -183,6 +189,14 @@ impl Profile {
     pub fn found_by_items(&self) -> std::option::Option<&[crate::types::FoundByKeyValue]> {
         self.found_by_items.as_deref()
     }
+    /// <p>An alternative to PartyType which accepts any string as input.</p>
+    pub fn party_type_string(&self) -> std::option::Option<&str> {
+        self.party_type_string.as_deref()
+    }
+    /// <p>An alternative to Gender which accepts any string as input.</p>
+    pub fn gender_string(&self) -> std::option::Option<&str> {
+        self.gender_string.as_deref()
+    }
 }
 impl Profile {
     /// Creates a new builder-style object to manufacture [`Profile`](crate::types::Profile).
@@ -219,6 +233,8 @@ pub struct ProfileBuilder {
     pub(crate) attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) found_by_items: std::option::Option<std::vec::Vec<crate::types::FoundByKeyValue>>,
+    pub(crate) party_type_string: std::option::Option<std::string::String>,
+    pub(crate) gender_string: std::option::Option<std::string::String>,
 }
 impl ProfileBuilder {
     /// <p>The unique identifier of a customer profile.</p>
@@ -514,6 +530,29 @@ impl ProfileBuilder {
         self.found_by_items = input;
         self
     }
+    /// <p>An alternative to PartyType which accepts any string as input.</p>
+    pub fn party_type_string(mut self, input: impl Into<std::string::String>) -> Self {
+        self.party_type_string = Some(input.into());
+        self
+    }
+    /// <p>An alternative to PartyType which accepts any string as input.</p>
+    pub fn set_party_type_string(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.party_type_string = input;
+        self
+    }
+    /// <p>An alternative to Gender which accepts any string as input.</p>
+    pub fn gender_string(mut self, input: impl Into<std::string::String>) -> Self {
+        self.gender_string = Some(input.into());
+        self
+    }
+    /// <p>An alternative to Gender which accepts any string as input.</p>
+    pub fn set_gender_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.gender_string = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Profile`](crate::types::Profile).
     pub fn build(self) -> crate::types::Profile {
         crate::types::Profile {
@@ -540,6 +579,8 @@ impl ProfileBuilder {
             billing_address: self.billing_address,
             attributes: self.attributes,
             found_by_items: self.found_by_items,
+            party_type_string: self.party_type_string,
+            gender_string: self.gender_string,
         }
     }
 }

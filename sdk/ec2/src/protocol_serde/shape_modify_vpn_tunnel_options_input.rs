@@ -26,6 +26,11 @@ pub fn ser_modify_vpn_tunnel_options_input_input(
     if let Some(var_8) = &input.dry_run {
         scope_7.boolean(*var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("SkipTunnelReplacement");
+    if let Some(var_10) = &input.skip_tunnel_replacement {
+        scope_9.boolean(*var_10);
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

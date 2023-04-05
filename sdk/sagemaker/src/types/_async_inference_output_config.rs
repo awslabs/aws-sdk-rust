@@ -14,6 +14,9 @@ pub struct AsyncInferenceOutputConfig {
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
     #[doc(hidden)]
     pub notification_config: std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
+    /// <p>The Amazon S3 location to upload failure inference responses to.</p>
+    #[doc(hidden)]
+    pub s3_failure_path: std::option::Option<std::string::String>,
 }
 impl AsyncInferenceOutputConfig {
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
@@ -31,6 +34,10 @@ impl AsyncInferenceOutputConfig {
     ) -> std::option::Option<&crate::types::AsyncInferenceNotificationConfig> {
         self.notification_config.as_ref()
     }
+    /// <p>The Amazon S3 location to upload failure inference responses to.</p>
+    pub fn s3_failure_path(&self) -> std::option::Option<&str> {
+        self.s3_failure_path.as_deref()
+    }
 }
 impl AsyncInferenceOutputConfig {
     /// Creates a new builder-style object to manufacture [`AsyncInferenceOutputConfig`](crate::types::AsyncInferenceOutputConfig).
@@ -47,6 +54,7 @@ pub struct AsyncInferenceOutputConfigBuilder {
     pub(crate) s3_output_path: std::option::Option<std::string::String>,
     pub(crate) notification_config:
         std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
+    pub(crate) s3_failure_path: std::option::Option<std::string::String>,
 }
 impl AsyncInferenceOutputConfigBuilder {
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
@@ -87,12 +95,23 @@ impl AsyncInferenceOutputConfigBuilder {
         self.notification_config = input;
         self
     }
+    /// <p>The Amazon S3 location to upload failure inference responses to.</p>
+    pub fn s3_failure_path(mut self, input: impl Into<std::string::String>) -> Self {
+        self.s3_failure_path = Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 location to upload failure inference responses to.</p>
+    pub fn set_s3_failure_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.s3_failure_path = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AsyncInferenceOutputConfig`](crate::types::AsyncInferenceOutputConfig).
     pub fn build(self) -> crate::types::AsyncInferenceOutputConfig {
         crate::types::AsyncInferenceOutputConfig {
             kms_key_id: self.kms_key_id,
             s3_output_path: self.s3_output_path,
             notification_config: self.notification_config,
+            s3_failure_path: self.s3_failure_path,
         }
     }
 }

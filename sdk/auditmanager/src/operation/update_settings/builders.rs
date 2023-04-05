@@ -5,7 +5,7 @@ pub use crate::operation::update_settings::_update_settings_input::UpdateSetting
 
 /// Fluent builder constructing a request to `UpdateSettings`.
 ///
-/// <p> Updates Audit Manager settings for the current user account. </p>
+/// <p> Updates Audit Manager settings for the current account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSettingsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

@@ -18,7 +18,7 @@ pub struct GetEarthObservationJobOutput {
     /// <p>The status of a previously initiated Earth Observation job.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::EarthObservationJobStatus>,
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Input data for the Earth Observation job.</p>
@@ -27,7 +27,7 @@ pub struct GetEarthObservationJobOutput {
     /// <p>An object containing information about the job configuration.</p>
     #[doc(hidden)]
     pub job_config: std::option::Option<crate::types::JobConfigInput>,
-    /// <p></p>
+    /// <p>Bands available in the output of an operation.</p>
     #[doc(hidden)]
     pub output_bands: std::option::Option<std::vec::Vec<crate::types::OutputBand>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
@@ -69,7 +69,7 @@ impl GetEarthObservationJobOutput {
     pub fn status(&self) -> std::option::Option<&crate::types::EarthObservationJobStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -81,7 +81,7 @@ impl GetEarthObservationJobOutput {
     pub fn job_config(&self) -> std::option::Option<&crate::types::JobConfigInput> {
         self.job_config.as_ref()
     }
-    /// <p></p>
+    /// <p>Bands available in the output of an operation.</p>
     pub fn output_bands(&self) -> std::option::Option<&[crate::types::OutputBand]> {
         self.output_bands.as_deref()
     }
@@ -205,12 +205,12 @@ impl GetEarthObservationJobOutputBuilder {
         self.status = input;
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.kms_key_id = input;
         self
@@ -245,14 +245,14 @@ impl GetEarthObservationJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_output_bands`](Self::set_output_bands).
     ///
-    /// <p></p>
+    /// <p>Bands available in the output of an operation.</p>
     pub fn output_bands(mut self, input: crate::types::OutputBand) -> Self {
         let mut v = self.output_bands.unwrap_or_default();
         v.push(input);
         self.output_bands = Some(v);
         self
     }
-    /// <p></p>
+    /// <p>Bands available in the output of an operation.</p>
     pub fn set_output_bands(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::OutputBand>>,

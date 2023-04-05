@@ -100,6 +100,20 @@ where
                                     )?,
                                 );
                             }
+                            "returnCode" => {
+                                builder = builder.set_return_code(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "batchJobIdentifier" => {
+                                builder = builder.set_batch_job_identifier(
+                                    crate::protocol_serde::shape_batch_job_identifier::de_batch_job_identifier(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

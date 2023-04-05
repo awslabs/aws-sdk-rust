@@ -5,7 +5,7 @@ pub use crate::operation::delete_infrastructure_configuration::_delete_infrastru
 
 /// Fluent builder constructing a request to `DeleteInfrastructureConfiguration`.
 ///
-/// <p> Deletes an infrastructure configuration.</p>
+/// <p>Deletes an infrastructure configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInfrastructureConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

@@ -35,6 +35,9 @@ pub struct StartJobRunInput {
     #[doc(hidden)]
     pub job_template_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The retry policy configuration for the job run.</p>
+    #[doc(hidden)]
+    pub retry_policy_configuration: std::option::Option<crate::types::RetryPolicyConfiguration>,
 }
 impl StartJobRunInput {
     /// <p>The name of the job run.</p>
@@ -85,6 +88,12 @@ impl StartJobRunInput {
     {
         self.job_template_parameters.as_ref()
     }
+    /// <p>The retry policy configuration for the job run.</p>
+    pub fn retry_policy_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::RetryPolicyConfiguration> {
+        self.retry_policy_configuration.as_ref()
+    }
 }
 impl StartJobRunInput {
     /// Creates a new builder-style object to manufacture [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
@@ -109,6 +118,8 @@ pub struct StartJobRunInputBuilder {
     pub(crate) job_template_id: std::option::Option<std::string::String>,
     pub(crate) job_template_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) retry_policy_configuration:
+        std::option::Option<crate::types::RetryPolicyConfiguration>,
 }
 impl StartJobRunInputBuilder {
     /// <p>The name of the job run.</p>
@@ -250,6 +261,22 @@ impl StartJobRunInputBuilder {
         self.job_template_parameters = input;
         self
     }
+    /// <p>The retry policy configuration for the job run.</p>
+    pub fn retry_policy_configuration(
+        mut self,
+        input: crate::types::RetryPolicyConfiguration,
+    ) -> Self {
+        self.retry_policy_configuration = Some(input);
+        self
+    }
+    /// <p>The retry policy configuration for the job run.</p>
+    pub fn set_retry_policy_configuration(
+        mut self,
+        input: std::option::Option<crate::types::RetryPolicyConfiguration>,
+    ) -> Self {
+        self.retry_policy_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
     pub fn build(
         self,
@@ -268,6 +295,7 @@ impl StartJobRunInputBuilder {
             tags: self.tags,
             job_template_id: self.job_template_id,
             job_template_parameters: self.job_template_parameters,
+            retry_policy_configuration: self.retry_policy_configuration,
         })
     }
 }

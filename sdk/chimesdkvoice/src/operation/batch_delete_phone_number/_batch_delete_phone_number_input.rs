@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeletePhoneNumberInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone number IDs.</p>
     #[doc(hidden)]
     pub phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeletePhoneNumberInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone number IDs.</p>
     pub fn phone_number_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.phone_number_ids.as_deref()
     }
@@ -33,13 +33,14 @@ impl BatchDeletePhoneNumberInputBuilder {
     ///
     /// To override the contents of this collection use [`set_phone_number_ids`](Self::set_phone_number_ids).
     ///
+    /// <p>List of phone number IDs.</p>
     pub fn phone_number_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.phone_number_ids.unwrap_or_default();
         v.push(input.into());
         self.phone_number_ids = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone number IDs.</p>
     pub fn set_phone_number_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

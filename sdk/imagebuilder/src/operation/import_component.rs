@@ -176,7 +176,7 @@ pub enum ImportComponentError {
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
     /// <p>You have specified two or more mutually exclusive parameters. Review the error message for details.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p>You have made a request for an action that is not supported by the service.</p>
+    /// <p>You have requested an action that that the service doesn't support.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>Your version number is out of bounds or does not follow the required syntax.</p>
     InvalidVersionNumberException(crate::types::error::InvalidVersionNumberException),

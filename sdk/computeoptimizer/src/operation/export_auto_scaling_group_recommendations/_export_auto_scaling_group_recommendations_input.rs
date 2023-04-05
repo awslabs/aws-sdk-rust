@@ -31,7 +31,7 @@ pub struct ExportAutoScalingGroupRecommendationsInput {
     /// <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
     #[doc(hidden)]
-    pub include_member_accounts: bool,
+    pub include_member_accounts: std::option::Option<bool>,
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to export.</p>
     #[doc(hidden)]
     pub recommendation_preferences: std::option::Option<crate::types::RecommendationPreferences>,
@@ -70,7 +70,7 @@ impl ExportAutoScalingGroupRecommendationsInput {
     /// <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>
     /// <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
-    pub fn include_member_accounts(&self) -> bool {
+    pub fn include_member_accounts(&self) -> std::option::Option<bool> {
         self.include_member_accounts
     }
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to export.</p>
@@ -246,7 +246,6 @@ impl ExportAutoScalingGroupRecommendationsInputBuilder {
                 file_format: self.file_format
                 ,
                 include_member_accounts: self.include_member_accounts
-                    .unwrap_or_default()
                 ,
                 recommendation_preferences: self.recommendation_preferences
                 ,

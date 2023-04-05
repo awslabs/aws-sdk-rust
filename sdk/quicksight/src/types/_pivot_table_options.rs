@@ -31,6 +31,9 @@ pub struct PivotTableOptions {
     /// <p>The row alternate color options (widget status, row alternate colors).</p>
     #[doc(hidden)]
     pub row_alternate_color_options: std::option::Option<crate::types::RowAlternateColorOptions>,
+    /// <p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>
+    #[doc(hidden)]
+    pub collapsed_row_dimensions_visibility: std::option::Option<crate::types::Visibility>,
 }
 impl PivotTableOptions {
     /// <p>The metric placement (row, column) options.</p>
@@ -73,6 +76,12 @@ impl PivotTableOptions {
     ) -> std::option::Option<&crate::types::RowAlternateColorOptions> {
         self.row_alternate_color_options.as_ref()
     }
+    /// <p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>
+    pub fn collapsed_row_dimensions_visibility(
+        &self,
+    ) -> std::option::Option<&crate::types::Visibility> {
+        self.collapsed_row_dimensions_visibility.as_ref()
+    }
 }
 impl PivotTableOptions {
     /// Creates a new builder-style object to manufacture [`PivotTableOptions`](crate::types::PivotTableOptions).
@@ -95,6 +104,7 @@ pub struct PivotTableOptionsBuilder {
     pub(crate) row_field_names_style: std::option::Option<crate::types::TableCellStyle>,
     pub(crate) row_alternate_color_options:
         std::option::Option<crate::types::RowAlternateColorOptions>,
+    pub(crate) collapsed_row_dimensions_visibility: std::option::Option<crate::types::Visibility>,
 }
 impl PivotTableOptionsBuilder {
     /// <p>The metric placement (row, column) options.</p>
@@ -217,6 +227,19 @@ impl PivotTableOptionsBuilder {
         self.row_alternate_color_options = input;
         self
     }
+    /// <p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>
+    pub fn collapsed_row_dimensions_visibility(mut self, input: crate::types::Visibility) -> Self {
+        self.collapsed_row_dimensions_visibility = Some(input);
+        self
+    }
+    /// <p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>
+    pub fn set_collapsed_row_dimensions_visibility(
+        mut self,
+        input: std::option::Option<crate::types::Visibility>,
+    ) -> Self {
+        self.collapsed_row_dimensions_visibility = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PivotTableOptions`](crate::types::PivotTableOptions).
     pub fn build(self) -> crate::types::PivotTableOptions {
         crate::types::PivotTableOptions {
@@ -229,6 +252,7 @@ impl PivotTableOptionsBuilder {
             cell_style: self.cell_style,
             row_field_names_style: self.row_field_names_style,
             row_alternate_color_options: self.row_alternate_color_options,
+            collapsed_row_dimensions_visibility: self.collapsed_row_dimensions_visibility,
         }
     }
 }

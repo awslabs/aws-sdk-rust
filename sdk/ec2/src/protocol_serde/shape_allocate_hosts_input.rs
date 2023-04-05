@@ -61,6 +61,11 @@ pub fn ser_allocate_hosts_input_input(
     if let Some(var_21) = &input.outpost_arn {
         scope_20.string(var_21);
     }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("HostMaintenance");
+    if let Some(var_23) = &input.host_maintenance {
+        scope_22.string(var_23.as_str());
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

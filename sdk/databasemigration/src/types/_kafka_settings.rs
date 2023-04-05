@@ -58,6 +58,9 @@ pub struct KafkaSettings {
     /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.</p>
     #[doc(hidden)]
     pub no_hex_prefix: std::option::Option<bool>,
+    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
+    #[doc(hidden)]
+    pub sasl_mechanism: std::option::Option<crate::types::KafkaSaslMechanism>,
 }
 impl KafkaSettings {
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
@@ -132,6 +135,10 @@ impl KafkaSettings {
     pub fn no_hex_prefix(&self) -> std::option::Option<bool> {
         self.no_hex_prefix
     }
+    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
+    pub fn sasl_mechanism(&self) -> std::option::Option<&crate::types::KafkaSaslMechanism> {
+        self.sasl_mechanism.as_ref()
+    }
 }
 impl std::fmt::Debug for KafkaSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -169,6 +176,7 @@ impl std::fmt::Debug for KafkaSettings {
         formatter.field("sasl_username", &self.sasl_username);
         formatter.field("sasl_password", &"*** Sensitive Data Redacted ***");
         formatter.field("no_hex_prefix", &self.no_hex_prefix);
+        formatter.field("sasl_mechanism", &self.sasl_mechanism);
         formatter.finish()
     }
 }
@@ -201,6 +209,7 @@ pub struct KafkaSettingsBuilder {
     pub(crate) sasl_username: std::option::Option<std::string::String>,
     pub(crate) sasl_password: std::option::Option<std::string::String>,
     pub(crate) no_hex_prefix: std::option::Option<bool>,
+    pub(crate) sasl_mechanism: std::option::Option<crate::types::KafkaSaslMechanism>,
 }
 impl KafkaSettingsBuilder {
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
@@ -401,6 +410,19 @@ impl KafkaSettingsBuilder {
         self.no_hex_prefix = input;
         self
     }
+    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
+    pub fn sasl_mechanism(mut self, input: crate::types::KafkaSaslMechanism) -> Self {
+        self.sasl_mechanism = Some(input);
+        self
+    }
+    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
+    pub fn set_sasl_mechanism(
+        mut self,
+        input: std::option::Option<crate::types::KafkaSaslMechanism>,
+    ) -> Self {
+        self.sasl_mechanism = input;
+        self
+    }
     /// Consumes the builder and constructs a [`KafkaSettings`](crate::types::KafkaSettings).
     pub fn build(self) -> crate::types::KafkaSettings {
         crate::types::KafkaSettings {
@@ -422,6 +444,7 @@ impl KafkaSettingsBuilder {
             sasl_username: self.sasl_username,
             sasl_password: self.sasl_password,
             no_hex_prefix: self.no_hex_prefix,
+            sasl_mechanism: self.sasl_mechanism,
         }
     }
 }
@@ -461,6 +484,7 @@ impl std::fmt::Debug for KafkaSettingsBuilder {
         formatter.field("sasl_username", &self.sasl_username);
         formatter.field("sasl_password", &"*** Sensitive Data Redacted ***");
         formatter.field("no_hex_prefix", &self.no_hex_prefix);
+        formatter.field("sasl_mechanism", &self.sasl_mechanism);
         formatter.finish()
     }
 }

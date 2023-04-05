@@ -43,6 +43,34 @@ pub fn de_ipam_pool_cidr(
                 builder = builder.set_failure_reason(var_3);
             }
             ,
+            s if s.matches("ipamPoolCidrId") /* IpamPoolCidrId com.amazonaws.ec2#IpamPoolCidr$IpamPoolCidrId */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ipam_pool_cidr_id(var_4);
+            }
+            ,
+            s if s.matches("netmaskLength") /* NetmaskLength com.amazonaws.ec2#IpamPoolCidr$NetmaskLength */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_netmask_length(var_5);
+            }
+            ,
             _ => {}
         }
     }

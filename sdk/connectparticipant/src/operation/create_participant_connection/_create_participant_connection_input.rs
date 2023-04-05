@@ -10,7 +10,7 @@ pub struct CreateParticipantConnectionInput {
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     #[doc(hidden)]
     pub participant_token: std::option::Option<std::string::String>,
-    /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     #[doc(hidden)]
     pub connect_participant: std::option::Option<bool>,
 }
@@ -24,7 +24,7 @@ impl CreateParticipantConnectionInput {
     pub fn participant_token(&self) -> std::option::Option<&str> {
         self.participant_token.as_deref()
     }
-    /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn connect_participant(&self) -> std::option::Option<bool> {
         self.connect_participant
     }
@@ -79,12 +79,12 @@ impl CreateParticipantConnectionInputBuilder {
         self.participant_token = input;
         self
     }
-    /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn connect_participant(mut self, input: bool) -> Self {
         self.connect_participant = Some(input);
         self
     }
-    /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn set_connect_participant(mut self, input: std::option::Option<bool>) -> Self {
         self.connect_participant = input;
         self

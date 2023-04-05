@@ -11,7 +11,7 @@ pub struct UpgradeAppliedSchemaInput {
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
     #[doc(hidden)]
-    pub dry_run: bool,
+    pub dry_run: std::option::Option<bool>,
 }
 impl UpgradeAppliedSchemaInput {
     /// <p>The revision of the published schema to upgrade the directory to.</p>
@@ -23,7 +23,7 @@ impl UpgradeAppliedSchemaInput {
         self.directory_arn.as_deref()
     }
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -88,7 +88,7 @@ impl UpgradeAppliedSchemaInputBuilder {
             crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput {
                 published_schema_arn: self.published_schema_arn,
                 directory_arn: self.directory_arn,
-                dry_run: self.dry_run.unwrap_or_default(),
+                dry_run: self.dry_run,
             },
         )
     }

@@ -5,7 +5,9 @@ pub use crate::operation::list_hub_content_versions::_list_hub_content_versions_
 
 /// Fluent builder constructing a request to `ListHubContentVersions`.
 ///
-/// <p>List hub content versions.</p>
+/// <p>List hub content versions.</p> <note>
+/// <p>Hub APIs are only callable through SageMaker Studio.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListHubContentVersionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

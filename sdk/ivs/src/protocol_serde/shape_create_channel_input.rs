@@ -6,6 +6,9 @@ pub fn ser_create_channel_input(
     if input.authorized {
         object.key("authorized").boolean(input.authorized);
     }
+    if input.insecure_ingest {
+        object.key("insecureIngest").boolean(input.insecure_ingest);
+    }
     if let Some(var_1) = &input.latency_mode {
         object.key("latencyMode").string(var_1.as_str());
     }

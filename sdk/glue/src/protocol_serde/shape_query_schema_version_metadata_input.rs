@@ -36,14 +36,14 @@ pub fn ser_query_schema_version_metadata_input(
         }
         array_7.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_10) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.next_token {
-        object.key("NextToken").string(var_10.as_str());
+    if let Some(var_11) = &input.next_token {
+        object.key("NextToken").string(var_11.as_str());
     }
     Ok(())
 }

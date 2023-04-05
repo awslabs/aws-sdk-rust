@@ -44,6 +44,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "UseOffPeakWindow" => {
+                                builder = builder.set_use_off_peak_window(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

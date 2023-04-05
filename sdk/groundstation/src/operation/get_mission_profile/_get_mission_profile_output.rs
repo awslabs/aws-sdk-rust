@@ -35,6 +35,12 @@ pub struct GetMissionProfileOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>KMS key to use for encrypting streams.</p>
+    #[doc(hidden)]
+    pub streams_kms_key: std::option::Option<crate::types::KmsKey>,
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    #[doc(hidden)]
+    pub streams_kms_role: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMissionProfileOutput {
@@ -81,6 +87,14 @@ impl GetMissionProfileOutput {
     {
         self.tags.as_ref()
     }
+    /// <p>KMS key to use for encrypting streams.</p>
+    pub fn streams_kms_key(&self) -> std::option::Option<&crate::types::KmsKey> {
+        self.streams_kms_key.as_ref()
+    }
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    pub fn streams_kms_role(&self) -> std::option::Option<&str> {
+        self.streams_kms_role.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for GetMissionProfileOutput {
     fn request_id(&self) -> Option<&str> {
@@ -111,6 +125,8 @@ pub struct GetMissionProfileOutputBuilder {
     pub(crate) tracking_config_arn: std::option::Option<std::string::String>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) streams_kms_key: std::option::Option<crate::types::KmsKey>,
+    pub(crate) streams_kms_role: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMissionProfileOutputBuilder {
@@ -256,6 +272,26 @@ impl GetMissionProfileOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>KMS key to use for encrypting streams.</p>
+    pub fn streams_kms_key(mut self, input: crate::types::KmsKey) -> Self {
+        self.streams_kms_key = Some(input);
+        self
+    }
+    /// <p>KMS key to use for encrypting streams.</p>
+    pub fn set_streams_kms_key(mut self, input: std::option::Option<crate::types::KmsKey>) -> Self {
+        self.streams_kms_key = input;
+        self
+    }
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    pub fn streams_kms_role(mut self, input: impl Into<std::string::String>) -> Self {
+        self.streams_kms_role = Some(input.into());
+        self
+    }
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    pub fn set_streams_kms_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.streams_kms_role = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -278,6 +314,8 @@ impl GetMissionProfileOutputBuilder {
             dataflow_edges: self.dataflow_edges,
             tracking_config_arn: self.tracking_config_arn,
             tags: self.tags,
+            streams_kms_key: self.streams_kms_key,
+            streams_kms_role: self.streams_kms_role,
             _request_id: self._request_id,
         }
     }

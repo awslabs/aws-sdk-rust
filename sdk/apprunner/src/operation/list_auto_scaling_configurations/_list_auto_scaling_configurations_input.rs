@@ -10,7 +10,7 @@ pub struct ListAutoScalingConfigurationsInput {
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
     /// <p>Default: <code>true</code> </p>
     #[doc(hidden)]
-    pub latest_only: bool,
+    pub latest_only: std::option::Option<bool>,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     #[doc(hidden)]
@@ -28,7 +28,7 @@ impl ListAutoScalingConfigurationsInput {
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
     /// <p>Default: <code>true</code> </p>
-    pub fn latest_only(&self) -> bool {
+    pub fn latest_only(&self) -> std::option::Option<bool> {
         self.latest_only
     }
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -125,7 +125,6 @@ impl ListAutoScalingConfigurationsInputBuilder {
                 auto_scaling_configuration_name: self.auto_scaling_configuration_name
                 ,
                 latest_only: self.latest_only
-                    .unwrap_or_default()
                 ,
                 max_results: self.max_results
                 ,

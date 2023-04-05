@@ -92,12 +92,12 @@ impl UpdateContactChannelFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn delivery_address(mut self, input: crate::types::ContactChannelAddress) -> Self {
         self.inner = self.inner.delivery_address(input);
         self
     }
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn set_delivery_address(
         mut self,
         input: std::option::Option<crate::types::ContactChannelAddress>,

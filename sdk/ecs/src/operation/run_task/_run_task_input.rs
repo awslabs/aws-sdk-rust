@@ -18,11 +18,11 @@ pub struct RunTaskInput {
     pub count: std::option::Option<i32>,
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub enable_ecs_managed_tags: bool,
+    pub enable_ecs_managed_tags: std::option::Option<bool>,
     /// <p>Determines whether to use the execute command functionality for the containers in this task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     /// <p>If <code>true</code>, then the task definition must have a task role, or you must provide one as an override.</p>
     #[doc(hidden)]
-    pub enable_execute_command: bool,
+    pub enable_execute_command: std::option::Option<bool>,
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, <code>family:my-family-name</code>).</p>
     #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
@@ -79,8 +79,8 @@ pub struct RunTaskInput {
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-    /// <p>When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
-    /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's permissions policy.</p>
+    /// <p>When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
+    /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's permissions policy.</p>
     /// <p>When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
     /// <p>When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.</p>
@@ -106,12 +106,12 @@ impl RunTaskInput {
         self.count
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn enable_ecs_managed_tags(&self) -> bool {
+    pub fn enable_ecs_managed_tags(&self) -> std::option::Option<bool> {
         self.enable_ecs_managed_tags
     }
     /// <p>Determines whether to use the execute command functionality for the containers in this task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     /// <p>If <code>true</code>, then the task definition must have a task role, or you must provide one as an override.</p>
-    pub fn enable_execute_command(&self) -> bool {
+    pub fn enable_execute_command(&self) -> std::option::Option<bool> {
         self.enable_execute_command
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, <code>family:my-family-name</code>).</p>
@@ -184,8 +184,8 @@ impl RunTaskInput {
         self.tags.as_deref()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-    /// <p>When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
-    /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's permissions policy.</p>
+    /// <p>When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
+    /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's permissions policy.</p>
     /// <p>When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
     /// <p>When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.</p>
@@ -482,8 +482,8 @@ impl RunTaskInputBuilder {
         self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-    /// <p>When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
-    /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's permissions policy.</p>
+    /// <p>When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
+    /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's permissions policy.</p>
     /// <p>When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
     /// <p>When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.</p>
@@ -492,8 +492,8 @@ impl RunTaskInputBuilder {
         self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-    /// <p>When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
-    /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's permissions policy.</p>
+    /// <p>When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
+    /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's permissions policy.</p>
     /// <p>When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
     /// <p>When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.</p>
@@ -512,8 +512,8 @@ impl RunTaskInputBuilder {
             capacity_provider_strategy: self.capacity_provider_strategy,
             cluster: self.cluster,
             count: self.count,
-            enable_ecs_managed_tags: self.enable_ecs_managed_tags.unwrap_or_default(),
-            enable_execute_command: self.enable_execute_command.unwrap_or_default(),
+            enable_ecs_managed_tags: self.enable_ecs_managed_tags,
+            enable_execute_command: self.enable_execute_command,
             group: self.group,
             launch_type: self.launch_type,
             network_configuration: self.network_configuration,

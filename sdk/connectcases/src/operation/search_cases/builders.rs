@@ -5,7 +5,9 @@ pub use crate::operation::search_cases::_search_cases_input::SearchCasesInputBui
 
 /// Fluent builder constructing a request to `SearchCases`.
 ///
-/// <p>Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.</p>
+/// <p>Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.</p> <note>
+/// <p>For <code>customer_id</code> you must provide the full customer profile ARN in this format: <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID</code>. </p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchCasesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

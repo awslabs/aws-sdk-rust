@@ -9,39 +9,35 @@ pub fn ser_update_endpoint_input(
     if let Some(var_2) = &input.endpoint_config_name {
         object.key("EndpointConfigName").string(var_2.as_str());
     }
-    if input.retain_all_variant_properties {
-        object
-            .key("RetainAllVariantProperties")
-            .boolean(input.retain_all_variant_properties);
+    if let Some(var_3) = &input.retain_all_variant_properties {
+        object.key("RetainAllVariantProperties").boolean(*var_3);
     }
-    if let Some(var_3) = &input.exclude_retained_variant_properties {
-        let mut array_4 = object.key("ExcludeRetainedVariantProperties").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.exclude_retained_variant_properties {
+        let mut array_5 = object.key("ExcludeRetainedVariantProperties").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
+                let mut object_7 = array_5.value().start_object();
                 crate::protocol_serde::shape_variant_property::ser_variant_property(
-                    &mut object_6,
-                    item_5,
+                    &mut object_7,
+                    item_6,
                 )?;
-                object_6.finish();
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_7) = &input.deployment_config {
+    if let Some(var_8) = &input.deployment_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("DeploymentConfig").start_object();
+        let mut object_9 = object.key("DeploymentConfig").start_object();
         crate::protocol_serde::shape_deployment_config::ser_deployment_config(
-            &mut object_8,
-            var_7,
+            &mut object_9,
+            var_8,
         )?;
-        object_8.finish();
+        object_9.finish();
     }
-    if input.retain_deployment_config {
-        object
-            .key("RetainDeploymentConfig")
-            .boolean(input.retain_deployment_config);
+    if let Some(var_10) = &input.retain_deployment_config {
+        object.key("RetainDeploymentConfig").boolean(*var_10);
     }
     Ok(())
 }

@@ -17,14 +17,18 @@ pub struct Answer {
     /// <p>The description of the question.</p>
     #[doc(hidden)]
     pub question_description: std::option::Option<std::string::String>,
-    /// <p>The improvement plan URL for a question.</p>
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
     #[doc(hidden)]
     pub improvement_plan_url: std::option::Option<std::string::String>,
-    /// <p>The helpful resource URL for a question.</p>
+    /// <p>The helpful resource URL.</p>
+    /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
+    /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
     #[doc(hidden)]
     pub helpful_resource_url: std::option::Option<std::string::String>,
-    /// <p>The helpful resource text to be displayed.</p>
+    /// <p>The helpful resource text to be displayed for a custom lens.</p>
+    /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     #[doc(hidden)]
     pub helpful_resource_display_text: std::option::Option<std::string::String>,
     /// <p>List of choices available for a question.</p>
@@ -68,16 +72,20 @@ impl Answer {
     pub fn question_description(&self) -> std::option::Option<&str> {
         self.question_description.as_deref()
     }
-    /// <p>The improvement plan URL for a question.</p>
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
     pub fn improvement_plan_url(&self) -> std::option::Option<&str> {
         self.improvement_plan_url.as_deref()
     }
-    /// <p>The helpful resource URL for a question.</p>
+    /// <p>The helpful resource URL.</p>
+    /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
+    /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
     pub fn helpful_resource_url(&self) -> std::option::Option<&str> {
         self.helpful_resource_url.as_deref()
     }
-    /// <p>The helpful resource text to be displayed.</p>
+    /// <p>The helpful resource text to be displayed for a custom lens.</p>
+    /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     pub fn helpful_resource_display_text(&self) -> std::option::Option<&str> {
         self.helpful_resource_display_text.as_deref()
     }
@@ -183,14 +191,16 @@ impl AnswerBuilder {
         self.question_description = input;
         self
     }
-    /// <p>The improvement plan URL for a question.</p>
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
     pub fn improvement_plan_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.improvement_plan_url = Some(input.into());
         self
     }
-    /// <p>The improvement plan URL for a question.</p>
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
     pub fn set_improvement_plan_url(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -198,12 +208,16 @@ impl AnswerBuilder {
         self.improvement_plan_url = input;
         self
     }
-    /// <p>The helpful resource URL for a question.</p>
+    /// <p>The helpful resource URL.</p>
+    /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
+    /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
     pub fn helpful_resource_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.helpful_resource_url = Some(input.into());
         self
     }
-    /// <p>The helpful resource URL for a question.</p>
+    /// <p>The helpful resource URL.</p>
+    /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
+    /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
     pub fn set_helpful_resource_url(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -211,12 +225,14 @@ impl AnswerBuilder {
         self.helpful_resource_url = input;
         self
     }
-    /// <p>The helpful resource text to be displayed.</p>
+    /// <p>The helpful resource text to be displayed for a custom lens.</p>
+    /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     pub fn helpful_resource_display_text(mut self, input: impl Into<std::string::String>) -> Self {
         self.helpful_resource_display_text = Some(input.into());
         self
     }
-    /// <p>The helpful resource text to be displayed.</p>
+    /// <p>The helpful resource text to be displayed for a custom lens.</p>
+    /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     pub fn set_helpful_resource_display_text(
         mut self,
         input: std::option::Option<std::string::String>,

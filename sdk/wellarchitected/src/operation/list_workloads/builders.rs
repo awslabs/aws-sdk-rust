@@ -5,7 +5,7 @@ pub use crate::operation::list_workloads::_list_workloads_input::ListWorkloadsIn
 
 /// Fluent builder constructing a request to `ListWorkloads`.
 ///
-/// <p>List workloads. Paginated.</p>
+/// <p>Paginated list of workloads.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWorkloadsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

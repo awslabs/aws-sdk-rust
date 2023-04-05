@@ -77,8 +77,10 @@
 ///     OperationType::SendContactMethodVerification => { /* ... */ },
 ///     OperationType::SetIpAddressType => { /* ... */ },
 ///     OperationType::SetResourceAccessForBucket => { /* ... */ },
+///     OperationType::StartGuiSession => { /* ... */ },
 ///     OperationType::StartInstance => { /* ... */ },
 ///     OperationType::StartRelationalDatabase => { /* ... */ },
+///     OperationType::StopGuiSession => { /* ... */ },
 ///     OperationType::StopInstance => { /* ... */ },
 ///     OperationType::StopRelationalDatabase => { /* ... */ },
 ///     OperationType::TestAlarm => { /* ... */ },
@@ -256,9 +258,13 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     SetResourceAccessForBucket,
     #[allow(missing_docs)] // documentation missing in model
+    StartGuiSession,
+    #[allow(missing_docs)] // documentation missing in model
     StartInstance,
     #[allow(missing_docs)] // documentation missing in model
     StartRelationalDatabase,
+    #[allow(missing_docs)] // documentation missing in model
+    StopGuiSession,
     #[allow(missing_docs)] // documentation missing in model
     StopInstance,
     #[allow(missing_docs)] // documentation missing in model
@@ -360,8 +366,10 @@ impl std::convert::From<&str> for OperationType {
             "SendContactMethodVerification" => OperationType::SendContactMethodVerification,
             "SetIpAddressType" => OperationType::SetIpAddressType,
             "SetResourceAccessForBucket" => OperationType::SetResourceAccessForBucket,
+            "StartGUISession" => OperationType::StartGuiSession,
             "StartInstance" => OperationType::StartInstance,
             "StartRelationalDatabase" => OperationType::StartRelationalDatabase,
+            "StopGUISession" => OperationType::StopGuiSession,
             "StopInstance" => OperationType::StopInstance,
             "StopRelationalDatabase" => OperationType::StopRelationalDatabase,
             "TestAlarm" => OperationType::TestAlarm,
@@ -463,8 +471,10 @@ impl OperationType {
             OperationType::SendContactMethodVerification => "SendContactMethodVerification",
             OperationType::SetIpAddressType => "SetIpAddressType",
             OperationType::SetResourceAccessForBucket => "SetResourceAccessForBucket",
+            OperationType::StartGuiSession => "StartGUISession",
             OperationType::StartInstance => "StartInstance",
             OperationType::StartRelationalDatabase => "StartRelationalDatabase",
+            OperationType::StopGuiSession => "StopGUISession",
             OperationType::StopInstance => "StopInstance",
             OperationType::StopRelationalDatabase => "StopRelationalDatabase",
             OperationType::TestAlarm => "TestAlarm",
@@ -551,8 +561,10 @@ impl OperationType {
             "SendContactMethodVerification",
             "SetIpAddressType",
             "SetResourceAccessForBucket",
+            "StartGUISession",
             "StartInstance",
             "StartRelationalDatabase",
+            "StopGUISession",
             "StopInstance",
             "StopRelationalDatabase",
             "TestAlarm",

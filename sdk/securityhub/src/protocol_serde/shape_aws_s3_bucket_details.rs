@@ -62,6 +62,12 @@ pub fn ser_aws_s3_bucket_details(
         crate::protocol_serde::shape_aws_s3_bucket_bucket_versioning_configuration::ser_aws_s3_bucket_bucket_versioning_configuration(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.object_lock_configuration {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("ObjectLockConfiguration").start_object();
+        crate::protocol_serde::shape_aws_s3_bucket_object_lock_configuration::ser_aws_s3_bucket_object_lock_configuration(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }
 
@@ -167,6 +173,11 @@ where
                             "BucketVersioningConfiguration" => {
                                 builder = builder.set_bucket_versioning_configuration(
                                     crate::protocol_serde::shape_aws_s3_bucket_bucket_versioning_configuration::de_aws_s3_bucket_bucket_versioning_configuration(tokens)?
+                                );
+                            }
+                            "ObjectLockConfiguration" => {
+                                builder = builder.set_object_lock_configuration(
+                                    crate::protocol_serde::shape_aws_s3_bucket_object_lock_configuration::de_aws_s3_bucket_object_lock_configuration(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -7,10 +7,10 @@ pub struct Setting {
     /// <p>The Amazon ECS resource name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::SettingName>,
-    /// <p>Determines whether the account setting is enabled or disabled for the specified resource.</p>
+    /// <p>Determines whether the account setting is on or off for the specified resource.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
-    /// <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
+    /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
 }
@@ -19,11 +19,11 @@ impl Setting {
     pub fn name(&self) -> std::option::Option<&crate::types::SettingName> {
         self.name.as_ref()
     }
-    /// <p>Determines whether the account setting is enabled or disabled for the specified resource.</p>
+    /// <p>Determines whether the account setting is on or off for the specified resource.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
+    /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
@@ -54,22 +54,22 @@ impl SettingBuilder {
         self.name = input;
         self
     }
-    /// <p>Determines whether the account setting is enabled or disabled for the specified resource.</p>
+    /// <p>Determines whether the account setting is on or off for the specified resource.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>Determines whether the account setting is enabled or disabled for the specified resource.</p>
+    /// <p>Determines whether the account setting is on or off for the specified resource.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
+    /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.principal_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
+    /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.principal_arn = input;
         self

@@ -69,12 +69,12 @@ impl DescribeFraudsterFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The identifier of the domain containing the fraudster.</p>
+    /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The identifier of the domain containing the fraudster.</p>
+    /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self

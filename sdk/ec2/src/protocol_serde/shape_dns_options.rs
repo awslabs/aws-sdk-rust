@@ -20,6 +20,21 @@ pub fn de_dns_options(
                 builder = builder.set_dns_record_ip_type(var_1);
             }
             ,
+            s if s.matches("privateDnsOnlyForInboundResolverEndpoint") /* PrivateDnsOnlyForInboundResolverEndpoint com.amazonaws.ec2#DnsOptions$PrivateDnsOnlyForInboundResolverEndpoint */ =>  {
+                let var_2 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_private_dns_only_for_inbound_resolver_endpoint(var_2);
+            }
+            ,
             _ => {}
         }
     }

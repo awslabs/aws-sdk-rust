@@ -98,12 +98,12 @@ impl StartSessionFluentBuilder {
         self.inner = self.inner.set_engine_configuration(input);
         self
     }
-    /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+    /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.notebook_version(input.into());
         self
     }
-    /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+    /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub fn set_notebook_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_notebook_version(input);
         self

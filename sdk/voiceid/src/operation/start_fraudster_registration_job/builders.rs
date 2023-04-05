@@ -69,12 +69,12 @@ impl StartFraudsterRegistrationJobFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
@@ -89,12 +89,12 @@ impl StartFraudsterRegistrationJobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job and in which the fraudsters are registered.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
+    /// <p>The identifier of the domain that contains the fraudster registration job and in which the fraudsters are registered.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self

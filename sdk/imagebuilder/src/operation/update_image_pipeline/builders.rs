@@ -5,7 +5,7 @@ pub use crate::operation::update_image_pipeline::_update_image_pipeline_input::U
 
 /// Fluent builder constructing a request to `UpdateImagePipeline`.
 ///
-/// <p> Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.</p> <note>
+/// <p>Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.</p> <note>
 /// <p>UpdateImagePipeline does not support selective updates for the pipeline. You must specify all of the required properties in the update request, not just the properties that have changed.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -117,7 +117,7 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.set_container_recipe_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
     pub fn infrastructure_configuration_arn(
         mut self,
         input: impl Into<std::string::String>,
@@ -125,7 +125,7 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.infrastructure_configuration_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
     pub fn set_infrastructure_configuration_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -133,12 +133,12 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.set_infrastructure_configuration_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
     pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.distribution_configuration_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
     pub fn set_distribution_configuration_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -162,12 +162,12 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.set_image_tests_configuration(input);
         self
     }
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enhanced_image_metadata_enabled(input);
         self
     }
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enhanced_image_metadata_enabled(input);
         self
@@ -200,6 +200,22 @@ impl UpdateImagePipelineFluentBuilder {
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn image_scanning_configuration(
+        mut self,
+        input: crate::types::ImageScanningConfiguration,
+    ) -> Self {
+        self.inner = self.inner.image_scanning_configuration(input);
+        self
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn set_image_scanning_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ImageScanningConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_image_scanning_configuration(input);
         self
     }
 }

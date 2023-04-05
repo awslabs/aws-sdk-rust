@@ -62,6 +62,8 @@ pub(crate) mod shape_enable_organization_admin_account;
 
 pub(crate) mod shape_get_administrator_account;
 
+pub(crate) mod shape_get_coverage_statistics;
+
 pub(crate) mod shape_get_detector;
 
 pub(crate) mod shape_get_filter;
@@ -89,6 +91,8 @@ pub(crate) mod shape_get_threat_intel_set;
 pub(crate) mod shape_get_usage_statistics;
 
 pub(crate) mod shape_invite_members;
+
+pub(crate) mod shape_list_coverage;
 
 pub(crate) mod shape_list_detectors;
 
@@ -182,6 +186,8 @@ pub(crate) mod shape_disassociate_members_input;
 
 pub(crate) mod shape_enable_organization_admin_account_input;
 
+pub(crate) mod shape_get_coverage_statistics_input;
+
 pub(crate) mod shape_get_findings_input;
 
 pub(crate) mod shape_get_findings_statistics_input;
@@ -197,6 +203,8 @@ pub(crate) mod shape_get_usage_statistics_input;
 pub(crate) mod shape_internal_server_error_exception;
 
 pub(crate) mod shape_invite_members_input;
+
+pub(crate) mod shape_list_coverage_input;
 
 pub(crate) mod shape_list_findings_input;
 
@@ -234,6 +242,14 @@ pub(crate) mod shape_admin_accounts;
 
 pub(crate) mod shape_administrator;
 
+pub(crate) mod shape_coverage_filter_criteria;
+
+pub(crate) mod shape_coverage_resources;
+
+pub(crate) mod shape_coverage_sort_criteria;
+
+pub(crate) mod shape_coverage_statistics;
+
 pub(crate) mod shape_data_source_configurations;
 
 pub(crate) mod shape_data_source_configurations_result;
@@ -241,6 +257,10 @@ pub(crate) mod shape_data_source_configurations_result;
 pub(crate) mod shape_destination_properties;
 
 pub(crate) mod shape_destinations;
+
+pub(crate) mod shape_detector_feature_configuration;
+
+pub(crate) mod shape_detector_feature_configurations_results;
 
 pub(crate) mod shape_detector_ids;
 
@@ -264,11 +284,17 @@ pub(crate) mod shape_master;
 
 pub(crate) mod shape_member_data_source_configurations;
 
+pub(crate) mod shape_member_features_configuration;
+
 pub(crate) mod shape_members;
 
 pub(crate) mod shape_organization_data_source_configurations;
 
 pub(crate) mod shape_organization_data_source_configurations_result;
+
+pub(crate) mod shape_organization_feature_configuration;
+
+pub(crate) mod shape_organization_features_configurations_results;
 
 pub(crate) mod shape_scan_resource_criteria;
 
@@ -296,11 +322,23 @@ pub(crate) mod shape_cloud_trail_configuration_result;
 
 pub(crate) mod shape_condition;
 
+pub(crate) mod shape_count_by_coverage_status;
+
+pub(crate) mod shape_count_by_resource_type;
+
 pub(crate) mod shape_count_by_severity;
+
+pub(crate) mod shape_coverage_filter_criterion;
+
+pub(crate) mod shape_coverage_resource;
 
 pub(crate) mod shape_criterion;
 
 pub(crate) mod shape_destination;
+
+pub(crate) mod shape_detector_additional_configuration;
+
+pub(crate) mod shape_detector_feature_configuration_result;
 
 pub(crate) mod shape_dns_logs_configuration_result;
 
@@ -322,7 +360,13 @@ pub(crate) mod shape_malware_protection_configuration_result;
 
 pub(crate) mod shape_member;
 
+pub(crate) mod shape_member_additional_configuration;
+
 pub(crate) mod shape_member_data_source_configuration;
+
+pub(crate) mod shape_organization_additional_configuration;
+
+pub(crate) mod shape_organization_feature_configuration_result;
 
 pub(crate) mod shape_organization_kubernetes_configuration;
 
@@ -352,15 +396,29 @@ pub(crate) mod shape_usage_account_result_list;
 
 pub(crate) mod shape_usage_data_source_result_list;
 
+pub(crate) mod shape_usage_feature_result_list;
+
 pub(crate) mod shape_usage_resource_result_list;
+
+pub(crate) mod shape_coverage_filter_condition;
+
+pub(crate) mod shape_coverage_resource_details;
 
 pub(crate) mod shape_data_sources_free_trial;
 
+pub(crate) mod shape_detector_additional_configuration_results;
+
 pub(crate) mod shape_filter_condition;
+
+pub(crate) mod shape_free_trial_feature_configurations_results;
 
 pub(crate) mod shape_kubernetes_audit_logs_configuration;
 
 pub(crate) mod shape_kubernetes_audit_logs_configuration_result;
+
+pub(crate) mod shape_member_features_configurations_results;
+
+pub(crate) mod shape_organization_additional_configuration_results;
 
 pub(crate) mod shape_organization_kubernetes_audit_logs_configuration;
 
@@ -390,6 +448,8 @@ pub(crate) mod shape_usage_account_result;
 
 pub(crate) mod shape_usage_data_source_result;
 
+pub(crate) mod shape_usage_feature_result;
+
 pub(crate) mod shape_usage_resource_result;
 
 pub(crate) mod shape_volume_details;
@@ -400,7 +460,11 @@ pub(crate) mod shape_action;
 
 pub(crate) mod shape_container;
 
+pub(crate) mod shape_coverage_eks_cluster_details;
+
 pub(crate) mod shape_data_source_free_trial;
+
+pub(crate) mod shape_detector_additional_configuration_result;
 
 pub(crate) mod shape_ebs_volume_details;
 
@@ -418,6 +482,8 @@ pub(crate) mod shape_equals;
 
 pub(crate) mod shape_evidence;
 
+pub(crate) mod shape_free_trial_feature_configuration_result;
+
 pub(crate) mod shape_instance_details;
 
 pub(crate) mod shape_kubernetes_data_source_free_trial;
@@ -428,13 +494,23 @@ pub(crate) mod shape_malware_protection_data_source_free_trial;
 
 pub(crate) mod shape_map_equals;
 
+pub(crate) mod shape_member_features_configuration_result;
+
 pub(crate) mod shape_neq;
 
 pub(crate) mod shape_not_equals;
 
+pub(crate) mod shape_organization_additional_configuration_result;
+
 pub(crate) mod shape_organization_ebs_volumes;
 
 pub(crate) mod shape_organization_ebs_volumes_result;
+
+pub(crate) mod shape_rds_db_instance_details;
+
+pub(crate) mod shape_rds_db_user_details;
+
+pub(crate) mod shape_runtime_details;
 
 pub(crate) mod shape_s3_bucket_details;
 
@@ -443,6 +519,8 @@ pub(crate) mod shape_service_additional_info;
 pub(crate) mod shape_total;
 
 pub(crate) mod shape_volume_detail;
+
+pub(crate) mod shape_addon_details;
 
 pub(crate) mod shape_aws_api_call_action;
 
@@ -458,13 +536,21 @@ pub(crate) mod shape_kubernetes_user_details;
 
 pub(crate) mod shape_kubernetes_workload_details;
 
+pub(crate) mod shape_member_additional_configuration_results;
+
 pub(crate) mod shape_network_connection_action;
 
 pub(crate) mod shape_network_interfaces;
 
 pub(crate) mod shape_port_probe_action;
 
+pub(crate) mod shape_process_details;
+
 pub(crate) mod shape_product_codes;
+
+pub(crate) mod shape_rds_login_attempt_action;
+
+pub(crate) mod shape_runtime_context;
 
 pub(crate) mod shape_s3_bucket_detail;
 
@@ -488,13 +574,23 @@ pub(crate) mod shape_default_server_side_encryption;
 
 pub(crate) mod shape_domain_details;
 
+pub(crate) mod shape_flags_list;
+
 pub(crate) mod shape_groups;
 
 pub(crate) mod shape_highest_severity_threat_details;
 
+pub(crate) mod shape_lineage;
+
 pub(crate) mod shape_local_ip_details;
 
 pub(crate) mod shape_local_port_details;
+
+pub(crate) mod shape_login_attributes;
+
+pub(crate) mod shape_member_additional_configuration_result;
+
+pub(crate) mod shape_memory_regions_list;
 
 pub(crate) mod shape_network_interface;
 
@@ -535,6 +631,10 @@ pub(crate) mod shape_country;
 pub(crate) mod shape_geo_location;
 
 pub(crate) mod shape_ipv6_addresses;
+
+pub(crate) mod shape_lineage_object;
+
+pub(crate) mod shape_login_attribute;
 
 pub(crate) mod shape_organization;
 

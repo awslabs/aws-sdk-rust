@@ -69,6 +69,26 @@ pub(crate) fn reflens_list_voice_connectors_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_voice_profile_domains_output_next_token(
+    input: &crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_voice_profiles_output_next_token(
+    input: &crate::operation::list_voice_profiles::ListVoiceProfilesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_search_available_phone_numbers_output_next_token(
     input: &crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput,
 ) -> std::option::Option<&std::string::String> {

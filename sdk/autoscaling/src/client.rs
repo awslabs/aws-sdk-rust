@@ -354,6 +354,8 @@ mod record_lifecycle_action_heartbeat;
 
 mod resume_processes;
 
+mod rollback_instance_refresh;
+
 mod set_desired_capacity;
 
 mod set_instance_health;

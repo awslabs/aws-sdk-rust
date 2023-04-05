@@ -121,6 +121,8 @@ pub use crate::types::_ebs::EbsBuilder;
 
 pub use crate::types::_instance_refresh::InstanceRefreshBuilder;
 
+pub use crate::types::_rollback_details::RollbackDetailsBuilder;
+
 pub use crate::types::_instance_refresh_progress_details::InstanceRefreshProgressDetailsBuilder;
 
 pub use crate::types::_instance_refresh_warm_pool_progress::InstanceRefreshWarmPoolProgressBuilder;

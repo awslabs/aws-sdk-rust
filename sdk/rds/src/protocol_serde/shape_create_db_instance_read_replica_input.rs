@@ -238,6 +238,11 @@ pub fn ser_create_db_instance_read_replica_input_input(
             aws_smithy_types::Number::NegInt((*var_86).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_87 = writer.prefix("SourceDBClusterIdentifier");
+    if let Some(var_88) = &input.source_db_cluster_identifier {
+        scope_87.string(var_88);
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

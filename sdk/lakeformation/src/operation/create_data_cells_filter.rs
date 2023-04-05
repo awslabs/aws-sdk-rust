@@ -165,7 +165,7 @@ pub enum CreateDataCellsFilterError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A resource to be created or added already exists.</p>
     AlreadyExistsException(crate::types::error::AlreadyExistsException),
-    /// <p>A specified entity does not exist</p>
+    /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::types::error::InternalServiceException),

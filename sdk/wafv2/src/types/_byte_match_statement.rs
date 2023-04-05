@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ByteMatchStatement {
-    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
+    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
     /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
@@ -12,7 +12,7 @@ pub struct ByteMatchStatement {
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p> <b>If you're using the WAF API</b> </p>
-    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
+    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 200 bytes.</p>
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
     /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
@@ -43,7 +43,7 @@ pub struct ByteMatchStatement {
     pub positional_constraint: std::option::Option<crate::types::PositionalConstraint>,
 }
 impl ByteMatchStatement {
-    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
+    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
     /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
@@ -51,7 +51,7 @@ impl ByteMatchStatement {
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p> <b>If you're using the WAF API</b> </p>
-    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
+    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 200 bytes.</p>
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
     /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
@@ -105,7 +105,7 @@ pub struct ByteMatchStatementBuilder {
     pub(crate) positional_constraint: std::option::Option<crate::types::PositionalConstraint>,
 }
 impl ByteMatchStatementBuilder {
-    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
+    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
     /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
@@ -113,7 +113,7 @@ impl ByteMatchStatementBuilder {
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p> <b>If you're using the WAF API</b> </p>
-    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
+    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 200 bytes.</p>
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
     /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
@@ -121,7 +121,7 @@ impl ByteMatchStatementBuilder {
         self.search_string = Some(input);
         self
     }
-    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
+    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
     /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
@@ -129,7 +129,7 @@ impl ByteMatchStatementBuilder {
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p> <b>If you're using the WAF API</b> </p>
-    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
+    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 200 bytes.</p>
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
     /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>

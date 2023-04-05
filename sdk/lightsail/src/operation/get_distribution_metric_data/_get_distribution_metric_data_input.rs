@@ -39,7 +39,7 @@ pub struct GetDistributionMetricDataInput {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The granularity, in seconds, for the metric data points that will be returned.</p>
     #[doc(hidden)]
-    pub period: i32,
+    pub period: std::option::Option<i32>,
     /// <p>The unit for the metric data request.</p>
     /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
     #[doc(hidden)]
@@ -96,7 +96,7 @@ impl GetDistributionMetricDataInput {
         self.end_time.as_ref()
     }
     /// <p>The granularity, in seconds, for the metric data points that will be returned.</p>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p>The unit for the metric data request.</p>
@@ -300,7 +300,7 @@ impl GetDistributionMetricDataInputBuilder {
                 metric_name: self.metric_name,
                 start_time: self.start_time,
                 end_time: self.end_time,
-                period: self.period.unwrap_or_default(),
+                period: self.period,
                 unit: self.unit,
                 statistics: self.statistics,
             },

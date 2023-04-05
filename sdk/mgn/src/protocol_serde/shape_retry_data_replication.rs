@@ -155,6 +155,15 @@ pub(crate) fn de_retry_data_replication(
                             crate::protocol_serde::shape_data_replication_info::de_data_replication_info(tokens)?
                         );
                     }
+                    "fqdnForActionFramework" => {
+                        builder = builder.set_fqdn_for_action_framework(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "isArchived" => {
                         builder = builder.set_is_archived(
                             aws_smithy_json::deserialize::token::expect_bool_or_null(
@@ -205,6 +214,15 @@ pub(crate) fn de_retry_data_replication(
                     "tags" => {
                         builder = builder
                             .set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    }
+                    "userProvidedID" => {
+                        builder = builder.set_user_provided_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
                     }
                     "vcenterClientID" => {
                         builder = builder.set_vcenter_client_id(

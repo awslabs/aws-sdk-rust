@@ -5,7 +5,7 @@
 pub struct CreateLagInput {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
     #[doc(hidden)]
-    pub number_of_connections: i32,
+    pub number_of_connections: std::option::Option<i32>,
     /// <p>The location for the LAG.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
@@ -35,7 +35,7 @@ pub struct CreateLagInput {
 }
 impl CreateLagInput {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
-    pub fn number_of_connections(&self) -> i32 {
+    pub fn number_of_connections(&self) -> std::option::Option<i32> {
         self.number_of_connections
     }
     /// <p>The location for the LAG.</p>
@@ -218,7 +218,7 @@ impl CreateLagInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::create_lag::CreateLagInput {
-            number_of_connections: self.number_of_connections.unwrap_or_default(),
+            number_of_connections: self.number_of_connections,
             location: self.location,
             connections_bandwidth: self.connections_bandwidth,
             lag_name: self.lag_name,

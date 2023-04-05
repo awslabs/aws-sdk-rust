@@ -15,13 +15,13 @@ pub struct StartDocumentClassificationJobInput {
     /// <p>Specifies where to send the output files.</p>
     #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::types::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -31,9 +31,12 @@ pub struct StartDocumentClassificationJobInput {
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::types::VpcConfig>,
-    /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to associate with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to use.</p>
+    #[doc(hidden)]
+    pub flywheel_arn: std::option::Option<std::string::String>,
 }
 impl StartDocumentClassificationJobInput {
     /// <p>The identifier of the job.</p>
@@ -52,7 +55,7 @@ impl StartDocumentClassificationJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -60,7 +63,7 @@ impl StartDocumentClassificationJobInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -72,9 +75,13 @@ impl StartDocumentClassificationJobInput {
     pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to associate with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to use.</p>
+    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
+        self.flywheel_arn.as_deref()
     }
 }
 impl StartDocumentClassificationJobInput {
@@ -97,6 +104,7 @@ pub struct StartDocumentClassificationJobInputBuilder {
     pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
     pub(crate) vpc_config: std::option::Option<crate::types::VpcConfig>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) flywheel_arn: std::option::Option<std::string::String>,
 }
 impl StartDocumentClassificationJobInputBuilder {
     /// <p>The identifier of the job.</p>
@@ -148,12 +156,12 @@ impl StartDocumentClassificationJobInputBuilder {
         self.output_data_config = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_access_role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -174,7 +182,7 @@ impl StartDocumentClassificationJobInputBuilder {
         self.client_request_token = input;
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -183,7 +191,7 @@ impl StartDocumentClassificationJobInputBuilder {
         self.volume_kms_key_id = Some(input.into());
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -209,19 +217,29 @@ impl StartDocumentClassificationJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to associate with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = Some(v);
         self
     }
-    /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to associate with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to use.</p>
+    pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.flywheel_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to use.</p>
+    pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.flywheel_arn = input;
         self
     }
     /// Consumes the builder and constructs a [`StartDocumentClassificationJobInput`](crate::operation::start_document_classification_job::StartDocumentClassificationJobInput).
@@ -250,6 +268,8 @@ impl StartDocumentClassificationJobInputBuilder {
                 vpc_config: self.vpc_config
                 ,
                 tags: self.tags
+                ,
+                flywheel_arn: self.flywheel_arn
                 ,
             }
         )

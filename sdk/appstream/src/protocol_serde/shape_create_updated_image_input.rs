@@ -25,8 +25,8 @@ pub fn ser_create_updated_image_input(
         }
         object_6.finish();
     }
-    if input.dry_run {
-        object.key("dryRun").boolean(input.dry_run);
+    if let Some(var_9) = &input.dry_run {
+        object.key("dryRun").boolean(*var_9);
     }
     Ok(())
 }

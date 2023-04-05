@@ -11,7 +11,7 @@ pub struct ReplicateSecretToRegionsInput {
     pub add_replica_regions: std::option::Option<std::vec::Vec<crate::types::ReplicaRegionType>>,
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region.</p>
     #[doc(hidden)]
-    pub force_overwrite_replica_secret: bool,
+    pub force_overwrite_replica_secret: std::option::Option<bool>,
 }
 impl ReplicateSecretToRegionsInput {
     /// <p>The ARN or name of the secret to replicate.</p>
@@ -23,7 +23,7 @@ impl ReplicateSecretToRegionsInput {
         self.add_replica_regions.as_deref()
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region.</p>
-    pub fn force_overwrite_replica_secret(&self) -> bool {
+    pub fn force_overwrite_replica_secret(&self) -> std::option::Option<bool> {
         self.force_overwrite_replica_secret
     }
 }
@@ -96,9 +96,7 @@ impl ReplicateSecretToRegionsInputBuilder {
             crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput {
                 secret_id: self.secret_id,
                 add_replica_regions: self.add_replica_regions,
-                force_overwrite_replica_secret: self
-                    .force_overwrite_replica_secret
-                    .unwrap_or_default(),
+                force_overwrite_replica_secret: self.force_overwrite_replica_secret,
             },
         )
     }

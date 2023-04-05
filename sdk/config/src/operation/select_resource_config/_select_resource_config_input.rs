@@ -8,7 +8,7 @@ pub struct SelectResourceConfigInput {
     pub expression: std::option::Option<std::string::String>,
     /// <p>The maximum number of query results returned on each page. </p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl SelectResourceConfigInput {
         self.expression.as_deref()
     }
     /// <p>The maximum number of query results returned on each page. </p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
@@ -84,7 +84,7 @@ impl SelectResourceConfigInputBuilder {
         Ok(
             crate::operation::select_resource_config::SelectResourceConfigInput {
                 expression: self.expression,
-                limit: self.limit.unwrap_or_default(),
+                limit: self.limit,
                 next_token: self.next_token,
             },
         )

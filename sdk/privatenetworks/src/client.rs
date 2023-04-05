@@ -282,6 +282,8 @@ mod list_tags_for_resource;
 
 mod ping;
 
+mod start_network_resource_update;
+
 mod tag_resource;
 
 mod untag_resource;

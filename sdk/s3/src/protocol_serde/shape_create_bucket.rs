@@ -99,12 +99,11 @@ pub fn ser_create_bucket_headers(
             builder = builder.header("x-amz-grant-write-acp", header_value);
         }
     }
-    if input.object_lock_enabled_for_bucket {
-        let mut encoder =
-            aws_smithy_types::primitive::Encoder::from(input.object_lock_enabled_for_bucket);
-        let formatted_13 = encoder.encode();
-        if !formatted_13.is_empty() {
-            let header_value = formatted_13;
+    if let Some(inner_13) = &input.object_lock_enabled_for_bucket {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_13);
+        let formatted_14 = encoder.encode();
+        if !formatted_14.is_empty() {
+            let header_value = formatted_14;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_enabled_for_bucket",
@@ -117,10 +116,10 @@ pub fn ser_create_bucket_headers(
             builder = builder.header("x-amz-bucket-object-lock-enabled", header_value);
         }
     }
-    if let Some(inner_14) = &input.object_ownership {
-        let formatted_15 = inner_14.as_str();
-        if !formatted_15.is_empty() {
-            let header_value = formatted_15;
+    if let Some(inner_15) = &input.object_ownership {
+        let formatted_16 = inner_15.as_str();
+        if !formatted_16.is_empty() {
+            let header_value = formatted_16;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_ownership",

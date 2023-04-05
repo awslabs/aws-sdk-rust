@@ -6,8 +6,8 @@ pub fn ser_unregister_connector_input(
     if let Some(var_1) = &input.connector_label {
         object.key("connectorLabel").string(var_1.as_str());
     }
-    if input.force_delete {
-        object.key("forceDelete").boolean(input.force_delete);
+    if let Some(var_2) = &input.force_delete {
+        object.key("forceDelete").boolean(*var_2);
     }
     Ok(())
 }

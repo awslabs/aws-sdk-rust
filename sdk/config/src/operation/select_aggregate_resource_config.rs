@@ -171,7 +171,7 @@ pub enum SelectAggregateResourceConfigError {
     InvalidExpressionException(crate::types::error::InvalidExpressionException),
     /// <p>The specified limit is outside the allowable range.</p>
     InvalidLimitException(crate::types::error::InvalidLimitException),
-    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
+    /// <p>The specified next token is not valid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>You have specified a configuration aggregator that does not exist.</p>
     NoSuchConfigurationAggregatorException(

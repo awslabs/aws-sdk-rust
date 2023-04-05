@@ -18,6 +18,19 @@ pub fn ser_value_mappings(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.binding_properties {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("bindingProperties").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = object_6.key(key_7.as_str()).start_object();
+                crate::protocol_serde::shape_form_input_binding_properties_value::ser_form_input_binding_properties_value(&mut object_9, value_8)?;
+                object_9.finish();
+            }
+        }
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -48,6 +61,11 @@ where
                             "values" => {
                                 builder = builder.set_values(
                                     crate::protocol_serde::shape_value_mapping_list::de_value_mapping_list(tokens)?
+                                );
+                            }
+                            "bindingProperties" => {
+                                builder = builder.set_binding_properties(
+                                    crate::protocol_serde::shape_form_input_binding_properties::de_form_input_binding_properties(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

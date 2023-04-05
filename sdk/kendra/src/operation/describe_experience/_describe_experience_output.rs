@@ -18,10 +18,10 @@ pub struct DescribeExperienceOutput {
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::types::ExperienceConfiguration>,
-    /// <p>Shows the date-time your Amazon Kendra experience was created.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the description for your Amazon Kendra experience.</p>
@@ -59,11 +59,11 @@ impl DescribeExperienceOutput {
     pub fn configuration(&self) -> std::option::Option<&crate::types::ExperienceConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>Shows the date-time your Amazon Kendra experience was created.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -177,12 +177,12 @@ impl DescribeExperienceOutputBuilder {
         self.configuration = input;
         self
     }
-    /// <p>Shows the date-time your Amazon Kendra experience was created.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>Shows the date-time your Amazon Kendra experience was created.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -190,12 +190,12 @@ impl DescribeExperienceOutputBuilder {
         self.created_at = input;
         self
     }
-    /// <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+    /// <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

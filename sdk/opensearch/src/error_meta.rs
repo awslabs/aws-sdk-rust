@@ -3,27 +3,29 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>An error occurred because user does not have permissions to access the resource. Returns HTTP status code 403.</p>
+    /// <p>An error occurred because you don't have permissions to access the resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::types::error::BaseException),
-    /// <p>An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP status code 409.</p>
+    /// <p>An error occurred because the client attempts to remove a resource that is currently in use.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    /// <p>An error occured because the client wanted to access a not supported operation.</p>
     DisabledOperationException(crate::types::error::DisabledOperationException),
-    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),
-    /// <p>The request processing has failed because of invalid pagination token provided by customer. Returns an HTTP status code of 400. </p>
+    /// <p>The request processing has failed because you provided an invalid pagination token.</p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
-    /// <p>An exception for trying to create or access sub-resource that is either invalid or not supported. Gives http status code of 409.</p>
+    /// <p>An exception for trying to create or access a sub-resource that's either invalid or not supported.</p>
     InvalidTypeException(crate::types::error::InvalidTypeException),
-    /// <p>An exception for trying to create more than allowed resources or sub-resources. Gives http status code of 409.</p>
+    /// <p>An exception for trying to create more than the allowed number of resources or sub-resources.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>An exception for creating a resource that already exists. Gives http status code of 400.</p>
+    /// <p>An exception for creating a resource that already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    /// <p>An exception for accessing or deleting a resource that does not exist..</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    /// <p>An exception for attempting to schedule a domain action during an unavailable time slot.</p>
+    SlotNotAvailableException(crate::types::error::SlotNotAvailableException),
+    /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
@@ -41,6 +43,7 @@ impl std::fmt::Display for Error {
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::SlotNotAvailableException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -1642,6 +1645,49 @@ impl From<crate::operation::list_packages_for_domain::ListPackagesForDomainError
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_scheduled_actions::ListScheduledActionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_scheduled_actions::ListScheduledActionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_scheduled_actions::ListScheduledActionsError> for Error {
+    fn from(err: crate::operation::list_scheduled_actions::ListScheduledActionsError) -> Self {
+        match err {
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags::ListTagsError, R>>
     for Error
 where
@@ -2162,6 +2208,51 @@ impl From<crate::operation::update_package::UpdatePackageError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::update_scheduled_action::UpdateScheduledActionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_scheduled_action::UpdateScheduledActionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_scheduled_action::UpdateScheduledActionError> for Error {
+    fn from(err: crate::operation::update_scheduled_action::UpdateScheduledActionError) -> Self {
+        match err {
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::SlotNotAvailableException(inner) => Error::SlotNotAvailableException(inner),
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
             R,
         >,
@@ -2257,6 +2348,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::LimitExceededException(e) => e.request_id(),
             Self::ResourceAlreadyExistsException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::SlotNotAvailableException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }

@@ -50,6 +50,9 @@ pub struct CreateReplicationConfigurationTemplateInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    #[doc(hidden)]
+    pub auto_replicate_new_disks: std::option::Option<bool>,
 }
 impl CreateReplicationConfigurationTemplateInput {
     /// <p>The subnet to be used by the replication staging area.</p>
@@ -123,6 +126,10 @@ impl CreateReplicationConfigurationTemplateInput {
     {
         self.tags.as_ref()
     }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn auto_replicate_new_disks(&self) -> std::option::Option<bool> {
+        self.auto_replicate_new_disks
+    }
 }
 impl std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -156,6 +163,7 @@ impl std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
         formatter.finish()
     }
 }
@@ -190,6 +198,7 @@ pub struct CreateReplicationConfigurationTemplateInputBuilder {
     pub(crate) pit_policy: std::option::Option<std::vec::Vec<crate::types::PitPolicyRule>>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) auto_replicate_new_disks: std::option::Option<bool>,
 }
 impl CreateReplicationConfigurationTemplateInputBuilder {
     /// <p>The subnet to be used by the replication staging area.</p>
@@ -423,6 +432,16 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn auto_replicate_new_disks(mut self, input: bool) -> Self {
+        self.auto_replicate_new_disks = Some(input);
+        self
+    }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn set_auto_replicate_new_disks(mut self, input: std::option::Option<bool>) -> Self {
+        self.auto_replicate_new_disks = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationTemplateInput`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput).
     pub fn build(self) -> Result<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
@@ -455,6 +474,8 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
                 pit_policy: self.pit_policy
                 ,
                 tags: self.tags
+                ,
+                auto_replicate_new_disks: self.auto_replicate_new_disks
                 ,
             }
         )
@@ -492,6 +513,7 @@ impl std::fmt::Debug for CreateReplicationConfigurationTemplateInputBuilder {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
         formatter.finish()
     }
 }

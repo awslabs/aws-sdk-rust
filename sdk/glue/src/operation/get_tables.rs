@@ -168,6 +168,10 @@ pub type GetTablesErrorKind = GetTablesError;
 pub enum GetTablesError {
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
+    /// <p>A federation source failed.</p>
+    FederationSourceException(crate::types::error::FederationSourceException),
+    #[allow(missing_docs)] // documentation missing in model
+    FederationSourceRetryableException(crate::types::error::FederationSourceRetryableException),
     /// <p>An encryption operation failed.</p>
     GlueEncryptionException(crate::types::error::GlueEncryptionException),
     /// <p>An internal service error occurred.</p>
@@ -195,6 +199,8 @@ impl std::fmt::Display for GetTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::EntityNotFoundException(_inner) => _inner.fmt(f),
+            Self::FederationSourceException(_inner) => _inner.fmt(f),
+            Self::FederationSourceRetryableException(_inner) => _inner.fmt(f),
             Self::GlueEncryptionException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
@@ -207,6 +213,12 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GetTablesError 
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::EntityNotFoundException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::FederationSourceException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::FederationSourceRetryableException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::GlueEncryptionException(_inner) => {
@@ -267,6 +279,8 @@ impl GetTablesError {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::EntityNotFoundException(e) => e.meta(),
+            Self::FederationSourceException(e) => e.meta(),
+            Self::FederationSourceRetryableException(e) => e.meta(),
             Self::GlueEncryptionException(e) => e.meta(),
             Self::InternalServiceException(e) => e.meta(),
             Self::InvalidInputException(e) => e.meta(),
@@ -277,6 +291,14 @@ impl GetTablesError {
     /// Returns `true` if the error kind is `GetTablesError::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(self, Self::EntityNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetTablesError::FederationSourceException`.
+    pub fn is_federation_source_exception(&self) -> bool {
+        matches!(self, Self::FederationSourceException(_))
+    }
+    /// Returns `true` if the error kind is `GetTablesError::FederationSourceRetryableException`.
+    pub fn is_federation_source_retryable_exception(&self) -> bool {
+        matches!(self, Self::FederationSourceRetryableException(_))
     }
     /// Returns `true` if the error kind is `GetTablesError::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
@@ -299,6 +321,8 @@ impl std::error::Error for GetTablesError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::EntityNotFoundException(_inner) => Some(_inner),
+            Self::FederationSourceException(_inner) => Some(_inner),
+            Self::FederationSourceRetryableException(_inner) => Some(_inner),
             Self::GlueEncryptionException(_inner) => Some(_inner),
             Self::InternalServiceException(_inner) => Some(_inner),
             Self::InvalidInputException(_inner) => Some(_inner),

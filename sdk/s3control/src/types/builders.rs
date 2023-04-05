@@ -51,6 +51,36 @@ pub use crate::types::_versioning_configuration::VersioningConfigurationBuilder;
 
 pub use crate::types::_tagging::TaggingBuilder;
 
+pub use crate::types::_replication_configuration::ReplicationConfigurationBuilder;
+
+pub use crate::types::_replication_rule::ReplicationRuleBuilder;
+
+pub use crate::types::_delete_marker_replication::DeleteMarkerReplicationBuilder;
+
+pub use crate::types::_destination::DestinationBuilder;
+
+pub use crate::types::_metrics::MetricsBuilder;
+
+pub use crate::types::_replication_time_value::ReplicationTimeValueBuilder;
+
+pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
+
+pub use crate::types::_access_control_translation::AccessControlTranslationBuilder;
+
+pub use crate::types::_replication_time::ReplicationTimeBuilder;
+
+pub use crate::types::_existing_object_replication::ExistingObjectReplicationBuilder;
+
+pub use crate::types::_source_selection_criteria::SourceSelectionCriteriaBuilder;
+
+pub use crate::types::_replica_modifications::ReplicaModificationsBuilder;
+
+pub use crate::types::_sse_kms_encrypted_objects::SseKmsEncryptedObjectsBuilder;
+
+pub use crate::types::_replication_rule_filter::ReplicationRuleFilterBuilder;
+
+pub use crate::types::_replication_rule_and_operator::ReplicationRuleAndOperatorBuilder;
+
 pub use crate::types::_lifecycle_configuration::LifecycleConfigurationBuilder;
 
 pub use crate::types::_lifecycle_rule::LifecycleRuleBuilder;
@@ -90,6 +120,8 @@ pub use crate::types::_job_progress_summary::JobProgressSummaryBuilder;
 pub use crate::types::_job_timers::JobTimersBuilder;
 
 pub use crate::types::_object_lambda_access_point::ObjectLambdaAccessPointBuilder;
+
+pub use crate::types::_object_lambda_access_point_alias::ObjectLambdaAccessPointAliasBuilder;
 
 pub use crate::types::_access_point::AccessPointBuilder;
 

@@ -13,6 +13,9 @@ pub struct ClusterStatus {
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
     #[doc(hidden)]
     pub timeline: std::option::Option<crate::types::ClusterTimeline>,
+    /// <p>A list of tuples that provide information about the errors that caused a cluster termination. This structure may have up to 10 different <code>ErrorDetail</code> tuples.</p>
+    #[doc(hidden)]
+    pub error_details: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
 }
 impl ClusterStatus {
     /// <p>The current state of the cluster.</p>
@@ -29,6 +32,10 @@ impl ClusterStatus {
     pub fn timeline(&self) -> std::option::Option<&crate::types::ClusterTimeline> {
         self.timeline.as_ref()
     }
+    /// <p>A list of tuples that provide information about the errors that caused a cluster termination. This structure may have up to 10 different <code>ErrorDetail</code> tuples.</p>
+    pub fn error_details(&self) -> std::option::Option<&[crate::types::ErrorDetail]> {
+        self.error_details.as_deref()
+    }
 }
 impl ClusterStatus {
     /// Creates a new builder-style object to manufacture [`ClusterStatus`](crate::types::ClusterStatus).
@@ -44,6 +51,7 @@ pub struct ClusterStatusBuilder {
     pub(crate) state: std::option::Option<crate::types::ClusterState>,
     pub(crate) state_change_reason: std::option::Option<crate::types::ClusterStateChangeReason>,
     pub(crate) timeline: std::option::Option<crate::types::ClusterTimeline>,
+    pub(crate) error_details: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
 }
 impl ClusterStatusBuilder {
     /// <p>The current state of the cluster.</p>
@@ -82,12 +90,32 @@ impl ClusterStatusBuilder {
         self.timeline = input;
         self
     }
+    /// Appends an item to `error_details`.
+    ///
+    /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
+    ///
+    /// <p>A list of tuples that provide information about the errors that caused a cluster termination. This structure may have up to 10 different <code>ErrorDetail</code> tuples.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
+        let mut v = self.error_details.unwrap_or_default();
+        v.push(input);
+        self.error_details = Some(v);
+        self
+    }
+    /// <p>A list of tuples that provide information about the errors that caused a cluster termination. This structure may have up to 10 different <code>ErrorDetail</code> tuples.</p>
+    pub fn set_error_details(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
+    ) -> Self {
+        self.error_details = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ClusterStatus`](crate::types::ClusterStatus).
     pub fn build(self) -> crate::types::ClusterStatus {
         crate::types::ClusterStatus {
             state: self.state,
             state_change_reason: self.state_change_reason,
             timeline: self.timeline,
+            error_details: self.error_details,
         }
     }
 }

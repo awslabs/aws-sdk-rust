@@ -177,6 +177,13 @@ pub(crate) fn de_create_replication_configuration_template(value: &[u8], mut bui
                             )?,
                         );
                     }
+                    "autoReplicateNewDisks" => {
+                        builder = builder.set_auto_replicate_new_disks(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     "bandwidthThrottling" => {
                         builder = builder.set_bandwidth_throttling(
                             aws_smithy_json::deserialize::token::expect_number_or_null(

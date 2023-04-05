@@ -27,6 +27,17 @@ impl DescribeAcceleratorsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `accelerator_set`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(
+        self,
+    ) -> crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginatorItems
+    {
+        crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -108,6 +119,35 @@ impl DescribeAcceleratorsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `DescribeAcceleratorsPaginator`
+///
+/// This is created with [`.items()`](DescribeAcceleratorsPaginator::items)
+pub struct DescribeAcceleratorsPaginatorItems(DescribeAcceleratorsPaginator);
+
+impl DescribeAcceleratorsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::types::ElasticInferenceAccelerator,
+            aws_smithy_http::result::SdkError<
+                crate::operation::describe_accelerators::DescribeAcceleratorsError,
+            >,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_accelerators_output_accelerator_set(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

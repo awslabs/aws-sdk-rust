@@ -57,6 +57,8 @@ pub use crate::types::_domain_name_config::DomainNameConfig;
 
 pub use crate::types::_data_source::DataSource;
 
+pub use crate::types::_event_bridge_data_source_config::EventBridgeDataSourceConfig;
+
 pub use crate::types::_relational_database_data_source_config::RelationalDatabaseDataSourceConfig;
 
 pub use crate::types::_rds_http_endpoint_config::RdsHttpEndpointConfig;
@@ -164,6 +166,8 @@ mod _elasticsearch_data_source_config;
 mod _error_detail;
 
 mod _evaluate_code_error_detail;
+
+mod _event_bridge_data_source_config;
 
 mod _field_log_level;
 

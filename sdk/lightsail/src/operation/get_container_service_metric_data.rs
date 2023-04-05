@@ -86,6 +86,12 @@ impl GetContainerServiceMetricDataInput {
                     )?,
                 );
                 let inner_4 = &_input.period;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "period",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 query.push_kv(
                     "period",
                     aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),

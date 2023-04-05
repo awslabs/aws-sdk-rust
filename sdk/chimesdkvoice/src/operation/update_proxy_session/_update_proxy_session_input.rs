@@ -3,33 +3,33 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProxySessionInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     #[doc(hidden)]
     pub proxy_session_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session capabilities.</p>
     #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<crate::types::Capability>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     #[doc(hidden)]
     pub expiry_minutes: std::option::Option<i32>,
 }
 impl UpdateProxySessionInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(&self) -> std::option::Option<&str> {
         self.proxy_session_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session capabilities.</p>
     pub fn capabilities(&self) -> std::option::Option<&[crate::types::Capability]> {
         self.capabilities.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(&self) -> std::option::Option<i32> {
         self.expiry_minutes
     }
@@ -52,12 +52,12 @@ pub struct UpdateProxySessionInputBuilder {
     pub(crate) expiry_minutes: std::option::Option<i32>,
 }
 impl UpdateProxySessionInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -65,12 +65,12 @@ impl UpdateProxySessionInputBuilder {
         self.voice_connector_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.proxy_session_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn set_proxy_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.proxy_session_id = input;
         self
@@ -79,13 +79,14 @@ impl UpdateProxySessionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
     ///
+    /// <p>The proxy session capabilities.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
         v.push(input);
         self.capabilities = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session capabilities.</p>
     pub fn set_capabilities(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Capability>>,
@@ -93,12 +94,12 @@ impl UpdateProxySessionInputBuilder {
         self.capabilities = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(mut self, input: i32) -> Self {
         self.expiry_minutes = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn set_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.expiry_minutes = input;
         self

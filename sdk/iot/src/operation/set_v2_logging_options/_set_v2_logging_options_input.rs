@@ -11,7 +11,7 @@ pub struct SetV2LoggingOptionsInput {
     pub default_log_level: std::option::Option<crate::types::LogLevel>,
     /// <p>If true all logs are disabled. The default is false.</p>
     #[doc(hidden)]
-    pub disable_all_logs: bool,
+    pub disable_all_logs: std::option::Option<bool>,
 }
 impl SetV2LoggingOptionsInput {
     /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
@@ -23,7 +23,7 @@ impl SetV2LoggingOptionsInput {
         self.default_log_level.as_ref()
     }
     /// <p>If true all logs are disabled. The default is false.</p>
-    pub fn disable_all_logs(&self) -> bool {
+    pub fn disable_all_logs(&self) -> std::option::Option<bool> {
         self.disable_all_logs
     }
 }
@@ -89,7 +89,7 @@ impl SetV2LoggingOptionsInputBuilder {
             crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput {
                 role_arn: self.role_arn,
                 default_log_level: self.default_log_level,
-                disable_all_logs: self.disable_all_logs.unwrap_or_default(),
+                disable_all_logs: self.disable_all_logs,
             },
         )
     }

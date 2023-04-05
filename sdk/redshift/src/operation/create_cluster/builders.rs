@@ -157,29 +157,33 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_node_type(input);
         self
     }
-    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
+    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Must not contain a colon (:) or a slash (/).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
     pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.master_username(input.into());
         self
     }
-    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
+    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Must not contain a colon (:) or a slash (/).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
     pub fn set_master_username(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_master_username(input);
         self
     }
-    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -192,7 +196,7 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
-    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>

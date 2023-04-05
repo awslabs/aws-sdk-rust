@@ -42,6 +42,10 @@ pub struct InstanceFleet {
     #[doc(hidden)]
     pub launch_specifications:
         std::option::Option<crate::types::InstanceFleetProvisioningSpecifications>,
+    /// <p>The resize specification for the instance fleet.</p>
+    #[doc(hidden)]
+    pub resize_specifications:
+        std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
 impl InstanceFleet {
     /// <p>The unique identifier of the instance fleet.</p>
@@ -92,6 +96,12 @@ impl InstanceFleet {
     ) -> std::option::Option<&crate::types::InstanceFleetProvisioningSpecifications> {
         self.launch_specifications.as_ref()
     }
+    /// <p>The resize specification for the instance fleet.</p>
+    pub fn resize_specifications(
+        &self,
+    ) -> std::option::Option<&crate::types::InstanceFleetResizingSpecifications> {
+        self.resize_specifications.as_ref()
+    }
 }
 impl InstanceFleet {
     /// Creates a new builder-style object to manufacture [`InstanceFleet`](crate::types::InstanceFleet).
@@ -116,6 +126,8 @@ pub struct InstanceFleetBuilder {
         std::option::Option<std::vec::Vec<crate::types::InstanceTypeSpecification>>,
     pub(crate) launch_specifications:
         std::option::Option<crate::types::InstanceFleetProvisioningSpecifications>,
+    pub(crate) resize_specifications:
+        std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
 impl InstanceFleetBuilder {
     /// <p>The unique identifier of the instance fleet.</p>
@@ -250,6 +262,22 @@ impl InstanceFleetBuilder {
         self.launch_specifications = input;
         self
     }
+    /// <p>The resize specification for the instance fleet.</p>
+    pub fn resize_specifications(
+        mut self,
+        input: crate::types::InstanceFleetResizingSpecifications,
+    ) -> Self {
+        self.resize_specifications = Some(input);
+        self
+    }
+    /// <p>The resize specification for the instance fleet.</p>
+    pub fn set_resize_specifications(
+        mut self,
+        input: std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+    ) -> Self {
+        self.resize_specifications = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InstanceFleet`](crate::types::InstanceFleet).
     pub fn build(self) -> crate::types::InstanceFleet {
         crate::types::InstanceFleet {
@@ -263,6 +291,7 @@ impl InstanceFleetBuilder {
             provisioned_spot_capacity: self.provisioned_spot_capacity,
             instance_type_specifications: self.instance_type_specifications,
             launch_specifications: self.launch_specifications,
+            resize_specifications: self.resize_specifications,
         }
     }
 }

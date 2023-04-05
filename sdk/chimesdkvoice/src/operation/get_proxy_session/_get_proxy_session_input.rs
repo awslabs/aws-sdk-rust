@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProxySessionInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     #[doc(hidden)]
     pub proxy_session_id: std::option::Option<std::string::String>,
 }
 impl GetProxySessionInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(&self) -> std::option::Option<&str> {
         self.proxy_session_id.as_deref()
     }
@@ -35,12 +35,12 @@ pub struct GetProxySessionInputBuilder {
     pub(crate) proxy_session_id: std::option::Option<std::string::String>,
 }
 impl GetProxySessionInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -48,12 +48,12 @@ impl GetProxySessionInputBuilder {
         self.voice_connector_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.proxy_session_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn set_proxy_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.proxy_session_id = input;
         self

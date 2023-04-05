@@ -72,71 +72,69 @@ pub fn ser_update_association_input(
     if let Some(var_23) = &input.sync_compliance {
         object.key("SyncCompliance").string(var_23.as_str());
     }
-    if input.apply_only_at_cron_interval {
-        object
-            .key("ApplyOnlyAtCronInterval")
-            .boolean(input.apply_only_at_cron_interval);
+    if let Some(var_24) = &input.apply_only_at_cron_interval {
+        object.key("ApplyOnlyAtCronInterval").boolean(*var_24);
     }
-    if let Some(var_24) = &input.calendar_names {
-        let mut array_25 = object.key("CalendarNames").start_array();
-        for item_26 in var_24 {
+    if let Some(var_25) = &input.calendar_names {
+        let mut array_26 = object.key("CalendarNames").start_array();
+        for item_27 in var_25 {
             {
-                array_25.value().string(item_26.as_str());
+                array_26.value().string(item_27.as_str());
             }
         }
-        array_25.finish();
+        array_26.finish();
     }
-    if let Some(var_27) = &input.target_locations {
-        let mut array_28 = object.key("TargetLocations").start_array();
-        for item_29 in var_27 {
+    if let Some(var_28) = &input.target_locations {
+        let mut array_29 = object.key("TargetLocations").start_array();
+        for item_30 in var_28 {
             {
                 #[allow(unused_mut)]
-                let mut object_30 = array_28.value().start_object();
+                let mut object_31 = array_29.value().start_object();
                 crate::protocol_serde::shape_target_location::ser_target_location(
-                    &mut object_30,
-                    item_29,
+                    &mut object_31,
+                    item_30,
                 )?;
-                object_30.finish();
+                object_31.finish();
             }
         }
-        array_28.finish();
+        array_29.finish();
     }
-    if let Some(var_31) = &input.schedule_offset {
+    if let Some(var_32) = &input.schedule_offset {
         object.key("ScheduleOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_31).into()),
+            aws_smithy_types::Number::NegInt((*var_32).into()),
         );
     }
-    if let Some(var_32) = &input.target_maps {
-        let mut array_33 = object.key("TargetMaps").start_array();
-        for item_34 in var_32 {
+    if let Some(var_33) = &input.target_maps {
+        let mut array_34 = object.key("TargetMaps").start_array();
+        for item_35 in var_33 {
             {
                 #[allow(unused_mut)]
-                let mut object_35 = array_33.value().start_object();
-                for (key_36, value_37) in item_34 {
+                let mut object_36 = array_34.value().start_object();
+                for (key_37, value_38) in item_35 {
                     {
-                        let mut array_38 = object_35.key(key_36.as_str()).start_array();
-                        for item_39 in value_37 {
+                        let mut array_39 = object_36.key(key_37.as_str()).start_array();
+                        for item_40 in value_38 {
                             {
-                                array_38.value().string(item_39.as_str());
+                                array_39.value().string(item_40.as_str());
                             }
                         }
-                        array_38.finish();
+                        array_39.finish();
                     }
                 }
-                object_35.finish();
+                object_36.finish();
             }
         }
-        array_33.finish();
+        array_34.finish();
     }
-    if let Some(var_40) = &input.alarm_configuration {
+    if let Some(var_41) = &input.alarm_configuration {
         #[allow(unused_mut)]
-        let mut object_41 = object.key("AlarmConfiguration").start_object();
+        let mut object_42 = object.key("AlarmConfiguration").start_object();
         crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(
-            &mut object_41,
-            var_40,
+            &mut object_42,
+            var_41,
         )?;
-        object_41.finish();
+        object_42.finish();
     }
     Ok(())
 }

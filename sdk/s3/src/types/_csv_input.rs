@@ -12,7 +12,8 @@ pub struct CsvInput {
     /// </ul>
     #[doc(hidden)]
     pub file_header_info: std::option::Option<crate::types::FileHeaderInfo>,
-    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
+    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
+    /// <p>Default: <code>#</code> </p>
     #[doc(hidden)]
     pub comments: std::option::Option<std::string::String>,
     /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
@@ -44,7 +45,8 @@ impl CsvInput {
     pub fn file_header_info(&self) -> std::option::Option<&crate::types::FileHeaderInfo> {
         self.file_header_info.as_ref()
     }
-    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
+    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
+    /// <p>Default: <code>#</code> </p>
     pub fn comments(&self) -> std::option::Option<&str> {
         self.comments.as_deref()
     }
@@ -115,12 +117,14 @@ impl CsvInputBuilder {
         self.file_header_info = input;
         self
     }
-    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
+    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
+    /// <p>Default: <code>#</code> </p>
     pub fn comments(mut self, input: impl Into<std::string::String>) -> Self {
         self.comments = Some(input.into());
         self
     }
-    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
+    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
+    /// <p>Default: <code>#</code> </p>
     pub fn set_comments(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.comments = input;
         self

@@ -9,7 +9,7 @@ pub struct DescribeAutoMlJobOutput {
     /// <p>Returns the ARN of the AutoML job.</p>
     #[doc(hidden)]
     pub auto_ml_job_arn: std::option::Option<std::string::String>,
-    /// <p>Returns the input data configuration for the AutoML job..</p>
+    /// <p>Returns the input data configuration for the AutoML job.</p>
     #[doc(hidden)]
     pub input_data_config: std::option::Option<std::vec::Vec<crate::types::AutoMlChannel>>,
     /// <p>Returns the job's output data config.</p>
@@ -58,7 +58,7 @@ pub struct DescribeAutoMlJobOutput {
     /// <p>Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.</p>
     #[doc(hidden)]
     pub auto_ml_job_artifacts: std::option::Option<crate::types::AutoMlJobArtifacts>,
-    /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you provide.</p>
+    /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you provide.</p>
     #[doc(hidden)]
     pub resolved_attributes: std::option::Option<crate::types::ResolvedAttributes>,
     /// <p>Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed automatically.</p>
@@ -78,7 +78,7 @@ impl DescribeAutoMlJobOutput {
     pub fn auto_ml_job_arn(&self) -> std::option::Option<&str> {
         self.auto_ml_job_arn.as_deref()
     }
-    /// <p>Returns the input data configuration for the AutoML job..</p>
+    /// <p>Returns the input data configuration for the AutoML job.</p>
     pub fn input_data_config(&self) -> std::option::Option<&[crate::types::AutoMlChannel]> {
         self.input_data_config.as_deref()
     }
@@ -146,7 +146,7 @@ impl DescribeAutoMlJobOutput {
     pub fn auto_ml_job_artifacts(&self) -> std::option::Option<&crate::types::AutoMlJobArtifacts> {
         self.auto_ml_job_artifacts.as_ref()
     }
-    /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you provide.</p>
+    /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you provide.</p>
     pub fn resolved_attributes(&self) -> std::option::Option<&crate::types::ResolvedAttributes> {
         self.resolved_attributes.as_ref()
     }
@@ -226,14 +226,14 @@ impl DescribeAutoMlJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
     ///
-    /// <p>Returns the input data configuration for the AutoML job..</p>
+    /// <p>Returns the input data configuration for the AutoML job.</p>
     pub fn input_data_config(mut self, input: crate::types::AutoMlChannel) -> Self {
         let mut v = self.input_data_config.unwrap_or_default();
         v.push(input);
         self.input_data_config = Some(v);
         self
     }
-    /// <p>Returns the input data configuration for the AutoML job..</p>
+    /// <p>Returns the input data configuration for the AutoML job.</p>
     pub fn set_input_data_config(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::AutoMlChannel>>,
@@ -439,12 +439,12 @@ impl DescribeAutoMlJobOutputBuilder {
         self.auto_ml_job_artifacts = input;
         self
     }
-    /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you provide.</p>
+    /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you provide.</p>
     pub fn resolved_attributes(mut self, input: crate::types::ResolvedAttributes) -> Self {
         self.resolved_attributes = Some(input);
         self
     }
-    /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you provide.</p>
+    /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you provide.</p>
     pub fn set_resolved_attributes(
         mut self,
         input: std::option::Option<crate::types::ResolvedAttributes>,

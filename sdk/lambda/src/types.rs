@@ -67,6 +67,10 @@ pub use crate::types::_environment::Environment;
 
 pub use crate::types::_vpc_config::VpcConfig;
 
+pub use crate::types::_document_db_event_source_config::DocumentDbEventSourceConfig;
+
+pub use crate::types::_full_document::FullDocument;
+
 pub use crate::types::_scaling_config::ScalingConfig;
 
 pub use crate::types::_self_managed_kafka_event_source_config::SelfManagedKafkaEventSourceConfig;
@@ -167,6 +171,8 @@ mod _dead_letter_config;
 
 mod _destination_config;
 
+mod _document_db_event_source_config;
+
 mod _end_point_type;
 
 mod _environment;
@@ -186,6 +192,8 @@ mod _file_system_config;
 mod _filter;
 
 mod _filter_criteria;
+
+mod _full_document;
 
 mod _function_code;
 

@@ -15,6 +15,8 @@ pub use crate::types::_ingested_events_time_window::IngestedEventsTimeWindow;
 
 pub use crate::types::_external_events_detail::ExternalEventsDetail;
 
+pub use crate::types::_list_update_mode::ListUpdateMode;
+
 pub use crate::types::_detector_version_status::DetectorVersionStatus;
 
 pub use crate::types::_rule_execution_mode::RuleExecutionMode;
@@ -62,6 +64,8 @@ pub use crate::types::_unlabeled_events_treatment::UnlabeledEventsTreatment;
 pub use crate::types::_training_data_source_enum::TrainingDataSourceEnum;
 
 pub use crate::types::_model::Model;
+
+pub use crate::types::_allow_deny_list::AllowDenyList;
 
 pub use crate::types::_label::Label;
 
@@ -135,6 +139,8 @@ pub use crate::types::_tfi_training_metrics_value::TfiTrainingMetricsValue;
 
 pub use crate::types::_tfi_model_performance::TfiModelPerformance;
 
+pub use crate::types::_uncertainty_range::UncertaintyRange;
+
 pub use crate::types::_tfi_metric_data_point::TfiMetricDataPoint;
 
 pub use crate::types::_ofi_training_metrics_value::OfiTrainingMetricsValue;
@@ -168,6 +174,8 @@ mod _aggregated_log_odds_metric;
 mod _aggregated_variables_impact_explanation;
 
 mod _aggregated_variables_importance_metrics;
+
+mod _allow_deny_list;
 
 mod _async_job_status;
 
@@ -245,6 +253,8 @@ mod _label_schema;
 
 mod _language;
 
+mod _list_update_mode;
+
 mod _log_odds_metric;
 
 mod _metric_data_point;
@@ -316,6 +326,8 @@ mod _training_metrics_v2;
 mod _training_result;
 
 mod _training_result_v2;
+
+mod _uncertainty_range;
 
 mod _unlabeled_events_treatment;
 

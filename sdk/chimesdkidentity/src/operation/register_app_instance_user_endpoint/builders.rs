@@ -127,12 +127,12 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
         self.inner = self.inner.set_endpoint_attributes(input);
         self
     }
-    /// <p>The idempotency token for each client request. </p>
+    /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>The idempotency token for each client request. </p>
+    /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,

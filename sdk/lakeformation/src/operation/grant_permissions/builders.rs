@@ -6,7 +6,7 @@ pub use crate::operation::grant_permissions::_grant_permissions_input::GrantPerm
 /// Fluent builder constructing a request to `GrantPermissions`.
 ///
 /// <p>Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3.</p>
-/// <p>For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+/// <p>For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GrantPermissionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

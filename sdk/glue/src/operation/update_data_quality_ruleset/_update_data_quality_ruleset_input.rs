@@ -6,9 +6,6 @@ pub struct UpdateDataQualityRulesetInput {
     /// <p>The name of the data quality ruleset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The new name of the ruleset, if you are renaming it.</p>
-    #[doc(hidden)]
-    pub updated_name: std::option::Option<std::string::String>,
     /// <p>A description of the ruleset.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -20,10 +17,6 @@ impl UpdateDataQualityRulesetInput {
     /// <p>The name of the data quality ruleset.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-    /// <p>The new name of the ruleset, if you are renaming it.</p>
-    pub fn updated_name(&self) -> std::option::Option<&str> {
-        self.updated_name.as_deref()
     }
     /// <p>A description of the ruleset.</p>
     pub fn description(&self) -> std::option::Option<&str> {
@@ -48,7 +41,6 @@ impl UpdateDataQualityRulesetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDataQualityRulesetInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) updated_name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) ruleset: std::option::Option<std::string::String>,
 }
@@ -61,16 +53,6 @@ impl UpdateDataQualityRulesetInputBuilder {
     /// <p>The name of the data quality ruleset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
-        self
-    }
-    /// <p>The new name of the ruleset, if you are renaming it.</p>
-    pub fn updated_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_name = Some(input.into());
-        self
-    }
-    /// <p>The new name of the ruleset, if you are renaming it.</p>
-    pub fn set_updated_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.updated_name = input;
         self
     }
     /// <p>A description of the ruleset.</p>
@@ -103,7 +85,6 @@ impl UpdateDataQualityRulesetInputBuilder {
         Ok(
             crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput {
                 name: self.name,
-                updated_name: self.updated_name,
                 description: self.description,
                 ruleset: self.ruleset,
             },

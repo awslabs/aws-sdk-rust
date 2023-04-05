@@ -10,6 +10,9 @@ pub struct OnDeviceServiceConfiguration {
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
     #[doc(hidden)]
     pub tgw_on_device_service: std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
+    /// <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+    #[doc(hidden)]
+    pub eks_on_device_service: std::option::Option<crate::types::EksOnDeviceServiceConfiguration>,
 }
 impl OnDeviceServiceConfiguration {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
@@ -23,6 +26,12 @@ impl OnDeviceServiceConfiguration {
         &self,
     ) -> std::option::Option<&crate::types::TgwOnDeviceServiceConfiguration> {
         self.tgw_on_device_service.as_ref()
+    }
+    /// <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+    pub fn eks_on_device_service(
+        &self,
+    ) -> std::option::Option<&crate::types::EksOnDeviceServiceConfiguration> {
+        self.eks_on_device_service.as_ref()
     }
 }
 impl OnDeviceServiceConfiguration {
@@ -40,6 +49,8 @@ pub struct OnDeviceServiceConfigurationBuilder {
         std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
     pub(crate) tgw_on_device_service:
         std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
+    pub(crate) eks_on_device_service:
+        std::option::Option<crate::types::EksOnDeviceServiceConfiguration>,
 }
 impl OnDeviceServiceConfigurationBuilder {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
@@ -74,11 +85,28 @@ impl OnDeviceServiceConfigurationBuilder {
         self.tgw_on_device_service = input;
         self
     }
+    /// <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+    pub fn eks_on_device_service(
+        mut self,
+        input: crate::types::EksOnDeviceServiceConfiguration,
+    ) -> Self {
+        self.eks_on_device_service = Some(input);
+        self
+    }
+    /// <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+    pub fn set_eks_on_device_service(
+        mut self,
+        input: std::option::Option<crate::types::EksOnDeviceServiceConfiguration>,
+    ) -> Self {
+        self.eks_on_device_service = input;
+        self
+    }
     /// Consumes the builder and constructs a [`OnDeviceServiceConfiguration`](crate::types::OnDeviceServiceConfiguration).
     pub fn build(self) -> crate::types::OnDeviceServiceConfiguration {
         crate::types::OnDeviceServiceConfiguration {
             nfs_on_device_service: self.nfs_on_device_service,
             tgw_on_device_service: self.tgw_on_device_service,
+            eks_on_device_service: self.eks_on_device_service,
         }
     }
 }

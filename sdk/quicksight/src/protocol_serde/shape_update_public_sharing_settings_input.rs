@@ -3,10 +3,8 @@ pub fn ser_update_public_sharing_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.public_sharing_enabled {
-        object
-            .key("PublicSharingEnabled")
-            .boolean(input.public_sharing_enabled);
+    if let Some(var_1) = &input.public_sharing_enabled {
+        object.key("PublicSharingEnabled").boolean(*var_1);
     }
     Ok(())
 }

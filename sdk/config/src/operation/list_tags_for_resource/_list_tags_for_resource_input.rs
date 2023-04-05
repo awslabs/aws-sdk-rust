@@ -8,7 +8,7 @@ pub struct ListTagsForResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -85,7 +85,7 @@ impl ListTagsForResourceInputBuilder {
         Ok(
             crate::operation::list_tags_for_resource::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
-                limit: self.limit.unwrap_or_default(),
+                limit: self.limit,
                 next_token: self.next_token,
             },
         )

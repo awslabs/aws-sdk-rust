@@ -13,7 +13,7 @@ pub struct SessionConfiguration {
     /// <p>The idle timeout in seconds for the session.</p>
     #[doc(hidden)]
     pub idle_timeout_seconds: std::option::Option<i64>,
-    /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
+    /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
     #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::types::EncryptionConfiguration>,
 }
@@ -30,7 +30,7 @@ impl SessionConfiguration {
     pub fn idle_timeout_seconds(&self) -> std::option::Option<i64> {
         self.idle_timeout_seconds
     }
-    /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
+    /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
     pub fn encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::types::EncryptionConfiguration> {
@@ -87,7 +87,7 @@ impl SessionConfigurationBuilder {
         self.idle_timeout_seconds = input;
         self
     }
-    /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
+    /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
     pub fn encryption_configuration(
         mut self,
         input: crate::types::EncryptionConfiguration,
@@ -95,7 +95,7 @@ impl SessionConfigurationBuilder {
         self.encryption_configuration = Some(input);
         self
     }
-    /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
+    /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
     pub fn set_encryption_configuration(
         mut self,
         input: std::option::Option<crate::types::EncryptionConfiguration>,

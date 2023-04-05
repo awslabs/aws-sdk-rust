@@ -43,6 +43,11 @@ pub(crate) fn de_conflict_exception_json_err(
                             .transpose()?,
                         );
                     }
+                    "DependentEntities" => {
+                        builder = builder.set_dependent_entities(
+                            crate::protocol_serde::shape_dependent_entity_list::de_dependent_entity_list(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

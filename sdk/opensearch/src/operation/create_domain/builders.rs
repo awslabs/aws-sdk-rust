@@ -305,4 +305,30 @@ impl CreateDomainFluentBuilder {
         self.inner = self.inner.set_auto_tune_options(input);
         self
     }
+    /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
+    pub fn off_peak_window_options(mut self, input: crate::types::OffPeakWindowOptions) -> Self {
+        self.inner = self.inner.off_peak_window_options(input);
+        self
+    }
+    /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
+    pub fn set_off_peak_window_options(
+        mut self,
+        input: std::option::Option<crate::types::OffPeakWindowOptions>,
+    ) -> Self {
+        self.inner = self.inner.set_off_peak_window_options(input);
+        self
+    }
+    /// <p>Software update options for the domain.</p>
+    pub fn software_update_options(mut self, input: crate::types::SoftwareUpdateOptions) -> Self {
+        self.inner = self.inner.software_update_options(input);
+        self
+    }
+    /// <p>Software update options for the domain.</p>
+    pub fn set_software_update_options(
+        mut self,
+        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+    ) -> Self {
+        self.inner = self.inner.set_software_update_options(input);
+        self
+    }
 }

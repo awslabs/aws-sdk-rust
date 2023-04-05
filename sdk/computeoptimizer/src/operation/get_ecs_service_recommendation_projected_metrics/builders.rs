@@ -56,14 +56,14 @@ impl GetECSServiceRecommendationProjectedMetricsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_arn(input.into());
         self
     }
-    /// <p> The ARN that identifies the ECS service. </p>
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {

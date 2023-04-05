@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCalculationExecutionCodeOutput {
-    /// <p>A pre-signed URL to the code that executed the calculation.</p>
+    /// <p>The unencrypted code that was executed for the calculation.</p>
     #[doc(hidden)]
     pub code_block: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCalculationExecutionCodeOutput {
-    /// <p>A pre-signed URL to the code that executed the calculation.</p>
+    /// <p>The unencrypted code that was executed for the calculation.</p>
     pub fn code_block(&self) -> std::option::Option<&str> {
         self.code_block.as_deref()
     }
@@ -34,12 +34,12 @@ pub struct GetCalculationExecutionCodeOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetCalculationExecutionCodeOutputBuilder {
-    /// <p>A pre-signed URL to the code that executed the calculation.</p>
+    /// <p>The unencrypted code that was executed for the calculation.</p>
     pub fn code_block(mut self, input: impl Into<std::string::String>) -> Self {
         self.code_block = Some(input.into());
         self
     }
-    /// <p>A pre-signed URL to the code that executed the calculation.</p>
+    /// <p>The unencrypted code that was executed for the calculation.</p>
     pub fn set_code_block(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.code_block = input;
         self

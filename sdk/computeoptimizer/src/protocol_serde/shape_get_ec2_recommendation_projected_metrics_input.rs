@@ -9,30 +9,30 @@ pub fn ser_get_ec2_recommendation_projected_metrics_input(
     if let Some(var_2) = &input.stat {
         object.key("stat").string(var_2.as_str());
     }
-    {
+    if let Some(var_3) = &input.period {
         object.key("period").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.period).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.start_time {
+    if let Some(var_4) = &input.start_time {
         object
             .key("startTime")
-            .date_time(var_3, aws_smithy_types::date_time::Format::EpochSeconds)?;
-    }
-    if let Some(var_4) = &input.end_time {
-        object
-            .key("endTime")
             .date_time(var_4, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.recommendation_preferences {
+    if let Some(var_5) = &input.end_time {
+        object
+            .key("endTime")
+            .date_time(var_5, aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
+    if let Some(var_6) = &input.recommendation_preferences {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("recommendationPreferences").start_object();
+        let mut object_7 = object.key("recommendationPreferences").start_object();
         crate::protocol_serde::shape_recommendation_preferences::ser_recommendation_preferences(
-            &mut object_6,
-            var_5,
+            &mut object_7,
+            var_6,
         )?;
-        object_6.finish();
+        object_7.finish();
     }
     Ok(())
 }

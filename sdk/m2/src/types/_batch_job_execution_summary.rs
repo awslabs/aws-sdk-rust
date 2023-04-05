@@ -28,6 +28,12 @@ pub struct BatchJobExecutionSummary {
     /// <p>The timestamp when this batch job execution ended.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p></p>
+    #[doc(hidden)]
+    pub return_code: std::option::Option<std::string::String>,
+    /// <p>Identifies a specific batch job.</p>
+    #[doc(hidden)]
+    pub batch_job_identifier: std::option::Option<crate::types::BatchJobIdentifier>,
 }
 impl BatchJobExecutionSummary {
     /// <p>The unique identifier of this execution of the batch job.</p>
@@ -62,6 +68,14 @@ impl BatchJobExecutionSummary {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
+    /// <p></p>
+    pub fn return_code(&self) -> std::option::Option<&str> {
+        self.return_code.as_deref()
+    }
+    /// <p>Identifies a specific batch job.</p>
+    pub fn batch_job_identifier(&self) -> std::option::Option<&crate::types::BatchJobIdentifier> {
+        self.batch_job_identifier.as_ref()
+    }
 }
 impl BatchJobExecutionSummary {
     /// Creates a new builder-style object to manufacture [`BatchJobExecutionSummary`](crate::types::BatchJobExecutionSummary).
@@ -82,6 +96,8 @@ pub struct BatchJobExecutionSummaryBuilder {
     pub(crate) status: std::option::Option<crate::types::BatchJobExecutionStatus>,
     pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) return_code: std::option::Option<std::string::String>,
+    pub(crate) batch_job_identifier: std::option::Option<crate::types::BatchJobIdentifier>,
 }
 impl BatchJobExecutionSummaryBuilder {
     /// <p>The unique identifier of this execution of the batch job.</p>
@@ -170,6 +186,29 @@ impl BatchJobExecutionSummaryBuilder {
         self.end_time = input;
         self
     }
+    /// <p></p>
+    pub fn return_code(mut self, input: impl Into<std::string::String>) -> Self {
+        self.return_code = Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_return_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.return_code = input;
+        self
+    }
+    /// <p>Identifies a specific batch job.</p>
+    pub fn batch_job_identifier(mut self, input: crate::types::BatchJobIdentifier) -> Self {
+        self.batch_job_identifier = Some(input);
+        self
+    }
+    /// <p>Identifies a specific batch job.</p>
+    pub fn set_batch_job_identifier(
+        mut self,
+        input: std::option::Option<crate::types::BatchJobIdentifier>,
+    ) -> Self {
+        self.batch_job_identifier = input;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchJobExecutionSummary`](crate::types::BatchJobExecutionSummary).
     pub fn build(self) -> crate::types::BatchJobExecutionSummary {
         crate::types::BatchJobExecutionSummary {
@@ -181,6 +220,8 @@ impl BatchJobExecutionSummaryBuilder {
             status: self.status,
             start_time: self.start_time,
             end_time: self.end_time,
+            return_code: self.return_code,
+            batch_job_identifier: self.batch_job_identifier,
         }
     }
 }

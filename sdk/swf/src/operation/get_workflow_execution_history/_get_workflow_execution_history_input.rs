@@ -15,10 +15,10 @@ pub struct GetWorkflowExecutionHistoryInput {
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     #[doc(hidden)]
-    pub maximum_page_size: i32,
+    pub maximum_page_size: std::option::Option<i32>,
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
     #[doc(hidden)]
-    pub reverse_order: bool,
+    pub reverse_order: std::option::Option<bool>,
 }
 impl GetWorkflowExecutionHistoryInput {
     /// <p>The name of the domain containing the workflow execution.</p>
@@ -35,11 +35,11 @@ impl GetWorkflowExecutionHistoryInput {
         self.next_page_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
-    pub fn maximum_page_size(&self) -> i32 {
+    pub fn maximum_page_size(&self) -> std::option::Option<i32> {
         self.maximum_page_size
     }
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
-    pub fn reverse_order(&self) -> bool {
+    pub fn reverse_order(&self) -> std::option::Option<bool> {
         self.reverse_order
     }
 }
@@ -128,8 +128,8 @@ impl GetWorkflowExecutionHistoryInputBuilder {
                 domain: self.domain,
                 execution: self.execution,
                 next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
+                maximum_page_size: self.maximum_page_size,
+                reverse_order: self.reverse_order,
             },
         )
     }

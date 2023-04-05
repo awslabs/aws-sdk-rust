@@ -171,10 +171,12 @@ pub type CreateSecurityPolicyErrorKind = CreateSecurityPolicyError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSecurityPolicyError {
-    /// <p>When creating a collection, thrown when a collection with the same name already exists or is being created. When deleting a collection, thrown when the collection is not in the ACTIVE or FAILED state.</p>
+    /// <p>When creating a resource, thrown when a resource with the same name already exists or is being created. When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Thrown when an error internal to the service occurs while processing a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>Thrown when you attempt to create more resources than the service allows based on service quotas.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Thrown when the HTTP request contains invalid input or is missing required input.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -197,6 +199,7 @@ impl std::fmt::Display for CreateSecurityPolicyError {
         match self {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -209,6 +212,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateSecurityP
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ServiceQuotaExceededException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ValidationException(_inner) => {
@@ -263,6 +269,7 @@ impl CreateSecurityPolicyError {
         match self {
             Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
+            Self::ServiceQuotaExceededException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -275,6 +282,10 @@ impl CreateSecurityPolicyError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
     }
+    /// Returns `true` if the error kind is `CreateSecurityPolicyError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
     /// Returns `true` if the error kind is `CreateSecurityPolicyError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -285,6 +296,7 @@ impl std::error::Error for CreateSecurityPolicyError {
         match self {
             Self::ConflictException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }

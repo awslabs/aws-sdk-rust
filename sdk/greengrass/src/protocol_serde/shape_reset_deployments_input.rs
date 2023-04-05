@@ -3,8 +3,8 @@ pub fn ser_reset_deployments_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reset_deployments::ResetDeploymentsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.force {
-        object.key("Force").boolean(input.force);
+    if let Some(var_1) = &input.force {
+        object.key("Force").boolean(*var_1);
     }
     Ok(())
 }

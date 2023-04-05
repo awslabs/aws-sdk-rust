@@ -3,11 +3,11 @@ pub fn ser_get_object_attributes_headers(
     input: &crate::operation::get_object_attributes::GetObjectAttributesInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
-    if input.max_parts != 0 {
-        let mut encoder = aws_smithy_types::primitive::Encoder::from(input.max_parts);
-        let formatted_1 = encoder.encode();
-        if !formatted_1.is_empty() {
-            let header_value = formatted_1;
+    if let Some(inner_1) = &input.max_parts {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_1);
+        let formatted_2 = encoder.encode();
+        if !formatted_2.is_empty() {
+            let header_value = formatted_2;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "max_parts",
@@ -20,10 +20,10 @@ pub fn ser_get_object_attributes_headers(
             builder = builder.header("x-amz-max-parts", header_value);
         }
     }
-    if let Some(inner_2) = &input.part_number_marker {
-        let formatted_3 = inner_2.as_str();
-        if !formatted_3.is_empty() {
-            let header_value = formatted_3;
+    if let Some(inner_3) = &input.part_number_marker {
+        let formatted_4 = inner_3.as_str();
+        if !formatted_4.is_empty() {
+            let header_value = formatted_4;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "part_number_marker",
@@ -36,10 +36,10 @@ pub fn ser_get_object_attributes_headers(
             builder = builder.header("x-amz-part-number-marker", header_value);
         }
     }
-    if let Some(inner_4) = &input.sse_customer_algorithm {
-        let formatted_5 = inner_4.as_str();
-        if !formatted_5.is_empty() {
-            let header_value = formatted_5;
+    if let Some(inner_5) = &input.sse_customer_algorithm {
+        let formatted_6 = inner_5.as_str();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_algorithm",
@@ -55,10 +55,10 @@ pub fn ser_get_object_attributes_headers(
             );
         }
     }
-    if let Some(inner_6) = &input.sse_customer_key {
-        let formatted_7 = inner_6.as_str();
-        if !formatted_7.is_empty() {
-            let header_value = formatted_7;
+    if let Some(inner_7) = &input.sse_customer_key {
+        let formatted_8 = inner_7.as_str();
+        if !formatted_8.is_empty() {
+            let header_value = formatted_8;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key",
@@ -71,10 +71,10 @@ pub fn ser_get_object_attributes_headers(
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
-    if let Some(inner_8) = &input.sse_customer_key_md5 {
-        let formatted_9 = inner_8.as_str();
-        if !formatted_9.is_empty() {
-            let header_value = formatted_9;
+    if let Some(inner_9) = &input.sse_customer_key_md5 {
+        let formatted_10 = inner_9.as_str();
+        if !formatted_10.is_empty() {
+            let header_value = formatted_10;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key_md5",
@@ -90,10 +90,10 @@ pub fn ser_get_object_attributes_headers(
             );
         }
     }
-    if let Some(inner_10) = &input.request_payer {
-        let formatted_11 = inner_10.as_str();
-        if !formatted_11.is_empty() {
-            let header_value = formatted_11;
+    if let Some(inner_11) = &input.request_payer {
+        let formatted_12 = inner_11.as_str();
+        if !formatted_12.is_empty() {
+            let header_value = formatted_12;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
@@ -106,10 +106,10 @@ pub fn ser_get_object_attributes_headers(
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
-    if let Some(inner_12) = &input.expected_bucket_owner {
-        let formatted_13 = inner_12.as_str();
-        if !formatted_13.is_empty() {
-            let header_value = formatted_13;
+    if let Some(inner_13) = &input.expected_bucket_owner {
+        let formatted_14 = inner_13.as_str();
+        if !formatted_14.is_empty() {
+            let header_value = formatted_14;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
@@ -122,11 +122,11 @@ pub fn ser_get_object_attributes_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
-    if let Some(inner_14) = &input.object_attributes {
-        for inner_15 in inner_14 {
-            let formatted_16 = aws_smithy_http::header::quote_header_value(inner_15.as_str());
-            if !formatted_16.is_empty() {
-                let header_value = formatted_16;
+    if let Some(inner_15) = &input.object_attributes {
+        for inner_16 in inner_15 {
+            let formatted_17 = aws_smithy_http::header::quote_header_value(inner_16.as_str());
+            if !formatted_17.is_empty() {
+                let header_value = formatted_17;
                 let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                     aws_smithy_http::operation::error::BuildError::invalid_field(
                         "object_attributes",
@@ -274,7 +274,7 @@ pub fn de_get_object_attributes(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ETag") /* ETag com.amazonaws.s3.synthetic#GetObjectAttributesOutput$ETag */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -283,21 +283,21 @@ pub fn de_get_object_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_e_tag(var_17);
+                builder = builder.set_e_tag(var_18);
             }
             ,
             s if s.matches("Checksum") /* Checksum com.amazonaws.s3.synthetic#GetObjectAttributesOutput$Checksum */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_checksum::de_checksum(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_checksum(var_18);
+                builder = builder.set_checksum(var_19);
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3.synthetic#GetObjectAttributesOutput$StorageClass */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                         Result::<crate::types::StorageClass, aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::StorageClass::from(
@@ -307,11 +307,11 @@ pub fn de_get_object_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_storage_class(var_19);
+                builder = builder.set_storage_class(var_20);
             }
             ,
             s if s.matches("ObjectSize") /* ObjectSize com.amazonaws.s3.synthetic#GetObjectAttributesOutput$ObjectSize */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -322,17 +322,17 @@ pub fn de_get_object_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_object_size(var_20);
+                builder = builder.set_object_size(var_21);
             }
             ,
             s if s.matches("ObjectParts") /* ObjectParts com.amazonaws.s3.synthetic#GetObjectAttributesOutput$ObjectParts */ =>  {
-                let var_21 =
+                let var_22 =
                     Some(
                         crate::protocol_serde::shape_get_object_attributes_parts::de_get_object_attributes_parts(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_object_parts(var_21);
+                builder = builder.set_object_parts(var_22);
             }
             ,
             _ => {}

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSearchSuggestions`](crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource(ResourceType)`](crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder::resource) / [`set_resource(Option<ResourceType>)`](crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder::set_resource): <p>The name of the Amazon SageMaker resource to search for.</p>
+    ///   - [`resource(ResourceType)`](crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder::resource) / [`set_resource(Option<ResourceType>)`](crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder::set_resource): <p>The name of the SageMaker resource to search for.</p>
     ///   - [`suggestion_query(SuggestionQuery)`](crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder::suggestion_query) / [`set_suggestion_query(Option<SuggestionQuery>)`](crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder::set_suggestion_query): <p>Limits the property names that are included in the response.</p>
     /// - On success, responds with [`GetSearchSuggestionsOutput`](crate::operation::get_search_suggestions::GetSearchSuggestionsOutput) with field(s):
     ///   - [`property_name_suggestions(Option<Vec<PropertyNameSuggestion>>)`](crate::operation::get_search_suggestions::GetSearchSuggestionsOutput::property_name_suggestions): <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>

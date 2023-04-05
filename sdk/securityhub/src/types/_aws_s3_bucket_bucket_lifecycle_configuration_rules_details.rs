@@ -8,7 +8,7 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesDetails  {
     #[doc(hidden)]
     pub abort_incomplete_multipart_upload: std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails>,
     /// <p>The date when objects are moved or deleted.</p> 
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub expiration_date: std::option::Option<std::string::String>,
     /// <p>The length in days of the lifetime for objects that are subject to the rule.</p>
@@ -46,7 +46,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
         self.abort_incomplete_multipart_upload.as_ref()
     }
     /// <p>The date when objects are moved or deleted.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn expiration_date(&self) -> std::option::Option<&str> {
         self.expiration_date.as_deref()
     }
@@ -138,13 +138,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
         self
     }
     /// <p>The date when objects are moved or deleted.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn expiration_date(mut self, input: impl Into<std::string::String>) -> Self {
         self.expiration_date = Some(input.into());
         self
     }
     /// <p>The date when objects are moved or deleted.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_expiration_date(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.expiration_date = input;
         self

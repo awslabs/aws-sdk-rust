@@ -17,6 +17,7 @@
 ///     LifeCycleState::Disconnected => { /* ... */ },
 ///     LifeCycleState::Discovered => { /* ... */ },
 ///     LifeCycleState::NotReady => { /* ... */ },
+///     LifeCycleState::PendingInstallation => { /* ... */ },
 ///     LifeCycleState::ReadyForCutover => { /* ... */ },
 ///     LifeCycleState::ReadyForTest => { /* ... */ },
 ///     LifeCycleState::Stopped => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum LifeCycleState {
     #[allow(missing_docs)] // documentation missing in model
     NotReady,
     #[allow(missing_docs)] // documentation missing in model
+    PendingInstallation,
+    #[allow(missing_docs)] // documentation missing in model
     ReadyForCutover,
     #[allow(missing_docs)] // documentation missing in model
     ReadyForTest,
@@ -83,6 +86,7 @@ impl std::convert::From<&str> for LifeCycleState {
             "DISCONNECTED" => LifeCycleState::Disconnected,
             "DISCOVERED" => LifeCycleState::Discovered,
             "NOT_READY" => LifeCycleState::NotReady,
+            "PENDING_INSTALLATION" => LifeCycleState::PendingInstallation,
             "READY_FOR_CUTOVER" => LifeCycleState::ReadyForCutover,
             "READY_FOR_TEST" => LifeCycleState::ReadyForTest,
             "STOPPED" => LifeCycleState::Stopped,
@@ -109,6 +113,7 @@ impl LifeCycleState {
             LifeCycleState::Disconnected => "DISCONNECTED",
             LifeCycleState::Discovered => "DISCOVERED",
             LifeCycleState::NotReady => "NOT_READY",
+            LifeCycleState::PendingInstallation => "PENDING_INSTALLATION",
             LifeCycleState::ReadyForCutover => "READY_FOR_CUTOVER",
             LifeCycleState::ReadyForTest => "READY_FOR_TEST",
             LifeCycleState::Stopped => "STOPPED",
@@ -124,6 +129,7 @@ impl LifeCycleState {
             "DISCONNECTED",
             "DISCOVERED",
             "NOT_READY",
+            "PENDING_INSTALLATION",
             "READY_FOR_CUTOVER",
             "READY_FOR_TEST",
             "STOPPED",

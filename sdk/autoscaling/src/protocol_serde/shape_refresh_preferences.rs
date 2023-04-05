@@ -47,6 +47,21 @@ pub fn ser_refresh_preferences(
     if let Some(var_13) = &input.skip_matching {
         scope_12.boolean(*var_13);
     }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("AutoRollback");
+    if let Some(var_15) = &input.auto_rollback {
+        scope_14.boolean(*var_15);
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("ScaleInProtectedInstances");
+    if let Some(var_17) = &input.scale_in_protected_instances {
+        scope_16.string(var_17.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("StandbyInstances");
+    if let Some(var_19) = &input.standby_instances {
+        scope_18.string(var_19.as_str());
+    }
     Ok(())
 }
 
@@ -58,7 +73,7 @@ pub fn de_refresh_preferences(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MinHealthyPercentage") /* MinHealthyPercentage com.amazonaws.autoscaling#RefreshPreferences$MinHealthyPercentage */ =>  {
-                let var_14 =
+                let var_20 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -69,11 +84,11 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_min_healthy_percentage(var_14);
+                builder = builder.set_min_healthy_percentage(var_20);
             }
             ,
             s if s.matches("InstanceWarmup") /* InstanceWarmup com.amazonaws.autoscaling#RefreshPreferences$InstanceWarmup */ =>  {
-                let var_15 =
+                let var_21 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -84,21 +99,21 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_instance_warmup(var_15);
+                builder = builder.set_instance_warmup(var_21);
             }
             ,
             s if s.matches("CheckpointPercentages") /* CheckpointPercentages com.amazonaws.autoscaling#RefreshPreferences$CheckpointPercentages */ =>  {
-                let var_16 =
+                let var_22 =
                     Some(
                         crate::protocol_serde::shape_checkpoint_percentages::de_checkpoint_percentages(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_checkpoint_percentages(var_16);
+                builder = builder.set_checkpoint_percentages(var_22);
             }
             ,
             s if s.matches("CheckpointDelay") /* CheckpointDelay com.amazonaws.autoscaling#RefreshPreferences$CheckpointDelay */ =>  {
-                let var_17 =
+                let var_23 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -109,11 +124,11 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_checkpoint_delay(var_17);
+                builder = builder.set_checkpoint_delay(var_23);
             }
             ,
             s if s.matches("SkipMatching") /* SkipMatching com.amazonaws.autoscaling#RefreshPreferences$SkipMatching */ =>  {
-                let var_18 =
+                let var_24 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -124,7 +139,50 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_skip_matching(var_18);
+                builder = builder.set_skip_matching(var_24);
+            }
+            ,
+            s if s.matches("AutoRollback") /* AutoRollback com.amazonaws.autoscaling#RefreshPreferences$AutoRollback */ =>  {
+                let var_25 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.autoscaling#AutoRollback`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_auto_rollback(var_25);
+            }
+            ,
+            s if s.matches("ScaleInProtectedInstances") /* ScaleInProtectedInstances com.amazonaws.autoscaling#RefreshPreferences$ScaleInProtectedInstances */ =>  {
+                let var_26 =
+                    Some(
+                        Result::<crate::types::ScaleInProtectedInstances, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ScaleInProtectedInstances::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_scale_in_protected_instances(var_26);
+            }
+            ,
+            s if s.matches("StandbyInstances") /* StandbyInstances com.amazonaws.autoscaling#RefreshPreferences$StandbyInstances */ =>  {
+                let var_27 =
+                    Some(
+                        Result::<crate::types::StandbyInstances, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StandbyInstances::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_standby_instances(var_27);
             }
             ,
             _ => {}

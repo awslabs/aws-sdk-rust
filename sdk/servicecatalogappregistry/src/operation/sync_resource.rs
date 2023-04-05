@@ -197,6 +197,10 @@ pub enum SyncResourceError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p> The maximum number of API requests has been exceeded. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>The request has invalid or missing parameters.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -218,6 +222,8 @@ impl std::fmt::Display for SyncResourceError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -232,6 +238,12 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SyncResourceErr
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ResourceNotFoundException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ThrottlingException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ValidationException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -282,6 +294,8 @@ impl SyncResourceError {
             Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
+            Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -297,6 +311,14 @@ impl SyncResourceError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `SyncResourceError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `SyncResourceError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl std::error::Error for SyncResourceError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
@@ -304,6 +326,8 @@ impl std::error::Error for SyncResourceError {
             Self::ConflictException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
+            Self::ThrottlingException(_inner) => Some(_inner),
+            Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

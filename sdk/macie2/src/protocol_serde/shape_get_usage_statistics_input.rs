@@ -18,26 +18,26 @@ pub fn ser_get_usage_statistics_input(
         }
         array_2.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_5) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("nextToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("nextToken").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.sort_by {
+    if let Some(var_7) = &input.sort_by {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("sortBy").start_object();
+        let mut object_8 = object.key("sortBy").start_object();
         crate::protocol_serde::shape_usage_statistics_sort_by::ser_usage_statistics_sort_by(
-            &mut object_7,
-            var_6,
+            &mut object_8,
+            var_7,
         )?;
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_8) = &input.time_range {
-        object.key("timeRange").string(var_8.as_str());
+    if let Some(var_9) = &input.time_range {
+        object.key("timeRange").string(var_9.as_str());
     }
     Ok(())
 }

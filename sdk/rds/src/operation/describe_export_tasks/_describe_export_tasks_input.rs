@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExportTasksInput {
-    /// <p>The identifier of the snapshot export task to be described.</p>
+    /// <p>The identifier of the snapshot or cluster export task to be described.</p>
     #[doc(hidden)]
     pub export_task_identifier: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
-    /// <p>Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
+    /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
     /// <p>Supported filters include the following:</p>
     /// <ul>
-    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot export task.</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p> </li>
-    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li>
+    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.</p> </li>
+    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.</p> </li>
+    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p> </li>
     /// <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>
     /// <ul>
     /// <li> <p> <code>canceled</code> </p> </li>
@@ -40,20 +40,20 @@ pub struct DescribeExportTasksInput {
     pub source_type: std::option::Option<crate::types::ExportSourceType>,
 }
 impl DescribeExportTasksInput {
-    /// <p>The identifier of the snapshot export task to be described.</p>
+    /// <p>The identifier of the snapshot or cluster export task to be described.</p>
     pub fn export_task_identifier(&self) -> std::option::Option<&str> {
         self.export_task_identifier.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
-    /// <p>Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
+    /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
     /// <p>Supported filters include the following:</p>
     /// <ul>
-    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot export task.</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p> </li>
-    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li>
+    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.</p> </li>
+    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.</p> </li>
+    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p> </li>
     /// <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>
     /// <ul>
     /// <li> <p> <code>canceled</code> </p> </li>
@@ -103,12 +103,12 @@ pub struct DescribeExportTasksInputBuilder {
     pub(crate) source_type: std::option::Option<crate::types::ExportSourceType>,
 }
 impl DescribeExportTasksInputBuilder {
-    /// <p>The identifier of the snapshot export task to be described.</p>
+    /// <p>The identifier of the snapshot or cluster export task to be described.</p>
     pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.export_task_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier of the snapshot export task to be described.</p>
+    /// <p>The identifier of the snapshot or cluster export task to be described.</p>
     pub fn set_export_task_identifier(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -116,12 +116,12 @@ impl DescribeExportTasksInputBuilder {
         self.export_task_identifier = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
     pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.source_arn = input;
         self
@@ -130,12 +130,12 @@ impl DescribeExportTasksInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
+    /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
     /// <p>Supported filters include the following:</p>
     /// <ul>
-    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot export task.</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p> </li>
-    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li>
+    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.</p> </li>
+    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.</p> </li>
+    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p> </li>
     /// <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>
     /// <ul>
     /// <li> <p> <code>canceled</code> </p> </li>
@@ -152,12 +152,12 @@ impl DescribeExportTasksInputBuilder {
         self.filters = Some(v);
         self
     }
-    /// <p>Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
+    /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
     /// <p>Supported filters include the following:</p>
     /// <ul>
-    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot export task.</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p> </li>
-    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li>
+    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.</p> </li>
+    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.</p> </li>
+    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p> </li>
     /// <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>
     /// <ul>
     /// <li> <p> <code>canceled</code> </p> </li>

@@ -20,5 +20,8 @@ pub fn ser_update_endpoint_input(
             .key("DesiredDataAccessRoleArn")
             .string(var_4.as_str());
     }
+    if let Some(var_5) = &input.flywheel_arn {
+        object.key("FlywheelArn").string(var_5.as_str());
+    }
     Ok(())
 }

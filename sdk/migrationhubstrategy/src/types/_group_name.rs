@@ -13,6 +13,7 @@
 /// # let groupname = unimplemented!();
 /// match groupname {
 ///     GroupName::ExternalId => { /* ... */ },
+///     GroupName::ExternalSourceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@
 pub enum GroupName {
     #[allow(missing_docs)] // documentation missing in model
     ExternalId,
+    #[allow(missing_docs)] // documentation missing in model
+    ExternalSourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +58,7 @@ impl std::convert::From<&str> for GroupName {
     fn from(s: &str) -> Self {
         match s {
             "ExternalId" => GroupName::ExternalId,
+            "ExternalSourceType" => GroupName::ExternalSourceType,
             other => GroupName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl GroupName {
     pub fn as_str(&self) -> &str {
         match self {
             GroupName::ExternalId => "ExternalId",
+            GroupName::ExternalSourceType => "ExternalSourceType",
             GroupName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ExternalId"]
+        &["ExternalId", "ExternalSourceType"]
     }
 }
 impl AsRef<str> for GroupName {

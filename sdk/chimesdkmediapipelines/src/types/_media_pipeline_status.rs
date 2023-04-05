@@ -15,6 +15,7 @@
 ///     MediaPipelineStatus::Failed => { /* ... */ },
 ///     MediaPipelineStatus::InProgress => { /* ... */ },
 ///     MediaPipelineStatus::Initializing => { /* ... */ },
+///     MediaPipelineStatus::Paused => { /* ... */ },
 ///     MediaPipelineStatus::Stopped => { /* ... */ },
 ///     MediaPipelineStatus::Stopping => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,6 +58,8 @@ pub enum MediaPipelineStatus {
     #[allow(missing_docs)] // documentation missing in model
     Initializing,
     #[allow(missing_docs)] // documentation missing in model
+    Paused,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
@@ -69,6 +72,7 @@ impl std::convert::From<&str> for MediaPipelineStatus {
             "Failed" => MediaPipelineStatus::Failed,
             "InProgress" => MediaPipelineStatus::InProgress,
             "Initializing" => MediaPipelineStatus::Initializing,
+            "Paused" => MediaPipelineStatus::Paused,
             "Stopped" => MediaPipelineStatus::Stopped,
             "Stopping" => MediaPipelineStatus::Stopping,
             other => MediaPipelineStatus::Unknown(crate::primitives::UnknownVariantValue(
@@ -91,6 +95,7 @@ impl MediaPipelineStatus {
             MediaPipelineStatus::Failed => "Failed",
             MediaPipelineStatus::InProgress => "InProgress",
             MediaPipelineStatus::Initializing => "Initializing",
+            MediaPipelineStatus::Paused => "Paused",
             MediaPipelineStatus::Stopped => "Stopped",
             MediaPipelineStatus::Stopping => "Stopping",
             MediaPipelineStatus::Unknown(value) => value.as_str(),
@@ -102,6 +107,7 @@ impl MediaPipelineStatus {
             "Failed",
             "InProgress",
             "Initializing",
+            "Paused",
             "Stopped",
             "Stopping",
         ]

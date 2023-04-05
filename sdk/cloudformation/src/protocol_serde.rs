@@ -439,6 +439,8 @@ pub(crate) mod shape_physical_resource_id_context;
 
 pub(crate) mod shape_property_differences;
 
+pub(crate) mod shape_region_list;
+
 pub(crate) mod shape_required_activated_type;
 
 pub(crate) mod shape_resource_identifier_summary;
@@ -494,8 +496,6 @@ pub(crate) mod shape_parameter_constraints;
 pub(crate) mod shape_physical_resource_id_context_key_value_pair;
 
 pub(crate) mod shape_property_difference;
-
-pub(crate) mod shape_region_list;
 
 pub(crate) mod shape_resource_change;
 

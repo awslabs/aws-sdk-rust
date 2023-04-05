@@ -6,6 +6,7 @@ pub use crate::operation::update_member_detectors::_update_member_detectors_inpu
 /// Fluent builder constructing a request to `UpdateMemberDetectors`.
 ///
 /// <p>Contains information on member accounts to be updated.</p>
+/// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMemberDetectorsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -97,16 +98,35 @@ impl UpdateMemberDetectorsFluentBuilder {
         self
     }
     /// <p>Describes which data sources will be updated.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurations) -> Self {
         self.inner = self.inner.data_sources(input);
         self
     }
     /// <p>Describes which data sources will be updated.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn set_data_sources(
         mut self,
         input: std::option::Option<crate::types::DataSourceConfigurations>,
     ) -> Self {
         self.inner = self.inner.set_data_sources(input);
+        self
+    }
+    /// Appends an item to `Features`.
+    ///
+    /// To override the contents of this collection use [`set_features`](Self::set_features).
+    ///
+    /// <p>A list of features that will be updated for the specified member accounts.</p>
+    pub fn features(mut self, input: crate::types::MemberFeaturesConfiguration) -> Self {
+        self.inner = self.inner.features(input);
+        self
+    }
+    /// <p>A list of features that will be updated for the specified member accounts.</p>
+    pub fn set_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MemberFeaturesConfiguration>>,
+    ) -> Self {
+        self.inner = self.inner.set_features(input);
         self
     }
 }

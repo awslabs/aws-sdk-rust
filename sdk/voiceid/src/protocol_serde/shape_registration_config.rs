@@ -14,6 +14,15 @@ pub fn ser_registration_config(
             aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.watchlist_ids {
+        let mut array_4 = object.key("WatchlistIds").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +72,11 @@ where
                                     )?
                                     .map(i32::try_from)
                                     .transpose()?,
+                                );
+                            }
+                            "WatchlistIds" => {
+                                builder = builder.set_watchlist_ids(
+                                    crate::protocol_serde::shape_registration_config_watchlist_ids::de_registration_config_watchlist_ids(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

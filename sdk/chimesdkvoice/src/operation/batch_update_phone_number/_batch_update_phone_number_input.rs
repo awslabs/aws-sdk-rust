@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Lists the phone numbers in the update request.</p>
     #[doc(hidden)]
     pub update_phone_number_request_items:
         std::option::Option<std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
 }
 impl BatchUpdatePhoneNumberInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Lists the phone numbers in the update request.</p>
     pub fn update_phone_number_request_items(
         &self,
     ) -> std::option::Option<&[crate::types::UpdatePhoneNumberRequestItem]> {
@@ -37,6 +37,7 @@ impl BatchUpdatePhoneNumberInputBuilder {
     ///
     /// To override the contents of this collection use [`set_update_phone_number_request_items`](Self::set_update_phone_number_request_items).
     ///
+    /// <p>Lists the phone numbers in the update request.</p>
     pub fn update_phone_number_request_items(
         mut self,
         input: crate::types::UpdatePhoneNumberRequestItem,
@@ -46,7 +47,7 @@ impl BatchUpdatePhoneNumberInputBuilder {
         self.update_phone_number_request_items = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Lists the phone numbers in the update request.</p>
     pub fn set_update_phone_number_request_items(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,

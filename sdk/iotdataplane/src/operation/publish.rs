@@ -69,36 +69,42 @@ impl PublishInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.qos != 0 {
-                    query.push_kv(
-                        "qos",
-                        aws_smithy_types::primitive::Encoder::from(_input.qos).encode(),
-                    );
-                }
-                if _input.retain {
-                    query.push_kv(
-                        "retain",
-                        aws_smithy_types::primitive::Encoder::from(_input.retain).encode(),
-                    );
-                }
-                if let Some(inner_2) = &_input.content_type {
-                    {
-                        query.push_kv("contentType", &aws_smithy_http::query::fmt_string(&inner_2));
-                    }
-                }
-                if let Some(inner_3) = &_input.response_topic {
-                    {
+                if let Some(inner_2) = &_input.qos {
+                    if *inner_2 != 0 {
                         query.push_kv(
-                            "responseTopic",
-                            &aws_smithy_http::query::fmt_string(&inner_3),
+                            "qos",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
                         );
                     }
                 }
-                if _input.message_expiry != 0 {
-                    query.push_kv(
-                        "messageExpiry",
-                        aws_smithy_types::primitive::Encoder::from(_input.message_expiry).encode(),
-                    );
+                if let Some(inner_3) = &_input.retain {
+                    if *inner_3 {
+                        query.push_kv(
+                            "retain",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_4) = &_input.content_type {
+                    {
+                        query.push_kv("contentType", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
+                }
+                if let Some(inner_5) = &_input.response_topic {
+                    {
+                        query.push_kv(
+                            "responseTopic",
+                            &aws_smithy_http::query::fmt_string(&inner_5),
+                        );
+                    }
+                }
+                if let Some(inner_6) = &_input.message_expiry {
+                    if *inner_6 != 0 {
+                        query.push_kv(
+                            "messageExpiry",
+                            aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

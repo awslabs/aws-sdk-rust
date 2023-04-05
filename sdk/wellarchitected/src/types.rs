@@ -113,6 +113,20 @@ pub use crate::types::_lens_review_report::LensReviewReport;
 
 pub use crate::types::_lens::Lens;
 
+pub use crate::types::_consolidated_report_metric::ConsolidatedReportMetric;
+
+pub use crate::types::_lens_metric::LensMetric;
+
+pub use crate::types::_pillar_metric::PillarMetric;
+
+pub use crate::types::_question_metric::QuestionMetric;
+
+pub use crate::types::_best_practice::BestPractice;
+
+pub use crate::types::_metric_type::MetricType;
+
+pub use crate::types::_report_format::ReportFormat;
+
 mod _additional_resource_type;
 
 mod _additional_resources;
@@ -122,6 +136,8 @@ mod _answer;
 mod _answer_reason;
 
 mod _answer_summary;
+
+mod _best_practice;
 
 mod _check_detail;
 
@@ -149,6 +165,8 @@ mod _choice_status;
 
 mod _choice_update;
 
+mod _consolidated_report_metric;
+
 mod _difference_status;
 
 mod _import_lens_status;
@@ -156,6 +174,8 @@ mod _import_lens_status;
 mod _improvement_summary;
 
 mod _lens;
+
+mod _lens_metric;
 
 mod _lens_review;
 
@@ -175,6 +195,8 @@ mod _lens_type;
 
 mod _lens_upgrade_summary;
 
+mod _metric_type;
+
 mod _milestone;
 
 mod _milestone_summary;
@@ -189,9 +211,15 @@ mod _permission_type;
 
 mod _pillar_difference;
 
+mod _pillar_metric;
+
 mod _pillar_review_summary;
 
 mod _question_difference;
+
+mod _question_metric;
+
+mod _report_format;
 
 mod _risk;
 

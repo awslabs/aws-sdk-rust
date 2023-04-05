@@ -11,7 +11,7 @@ pub struct UpdateTaskProtectionInput {
     pub tasks: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
     #[doc(hidden)]
-    pub protection_enabled: bool,
+    pub protection_enabled: std::option::Option<bool>,
     /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
     /// <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
     #[doc(hidden)]
@@ -27,7 +27,7 @@ impl UpdateTaskProtectionInput {
         self.tasks.as_deref()
     }
     /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
-    pub fn protection_enabled(&self) -> bool {
+    pub fn protection_enabled(&self) -> std::option::Option<bool> {
         self.protection_enabled
     }
     /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
@@ -116,7 +116,7 @@ impl UpdateTaskProtectionInputBuilder {
             crate::operation::update_task_protection::UpdateTaskProtectionInput {
                 cluster: self.cluster,
                 tasks: self.tasks,
-                protection_enabled: self.protection_enabled.unwrap_or_default(),
+                protection_enabled: self.protection_enabled,
                 expires_in_minutes: self.expires_in_minutes,
             },
         )

@@ -5,7 +5,7 @@ pub use crate::operation::analyze_id::_analyze_id_input::AnalyzeIdInputBuilder;
 
 /// Fluent builder constructing a request to `AnalyzeID`.
 ///
-/// <p>Analyzes identity documents for relevant information. This information is extracted and returned as <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted text.Unlike other Amazon Textract operations, <code>AnalyzeID</code> doesn't return any Geometry data.</p>
+/// <p>Analyzes identity documents for relevant information. This information is extracted and returned as <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted text. Unlike other Amazon Textract operations, <code>AnalyzeID</code> doesn't return any Geometry data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AnalyzeIDFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

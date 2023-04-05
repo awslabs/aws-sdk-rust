@@ -11,7 +11,7 @@ pub struct UpdateBrokerCountInput {
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
     #[doc(hidden)]
-    pub target_number_of_broker_nodes: i32,
+    pub target_number_of_broker_nodes: std::option::Option<i32>,
 }
 impl UpdateBrokerCountInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -23,7 +23,7 @@ impl UpdateBrokerCountInput {
         self.current_version.as_deref()
     }
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
-    pub fn target_number_of_broker_nodes(&self) -> i32 {
+    pub fn target_number_of_broker_nodes(&self) -> std::option::Option<i32> {
         self.target_number_of_broker_nodes
     }
 }
@@ -85,9 +85,7 @@ impl UpdateBrokerCountInputBuilder {
             crate::operation::update_broker_count::UpdateBrokerCountInput {
                 cluster_arn: self.cluster_arn,
                 current_version: self.current_version,
-                target_number_of_broker_nodes: self
-                    .target_number_of_broker_nodes
-                    .unwrap_or_default(),
+                target_number_of_broker_nodes: self.target_number_of_broker_nodes,
             },
         )
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePositionInput {
-    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
@@ -11,7 +11,7 @@ pub struct GetResourcePositionInput {
     pub resource_type: std::option::Option<crate::types::PositionResourceType>,
 }
 impl GetResourcePositionInput {
-    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -37,12 +37,12 @@ pub struct GetResourcePositionInputBuilder {
     pub(crate) resource_type: std::option::Option<crate::types::PositionResourceType>,
 }
 impl GetResourcePositionInputBuilder {
-    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.resource_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
+    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     pub fn set_resource_identifier(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -200,9 +200,17 @@ pub mod customize;
 
 mod delete_alternate_contact;
 
+mod disable_region;
+
+mod enable_region;
+
 mod get_alternate_contact;
 
 mod get_contact_information;
+
+mod get_region_opt_status;
+
+mod list_regions;
 
 mod put_alternate_contact;
 

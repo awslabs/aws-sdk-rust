@@ -10,7 +10,7 @@ pub struct UpdateFindingsFilterInput {
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
-    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The criteria to use to filter findings.</p>
@@ -20,12 +20,12 @@ pub struct UpdateFindingsFilterInput {
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
-    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     #[doc(hidden)]
-    pub position: i32,
+    pub position: std::option::Option<i32>,
 }
 impl UpdateFindingsFilterInput {
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
@@ -37,7 +37,7 @@ impl UpdateFindingsFilterInput {
         self.client_token.as_deref()
     }
     /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
-    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -50,12 +50,12 @@ impl UpdateFindingsFilterInput {
         self.id.as_deref()
     }
     /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
-    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-    pub fn position(&self) -> i32 {
+    pub fn position(&self) -> std::option::Option<i32> {
         self.position
     }
 }
@@ -104,13 +104,13 @@ impl UpdateFindingsFilterInputBuilder {
         self
     }
     /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
-    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
     /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
-    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
         self
@@ -139,13 +139,13 @@ impl UpdateFindingsFilterInputBuilder {
         self
     }
     /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
-    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
     /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
-    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
@@ -175,7 +175,7 @@ impl UpdateFindingsFilterInputBuilder {
                 finding_criteria: self.finding_criteria,
                 id: self.id,
                 name: self.name,
-                position: self.position.unwrap_or_default(),
+                position: self.position,
             },
         )
     }

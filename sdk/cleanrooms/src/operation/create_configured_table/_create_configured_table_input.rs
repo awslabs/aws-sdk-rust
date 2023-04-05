@@ -18,6 +18,10 @@ pub struct CreateConfiguredTableInput {
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
     #[doc(hidden)]
     pub analysis_method: std::option::Option<crate::types::AnalysisMethod>,
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateConfiguredTableInput {
     /// <p>The name of the configured table.</p>
@@ -40,6 +44,13 @@ impl CreateConfiguredTableInput {
     pub fn analysis_method(&self) -> std::option::Option<&crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl CreateConfiguredTableInput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredTableInput`](crate::operation::create_configured_table::CreateConfiguredTableInput).
@@ -59,6 +70,8 @@ pub struct CreateConfiguredTableInputBuilder {
     pub(crate) table_reference: std::option::Option<crate::types::TableReference>,
     pub(crate) allowed_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) analysis_method: std::option::Option<crate::types::AnalysisMethod>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateConfiguredTableInputBuilder {
     /// <p>The name of the configured table.</p>
@@ -126,6 +139,31 @@ impl CreateConfiguredTableInputBuilder {
         self.analysis_method = input;
         self
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
+    }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateConfiguredTableInput`](crate::operation::create_configured_table::CreateConfiguredTableInput).
     pub fn build(
         self,
@@ -140,6 +178,7 @@ impl CreateConfiguredTableInputBuilder {
                 table_reference: self.table_reference,
                 allowed_columns: self.allowed_columns,
                 analysis_method: self.analysis_method,
+                tags: self.tags,
             },
         )
     }

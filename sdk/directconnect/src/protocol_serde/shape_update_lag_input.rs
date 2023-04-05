@@ -9,14 +9,14 @@ pub fn ser_update_lag_input(
     if let Some(var_2) = &input.lag_name {
         object.key("lagName").string(var_2.as_str());
     }
-    if input.minimum_links != 0 {
+    if let Some(var_3) = &input.minimum_links {
         object.key("minimumLinks").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.minimum_links).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.encryption_mode {
-        object.key("encryptionMode").string(var_3.as_str());
+    if let Some(var_4) = &input.encryption_mode {
+        object.key("encryptionMode").string(var_4.as_str());
     }
     Ok(())
 }

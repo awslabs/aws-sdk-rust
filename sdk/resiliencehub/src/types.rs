@@ -11,6 +11,16 @@ pub use crate::types::_resiliency_policy_tier::ResiliencyPolicyTier;
 
 pub use crate::types::_data_location_constraint::DataLocationConstraint;
 
+pub use crate::types::_physical_resource::PhysicalResource;
+
+pub use crate::types::_app_component::AppComponent;
+
+pub use crate::types::_physical_resource_id::PhysicalResourceId;
+
+pub use crate::types::_physical_identifier_type::PhysicalIdentifierType;
+
+pub use crate::types::_logical_resource_id::LogicalResourceId;
+
 pub use crate::types::_app::App;
 
 pub use crate::types::_app_assessment_schedule_type::AppAssessmentScheduleType;
@@ -43,12 +53,6 @@ pub use crate::types::_resource_resolution_status_type::ResourceResolutionStatus
 
 pub use crate::types::_unsupported_resource::UnsupportedResource;
 
-pub use crate::types::_physical_resource_id::PhysicalResourceId;
-
-pub use crate::types::_physical_identifier_type::PhysicalIdentifierType;
-
-pub use crate::types::_logical_resource_id::LogicalResourceId;
-
 pub use crate::types::_test_recommendation::TestRecommendation;
 
 pub use crate::types::_recommendation_item::RecommendationItem;
@@ -73,15 +77,17 @@ pub use crate::types::_s3_location::S3Location;
 
 pub use crate::types::_app_version_summary::AppVersionSummary;
 
-pub use crate::types::_physical_resource::PhysicalResource;
-
-pub use crate::types::_app_component::AppComponent;
-
 pub use crate::types::_resource_mapping::ResourceMapping;
 
 pub use crate::types::_resource_mapping_type::ResourceMappingType;
 
 pub use crate::types::_app_summary::AppSummary;
+
+pub use crate::types::_app_input_source::AppInputSource;
+
+pub use crate::types::_eks_source_cluster_namespace::EksSourceClusterNamespace;
+
+pub use crate::types::_terraform_source::TerraformSource;
 
 pub use crate::types::_component_recommendation::ComponentRecommendation;
 
@@ -103,9 +109,11 @@ pub use crate::types::_alarm_recommendation::AlarmRecommendation;
 
 pub use crate::types::_alarm_type::AlarmType;
 
-pub use crate::types::_terraform_source::TerraformSource;
+pub use crate::types::_eks_source::EksSource;
 
 pub use crate::types::_resource_import_status_type::ResourceImportStatusType;
+
+pub use crate::types::_resource_import_strategy_type::ResourceImportStrategyType;
 
 mod _alarm_recommendation;
 
@@ -124,6 +132,8 @@ mod _app_compliance_status_type;
 mod _app_component;
 
 mod _app_component_compliance;
+
+mod _app_input_source;
 
 mod _app_status_type;
 
@@ -152,6 +162,10 @@ mod _data_location_constraint;
 mod _disruption_compliance;
 
 mod _disruption_type;
+
+mod _eks_source;
+
+mod _eks_source_cluster_namespace;
 
 mod _estimated_cost_tier;
 
@@ -190,6 +204,8 @@ mod _resource_error;
 mod _resource_errors_details;
 
 mod _resource_import_status_type;
+
+mod _resource_import_strategy_type;
 
 mod _resource_mapping;
 

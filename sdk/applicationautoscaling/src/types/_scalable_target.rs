@@ -65,9 +65,12 @@ pub struct ScalableTarget {
     /// <p>The Unix timestamp for when the scalable target was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state. </p>
+    /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     #[doc(hidden)]
     pub suspended_state: std::option::Option<crate::types::SuspendedState>,
+    /// <p>The ARN of the scalable target.</p>
+    #[doc(hidden)]
+    pub scalable_target_arn: std::option::Option<std::string::String>,
 }
 impl ScalableTarget {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
@@ -138,9 +141,13 @@ impl ScalableTarget {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state. </p>
+    /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     pub fn suspended_state(&self) -> std::option::Option<&crate::types::SuspendedState> {
         self.suspended_state.as_ref()
+    }
+    /// <p>The ARN of the scalable target.</p>
+    pub fn scalable_target_arn(&self) -> std::option::Option<&str> {
+        self.scalable_target_arn.as_deref()
     }
 }
 impl ScalableTarget {
@@ -162,6 +169,7 @@ pub struct ScalableTargetBuilder {
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) suspended_state: std::option::Option<crate::types::SuspendedState>,
+    pub(crate) scalable_target_arn: std::option::Option<std::string::String>,
 }
 impl ScalableTargetBuilder {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
@@ -323,17 +331,30 @@ impl ScalableTargetBuilder {
         self.creation_time = input;
         self
     }
-    /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state. </p>
+    /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     pub fn suspended_state(mut self, input: crate::types::SuspendedState) -> Self {
         self.suspended_state = Some(input);
         self
     }
-    /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state. </p>
+    /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     pub fn set_suspended_state(
         mut self,
         input: std::option::Option<crate::types::SuspendedState>,
     ) -> Self {
         self.suspended_state = input;
+        self
+    }
+    /// <p>The ARN of the scalable target.</p>
+    pub fn scalable_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.scalable_target_arn = Some(input.into());
+        self
+    }
+    /// <p>The ARN of the scalable target.</p>
+    pub fn set_scalable_target_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.scalable_target_arn = input;
         self
     }
     /// Consumes the builder and constructs a [`ScalableTarget`](crate::types::ScalableTarget).
@@ -347,6 +368,7 @@ impl ScalableTargetBuilder {
             role_arn: self.role_arn,
             creation_time: self.creation_time,
             suspended_state: self.suspended_state,
+            scalable_target_arn: self.scalable_target_arn,
         }
     }
 }

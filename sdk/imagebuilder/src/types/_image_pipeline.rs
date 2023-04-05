@@ -16,7 +16,7 @@ pub struct ImagePipeline {
     /// <p>The platform of the image pipeline.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::types::Platform>,
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     #[doc(hidden)]
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the image recipe associated with this image pipeline.</p>
@@ -56,6 +56,9 @@ pub struct ImagePipeline {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Contains settings for vulnerability scans.</p>
+    #[doc(hidden)]
+    pub image_scanning_configuration: std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl ImagePipeline {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
@@ -74,7 +77,7 @@ impl ImagePipeline {
     pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
         self.platform.as_ref()
     }
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
         self.enhanced_image_metadata_enabled
     }
@@ -131,6 +134,12 @@ impl ImagePipeline {
     {
         self.tags.as_ref()
     }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn image_scanning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ImageScanningConfiguration> {
+        self.image_scanning_configuration.as_ref()
+    }
 }
 impl ImagePipeline {
     /// Creates a new builder-style object to manufacture [`ImagePipeline`](crate::types::ImagePipeline).
@@ -162,6 +171,8 @@ pub struct ImagePipelineBuilder {
     pub(crate) date_next_run: std::option::Option<std::string::String>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) image_scanning_configuration:
+        std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl ImagePipelineBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
@@ -204,12 +215,12 @@ impl ImagePipelineBuilder {
         self.platform = input;
         self
     }
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
         self.enhanced_image_metadata_enabled = Some(input);
         self
     }
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.enhanced_image_metadata_enabled = input;
         self
@@ -367,6 +378,22 @@ impl ImagePipelineBuilder {
         self.tags = input;
         self
     }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn image_scanning_configuration(
+        mut self,
+        input: crate::types::ImageScanningConfiguration,
+    ) -> Self {
+        self.image_scanning_configuration = Some(input);
+        self
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn set_image_scanning_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ImageScanningConfiguration>,
+    ) -> Self {
+        self.image_scanning_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ImagePipeline`](crate::types::ImagePipeline).
     pub fn build(self) -> crate::types::ImagePipeline {
         crate::types::ImagePipeline {
@@ -387,6 +414,7 @@ impl ImagePipelineBuilder {
             date_last_run: self.date_last_run,
             date_next_run: self.date_next_run,
             tags: self.tags,
+            image_scanning_configuration: self.image_scanning_configuration,
         }
     }
 }

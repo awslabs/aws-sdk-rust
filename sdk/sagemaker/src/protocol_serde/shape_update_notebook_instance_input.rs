@@ -15,63 +15,59 @@ pub fn ser_update_notebook_instance_input(
     if let Some(var_4) = &input.lifecycle_config_name {
         object.key("LifecycleConfigName").string(var_4.as_str());
     }
-    if input.disassociate_lifecycle_config {
-        object
-            .key("DisassociateLifecycleConfig")
-            .boolean(input.disassociate_lifecycle_config);
+    if let Some(var_5) = &input.disassociate_lifecycle_config {
+        object.key("DisassociateLifecycleConfig").boolean(*var_5);
     }
-    if let Some(var_5) = &input.volume_size_in_gb {
+    if let Some(var_6) = &input.volume_size_in_gb {
         object.key("VolumeSizeInGB").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.default_code_repository {
-        object.key("DefaultCodeRepository").string(var_6.as_str());
+    if let Some(var_7) = &input.default_code_repository {
+        object.key("DefaultCodeRepository").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.additional_code_repositories {
-        let mut array_8 = object.key("AdditionalCodeRepositories").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.additional_code_repositories {
+        let mut array_9 = object.key("AdditionalCodeRepositories").start_array();
+        for item_10 in var_8 {
             {
-                array_8.value().string(item_9.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.accelerator_types {
-        let mut array_11 = object.key("AcceleratorTypes").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.accelerator_types {
+        let mut array_12 = object.key("AcceleratorTypes").start_array();
+        for item_13 in var_11 {
             {
-                array_11.value().string(item_12.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if input.disassociate_accelerator_types {
-        object
-            .key("DisassociateAcceleratorTypes")
-            .boolean(input.disassociate_accelerator_types);
+    if let Some(var_14) = &input.disassociate_accelerator_types {
+        object.key("DisassociateAcceleratorTypes").boolean(*var_14);
     }
-    if input.disassociate_default_code_repository {
+    if let Some(var_15) = &input.disassociate_default_code_repository {
         object
             .key("DisassociateDefaultCodeRepository")
-            .boolean(input.disassociate_default_code_repository);
+            .boolean(*var_15);
     }
-    if input.disassociate_additional_code_repositories {
+    if let Some(var_16) = &input.disassociate_additional_code_repositories {
         object
             .key("DisassociateAdditionalCodeRepositories")
-            .boolean(input.disassociate_additional_code_repositories);
+            .boolean(*var_16);
     }
-    if let Some(var_13) = &input.root_access {
-        object.key("RootAccess").string(var_13.as_str());
+    if let Some(var_17) = &input.root_access {
+        object.key("RootAccess").string(var_17.as_str());
     }
-    if let Some(var_14) = &input.instance_metadata_service_configuration {
+    if let Some(var_18) = &input.instance_metadata_service_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object
+        let mut object_19 = object
             .key("InstanceMetadataServiceConfiguration")
             .start_object();
-        crate::protocol_serde::shape_instance_metadata_service_configuration::ser_instance_metadata_service_configuration(&mut object_15, var_14)?;
-        object_15.finish();
+        crate::protocol_serde::shape_instance_metadata_service_configuration::ser_instance_metadata_service_configuration(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

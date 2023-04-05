@@ -6,7 +6,7 @@ pub struct DeleteExportOutput {
     /// <p>The unique identifier of the deleted export.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
+    /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
     #[doc(hidden)]
     pub export_status: std::option::Option<crate::types::ExportStatus>,
     _request_id: Option<String>,
@@ -16,7 +16,7 @@ impl DeleteExportOutput {
     pub fn export_id(&self) -> std::option::Option<&str> {
         self.export_id.as_deref()
     }
-    /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
+    /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
     pub fn export_status(&self) -> std::option::Option<&crate::types::ExportStatus> {
         self.export_status.as_ref()
     }
@@ -52,12 +52,12 @@ impl DeleteExportOutputBuilder {
         self.export_id = input;
         self
     }
-    /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
+    /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
         self.export_status = Some(input);
         self
     }
-    /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
+    /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
     pub fn set_export_status(
         mut self,
         input: std::option::Option<crate::types::ExportStatus>,

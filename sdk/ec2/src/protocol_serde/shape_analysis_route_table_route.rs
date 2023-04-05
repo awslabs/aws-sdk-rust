@@ -149,6 +149,45 @@ pub fn de_analysis_route_table_route(
                 builder = builder.set_state(var_11);
             }
             ,
+            s if s.matches("carrierGatewayId") /* CarrierGatewayId com.amazonaws.ec2#AnalysisRouteTableRoute$CarrierGatewayId */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_carrier_gateway_id(var_12);
+            }
+            ,
+            s if s.matches("coreNetworkArn") /* CoreNetworkArn com.amazonaws.ec2#AnalysisRouteTableRoute$CoreNetworkArn */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_core_network_arn(var_13);
+            }
+            ,
+            s if s.matches("localGatewayId") /* LocalGatewayId com.amazonaws.ec2#AnalysisRouteTableRoute$LocalGatewayId */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_local_gateway_id(var_14);
+            }
+            ,
             _ => {}
         }
     }

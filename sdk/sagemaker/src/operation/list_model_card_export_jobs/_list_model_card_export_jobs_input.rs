@@ -8,7 +8,7 @@ pub struct ListModelCardExportJobsInput {
     pub model_card_name: std::option::Option<std::string::String>,
     /// <p>List export jobs for the model card with the specified version.</p>
     #[doc(hidden)]
-    pub model_card_version: i32,
+    pub model_card_version: std::option::Option<i32>,
     /// <p>Only list model card export jobs that were created after the time specified.</p>
     #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -40,7 +40,7 @@ impl ListModelCardExportJobsInput {
         self.model_card_name.as_deref()
     }
     /// <p>List export jobs for the model card with the specified version.</p>
-    pub fn model_card_version(&self) -> i32 {
+    pub fn model_card_version(&self) -> std::option::Option<i32> {
         self.model_card_version
     }
     /// <p>Only list model card export jobs that were created after the time specified.</p>
@@ -232,7 +232,7 @@ impl ListModelCardExportJobsInputBuilder {
         Ok(
             crate::operation::list_model_card_export_jobs::ListModelCardExportJobsInput {
                 model_card_name: self.model_card_name,
-                model_card_version: self.model_card_version.unwrap_or_default(),
+                model_card_version: self.model_card_version,
                 creation_time_after: self.creation_time_after,
                 creation_time_before: self.creation_time_before,
                 model_card_export_job_name_contains: self.model_card_export_job_name_contains,

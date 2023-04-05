@@ -9,14 +9,14 @@ pub fn ser_list_domains_input(
     if let Some(var_2) = &input.registration_status {
         object.key("registrationStatus").string(var_2.as_str());
     }
-    if input.maximum_page_size != 0 {
+    if let Some(var_3) = &input.maximum_page_size {
         object.key("maximumPageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_page_size).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.reverse_order {
-        object.key("reverseOrder").boolean(input.reverse_order);
+    if let Some(var_4) = &input.reverse_order {
+        object.key("reverseOrder").boolean(*var_4);
     }
     Ok(())
 }

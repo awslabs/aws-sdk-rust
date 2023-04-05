@@ -17,7 +17,7 @@ pub struct DescribeCasesInput {
     pub before_time: std::option::Option<std::string::String>,
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
     #[doc(hidden)]
-    pub include_resolved_cases: bool,
+    pub include_resolved_cases: std::option::Option<bool>,
     /// <p>A resumption point for pagination.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -49,7 +49,7 @@ impl DescribeCasesInput {
         self.before_time.as_deref()
     }
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
-    pub fn include_resolved_cases(&self) -> bool {
+    pub fn include_resolved_cases(&self) -> std::option::Option<bool> {
         self.include_resolved_cases
     }
     /// <p>A resumption point for pagination.</p>
@@ -202,7 +202,7 @@ impl DescribeCasesInputBuilder {
             display_id: self.display_id,
             after_time: self.after_time,
             before_time: self.before_time,
-            include_resolved_cases: self.include_resolved_cases.unwrap_or_default(),
+            include_resolved_cases: self.include_resolved_cases,
             next_token: self.next_token,
             max_results: self.max_results,
             language: self.language,

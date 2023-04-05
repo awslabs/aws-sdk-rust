@@ -11,7 +11,7 @@ pub use crate::operation::transact_get_items::_transact_get_items_input::Transac
 /// <li> <p>A conflicting operation is in the process of updating an item to be read.</p> </li>
 /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
 /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-/// <li> <p>The aggregate size of the items in the transaction cannot exceed 4 MB.</p> </li>
+/// <li> <p>The aggregate size of the items in the transaction exceeded 4 MB.</p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TransactGetItemsFluentBuilder {

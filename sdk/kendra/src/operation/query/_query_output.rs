@@ -23,6 +23,10 @@ pub struct QueryOutput {
     #[doc(hidden)]
     pub spell_corrected_queries:
         std::option::Option<std::vec::Vec<crate::types::SpellCorrectedQuery>>,
+    /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
+    #[doc(hidden)]
+    pub featured_results_items:
+        std::option::Option<std::vec::Vec<crate::types::FeaturedResultsItem>>,
     _request_id: Option<String>,
 }
 impl QueryOutput {
@@ -53,6 +57,12 @@ impl QueryOutput {
     ) -> std::option::Option<&[crate::types::SpellCorrectedQuery]> {
         self.spell_corrected_queries.as_deref()
     }
+    /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
+    pub fn featured_results_items(
+        &self,
+    ) -> std::option::Option<&[crate::types::FeaturedResultsItem]> {
+        self.featured_results_items.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for QueryOutput {
     fn request_id(&self) -> Option<&str> {
@@ -77,6 +87,8 @@ pub struct QueryOutputBuilder {
     pub(crate) warnings: std::option::Option<std::vec::Vec<crate::types::Warning>>,
     pub(crate) spell_corrected_queries:
         std::option::Option<std::vec::Vec<crate::types::SpellCorrectedQuery>>,
+    pub(crate) featured_results_items:
+        std::option::Option<std::vec::Vec<crate::types::FeaturedResultsItem>>,
     _request_id: Option<String>,
 }
 impl QueryOutputBuilder {
@@ -178,6 +190,25 @@ impl QueryOutputBuilder {
         self.spell_corrected_queries = input;
         self
     }
+    /// Appends an item to `featured_results_items`.
+    ///
+    /// To override the contents of this collection use [`set_featured_results_items`](Self::set_featured_results_items).
+    ///
+    /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
+    pub fn featured_results_items(mut self, input: crate::types::FeaturedResultsItem) -> Self {
+        let mut v = self.featured_results_items.unwrap_or_default();
+        v.push(input);
+        self.featured_results_items = Some(v);
+        self
+    }
+    /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
+    pub fn set_featured_results_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FeaturedResultsItem>>,
+    ) -> Self {
+        self.featured_results_items = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -196,6 +227,7 @@ impl QueryOutputBuilder {
             total_number_of_results: self.total_number_of_results,
             warnings: self.warnings,
             spell_corrected_queries: self.spell_corrected_queries,
+            featured_results_items: self.featured_results_items,
             _request_id: self._request_id,
         }
     }

@@ -11,7 +11,7 @@ pub struct GetEc2RecommendationProjectedMetricsInput {
     pub stat: std::option::Option<crate::types::MetricStatistic>,
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
     #[doc(hidden)]
-    pub period: i32,
+    pub period: std::option::Option<i32>,
     /// <p>The timestamp of the first projected metrics data point to return.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -32,7 +32,7 @@ impl GetEc2RecommendationProjectedMetricsInput {
         self.stat.as_ref()
     }
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
@@ -148,7 +148,6 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
                 stat: self.stat
                 ,
                 period: self.period
-                    .unwrap_or_default()
                 ,
                 start_time: self.start_time
                 ,

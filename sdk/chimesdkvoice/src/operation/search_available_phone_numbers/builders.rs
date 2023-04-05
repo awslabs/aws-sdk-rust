@@ -5,6 +5,7 @@ pub use crate::operation::search_available_phone_numbers::_search_available_phon
 
 /// Fluent builder constructing a request to `SearchAvailablePhoneNumbers`.
 ///
+/// <p>Searches the provisioned phone numbers in an organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -74,62 +75,62 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator{
         crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::new(self.handle, self.inner)
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
     pub fn area_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.area_code(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
     pub fn set_area_code(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_area_code(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
     pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.city(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
     pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_city(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
     pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.country(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
     pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_country(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.state(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
     pub fn toll_free_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.toll_free_prefix(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
     pub fn set_toll_free_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_toll_free_prefix(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.inner = self.inner.phone_number_type(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
     pub fn set_phone_number_type(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberType>,
@@ -137,22 +138,22 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self.inner = self.inner.set_phone_number_type(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self

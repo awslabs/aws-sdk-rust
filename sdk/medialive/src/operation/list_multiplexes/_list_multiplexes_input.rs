@@ -6,14 +6,14 @@
 pub struct ListMultiplexesInput {
     /// The maximum number of items to return.
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// The token to retrieve the next page of results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMultiplexesInput {
     /// The maximum number of items to return.
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// The token to retrieve the next page of results.
@@ -64,7 +64,7 @@ impl ListMultiplexesInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::list_multiplexes::ListMultiplexesInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

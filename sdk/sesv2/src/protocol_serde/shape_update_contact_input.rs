@@ -21,8 +21,8 @@ pub fn ser_update_contact_input(
         }
         array_3.finish();
     }
-    if input.unsubscribe_all {
-        object.key("UnsubscribeAll").boolean(input.unsubscribe_all);
+    if let Some(var_6) = &input.unsubscribe_all {
+        object.key("UnsubscribeAll").boolean(*var_6);
     }
     Ok(())
 }

@@ -6,93 +6,96 @@ pub fn ser_update_replication_configuration_input(
     if let Some(var_1) = &input.associate_default_security_group {
         object.key("associateDefaultSecurityGroup").boolean(*var_1);
     }
+    if let Some(var_2) = &input.auto_replicate_new_disks {
+        object.key("autoReplicateNewDisks").boolean(*var_2);
+    }
     if input.bandwidth_throttling != 0 {
         object.key("bandwidthThrottling").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((input.bandwidth_throttling).into()),
         );
     }
-    if let Some(var_2) = &input.create_public_ip {
-        object.key("createPublicIP").boolean(*var_2);
+    if let Some(var_3) = &input.create_public_ip {
+        object.key("createPublicIP").boolean(*var_3);
     }
-    if let Some(var_3) = &input.data_plane_routing {
-        object.key("dataPlaneRouting").string(var_3.as_str());
+    if let Some(var_4) = &input.data_plane_routing {
+        object.key("dataPlaneRouting").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.default_large_staging_disk_type {
+    if let Some(var_5) = &input.default_large_staging_disk_type {
         object
             .key("defaultLargeStagingDiskType")
-            .string(var_4.as_str());
+            .string(var_5.as_str());
     }
-    if let Some(var_5) = &input.ebs_encryption {
-        object.key("ebsEncryption").string(var_5.as_str());
+    if let Some(var_6) = &input.ebs_encryption {
+        object.key("ebsEncryption").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.ebs_encryption_key_arn {
-        object.key("ebsEncryptionKeyArn").string(var_6.as_str());
+    if let Some(var_7) = &input.ebs_encryption_key_arn {
+        object.key("ebsEncryptionKeyArn").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.pit_policy {
-        let mut array_9 = object.key("pitPolicy").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.pit_policy {
+        let mut array_10 = object.key("pitPolicy").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
+                let mut object_12 = array_10.value().start_object();
                 crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(
-                    &mut object_11,
-                    item_10,
+                    &mut object_12,
+                    item_11,
                 )?;
-                object_11.finish();
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.replicated_disks {
-        let mut array_13 = object.key("replicatedDisks").start_array();
-        for item_14 in var_12 {
+    if let Some(var_13) = &input.replicated_disks {
+        let mut array_14 = object.key("replicatedDisks").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_replication_configuration_replicated_disk::ser_replication_configuration_replicated_disk(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_replication_configuration_replicated_disk::ser_replication_configuration_replicated_disk(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_16) = &input.replication_server_instance_type {
+    if let Some(var_17) = &input.replication_server_instance_type {
         object
             .key("replicationServerInstanceType")
-            .string(var_16.as_str());
+            .string(var_17.as_str());
     }
-    if let Some(var_17) = &input.replication_servers_security_groups_i_ds {
-        let mut array_18 = object
+    if let Some(var_18) = &input.replication_servers_security_groups_i_ds {
+        let mut array_19 = object
             .key("replicationServersSecurityGroupsIDs")
             .start_array();
-        for item_19 in var_17 {
+        for item_20 in var_18 {
             {
-                array_18.value().string(item_19.as_str());
+                array_19.value().string(item_20.as_str());
             }
         }
-        array_18.finish();
+        array_19.finish();
     }
-    if let Some(var_20) = &input.source_server_id {
-        object.key("sourceServerID").string(var_20.as_str());
+    if let Some(var_21) = &input.source_server_id {
+        object.key("sourceServerID").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_21.as_str());
+    if let Some(var_22) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.staging_area_tags {
+    if let Some(var_23) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("stagingAreaTags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_24 = object.key("stagingAreaTags").start_object();
+        for (key_25, value_26) in var_23 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
-        object_23.finish();
+        object_24.finish();
     }
-    if let Some(var_26) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_26);
+    if let Some(var_27) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_27);
     }
     Ok(())
 }

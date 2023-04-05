@@ -116,12 +116,12 @@ impl GetPositionEstimateFluentBuilder {
         self.inner = self.inner.set_gnss(input);
         self
     }
-    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.timestamp(input);
         self
     }
-    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the UNIX timestamp format. If not specified, the time at which the request was received will be used.</p>
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_timestamp(input);
         self

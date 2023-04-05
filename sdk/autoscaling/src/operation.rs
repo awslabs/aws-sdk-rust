@@ -172,6 +172,9 @@ pub mod record_lifecycle_action_heartbeat;
 /// Types for the `ResumeProcesses` operation.
 pub mod resume_processes;
 
+/// Types for the `RollbackInstanceRefresh` operation.
+pub mod rollback_instance_refresh;
+
 /// Types for the `SetDesiredCapacity` operation.
 pub mod set_desired_capacity;
 

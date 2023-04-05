@@ -51,7 +51,7 @@ pub struct Workspace {
     /// <p>The modification states of the WorkSpace.</p>
     #[doc(hidden)]
     pub modification_states: std::option::Option<std::vec::Vec<crate::types::ModificationState>>,
-    /// <p>The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
+    /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
     #[doc(hidden)]
     pub related_workspaces:
         std::option::Option<std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
@@ -119,7 +119,7 @@ impl Workspace {
     pub fn modification_states(&self) -> std::option::Option<&[crate::types::ModificationState]> {
         self.modification_states.as_deref()
     }
-    /// <p>The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
+    /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
     pub fn related_workspaces(
         &self,
     ) -> std::option::Option<&[crate::types::RelatedWorkspaceProperties]> {
@@ -330,14 +330,14 @@ impl WorkspaceBuilder {
     ///
     /// To override the contents of this collection use [`set_related_workspaces`](Self::set_related_workspaces).
     ///
-    /// <p>The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
+    /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
     pub fn related_workspaces(mut self, input: crate::types::RelatedWorkspaceProperties) -> Self {
         let mut v = self.related_workspaces.unwrap_or_default();
         v.push(input);
         self.related_workspaces = Some(v);
         self
     }
-    /// <p>The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
+    /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
     pub fn set_related_workspaces(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,

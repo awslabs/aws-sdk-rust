@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMediaLiveConnectorPipelineOutput {
-    /// <p>The new media pipeline.</p>
+    /// <p>The new media live connector pipeline.</p>
     #[doc(hidden)]
     pub media_live_connector_pipeline:
         std::option::Option<crate::types::MediaLiveConnectorPipeline>,
     _request_id: Option<String>,
 }
 impl CreateMediaLiveConnectorPipelineOutput {
-    /// <p>The new media pipeline.</p>
+    /// <p>The new media live connector pipeline.</p>
     pub fn media_live_connector_pipeline(
         &self,
     ) -> std::option::Option<&crate::types::MediaLiveConnectorPipeline> {
@@ -38,7 +38,7 @@ pub struct CreateMediaLiveConnectorPipelineOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateMediaLiveConnectorPipelineOutputBuilder {
-    /// <p>The new media pipeline.</p>
+    /// <p>The new media live connector pipeline.</p>
     pub fn media_live_connector_pipeline(
         mut self,
         input: crate::types::MediaLiveConnectorPipeline,
@@ -46,7 +46,7 @@ impl CreateMediaLiveConnectorPipelineOutputBuilder {
         self.media_live_connector_pipeline = Some(input);
         self
     }
-    /// <p>The new media pipeline.</p>
+    /// <p>The new media live connector pipeline.</p>
     pub fn set_media_live_connector_pipeline(
         mut self,
         input: std::option::Option<crate::types::MediaLiveConnectorPipeline>,

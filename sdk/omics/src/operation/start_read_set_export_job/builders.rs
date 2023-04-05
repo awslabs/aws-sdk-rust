@@ -5,7 +5,7 @@ pub use crate::operation::start_read_set_export_job::_start_read_set_export_job_
 
 /// Fluent builder constructing a request to `StartReadSetExportJob`.
 ///
-/// <p>Starts a read set export job.</p>
+/// <p>Exports a read set to Amazon S3.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartReadSetExportJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -116,12 +116,12 @@ impl StartReadSetExportJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>Sources for the job.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::ExportReadSet) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    /// <p>Sources for the job.</p>
+    /// <p>The job's source files.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ExportReadSet>>,

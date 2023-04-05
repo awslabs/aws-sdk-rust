@@ -10,6 +10,9 @@ pub struct NielsenNaesIiNw {
     /// Enter the Nielsen Source ID (SID) to include in the watermark
     #[doc(hidden)]
     pub sid: f64,
+    /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
+    #[doc(hidden)]
+    pub timezone: std::option::Option<crate::types::NielsenWatermarkTimezones>,
 }
 impl NielsenNaesIiNw {
     /// Enter the check digit string for the watermark
@@ -19,6 +22,10 @@ impl NielsenNaesIiNw {
     /// Enter the Nielsen Source ID (SID) to include in the watermark
     pub fn sid(&self) -> f64 {
         self.sid
+    }
+    /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
+    pub fn timezone(&self) -> std::option::Option<&crate::types::NielsenWatermarkTimezones> {
+        self.timezone.as_ref()
     }
 }
 impl NielsenNaesIiNw {
@@ -34,6 +41,7 @@ impl NielsenNaesIiNw {
 pub struct NielsenNaesIiNwBuilder {
     pub(crate) check_digit_string: std::option::Option<std::string::String>,
     pub(crate) sid: std::option::Option<f64>,
+    pub(crate) timezone: std::option::Option<crate::types::NielsenWatermarkTimezones>,
 }
 impl NielsenNaesIiNwBuilder {
     /// Enter the check digit string for the watermark
@@ -59,11 +67,25 @@ impl NielsenNaesIiNwBuilder {
         self.sid = input;
         self
     }
+    /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
+    pub fn timezone(mut self, input: crate::types::NielsenWatermarkTimezones) -> Self {
+        self.timezone = Some(input);
+        self
+    }
+    /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
+    pub fn set_timezone(
+        mut self,
+        input: std::option::Option<crate::types::NielsenWatermarkTimezones>,
+    ) -> Self {
+        self.timezone = input;
+        self
+    }
     /// Consumes the builder and constructs a [`NielsenNaesIiNw`](crate::types::NielsenNaesIiNw).
     pub fn build(self) -> crate::types::NielsenNaesIiNw {
         crate::types::NielsenNaesIiNw {
             check_digit_string: self.check_digit_string,
             sid: self.sid.unwrap_or_default(),
+            timezone: self.timezone,
         }
     }
 }

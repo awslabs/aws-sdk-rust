@@ -5,6 +5,7 @@ pub use crate::operation::update_voice_connector_group::_update_voice_connector_
 
 /// Fluent builder constructing a request to `UpdateVoiceConnectorGroup`.
 ///
+/// <p>Updates the settings for the specified Amazon Chime SDK Voice Connector group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroupFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl UpdateVoiceConnectorGroupFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_group_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_group_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -81,12 +82,12 @@ impl UpdateVoiceConnectorGroupFluentBuilder {
         self.inner = self.inner.set_voice_connector_group_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
@@ -95,12 +96,12 @@ impl UpdateVoiceConnectorGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_voice_connector_items`](Self::set_voice_connector_items).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The <code>VoiceConnectorItems</code> to associate with the Voice Connector group.</p>
     pub fn voice_connector_items(mut self, input: crate::types::VoiceConnectorItem) -> Self {
         self.inner = self.inner.voice_connector_items(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The <code>VoiceConnectorItems</code> to associate with the Voice Connector group.</p>
     pub fn set_voice_connector_items(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorItem>>,

@@ -80,6 +80,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_update_application_input;
 
 pub(crate) mod shape_update_attribute_group_input;

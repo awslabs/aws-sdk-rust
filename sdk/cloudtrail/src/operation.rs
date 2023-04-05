@@ -7,14 +7,23 @@ pub mod add_tags;
 /// Types for the `CancelQuery` operation.
 pub mod cancel_query;
 
+/// Types for the `CreateChannel` operation.
+pub mod create_channel;
+
 /// Types for the `CreateEventDataStore` operation.
 pub mod create_event_data_store;
 
 /// Types for the `CreateTrail` operation.
 pub mod create_trail;
 
+/// Types for the `DeleteChannel` operation.
+pub mod delete_channel;
+
 /// Types for the `DeleteEventDataStore` operation.
 pub mod delete_event_data_store;
+
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
 
 /// Types for the `DeleteTrail` operation.
 pub mod delete_trail;
@@ -45,6 +54,9 @@ pub mod get_insight_selectors;
 
 /// Types for the `GetQueryResults` operation.
 pub mod get_query_results;
+
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
 
 /// Types for the `GetTrail` operation.
 pub mod get_trail;
@@ -85,6 +97,9 @@ pub mod put_event_selectors;
 /// Types for the `PutInsightSelectors` operation.
 pub mod put_insight_selectors;
 
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
+
 /// Types for the `RegisterOrganizationDelegatedAdmin` operation.
 pub mod register_organization_delegated_admin;
 
@@ -108,6 +123,9 @@ pub mod stop_import;
 
 /// Types for the `StopLogging` operation.
 pub mod stop_logging;
+
+/// Types for the `UpdateChannel` operation.
+pub mod update_channel;
 
 /// Types for the `UpdateEventDataStore` operation.
 pub mod update_event_data_store;

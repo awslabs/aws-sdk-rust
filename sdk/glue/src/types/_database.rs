@@ -20,7 +20,7 @@ pub struct Database {
     /// <p>The time at which the metadata database was created in the catalog.</p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Creates a set of default permissions on the table for principals. </p>
+    /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
     #[doc(hidden)]
     pub create_table_default_permissions:
         std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
@@ -30,6 +30,9 @@ pub struct Database {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub federated_database: std::option::Option<crate::types::FederatedDatabase>,
 }
 impl Database {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
@@ -55,7 +58,7 @@ impl Database {
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>Creates a set of default permissions on the table for principals. </p>
+    /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
     pub fn create_table_default_permissions(
         &self,
     ) -> std::option::Option<&[crate::types::PrincipalPermissions]> {
@@ -68,6 +71,10 @@ impl Database {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
+    }
+    /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
+    pub fn federated_database(&self) -> std::option::Option<&crate::types::FederatedDatabase> {
+        self.federated_database.as_ref()
     }
 }
 impl Database {
@@ -91,6 +98,7 @@ pub struct DatabaseBuilder {
         std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
     pub(crate) target_database: std::option::Option<crate::types::DatabaseIdentifier>,
     pub(crate) catalog_id: std::option::Option<std::string::String>,
+    pub(crate) federated_database: std::option::Option<crate::types::FederatedDatabase>,
 }
 impl DatabaseBuilder {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
@@ -165,7 +173,7 @@ impl DatabaseBuilder {
     ///
     /// To override the contents of this collection use [`set_create_table_default_permissions`](Self::set_create_table_default_permissions).
     ///
-    /// <p>Creates a set of default permissions on the table for principals. </p>
+    /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
     pub fn create_table_default_permissions(
         mut self,
         input: crate::types::PrincipalPermissions,
@@ -175,7 +183,7 @@ impl DatabaseBuilder {
         self.create_table_default_permissions = Some(v);
         self
     }
-    /// <p>Creates a set of default permissions on the table for principals. </p>
+    /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
     pub fn set_create_table_default_permissions(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
@@ -206,6 +214,19 @@ impl DatabaseBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
+    pub fn federated_database(mut self, input: crate::types::FederatedDatabase) -> Self {
+        self.federated_database = Some(input);
+        self
+    }
+    /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
+    pub fn set_federated_database(
+        mut self,
+        input: std::option::Option<crate::types::FederatedDatabase>,
+    ) -> Self {
+        self.federated_database = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Database`](crate::types::Database).
     pub fn build(self) -> crate::types::Database {
         crate::types::Database {
@@ -217,6 +238,7 @@ impl DatabaseBuilder {
             create_table_default_permissions: self.create_table_default_permissions,
             target_database: self.target_database,
             catalog_id: self.catalog_id,
+            federated_database: self.federated_database,
         }
     }
 }

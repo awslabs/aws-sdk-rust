@@ -135,6 +135,16 @@ where
                                     crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?,
                                 );
                             }
+                            "TuningJobCompletionDetails" => {
+                                builder = builder.set_tuning_job_completion_details(
+                                    crate::protocol_serde::shape_hyper_parameter_tuning_job_completion_details::de_hyper_parameter_tuning_job_completion_details(tokens)?
+                                );
+                            }
+                            "ConsumedResources" => {
+                                builder = builder.set_consumed_resources(
+                                    crate::protocol_serde::shape_hyper_parameter_tuning_job_consumed_resources::de_hyper_parameter_tuning_job_consumed_resources(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

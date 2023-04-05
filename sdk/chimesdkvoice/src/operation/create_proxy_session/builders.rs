@@ -5,6 +5,7 @@ pub use crate::operation::create_proxy_session::_create_proxy_session_input::Cre
 
 /// Fluent builder constructing a request to `CreateProxySession`.
 ///
+/// <p>Creates a proxy session for the specified Amazon Chime SDK Voice Connector for the specified participant phone numbers.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProxySessionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl CreateProxySessionFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -85,12 +86,12 @@ impl CreateProxySessionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_participant_phone_numbers`](Self::set_participant_phone_numbers).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The participant phone numbers.</p>
     pub fn participant_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.participant_phone_numbers(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The participant phone numbers.</p>
     pub fn set_participant_phone_numbers(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -98,22 +99,22 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_participant_phone_numbers(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the proxy session.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the proxy session.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.expiry_minutes(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn set_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expiry_minutes(input);
         self
@@ -122,12 +123,12 @@ impl CreateProxySessionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session's capabilities.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         self.inner = self.inner.capabilities(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session's capabilities.</p>
     pub fn set_capabilities(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Capability>>,
@@ -135,7 +136,7 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_capabilities(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn number_selection_behavior(
         mut self,
         input: crate::types::NumberSelectionBehavior,
@@ -143,7 +144,7 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.number_selection_behavior(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn set_number_selection_behavior(
         mut self,
         input: std::option::Option<crate::types::NumberSelectionBehavior>,
@@ -151,12 +152,12 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_number_selection_behavior(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     pub fn geo_match_level(mut self, input: crate::types::GeoMatchLevel) -> Self {
         self.inner = self.inner.geo_match_level(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     pub fn set_geo_match_level(
         mut self,
         input: std::option::Option<crate::types::GeoMatchLevel>,
@@ -164,12 +165,12 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_geo_match_level(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country and area code for the proxy phone number.</p>
     pub fn geo_match_params(mut self, input: crate::types::GeoMatchParams) -> Self {
         self.inner = self.inner.geo_match_params(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country and area code for the proxy phone number.</p>
     pub fn set_geo_match_params(
         mut self,
         input: std::option::Option<crate::types::GeoMatchParams>,

@@ -96,6 +96,32 @@ where
                                     crate::protocol_serde::shape_ssm_document_parameters::de_ssm_document_parameters(tokens)?
                                 );
                             }
+                            "externalParameters" => {
+                                builder = builder.set_external_parameters(
+                                    crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(tokens)?
+                                );
+                            }
+                            "description" => {
+                                builder = builder.set_description(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "category" => {
+                                builder = builder.set_category(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::ActionCategory::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

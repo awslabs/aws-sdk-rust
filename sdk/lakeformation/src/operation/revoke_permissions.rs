@@ -167,7 +167,7 @@ pub type RevokePermissionsErrorKind = RevokePermissionsError;
 pub enum RevokePermissionsError {
     /// <p>Two processes are trying to modify a resource simultaneously.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>A specified entity does not exist</p>
+    /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::types::error::InvalidInputException),

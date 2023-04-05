@@ -179,4 +179,17 @@ impl AllocateHostsFluentBuilder {
         self.inner = self.inner.set_outpost_arn(input);
         self
     }
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn host_maintenance(mut self, input: crate::types::HostMaintenance) -> Self {
+        self.inner = self.inner.host_maintenance(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_host_maintenance(
+        mut self,
+        input: std::option::Option<crate::types::HostMaintenance>,
+    ) -> Self {
+        self.inner = self.inner.set_host_maintenance(input);
+        self
+    }
 }

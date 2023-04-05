@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEcsServiceRecommendationsOutput {
-    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> An array of objects that describe the ECS service recommendations. </p>
+    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
     #[doc(hidden)]
     pub ecs_service_recommendations:
         std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendation>>,
@@ -16,11 +16,11 @@ pub struct GetEcsServiceRecommendationsOutput {
     _request_id: Option<String>,
 }
 impl GetEcsServiceRecommendationsOutput {
-    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> An array of objects that describe the ECS service recommendations. </p>
+    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
     pub fn ecs_service_recommendations(
         &self,
     ) -> std::option::Option<&[crate::types::EcsServiceRecommendation]> {
@@ -54,12 +54,12 @@ pub struct GetEcsServiceRecommendationsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetEcsServiceRecommendationsOutputBuilder {
-    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self
@@ -68,7 +68,7 @@ impl GetEcsServiceRecommendationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_ecs_service_recommendations`](Self::set_ecs_service_recommendations).
     ///
-    /// <p> An array of objects that describe the ECS service recommendations. </p>
+    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
     pub fn ecs_service_recommendations(
         mut self,
         input: crate::types::EcsServiceRecommendation,
@@ -78,7 +78,7 @@ impl GetEcsServiceRecommendationsOutputBuilder {
         self.ecs_service_recommendations = Some(v);
         self
     }
-    /// <p> An array of objects that describe the ECS service recommendations. </p>
+    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
     pub fn set_ecs_service_recommendations(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendation>>,

@@ -181,6 +181,15 @@ pub(crate) fn de_create_access_token(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "accessTokenId" => {
+                        builder = builder.set_access_token_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "expiresTime" => {
                         builder = builder.set_expires_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -84,14 +84,14 @@ impl PutEventsFluentBuilder {
         self.inner = self.inner.set_entries(input);
         self
     }
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
     /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
     /// </important>
     pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.endpoint_id(input.into());
         self
     }
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
     /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
     /// </important>
     pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {

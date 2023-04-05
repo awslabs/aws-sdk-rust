@@ -20,7 +20,7 @@ pub struct ReplicationConfigurationReplicatedDisk {
     /// <p>The throughput to use for the EBS volume in MiB/s. This parameter is valid only for gp3 volumes.</p>
     #[doc(hidden)]
     pub throughput: i64,
-    /// <p>When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it is constantly updated by the service. This is a read-only field.</p>
+    /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
     #[doc(hidden)]
     pub optimized_staging_disk_type:
         std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
@@ -49,7 +49,7 @@ impl ReplicationConfigurationReplicatedDisk {
     pub fn throughput(&self) -> i64 {
         self.throughput
     }
-    /// <p>When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it is constantly updated by the service. This is a read-only field.</p>
+    /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
     pub fn optimized_staging_disk_type(
         &self,
     ) -> std::option::Option<&crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>
@@ -136,7 +136,7 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
         self.throughput = input;
         self
     }
-    /// <p>When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it is constantly updated by the service. This is a read-only field.</p>
+    /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
     pub fn optimized_staging_disk_type(
         mut self,
         input: crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType,
@@ -144,7 +144,7 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
         self.optimized_staging_disk_type = Some(input);
         self
     }
-    /// <p>When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it is constantly updated by the service. This is a read-only field.</p>
+    /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
     pub fn set_optimized_staging_disk_type(
         mut self,
         input: std::option::Option<

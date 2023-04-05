@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ImportFirewallDomainsOutput`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput::id): <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
     ///   - [`name(Option<String>)`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput::name): <p>The name of the domain list. </p>
-    ///   - [`status(Option<FirewallDomainListStatus>)`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput::status): <p> </p>
+    ///   - [`status(Option<FirewallDomainListStatus>)`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput::status): <p>Status of the import request.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput::status_message): <p>Additional information about the status of the list, if available.</p>
     /// - On failure, responds with [`SdkError<ImportFirewallDomainsError>`](crate::operation::import_firewall_domains::ImportFirewallDomainsError)
     pub fn import_firewall_domains(

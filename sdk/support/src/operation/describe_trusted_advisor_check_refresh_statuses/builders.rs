@@ -70,8 +70,8 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesFluentBuilder {
     /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
     /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
     /// </note>
-    pub fn check_ids(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inner = self.inner.check_ids(input.into());
+    pub fn check_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.check_ids(input);
         self
     }
     /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
@@ -79,7 +79,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesFluentBuilder {
     /// </note>
     pub fn set_check_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_check_ids(input);
         self

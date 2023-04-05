@@ -55,6 +55,15 @@ where
                                     )?,
                                 );
                             }
+                            "createdAt" => {
+                                builder = builder.set_created_at(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "dashPackage" => {
                                 builder = builder.set_dash_package(
                                     crate::protocol_serde::shape_dash_package::de_dash_package(

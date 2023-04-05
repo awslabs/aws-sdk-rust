@@ -36,6 +36,9 @@ pub fn ser_data_cells_filter(
         crate::protocol_serde::shape_column_wildcard::ser_column_wildcard(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.version_id {
+        object.key("VersionId").string(var_12.as_str());
+    }
     Ok(())
 }
 
@@ -114,6 +117,15 @@ where
                             "ColumnWildcard" => {
                                 builder = builder.set_column_wildcard(
                                     crate::protocol_serde::shape_column_wildcard::de_column_wildcard(tokens)?
+                                );
+                            }
+                            "VersionId" => {
+                                builder = builder.set_version_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

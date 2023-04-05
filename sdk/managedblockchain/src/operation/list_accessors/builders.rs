@@ -5,9 +5,6 @@ pub use crate::operation::list_accessors::_list_accessors_input::ListAccessorsIn
 
 /// Fluent builder constructing a request to `ListAccessors`.
 ///
-/// <important>
-/// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p>
-/// </important>
 /// <p>Returns a list of the accessors and their properties. Accessor objects are containers that have the information required for token based access to your Ethereum nodes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccessorsFluentBuilder {

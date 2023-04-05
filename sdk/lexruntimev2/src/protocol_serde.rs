@@ -58,6 +58,8 @@ pub(crate) mod shape_message;
 
 pub(crate) mod shape_messages;
 
+pub(crate) mod shape_recognized_bot_member;
+
 pub(crate) mod shape_session_state;
 
 pub(crate) mod shape_string_map;

@@ -22,6 +22,10 @@ pub struct CreateSceneInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The request metadata.</p>
+    #[doc(hidden)]
+    pub scene_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
@@ -51,6 +55,13 @@ impl CreateSceneInput {
     {
         self.tags.as_ref()
     }
+    /// <p>The request metadata.</p>
+    pub fn scene_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.scene_metadata.as_ref()
+    }
 }
 impl CreateSceneInput {
     /// Creates a new builder-style object to manufacture [`CreateSceneInput`](crate::operation::create_scene::CreateSceneInput).
@@ -69,6 +80,8 @@ pub struct CreateSceneInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) scene_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSceneInputBuilder {
@@ -156,6 +169,31 @@ impl CreateSceneInputBuilder {
         self.tags = input;
         self
     }
+    /// Adds a key-value pair to `scene_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_scene_metadata`](Self::set_scene_metadata).
+    ///
+    /// <p>The request metadata.</p>
+    pub fn scene_metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.scene_metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.scene_metadata = Some(hash_map);
+        self
+    }
+    /// <p>The request metadata.</p>
+    pub fn set_scene_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.scene_metadata = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateSceneInput`](crate::operation::create_scene::CreateSceneInput).
     pub fn build(
         self,
@@ -170,6 +208,7 @@ impl CreateSceneInputBuilder {
             description: self.description,
             capabilities: self.capabilities,
             tags: self.tags,
+            scene_metadata: self.scene_metadata,
         })
     }
 }

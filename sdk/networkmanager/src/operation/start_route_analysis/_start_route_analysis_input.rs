@@ -14,10 +14,10 @@ pub struct StartRouteAnalysisInput {
     pub destination: std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
     #[doc(hidden)]
-    pub include_return_path: bool,
+    pub include_return_path: std::option::Option<bool>,
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
     #[doc(hidden)]
-    pub use_middleboxes: bool,
+    pub use_middleboxes: std::option::Option<bool>,
 }
 impl StartRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
@@ -37,11 +37,11 @@ impl StartRouteAnalysisInput {
         self.destination.as_ref()
     }
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
-    pub fn include_return_path(&self) -> bool {
+    pub fn include_return_path(&self) -> std::option::Option<bool> {
         self.include_return_path
     }
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
-    pub fn use_middleboxes(&self) -> bool {
+    pub fn use_middleboxes(&self) -> std::option::Option<bool> {
         self.use_middleboxes
     }
 }
@@ -142,8 +142,8 @@ impl StartRouteAnalysisInputBuilder {
                 global_network_id: self.global_network_id,
                 source: self.source,
                 destination: self.destination,
-                include_return_path: self.include_return_path.unwrap_or_default(),
-                use_middleboxes: self.use_middleboxes.unwrap_or_default(),
+                include_return_path: self.include_return_path,
+                use_middleboxes: self.use_middleboxes,
             },
         )
     }

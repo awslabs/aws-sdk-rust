@@ -6,7 +6,6 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionSettings {
     /// <p>Makes it possible to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
-    /// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
     /// <p>If you include <code>AllowDeferredExecution</code> in your request, you must also include <code>DataAccessRoleArn</code>.</p>
     #[doc(hidden)]
     pub allow_deferred_execution: std::option::Option<bool>,
@@ -18,7 +17,6 @@ pub struct JobExecutionSettings {
 }
 impl JobExecutionSettings {
     /// <p>Makes it possible to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
-    /// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
     /// <p>If you include <code>AllowDeferredExecution</code> in your request, you must also include <code>DataAccessRoleArn</code>.</p>
     pub fn allow_deferred_execution(&self) -> std::option::Option<bool> {
         self.allow_deferred_execution
@@ -46,14 +44,12 @@ pub struct JobExecutionSettingsBuilder {
 }
 impl JobExecutionSettingsBuilder {
     /// <p>Makes it possible to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
-    /// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
     /// <p>If you include <code>AllowDeferredExecution</code> in your request, you must also include <code>DataAccessRoleArn</code>.</p>
     pub fn allow_deferred_execution(mut self, input: bool) -> Self {
         self.allow_deferred_execution = Some(input);
         self
     }
     /// <p>Makes it possible to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
-    /// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
     /// <p>If you include <code>AllowDeferredExecution</code> in your request, you must also include <code>DataAccessRoleArn</code>.</p>
     pub fn set_allow_deferred_execution(mut self, input: std::option::Option<bool>) -> Self {
         self.allow_deferred_execution = input;

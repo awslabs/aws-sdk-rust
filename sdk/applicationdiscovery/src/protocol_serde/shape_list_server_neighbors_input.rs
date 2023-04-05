@@ -6,28 +6,26 @@ pub fn ser_list_server_neighbors_input(
     if let Some(var_1) = &input.configuration_id {
         object.key("configurationId").string(var_1.as_str());
     }
-    if input.port_information_needed {
-        object
-            .key("portInformationNeeded")
-            .boolean(input.port_information_needed);
+    if let Some(var_2) = &input.port_information_needed {
+        object.key("portInformationNeeded").boolean(*var_2);
     }
-    if let Some(var_2) = &input.neighbor_configuration_ids {
-        let mut array_3 = object.key("neighborConfigurationIds").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.neighbor_configuration_ids {
+        let mut array_4 = object.key("neighborConfigurationIds").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_6) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("nextToken").string(var_5.as_str());
+    if let Some(var_7) = &input.next_token {
+        object.key("nextToken").string(var_7.as_str());
     }
     Ok(())
 }

@@ -77,6 +77,9 @@ pub struct DescribeBackupJobOutput {
     #[doc(hidden)]
     pub child_jobs_in_state:
         std::option::Option<std::collections::HashMap<crate::types::BackupJobState, i64>>,
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    #[doc(hidden)]
+    pub resource_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBackupJobOutput {
@@ -181,6 +184,10 @@ impl DescribeBackupJobOutput {
     ) -> std::option::Option<&std::collections::HashMap<crate::types::BackupJobState, i64>> {
         self.child_jobs_in_state.as_ref()
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeBackupJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -225,6 +232,7 @@ pub struct DescribeBackupJobOutputBuilder {
     pub(crate) number_of_child_jobs: std::option::Option<i64>,
     pub(crate) child_jobs_in_state:
         std::option::Option<std::collections::HashMap<crate::types::BackupJobState, i64>>,
+    pub(crate) resource_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBackupJobOutputBuilder {
@@ -510,6 +518,16 @@ impl DescribeBackupJobOutputBuilder {
         self.child_jobs_in_state = input;
         self
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_name = Some(input.into());
+        self
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_name = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -546,6 +564,7 @@ impl DescribeBackupJobOutputBuilder {
             is_parent: self.is_parent.unwrap_or_default(),
             number_of_child_jobs: self.number_of_child_jobs,
             child_jobs_in_state: self.child_jobs_in_state,
+            resource_name: self.resource_name,
             _request_id: self._request_id,
         }
     }

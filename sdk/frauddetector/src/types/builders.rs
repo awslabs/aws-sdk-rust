@@ -35,6 +35,8 @@ pub use crate::types::_label_schema::LabelSchemaBuilder;
 
 pub use crate::types::_model::ModelBuilder;
 
+pub use crate::types::_allow_deny_list::AllowDenyListBuilder;
+
 pub use crate::types::_label::LabelBuilder;
 
 pub use crate::types::_kms_key::KmsKeyBuilder;
@@ -104,6 +106,8 @@ pub use crate::types::_ati_metric_data_point::AtiMetricDataPointBuilder;
 pub use crate::types::_tfi_training_metrics_value::TfiTrainingMetricsValueBuilder;
 
 pub use crate::types::_tfi_model_performance::TfiModelPerformanceBuilder;
+
+pub use crate::types::_uncertainty_range::UncertaintyRangeBuilder;
 
 pub use crate::types::_tfi_metric_data_point::TfiMetricDataPointBuilder;
 

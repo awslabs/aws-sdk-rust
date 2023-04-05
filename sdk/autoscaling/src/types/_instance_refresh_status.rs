@@ -17,6 +17,9 @@
 ///     InstanceRefreshStatus::Failed => { /* ... */ },
 ///     InstanceRefreshStatus::InProgress => { /* ... */ },
 ///     InstanceRefreshStatus::Pending => { /* ... */ },
+///     InstanceRefreshStatus::RollbackFailed => { /* ... */ },
+///     InstanceRefreshStatus::RollbackInProgress => { /* ... */ },
+///     InstanceRefreshStatus::RollbackSuccessful => { /* ... */ },
 ///     InstanceRefreshStatus::Successful => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -62,6 +65,12 @@ pub enum InstanceRefreshStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
+    RollbackFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    RollbackInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    RollbackSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     Successful,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -74,6 +83,9 @@ impl std::convert::From<&str> for InstanceRefreshStatus {
             "Failed" => InstanceRefreshStatus::Failed,
             "InProgress" => InstanceRefreshStatus::InProgress,
             "Pending" => InstanceRefreshStatus::Pending,
+            "RollbackFailed" => InstanceRefreshStatus::RollbackFailed,
+            "RollbackInProgress" => InstanceRefreshStatus::RollbackInProgress,
+            "RollbackSuccessful" => InstanceRefreshStatus::RollbackSuccessful,
             "Successful" => InstanceRefreshStatus::Successful,
             other => InstanceRefreshStatus::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
@@ -97,6 +109,9 @@ impl InstanceRefreshStatus {
             InstanceRefreshStatus::Failed => "Failed",
             InstanceRefreshStatus::InProgress => "InProgress",
             InstanceRefreshStatus::Pending => "Pending",
+            InstanceRefreshStatus::RollbackFailed => "RollbackFailed",
+            InstanceRefreshStatus::RollbackInProgress => "RollbackInProgress",
+            InstanceRefreshStatus::RollbackSuccessful => "RollbackSuccessful",
             InstanceRefreshStatus::Successful => "Successful",
             InstanceRefreshStatus::Unknown(value) => value.as_str(),
         }
@@ -109,6 +124,9 @@ impl InstanceRefreshStatus {
             "Failed",
             "InProgress",
             "Pending",
+            "RollbackFailed",
+            "RollbackInProgress",
+            "RollbackSuccessful",
             "Successful",
         ]
     }

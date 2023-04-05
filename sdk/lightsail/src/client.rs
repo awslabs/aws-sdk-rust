@@ -256,6 +256,8 @@ mod create_domain;
 
 mod create_domain_entry;
 
+mod create_gui_session_access_details;
+
 mod create_instance_snapshot;
 
 mod create_instances;
@@ -398,6 +400,8 @@ mod get_container_service_powers;
 
 mod get_container_services;
 
+mod get_cost_estimate;
+
 mod get_disk;
 
 mod get_disk_snapshot;
@@ -514,9 +518,13 @@ mod set_ip_address_type;
 
 mod set_resource_access_for_bucket;
 
+mod start_gui_session;
+
 mod start_instance;
 
 mod start_relational_database;
+
+mod stop_gui_session;
 
 mod stop_instance;
 

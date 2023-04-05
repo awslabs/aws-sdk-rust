@@ -12,8 +12,8 @@ pub fn ser_delete_document_input(
     if let Some(var_3) = &input.version_name {
         object.key("VersionName").string(var_3.as_str());
     }
-    if input.force {
-        object.key("Force").boolean(input.force);
+    if let Some(var_4) = &input.force {
+        object.key("Force").boolean(*var_4);
     }
     Ok(())
 }

@@ -90,6 +90,10 @@ pub struct CreateEventSourceMappingOutput {
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     #[doc(hidden)]
     pub scaling_config: std::option::Option<crate::types::ScalingConfig>,
+    /// <p>Specific configuration settings for a DocumentDB event source.</p>
+    #[doc(hidden)]
+    pub document_db_event_source_config:
+        std::option::Option<crate::types::DocumentDbEventSourceConfig>,
     _request_id: Option<String>,
 }
 impl CreateEventSourceMappingOutput {
@@ -211,6 +215,12 @@ impl CreateEventSourceMappingOutput {
     pub fn scaling_config(&self) -> std::option::Option<&crate::types::ScalingConfig> {
         self.scaling_config.as_ref()
     }
+    /// <p>Specific configuration settings for a DocumentDB event source.</p>
+    pub fn document_db_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::types::DocumentDbEventSourceConfig> {
+        self.document_db_event_source_config.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for CreateEventSourceMappingOutput {
     fn request_id(&self) -> Option<&str> {
@@ -258,6 +268,8 @@ pub struct CreateEventSourceMappingOutputBuilder {
     pub(crate) self_managed_kafka_event_source_config:
         std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
     pub(crate) scaling_config: std::option::Option<crate::types::ScalingConfig>,
+    pub(crate) document_db_event_source_config:
+        std::option::Option<crate::types::DocumentDbEventSourceConfig>,
     _request_id: Option<String>,
 }
 impl CreateEventSourceMappingOutputBuilder {
@@ -613,6 +625,22 @@ impl CreateEventSourceMappingOutputBuilder {
         self.scaling_config = input;
         self
     }
+    /// <p>Specific configuration settings for a DocumentDB event source.</p>
+    pub fn document_db_event_source_config(
+        mut self,
+        input: crate::types::DocumentDbEventSourceConfig,
+    ) -> Self {
+        self.document_db_event_source_config = Some(input);
+        self
+    }
+    /// <p>Specific configuration settings for a DocumentDB event source.</p>
+    pub fn set_document_db_event_source_config(
+        mut self,
+        input: std::option::Option<crate::types::DocumentDbEventSourceConfig>,
+    ) -> Self {
+        self.document_db_event_source_config = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -653,6 +681,7 @@ impl CreateEventSourceMappingOutputBuilder {
             amazon_managed_kafka_event_source_config: self.amazon_managed_kafka_event_source_config,
             self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             scaling_config: self.scaling_config,
+            document_db_event_source_config: self.document_db_event_source_config,
             _request_id: self._request_id,
         }
     }

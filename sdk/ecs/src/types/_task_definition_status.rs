@@ -13,6 +13,7 @@
 /// # let taskdefinitionstatus = unimplemented!();
 /// match taskdefinitionstatus {
 ///     TaskDefinitionStatus::Active => { /* ... */ },
+///     TaskDefinitionStatus::DeleteInProgress => { /* ... */ },
 ///     TaskDefinitionStatus::Inactive => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum TaskDefinitionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl std::convert::From<&str> for TaskDefinitionStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => TaskDefinitionStatus::Active,
+            "DELETE_IN_PROGRESS" => TaskDefinitionStatus::DeleteInProgress,
             "INACTIVE" => TaskDefinitionStatus::Inactive,
             other => TaskDefinitionStatus::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
@@ -77,13 +81,14 @@ impl TaskDefinitionStatus {
     pub fn as_str(&self) -> &str {
         match self {
             TaskDefinitionStatus::Active => "ACTIVE",
+            TaskDefinitionStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
             TaskDefinitionStatus::Inactive => "INACTIVE",
             TaskDefinitionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INACTIVE"]
+        &["ACTIVE", "DELETE_IN_PROGRESS", "INACTIVE"]
     }
 }
 impl AsRef<str> for TaskDefinitionStatus {

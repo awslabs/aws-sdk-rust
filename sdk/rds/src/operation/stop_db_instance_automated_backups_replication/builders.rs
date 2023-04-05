@@ -58,12 +58,12 @@ impl StopDBInstanceAutomatedBackupsReplicationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     pub fn source_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_db_instance_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     pub fn set_source_db_instance_arn(
         mut self,
         input: std::option::Option<std::string::String>,

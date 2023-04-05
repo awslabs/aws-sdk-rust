@@ -312,4 +312,20 @@ impl UpdateEventSourceMappingFluentBuilder {
         self.inner = self.inner.set_scaling_config(input);
         self
     }
+    /// <p>Specific configuration settings for a DocumentDB event source.</p>
+    pub fn document_db_event_source_config(
+        mut self,
+        input: crate::types::DocumentDbEventSourceConfig,
+    ) -> Self {
+        self.inner = self.inner.document_db_event_source_config(input);
+        self
+    }
+    /// <p>Specific configuration settings for a DocumentDB event source.</p>
+    pub fn set_document_db_event_source_config(
+        mut self,
+        input: std::option::Option<crate::types::DocumentDbEventSourceConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_document_db_event_source_config(input);
+        self
+    }
 }

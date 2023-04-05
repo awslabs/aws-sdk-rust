@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSipMediaApplication`](crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder::set_sip_media_application_id): (undocumented)
+    ///   - [`sip_media_application_id(impl Into<String>)`](crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder::set_sip_media_application_id): <p>The SIP media application ID .</p>
     /// - On success, responds with [`GetSipMediaApplicationOutput`](crate::operation::get_sip_media_application::GetSipMediaApplicationOutput) with field(s):
-    ///   - [`sip_media_application(Option<SipMediaApplication>)`](crate::operation::get_sip_media_application::GetSipMediaApplicationOutput::sip_media_application): (undocumented)
+    ///   - [`sip_media_application(Option<SipMediaApplication>)`](crate::operation::get_sip_media_application::GetSipMediaApplicationOutput::sip_media_application): <p>The details of the SIP media application.</p>
     /// - On failure, responds with [`SdkError<GetSipMediaApplicationError>`](crate::operation::get_sip_media_application::GetSipMediaApplicationError)
     pub fn get_sip_media_application(
         &self,

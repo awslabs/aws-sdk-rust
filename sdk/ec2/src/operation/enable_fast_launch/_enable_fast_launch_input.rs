@@ -17,7 +17,7 @@ pub struct EnableFastLaunchInput {
     #[doc(hidden)]
     pub launch_template:
         std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationRequest>,
-    /// <p>The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or greater. </p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>
     #[doc(hidden)]
     pub max_parallel_launches: std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -45,7 +45,7 @@ impl EnableFastLaunchInput {
     ) -> std::option::Option<&crate::types::FastLaunchLaunchTemplateSpecificationRequest> {
         self.launch_template.as_ref()
     }
-    /// <p>The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or greater. </p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>
     pub fn max_parallel_launches(&self) -> std::option::Option<i32> {
         self.max_parallel_launches
     }
@@ -128,12 +128,12 @@ impl EnableFastLaunchInputBuilder {
         self.launch_template = input;
         self
     }
-    /// <p>The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or greater. </p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>
     pub fn max_parallel_launches(mut self, input: i32) -> Self {
         self.max_parallel_launches = Some(input);
         self
     }
-    /// <p>The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or greater. </p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>
     pub fn set_max_parallel_launches(mut self, input: std::option::Option<i32>) -> Self {
         self.max_parallel_launches = input;
         self

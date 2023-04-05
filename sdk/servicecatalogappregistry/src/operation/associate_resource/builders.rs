@@ -5,7 +5,7 @@ pub use crate::operation::associate_resource::_associate_resource_input::Associa
 
 /// Fluent builder constructing a request to `AssociateResource`.
 ///
-/// <p>Associates a resource with an application. Both the resource and the application can be specified either by ID or name.</p>
+/// <p> Associates a resource with an application. The resource can be specified by its ARN or name. The application can be specified by ARN, ID, or name. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +69,12 @@ impl AssociateResourceFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
         self
     }
-    /// <p>The name or ID of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_application(input);
         self

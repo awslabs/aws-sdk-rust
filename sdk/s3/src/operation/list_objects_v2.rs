@@ -68,34 +68,38 @@ impl ListObjectsV2Input {
                         );
                     }
                 }
-                if _input.max_keys != 0 {
-                    query.push_kv(
-                        "max-keys",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
-                    );
-                }
-                if let Some(inner_3) = &_input.prefix {
-                    {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_3));
-                    }
-                }
-                if let Some(inner_4) = &_input.continuation_token {
-                    {
+                if let Some(inner_3) = &_input.max_keys {
+                    if *inner_3 != 0 {
                         query.push_kv(
-                            "continuation-token",
-                            &aws_smithy_http::query::fmt_string(&inner_4),
+                            "max-keys",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
                         );
                     }
                 }
-                if _input.fetch_owner {
-                    query.push_kv(
-                        "fetch-owner",
-                        aws_smithy_types::primitive::Encoder::from(_input.fetch_owner).encode(),
-                    );
-                }
-                if let Some(inner_5) = &_input.start_after {
+                if let Some(inner_4) = &_input.prefix {
                     {
-                        query.push_kv("start-after", &aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
+                }
+                if let Some(inner_5) = &_input.continuation_token {
+                    {
+                        query.push_kv(
+                            "continuation-token",
+                            &aws_smithy_http::query::fmt_string(&inner_5),
+                        );
+                    }
+                }
+                if let Some(inner_6) = &_input.fetch_owner {
+                    if *inner_6 {
+                        query.push_kv(
+                            "fetch-owner",
+                            aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_7) = &_input.start_after {
+                    {
+                        query.push_kv("start-after", &aws_smithy_http::query::fmt_string(&inner_7));
                     }
                 }
                 Ok(())

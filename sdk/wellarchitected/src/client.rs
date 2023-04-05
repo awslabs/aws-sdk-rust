@@ -266,6 +266,8 @@ mod export_lens;
 
 mod get_answer;
 
+mod get_consolidated_report;
+
 mod get_lens;
 
 mod get_lens_review;

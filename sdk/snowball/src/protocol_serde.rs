@@ -50,6 +50,8 @@ pub(crate) mod shape_list_jobs;
 
 pub(crate) mod shape_list_long_term_pricing;
 
+pub(crate) mod shape_list_service_versions;
+
 pub(crate) mod shape_update_cluster;
 
 pub(crate) mod shape_update_job;
@@ -124,6 +126,8 @@ pub(crate) mod shape_list_jobs_input;
 
 pub(crate) mod shape_list_long_term_pricing_input;
 
+pub(crate) mod shape_list_service_versions_input;
+
 pub(crate) mod shape_return_shipping_label_already_exists_exception;
 
 pub(crate) mod shape_unsupported_address_exception;
@@ -146,6 +150,10 @@ pub(crate) mod shape_cluster_metadata;
 
 pub(crate) mod shape_compatible_image_list;
 
+pub(crate) mod shape_dependent_service;
+
+pub(crate) mod shape_dependent_service_list;
+
 pub(crate) mod shape_device_configuration;
 
 pub(crate) mod shape_job_list_entry_list;
@@ -162,6 +170,8 @@ pub(crate) mod shape_notification;
 
 pub(crate) mod shape_on_device_service_configuration;
 
+pub(crate) mod shape_service_version_list;
+
 pub(crate) mod shape_tax_documents;
 
 pub(crate) mod shape_cluster_list_entry;
@@ -171,6 +181,8 @@ pub(crate) mod shape_compatible_image;
 pub(crate) mod shape_data_transfer;
 
 pub(crate) mod shape_ec2_ami_resource;
+
+pub(crate) mod shape_eks_on_device_service_configuration;
 
 pub(crate) mod shape_ind_tax_documents;
 
@@ -185,6 +197,8 @@ pub(crate) mod shape_long_term_pricing_list_entry;
 pub(crate) mod shape_nfs_on_device_service_configuration;
 
 pub(crate) mod shape_s3_resource;
+
+pub(crate) mod shape_service_version;
 
 pub(crate) mod shape_shipping_details;
 

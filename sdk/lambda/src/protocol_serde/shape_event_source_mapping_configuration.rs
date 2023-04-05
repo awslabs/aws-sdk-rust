@@ -220,6 +220,11 @@ where
                                     )?,
                                 );
                             }
+                            "DocumentDBEventSourceConfig" => {
+                                builder = builder.set_document_db_event_source_config(
+                                    crate::protocol_serde::shape_document_db_event_source_config::de_document_db_event_source_config(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

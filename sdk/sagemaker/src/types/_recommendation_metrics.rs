@@ -16,6 +16,14 @@ pub struct RecommendationMetrics {
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
     #[doc(hidden)]
     pub model_latency: i32,
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    #[doc(hidden)]
+    pub cpu_utilization: std::option::Option<f32>,
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    #[doc(hidden)]
+    pub memory_utilization: std::option::Option<f32>,
 }
 impl RecommendationMetrics {
     /// <p>Defines the cost per hour for the instance. </p>
@@ -34,6 +42,16 @@ impl RecommendationMetrics {
     pub fn model_latency(&self) -> i32 {
         self.model_latency
     }
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn cpu_utilization(&self) -> std::option::Option<f32> {
+        self.cpu_utilization
+    }
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn memory_utilization(&self) -> std::option::Option<f32> {
+        self.memory_utilization
+    }
 }
 impl RecommendationMetrics {
     /// Creates a new builder-style object to manufacture [`RecommendationMetrics`](crate::types::RecommendationMetrics).
@@ -50,6 +68,8 @@ pub struct RecommendationMetricsBuilder {
     pub(crate) cost_per_inference: std::option::Option<f32>,
     pub(crate) max_invocations: std::option::Option<i32>,
     pub(crate) model_latency: std::option::Option<i32>,
+    pub(crate) cpu_utilization: std::option::Option<f32>,
+    pub(crate) memory_utilization: std::option::Option<f32>,
 }
 impl RecommendationMetricsBuilder {
     /// <p>Defines the cost per hour for the instance. </p>
@@ -92,6 +112,30 @@ impl RecommendationMetricsBuilder {
         self.model_latency = input;
         self
     }
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn cpu_utilization(mut self, input: f32) -> Self {
+        self.cpu_utilization = Some(input);
+        self
+    }
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn set_cpu_utilization(mut self, input: std::option::Option<f32>) -> Self {
+        self.cpu_utilization = input;
+        self
+    }
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn memory_utilization(mut self, input: f32) -> Self {
+        self.memory_utilization = Some(input);
+        self
+    }
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn set_memory_utilization(mut self, input: std::option::Option<f32>) -> Self {
+        self.memory_utilization = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecommendationMetrics`](crate::types::RecommendationMetrics).
     pub fn build(self) -> crate::types::RecommendationMetrics {
         crate::types::RecommendationMetrics {
@@ -99,6 +143,8 @@ impl RecommendationMetricsBuilder {
             cost_per_inference: self.cost_per_inference.unwrap_or_default(),
             max_invocations: self.max_invocations.unwrap_or_default(),
             model_latency: self.model_latency.unwrap_or_default(),
+            cpu_utilization: self.cpu_utilization,
+            memory_utilization: self.memory_utilization,
         }
     }
 }

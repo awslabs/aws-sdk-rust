@@ -12,7 +12,7 @@ pub struct CreateEndpointInput {
     /// <p>Configure the routing policy, including the health check and secondary Region..</p>
     #[doc(hidden)]
     pub routing_config: std::option::Option<crate::types::RoutingConfig>,
-    /// <p>Enable or disable event replication.</p>
+    /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     #[doc(hidden)]
     pub replication_config: std::option::Option<crate::types::ReplicationConfig>,
     /// <p>Define the event buses used. </p> <important>
@@ -37,7 +37,7 @@ impl CreateEndpointInput {
     pub fn routing_config(&self) -> std::option::Option<&crate::types::RoutingConfig> {
         self.routing_config.as_ref()
     }
-    /// <p>Enable or disable event replication.</p>
+    /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub fn replication_config(&self) -> std::option::Option<&crate::types::ReplicationConfig> {
         self.replication_config.as_ref()
     }
@@ -104,12 +104,12 @@ impl CreateEndpointInputBuilder {
         self.routing_config = input;
         self
     }
-    /// <p>Enable or disable event replication.</p>
+    /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub fn replication_config(mut self, input: crate::types::ReplicationConfig) -> Self {
         self.replication_config = Some(input);
         self
     }
-    /// <p>Enable or disable event replication.</p>
+    /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub fn set_replication_config(
         mut self,
         input: std::option::Option<crate::types::ReplicationConfig>,

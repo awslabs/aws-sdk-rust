@@ -5,7 +5,7 @@ pub use crate::operation::create_monitoring_schedule::_create_monitoring_schedul
 
 /// Fluent builder constructing a request to `CreateMonitoringSchedule`.
 ///
-/// <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to monitor the data captured for an Amazon SageMaker Endoint.</p>
+/// <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to monitor the data captured for an Amazon SageMaker Endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMonitoringScheduleFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

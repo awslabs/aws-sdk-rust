@@ -95,12 +95,12 @@ impl CreateRunGroupFluentBuilder {
         self.inner = self.inner.set_max_runs(input);
         self
     }
-    /// <p>A max duration for the group.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.max_duration(input);
         self
     }
-    /// <p>A max duration for the group.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn set_max_duration(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_duration(input);
         self
@@ -128,12 +128,12 @@ impl CreateRunGroupFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A request ID for the group.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
         self
     }
-    /// <p>A request ID for the group.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self

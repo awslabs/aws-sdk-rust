@@ -7,6 +7,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_workspace_description::WorkspaceDescriptionBuilder;
 
+pub use crate::types::_network_access_configuration::NetworkAccessConfigurationBuilder;
+
 pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
 
 pub use crate::types::_update_error::UpdateErrorBuilder;

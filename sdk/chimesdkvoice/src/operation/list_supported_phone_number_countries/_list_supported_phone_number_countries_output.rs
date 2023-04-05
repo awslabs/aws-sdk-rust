@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The supported phone number countries.</p>
     #[doc(hidden)]
     pub phone_number_countries:
         std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountry>>,
     _request_id: Option<String>,
 }
 impl ListSupportedPhoneNumberCountriesOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The supported phone number countries.</p>
     pub fn phone_number_countries(
         &self,
     ) -> std::option::Option<&[crate::types::PhoneNumberCountry]> {
@@ -42,13 +42,14 @@ impl ListSupportedPhoneNumberCountriesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_phone_number_countries`](Self::set_phone_number_countries).
     ///
+    /// <p>The supported phone number countries.</p>
     pub fn phone_number_countries(mut self, input: crate::types::PhoneNumberCountry) -> Self {
         let mut v = self.phone_number_countries.unwrap_or_default();
         v.push(input);
         self.phone_number_countries = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The supported phone number countries.</p>
     pub fn set_phone_number_countries(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountry>>,

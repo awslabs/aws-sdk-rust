@@ -37,6 +37,9 @@ pub mod delete_bucket_lifecycle_configuration;
 /// Types for the `DeleteBucketPolicy` operation.
 pub mod delete_bucket_policy;
 
+/// Types for the `DeleteBucketReplication` operation.
+pub mod delete_bucket_replication;
+
 /// Types for the `DeleteBucketTagging` operation.
 pub mod delete_bucket_tagging;
 
@@ -90,6 +93,9 @@ pub mod get_bucket_lifecycle_configuration;
 
 /// Types for the `GetBucketPolicy` operation.
 pub mod get_bucket_policy;
+
+/// Types for the `GetBucketReplication` operation.
+pub mod get_bucket_replication;
 
 /// Types for the `GetBucketTagging` operation.
 pub mod get_bucket_tagging;
@@ -153,6 +159,9 @@ pub mod put_bucket_lifecycle_configuration;
 
 /// Types for the `PutBucketPolicy` operation.
 pub mod put_bucket_policy;
+
+/// Types for the `PutBucketReplication` operation.
+pub mod put_bucket_replication;
 
 /// Types for the `PutBucketTagging` operation.
 pub mod put_bucket_tagging;

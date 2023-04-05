@@ -75,7 +75,8 @@ impl ModifySpotFleetRequestFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         mut self,
         input: crate::types::ExcessCapacityTerminationPolicy,
@@ -83,7 +84,8 @@ impl ModifySpotFleetRequestFluentBuilder {
         self.inner = self.inner.excess_capacity_termination_policy(input);
         self
     }
-    /// <p>Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(
         mut self,
         input: std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,

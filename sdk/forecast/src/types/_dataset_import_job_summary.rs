@@ -10,8 +10,8 @@ pub struct DatasetImportJobSummary {
     /// <p>The name of the dataset import job.</p>
     #[doc(hidden)]
     pub dataset_import_job_name: std::option::Option<std::string::String>,
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-    /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<crate::types::DataSource>,
     /// <p>The status of the dataset import job. States include:</p>
@@ -39,6 +39,9 @@ pub struct DatasetImportJobSummary {
     /// </ul>
     #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+    #[doc(hidden)]
+    pub import_mode: std::option::Option<crate::types::ImportMode>,
 }
 impl DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
@@ -49,8 +52,8 @@ impl DatasetImportJobSummary {
     pub fn dataset_import_job_name(&self) -> std::option::Option<&str> {
         self.dataset_import_job_name.as_deref()
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-    /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
@@ -83,6 +86,10 @@ impl DatasetImportJobSummary {
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
+    /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+    pub fn import_mode(&self) -> std::option::Option<&crate::types::ImportMode> {
+        self.import_mode.as_ref()
+    }
 }
 impl DatasetImportJobSummary {
     /// Creates a new builder-style object to manufacture [`DatasetImportJobSummary`](crate::types::DatasetImportJobSummary).
@@ -102,6 +109,7 @@ pub struct DatasetImportJobSummaryBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) import_mode: std::option::Option<crate::types::ImportMode>,
 }
 impl DatasetImportJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
@@ -130,14 +138,14 @@ impl DatasetImportJobSummaryBuilder {
         self.dataset_import_job_name = input;
         self
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-    /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = Some(input);
         self
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-    /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
@@ -214,6 +222,16 @@ impl DatasetImportJobSummaryBuilder {
         self.last_modification_time = input;
         self
     }
+    /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+    pub fn import_mode(mut self, input: crate::types::ImportMode) -> Self {
+        self.import_mode = Some(input);
+        self
+    }
+    /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+    pub fn set_import_mode(mut self, input: std::option::Option<crate::types::ImportMode>) -> Self {
+        self.import_mode = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DatasetImportJobSummary`](crate::types::DatasetImportJobSummary).
     pub fn build(self) -> crate::types::DatasetImportJobSummary {
         crate::types::DatasetImportJobSummary {
@@ -224,6 +242,7 @@ impl DatasetImportJobSummaryBuilder {
             message: self.message,
             creation_time: self.creation_time,
             last_modification_time: self.last_modification_time,
+            import_mode: self.import_mode,
         }
     }
 }

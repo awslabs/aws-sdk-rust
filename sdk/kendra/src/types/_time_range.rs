@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeRange {
-    /// <p>The UNIX datetime of the beginning of the time range.</p>
+    /// <p>The Unix timestamp for the beginning of the time range.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The UNIX datetime of the end of the time range.</p>
+    /// <p>The Unix timestamp for the end of the time range.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRange {
-    /// <p>The UNIX datetime of the beginning of the time range.</p>
+    /// <p>The Unix timestamp for the beginning of the time range.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The UNIX datetime of the end of the time range.</p>
+    /// <p>The Unix timestamp for the end of the time range.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -36,12 +36,12 @@ pub struct TimeRangeBuilder {
     pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRangeBuilder {
-    /// <p>The UNIX datetime of the beginning of the time range.</p>
+    /// <p>The Unix timestamp for the beginning of the time range.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.start_time = Some(input);
         self
     }
-    /// <p>The UNIX datetime of the beginning of the time range.</p>
+    /// <p>The Unix timestamp for the beginning of the time range.</p>
     pub fn set_start_time(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -49,12 +49,12 @@ impl TimeRangeBuilder {
         self.start_time = input;
         self
     }
-    /// <p>The UNIX datetime of the end of the time range.</p>
+    /// <p>The Unix timestamp for the end of the time range.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.end_time = Some(input);
         self
     }
-    /// <p>The UNIX datetime of the end of the time range.</p>
+    /// <p>The Unix timestamp for the end of the time range.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self

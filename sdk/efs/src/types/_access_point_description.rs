@@ -28,7 +28,7 @@ pub struct AccessPointDescription {
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
     #[doc(hidden)]
     pub root_directory: std::option::Option<crate::types::RootDirectory>,
-    /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
+    /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Identifies the lifecycle phase of the access point.</p>
@@ -68,7 +68,7 @@ impl AccessPointDescription {
     pub fn root_directory(&self) -> std::option::Option<&crate::types::RootDirectory> {
         self.root_directory.as_ref()
     }
-    /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
+    /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
     pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
@@ -192,12 +192,12 @@ impl AccessPointDescriptionBuilder {
         self.root_directory = input;
         self
     }
-    /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
+    /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.owner_id = Some(input.into());
         self
     }
-    /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
+    /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.owner_id = input;
         self

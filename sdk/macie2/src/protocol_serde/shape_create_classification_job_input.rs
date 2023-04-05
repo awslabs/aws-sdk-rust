@@ -27,62 +27,62 @@ pub fn ser_create_classification_job_input(
     if let Some(var_8) = &input.description {
         object.key("description").string(var_8.as_str());
     }
-    if input.initial_run {
-        object.key("initialRun").boolean(input.initial_run);
+    if let Some(var_9) = &input.initial_run {
+        object.key("initialRun").boolean(*var_9);
     }
-    if let Some(var_9) = &input.job_type {
-        object.key("jobType").string(var_9.as_str());
+    if let Some(var_10) = &input.job_type {
+        object.key("jobType").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.managed_data_identifier_ids {
-        let mut array_11 = object.key("managedDataIdentifierIds").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.managed_data_identifier_ids {
+        let mut array_12 = object.key("managedDataIdentifierIds").start_array();
+        for item_13 in var_11 {
             {
-                array_11.value().string(item_12.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.managed_data_identifier_selector {
+    if let Some(var_14) = &input.managed_data_identifier_selector {
         object
             .key("managedDataIdentifierSelector")
-            .string(var_13.as_str());
+            .string(var_14.as_str());
     }
-    if let Some(var_14) = &input.name {
-        object.key("name").string(var_14.as_str());
+    if let Some(var_15) = &input.name {
+        object.key("name").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.s3_job_definition {
+    if let Some(var_16) = &input.s3_job_definition {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("s3JobDefinition").start_object();
+        let mut object_17 = object.key("s3JobDefinition").start_object();
         crate::protocol_serde::shape_s3_job_definition::ser_s3_job_definition(
-            &mut object_16,
-            var_15,
+            &mut object_17,
+            var_16,
         )?;
-        object_16.finish();
+        object_17.finish();
     }
-    if input.sampling_percentage != 0 {
+    if let Some(var_18) = &input.sampling_percentage {
         object.key("samplingPercentage").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sampling_percentage).into()),
+            aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_17) = &input.schedule_frequency {
+    if let Some(var_19) = &input.schedule_frequency {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("scheduleFrequency").start_object();
+        let mut object_20 = object.key("scheduleFrequency").start_object();
         crate::protocol_serde::shape_job_schedule_frequency::ser_job_schedule_frequency(
-            &mut object_18,
-            var_17,
+            &mut object_20,
+            var_19,
         )?;
-        object_18.finish();
+        object_20.finish();
     }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_21) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_22 = object.key("tags").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_20.finish();
+        object_22.finish();
     }
     Ok(())
 }

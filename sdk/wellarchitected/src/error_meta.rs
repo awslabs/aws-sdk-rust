@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The resource already exists.</p>
+    /// <p>The resource has already been processed, was deleted, or is too large.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -264,6 +264,7 @@ impl From<crate::operation::create_workload::CreateWorkloadError> for Error {
             crate::operation::create_workload::CreateWorkloadError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_workload::CreateWorkloadError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_workload::CreateWorkloadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_workload::CreateWorkloadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_workload::CreateWorkloadError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_workload::CreateWorkloadError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_workload::CreateWorkloadError::ValidationException(inner) => Error::ValidationException(inner),
@@ -647,6 +648,49 @@ impl From<crate::operation::get_answer::GetAnswerError> for Error {
             crate::operation::get_answer::GetAnswerError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_consolidated_report::GetConsolidatedReportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_consolidated_report::GetConsolidatedReportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_consolidated_report::GetConsolidatedReportError> for Error {
+    fn from(err: crate::operation::get_consolidated_report::GetConsolidatedReportError) -> Self {
+        match err {
+            crate::operation::get_consolidated_report::GetConsolidatedReportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_consolidated_report::GetConsolidatedReportError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_consolidated_report::GetConsolidatedReportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_consolidated_report::GetConsolidatedReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_consolidated_report::GetConsolidatedReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_consolidated_report::GetConsolidatedReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

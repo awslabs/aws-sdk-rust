@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelInstanceRefreshOutput {
-    /// <p>The instance refresh ID.</p>
+    /// <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
     #[doc(hidden)]
     pub instance_refresh_id: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelInstanceRefreshOutput {
-    /// <p>The instance refresh ID.</p>
+    /// <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
     pub fn instance_refresh_id(&self) -> std::option::Option<&str> {
         self.instance_refresh_id.as_deref()
     }
@@ -36,12 +36,12 @@ pub struct CancelInstanceRefreshOutputBuilder {
     _request_id: Option<String>,
 }
 impl CancelInstanceRefreshOutputBuilder {
-    /// <p>The instance refresh ID.</p>
+    /// <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
     pub fn instance_refresh_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_refresh_id = Some(input.into());
         self
     }
-    /// <p>The instance refresh ID.</p>
+    /// <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
     pub fn set_instance_refresh_id(
         mut self,
         input: std::option::Option<std::string::String>,

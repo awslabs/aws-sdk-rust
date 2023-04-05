@@ -5,7 +5,7 @@ pub use crate::operation::delete_distribution_configuration::_delete_distributio
 
 /// Fluent builder constructing a request to `DeleteDistributionConfiguration`.
 ///
-/// <p> Deletes a distribution configuration.</p>
+/// <p>Deletes a distribution configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDistributionConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

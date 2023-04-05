@@ -19,7 +19,7 @@ pub struct UpdateNotebookInstanceInput {
     pub lifecycle_config_name: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
     #[doc(hidden)]
-    pub disassociate_lifecycle_config: bool,
+    pub disassociate_lifecycle_config: std::option::Option<bool>,
     /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
     #[doc(hidden)]
     pub volume_size_in_gb: std::option::Option<i32>,
@@ -35,13 +35,13 @@ pub struct UpdateNotebookInstanceInput {
         std::option::Option<std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>,
     /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
     #[doc(hidden)]
-    pub disassociate_accelerator_types: bool,
+    pub disassociate_accelerator_types: std::option::Option<bool>,
     /// <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
     #[doc(hidden)]
-    pub disassociate_default_code_repository: bool,
+    pub disassociate_default_code_repository: std::option::Option<bool>,
     /// <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
     #[doc(hidden)]
-    pub disassociate_additional_code_repositories: bool,
+    pub disassociate_additional_code_repositories: std::option::Option<bool>,
     /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
     /// <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>
     /// </note>
@@ -72,7 +72,7 @@ impl UpdateNotebookInstanceInput {
         self.lifecycle_config_name.as_deref()
     }
     /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    pub fn disassociate_lifecycle_config(&self) -> bool {
+    pub fn disassociate_lifecycle_config(&self) -> std::option::Option<bool> {
         self.disassociate_lifecycle_config
     }
     /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
@@ -94,15 +94,15 @@ impl UpdateNotebookInstanceInput {
         self.accelerator_types.as_deref()
     }
     /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    pub fn disassociate_accelerator_types(&self) -> bool {
+    pub fn disassociate_accelerator_types(&self) -> std::option::Option<bool> {
         self.disassociate_accelerator_types
     }
     /// <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    pub fn disassociate_default_code_repository(&self) -> bool {
+    pub fn disassociate_default_code_repository(&self) -> std::option::Option<bool> {
         self.disassociate_default_code_repository
     }
     /// <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    pub fn disassociate_additional_code_repositories(&self) -> bool {
+    pub fn disassociate_additional_code_repositories(&self) -> std::option::Option<bool> {
         self.disassociate_additional_code_repositories
     }
     /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
@@ -356,22 +356,15 @@ impl UpdateNotebookInstanceInputBuilder {
                 instance_type: self.instance_type,
                 role_arn: self.role_arn,
                 lifecycle_config_name: self.lifecycle_config_name,
-                disassociate_lifecycle_config: self
-                    .disassociate_lifecycle_config
-                    .unwrap_or_default(),
+                disassociate_lifecycle_config: self.disassociate_lifecycle_config,
                 volume_size_in_gb: self.volume_size_in_gb,
                 default_code_repository: self.default_code_repository,
                 additional_code_repositories: self.additional_code_repositories,
                 accelerator_types: self.accelerator_types,
-                disassociate_accelerator_types: self
-                    .disassociate_accelerator_types
-                    .unwrap_or_default(),
-                disassociate_default_code_repository: self
-                    .disassociate_default_code_repository
-                    .unwrap_or_default(),
+                disassociate_accelerator_types: self.disassociate_accelerator_types,
+                disassociate_default_code_repository: self.disassociate_default_code_repository,
                 disassociate_additional_code_repositories: self
-                    .disassociate_additional_code_repositories
-                    .unwrap_or_default(),
+                    .disassociate_additional_code_repositories,
                 root_access: self.root_access,
                 instance_metadata_service_configuration: self
                     .instance_metadata_service_configuration,

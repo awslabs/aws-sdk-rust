@@ -437,6 +437,46 @@ impl From<crate::operation::create_auto_ml_job::CreateAutoMLJobError> for Error 
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error> for Error {
+    fn from(err: crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error) -> Self {
+        match err {
+            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
+            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::create_code_repository::CreateCodeRepositoryError,
             R,
         >,
@@ -4303,6 +4343,45 @@ impl From<crate::operation::describe_auto_ml_job::DescribeAutoMLJobError> for Er
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error> for Error {
+    fn from(err: crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error) -> Self {
+        match err {
+            crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::describe_code_repository::DescribeCodeRepositoryError,
             R,
         >,
@@ -7775,6 +7854,7 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_inference_
 impl From<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError> for Error {
     fn from(err: crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError) -> Self {
         match err {
+            crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

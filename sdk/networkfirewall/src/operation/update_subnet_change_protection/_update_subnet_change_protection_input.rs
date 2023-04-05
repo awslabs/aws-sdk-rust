@@ -18,7 +18,7 @@ pub struct UpdateSubnetChangeProtectionInput {
     pub firewall_name: std::option::Option<std::string::String>,
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     #[doc(hidden)]
-    pub subnet_change_protection: bool,
+    pub subnet_change_protection: std::option::Option<bool>,
 }
 impl UpdateSubnetChangeProtectionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -38,7 +38,7 @@ impl UpdateSubnetChangeProtectionInput {
         self.firewall_name.as_deref()
     }
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    pub fn subnet_change_protection(&self) -> bool {
+    pub fn subnet_change_protection(&self) -> std::option::Option<bool> {
         self.subnet_change_protection
     }
 }
@@ -119,7 +119,7 @@ impl UpdateSubnetChangeProtectionInputBuilder {
                 update_token: self.update_token,
                 firewall_arn: self.firewall_arn,
                 firewall_name: self.firewall_name,
-                subnet_change_protection: self.subnet_change_protection.unwrap_or_default(),
+                subnet_change_protection: self.subnet_change_protection,
             },
         )
     }

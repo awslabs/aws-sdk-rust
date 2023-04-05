@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVoiceConnectorProxy`](crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder::set_voice_connector_id): (undocumented)
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
     /// - On success, responds with [`DeleteVoiceConnectorProxyOutput`](crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceConnectorProxyError>`](crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyError)
     pub fn delete_voice_connector_proxy(&self) -> crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder{

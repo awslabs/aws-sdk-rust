@@ -8,7 +8,7 @@ pub struct DescribeModelCardInput {
     pub model_card_name: std::option::Option<std::string::String>,
     /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
     #[doc(hidden)]
-    pub model_card_version: i32,
+    pub model_card_version: std::option::Option<i32>,
 }
 impl DescribeModelCardInput {
     /// <p>The name of the model card to describe.</p>
@@ -16,7 +16,7 @@ impl DescribeModelCardInput {
         self.model_card_name.as_deref()
     }
     /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
-    pub fn model_card_version(&self) -> i32 {
+    pub fn model_card_version(&self) -> std::option::Option<i32> {
         self.model_card_version
     }
 }
@@ -66,7 +66,7 @@ impl DescribeModelCardInputBuilder {
         Ok(
             crate::operation::describe_model_card::DescribeModelCardInput {
                 model_card_name: self.model_card_name,
-                model_card_version: self.model_card_version.unwrap_or_default(),
+                model_card_version: self.model_card_version,
             },
         )
     }

@@ -13,7 +13,7 @@ pub struct Gnss {
     /// <p>Optional value that gives the capture time estimate accuracy, in seconds. If capture time accuracy is not specified, default value of 300 is used.</p>
     #[doc(hidden)]
     pub capture_time_accuracy: std::option::Option<f32>,
-    /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The co-ordinates are inside the WGS84 reference frame.</p>
+    /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
     #[doc(hidden)]
     pub assist_position: std::option::Option<std::vec::Vec<f32>>,
     /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
@@ -36,7 +36,7 @@ impl Gnss {
     pub fn capture_time_accuracy(&self) -> std::option::Option<f32> {
         self.capture_time_accuracy
     }
-    /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The co-ordinates are inside the WGS84 reference frame.</p>
+    /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
     pub fn assist_position(&self) -> std::option::Option<&[f32]> {
         self.assist_position.as_deref()
     }
@@ -102,14 +102,14 @@ impl GnssBuilder {
     ///
     /// To override the contents of this collection use [`set_assist_position`](Self::set_assist_position).
     ///
-    /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The co-ordinates are inside the WGS84 reference frame.</p>
+    /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
     pub fn assist_position(mut self, input: f32) -> Self {
         let mut v = self.assist_position.unwrap_or_default();
         v.push(input);
         self.assist_position = Some(v);
         self
     }
-    /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The co-ordinates are inside the WGS84 reference frame.</p>
+    /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
     pub fn set_assist_position(mut self, input: std::option::Option<std::vec::Vec<f32>>) -> Self {
         self.assist_position = input;
         self

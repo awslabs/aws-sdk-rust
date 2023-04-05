@@ -16,6 +16,8 @@ impl super::Client {
     ///   - [`replication_type(Option<ReplicationType>)`](crate::operation::finalize_cutover::FinalizeCutoverOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::operation::finalize_cutover::FinalizeCutoverOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::finalize_cutover::FinalizeCutoverOutput::application_id): <p>Source server application ID.</p>
+    ///   - [`user_provided_id(Option<String>)`](crate::operation::finalize_cutover::FinalizeCutoverOutput::user_provided_id): <p>Source server user provided ID.</p>
+    ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::finalize_cutover::FinalizeCutoverOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<FinalizeCutoverError>`](crate::operation::finalize_cutover::FinalizeCutoverError)
     pub fn finalize_cutover(
         &self,

@@ -69,12 +69,12 @@ impl DescribeDocumentClassifierFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
     pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.document_classifier_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
     pub fn set_document_classifier_arn(
         mut self,
         input: std::option::Option<std::string::String>,

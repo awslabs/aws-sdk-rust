@@ -30,6 +30,9 @@ pub fn ser_resource_mapping(
     if let Some(var_8) = &input.terraform_source_name {
         object.key("terraformSourceName").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.eks_source_name {
+        object.key("eksSourceName").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -113,6 +116,15 @@ where
                             }
                             "terraformSourceName" => {
                                 builder = builder.set_terraform_source_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "eksSourceName" => {
+                                builder = builder.set_eks_source_name(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

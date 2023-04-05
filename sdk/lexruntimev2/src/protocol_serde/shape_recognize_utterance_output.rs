@@ -60,6 +60,16 @@ pub(crate) fn de_messages_header(
     aws_smithy_http::header::one_or_none(headers)
 }
 
+pub(crate) fn de_recognized_bot_member_header(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("x-amz-lex-recognized-bot-member").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
 pub(crate) fn de_request_attributes_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<

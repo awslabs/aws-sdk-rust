@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProxySession`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::set_voice_connector_id): (undocumented)
-    ///   - [`proxy_session_id(impl Into<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::set_proxy_session_id): (undocumented)
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
+    ///   - [`proxy_session_id(impl Into<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::set_proxy_session_id): <p>The proxy session ID.</p>
     /// - On success, responds with [`GetProxySessionOutput`](crate::operation::get_proxy_session::GetProxySessionOutput) with field(s):
-    ///   - [`proxy_session(Option<ProxySession>)`](crate::operation::get_proxy_session::GetProxySessionOutput::proxy_session): (undocumented)
+    ///   - [`proxy_session(Option<ProxySession>)`](crate::operation::get_proxy_session::GetProxySessionOutput::proxy_session): <p>The proxy session details.</p>
     /// - On failure, responds with [`SdkError<GetProxySessionError>`](crate::operation::get_proxy_session::GetProxySessionError)
     pub fn get_proxy_session(
         &self,

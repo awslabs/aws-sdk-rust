@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStaleSecurityGroupsOutput {
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the stale security groups.</p>
@@ -13,7 +13,7 @@ pub struct DescribeStaleSecurityGroupsOutput {
     _request_id: Option<String>,
 }
 impl DescribeStaleSecurityGroupsOutput {
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,12 +46,12 @@ pub struct DescribeStaleSecurityGroupsOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeStaleSecurityGroupsOutputBuilder {
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

@@ -57,37 +57,37 @@ pub fn ser_update_workload_input(
     if let Some(var_17) = &input.industry_type {
         object.key("IndustryType").string(var_17.as_str());
     }
-    if input.is_review_owner_update_acknowledged {
+    if let Some(var_18) = &input.is_review_owner_update_acknowledged {
         object
             .key("IsReviewOwnerUpdateAcknowledged")
-            .boolean(input.is_review_owner_update_acknowledged);
+            .boolean(*var_18);
     }
-    if let Some(var_18) = &input.non_aws_regions {
-        let mut array_19 = object.key("NonAwsRegions").start_array();
-        for item_20 in var_18 {
+    if let Some(var_19) = &input.non_aws_regions {
+        let mut array_20 = object.key("NonAwsRegions").start_array();
+        for item_21 in var_19 {
             {
-                array_19.value().string(item_20.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_19.finish();
+        array_20.finish();
     }
-    if let Some(var_21) = &input.notes {
-        object.key("Notes").string(var_21.as_str());
+    if let Some(var_22) = &input.notes {
+        object.key("Notes").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.pillar_priorities {
-        let mut array_23 = object.key("PillarPriorities").start_array();
-        for item_24 in var_22 {
+    if let Some(var_23) = &input.pillar_priorities {
+        let mut array_24 = object.key("PillarPriorities").start_array();
+        for item_25 in var_23 {
             {
-                array_23.value().string(item_24.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        array_23.finish();
+        array_24.finish();
     }
-    if let Some(var_25) = &input.review_owner {
-        object.key("ReviewOwner").string(var_25.as_str());
+    if let Some(var_26) = &input.review_owner {
+        object.key("ReviewOwner").string(var_26.as_str());
     }
-    if let Some(var_26) = &input.workload_name {
-        object.key("WorkloadName").string(var_26.as_str());
+    if let Some(var_27) = &input.workload_name {
+        object.key("WorkloadName").string(var_27.as_str());
     }
     Ok(())
 }

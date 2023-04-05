@@ -35,12 +35,11 @@ pub fn ser_put_bucket_policy_headers(
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
-    if input.confirm_remove_self_bucket_access {
-        let mut encoder =
-            aws_smithy_types::primitive::Encoder::from(input.confirm_remove_self_bucket_access);
-        let formatted_5 = encoder.encode();
-        if !formatted_5.is_empty() {
-            let header_value = formatted_5;
+    if let Some(inner_5) = &input.confirm_remove_self_bucket_access {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_5);
+        let formatted_6 = encoder.encode();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "confirm_remove_self_bucket_access",
@@ -53,10 +52,10 @@ pub fn ser_put_bucket_policy_headers(
             builder = builder.header("x-amz-confirm-remove-self-bucket-access", header_value);
         }
     }
-    if let Some(inner_6) = &input.expected_bucket_owner {
-        let formatted_7 = inner_6.as_str();
-        if !formatted_7.is_empty() {
-            let header_value = formatted_7;
+    if let Some(inner_7) = &input.expected_bucket_owner {
+        let formatted_8 = inner_7.as_str();
+        if !formatted_8.is_empty() {
+            let header_value = formatted_8;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",

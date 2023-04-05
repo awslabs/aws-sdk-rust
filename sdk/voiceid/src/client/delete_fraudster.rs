@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFraudster`](crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::set_domain_id): <p>The identifier of the domain containing the fraudster.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::set_domain_id): <p>The identifier of the domain that contains the fraudster.</p>
     ///   - [`fraudster_id(impl Into<String>)`](crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::fraudster_id) / [`set_fraudster_id(Option<String>)`](crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::set_fraudster_id): <p>The identifier of the fraudster you want to delete.</p>
     /// - On success, responds with [`DeleteFraudsterOutput`](crate::operation::delete_fraudster::DeleteFraudsterOutput)
     /// - On failure, responds with [`SdkError<DeleteFraudsterError>`](crate::operation::delete_fraudster::DeleteFraudsterError)

@@ -318,6 +318,8 @@ mod remove_resource_permission;
 
 mod restore_document_versions;
 
+mod search_resources;
+
 mod update_document;
 
 mod update_document_version;

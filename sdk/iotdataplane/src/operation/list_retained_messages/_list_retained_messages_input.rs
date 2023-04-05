@@ -8,7 +8,7 @@ pub struct ListRetainedMessagesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListRetainedMessagesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -16,7 +16,7 @@ impl ListRetainedMessagesInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -66,7 +66,7 @@ impl ListRetainedMessagesInputBuilder {
         Ok(
             crate::operation::list_retained_messages::ListRetainedMessagesInput {
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
             },
         )
     }

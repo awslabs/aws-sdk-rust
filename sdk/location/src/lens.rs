@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_geofences_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_keys_output_next_token(
+    input: &crate::operation::list_keys::ListKeysOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_maps_output_next_token(
     input: &crate::operation::list_maps::ListMapsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -122,6 +132,16 @@ pub(crate) fn lens_list_geofence_collections_output_entries(
 pub(crate) fn lens_list_geofences_output_entries(
     input: crate::operation::list_geofences::ListGeofencesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::ListGeofenceResponseEntry>> {
+    let input = match input.entries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_keys_output_entries(
+    input: crate::operation::list_keys::ListKeysOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ListKeysResponseEntry>> {
     let input = match input.entries {
         None => return None,
         Some(t) => t,

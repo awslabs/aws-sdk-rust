@@ -4,7 +4,8 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifySpotFleetRequestInput {
-    /// <p>Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     #[doc(hidden)]
     pub excess_capacity_termination_policy:
         std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
@@ -26,7 +27,8 @@ pub struct ModifySpotFleetRequestInput {
     pub context: std::option::Option<std::string::String>,
 }
 impl ModifySpotFleetRequestInput {
-    /// <p>Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         &self,
     ) -> std::option::Option<&crate::types::ExcessCapacityTerminationPolicy> {
@@ -78,7 +80,8 @@ pub struct ModifySpotFleetRequestInputBuilder {
     pub(crate) context: std::option::Option<std::string::String>,
 }
 impl ModifySpotFleetRequestInputBuilder {
-    /// <p>Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         mut self,
         input: crate::types::ExcessCapacityTerminationPolicy,
@@ -86,7 +89,8 @@ impl ModifySpotFleetRequestInputBuilder {
         self.excess_capacity_termination_policy = Some(input);
         self
     }
-    /// <p>Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(
         mut self,
         input: std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,

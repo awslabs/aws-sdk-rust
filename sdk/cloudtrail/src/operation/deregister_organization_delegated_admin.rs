@@ -148,12 +148,14 @@ pub type DeregisterOrganizationDelegatedAdminErrorKind = DeregisterOrganizationD
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterOrganizationDelegatedAdminError {
-    /// <p>This exception is thrown when when the specified account is not found or not part of an organization.</p>
+    /// <p>This exception is thrown when the specified account is not found or not part of an organization.</p>
     AccountNotFoundException(crate::types::error::AccountNotFoundException),
     /// <p>This exception is thrown when the specified account is not registered as the CloudTrail delegated administrator.</p>
     AccountNotRegisteredException(crate::types::error::AccountNotRegisteredException),
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::types::error::CloudTrailAccessNotEnabledException),
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::types::error::InsufficientDependencyServiceAccessPermissionException,
@@ -195,6 +197,7 @@ impl std::fmt::Display for DeregisterOrganizationDelegatedAdminError {
             Self::AccountNotFoundException(_inner) => _inner.fmt(f),
             Self::AccountNotRegisteredException(_inner) => _inner.fmt(f),
             Self::CloudTrailAccessNotEnabledException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::NotOrganizationManagementAccountException(_inner) => _inner.fmt(f),
@@ -218,6 +221,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::CloudTrailAccessNotEnabledException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ConflictException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => {
@@ -289,6 +295,7 @@ impl DeregisterOrganizationDelegatedAdminError {
             Self::AccountNotFoundException(e) => e.meta(),
             Self::AccountNotRegisteredException(e) => e.meta(),
             Self::CloudTrailAccessNotEnabledException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::InsufficientDependencyServiceAccessPermissionException(e) => e.meta(),
             Self::InvalidParameterException(e) => e.meta(),
             Self::NotOrganizationManagementAccountException(e) => e.meta(),
@@ -310,6 +317,10 @@ impl DeregisterOrganizationDelegatedAdminError {
     /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminError::CloudTrailAccessNotEnabledException`.
     pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
         matches!(self, Self::CloudTrailAccessNotEnabledException(_))
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminError::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
@@ -349,6 +360,7 @@ impl std::error::Error for DeregisterOrganizationDelegatedAdminError {
             Self::AccountNotFoundException(_inner) => Some(_inner),
             Self::AccountNotRegisteredException(_inner) => Some(_inner),
             Self::CloudTrailAccessNotEnabledException(_inner) => Some(_inner),
+            Self::ConflictException(_inner) => Some(_inner),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => Some(_inner),
             Self::InvalidParameterException(_inner) => Some(_inner),
             Self::NotOrganizationManagementAccountException(_inner) => Some(_inner),

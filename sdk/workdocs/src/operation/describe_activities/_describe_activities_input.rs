@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivitiesInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
@@ -26,7 +26,7 @@ pub struct DescribeActivitiesInput {
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     #[doc(hidden)]
-    pub include_indirect_activities: bool,
+    pub include_indirect_activities: std::option::Option<bool>,
     /// <p>The maximum number of items to return.</p>
     #[doc(hidden)]
     pub limit: std::option::Option<i32>,
@@ -35,7 +35,7 @@ pub struct DescribeActivitiesInput {
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeActivitiesInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -64,7 +64,7 @@ impl DescribeActivitiesInput {
         self.user_id.as_deref()
     }
     /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
-    pub fn include_indirect_activities(&self) -> bool {
+    pub fn include_indirect_activities(&self) -> std::option::Option<bool> {
         self.include_indirect_activities
     }
     /// <p>The maximum number of items to return.</p>
@@ -119,12 +119,12 @@ pub struct DescribeActivitiesInputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
 }
 impl DescribeActivitiesInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -241,7 +241,7 @@ impl DescribeActivitiesInputBuilder {
                 activity_types: self.activity_types,
                 resource_id: self.resource_id,
                 user_id: self.user_id,
-                include_indirect_activities: self.include_indirect_activities.unwrap_or_default(),
+                include_indirect_activities: self.include_indirect_activities,
                 limit: self.limit,
                 marker: self.marker,
             },

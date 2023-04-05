@@ -8,7 +8,7 @@ pub struct S3StorageConfig {
     /// <p>S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
     /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
@@ -25,7 +25,7 @@ impl S3StorageConfig {
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
     /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
@@ -66,7 +66,7 @@ impl S3StorageConfigBuilder {
         self.s3_uri = input;
         self
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
     /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
@@ -75,7 +75,7 @@ impl S3StorageConfigBuilder {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
     /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>

@@ -15,7 +15,7 @@ pub struct UpdateChannelMessageInput {
     /// <p>The metadata of the message being updated.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>The ID of the SubChannel in the request.</p> <note>
@@ -23,6 +23,9 @@ pub struct UpdateChannelMessageInput {
     /// </note>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    /// <p>The content type of the channel message.</p>
+    #[doc(hidden)]
+    pub content_type: std::option::Option<std::string::String>,
 }
 impl UpdateChannelMessageInput {
     /// <p>The ARN of the channel.</p>
@@ -41,7 +44,7 @@ impl UpdateChannelMessageInput {
     pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
@@ -50,6 +53,10 @@ impl UpdateChannelMessageInput {
     /// </note>
     pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
+    }
+    /// <p>The content type of the channel message.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
     }
 }
 impl std::fmt::Debug for UpdateChannelMessageInput {
@@ -61,6 +68,7 @@ impl std::fmt::Debug for UpdateChannelMessageInput {
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("chime_bearer", &self.chime_bearer);
         formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -82,6 +90,7 @@ pub struct UpdateChannelMessageInputBuilder {
     pub(crate) metadata: std::option::Option<std::string::String>,
     pub(crate) chime_bearer: std::option::Option<std::string::String>,
     pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+    pub(crate) content_type: std::option::Option<std::string::String>,
 }
 impl UpdateChannelMessageInputBuilder {
     /// <p>The ARN of the channel.</p>
@@ -124,12 +133,12 @@ impl UpdateChannelMessageInputBuilder {
         self.metadata = input;
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.chime_bearer = Some(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.chime_bearer = input;
         self
@@ -148,6 +157,16 @@ impl UpdateChannelMessageInputBuilder {
         self.sub_channel_id = input;
         self
     }
+    /// <p>The content type of the channel message.</p>
+    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.content_type = Some(input.into());
+        self
+    }
+    /// <p>The content type of the channel message.</p>
+    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.content_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateChannelMessageInput`](crate::operation::update_channel_message::UpdateChannelMessageInput).
     pub fn build(
         self,
@@ -163,6 +182,7 @@ impl UpdateChannelMessageInputBuilder {
                 metadata: self.metadata,
                 chime_bearer: self.chime_bearer,
                 sub_channel_id: self.sub_channel_id,
+                content_type: self.content_type,
             },
         )
     }
@@ -176,6 +196,7 @@ impl std::fmt::Debug for UpdateChannelMessageInputBuilder {
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("chime_bearer", &self.chime_bearer);
         formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

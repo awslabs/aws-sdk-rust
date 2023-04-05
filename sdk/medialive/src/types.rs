@@ -851,6 +851,8 @@ pub use crate::types::_nielsen_watermarks_settings::NielsenWatermarksSettings;
 
 pub use crate::types::_nielsen_naes_ii_nw::NielsenNaesIiNw;
 
+pub use crate::types::_nielsen_watermark_timezones::NielsenWatermarkTimezones;
+
 pub use crate::types::_nielsen_watermarks_distribution_types::NielsenWatermarksDistributionTypes;
 
 pub use crate::types::_nielsen_cbet::NielsenCbet;
@@ -1744,6 +1746,8 @@ mod _nielsen_configuration;
 mod _nielsen_naes_ii_nw;
 
 mod _nielsen_pcm_to_id3_tagging_state;
+
+mod _nielsen_watermark_timezones;
 
 mod _nielsen_watermarks_cbet_stepaside;
 

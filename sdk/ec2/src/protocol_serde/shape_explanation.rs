@@ -558,6 +558,26 @@ pub fn de_explanation(
                 builder = builder.set_component_region(var_51);
             }
             ,
+            s if s.matches("firewallStatelessRule") /* FirewallStatelessRule com.amazonaws.ec2#Explanation$FirewallStatelessRule */ =>  {
+                let var_52 =
+                    Some(
+                        crate::protocol_serde::shape_firewall_stateless_rule::de_firewall_stateless_rule(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_firewall_stateless_rule(var_52);
+            }
+            ,
+            s if s.matches("firewallStatefulRule") /* FirewallStatefulRule com.amazonaws.ec2#Explanation$FirewallStatefulRule */ =>  {
+                let var_53 =
+                    Some(
+                        crate::protocol_serde::shape_firewall_stateful_rule::de_firewall_stateful_rule(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_firewall_stateful_rule(var_53);
+            }
+            ,
             _ => {}
         }
     }

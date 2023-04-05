@@ -3,31 +3,31 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTimelineEventInput {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the action only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
     #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
     #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
     /// <p>A short description of the event.</p>
     #[doc(hidden)]
     pub event_data: std::option::Option<std::string::String>,
-    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
     #[doc(hidden)]
     pub event_references: std::option::Option<std::vec::Vec<crate::types::EventReference>>,
 }
 impl CreateTimelineEventInput {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the action only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
@@ -35,7 +35,7 @@ impl CreateTimelineEventInput {
     pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
-    /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
     pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
     }
@@ -43,7 +43,7 @@ impl CreateTimelineEventInput {
     pub fn event_data(&self) -> std::option::Option<&str> {
         self.event_data.as_deref()
     }
-    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
     pub fn event_references(&self) -> std::option::Option<&[crate::types::EventReference]> {
         self.event_references.as_deref()
     }
@@ -69,22 +69,22 @@ pub struct CreateTimelineEventInputBuilder {
     pub(crate) event_references: std::option::Option<std::vec::Vec<crate::types::EventReference>>,
 }
 impl CreateTimelineEventInputBuilder {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the action only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the action only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
     pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.incident_record_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
     pub fn set_incident_record_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -105,12 +105,12 @@ impl CreateTimelineEventInputBuilder {
         self.event_time = input;
         self
     }
-    /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
     pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_type = Some(input.into());
         self
     }
-    /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
     pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.event_type = input;
         self
@@ -129,14 +129,14 @@ impl CreateTimelineEventInputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
     ///
-    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
     pub fn event_references(mut self, input: crate::types::EventReference) -> Self {
         let mut v = self.event_references.unwrap_or_default();
         v.push(input);
         self.event_references = Some(v);
         self
     }
-    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
     pub fn set_event_references(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::EventReference>>,

@@ -3,46 +3,61 @@ pub fn ser_create_bot_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_bot::CreateBotInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bot_name {
-        object.key("botName").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.bot_tags {
-        #[allow(unused_mut)]
-        let mut object_3 = object.key("botTags").start_object();
-        for (key_4, value_5) in var_2 {
+    if let Some(var_1) = &input.bot_members {
+        let mut array_2 = object.key("botMembers").start_array();
+        for item_3 in var_1 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                #[allow(unused_mut)]
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_bot_member::ser_bot_member(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        object_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.data_privacy {
+    if let Some(var_5) = &input.bot_name {
+        object.key("botName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.bot_tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("dataPrivacy").start_object();
-        crate::protocol_serde::shape_data_privacy::ser_data_privacy(&mut object_7, var_6)?;
+        let mut object_7 = object.key("botTags").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                object_7.key(key_8.as_str()).string(value_9.as_str());
+            }
+        }
         object_7.finish();
     }
-    if let Some(var_8) = &input.description {
-        object.key("description").string(var_8.as_str());
+    if let Some(var_10) = &input.bot_type {
+        object.key("botType").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.idle_session_ttl_in_seconds {
+    if let Some(var_11) = &input.data_privacy {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("dataPrivacy").start_object();
+        crate::protocol_serde::shape_data_privacy::ser_data_privacy(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.description {
+        object.key("description").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.idle_session_ttl_in_seconds {
         object.key("idleSessionTTLInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_9).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_10) = &input.role_arn {
-        object.key("roleArn").string(var_10.as_str());
+    if let Some(var_15) = &input.role_arn {
+        object.key("roleArn").string(var_15.as_str());
     }
-    if let Some(var_11) = &input.test_bot_alias_tags {
+    if let Some(var_16) = &input.test_bot_alias_tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("testBotAliasTags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_17 = object.key("testBotAliasTags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_12.finish();
+        object_17.finish();
     }
     Ok(())
 }

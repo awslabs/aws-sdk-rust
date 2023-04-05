@@ -5,7 +5,9 @@ pub use crate::operation::list_launch_paths::_list_launch_paths_input::ListLaunc
 
 /// Fluent builder constructing a request to `ListLaunchPaths`.
 ///
-/// <p>Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product.</p>
+/// <p> Lists the paths to the specified product. A path describes how the user gets access to a specified product and is necessary when provisioning a product. A path also determines the constraints that are put on a product. A path is dependent on a specific product, porfolio, and principal. </p> <note>
+/// <p> When provisioning a product that's been added to a portfolio, you must grant your user, group, or role access to the portfolio. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting users access</a> in the <i>Service Catalog User Guide</i>. </p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLaunchPathsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -82,7 +84,6 @@ impl ListLaunchPathsFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -92,7 +93,6 @@ impl ListLaunchPathsFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>

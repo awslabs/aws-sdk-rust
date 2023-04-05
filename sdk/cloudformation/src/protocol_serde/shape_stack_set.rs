@@ -195,6 +195,16 @@ pub fn de_stack_set(
                 builder = builder.set_managed_execution(var_16);
             }
             ,
+            s if s.matches("Regions") /* Regions com.amazonaws.cloudformation#StackSet$Regions */ =>  {
+                let var_17 =
+                    Some(
+                        crate::protocol_serde::shape_region_list::de_region_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_regions(var_17);
+            }
+            ,
             _ => {}
         }
     }

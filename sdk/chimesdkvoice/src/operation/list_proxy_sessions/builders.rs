@@ -5,6 +5,7 @@ pub use crate::operation::list_proxy_sessions::_list_proxy_sessions_input::ListP
 
 /// Fluent builder constructing a request to `ListProxySessions`.
 ///
+/// <p>Lists the proxy sessions for the specified Amazon Chime SDK Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProxySessionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -79,12 +80,12 @@ impl ListProxySessionsFluentBuilder {
             self.inner,
         )
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -92,12 +93,12 @@ impl ListProxySessionsFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session status.</p>
     pub fn status(mut self, input: crate::types::ProxySessionStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session status.</p>
     pub fn set_status(
         mut self,
         input: std::option::Option<crate::types::ProxySessionStatus>,
@@ -105,22 +106,22 @@ impl ListProxySessionsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self

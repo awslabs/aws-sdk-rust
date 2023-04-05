@@ -29,6 +29,10 @@ pub struct DescribeTimeSeriesOutput {
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
     #[doc(hidden)]
     pub time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    #[doc(hidden)]
+    pub time_series_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTimeSeriesOutput {
@@ -66,6 +70,11 @@ impl DescribeTimeSeriesOutput {
     pub fn time_series_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_series_last_update_date.as_ref()
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    pub fn time_series_arn(&self) -> std::option::Option<&str> {
+        self.time_series_arn.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeTimeSeriesOutput {
     fn request_id(&self) -> Option<&str> {
@@ -92,6 +101,7 @@ pub struct DescribeTimeSeriesOutputBuilder {
     pub(crate) data_type_spec: std::option::Option<std::string::String>,
     pub(crate) time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) time_series_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTimeSeriesOutputBuilder {
@@ -188,6 +198,18 @@ impl DescribeTimeSeriesOutputBuilder {
         self.time_series_last_update_date = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    pub fn time_series_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.time_series_arn = Some(input.into());
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    pub fn set_time_series_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.time_series_arn = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -208,6 +230,7 @@ impl DescribeTimeSeriesOutputBuilder {
             data_type_spec: self.data_type_spec,
             time_series_creation_date: self.time_series_creation_date,
             time_series_last_update_date: self.time_series_last_update_date,
+            time_series_arn: self.time_series_arn,
             _request_id: self._request_id,
         }
     }

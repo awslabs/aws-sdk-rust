@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p></p>
+    /// <p>The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is in the process of being deleted, or you can't import domains into a domain list that is in the process of being deleted.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>We encountered an unknown error. Try again in a few minutes.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
@@ -33,7 +33,7 @@ pub enum Error {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The specified resource doesn't exist.</p>
     UnknownResourceException(crate::types::error::UnknownResourceException),
-    /// <p></p>
+    /// <p>You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
@@ -1146,6 +1146,7 @@ impl From<crate::operation::get_resolver_config::GetResolverConfigError> for Err
             crate::operation::get_resolver_config::GetResolverConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_resolver_config::GetResolverConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_resolver_config::GetResolverConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resolver_config::GetResolverConfigError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_resolver_config::GetResolverConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1459,6 +1460,7 @@ where
 impl From<crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError> for Error {
     fn from(err: crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError) -> Self {
         match err {
+            crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
             crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
@@ -1789,6 +1791,7 @@ impl From<crate::operation::list_resolver_configs::ListResolverConfigsError> for
             crate::operation::list_resolver_configs::ListResolverConfigsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_resolver_configs::ListResolverConfigsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_resolver_configs::ListResolverConfigsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resolver_configs::ListResolverConfigsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_resolver_configs::ListResolverConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2230,6 +2233,7 @@ where
 impl From<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError> for Error {
     fn from(err: crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError) -> Self {
         match err {
+            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
             crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError::InvalidPolicyDocument(inner) => Error::InvalidPolicyDocument(inner),
@@ -2542,6 +2546,7 @@ impl From<crate::operation::update_resolver_config::UpdateResolverConfigError> f
             crate::operation::update_resolver_config::UpdateResolverConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_resolver_config::UpdateResolverConfigError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
             crate::operation::update_resolver_config::UpdateResolverConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_resolver_config::UpdateResolverConfigError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_resolver_config::UpdateResolverConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

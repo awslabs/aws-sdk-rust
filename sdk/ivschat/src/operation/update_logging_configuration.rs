@@ -164,6 +164,8 @@ pub enum UpdateLoggingConfigurationError {
     /// <p></p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p></p>
+    ConflictException(crate::types::error::ConflictException),
+    /// <p></p>
     PendingVerification(crate::types::error::PendingVerification),
     /// <p></p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
@@ -188,6 +190,7 @@ impl std::fmt::Display for UpdateLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::PendingVerification(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -199,6 +202,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateLoggingCo
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ConflictException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::PendingVerification(_inner) => {
@@ -258,6 +264,7 @@ impl UpdateLoggingConfigurationError {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::AccessDeniedException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::PendingVerification(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
@@ -267,6 +274,10 @@ impl UpdateLoggingConfigurationError {
     /// Returns `true` if the error kind is `UpdateLoggingConfigurationError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateLoggingConfigurationError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateLoggingConfigurationError::PendingVerification`.
     pub fn is_pending_verification(&self) -> bool {
@@ -285,6 +296,7 @@ impl std::error::Error for UpdateLoggingConfigurationError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => Some(_inner),
+            Self::ConflictException(_inner) => Some(_inner),
             Self::PendingVerification(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),

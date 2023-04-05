@@ -7,7 +7,7 @@ pub struct Filter {
     /// <p>Name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Filter values. Filter values are case-sensitive.</p>
+    /// <p>The value of the filter, which is case-sensitive. You can only specify one value for the filter.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -16,7 +16,7 @@ impl Filter {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Filter values. Filter values are case-sensitive.</p>
+    /// <p>The value of the filter, which is case-sensitive. You can only specify one value for the filter.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -50,14 +50,14 @@ impl FilterBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>Filter values. Filter values are case-sensitive.</p>
+    /// <p>The value of the filter, which is case-sensitive. You can only specify one value for the filter.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
         self.values = Some(v);
         self
     }
-    /// <p>Filter values. Filter values are case-sensitive.</p>
+    /// <p>The value of the filter, which is case-sensitive. You can only specify one value for the filter.</p>
     pub fn set_values(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

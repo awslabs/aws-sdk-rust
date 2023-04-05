@@ -21,7 +21,7 @@ pub struct UpdateThingInput {
     pub expected_version: std::option::Option<i64>,
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     #[doc(hidden)]
-    pub remove_thing_type: bool,
+    pub remove_thing_type: std::option::Option<bool>,
 }
 impl UpdateThingInput {
     /// <p>The name of the thing to update.</p>
@@ -44,7 +44,7 @@ impl UpdateThingInput {
         self.expected_version
     }
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
-    pub fn remove_thing_type(&self) -> bool {
+    pub fn remove_thing_type(&self) -> std::option::Option<bool> {
         self.remove_thing_type
     }
 }
@@ -137,7 +137,7 @@ impl UpdateThingInputBuilder {
             thing_type_name: self.thing_type_name,
             attribute_payload: self.attribute_payload,
             expected_version: self.expected_version,
-            remove_thing_type: self.remove_thing_type.unwrap_or_default(),
+            remove_thing_type: self.remove_thing_type,
         })
     }
 }

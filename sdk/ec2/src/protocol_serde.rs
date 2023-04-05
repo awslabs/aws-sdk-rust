@@ -61,6 +61,10 @@ pub(crate) mod shape_assign_private_ip_addresses;
 
 pub(crate) mod shape_assign_private_ip_addresses_input;
 
+pub(crate) mod shape_assign_private_nat_gateway_address;
+
+pub(crate) mod shape_assign_private_nat_gateway_address_input;
+
 pub(crate) mod shape_associate_address;
 
 pub(crate) mod shape_associate_address_input;
@@ -84,6 +88,14 @@ pub(crate) mod shape_associate_iam_instance_profile_input;
 pub(crate) mod shape_associate_instance_event_window;
 
 pub(crate) mod shape_associate_instance_event_window_input;
+
+pub(crate) mod shape_associate_ipam_resource_discovery;
+
+pub(crate) mod shape_associate_ipam_resource_discovery_input;
+
+pub(crate) mod shape_associate_nat_gateway_address;
+
+pub(crate) mod shape_associate_nat_gateway_address_input;
 
 pub(crate) mod shape_associate_route_table;
 
@@ -292,6 +304,10 @@ pub(crate) mod shape_create_ipam_input;
 pub(crate) mod shape_create_ipam_pool;
 
 pub(crate) mod shape_create_ipam_pool_input;
+
+pub(crate) mod shape_create_ipam_resource_discovery;
+
+pub(crate) mod shape_create_ipam_resource_discovery_input;
 
 pub(crate) mod shape_create_ipam_scope;
 
@@ -588,6 +604,10 @@ pub(crate) mod shape_delete_ipam_input;
 pub(crate) mod shape_delete_ipam_pool;
 
 pub(crate) mod shape_delete_ipam_pool_input;
+
+pub(crate) mod shape_delete_ipam_resource_discovery;
+
+pub(crate) mod shape_delete_ipam_resource_discovery_input;
 
 pub(crate) mod shape_delete_ipam_scope;
 
@@ -1061,6 +1081,14 @@ pub(crate) mod shape_describe_ipam_pools;
 
 pub(crate) mod shape_describe_ipam_pools_input;
 
+pub(crate) mod shape_describe_ipam_resource_discoveries;
+
+pub(crate) mod shape_describe_ipam_resource_discoveries_input;
+
+pub(crate) mod shape_describe_ipam_resource_discovery_associations;
+
+pub(crate) mod shape_describe_ipam_resource_discovery_associations_input;
+
 pub(crate) mod shape_describe_ipam_scopes;
 
 pub(crate) mod shape_describe_ipam_scopes_input;
@@ -1505,6 +1533,14 @@ pub(crate) mod shape_disassociate_instance_event_window;
 
 pub(crate) mod shape_disassociate_instance_event_window_input;
 
+pub(crate) mod shape_disassociate_ipam_resource_discovery;
+
+pub(crate) mod shape_disassociate_ipam_resource_discovery_input;
+
+pub(crate) mod shape_disassociate_nat_gateway_address;
+
+pub(crate) mod shape_disassociate_nat_gateway_address_input;
+
 pub(crate) mod shape_disassociate_route_table;
 
 pub(crate) mod shape_disassociate_route_table_input;
@@ -1669,6 +1705,14 @@ pub(crate) mod shape_get_ipam_address_history;
 
 pub(crate) mod shape_get_ipam_address_history_input;
 
+pub(crate) mod shape_get_ipam_discovered_accounts;
+
+pub(crate) mod shape_get_ipam_discovered_accounts_input;
+
+pub(crate) mod shape_get_ipam_discovered_resource_cidrs;
+
+pub(crate) mod shape_get_ipam_discovered_resource_cidrs_input;
+
 pub(crate) mod shape_get_ipam_pool_allocations;
 
 pub(crate) mod shape_get_ipam_pool_allocations_input;
@@ -1764,6 +1808,10 @@ pub(crate) mod shape_get_vpn_connection_device_sample_configuration_input;
 pub(crate) mod shape_get_vpn_connection_device_types;
 
 pub(crate) mod shape_get_vpn_connection_device_types_input;
+
+pub(crate) mod shape_get_vpn_tunnel_replacement_status;
+
+pub(crate) mod shape_get_vpn_tunnel_replacement_status_input;
 
 pub(crate) mod shape_import_client_vpn_client_certificate_revocation_list;
 
@@ -1892,6 +1940,10 @@ pub(crate) mod shape_modify_ipam_pool_input;
 pub(crate) mod shape_modify_ipam_resource_cidr;
 
 pub(crate) mod shape_modify_ipam_resource_cidr_input;
+
+pub(crate) mod shape_modify_ipam_resource_discovery;
+
+pub(crate) mod shape_modify_ipam_resource_discovery_input;
 
 pub(crate) mod shape_modify_ipam_scope;
 
@@ -2161,6 +2213,10 @@ pub(crate) mod shape_replace_transit_gateway_route;
 
 pub(crate) mod shape_replace_transit_gateway_route_input;
 
+pub(crate) mod shape_replace_vpn_tunnel;
+
+pub(crate) mod shape_replace_vpn_tunnel_input;
+
 pub(crate) mod shape_report_instance_status;
 
 pub(crate) mod shape_report_instance_status_input;
@@ -2292,6 +2348,10 @@ pub(crate) mod shape_unassign_ipv6_addresses_input;
 pub(crate) mod shape_unassign_private_ip_addresses;
 
 pub(crate) mod shape_unassign_private_ip_addresses_input;
+
+pub(crate) mod shape_unassign_private_nat_gateway_address;
+
+pub(crate) mod shape_unassign_private_nat_gateway_address_input;
 
 pub(crate) mod shape_unmonitor_instances;
 
@@ -2468,6 +2528,8 @@ pub(crate) mod shape_network_interface_attachment_changes;
 pub(crate) mod shape_new_dhcp_configuration;
 
 pub(crate) mod shape_on_demand_options_request;
+
+pub(crate) mod shape_path_request_filter;
 
 pub(crate) mod shape_peering_connection_options_request;
 
@@ -2829,6 +2891,10 @@ pub(crate) mod shape_ipam;
 
 pub(crate) mod shape_ipam_address_history_record_set;
 
+pub(crate) mod shape_ipam_discovered_account_set;
+
+pub(crate) mod shape_ipam_discovered_resource_cidr_set;
+
 pub(crate) mod shape_ipam_pool;
 
 pub(crate) mod shape_ipam_pool_allocation;
@@ -2844,6 +2910,14 @@ pub(crate) mod shape_ipam_pool_set;
 pub(crate) mod shape_ipam_resource_cidr;
 
 pub(crate) mod shape_ipam_resource_cidr_set;
+
+pub(crate) mod shape_ipam_resource_discovery;
+
+pub(crate) mod shape_ipam_resource_discovery_association;
+
+pub(crate) mod shape_ipam_resource_discovery_association_set;
+
+pub(crate) mod shape_ipam_resource_discovery_set;
 
 pub(crate) mod shape_ipam_scope;
 
@@ -2935,6 +3009,8 @@ pub(crate) mod shape_local_gateway_virtual_interface_group_set;
 
 pub(crate) mod shape_local_gateway_virtual_interface_set;
 
+pub(crate) mod shape_maintenance_details;
+
 pub(crate) mod shape_managed_prefix_list;
 
 pub(crate) mod shape_managed_prefix_list_set;
@@ -2946,6 +3022,8 @@ pub(crate) mod shape_memory_mi_b_request;
 pub(crate) mod shape_moving_address_status_set;
 
 pub(crate) mod shape_nat_gateway;
+
+pub(crate) mod shape_nat_gateway_address_list;
 
 pub(crate) mod shape_nat_gateway_list;
 
@@ -3030,6 +3108,8 @@ pub(crate) mod shape_region_list;
 pub(crate) mod shape_replace_root_volume_task;
 
 pub(crate) mod shape_replace_root_volume_tasks;
+
+pub(crate) mod shape_request_filter_port_range;
 
 pub(crate) mod shape_reservation_list;
 
@@ -3523,6 +3603,10 @@ pub(crate) mod shape_internet_gateway_attachment_list;
 
 pub(crate) mod shape_ipam_address_history_record;
 
+pub(crate) mod shape_ipam_discovered_account;
+
+pub(crate) mod shape_ipam_discovered_resource_cidr;
+
 pub(crate) mod shape_ipam_operating_region_set;
 
 pub(crate) mod shape_ipam_pool_cidr_failure_reason;
@@ -3587,7 +3671,7 @@ pub(crate) mod shape_local_gateway_virtual_interface_group;
 
 pub(crate) mod shape_moving_address_status;
 
-pub(crate) mod shape_nat_gateway_address_list;
+pub(crate) mod shape_nat_gateway_address;
 
 pub(crate) mod shape_network_acl_association_list;
 
@@ -3606,6 +3690,8 @@ pub(crate) mod shape_oidc_options;
 pub(crate) mod shape_packet_header_statement_request;
 
 pub(crate) mod shape_path_component_list;
+
+pub(crate) mod shape_path_filter;
 
 pub(crate) mod shape_peering_attachment_status;
 
@@ -3915,6 +4001,8 @@ pub(crate) mod shape_excluded_instance_type_set;
 
 pub(crate) mod shape_explanation;
 
+pub(crate) mod shape_filter_port_range;
+
 pub(crate) mod shape_fleet_launch_template_config_list;
 
 pub(crate) mod shape_fpga_image_state;
@@ -3963,6 +4051,8 @@ pub(crate) mod shape_internet_gateway_attachment;
 
 pub(crate) mod shape_ip_range_list;
 
+pub(crate) mod shape_ipam_discovery_failure_reason;
+
 pub(crate) mod shape_ipam_operating_region;
 
 pub(crate) mod shape_ipam_resource_tag;
@@ -4006,8 +4096,6 @@ pub(crate) mod shape_memory_mi_b;
 pub(crate) mod shape_metric_points;
 
 pub(crate) mod shape_monitoring;
-
-pub(crate) mod shape_nat_gateway_address;
 
 pub(crate) mod shape_network_acl_association;
 
@@ -4197,6 +4285,10 @@ pub(crate) mod shape_elastic_inference_accelerator_association;
 
 pub(crate) mod shape_enable_fast_snapshot_restore_state_error_item;
 
+pub(crate) mod shape_firewall_stateful_rule;
+
+pub(crate) mod shape_firewall_stateless_rule;
+
 pub(crate) mod shape_fleet_launch_template_config;
 
 pub(crate) mod shape_fleet_launch_template_overrides;
@@ -4363,6 +4455,8 @@ pub(crate) mod shape_placement_response;
 
 pub(crate) mod shape_prefix_list_id_set;
 
+pub(crate) mod shape_protocol_int_list;
+
 pub(crate) mod shape_resource_statement;
 
 pub(crate) mod shape_through_resources_statement;
@@ -4409,8 +4503,20 @@ pub(crate) mod shape_phase2_integrity_algorithms_list_value;
 
 pub(crate) mod shape_protocol_list;
 
+pub(crate) mod shape_rule_group_rule_options_pair_list;
+
+pub(crate) mod shape_rule_group_type_pair_list;
+
+pub(crate) mod shape_rule_option_list;
+
 pub(crate) mod shape_security_group_id_string_list;
 
 pub(crate) mod shape_spot_fleet_tag_specification_list;
 
 pub(crate) mod shape_target_groups;
+
+pub(crate) mod shape_rule_group_rule_options_pair;
+
+pub(crate) mod shape_rule_group_type_pair;
+
+pub(crate) mod shape_rule_option;

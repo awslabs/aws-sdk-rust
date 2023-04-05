@@ -26,14 +26,14 @@ pub struct CreateWorkflowInput {
     pub parameter_template: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>,
     >,
-    /// <p>A storage capacity for the workflow.</p>
+    /// <p>A storage capacity for the workflow in gigabytes.</p>
     #[doc(hidden)]
     pub storage_capacity: std::option::Option<i32>,
     /// <p>Tags for the workflow.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A request ID for the workflow.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
@@ -70,7 +70,7 @@ impl CreateWorkflowInput {
     > {
         self.parameter_template.as_ref()
     }
-    /// <p>A storage capacity for the workflow.</p>
+    /// <p>A storage capacity for the workflow in gigabytes.</p>
     pub fn storage_capacity(&self) -> std::option::Option<i32> {
         self.storage_capacity
     }
@@ -81,7 +81,7 @@ impl CreateWorkflowInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A request ID for the workflow.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -200,12 +200,12 @@ impl CreateWorkflowInputBuilder {
         self.parameter_template = input;
         self
     }
-    /// <p>A storage capacity for the workflow.</p>
+    /// <p>A storage capacity for the workflow in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = Some(input);
         self
     }
-    /// <p>A storage capacity for the workflow.</p>
+    /// <p>A storage capacity for the workflow in gigabytes.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
@@ -235,12 +235,12 @@ impl CreateWorkflowInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>A request ID for the workflow.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.request_id = Some(input.into());
         self
     }
-    /// <p>A request ID for the workflow.</p>
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.request_id = input;
         self

@@ -12,7 +12,7 @@ pub struct DescribeWhatIfForecastExportOutput {
     /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
     #[doc(hidden)]
     pub what_if_forecast_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     #[doc(hidden)]
     pub destination: std::option::Option<crate::types::DataDestination>,
     /// <p>If an error occurred, an informational message about the error.</p>
@@ -63,7 +63,7 @@ impl DescribeWhatIfForecastExportOutput {
     pub fn what_if_forecast_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.what_if_forecast_arns.as_deref()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> std::option::Option<&crate::types::DataDestination> {
         self.destination.as_ref()
     }
@@ -181,12 +181,12 @@ impl DescribeWhatIfForecastExportOutputBuilder {
         self.what_if_forecast_arns = input;
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.destination = Some(input);
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn set_destination(
         mut self,
         input: std::option::Option<crate::types::DataDestination>,

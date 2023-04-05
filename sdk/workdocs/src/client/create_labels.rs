@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::set_resource_id): <p>The ID of the resource.</p>
     ///   - [`labels(Vec<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::labels) / [`set_labels(Option<Vec<String>>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::set_labels): <p>List of labels to add to the resource.</p>
-    ///   - [`authentication_token(impl Into<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     /// - On success, responds with [`CreateLabelsOutput`](crate::operation::create_labels::CreateLabelsOutput)
     /// - On failure, responds with [`SdkError<CreateLabelsError>`](crate::operation::create_labels::CreateLabelsError)
     pub fn create_labels(

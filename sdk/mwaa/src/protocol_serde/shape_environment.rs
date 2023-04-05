@@ -158,6 +158,24 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "StartupScriptS3Path" => {
+                                builder = builder.set_startup_script_s3_path(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "StartupScriptS3ObjectVersion" => {
+                                builder = builder.set_startup_script_s3_object_version(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "AirflowConfigurationOptions" => {
                                 builder = builder.set_airflow_configuration_options(
                                     crate::protocol_serde::shape_airflow_configuration_options::de_airflow_configuration_options(tokens)?

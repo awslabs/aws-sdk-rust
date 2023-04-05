@@ -8,7 +8,7 @@ pub struct CreateModelCardExportJobInput {
     pub model_card_name: std::option::Option<std::string::String>,
     /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
     #[doc(hidden)]
-    pub model_card_version: i32,
+    pub model_card_version: std::option::Option<i32>,
     /// <p>The name of the model card export job.</p>
     #[doc(hidden)]
     pub model_card_export_job_name: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ impl CreateModelCardExportJobInput {
         self.model_card_name.as_deref()
     }
     /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
-    pub fn model_card_version(&self) -> i32 {
+    pub fn model_card_version(&self) -> std::option::Option<i32> {
         self.model_card_version
     }
     /// <p>The name of the model card export job.</p>
@@ -107,7 +107,7 @@ impl CreateModelCardExportJobInputBuilder {
         Ok(
             crate::operation::create_model_card_export_job::CreateModelCardExportJobInput {
                 model_card_name: self.model_card_name,
-                model_card_version: self.model_card_version.unwrap_or_default(),
+                model_card_version: self.model_card_version,
                 model_card_export_job_name: self.model_card_export_job_name,
                 output_config: self.output_config,
             },

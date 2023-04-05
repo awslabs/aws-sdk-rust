@@ -262,6 +262,8 @@ mod describe_contact;
 
 mod describe_ephemeris;
 
+mod get_agent_configuration;
+
 mod get_config;
 
 mod get_dataflow_endpoint_group;
@@ -288,11 +290,15 @@ mod list_satellites;
 
 mod list_tags_for_resource;
 
+mod register_agent;
+
 mod reserve_contact;
 
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_agent_status;
 
 mod update_config;
 

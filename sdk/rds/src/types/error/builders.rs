@@ -225,6 +225,8 @@ pub use crate::types::error::_custom_db_engine_version_quota_exceeded_fault::Cus
 
 pub use crate::types::error::_custom_db_engine_version_already_exists_fault::CustomDbEngineVersionAlreadyExistsFaultBuilder;
 
+pub use crate::types::error::_create_custom_db_engine_version_fault::CreateCustomDbEngineVersionFaultBuilder;
+
 pub use crate::types::error::_source_database_not_supported_fault::SourceDatabaseNotSupportedFaultBuilder;
 
 pub use crate::types::error::_source_cluster_not_supported_fault::SourceClusterNotSupportedFaultBuilder;

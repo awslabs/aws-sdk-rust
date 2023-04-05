@@ -36,5 +36,160 @@ pub fn ser_dashboard_publish_options(
         crate::protocol_serde::shape_dashboard_visual_publish_options::ser_dashboard_visual_publish_options(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.sheet_layout_element_maximization_option {
+        #[allow(unused_mut)]
+        let mut object_10 = object
+            .key("SheetLayoutElementMaximizationOption")
+            .start_object();
+        crate::protocol_serde::shape_sheet_layout_element_maximization_option::ser_sheet_layout_element_maximization_option(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.visual_menu_option {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("VisualMenuOption").start_object();
+        crate::protocol_serde::shape_visual_menu_option::ser_visual_menu_option(
+            &mut object_12,
+            var_11,
+        )?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.visual_axis_sort_option {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("VisualAxisSortOption").start_object();
+        crate::protocol_serde::shape_visual_axis_sort_option::ser_visual_axis_sort_option(
+            &mut object_14,
+            var_13,
+        )?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.export_with_hidden_fields_option {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("ExportWithHiddenFieldsOption").start_object();
+        crate::protocol_serde::shape_export_with_hidden_fields_option::ser_export_with_hidden_fields_option(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.data_point_drill_up_down_option {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("DataPointDrillUpDownOption").start_object();
+        crate::protocol_serde::shape_data_point_drill_up_down_option::ser_data_point_drill_up_down_option(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.data_point_menu_label_option {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("DataPointMenuLabelOption").start_object();
+        crate::protocol_serde::shape_data_point_menu_label_option::ser_data_point_menu_label_option(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.data_point_tooltip_option {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("DataPointTooltipOption").start_object();
+        crate::protocol_serde::shape_data_point_tooltip_option::ser_data_point_tooltip_option(
+            &mut object_22,
+            var_21,
+        )?;
+        object_22.finish();
+    }
     Ok(())
+}
+
+pub(crate) fn de_dashboard_publish_options<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::types::DashboardPublishOptions>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::types::builders::DashboardPublishOptionsBuilder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AdHocFilteringOption" => {
+                                builder = builder.set_ad_hoc_filtering_option(
+                                    crate::protocol_serde::shape_ad_hoc_filtering_option::de_ad_hoc_filtering_option(tokens)?
+                                );
+                            }
+                            "ExportToCSVOption" => {
+                                builder = builder.set_export_to_csv_option(
+                                    crate::protocol_serde::shape_export_to_csv_option::de_export_to_csv_option(tokens)?
+                                );
+                            }
+                            "SheetControlsOption" => {
+                                builder = builder.set_sheet_controls_option(
+                                    crate::protocol_serde::shape_sheet_controls_option::de_sheet_controls_option(tokens)?
+                                );
+                            }
+                            "VisualPublishOptions" => {
+                                builder = builder.set_visual_publish_options(
+                                    crate::protocol_serde::shape_dashboard_visual_publish_options::de_dashboard_visual_publish_options(tokens)?
+                                );
+                            }
+                            "SheetLayoutElementMaximizationOption" => {
+                                builder = builder.set_sheet_layout_element_maximization_option(
+                                    crate::protocol_serde::shape_sheet_layout_element_maximization_option::de_sheet_layout_element_maximization_option(tokens)?
+                                );
+                            }
+                            "VisualMenuOption" => {
+                                builder = builder.set_visual_menu_option(
+                                    crate::protocol_serde::shape_visual_menu_option::de_visual_menu_option(tokens)?
+                                );
+                            }
+                            "VisualAxisSortOption" => {
+                                builder = builder.set_visual_axis_sort_option(
+                                    crate::protocol_serde::shape_visual_axis_sort_option::de_visual_axis_sort_option(tokens)?
+                                );
+                            }
+                            "ExportWithHiddenFieldsOption" => {
+                                builder = builder.set_export_with_hidden_fields_option(
+                                    crate::protocol_serde::shape_export_with_hidden_fields_option::de_export_with_hidden_fields_option(tokens)?
+                                );
+                            }
+                            "DataPointDrillUpDownOption" => {
+                                builder = builder.set_data_point_drill_up_down_option(
+                                    crate::protocol_serde::shape_data_point_drill_up_down_option::de_data_point_drill_up_down_option(tokens)?
+                                );
+                            }
+                            "DataPointMenuLabelOption" => {
+                                builder = builder.set_data_point_menu_label_option(
+                                    crate::protocol_serde::shape_data_point_menu_label_option::de_data_point_menu_label_option(tokens)?
+                                );
+                            }
+                            "DataPointTooltipOption" => {
+                                builder = builder.set_data_point_tooltip_option(
+                                    crate::protocol_serde::shape_data_point_tooltip_option::de_data_point_tooltip_option(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
 }

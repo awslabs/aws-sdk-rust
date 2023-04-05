@@ -9,7 +9,7 @@ pub struct UpdateCallAnalyticsCategoryInput {
     /// <p>The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that are currently being used in the specified category.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::types::Rule>>,
-    /// <p>Choose whether you want to update a streaming or a batch Call Analytics category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
+    /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
     #[doc(hidden)]
     pub input_type: std::option::Option<crate::types::InputType>,
 }
@@ -22,7 +22,7 @@ impl UpdateCallAnalyticsCategoryInput {
     pub fn rules(&self) -> std::option::Option<&[crate::types::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>Choose whether you want to update a streaming or a batch Call Analytics category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
+    /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
     pub fn input_type(&self) -> std::option::Option<&crate::types::InputType> {
         self.input_type.as_ref()
     }
@@ -72,12 +72,12 @@ impl UpdateCallAnalyticsCategoryInputBuilder {
         self.rules = input;
         self
     }
-    /// <p>Choose whether you want to update a streaming or a batch Call Analytics category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
+    /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
     pub fn input_type(mut self, input: crate::types::InputType) -> Self {
         self.input_type = Some(input);
         self
     }
-    /// <p>Choose whether you want to update a streaming or a batch Call Analytics category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
+    /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
     pub fn set_input_type(mut self, input: std::option::Option<crate::types::InputType>) -> Self {
         self.input_type = input;
         self

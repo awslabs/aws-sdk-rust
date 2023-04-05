@@ -29,6 +29,12 @@ pub fn ser_managed_rule_group_config(
         crate::protocol_serde::shape_aws_managed_rules_bot_control_rule_set::ser_aws_managed_rules_bot_control_rule_set(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.aws_managed_rules_atp_rule_set {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("AWSManagedRulesATPRuleSet").start_object();
+        crate::protocol_serde::shape_aws_managed_rules_atp_rule_set::ser_aws_managed_rules_atp_rule_set(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -94,6 +100,11 @@ where
                             "AWSManagedRulesBotControlRuleSet" => {
                                 builder = builder.set_aws_managed_rules_bot_control_rule_set(
                                     crate::protocol_serde::shape_aws_managed_rules_bot_control_rule_set::de_aws_managed_rules_bot_control_rule_set(tokens)?
+                                );
+                            }
+                            "AWSManagedRulesATPRuleSet" => {
+                                builder = builder.set_aws_managed_rules_atp_rule_set(
+                                    crate::protocol_serde::shape_aws_managed_rules_atp_rule_set::de_aws_managed_rules_atp_rule_set(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

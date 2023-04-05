@@ -4,33 +4,33 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RasterDataCollectionQueryWithBandFilterInput {
-    /// <p></p>
+    /// <p>The TimeRange Filter used in the search query.</p>
     #[doc(hidden)]
     pub time_range_filter: std::option::Option<crate::types::TimeRangeFilterInput>,
-    /// <p></p>
+    /// <p>The Area of interest to be used in the search query.</p>
     #[doc(hidden)]
     pub area_of_interest: std::option::Option<crate::types::AreaOfInterest>,
-    /// <p></p>
+    /// <p>The Property Filters used in the search query.</p>
     #[doc(hidden)]
     pub property_filters: std::option::Option<crate::types::PropertyFilters>,
-    /// <p></p>
+    /// <p>The list of Bands to be displayed in the result for each item.</p>
     #[doc(hidden)]
     pub band_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RasterDataCollectionQueryWithBandFilterInput {
-    /// <p></p>
+    /// <p>The TimeRange Filter used in the search query.</p>
     pub fn time_range_filter(&self) -> std::option::Option<&crate::types::TimeRangeFilterInput> {
         self.time_range_filter.as_ref()
     }
-    /// <p></p>
+    /// <p>The Area of interest to be used in the search query.</p>
     pub fn area_of_interest(&self) -> std::option::Option<&crate::types::AreaOfInterest> {
         self.area_of_interest.as_ref()
     }
-    /// <p></p>
+    /// <p>The Property Filters used in the search query.</p>
     pub fn property_filters(&self) -> std::option::Option<&crate::types::PropertyFilters> {
         self.property_filters.as_ref()
     }
-    /// <p></p>
+    /// <p>The list of Bands to be displayed in the result for each item.</p>
     pub fn band_filter(&self) -> std::option::Option<&[std::string::String]> {
         self.band_filter.as_deref()
     }
@@ -63,12 +63,12 @@ pub struct RasterDataCollectionQueryWithBandFilterInputBuilder {
     pub(crate) band_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RasterDataCollectionQueryWithBandFilterInputBuilder {
-    /// <p></p>
+    /// <p>The TimeRange Filter used in the search query.</p>
     pub fn time_range_filter(mut self, input: crate::types::TimeRangeFilterInput) -> Self {
         self.time_range_filter = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The TimeRange Filter used in the search query.</p>
     pub fn set_time_range_filter(
         mut self,
         input: std::option::Option<crate::types::TimeRangeFilterInput>,
@@ -76,12 +76,12 @@ impl RasterDataCollectionQueryWithBandFilterInputBuilder {
         self.time_range_filter = input;
         self
     }
-    /// <p></p>
+    /// <p>The Area of interest to be used in the search query.</p>
     pub fn area_of_interest(mut self, input: crate::types::AreaOfInterest) -> Self {
         self.area_of_interest = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The Area of interest to be used in the search query.</p>
     pub fn set_area_of_interest(
         mut self,
         input: std::option::Option<crate::types::AreaOfInterest>,
@@ -89,12 +89,12 @@ impl RasterDataCollectionQueryWithBandFilterInputBuilder {
         self.area_of_interest = input;
         self
     }
-    /// <p></p>
+    /// <p>The Property Filters used in the search query.</p>
     pub fn property_filters(mut self, input: crate::types::PropertyFilters) -> Self {
         self.property_filters = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The Property Filters used in the search query.</p>
     pub fn set_property_filters(
         mut self,
         input: std::option::Option<crate::types::PropertyFilters>,
@@ -106,14 +106,14 @@ impl RasterDataCollectionQueryWithBandFilterInputBuilder {
     ///
     /// To override the contents of this collection use [`set_band_filter`](Self::set_band_filter).
     ///
-    /// <p></p>
+    /// <p>The list of Bands to be displayed in the result for each item.</p>
     pub fn band_filter(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.band_filter.unwrap_or_default();
         v.push(input.into());
         self.band_filter = Some(v);
         self
     }
-    /// <p></p>
+    /// <p>The list of Bands to be displayed in the result for each item.</p>
     pub fn set_band_filter(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

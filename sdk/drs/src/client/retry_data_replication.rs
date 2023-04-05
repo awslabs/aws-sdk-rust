@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`replication_direction(Option<ReplicationDirection>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::replication_direction): <p>Replication direction of the Source Server.</p>
     ///   - [`reversed_direction_source_server_arn(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::reversed_direction_source_server_arn): <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
     /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::operation::retry_data_replication::RetryDataReplicationError)
+    #[deprecated(note = "WARNING: RetryDataReplication is deprecated")]
     pub fn retry_data_replication(
         &self,
     ) -> crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder {

@@ -33,29 +33,27 @@ pub fn ser_update_dev_endpoint_input(
         crate::protocol_serde::shape_dev_endpoint_custom_libraries::ser_dev_endpoint_custom_libraries(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if input.update_etl_libraries {
-        object
-            .key("UpdateEtlLibraries")
-            .boolean(input.update_etl_libraries);
+    if let Some(var_11) = &input.update_etl_libraries {
+        object.key("UpdateEtlLibraries").boolean(*var_11);
     }
-    if let Some(var_11) = &input.delete_arguments {
-        let mut array_12 = object.key("DeleteArguments").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.delete_arguments {
+        let mut array_13 = object.key("DeleteArguments").start_array();
+        for item_14 in var_12 {
             {
-                array_12.value().string(item_13.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.add_arguments {
+    if let Some(var_15) = &input.add_arguments {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("AddArguments").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_16 = object.key("AddArguments").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_15.finish();
+        object_16.finish();
     }
     Ok(())
 }

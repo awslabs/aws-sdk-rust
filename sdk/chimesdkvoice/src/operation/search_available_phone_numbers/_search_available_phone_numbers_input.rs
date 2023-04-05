@@ -3,61 +3,61 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
     #[doc(hidden)]
     pub area_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
     #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
     #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
     #[doc(hidden)]
     pub toll_free_prefix: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
     #[doc(hidden)]
     pub phone_number_type: std::option::Option<crate::types::PhoneNumberType>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchAvailablePhoneNumbersInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
     pub fn area_code(&self) -> std::option::Option<&str> {
         self.area_code.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
     pub fn city(&self) -> std::option::Option<&str> {
         self.city.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
     pub fn country(&self) -> std::option::Option<&str> {
         self.country.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
     pub fn toll_free_prefix(&self) -> std::option::Option<&str> {
         self.toll_free_prefix.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
     pub fn phone_number_type(&self) -> std::option::Option<&crate::types::PhoneNumberType> {
         self.phone_number_type.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -83,62 +83,62 @@ pub struct SearchAvailablePhoneNumbersInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl SearchAvailablePhoneNumbersInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
     pub fn area_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.area_code = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
     pub fn set_area_code(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.area_code = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
     pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
         self.city = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
     pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.city = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
     pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
         self.country = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
     pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.country = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
         self.state = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.state = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
     pub fn toll_free_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.toll_free_prefix = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
     pub fn set_toll_free_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.toll_free_prefix = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.phone_number_type = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
     pub fn set_phone_number_type(
         mut self,
         input: std::option::Option<crate::types::PhoneNumberType>,
@@ -146,22 +146,22 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         self.phone_number_type = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

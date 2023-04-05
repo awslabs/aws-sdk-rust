@@ -19,6 +19,9 @@ pub struct Predicate {
     /// <p>The value to use when performing the evaluation.</p>
     #[doc(hidden)]
     pub operand: std::option::Option<std::string::String>,
+    /// <p>The type of value to use when performing the evaluation.</p>
+    #[doc(hidden)]
+    pub operand_type: std::option::Option<std::string::String>,
 }
 impl Predicate {
     /// <p>A list of predicates to combine logically.</p>
@@ -41,6 +44,10 @@ impl Predicate {
     pub fn operand(&self) -> std::option::Option<&str> {
         self.operand.as_deref()
     }
+    /// <p>The type of value to use when performing the evaluation.</p>
+    pub fn operand_type(&self) -> std::option::Option<&str> {
+        self.operand_type.as_deref()
+    }
 }
 impl Predicate {
     /// Creates a new builder-style object to manufacture [`Predicate`](crate::types::Predicate).
@@ -58,6 +65,7 @@ pub struct PredicateBuilder {
     pub(crate) field: std::option::Option<std::string::String>,
     pub(crate) operator: std::option::Option<std::string::String>,
     pub(crate) operand: std::option::Option<std::string::String>,
+    pub(crate) operand_type: std::option::Option<std::string::String>,
 }
 impl PredicateBuilder {
     /// Appends an item to `or`.
@@ -128,6 +136,16 @@ impl PredicateBuilder {
         self.operand = input;
         self
     }
+    /// <p>The type of value to use when performing the evaluation.</p>
+    pub fn operand_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.operand_type = Some(input.into());
+        self
+    }
+    /// <p>The type of value to use when performing the evaluation.</p>
+    pub fn set_operand_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.operand_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Predicate`](crate::types::Predicate).
     pub fn build(self) -> crate::types::Predicate {
         crate::types::Predicate {
@@ -136,6 +154,7 @@ impl PredicateBuilder {
             field: self.field,
             operator: self.operator,
             operand: self.operand,
+            operand_type: self.operand_type,
         }
     }
 }

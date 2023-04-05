@@ -14,6 +14,7 @@
 /// match datasourcetype {
 ///     DataSourceType::AmazonDynamodb => { /* ... */ },
 ///     DataSourceType::AmazonElasticsearch => { /* ... */ },
+///     DataSourceType::AmazonEventbridge => { /* ... */ },
 ///     DataSourceType::AmazonOpensearchService => { /* ... */ },
 ///     DataSourceType::AwsLambda => { /* ... */ },
 ///     DataSourceType::Http => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     AmazonElasticsearch,
     #[allow(missing_docs)] // documentation missing in model
+    AmazonEventbridge,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonOpensearchService,
     #[allow(missing_docs)] // documentation missing in model
     AwsLambda,
@@ -74,6 +77,7 @@ impl std::convert::From<&str> for DataSourceType {
         match s {
             "AMAZON_DYNAMODB" => DataSourceType::AmazonDynamodb,
             "AMAZON_ELASTICSEARCH" => DataSourceType::AmazonElasticsearch,
+            "AMAZON_EVENTBRIDGE" => DataSourceType::AmazonEventbridge,
             "AMAZON_OPENSEARCH_SERVICE" => DataSourceType::AmazonOpensearchService,
             "AWS_LAMBDA" => DataSourceType::AwsLambda,
             "HTTP" => DataSourceType::Http,
@@ -98,6 +102,7 @@ impl DataSourceType {
         match self {
             DataSourceType::AmazonDynamodb => "AMAZON_DYNAMODB",
             DataSourceType::AmazonElasticsearch => "AMAZON_ELASTICSEARCH",
+            DataSourceType::AmazonEventbridge => "AMAZON_EVENTBRIDGE",
             DataSourceType::AmazonOpensearchService => "AMAZON_OPENSEARCH_SERVICE",
             DataSourceType::AwsLambda => "AWS_LAMBDA",
             DataSourceType::Http => "HTTP",
@@ -111,6 +116,7 @@ impl DataSourceType {
         &[
             "AMAZON_DYNAMODB",
             "AMAZON_ELASTICSEARCH",
+            "AMAZON_EVENTBRIDGE",
             "AMAZON_OPENSEARCH_SERVICE",
             "AWS_LAMBDA",
             "HTTP",

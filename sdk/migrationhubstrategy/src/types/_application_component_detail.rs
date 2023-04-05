@@ -72,6 +72,9 @@ pub struct ApplicationComponentDetail {
     /// <p>The error in the analysis of the source code or database.</p>
     #[doc(hidden)]
     pub app_unit_error: std::option::Option<crate::types::AppUnitError>,
+    /// <p>A list of the analysis results.</p>
+    #[doc(hidden)]
+    pub result_list: std::option::Option<std::vec::Vec<crate::types::Result>>,
 }
 impl ApplicationComponentDetail {
     /// <p> The ID of the application component. </p>
@@ -170,6 +173,10 @@ impl ApplicationComponentDetail {
     pub fn app_unit_error(&self) -> std::option::Option<&crate::types::AppUnitError> {
         self.app_unit_error.as_ref()
     }
+    /// <p>A list of the analysis results.</p>
+    pub fn result_list(&self) -> std::option::Option<&[crate::types::Result]> {
+        self.result_list.as_deref()
+    }
 }
 impl ApplicationComponentDetail {
     /// Creates a new builder-style object to manufacture [`ApplicationComponentDetail`](crate::types::ApplicationComponentDetail).
@@ -207,6 +214,7 @@ pub struct ApplicationComponentDetailBuilder {
     pub(crate) runtime_status: std::option::Option<crate::types::RuntimeAnalysisStatus>,
     pub(crate) runtime_status_message: std::option::Option<std::string::String>,
     pub(crate) app_unit_error: std::option::Option<crate::types::AppUnitError>,
+    pub(crate) result_list: std::option::Option<std::vec::Vec<crate::types::Result>>,
 }
 impl ApplicationComponentDetailBuilder {
     /// <p> The ID of the application component. </p>
@@ -495,6 +503,25 @@ impl ApplicationComponentDetailBuilder {
         self.app_unit_error = input;
         self
     }
+    /// Appends an item to `result_list`.
+    ///
+    /// To override the contents of this collection use [`set_result_list`](Self::set_result_list).
+    ///
+    /// <p>A list of the analysis results.</p>
+    pub fn result_list(mut self, input: crate::types::Result) -> Self {
+        let mut v = self.result_list.unwrap_or_default();
+        v.push(input);
+        self.result_list = Some(v);
+        self
+    }
+    /// <p>A list of the analysis results.</p>
+    pub fn set_result_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Result>>,
+    ) -> Self {
+        self.result_list = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ApplicationComponentDetail`](crate::types::ApplicationComponentDetail).
     pub fn build(self) -> crate::types::ApplicationComponentDetail {
         crate::types::ApplicationComponentDetail {
@@ -520,6 +547,7 @@ impl ApplicationComponentDetailBuilder {
             runtime_status: self.runtime_status,
             runtime_status_message: self.runtime_status_message,
             app_unit_error: self.app_unit_error,
+            result_list: self.result_list,
         }
     }
 }

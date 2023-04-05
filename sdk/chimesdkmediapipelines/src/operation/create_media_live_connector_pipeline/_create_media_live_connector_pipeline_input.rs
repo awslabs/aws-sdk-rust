@@ -3,27 +3,27 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMediaLiveConnectorPipelineInput {
-    /// <p>The media pipeline's data sources.</p>
+    /// <p>The media live connector pipeline's data sources.</p>
     #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
-    /// <p>The media pipeline's data sinks.</p>
+    /// <p>The media live connector pipeline's data sinks.</p>
     #[doc(hidden)]
     pub sinks: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
     /// <p>The token assigned to the client making the request.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The tags associated with the media pipeline.</p>
+    /// <p>The tags associated with the media live connector pipeline.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMediaLiveConnectorPipelineInput {
-    /// <p>The media pipeline's data sources.</p>
+    /// <p>The media live connector pipeline's data sources.</p>
     pub fn sources(
         &self,
     ) -> std::option::Option<&[crate::types::LiveConnectorSourceConfiguration]> {
         self.sources.as_deref()
     }
-    /// <p>The media pipeline's data sinks.</p>
+    /// <p>The media live connector pipeline's data sinks.</p>
     pub fn sinks(&self) -> std::option::Option<&[crate::types::LiveConnectorSinkConfiguration]> {
         self.sinks.as_deref()
     }
@@ -31,7 +31,7 @@ impl CreateMediaLiveConnectorPipelineInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The tags associated with the media pipeline.</p>
+    /// <p>The tags associated with the media live connector pipeline.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
@@ -69,14 +69,14 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>The media pipeline's data sources.</p>
+    /// <p>The media live connector pipeline's data sources.</p>
     pub fn sources(mut self, input: crate::types::LiveConnectorSourceConfiguration) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
         self.sources = Some(v);
         self
     }
-    /// <p>The media pipeline's data sources.</p>
+    /// <p>The media live connector pipeline's data sources.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
@@ -88,14 +88,14 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
     ///
-    /// <p>The media pipeline's data sinks.</p>
+    /// <p>The media live connector pipeline's data sinks.</p>
     pub fn sinks(mut self, input: crate::types::LiveConnectorSinkConfiguration) -> Self {
         let mut v = self.sinks.unwrap_or_default();
         v.push(input);
         self.sinks = Some(v);
         self
     }
-    /// <p>The media pipeline's data sinks.</p>
+    /// <p>The media live connector pipeline's data sinks.</p>
     pub fn set_sinks(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
@@ -120,14 +120,14 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags associated with the media pipeline.</p>
+    /// <p>The tags associated with the media live connector pipeline.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = Some(v);
         self
     }
-    /// <p>The tags associated with the media pipeline.</p>
+    /// <p>The tags associated with the media live connector pipeline.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,

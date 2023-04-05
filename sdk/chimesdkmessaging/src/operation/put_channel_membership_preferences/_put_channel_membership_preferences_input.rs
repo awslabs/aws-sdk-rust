@@ -6,10 +6,10 @@ pub struct PutChannelMembershipPreferencesInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+    /// <p>The ARN of the member setting the preferences.</p>
     #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
@@ -21,11 +21,11 @@ impl PutChannelMembershipPreferencesInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+    /// <p>The ARN of the member setting the preferences.</p>
     pub fn member_arn(&self) -> std::option::Option<&str> {
         self.member_arn.as_deref()
     }
-    /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
@@ -61,22 +61,22 @@ impl PutChannelMembershipPreferencesInputBuilder {
         self.channel_arn = input;
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+    /// <p>The ARN of the member setting the preferences.</p>
     pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.member_arn = Some(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+    /// <p>The ARN of the member setting the preferences.</p>
     pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.member_arn = input;
         self
     }
-    /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.chime_bearer = Some(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.chime_bearer = input;
         self

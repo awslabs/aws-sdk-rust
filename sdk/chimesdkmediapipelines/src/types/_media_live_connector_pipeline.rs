@@ -19,7 +19,7 @@ pub struct MediaLiveConnectorPipeline {
     /// <p>The connector pipeline's status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::MediaPipelineStatus>,
-    /// <p>Thetime at which the connector pipeline was created.</p>
+    /// <p>The time at which the connector pipeline was created.</p>
     #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the connector pipeline was last updated.</p>
@@ -49,7 +49,7 @@ impl MediaLiveConnectorPipeline {
     pub fn status(&self) -> std::option::Option<&crate::types::MediaPipelineStatus> {
         self.status.as_ref()
     }
-    /// <p>Thetime at which the connector pipeline was created.</p>
+    /// <p>The time at which the connector pipeline was created.</p>
     pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
@@ -157,12 +157,12 @@ impl MediaLiveConnectorPipelineBuilder {
         self.status = input;
         self
     }
-    /// <p>Thetime at which the connector pipeline was created.</p>
+    /// <p>The time at which the connector pipeline was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = Some(input);
         self
     }
-    /// <p>Thetime at which the connector pipeline was created.</p>
+    /// <p>The time at which the connector pipeline was created.</p>
     pub fn set_created_timestamp(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

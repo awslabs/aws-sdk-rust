@@ -21,10 +21,8 @@ pub fn ser_replicate_secret_to_regions_input(
         }
         array_3.finish();
     }
-    if input.force_overwrite_replica_secret {
-        object
-            .key("ForceOverwriteReplicaSecret")
-            .boolean(input.force_overwrite_replica_secret);
+    if let Some(var_6) = &input.force_overwrite_replica_secret {
+        object.key("ForceOverwriteReplicaSecret").boolean(*var_6);
     }
     Ok(())
 }

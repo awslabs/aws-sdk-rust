@@ -13,7 +13,7 @@ pub struct MovSettings {
     /// When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2.
     #[doc(hidden)]
     pub mpeg2_four_cc_control: std::option::Option<crate::types::MovMpeg2FourCcControl>,
-    /// To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+    /// Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding.
     #[doc(hidden)]
     pub padding_control: std::option::Option<crate::types::MovPaddingControl>,
     /// Always keep the default value (SELF_CONTAINED) for this setting.
@@ -35,7 +35,7 @@ impl MovSettings {
     ) -> std::option::Option<&crate::types::MovMpeg2FourCcControl> {
         self.mpeg2_four_cc_control.as_ref()
     }
-    /// To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+    /// Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding.
     pub fn padding_control(&self) -> std::option::Option<&crate::types::MovPaddingControl> {
         self.padding_control.as_ref()
     }
@@ -95,12 +95,12 @@ impl MovSettingsBuilder {
         self.mpeg2_four_cc_control = input;
         self
     }
-    /// To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+    /// Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding.
     pub fn padding_control(mut self, input: crate::types::MovPaddingControl) -> Self {
         self.padding_control = Some(input);
         self
     }
-    /// To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+    /// Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding.
     pub fn set_padding_control(
         mut self,
         input: std::option::Option<crate::types::MovPaddingControl>,

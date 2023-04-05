@@ -93,12 +93,13 @@ impl GetLensReviewInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.milestone_number != 0 {
-                    query.push_kv(
-                        "MilestoneNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.milestone_number)
-                            .encode(),
-                    );
+                if let Some(inner_3) = &_input.milestone_number {
+                    if *inner_3 != 0 {
+                        query.push_kv(
+                            "MilestoneNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

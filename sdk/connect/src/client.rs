@@ -392,6 +392,8 @@ mod get_federation_token;
 
 mod get_metric_data;
 
+mod get_metric_data_v2;
+
 mod get_task_template;
 
 mod get_traffic_distribution;

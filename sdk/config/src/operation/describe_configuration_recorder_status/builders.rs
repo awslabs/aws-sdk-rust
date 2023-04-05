@@ -5,8 +5,8 @@ pub use crate::operation::describe_configuration_recorder_status::_describe_conf
 
 /// Fluent builder constructing a request to `DescribeConfigurationRecorderStatus`.
 ///
-/// <p>Returns the current status of the specified configuration recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorders associated with the account.</p> <note>
-/// <p>Currently, you can specify only one configuration recorder per region in your account.</p>
+/// <p>Returns the current status of the specified configuration recorder as well as the status of the last recording event for the recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorders associated with the account.</p> <note>
+/// <p>Currently, you can specify only one configuration recorder per region in your account. For a detailed status of recording events over time, add your Config events to Amazon CloudWatch metrics and use CloudWatch metrics.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConfigurationRecorderStatusFluentBuilder {

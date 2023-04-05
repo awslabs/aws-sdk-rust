@@ -15,6 +15,10 @@ pub struct ModifyVpnTunnelOptionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    #[doc(hidden)]
+    pub skip_tunnel_replacement: std::option::Option<bool>,
 }
 impl ModifyVpnTunnelOptionsInput {
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
@@ -35,6 +39,11 @@ impl ModifyVpnTunnelOptionsInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    pub fn skip_tunnel_replacement(&self) -> std::option::Option<bool> {
+        self.skip_tunnel_replacement
+    }
 }
 impl ModifyVpnTunnelOptionsInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnTunnelOptionsInput`](crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsInput).
@@ -54,6 +63,7 @@ pub struct ModifyVpnTunnelOptionsInputBuilder {
     pub(crate) tunnel_options:
         std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification>,
     pub(crate) dry_run: std::option::Option<bool>,
+    pub(crate) skip_tunnel_replacement: std::option::Option<bool>,
 }
 impl ModifyVpnTunnelOptionsInputBuilder {
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
@@ -108,6 +118,18 @@ impl ModifyVpnTunnelOptionsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    pub fn skip_tunnel_replacement(mut self, input: bool) -> Self {
+        self.skip_tunnel_replacement = Some(input);
+        self
+    }
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    pub fn set_skip_tunnel_replacement(mut self, input: std::option::Option<bool>) -> Self {
+        self.skip_tunnel_replacement = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyVpnTunnelOptionsInput`](crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsInput).
     pub fn build(
         self,
@@ -121,6 +143,7 @@ impl ModifyVpnTunnelOptionsInputBuilder {
                 vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,
                 tunnel_options: self.tunnel_options,
                 dry_run: self.dry_run,
+                skip_tunnel_replacement: self.skip_tunnel_replacement,
             },
         )
     }

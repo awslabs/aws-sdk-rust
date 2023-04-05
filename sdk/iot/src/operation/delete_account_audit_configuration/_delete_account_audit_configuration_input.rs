@@ -5,11 +5,11 @@
 pub struct DeleteAccountAuditConfigurationInput {
     /// <p>If true, all scheduled audits are deleted.</p>
     #[doc(hidden)]
-    pub delete_scheduled_audits: bool,
+    pub delete_scheduled_audits: std::option::Option<bool>,
 }
 impl DeleteAccountAuditConfigurationInput {
     /// <p>If true, all scheduled audits are deleted.</p>
-    pub fn delete_scheduled_audits(&self) -> bool {
+    pub fn delete_scheduled_audits(&self) -> std::option::Option<bool> {
         self.delete_scheduled_audits
     }
 }
@@ -47,7 +47,6 @@ impl DeleteAccountAuditConfigurationInputBuilder {
         Ok(
             crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput {
                 delete_scheduled_audits: self.delete_scheduled_audits
-                    .unwrap_or_default()
                 ,
             }
         )

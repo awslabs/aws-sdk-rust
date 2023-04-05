@@ -369,6 +369,26 @@ pub(crate) fn reflens_describe_ipam_pools_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_describe_ipam_resource_discoveries_output_next_token(
+    input: &crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_describe_ipam_resource_discovery_associations_output_next_token(
+    input: &crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_describe_ipam_scopes_output_next_token(
     input: &crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -1129,6 +1149,26 @@ pub(crate) fn reflens_get_ipam_address_history_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_get_ipam_discovered_accounts_output_next_token(
+    input: &crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_get_ipam_discovered_resource_cidrs_output_next_token(
+    input: &crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_get_ipam_pool_allocations_output_next_token(
     input: &crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -1663,6 +1703,26 @@ pub(crate) fn lens_describe_ipam_pools_output_ipam_pools(
     input: crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::IpamPool>> {
     let input = match input.ipam_pools {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_describe_ipam_resource_discoveries_output_ipam_resource_discoveries(
+    input: crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::IpamResourceDiscovery>> {
+    let input = match input.ipam_resource_discoveries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_describe_ipam_resource_discovery_associations_output_ipam_resource_discovery_associations(
+    input: crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::IpamResourceDiscoveryAssociation>> {
+    let input = match input.ipam_resource_discovery_associations {
         None => return None,
         Some(t) => t,
     };
@@ -2425,6 +2485,26 @@ pub(crate) fn lens_get_ipam_address_history_output_history_records(
     input: crate::operation::get_ipam_address_history::GetIpamAddressHistoryOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::IpamAddressHistoryRecord>> {
     let input = match input.history_records {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_get_ipam_discovered_accounts_output_ipam_discovered_accounts(
+    input: crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::IpamDiscoveredAccount>> {
+    let input = match input.ipam_discovered_accounts {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_get_ipam_discovered_resource_cidrs_output_ipam_discovered_resource_cidrs(
+    input: crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::IpamDiscoveredResourceCidr>> {
+    let input = match input.ipam_discovered_resource_cidrs {
         None => return None,
         Some(t) => t,
     };

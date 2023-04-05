@@ -119,6 +119,9 @@ pub struct DbCluster {
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
     #[doc(hidden)]
     pub enabled_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
+    #[doc(hidden)]
+    pub pending_modified_values: std::option::Option<crate::types::ClusterPendingModifiedValues>,
     /// <p>Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
@@ -133,6 +136,9 @@ pub struct DbCluster {
     #[doc(hidden)]
     pub serverless_v2_scaling_configuration:
         std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
+    #[doc(hidden)]
+    pub global_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DbCluster {
     /// <p> <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
@@ -288,6 +294,12 @@ impl DbCluster {
     pub fn enabled_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.enabled_cloudwatch_logs_exports.as_deref()
     }
+    /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
+    pub fn pending_modified_values(
+        &self,
+    ) -> std::option::Option<&crate::types::ClusterPendingModifiedValues> {
+        self.pending_modified_values.as_ref()
+    }
     /// <p>Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
@@ -306,6 +318,10 @@ impl DbCluster {
         &self,
     ) -> std::option::Option<&crate::types::ServerlessV2ScalingConfigurationInfo> {
         self.serverless_v2_scaling_configuration.as_ref()
+    }
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
     }
 }
 impl DbCluster {
@@ -360,11 +376,14 @@ pub struct DbClusterBuilder {
     pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
     pub(crate) enabled_cloudwatch_logs_exports:
         std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) pending_modified_values:
+        std::option::Option<crate::types::ClusterPendingModifiedValues>,
     pub(crate) deletion_protection: std::option::Option<bool>,
     pub(crate) cross_account_clone: std::option::Option<bool>,
     pub(crate) automatic_restart_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) serverless_v2_scaling_configuration:
         std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DbClusterBuilder {
     /// <p> <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
@@ -841,6 +860,22 @@ impl DbClusterBuilder {
         self.enabled_cloudwatch_logs_exports = input;
         self
     }
+    /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
+    pub fn pending_modified_values(
+        mut self,
+        input: crate::types::ClusterPendingModifiedValues,
+    ) -> Self {
+        self.pending_modified_values = Some(input);
+        self
+    }
+    /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
+    pub fn set_pending_modified_values(
+        mut self,
+        input: std::option::Option<crate::types::ClusterPendingModifiedValues>,
+    ) -> Self {
+        self.pending_modified_values = input;
+        self
+    }
     /// <p>Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = Some(input);
@@ -892,6 +927,19 @@ impl DbClusterBuilder {
         self.serverless_v2_scaling_configuration = input;
         self
     }
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
+    pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+        self.global_cluster_identifier = Some(input.into());
+        self
+    }
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
+    pub fn set_global_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_cluster_identifier = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -934,10 +982,12 @@ impl DbClusterBuilder {
             cluster_create_time: self.cluster_create_time,
             copy_tags_to_snapshot: self.copy_tags_to_snapshot,
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
+            pending_modified_values: self.pending_modified_values,
             deletion_protection: self.deletion_protection,
             cross_account_clone: self.cross_account_clone,
             automatic_restart_time: self.automatic_restart_time,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+            global_cluster_identifier: self.global_cluster_identifier,
         }
     }
 }

@@ -7,7 +7,7 @@ pub struct SopRecommendation {
     /// <p>The service type.</p>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::types::SopServiceType>,
-    /// <p>The application component name.</p>
+    /// <p>The name of the Application Component.</p>
     #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The description of the SOP recommendation.</p>
@@ -34,7 +34,7 @@ impl SopRecommendation {
     pub fn service_type(&self) -> std::option::Option<&crate::types::SopServiceType> {
         self.service_type.as_ref()
     }
-    /// <p>The application component name.</p>
+    /// <p>The name of the Application Component.</p>
     pub fn app_component_name(&self) -> std::option::Option<&str> {
         self.app_component_name.as_deref()
     }
@@ -97,12 +97,12 @@ impl SopRecommendationBuilder {
         self.service_type = input;
         self
     }
-    /// <p>The application component name.</p>
+    /// <p>The name of the Application Component.</p>
     pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.app_component_name = Some(input.into());
         self
     }
-    /// <p>The application component name.</p>
+    /// <p>The name of the Application Component.</p>
     pub fn set_app_component_name(
         mut self,
         input: std::option::Option<std::string::String>,

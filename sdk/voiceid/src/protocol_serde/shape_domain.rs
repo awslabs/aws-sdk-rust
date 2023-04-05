@@ -94,6 +94,11 @@ where
                                     crate::protocol_serde::shape_server_side_encryption_update_details::de_server_side_encryption_update_details(tokens)?
                                 );
                             }
+                            "WatchlistDetails" => {
+                                builder = builder.set_watchlist_details(
+                                    crate::protocol_serde::shape_watchlist_details::de_watchlist_details(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

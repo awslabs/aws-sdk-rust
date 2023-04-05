@@ -152,12 +152,12 @@ impl UpdateLocationSmbFluentBuilder {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
         self.inner = self.inner.mount_options(input);
         self
     }
-    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn set_mount_options(
         mut self,
         input: std::option::Option<crate::types::SmbMountOptions>,

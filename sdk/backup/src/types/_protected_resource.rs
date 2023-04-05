@@ -13,6 +13,9 @@ pub struct ProtectedResource {
     /// <p>The date and time a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
     pub last_backup_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    #[doc(hidden)]
+    pub resource_name: std::option::Option<std::string::String>,
 }
 impl ProtectedResource {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
@@ -26,6 +29,10 @@ impl ProtectedResource {
     /// <p>The date and time a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_backup_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_backup_time.as_ref()
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
     }
 }
 impl ProtectedResource {
@@ -42,6 +49,7 @@ pub struct ProtectedResourceBuilder {
     pub(crate) resource_arn: std::option::Option<std::string::String>,
     pub(crate) resource_type: std::option::Option<std::string::String>,
     pub(crate) last_backup_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) resource_name: std::option::Option<std::string::String>,
 }
 impl ProtectedResourceBuilder {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
@@ -77,12 +85,23 @@ impl ProtectedResourceBuilder {
         self.last_backup_time = input;
         self
     }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.resource_name = Some(input.into());
+        self
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ProtectedResource`](crate::types::ProtectedResource).
     pub fn build(self) -> crate::types::ProtectedResource {
         crate::types::ProtectedResource {
             resource_arn: self.resource_arn,
             resource_type: self.resource_type,
             last_backup_time: self.last_backup_time,
+            resource_name: self.resource_name,
         }
     }
 }

@@ -9,7 +9,7 @@ pub struct StartReadSetActivationJobInput {
     /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     #[doc(hidden)]
     pub sources:
         std::option::Option<std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>,
@@ -23,7 +23,7 @@ impl StartReadSetActivationJobInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(
         &self,
     ) -> std::option::Option<&[crate::types::StartReadSetActivationJobSourceItem]> {
@@ -74,14 +74,14 @@ impl StartReadSetActivationJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::StartReadSetActivationJobSourceItem) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
         self.sources = Some(v);
         self
     }
-    /// <p>The job's sources.</p>
+    /// <p>The job's source files.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<

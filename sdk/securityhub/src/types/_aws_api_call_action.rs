@@ -24,9 +24,11 @@ pub struct AwsApiCallAction {
     pub affected_resources:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub first_seen: std::option::Option<std::string::String>,
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub last_seen: std::option::Option<std::string::String>,
 }
@@ -61,10 +63,12 @@ impl AwsApiCallAction {
         self.affected_resources.as_ref()
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn first_seen(&self) -> std::option::Option<&str> {
         self.first_seen.as_deref()
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn last_seen(&self) -> std::option::Option<&str> {
         self.last_seen.as_deref()
     }
@@ -173,21 +177,25 @@ impl AwsApiCallActionBuilder {
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn first_seen(mut self, input: impl Into<std::string::String>) -> Self {
         self.first_seen = Some(input.into());
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_first_seen(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.first_seen = input;
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn last_seen(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_seen = Some(input.into());
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_last_seen(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.last_seen = input;
         self

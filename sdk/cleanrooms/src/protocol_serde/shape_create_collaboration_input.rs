@@ -48,5 +48,15 @@ pub fn ser_create_collaboration_input(
     if let Some(var_13) = &input.query_log_status {
         object.key("queryLogStatus").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("tags").start_object();
+        for (key_16, value_17) in var_14 {
+            {
+                object_15.key(key_16.as_str()).string(value_17.as_str());
+            }
+        }
+        object_15.finish();
+    }
     Ok(())
 }

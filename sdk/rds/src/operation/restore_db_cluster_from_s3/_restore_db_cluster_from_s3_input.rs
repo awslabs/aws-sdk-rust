@@ -46,16 +46,14 @@ pub struct RestoreDbClusterFromS3Input {
     #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the database engine to be used for this DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
+    /// <p>Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the database engine to use.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
@@ -147,8 +145,6 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p> <b>Aurora MySQL</b> </p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
-    /// <p>Possible value is <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -248,17 +244,15 @@ impl RestoreDbClusterFromS3Input {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The name of the database engine to be used for this DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
+    /// <p>Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the database engine to use.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -367,8 +361,6 @@ impl RestoreDbClusterFromS3Input {
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p> <b>Aurora MySQL</b> </p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
-    /// <p>Possible value is <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.enable_cloudwatch_logs_exports.as_deref()
@@ -628,35 +620,31 @@ impl RestoreDbClusterFromS3InputBuilder {
         self
     }
     /// <p>The name of the database engine to be used for this DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
+    /// <p>Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
         self.engine = Some(input.into());
         self
     }
     /// <p>The name of the database engine to be used for this DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
+    /// <p>Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.engine = input;
         self
     }
     /// <p>The version number of the database engine to use.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.engine_version = Some(input.into());
         self
     }
     /// <p>The version number of the database engine to use.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.engine_version = input;
         self
@@ -934,8 +922,6 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p> <b>Aurora MySQL</b> </p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
-    /// <p>Possible value is <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
@@ -946,8 +932,6 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p> <b>Aurora MySQL</b> </p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
-    /// <p>Possible value is <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_enable_cloudwatch_logs_exports(
         mut self,

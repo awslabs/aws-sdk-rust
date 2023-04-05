@@ -18,7 +18,7 @@ pub struct UpdateStackInput {
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
     #[deprecated]
     #[doc(hidden)]
-    pub delete_storage_connectors: bool,
+    pub delete_storage_connectors: std::option::Option<bool>,
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
     #[doc(hidden)]
     pub redirect_url: std::option::Option<std::string::String>,
@@ -64,7 +64,7 @@ impl UpdateStackInput {
     }
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
     #[deprecated]
-    pub fn delete_storage_connectors(&self) -> bool {
+    pub fn delete_storage_connectors(&self) -> std::option::Option<bool> {
         self.delete_storage_connectors
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
@@ -329,7 +329,7 @@ impl UpdateStackInputBuilder {
             description: self.description,
             name: self.name,
             storage_connectors: self.storage_connectors,
-            delete_storage_connectors: self.delete_storage_connectors.unwrap_or_default(),
+            delete_storage_connectors: self.delete_storage_connectors,
             redirect_url: self.redirect_url,
             feedback_url: self.feedback_url,
             attributes_to_delete: self.attributes_to_delete,

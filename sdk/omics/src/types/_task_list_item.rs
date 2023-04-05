@@ -16,7 +16,7 @@ pub struct TaskListItem {
     /// <p>The task's CPU count.</p>
     #[doc(hidden)]
     pub cpus: std::option::Option<i32>,
-    /// <p>The task's memory.</p>
+    /// <p>The task's memory use in gigabyes.</p>
     #[doc(hidden)]
     pub memory: std::option::Option<i32>,
     /// <p>When the task was created.</p>
@@ -46,7 +46,7 @@ impl TaskListItem {
     pub fn cpus(&self) -> std::option::Option<i32> {
         self.cpus
     }
-    /// <p>The task's memory.</p>
+    /// <p>The task's memory use in gigabyes.</p>
     pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
     }
@@ -124,12 +124,12 @@ impl TaskListItemBuilder {
         self.cpus = input;
         self
     }
-    /// <p>The task's memory.</p>
+    /// <p>The task's memory use in gigabyes.</p>
     pub fn memory(mut self, input: i32) -> Self {
         self.memory = Some(input);
         self
     }
-    /// <p>The task's memory.</p>
+    /// <p>The task's memory use in gigabyes.</p>
     pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
         self.memory = input;
         self

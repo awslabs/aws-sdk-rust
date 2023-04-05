@@ -170,6 +170,11 @@ pub(crate) fn de_get_batch_job_execution(
                             .transpose()?,
                         );
                     }
+                    "batchJobIdentifier" => {
+                        builder = builder.set_batch_job_identifier(
+                            crate::protocol_serde::shape_batch_job_identifier::de_batch_job_identifier(tokens)?
+                        );
+                    }
                     "endTime" => {
                         builder = builder.set_end_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -219,6 +224,15 @@ pub(crate) fn de_get_batch_job_execution(
                     }
                     "jobUser" => {
                         builder = builder.set_job_user(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "returnCode" => {
+                        builder = builder.set_return_code(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?

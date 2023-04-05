@@ -165,7 +165,7 @@ pub enum RemoveLFTagsFromResourceError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Two processes are trying to modify a resource simultaneously.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>A specified entity does not exist</p>
+    /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An encryption operation failed.</p>
     GlueEncryptionException(crate::types::error::GlueEncryptionException),

@@ -19,7 +19,7 @@ pub struct ListEarthObservationJobOutputConfig {
     /// <p>The status of the list of the Earth Observation jobs.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::EarthObservationJobStatus>,
-    /// <p></p>
+    /// <p>The operation type for an Earth Observation job.</p>
     #[doc(hidden)]
     pub operation_type: std::option::Option<std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
@@ -48,7 +48,7 @@ impl ListEarthObservationJobOutputConfig {
     pub fn status(&self) -> std::option::Option<&crate::types::EarthObservationJobStatus> {
         self.status.as_ref()
     }
-    /// <p></p>
+    /// <p>The operation type for an Earth Observation job.</p>
     pub fn operation_type(&self) -> std::option::Option<&str> {
         self.operation_type.as_deref()
     }
@@ -137,12 +137,12 @@ impl ListEarthObservationJobOutputConfigBuilder {
         self.status = input;
         self
     }
-    /// <p></p>
+    /// <p>The operation type for an Earth Observation job.</p>
     pub fn operation_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.operation_type = Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The operation type for an Earth Observation job.</p>
     pub fn set_operation_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.operation_type = input;
         self

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsForAppInstanceUserInput {
-    /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    /// <p>The ARN of the user or bot.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of users that you want returned.</p>
@@ -12,12 +12,12 @@ pub struct ListChannelMembershipsForAppInstanceUserInput {
     /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsForAppInstanceUserInput {
-    /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    /// <p>The ARN of the user or bot.</p>
     pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
     }
@@ -29,7 +29,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
@@ -61,12 +61,12 @@ pub struct ListChannelMembershipsForAppInstanceUserInputBuilder {
     pub(crate) chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsForAppInstanceUserInputBuilder {
-    /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    /// <p>The ARN of the user or bot.</p>
     pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.app_instance_user_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    /// <p>The ARN of the user or bot.</p>
     pub fn set_app_instance_user_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -94,12 +94,12 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
         self.next_token = input;
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.chime_bearer = Some(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.chime_bearer = input;
         self

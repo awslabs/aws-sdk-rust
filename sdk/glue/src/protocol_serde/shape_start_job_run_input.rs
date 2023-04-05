@@ -19,47 +19,47 @@ pub fn ser_start_job_run_input(
         }
         object_4.finish();
     }
-    if input.allocated_capacity != 0 {
+    if let Some(var_7) = &input.allocated_capacity {
         object.key("AllocatedCapacity").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.allocated_capacity).into()),
-        );
-    }
-    if let Some(var_7) = &input.timeout {
-        object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.max_capacity {
+    if let Some(var_8) = &input.timeout {
+        object.key("Timeout").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.max_capacity {
         object.key("MaxCapacity").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_8).into()),
+            aws_smithy_types::Number::Float((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.security_configuration {
-        object.key("SecurityConfiguration").string(var_9.as_str());
+    if let Some(var_10) = &input.security_configuration {
+        object.key("SecurityConfiguration").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.notification_property {
+    if let Some(var_11) = &input.notification_property {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("NotificationProperty").start_object();
+        let mut object_12 = object.key("NotificationProperty").start_object();
         crate::protocol_serde::shape_notification_property::ser_notification_property(
-            &mut object_11,
-            var_10,
+            &mut object_12,
+            var_11,
         )?;
-        object_11.finish();
+        object_12.finish();
     }
-    if let Some(var_12) = &input.worker_type {
-        object.key("WorkerType").string(var_12.as_str());
+    if let Some(var_13) = &input.worker_type {
+        object.key("WorkerType").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.number_of_workers {
+    if let Some(var_14) = &input.number_of_workers {
         object.key("NumberOfWorkers").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_13).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.execution_class {
-        object.key("ExecutionClass").string(var_14.as_str());
+    if let Some(var_15) = &input.execution_class {
+        object.key("ExecutionClass").string(var_15.as_str());
     }
     Ok(())
 }

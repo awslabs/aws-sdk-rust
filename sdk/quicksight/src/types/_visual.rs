@@ -92,6 +92,10 @@ pub struct Visual {
     /// <p>An empty visual.</p>
     #[doc(hidden)]
     pub empty_visual: std::option::Option<crate::types::EmptyVisual>,
+    /// <p>A radar chart visual.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    #[doc(hidden)]
+    pub radar_chart_visual: std::option::Option<crate::types::RadarChartVisual>,
 }
 impl Visual {
     /// <p>A table visual.</p>
@@ -203,6 +207,11 @@ impl Visual {
     pub fn empty_visual(&self) -> std::option::Option<&crate::types::EmptyVisual> {
         self.empty_visual.as_ref()
     }
+    /// <p>A radar chart visual.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn radar_chart_visual(&self) -> std::option::Option<&crate::types::RadarChartVisual> {
+        self.radar_chart_visual.as_ref()
+    }
 }
 impl Visual {
     /// Creates a new builder-style object to manufacture [`Visual`](crate::types::Visual).
@@ -237,6 +246,7 @@ pub struct VisualBuilder {
     pub(crate) sankey_diagram_visual: std::option::Option<crate::types::SankeyDiagramVisual>,
     pub(crate) custom_content_visual: std::option::Option<crate::types::CustomContentVisual>,
     pub(crate) empty_visual: std::option::Option<crate::types::EmptyVisual>,
+    pub(crate) radar_chart_visual: std::option::Option<crate::types::RadarChartVisual>,
 }
 impl VisualBuilder {
     /// <p>A table visual.</p>
@@ -564,6 +574,21 @@ impl VisualBuilder {
         self.empty_visual = input;
         self
     }
+    /// <p>A radar chart visual.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn radar_chart_visual(mut self, input: crate::types::RadarChartVisual) -> Self {
+        self.radar_chart_visual = Some(input);
+        self
+    }
+    /// <p>A radar chart visual.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn set_radar_chart_visual(
+        mut self,
+        input: std::option::Option<crate::types::RadarChartVisual>,
+    ) -> Self {
+        self.radar_chart_visual = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Visual`](crate::types::Visual).
     pub fn build(self) -> crate::types::Visual {
         crate::types::Visual {
@@ -589,6 +614,7 @@ impl VisualBuilder {
             sankey_diagram_visual: self.sankey_diagram_visual,
             custom_content_visual: self.custom_content_visual,
             empty_visual: self.empty_visual,
+            radar_chart_visual: self.radar_chart_visual,
         }
     }
 }

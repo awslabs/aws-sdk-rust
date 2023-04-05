@@ -5,6 +5,7 @@ pub use crate::operation::disassociate_phone_numbers_from_voice_connector::_disa
 
 /// Fluent builder constructing a request to `DisassociatePhoneNumbersFromVoiceConnector`.
 ///
+/// <p>Disassociates the specified phone numbers from the specified Amazon Chime SDK Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl DisassociatePhoneNumbersFromVoiceConnectorFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -72,12 +73,12 @@ impl DisassociatePhoneNumbersFromVoiceConnectorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.e164_phone_numbers(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>List of phone numbers, in E.164 format.</p>
     pub fn set_e164_phone_numbers(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

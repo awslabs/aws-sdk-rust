@@ -13,6 +13,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
+pub use crate::types::error::_featured_results_conflict_exception::FeaturedResultsConflictExceptionBuilder;
+
 pub use crate::types::error::_resource_unavailable_exception::ResourceUnavailableExceptionBuilder;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;

@@ -62,20 +62,22 @@ impl ListSecurityProfilesForTargetInput {
                         );
                     }
                 }
-                if _input.recursive {
-                    query.push_kv(
-                        "recursive",
-                        aws_smithy_types::primitive::Encoder::from(_input.recursive).encode(),
-                    );
+                if let Some(inner_3) = &_input.recursive {
+                    if *inner_3 {
+                        query.push_kv(
+                            "recursive",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
-                let inner_3 = &_input.security_profile_target_arn;
-                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                let inner_4 = &_input.security_profile_target_arn;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "security_profile_target_arn",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_3.is_empty() {
+                if inner_4.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "security_profile_target_arn",
@@ -85,7 +87,7 @@ impl ListSecurityProfilesForTargetInput {
                 }
                 query.push_kv(
                     "securityProfileTargetArn",
-                    &aws_smithy_http::query::fmt_string(&inner_3),
+                    &aws_smithy_http::query::fmt_string(&inner_4),
                 );
                 Ok(())
             }

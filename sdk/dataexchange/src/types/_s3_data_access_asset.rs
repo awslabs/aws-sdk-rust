@@ -19,6 +19,9 @@ pub struct S3DataAccessAsset {
     /// <p>The ARN for your Amazon S3 Access Point. Customers can also access their entitled data using the S3 Access Point ARN.</p>
     #[doc(hidden)]
     pub s3_access_point_arn: std::option::Option<std::string::String>,
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    #[doc(hidden)]
+    pub kms_keys_to_grant: std::option::Option<std::vec::Vec<crate::types::KmsKeyToGrant>>,
 }
 impl S3DataAccessAsset {
     /// <p>The Amazon S3 bucket hosting data to be shared in the S3 data access.</p>
@@ -41,6 +44,10 @@ impl S3DataAccessAsset {
     pub fn s3_access_point_arn(&self) -> std::option::Option<&str> {
         self.s3_access_point_arn.as_deref()
     }
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    pub fn kms_keys_to_grant(&self) -> std::option::Option<&[crate::types::KmsKeyToGrant]> {
+        self.kms_keys_to_grant.as_deref()
+    }
 }
 impl S3DataAccessAsset {
     /// Creates a new builder-style object to manufacture [`S3DataAccessAsset`](crate::types::S3DataAccessAsset).
@@ -58,6 +65,7 @@ pub struct S3DataAccessAssetBuilder {
     pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) s3_access_point_alias: std::option::Option<std::string::String>,
     pub(crate) s3_access_point_arn: std::option::Option<std::string::String>,
+    pub(crate) kms_keys_to_grant: std::option::Option<std::vec::Vec<crate::types::KmsKeyToGrant>>,
 }
 impl S3DataAccessAssetBuilder {
     /// <p>The Amazon S3 bucket hosting data to be shared in the S3 data access.</p>
@@ -134,6 +142,25 @@ impl S3DataAccessAssetBuilder {
         self.s3_access_point_arn = input;
         self
     }
+    /// Appends an item to `kms_keys_to_grant`.
+    ///
+    /// To override the contents of this collection use [`set_kms_keys_to_grant`](Self::set_kms_keys_to_grant).
+    ///
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    pub fn kms_keys_to_grant(mut self, input: crate::types::KmsKeyToGrant) -> Self {
+        let mut v = self.kms_keys_to_grant.unwrap_or_default();
+        v.push(input);
+        self.kms_keys_to_grant = Some(v);
+        self
+    }
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    pub fn set_kms_keys_to_grant(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::KmsKeyToGrant>>,
+    ) -> Self {
+        self.kms_keys_to_grant = input;
+        self
+    }
     /// Consumes the builder and constructs a [`S3DataAccessAsset`](crate::types::S3DataAccessAsset).
     pub fn build(self) -> crate::types::S3DataAccessAsset {
         crate::types::S3DataAccessAsset {
@@ -142,6 +169,7 @@ impl S3DataAccessAssetBuilder {
             keys: self.keys,
             s3_access_point_alias: self.s3_access_point_alias,
             s3_access_point_arn: self.s3_access_point_arn,
+            kms_keys_to_grant: self.kms_keys_to_grant,
         }
     }
 }

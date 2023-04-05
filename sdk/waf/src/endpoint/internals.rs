@@ -20,27 +20,78 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
     #[allow(unused_variables)]
-    if let Some(partition_result) =
-        partition_resolver.resolve_partition(region, _diagnostic_collector)
-    {
-        #[allow(unused_variables)]
-        if let Some(endpoint) = endpoint {
-            if (*use_fips) == (true) {
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                    "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
-                ));
-            }
-            if (*use_dual_stack) == (true) {
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                    "Invalid Configuration: Dualstack and custom endpoint are not supported"
-                        .to_string(),
-                ));
-            }
-            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                .url(endpoint.to_owned())
-                .build());
+    if let Some(endpoint) = endpoint {
+        if (*use_fips) == (true) {
+            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+            ));
         }
-        if (partition_result.name()) == ("aws") {
+        if (*use_dual_stack) == (true) {
+            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                "Invalid Configuration: Dualstack and custom endpoint are not supported"
+                    .to_string(),
+            ));
+        }
+        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+            .url(endpoint.to_owned())
+            .build());
+    }
+    #[allow(unused_variables)]
+    if let Some(region) = region {
+        #[allow(unused_variables)]
+        if let Some(partition_result) =
+            partition_resolver.resolve_partition(region, _diagnostic_collector)
+        {
+            if (partition_result.name()) == ("aws") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://waf.amazonaws.com".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![aws_smithy_types::Document::from({
+                                    let mut out = std::collections::HashMap::<
+                                        String,
+                                        aws_smithy_types::Document,
+                                    >::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "waf".to_string().into());
+                                    out.insert(
+                                        "signingRegion".to_string(),
+                                        "us-east-1".to_string().into(),
+                                    );
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
+            if (partition_result.name()) == ("aws") {
+                if (*use_fips) == (true) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://waf-fips.amazonaws.com".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![aws_smithy_types::Document::from({
+                                    let mut out = std::collections::HashMap::<
+                                        String,
+                                        aws_smithy_types::Document,
+                                    >::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "waf".to_string().into());
+                                    out.insert(
+                                        "signingRegion".to_string(),
+                                        "us-east-1".to_string().into(),
+                                    );
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
@@ -51,7 +102,9 @@ pub(super) fn resolve_endpoint(
                                     out.push_str("https://waf-fips.");
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&region);
-                                    out.push_str(".api.aws");
+                                    out.push('.');
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&partition_result.dual_stack_dns_suffix());
                                     out
                                 })
                                 .build());
@@ -64,23 +117,16 @@ pub(super) fn resolve_endpoint(
             if (*use_fips) == (true) {
                 if (true) == (partition_result.supports_fips()) {
                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://waf-fips.amazonaws.com".to_string())
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "waf".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "us-east-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
+                        .url({
+                            let mut out = String::new();
+                            out.push_str("https://waf-fips.");
+                            #[allow(clippy::needless_borrow)]
+                            out.push_str(&region);
+                            out.push('.');
+                            #[allow(clippy::needless_borrow)]
+                            out.push_str(&partition_result.dns_suffix());
+                            out
+                        })
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -95,7 +141,9 @@ pub(super) fn resolve_endpoint(
                             out.push_str("https://waf.");
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&region);
-                            out.push_str(".api.aws");
+                            out.push('.');
+                            #[allow(clippy::needless_borrow)]
+                            out.push_str(&partition_result.dual_stack_dns_suffix());
                             out
                         })
                         .build());
@@ -106,135 +154,27 @@ pub(super) fn resolve_endpoint(
                 ));
             }
             return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://waf.amazonaws.com".to_string())
-                .property(
-                    "authSchemes",
-                    vec![aws_smithy_types::Document::from({
-                        let mut out =
-                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "waf".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    })],
-                )
+                .url({
+                    let mut out = String::new();
+                    out.push_str("https://waf.");
+                    #[allow(clippy::needless_borrow)]
+                    out.push_str(&region);
+                    out.push('.');
+                    #[allow(clippy::needless_borrow)]
+                    out.push_str(&partition_result.dns_suffix());
+                    out
+                })
                 .build());
         }
-        if (*use_fips) == (true) {
-            if (*use_dual_stack) == (true) {
-                if (true) == (partition_result.supports_fips()) {
-                    if (true) == (partition_result.supports_dual_stack()) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                            .url({
-                                let mut out = String::new();
-                                out.push_str("https://waf-fips.");
-                                #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
-                                out.push('.');
-                                #[allow(clippy::needless_borrow)]
-                                out.push_str(&partition_result.dual_stack_dns_suffix());
-                                out
-                            })
-                            .build());
-                    }
-                }
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("FIPS and DualStack are enabled, but this partition does not support one or both"
-.to_string()));
-            }
-        }
-        if (*use_fips) == (true) {
-            if (true) == (partition_result.supports_fips()) {
-                if (region) == ("aws-global") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://waf-fips.amazonaws.com".to_string())
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "waf".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "us-east-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
-                        .build());
-                }
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                    .url({
-                        let mut out = String::new();
-                        out.push_str("https://waf-fips.");
-                        #[allow(clippy::needless_borrow)]
-                        out.push_str(&region);
-                        out.push('.');
-                        #[allow(clippy::needless_borrow)]
-                        out.push_str(&partition_result.dns_suffix());
-                        out
-                    })
-                    .build());
-            }
-            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                "FIPS is enabled but this partition does not support FIPS".to_string(),
-            ));
-        }
-        if (*use_dual_stack) == (true) {
-            if (true) == (partition_result.supports_dual_stack()) {
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                    .url({
-                        let mut out = String::new();
-                        out.push_str("https://waf.");
-                        #[allow(clippy::needless_borrow)]
-                        out.push_str(&region);
-                        out.push('.');
-                        #[allow(clippy::needless_borrow)]
-                        out.push_str(&partition_result.dual_stack_dns_suffix());
-                        out
-                    })
-                    .build());
-            }
-            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                "DualStack is enabled but this partition does not support DualStack".to_string(),
-            ));
-        }
-        if (region) == ("aws-global") {
-            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://waf.amazonaws.com".to_string())
-                .property(
-                    "authSchemes",
-                    vec![aws_smithy_types::Document::from({
-                        let mut out =
-                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "waf".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    })],
-                )
-                .build());
-        }
-        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-            .url({
-                let mut out = String::new();
-                out.push_str("https://waf.");
-                #[allow(clippy::needless_borrow)]
-                out.push_str(&region);
-                out.push('.');
-                #[allow(clippy::needless_borrow)]
-                out.push_str(&partition_result.dns_suffix());
-                out
-            })
-            .build());
+        #[allow(unreachable_code)]
+        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+            format!(
+                "No rules matched these parameters. This is a bug. {:?}",
+                _params
+            ),
+        ));
     }
-    #[allow(unreachable_code)]
     return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-        format!(
-            "No rules matched these parameters. This is a bug. {:?}",
-            _params
-        ),
+        "Invalid Configuration: Missing Region".to_string(),
     ));
 }

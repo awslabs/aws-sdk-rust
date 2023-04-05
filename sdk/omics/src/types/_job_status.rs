@@ -14,6 +14,7 @@
 /// match jobstatus {
 ///     JobStatus::Cancelled => { /* ... */ },
 ///     JobStatus::Completed => { /* ... */ },
+///     JobStatus::CompletedWithFailures => { /* ... */ },
 ///     JobStatus::Failed => { /* ... */ },
 ///     JobStatus::InProgress => { /* ... */ },
 ///     JobStatus::Submitted => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum JobStatus {
     Cancelled,
     /// The Job has completed
     Completed,
+    /// The Job completed with failed runs
+    CompletedWithFailures,
     /// The Job failed
     Failed,
     /// The Job is executing
@@ -68,6 +71,7 @@ impl std::convert::From<&str> for JobStatus {
         match s {
             "CANCELLED" => JobStatus::Cancelled,
             "COMPLETED" => JobStatus::Completed,
+            "COMPLETED_WITH_FAILURES" => JobStatus::CompletedWithFailures,
             "FAILED" => JobStatus::Failed,
             "IN_PROGRESS" => JobStatus::InProgress,
             "SUBMITTED" => JobStatus::Submitted,
@@ -88,6 +92,7 @@ impl JobStatus {
         match self {
             JobStatus::Cancelled => "CANCELLED",
             JobStatus::Completed => "COMPLETED",
+            JobStatus::CompletedWithFailures => "COMPLETED_WITH_FAILURES",
             JobStatus::Failed => "FAILED",
             JobStatus::InProgress => "IN_PROGRESS",
             JobStatus::Submitted => "SUBMITTED",
@@ -99,6 +104,7 @@ impl JobStatus {
         &[
             "CANCELLED",
             "COMPLETED",
+            "COMPLETED_WITH_FAILURES",
             "FAILED",
             "IN_PROGRESS",
             "SUBMITTED",

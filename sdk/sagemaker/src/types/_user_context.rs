@@ -13,6 +13,9 @@ pub struct UserContext {
     /// <p>The domain associated with the user.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
+    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
+    #[doc(hidden)]
+    pub iam_identity: std::option::Option<crate::types::IamIdentity>,
 }
 impl UserContext {
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
@@ -26,6 +29,10 @@ impl UserContext {
     /// <p>The domain associated with the user.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
+    }
+    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
+    pub fn iam_identity(&self) -> std::option::Option<&crate::types::IamIdentity> {
+        self.iam_identity.as_ref()
     }
 }
 impl UserContext {
@@ -42,6 +49,7 @@ pub struct UserContextBuilder {
     pub(crate) user_profile_arn: std::option::Option<std::string::String>,
     pub(crate) user_profile_name: std::option::Option<std::string::String>,
     pub(crate) domain_id: std::option::Option<std::string::String>,
+    pub(crate) iam_identity: std::option::Option<crate::types::IamIdentity>,
 }
 impl UserContextBuilder {
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
@@ -77,12 +85,26 @@ impl UserContextBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
+    pub fn iam_identity(mut self, input: crate::types::IamIdentity) -> Self {
+        self.iam_identity = Some(input);
+        self
+    }
+    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
+    pub fn set_iam_identity(
+        mut self,
+        input: std::option::Option<crate::types::IamIdentity>,
+    ) -> Self {
+        self.iam_identity = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UserContext`](crate::types::UserContext).
     pub fn build(self) -> crate::types::UserContext {
         crate::types::UserContext {
             user_profile_arn: self.user_profile_arn,
             user_profile_name: self.user_profile_name,
             domain_id: self.domain_id,
+            iam_identity: self.iam_identity,
         }
     }
 }

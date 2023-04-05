@@ -3,22 +3,20 @@ pub fn ser_add_thing_to_thing_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_thing_to_thing_group::AddThingToThingGroupInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.override_dynamic_groups {
-        object
-            .key("overrideDynamicGroups")
-            .boolean(input.override_dynamic_groups);
+    if let Some(var_1) = &input.override_dynamic_groups {
+        object.key("overrideDynamicGroups").boolean(*var_1);
     }
-    if let Some(var_1) = &input.thing_arn {
-        object.key("thingArn").string(var_1.as_str());
+    if let Some(var_2) = &input.thing_arn {
+        object.key("thingArn").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.thing_group_arn {
-        object.key("thingGroupArn").string(var_2.as_str());
+    if let Some(var_3) = &input.thing_group_arn {
+        object.key("thingGroupArn").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.thing_group_name {
-        object.key("thingGroupName").string(var_3.as_str());
+    if let Some(var_4) = &input.thing_group_name {
+        object.key("thingGroupName").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.thing_name {
-        object.key("thingName").string(var_4.as_str());
+    if let Some(var_5) = &input.thing_name {
+        object.key("thingName").string(var_5.as_str());
     }
     Ok(())
 }

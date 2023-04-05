@@ -26,7 +26,7 @@ pub struct GetLoadBalancerMetricDataInput {
     pub metric_name: std::option::Option<crate::types::LoadBalancerMetricName>,
     /// <p>The granularity, in seconds, of the returned data points.</p>
     #[doc(hidden)]
-    pub period: i32,
+    pub period: std::option::Option<i32>,
     /// <p>The start time of the period.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -73,7 +73,7 @@ impl GetLoadBalancerMetricDataInput {
         self.metric_name.as_ref()
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p>The start time of the period.</p>
@@ -266,7 +266,7 @@ impl GetLoadBalancerMetricDataInputBuilder {
             crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataInput {
                 load_balancer_name: self.load_balancer_name,
                 metric_name: self.metric_name,
-                period: self.period.unwrap_or_default(),
+                period: self.period,
                 start_time: self.start_time,
                 end_time: self.end_time,
                 unit: self.unit,

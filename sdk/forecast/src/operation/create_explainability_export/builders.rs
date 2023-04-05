@@ -6,7 +6,7 @@ pub use crate::operation::create_explainability_export::_create_explainability_e
 /// Fluent builder constructing a request to `CreateExplainabilityExport`.
 ///
 /// <p>Exports an Explainability resource created by the <code>CreateExplainability</code> operation. Exported files are exported to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-/// <p>You must specify a <code>DataDestination</code> object that includes an Amazon S3 bucket and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p> <note>
+/// <p>You must specify a <code>DataDestination</code> object that includes an Amazon S3 bucket and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p> <note>
 /// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can access the export in your Amazon S3 bucket. To get the status, use the <code>DescribeExplainabilityExport</code> operation.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -98,12 +98,12 @@ impl CreateExplainabilityExportFluentBuilder {
         self.inner = self.inner.set_explainability_arn(input);
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.inner = self.inner.destination(input);
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn set_destination(
         mut self,
         input: std::option::Option<crate::types::DataDestination>,

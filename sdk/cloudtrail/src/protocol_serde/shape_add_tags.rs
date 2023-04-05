@@ -28,6 +28,24 @@ pub fn de_add_tags_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ChannelNotFoundException" => {
+            crate::operation::add_tags::AddTagsError::ChannelNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ChannelNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_channel_not_found_exception::de_channel_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "CloudTrailARNInvalidException" => {
             crate::operation::add_tags::AddTagsError::CloudTrailArnInvalidException({
                 #[allow(unused_mut)]

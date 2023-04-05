@@ -5,7 +5,7 @@ pub use crate::operation::create_contact::_create_contact_input::CreateContactIn
 
 /// Fluent builder constructing a request to `CreateContact`.
 ///
-/// <p>Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident. </p>
+/// <p>Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateContactFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,22 +65,22 @@ impl CreateContactFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
         self
     }
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }
-    /// <p>The full name of the contact or escalation plan. </p>
+    /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>The full name of the contact or escalation plan. </p>
+    /// <p>The full name of the contact or escalation plan.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
@@ -95,12 +95,12 @@ impl CreateContactFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
         self.inner = self.inner.plan(input);
         self
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
     pub fn set_plan(mut self, input: std::option::Option<crate::types::Plan>) -> Self {
         self.inner = self.inner.set_plan(input);
         self
@@ -109,12 +109,12 @@ impl CreateContactFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,

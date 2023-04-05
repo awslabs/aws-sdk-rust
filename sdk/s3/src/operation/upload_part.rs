@@ -76,6 +76,12 @@ impl UploadPartInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
                 let inner_2 = &_input.part_number;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "part_number",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 query.push_kv(
                     "partNumber",
                     aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
@@ -308,6 +314,12 @@ impl UploadPartInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
                 let inner_5 = &_input.part_number;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "part_number",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 query.push_kv(
                     "partNumber",
                     aws_smithy_types::primitive::Encoder::from(*inner_5).encode(),

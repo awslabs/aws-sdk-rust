@@ -34,10 +34,10 @@ pub struct EntityRecognizerProperties {
     /// <p> Provides information about an entity recognizer.</p>
     #[doc(hidden)]
     pub recognizer_metadata: std::option::Option<crate::types::EntityRecognizerMetadata>,
-    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -47,7 +47,7 @@ pub struct EntityRecognizerProperties {
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::types::VpcConfig>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats: </p>
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -57,9 +57,15 @@ pub struct EntityRecognizerProperties {
     /// <p>The version name you assigned to the entity recognizer.</p>
     #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the entity recognizer model in your AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the entity recognizer model in your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub source_model_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    #[doc(hidden)]
+    pub flywheel_arn: std::option::Option<std::string::String>,
+    /// <p>Output data configuration.</p>
+    #[doc(hidden)]
+    pub output_data_config: std::option::Option<crate::types::EntityRecognizerOutputDataConfig>,
 }
 impl EntityRecognizerProperties {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
@@ -106,11 +112,11 @@ impl EntityRecognizerProperties {
     ) -> std::option::Option<&crate::types::EntityRecognizerMetadata> {
         self.recognizer_metadata.as_ref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -122,7 +128,7 @@ impl EntityRecognizerProperties {
     pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats: </p>
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -134,9 +140,19 @@ impl EntityRecognizerProperties {
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the entity recognizer model in your AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the entity recognizer model in your Amazon Web Services account.</p>
     pub fn source_model_arn(&self) -> std::option::Option<&str> {
         self.source_model_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
+        self.flywheel_arn.as_deref()
+    }
+    /// <p>Output data configuration.</p>
+    pub fn output_data_config(
+        &self,
+    ) -> std::option::Option<&crate::types::EntityRecognizerOutputDataConfig> {
+        self.output_data_config.as_ref()
     }
 }
 impl std::fmt::Debug for EntityRecognizerProperties {
@@ -158,6 +174,8 @@ impl std::fmt::Debug for EntityRecognizerProperties {
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
         formatter.field("version_name", &self.version_name);
         formatter.field("source_model_arn", &self.source_model_arn);
+        formatter.field("flywheel_arn", &self.flywheel_arn);
+        formatter.field("output_data_config", &self.output_data_config);
         formatter.finish()
     }
 }
@@ -189,6 +207,9 @@ pub struct EntityRecognizerPropertiesBuilder {
     pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
     pub(crate) version_name: std::option::Option<std::string::String>,
     pub(crate) source_model_arn: std::option::Option<std::string::String>,
+    pub(crate) flywheel_arn: std::option::Option<std::string::String>,
+    pub(crate) output_data_config:
+        std::option::Option<crate::types::EntityRecognizerOutputDataConfig>,
 }
 impl EntityRecognizerPropertiesBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
@@ -315,12 +336,12 @@ impl EntityRecognizerPropertiesBuilder {
         self.recognizer_metadata = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_access_role_arn = Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -328,7 +349,7 @@ impl EntityRecognizerPropertiesBuilder {
         self.data_access_role_arn = input;
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -337,7 +358,7 @@ impl EntityRecognizerPropertiesBuilder {
         self.volume_kms_key_id = Some(input.into());
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -359,7 +380,7 @@ impl EntityRecognizerPropertiesBuilder {
         self.vpc_config = input;
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats: </p>
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -368,7 +389,7 @@ impl EntityRecognizerPropertiesBuilder {
         self.model_kms_key_id = Some(input.into());
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats: </p>
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -387,14 +408,40 @@ impl EntityRecognizerPropertiesBuilder {
         self.version_name = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the entity recognizer model in your AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the entity recognizer model in your Amazon Web Services account.</p>
     pub fn source_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_model_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the entity recognizer model in your AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the entity recognizer model in your Amazon Web Services account.</p>
     pub fn set_source_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.source_model_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.flywheel_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.flywheel_arn = input;
+        self
+    }
+    /// <p>Output data configuration.</p>
+    pub fn output_data_config(
+        mut self,
+        input: crate::types::EntityRecognizerOutputDataConfig,
+    ) -> Self {
+        self.output_data_config = Some(input);
+        self
+    }
+    /// <p>Output data configuration.</p>
+    pub fn set_output_data_config(
+        mut self,
+        input: std::option::Option<crate::types::EntityRecognizerOutputDataConfig>,
+    ) -> Self {
+        self.output_data_config = input;
         self
     }
     /// Consumes the builder and constructs a [`EntityRecognizerProperties`](crate::types::EntityRecognizerProperties).
@@ -416,6 +463,8 @@ impl EntityRecognizerPropertiesBuilder {
             model_kms_key_id: self.model_kms_key_id,
             version_name: self.version_name,
             source_model_arn: self.source_model_arn,
+            flywheel_arn: self.flywheel_arn,
+            output_data_config: self.output_data_config,
         }
     }
 }
@@ -438,6 +487,8 @@ impl std::fmt::Debug for EntityRecognizerPropertiesBuilder {
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
         formatter.field("version_name", &self.version_name);
         formatter.field("source_model_arn", &self.source_model_arn);
+        formatter.field("flywheel_arn", &self.flywheel_arn);
+        formatter.field("output_data_config", &self.output_data_config);
         formatter.finish()
     }
 }

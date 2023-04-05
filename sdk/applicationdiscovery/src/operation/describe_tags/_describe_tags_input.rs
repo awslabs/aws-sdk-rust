@@ -8,7 +8,7 @@ pub struct DescribeTagsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
     /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl DescribeTagsInput {
         self.filters.as_deref()
     }
     /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -91,7 +91,7 @@ impl DescribeTagsInputBuilder {
     > {
         Ok(crate::operation::describe_tags::DescribeTagsInput {
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

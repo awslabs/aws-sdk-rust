@@ -168,7 +168,7 @@ pub type StartResourceEvaluationErrorKind = StartResourceEvaluationError;
 pub enum StartResourceEvaluationError {
     /// <p>Using the same client token with one or more different parameters. Specify a new client token with the parameter changes and try again.</p>
     IdempotentParameterMismatch(crate::types::error::IdempotentParameterMismatch),
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

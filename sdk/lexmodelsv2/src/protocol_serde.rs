@@ -282,6 +282,10 @@ pub(crate) mod shape_bot_locale_sort_by;
 
 pub(crate) mod shape_bot_locale_summary_list;
 
+pub(crate) mod shape_bot_member;
+
+pub(crate) mod shape_bot_members;
+
 pub(crate) mod shape_bot_recommendation_results;
 
 pub(crate) mod shape_bot_recommendation_summary_list;
@@ -373,6 +377,8 @@ pub(crate) mod shape_obfuscation_setting;
 pub(crate) mod shape_output_context;
 
 pub(crate) mod shape_output_contexts_list;
+
+pub(crate) mod shape_parent_bot_networks;
 
 pub(crate) mod shape_principal;
 
@@ -483,6 +489,8 @@ pub(crate) mod shape_grammar_slot_type_setting;
 pub(crate) mod shape_import_summary;
 
 pub(crate) mod shape_intent_summary;
+
+pub(crate) mod shape_parent_bot_network;
 
 pub(crate) mod shape_post_fulfillment_status_specification;
 

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector settings.</p>
     #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::types::VoiceConnectorSettings>,
 }
 impl UpdateGlobalSettingsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector settings.</p>
     pub fn voice_connector(&self) -> std::option::Option<&crate::types::VoiceConnectorSettings> {
         self.voice_connector.as_ref()
     }
@@ -28,12 +28,12 @@ pub struct UpdateGlobalSettingsInputBuilder {
     pub(crate) voice_connector: std::option::Option<crate::types::VoiceConnectorSettings>,
 }
 impl UpdateGlobalSettingsInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector settings.</p>
     pub fn voice_connector(mut self, input: crate::types::VoiceConnectorSettings) -> Self {
         self.voice_connector = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector settings.</p>
     pub fn set_voice_connector(
         mut self,
         input: std::option::Option<crate::types::VoiceConnectorSettings>,

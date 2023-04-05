@@ -6,12 +6,19 @@ pub struct CreateEndpointOutput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
+    #[doc(hidden)]
+    pub model_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEndpointOutput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateEndpointOutput {
@@ -31,6 +38,7 @@ impl CreateEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateEndpointOutputBuilder {
     pub(crate) endpoint_arn: std::option::Option<std::string::String>,
+    pub(crate) model_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEndpointOutputBuilder {
@@ -42,6 +50,16 @@ impl CreateEndpointOutputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
     pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.endpoint_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
+    pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.model_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
+    pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_arn = input;
         self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -57,6 +75,7 @@ impl CreateEndpointOutputBuilder {
     pub fn build(self) -> crate::operation::create_endpoint::CreateEndpointOutput {
         crate::operation::create_endpoint::CreateEndpointOutput {
             endpoint_arn: self.endpoint_arn,
+            model_arn: self.model_arn,
             _request_id: self._request_id,
         }
     }

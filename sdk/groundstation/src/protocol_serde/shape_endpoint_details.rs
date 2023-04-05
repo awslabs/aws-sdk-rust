@@ -18,6 +18,12 @@ pub fn ser_endpoint_details(
         )?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.aws_ground_station_agent_endpoint {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("awsGroundStationAgentEndpoint").start_object();
+        crate::protocol_serde::shape_aws_ground_station_agent_endpoint::ser_aws_ground_station_agent_endpoint(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -53,6 +59,11 @@ where
                             "endpoint" => {
                                 builder = builder.set_endpoint(
                                     crate::protocol_serde::shape_dataflow_endpoint::de_dataflow_endpoint(tokens)?
+                                );
+                            }
+                            "awsGroundStationAgentEndpoint" => {
+                                builder = builder.set_aws_ground_station_agent_endpoint(
+                                    crate::protocol_serde::shape_aws_ground_station_agent_endpoint::de_aws_ground_station_agent_endpoint(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

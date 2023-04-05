@@ -6,29 +6,44 @@ pub fn ser_import_resources_to_draft_app_version_input(
     if let Some(var_1) = &input.app_arn {
         object.key("appArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.source_arns {
-        let mut array_3 = object.key("sourceArns").start_array();
+    if let Some(var_2) = &input.eks_sources {
+        let mut array_3 = object.key("eksSources").start_array();
         for item_4 in var_2 {
             {
-                array_3.value().string(item_4.as_str());
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_eks_source::ser_eks_source(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.terraform_sources {
-        let mut array_6 = object.key("terraformSources").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.import_strategy {
+        object.key("importStrategy").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.source_arns {
+        let mut array_8 = object.key("sourceArns").start_array();
+        for item_9 in var_7 {
             {
-                #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_terraform_source::ser_terraform_source(
-                    &mut object_8,
-                    item_7,
-                )?;
-                object_8.finish();
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_6.finish();
+        array_8.finish();
+    }
+    if let Some(var_10) = &input.terraform_sources {
+        let mut array_11 = object.key("terraformSources").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_terraform_source::ser_terraform_source(
+                    &mut object_13,
+                    item_12,
+                )?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
     }
     Ok(())
 }

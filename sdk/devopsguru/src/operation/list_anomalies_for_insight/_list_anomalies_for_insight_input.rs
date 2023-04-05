@@ -18,6 +18,9 @@ pub struct ListAnomaliesForInsightInput {
     /// <p>The ID of the Amazon Web Services account. </p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
 }
 impl ListAnomaliesForInsightInput {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
@@ -40,6 +43,10 @@ impl ListAnomaliesForInsightInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
+    pub fn filters(&self) -> std::option::Option<&crate::types::ListAnomaliesForInsightFilters> {
+        self.filters.as_ref()
+    }
 }
 impl ListAnomaliesForInsightInput {
     /// Creates a new builder-style object to manufacture [`ListAnomaliesForInsightInput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput).
@@ -59,6 +66,7 @@ pub struct ListAnomaliesForInsightInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) account_id: std::option::Option<std::string::String>,
+    pub(crate) filters: std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
 }
 impl ListAnomaliesForInsightInputBuilder {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
@@ -114,6 +122,19 @@ impl ListAnomaliesForInsightInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
+    pub fn filters(mut self, input: crate::types::ListAnomaliesForInsightFilters) -> Self {
+        self.filters = Some(input);
+        self
+    }
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
+    ) -> Self {
+        self.filters = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAnomaliesForInsightInput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput).
     pub fn build(
         self,
@@ -128,6 +149,7 @@ impl ListAnomaliesForInsightInputBuilder {
                 max_results: self.max_results,
                 next_token: self.next_token,
                 account_id: self.account_id,
+                filters: self.filters,
             },
         )
     }

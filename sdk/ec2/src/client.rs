@@ -240,6 +240,8 @@ mod assign_ipv6_addresses;
 
 mod assign_private_ip_addresses;
 
+mod assign_private_nat_gateway_address;
+
 mod associate_address;
 
 mod associate_client_vpn_target_network;
@@ -251,6 +253,10 @@ mod associate_enclave_certificate_iam_role;
 mod associate_iam_instance_profile;
 
 mod associate_instance_event_window;
+
+mod associate_ipam_resource_discovery;
+
+mod associate_nat_gateway_address;
 
 mod associate_route_table;
 
@@ -355,6 +361,8 @@ mod create_internet_gateway;
 mod create_ipam;
 
 mod create_ipam_pool;
+
+mod create_ipam_resource_discovery;
 
 mod create_ipam_scope;
 
@@ -531,6 +539,8 @@ mod delete_internet_gateway;
 mod delete_ipam;
 
 mod delete_ipam_pool;
+
+mod delete_ipam_resource_discovery;
 
 mod delete_ipam_scope;
 
@@ -768,6 +778,10 @@ mod describe_internet_gateways;
 
 mod describe_ipam_pools;
 
+mod describe_ipam_resource_discoveries;
+
+mod describe_ipam_resource_discovery_associations;
+
 mod describe_ipam_scopes;
 
 mod describe_ipams;
@@ -990,6 +1004,10 @@ mod disassociate_iam_instance_profile;
 
 mod disassociate_instance_event_window;
 
+mod disassociate_ipam_resource_discovery;
+
+mod disassociate_nat_gateway_address;
+
 mod disassociate_route_table;
 
 mod disassociate_subnet_cidr_block;
@@ -1072,6 +1090,10 @@ mod get_instance_uefi_data;
 
 mod get_ipam_address_history;
 
+mod get_ipam_discovered_accounts;
+
+mod get_ipam_discovered_resource_cidrs;
+
 mod get_ipam_pool_allocations;
 
 mod get_ipam_pool_cidrs;
@@ -1119,6 +1141,8 @@ mod get_verified_access_group_policy;
 mod get_vpn_connection_device_sample_configuration;
 
 mod get_vpn_connection_device_types;
+
+mod get_vpn_tunnel_replacement_status;
 
 mod import_client_vpn_client_certificate_revocation_list;
 
@@ -1183,6 +1207,8 @@ mod modify_ipam;
 mod modify_ipam_pool;
 
 mod modify_ipam_resource_cidr;
+
+mod modify_ipam_resource_discovery;
 
 mod modify_ipam_scope;
 
@@ -1318,6 +1344,8 @@ mod replace_route_table_association;
 
 mod replace_transit_gateway_route;
 
+mod replace_vpn_tunnel;
+
 mod report_instance_status;
 
 mod request_spot_fleet;
@@ -1383,6 +1411,8 @@ mod terminate_instances;
 mod unassign_ipv6_addresses;
 
 mod unassign_private_ip_addresses;
+
+mod unassign_private_nat_gateway_address;
 
 mod unmonitor_instances;
 

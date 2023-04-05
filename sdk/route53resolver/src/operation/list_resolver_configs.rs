@@ -182,6 +182,8 @@ pub enum ListResolverConfigsError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -206,6 +208,7 @@ impl std::fmt::Display for ListResolverConfigsError {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -229,6 +232,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ListResolverCon
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ThrottlingException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ValidationException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -284,6 +290,7 @@ impl ListResolverConfigsError {
             Self::InvalidParameterException(e) => e.meta(),
             Self::InvalidRequestException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
+            Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -311,6 +318,10 @@ impl ListResolverConfigsError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `ListResolverConfigsError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl std::error::Error for ListResolverConfigsError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
@@ -321,6 +332,7 @@ impl std::error::Error for ListResolverConfigsError {
             Self::InvalidParameterException(_inner) => Some(_inner),
             Self::InvalidRequestException(_inner) => Some(_inner),
             Self::ThrottlingException(_inner) => Some(_inner),
+            Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

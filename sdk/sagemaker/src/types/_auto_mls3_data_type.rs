@@ -12,6 +12,7 @@
 /// ```text
 /// # let automls3datatype = unimplemented!();
 /// match automls3datatype {
+///     AutoMls3DataType::AugmentedManifestFile => { /* ... */ },
 ///     AutoMls3DataType::ManifestFile => { /* ... */ },
 ///     AutoMls3DataType::S3Prefix => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@
 )]
 pub enum AutoMls3DataType {
     #[allow(missing_docs)] // documentation missing in model
+    AugmentedManifestFile,
+    #[allow(missing_docs)] // documentation missing in model
     ManifestFile,
     #[allow(missing_docs)] // documentation missing in model
     S3Prefix,
@@ -57,6 +60,7 @@ pub enum AutoMls3DataType {
 impl std::convert::From<&str> for AutoMls3DataType {
     fn from(s: &str) -> Self {
         match s {
+            "AugmentedManifestFile" => AutoMls3DataType::AugmentedManifestFile,
             "ManifestFile" => AutoMls3DataType::ManifestFile,
             "S3Prefix" => AutoMls3DataType::S3Prefix,
             other => {
@@ -76,6 +80,7 @@ impl AutoMls3DataType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AutoMls3DataType::AugmentedManifestFile => "AugmentedManifestFile",
             AutoMls3DataType::ManifestFile => "ManifestFile",
             AutoMls3DataType::S3Prefix => "S3Prefix",
             AutoMls3DataType::Unknown(value) => value.as_str(),
@@ -83,7 +88,7 @@ impl AutoMls3DataType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ManifestFile", "S3Prefix"]
+        &["AugmentedManifestFile", "ManifestFile", "S3Prefix"]
     }
 }
 impl AsRef<str> for AutoMls3DataType {

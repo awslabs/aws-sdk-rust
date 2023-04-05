@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSecurityGroupInput {
-    /// <p>A description for the security group. This is informational only.</p>
+    /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
     /// <p>Constraints for EC2-Classic: ASCII characters</p>
     /// <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
@@ -26,7 +26,7 @@ pub struct CreateSecurityGroupInput {
     pub dry_run: std::option::Option<bool>,
 }
 impl CreateSecurityGroupInput {
-    /// <p>A description for the security group. This is informational only.</p>
+    /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
     /// <p>Constraints for EC2-Classic: ASCII characters</p>
     /// <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
@@ -74,7 +74,7 @@ pub struct CreateSecurityGroupInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl CreateSecurityGroupInputBuilder {
-    /// <p>A description for the security group. This is informational only.</p>
+    /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
     /// <p>Constraints for EC2-Classic: ASCII characters</p>
     /// <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
@@ -82,7 +82,7 @@ impl CreateSecurityGroupInputBuilder {
         self.description = Some(input.into());
         self
     }
-    /// <p>A description for the security group. This is informational only.</p>
+    /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
     /// <p>Constraints for EC2-Classic: ASCII characters</p>
     /// <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>

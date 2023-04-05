@@ -37,6 +37,9 @@ pub struct RecognizeUtteranceOutput {
     pub input_transcript: std::option::Option<std::string::String>,
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
+    /// <p>The bot member that recognized the utterance.</p>
+    #[doc(hidden)]
+    pub recognized_bot_member: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl RecognizeUtteranceOutput {
@@ -84,6 +87,10 @@ impl RecognizeUtteranceOutput {
     pub fn audio_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.audio_stream
     }
+    /// <p>The bot member that recognized the utterance.</p>
+    pub fn recognized_bot_member(&self) -> std::option::Option<&str> {
+        self.recognized_bot_member.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for RecognizeUtteranceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -111,6 +118,7 @@ pub struct RecognizeUtteranceOutputBuilder {
     pub(crate) session_id: std::option::Option<std::string::String>,
     pub(crate) input_transcript: std::option::Option<std::string::String>,
     pub(crate) audio_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) recognized_bot_member: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl RecognizeUtteranceOutputBuilder {
@@ -226,6 +234,19 @@ impl RecognizeUtteranceOutputBuilder {
         self.audio_stream = input;
         self
     }
+    /// <p>The bot member that recognized the utterance.</p>
+    pub fn recognized_bot_member(mut self, input: impl Into<std::string::String>) -> Self {
+        self.recognized_bot_member = Some(input.into());
+        self
+    }
+    /// <p>The bot member that recognized the utterance.</p>
+    pub fn set_recognized_bot_member(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recognized_bot_member = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -247,6 +268,7 @@ impl RecognizeUtteranceOutputBuilder {
             session_id: self.session_id,
             input_transcript: self.input_transcript,
             audio_stream: self.audio_stream.unwrap_or_default(),
+            recognized_bot_member: self.recognized_bot_member,
             _request_id: self._request_id,
         }
     }

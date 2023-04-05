@@ -31,6 +31,11 @@ pub fn ser_create_local_gateway_route_input_input(
     if let Some(var_10) = &input.network_interface_id {
         scope_9.string(var_10);
     }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("DestinationPrefixListId");
+    if let Some(var_12) = &input.destination_prefix_list_id {
+        scope_11.string(var_12);
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

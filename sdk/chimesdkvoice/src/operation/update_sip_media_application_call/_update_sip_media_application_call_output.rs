@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationCallOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A <code>Call</code> instance for a SIP media application.</p>
     #[doc(hidden)]
     pub sip_media_application_call: std::option::Option<crate::types::SipMediaApplicationCall>,
     _request_id: Option<String>,
 }
 impl UpdateSipMediaApplicationCallOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A <code>Call</code> instance for a SIP media application.</p>
     pub fn sip_media_application_call(
         &self,
     ) -> std::option::Option<&crate::types::SipMediaApplicationCall> {
@@ -37,7 +37,7 @@ pub struct UpdateSipMediaApplicationCallOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateSipMediaApplicationCallOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A <code>Call</code> instance for a SIP media application.</p>
     pub fn sip_media_application_call(
         mut self,
         input: crate::types::SipMediaApplicationCall,
@@ -45,7 +45,7 @@ impl UpdateSipMediaApplicationCallOutputBuilder {
         self.sip_media_application_call = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A <code>Call</code> instance for a SIP media application.</p>
     pub fn set_sip_media_application_call(
         mut self,
         input: std::option::Option<crate::types::SipMediaApplicationCall>,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateFolder`](crate::operation::create_folder::builders::CreateFolderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`authentication_token(impl Into<String>)`](crate::operation::create_folder::builders::CreateFolderFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::create_folder::builders::CreateFolderFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::operation::create_folder::builders::CreateFolderFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::create_folder::builders::CreateFolderFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     ///   - [`name(impl Into<String>)`](crate::operation::create_folder::builders::CreateFolderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_folder::builders::CreateFolderFluentBuilder::set_name): <p>The name of the new folder.</p>
     ///   - [`parent_folder_id(impl Into<String>)`](crate::operation::create_folder::builders::CreateFolderFluentBuilder::parent_folder_id) / [`set_parent_folder_id(Option<String>)`](crate::operation::create_folder::builders::CreateFolderFluentBuilder::set_parent_folder_id): <p>The ID of the parent folder.</p>
     /// - On success, responds with [`CreateFolderOutput`](crate::operation::create_folder::CreateFolderOutput) with field(s):

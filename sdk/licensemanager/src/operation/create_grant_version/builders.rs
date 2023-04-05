@@ -5,7 +5,7 @@ pub use crate::operation::create_grant_version::_create_grant_version_input::Cre
 
 /// Fluent builder constructing a request to `CreateGrantVersion`.
 ///
-/// <p>Creates a new version of the specified grant.</p>
+/// <p>Creates a new version of the specified grant. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted licenses in License Manager</a> in the <i>License Manager User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGrantVersionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -144,6 +144,16 @@ impl CreateGrantVersionFluentBuilder {
     /// <p>Current version of the grant.</p>
     pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
+        self
+    }
+    /// <p>The options specified for the grant.</p>
+    pub fn options(mut self, input: crate::types::Options) -> Self {
+        self.inner = self.inner.options(input);
+        self
+    }
+    /// <p>The options specified for the grant.</p>
+    pub fn set_options(mut self, input: std::option::Option<crate::types::Options>) -> Self {
+        self.inner = self.inner.set_options(input);
         self
     }
 }

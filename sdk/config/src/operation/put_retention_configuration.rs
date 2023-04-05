@@ -166,7 +166,7 @@ pub type PutRetentionConfigurationErrorKind = PutRetentionConfigurationError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRetentionConfigurationError {
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>Failed to add the retention configuration because a retention configuration with that name already exists.</p>
     MaxNumberOfRetentionConfigurationsExceededException(

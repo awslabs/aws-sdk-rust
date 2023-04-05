@@ -17,7 +17,7 @@ pub struct UpdateIpSetInput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     #[doc(hidden)]
-    pub activate: bool,
+    pub activate: std::option::Option<bool>,
 }
 impl UpdateIpSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
@@ -37,7 +37,7 @@ impl UpdateIpSetInput {
         self.location.as_deref()
     }
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
-    pub fn activate(&self) -> bool {
+    pub fn activate(&self) -> std::option::Option<bool> {
         self.activate
     }
 }
@@ -121,7 +121,7 @@ impl UpdateIpSetInputBuilder {
             ip_set_id: self.ip_set_id,
             name: self.name,
             location: self.location,
-            activate: self.activate.unwrap_or_default(),
+            activate: self.activate,
         })
     }
 }

@@ -98,6 +98,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "LogConfiguration" => {
+                                builder = builder.set_log_configuration(
+                                    crate::protocol_serde::shape_log_configuration_for_channel::de_log_configuration_for_channel(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

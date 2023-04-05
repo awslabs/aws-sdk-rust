@@ -169,6 +169,8 @@ pub use crate::types::_code_hook_specification::CodeHookSpecificationBuilder;
 
 pub use crate::types::_lambda_code_hook::LambdaCodeHookBuilder;
 
+pub use crate::types::_bot_member::BotMemberBuilder;
+
 pub use crate::types::_data_privacy::DataPrivacyBuilder;
 
 pub use crate::types::_import_resource_specification::ImportResourceSpecificationBuilder;
@@ -254,6 +256,8 @@ pub use crate::types::_relative_aggregation_duration::RelativeAggregationDuratio
 pub use crate::types::_aggregated_utterances_filter::AggregatedUtterancesFilterBuilder;
 
 pub use crate::types::_aggregated_utterances_sort_by::AggregatedUtterancesSortByBuilder;
+
+pub use crate::types::_parent_bot_network::ParentBotNetworkBuilder;
 
 pub use crate::types::_bot_recommendation_results::BotRecommendationResultsBuilder;
 

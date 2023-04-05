@@ -42,26 +42,26 @@ pub fn ser_update_origin_endpoint_input(
     if let Some(var_13) = &input.origination {
         object.key("origination").string(var_13.as_str());
     }
-    if input.startover_window_seconds != 0 {
+    if let Some(var_14) = &input.startover_window_seconds {
         object.key("startoverWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.startover_window_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if input.time_delay_seconds != 0 {
+    if let Some(var_15) = &input.time_delay_seconds {
         object.key("timeDelaySeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.time_delay_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_14) = &input.whitelist {
-        let mut array_15 = object.key("whitelist").start_array();
-        for item_16 in var_14 {
+    if let Some(var_16) = &input.whitelist {
+        let mut array_17 = object.key("whitelist").start_array();
+        for item_18 in var_16 {
             {
-                array_15.value().string(item_16.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
     Ok(())
 }

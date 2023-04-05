@@ -199,6 +199,10 @@ pub use crate::types::_code_hook_specification::CodeHookSpecification;
 
 pub use crate::types::_lambda_code_hook::LambdaCodeHook;
 
+pub use crate::types::_bot_member::BotMember;
+
+pub use crate::types::_bot_type::BotType;
+
 pub use crate::types::_bot_status::BotStatus;
 
 pub use crate::types::_data_privacy::DataPrivacy;
@@ -359,6 +363,8 @@ pub use crate::types::_aggregated_utterances_sort_attribute::AggregatedUtterance
 
 pub use crate::types::_custom_vocabulary_status::CustomVocabularyStatus;
 
+pub use crate::types::_parent_bot_network::ParentBotNetwork;
+
 pub use crate::types::_bot_recommendation_results::BotRecommendationResults;
 
 pub use crate::types::_bot_recommendation_result_statistics::BotRecommendationResultStatistics;
@@ -455,6 +461,8 @@ mod _bot_locale_status;
 
 mod _bot_locale_summary;
 
+mod _bot_member;
+
 mod _bot_recommendation_result_statistics;
 
 mod _bot_recommendation_results;
@@ -470,6 +478,8 @@ mod _bot_sort_by;
 mod _bot_status;
 
 mod _bot_summary;
+
+mod _bot_type;
 
 mod _bot_version_locale_details;
 
@@ -646,6 +656,8 @@ mod _obfuscation_setting;
 mod _obfuscation_setting_type;
 
 mod _output_context;
+
+mod _parent_bot_network;
 
 mod _path_format;
 

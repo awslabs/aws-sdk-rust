@@ -69,12 +69,12 @@ impl CancelImageCreationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.image_build_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     pub fn set_image_build_version_arn(
         mut self,
         input: std::option::Option<std::string::String>,

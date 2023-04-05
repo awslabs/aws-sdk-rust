@@ -15,6 +15,15 @@ pub fn ser_plan(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.rotation_ids {
+        let mut array_6 = object.key("RotationIds").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }
 
@@ -44,6 +53,11 @@ where
                                     crate::protocol_serde::shape_stages_list::de_stages_list(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "RotationIds" => {
+                                builder = builder.set_rotation_ids(
+                                    crate::protocol_serde::shape_ssm_contacts_arn_list::de_ssm_contacts_arn_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

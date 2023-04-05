@@ -184,6 +184,13 @@ pub(crate) fn de_get_channel(
                             crate::protocol_serde::shape_destinations::de_destinations(tokens)?,
                         );
                     }
+                    "IngestionStatus" => {
+                        builder = builder.set_ingestion_status(
+                            crate::protocol_serde::shape_ingestion_status::de_ingestion_status(
+                                tokens,
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

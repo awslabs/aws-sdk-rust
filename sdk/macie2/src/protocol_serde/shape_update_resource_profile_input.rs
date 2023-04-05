@@ -3,10 +3,10 @@ pub fn ser_update_resource_profile_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_resource_profile::UpdateResourceProfileInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.sensitivity_score_override != 0 {
+    if let Some(var_1) = &input.sensitivity_score_override {
         object.key("sensitivityScoreOverride").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sensitivity_score_override).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

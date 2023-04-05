@@ -12,6 +12,9 @@ pub fn ser_s3_parameters(
         )?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.role_arn {
+        object.key("RoleArn").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -39,6 +42,15 @@ where
                             "ManifestFileLocation" => {
                                 builder = builder.set_manifest_file_location(
                                     crate::protocol_serde::shape_manifest_file_location::de_manifest_file_location(tokens)?
+                                );
+                            }
+                            "RoleArn" => {
+                                builder = builder.set_role_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

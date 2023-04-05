@@ -112,12 +112,12 @@ impl CreateAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_metadata(input);
         self
     }
-    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -140,6 +140,19 @@ impl CreateAppInstanceUserFluentBuilder {
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
+        self.inner = self.inner.expiration_settings(input);
+        self
+    }
+    /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn set_expiration_settings(
+        mut self,
+        input: std::option::Option<crate::types::ExpirationSettings>,
+    ) -> Self {
+        self.inner = self.inner.set_expiration_settings(input);
         self
     }
 }

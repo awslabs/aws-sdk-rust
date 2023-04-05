@@ -11,7 +11,7 @@ pub struct DescribeVoicesInput {
     pub language_code: std::option::Option<crate::types::LanguageCode>,
     /// <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
     #[doc(hidden)]
-    pub include_additional_language_codes: bool,
+    pub include_additional_language_codes: std::option::Option<bool>,
     /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ impl DescribeVoicesInput {
         self.language_code.as_ref()
     }
     /// <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
-    pub fn include_additional_language_codes(&self) -> bool {
+    pub fn include_additional_language_codes(&self) -> std::option::Option<bool> {
         self.include_additional_language_codes
     }
     /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>
@@ -107,9 +107,7 @@ impl DescribeVoicesInputBuilder {
         Ok(crate::operation::describe_voices::DescribeVoicesInput {
             engine: self.engine,
             language_code: self.language_code,
-            include_additional_language_codes: self
-                .include_additional_language_codes
-                .unwrap_or_default(),
+            include_additional_language_codes: self.include_additional_language_codes,
             next_token: self.next_token,
         })
     }

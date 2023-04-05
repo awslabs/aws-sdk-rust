@@ -9,7 +9,7 @@ pub struct DescribeBotVersionOutput {
     /// <p>The name of the bot that contains the version.</p>
     #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
-    /// <p>The version of the bot to describe.</p>
+    /// <p>The version of the bot that was described.</p>
     #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The description specified for the bot.</p>
@@ -33,6 +33,15 @@ pub struct DescribeBotVersionOutput {
     /// <p>A timestamp of the date and time that the bot version was created.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of the networks to which the bot version you described belongs.</p>
+    #[doc(hidden)]
+    pub parent_bot_networks: std::option::Option<std::vec::Vec<crate::types::ParentBotNetwork>>,
+    /// <p>The type of the bot in the version that was described.</p>
+    #[doc(hidden)]
+    pub bot_type: std::option::Option<crate::types::BotType>,
+    /// <p>The members of bot network in the version that was described.</p>
+    #[doc(hidden)]
+    pub bot_members: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
     _request_id: Option<String>,
 }
 impl DescribeBotVersionOutput {
@@ -44,7 +53,7 @@ impl DescribeBotVersionOutput {
     pub fn bot_name(&self) -> std::option::Option<&str> {
         self.bot_name.as_deref()
     }
-    /// <p>The version of the bot to describe.</p>
+    /// <p>The version of the bot that was described.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
@@ -76,6 +85,18 @@ impl DescribeBotVersionOutput {
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
+    /// <p>A list of the networks to which the bot version you described belongs.</p>
+    pub fn parent_bot_networks(&self) -> std::option::Option<&[crate::types::ParentBotNetwork]> {
+        self.parent_bot_networks.as_deref()
+    }
+    /// <p>The type of the bot in the version that was described.</p>
+    pub fn bot_type(&self) -> std::option::Option<&crate::types::BotType> {
+        self.bot_type.as_ref()
+    }
+    /// <p>The members of bot network in the version that was described.</p>
+    pub fn bot_members(&self) -> std::option::Option<&[crate::types::BotMember]> {
+        self.bot_members.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeBotVersionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -104,6 +125,10 @@ pub struct DescribeBotVersionOutputBuilder {
     pub(crate) bot_status: std::option::Option<crate::types::BotStatus>,
     pub(crate) failure_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) parent_bot_networks:
+        std::option::Option<std::vec::Vec<crate::types::ParentBotNetwork>>,
+    pub(crate) bot_type: std::option::Option<crate::types::BotType>,
+    pub(crate) bot_members: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
     _request_id: Option<String>,
 }
 impl DescribeBotVersionOutputBuilder {
@@ -127,12 +152,12 @@ impl DescribeBotVersionOutputBuilder {
         self.bot_name = input;
         self
     }
-    /// <p>The version of the bot to describe.</p>
+    /// <p>The version of the bot that was described.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.bot_version = Some(input.into());
         self
     }
-    /// <p>The version of the bot to describe.</p>
+    /// <p>The version of the bot that was described.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.bot_version = input;
         self
@@ -222,6 +247,54 @@ impl DescribeBotVersionOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// Appends an item to `parent_bot_networks`.
+    ///
+    /// To override the contents of this collection use [`set_parent_bot_networks`](Self::set_parent_bot_networks).
+    ///
+    /// <p>A list of the networks to which the bot version you described belongs.</p>
+    pub fn parent_bot_networks(mut self, input: crate::types::ParentBotNetwork) -> Self {
+        let mut v = self.parent_bot_networks.unwrap_or_default();
+        v.push(input);
+        self.parent_bot_networks = Some(v);
+        self
+    }
+    /// <p>A list of the networks to which the bot version you described belongs.</p>
+    pub fn set_parent_bot_networks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ParentBotNetwork>>,
+    ) -> Self {
+        self.parent_bot_networks = input;
+        self
+    }
+    /// <p>The type of the bot in the version that was described.</p>
+    pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
+        self.bot_type = Some(input);
+        self
+    }
+    /// <p>The type of the bot in the version that was described.</p>
+    pub fn set_bot_type(mut self, input: std::option::Option<crate::types::BotType>) -> Self {
+        self.bot_type = input;
+        self
+    }
+    /// Appends an item to `bot_members`.
+    ///
+    /// To override the contents of this collection use [`set_bot_members`](Self::set_bot_members).
+    ///
+    /// <p>The members of bot network in the version that was described.</p>
+    pub fn bot_members(mut self, input: crate::types::BotMember) -> Self {
+        let mut v = self.bot_members.unwrap_or_default();
+        v.push(input);
+        self.bot_members = Some(v);
+        self
+    }
+    /// <p>The members of bot network in the version that was described.</p>
+    pub fn set_bot_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
+    ) -> Self {
+        self.bot_members = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -244,6 +317,9 @@ impl DescribeBotVersionOutputBuilder {
             bot_status: self.bot_status,
             failure_reasons: self.failure_reasons,
             creation_date_time: self.creation_date_time,
+            parent_bot_networks: self.parent_bot_networks,
+            bot_type: self.bot_type,
+            bot_members: self.bot_members,
             _request_id: self._request_id,
         }
     }

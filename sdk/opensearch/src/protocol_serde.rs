@@ -80,6 +80,8 @@ pub(crate) mod shape_list_instance_type_details;
 
 pub(crate) mod shape_list_packages_for_domain;
 
+pub(crate) mod shape_list_scheduled_actions;
+
 pub(crate) mod shape_list_tags;
 
 pub(crate) mod shape_list_versions;
@@ -103,6 +105,8 @@ pub(crate) mod shape_start_service_software_update;
 pub(crate) mod shape_update_domain_config;
 
 pub(crate) mod shape_update_package;
+
+pub(crate) mod shape_update_scheduled_action;
 
 pub(crate) mod shape_update_vpc_endpoint;
 
@@ -168,11 +172,15 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_revoke_vpc_endpoint_access_input;
 
+pub(crate) mod shape_slot_not_available_exception;
+
 pub(crate) mod shape_start_service_software_update_input;
 
 pub(crate) mod shape_update_domain_config_input;
 
 pub(crate) mod shape_update_package_input;
+
+pub(crate) mod shape_update_scheduled_action_input;
 
 pub(crate) mod shape_update_vpc_endpoint_input;
 
@@ -203,6 +211,8 @@ pub(crate) mod shape_cluster_config;
 pub(crate) mod shape_cognito_options;
 
 pub(crate) mod shape_compatible_versions_list;
+
+pub(crate) mod shape_connection_properties;
 
 pub(crate) mod shape_describe_packages_filter;
 
@@ -244,6 +254,8 @@ pub(crate) mod shape_log_publishing_option;
 
 pub(crate) mod shape_node_to_node_encryption_options;
 
+pub(crate) mod shape_off_peak_window_options;
+
 pub(crate) mod shape_outbound_connection;
 
 pub(crate) mod shape_outbound_connection_status;
@@ -262,9 +274,17 @@ pub(crate) mod shape_reserved_instance_list;
 
 pub(crate) mod shape_reserved_instance_offering_list;
 
+pub(crate) mod shape_scheduled_action;
+
+pub(crate) mod shape_scheduled_actions_list;
+
 pub(crate) mod shape_service_software_options;
 
+pub(crate) mod shape_slot_list;
+
 pub(crate) mod shape_snapshot_options;
+
+pub(crate) mod shape_software_update_options;
 
 pub(crate) mod shape_tag;
 
@@ -340,6 +360,10 @@ pub(crate) mod shape_master_user_options;
 
 pub(crate) mod shape_node_to_node_encryption_options_status;
 
+pub(crate) mod shape_off_peak_window;
+
+pub(crate) mod shape_off_peak_window_options_status;
+
 pub(crate) mod shape_package_version_history;
 
 pub(crate) mod shape_reserved_instance;
@@ -349,6 +373,8 @@ pub(crate) mod shape_reserved_instance_offering;
 pub(crate) mod shape_saml_options_input;
 
 pub(crate) mod shape_snapshot_options_status;
+
+pub(crate) mod shape_software_update_options_status;
 
 pub(crate) mod shape_string_list;
 
@@ -393,6 +419,8 @@ pub(crate) mod shape_storage_type_list;
 pub(crate) mod shape_upgrade_steps_list;
 
 pub(crate) mod shape_validation_failure;
+
+pub(crate) mod shape_window_start_time;
 
 pub(crate) mod shape_additional_limit;
 

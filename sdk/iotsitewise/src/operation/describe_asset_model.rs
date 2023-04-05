@@ -73,12 +73,13 @@ impl DescribeAssetModelInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.exclude_properties {
-                    query.push_kv(
-                        "excludeProperties",
-                        aws_smithy_types::primitive::Encoder::from(_input.exclude_properties)
-                            .encode(),
-                    );
+                if let Some(inner_2) = &_input.exclude_properties {
+                    if *inner_2 {
+                        query.push_kv(
+                            "excludeProperties",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

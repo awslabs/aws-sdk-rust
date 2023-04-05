@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeContact`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     ///   - [`contact_id(impl Into<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::set_contact_id): <p>The identifier of the contact.</p>
     /// - On success, responds with [`DescribeContactOutput`](crate::operation::describe_contact::DescribeContactOutput) with field(s):
     ///   - [`contact(Option<Contact>)`](crate::operation::describe_contact::DescribeContactOutput::contact): <p>Information about the contact.</p>

@@ -29,6 +29,9 @@ pub struct RecommendationJobContainerConfig {
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
     #[doc(hidden)]
     pub supported_instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+    #[doc(hidden)]
+    pub data_input_config: std::option::Option<std::string::String>,
 }
 impl RecommendationJobContainerConfig {
     /// <p>The machine learning domain of the model and its components.</p>
@@ -65,6 +68,10 @@ impl RecommendationJobContainerConfig {
     pub fn supported_instance_types(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_instance_types.as_deref()
     }
+    /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+    pub fn data_input_config(&self) -> std::option::Option<&str> {
+        self.data_input_config.as_deref()
+    }
 }
 impl RecommendationJobContainerConfig {
     /// Creates a new builder-style object to manufacture [`RecommendationJobContainerConfig`](crate::types::RecommendationJobContainerConfig).
@@ -84,6 +91,7 @@ pub struct RecommendationJobContainerConfigBuilder {
     pub(crate) payload_config: std::option::Option<crate::types::RecommendationJobPayloadConfig>,
     pub(crate) nearest_model_name: std::option::Option<std::string::String>,
     pub(crate) supported_instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) data_input_config: std::option::Option<std::string::String>,
 }
 impl RecommendationJobContainerConfigBuilder {
     /// <p>The machine learning domain of the model and its components.</p>
@@ -182,6 +190,19 @@ impl RecommendationJobContainerConfigBuilder {
         self.supported_instance_types = input;
         self
     }
+    /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+    pub fn data_input_config(mut self, input: impl Into<std::string::String>) -> Self {
+        self.data_input_config = Some(input.into());
+        self
+    }
+    /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+    pub fn set_data_input_config(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_input_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecommendationJobContainerConfig`](crate::types::RecommendationJobContainerConfig).
     pub fn build(self) -> crate::types::RecommendationJobContainerConfig {
         crate::types::RecommendationJobContainerConfig {
@@ -192,6 +213,7 @@ impl RecommendationJobContainerConfigBuilder {
             payload_config: self.payload_config,
             nearest_model_name: self.nearest_model_name,
             supported_instance_types: self.supported_instance_types,
+            data_input_config: self.data_input_config,
         }
     }
 }

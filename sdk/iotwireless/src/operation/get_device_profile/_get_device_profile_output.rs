@@ -15,6 +15,9 @@ pub struct GetDeviceProfileOutput {
     /// <p>Information about the device profile.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::types::LoRaWanDeviceProfile>,
+    /// <p>Information about the Sidewalk parameters in the device profile.</p>
+    #[doc(hidden)]
+    pub sidewalk: std::option::Option<crate::types::SidewalkGetDeviceProfile>,
     _request_id: Option<String>,
 }
 impl GetDeviceProfileOutput {
@@ -33,6 +36,10 @@ impl GetDeviceProfileOutput {
     /// <p>Information about the device profile.</p>
     pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanDeviceProfile> {
         self.lo_ra_wan.as_ref()
+    }
+    /// <p>Information about the Sidewalk parameters in the device profile.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::types::SidewalkGetDeviceProfile> {
+        self.sidewalk.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDeviceProfileOutput {
@@ -56,6 +63,7 @@ pub struct GetDeviceProfileOutputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanDeviceProfile>,
+    pub(crate) sidewalk: std::option::Option<crate::types::SidewalkGetDeviceProfile>,
     _request_id: Option<String>,
 }
 impl GetDeviceProfileOutputBuilder {
@@ -102,6 +110,19 @@ impl GetDeviceProfileOutputBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>Information about the Sidewalk parameters in the device profile.</p>
+    pub fn sidewalk(mut self, input: crate::types::SidewalkGetDeviceProfile) -> Self {
+        self.sidewalk = Some(input);
+        self
+    }
+    /// <p>Information about the Sidewalk parameters in the device profile.</p>
+    pub fn set_sidewalk(
+        mut self,
+        input: std::option::Option<crate::types::SidewalkGetDeviceProfile>,
+    ) -> Self {
+        self.sidewalk = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -118,6 +139,7 @@ impl GetDeviceProfileOutputBuilder {
             name: self.name,
             id: self.id,
             lo_ra_wan: self.lo_ra_wan,
+            sidewalk: self.sidewalk,
             _request_id: self._request_id,
         }
     }

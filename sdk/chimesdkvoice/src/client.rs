@@ -234,6 +234,10 @@ mod create_voice_connector;
 
 mod create_voice_connector_group;
 
+mod create_voice_profile;
+
+mod create_voice_profile_domain;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -286,6 +290,10 @@ mod delete_voice_connector_termination;
 
 mod delete_voice_connector_termination_credentials;
 
+mod delete_voice_profile;
+
+mod delete_voice_profile_domain;
+
 mod disassociate_phone_numbers_from_voice_connector;
 
 mod disassociate_phone_numbers_from_voice_connector_group;
@@ -308,6 +316,8 @@ mod get_sip_media_application_logging_configuration;
 
 mod get_sip_rule;
 
+mod get_speaker_search_task;
+
 mod get_voice_connector;
 
 mod get_voice_connector_emergency_calling_configuration;
@@ -326,6 +336,12 @@ mod get_voice_connector_termination;
 
 mod get_voice_connector_termination_health;
 
+mod get_voice_profile;
+
+mod get_voice_profile_domain;
+
+mod get_voice_tone_analysis_task;
+
 mod list_available_voice_connector_regions;
 
 mod list_phone_number_orders;
@@ -340,11 +356,17 @@ mod list_sip_rules;
 
 mod list_supported_phone_number_countries;
 
+mod list_tags_for_resource;
+
 mod list_voice_connector_groups;
 
 mod list_voice_connector_termination_credentials;
 
 mod list_voice_connectors;
+
+mod list_voice_profile_domains;
+
+mod list_voice_profiles;
 
 mod put_sip_media_application_alexa_skill_configuration;
 
@@ -368,6 +390,18 @@ mod restore_phone_number;
 
 mod search_available_phone_numbers;
 
+mod start_speaker_search_task;
+
+mod start_voice_tone_analysis_task;
+
+mod stop_speaker_search_task;
+
+mod stop_voice_tone_analysis_task;
+
+mod tag_resource;
+
+mod untag_resource;
+
 mod update_global_settings;
 
 mod update_phone_number;
@@ -385,5 +419,9 @@ mod update_sip_rule;
 mod update_voice_connector;
 
 mod update_voice_connector_group;
+
+mod update_voice_profile;
+
+mod update_voice_profile_domain;
 
 mod validate_e911_address;

@@ -49,6 +49,23 @@ pub fn de_stop_logging_http_error(
                                                     }
             tmp
         }),
+        "ConflictException" => crate::operation::stop_logging::StopLoggingError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_logging::StopLoggingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "InsufficientDependencyServiceAccessPermissionException" => crate::operation::stop_logging::StopLoggingError::InsufficientDependencyServiceAccessPermissionException({
             #[allow(unused_mut)]
             let mut tmp =

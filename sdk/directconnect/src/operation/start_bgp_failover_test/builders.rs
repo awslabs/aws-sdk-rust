@@ -103,14 +103,14 @@ impl StartBgpFailoverTestFluentBuilder {
         self
     }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
-    /// <p>Maximum value: 180 minutes (3 hours).</p>
+    /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
     pub fn test_duration_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.test_duration_in_minutes(input);
         self
     }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
-    /// <p>Maximum value: 180 minutes (3 hours).</p>
+    /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
     pub fn set_test_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_test_duration_in_minutes(input);

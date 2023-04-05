@@ -18,14 +18,14 @@ pub fn ser_describe_remediation_execution_status_input(
         }
         array_3.finish();
     }
-    if input.limit != 0 {
+    if let Some(var_6) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.limit).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.next_token {
-        object.key("NextToken").string(var_6.as_str());
+    if let Some(var_7) = &input.next_token {
+        object.key("NextToken").string(var_7.as_str());
     }
     Ok(())
 }

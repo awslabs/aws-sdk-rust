@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInstanceMetadataOptionsOutput {
-    /// <p>Describes the API operation.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
 }
 impl UpdateInstanceMetadataOptionsOutput {
-    /// <p>Describes the API operation.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
@@ -34,12 +34,12 @@ pub struct UpdateInstanceMetadataOptionsOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateInstanceMetadataOptionsOutputBuilder {
-    /// <p>Describes the API operation.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
         self.operation = Some(input);
         self
     }
-    /// <p>Describes the API operation.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
         self.operation = input;
         self

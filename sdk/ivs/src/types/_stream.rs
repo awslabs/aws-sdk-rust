@@ -16,7 +16,7 @@ pub struct Stream {
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The stream’s state.</p>
+    /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::StreamState>,
     /// <p>The stream’s health.</p>
@@ -43,7 +43,7 @@ impl Stream {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The stream’s state.</p>
+    /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
     pub fn state(&self) -> std::option::Option<&crate::types::StreamState> {
         self.state.as_ref()
     }
@@ -119,12 +119,12 @@ impl StreamBuilder {
         self.start_time = input;
         self
     }
-    /// <p>The stream’s state.</p>
+    /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
     pub fn state(mut self, input: crate::types::StreamState) -> Self {
         self.state = Some(input);
         self
     }
-    /// <p>The stream’s state.</p>
+    /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::StreamState>) -> Self {
         self.state = input;
         self

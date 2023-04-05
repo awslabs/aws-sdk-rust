@@ -7,6 +7,8 @@ pub use crate::types::_ephemeris_source::EphemerisSource;
 
 pub use crate::types::_mission_profile_list_item::MissionProfileListItem;
 
+pub use crate::types::_kms_key::KmsKey;
+
 pub use crate::types::_ground_station_data::GroundStationData;
 
 pub use crate::types::_ephemeris_item::EphemerisItem;
@@ -35,11 +37,25 @@ pub use crate::types::_dataflow_endpoint_list_item::DataflowEndpointListItem;
 
 pub use crate::types::_endpoint_details::EndpointDetails;
 
+pub use crate::types::_aws_ground_station_agent_endpoint::AwsGroundStationAgentEndpoint;
+
+pub use crate::types::_audit_results::AuditResults;
+
+pub use crate::types::_agent_status::AgentStatus;
+
+pub use crate::types::_ranged_connection_details::RangedConnectionDetails;
+
+pub use crate::types::_ranged_socket_address::RangedSocketAddress;
+
+pub use crate::types::_integer_range::IntegerRange;
+
+pub use crate::types::_connection_details::ConnectionDetails;
+
+pub use crate::types::_socket_address::SocketAddress;
+
 pub use crate::types::_dataflow_endpoint::DataflowEndpoint;
 
 pub use crate::types::_endpoint_status::EndpointStatus;
-
-pub use crate::types::_socket_address::SocketAddress;
 
 pub use crate::types::_security_details::SecurityDetails;
 
@@ -107,6 +123,24 @@ pub use crate::types::_criticality::Criticality;
 
 pub use crate::types::_antenna_downlink_config::AntennaDownlinkConfig;
 
+pub use crate::types::_agent_details::AgentDetails;
+
+pub use crate::types::_component_version::ComponentVersion;
+
+pub use crate::types::_component_type::ComponentType;
+
+pub use crate::types::_discovery_data::DiscoveryData;
+
+pub use crate::types::_component_status_data::ComponentStatusData;
+
+pub use crate::types::_aggregate_status::AggregateStatus;
+
+mod _agent_details;
+
+mod _agent_status;
+
+mod _aggregate_status;
+
 mod _angle_units;
 
 mod _antenna_demod_decode_details;
@@ -117,7 +151,17 @@ mod _antenna_downlink_demod_decode_config;
 
 mod _antenna_uplink_config;
 
+mod _audit_results;
+
+mod _aws_ground_station_agent_endpoint;
+
 mod _bandwidth_units;
+
+mod _component_status_data;
+
+mod _component_type;
+
+mod _component_version;
 
 mod _config_capability_type;
 
@@ -126,6 +170,8 @@ mod _config_details;
 mod _config_list_item;
 
 mod _config_type_data;
+
+mod _connection_details;
 
 mod _contact_data;
 
@@ -146,6 +192,8 @@ mod _decode_config;
 mod _demodulation_config;
 
 mod _destination;
+
+mod _discovery_data;
 
 mod _eirp;
 
@@ -181,11 +229,19 @@ mod _frequency_units;
 
 mod _ground_station_data;
 
+mod _integer_range;
+
+mod _kms_key;
+
 mod _mission_profile_list_item;
 
 mod _oem_ephemeris;
 
 mod _polarization;
+
+mod _ranged_connection_details;
+
+mod _ranged_socket_address;
 
 mod _s3_object;
 

@@ -34,6 +34,9 @@ pub mod describe_contact;
 /// Types for the `DescribeEphemeris` operation.
 pub mod describe_ephemeris;
 
+/// Types for the `GetAgentConfiguration` operation.
+pub mod get_agent_configuration;
+
 /// Types for the `GetConfig` operation.
 pub mod get_config;
 
@@ -73,6 +76,9 @@ pub mod list_satellites;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `RegisterAgent` operation.
+pub mod register_agent;
+
 /// Types for the `ReserveContact` operation.
 pub mod reserve_contact;
 
@@ -81,6 +87,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAgentStatus` operation.
+pub mod update_agent_status;
 
 /// Types for the `UpdateConfig` operation.
 pub mod update_config;

@@ -3,45 +3,45 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSipMediaApplicationCallInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime SDK phone number inventory.</p>
     #[doc(hidden)]
     pub from_phone_number: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number that the service should call.</p>
     #[doc(hidden)]
     pub to_phone_number: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the SIP media application.</p>
     #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP headers added to an outbound call leg.</p>
     #[doc(hidden)]
     pub sip_headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
     #[doc(hidden)]
     pub arguments_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSipMediaApplicationCallInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime SDK phone number inventory.</p>
     pub fn from_phone_number(&self) -> std::option::Option<&str> {
         self.from_phone_number.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number that the service should call.</p>
     pub fn to_phone_number(&self) -> std::option::Option<&str> {
         self.to_phone_number.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the SIP media application.</p>
     pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
         self.sip_media_application_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP headers added to an outbound call leg.</p>
     pub fn sip_headers(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.sip_headers.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
     pub fn arguments_map(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -80,12 +80,12 @@ pub struct CreateSipMediaApplicationCallInputBuilder {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSipMediaApplicationCallInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime SDK phone number inventory.</p>
     pub fn from_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.from_phone_number = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime SDK phone number inventory.</p>
     pub fn set_from_phone_number(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -93,22 +93,22 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self.from_phone_number = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number that the service should call.</p>
     pub fn to_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.to_phone_number = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The phone number that the service should call.</p>
     pub fn set_to_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.to_phone_number = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the SIP media application.</p>
     pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.sip_media_application_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the SIP media application.</p>
     pub fn set_sip_media_application_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -120,6 +120,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sip_headers`](Self::set_sip_headers).
     ///
+    /// <p>The SIP headers added to an outbound call leg.</p>
     pub fn sip_headers(
         mut self,
         k: impl Into<std::string::String>,
@@ -130,7 +131,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self.sip_headers = Some(hash_map);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP headers added to an outbound call leg.</p>
     pub fn set_sip_headers(
         mut self,
         input: std::option::Option<
@@ -144,6 +145,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
     ///
     /// To override the contents of this collection use [`set_arguments_map`](Self::set_arguments_map).
     ///
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
     pub fn arguments_map(
         mut self,
         k: impl Into<std::string::String>,
@@ -154,7 +156,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self.arguments_map = Some(hash_map);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
     pub fn set_arguments_map(
         mut self,
         input: std::option::Option<

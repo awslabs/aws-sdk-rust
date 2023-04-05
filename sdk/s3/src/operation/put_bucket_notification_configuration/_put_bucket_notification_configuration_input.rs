@@ -14,7 +14,7 @@ pub struct PutBucketNotificationConfigurationInput {
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
     #[doc(hidden)]
-    pub skip_destination_validation: bool,
+    pub skip_destination_validation: std::option::Option<bool>,
 }
 impl PutBucketNotificationConfigurationInput {
     /// <p>The name of the bucket.</p>
@@ -32,7 +32,7 @@ impl PutBucketNotificationConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
-    pub fn skip_destination_validation(&self) -> bool {
+    pub fn skip_destination_validation(&self) -> std::option::Option<bool> {
         self.skip_destination_validation
     }
 }
@@ -114,7 +114,6 @@ impl PutBucketNotificationConfigurationInputBuilder {
                 expected_bucket_owner: self.expected_bucket_owner
                 ,
                 skip_destination_validation: self.skip_destination_validation
-                    .unwrap_or_default()
                 ,
             }
         )

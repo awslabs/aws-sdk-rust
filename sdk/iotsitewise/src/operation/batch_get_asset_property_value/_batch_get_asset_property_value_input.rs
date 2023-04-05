@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueInput {
-    /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>>,
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -11,7 +11,7 @@ pub struct BatchGetAssetPropertyValueInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueInput {
-    /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::types::BatchGetAssetPropertyValueEntry]> {
         self.entries.as_deref()
     }
@@ -40,14 +40,14 @@ impl BatchGetAssetPropertyValueInputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
     pub fn entries(mut self, input: crate::types::BatchGetAssetPropertyValueEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = Some(v);
         self
     }
-    /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
     pub fn set_entries(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>>,

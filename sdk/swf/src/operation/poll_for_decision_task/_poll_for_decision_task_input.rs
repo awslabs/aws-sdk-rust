@@ -22,10 +22,10 @@ pub struct PollForDecisionTaskInput {
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
     #[doc(hidden)]
-    pub maximum_page_size: i32,
+    pub maximum_page_size: std::option::Option<i32>,
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
     #[doc(hidden)]
-    pub reverse_order: bool,
+    pub reverse_order: std::option::Option<bool>,
 }
 impl PollForDecisionTaskInput {
     /// <p>The name of the domain containing the task lists to poll.</p>
@@ -50,11 +50,11 @@ impl PollForDecisionTaskInput {
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
-    pub fn maximum_page_size(&self) -> i32 {
+    pub fn maximum_page_size(&self) -> std::option::Option<i32> {
         self.maximum_page_size
     }
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
-    pub fn reverse_order(&self) -> bool {
+    pub fn reverse_order(&self) -> std::option::Option<bool> {
         self.reverse_order
     }
 }
@@ -162,8 +162,8 @@ impl PollForDecisionTaskInputBuilder {
                 task_list: self.task_list,
                 identity: self.identity,
                 next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
+                maximum_page_size: self.maximum_page_size,
+                reverse_order: self.reverse_order,
             },
         )
     }

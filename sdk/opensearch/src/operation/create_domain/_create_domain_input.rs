@@ -62,6 +62,12 @@ pub struct CreateDomainInput {
     /// <p>Options for Auto-Tune.</p>
     #[doc(hidden)]
     pub auto_tune_options: std::option::Option<crate::types::AutoTuneOptionsInput>,
+    /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
+    #[doc(hidden)]
+    pub off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
+    /// <p>Software update options for the domain.</p>
+    #[doc(hidden)]
+    pub software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl CreateDomainInput {
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
@@ -150,6 +156,18 @@ impl CreateDomainInput {
     pub fn auto_tune_options(&self) -> std::option::Option<&crate::types::AutoTuneOptionsInput> {
         self.auto_tune_options.as_ref()
     }
+    /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
+    pub fn off_peak_window_options(
+        &self,
+    ) -> std::option::Option<&crate::types::OffPeakWindowOptions> {
+        self.off_peak_window_options.as_ref()
+    }
+    /// <p>Software update options for the domain.</p>
+    pub fn software_update_options(
+        &self,
+    ) -> std::option::Option<&crate::types::SoftwareUpdateOptions> {
+        self.software_update_options.as_ref()
+    }
 }
 impl CreateDomainInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
@@ -184,6 +202,8 @@ pub struct CreateDomainInputBuilder {
         std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) auto_tune_options: std::option::Option<crate::types::AutoTuneOptionsInput>,
+    pub(crate) off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
+    pub(crate) software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl CreateDomainInputBuilder {
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
@@ -432,6 +452,32 @@ impl CreateDomainInputBuilder {
         self.auto_tune_options = input;
         self
     }
+    /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
+    pub fn off_peak_window_options(mut self, input: crate::types::OffPeakWindowOptions) -> Self {
+        self.off_peak_window_options = Some(input);
+        self
+    }
+    /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
+    pub fn set_off_peak_window_options(
+        mut self,
+        input: std::option::Option<crate::types::OffPeakWindowOptions>,
+    ) -> Self {
+        self.off_peak_window_options = input;
+        self
+    }
+    /// <p>Software update options for the domain.</p>
+    pub fn software_update_options(mut self, input: crate::types::SoftwareUpdateOptions) -> Self {
+        self.software_update_options = Some(input);
+        self
+    }
+    /// <p>Software update options for the domain.</p>
+    pub fn set_software_update_options(
+        mut self,
+        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+    ) -> Self {
+        self.software_update_options = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
     pub fn build(
         self,
@@ -456,6 +502,8 @@ impl CreateDomainInputBuilder {
             advanced_security_options: self.advanced_security_options,
             tag_list: self.tag_list,
             auto_tune_options: self.auto_tune_options,
+            off_peak_window_options: self.off_peak_window_options,
+            software_update_options: self.software_update_options,
         })
     }
 }

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExperienceOutput {
-    /// <p>The identifier for your created Amazon Kendra experience.</p>
+    /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateExperienceOutput {
-    /// <p>The identifier for your created Amazon Kendra experience.</p>
+    /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -35,12 +35,12 @@ pub struct CreateExperienceOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateExperienceOutputBuilder {
-    /// <p>The identifier for your created Amazon Kendra experience.</p>
+    /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The identifier for your created Amazon Kendra experience.</p>
+    /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.id = input;
         self

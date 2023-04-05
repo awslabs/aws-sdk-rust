@@ -3,34 +3,34 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSipRuleInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     #[doc(hidden)]
     pub sip_rule_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new name for the specified SIP rule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new value that indicates whether the rule is disabled.</p>
     #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new list of target applications.</p>
     #[doc(hidden)]
     pub target_applications:
         std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,
 }
 impl UpdateSipRuleInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn sip_rule_id(&self) -> std::option::Option<&str> {
         self.sip_rule_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new name for the specified SIP rule.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new value that indicates whether the rule is disabled.</p>
     pub fn disabled(&self) -> std::option::Option<bool> {
         self.disabled
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new list of target applications.</p>
     pub fn target_applications(
         &self,
     ) -> std::option::Option<&[crate::types::SipRuleTargetApplication]> {
@@ -55,32 +55,32 @@ pub struct UpdateSipRuleInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,
 }
 impl UpdateSipRuleInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn sip_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.sip_rule_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn set_sip_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.sip_rule_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new name for the specified SIP rule.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new name for the specified SIP rule.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new value that indicates whether the rule is disabled.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new value that indicates whether the rule is disabled.</p>
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
@@ -89,13 +89,14 @@ impl UpdateSipRuleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_target_applications`](Self::set_target_applications).
     ///
+    /// <p>The new list of target applications.</p>
     pub fn target_applications(mut self, input: crate::types::SipRuleTargetApplication) -> Self {
         let mut v = self.target_applications.unwrap_or_default();
         v.push(input);
         self.target_applications = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new list of target applications.</p>
     pub fn set_target_applications(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,

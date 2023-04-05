@@ -29,6 +29,7 @@
 ///     AutoMlJobSecondaryStatus::Starting => { /* ... */ },
 ///     AutoMlJobSecondaryStatus::Stopped => { /* ... */ },
 ///     AutoMlJobSecondaryStatus::Stopping => { /* ... */ },
+///     AutoMlJobSecondaryStatus::TrainingModels => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -96,6 +97,8 @@ pub enum AutoMlJobSecondaryStatus {
     Stopped,
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
+    TrainingModels,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -125,6 +128,7 @@ impl std::convert::From<&str> for AutoMlJobSecondaryStatus {
             "Starting" => AutoMlJobSecondaryStatus::Starting,
             "Stopped" => AutoMlJobSecondaryStatus::Stopped,
             "Stopping" => AutoMlJobSecondaryStatus::Stopping,
+            "TrainingModels" => AutoMlJobSecondaryStatus::TrainingModels,
             other => AutoMlJobSecondaryStatus::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -165,6 +169,7 @@ impl AutoMlJobSecondaryStatus {
             AutoMlJobSecondaryStatus::Starting => "Starting",
             AutoMlJobSecondaryStatus::Stopped => "Stopped",
             AutoMlJobSecondaryStatus::Stopping => "Stopping",
+            AutoMlJobSecondaryStatus::TrainingModels => "TrainingModels",
             AutoMlJobSecondaryStatus::Unknown(value) => value.as_str(),
         }
     }
@@ -188,6 +193,7 @@ impl AutoMlJobSecondaryStatus {
             "Starting",
             "Stopped",
             "Stopping",
+            "TrainingModels",
         ]
     }
 }

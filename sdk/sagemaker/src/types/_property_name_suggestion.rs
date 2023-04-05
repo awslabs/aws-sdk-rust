@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyNameSuggestion {
-    /// <p>A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.</p>
+    /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
     #[doc(hidden)]
     pub property_name: std::option::Option<std::string::String>,
 }
 impl PropertyNameSuggestion {
-    /// <p>A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.</p>
+    /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
     pub fn property_name(&self) -> std::option::Option<&str> {
         self.property_name.as_deref()
     }
@@ -28,12 +28,12 @@ pub struct PropertyNameSuggestionBuilder {
     pub(crate) property_name: std::option::Option<std::string::String>,
 }
 impl PropertyNameSuggestionBuilder {
-    /// <p>A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.</p>
+    /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
     pub fn property_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.property_name = Some(input.into());
         self
     }
-    /// <p>A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.</p>
+    /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
     pub fn set_property_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.property_name = input;
         self

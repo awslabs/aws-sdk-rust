@@ -69,6 +69,24 @@ where
                                     crate::protocol_serde::shape_line_item_asset_information_list::de_line_item_asset_information_list(tokens)?
                                 );
                             }
+                            "PreviousLineItemId" => {
+                                builder = builder.set_previous_line_item_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "PreviousOrderId" => {
+                                builder = builder.set_previous_order_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

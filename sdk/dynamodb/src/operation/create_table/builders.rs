@@ -347,4 +347,14 @@ impl CreateTableFluentBuilder {
         self.inner = self.inner.set_table_class(input);
         self
     }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.deletion_protection_enabled(input);
+        self
+    }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_deletion_protection_enabled(input);
+        self
+    }
 }

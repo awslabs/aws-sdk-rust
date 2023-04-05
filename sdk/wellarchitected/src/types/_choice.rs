@@ -13,13 +13,16 @@ pub struct Choice {
     /// <p>The description of a choice.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The choice level helpful resource.</p>
+    /// <p>The helpful resource (both text and URL) for a particular choice.</p>
+    /// <p>This field only applies to custom lenses. Each choice can have only one helpful resource.</p>
     #[doc(hidden)]
     pub helpful_resource: std::option::Option<crate::types::ChoiceContent>,
-    /// <p>The choice level improvement plan.</p>
+    /// <p>The improvement plan (both text and URL) for a particular choice.</p>
+    /// <p>This field only applies to custom lenses. Each choice can have only one improvement plan.</p>
     #[doc(hidden)]
     pub improvement_plan: std::option::Option<crate::types::ChoiceContent>,
-    /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
+    /// <p>The additional resources for a choice in a custom lens.</p>
+    /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
     #[doc(hidden)]
     pub additional_resources: std::option::Option<std::vec::Vec<crate::types::AdditionalResources>>,
 }
@@ -36,15 +39,18 @@ impl Choice {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The choice level helpful resource.</p>
+    /// <p>The helpful resource (both text and URL) for a particular choice.</p>
+    /// <p>This field only applies to custom lenses. Each choice can have only one helpful resource.</p>
     pub fn helpful_resource(&self) -> std::option::Option<&crate::types::ChoiceContent> {
         self.helpful_resource.as_ref()
     }
-    /// <p>The choice level improvement plan.</p>
+    /// <p>The improvement plan (both text and URL) for a particular choice.</p>
+    /// <p>This field only applies to custom lenses. Each choice can have only one improvement plan.</p>
     pub fn improvement_plan(&self) -> std::option::Option<&crate::types::ChoiceContent> {
         self.improvement_plan.as_ref()
     }
-    /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
+    /// <p>The additional resources for a choice in a custom lens.</p>
+    /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
     pub fn additional_resources(
         &self,
     ) -> std::option::Option<&[crate::types::AdditionalResources]> {
@@ -101,12 +107,14 @@ impl ChoiceBuilder {
         self.description = input;
         self
     }
-    /// <p>The choice level helpful resource.</p>
+    /// <p>The helpful resource (both text and URL) for a particular choice.</p>
+    /// <p>This field only applies to custom lenses. Each choice can have only one helpful resource.</p>
     pub fn helpful_resource(mut self, input: crate::types::ChoiceContent) -> Self {
         self.helpful_resource = Some(input);
         self
     }
-    /// <p>The choice level helpful resource.</p>
+    /// <p>The helpful resource (both text and URL) for a particular choice.</p>
+    /// <p>This field only applies to custom lenses. Each choice can have only one helpful resource.</p>
     pub fn set_helpful_resource(
         mut self,
         input: std::option::Option<crate::types::ChoiceContent>,
@@ -114,12 +122,14 @@ impl ChoiceBuilder {
         self.helpful_resource = input;
         self
     }
-    /// <p>The choice level improvement plan.</p>
+    /// <p>The improvement plan (both text and URL) for a particular choice.</p>
+    /// <p>This field only applies to custom lenses. Each choice can have only one improvement plan.</p>
     pub fn improvement_plan(mut self, input: crate::types::ChoiceContent) -> Self {
         self.improvement_plan = Some(input);
         self
     }
-    /// <p>The choice level improvement plan.</p>
+    /// <p>The improvement plan (both text and URL) for a particular choice.</p>
+    /// <p>This field only applies to custom lenses. Each choice can have only one improvement plan.</p>
     pub fn set_improvement_plan(
         mut self,
         input: std::option::Option<crate::types::ChoiceContent>,
@@ -131,14 +141,16 @@ impl ChoiceBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_resources`](Self::set_additional_resources).
     ///
-    /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
+    /// <p>The additional resources for a choice in a custom lens.</p>
+    /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
     pub fn additional_resources(mut self, input: crate::types::AdditionalResources) -> Self {
         let mut v = self.additional_resources.unwrap_or_default();
         v.push(input);
         self.additional_resources = Some(v);
         self
     }
-    /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
+    /// <p>The additional resources for a choice in a custom lens.</p>
+    /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
     pub fn set_additional_resources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::AdditionalResources>>,

@@ -5,7 +5,7 @@ pub use crate::operation::put_metadata_flag::_put_metadata_flag_input::PutMetada
 
 /// Fluent builder constructing a request to `PutMetadataFlag`.
 ///
-/// <p>Stores the metadata information about a feature on a form or view.</p>
+/// <p>Stores the metadata information about a feature on a form.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutMetadataFlagFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

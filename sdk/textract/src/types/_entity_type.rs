@@ -14,6 +14,12 @@
 /// match entitytype {
 ///     EntityType::ColumnHeader => { /* ... */ },
 ///     EntityType::Key => { /* ... */ },
+///     EntityType::SemiStructuredTable => { /* ... */ },
+///     EntityType::StructuredTable => { /* ... */ },
+///     EntityType::TableFooter => { /* ... */ },
+///     EntityType::TableSectionTitle => { /* ... */ },
+///     EntityType::TableSummary => { /* ... */ },
+///     EntityType::TableTitle => { /* ... */ },
 ///     EntityType::Value => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +59,18 @@ pub enum EntityType {
     #[allow(missing_docs)] // documentation missing in model
     Key,
     #[allow(missing_docs)] // documentation missing in model
+    SemiStructuredTable,
+    #[allow(missing_docs)] // documentation missing in model
+    StructuredTable,
+    #[allow(missing_docs)] // documentation missing in model
+    TableFooter,
+    #[allow(missing_docs)] // documentation missing in model
+    TableSectionTitle,
+    #[allow(missing_docs)] // documentation missing in model
+    TableSummary,
+    #[allow(missing_docs)] // documentation missing in model
+    TableTitle,
+    #[allow(missing_docs)] // documentation missing in model
     Value,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -62,6 +80,12 @@ impl std::convert::From<&str> for EntityType {
         match s {
             "COLUMN_HEADER" => EntityType::ColumnHeader,
             "KEY" => EntityType::Key,
+            "SEMI_STRUCTURED_TABLE" => EntityType::SemiStructuredTable,
+            "STRUCTURED_TABLE" => EntityType::StructuredTable,
+            "TABLE_FOOTER" => EntityType::TableFooter,
+            "TABLE_SECTION_TITLE" => EntityType::TableSectionTitle,
+            "TABLE_SUMMARY" => EntityType::TableSummary,
+            "TABLE_TITLE" => EntityType::TableTitle,
             "VALUE" => EntityType::Value,
             other => EntityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -80,13 +104,29 @@ impl EntityType {
         match self {
             EntityType::ColumnHeader => "COLUMN_HEADER",
             EntityType::Key => "KEY",
+            EntityType::SemiStructuredTable => "SEMI_STRUCTURED_TABLE",
+            EntityType::StructuredTable => "STRUCTURED_TABLE",
+            EntityType::TableFooter => "TABLE_FOOTER",
+            EntityType::TableSectionTitle => "TABLE_SECTION_TITLE",
+            EntityType::TableSummary => "TABLE_SUMMARY",
+            EntityType::TableTitle => "TABLE_TITLE",
             EntityType::Value => "VALUE",
             EntityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COLUMN_HEADER", "KEY", "VALUE"]
+        &[
+            "COLUMN_HEADER",
+            "KEY",
+            "SEMI_STRUCTURED_TABLE",
+            "STRUCTURED_TABLE",
+            "TABLE_FOOTER",
+            "TABLE_SECTION_TITLE",
+            "TABLE_SUMMARY",
+            "TABLE_TITLE",
+            "VALUE",
+        ]
     }
 }
 impl AsRef<str> for EntityType {

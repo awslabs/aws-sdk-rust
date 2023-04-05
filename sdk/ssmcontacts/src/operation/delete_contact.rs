@@ -168,6 +168,8 @@ pub type DeleteContactErrorKind = DeleteContactError;
 pub enum DeleteContactError {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Updating or deleting a resource causes an inconsistent state.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
@@ -195,6 +197,7 @@ impl std::fmt::Display for DeleteContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -207,6 +210,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteContactEr
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ConflictException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerException(_inner) => {
@@ -267,6 +273,7 @@ impl DeleteContactError {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::AccessDeniedException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
@@ -277,6 +284,10 @@ impl DeleteContactError {
     /// Returns `true` if the error kind is `DeleteContactError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteContactError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteContactError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -299,6 +310,7 @@ impl std::error::Error for DeleteContactError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => Some(_inner),
+            Self::ConflictException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ThrottlingException(_inner) => Some(_inner),

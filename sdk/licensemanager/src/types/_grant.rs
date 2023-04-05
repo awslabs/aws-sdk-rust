@@ -34,6 +34,9 @@ pub struct Grant {
     /// <p>Granted operations.</p>
     #[doc(hidden)]
     pub granted_operations: std::option::Option<std::vec::Vec<crate::types::AllowedOperation>>,
+    /// <p>The options specified for the grant.</p>
+    #[doc(hidden)]
+    pub options: std::option::Option<crate::types::Options>,
 }
 impl Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -76,6 +79,10 @@ impl Grant {
     pub fn granted_operations(&self) -> std::option::Option<&[crate::types::AllowedOperation]> {
         self.granted_operations.as_deref()
     }
+    /// <p>The options specified for the grant.</p>
+    pub fn options(&self) -> std::option::Option<&crate::types::Options> {
+        self.options.as_ref()
+    }
 }
 impl Grant {
     /// Creates a new builder-style object to manufacture [`Grant`](crate::types::Grant).
@@ -99,6 +106,7 @@ pub struct GrantBuilder {
     pub(crate) version: std::option::Option<std::string::String>,
     pub(crate) granted_operations:
         std::option::Option<std::vec::Vec<crate::types::AllowedOperation>>,
+    pub(crate) options: std::option::Option<crate::types::Options>,
 }
 impl GrantBuilder {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -216,6 +224,16 @@ impl GrantBuilder {
         self.granted_operations = input;
         self
     }
+    /// <p>The options specified for the grant.</p>
+    pub fn options(mut self, input: crate::types::Options) -> Self {
+        self.options = Some(input);
+        self
+    }
+    /// <p>The options specified for the grant.</p>
+    pub fn set_options(mut self, input: std::option::Option<crate::types::Options>) -> Self {
+        self.options = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Grant`](crate::types::Grant).
     pub fn build(self) -> crate::types::Grant {
         crate::types::Grant {
@@ -229,6 +247,7 @@ impl GrantBuilder {
             status_reason: self.status_reason,
             version: self.version,
             granted_operations: self.granted_operations,
+            options: self.options,
         }
     }
 }

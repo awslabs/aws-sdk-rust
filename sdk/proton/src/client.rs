@@ -306,6 +306,8 @@ mod get_repository;
 
 mod get_repository_sync_status;
 
+mod get_resources_summary;
+
 mod get_service;
 
 mod get_service_instance;

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelImageCreationInput {
-    /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -11,7 +11,7 @@ pub struct CancelImageCreationInput {
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CancelImageCreationInput {
-    /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -37,12 +37,12 @@ pub struct CancelImageCreationInputBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl CancelImageCreationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.image_build_version_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     pub fn set_image_build_version_arn(
         mut self,
         input: std::option::Option<std::string::String>,

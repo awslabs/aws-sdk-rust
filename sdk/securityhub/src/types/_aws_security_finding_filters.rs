@@ -24,15 +24,19 @@ pub struct AwsSecurityFindingFilters {
     #[doc(hidden)]
     pub r#type: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub first_observed_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub last_observed_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding record. </p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The native severity as defined by the security-findings provider's solution that generated the finding.</p>
@@ -136,13 +140,15 @@ pub struct AwsSecurityFindingFilters {
     /// <p>The process ID.</p>
     #[doc(hidden)]
     pub process_pid: std::option::Option<std::vec::Vec<crate::types::NumberFilter>>,
-    /// <p>The parent process ID.</p>
+    /// <p>The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.</p>
     #[doc(hidden)]
     pub process_parent_pid: std::option::Option<std::vec::Vec<crate::types::NumberFilter>>,
-    /// <p>The date/time that the process was launched.</p>
+    /// <p>A timestamp that identifies when the process was launched.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub process_launched_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>The date/time that the process was terminated.</p>
+    /// <p>A timestamp that identifies when the process was terminated.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub process_terminated_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The type of a threat intelligence indicator.</p>
@@ -156,7 +162,7 @@ pub struct AwsSecurityFindingFilters {
     #[doc(hidden)]
     pub threat_intel_indicator_category:
         std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>The date/time of the last observation of a threat intelligence indicator.</p>
+    /// <p>A timestamp that identifies the last observation of a threat intelligence indicator.</p>
     #[doc(hidden)]
     pub threat_intel_indicator_last_observed_at:
         std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -260,7 +266,8 @@ pub struct AwsSecurityFindingFilters {
     #[doc(hidden)]
     pub resource_container_image_name:
         std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>The date/time that the container was started.</p>
+    /// <p>A timestamp that identifies when the container was started.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub resource_container_launched_at:
         std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -355,6 +362,14 @@ pub struct AwsSecurityFindingFilters {
     /// <p>Indicates whether or not sample findings are included in the filter results.</p>
     #[doc(hidden)]
     pub sample: std::option::Option<std::vec::Vec<crate::types::BooleanFilter>>,
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    #[doc(hidden)]
+    pub compliance_security_control_id:
+        std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    #[doc(hidden)]
+    pub compliance_associated_standards_id:
+        std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AwsSecurityFindingFilters {
     /// <p>The ARN generated by Security Hub that uniquely identifies a third-party company (security findings provider) after this provider's product (solution that generates findings) is registered with Security Hub.</p>
@@ -382,18 +397,22 @@ impl AwsSecurityFindingFilters {
         self.r#type.as_deref()
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn first_observed_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.first_observed_at.as_deref()
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn last_observed_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.last_observed_at.as_deref()
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn created_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.created_at.as_deref()
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding record. </p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn updated_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.updated_at.as_deref()
     }
@@ -527,15 +546,17 @@ impl AwsSecurityFindingFilters {
     pub fn process_pid(&self) -> std::option::Option<&[crate::types::NumberFilter]> {
         self.process_pid.as_deref()
     }
-    /// <p>The parent process ID.</p>
+    /// <p>The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.</p>
     pub fn process_parent_pid(&self) -> std::option::Option<&[crate::types::NumberFilter]> {
         self.process_parent_pid.as_deref()
     }
-    /// <p>The date/time that the process was launched.</p>
+    /// <p>A timestamp that identifies when the process was launched.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn process_launched_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.process_launched_at.as_deref()
     }
-    /// <p>The date/time that the process was terminated.</p>
+    /// <p>A timestamp that identifies when the process was terminated.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn process_terminated_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.process_terminated_at.as_deref()
     }
@@ -557,7 +578,7 @@ impl AwsSecurityFindingFilters {
     ) -> std::option::Option<&[crate::types::StringFilter]> {
         self.threat_intel_indicator_category.as_deref()
     }
-    /// <p>The date/time of the last observation of a threat intelligence indicator.</p>
+    /// <p>A timestamp that identifies the last observation of a threat intelligence indicator.</p>
     pub fn threat_intel_indicator_last_observed_at(
         &self,
     ) -> std::option::Option<&[crate::types::DateFilter]> {
@@ -711,7 +732,8 @@ impl AwsSecurityFindingFilters {
     ) -> std::option::Option<&[crate::types::StringFilter]> {
         self.resource_container_image_name.as_deref()
     }
-    /// <p>The date/time that the container was started.</p>
+    /// <p>A timestamp that identifies when the container was started.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn resource_container_launched_at(
         &self,
     ) -> std::option::Option<&[crate::types::DateFilter]> {
@@ -836,6 +858,18 @@ impl AwsSecurityFindingFilters {
     /// <p>Indicates whether or not sample findings are included in the filter results.</p>
     pub fn sample(&self) -> std::option::Option<&[crate::types::BooleanFilter]> {
         self.sample.as_deref()
+    }
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    pub fn compliance_security_control_id(
+        &self,
+    ) -> std::option::Option<&[crate::types::StringFilter]> {
+        self.compliance_security_control_id.as_deref()
+    }
+    /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    pub fn compliance_associated_standards_id(
+        &self,
+    ) -> std::option::Option<&[crate::types::StringFilter]> {
+        self.compliance_associated_standards_id.as_deref()
     }
 }
 impl AwsSecurityFindingFilters {
@@ -983,6 +1017,10 @@ pub struct AwsSecurityFindingFiltersBuilder {
     pub(crate) finding_provider_fields_types:
         std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sample: std::option::Option<std::vec::Vec<crate::types::BooleanFilter>>,
+    pub(crate) compliance_security_control_id:
+        std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) compliance_associated_standards_id:
+        std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AwsSecurityFindingFiltersBuilder {
     /// Appends an item to `product_arn`.
@@ -1104,6 +1142,7 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_first_observed_at`](Self::set_first_observed_at).
     ///
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn first_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.first_observed_at.unwrap_or_default();
         v.push(input);
@@ -1111,6 +1150,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_first_observed_at(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -1123,6 +1163,7 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_last_observed_at`](Self::set_last_observed_at).
     ///
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn last_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.last_observed_at.unwrap_or_default();
         v.push(input);
@@ -1130,6 +1171,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_last_observed_at(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -1142,6 +1184,7 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_created_at`](Self::set_created_at).
     ///
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn created_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.created_at.unwrap_or_default();
         v.push(input);
@@ -1149,6 +1192,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security issue that a finding captured.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -1161,6 +1205,7 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_updated_at`](Self::set_updated_at).
     ///
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding record. </p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.updated_at.unwrap_or_default();
         v.push(input);
@@ -1168,6 +1213,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding record. </p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -1780,14 +1826,14 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_process_parent_pid`](Self::set_process_parent_pid).
     ///
-    /// <p>The parent process ID.</p>
+    /// <p>The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.</p>
     pub fn process_parent_pid(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.process_parent_pid.unwrap_or_default();
         v.push(input);
         self.process_parent_pid = Some(v);
         self
     }
-    /// <p>The parent process ID.</p>
+    /// <p>The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.</p>
     pub fn set_process_parent_pid(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::NumberFilter>>,
@@ -1799,14 +1845,16 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_process_launched_at`](Self::set_process_launched_at).
     ///
-    /// <p>The date/time that the process was launched.</p>
+    /// <p>A timestamp that identifies when the process was launched.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn process_launched_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.process_launched_at.unwrap_or_default();
         v.push(input);
         self.process_launched_at = Some(v);
         self
     }
-    /// <p>The date/time that the process was launched.</p>
+    /// <p>A timestamp that identifies when the process was launched.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_process_launched_at(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -1818,14 +1866,16 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_process_terminated_at`](Self::set_process_terminated_at).
     ///
-    /// <p>The date/time that the process was terminated.</p>
+    /// <p>A timestamp that identifies when the process was terminated.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn process_terminated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.process_terminated_at.unwrap_or_default();
         v.push(input);
         self.process_terminated_at = Some(v);
         self
     }
-    /// <p>The date/time that the process was terminated.</p>
+    /// <p>A timestamp that identifies when the process was terminated.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_process_terminated_at(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -1894,7 +1944,7 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_threat_intel_indicator_last_observed_at`](Self::set_threat_intel_indicator_last_observed_at).
     ///
-    /// <p>The date/time of the last observation of a threat intelligence indicator.</p>
+    /// <p>A timestamp that identifies the last observation of a threat intelligence indicator.</p>
     pub fn threat_intel_indicator_last_observed_at(
         mut self,
         input: crate::types::DateFilter,
@@ -1906,7 +1956,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self.threat_intel_indicator_last_observed_at = Some(v);
         self
     }
-    /// <p>The date/time of the last observation of a threat intelligence indicator.</p>
+    /// <p>A timestamp that identifies the last observation of a threat intelligence indicator.</p>
     pub fn set_threat_intel_indicator_last_observed_at(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -2456,14 +2506,16 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_container_launched_at`](Self::set_resource_container_launched_at).
     ///
-    /// <p>The date/time that the container was started.</p>
+    /// <p>A timestamp that identifies when the container was started.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn resource_container_launched_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.resource_container_launched_at.unwrap_or_default();
         v.push(input);
         self.resource_container_launched_at = Some(v);
         self
     }
-    /// <p>The date/time that the container was started.</p>
+    /// <p>A timestamp that identifies when the container was started.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_resource_container_launched_at(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
@@ -2920,6 +2972,44 @@ impl AwsSecurityFindingFiltersBuilder {
         self.sample = input;
         self
     }
+    /// Appends an item to `compliance_security_control_id`.
+    ///
+    /// To override the contents of this collection use [`set_compliance_security_control_id`](Self::set_compliance_security_control_id).
+    ///
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    pub fn compliance_security_control_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.compliance_security_control_id.unwrap_or_default();
+        v.push(input);
+        self.compliance_security_control_id = Some(v);
+        self
+    }
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    pub fn set_compliance_security_control_id(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.compliance_security_control_id = input;
+        self
+    }
+    /// Appends an item to `compliance_associated_standards_id`.
+    ///
+    /// To override the contents of this collection use [`set_compliance_associated_standards_id`](Self::set_compliance_associated_standards_id).
+    ///
+    /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    pub fn compliance_associated_standards_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.compliance_associated_standards_id.unwrap_or_default();
+        v.push(input);
+        self.compliance_associated_standards_id = Some(v);
+        self
+    }
+    /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    pub fn set_compliance_associated_standards_id(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.compliance_associated_standards_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AwsSecurityFindingFilters`](crate::types::AwsSecurityFindingFilters).
     pub fn build(self) -> crate::types::AwsSecurityFindingFilters {
         crate::types::AwsSecurityFindingFilters {
@@ -3025,6 +3115,8 @@ impl AwsSecurityFindingFiltersBuilder {
                 .finding_provider_fields_severity_original,
             finding_provider_fields_types: self.finding_provider_fields_types,
             sample: self.sample,
+            compliance_security_control_id: self.compliance_security_control_id,
+            compliance_associated_standards_id: self.compliance_associated_standards_id,
         }
     }
 }

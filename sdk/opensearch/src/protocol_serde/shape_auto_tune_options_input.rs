@@ -18,5 +18,8 @@ pub fn ser_auto_tune_options_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.use_off_peak_window {
+        object.key("UseOffPeakWindow").boolean(*var_6);
+    }
     Ok(())
 }

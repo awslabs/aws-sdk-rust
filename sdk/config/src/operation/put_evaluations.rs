@@ -166,11 +166,11 @@ pub type PutEvaluationsErrorKind = PutEvaluationsError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutEvaluationsError {
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The specified <code>ResultToken</code> is invalid.</p>
+    /// <p>The specified <code>ResultToken</code> is not valid.</p>
     InvalidResultTokenException(crate::types::error::InvalidResultTokenException),
-    /// <p>The Config rule in the request is invalid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::types::error::NoSuchConfigRuleException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

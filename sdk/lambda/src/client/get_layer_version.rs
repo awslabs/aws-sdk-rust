@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`layer_name(impl Into<String>)`](crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder::layer_name) / [`set_layer_name(Option<String>)`](crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder::set_layer_name): <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    ///   - [`version_number(i64)`](crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder::version_number) / [`set_version_number(i64)`](crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder::set_version_number): <p>The version number.</p>
+    ///   - [`version_number(i64)`](crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder::version_number) / [`set_version_number(Option<i64>)`](crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder::set_version_number): <p>The version number.</p>
     /// - On success, responds with [`GetLayerVersionOutput`](crate::operation::get_layer_version::GetLayerVersionOutput) with field(s):
     ///   - [`content(Option<LayerVersionContentOutput>)`](crate::operation::get_layer_version::GetLayerVersionOutput::content): <p>Details about the layer version.</p>
     ///   - [`layer_arn(Option<String>)`](crate::operation::get_layer_version::GetLayerVersionOutput::layer_arn): <p>The ARN of the layer.</p>

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateActionTargetOutput {
-    /// <p>The ARN for the custom action target.</p>
+    /// <p>The Amazon Resource Name (ARN) for the custom action target.</p>
     #[doc(hidden)]
     pub action_target_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateActionTargetOutput {
-    /// <p>The ARN for the custom action target.</p>
+    /// <p>The Amazon Resource Name (ARN) for the custom action target.</p>
     pub fn action_target_arn(&self) -> std::option::Option<&str> {
         self.action_target_arn.as_deref()
     }
@@ -35,12 +35,12 @@ pub struct CreateActionTargetOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateActionTargetOutputBuilder {
-    /// <p>The ARN for the custom action target.</p>
+    /// <p>The Amazon Resource Name (ARN) for the custom action target.</p>
     pub fn action_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.action_target_arn = Some(input.into());
         self
     }
-    /// <p>The ARN for the custom action target.</p>
+    /// <p>The Amazon Resource Name (ARN) for the custom action target.</p>
     pub fn set_action_target_arn(
         mut self,
         input: std::option::Option<std::string::String>,

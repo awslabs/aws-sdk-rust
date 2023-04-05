@@ -63,6 +63,15 @@ pub fn ser_kafka_streaming_source_options(
             aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
+    if let Some(var_16) = &input.include_headers {
+        object.key("IncludeHeaders").boolean(*var_16);
+    }
+    if let Some(var_17) = &input.add_record_timestamp {
+        object.key("AddRecordTimestamp").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.emit_consumer_lag_metrics {
+        object.key("EmitConsumerLagMetrics").string(var_18.as_str());
+    }
     Ok(())
 }
 
@@ -222,6 +231,31 @@ where
                                         tokens.next(),
                                     )?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "IncludeHeaders" => {
+                                builder = builder.set_include_headers(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "AddRecordTimestamp" => {
+                                builder = builder.set_add_record_timestamp(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "EmitConsumerLagMetrics" => {
+                                builder = builder.set_emit_consumer_lag_metrics(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }

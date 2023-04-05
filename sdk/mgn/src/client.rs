@@ -300,6 +300,14 @@ mod initialize_service;
 
 mod list_applications;
 
+mod list_export_errors;
+
+mod list_exports;
+
+mod list_import_errors;
+
+mod list_imports;
+
 mod list_source_server_actions;
 
 mod list_tags_for_resource;
@@ -321,6 +329,10 @@ mod remove_template_action;
 mod retry_data_replication;
 
 mod start_cutover;
+
+mod start_export;
+
+mod start_import;
 
 mod start_replication;
 

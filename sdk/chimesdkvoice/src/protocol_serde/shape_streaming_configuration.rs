@@ -44,6 +44,11 @@ where
                                     crate::protocol_serde::shape_streaming_notification_target_list::de_streaming_notification_target_list(tokens)?
                                 );
                             }
+                            "MediaInsightsConfiguration" => {
+                                builder = builder.set_media_insights_configuration(
+                                    crate::protocol_serde::shape_media_insights_configuration::de_media_insights_configuration(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -91,6 +96,12 @@ pub fn ser_streaming_configuration(
             }
         }
         array_4.finish();
+    }
+    if let Some(var_7) = &input.media_insights_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("MediaInsightsConfiguration").start_object();
+        crate::protocol_serde::shape_media_insights_configuration::ser_media_insights_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

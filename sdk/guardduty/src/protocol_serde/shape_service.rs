@@ -119,6 +119,11 @@ where
                                     crate::protocol_serde::shape_ebs_volume_scan_details::de_ebs_volume_scan_details(tokens)?
                                 );
                             }
+                            "runtimeDetails" => {
+                                builder = builder.set_runtime_details(
+                                    crate::protocol_serde::shape_runtime_details::de_runtime_details(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

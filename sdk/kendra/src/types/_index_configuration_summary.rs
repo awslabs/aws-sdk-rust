@@ -16,7 +16,7 @@ pub struct IndexConfigurationSummary {
     /// <p>The Unix timestamp when the index was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
+    /// <p>The Unix timestamp when the index was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
@@ -40,7 +40,7 @@ impl IndexConfigurationSummary {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
+    /// <p>The Unix timestamp when the index was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -111,12 +111,12 @@ impl IndexConfigurationSummaryBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
+    /// <p>The Unix timestamp when the index was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
+    /// <p>The Unix timestamp when the index was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

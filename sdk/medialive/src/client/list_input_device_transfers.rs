@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`max_results(i32)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::set_max_results): Placeholder documentation for MaxResults
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::set_next_token): Placeholder documentation for __string
     ///   - [`transfer_type(impl Into<String>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::transfer_type) / [`set_transfer_type(Option<String>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::set_transfer_type): Placeholder documentation for __string
     /// - On success, responds with [`ListInputDeviceTransfersOutput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput) with field(s):

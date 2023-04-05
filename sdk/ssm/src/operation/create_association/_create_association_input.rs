@@ -4,7 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssociationInput {
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
-    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
+    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account.</p>
     /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
     /// <p> <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
     /// <p>For example:</p>
@@ -60,7 +60,7 @@ pub struct CreateAssociationInput {
     pub sync_compliance: std::option::Option<crate::types::AssociationSyncCompliance>,
     /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
     #[doc(hidden)]
-    pub apply_only_at_cron_interval: bool,
+    pub apply_only_at_cron_interval: std::option::Option<bool>,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
     #[doc(hidden)]
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -88,7 +88,7 @@ pub struct CreateAssociationInput {
 }
 impl CreateAssociationInput {
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
-    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
+    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account.</p>
     /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
     /// <p> <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
     /// <p>For example:</p>
@@ -162,7 +162,7 @@ impl CreateAssociationInput {
         self.sync_compliance.as_ref()
     }
     /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
-    pub fn apply_only_at_cron_interval(&self) -> bool {
+    pub fn apply_only_at_cron_interval(&self) -> std::option::Option<bool> {
         self.apply_only_at_cron_interval
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
@@ -271,7 +271,7 @@ pub struct CreateAssociationInputBuilder {
 }
 impl CreateAssociationInputBuilder {
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
-    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
+    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account.</p>
     /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
     /// <p> <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
     /// <p>For example:</p>
@@ -282,7 +282,7 @@ impl CreateAssociationInputBuilder {
         self
     }
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
-    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
+    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account.</p>
     /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
     /// <p> <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
     /// <p>For example:</p>
@@ -618,7 +618,7 @@ impl CreateAssociationInputBuilder {
                 max_concurrency: self.max_concurrency,
                 compliance_severity: self.compliance_severity,
                 sync_compliance: self.sync_compliance,
-                apply_only_at_cron_interval: self.apply_only_at_cron_interval.unwrap_or_default(),
+                apply_only_at_cron_interval: self.apply_only_at_cron_interval,
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,

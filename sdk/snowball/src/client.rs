@@ -282,6 +282,8 @@ mod list_jobs;
 
 mod list_long_term_pricing;
 
+mod list_service_versions;
+
 mod update_cluster;
 
 mod update_job;

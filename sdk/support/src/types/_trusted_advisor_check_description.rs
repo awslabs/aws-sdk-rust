@@ -18,7 +18,7 @@ pub struct TrustedAdvisorCheckDescription {
     pub category: std::option::Option<std::string::String>,
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub metadata: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
@@ -38,7 +38,7 @@ impl TrustedAdvisorCheckDescription {
         self.category.as_deref()
     }
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
-    pub fn metadata(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn metadata(&self) -> std::option::Option<&[std::option::Option<std::string::String>]> {
         self.metadata.as_deref()
     }
 }
@@ -57,7 +57,8 @@ pub struct TrustedAdvisorCheckDescriptionBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) category: std::option::Option<std::string::String>,
-    pub(crate) metadata: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) metadata:
+        std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl TrustedAdvisorCheckDescriptionBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
@@ -105,16 +106,16 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
-    pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
         let mut v = self.metadata.unwrap_or_default();
-        v.push(input.into());
+        v.push(input);
         self.metadata = Some(v);
         self
     }
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
     ) -> Self {
         self.metadata = input;
         self

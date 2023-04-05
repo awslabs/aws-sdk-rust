@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationDpuSizes {
-    /// <p>The name of the supported application runtime (for example, <code>Jupyter 1.0</code>).</p>
+    /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
     #[doc(hidden)]
     pub application_runtime_id: std::option::Option<std::string::String>,
     /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
@@ -12,7 +12,7 @@ pub struct ApplicationDpuSizes {
     pub supported_dpu_sizes: std::option::Option<std::vec::Vec<i32>>,
 }
 impl ApplicationDpuSizes {
-    /// <p>The name of the supported application runtime (for example, <code>Jupyter 1.0</code>).</p>
+    /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
     pub fn application_runtime_id(&self) -> std::option::Option<&str> {
         self.application_runtime_id.as_deref()
     }
@@ -36,12 +36,12 @@ pub struct ApplicationDpuSizesBuilder {
     pub(crate) supported_dpu_sizes: std::option::Option<std::vec::Vec<i32>>,
 }
 impl ApplicationDpuSizesBuilder {
-    /// <p>The name of the supported application runtime (for example, <code>Jupyter 1.0</code>).</p>
+    /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
     pub fn application_runtime_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.application_runtime_id = Some(input.into());
         self
     }
-    /// <p>The name of the supported application runtime (for example, <code>Jupyter 1.0</code>).</p>
+    /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
     pub fn set_application_runtime_id(
         mut self,
         input: std::option::Option<std::string::String>,

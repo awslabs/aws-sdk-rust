@@ -11,7 +11,7 @@ pub struct DeleteJobInput {
     /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
     /// </note>
     #[doc(hidden)]
-    pub force: bool,
+    pub force: std::option::Option<bool>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
@@ -29,7 +29,7 @@ impl DeleteJobInput {
     /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
     /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
     /// </note>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> std::option::Option<bool> {
         self.force
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
@@ -110,7 +110,7 @@ impl DeleteJobInputBuilder {
     > {
         Ok(crate::operation::delete_job::DeleteJobInput {
             job_id: self.job_id,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
             namespace_id: self.namespace_id,
         })
     }

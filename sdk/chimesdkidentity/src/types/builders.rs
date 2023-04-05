@@ -3,6 +3,8 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_endpoint_attributes::EndpointAttributesBuilder;
 
+pub use crate::types::_expiration_settings::ExpirationSettingsBuilder;
+
 pub use crate::types::_app_instance_retention_settings::AppInstanceRetentionSettingsBuilder;
 
 pub use crate::types::_channel_retention_settings::ChannelRetentionSettingsBuilder;
@@ -15,6 +17,8 @@ pub use crate::types::_endpoint_state::EndpointStateBuilder;
 
 pub use crate::types::_app_instance_summary::AppInstanceSummaryBuilder;
 
+pub use crate::types::_app_instance_bot_summary::AppInstanceBotSummaryBuilder;
+
 pub use crate::types::_app_instance_admin_summary::AppInstanceAdminSummaryBuilder;
 
 pub use crate::types::_identity::IdentityBuilder;
@@ -22,6 +26,12 @@ pub use crate::types::_identity::IdentityBuilder;
 pub use crate::types::_app_instance_user_endpoint::AppInstanceUserEndpointBuilder;
 
 pub use crate::types::_app_instance_user::AppInstanceUserBuilder;
+
+pub use crate::types::_app_instance_bot::AppInstanceBotBuilder;
+
+pub use crate::types::_configuration::ConfigurationBuilder;
+
+pub use crate::types::_lex_configuration::LexConfigurationBuilder;
 
 pub use crate::types::_app_instance_admin::AppInstanceAdminBuilder;
 

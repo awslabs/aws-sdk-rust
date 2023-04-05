@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomMetadataInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource, either a document or folder.</p>
@@ -17,10 +17,10 @@ pub struct DeleteCustomMetadataInput {
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     #[doc(hidden)]
-    pub delete_all: bool,
+    pub delete_all: std::option::Option<bool>,
 }
 impl DeleteCustomMetadataInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -37,7 +37,7 @@ impl DeleteCustomMetadataInput {
         self.keys.as_deref()
     }
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
-    pub fn delete_all(&self) -> bool {
+    pub fn delete_all(&self) -> std::option::Option<bool> {
         self.delete_all
     }
 }
@@ -71,12 +71,12 @@ pub struct DeleteCustomMetadataInputBuilder {
     pub(crate) delete_all: std::option::Option<bool>,
 }
 impl DeleteCustomMetadataInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -146,7 +146,7 @@ impl DeleteCustomMetadataInputBuilder {
                 resource_id: self.resource_id,
                 version_id: self.version_id,
                 keys: self.keys,
-                delete_all: self.delete_all.unwrap_or_default(),
+                delete_all: self.delete_all,
             },
         )
     }

@@ -39,6 +39,9 @@ pub struct ChannelMessageSummary {
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
     >,
+    /// <p>The content type of the channel messsage listed in the summary.</p>
+    #[doc(hidden)]
+    pub content_type: std::option::Option<std::string::String>,
 }
 impl ChannelMessageSummary {
     /// <p>The ID of the message.</p>
@@ -89,6 +92,10 @@ impl ChannelMessageSummary {
     > {
         self.message_attributes.as_ref()
     }
+    /// <p>The content type of the channel messsage listed in the summary.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelMessageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -104,6 +111,7 @@ impl std::fmt::Debug for ChannelMessageSummary {
         formatter.field("redacted", &self.redacted);
         formatter.field("status", &self.status);
         formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -131,6 +139,7 @@ pub struct ChannelMessageSummaryBuilder {
     pub(crate) message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
     >,
+    pub(crate) content_type: std::option::Option<std::string::String>,
 }
 impl ChannelMessageSummaryBuilder {
     /// <p>The ID of the message.</p>
@@ -273,6 +282,16 @@ impl ChannelMessageSummaryBuilder {
         self.message_attributes = input;
         self
     }
+    /// <p>The content type of the channel messsage listed in the summary.</p>
+    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.content_type = Some(input.into());
+        self
+    }
+    /// <p>The content type of the channel messsage listed in the summary.</p>
+    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.content_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ChannelMessageSummary`](crate::types::ChannelMessageSummary).
     pub fn build(self) -> crate::types::ChannelMessageSummary {
         crate::types::ChannelMessageSummary {
@@ -287,6 +306,7 @@ impl ChannelMessageSummaryBuilder {
             redacted: self.redacted.unwrap_or_default(),
             status: self.status,
             message_attributes: self.message_attributes,
+            content_type: self.content_type,
         }
     }
 }
@@ -304,6 +324,7 @@ impl std::fmt::Debug for ChannelMessageSummaryBuilder {
         formatter.field("redacted", &self.redacted);
         formatter.field("status", &self.status);
         formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

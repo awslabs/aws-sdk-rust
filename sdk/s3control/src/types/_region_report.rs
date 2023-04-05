@@ -10,6 +10,9 @@ pub struct RegionReport {
     /// <p>The name of the Region.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    #[doc(hidden)]
+    pub bucket_account_id: std::option::Option<std::string::String>,
 }
 impl RegionReport {
     /// <p>The name of the bucket.</p>
@@ -19,6 +22,10 @@ impl RegionReport {
     /// <p>The name of the Region.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    pub fn bucket_account_id(&self) -> std::option::Option<&str> {
+        self.bucket_account_id.as_deref()
     }
 }
 impl RegionReport {
@@ -34,6 +41,7 @@ impl RegionReport {
 pub struct RegionReportBuilder {
     pub(crate) bucket: std::option::Option<std::string::String>,
     pub(crate) region: std::option::Option<std::string::String>,
+    pub(crate) bucket_account_id: std::option::Option<std::string::String>,
 }
 impl RegionReportBuilder {
     /// <p>The name of the bucket.</p>
@@ -56,11 +64,25 @@ impl RegionReportBuilder {
         self.region = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.bucket_account_id = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    pub fn set_bucket_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.bucket_account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RegionReport`](crate::types::RegionReport).
     pub fn build(self) -> crate::types::RegionReport {
         crate::types::RegionReport {
             bucket: self.bucket,
             region: self.region,
+            bucket_account_id: self.bucket_account_id,
         }
     }
 }

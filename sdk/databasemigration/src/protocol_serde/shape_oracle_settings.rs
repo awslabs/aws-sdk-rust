@@ -169,6 +169,9 @@ pub fn ser_oracle_settings(
     if let Some(var_43) = &input.trim_space_in_char {
         object.key("TrimSpaceInChar").boolean(*var_43);
     }
+    if let Some(var_44) = &input.convert_timestamp_with_zone_to_utc {
+        object.key("ConvertTimestampWithZoneToUTC").boolean(*var_44);
+    }
     Ok(())
 }
 
@@ -533,6 +536,13 @@ where
                             }
                             "TrimSpaceInChar" => {
                                 builder = builder.set_trim_space_in_char(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "ConvertTimestampWithZoneToUTC" => {
+                                builder = builder.set_convert_timestamp_with_zone_to_utc(
                                     aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,

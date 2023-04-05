@@ -252,6 +252,8 @@ mod delete_domain;
 
 mod delete_domain_permissions_policy;
 
+mod delete_package;
+
 mod delete_package_versions;
 
 mod delete_repository;
@@ -297,6 +299,8 @@ mod list_repositories;
 mod list_repositories_in_domain;
 
 mod list_tags_for_resource;
+
+mod publish_package_version;
 
 mod put_domain_permissions_policy;
 

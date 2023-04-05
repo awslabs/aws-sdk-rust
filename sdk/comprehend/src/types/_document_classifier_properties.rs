@@ -37,10 +37,10 @@ pub struct DocumentClassifierProperties {
     /// <p>Information about the document classifier, including the number of documents used for training the classifier, the number of documents used for test the classifier, and an accuracy rating.</p>
     #[doc(hidden)]
     pub classifier_metadata: std::option::Option<crate::types::ClassifierMetadata>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -53,7 +53,7 @@ pub struct DocumentClassifierProperties {
     /// <p>Indicates the mode in which the specific classifier was trained. This also indicates the format of input documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this cannot be changed once the classifier is trained.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::types::DocumentClassifierMode>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -63,9 +63,12 @@ pub struct DocumentClassifierProperties {
     /// <p>The version name that you assigned to the document classifier.</p>
     #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the document classifier model in your AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the document classifier model in your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub source_model_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    #[doc(hidden)]
+    pub flywheel_arn: std::option::Option<std::string::String>,
 }
 impl DocumentClassifierProperties {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
@@ -116,11 +119,11 @@ impl DocumentClassifierProperties {
     pub fn classifier_metadata(&self) -> std::option::Option<&crate::types::ClassifierMetadata> {
         self.classifier_metadata.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -136,7 +139,7 @@ impl DocumentClassifierProperties {
     pub fn mode(&self) -> std::option::Option<&crate::types::DocumentClassifierMode> {
         self.mode.as_ref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -148,9 +151,13 @@ impl DocumentClassifierProperties {
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the document classifier model in your AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the document classifier model in your Amazon Web Services account.</p>
     pub fn source_model_arn(&self) -> std::option::Option<&str> {
         self.source_model_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
+        self.flywheel_arn.as_deref()
     }
 }
 impl std::fmt::Debug for DocumentClassifierProperties {
@@ -174,6 +181,7 @@ impl std::fmt::Debug for DocumentClassifierProperties {
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
         formatter.field("version_name", &self.version_name);
         formatter.field("source_model_arn", &self.source_model_arn);
+        formatter.field("flywheel_arn", &self.flywheel_arn);
         formatter.finish()
     }
 }
@@ -208,6 +216,7 @@ pub struct DocumentClassifierPropertiesBuilder {
     pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
     pub(crate) version_name: std::option::Option<std::string::String>,
     pub(crate) source_model_arn: std::option::Option<std::string::String>,
+    pub(crate) flywheel_arn: std::option::Option<std::string::String>,
 }
 impl DocumentClassifierPropertiesBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
@@ -350,12 +359,12 @@ impl DocumentClassifierPropertiesBuilder {
         self.classifier_metadata = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_access_role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -363,7 +372,7 @@ impl DocumentClassifierPropertiesBuilder {
         self.data_access_role_arn = input;
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -372,7 +381,7 @@ impl DocumentClassifierPropertiesBuilder {
         self.volume_kms_key_id = Some(input.into());
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -407,7 +416,7 @@ impl DocumentClassifierPropertiesBuilder {
         self.mode = input;
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -416,7 +425,7 @@ impl DocumentClassifierPropertiesBuilder {
         self.model_kms_key_id = Some(input.into());
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -435,14 +444,24 @@ impl DocumentClassifierPropertiesBuilder {
         self.version_name = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the document classifier model in your AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the document classifier model in your Amazon Web Services account.</p>
     pub fn source_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_model_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the document classifier model in your AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the document classifier model in your Amazon Web Services account.</p>
     pub fn set_source_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.source_model_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.flywheel_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.flywheel_arn = input;
         self
     }
     /// Consumes the builder and constructs a [`DocumentClassifierProperties`](crate::types::DocumentClassifierProperties).
@@ -466,6 +485,7 @@ impl DocumentClassifierPropertiesBuilder {
             model_kms_key_id: self.model_kms_key_id,
             version_name: self.version_name,
             source_model_arn: self.source_model_arn,
+            flywheel_arn: self.flywheel_arn,
         }
     }
 }
@@ -490,6 +510,7 @@ impl std::fmt::Debug for DocumentClassifierPropertiesBuilder {
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
         formatter.field("version_name", &self.version_name);
         formatter.field("source_model_arn", &self.source_model_arn);
+        formatter.field("flywheel_arn", &self.flywheel_arn);
         formatter.finish()
     }
 }

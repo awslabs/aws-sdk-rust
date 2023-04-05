@@ -63,7 +63,6 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -73,7 +72,6 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -91,13 +89,13 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
         self.inner = self.inner.set_portfolio_id(input);
         self
     }
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
     /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
     /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);

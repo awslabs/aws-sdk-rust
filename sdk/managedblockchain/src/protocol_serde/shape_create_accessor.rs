@@ -142,6 +142,24 @@ pub fn de_create_accessor_http_error(
                 tmp
             })
         }
+        "TooManyTagsException" => {
+            crate::operation::create_accessor::CreateAccessorError::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyTagsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_accessor::CreateAccessorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::create_accessor::CreateAccessorError::generic(generic),
     })
 }

@@ -24,28 +24,26 @@ pub fn ser_create_key_input(
     if let Some(var_7) = &input.custom_key_store_id {
         object.key("CustomKeyStoreId").string(var_7.as_str());
     }
-    if input.bypass_policy_lockout_safety_check {
-        object
-            .key("BypassPolicyLockoutSafetyCheck")
-            .boolean(input.bypass_policy_lockout_safety_check);
+    if let Some(var_8) = &input.bypass_policy_lockout_safety_check {
+        object.key("BypassPolicyLockoutSafetyCheck").boolean(*var_8);
     }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("Tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("Tags").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.multi_region {
-        object.key("MultiRegion").boolean(*var_12);
+    if let Some(var_13) = &input.multi_region {
+        object.key("MultiRegion").boolean(*var_13);
     }
-    if let Some(var_13) = &input.xks_key_id {
-        object.key("XksKeyId").string(var_13.as_str());
+    if let Some(var_14) = &input.xks_key_id {
+        object.key("XksKeyId").string(var_14.as_str());
     }
     Ok(())
 }

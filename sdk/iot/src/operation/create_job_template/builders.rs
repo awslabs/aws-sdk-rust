@@ -218,4 +218,21 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_job_executions_retry_config(input);
         self
     }
+    /// Appends an item to `maintenanceWindows`.
+    ///
+    /// To override the contents of this collection use [`set_maintenance_windows`](Self::set_maintenance_windows).
+    ///
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn maintenance_windows(mut self, input: crate::types::MaintenanceWindow) -> Self {
+        self.inner = self.inner.maintenance_windows(input);
+        self
+    }
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn set_maintenance_windows(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
+    ) -> Self {
+        self.inner = self.inner.set_maintenance_windows(input);
+        self
+    }
 }

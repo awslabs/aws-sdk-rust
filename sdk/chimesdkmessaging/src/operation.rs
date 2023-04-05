@@ -43,6 +43,9 @@ pub mod delete_channel_message;
 /// Types for the `DeleteChannelModerator` operation.
 pub mod delete_channel_moderator;
 
+/// Types for the `DeleteMessagingStreamingConfigurations` operation.
+pub mod delete_messaging_streaming_configurations;
+
 /// Types for the `DescribeChannel` operation.
 pub mod describe_channel;
 
@@ -79,6 +82,9 @@ pub mod get_channel_message_status;
 /// Types for the `GetMessagingSessionEndpoint` operation.
 pub mod get_messaging_session_endpoint;
 
+/// Types for the `GetMessagingStreamingConfigurations` operation.
+pub mod get_messaging_streaming_configurations;
+
 /// Types for the `ListChannelBans` operation.
 pub mod list_channel_bans;
 
@@ -112,8 +118,14 @@ pub mod list_sub_channels;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `PutChannelExpirationSettings` operation.
+pub mod put_channel_expiration_settings;
+
 /// Types for the `PutChannelMembershipPreferences` operation.
 pub mod put_channel_membership_preferences;
+
+/// Types for the `PutMessagingStreamingConfigurations` operation.
+pub mod put_messaging_streaming_configurations;
 
 /// Types for the `RedactChannelMessage` operation.
 pub mod redact_channel_message;

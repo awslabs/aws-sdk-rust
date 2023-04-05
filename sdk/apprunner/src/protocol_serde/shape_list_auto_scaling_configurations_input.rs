@@ -8,17 +8,17 @@ pub fn ser_list_auto_scaling_configurations_input(
             .key("AutoScalingConfigurationName")
             .string(var_1.as_str());
     }
-    if input.latest_only {
-        object.key("LatestOnly").boolean(input.latest_only);
+    if let Some(var_2) = &input.latest_only {
+        object.key("LatestOnly").boolean(*var_2);
     }
-    if let Some(var_2) = &input.max_results {
+    if let Some(var_3) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_2).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("NextToken").string(var_3.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("NextToken").string(var_4.as_str());
     }
     Ok(())
 }

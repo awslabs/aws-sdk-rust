@@ -59,6 +59,26 @@ impl DescribeOrganizationConfigurationInput {
                 .expect("formatting should succeed");
                 Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_2) = &_input.max_results {
+                    if *inner_2 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_3) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
+                Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput,
@@ -69,6 +89,7 @@ impl DescribeOrganizationConfigurationInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -271,3 +292,6 @@ mod _describe_organization_configuration_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

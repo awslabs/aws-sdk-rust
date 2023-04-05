@@ -9,5 +9,10 @@ pub fn ser_dns_options_specification(
     if let Some(var_2) = &input.dns_record_ip_type {
         scope_1.string(var_2.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("PrivateDnsOnlyForInboundResolverEndpoint");
+    if let Some(var_4) = &input.private_dns_only_for_inbound_resolver_endpoint {
+        scope_3.boolean(*var_4);
+    }
     Ok(())
 }

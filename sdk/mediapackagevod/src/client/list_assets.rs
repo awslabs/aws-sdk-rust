@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_max_results): Upper bound on number of records to return.
+    ///   - [`max_results(i32)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_max_results): Upper bound on number of records to return.
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_next_token): A token used to resume pagination from the end of a previous request.
     ///   - [`packaging_group_id(impl Into<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::packaging_group_id) / [`set_packaging_group_id(Option<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_packaging_group_id): Returns Assets associated with the specified PackagingGroup.
     /// - On success, responds with [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput) with field(s):

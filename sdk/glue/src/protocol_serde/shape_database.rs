@@ -81,6 +81,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "FederatedDatabase" => {
+                                builder = builder.set_federated_database(
+                                    crate::protocol_serde::shape_federated_database::de_federated_database(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

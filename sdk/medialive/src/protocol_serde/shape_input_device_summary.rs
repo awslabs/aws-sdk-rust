@@ -137,6 +137,10 @@ where
                                     crate::protocol_serde::shape_input_device_uhd_settings::de_input_device_uhd_settings(tokens)?
                                 );
                             }
+                            "tags" => {
+                                builder = builder
+                                    .set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

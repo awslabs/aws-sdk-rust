@@ -7,7 +7,7 @@ pub struct CreateIpSetInput {
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
@@ -18,7 +18,7 @@ pub struct CreateIpSetInput {
     pub location: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     #[doc(hidden)]
-    pub activate: bool,
+    pub activate: std::option::Option<bool>,
     /// <p>The idempotency token for the create request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ impl CreateIpSetInput {
         self.detector_id.as_deref()
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -46,7 +46,7 @@ impl CreateIpSetInput {
         self.location.as_deref()
     }
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
-    pub fn activate(&self) -> bool {
+    pub fn activate(&self) -> std::option::Option<bool> {
         self.activate
     }
     /// <p>The idempotency token for the create request.</p>
@@ -93,13 +93,13 @@ impl CreateIpSetInputBuilder {
         self
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
@@ -181,7 +181,7 @@ impl CreateIpSetInputBuilder {
             name: self.name,
             format: self.format,
             location: self.location,
-            activate: self.activate.unwrap_or_default(),
+            activate: self.activate,
             client_token: self.client_token,
             tags: self.tags,
         })

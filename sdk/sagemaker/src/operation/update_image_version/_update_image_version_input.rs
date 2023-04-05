@@ -50,7 +50,7 @@ pub struct UpdateImageVersionInput {
     pub processor: std::option::Option<crate::types::Processor>,
     /// <p>Indicates Horovod compatibility.</p>
     #[doc(hidden)]
-    pub horovod: bool,
+    pub horovod: std::option::Option<bool>,
     /// <p>The maintainer description of the image version.</p>
     #[doc(hidden)]
     pub release_notes: std::option::Option<std::string::String>,
@@ -112,7 +112,7 @@ impl UpdateImageVersionInput {
         self.processor.as_ref()
     }
     /// <p>Indicates Horovod compatibility.</p>
-    pub fn horovod(&self) -> bool {
+    pub fn horovod(&self) -> std::option::Option<bool> {
         self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
@@ -336,7 +336,7 @@ impl UpdateImageVersionInputBuilder {
                 ml_framework: self.ml_framework,
                 programming_lang: self.programming_lang,
                 processor: self.processor,
-                horovod: self.horovod.unwrap_or_default(),
+                horovod: self.horovod,
                 release_notes: self.release_notes,
             },
         )

@@ -7,7 +7,7 @@ pub struct MetricDatum {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>The dimensions associated with the metric.</p>
+    /// <p>The dimensions associated with the metric. </p>
     #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
@@ -42,7 +42,7 @@ impl MetricDatum {
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>The dimensions associated with the metric.</p>
+    /// <p>The dimensions associated with the metric. </p>
     pub fn dimensions(&self) -> std::option::Option<&[crate::types::Dimension]> {
         self.dimensions.as_deref()
     }
@@ -116,14 +116,14 @@ impl MetricDatumBuilder {
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
-    /// <p>The dimensions associated with the metric.</p>
+    /// <p>The dimensions associated with the metric. </p>
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
         v.push(input);
         self.dimensions = Some(v);
         self
     }
-    /// <p>The dimensions associated with the metric.</p>
+    /// <p>The dimensions associated with the metric. </p>
     pub fn set_dimensions(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,

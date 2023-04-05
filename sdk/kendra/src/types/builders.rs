@@ -17,6 +17,12 @@ pub use crate::types::_search::SearchBuilder;
 
 pub use crate::types::_relevance::RelevanceBuilder;
 
+pub use crate::types::_conflicting_item::ConflictingItemBuilder;
+
+pub use crate::types::_featured_results_set::FeaturedResultsSetBuilder;
+
+pub use crate::types::_featured_document::FeaturedDocumentBuilder;
+
 pub use crate::types::_experience_configuration::ExperienceConfigurationBuilder;
 
 pub use crate::types::_user_identity_configuration::UserIdentityConfigurationBuilder;
@@ -151,6 +157,18 @@ pub use crate::types::_relevance_feedback::RelevanceFeedbackBuilder;
 
 pub use crate::types::_click_feedback::ClickFeedbackBuilder;
 
+pub use crate::types::_featured_results_item::FeaturedResultsItemBuilder;
+
+pub use crate::types::_document_attribute::DocumentAttributeBuilder;
+
+pub use crate::types::_text_with_highlights::TextWithHighlightsBuilder;
+
+pub use crate::types::_highlight::HighlightBuilder;
+
+pub use crate::types::_additional_result_attribute::AdditionalResultAttributeBuilder;
+
+pub use crate::types::_additional_result_attribute_value::AdditionalResultAttributeValueBuilder;
+
 pub use crate::types::_spell_corrected_query::SpellCorrectedQueryBuilder;
 
 pub use crate::types::_correction::CorrectionBuilder;
@@ -170,16 +188,6 @@ pub use crate::types::_table_row::TableRowBuilder;
 pub use crate::types::_table_cell::TableCellBuilder;
 
 pub use crate::types::_score_attributes::ScoreAttributesBuilder;
-
-pub use crate::types::_document_attribute::DocumentAttributeBuilder;
-
-pub use crate::types::_text_with_highlights::TextWithHighlightsBuilder;
-
-pub use crate::types::_highlight::HighlightBuilder;
-
-pub use crate::types::_additional_result_attribute::AdditionalResultAttributeBuilder;
-
-pub use crate::types::_additional_result_attribute_value::AdditionalResultAttributeValueBuilder;
 
 pub use crate::types::_spell_correction_configuration::SpellCorrectionConfigurationBuilder;
 
@@ -208,6 +216,8 @@ pub use crate::types::_query_suggestions_block_list_summary::QuerySuggestionsBlo
 pub use crate::types::_index_configuration_summary::IndexConfigurationSummaryBuilder;
 
 pub use crate::types::_group_summary::GroupSummaryBuilder;
+
+pub use crate::types::_featured_results_set_summary::FeaturedResultsSetSummaryBuilder;
 
 pub use crate::types::_faq_summary::FaqSummaryBuilder;
 
@@ -253,6 +263,10 @@ pub use crate::types::_faq_statistics::FaqStatisticsBuilder;
 
 pub use crate::types::_server_side_encryption_configuration::ServerSideEncryptionConfigurationBuilder;
 
+pub use crate::types::_featured_document_missing::FeaturedDocumentMissingBuilder;
+
+pub use crate::types::_featured_document_with_metadata::FeaturedDocumentWithMetadataBuilder;
+
 pub use crate::types::_batch_put_document_response_failed_document::BatchPutDocumentResponseFailedDocumentBuilder;
 
 pub use crate::types::_document::DocumentBuilder;
@@ -262,6 +276,8 @@ pub use crate::types::_status::StatusBuilder;
 pub use crate::types::_batch_get_document_status_response_error::BatchGetDocumentStatusResponseErrorBuilder;
 
 pub use crate::types::_document_info::DocumentInfoBuilder;
+
+pub use crate::types::_batch_delete_featured_results_set_error::BatchDeleteFeaturedResultsSetErrorBuilder;
 
 pub use crate::types::_batch_delete_document_response_failed_document::BatchDeleteDocumentResponseFailedDocumentBuilder;
 

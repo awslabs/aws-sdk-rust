@@ -13,6 +13,8 @@ pub use crate::types::_replication_task_assessment_run_progress::ReplicationTask
 
 pub use crate::types::_start_replication_task_type_value::StartReplicationTaskTypeValue;
 
+pub use crate::types::_recommendation_settings::RecommendationSettings;
+
 pub use crate::types::_reload_option_value::ReloadOptionValue;
 
 pub use crate::types::_table_to_reload::TableToReload;
@@ -55,6 +57,8 @@ pub use crate::types::_ibm_db2_settings::IbmDb2Settings;
 
 pub use crate::types::_microsoft_sql_server_settings::MicrosoftSqlServerSettings;
 
+pub use crate::types::_tlog_access_mode::TlogAccessMode;
+
 pub use crate::types::_safeguard_policy::SafeguardPolicy;
 
 pub use crate::types::_sybase_settings::SybaseSettings;
@@ -78,6 +82,8 @@ pub use crate::types::_neptune_settings::NeptuneSettings;
 pub use crate::types::_elasticsearch_settings::ElasticsearchSettings;
 
 pub use crate::types::_kafka_settings::KafkaSettings;
+
+pub use crate::types::_kafka_sasl_mechanism::KafkaSaslMechanism;
 
 pub use crate::types::_kafka_security_protocol::KafkaSecurityProtocol;
 
@@ -129,6 +135,18 @@ pub use crate::types::_replication_task_assessment_result::ReplicationTaskAssess
 
 pub use crate::types::_replication_instance_task_log::ReplicationInstanceTaskLog;
 
+pub use crate::types::_recommendation::Recommendation;
+
+pub use crate::types::_recommendation_data::RecommendationData;
+
+pub use crate::types::_rds_recommendation::RdsRecommendation;
+
+pub use crate::types::_rds_configuration::RdsConfiguration;
+
+pub use crate::types::_rds_requirements::RdsRequirements;
+
+pub use crate::types::_limitation::Limitation;
+
 pub use crate::types::_resource_pending_maintenance_actions::ResourcePendingMaintenanceActions;
 
 pub use crate::types::_pending_maintenance_action::PendingMaintenanceAction;
@@ -179,6 +197,10 @@ pub use crate::types::_endpoint_setting_type_value::EndpointSettingTypeValue;
 
 pub use crate::types::_account_quota::AccountQuota;
 
+pub use crate::types::_batch_start_recommendations_error_entry::BatchStartRecommendationsErrorEntry;
+
+pub use crate::types::_start_recommendations_request_entry::StartRecommendationsRequestEntry;
+
 mod _account_quota;
 
 mod _auth_mechanism_value;
@@ -186,6 +208,8 @@ mod _auth_mechanism_value;
 mod _auth_type_value;
 
 mod _availability_zone;
+
+mod _batch_start_recommendations_error_entry;
 
 mod _canned_acl_for_objects_value;
 
@@ -255,11 +279,15 @@ mod _ibm_db2_settings;
 
 mod _inventory_data;
 
+mod _kafka_sasl_mechanism;
+
 mod _kafka_security_protocol;
 
 mod _kafka_settings;
 
 mod _kinesis_settings;
+
+mod _limitation;
 
 mod _message_format_value;
 
@@ -286,6 +314,18 @@ mod _pending_maintenance_action;
 mod _plugin_name_value;
 
 mod _postgre_sql_settings;
+
+mod _rds_configuration;
+
+mod _rds_recommendation;
+
+mod _rds_requirements;
+
+mod _recommendation;
+
+mod _recommendation_data;
+
+mod _recommendation_settings;
 
 mod _redis_auth_type_value;
 
@@ -339,6 +379,8 @@ mod _source_type;
 
 mod _ssl_security_protocol_value;
 
+mod _start_recommendations_request_entry;
+
 mod _start_replication_task_type_value;
 
 mod _subnet;
@@ -354,6 +396,8 @@ mod _table_to_reload;
 mod _tag;
 
 mod _target_db_type;
+
+mod _tlog_access_mode;
 
 mod _version_status;
 

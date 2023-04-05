@@ -15,10 +15,11 @@ pub struct CreateLocationFsxOntapInput {
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
+    /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
     #[doc(hidden)]
     pub storage_virtual_machine_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>
+    /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
+    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
@@ -42,11 +43,12 @@ impl CreateLocationFsxOntapInput {
     pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_arns.as_deref()
     }
-    /// <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
+    /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
     pub fn storage_virtual_machine_arn(&self) -> std::option::Option<&str> {
         self.storage_virtual_machine_arn.as_deref()
     }
-    /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>
+    /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
+    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
     pub fn subdirectory(&self) -> std::option::Option<&str> {
@@ -118,12 +120,12 @@ impl CreateLocationFsxOntapInputBuilder {
         self.security_group_arns = input;
         self
     }
-    /// <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
+    /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
     pub fn storage_virtual_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.storage_virtual_machine_arn = Some(input.into());
         self
     }
-    /// <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
+    /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
     pub fn set_storage_virtual_machine_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -131,14 +133,16 @@ impl CreateLocationFsxOntapInputBuilder {
         self.storage_virtual_machine_arn = input;
         self
     }
-    /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>
+    /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
+    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
     pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
         self.subdirectory = Some(input.into());
         self
     }
-    /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>
+    /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
+    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
     pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {

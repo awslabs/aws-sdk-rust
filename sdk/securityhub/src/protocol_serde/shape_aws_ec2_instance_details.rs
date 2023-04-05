@@ -63,6 +63,12 @@ pub fn ser_aws_ec2_instance_details(
         crate::protocol_serde::shape_aws_ec2_instance_metadata_options::ser_aws_ec2_instance_metadata_options(&mut object_20, var_19)?;
         object_20.finish();
     }
+    if let Some(var_21) = &input.monitoring {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("Monitoring").start_object();
+        crate::protocol_serde::shape_aws_ec2_instance_monitoring_details::ser_aws_ec2_instance_monitoring_details(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }
 
@@ -184,6 +190,11 @@ where
                             "MetadataOptions" => {
                                 builder = builder.set_metadata_options(
                                     crate::protocol_serde::shape_aws_ec2_instance_metadata_options::de_aws_ec2_instance_metadata_options(tokens)?
+                                );
+                            }
+                            "Monitoring" => {
+                                builder = builder.set_monitoring(
+                                    crate::protocol_serde::shape_aws_ec2_instance_monitoring_details::de_aws_ec2_instance_monitoring_details(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

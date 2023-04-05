@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSipMediaApplicationLoggingConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The actual logging configuration.</p>
     #[doc(hidden)]
     pub sip_media_application_logging_configuration:
         std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetSipMediaApplicationLoggingConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The actual logging configuration.</p>
     pub fn sip_media_application_logging_configuration(
         &self,
     ) -> std::option::Option<&crate::types::SipMediaApplicationLoggingConfiguration> {
@@ -38,7 +38,7 @@ pub struct GetSipMediaApplicationLoggingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSipMediaApplicationLoggingConfigurationOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The actual logging configuration.</p>
     pub fn sip_media_application_logging_configuration(
         mut self,
         input: crate::types::SipMediaApplicationLoggingConfiguration,
@@ -46,7 +46,7 @@ impl GetSipMediaApplicationLoggingConfigurationOutputBuilder {
         self.sip_media_application_logging_configuration = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The actual logging configuration.</p>
     pub fn set_sip_media_application_logging_configuration(
         mut self,
         input: std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,

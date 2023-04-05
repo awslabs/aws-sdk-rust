@@ -12,10 +12,8 @@ pub fn ser_update_firewall_policy_change_protection_input(
     if let Some(var_3) = &input.firewall_name {
         object.key("FirewallName").string(var_3.as_str());
     }
-    {
-        object
-            .key("FirewallPolicyChangeProtection")
-            .boolean(input.firewall_policy_change_protection);
+    if let Some(var_4) = &input.firewall_policy_change_protection {
+        object.key("FirewallPolicyChangeProtection").boolean(*var_4);
     }
     Ok(())
 }

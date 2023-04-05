@@ -82,6 +82,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_authentication_description;
 
+pub(crate) mod shape_network_access_configuration;
+
 pub(crate) mod shape_permission_entry_list;
 
 pub(crate) mod shape_saml_configuration;
@@ -130,9 +132,13 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_workspace_summary;
 
+pub(crate) mod shape_prefix_list_ids;
+
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_subnet_ids;
+
+pub(crate) mod shape_vpce_ids;
 
 pub(crate) mod shape_allowed_organizations;
 

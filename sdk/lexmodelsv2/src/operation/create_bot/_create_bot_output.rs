@@ -21,7 +21,7 @@ pub struct CreateBotOutput {
     /// <p>The session idle time specified for the bot.</p>
     #[doc(hidden)]
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
-    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>Draft</code> version of the bot.</p>
+    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
     #[doc(hidden)]
     pub bot_status: std::option::Option<crate::types::BotStatus>,
     /// <p>A timestamp indicating the date and time that the bot was created.</p>
@@ -35,6 +35,12 @@ pub struct CreateBotOutput {
     #[doc(hidden)]
     pub test_bot_alias_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The type of a bot that was created.</p>
+    #[doc(hidden)]
+    pub bot_type: std::option::Option<crate::types::BotType>,
+    /// <p>The list of bots in a network that was created.</p>
+    #[doc(hidden)]
+    pub bot_members: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
     _request_id: Option<String>,
 }
 impl CreateBotOutput {
@@ -62,7 +68,7 @@ impl CreateBotOutput {
     pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
         self.idle_session_ttl_in_seconds
     }
-    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>Draft</code> version of the bot.</p>
+    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
     pub fn bot_status(&self) -> std::option::Option<&crate::types::BotStatus> {
         self.bot_status.as_ref()
     }
@@ -83,6 +89,14 @@ impl CreateBotOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.test_bot_alias_tags.as_ref()
+    }
+    /// <p>The type of a bot that was created.</p>
+    pub fn bot_type(&self) -> std::option::Option<&crate::types::BotType> {
+        self.bot_type.as_ref()
+    }
+    /// <p>The list of bots in a network that was created.</p>
+    pub fn bot_members(&self) -> std::option::Option<&[crate::types::BotMember]> {
+        self.bot_members.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateBotOutput {
@@ -113,6 +127,8 @@ pub struct CreateBotOutputBuilder {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) test_bot_alias_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) bot_type: std::option::Option<crate::types::BotType>,
+    pub(crate) bot_members: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
     _request_id: Option<String>,
 }
 impl CreateBotOutputBuilder {
@@ -179,12 +195,12 @@ impl CreateBotOutputBuilder {
         self.idle_session_ttl_in_seconds = input;
         self
     }
-    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>Draft</code> version of the bot.</p>
+    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
         self.bot_status = Some(input);
         self
     }
-    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>Draft</code> version of the bot.</p>
+    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
     pub fn set_bot_status(mut self, input: std::option::Option<crate::types::BotStatus>) -> Self {
         self.bot_status = input;
         self
@@ -252,6 +268,35 @@ impl CreateBotOutputBuilder {
         self.test_bot_alias_tags = input;
         self
     }
+    /// <p>The type of a bot that was created.</p>
+    pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
+        self.bot_type = Some(input);
+        self
+    }
+    /// <p>The type of a bot that was created.</p>
+    pub fn set_bot_type(mut self, input: std::option::Option<crate::types::BotType>) -> Self {
+        self.bot_type = input;
+        self
+    }
+    /// Appends an item to `bot_members`.
+    ///
+    /// To override the contents of this collection use [`set_bot_members`](Self::set_bot_members).
+    ///
+    /// <p>The list of bots in a network that was created.</p>
+    pub fn bot_members(mut self, input: crate::types::BotMember) -> Self {
+        let mut v = self.bot_members.unwrap_or_default();
+        v.push(input);
+        self.bot_members = Some(v);
+        self
+    }
+    /// <p>The list of bots in a network that was created.</p>
+    pub fn set_bot_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
+    ) -> Self {
+        self.bot_members = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -274,6 +319,8 @@ impl CreateBotOutputBuilder {
             creation_date_time: self.creation_date_time,
             bot_tags: self.bot_tags,
             test_bot_alias_tags: self.test_bot_alias_tags,
+            bot_type: self.bot_type,
+            bot_members: self.bot_members,
             _request_id: self._request_id,
         }
     }

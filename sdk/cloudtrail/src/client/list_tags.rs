@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_tags::builders::ListTagsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id_list(Vec<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::resource_id_list) / [`set_resource_id_list(Option<Vec<String>>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_resource_id_list): <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
+    ///   - [`resource_id_list(Vec<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::resource_id_list) / [`set_resource_id_list(Option<Vec<String>>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_resource_id_list): <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_next_token): <p>Reserved for future use.</p>
     /// - On success, responds with [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput) with field(s):
     ///   - [`resource_tag_list(Option<Vec<ResourceTag>>)`](crate::operation::list_tags::ListTagsOutput::resource_tag_list): <p>A list of resource tags.</p>

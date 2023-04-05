@@ -10,9 +10,12 @@ pub struct ConflictException {
     /// Identifier of the resource in use
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
-    /// ype of the resource in use
+    /// Type of the resource in use
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
+    /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+    #[doc(hidden)]
+    pub dependent_entities: std::option::Option<std::vec::Vec<crate::types::DependentEntity>>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ConflictException {
@@ -20,9 +23,13 @@ impl ConflictException {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// ype of the resource in use
+    /// Type of the resource in use
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
+    }
+    /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+    pub fn dependent_entities(&self) -> std::option::Option<&[crate::types::DependentEntity]> {
+        self.dependent_entities.as_deref()
     }
 }
 impl ConflictException {
@@ -68,6 +75,8 @@ pub struct ConflictExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) resource_id: std::option::Option<std::string::String>,
     pub(crate) resource_type: std::option::Option<std::string::String>,
+    pub(crate) dependent_entities:
+        std::option::Option<std::vec::Vec<crate::types::DependentEntity>>,
     meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConflictExceptionBuilder {
@@ -91,14 +100,33 @@ impl ConflictExceptionBuilder {
         self.resource_id = input;
         self
     }
-    /// ype of the resource in use
+    /// Type of the resource in use
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.resource_type = Some(input.into());
         self
     }
-    /// ype of the resource in use
+    /// Type of the resource in use
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.resource_type = input;
+        self
+    }
+    /// Appends an item to `dependent_entities`.
+    ///
+    /// To override the contents of this collection use [`set_dependent_entities`](Self::set_dependent_entities).
+    ///
+    /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+    pub fn dependent_entities(mut self, input: crate::types::DependentEntity) -> Self {
+        let mut v = self.dependent_entities.unwrap_or_default();
+        v.push(input);
+        self.dependent_entities = Some(v);
+        self
+    }
+    /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+    pub fn set_dependent_entities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DependentEntity>>,
+    ) -> Self {
+        self.dependent_entities = input;
         self
     }
     /// Sets error metadata
@@ -121,6 +149,7 @@ impl ConflictExceptionBuilder {
             message: self.message,
             resource_id: self.resource_id,
             resource_type: self.resource_type,
+            dependent_entities: self.dependent_entities,
             meta: self.meta.unwrap_or_default(),
         }
     }

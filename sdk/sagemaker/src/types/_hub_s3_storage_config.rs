@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HubS3StorageConfig {
-    /// <p>The Amazon S3 output path for the hub.</p>
+    /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
     #[doc(hidden)]
     pub s3_output_path: std::option::Option<std::string::String>,
 }
 impl HubS3StorageConfig {
-    /// <p>The Amazon S3 output path for the hub.</p>
+    /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
     pub fn s3_output_path(&self) -> std::option::Option<&str> {
         self.s3_output_path.as_deref()
     }
@@ -28,12 +28,12 @@ pub struct HubS3StorageConfigBuilder {
     pub(crate) s3_output_path: std::option::Option<std::string::String>,
 }
 impl HubS3StorageConfigBuilder {
-    /// <p>The Amazon S3 output path for the hub.</p>
+    /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
     pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.s3_output_path = Some(input.into());
         self
     }
-    /// <p>The Amazon S3 output path for the hub.</p>
+    /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
     pub fn set_s3_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.s3_output_path = input;
         self

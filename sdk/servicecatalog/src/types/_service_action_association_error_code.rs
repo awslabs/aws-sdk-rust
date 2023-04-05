@@ -14,6 +14,7 @@
 /// match serviceactionassociationerrorcode {
 ///     ServiceActionAssociationErrorCode::DuplicateResourceException => { /* ... */ },
 ///     ServiceActionAssociationErrorCode::InternalFailure => { /* ... */ },
+///     ServiceActionAssociationErrorCode::InvalidParameterException => { /* ... */ },
 ///     ServiceActionAssociationErrorCode::LimitExceededException => { /* ... */ },
 ///     ServiceActionAssociationErrorCode::ResourceNotFoundException => { /* ... */ },
 ///     ServiceActionAssociationErrorCode::ThrottlingException => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum ServiceActionAssociationErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidParameterException,
+    #[allow(missing_docs)] // documentation missing in model
     LimitExceededException,
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException,
@@ -68,6 +71,7 @@ impl std::convert::From<&str> for ServiceActionAssociationErrorCode {
         match s {
             "DUPLICATE_RESOURCE" => ServiceActionAssociationErrorCode::DuplicateResourceException,
             "INTERNAL_FAILURE" => ServiceActionAssociationErrorCode::InternalFailure,
+            "INVALID_PARAMETER" => ServiceActionAssociationErrorCode::InvalidParameterException,
             "LIMIT_EXCEEDED" => ServiceActionAssociationErrorCode::LimitExceededException,
             "RESOURCE_NOT_FOUND" => ServiceActionAssociationErrorCode::ResourceNotFoundException,
             "THROTTLING" => ServiceActionAssociationErrorCode::ThrottlingException,
@@ -90,6 +94,7 @@ impl ServiceActionAssociationErrorCode {
         match self {
             ServiceActionAssociationErrorCode::DuplicateResourceException => "DUPLICATE_RESOURCE",
             ServiceActionAssociationErrorCode::InternalFailure => "INTERNAL_FAILURE",
+            ServiceActionAssociationErrorCode::InvalidParameterException => "INVALID_PARAMETER",
             ServiceActionAssociationErrorCode::LimitExceededException => "LIMIT_EXCEEDED",
             ServiceActionAssociationErrorCode::ResourceNotFoundException => "RESOURCE_NOT_FOUND",
             ServiceActionAssociationErrorCode::ThrottlingException => "THROTTLING",
@@ -101,6 +106,7 @@ impl ServiceActionAssociationErrorCode {
         &[
             "DUPLICATE_RESOURCE",
             "INTERNAL_FAILURE",
+            "INVALID_PARAMETER",
             "LIMIT_EXCEEDED",
             "RESOURCE_NOT_FOUND",
             "THROTTLING",

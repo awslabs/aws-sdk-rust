@@ -19,7 +19,7 @@ pub struct PhysicalResourceId {
     /// Native
     /// </dt>
     /// <dd>
-    /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
+    /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
     /// </dd>
     /// </dl>
     #[doc(hidden)]
@@ -48,7 +48,7 @@ impl PhysicalResourceId {
     /// Native
     /// </dt>
     /// <dd>
-    /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
+    /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
     /// </dd>
     /// </dl>
     pub fn r#type(&self) -> std::option::Option<&crate::types::PhysicalIdentifierType> {
@@ -102,7 +102,7 @@ impl PhysicalResourceIdBuilder {
     /// Native
     /// </dt>
     /// <dd>
-    /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
+    /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
     /// </dd>
     /// </dl>
     pub fn r#type(mut self, input: crate::types::PhysicalIdentifierType) -> Self {
@@ -121,7 +121,7 @@ impl PhysicalResourceIdBuilder {
     /// Native
     /// </dt>
     /// <dd>
-    /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
+    /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
     /// </dd>
     /// </dl>
     pub fn set_type(

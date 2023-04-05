@@ -9,6 +9,21 @@ pub fn ser_tuning_job_completion_criteria(
             aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.best_objective_not_improving {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("BestObjectiveNotImproving").start_object();
+        crate::protocol_serde::shape_best_objective_not_improving::ser_best_objective_not_improving(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.convergence_detected {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ConvergenceDetected").start_object();
+        crate::protocol_serde::shape_convergence_detected::ser_convergence_detected(
+            &mut object_5,
+            var_4,
+        )?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -42,6 +57,16 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_f32_lossy()),
+                                );
+                            }
+                            "BestObjectiveNotImproving" => {
+                                builder = builder.set_best_objective_not_improving(
+                                    crate::protocol_serde::shape_best_objective_not_improving::de_best_objective_not_improving(tokens)?
+                                );
+                            }
+                            "ConvergenceDetected" => {
+                                builder = builder.set_convergence_detected(
+                                    crate::protocol_serde::shape_convergence_detected::de_convergence_detected(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

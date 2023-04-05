@@ -2,7 +2,7 @@
 
 /// <p>Contains the parameters for RunScheduledInstances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunScheduledInstancesInput {
     /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     #[doc(hidden)]
@@ -47,6 +47,17 @@ impl RunScheduledInstancesInput {
         self.scheduled_instance_id.as_deref()
     }
 }
+impl std::fmt::Debug for RunScheduledInstancesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RunScheduledInstancesInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("dry_run", &self.dry_run);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("launch_specification", &"*** Sensitive Data Redacted ***");
+        formatter.field("scheduled_instance_id", &self.scheduled_instance_id);
+        formatter.finish()
+    }
+}
 impl RunScheduledInstancesInput {
     /// Creates a new builder-style object to manufacture [`RunScheduledInstancesInput`](crate::operation::run_scheduled_instances::RunScheduledInstancesInput).
     pub fn builder(
@@ -58,7 +69,7 @@ impl RunScheduledInstancesInput {
 
 /// A builder for [`RunScheduledInstancesInput`](crate::operation::run_scheduled_instances::RunScheduledInstancesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct RunScheduledInstancesInputBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) dry_run: std::option::Option<bool>,
@@ -145,5 +156,16 @@ impl RunScheduledInstancesInputBuilder {
                 scheduled_instance_id: self.scheduled_instance_id,
             },
         )
+    }
+}
+impl std::fmt::Debug for RunScheduledInstancesInputBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RunScheduledInstancesInputBuilder");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("dry_run", &self.dry_run);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("launch_specification", &"*** Sensitive Data Redacted ***");
+        formatter.field("scheduled_instance_id", &self.scheduled_instance_id);
+        formatter.finish()
     }
 }

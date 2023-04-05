@@ -14,7 +14,7 @@ pub struct DeleteAnalysisInput {
     pub recovery_window_in_days: std::option::Option<i64>,
     /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     #[doc(hidden)]
-    pub force_delete_without_recovery: bool,
+    pub force_delete_without_recovery: std::option::Option<bool>,
 }
 impl DeleteAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
@@ -30,7 +30,7 @@ impl DeleteAnalysisInput {
         self.recovery_window_in_days
     }
     /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
-    pub fn force_delete_without_recovery(&self) -> bool {
+    pub fn force_delete_without_recovery(&self) -> std::option::Option<bool> {
         self.force_delete_without_recovery
     }
 }
@@ -102,7 +102,7 @@ impl DeleteAnalysisInputBuilder {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,
             recovery_window_in_days: self.recovery_window_in_days,
-            force_delete_without_recovery: self.force_delete_without_recovery.unwrap_or_default(),
+            force_delete_without_recovery: self.force_delete_without_recovery,
         })
     }
 }

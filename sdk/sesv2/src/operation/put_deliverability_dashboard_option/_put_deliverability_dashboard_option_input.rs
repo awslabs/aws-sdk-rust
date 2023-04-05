@@ -7,7 +7,7 @@
 pub struct PutDeliverabilityDashboardOptionInput {
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
     #[doc(hidden)]
-    pub dashboard_enabled: bool,
+    pub dashboard_enabled: std::option::Option<bool>,
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
     #[doc(hidden)]
     pub subscribed_domains:
@@ -15,7 +15,7 @@ pub struct PutDeliverabilityDashboardOptionInput {
 }
 impl PutDeliverabilityDashboardOptionInput {
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
-    pub fn dashboard_enabled(&self) -> bool {
+    pub fn dashboard_enabled(&self) -> std::option::Option<bool> {
         self.dashboard_enabled
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
@@ -78,7 +78,6 @@ impl PutDeliverabilityDashboardOptionInputBuilder {
         Ok(
             crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput {
                 dashboard_enabled: self.dashboard_enabled
-                    .unwrap_or_default()
                 ,
                 subscribed_domains: self.subscribed_domains
                 ,

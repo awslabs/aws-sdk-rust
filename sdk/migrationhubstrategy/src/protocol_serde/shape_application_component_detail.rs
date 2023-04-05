@@ -221,6 +221,13 @@ where
                                     )?,
                                 );
                             }
+                            "resultList" => {
+                                builder = builder.set_result_list(
+                                    crate::protocol_serde::shape_result_list::de_result_list(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

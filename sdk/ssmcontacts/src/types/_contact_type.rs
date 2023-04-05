@@ -13,6 +13,7 @@
 /// # let contacttype = unimplemented!();
 /// match contacttype {
 ///     ContactType::Escalation => { /* ... */ },
+///     ContactType::OncallSchedule => { /* ... */ },
 ///     ContactType::Personal => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum ContactType {
     #[allow(missing_docs)] // documentation missing in model
     Escalation,
     #[allow(missing_docs)] // documentation missing in model
+    OncallSchedule,
+    #[allow(missing_docs)] // documentation missing in model
     Personal,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl std::convert::From<&str> for ContactType {
     fn from(s: &str) -> Self {
         match s {
             "ESCALATION" => ContactType::Escalation,
+            "ONCALL_SCHEDULE" => ContactType::OncallSchedule,
             "PERSONAL" => ContactType::Personal,
             other => ContactType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl ContactType {
     pub fn as_str(&self) -> &str {
         match self {
             ContactType::Escalation => "ESCALATION",
+            ContactType::OncallSchedule => "ONCALL_SCHEDULE",
             ContactType::Personal => "PERSONAL",
             ContactType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ESCALATION", "PERSONAL"]
+        &["ESCALATION", "ONCALL_SCHEDULE", "PERSONAL"]
     }
 }
 impl AsRef<str> for ContactType {

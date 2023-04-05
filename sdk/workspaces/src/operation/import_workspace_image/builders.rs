@@ -5,7 +5,7 @@ pub use crate::operation::import_workspace_image::_import_workspace_image_input:
 
 /// Fluent builder constructing a request to `ImportWorkspaceImage`.
 ///
-/// <p>Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016 BYOL image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>
+/// <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportWorkspaceImageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

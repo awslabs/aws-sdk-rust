@@ -8,7 +8,7 @@ pub struct SensitivityAggregations {
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     #[doc(hidden)]
     pub classifiable_size_in_bytes: i64,
-    /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     #[doc(hidden)]
     pub publicly_accessible_count: i64,
     /// <p>The total number of buckets.</p>
@@ -25,7 +25,7 @@ impl SensitivityAggregations {
     pub fn classifiable_size_in_bytes(&self) -> i64 {
         self.classifiable_size_in_bytes
     }
-    /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn publicly_accessible_count(&self) -> i64 {
         self.publicly_accessible_count
     }
@@ -68,12 +68,12 @@ impl SensitivityAggregationsBuilder {
         self.classifiable_size_in_bytes = input;
         self
     }
-    /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn publicly_accessible_count(mut self, input: i64) -> Self {
         self.publicly_accessible_count = Some(input);
         self
     }
-    /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn set_publicly_accessible_count(mut self, input: std::option::Option<i64>) -> Self {
         self.publicly_accessible_count = input;
         self

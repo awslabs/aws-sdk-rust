@@ -167,8 +167,12 @@ pub enum CreateEndpointError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>There was an exception with the internal server.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The service link connection to your Outposts home Region is down. Check your connection and try again.</p>
+    OutpostOfflineException(crate::types::error::OutpostOfflineException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -192,7 +196,9 @@ impl std::fmt::Display for CreateEndpointError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::OutpostOfflineException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -210,7 +216,13 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateEndpointE
             Self::InternalServerException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
+            Self::OutpostOfflineException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::ResourceNotFoundException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ThrottlingException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ValidationException(_inner) => {
@@ -264,7 +276,9 @@ impl CreateEndpointError {
             Self::AccessDeniedException(e) => e.meta(),
             Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
+            Self::OutpostOfflineException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -281,9 +295,17 @@ impl CreateEndpointError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
     }
+    /// Returns `true` if the error kind is `CreateEndpointError::OutpostOfflineException`.
+    pub fn is_outpost_offline_exception(&self) -> bool {
+        matches!(self, Self::OutpostOfflineException(_))
+    }
     /// Returns `true` if the error kind is `CreateEndpointError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `CreateEndpointError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `CreateEndpointError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -296,7 +318,9 @@ impl std::error::Error for CreateEndpointError {
             Self::AccessDeniedException(_inner) => Some(_inner),
             Self::ConflictException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
+            Self::OutpostOfflineException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
+            Self::ThrottlingException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }

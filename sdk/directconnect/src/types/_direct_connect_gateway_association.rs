@@ -16,6 +16,7 @@ pub struct DirectConnectGatewayAssociation {
     /// <li> <p> <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p> </li>
     /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
     /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
+    /// <li> <p> <code>updating</code>: The CIDR blocks for the virtual private gateway or transit gateway are currently being updated. This could be new CIDR blocks added or current CIDR blocks removed.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub association_state: std::option::Option<crate::types::DirectConnectGatewayAssociationState>,
@@ -57,6 +58,7 @@ impl DirectConnectGatewayAssociation {
     /// <li> <p> <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p> </li>
     /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
     /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
+    /// <li> <p> <code>updating</code>: The CIDR blocks for the virtual private gateway or transit gateway are currently being updated. This could be new CIDR blocks added or current CIDR blocks removed.</p> </li>
     /// </ul>
     pub fn association_state(
         &self,
@@ -154,6 +156,7 @@ impl DirectConnectGatewayAssociationBuilder {
     /// <li> <p> <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p> </li>
     /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
     /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
+    /// <li> <p> <code>updating</code>: The CIDR blocks for the virtual private gateway or transit gateway are currently being updated. This could be new CIDR blocks added or current CIDR blocks removed.</p> </li>
     /// </ul>
     pub fn association_state(
         mut self,
@@ -168,6 +171,7 @@ impl DirectConnectGatewayAssociationBuilder {
     /// <li> <p> <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p> </li>
     /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
     /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
+    /// <li> <p> <code>updating</code>: The CIDR blocks for the virtual private gateway or transit gateway are currently being updated. This could be new CIDR blocks added or current CIDR blocks removed.</p> </li>
     /// </ul>
     pub fn set_association_state(
         mut self,

@@ -7,11 +7,20 @@ pub mod create_media_capture_pipeline;
 /// Types for the `CreateMediaConcatenationPipeline` operation.
 pub mod create_media_concatenation_pipeline;
 
+/// Types for the `CreateMediaInsightsPipeline` operation.
+pub mod create_media_insights_pipeline;
+
+/// Types for the `CreateMediaInsightsPipelineConfiguration` operation.
+pub mod create_media_insights_pipeline_configuration;
+
 /// Types for the `CreateMediaLiveConnectorPipeline` operation.
 pub mod create_media_live_connector_pipeline;
 
 /// Types for the `DeleteMediaCapturePipeline` operation.
 pub mod delete_media_capture_pipeline;
+
+/// Types for the `DeleteMediaInsightsPipelineConfiguration` operation.
+pub mod delete_media_insights_pipeline_configuration;
 
 /// Types for the `DeleteMediaPipeline` operation.
 pub mod delete_media_pipeline;
@@ -19,11 +28,17 @@ pub mod delete_media_pipeline;
 /// Types for the `GetMediaCapturePipeline` operation.
 pub mod get_media_capture_pipeline;
 
+/// Types for the `GetMediaInsightsPipelineConfiguration` operation.
+pub mod get_media_insights_pipeline_configuration;
+
 /// Types for the `GetMediaPipeline` operation.
 pub mod get_media_pipeline;
 
 /// Types for the `ListMediaCapturePipelines` operation.
 pub mod list_media_capture_pipelines;
+
+/// Types for the `ListMediaInsightsPipelineConfigurations` operation.
+pub mod list_media_insights_pipeline_configurations;
 
 /// Types for the `ListMediaPipelines` operation.
 pub mod list_media_pipelines;
@@ -36,3 +51,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateMediaInsightsPipelineConfiguration` operation.
+pub mod update_media_insights_pipeline_configuration;
+
+/// Types for the `UpdateMediaInsightsPipelineStatus` operation.
+pub mod update_media_insights_pipeline_status;

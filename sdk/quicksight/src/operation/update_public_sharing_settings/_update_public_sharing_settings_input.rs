@@ -8,7 +8,7 @@ pub struct UpdatePublicSharingSettingsInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
     #[doc(hidden)]
-    pub public_sharing_enabled: bool,
+    pub public_sharing_enabled: std::option::Option<bool>,
 }
 impl UpdatePublicSharingSettingsInput {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
@@ -16,7 +16,7 @@ impl UpdatePublicSharingSettingsInput {
         self.aws_account_id.as_deref()
     }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
-    pub fn public_sharing_enabled(&self) -> bool {
+    pub fn public_sharing_enabled(&self) -> std::option::Option<bool> {
         self.public_sharing_enabled
     }
 }
@@ -65,7 +65,7 @@ impl UpdatePublicSharingSettingsInputBuilder {
         Ok(
             crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput {
                 aws_account_id: self.aws_account_id,
-                public_sharing_enabled: self.public_sharing_enabled.unwrap_or_default(),
+                public_sharing_enabled: self.public_sharing_enabled,
             },
         )
     }

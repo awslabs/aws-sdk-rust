@@ -15,6 +15,8 @@ pub use crate::types::_data_point::DataPoint;
 
 pub use crate::types::_response_resource_metric_key::ResponseResourceMetricKey;
 
+pub use crate::types::_period_alignment::PeriodAlignment;
+
 pub use crate::types::_metric_query::MetricQuery;
 
 pub use crate::types::_dimension_group::DimensionGroup;
@@ -54,6 +56,8 @@ mod _metric_dimension_groups;
 mod _metric_key_data_points;
 
 mod _metric_query;
+
+mod _period_alignment;
 
 mod _response_partition_key;
 

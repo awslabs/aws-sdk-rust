@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChatContactInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -24,18 +24,26 @@ pub struct StartChatContactInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
     #[doc(hidden)]
     pub chat_duration_in_minutes: std::option::Option<i32>,
-    /// <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
+    /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>. </p>
+    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>. </p> <note>
+    /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
+    /// </note>
     #[doc(hidden)]
     pub supported_messaging_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
     #[doc(hidden)]
     pub persistent_chat: std::option::Option<crate::types::PersistentChat>,
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
+    /// <p>You cannot provide data for both RelatedContactId and PersistentChat. </p>
+    /// </note>
+    #[doc(hidden)]
+    pub related_contact_id: std::option::Option<std::string::String>,
 }
 impl StartChatContactInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -64,17 +72,26 @@ impl StartChatContactInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
     pub fn chat_duration_in_minutes(&self) -> std::option::Option<i32> {
         self.chat_duration_in_minutes
     }
-    /// <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
+    /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>. </p>
+    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>. </p> <note>
+    /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
+    /// </note>
     pub fn supported_messaging_content_types(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_messaging_content_types.as_deref()
     }
     /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
     pub fn persistent_chat(&self) -> std::option::Option<&crate::types::PersistentChat> {
         self.persistent_chat.as_ref()
+    }
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
+    /// <p>You cannot provide data for both RelatedContactId and PersistentChat. </p>
+    /// </note>
+    pub fn related_contact_id(&self) -> std::option::Option<&str> {
+        self.related_contact_id.as_deref()
     }
 }
 impl StartChatContactInput {
@@ -100,14 +117,15 @@ pub struct StartChatContactInputBuilder {
     pub(crate) supported_messaging_content_types:
         std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) persistent_chat: std::option::Option<crate::types::PersistentChat>,
+    pub(crate) related_contact_id: std::option::Option<std::string::String>,
 }
 impl StartChatContactInputBuilder {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.instance_id = input;
         self
@@ -187,12 +205,12 @@ impl StartChatContactInputBuilder {
         self.client_token = input;
         self
     }
-    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
     pub fn chat_duration_in_minutes(mut self, input: i32) -> Self {
         self.chat_duration_in_minutes = Some(input);
         self
     }
-    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
     pub fn set_chat_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.chat_duration_in_minutes = input;
         self
@@ -201,7 +219,10 @@ impl StartChatContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_messaging_content_types`](Self::set_supported_messaging_content_types).
     ///
-    /// <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
+    /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>. </p>
+    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>. </p> <note>
+    /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
+    /// </note>
     pub fn supported_messaging_content_types(
         mut self,
         input: impl Into<std::string::String>,
@@ -211,7 +232,10 @@ impl StartChatContactInputBuilder {
         self.supported_messaging_content_types = Some(v);
         self
     }
-    /// <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
+    /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>. </p>
+    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>. </p> <note>
+    /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
+    /// </note>
     pub fn set_supported_messaging_content_types(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -232,6 +256,23 @@ impl StartChatContactInputBuilder {
         self.persistent_chat = input;
         self
     }
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
+    /// <p>You cannot provide data for both RelatedContactId and PersistentChat. </p>
+    /// </note>
+    pub fn related_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.related_contact_id = Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
+    /// <p>You cannot provide data for both RelatedContactId and PersistentChat. </p>
+    /// </note>
+    pub fn set_related_contact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.related_contact_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartChatContactInput`](crate::operation::start_chat_contact::StartChatContactInput).
     pub fn build(
         self,
@@ -250,6 +291,7 @@ impl StartChatContactInputBuilder {
                 chat_duration_in_minutes: self.chat_duration_in_minutes,
                 supported_messaging_content_types: self.supported_messaging_content_types,
                 persistent_chat: self.persistent_chat,
+                related_contact_id: self.related_contact_id,
             },
         )
     }

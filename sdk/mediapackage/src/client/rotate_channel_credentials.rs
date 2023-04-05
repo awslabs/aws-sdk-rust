@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`id(impl Into<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::set_id): The ID of the channel to update.
     /// - On success, responds with [`RotateChannelCredentialsOutput`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
+    ///   - [`created_at(Option<String>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::created_at): The date and time the Channel was created.
     ///   - [`description(Option<String>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::description): A short text description of the Channel.
     ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::egress_access_logs): Configure egress access logging.
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.

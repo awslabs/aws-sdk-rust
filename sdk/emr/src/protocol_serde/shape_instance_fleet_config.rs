@@ -42,5 +42,11 @@ pub fn ser_instance_fleet_config(
         crate::protocol_serde::shape_instance_fleet_provisioning_specifications::ser_instance_fleet_provisioning_specifications(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.resize_specifications {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("ResizeSpecifications").start_object();
+        crate::protocol_serde::shape_instance_fleet_resizing_specifications::ser_instance_fleet_resizing_specifications(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

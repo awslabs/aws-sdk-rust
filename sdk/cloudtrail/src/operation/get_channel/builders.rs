@@ -5,7 +5,7 @@ pub use crate::operation::get_channel::_get_channel_input::GetChannelInputBuilde
 
 /// Fluent builder constructing a request to `GetChannel`.
 ///
-/// <p> Returns information about a specific channel. Amazon Web Services services create service-linked channels to get information about CloudTrail events on your behalf. For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing service-linked channels for CloudTrail by using the CLI</a>. </p>
+/// <p> Returns information about a specific channel. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetChannelFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

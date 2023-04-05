@@ -26,7 +26,7 @@ pub struct RecordingGroup {
     pub include_global_resource_types: bool,
     /// <p>A comma-separated list that specifies the types of Amazon Web Services resources for which Config records configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
     /// <p>To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.</p>
-    /// <p>If you set this option to <code>false</code>, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
+    /// <p>If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with values, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
     /// <p>For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
     #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<crate::types::ResourceType>>,
@@ -47,7 +47,7 @@ impl RecordingGroup {
     }
     /// <p>A comma-separated list that specifies the types of Amazon Web Services resources for which Config records configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
     /// <p>To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.</p>
-    /// <p>If you set this option to <code>false</code>, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
+    /// <p>If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with values, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
     /// <p>For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
     pub fn resource_types(&self) -> std::option::Option<&[crate::types::ResourceType]> {
         self.resource_types.as_deref()
@@ -105,7 +105,7 @@ impl RecordingGroupBuilder {
     ///
     /// <p>A comma-separated list that specifies the types of Amazon Web Services resources for which Config records configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
     /// <p>To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.</p>
-    /// <p>If you set this option to <code>false</code>, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
+    /// <p>If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with values, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
     /// <p>For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
     pub fn resource_types(mut self, input: crate::types::ResourceType) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
@@ -115,7 +115,7 @@ impl RecordingGroupBuilder {
     }
     /// <p>A comma-separated list that specifies the types of Amazon Web Services resources for which Config records configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
     /// <p>To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.</p>
-    /// <p>If you set this option to <code>false</code>, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
+    /// <p>If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with values, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
     /// <p>For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
     pub fn set_resource_types(
         mut self,

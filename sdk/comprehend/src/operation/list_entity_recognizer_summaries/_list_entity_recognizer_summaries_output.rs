@@ -7,7 +7,7 @@ pub struct ListEntityRecognizerSummariesOutput {
     #[doc(hidden)]
     pub entity_recognizer_summaries_list:
         std::option::Option<std::vec::Vec<crate::types::EntityRecognizerSummary>>,
-    /// <p>The list entity recognizer summaries.</p>
+    /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -19,7 +19,7 @@ impl ListEntityRecognizerSummariesOutput {
     ) -> std::option::Option<&[crate::types::EntityRecognizerSummary]> {
         self.entity_recognizer_summaries_list.as_deref()
     }
-    /// <p>The list entity recognizer summaries.</p>
+    /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -68,12 +68,12 @@ impl ListEntityRecognizerSummariesOutputBuilder {
         self.entity_recognizer_summaries_list = input;
         self
     }
-    /// <p>The list entity recognizer summaries.</p>
+    /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The list entity recognizer summaries.</p>
+    /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

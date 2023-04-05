@@ -10,6 +10,9 @@ pub struct ListBillingGroupsFilter {
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<std::string::String>,
+    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    #[doc(hidden)]
+    pub statuses: std::option::Option<std::vec::Vec<crate::types::BillingGroupStatus>>,
 }
 impl ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
@@ -19,6 +22,10 @@ impl ListBillingGroupsFilter {
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn pricing_plan(&self) -> std::option::Option<&str> {
         self.pricing_plan.as_deref()
+    }
+    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    pub fn statuses(&self) -> std::option::Option<&[crate::types::BillingGroupStatus]> {
+        self.statuses.as_deref()
     }
 }
 impl ListBillingGroupsFilter {
@@ -34,6 +41,7 @@ impl ListBillingGroupsFilter {
 pub struct ListBillingGroupsFilterBuilder {
     pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) pricing_plan: std::option::Option<std::string::String>,
+    pub(crate) statuses: std::option::Option<std::vec::Vec<crate::types::BillingGroupStatus>>,
 }
 impl ListBillingGroupsFilterBuilder {
     /// Appends an item to `arns`.
@@ -65,11 +73,31 @@ impl ListBillingGroupsFilterBuilder {
         self.pricing_plan = input;
         self
     }
+    /// Appends an item to `statuses`.
+    ///
+    /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
+    ///
+    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    pub fn statuses(mut self, input: crate::types::BillingGroupStatus) -> Self {
+        let mut v = self.statuses.unwrap_or_default();
+        v.push(input);
+        self.statuses = Some(v);
+        self
+    }
+    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    pub fn set_statuses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BillingGroupStatus>>,
+    ) -> Self {
+        self.statuses = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
     pub fn build(self) -> crate::types::ListBillingGroupsFilter {
         crate::types::ListBillingGroupsFilter {
             arns: self.arns,
             pricing_plan: self.pricing_plan,
+            statuses: self.statuses,
         }
     }
 }

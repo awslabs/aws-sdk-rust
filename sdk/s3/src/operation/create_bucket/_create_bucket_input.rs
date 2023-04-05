@@ -30,7 +30,7 @@ pub struct CreateBucketInput {
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
     #[doc(hidden)]
-    pub object_lock_enabled_for_bucket: bool,
+    pub object_lock_enabled_for_bucket: std::option::Option<bool>,
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
     /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
@@ -75,7 +75,7 @@ impl CreateBucketInput {
         self.grant_write_acp.as_deref()
     }
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-    pub fn object_lock_enabled_for_bucket(&self) -> bool {
+    pub fn object_lock_enabled_for_bucket(&self) -> std::option::Option<bool> {
         self.object_lock_enabled_for_bucket
     }
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
@@ -246,7 +246,7 @@ impl CreateBucketInputBuilder {
             grant_read_acp: self.grant_read_acp,
             grant_write: self.grant_write,
             grant_write_acp: self.grant_write_acp,
-            object_lock_enabled_for_bucket: self.object_lock_enabled_for_bucket.unwrap_or_default(),
+            object_lock_enabled_for_bucket: self.object_lock_enabled_for_bucket,
             object_ownership: self.object_ownership,
         })
     }

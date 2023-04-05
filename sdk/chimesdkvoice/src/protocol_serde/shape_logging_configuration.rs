@@ -30,6 +30,13 @@ where
                                     )?,
                                 );
                             }
+                            "EnableMediaMetricLogs" => {
+                                builder = builder.set_enable_media_metric_logs(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -59,6 +66,9 @@ pub fn ser_logging_configuration(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.enable_sip_logs {
         object.key("EnableSIPLogs").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.enable_media_metric_logs {
+        object.key("EnableMediaMetricLogs").boolean(*var_2);
     }
     Ok(())
 }

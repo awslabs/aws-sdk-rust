@@ -123,7 +123,7 @@ impl GetSessionEmbedUrlFluentBuilder {
     /// <ol>
     /// <li> <p>Active Directory (AD) users or group members</p> </li>
     /// <li> <p>Invited nonfederated users</p> </li>
-    /// <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
     /// </ol>
     /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,7 +134,7 @@ impl GetSessionEmbedUrlFluentBuilder {
     /// <ol>
     /// <li> <p>Active Directory (AD) users or group members</p> </li>
     /// <li> <p>Invited nonfederated users</p> </li>
-    /// <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
     /// </ol>
     /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {

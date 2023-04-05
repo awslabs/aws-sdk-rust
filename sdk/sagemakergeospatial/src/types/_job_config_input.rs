@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum JobConfigInput {
-    /// <p></p>
+    /// <p>An object containing information about the job configuration for BandMath.</p>
     BandMathConfig(crate::types::BandMathConfigInput),
     /// <p>An object containing information about the job configuration for cloud masking.</p>
     CloudMaskingConfig(crate::types::CloudMaskingConfigInput),
@@ -16,7 +16,7 @@ pub enum JobConfigInput {
     LandCoverSegmentationConfig(crate::types::LandCoverSegmentationConfigInput),
     /// <p>An object containing information about the job configuration for resampling.</p>
     ResamplingConfig(crate::types::ResamplingConfigInput),
-    /// <p></p>
+    /// <p>An object containing information about the job configuration for a Stacking Earth Observation job.</p>
     StackConfig(crate::types::StackConfigInput),
     /// <p>An object containing information about the job configuration for temporal statistics.</p>
     TemporalStatisticsConfig(crate::types::TemporalStatisticsConfigInput),

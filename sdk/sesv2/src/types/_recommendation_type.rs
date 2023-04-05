@@ -12,6 +12,7 @@
 /// ```text
 /// # let recommendationtype = unimplemented!();
 /// match recommendationtype {
+///     RecommendationType::Bimi => { /* ... */ },
 ///     RecommendationType::Dkim => { /* ... */ },
 ///     RecommendationType::Dmarc => { /* ... */ },
 ///     RecommendationType::Spf => { /* ... */ },
@@ -49,6 +50,8 @@
 )]
 pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
+    Bimi,
+    #[allow(missing_docs)] // documentation missing in model
     Dkim,
     #[allow(missing_docs)] // documentation missing in model
     Dmarc,
@@ -60,6 +63,7 @@ pub enum RecommendationType {
 impl std::convert::From<&str> for RecommendationType {
     fn from(s: &str) -> Self {
         match s {
+            "BIMI" => RecommendationType::Bimi,
             "DKIM" => RecommendationType::Dkim,
             "DMARC" => RecommendationType::Dmarc,
             "SPF" => RecommendationType::Spf,
@@ -80,6 +84,7 @@ impl RecommendationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RecommendationType::Bimi => "BIMI",
             RecommendationType::Dkim => "DKIM",
             RecommendationType::Dmarc => "DMARC",
             RecommendationType::Spf => "SPF",
@@ -88,7 +93,7 @@ impl RecommendationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DKIM", "DMARC", "SPF"]
+        &["BIMI", "DKIM", "DMARC", "SPF"]
     }
 }
 impl AsRef<str> for RecommendationType {

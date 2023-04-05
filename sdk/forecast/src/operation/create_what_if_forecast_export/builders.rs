@@ -17,7 +17,7 @@ pub use crate::operation::create_what_if_forecast_export::_create_what_if_foreca
 /// <p>The <exporttimestamp>
 /// component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
 /// </exporttimestamp></p>
-/// <p>You must specify a <code>DataDestination</code> object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p>
+/// <p>You must specify a <code>DataDestination</code> object that includes an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p>
 /// <p>For more information, see <code>howitworks-forecast</code>.</p>
 /// <p>To get a list of all your what-if forecast export jobs, use the <code>ListWhatIfForecastExports</code> operation.</p> <note>
 /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your Amazon S3 bucket. To get the status, use the <code>DescribeWhatIfForecastExport</code> operation.</p>
@@ -115,14 +115,14 @@ impl CreateWhatIfForecastExportFluentBuilder {
         self.inner = self.inner.set_what_if_forecast_arns(input);
         self
     }
-    /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
-    /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.inner = self.inner.destination(input);
         self
     }
-    /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
-    /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub fn set_destination(
         mut self,
         input: std::option::Option<crate::types::DataDestination>,

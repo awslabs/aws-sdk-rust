@@ -13,7 +13,9 @@ pub struct GetParametersForImportInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The algorithm you will use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the Key Material</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The algorithm you will use to encrypt the key material before using the <code>ImportKeyMaterial</code> operation to import it. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the key material</a> in the <i>Key Management Service Developer Guide</i>.</p> <important>
+    /// <p>The <code>RSAES_PKCS1_V1_5</code> wrapping algorithm is deprecated. We recommend that you begin using a different wrapping algorithm immediately. KMS will end support for <code>RSAES_PKCS1_V1_5</code> by October 1, 2023 pursuant to <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">cryptographic key management guidance</a> from the National Institute of Standards and Technology (NIST).</p>
+    /// </important>
     #[doc(hidden)]
     pub wrapping_algorithm: std::option::Option<crate::types::AlgorithmSpec>,
     /// <p>The type of wrapping key (public key) to return in the response. Only 2048-bit RSA public keys are supported.</p>
@@ -32,7 +34,9 @@ impl GetParametersForImportInput {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>The algorithm you will use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the Key Material</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The algorithm you will use to encrypt the key material before using the <code>ImportKeyMaterial</code> operation to import it. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the key material</a> in the <i>Key Management Service Developer Guide</i>.</p> <important>
+    /// <p>The <code>RSAES_PKCS1_V1_5</code> wrapping algorithm is deprecated. We recommend that you begin using a different wrapping algorithm immediately. KMS will end support for <code>RSAES_PKCS1_V1_5</code> by October 1, 2023 pursuant to <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">cryptographic key management guidance</a> from the National Institute of Standards and Technology (NIST).</p>
+    /// </important>
     pub fn wrapping_algorithm(&self) -> std::option::Option<&crate::types::AlgorithmSpec> {
         self.wrapping_algorithm.as_ref()
     }
@@ -83,12 +87,16 @@ impl GetParametersForImportInputBuilder {
         self.key_id = input;
         self
     }
-    /// <p>The algorithm you will use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the Key Material</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The algorithm you will use to encrypt the key material before using the <code>ImportKeyMaterial</code> operation to import it. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the key material</a> in the <i>Key Management Service Developer Guide</i>.</p> <important>
+    /// <p>The <code>RSAES_PKCS1_V1_5</code> wrapping algorithm is deprecated. We recommend that you begin using a different wrapping algorithm immediately. KMS will end support for <code>RSAES_PKCS1_V1_5</code> by October 1, 2023 pursuant to <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">cryptographic key management guidance</a> from the National Institute of Standards and Technology (NIST).</p>
+    /// </important>
     pub fn wrapping_algorithm(mut self, input: crate::types::AlgorithmSpec) -> Self {
         self.wrapping_algorithm = Some(input);
         self
     }
-    /// <p>The algorithm you will use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the Key Material</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The algorithm you will use to encrypt the key material before using the <code>ImportKeyMaterial</code> operation to import it. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the key material</a> in the <i>Key Management Service Developer Guide</i>.</p> <important>
+    /// <p>The <code>RSAES_PKCS1_V1_5</code> wrapping algorithm is deprecated. We recommend that you begin using a different wrapping algorithm immediately. KMS will end support for <code>RSAES_PKCS1_V1_5</code> by October 1, 2023 pursuant to <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">cryptographic key management guidance</a> from the National Institute of Standards and Technology (NIST).</p>
+    /// </important>
     pub fn set_wrapping_algorithm(
         mut self,
         input: std::option::Option<crate::types::AlgorithmSpec>,

@@ -148,7 +148,7 @@ pub type RegisterOrganizationDelegatedAdminErrorKind = RegisterOrganizationDeleg
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterOrganizationDelegatedAdminError {
-    /// <p>This exception is thrown when when the specified account is not found or not part of an organization.</p>
+    /// <p>This exception is thrown when the specified account is not found or not part of an organization.</p>
     AccountNotFoundException(crate::types::error::AccountNotFoundException),
     /// <p>This exception is thrown when the account is already registered as the CloudTrail delegated administrator.</p>
     AccountRegisteredException(crate::types::error::AccountRegisteredException),
@@ -158,6 +158,8 @@ pub enum RegisterOrganizationDelegatedAdminError {
     ),
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::types::error::CloudTrailAccessNotEnabledException),
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>This exception is thrown when the maximum number of CloudTrail delegated administrators is reached.</p>
     DelegatedAdminAccountLimitExceededException(
         crate::types::error::DelegatedAdminAccountLimitExceededException,
@@ -204,6 +206,7 @@ impl std::fmt::Display for RegisterOrganizationDelegatedAdminError {
             Self::AccountRegisteredException(_inner) => _inner.fmt(f),
             Self::CannotDelegateManagementAccountException(_inner) => _inner.fmt(f),
             Self::CloudTrailAccessNotEnabledException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::DelegatedAdminAccountLimitExceededException(_inner) => _inner.fmt(f),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -231,6 +234,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::CloudTrailAccessNotEnabledException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ConflictException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::DelegatedAdminAccountLimitExceededException(_inner) => {
@@ -306,6 +312,7 @@ impl RegisterOrganizationDelegatedAdminError {
             Self::AccountRegisteredException(e) => e.meta(),
             Self::CannotDelegateManagementAccountException(e) => e.meta(),
             Self::CloudTrailAccessNotEnabledException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::DelegatedAdminAccountLimitExceededException(e) => e.meta(),
             Self::InsufficientDependencyServiceAccessPermissionException(e) => e.meta(),
             Self::InvalidParameterException(e) => e.meta(),
@@ -332,6 +339,10 @@ impl RegisterOrganizationDelegatedAdminError {
     /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminError::CloudTrailAccessNotEnabledException`.
     pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
         matches!(self, Self::CloudTrailAccessNotEnabledException(_))
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminError::DelegatedAdminAccountLimitExceededException`.
     pub fn is_delegated_admin_account_limit_exceeded_exception(&self) -> bool {
@@ -376,6 +387,7 @@ impl std::error::Error for RegisterOrganizationDelegatedAdminError {
             Self::AccountRegisteredException(_inner) => Some(_inner),
             Self::CannotDelegateManagementAccountException(_inner) => Some(_inner),
             Self::CloudTrailAccessNotEnabledException(_inner) => Some(_inner),
+            Self::ConflictException(_inner) => Some(_inner),
             Self::DelegatedAdminAccountLimitExceededException(_inner) => Some(_inner),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => Some(_inner),
             Self::InvalidParameterException(_inner) => Some(_inner),

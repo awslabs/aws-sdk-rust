@@ -49,6 +49,11 @@ pub fn ser_work_group_configuration(
         crate::protocol_serde::shape_customer_content_encryption_configuration::ser_customer_content_encryption_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.enable_minimum_encryption_configuration {
+        object
+            .key("EnableMinimumEncryptionConfiguration")
+            .boolean(*var_13);
+    }
     Ok(())
 }
 
@@ -139,6 +144,13 @@ where
                             "CustomerContentEncryptionConfiguration" => {
                                 builder = builder.set_customer_content_encryption_configuration(
                                     crate::protocol_serde::shape_customer_content_encryption_configuration::de_customer_content_encryption_configuration(tokens)?
+                                );
+                            }
+                            "EnableMinimumEncryptionConfiguration" => {
+                                builder = builder.set_enable_minimum_encryption_configuration(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

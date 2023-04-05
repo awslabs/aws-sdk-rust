@@ -29,7 +29,7 @@ pub struct Evidence {
     #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p> The unique identifier for the IAM user or role that's associated with the evidence. </p>
+    /// <p> The unique identifier for the user or role that's associated with the evidence. </p>
     #[doc(hidden)]
     pub iam_id: std::option::Option<std::string::String>,
     /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
@@ -92,7 +92,7 @@ impl Evidence {
     {
         self.attributes.as_ref()
     }
-    /// <p> The unique identifier for the IAM user or role that's associated with the evidence. </p>
+    /// <p> The unique identifier for the user or role that's associated with the evidence. </p>
     pub fn iam_id(&self) -> std::option::Option<&str> {
         self.iam_id.as_deref()
     }
@@ -262,12 +262,12 @@ impl EvidenceBuilder {
         self.attributes = input;
         self
     }
-    /// <p> The unique identifier for the IAM user or role that's associated with the evidence. </p>
+    /// <p> The unique identifier for the user or role that's associated with the evidence. </p>
     pub fn iam_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.iam_id = Some(input.into());
         self
     }
-    /// <p> The unique identifier for the IAM user or role that's associated with the evidence. </p>
+    /// <p> The unique identifier for the user or role that's associated with the evidence. </p>
     pub fn set_iam_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.iam_id = input;
         self

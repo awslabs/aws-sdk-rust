@@ -62,6 +62,20 @@ pub fn ser_create_network_insights_path_input_input(
     if let Some(var_21) = &input.client_token {
         scope_20.string(var_21);
     }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("FilterAtSource");
+    if let Some(var_23) = &input.filter_at_source {
+        crate::protocol_serde::shape_path_request_filter::ser_path_request_filter(
+            scope_22, var_23,
+        )?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("FilterAtDestination");
+    if let Some(var_25) = &input.filter_at_destination {
+        crate::protocol_serde::shape_path_request_filter::ser_path_request_filter(
+            scope_24, var_25,
+        )?;
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

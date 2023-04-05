@@ -51,6 +51,12 @@ pub use crate::types::_provisioning_preferences::ProvisioningPreferencesBuilder;
 
 pub use crate::types::_provisioning_parameter::ProvisioningParameterBuilder;
 
+pub use crate::types::_record_output::RecordOutputBuilder;
+
+pub use crate::types::_engine_workflow_resource_identifier::EngineWorkflowResourceIdentifierBuilder;
+
+pub use crate::types::_unique_tag_resource_identifier::UniqueTagResourceIdentifierBuilder;
+
 pub use crate::types::_list_tag_options_filters::ListTagOptionsFiltersBuilder;
 
 pub use crate::types::_stack_instance::StackInstanceBuilder;
@@ -72,8 +78,6 @@ pub use crate::types::_launch_path_summary::LaunchPathSummaryBuilder;
 pub use crate::types::_constraint_summary::ConstraintSummaryBuilder;
 
 pub use crate::types::_budget_detail::BudgetDetailBuilder;
-
-pub use crate::types::_record_output::RecordOutputBuilder;
 
 pub use crate::types::_execution_parameter::ExecutionParameterBuilder;
 

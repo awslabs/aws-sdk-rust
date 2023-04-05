@@ -3,7 +3,8 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceProfileArtifactsOutput {
-    /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
+    /// <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
+    /// <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
     #[doc(hidden)]
     pub artifacts: std::option::Option<std::vec::Vec<crate::types::ResourceProfileArtifact>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -12,7 +13,8 @@ pub struct ListResourceProfileArtifactsOutput {
     _request_id: Option<String>,
 }
 impl ListResourceProfileArtifactsOutput {
-    /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
+    /// <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
+    /// <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
     pub fn artifacts(&self) -> std::option::Option<&[crate::types::ResourceProfileArtifact]> {
         self.artifacts.as_deref()
     }
@@ -46,14 +48,16 @@ impl ListResourceProfileArtifactsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_artifacts`](Self::set_artifacts).
     ///
-    /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
+    /// <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
+    /// <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
     pub fn artifacts(mut self, input: crate::types::ResourceProfileArtifact) -> Self {
         let mut v = self.artifacts.unwrap_or_default();
         v.push(input);
         self.artifacts = Some(v);
         self
     }
-    /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
+    /// <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
+    /// <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
     pub fn set_artifacts(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ResourceProfileArtifact>>,

@@ -14,6 +14,8 @@ pub(crate) mod shape_associate_personas_to_entities;
 
 pub(crate) mod shape_batch_delete_document;
 
+pub(crate) mod shape_batch_delete_featured_results_set;
+
 pub(crate) mod shape_batch_get_document_status;
 
 pub(crate) mod shape_batch_put_document;
@@ -27,6 +29,8 @@ pub(crate) mod shape_create_data_source;
 pub(crate) mod shape_create_experience;
 
 pub(crate) mod shape_create_faq;
+
+pub(crate) mod shape_create_featured_results_set;
 
 pub(crate) mod shape_create_index;
 
@@ -57,6 +61,8 @@ pub(crate) mod shape_describe_data_source;
 pub(crate) mod shape_describe_experience;
 
 pub(crate) mod shape_describe_faq;
+
+pub(crate) mod shape_describe_featured_results_set;
 
 pub(crate) mod shape_describe_index;
 
@@ -90,6 +96,8 @@ pub(crate) mod shape_list_experiences;
 
 pub(crate) mod shape_list_faqs;
 
+pub(crate) mod shape_list_featured_results_sets;
+
 pub(crate) mod shape_list_groups_older_than_ordering_id;
 
 pub(crate) mod shape_list_indices;
@@ -120,6 +128,8 @@ pub(crate) mod shape_update_data_source;
 
 pub(crate) mod shape_update_experience;
 
+pub(crate) mod shape_update_featured_results_set;
+
 pub(crate) mod shape_update_index;
 
 pub(crate) mod shape_update_query_suggestions_block_list;
@@ -144,6 +154,8 @@ pub(crate) mod shape_associate_personas_to_entities_input;
 
 pub(crate) mod shape_batch_delete_document_input;
 
+pub(crate) mod shape_batch_delete_featured_results_set_input;
+
 pub(crate) mod shape_batch_get_document_status_input;
 
 pub(crate) mod shape_batch_put_document_input;
@@ -159,6 +171,8 @@ pub(crate) mod shape_create_data_source_input;
 pub(crate) mod shape_create_experience_input;
 
 pub(crate) mod shape_create_faq_input;
+
+pub(crate) mod shape_create_featured_results_set_input;
 
 pub(crate) mod shape_create_index_input;
 
@@ -190,6 +204,8 @@ pub(crate) mod shape_describe_experience_input;
 
 pub(crate) mod shape_describe_faq_input;
 
+pub(crate) mod shape_describe_featured_results_set_input;
+
 pub(crate) mod shape_describe_index_input;
 
 pub(crate) mod shape_describe_principal_mapping_input;
@@ -203,6 +219,8 @@ pub(crate) mod shape_describe_thesaurus_input;
 pub(crate) mod shape_disassociate_entities_from_experience_input;
 
 pub(crate) mod shape_disassociate_personas_from_entities_input;
+
+pub(crate) mod shape_featured_results_conflict_exception;
 
 pub(crate) mod shape_get_query_suggestions_input;
 
@@ -225,6 +243,8 @@ pub(crate) mod shape_list_experience_entities_input;
 pub(crate) mod shape_list_experiences_input;
 
 pub(crate) mod shape_list_faqs_input;
+
+pub(crate) mod shape_list_featured_results_sets_input;
 
 pub(crate) mod shape_list_groups_older_than_ordering_id_input;
 
@@ -268,6 +288,8 @@ pub(crate) mod shape_update_data_source_input;
 
 pub(crate) mod shape_update_experience_input;
 
+pub(crate) mod shape_update_featured_results_set_input;
+
 pub(crate) mod shape_update_index_input;
 
 pub(crate) mod shape_update_query_suggestions_block_list_input;
@@ -286,6 +308,8 @@ pub(crate) mod shape_attribute_filter;
 
 pub(crate) mod shape_batch_delete_document_response_failed_documents;
 
+pub(crate) mod shape_batch_delete_featured_results_set_errors;
+
 pub(crate) mod shape_batch_get_document_status_response_errors;
 
 pub(crate) mod shape_batch_put_document_response_failed_documents;
@@ -293,6 +317,8 @@ pub(crate) mod shape_batch_put_document_response_failed_documents;
 pub(crate) mod shape_capacity_units_configuration;
 
 pub(crate) mod shape_click_feedback;
+
+pub(crate) mod shape_conflicting_items;
 
 pub(crate) mod shape_custom_document_enrichment_configuration;
 
@@ -338,6 +364,18 @@ pub(crate) mod shape_failed_entity_list;
 
 pub(crate) mod shape_faq_summary_items;
 
+pub(crate) mod shape_featured_document;
+
+pub(crate) mod shape_featured_document_missing_list;
+
+pub(crate) mod shape_featured_document_with_metadata_list;
+
+pub(crate) mod shape_featured_results_item_list;
+
+pub(crate) mod shape_featured_results_set;
+
+pub(crate) mod shape_featured_results_set_summary_items;
+
 pub(crate) mod shape_group_members;
 
 pub(crate) mod shape_group_ordering_id_summaries;
@@ -361,6 +399,8 @@ pub(crate) mod shape_principal_list;
 pub(crate) mod shape_query_result_item_list;
 
 pub(crate) mod shape_query_suggestions_block_list_summary_items;
+
+pub(crate) mod shape_query_text_list;
 
 pub(crate) mod shape_relevance_feedback;
 
@@ -404,11 +444,15 @@ pub(crate) mod shape_alfresco_configuration;
 
 pub(crate) mod shape_batch_delete_document_response_failed_document;
 
+pub(crate) mod shape_batch_delete_featured_results_set_error;
+
 pub(crate) mod shape_batch_get_document_status_response_error;
 
 pub(crate) mod shape_batch_put_document_response_failed_document;
 
 pub(crate) mod shape_box_configuration;
+
+pub(crate) mod shape_conflicting_item;
 
 pub(crate) mod shape_confluence_configuration;
 
@@ -437,6 +481,16 @@ pub(crate) mod shape_failed_entity;
 pub(crate) mod shape_faq_statistics;
 
 pub(crate) mod shape_faq_summary;
+
+pub(crate) mod shape_featured_document_list;
+
+pub(crate) mod shape_featured_document_missing;
+
+pub(crate) mod shape_featured_document_with_metadata;
+
+pub(crate) mod shape_featured_results_item;
+
+pub(crate) mod shape_featured_results_set_summary;
 
 pub(crate) mod shape_fsx_configuration;
 

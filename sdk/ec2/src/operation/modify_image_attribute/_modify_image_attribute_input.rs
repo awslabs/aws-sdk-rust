@@ -5,7 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyImageAttributeInput {
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     #[doc(hidden)]
     pub attribute: std::option::Option<std::string::String>,
     /// <p>A new description for the AMI.</p>
@@ -29,7 +29,7 @@ pub struct ModifyImageAttributeInput {
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
+    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,10 +41,15 @@ pub struct ModifyImageAttributeInput {
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     #[doc(hidden)]
     pub organizational_unit_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
+    /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub imds_support: std::option::Option<crate::types::AttributeValue>,
 }
 impl ModifyImageAttributeInput {
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub fn attribute(&self) -> std::option::Option<&str> {
         self.attribute.as_deref()
     }
@@ -78,7 +83,7 @@ impl ModifyImageAttributeInput {
     pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids.as_deref()
     }
-    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
+    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -93,6 +98,12 @@ impl ModifyImageAttributeInput {
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn organizational_unit_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_arns.as_deref()
+    }
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
+    /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
+    /// </important>
+    pub fn imds_support(&self) -> std::option::Option<&crate::types::AttributeValue> {
+        self.imds_support.as_ref()
     }
 }
 impl ModifyImageAttributeInput {
@@ -119,16 +130,17 @@ pub struct ModifyImageAttributeInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
     pub(crate) organization_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) organizational_unit_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) imds_support: std::option::Option<crate::types::AttributeValue>,
 }
 impl ModifyImageAttributeInputBuilder {
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
         self.attribute = Some(input.into());
         self
     }
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.attribute = input;
         self
@@ -239,12 +251,12 @@ impl ModifyImageAttributeInputBuilder {
         self.user_ids = input;
         self
     }
-    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
+    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
+    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.value = input;
         self
@@ -297,6 +309,23 @@ impl ModifyImageAttributeInputBuilder {
         self.organizational_unit_arns = input;
         self
     }
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
+    /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
+    /// </important>
+    pub fn imds_support(mut self, input: crate::types::AttributeValue) -> Self {
+        self.imds_support = Some(input);
+        self
+    }
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
+    /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
+    /// </important>
+    pub fn set_imds_support(
+        mut self,
+        input: std::option::Option<crate::types::AttributeValue>,
+    ) -> Self {
+        self.imds_support = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyImageAttributeInput`](crate::operation::modify_image_attribute::ModifyImageAttributeInput).
     pub fn build(
         self,
@@ -318,6 +347,7 @@ impl ModifyImageAttributeInputBuilder {
                 dry_run: self.dry_run,
                 organization_arns: self.organization_arns,
                 organizational_unit_arns: self.organizational_unit_arns,
+                imds_support: self.imds_support,
             },
         )
     }

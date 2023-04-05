@@ -10,8 +10,12 @@ pub struct UpdateMemberDetectorsInput {
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes which data sources will be updated.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     #[doc(hidden)]
     pub data_sources: std::option::Option<crate::types::DataSourceConfigurations>,
+    /// <p>A list of features that will be updated for the specified member accounts.</p>
+    #[doc(hidden)]
+    pub features: std::option::Option<std::vec::Vec<crate::types::MemberFeaturesConfiguration>>,
 }
 impl UpdateMemberDetectorsInput {
     /// <p>The detector ID of the administrator account.</p>
@@ -23,8 +27,13 @@ impl UpdateMemberDetectorsInput {
         self.account_ids.as_deref()
     }
     /// <p>Describes which data sources will be updated.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(&self) -> std::option::Option<&crate::types::DataSourceConfigurations> {
         self.data_sources.as_ref()
+    }
+    /// <p>A list of features that will be updated for the specified member accounts.</p>
+    pub fn features(&self) -> std::option::Option<&[crate::types::MemberFeaturesConfiguration]> {
+        self.features.as_deref()
     }
 }
 impl UpdateMemberDetectorsInput {
@@ -43,6 +52,8 @@ pub struct UpdateMemberDetectorsInputBuilder {
     pub(crate) detector_id: std::option::Option<std::string::String>,
     pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) data_sources: std::option::Option<crate::types::DataSourceConfigurations>,
+    pub(crate) features:
+        std::option::Option<std::vec::Vec<crate::types::MemberFeaturesConfiguration>>,
 }
 impl UpdateMemberDetectorsInputBuilder {
     /// <p>The detector ID of the administrator account.</p>
@@ -75,16 +86,37 @@ impl UpdateMemberDetectorsInputBuilder {
         self
     }
     /// <p>Describes which data sources will be updated.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurations) -> Self {
         self.data_sources = Some(input);
         self
     }
     /// <p>Describes which data sources will be updated.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn set_data_sources(
         mut self,
         input: std::option::Option<crate::types::DataSourceConfigurations>,
     ) -> Self {
         self.data_sources = input;
+        self
+    }
+    /// Appends an item to `features`.
+    ///
+    /// To override the contents of this collection use [`set_features`](Self::set_features).
+    ///
+    /// <p>A list of features that will be updated for the specified member accounts.</p>
+    pub fn features(mut self, input: crate::types::MemberFeaturesConfiguration) -> Self {
+        let mut v = self.features.unwrap_or_default();
+        v.push(input);
+        self.features = Some(v);
+        self
+    }
+    /// <p>A list of features that will be updated for the specified member accounts.</p>
+    pub fn set_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MemberFeaturesConfiguration>>,
+    ) -> Self {
+        self.features = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateMemberDetectorsInput`](crate::operation::update_member_detectors::UpdateMemberDetectorsInput).
@@ -99,6 +131,7 @@ impl UpdateMemberDetectorsInputBuilder {
                 detector_id: self.detector_id,
                 account_ids: self.account_ids,
                 data_sources: self.data_sources,
+                features: self.features,
             },
         )
     }

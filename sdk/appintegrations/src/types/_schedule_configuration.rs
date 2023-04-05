@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleConfiguration {
-    /// <p>The start date for objects to import in the first flow run.</p>
+    /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
     #[doc(hidden)]
     pub first_execution_from: std::option::Option<std::string::String>,
     /// <p>The name of the object to pull from the data source.</p>
@@ -15,7 +15,7 @@ pub struct ScheduleConfiguration {
     pub schedule_expression: std::option::Option<std::string::String>,
 }
 impl ScheduleConfiguration {
-    /// <p>The start date for objects to import in the first flow run.</p>
+    /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
     pub fn first_execution_from(&self) -> std::option::Option<&str> {
         self.first_execution_from.as_deref()
     }
@@ -44,12 +44,12 @@ pub struct ScheduleConfigurationBuilder {
     pub(crate) schedule_expression: std::option::Option<std::string::String>,
 }
 impl ScheduleConfigurationBuilder {
-    /// <p>The start date for objects to import in the first flow run.</p>
+    /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
     pub fn first_execution_from(mut self, input: impl Into<std::string::String>) -> Self {
         self.first_execution_from = Some(input.into());
         self
     }
-    /// <p>The start date for objects to import in the first flow run.</p>
+    /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
     pub fn set_first_execution_from(
         mut self,
         input: std::option::Option<std::string::String>,

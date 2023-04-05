@@ -106,6 +106,9 @@ pub struct RedshiftSettings {
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint connection details.</p>
     #[doc(hidden)]
     pub secrets_manager_secret_id: std::option::Option<std::string::String>,
+    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
+    #[doc(hidden)]
+    pub map_boolean_as_boolean: std::option::Option<bool>,
 }
 impl RedshiftSettings {
     /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
@@ -240,6 +243,10 @@ impl RedshiftSettings {
     pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
+    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
+    pub fn map_boolean_as_boolean(&self) -> std::option::Option<bool> {
+        self.map_boolean_as_boolean
+    }
 }
 impl std::fmt::Debug for RedshiftSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -283,6 +290,7 @@ impl std::fmt::Debug for RedshiftSettings {
             &self.secrets_manager_access_role_arn,
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
         formatter.finish()
     }
 }
@@ -327,6 +335,7 @@ pub struct RedshiftSettingsBuilder {
     pub(crate) write_buffer_size: std::option::Option<i32>,
     pub(crate) secrets_manager_access_role_arn: std::option::Option<std::string::String>,
     pub(crate) secrets_manager_secret_id: std::option::Option<std::string::String>,
+    pub(crate) map_boolean_as_boolean: std::option::Option<bool>,
 }
 impl RedshiftSettingsBuilder {
     /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
@@ -680,6 +689,16 @@ impl RedshiftSettingsBuilder {
         self.secrets_manager_secret_id = input;
         self
     }
+    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
+    pub fn map_boolean_as_boolean(mut self, input: bool) -> Self {
+        self.map_boolean_as_boolean = Some(input);
+        self
+    }
+    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
+    pub fn set_map_boolean_as_boolean(mut self, input: std::option::Option<bool>) -> Self {
+        self.map_boolean_as_boolean = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RedshiftSettings`](crate::types::RedshiftSettings).
     pub fn build(self) -> crate::types::RedshiftSettings {
         crate::types::RedshiftSettings {
@@ -713,6 +732,7 @@ impl RedshiftSettingsBuilder {
             write_buffer_size: self.write_buffer_size,
             secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
             secrets_manager_secret_id: self.secrets_manager_secret_id,
+            map_boolean_as_boolean: self.map_boolean_as_boolean,
         }
     }
 }
@@ -758,6 +778,7 @@ impl std::fmt::Debug for RedshiftSettingsBuilder {
             &self.secrets_manager_access_role_arn,
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
         formatter.finish()
     }
 }

@@ -22,6 +22,9 @@ pub mod create_batch_prediction_job;
 /// Types for the `CreateDetectorVersion` operation.
 pub mod create_detector_version;
 
+/// Types for the `CreateList` operation.
+pub mod create_list;
+
 /// Types for the `CreateModel` operation.
 pub mod create_model;
 
@@ -63,6 +66,9 @@ pub mod delete_external_model;
 
 /// Types for the `DeleteLabel` operation.
 pub mod delete_label;
+
+/// Types for the `DeleteList` operation.
+pub mod delete_list;
 
 /// Types for the `DeleteModel` operation.
 pub mod delete_model;
@@ -123,6 +129,12 @@ pub mod get_kms_encryption_key;
 
 /// Types for the `GetLabels` operation.
 pub mod get_labels;
+
+/// Types for the `GetListElements` operation.
+pub mod get_list_elements;
+
+/// Types for the `GetListsMetadata` operation.
+pub mod get_lists_metadata;
 
 /// Types for the `GetModelVersion` operation.
 pub mod get_model_version;
@@ -186,6 +198,9 @@ pub mod update_detector_version_status;
 
 /// Types for the `UpdateEventLabel` operation.
 pub mod update_event_label;
+
+/// Types for the `UpdateList` operation.
+pub mod update_list;
 
 /// Types for the `UpdateModel` operation.
 pub mod update_model;

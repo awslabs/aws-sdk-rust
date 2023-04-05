@@ -145,4 +145,27 @@ impl CreateSceneFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// Adds a key-value pair to `sceneMetadata`.
+    ///
+    /// To override the contents of this collection use [`set_scene_metadata`](Self::set_scene_metadata).
+    ///
+    /// <p>The request metadata.</p>
+    pub fn scene_metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.scene_metadata(k.into(), v.into());
+        self
+    }
+    /// <p>The request metadata.</p>
+    pub fn set_scene_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.inner = self.inner.set_scene_metadata(input);
+        self
+    }
 }

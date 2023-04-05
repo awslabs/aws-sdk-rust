@@ -5,7 +5,7 @@ pub use crate::operation::update_contact::_update_contact_input::UpdateContactIn
 
 /// Fluent builder constructing a request to `UpdateContact`.
 ///
-/// <p>Updates the contact or escalation plan specified. </p>
+/// <p>Updates the contact or escalation plan specified.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContactFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -85,12 +85,12 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
         self.inner = self.inner.plan(input);
         self
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub fn set_plan(mut self, input: std::option::Option<crate::types::Plan>) -> Self {
         self.inner = self.inner.set_plan(input);
         self

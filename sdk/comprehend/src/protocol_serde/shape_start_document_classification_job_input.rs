@@ -54,5 +54,8 @@ pub fn ser_start_document_classification_job_input(
         }
         array_13.finish();
     }
+    if let Some(var_16) = &input.flywheel_arn {
+        object.key("FlywheelArn").string(var_16.as_str());
+    }
     Ok(())
 }

@@ -166,7 +166,7 @@ pub type DeleteRetentionConfigurationErrorKind = DeleteRetentionConfigurationErr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRetentionConfigurationError {
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>You have specified a retention configuration that does not exist.</p>
     NoSuchRetentionConfigurationException(

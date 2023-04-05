@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_run_group::GetRunGroupOutput::name): <p>The group's name.</p>
     ///   - [`max_cpus(Option<i32>)`](crate::operation::get_run_group::GetRunGroupOutput::max_cpus): <p>The group's maximum number of CPUs to use.</p>
     ///   - [`max_runs(Option<i32>)`](crate::operation::get_run_group::GetRunGroupOutput::max_runs): <p>The maximum number of concurrent runs for the group.</p>
-    ///   - [`max_duration(Option<i32>)`](crate::operation::get_run_group::GetRunGroupOutput::max_duration): <p>The group's maximum run duration.</p>
+    ///   - [`max_duration(Option<i32>)`](crate::operation::get_run_group::GetRunGroupOutput::max_duration): <p>The group's maximum run time in minutes.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_run_group::GetRunGroupOutput::creation_time): <p>When the group was created.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_run_group::GetRunGroupOutput::tags): <p>The group's tags.</p>
     /// - On failure, responds with [`SdkError<GetRunGroupError>`](crate::operation::get_run_group::GetRunGroupError)

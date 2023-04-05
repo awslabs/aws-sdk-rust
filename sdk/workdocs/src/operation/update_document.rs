@@ -197,7 +197,7 @@ pub enum UpdateDocumentError {
     EntityAlreadyExistsException(crate::types::error::EntityAlreadyExistsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::types::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    /// <p>The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

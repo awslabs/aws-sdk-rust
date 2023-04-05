@@ -248,6 +248,11 @@ pub(crate) fn de_get_table(
                         builder = builder
                             .set_comment(crate::protocol_serde::shape_comment::de_comment(tokens)?);
                     }
+                    "clientSideTimestamps" => {
+                        builder = builder.set_client_side_timestamps(
+                            crate::protocol_serde::shape_client_side_timestamps::de_client_side_timestamps(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

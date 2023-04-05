@@ -3,14 +3,31 @@ pub fn ser_update_organization_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("autoEnable").boolean(input.auto_enable);
+    if let Some(var_1) = &input.auto_enable {
+        object.key("autoEnable").boolean(*var_1);
     }
-    if let Some(var_1) = &input.data_sources {
+    if let Some(var_2) = &input.auto_enable_organization_members {
+        object
+            .key("autoEnableOrganizationMembers")
+            .string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.data_sources {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("dataSources").start_object();
-        crate::protocol_serde::shape_organization_data_source_configurations::ser_organization_data_source_configurations(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_4 = object.key("dataSources").start_object();
+        crate::protocol_serde::shape_organization_data_source_configurations::ser_organization_data_source_configurations(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.features {
+        let mut array_6 = object.key("features").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_organization_feature_configuration::ser_organization_feature_configuration(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
     }
     Ok(())
 }

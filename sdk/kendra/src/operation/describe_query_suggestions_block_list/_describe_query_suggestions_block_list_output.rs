@@ -21,10 +21,10 @@ pub struct DescribeQuerySuggestionsBlockListOutput {
     /// <p>The error message containing details if there are issues processing the block list.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>The date-time a block list for query suggestions was created.</p>
+    /// <p>The Unix timestamp when a block list for query suggestions was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date-time a block list for query suggestions was last updated.</p>
+    /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
@@ -69,11 +69,11 @@ impl DescribeQuerySuggestionsBlockListOutput {
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>The date-time a block list for query suggestions was created.</p>
+    /// <p>The Unix timestamp when a block list for query suggestions was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date-time a block list for query suggestions was last updated.</p>
+    /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -191,12 +191,12 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         self.error_message = input;
         self
     }
-    /// <p>The date-time a block list for query suggestions was created.</p>
+    /// <p>The Unix timestamp when a block list for query suggestions was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The date-time a block list for query suggestions was created.</p>
+    /// <p>The Unix timestamp when a block list for query suggestions was created.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -204,12 +204,12 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The date-time a block list for query suggestions was last updated.</p>
+    /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.updated_at = Some(input);
         self
     }
-    /// <p>The date-time a block list for query suggestions was last updated.</p>
+    /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
     pub fn set_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

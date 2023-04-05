@@ -9,6 +9,9 @@ pub struct GetRuntimeManagementConfigOutput {
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
     #[doc(hidden)]
     pub runtime_version_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    #[doc(hidden)]
+    pub function_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRuntimeManagementConfigOutput {
@@ -19,6 +22,10 @@ impl GetRuntimeManagementConfigOutput {
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
     pub fn runtime_version_arn(&self) -> std::option::Option<&str> {
         self.runtime_version_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetRuntimeManagementConfigOutput {
@@ -39,6 +46,7 @@ impl GetRuntimeManagementConfigOutput {
 pub struct GetRuntimeManagementConfigOutputBuilder {
     pub(crate) update_runtime_on: std::option::Option<crate::types::UpdateRuntimeOn>,
     pub(crate) runtime_version_arn: std::option::Option<std::string::String>,
+    pub(crate) function_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRuntimeManagementConfigOutputBuilder {
@@ -68,6 +76,16 @@ impl GetRuntimeManagementConfigOutputBuilder {
         self.runtime_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.function_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.function_arn = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -84,6 +102,7 @@ impl GetRuntimeManagementConfigOutputBuilder {
         crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput {
             update_runtime_on: self.update_runtime_on,
             runtime_version_arn: self.runtime_version_arn,
+            function_arn: self.function_arn,
             _request_id: self._request_id,
         }
     }

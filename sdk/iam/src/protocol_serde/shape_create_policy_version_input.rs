@@ -18,8 +18,8 @@ pub fn ser_create_policy_version_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("SetAsDefault");
-    if input.set_as_default {
-        scope_5.boolean(input.set_as_default);
+    if let Some(var_6) = &input.set_as_default {
+        scope_5.boolean(*var_6);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

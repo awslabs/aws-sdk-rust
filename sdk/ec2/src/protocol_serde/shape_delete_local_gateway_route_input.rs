@@ -21,6 +21,11 @@ pub fn ser_delete_local_gateway_route_input_input(
     if let Some(var_6) = &input.dry_run {
         scope_5.boolean(*var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("DestinationPrefixListId");
+    if let Some(var_8) = &input.destination_prefix_list_id {
+        scope_7.string(var_8);
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

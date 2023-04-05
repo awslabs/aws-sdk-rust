@@ -30,7 +30,7 @@ pub struct MicrosoftSqlServerSettings {
     /// <p> <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS tasks against the same database, use the default method.</p>
     #[doc(hidden)]
     pub safeguard_policy: std::option::Option<crate::types::SafeguardPolicy>,
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
     /// <p>Endpoint connection user name.</p>
@@ -53,6 +53,12 @@ pub struct MicrosoftSqlServerSettings {
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     #[doc(hidden)]
     pub trim_space_in_char: std::option::Option<bool>,
+    /// <p>Indicates the mode used to fetch CDC data.</p>
+    #[doc(hidden)]
+    pub tlog_access_mode: std::option::Option<crate::types::TlogAccessMode>,
+    /// <p>Forces LOB lookup on inline LOB.</p>
+    #[doc(hidden)]
+    pub force_lob_lookup: std::option::Option<bool>,
 }
 impl MicrosoftSqlServerSettings {
     /// <p>Endpoint TCP port.</p>
@@ -89,7 +95,7 @@ impl MicrosoftSqlServerSettings {
     pub fn safeguard_policy(&self) -> std::option::Option<&crate::types::SafeguardPolicy> {
         self.safeguard_policy.as_ref()
     }
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
@@ -119,6 +125,14 @@ impl MicrosoftSqlServerSettings {
     pub fn trim_space_in_char(&self) -> std::option::Option<bool> {
         self.trim_space_in_char
     }
+    /// <p>Indicates the mode used to fetch CDC data.</p>
+    pub fn tlog_access_mode(&self) -> std::option::Option<&crate::types::TlogAccessMode> {
+        self.tlog_access_mode.as_ref()
+    }
+    /// <p>Forces LOB lookup on inline LOB.</p>
+    pub fn force_lob_lookup(&self) -> std::option::Option<bool> {
+        self.force_lob_lookup
+    }
 }
 impl std::fmt::Debug for MicrosoftSqlServerSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -147,6 +161,8 @@ impl std::fmt::Debug for MicrosoftSqlServerSettings {
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
+        formatter.field("tlog_access_mode", &self.tlog_access_mode);
+        formatter.field("force_lob_lookup", &self.force_lob_lookup);
         formatter.finish()
     }
 }
@@ -176,6 +192,8 @@ pub struct MicrosoftSqlServerSettingsBuilder {
     pub(crate) secrets_manager_access_role_arn: std::option::Option<std::string::String>,
     pub(crate) secrets_manager_secret_id: std::option::Option<std::string::String>,
     pub(crate) trim_space_in_char: std::option::Option<bool>,
+    pub(crate) tlog_access_mode: std::option::Option<crate::types::TlogAccessMode>,
+    pub(crate) force_lob_lookup: std::option::Option<bool>,
 }
 impl MicrosoftSqlServerSettingsBuilder {
     /// <p>Endpoint TCP port.</p>
@@ -268,12 +286,12 @@ impl MicrosoftSqlServerSettingsBuilder {
         self.safeguard_policy = input;
         self
     }
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.server_name = Some(input.into());
         self
     }
-    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.server_name = input;
         self
@@ -351,6 +369,29 @@ impl MicrosoftSqlServerSettingsBuilder {
         self.trim_space_in_char = input;
         self
     }
+    /// <p>Indicates the mode used to fetch CDC data.</p>
+    pub fn tlog_access_mode(mut self, input: crate::types::TlogAccessMode) -> Self {
+        self.tlog_access_mode = Some(input);
+        self
+    }
+    /// <p>Indicates the mode used to fetch CDC data.</p>
+    pub fn set_tlog_access_mode(
+        mut self,
+        input: std::option::Option<crate::types::TlogAccessMode>,
+    ) -> Self {
+        self.tlog_access_mode = input;
+        self
+    }
+    /// <p>Forces LOB lookup on inline LOB.</p>
+    pub fn force_lob_lookup(mut self, input: bool) -> Self {
+        self.force_lob_lookup = Some(input);
+        self
+    }
+    /// <p>Forces LOB lookup on inline LOB.</p>
+    pub fn set_force_lob_lookup(mut self, input: std::option::Option<bool>) -> Self {
+        self.force_lob_lookup = input;
+        self
+    }
     /// Consumes the builder and constructs a [`MicrosoftSqlServerSettings`](crate::types::MicrosoftSqlServerSettings).
     pub fn build(self) -> crate::types::MicrosoftSqlServerSettings {
         crate::types::MicrosoftSqlServerSettings {
@@ -369,6 +410,8 @@ impl MicrosoftSqlServerSettingsBuilder {
             secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
             secrets_manager_secret_id: self.secrets_manager_secret_id,
             trim_space_in_char: self.trim_space_in_char,
+            tlog_access_mode: self.tlog_access_mode,
+            force_lob_lookup: self.force_lob_lookup,
         }
     }
 }
@@ -399,6 +442,8 @@ impl std::fmt::Debug for MicrosoftSqlServerSettingsBuilder {
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
+        formatter.field("tlog_access_mode", &self.tlog_access_mode);
+        formatter.field("force_lob_lookup", &self.force_lob_lookup);
         formatter.finish()
     }
 }

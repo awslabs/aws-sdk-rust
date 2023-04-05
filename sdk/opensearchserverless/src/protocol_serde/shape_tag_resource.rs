@@ -86,6 +86,23 @@ pub fn de_tag_resource_http_error(
                 tmp
             })
         }
+        "ServiceQuotaExceededException" => {
+            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ValidationException" => {
             crate::operation::tag_resource::TagResourceError::ValidationException({
                 #[allow(unused_mut)]

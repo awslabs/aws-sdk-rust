@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`store_options(StoreOptions)`](crate::operation::create_annotation_store::builders::CreateAnnotationStoreFluentBuilder::store_options) / [`set_store_options(Option<StoreOptions>)`](crate::operation::create_annotation_store::builders::CreateAnnotationStoreFluentBuilder::set_store_options): <p>File parsing options for the annotation store.</p>
     /// - On success, responds with [`CreateAnnotationStoreOutput`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput::id): <p>The store's ID.</p>
-    ///   - [`reference(Option<ReferenceItem>)`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput::reference): <p>The store's genome reference.</p>
+    ///   - [`reference(Option<ReferenceItem>)`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput::reference): <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
     ///   - [`store_format(Option<StoreFormat>)`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput::store_format): <p>The annotation file format of the store.</p>
     ///   - [`store_options(Option<StoreOptions>)`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput::store_options): <p>The store's file parsing options.</p>
     ///   - [`status(Option<StoreStatus>)`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput::status): <p>The store's status.</p>

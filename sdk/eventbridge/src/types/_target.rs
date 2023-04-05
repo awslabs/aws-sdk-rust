@@ -17,7 +17,7 @@ pub struct Target {
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
-    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
     #[doc(hidden)]
     pub input_path: std::option::Option<std::string::String>,
     /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
@@ -39,8 +39,8 @@ pub struct Target {
     /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
     #[doc(hidden)]
     pub sqs_parameters: std::option::Option<crate::types::SqsParameters>,
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
-    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.</p>
+    /// <p>If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     #[doc(hidden)]
     pub http_parameters: std::option::Option<crate::types::HttpParameters>,
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
@@ -76,7 +76,7 @@ impl Target {
     pub fn input(&self) -> std::option::Option<&str> {
         self.input.as_deref()
     }
-    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
     pub fn input_path(&self) -> std::option::Option<&str> {
         self.input_path.as_deref()
     }
@@ -107,8 +107,8 @@ impl Target {
     pub fn sqs_parameters(&self) -> std::option::Option<&crate::types::SqsParameters> {
         self.sqs_parameters.as_ref()
     }
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
-    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.</p>
+    /// <p>If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     pub fn http_parameters(&self) -> std::option::Option<&crate::types::HttpParameters> {
         self.http_parameters.as_ref()
     }
@@ -205,12 +205,12 @@ impl TargetBuilder {
         self.input = input;
         self
     }
-    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
     pub fn input_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.input_path = Some(input.into());
         self
     }
-    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
     pub fn set_input_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.input_path = input;
         self
@@ -295,14 +295,14 @@ impl TargetBuilder {
         self.sqs_parameters = input;
         self
     }
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
-    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.</p>
+    /// <p>If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     pub fn http_parameters(mut self, input: crate::types::HttpParameters) -> Self {
         self.http_parameters = Some(input);
         self
     }
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
-    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.</p>
+    /// <p>If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     pub fn set_http_parameters(
         mut self,
         input: std::option::Option<crate::types::HttpParameters>,

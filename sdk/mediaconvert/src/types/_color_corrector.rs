@@ -10,7 +10,7 @@ pub struct ColorCorrector {
     /// Specify YUV limits and RGB tolerances when you set Sample range conversion to Limited range clip.
     #[doc(hidden)]
     pub clip_limits: std::option::Option<crate::types::ClipLimits>,
-    /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
+    /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses tone mapping to approximate the outcome of manually regrading from HDR to SDR. When you specify an output color space, MediaConvert uses the following color space metadata, which includes color primaries, transfer characteristics, and matrix coefficients: * HDR 10: BT.2020, PQ, BT.2020 non-constant * HLG 2020: BT.2020, HLG, BT.2020 non-constant * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709 * P3D65 (SDR): Display P3, sRGB, BT.709 * P3D65 (HDR): Display P3, PQ, BT.709
     #[doc(hidden)]
     pub color_space_conversion: std::option::Option<crate::types::ColorSpaceConversion>,
     /// Contrast level.
@@ -19,6 +19,9 @@ pub struct ColorCorrector {
     /// Use these settings when you convert to the HDR 10 color space. Specify the SMPTE ST 2086 Mastering Display Color Volume static metadata that you want signaled in the output. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. When you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10), these settings are required. You must set values for Max frame average light level (maxFrameAverageLightLevel) and Max content light level (maxContentLightLevel); these settings don't have a default value. The default values for the other HDR 10 metadata settings are defined by the P3D65 color space. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     #[doc(hidden)]
     pub hdr10_metadata: std::option::Option<crate::types::Hdr10Metadata>,
+    /// Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
+    #[doc(hidden)]
+    pub hdr_to_sdr_tone_mapper: std::option::Option<crate::types::HdrToSdrToneMapper>,
     /// Hue in degrees.
     #[doc(hidden)]
     pub hue: i32,
@@ -41,7 +44,7 @@ impl ColorCorrector {
     pub fn clip_limits(&self) -> std::option::Option<&crate::types::ClipLimits> {
         self.clip_limits.as_ref()
     }
-    /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
+    /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses tone mapping to approximate the outcome of manually regrading from HDR to SDR. When you specify an output color space, MediaConvert uses the following color space metadata, which includes color primaries, transfer characteristics, and matrix coefficients: * HDR 10: BT.2020, PQ, BT.2020 non-constant * HLG 2020: BT.2020, HLG, BT.2020 non-constant * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709 * P3D65 (SDR): Display P3, sRGB, BT.709 * P3D65 (HDR): Display P3, PQ, BT.709
     pub fn color_space_conversion(
         &self,
     ) -> std::option::Option<&crate::types::ColorSpaceConversion> {
@@ -54,6 +57,10 @@ impl ColorCorrector {
     /// Use these settings when you convert to the HDR 10 color space. Specify the SMPTE ST 2086 Mastering Display Color Volume static metadata that you want signaled in the output. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. When you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10), these settings are required. You must set values for Max frame average light level (maxFrameAverageLightLevel) and Max content light level (maxContentLightLevel); these settings don't have a default value. The default values for the other HDR 10 metadata settings are defined by the P3D65 color space. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     pub fn hdr10_metadata(&self) -> std::option::Option<&crate::types::Hdr10Metadata> {
         self.hdr10_metadata.as_ref()
+    }
+    /// Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
+    pub fn hdr_to_sdr_tone_mapper(&self) -> std::option::Option<&crate::types::HdrToSdrToneMapper> {
+        self.hdr_to_sdr_tone_mapper.as_ref()
     }
     /// Hue in degrees.
     pub fn hue(&self) -> i32 {
@@ -90,6 +97,7 @@ pub struct ColorCorrectorBuilder {
     pub(crate) color_space_conversion: std::option::Option<crate::types::ColorSpaceConversion>,
     pub(crate) contrast: std::option::Option<i32>,
     pub(crate) hdr10_metadata: std::option::Option<crate::types::Hdr10Metadata>,
+    pub(crate) hdr_to_sdr_tone_mapper: std::option::Option<crate::types::HdrToSdrToneMapper>,
     pub(crate) hue: std::option::Option<i32>,
     pub(crate) sample_range_conversion: std::option::Option<crate::types::SampleRangeConversion>,
     pub(crate) saturation: std::option::Option<i32>,
@@ -116,12 +124,12 @@ impl ColorCorrectorBuilder {
         self.clip_limits = input;
         self
     }
-    /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
+    /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses tone mapping to approximate the outcome of manually regrading from HDR to SDR. When you specify an output color space, MediaConvert uses the following color space metadata, which includes color primaries, transfer characteristics, and matrix coefficients: * HDR 10: BT.2020, PQ, BT.2020 non-constant * HLG 2020: BT.2020, HLG, BT.2020 non-constant * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709 * P3D65 (SDR): Display P3, sRGB, BT.709 * P3D65 (HDR): Display P3, PQ, BT.709
     pub fn color_space_conversion(mut self, input: crate::types::ColorSpaceConversion) -> Self {
         self.color_space_conversion = Some(input);
         self
     }
-    /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
+    /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses tone mapping to approximate the outcome of manually regrading from HDR to SDR. When you specify an output color space, MediaConvert uses the following color space metadata, which includes color primaries, transfer characteristics, and matrix coefficients: * HDR 10: BT.2020, PQ, BT.2020 non-constant * HLG 2020: BT.2020, HLG, BT.2020 non-constant * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709 * P3D65 (SDR): Display P3, sRGB, BT.709 * P3D65 (HDR): Display P3, PQ, BT.709
     pub fn set_color_space_conversion(
         mut self,
         input: std::option::Option<crate::types::ColorSpaceConversion>,
@@ -150,6 +158,19 @@ impl ColorCorrectorBuilder {
         input: std::option::Option<crate::types::Hdr10Metadata>,
     ) -> Self {
         self.hdr10_metadata = input;
+        self
+    }
+    /// Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
+    pub fn hdr_to_sdr_tone_mapper(mut self, input: crate::types::HdrToSdrToneMapper) -> Self {
+        self.hdr_to_sdr_tone_mapper = Some(input);
+        self
+    }
+    /// Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
+    pub fn set_hdr_to_sdr_tone_mapper(
+        mut self,
+        input: std::option::Option<crate::types::HdrToSdrToneMapper>,
+    ) -> Self {
+        self.hdr_to_sdr_tone_mapper = input;
         self
     }
     /// Hue in degrees.
@@ -203,6 +224,7 @@ impl ColorCorrectorBuilder {
             color_space_conversion: self.color_space_conversion,
             contrast: self.contrast.unwrap_or_default(),
             hdr10_metadata: self.hdr10_metadata,
+            hdr_to_sdr_tone_mapper: self.hdr_to_sdr_tone_mapper,
             hue: self.hue.unwrap_or_default(),
             sample_range_conversion: self.sample_range_conversion,
             saturation: self.saturation.unwrap_or_default(),

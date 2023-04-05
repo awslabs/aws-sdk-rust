@@ -112,12 +112,12 @@ impl CreateParticipantConnectionFluentBuilder {
         self.inner = self.inner.set_participant_token(input);
         self
     }
-    /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn connect_participant(mut self, input: bool) -> Self {
         self.inner = self.inner.connect_participant(input);
         self
     }
-    /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn set_connect_participant(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_connect_participant(input);
         self

@@ -6,7 +6,7 @@ pub struct ListVirtualClustersInput {
     /// <p>The container provider ID of the virtual cluster.</p>
     #[doc(hidden)]
     pub container_provider_id: std::option::Option<std::string::String>,
-    /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
+    /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
     #[doc(hidden)]
     pub container_provider_type: std::option::Option<crate::types::ContainerProviderType>,
     /// <p>The date and time after which the virtual clusters are created.</p>
@@ -30,7 +30,7 @@ impl ListVirtualClustersInput {
     pub fn container_provider_id(&self) -> std::option::Option<&str> {
         self.container_provider_id.as_deref()
     }
-    /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
+    /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
     pub fn container_provider_type(
         &self,
     ) -> std::option::Option<&crate::types::ContainerProviderType> {
@@ -92,12 +92,12 @@ impl ListVirtualClustersInputBuilder {
         self.container_provider_id = input;
         self
     }
-    /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
+    /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
     pub fn container_provider_type(mut self, input: crate::types::ContainerProviderType) -> Self {
         self.container_provider_type = Some(input);
         self
     }
-    /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
+    /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
     pub fn set_container_provider_type(
         mut self,
         input: std::option::Option<crate::types::ContainerProviderType>,

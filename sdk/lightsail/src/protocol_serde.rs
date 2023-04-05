@@ -52,6 +52,8 @@ pub(crate) mod shape_create_domain;
 
 pub(crate) mod shape_create_domain_entry;
 
+pub(crate) mod shape_create_gui_session_access_details;
+
 pub(crate) mod shape_create_instance_snapshot;
 
 pub(crate) mod shape_create_instances;
@@ -165,6 +167,8 @@ pub(crate) mod shape_get_container_service_metric_data;
 pub(crate) mod shape_get_container_service_powers;
 
 pub(crate) mod shape_get_container_services;
+
+pub(crate) mod shape_get_cost_estimate;
 
 pub(crate) mod shape_get_disk;
 
@@ -282,9 +286,13 @@ pub(crate) mod shape_set_ip_address_type;
 
 pub(crate) mod shape_set_resource_access_for_bucket;
 
+pub(crate) mod shape_start_gui_session;
+
 pub(crate) mod shape_start_instance;
 
 pub(crate) mod shape_start_relational_database;
+
+pub(crate) mod shape_stop_gui_session;
 
 pub(crate) mod shape_stop_instance;
 
@@ -371,6 +379,8 @@ pub(crate) mod shape_create_distribution_input;
 pub(crate) mod shape_create_domain_entry_input;
 
 pub(crate) mod shape_create_domain_input;
+
+pub(crate) mod shape_create_gui_session_access_details_input;
 
 pub(crate) mod shape_create_instance_snapshot_input;
 
@@ -479,6 +489,8 @@ pub(crate) mod shape_get_container_service_deployments_input;
 pub(crate) mod shape_get_container_service_metric_data_input;
 
 pub(crate) mod shape_get_container_services_input;
+
+pub(crate) mod shape_get_cost_estimate_input;
 
 pub(crate) mod shape_get_disk_input;
 
@@ -598,9 +610,13 @@ pub(crate) mod shape_set_ip_address_type_input;
 
 pub(crate) mod shape_set_resource_access_for_bucket_input;
 
+pub(crate) mod shape_start_gui_session_input;
+
 pub(crate) mod shape_start_instance_input;
 
 pub(crate) mod shape_start_relational_database_input;
+
+pub(crate) mod shape_stop_gui_session_input;
 
 pub(crate) mod shape_stop_instance_input;
 
@@ -784,6 +800,10 @@ pub(crate) mod shape_relational_database_snapshot;
 
 pub(crate) mod shape_relational_database_snapshot_list;
 
+pub(crate) mod shape_resources_budget_estimate;
+
+pub(crate) mod shape_sessions;
+
 pub(crate) mod shape_static_ip;
 
 pub(crate) mod shape_static_ip_list;
@@ -902,11 +922,19 @@ pub(crate) mod shape_relational_database_event;
 
 pub(crate) mod shape_relational_database_hardware;
 
+pub(crate) mod shape_resource_budget_estimate;
+
 pub(crate) mod shape_resource_location;
+
+pub(crate) mod shape_session;
+
+pub(crate) mod shape_stop_instance_on_idle_request;
 
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_add_on;
+
+pub(crate) mod shape_app_category_list;
 
 pub(crate) mod shape_attached_disk_list;
 
@@ -923,6 +951,8 @@ pub(crate) mod shape_container_service_ecr_image_puller_role;
 pub(crate) mod shape_container_service_endpoint;
 
 pub(crate) mod shape_container_service_public_domains_list;
+
+pub(crate) mod shape_cost_estimates;
 
 pub(crate) mod shape_destination_info;
 
@@ -968,6 +998,8 @@ pub(crate) mod shape_availability_zone;
 
 pub(crate) mod shape_cloud_formation_stack_record_source_info;
 
+pub(crate) mod shape_cost_estimate;
+
 pub(crate) mod shape_disk_snapshot_info;
 
 pub(crate) mod shape_domain_entry_options;
@@ -990,6 +1022,8 @@ pub(crate) mod shape_dns_record_creation_state;
 
 pub(crate) mod shape_environment;
 
+pub(crate) mod shape_estimates_by_time;
+
 pub(crate) mod shape_load_balancer_tls_certificate_dns_record_creation_state;
 
 pub(crate) mod shape_load_balancer_tls_certificate_domain_validation_option;
@@ -999,3 +1033,7 @@ pub(crate) mod shape_port_map;
 pub(crate) mod shape_resource_record;
 
 pub(crate) mod shape_disk_info;
+
+pub(crate) mod shape_estimate_by_time;
+
+pub(crate) mod shape_time_period;

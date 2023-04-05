@@ -3,12 +3,16 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>When creating a collection, thrown when a collection with the same name already exists or is being created. When deleting a collection, thrown when the collection is not in the ACTIVE or FAILED state.</p>
+    /// <p>When creating a resource, thrown when a resource with the same name already exists or is being created. When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Thrown when an error internal to the service occurs while processing a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// OCU Limit Exceeded for service limits
+    OcuLimitExceededException(crate::types::error::OcuLimitExceededException),
     /// <p>Thrown when accessing or deleting a resource that does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>Thrown when you attempt to create more resources than the service allows based on service quotas.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Thrown when the HTTP request contains invalid input or is missing required input.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -19,7 +23,9 @@ impl std::fmt::Display for Error {
         match self {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::OcuLimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -141,6 +147,7 @@ impl From<crate::operation::create_access_policy::CreateAccessPolicyError> for E
         match err {
             crate::operation::create_access_policy::CreateAccessPolicyError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_access_policy::CreateAccessPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_access_policy::CreateAccessPolicyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_access_policy::CreateAccessPolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_access_policy::CreateAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -180,18 +187,12 @@ where
 impl From<crate::operation::create_collection::CreateCollectionError> for Error {
     fn from(err: crate::operation::create_collection::CreateCollectionError) -> Self {
         match err {
-            crate::operation::create_collection::CreateCollectionError::ConflictException(
-                inner,
-            ) => Error::ConflictException(inner),
-            crate::operation::create_collection::CreateCollectionError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::create_collection::CreateCollectionError::ValidationException(
-                inner,
-            ) => Error::ValidationException(inner),
-            crate::operation::create_collection::CreateCollectionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_collection::CreateCollectionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_collection::CreateCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_collection::CreateCollectionError::OcuLimitExceededException(inner) => Error::OcuLimitExceededException(inner),
+            crate::operation::create_collection::CreateCollectionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_collection::CreateCollectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_collection::CreateCollectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -231,6 +232,7 @@ impl From<crate::operation::create_security_config::CreateSecurityConfigError> f
         match err {
             crate::operation::create_security_config::CreateSecurityConfigError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_security_config::CreateSecurityConfigError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_security_config::CreateSecurityConfigError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_security_config::CreateSecurityConfigError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_security_config::CreateSecurityConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -272,6 +274,7 @@ impl From<crate::operation::create_security_policy::CreateSecurityPolicyError> f
         match err {
             crate::operation::create_security_policy::CreateSecurityPolicyError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_security_policy::CreateSecurityPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_security_policy::CreateSecurityPolicyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_security_policy::CreateSecurityPolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_security_policy::CreateSecurityPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -313,6 +316,7 @@ impl From<crate::operation::create_vpc_endpoint::CreateVpcEndpointError> for Err
         match err {
             crate::operation::create_vpc_endpoint::CreateVpcEndpointError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_vpc_endpoint::CreateVpcEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_vpc_endpoint::CreateVpcEndpointError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_vpc_endpoint::CreateVpcEndpointError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_vpc_endpoint::CreateVpcEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1012,6 +1016,9 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
             crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1279,6 +1286,7 @@ impl From<crate::operation::update_security_policy::UpdateSecurityPolicyError> f
             crate::operation::update_security_policy::UpdateSecurityPolicyError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_security_policy::UpdateSecurityPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_security_policy::UpdateSecurityPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_security_policy::UpdateSecurityPolicyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_security_policy::UpdateSecurityPolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_security_policy::UpdateSecurityPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1331,7 +1339,9 @@ impl aws_http::request_id::RequestId for Error {
         match self {
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::OcuLimitExceededException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }

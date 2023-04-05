@@ -3,63 +3,63 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProxySessionInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The participant phone numbers.</p>
     #[doc(hidden)]
     pub participant_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the proxy session.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     #[doc(hidden)]
     pub expiry_minutes: std::option::Option<i32>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session's capabilities.</p>
     #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<crate::types::Capability>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     #[doc(hidden)]
     pub number_selection_behavior: std::option::Option<crate::types::NumberSelectionBehavior>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     #[doc(hidden)]
     pub geo_match_level: std::option::Option<crate::types::GeoMatchLevel>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country and area code for the proxy phone number.</p>
     #[doc(hidden)]
     pub geo_match_params: std::option::Option<crate::types::GeoMatchParams>,
 }
 impl CreateProxySessionInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The participant phone numbers.</p>
     pub fn participant_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
         self.participant_phone_numbers.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the proxy session.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(&self) -> std::option::Option<i32> {
         self.expiry_minutes
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session's capabilities.</p>
     pub fn capabilities(&self) -> std::option::Option<&[crate::types::Capability]> {
         self.capabilities.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn number_selection_behavior(
         &self,
     ) -> std::option::Option<&crate::types::NumberSelectionBehavior> {
         self.number_selection_behavior.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     pub fn geo_match_level(&self) -> std::option::Option<&crate::types::GeoMatchLevel> {
         self.geo_match_level.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country and area code for the proxy phone number.</p>
     pub fn geo_match_params(&self) -> std::option::Option<&crate::types::GeoMatchParams> {
         self.geo_match_params.as_ref()
     }
@@ -101,12 +101,12 @@ pub struct CreateProxySessionInputBuilder {
     pub(crate) geo_match_params: std::option::Option<crate::types::GeoMatchParams>,
 }
 impl CreateProxySessionInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -118,13 +118,14 @@ impl CreateProxySessionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_participant_phone_numbers`](Self::set_participant_phone_numbers).
     ///
+    /// <p>The participant phone numbers.</p>
     pub fn participant_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.participant_phone_numbers.unwrap_or_default();
         v.push(input.into());
         self.participant_phone_numbers = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The participant phone numbers.</p>
     pub fn set_participant_phone_numbers(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -132,22 +133,22 @@ impl CreateProxySessionInputBuilder {
         self.participant_phone_numbers = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the proxy session.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the proxy session.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(mut self, input: i32) -> Self {
         self.expiry_minutes = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn set_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.expiry_minutes = input;
         self
@@ -156,13 +157,14 @@ impl CreateProxySessionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
     ///
+    /// <p>The proxy session's capabilities.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
         v.push(input);
         self.capabilities = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session's capabilities.</p>
     pub fn set_capabilities(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Capability>>,
@@ -170,7 +172,7 @@ impl CreateProxySessionInputBuilder {
         self.capabilities = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn number_selection_behavior(
         mut self,
         input: crate::types::NumberSelectionBehavior,
@@ -178,7 +180,7 @@ impl CreateProxySessionInputBuilder {
         self.number_selection_behavior = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn set_number_selection_behavior(
         mut self,
         input: std::option::Option<crate::types::NumberSelectionBehavior>,
@@ -186,12 +188,12 @@ impl CreateProxySessionInputBuilder {
         self.number_selection_behavior = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     pub fn geo_match_level(mut self, input: crate::types::GeoMatchLevel) -> Self {
         self.geo_match_level = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     pub fn set_geo_match_level(
         mut self,
         input: std::option::Option<crate::types::GeoMatchLevel>,
@@ -199,12 +201,12 @@ impl CreateProxySessionInputBuilder {
         self.geo_match_level = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country and area code for the proxy phone number.</p>
     pub fn geo_match_params(mut self, input: crate::types::GeoMatchParams) -> Self {
         self.geo_match_params = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country and area code for the proxy phone number.</p>
     pub fn set_geo_match_params(
         mut self,
         input: std::option::Option<crate::types::GeoMatchParams>,

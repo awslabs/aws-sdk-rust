@@ -11,7 +11,7 @@ pub struct GetJobRunInput {
     pub run_id: std::option::Option<std::string::String>,
     /// <p>True if a list of predecessor runs should be returned.</p>
     #[doc(hidden)]
-    pub predecessors_included: bool,
+    pub predecessors_included: std::option::Option<bool>,
 }
 impl GetJobRunInput {
     /// <p>Name of the job definition being run.</p>
@@ -23,7 +23,7 @@ impl GetJobRunInput {
         self.run_id.as_deref()
     }
     /// <p>True if a list of predecessor runs should be returned.</p>
-    pub fn predecessors_included(&self) -> bool {
+    pub fn predecessors_included(&self) -> std::option::Option<bool> {
         self.predecessors_included
     }
 }
@@ -83,7 +83,7 @@ impl GetJobRunInputBuilder {
         Ok(crate::operation::get_job_run::GetJobRunInput {
             job_name: self.job_name,
             run_id: self.run_id,
-            predecessors_included: self.predecessors_included.unwrap_or_default(),
+            predecessors_included: self.predecessors_included,
         })
     }
 }

@@ -93,6 +93,14 @@ pub use crate::types::_provisioning_preferences::ProvisioningPreferences;
 
 pub use crate::types::_provisioning_parameter::ProvisioningParameter;
 
+pub use crate::types::_record_output::RecordOutput;
+
+pub use crate::types::_engine_workflow_status::EngineWorkflowStatus;
+
+pub use crate::types::_engine_workflow_resource_identifier::EngineWorkflowResourceIdentifier;
+
+pub use crate::types::_unique_tag_resource_identifier::UniqueTagResourceIdentifier;
+
 pub use crate::types::_list_tag_options_filters::ListTagOptionsFilters;
 
 pub use crate::types::_stack_instance::StackInstance;
@@ -120,8 +128,6 @@ pub use crate::types::_launch_path_summary::LaunchPathSummary;
 pub use crate::types::_constraint_summary::ConstraintSummary;
 
 pub use crate::types::_budget_detail::BudgetDetail;
-
-pub use crate::types::_record_output::RecordOutput;
 
 pub use crate::types::_access_status::AccessStatus;
 
@@ -210,6 +216,10 @@ mod _copy_option;
 mod _copy_product_status;
 
 mod _describe_portfolio_share_type;
+
+mod _engine_workflow_resource_identifier;
+
+mod _engine_workflow_status;
 
 mod _evaluation_type;
 
@@ -368,6 +378,8 @@ mod _tag;
 mod _tag_option_detail;
 
 mod _tag_option_summary;
+
+mod _unique_tag_resource_identifier;
 
 mod _update_provisioning_parameter;
 

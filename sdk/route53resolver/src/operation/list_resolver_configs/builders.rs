@@ -5,7 +5,7 @@ pub use crate::operation::list_resolver_configs::_list_resolver_configs_input::L
 
 /// Fluent builder constructing a request to `ListResolverConfigs`.
 ///
-/// <p>Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses the configurations to manage DNS resolution behavior for your VPCs.</p>
+/// <p>Retrieves the Resolver configurations that you have defined. Route&nbsp;53 Resolver uses the configurations to manage DNS resolution behavior for your VPCs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResolverConfigsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

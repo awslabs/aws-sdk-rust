@@ -6,14 +6,11 @@ pub fn ser_update_data_quality_ruleset_input(
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.updated_name {
-        object.key("UpdatedName").string(var_2.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.ruleset {
-        object.key("Ruleset").string(var_4.as_str());
+    if let Some(var_3) = &input.ruleset {
+        object.key("Ruleset").string(var_3.as_str());
     }
     Ok(())
 }

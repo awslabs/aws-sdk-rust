@@ -98,12 +98,12 @@ impl CreateEndpointFluentBuilder {
         self.inner = self.inner.set_routing_config(input);
         self
     }
-    /// <p>Enable or disable event replication.</p>
+    /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub fn replication_config(mut self, input: crate::types::ReplicationConfig) -> Self {
         self.inner = self.inner.replication_config(input);
         self
     }
-    /// <p>Enable or disable event replication.</p>
+    /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub fn set_replication_config(
         mut self,
         input: std::option::Option<crate::types::ReplicationConfig>,

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAgentOutput {
-    /// <p>The Amazon Resource Name (ARN) of the agent.</p>
+    /// <p>The ARN of the agent.</p>
     #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
     /// <p>The name of the agent.</p>
@@ -28,7 +28,7 @@ pub struct DescribeAgentOutput {
     _request_id: Option<String>,
 }
 impl DescribeAgentOutput {
-    /// <p>The Amazon Resource Name (ARN) of the agent.</p>
+    /// <p>The ARN of the agent.</p>
     pub fn agent_arn(&self) -> std::option::Option<&str> {
         self.agent_arn.as_deref()
     }
@@ -83,12 +83,12 @@ pub struct DescribeAgentOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeAgentOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the agent.</p>
+    /// <p>The ARN of the agent.</p>
     pub fn agent_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.agent_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent.</p>
+    /// <p>The ARN of the agent.</p>
     pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.agent_arn = input;
         self

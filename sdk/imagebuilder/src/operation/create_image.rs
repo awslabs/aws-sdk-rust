@@ -172,7 +172,7 @@ pub enum CreateImageError {
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
-    /// <p>You have made a request for an action that is not supported by the service.</p>
+    /// <p>You have requested an action that that the service doesn't support.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateParameterConfiguration {
-    /// <p>The type of the job template parameter. Allowed values are: ‘String’, ‘Number’.</p>
+    /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::TemplateParameterDataType>,
     /// <p>The default value for the job template parameter.</p>
@@ -12,7 +12,7 @@ pub struct TemplateParameterConfiguration {
     pub default_value: std::option::Option<std::string::String>,
 }
 impl TemplateParameterConfiguration {
-    /// <p>The type of the job template parameter. Allowed values are: ‘String’, ‘Number’.</p>
+    /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::types::TemplateParameterDataType> {
         self.r#type.as_ref()
     }
@@ -36,12 +36,12 @@ pub struct TemplateParameterConfigurationBuilder {
     pub(crate) default_value: std::option::Option<std::string::String>,
 }
 impl TemplateParameterConfigurationBuilder {
-    /// <p>The type of the job template parameter. Allowed values are: ‘String’, ‘Number’.</p>
+    /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
     pub fn r#type(mut self, input: crate::types::TemplateParameterDataType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of the job template parameter. Allowed values are: ‘String’, ‘Number’.</p>
+    /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
     pub fn set_type(
         mut self,
         input: std::option::Option<crate::types::TemplateParameterDataType>,

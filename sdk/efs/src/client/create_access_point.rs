@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`file_system_id(Option<String>)`](crate::operation::create_access_point::CreateAccessPointOutput::file_system_id): <p>The ID of the EFS file system that the access point applies to.</p>
     ///   - [`posix_user(Option<PosixUser>)`](crate::operation::create_access_point::CreateAccessPointOutput::posix_user): <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
     ///   - [`root_directory(Option<RootDirectory>)`](crate::operation::create_access_point::CreateAccessPointOutput::root_directory): <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
-    ///   - [`owner_id(Option<String>)`](crate::operation::create_access_point::CreateAccessPointOutput::owner_id): <p>Identified the Amazon Web Services account that owns the access point resource.</p>
+    ///   - [`owner_id(Option<String>)`](crate::operation::create_access_point::CreateAccessPointOutput::owner_id): <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
     ///   - [`life_cycle_state(Option<LifeCycleState>)`](crate::operation::create_access_point::CreateAccessPointOutput::life_cycle_state): <p>Identifies the lifecycle phase of the access point.</p>
     /// - On failure, responds with [`SdkError<CreateAccessPointError>`](crate::operation::create_access_point::CreateAccessPointError)
     pub fn create_access_point(

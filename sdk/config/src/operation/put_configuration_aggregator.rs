@@ -166,7 +166,7 @@ pub type PutConfigurationAggregatorErrorKind = PutConfigurationAggregatorError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutConfigurationAggregatorError {
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>You have provided a null or empty role ARN.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),

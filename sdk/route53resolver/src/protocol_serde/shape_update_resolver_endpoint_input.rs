@@ -9,5 +9,23 @@ pub fn ser_update_resolver_endpoint_input(
     if let Some(var_2) = &input.name {
         object.key("Name").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.resolver_endpoint_type {
+        object.key("ResolverEndpointType").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.update_ip_addresses {
+        let mut array_5 = object.key("UpdateIpAddresses").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_update_ip_address::ser_update_ip_address(
+                    &mut object_7,
+                    item_6,
+                )?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

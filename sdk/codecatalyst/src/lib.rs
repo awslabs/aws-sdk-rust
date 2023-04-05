@@ -36,6 +36,7 @@
 //!   - StartDevEnvironment, which starts a specified Dev Environment and puts it into an active state.
 //!   - StartDevEnvironmentSession, which starts a session to a specified Dev Environment.
 //!   - StopDevEnvironment, which stops a specified Dev Environment and puts it into an stopped state.
+//!   - StopDevEnvironmentSession, which stops a session for a specified Dev Environment.
 //!   - UpdateDevEnvironment, which changes one or more values for a Dev Environment.
 //!   - VerifySession, which verifies whether the calling user has a valid Amazon CodeCatalyst login and session.
 //!
@@ -56,7 +57,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-codecatalyst = "0.3.0"
+//! aws-sdk-codecatalyst = "0.3.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

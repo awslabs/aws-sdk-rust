@@ -33,10 +33,10 @@ pub struct UpdateOriginEndpointInput {
     pub origination: std::option::Option<crate::types::Origination>,
     /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
     #[doc(hidden)]
-    pub startover_window_seconds: i32,
+    pub startover_window_seconds: std::option::Option<i32>,
     /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     #[doc(hidden)]
-    pub time_delay_seconds: i32,
+    pub time_delay_seconds: std::option::Option<i32>,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     #[doc(hidden)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -81,11 +81,11 @@ impl UpdateOriginEndpointInput {
         self.origination.as_ref()
     }
     /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
-    pub fn startover_window_seconds(&self) -> i32 {
+    pub fn startover_window_seconds(&self) -> std::option::Option<i32> {
         self.startover_window_seconds
     }
     /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
-    pub fn time_delay_seconds(&self) -> i32 {
+    pub fn time_delay_seconds(&self) -> std::option::Option<i32> {
         self.time_delay_seconds
     }
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
@@ -281,8 +281,8 @@ impl UpdateOriginEndpointInputBuilder {
                 manifest_name: self.manifest_name,
                 mss_package: self.mss_package,
                 origination: self.origination,
-                startover_window_seconds: self.startover_window_seconds.unwrap_or_default(),
-                time_delay_seconds: self.time_delay_seconds.unwrap_or_default(),
+                startover_window_seconds: self.startover_window_seconds,
+                time_delay_seconds: self.time_delay_seconds,
                 whitelist: self.whitelist,
             },
         )

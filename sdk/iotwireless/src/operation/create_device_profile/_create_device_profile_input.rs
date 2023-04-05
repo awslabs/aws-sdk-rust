@@ -15,6 +15,9 @@ pub struct CreateDeviceProfileInput {
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
+    #[doc(hidden)]
+    pub sidewalk: std::option::Option<crate::types::SidewalkCreateDeviceProfile>,
 }
 impl CreateDeviceProfileInput {
     /// <p>The name of the new resource.</p>
@@ -32,6 +35,10 @@ impl CreateDeviceProfileInput {
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::types::SidewalkCreateDeviceProfile> {
+        self.sidewalk.as_ref()
     }
 }
 impl CreateDeviceProfileInput {
@@ -51,6 +58,7 @@ pub struct CreateDeviceProfileInputBuilder {
     pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanDeviceProfile>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_request_token: std::option::Option<std::string::String>,
+    pub(crate) sidewalk: std::option::Option<crate::types::SidewalkCreateDeviceProfile>,
 }
 impl CreateDeviceProfileInputBuilder {
     /// <p>The name of the new resource.</p>
@@ -108,6 +116,19 @@ impl CreateDeviceProfileInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
+    pub fn sidewalk(mut self, input: crate::types::SidewalkCreateDeviceProfile) -> Self {
+        self.sidewalk = Some(input);
+        self
+    }
+    /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
+    pub fn set_sidewalk(
+        mut self,
+        input: std::option::Option<crate::types::SidewalkCreateDeviceProfile>,
+    ) -> Self {
+        self.sidewalk = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDeviceProfileInput`](crate::operation::create_device_profile::CreateDeviceProfileInput).
     pub fn build(
         self,
@@ -121,6 +142,7 @@ impl CreateDeviceProfileInputBuilder {
                 lo_ra_wan: self.lo_ra_wan,
                 tags: self.tags,
                 client_request_token: self.client_request_token,
+                sidewalk: self.sidewalk,
             },
         )
     }

@@ -123,12 +123,12 @@ impl EnableFastLaunchFluentBuilder {
         self.inner = self.inner.set_launch_template(input);
         self
     }
-    /// <p>The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or greater. </p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>
     pub fn max_parallel_launches(mut self, input: i32) -> Self {
         self.inner = self.inner.max_parallel_launches(input);
         self
     }
-    /// <p>The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or greater. </p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>
     pub fn set_max_parallel_launches(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_parallel_launches(input);
         self

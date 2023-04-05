@@ -87,6 +87,24 @@ pub fn de_create_endpoint_http_error(
                 tmp
             })
         }
+        "OutpostOfflineException" => {
+            crate::operation::create_endpoint::CreateEndpointError::OutpostOfflineException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::OutpostOfflineExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_outpost_offline_exception::de_outpost_offline_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_endpoint::CreateEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceNotFoundException" => {
             crate::operation::create_endpoint::CreateEndpointError::ResourceNotFoundException({
                 #[allow(unused_mut)]
@@ -96,6 +114,24 @@ pub fn de_create_endpoint_http_error(
                         crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_endpoint::CreateEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::create_endpoint::CreateEndpointError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_endpoint::CreateEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

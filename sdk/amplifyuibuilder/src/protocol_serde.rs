@@ -230,6 +230,8 @@ pub(crate) mod shape_theme_values_list;
 
 pub(crate) mod shape_component_overrides_value;
 
+pub(crate) mod shape_file_uploader_field_config;
+
 pub(crate) mod shape_mutation_action_set_state_parameter;
 
 pub(crate) mod shape_value_mappings;
@@ -240,6 +242,8 @@ pub(crate) mod shape_component_variant_values;
 
 pub(crate) mod shape_form_bindings;
 
+pub(crate) mod shape_form_input_binding_properties_value;
+
 pub(crate) mod shape_identifier_list;
 
 pub(crate) mod shape_sort_property_list;
@@ -248,12 +252,20 @@ pub(crate) mod shape_validations_list;
 
 pub(crate) mod shape_value_mapping;
 
+pub(crate) mod shape_form_input_binding_properties_value_properties;
+
 pub(crate) mod shape_form_input_value_property;
 
 pub(crate) mod shape_predicate_list;
+
+pub(crate) mod shape_form_input_binding_properties;
+
+pub(crate) mod shape_form_input_value_property_binding_properties;
 
 pub(crate) mod shape_num_values;
 
 pub(crate) mod shape_str_values;
 
 pub(crate) mod shape_value_mapping_list;
+
+pub(crate) mod shape_form_input_value_property_list;

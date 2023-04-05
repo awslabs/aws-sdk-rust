@@ -29,14 +29,14 @@ pub struct CreateMaintenanceWindowInput {
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
     #[doc(hidden)]
-    pub duration: i32,
+    pub duration: std::option::Option<i32>,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     #[doc(hidden)]
-    pub cutoff: i32,
+    pub cutoff: std::option::Option<i32>,
     /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
     /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
     #[doc(hidden)]
-    pub allow_unassociated_targets: bool,
+    pub allow_unassociated_targets: std::option::Option<bool>,
     /// <p>User-provided idempotency token.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -84,16 +84,16 @@ impl CreateMaintenanceWindowInput {
         self.schedule_offset
     }
     /// <p>The duration of the maintenance window in hours.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
-    pub fn cutoff(&self) -> i32 {
+    pub fn cutoff(&self) -> std::option::Option<i32> {
         self.cutoff
     }
     /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
     /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
-    pub fn allow_unassociated_targets(&self) -> bool {
+    pub fn allow_unassociated_targets(&self) -> std::option::Option<bool> {
         self.allow_unassociated_targets
     }
     /// <p>User-provided idempotency token.</p>
@@ -330,9 +330,9 @@ impl CreateMaintenanceWindowInputBuilder {
                 schedule: self.schedule,
                 schedule_timezone: self.schedule_timezone,
                 schedule_offset: self.schedule_offset,
-                duration: self.duration.unwrap_or_default(),
-                cutoff: self.cutoff.unwrap_or_default(),
-                allow_unassociated_targets: self.allow_unassociated_targets.unwrap_or_default(),
+                duration: self.duration,
+                cutoff: self.cutoff,
+                allow_unassociated_targets: self.allow_unassociated_targets,
                 client_token: self.client_token,
                 tags: self.tags,
             },

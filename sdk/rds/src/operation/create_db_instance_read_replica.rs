@@ -161,6 +161,8 @@ pub type CreateDBInstanceReadReplicaErrorKind = CreateDBInstanceReadReplicaError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBInstanceReadReplicaError {
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
     /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
@@ -181,6 +183,8 @@ pub enum CreateDBInstanceReadReplicaError {
     InstanceQuotaExceededFault(crate::types::error::InstanceQuotaExceededFault),
     /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
+    /// <p>The requested operation can't be performed while the cluster is in this state.</p>
+    InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region read replica of the same source instance.</p>
@@ -219,6 +223,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateDBInstanceReadRepli
 impl std::fmt::Display for CreateDBInstanceReadReplicaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
@@ -229,6 +234,7 @@ impl std::fmt::Display for CreateDBInstanceReadReplicaError {
             Self::DomainNotFoundFault(_inner) => _inner.fmt(f),
             Self::InstanceQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::InsufficientDbInstanceCapacityFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbSubnetGroupFault(_inner) => _inner.fmt(f),
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
@@ -246,6 +252,9 @@ impl std::fmt::Display for CreateDBInstanceReadReplicaError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBInstanceReadReplicaError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DbClusterNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::DbInstanceAlreadyExistsFault(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -274,6 +283,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBInstanc
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InsufficientDbInstanceCapacityFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidDbClusterStateFault(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidDbInstanceStateFault(_inner) => {
@@ -353,6 +365,7 @@ impl CreateDBInstanceReadReplicaError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::DbClusterNotFoundFault(e) => e.meta(),
             Self::DbInstanceAlreadyExistsFault(e) => e.meta(),
             Self::DbInstanceNotFoundFault(e) => e.meta(),
             Self::DbParameterGroupNotFoundFault(e) => e.meta(),
@@ -363,6 +376,7 @@ impl CreateDBInstanceReadReplicaError {
             Self::DomainNotFoundFault(e) => e.meta(),
             Self::InstanceQuotaExceededFault(e) => e.meta(),
             Self::InsufficientDbInstanceCapacityFault(e) => e.meta(),
+            Self::InvalidDbClusterStateFault(e) => e.meta(),
             Self::InvalidDbInstanceStateFault(e) => e.meta(),
             Self::InvalidDbSubnetGroupFault(e) => e.meta(),
             Self::InvalidSubnet(e) => e.meta(),
@@ -375,6 +389,10 @@ impl CreateDBInstanceReadReplicaError {
             Self::StorageTypeNotSupportedFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaError::DbClusterNotFoundFault`.
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaError::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
@@ -415,6 +433,10 @@ impl CreateDBInstanceReadReplicaError {
     /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaError::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(self, Self::InsufficientDbInstanceCapacityFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaError::InvalidDbClusterStateFault`.
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaError::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
@@ -460,6 +482,7 @@ impl CreateDBInstanceReadReplicaError {
 impl std::error::Error for CreateDBInstanceReadReplicaError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Self::DbClusterNotFoundFault(_inner) => Some(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => Some(_inner),
             Self::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
@@ -470,6 +493,7 @@ impl std::error::Error for CreateDBInstanceReadReplicaError {
             Self::DomainNotFoundFault(_inner) => Some(_inner),
             Self::InstanceQuotaExceededFault(_inner) => Some(_inner),
             Self::InsufficientDbInstanceCapacityFault(_inner) => Some(_inner),
+            Self::InvalidDbClusterStateFault(_inner) => Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             Self::InvalidDbSubnetGroupFault(_inner) => Some(_inner),
             Self::InvalidSubnet(_inner) => Some(_inner),

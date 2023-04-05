@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVoiceConnectorOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated Voice Connector details.</p>
     #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::types::VoiceConnector>,
     _request_id: Option<String>,
 }
 impl UpdateVoiceConnectorOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated Voice Connector details.</p>
     pub fn voice_connector(&self) -> std::option::Option<&crate::types::VoiceConnector> {
         self.voice_connector.as_ref()
     }
@@ -35,12 +35,12 @@ pub struct UpdateVoiceConnectorOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateVoiceConnectorOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated Voice Connector details.</p>
     pub fn voice_connector(mut self, input: crate::types::VoiceConnector) -> Self {
         self.voice_connector = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated Voice Connector details.</p>
     pub fn set_voice_connector(
         mut self,
         input: std::option::Option<crate::types::VoiceConnector>,

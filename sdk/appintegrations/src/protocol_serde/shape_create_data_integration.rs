@@ -212,6 +212,13 @@ pub(crate) fn de_create_data_integration(
                             .transpose()?,
                         );
                     }
+                    "FileConfiguration" => {
+                        builder = builder.set_file_configuration(
+                            crate::protocol_serde::shape_file_configuration::de_file_configuration(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "Id" => {
                         builder = builder.set_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -237,6 +244,11 @@ pub(crate) fn de_create_data_integration(
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                        );
+                    }
+                    "ObjectConfiguration" => {
+                        builder = builder.set_object_configuration(
+                            crate::protocol_serde::shape_object_configuration::de_object_configuration(tokens)?
                         );
                     }
                     "ScheduleConfiguration" => {

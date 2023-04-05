@@ -5,7 +5,7 @@ pub use crate::operation::start_monitoring_members::_start_monitoring_members_in
 
 /// Fluent builder constructing a request to `StartMonitoringMembers`.
 ///
-/// <p>Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the <code>StopMonitoringMembers</code> operation.</p>
+/// <p>Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html">StopMonitoringMembers</a> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartMonitoringMembersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

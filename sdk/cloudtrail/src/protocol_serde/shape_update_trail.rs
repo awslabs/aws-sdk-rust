@@ -100,6 +100,23 @@ pub fn de_update_trail_http_error(
                                                     }
             tmp
         }),
+        "ConflictException" => crate::operation::update_trail::UpdateTrailError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_trail::UpdateTrailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "InsufficientDependencyServiceAccessPermissionException" => crate::operation::update_trail::UpdateTrailError::InsufficientDependencyServiceAccessPermissionException({
             #[allow(unused_mut)]
             let mut tmp =

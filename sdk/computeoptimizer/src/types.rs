@@ -121,6 +121,8 @@ pub use crate::types::_cpu_vendor_architecture::CpuVendorArchitecture;
 
 pub use crate::types::_instance_recommendation::InstanceRecommendation;
 
+pub use crate::types::_instance_state::InstanceState;
+
 pub use crate::types::_inferred_workload_type::InferredWorkloadType;
 
 pub use crate::types::_effective_recommendation_preferences::EffectiveRecommendationPreferences;
@@ -296,6 +298,8 @@ mod _instance_recommendation;
 mod _instance_recommendation_finding_reason_code;
 
 mod _instance_recommendation_option;
+
+mod _instance_state;
 
 mod _job_filter;
 

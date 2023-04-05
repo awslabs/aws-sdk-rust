@@ -18,7 +18,7 @@ pub struct CreateCustomDataIdentifierInput {
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     #[doc(hidden)]
-    pub maximum_match_distance: i32,
+    pub maximum_match_distance: std::option::Option<i32>,
     /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     #[doc(hidden)]
@@ -55,7 +55,7 @@ impl CreateCustomDataIdentifierInput {
         self.keywords.as_deref()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
-    pub fn maximum_match_distance(&self) -> i32 {
+    pub fn maximum_match_distance(&self) -> std::option::Option<i32> {
         self.maximum_match_distance
     }
     /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
@@ -257,7 +257,7 @@ impl CreateCustomDataIdentifierInputBuilder {
                 description: self.description,
                 ignore_words: self.ignore_words,
                 keywords: self.keywords,
-                maximum_match_distance: self.maximum_match_distance.unwrap_or_default(),
+                maximum_match_distance: self.maximum_match_distance,
                 name: self.name,
                 regex: self.regex,
                 severity_levels: self.severity_levels,

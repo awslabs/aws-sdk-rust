@@ -258,6 +258,8 @@ mod delete_cluster;
 
 mod delete_service;
 
+mod delete_task_definitions;
+
 mod delete_task_set;
 
 mod deregister_container_instance;

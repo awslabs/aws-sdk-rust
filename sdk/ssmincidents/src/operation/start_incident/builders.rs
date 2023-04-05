@@ -141,12 +141,12 @@ impl StartIncidentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
     ///
-    /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn related_items(mut self, input: crate::types::RelatedItem) -> Self {
         self.inner = self.inner.related_items(input);
         self
     }
-    /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn set_related_items(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::RelatedItem>>,

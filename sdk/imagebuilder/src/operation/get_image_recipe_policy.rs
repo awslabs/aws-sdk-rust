@@ -178,7 +178,7 @@ pub enum GetImageRecipePolicyError {
     CallRateLimitExceededException(crate::types::error::CallRateLimitExceededException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
-    /// <p>You have made a request for an action that is not supported by the service.</p>
+    /// <p>You have requested an action that that the service doesn't support.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

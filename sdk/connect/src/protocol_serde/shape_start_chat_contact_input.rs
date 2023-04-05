@@ -49,14 +49,17 @@ pub fn ser_start_chat_contact_input(
         crate::protocol_serde::shape_persistent_chat::ser_persistent_chat(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.supported_messaging_content_types {
-        let mut array_16 = object.key("SupportedMessagingContentTypes").start_array();
-        for item_17 in var_15 {
+    if let Some(var_15) = &input.related_contact_id {
+        object.key("RelatedContactId").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.supported_messaging_content_types {
+        let mut array_17 = object.key("SupportedMessagingContentTypes").start_array();
+        for item_18 in var_16 {
             {
-                array_16.value().string(item_17.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
     Ok(())
 }

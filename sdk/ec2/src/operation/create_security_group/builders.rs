@@ -76,7 +76,7 @@ impl CreateSecurityGroupFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>A description for the security group. This is informational only.</p>
+    /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
     /// <p>Constraints for EC2-Classic: ASCII characters</p>
     /// <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
@@ -84,7 +84,7 @@ impl CreateSecurityGroupFluentBuilder {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description for the security group. This is informational only.</p>
+    /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
     /// <p>Constraints for EC2-Classic: ASCII characters</p>
     /// <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>

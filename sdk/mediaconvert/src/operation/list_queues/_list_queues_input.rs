@@ -8,7 +8,7 @@ pub struct ListQueuesInput {
     pub list_by: std::option::Option<crate::types::QueueListBy>,
     /// Optional. Number of queues, up to twenty, that will be returned at one time.
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// Use this string, provided with the response to a previous request, to request the next batch of queues.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ impl ListQueuesInput {
         self.list_by.as_ref()
     }
     /// Optional. Number of queues, up to twenty, that will be returned at one time.
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of queues.
@@ -100,7 +100,7 @@ impl ListQueuesInputBuilder {
     > {
         Ok(crate::operation::list_queues::ListQueuesInput {
             list_by: self.list_by,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             order: self.order,
         })

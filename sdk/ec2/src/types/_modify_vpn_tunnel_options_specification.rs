@@ -104,6 +104,9 @@ pub struct ModifyVpnTunnelOptionsSpecification {
     /// <p>Options for logging VPN tunnel activity.</p>
     #[doc(hidden)]
     pub log_options: std::option::Option<crate::types::VpnTunnelLogOptionsSpecification>,
+    /// <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
+    #[doc(hidden)]
+    pub enable_tunnel_lifecycle_control: std::option::Option<bool>,
 }
 impl ModifyVpnTunnelOptionsSpecification {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway. </p>
@@ -233,6 +236,10 @@ impl ModifyVpnTunnelOptionsSpecification {
     ) -> std::option::Option<&crate::types::VpnTunnelLogOptionsSpecification> {
         self.log_options.as_ref()
     }
+    /// <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
+    pub fn enable_tunnel_lifecycle_control(&self) -> std::option::Option<bool> {
+        self.enable_tunnel_lifecycle_control
+    }
 }
 impl ModifyVpnTunnelOptionsSpecification {
     /// Creates a new builder-style object to manufacture [`ModifyVpnTunnelOptionsSpecification`](crate::types::ModifyVpnTunnelOptionsSpecification).
@@ -273,6 +280,7 @@ pub struct ModifyVpnTunnelOptionsSpecificationBuilder {
         std::option::Option<std::vec::Vec<crate::types::IkeVersionsRequestListValue>>,
     pub(crate) startup_action: std::option::Option<std::string::String>,
     pub(crate) log_options: std::option::Option<crate::types::VpnTunnelLogOptionsSpecification>,
+    pub(crate) enable_tunnel_lifecycle_control: std::option::Option<bool>,
 }
 impl ModifyVpnTunnelOptionsSpecificationBuilder {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway. </p>
@@ -640,6 +648,16 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.log_options = input;
         self
     }
+    /// <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
+    pub fn enable_tunnel_lifecycle_control(mut self, input: bool) -> Self {
+        self.enable_tunnel_lifecycle_control = Some(input);
+        self
+    }
+    /// <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
+    pub fn set_enable_tunnel_lifecycle_control(mut self, input: std::option::Option<bool>) -> Self {
+        self.enable_tunnel_lifecycle_control = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyVpnTunnelOptionsSpecification`](crate::types::ModifyVpnTunnelOptionsSpecification).
     pub fn build(self) -> crate::types::ModifyVpnTunnelOptionsSpecification {
         crate::types::ModifyVpnTunnelOptionsSpecification {
@@ -662,6 +680,7 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
             ike_versions: self.ike_versions,
             startup_action: self.startup_action,
             log_options: self.log_options,
+            enable_tunnel_lifecycle_control: self.enable_tunnel_lifecycle_control,
         }
     }
 }

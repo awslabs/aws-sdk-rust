@@ -5,7 +5,7 @@ pub use crate::operation::create_domain::_create_domain_input::CreateDomainInput
 
 /// Fluent builder constructing a request to `CreateDomain`.
 ///
-/// <p>Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer audio, and voiceprints. </p>
+/// <p>Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer audio, and voiceprints. Every domain is created with a default watchlist that fraudsters can be a part of.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDomainFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -75,12 +75,12 @@ impl CreateDomainFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description of this domain.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A brief description of the domain.</p>
+    /// <p>A brief description of this domain.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
@@ -101,12 +101,12 @@ impl CreateDomainFluentBuilder {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self

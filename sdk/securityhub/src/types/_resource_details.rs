@@ -280,6 +280,9 @@ pub struct ResourceDetails {
     /// <p> Details about an WAFv2 rule group. </p>
     #[doc(hidden)]
     pub aws_wafv2_rule_group: std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
+    #[doc(hidden)]
+    pub aws_ec2_route_table: std::option::Option<crate::types::AwsEc2RouteTableDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
@@ -733,6 +736,12 @@ impl ResourceDetails {
     ) -> std::option::Option<&crate::types::AwsWafv2RuleGroupDetails> {
         self.aws_wafv2_rule_group.as_ref()
     }
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
+    pub fn aws_ec2_route_table(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsEc2RouteTableDetails> {
+        self.aws_ec2_route_table.as_ref()
+    }
 }
 impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::types::ResourceDetails).
@@ -869,6 +878,7 @@ pub struct ResourceDetailsBuilder {
         std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
     pub(crate) aws_wafv2_web_acl: std::option::Option<crate::types::AwsWafv2WebAclDetails>,
     pub(crate) aws_wafv2_rule_group: std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
+    pub(crate) aws_ec2_route_table: std::option::Option<crate::types::AwsEc2RouteTableDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>Details for an autoscaling group.</p>
@@ -2093,6 +2103,19 @@ impl ResourceDetailsBuilder {
         self.aws_wafv2_rule_group = input;
         self
     }
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
+    pub fn aws_ec2_route_table(mut self, input: crate::types::AwsEc2RouteTableDetails) -> Self {
+        self.aws_ec2_route_table = Some(input);
+        self
+    }
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
+    pub fn set_aws_ec2_route_table(
+        mut self,
+        input: std::option::Option<crate::types::AwsEc2RouteTableDetails>,
+    ) -> Self {
+        self.aws_ec2_route_table = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
@@ -2179,6 +2202,7 @@ impl ResourceDetailsBuilder {
             aws_sage_maker_notebook_instance: self.aws_sage_maker_notebook_instance,
             aws_wafv2_web_acl: self.aws_wafv2_web_acl,
             aws_wafv2_rule_group: self.aws_wafv2_rule_group,
+            aws_ec2_route_table: self.aws_ec2_route_table,
         }
     }
 }

@@ -5,7 +5,7 @@ pub use crate::operation::update_work_group::_update_work_group_input::UpdateWor
 
 /// Fluent builder constructing a request to `UpdateWorkGroup`.
 ///
-/// <p>Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only one of <code>ConfigurationsUpdates</code> or <code>ConfigurationUpdates</code> can be specified; <code>ConfigurationsUpdates</code> for a workgroup with multi engine support (for example, an Apache Spark enabled workgroup) or <code>ConfigurationUpdates</code> for an Athena SQL workgroup.</p>
+/// <p>Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only <code>ConfigurationUpdates</code> can be specified.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

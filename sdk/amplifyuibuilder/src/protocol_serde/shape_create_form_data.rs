@@ -75,5 +75,8 @@ pub fn ser_create_form_data(
         }
         object_21.finish();
     }
+    if let Some(var_24) = &input.label_decorator {
+        object.key("labelDecorator").string(var_24.as_str());
+    }
     Ok(())
 }

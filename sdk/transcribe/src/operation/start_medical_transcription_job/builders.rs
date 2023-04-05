@@ -206,7 +206,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
     /// </ol>
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.output_encryption_kms_key_id(input.into());
         self
@@ -226,7 +226,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
     /// </ol>
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(
         mut self,
         input: std::option::Option<std::string::String>,

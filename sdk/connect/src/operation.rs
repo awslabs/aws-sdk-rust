@@ -229,6 +229,9 @@ pub mod get_federation_token;
 /// Types for the `GetMetricData` operation.
 pub mod get_metric_data;
 
+/// Types for the `GetMetricDataV2` operation.
+pub mod get_metric_data_v2;
+
 /// Types for the `GetTaskTemplate` operation.
 pub mod get_task_template;
 

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSnapshotsOutput {
-    /// <p>The date-time for the beginning and end of the time window for the search metrics data.</p>
+    /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
     #[doc(hidden)]
     pub snap_shot_time_filter: std::option::Option<crate::types::TimeRange>,
     /// <p>The column headers for the search metrics data.</p>
@@ -18,7 +18,7 @@ pub struct GetSnapshotsOutput {
     _request_id: Option<String>,
 }
 impl GetSnapshotsOutput {
-    /// <p>The date-time for the beginning and end of the time window for the search metrics data.</p>
+    /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
     pub fn snap_shot_time_filter(&self) -> std::option::Option<&crate::types::TimeRange> {
         self.snap_shot_time_filter.as_ref()
     }
@@ -59,12 +59,12 @@ pub struct GetSnapshotsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSnapshotsOutputBuilder {
-    /// <p>The date-time for the beginning and end of the time window for the search metrics data.</p>
+    /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
     pub fn snap_shot_time_filter(mut self, input: crate::types::TimeRange) -> Self {
         self.snap_shot_time_filter = Some(input);
         self
     }
-    /// <p>The date-time for the beginning and end of the time window for the search metrics data.</p>
+    /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
     pub fn set_snap_shot_time_filter(
         mut self,
         input: std::option::Option<crate::types::TimeRange>,

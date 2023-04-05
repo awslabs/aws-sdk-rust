@@ -5,6 +5,7 @@ pub use crate::operation::get_sip_media_application::_get_sip_media_application_
 
 /// Fluent builder constructing a request to `GetSipMediaApplication`.
 ///
+/// <p>Retrieves the information for a SIP media application, including name, AWS Region, and endpoints.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSipMediaApplicationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +70,12 @@ impl GetSipMediaApplicationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID .</p>
     pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID .</p>
     pub fn set_sip_media_application_id(
         mut self,
         input: std::option::Option<std::string::String>,

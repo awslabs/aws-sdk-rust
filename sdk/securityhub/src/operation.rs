@@ -13,11 +13,20 @@ pub mod batch_disable_standards;
 /// Types for the `BatchEnableStandards` operation.
 pub mod batch_enable_standards;
 
+/// Types for the `BatchGetSecurityControls` operation.
+pub mod batch_get_security_controls;
+
+/// Types for the `BatchGetStandardsControlAssociations` operation.
+pub mod batch_get_standards_control_associations;
+
 /// Types for the `BatchImportFindings` operation.
 pub mod batch_import_findings;
 
 /// Types for the `BatchUpdateFindings` operation.
 pub mod batch_update_findings;
+
+/// Types for the `BatchUpdateStandardsControlAssociations` operation.
+pub mod batch_update_standards_control_associations;
 
 /// Types for the `CreateActionTarget` operation.
 pub mod create_action_target;
@@ -138,6 +147,12 @@ pub mod list_members;
 
 /// Types for the `ListOrganizationAdminAccounts` operation.
 pub mod list_organization_admin_accounts;
+
+/// Types for the `ListSecurityControlDefinitions` operation.
+pub mod list_security_control_definitions;
+
+/// Types for the `ListStandardsControlAssociations` operation.
+pub mod list_standards_control_associations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

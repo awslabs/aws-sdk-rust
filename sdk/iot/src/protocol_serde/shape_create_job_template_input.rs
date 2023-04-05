@@ -36,32 +36,47 @@ pub fn ser_create_job_template_input(
         crate::protocol_serde::shape_job_executions_rollout_config::ser_job_executions_rollout_config(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.presigned_url_config {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("presignedUrlConfig").start_object();
-        crate::protocol_serde::shape_presigned_url_config::ser_presigned_url_config(
-            &mut object_12,
-            var_11,
-        )?;
-        object_12.finish();
-    }
-    if let Some(var_13) = &input.tags {
-        let mut array_14 = object.key("tags").start_array();
-        for item_15 in var_13 {
+    if let Some(var_11) = &input.maintenance_windows {
+        let mut array_12 = object.key("maintenanceWindows").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_maintenance_window::ser_maintenance_window(
+                    &mut object_14,
+                    item_13,
+                )?;
+                object_14.finish();
             }
         }
-        array_14.finish();
+        array_12.finish();
     }
-    if let Some(var_17) = &input.timeout_config {
+    if let Some(var_15) = &input.presigned_url_config {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("timeoutConfig").start_object();
-        crate::protocol_serde::shape_timeout_config::ser_timeout_config(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_16 = object.key("presignedUrlConfig").start_object();
+        crate::protocol_serde::shape_presigned_url_config::ser_presigned_url_config(
+            &mut object_16,
+            var_15,
+        )?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.tags {
+        let mut array_18 = object.key("tags").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_20, item_19)?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
+    }
+    if let Some(var_21) = &input.timeout_config {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("timeoutConfig").start_object();
+        crate::protocol_serde::shape_timeout_config::ser_timeout_config(&mut object_22, var_21)?;
+        object_22.finish();
     }
     Ok(())
 }

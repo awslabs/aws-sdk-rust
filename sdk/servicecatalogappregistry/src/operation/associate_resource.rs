@@ -221,8 +221,10 @@ pub enum AssociateResourceError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The maximum number of resources per account has been reached.</p>
+    /// <p> The maximum number of resources per account has been reached.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p> The maximum number of API requests has been exceeded. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has invalid or missing parameters.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -247,6 +249,7 @@ impl std::fmt::Display for AssociateResourceError {
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -265,6 +268,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AssociateResour
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ServiceQuotaExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ThrottlingException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ValidationException(_inner) => {
@@ -321,6 +327,7 @@ impl AssociateResourceError {
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ServiceQuotaExceededException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -341,6 +348,10 @@ impl AssociateResourceError {
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(self, Self::ServiceQuotaExceededException(_))
     }
+    /// Returns `true` if the error kind is `AssociateResourceError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `AssociateResourceError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -353,6 +364,7 @@ impl std::error::Error for AssociateResourceError {
             Self::InternalServerException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => Some(_inner),
+            Self::ThrottlingException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }

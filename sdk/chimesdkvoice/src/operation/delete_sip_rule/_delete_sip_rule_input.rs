@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSipRuleInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     #[doc(hidden)]
     pub sip_rule_id: std::option::Option<std::string::String>,
 }
 impl DeleteSipRuleInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn sip_rule_id(&self) -> std::option::Option<&str> {
         self.sip_rule_id.as_deref()
     }
@@ -27,12 +27,12 @@ pub struct DeleteSipRuleInputBuilder {
     pub(crate) sip_rule_id: std::option::Option<std::string::String>,
 }
 impl DeleteSipRuleInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn sip_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.sip_rule_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule ID.</p>
     pub fn set_sip_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.sip_rule_id = input;
         self

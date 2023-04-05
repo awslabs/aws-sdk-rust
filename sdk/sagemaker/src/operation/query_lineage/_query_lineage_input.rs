@@ -11,7 +11,7 @@ pub struct QueryLineageInput {
     pub direction: std::option::Option<crate::types::Direction>,
     /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
     #[doc(hidden)]
-    pub include_edges: bool,
+    pub include_edges: std::option::Option<bool>,
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
     /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
@@ -42,7 +42,7 @@ impl QueryLineageInput {
         self.direction.as_ref()
     }
     /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
-    pub fn include_edges(&self) -> bool {
+    pub fn include_edges(&self) -> std::option::Option<bool> {
         self.include_edges
     }
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
@@ -192,7 +192,7 @@ impl QueryLineageInputBuilder {
         Ok(crate::operation::query_lineage::QueryLineageInput {
             start_arns: self.start_arns,
             direction: self.direction,
-            include_edges: self.include_edges.unwrap_or_default(),
+            include_edges: self.include_edges,
             filters: self.filters,
             max_depth: self.max_depth,
             max_results: self.max_results,

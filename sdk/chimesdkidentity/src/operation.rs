@@ -7,6 +7,9 @@ pub mod create_app_instance;
 /// Types for the `CreateAppInstanceAdmin` operation.
 pub mod create_app_instance_admin;
 
+/// Types for the `CreateAppInstanceBot` operation.
+pub mod create_app_instance_bot;
+
 /// Types for the `CreateAppInstanceUser` operation.
 pub mod create_app_instance_user;
 
@@ -15,6 +18,9 @@ pub mod delete_app_instance;
 
 /// Types for the `DeleteAppInstanceAdmin` operation.
 pub mod delete_app_instance_admin;
+
+/// Types for the `DeleteAppInstanceBot` operation.
+pub mod delete_app_instance_bot;
 
 /// Types for the `DeleteAppInstanceUser` operation.
 pub mod delete_app_instance_user;
@@ -28,6 +34,9 @@ pub mod describe_app_instance;
 /// Types for the `DescribeAppInstanceAdmin` operation.
 pub mod describe_app_instance_admin;
 
+/// Types for the `DescribeAppInstanceBot` operation.
+pub mod describe_app_instance_bot;
+
 /// Types for the `DescribeAppInstanceUser` operation.
 pub mod describe_app_instance_user;
 
@@ -39,6 +48,9 @@ pub mod get_app_instance_retention_settings;
 
 /// Types for the `ListAppInstanceAdmins` operation.
 pub mod list_app_instance_admins;
+
+/// Types for the `ListAppInstanceBots` operation.
+pub mod list_app_instance_bots;
 
 /// Types for the `ListAppInstanceUserEndpoints` operation.
 pub mod list_app_instance_user_endpoints;
@@ -55,6 +67,9 @@ pub mod list_tags_for_resource;
 /// Types for the `PutAppInstanceRetentionSettings` operation.
 pub mod put_app_instance_retention_settings;
 
+/// Types for the `PutAppInstanceUserExpirationSettings` operation.
+pub mod put_app_instance_user_expiration_settings;
+
 /// Types for the `RegisterAppInstanceUserEndpoint` operation.
 pub mod register_app_instance_user_endpoint;
 
@@ -66,6 +81,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAppInstance` operation.
 pub mod update_app_instance;
+
+/// Types for the `UpdateAppInstanceBot` operation.
+pub mod update_app_instance_bot;
 
 /// Types for the `UpdateAppInstanceUser` operation.
 pub mod update_app_instance_user;

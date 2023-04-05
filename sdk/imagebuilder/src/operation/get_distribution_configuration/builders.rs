@@ -5,7 +5,7 @@ pub use crate::operation::get_distribution_configuration::_get_distribution_conf
 
 /// Fluent builder constructing a request to `GetDistributionConfiguration`.
 ///
-/// <p> Gets a distribution configuration.</p>
+/// <p>Gets a distribution configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDistributionConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

@@ -5,7 +5,7 @@ pub use crate::operation::list_package_versions::_list_package_versions_input::L
 
 /// Fluent builder constructing a request to `ListPackageVersions`.
 ///
-/// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects for package versions in a repository that match the request parameters. </p>
+/// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects for package versions in a repository that match the request parameters. Package versions of all statuses will be returned by default when calling <code>list-package-versions</code> with no <code>--status</code> parameter. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPackageVersionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -110,12 +110,12 @@ impl ListPackageVersionsFluentBuilder {
         self.inner = self.inner.set_repository(input);
         self
     }
-    /// <p> The format of the returned package versions. </p>
+    /// <p> The format of the package versions you want to list. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.inner = self.inner.format(input);
         self
     }
-    /// <p> The format of the returned package versions. </p>
+    /// <p> The format of the package versions you want to list. </p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
@@ -125,6 +125,7 @@ impl ListPackageVersionsFluentBuilder {
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -135,6 +136,7 @@ impl ListPackageVersionsFluentBuilder {
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);

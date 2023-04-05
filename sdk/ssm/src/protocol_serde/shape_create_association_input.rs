@@ -69,83 +69,81 @@ pub fn ser_create_association_input(
     if let Some(var_22) = &input.sync_compliance {
         object.key("SyncCompliance").string(var_22.as_str());
     }
-    if input.apply_only_at_cron_interval {
-        object
-            .key("ApplyOnlyAtCronInterval")
-            .boolean(input.apply_only_at_cron_interval);
+    if let Some(var_23) = &input.apply_only_at_cron_interval {
+        object.key("ApplyOnlyAtCronInterval").boolean(*var_23);
     }
-    if let Some(var_23) = &input.calendar_names {
-        let mut array_24 = object.key("CalendarNames").start_array();
-        for item_25 in var_23 {
+    if let Some(var_24) = &input.calendar_names {
+        let mut array_25 = object.key("CalendarNames").start_array();
+        for item_26 in var_24 {
             {
-                array_24.value().string(item_25.as_str());
+                array_25.value().string(item_26.as_str());
             }
         }
-        array_24.finish();
+        array_25.finish();
     }
-    if let Some(var_26) = &input.target_locations {
-        let mut array_27 = object.key("TargetLocations").start_array();
-        for item_28 in var_26 {
+    if let Some(var_27) = &input.target_locations {
+        let mut array_28 = object.key("TargetLocations").start_array();
+        for item_29 in var_27 {
             {
                 #[allow(unused_mut)]
-                let mut object_29 = array_27.value().start_object();
+                let mut object_30 = array_28.value().start_object();
                 crate::protocol_serde::shape_target_location::ser_target_location(
-                    &mut object_29,
-                    item_28,
+                    &mut object_30,
+                    item_29,
                 )?;
-                object_29.finish();
+                object_30.finish();
             }
         }
-        array_27.finish();
+        array_28.finish();
     }
-    if let Some(var_30) = &input.schedule_offset {
+    if let Some(var_31) = &input.schedule_offset {
         object.key("ScheduleOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_30).into()),
+            aws_smithy_types::Number::NegInt((*var_31).into()),
         );
     }
-    if let Some(var_31) = &input.target_maps {
-        let mut array_32 = object.key("TargetMaps").start_array();
-        for item_33 in var_31 {
+    if let Some(var_32) = &input.target_maps {
+        let mut array_33 = object.key("TargetMaps").start_array();
+        for item_34 in var_32 {
             {
                 #[allow(unused_mut)]
-                let mut object_34 = array_32.value().start_object();
-                for (key_35, value_36) in item_33 {
+                let mut object_35 = array_33.value().start_object();
+                for (key_36, value_37) in item_34 {
                     {
-                        let mut array_37 = object_34.key(key_35.as_str()).start_array();
-                        for item_38 in value_36 {
+                        let mut array_38 = object_35.key(key_36.as_str()).start_array();
+                        for item_39 in value_37 {
                             {
-                                array_37.value().string(item_38.as_str());
+                                array_38.value().string(item_39.as_str());
                             }
                         }
-                        array_37.finish();
+                        array_38.finish();
                     }
                 }
-                object_34.finish();
+                object_35.finish();
             }
         }
-        array_32.finish();
+        array_33.finish();
     }
-    if let Some(var_39) = &input.tags {
-        let mut array_40 = object.key("Tags").start_array();
-        for item_41 in var_39 {
+    if let Some(var_40) = &input.tags {
+        let mut array_41 = object.key("Tags").start_array();
+        for item_42 in var_40 {
             {
                 #[allow(unused_mut)]
-                let mut object_42 = array_40.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_42, item_41)?;
-                object_42.finish();
+                let mut object_43 = array_41.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_43, item_42)?;
+                object_43.finish();
             }
         }
-        array_40.finish();
+        array_41.finish();
     }
-    if let Some(var_43) = &input.alarm_configuration {
+    if let Some(var_44) = &input.alarm_configuration {
         #[allow(unused_mut)]
-        let mut object_44 = object.key("AlarmConfiguration").start_object();
+        let mut object_45 = object.key("AlarmConfiguration").start_object();
         crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(
-            &mut object_44,
-            var_43,
+            &mut object_45,
+            var_44,
         )?;
-        object_44.finish();
+        object_45.finish();
     }
     Ok(())
 }

@@ -7,7 +7,7 @@ pub struct ConformancePackComplianceSummary {
     /// <p>The name of the conformance pack name.</p>
     #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
-    /// <p>The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.</p>
+    /// <p>The status of the conformance pack.</p>
     #[doc(hidden)]
     pub conformance_pack_compliance_status:
         std::option::Option<crate::types::ConformancePackComplianceType>,
@@ -17,7 +17,7 @@ impl ConformancePackComplianceSummary {
     pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
         self.conformance_pack_name.as_deref()
     }
-    /// <p>The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.</p>
+    /// <p>The status of the conformance pack.</p>
     pub fn conformance_pack_compliance_status(
         &self,
     ) -> std::option::Option<&crate::types::ConformancePackComplianceType> {
@@ -53,7 +53,7 @@ impl ConformancePackComplianceSummaryBuilder {
         self.conformance_pack_name = input;
         self
     }
-    /// <p>The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.</p>
+    /// <p>The status of the conformance pack.</p>
     pub fn conformance_pack_compliance_status(
         mut self,
         input: crate::types::ConformancePackComplianceType,
@@ -61,7 +61,7 @@ impl ConformancePackComplianceSummaryBuilder {
         self.conformance_pack_compliance_status = Some(input);
         self
     }
-    /// <p>The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.</p>
+    /// <p>The status of the conformance pack.</p>
     pub fn set_conformance_pack_compliance_status(
         mut self,
         input: std::option::Option<crate::types::ConformancePackComplianceType>,

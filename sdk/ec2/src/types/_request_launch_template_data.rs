@@ -35,7 +35,7 @@ pub struct RequestLaunchTemplateData {
     /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -184,7 +184,7 @@ impl RequestLaunchTemplateData {
     /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
@@ -559,7 +559,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.image_id = Some(input.into());
         self
@@ -572,7 +572,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.image_id = input;
         self

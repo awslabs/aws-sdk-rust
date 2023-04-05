@@ -20,6 +20,8 @@ pub(crate) mod shape_delete_domain;
 
 pub(crate) mod shape_delete_domain_permissions_policy;
 
+pub(crate) mod shape_delete_package;
+
 pub(crate) mod shape_delete_package_versions;
 
 pub(crate) mod shape_delete_repository;
@@ -65,6 +67,10 @@ pub(crate) mod shape_list_repositories;
 pub(crate) mod shape_list_repositories_in_domain;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_publish_package_version;
+
+pub(crate) mod shape_publish_package_version_input;
 
 pub(crate) mod shape_put_domain_permissions_policy;
 
@@ -130,6 +136,8 @@ pub(crate) mod shape_update_repository_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_asset_summary;
+
 pub(crate) mod shape_asset_summary_list;
 
 pub(crate) mod shape_domain_description;
@@ -143,6 +151,8 @@ pub(crate) mod shape_package_description;
 pub(crate) mod shape_package_origin_configuration;
 
 pub(crate) mod shape_package_origin_restrictions;
+
+pub(crate) mod shape_package_summary;
 
 pub(crate) mod shape_package_summary_list;
 
@@ -166,15 +176,13 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_upstream_repository;
 
-pub(crate) mod shape_asset_summary;
+pub(crate) mod shape_asset_hashes;
 
 pub(crate) mod shape_domain_summary;
 
 pub(crate) mod shape_license_info_list;
 
 pub(crate) mod shape_package_dependency;
-
-pub(crate) mod shape_package_summary;
 
 pub(crate) mod shape_package_version_error;
 
@@ -189,8 +197,6 @@ pub(crate) mod shape_repository_summary;
 pub(crate) mod shape_successful_package_version_info;
 
 pub(crate) mod shape_upstream_repository_info_list;
-
-pub(crate) mod shape_asset_hashes;
 
 pub(crate) mod shape_domain_entry_point;
 

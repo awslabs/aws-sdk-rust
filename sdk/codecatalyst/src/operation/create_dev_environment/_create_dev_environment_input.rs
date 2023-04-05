@@ -29,8 +29,8 @@ pub struct CreateDevEnvironmentInput {
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
     #[doc(hidden)]
     pub inactivity_timeout_minutes: i32,
-    /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p> <note>
-    /// <p>Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     #[doc(hidden)]
     pub persistent_storage: std::option::Option<crate::types::PersistentStorageConfiguration>,
@@ -70,8 +70,8 @@ impl CreateDevEnvironmentInput {
     pub fn inactivity_timeout_minutes(&self) -> i32 {
         self.inactivity_timeout_minutes
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p> <note>
-    /// <p>Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn persistent_storage(
         &self,
@@ -208,8 +208,8 @@ impl CreateDevEnvironmentInputBuilder {
         self.inactivity_timeout_minutes = input;
         self
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p> <note>
-    /// <p>Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn persistent_storage(
         mut self,
@@ -218,8 +218,8 @@ impl CreateDevEnvironmentInputBuilder {
         self.persistent_storage = Some(input);
         self
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p> <note>
-    /// <p>Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn set_persistent_storage(
         mut self,

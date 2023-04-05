@@ -70,7 +70,7 @@ pub struct RunJobFlowInput {
     /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
     /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
     #[doc(hidden)]
-    pub visible_to_all_users: bool,
+    pub visible_to_all_users: std::option::Option<bool>,
     /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
     #[doc(hidden)]
     pub job_flow_role: std::option::Option<std::string::String>,
@@ -199,7 +199,7 @@ impl RunJobFlowInput {
     /// </important>
     /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
     /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
-    pub fn visible_to_all_users(&self) -> bool {
+    pub fn visible_to_all_users(&self) -> std::option::Option<bool> {
         self.visible_to_all_users
     }
     /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
@@ -775,7 +775,7 @@ impl RunJobFlowInputBuilder {
             new_supported_products: self.new_supported_products,
             applications: self.applications,
             configurations: self.configurations,
-            visible_to_all_users: self.visible_to_all_users.unwrap_or_default(),
+            visible_to_all_users: self.visible_to_all_users,
             job_flow_role: self.job_flow_role,
             service_role: self.service_role,
             tags: self.tags,

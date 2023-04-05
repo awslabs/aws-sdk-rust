@@ -9,6 +9,9 @@ pub struct InvokeEndpointAsyncOutput {
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
     #[doc(hidden)]
     pub output_location: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+    #[doc(hidden)]
+    pub failure_location: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeEndpointAsyncOutput {
@@ -19,6 +22,10 @@ impl InvokeEndpointAsyncOutput {
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
     pub fn output_location(&self) -> std::option::Option<&str> {
         self.output_location.as_deref()
+    }
+    /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+    pub fn failure_location(&self) -> std::option::Option<&str> {
+        self.failure_location.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for InvokeEndpointAsyncOutput {
@@ -41,6 +48,7 @@ impl InvokeEndpointAsyncOutput {
 pub struct InvokeEndpointAsyncOutputBuilder {
     pub(crate) inference_id: std::option::Option<std::string::String>,
     pub(crate) output_location: std::option::Option<std::string::String>,
+    pub(crate) failure_location: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeEndpointAsyncOutputBuilder {
@@ -64,6 +72,16 @@ impl InvokeEndpointAsyncOutputBuilder {
         self.output_location = input;
         self
     }
+    /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+    pub fn failure_location(mut self, input: impl Into<std::string::String>) -> Self {
+        self.failure_location = Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+    pub fn set_failure_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.failure_location = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -78,6 +96,7 @@ impl InvokeEndpointAsyncOutputBuilder {
         crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput {
             inference_id: self.inference_id,
             output_location: self.output_location,
+            failure_location: self.failure_location,
             _request_id: self._request_id,
         }
     }

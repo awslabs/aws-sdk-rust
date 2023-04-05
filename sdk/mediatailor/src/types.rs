@@ -79,7 +79,13 @@ pub use crate::types::_playback_mode::PlaybackMode;
 
 pub use crate::types::_request_output_item::RequestOutputItem;
 
+pub use crate::types::_log_type::LogType;
+
 pub use crate::types::_channel::Channel;
+
+pub use crate::types::_log_configuration_for_channel::LogConfigurationForChannel;
+
+pub use crate::types::_clip_range::ClipRange;
 
 pub use crate::types::_ad_break::AdBreak;
 
@@ -96,6 +102,10 @@ pub use crate::types::_schedule_configuration::ScheduleConfiguration;
 pub use crate::types::_transition::Transition;
 
 pub use crate::types::_relative_position::RelativePosition;
+
+pub use crate::types::_update_program_schedule_configuration::UpdateProgramScheduleConfiguration;
+
+pub use crate::types::_update_program_transition::UpdateProgramTransition;
 
 pub use crate::types::_alert::Alert;
 
@@ -121,6 +131,8 @@ mod _channel;
 
 mod _channel_state;
 
+mod _clip_range;
+
 mod _dash_configuration;
 
 mod _dash_configuration_for_put;
@@ -142,6 +154,10 @@ mod _live_pre_roll_configuration;
 mod _live_source;
 
 mod _log_configuration;
+
+mod _log_configuration_for_channel;
+
+mod _log_type;
 
 mod _manifest_processing_rules;
 
@@ -196,6 +212,10 @@ mod _time_signal_message;
 mod _transition;
 
 mod _type_;
+
+mod _update_program_schedule_configuration;
+
+mod _update_program_transition;
 
 mod _vod_source;
 

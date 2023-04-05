@@ -16,6 +16,12 @@ pub struct SidewalkListDevice {
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
     #[doc(hidden)]
     pub device_certificates: std::option::Option<std::vec::Vec<crate::types::CertificateList>>,
+    /// <p>Sidewalk object used by list functions.</p>
+    #[doc(hidden)]
+    pub device_profile_id: std::option::Option<std::string::String>,
+    /// <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
 }
 impl SidewalkListDevice {
     /// <p>The Sidewalk Amazon ID.</p>
@@ -34,6 +40,14 @@ impl SidewalkListDevice {
     pub fn device_certificates(&self) -> std::option::Option<&[crate::types::CertificateList]> {
         self.device_certificates.as_deref()
     }
+    /// <p>Sidewalk object used by list functions.</p>
+    pub fn device_profile_id(&self) -> std::option::Option<&str> {
+        self.device_profile_id.as_deref()
+    }
+    /// <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+    pub fn status(&self) -> std::option::Option<&crate::types::WirelessDeviceSidewalkStatus> {
+        self.status.as_ref()
+    }
 }
 impl SidewalkListDevice {
     /// Creates a new builder-style object to manufacture [`SidewalkListDevice`](crate::types::SidewalkListDevice).
@@ -51,6 +65,8 @@ pub struct SidewalkListDeviceBuilder {
     pub(crate) sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
     pub(crate) device_certificates:
         std::option::Option<std::vec::Vec<crate::types::CertificateList>>,
+    pub(crate) device_profile_id: std::option::Option<std::string::String>,
+    pub(crate) status: std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
 }
 impl SidewalkListDeviceBuilder {
     /// <p>The Sidewalk Amazon ID.</p>
@@ -105,6 +121,32 @@ impl SidewalkListDeviceBuilder {
         self.device_certificates = input;
         self
     }
+    /// <p>Sidewalk object used by list functions.</p>
+    pub fn device_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.device_profile_id = Some(input.into());
+        self
+    }
+    /// <p>Sidewalk object used by list functions.</p>
+    pub fn set_device_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.device_profile_id = input;
+        self
+    }
+    /// <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+    pub fn status(mut self, input: crate::types::WirelessDeviceSidewalkStatus) -> Self {
+        self.status = Some(input);
+        self
+    }
+    /// <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
+    ) -> Self {
+        self.status = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SidewalkListDevice`](crate::types::SidewalkListDevice).
     pub fn build(self) -> crate::types::SidewalkListDevice {
         crate::types::SidewalkListDevice {
@@ -112,6 +154,8 @@ impl SidewalkListDeviceBuilder {
             sidewalk_id: self.sidewalk_id,
             sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn,
             device_certificates: self.device_certificates,
+            device_profile_id: self.device_profile_id,
+            status: self.status,
         }
     }
 }

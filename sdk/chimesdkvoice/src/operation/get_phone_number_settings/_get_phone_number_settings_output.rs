@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPhoneNumberSettingsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     #[doc(hidden)]
     pub calling_name: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub calling_name_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetPhoneNumberSettingsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     pub fn calling_name(&self) -> std::option::Option<&str> {
         self.calling_name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     pub fn calling_name_updated_timestamp(
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -58,22 +58,22 @@ pub struct GetPhoneNumberSettingsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetPhoneNumberSettingsOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.calling_name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The default outbound calling name for the account.</p>
     pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.calling_name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     pub fn calling_name_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.calling_name_updated_timestamp = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     pub fn set_calling_name_updated_timestamp(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

@@ -42,6 +42,9 @@ pub struct CreateJobTemplateInput {
     /// <p>Allows you to create the criteria to retry a job.</p>
     #[doc(hidden)]
     pub job_executions_retry_config: std::option::Option<crate::types::JobExecutionsRetryConfig>,
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    #[doc(hidden)]
+    pub maintenance_windows: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
 }
 impl CreateJobTemplateInput {
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
@@ -97,6 +100,10 @@ impl CreateJobTemplateInput {
     ) -> std::option::Option<&crate::types::JobExecutionsRetryConfig> {
         self.job_executions_retry_config.as_ref()
     }
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn maintenance_windows(&self) -> std::option::Option<&[crate::types::MaintenanceWindow]> {
+        self.maintenance_windows.as_deref()
+    }
 }
 impl CreateJobTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
@@ -123,6 +130,8 @@ pub struct CreateJobTemplateInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) job_executions_retry_config:
         std::option::Option<crate::types::JobExecutionsRetryConfig>,
+    pub(crate) maintenance_windows:
+        std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
 }
 impl CreateJobTemplateInputBuilder {
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
@@ -275,6 +284,25 @@ impl CreateJobTemplateInputBuilder {
         self.job_executions_retry_config = input;
         self
     }
+    /// Appends an item to `maintenance_windows`.
+    ///
+    /// To override the contents of this collection use [`set_maintenance_windows`](Self::set_maintenance_windows).
+    ///
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn maintenance_windows(mut self, input: crate::types::MaintenanceWindow) -> Self {
+        let mut v = self.maintenance_windows.unwrap_or_default();
+        v.push(input);
+        self.maintenance_windows = Some(v);
+        self
+    }
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn set_maintenance_windows(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
+    ) -> Self {
+        self.maintenance_windows = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
     pub fn build(
         self,
@@ -295,6 +323,7 @@ impl CreateJobTemplateInputBuilder {
                 timeout_config: self.timeout_config,
                 tags: self.tags,
                 job_executions_retry_config: self.job_executions_retry_config,
+                maintenance_windows: self.maintenance_windows,
             },
         )
     }

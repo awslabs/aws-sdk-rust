@@ -13,7 +13,7 @@ pub struct ListConfigurationsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
     /// <p>The total number of items to return. The maximum value is 100.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ impl ListConfigurationsInput {
         self.filters.as_deref()
     }
     /// <p>The total number of items to return. The maximum value is 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
@@ -150,7 +150,7 @@ impl ListConfigurationsInputBuilder {
             crate::operation::list_configurations::ListConfigurationsInput {
                 configuration_type: self.configuration_type,
                 filters: self.filters,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
                 order_by: self.order_by,
             },

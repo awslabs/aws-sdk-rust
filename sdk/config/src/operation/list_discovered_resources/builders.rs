@@ -99,12 +99,12 @@ impl ListDiscoveredResourcesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
-    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
     pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_ids(input.into());
         self
     }
-    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
     pub fn set_resource_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

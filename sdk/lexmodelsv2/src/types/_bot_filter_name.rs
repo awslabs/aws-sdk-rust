@@ -13,6 +13,7 @@
 /// # let botfiltername = unimplemented!();
 /// match botfiltername {
 ///     BotFilterName::BotName => { /* ... */ },
+///     BotFilterName::BotType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@
 pub enum BotFilterName {
     #[allow(missing_docs)] // documentation missing in model
     BotName,
+    #[allow(missing_docs)] // documentation missing in model
+    BotType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +58,7 @@ impl std::convert::From<&str> for BotFilterName {
     fn from(s: &str) -> Self {
         match s {
             "BotName" => BotFilterName::BotName,
+            "BotType" => BotFilterName::BotType,
             other => {
                 BotFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -73,12 +77,13 @@ impl BotFilterName {
     pub fn as_str(&self) -> &str {
         match self {
             BotFilterName::BotName => "BotName",
+            BotFilterName::BotType => "BotType",
             BotFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BotName"]
+        &["BotName", "BotType"]
     }
 }
 impl AsRef<str> for BotFilterName {

@@ -3,14 +3,14 @@ pub fn ser_describe_aggregation_authorizations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.limit != 0 {
+    if let Some(var_1) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.limit).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.next_token {
-        object.key("NextToken").string(var_1.as_str());
+    if let Some(var_2) = &input.next_token {
+        object.key("NextToken").string(var_2.as_str());
     }
     Ok(())
 }

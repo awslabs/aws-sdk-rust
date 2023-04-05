@@ -17,8 +17,8 @@ pub struct ListConformancePackComplianceScoresInput {
     pub sort_by: std::option::Option<crate::types::SortBy>,
     /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
     #[doc(hidden)]
-    pub limit: i32,
-    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
+    pub limit: std::option::Option<i32>,
+    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for the next set of conformance pack compliance scores.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -41,10 +41,10 @@ impl ListConformancePackComplianceScoresInput {
         self.sort_by.as_ref()
     }
     /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
+    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for the next set of conformance pack compliance scores.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -116,12 +116,12 @@ impl ListConformancePackComplianceScoresInputBuilder {
         self.limit = input;
         self
     }
-    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
+    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for the next set of conformance pack compliance scores.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
+    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for the next set of conformance pack compliance scores.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self
@@ -137,7 +137,6 @@ impl ListConformancePackComplianceScoresInputBuilder {
                 sort_by: self.sort_by
                 ,
                 limit: self.limit
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

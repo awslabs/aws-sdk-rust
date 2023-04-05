@@ -294,6 +294,8 @@ mod enable_organization_admin_account;
 
 mod get_administrator_account;
 
+mod get_coverage_statistics;
+
 mod get_detector;
 
 mod get_filter;
@@ -321,6 +323,8 @@ mod get_threat_intel_set;
 mod get_usage_statistics;
 
 mod invite_members;
+
+mod list_coverage;
 
 mod list_detectors;
 

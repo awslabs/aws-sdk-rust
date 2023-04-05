@@ -47,6 +47,8 @@ pub use crate::types::_lf_resource_type::LfResourceType;
 
 pub use crate::types::_s3_data_access_asset::S3DataAccessAsset;
 
+pub use crate::types::_kms_key_to_grant::KmsKeyToGrant;
+
 pub use crate::types::_api_gateway_api_asset::ApiGatewayApiAsset;
 
 pub use crate::types::_protocol_type::ProtocolType;
@@ -224,6 +226,8 @@ mod _job_error;
 mod _job_error_limit_name;
 
 mod _job_error_resource_types;
+
+mod _kms_key_to_grant;
 
 mod _lake_formation_data_permission_asset;
 

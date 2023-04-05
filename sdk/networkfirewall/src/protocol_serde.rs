@@ -18,6 +18,8 @@ pub(crate) mod shape_create_firewall_policy;
 
 pub(crate) mod shape_create_rule_group;
 
+pub(crate) mod shape_create_tls_inspection_configuration;
+
 pub(crate) mod shape_delete_firewall;
 
 pub(crate) mod shape_delete_firewall_policy;
@@ -25,6 +27,8 @@ pub(crate) mod shape_delete_firewall_policy;
 pub(crate) mod shape_delete_resource_policy;
 
 pub(crate) mod shape_delete_rule_group;
+
+pub(crate) mod shape_delete_tls_inspection_configuration;
 
 pub(crate) mod shape_describe_firewall;
 
@@ -38,6 +42,8 @@ pub(crate) mod shape_describe_rule_group;
 
 pub(crate) mod shape_describe_rule_group_metadata;
 
+pub(crate) mod shape_describe_tls_inspection_configuration;
+
 pub(crate) mod shape_disassociate_subnets;
 
 pub(crate) mod shape_list_firewall_policies;
@@ -47,6 +53,8 @@ pub(crate) mod shape_list_firewalls;
 pub(crate) mod shape_list_rule_groups;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_tls_inspection_configurations;
 
 pub(crate) mod shape_put_resource_policy;
 
@@ -70,6 +78,8 @@ pub(crate) mod shape_update_rule_group;
 
 pub(crate) mod shape_update_subnet_change_protection;
 
+pub(crate) mod shape_update_tls_inspection_configuration;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -88,6 +98,8 @@ pub(crate) mod shape_create_firewall_policy_input;
 
 pub(crate) mod shape_create_rule_group_input;
 
+pub(crate) mod shape_create_tls_inspection_configuration_input;
+
 pub(crate) mod shape_delete_firewall_input;
 
 pub(crate) mod shape_delete_firewall_policy_input;
@@ -95,6 +107,8 @@ pub(crate) mod shape_delete_firewall_policy_input;
 pub(crate) mod shape_delete_resource_policy_input;
 
 pub(crate) mod shape_delete_rule_group_input;
+
+pub(crate) mod shape_delete_tls_inspection_configuration_input;
 
 pub(crate) mod shape_describe_firewall_input;
 
@@ -107,6 +121,8 @@ pub(crate) mod shape_describe_resource_policy_input;
 pub(crate) mod shape_describe_rule_group_input;
 
 pub(crate) mod shape_describe_rule_group_metadata_input;
+
+pub(crate) mod shape_describe_tls_inspection_configuration_input;
 
 pub(crate) mod shape_disassociate_subnets_input;
 
@@ -131,6 +147,8 @@ pub(crate) mod shape_list_firewalls_input;
 pub(crate) mod shape_list_rule_groups_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_list_tls_inspection_configurations_input;
 
 pub(crate) mod shape_log_destination_permission_exception;
 
@@ -163,6 +181,8 @@ pub(crate) mod shape_update_logging_configuration_input;
 pub(crate) mod shape_update_rule_group_input;
 
 pub(crate) mod shape_update_subnet_change_protection_input;
+
+pub(crate) mod shape_update_tls_inspection_configuration_input;
 
 pub(crate) mod shape_encryption_configuration;
 
@@ -198,7 +218,15 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_tls_inspection_configuration;
+
+pub(crate) mod shape_tls_inspection_configuration_response;
+
+pub(crate) mod shape_tls_inspection_configurations;
+
 pub(crate) mod shape_capacity_usage_summary;
+
+pub(crate) mod shape_certificates;
 
 pub(crate) mod shape_custom_action;
 
@@ -220,6 +248,10 @@ pub(crate) mod shape_rule_variables;
 
 pub(crate) mod shape_rules_source;
 
+pub(crate) mod shape_server_certificate_configuration;
+
+pub(crate) mod shape_server_certificate_configurations;
+
 pub(crate) mod shape_stateful_actions;
 
 pub(crate) mod shape_stateful_engine_options;
@@ -235,6 +267,8 @@ pub(crate) mod shape_stateless_rule_group_reference;
 pub(crate) mod shape_stateless_rule_group_references;
 
 pub(crate) mod shape_sync_states;
+
+pub(crate) mod shape_tls_inspection_configuration_metadata;
 
 pub(crate) mod shape_action_definition;
 
@@ -254,6 +288,10 @@ pub(crate) mod shape_port_sets;
 
 pub(crate) mod shape_rules_source_list;
 
+pub(crate) mod shape_server_certificate;
+
+pub(crate) mod shape_server_certificate_scope;
+
 pub(crate) mod shape_stateful_rule;
 
 pub(crate) mod shape_stateful_rule_group_override;
@@ -264,6 +302,10 @@ pub(crate) mod shape_stateless_rules_and_custom_actions;
 
 pub(crate) mod shape_sync_state;
 
+pub(crate) mod shape_tls_certificate_data;
+
+pub(crate) mod shape_address;
+
 pub(crate) mod shape_attachment;
 
 pub(crate) mod shape_header;
@@ -272,11 +314,17 @@ pub(crate) mod shape_ip_set_metadata_map;
 
 pub(crate) mod shape_log_destination_map;
 
+pub(crate) mod shape_port_range;
+
 pub(crate) mod shape_publish_metric_action;
 
 pub(crate) mod shape_rule_option;
 
 pub(crate) mod shape_rule_targets;
+
+pub(crate) mod shape_server_certificate_scopes;
+
+pub(crate) mod shape_server_certificates;
 
 pub(crate) mod shape_stateless_rule;
 
@@ -298,23 +346,19 @@ pub(crate) mod shape_rule_options;
 
 pub(crate) mod shape_variable_definition_list;
 
+pub(crate) mod shape_addresses;
+
 pub(crate) mod shape_dimensions;
 
 pub(crate) mod shape_match_attributes;
 
-pub(crate) mod shape_address;
+pub(crate) mod shape_port_ranges;
 
-pub(crate) mod shape_port_range;
+pub(crate) mod shape_protocol_numbers;
 
 pub(crate) mod shape_settings;
 
 pub(crate) mod shape_tcp_flag_field;
-
-pub(crate) mod shape_addresses;
-
-pub(crate) mod shape_port_ranges;
-
-pub(crate) mod shape_protocol_numbers;
 
 pub(crate) mod shape_tcp_flags;
 

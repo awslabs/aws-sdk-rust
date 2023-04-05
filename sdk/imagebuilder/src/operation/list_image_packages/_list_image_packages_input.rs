@@ -6,7 +6,7 @@ pub struct ListImagePackagesInput {
     /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
-    /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
+    /// <p>The maximum items to return in a request.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
@@ -18,7 +18,7 @@ impl ListImagePackagesInput {
     pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
-    /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -57,12 +57,12 @@ impl ListImagePackagesInputBuilder {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

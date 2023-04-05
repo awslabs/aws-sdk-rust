@@ -90,6 +90,8 @@ pub(crate) mod shape_job_template_data;
 
 pub(crate) mod shape_job_templates;
 
+pub(crate) mod shape_retry_policy_configuration;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_virtual_cluster;
@@ -105,6 +107,8 @@ pub(crate) mod shape_container_info;
 pub(crate) mod shape_monitoring_configuration;
 
 pub(crate) mod shape_parametric_configuration_overrides;
+
+pub(crate) mod shape_retry_policy_execution;
 
 pub(crate) mod shape_spark_sql_job_driver;
 

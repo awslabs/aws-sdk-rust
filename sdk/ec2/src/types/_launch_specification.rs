@@ -2,9 +2,9 @@
 
 /// <p>Describes the launch specification for an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchSpecification {
-    /// <p>The Base64-encoded user data for the instance.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     #[doc(hidden)]
     pub user_data: std::option::Option<std::string::String>,
     /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
@@ -53,7 +53,7 @@ pub struct LaunchSpecification {
     pub monitoring: std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
 }
 impl LaunchSpecification {
-    /// <p>The Base64-encoded user data for the instance.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn user_data(&self) -> std::option::Option<&str> {
         self.user_data.as_deref()
     }
@@ -121,6 +121,27 @@ impl LaunchSpecification {
         self.monitoring.as_ref()
     }
 }
+impl std::fmt::Debug for LaunchSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LaunchSpecification");
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("addressing_type", &self.addressing_type);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("placement", &self.placement);
+        formatter.field("ramdisk_id", &self.ramdisk_id);
+        formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.finish()
+    }
+}
 impl LaunchSpecification {
     /// Creates a new builder-style object to manufacture [`LaunchSpecification`](crate::types::LaunchSpecification).
     pub fn builder() -> crate::types::builders::LaunchSpecificationBuilder {
@@ -130,7 +151,7 @@ impl LaunchSpecification {
 
 /// A builder for [`LaunchSpecification`](crate::types::LaunchSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct LaunchSpecificationBuilder {
     pub(crate) user_data: std::option::Option<std::string::String>,
     pub(crate) security_groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
@@ -152,12 +173,12 @@ pub struct LaunchSpecificationBuilder {
     pub(crate) monitoring: std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
 }
 impl LaunchSpecificationBuilder {
-    /// <p>The Base64-encoded user data for the instance.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_data = Some(input.into());
         self
     }
-    /// <p>The Base64-encoded user data for the instance.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_data = input;
         self
@@ -370,5 +391,26 @@ impl LaunchSpecificationBuilder {
             subnet_id: self.subnet_id,
             monitoring: self.monitoring,
         }
+    }
+}
+impl std::fmt::Debug for LaunchSpecificationBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LaunchSpecificationBuilder");
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("addressing_type", &self.addressing_type);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("placement", &self.placement);
+        formatter.field("ramdisk_id", &self.ramdisk_id);
+        formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.finish()
     }
 }

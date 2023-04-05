@@ -16,6 +16,8 @@ impl super::Client {
     ///   - [`replication_type(Option<ReplicationType>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::replication_type): <p>Source server replication type.</p>
     ///   - [`vcenter_client_id(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::application_id): <p>Source server application ID.</p>
+    ///   - [`user_provided_id(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::user_provided_id): <p>Source server user provided ID.</p>
+    ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::operation::retry_data_replication::RetryDataReplicationError)
     pub fn retry_data_replication(
         &self,

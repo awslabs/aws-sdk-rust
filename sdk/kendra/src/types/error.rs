@@ -13,6 +13,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
+pub use crate::types::error::_featured_results_conflict_exception::FeaturedResultsConflictException;
+
 pub use crate::types::error::_resource_unavailable_exception::ResourceUnavailableException;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
@@ -24,6 +26,8 @@ pub use crate::types::error::_resource_already_exist_exception::ResourceAlreadyE
 mod _access_denied_exception;
 
 mod _conflict_exception;
+
+mod _featured_results_conflict_exception;
 
 mod _internal_server_exception;
 

@@ -94,12 +94,12 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
         self.inner = self.inner.set_blue_green_deployment_identifier(input);
         self
     }
-    /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn delete_target(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_target(input);
         self
     }
-    /// <p>A value that indicates whether to delete the resources in the green environment.</p>
+    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn set_delete_target(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_target(input);
         self

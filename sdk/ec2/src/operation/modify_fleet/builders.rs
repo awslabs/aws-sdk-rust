@@ -81,6 +81,7 @@ impl ModifyFleetFluentBuilder {
         self
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         mut self,
         input: crate::types::FleetExcessCapacityTerminationPolicy,
@@ -89,6 +90,7 @@ impl ModifyFleetFluentBuilder {
         self
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(
         mut self,
         input: std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,

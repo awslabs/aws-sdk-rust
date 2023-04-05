@@ -11,7 +11,7 @@ pub struct ListAuditSuppressionsInput {
     pub resource_identifier: std::option::Option<crate::types::ResourceIdentifier>,
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     #[doc(hidden)]
-    pub ascending_order: bool,
+    pub ascending_order: std::option::Option<bool>,
     /// <p> The token for the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ impl ListAuditSuppressionsInput {
         self.resource_identifier.as_ref()
     }
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
-    pub fn ascending_order(&self) -> bool {
+    pub fn ascending_order(&self) -> std::option::Option<bool> {
         self.ascending_order
     }
     /// <p> The token for the next set of results. </p>
@@ -125,7 +125,7 @@ impl ListAuditSuppressionsInputBuilder {
             crate::operation::list_audit_suppressions::ListAuditSuppressionsInput {
                 check_name: self.check_name,
                 resource_identifier: self.resource_identifier,
-                ascending_order: self.ascending_order.unwrap_or_default(),
+                ascending_order: self.ascending_order,
                 next_token: self.next_token,
                 max_results: self.max_results,
             },

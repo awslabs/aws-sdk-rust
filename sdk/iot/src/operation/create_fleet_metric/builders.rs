@@ -156,12 +156,12 @@ impl CreateFleetMetricFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub fn unit(mut self, input: crate::types::FleetMetricUnit) -> Self {
         self.inner = self.inner.unit(input);
         self
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub fn set_unit(mut self, input: std::option::Option<crate::types::FleetMetricUnit>) -> Self {
         self.inner = self.inner.set_unit(input);
         self

@@ -11,6 +11,11 @@ pub fn ser_salesforce_connector_profile_properties(
             .key("isSandboxEnvironment")
             .boolean(input.is_sandbox_environment);
     }
+    if input.use_private_link_for_metadata_and_authorization {
+        object
+            .key("usePrivateLinkForMetadataAndAuthorization")
+            .boolean(input.use_private_link_for_metadata_and_authorization);
+    }
     Ok(())
 }
 
@@ -54,6 +59,14 @@ where
                                         tokens.next(),
                                     )?,
                                 );
+                            }
+                            "usePrivateLinkForMetadataAndAuthorization" => {
+                                builder = builder
+                                    .set_use_private_link_for_metadata_and_authorization(
+                                        aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                            tokens.next(),
+                                        )?,
+                                    );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }

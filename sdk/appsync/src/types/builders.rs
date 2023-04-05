@@ -39,6 +39,8 @@ pub use crate::types::_domain_name_config::DomainNameConfigBuilder;
 
 pub use crate::types::_data_source::DataSourceBuilder;
 
+pub use crate::types::_event_bridge_data_source_config::EventBridgeDataSourceConfigBuilder;
+
 pub use crate::types::_relational_database_data_source_config::RelationalDatabaseDataSourceConfigBuilder;
 
 pub use crate::types::_rds_http_endpoint_config::RdsHttpEndpointConfigBuilder;

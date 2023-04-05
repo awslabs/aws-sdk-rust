@@ -447,6 +447,60 @@ pub fn ser_code_gen_configuration_node(
         )?;
         object_114.finish();
     }
+    if let Some(var_115) = &input.direct_jdbc_source {
+        #[allow(unused_mut)]
+        let mut object_116 = object.key("DirectJDBCSource").start_object();
+        crate::protocol_serde::shape_direct_jdbc_source::ser_direct_jdbc_source(
+            &mut object_116,
+            var_115,
+        )?;
+        object_116.finish();
+    }
+    if let Some(var_117) = &input.s3_catalog_delta_source {
+        #[allow(unused_mut)]
+        let mut object_118 = object.key("S3CatalogDeltaSource").start_object();
+        crate::protocol_serde::shape_s3_catalog_delta_source::ser_s3_catalog_delta_source(
+            &mut object_118,
+            var_117,
+        )?;
+        object_118.finish();
+    }
+    if let Some(var_119) = &input.catalog_delta_source {
+        #[allow(unused_mut)]
+        let mut object_120 = object.key("CatalogDeltaSource").start_object();
+        crate::protocol_serde::shape_catalog_delta_source::ser_catalog_delta_source(
+            &mut object_120,
+            var_119,
+        )?;
+        object_120.finish();
+    }
+    if let Some(var_121) = &input.s3_delta_source {
+        #[allow(unused_mut)]
+        let mut object_122 = object.key("S3DeltaSource").start_object();
+        crate::protocol_serde::shape_s3_delta_source::ser_s3_delta_source(
+            &mut object_122,
+            var_121,
+        )?;
+        object_122.finish();
+    }
+    if let Some(var_123) = &input.s3_delta_catalog_target {
+        #[allow(unused_mut)]
+        let mut object_124 = object.key("S3DeltaCatalogTarget").start_object();
+        crate::protocol_serde::shape_s3_delta_catalog_target::ser_s3_delta_catalog_target(
+            &mut object_124,
+            var_123,
+        )?;
+        object_124.finish();
+    }
+    if let Some(var_125) = &input.s3_delta_direct_target {
+        #[allow(unused_mut)]
+        let mut object_126 = object.key("S3DeltaDirectTarget").start_object();
+        crate::protocol_serde::shape_s3_delta_direct_target::ser_s3_delta_direct_target(
+            &mut object_126,
+            var_125,
+        )?;
+        object_126.finish();
+    }
     Ok(())
 }
 
@@ -778,6 +832,36 @@ where
                             "S3HudiDirectTarget" => {
                                 builder = builder.set_s3_hudi_direct_target(
                                     crate::protocol_serde::shape_s3_hudi_direct_target::de_s3_hudi_direct_target(tokens)?
+                                );
+                            }
+                            "DirectJDBCSource" => {
+                                builder = builder.set_direct_jdbc_source(
+                                    crate::protocol_serde::shape_direct_jdbc_source::de_direct_jdbc_source(tokens)?
+                                );
+                            }
+                            "S3CatalogDeltaSource" => {
+                                builder = builder.set_s3_catalog_delta_source(
+                                    crate::protocol_serde::shape_s3_catalog_delta_source::de_s3_catalog_delta_source(tokens)?
+                                );
+                            }
+                            "CatalogDeltaSource" => {
+                                builder = builder.set_catalog_delta_source(
+                                    crate::protocol_serde::shape_catalog_delta_source::de_catalog_delta_source(tokens)?
+                                );
+                            }
+                            "S3DeltaSource" => {
+                                builder = builder.set_s3_delta_source(
+                                    crate::protocol_serde::shape_s3_delta_source::de_s3_delta_source(tokens)?
+                                );
+                            }
+                            "S3DeltaCatalogTarget" => {
+                                builder = builder.set_s3_delta_catalog_target(
+                                    crate::protocol_serde::shape_s3_delta_catalog_target::de_s3_delta_catalog_target(tokens)?
+                                );
+                            }
+                            "S3DeltaDirectTarget" => {
+                                builder = builder.set_s3_delta_direct_target(
+                                    crate::protocol_serde::shape_s3_delta_direct_target::de_s3_delta_direct_target(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

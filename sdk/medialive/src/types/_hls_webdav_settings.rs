@@ -13,7 +13,7 @@ pub struct HlsWebdavSettings {
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
     #[doc(hidden)]
     pub http_transfer_mode: std::option::Option<crate::types::HlsWebdavHttpTransferMode>,
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     #[doc(hidden)]
     pub num_retries: i32,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
@@ -35,7 +35,7 @@ impl HlsWebdavSettings {
     ) -> std::option::Option<&crate::types::HlsWebdavHttpTransferMode> {
         self.http_transfer_mode.as_ref()
     }
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(&self) -> i32 {
         self.num_retries
     }
@@ -95,12 +95,12 @@ impl HlsWebdavSettingsBuilder {
         self.http_transfer_mode = input;
         self
     }
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(mut self, input: i32) -> Self {
         self.num_retries = Some(input);
         self
     }
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
         self.num_retries = input;
         self

@@ -16,7 +16,9 @@ pub struct Connection {
     /// <p>The reason that the connection is in the connection state.</p>
     #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>The authorization type specified for the connection.</p>
+    /// <p>The authorization type specified for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::types::ConnectionAuthorizationType>,
     /// <p>A time stamp for the time that the connection was created.</p>
@@ -46,7 +48,9 @@ impl Connection {
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>The authorization type specified for the connection.</p>
+    /// <p>The authorization type specified for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     pub fn authorization_type(
         &self,
     ) -> std::option::Option<&crate::types::ConnectionAuthorizationType> {
@@ -129,12 +133,16 @@ impl ConnectionBuilder {
         self.state_reason = input;
         self
     }
-    /// <p>The authorization type specified for the connection.</p>
+    /// <p>The authorization type specified for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     pub fn authorization_type(mut self, input: crate::types::ConnectionAuthorizationType) -> Self {
         self.authorization_type = Some(input);
         self
     }
-    /// <p>The authorization type specified for the connection.</p>
+    /// <p>The authorization type specified for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
     pub fn set_authorization_type(
         mut self,
         input: std::option::Option<crate::types::ConnectionAuthorizationType>,

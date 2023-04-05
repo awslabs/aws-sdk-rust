@@ -28,6 +28,9 @@ pub struct GetAttributeGroupOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The service principal that created the attribute group.</p>
+    #[doc(hidden)]
+    pub created_by: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAttributeGroupOutput {
@@ -66,6 +69,10 @@ impl GetAttributeGroupOutput {
     {
         self.tags.as_ref()
     }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for GetAttributeGroupOutput {
     fn request_id(&self) -> Option<&str> {
@@ -93,6 +100,7 @@ pub struct GetAttributeGroupOutputBuilder {
     pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) created_by: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAttributeGroupOutputBuilder {
@@ -197,6 +205,16 @@ impl GetAttributeGroupOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
+        self.created_by = Some(input.into());
+        self
+    }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.created_by = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -217,6 +235,7 @@ impl GetAttributeGroupOutputBuilder {
             creation_time: self.creation_time,
             last_update_time: self.last_update_time,
             tags: self.tags,
+            created_by: self.created_by,
             _request_id: self._request_id,
         }
     }

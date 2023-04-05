@@ -77,7 +77,7 @@ pub struct UpdateFleetInput {
     /// <p>Deletes the VPC association for the specified fleet.</p>
     #[deprecated]
     #[doc(hidden)]
-    pub delete_vpc_config: bool,
+    pub delete_vpc_config: std::option::Option<bool>,
     /// <p>The description to display.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -202,7 +202,7 @@ impl UpdateFleetInput {
     }
     /// <p>Deletes the VPC association for the specified fleet.</p>
     #[deprecated]
-    pub fn delete_vpc_config(&self) -> bool {
+    pub fn delete_vpc_config(&self) -> std::option::Option<bool> {
         self.delete_vpc_config
     }
     /// <p>The description to display.</p>
@@ -656,7 +656,7 @@ impl UpdateFleetInputBuilder {
             vpc_config: self.vpc_config,
             max_user_duration_in_seconds: self.max_user_duration_in_seconds,
             disconnect_timeout_in_seconds: self.disconnect_timeout_in_seconds,
-            delete_vpc_config: self.delete_vpc_config.unwrap_or_default(),
+            delete_vpc_config: self.delete_vpc_config,
             description: self.description,
             display_name: self.display_name,
             enable_default_internet_access: self.enable_default_internet_access,

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVoiceConnectorProxy`](crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyFluentBuilder::set_voice_connector_id): (undocumented)
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
     /// - On success, responds with [`GetVoiceConnectorProxyOutput`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput) with field(s):
-    ///   - [`proxy(Option<Proxy>)`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput::proxy): (undocumented)
+    ///   - [`proxy(Option<Proxy>)`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput::proxy): <p>The proxy configuration details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorProxyError>`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyError)
     pub fn get_voice_connector_proxy(
         &self,

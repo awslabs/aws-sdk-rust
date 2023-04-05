@@ -7,6 +7,9 @@ pub mod add_tags_to_resource;
 /// Types for the `ApplyPendingMaintenanceAction` operation.
 pub mod apply_pending_maintenance_action;
 
+/// Types for the `BatchStartRecommendations` operation.
+pub mod batch_start_recommendations;
+
 /// Types for the `CancelReplicationTaskAssessmentRun` operation.
 pub mod cancel_replication_task_assessment_run;
 
@@ -109,6 +112,12 @@ pub mod describe_orderable_replication_instances;
 /// Types for the `DescribePendingMaintenanceActions` operation.
 pub mod describe_pending_maintenance_actions;
 
+/// Types for the `DescribeRecommendationLimitations` operation.
+pub mod describe_recommendation_limitations;
+
+/// Types for the `DescribeRecommendations` operation.
+pub mod describe_recommendations;
+
 /// Types for the `DescribeRefreshSchemasStatus` operation.
 pub mod describe_refresh_schemas_status;
 
@@ -177,6 +186,9 @@ pub mod remove_tags_from_resource;
 
 /// Types for the `RunFleetAdvisorLsaAnalysis` operation.
 pub mod run_fleet_advisor_lsa_analysis;
+
+/// Types for the `StartRecommendations` operation.
+pub mod start_recommendations;
 
 /// Types for the `StartReplicationTask` operation.
 pub mod start_replication_task;

@@ -51,6 +51,43 @@ pub fn de_get_partitions_http_error(
                 tmp
             })
         }
+        "FederationSourceException" => {
+            crate::operation::get_partitions::GetPartitionsError::FederationSourceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::FederationSourceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_federation_source_exception::de_federation_source_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_partitions::GetPartitionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "FederationSourceRetryableException" => {
+            crate::operation::get_partitions::GetPartitionsError::FederationSourceRetryableException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::FederationSourceRetryableExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_federation_source_retryable_exception::de_federation_source_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_partitions::GetPartitionsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
         "GlueEncryptionException" => {
             crate::operation::get_partitions::GetPartitionsError::GlueEncryptionException({
                 #[allow(unused_mut)]

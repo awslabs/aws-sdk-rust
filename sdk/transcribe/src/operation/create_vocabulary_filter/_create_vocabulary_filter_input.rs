@@ -26,6 +26,11 @@ pub struct CreateVocabularyFilterInput {
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    #[doc(hidden)]
+    pub data_access_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateVocabularyFilterInput {
     /// <p>A unique name, chosen by you, for your new custom vocabulary filter.</p>
@@ -56,6 +61,12 @@ impl CreateVocabularyFilterInput {
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
 }
 impl CreateVocabularyFilterInput {
     /// Creates a new builder-style object to manufacture [`CreateVocabularyFilterInput`](crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput).
@@ -75,6 +86,7 @@ pub struct CreateVocabularyFilterInputBuilder {
     pub(crate) words: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) vocabulary_filter_file_uri: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateVocabularyFilterInputBuilder {
     /// <p>A unique name, chosen by you, for your new custom vocabulary filter.</p>
@@ -170,6 +182,23 @@ impl CreateVocabularyFilterInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.data_access_role_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_access_role_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateVocabularyFilterInput`](crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput).
     pub fn build(
         self,
@@ -184,6 +213,7 @@ impl CreateVocabularyFilterInputBuilder {
                 words: self.words,
                 vocabulary_filter_file_uri: self.vocabulary_filter_file_uri,
                 tags: self.tags,
+                data_access_role_arn: self.data_access_role_arn,
             },
         )
     }

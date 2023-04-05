@@ -12,8 +12,9 @@ pub struct GetDatabasesInput {
     /// <p>The maximum number of databases to return in one response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
+    /// <li> <p>If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with your account.</p> </li>
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
@@ -33,8 +34,9 @@ impl GetDatabasesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
+    /// <li> <p>If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with your account.</p> </li>
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
@@ -89,8 +91,9 @@ impl GetDatabasesInputBuilder {
         self.max_results = input;
         self
     }
-    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
+    /// <li> <p>If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with your account.</p> </li>
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
@@ -98,8 +101,9 @@ impl GetDatabasesInputBuilder {
         self.resource_share_type = Some(input);
         self
     }
-    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
+    /// <li> <p>If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with your account.</p> </li>
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>

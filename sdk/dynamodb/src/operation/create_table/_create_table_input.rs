@@ -101,6 +101,9 @@ pub struct CreateTableInput {
     /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     #[doc(hidden)]
     pub table_class: std::option::Option<crate::types::TableClass>,
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    #[doc(hidden)]
+    pub deletion_protection_enabled: std::option::Option<bool>,
 }
 impl CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
@@ -216,6 +219,10 @@ impl CreateTableInput {
     pub fn table_class(&self) -> std::option::Option<&crate::types::TableClass> {
         self.table_class.as_ref()
     }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn deletion_protection_enabled(&self) -> std::option::Option<bool> {
+        self.deletion_protection_enabled
+    }
 }
 impl CreateTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
@@ -242,6 +249,7 @@ pub struct CreateTableInputBuilder {
     pub(crate) sse_specification: std::option::Option<crate::types::SseSpecification>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) table_class: std::option::Option<crate::types::TableClass>,
+    pub(crate) deletion_protection_enabled: std::option::Option<bool>,
 }
 impl CreateTableInputBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -533,6 +541,16 @@ impl CreateTableInputBuilder {
         self.table_class = input;
         self
     }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
+        self.deletion_protection_enabled = Some(input);
+        self
+    }
+    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+        self.deletion_protection_enabled = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(
         self,
@@ -552,6 +570,7 @@ impl CreateTableInputBuilder {
             sse_specification: self.sse_specification,
             tags: self.tags,
             table_class: self.table_class,
+            deletion_protection_enabled: self.deletion_protection_enabled,
         })
     }
 }

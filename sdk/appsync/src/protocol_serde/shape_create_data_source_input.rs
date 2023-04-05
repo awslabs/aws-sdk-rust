@@ -21,44 +21,50 @@ pub fn ser_create_data_source_input(
         crate::protocol_serde::shape_elasticsearch_data_source_config::ser_elasticsearch_data_source_config(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.http_config {
+    if let Some(var_6) = &input.event_bridge_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("httpConfig").start_object();
-        crate::protocol_serde::shape_http_data_source_config::ser_http_data_source_config(
-            &mut object_7,
-            var_6,
-        )?;
+        let mut object_7 = object.key("eventBridgeConfig").start_object();
+        crate::protocol_serde::shape_event_bridge_data_source_config::ser_event_bridge_data_source_config(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.lambda_config {
+    if let Some(var_8) = &input.http_config {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("lambdaConfig").start_object();
-        crate::protocol_serde::shape_lambda_data_source_config::ser_lambda_data_source_config(
+        let mut object_9 = object.key("httpConfig").start_object();
+        crate::protocol_serde::shape_http_data_source_config::ser_http_data_source_config(
             &mut object_9,
             var_8,
         )?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.name {
-        object.key("name").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.open_search_service_config {
+    if let Some(var_10) = &input.lambda_config {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("openSearchServiceConfig").start_object();
-        crate::protocol_serde::shape_open_search_service_data_source_config::ser_open_search_service_data_source_config(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_11 = object.key("lambdaConfig").start_object();
+        crate::protocol_serde::shape_lambda_data_source_config::ser_lambda_data_source_config(
+            &mut object_11,
+            var_10,
+        )?;
+        object_11.finish();
     }
-    if let Some(var_13) = &input.relational_database_config {
+    if let Some(var_12) = &input.name {
+        object.key("name").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.open_search_service_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("relationalDatabaseConfig").start_object();
-        crate::protocol_serde::shape_relational_database_data_source_config::ser_relational_database_data_source_config(&mut object_14, var_13)?;
+        let mut object_14 = object.key("openSearchServiceConfig").start_object();
+        crate::protocol_serde::shape_open_search_service_data_source_config::ser_open_search_service_data_source_config(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.service_role_arn {
-        object.key("serviceRoleArn").string(var_15.as_str());
+    if let Some(var_15) = &input.relational_database_config {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("relationalDatabaseConfig").start_object();
+        crate::protocol_serde::shape_relational_database_data_source_config::ser_relational_database_data_source_config(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_16) = &input.r#type {
-        object.key("type").string(var_16.as_str());
+    if let Some(var_17) = &input.service_role_arn {
+        object.key("serviceRoleArn").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.r#type {
+        object.key("type").string(var_18.as_str());
     }
     Ok(())
 }

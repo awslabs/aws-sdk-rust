@@ -21,7 +21,7 @@ pub struct GetRasterDataCollectionOutput {
     /// <p>The filters supported by the raster data collection.</p>
     #[doc(hidden)]
     pub supported_filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p></p>
+    /// <p>The list of image source bands in the raster data collection.</p>
     #[doc(hidden)]
     pub image_source_bands: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Each tag consists of a key and a value.</p>
@@ -55,7 +55,7 @@ impl GetRasterDataCollectionOutput {
     pub fn supported_filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.supported_filters.as_deref()
     }
-    /// <p></p>
+    /// <p>The list of image source bands in the raster data collection.</p>
     pub fn image_source_bands(&self) -> std::option::Option<&[std::string::String]> {
         self.image_source_bands.as_deref()
     }
@@ -176,14 +176,14 @@ impl GetRasterDataCollectionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_image_source_bands`](Self::set_image_source_bands).
     ///
-    /// <p></p>
+    /// <p>The list of image source bands in the raster data collection.</p>
     pub fn image_source_bands(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.image_source_bands.unwrap_or_default();
         v.push(input.into());
         self.image_source_bands = Some(v);
         self
     }
-    /// <p></p>
+    /// <p>The list of image source bands in the raster data collection.</p>
     pub fn set_image_source_bands(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

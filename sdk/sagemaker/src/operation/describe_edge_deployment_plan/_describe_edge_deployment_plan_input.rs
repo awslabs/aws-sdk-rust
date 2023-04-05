@@ -11,7 +11,7 @@ pub struct DescribeEdgeDeploymentPlanInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to select (50 by default).</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl DescribeEdgeDeploymentPlanInput {
     /// <p>The name of the deployment plan to describe.</p>
@@ -23,7 +23,7 @@ impl DescribeEdgeDeploymentPlanInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to select (50 by default).</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -87,7 +87,7 @@ impl DescribeEdgeDeploymentPlanInputBuilder {
             crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanInput {
                 edge_deployment_plan_name: self.edge_deployment_plan_name,
                 next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
             },
         )
     }

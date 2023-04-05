@@ -931,6 +931,7 @@ impl
         match err {
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1114,6 +1115,7 @@ impl From<crate::operation::list_protected_queries::ListProtectedQueriesError> f
         match err {
             crate::operation::list_protected_queries::ListProtectedQueriesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_protected_queries::ListProtectedQueriesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_protected_queries::ListProtectedQueriesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_protected_queries::ListProtectedQueriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_protected_queries::ListProtectedQueriesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_protected_queries::ListProtectedQueriesError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1170,6 +1172,46 @@ impl From<crate::operation::list_schemas::ListSchemasError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::start_protected_query::StartProtectedQueryError,
             R,
         >,
@@ -1208,6 +1250,86 @@ impl From<crate::operation::start_protected_query::StartProtectedQueryError> for
             crate::operation::start_protected_query::StartProtectedQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_protected_query::StartProtectedQueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_protected_query::StartProtectedQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

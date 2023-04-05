@@ -10,7 +10,7 @@ pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p>The request id associated with the call responsible for the exception.</p>
+    /// <p>The request ID associated with the call responsible for the exception.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
@@ -20,7 +20,7 @@ impl ServiceUnavailableException {
     pub fn code(&self) -> std::option::Option<&crate::types::ErrorCode> {
         self.code.as_ref()
     }
-    /// <p>The request id associated with the call responsible for the exception.</p>
+    /// <p>The request ID associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -91,12 +91,12 @@ impl ServiceUnavailableExceptionBuilder {
         self.message = input;
         self
     }
-    /// <p>The request id associated with the call responsible for the exception.</p>
+    /// <p>The request ID associated with the call responsible for the exception.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.request_id = Some(input.into());
         self
     }
-    /// <p>The request id associated with the call responsible for the exception.</p>
+    /// <p>The request ID associated with the call responsible for the exception.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.request_id = input;
         self

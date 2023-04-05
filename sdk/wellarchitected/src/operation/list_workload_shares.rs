@@ -86,15 +86,17 @@ impl ListWorkloadSharesInput {
                         query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                if let Some(inner_4) = &_input.max_results {
+                    if *inner_4 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_4) = &_input.status {
+                if let Some(inner_5) = &_input.status {
                     {
-                        query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
                 Ok(())

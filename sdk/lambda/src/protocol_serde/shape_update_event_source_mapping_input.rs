@@ -21,73 +21,79 @@ pub fn ser_update_event_source_mapping_input(
         )?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.enabled {
-        object.key("Enabled").boolean(*var_5);
-    }
-    if let Some(var_6) = &input.filter_criteria {
+    if let Some(var_5) = &input.document_db_event_source_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("FilterCriteria").start_object();
-        crate::protocol_serde::shape_filter_criteria::ser_filter_criteria(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("DocumentDBEventSourceConfig").start_object();
+        crate::protocol_serde::shape_document_db_event_source_config::ser_document_db_event_source_config(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.function_name {
-        object.key("FunctionName").string(var_8.as_str());
+    if let Some(var_7) = &input.enabled {
+        object.key("Enabled").boolean(*var_7);
     }
-    if let Some(var_9) = &input.function_response_types {
-        let mut array_10 = object.key("FunctionResponseTypes").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.filter_criteria {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("FilterCriteria").start_object();
+        crate::protocol_serde::shape_filter_criteria::ser_filter_criteria(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.function_name {
+        object.key("FunctionName").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.function_response_types {
+        let mut array_12 = object.key("FunctionResponseTypes").start_array();
+        for item_13 in var_11 {
             {
-                array_10.value().string(item_11.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
-    if let Some(var_12) = &input.maximum_batching_window_in_seconds {
+    if let Some(var_14) = &input.maximum_batching_window_in_seconds {
         object.key("MaximumBatchingWindowInSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_12).into()),
-        );
-    }
-    if let Some(var_13) = &input.maximum_record_age_in_seconds {
-        object.key("MaximumRecordAgeInSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_13).into()),
-        );
-    }
-    if let Some(var_14) = &input.maximum_retry_attempts {
-        object.key("MaximumRetryAttempts").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_15) = &input.parallelization_factor {
-        object.key("ParallelizationFactor").number(
+    if let Some(var_15) = &input.maximum_record_age_in_seconds {
+        object.key("MaximumRecordAgeInSeconds").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_16) = &input.scaling_config {
-        #[allow(unused_mut)]
-        let mut object_17 = object.key("ScalingConfig").start_object();
-        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_17, var_16)?;
-        object_17.finish();
+    if let Some(var_16) = &input.maximum_retry_attempts {
+        object.key("MaximumRetryAttempts").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_16).into()),
+        );
     }
-    if let Some(var_18) = &input.source_access_configurations {
-        let mut array_19 = object.key("SourceAccessConfigurations").start_array();
-        for item_20 in var_18 {
+    if let Some(var_17) = &input.parallelization_factor {
+        object.key("ParallelizationFactor").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_17).into()),
+        );
+    }
+    if let Some(var_18) = &input.scaling_config {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("ScalingConfig").start_object();
+        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.source_access_configurations {
+        let mut array_21 = object.key("SourceAccessConfigurations").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_23, item_22)?;
+                object_23.finish();
             }
         }
-        array_19.finish();
+        array_21.finish();
     }
-    if let Some(var_22) = &input.tumbling_window_in_seconds {
+    if let Some(var_24) = &input.tumbling_window_in_seconds {
         object.key("TumblingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_22).into()),
+            aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
     Ok(())

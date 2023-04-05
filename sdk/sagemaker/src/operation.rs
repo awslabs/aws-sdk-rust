@@ -31,6 +31,9 @@ pub mod create_artifact;
 /// Types for the `CreateAutoMLJob` operation.
 pub mod create_auto_ml_job;
 
+/// Types for the `CreateAutoMLJobV2` operation.
+pub mod create_auto_ml_job_v2;
+
 /// Types for the `CreateCodeRepository` operation.
 pub mod create_code_repository;
 
@@ -327,6 +330,9 @@ pub mod describe_artifact;
 
 /// Types for the `DescribeAutoMLJob` operation.
 pub mod describe_auto_ml_job;
+
+/// Types for the `DescribeAutoMLJobV2` operation.
+pub mod describe_auto_ml_job_v2;
 
 /// Types for the `DescribeCodeRepository` operation.
 pub mod describe_code_repository;

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlarmsInput {
-    /// <p>The alarms to be deleted.</p>
+    /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
     #[doc(hidden)]
     pub alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteAlarmsInput {
-    /// <p>The alarms to be deleted.</p>
+    /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
     pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
         self.alarm_names.as_deref()
     }
@@ -31,14 +31,14 @@ impl DeleteAlarmsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
     ///
-    /// <p>The alarms to be deleted.</p>
+    /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
     pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.alarm_names.unwrap_or_default();
         v.push(input.into());
         self.alarm_names = Some(v);
         self
     }
-    /// <p>The alarms to be deleted.</p>
+    /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
     pub fn set_alarm_names(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

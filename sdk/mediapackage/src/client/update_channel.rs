@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`id(impl Into<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::set_id): The ID of the Channel to update.
     /// - On success, responds with [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
+    ///   - [`created_at(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::created_at): The date and time the Channel was created.
     ///   - [`description(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::description): A short text description of the Channel.
     ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::update_channel::UpdateChannelOutput::egress_access_logs): Configure egress access logging.
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::update_channel::UpdateChannelOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.

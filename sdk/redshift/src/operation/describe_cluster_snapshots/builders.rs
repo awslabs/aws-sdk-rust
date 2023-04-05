@@ -157,14 +157,14 @@ impl DescribeClusterSnapshotsFluentBuilder {
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
-    /// <p>Constraints: minimum 20, maximum 100.</p>
+    /// <p>Constraints: minimum 20, maximum 500.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
-    /// <p>Constraints: minimum 20, maximum 100.</p>
+    /// <p>Constraints: minimum 20, maximum 500.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self

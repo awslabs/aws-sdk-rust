@@ -6,7 +6,7 @@ pub struct PutEventsInput {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::types::PutEventsRequestEntry>>,
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
     /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
     /// </important>
     #[doc(hidden)]
@@ -17,7 +17,7 @@ impl PutEventsInput {
     pub fn entries(&self) -> std::option::Option<&[crate::types::PutEventsRequestEntry]> {
         self.entries.as_deref()
     }
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
     /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
     /// </important>
     pub fn endpoint_id(&self) -> std::option::Option<&str> {
@@ -58,14 +58,14 @@ impl PutEventsInputBuilder {
         self.entries = input;
         self
     }
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
     /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
     /// </important>
     pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.endpoint_id = Some(input.into());
         self
     }
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
     /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
     /// </important>
     pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {

@@ -38,6 +38,9 @@ pub struct Channel {
     #[doc(hidden)]
     pub elastic_channel_configuration:
         std::option::Option<crate::types::ElasticChannelConfiguration>,
+    /// <p>Settings that control when a channel expires.</p>
+    #[doc(hidden)]
+    pub expiration_settings: std::option::Option<crate::types::ExpirationSettings>,
 }
 impl Channel {
     /// <p>The name of a channel.</p>
@@ -86,6 +89,10 @@ impl Channel {
     ) -> std::option::Option<&crate::types::ElasticChannelConfiguration> {
         self.elastic_channel_configuration.as_ref()
     }
+    /// <p>Settings that control when a channel expires.</p>
+    pub fn expiration_settings(&self) -> std::option::Option<&crate::types::ExpirationSettings> {
+        self.expiration_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -104,6 +111,7 @@ impl std::fmt::Debug for Channel {
             "elastic_channel_configuration",
             &self.elastic_channel_configuration,
         );
+        formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
 }
@@ -130,6 +138,7 @@ pub struct ChannelBuilder {
     pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
     pub(crate) elastic_channel_configuration:
         std::option::Option<crate::types::ElasticChannelConfiguration>,
+    pub(crate) expiration_settings: std::option::Option<crate::types::ExpirationSettings>,
 }
 impl ChannelBuilder {
     /// <p>The name of a channel.</p>
@@ -257,6 +266,19 @@ impl ChannelBuilder {
         self.elastic_channel_configuration = input;
         self
     }
+    /// <p>Settings that control when a channel expires.</p>
+    pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
+        self.expiration_settings = Some(input);
+        self
+    }
+    /// <p>Settings that control when a channel expires.</p>
+    pub fn set_expiration_settings(
+        mut self,
+        input: std::option::Option<crate::types::ExpirationSettings>,
+    ) -> Self {
+        self.expiration_settings = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {
         crate::types::Channel {
@@ -271,6 +293,7 @@ impl ChannelBuilder {
             last_updated_timestamp: self.last_updated_timestamp,
             channel_flow_arn: self.channel_flow_arn,
             elastic_channel_configuration: self.elastic_channel_configuration,
+            expiration_settings: self.expiration_settings,
         }
     }
 }
@@ -291,6 +314,7 @@ impl std::fmt::Debug for ChannelBuilder {
             "elastic_channel_configuration",
             &self.elastic_channel_configuration,
         );
+        formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
 }

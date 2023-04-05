@@ -3,34 +3,34 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateE911AddressOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
     #[doc(hidden)]
     pub validation_result: i32,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID that represents the address.</p>
     #[doc(hidden)]
     pub address_external_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The validated address.</p>
     #[doc(hidden)]
     pub address: std::option::Option<crate::types::Address>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of address suggestions..</p>
     #[doc(hidden)]
     pub candidate_address_list: std::option::Option<std::vec::Vec<crate::types::CandidateAddress>>,
     _request_id: Option<String>,
 }
 impl ValidateE911AddressOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
     pub fn validation_result(&self) -> i32 {
         self.validation_result
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID that represents the address.</p>
     pub fn address_external_id(&self) -> std::option::Option<&str> {
         self.address_external_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The validated address.</p>
     pub fn address(&self) -> std::option::Option<&crate::types::Address> {
         self.address.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of address suggestions..</p>
     pub fn candidate_address_list(&self) -> std::option::Option<&[crate::types::CandidateAddress]> {
         self.candidate_address_list.as_deref()
     }
@@ -61,22 +61,22 @@ pub struct ValidateE911AddressOutputBuilder {
     _request_id: Option<String>,
 }
 impl ValidateE911AddressOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
     pub fn validation_result(mut self, input: i32) -> Self {
         self.validation_result = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
     pub fn set_validation_result(mut self, input: std::option::Option<i32>) -> Self {
         self.validation_result = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID that represents the address.</p>
     pub fn address_external_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.address_external_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID that represents the address.</p>
     pub fn set_address_external_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -84,12 +84,12 @@ impl ValidateE911AddressOutputBuilder {
         self.address_external_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The validated address.</p>
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.address = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The validated address.</p>
     pub fn set_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
         self.address = input;
         self
@@ -98,13 +98,14 @@ impl ValidateE911AddressOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_candidate_address_list`](Self::set_candidate_address_list).
     ///
+    /// <p>The list of address suggestions..</p>
     pub fn candidate_address_list(mut self, input: crate::types::CandidateAddress) -> Self {
         let mut v = self.candidate_address_list.unwrap_or_default();
         v.push(input);
         self.candidate_address_list = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of address suggestions..</p>
     pub fn set_candidate_address_list(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::CandidateAddress>>,

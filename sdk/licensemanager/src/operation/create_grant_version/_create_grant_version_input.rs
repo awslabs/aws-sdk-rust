@@ -24,6 +24,9 @@ pub struct CreateGrantVersionInput {
     /// <p>Current version of the grant.</p>
     #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
+    /// <p>The options specified for the grant.</p>
+    #[doc(hidden)]
+    pub options: std::option::Option<crate::types::Options>,
 }
 impl CreateGrantVersionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -54,6 +57,10 @@ impl CreateGrantVersionInput {
     pub fn source_version(&self) -> std::option::Option<&str> {
         self.source_version.as_deref()
     }
+    /// <p>The options specified for the grant.</p>
+    pub fn options(&self) -> std::option::Option<&crate::types::Options> {
+        self.options.as_ref()
+    }
 }
 impl CreateGrantVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateGrantVersionInput`](crate::operation::create_grant_version::CreateGrantVersionInput).
@@ -75,6 +82,7 @@ pub struct CreateGrantVersionInputBuilder {
     pub(crate) status: std::option::Option<crate::types::GrantStatus>,
     pub(crate) status_reason: std::option::Option<std::string::String>,
     pub(crate) source_version: std::option::Option<std::string::String>,
+    pub(crate) options: std::option::Option<crate::types::Options>,
 }
 impl CreateGrantVersionInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -156,6 +164,16 @@ impl CreateGrantVersionInputBuilder {
         self.source_version = input;
         self
     }
+    /// <p>The options specified for the grant.</p>
+    pub fn options(mut self, input: crate::types::Options) -> Self {
+        self.options = Some(input);
+        self
+    }
+    /// <p>The options specified for the grant.</p>
+    pub fn set_options(mut self, input: std::option::Option<crate::types::Options>) -> Self {
+        self.options = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateGrantVersionInput`](crate::operation::create_grant_version::CreateGrantVersionInput).
     pub fn build(
         self,
@@ -172,6 +190,7 @@ impl CreateGrantVersionInputBuilder {
                 status: self.status,
                 status_reason: self.status_reason,
                 source_version: self.source_version,
+                options: self.options,
             },
         )
     }

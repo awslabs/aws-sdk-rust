@@ -49,21 +49,25 @@ impl ListMembersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.only_associated {
-                    query.push_kv(
-                        "OnlyAssociated",
-                        aws_smithy_types::primitive::Encoder::from(_input.only_associated).encode(),
-                    );
+                if let Some(inner_1) = &_input.only_associated {
+                    if *inner_1 {
+                        query.push_kv(
+                            "OnlyAssociated",
+                            aws_smithy_types::primitive::Encoder::from(*inner_1).encode(),
+                        );
+                    }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                if let Some(inner_2) = &_input.max_results {
+                    if *inner_2 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_1) = &_input.next_token {
+                if let Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
                 Ok(())

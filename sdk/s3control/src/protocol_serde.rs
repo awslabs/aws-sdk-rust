@@ -35,6 +35,8 @@ pub(crate) mod shape_delete_bucket_lifecycle_configuration;
 
 pub(crate) mod shape_delete_bucket_policy;
 
+pub(crate) mod shape_delete_bucket_replication;
+
 pub(crate) mod shape_delete_bucket_tagging;
 
 pub(crate) mod shape_delete_job_tagging;
@@ -70,6 +72,8 @@ pub(crate) mod shape_get_bucket;
 pub(crate) mod shape_get_bucket_lifecycle_configuration;
 
 pub(crate) mod shape_get_bucket_policy;
+
+pub(crate) mod shape_get_bucket_replication;
 
 pub(crate) mod shape_get_bucket_tagging;
 
@@ -114,6 +118,10 @@ pub(crate) mod shape_put_bucket_lifecycle_configuration;
 pub(crate) mod shape_put_bucket_lifecycle_configuration_input;
 
 pub(crate) mod shape_put_bucket_policy;
+
+pub(crate) mod shape_put_bucket_replication;
+
+pub(crate) mod shape_put_bucket_replication_input;
 
 pub(crate) mod shape_put_bucket_tagging;
 
@@ -233,6 +241,8 @@ pub(crate) mod shape_multi_region_access_point_report_list;
 
 pub(crate) mod shape_multi_region_access_point_route;
 
+pub(crate) mod shape_object_lambda_access_point_alias;
+
 pub(crate) mod shape_object_lambda_access_point_list;
 
 pub(crate) mod shape_object_lambda_configuration;
@@ -242,6 +252,8 @@ pub(crate) mod shape_policy_status;
 pub(crate) mod shape_public_access_block_configuration;
 
 pub(crate) mod shape_regional_bucket_list;
+
+pub(crate) mod shape_replication_configuration;
 
 pub(crate) mod shape_route_list;
 
@@ -305,6 +317,10 @@ pub(crate) mod shape_region_report_list;
 
 pub(crate) mod shape_regional_bucket;
 
+pub(crate) mod shape_replication_rule;
+
+pub(crate) mod shape_replication_rules;
+
 pub(crate) mod shape_s3_copy_object_operation;
 
 pub(crate) mod shape_s3_generated_manifest_descriptor;
@@ -339,7 +355,13 @@ pub(crate) mod shape_bucket_level;
 
 pub(crate) mod shape_cloud_watch_metrics;
 
+pub(crate) mod shape_delete_marker_replication;
+
+pub(crate) mod shape_destination;
+
 pub(crate) mod shape_detailed_status_codes_metrics;
+
+pub(crate) mod shape_existing_object_replication;
 
 pub(crate) mod shape_job_failure;
 
@@ -363,6 +385,8 @@ pub(crate) mod shape_object_lambda_content_transformation;
 
 pub(crate) mod shape_region_report;
 
+pub(crate) mod shape_replication_rule_filter;
+
 pub(crate) mod shape_s3_access_control_policy;
 
 pub(crate) mod shape_s3_bucket_destination;
@@ -381,19 +405,27 @@ pub(crate) mod shape_s3_replicate_object_operation;
 
 pub(crate) mod shape_s3_retention;
 
+pub(crate) mod shape_source_selection_criteria;
+
 pub(crate) mod shape_transition;
 
 pub(crate) mod shape_transition_list;
 
+pub(crate) mod shape_access_control_translation;
+
 pub(crate) mod shape_aws_lambda_transformation;
 
 pub(crate) mod shape_buckets;
+
+pub(crate) mod shape_encryption_configuration;
 
 pub(crate) mod shape_generated_manifest_encryption;
 
 pub(crate) mod shape_job_manifest_field_list;
 
 pub(crate) mod shape_lifecycle_rule_and_operator;
+
+pub(crate) mod shape_metrics;
 
 pub(crate) mod shape_multi_region_access_point_regional_response_list;
 
@@ -405,11 +437,19 @@ pub(crate) mod shape_region_creation_list;
 
 pub(crate) mod shape_regions;
 
+pub(crate) mod shape_replica_modifications;
+
+pub(crate) mod shape_replication_rule_and_operator;
+
+pub(crate) mod shape_replication_time;
+
 pub(crate) mod shape_s3_access_control_list;
 
 pub(crate) mod shape_s3_grant_list;
 
 pub(crate) mod shape_s3_grantee;
+
+pub(crate) mod shape_sse_kms_encrypted_objects;
 
 pub(crate) mod shape_storage_lens_data_export_encryption;
 
@@ -418,6 +458,8 @@ pub(crate) mod shape_multi_region_access_point_regional_response;
 pub(crate) mod shape_prefix_level_storage_metrics;
 
 pub(crate) mod shape_replication_status_filter_list;
+
+pub(crate) mod shape_replication_time_value;
 
 pub(crate) mod shape_s3_object_owner;
 

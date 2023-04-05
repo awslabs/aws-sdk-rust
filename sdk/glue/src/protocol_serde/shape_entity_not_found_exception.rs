@@ -25,6 +25,13 @@ pub(crate) fn de_entity_not_found_exception_json_err(
                             .transpose()?,
                         );
                     }
+                    "FromFederationSource" => {
+                        builder = builder.set_from_federation_source(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

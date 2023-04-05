@@ -3,32 +3,32 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTimelineEventInput {
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
     #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
     #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
     /// <p>A short description of the event.</p>
     #[doc(hidden)]
     pub event_data: std::option::Option<std::string::String>,
-    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
-    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
     #[doc(hidden)]
     pub event_references: std::option::Option<std::vec::Vec<crate::types::EventReference>>,
 }
 impl UpdateTimelineEventInput {
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -36,7 +36,7 @@ impl UpdateTimelineEventInput {
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
@@ -44,7 +44,7 @@ impl UpdateTimelineEventInput {
     pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
-    /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
     pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
     }
@@ -52,8 +52,8 @@ impl UpdateTimelineEventInput {
     pub fn event_data(&self) -> std::option::Option<&str> {
         self.event_data.as_deref()
     }
-    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
-    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
     pub fn event_references(&self) -> std::option::Option<&[crate::types::EventReference]> {
         self.event_references.as_deref()
@@ -81,12 +81,12 @@ pub struct UpdateTimelineEventInputBuilder {
     pub(crate) event_references: std::option::Option<std::vec::Vec<crate::types::EventReference>>,
 }
 impl UpdateTimelineEventInputBuilder {
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.client_token = input;
         self
@@ -104,12 +104,12 @@ impl UpdateTimelineEventInputBuilder {
         self.incident_record_arn = input;
         self
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_id = Some(input.into());
         self
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.event_id = input;
         self
@@ -127,12 +127,12 @@ impl UpdateTimelineEventInputBuilder {
         self.event_time = input;
         self
     }
-    /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
     pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_type = Some(input.into());
         self
     }
-    /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
     pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.event_type = input;
         self
@@ -151,8 +151,8 @@ impl UpdateTimelineEventInputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
     ///
-    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
-    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
     pub fn event_references(mut self, input: crate::types::EventReference) -> Self {
         let mut v = self.event_references.unwrap_or_default();
@@ -160,8 +160,8 @@ impl UpdateTimelineEventInputBuilder {
         self.event_references = Some(v);
         self
     }
-    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
-    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
     pub fn set_event_references(
         mut self,

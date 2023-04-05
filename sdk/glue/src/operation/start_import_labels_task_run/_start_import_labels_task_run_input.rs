@@ -11,7 +11,7 @@ pub struct StartImportLabelsTaskRunInput {
     pub input_s3_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to overwrite your existing labels.</p>
     #[doc(hidden)]
-    pub replace_all_labels: bool,
+    pub replace_all_labels: std::option::Option<bool>,
 }
 impl StartImportLabelsTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
@@ -23,7 +23,7 @@ impl StartImportLabelsTaskRunInput {
         self.input_s3_path.as_deref()
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
-    pub fn replace_all_labels(&self) -> bool {
+    pub fn replace_all_labels(&self) -> std::option::Option<bool> {
         self.replace_all_labels
     }
 }
@@ -84,7 +84,7 @@ impl StartImportLabelsTaskRunInputBuilder {
             crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput {
                 transform_id: self.transform_id,
                 input_s3_path: self.input_s3_path,
-                replace_all_labels: self.replace_all_labels.unwrap_or_default(),
+                replace_all_labels: self.replace_all_labels,
             },
         )
     }

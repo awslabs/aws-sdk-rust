@@ -11,7 +11,7 @@ pub struct UpdateProvisioningTemplateInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>True to enable the provisioning template, otherwise false.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>The ID of the default provisioning template version.</p>
     #[doc(hidden)]
     pub default_version_id: std::option::Option<i32>,
@@ -35,7 +35,7 @@ impl UpdateProvisioningTemplateInput {
         self.description.as_deref()
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>The ID of the default provisioning template version.</p>
@@ -162,7 +162,7 @@ impl UpdateProvisioningTemplateInputBuilder {
             crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput {
                 template_name: self.template_name,
                 description: self.description,
-                enabled: self.enabled.unwrap_or_default(),
+                enabled: self.enabled,
                 default_version_id: self.default_version_id,
                 provisioning_role_arn: self.provisioning_role_arn,
                 pre_provisioning_hook: self.pre_provisioning_hook,

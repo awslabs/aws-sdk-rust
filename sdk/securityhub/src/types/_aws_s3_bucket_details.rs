@@ -14,7 +14,7 @@ pub struct AwsS3BucketDetails {
     #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>Indicates when the S3 bucket was created.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
@@ -48,6 +48,10 @@ pub struct AwsS3BucketDetails {
     #[doc(hidden)]
     pub bucket_versioning_configuration:
         std::option::Option<crate::types::AwsS3BucketBucketVersioningConfiguration>,
+    /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the specified bucket. </p>
+    #[doc(hidden)]
+    pub object_lock_configuration:
+        std::option::Option<crate::types::AwsS3BucketObjectLockConfiguration>,
 }
 impl AwsS3BucketDetails {
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
@@ -63,7 +67,7 @@ impl AwsS3BucketDetails {
         self.owner_account_id.as_deref()
     }
     /// <p>Indicates when the S3 bucket was created.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
     }
@@ -113,6 +117,12 @@ impl AwsS3BucketDetails {
     ) -> std::option::Option<&crate::types::AwsS3BucketBucketVersioningConfiguration> {
         self.bucket_versioning_configuration.as_ref()
     }
+    /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the specified bucket. </p>
+    pub fn object_lock_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsS3BucketObjectLockConfiguration> {
+        self.object_lock_configuration.as_ref()
+    }
 }
 impl AwsS3BucketDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketDetails`](crate::types::AwsS3BucketDetails).
@@ -144,6 +154,8 @@ pub struct AwsS3BucketDetailsBuilder {
         std::option::Option<crate::types::AwsS3BucketNotificationConfiguration>,
     pub(crate) bucket_versioning_configuration:
         std::option::Option<crate::types::AwsS3BucketBucketVersioningConfiguration>,
+    pub(crate) object_lock_configuration:
+        std::option::Option<crate::types::AwsS3BucketObjectLockConfiguration>,
 }
 impl AwsS3BucketDetailsBuilder {
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
@@ -177,13 +189,13 @@ impl AwsS3BucketDetailsBuilder {
         self
     }
     /// <p>Indicates when the S3 bucket was created.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.created_at = Some(input.into());
         self
     }
     /// <p>Indicates when the S3 bucket was created.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.created_at = input;
         self
@@ -313,6 +325,22 @@ impl AwsS3BucketDetailsBuilder {
         self.bucket_versioning_configuration = input;
         self
     }
+    /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the specified bucket. </p>
+    pub fn object_lock_configuration(
+        mut self,
+        input: crate::types::AwsS3BucketObjectLockConfiguration,
+    ) -> Self {
+        self.object_lock_configuration = Some(input);
+        self
+    }
+    /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the specified bucket. </p>
+    pub fn set_object_lock_configuration(
+        mut self,
+        input: std::option::Option<crate::types::AwsS3BucketObjectLockConfiguration>,
+    ) -> Self {
+        self.object_lock_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AwsS3BucketDetails`](crate::types::AwsS3BucketDetails).
     pub fn build(self) -> crate::types::AwsS3BucketDetails {
         crate::types::AwsS3BucketDetails {
@@ -328,6 +356,7 @@ impl AwsS3BucketDetailsBuilder {
             bucket_website_configuration: self.bucket_website_configuration,
             bucket_notification_configuration: self.bucket_notification_configuration,
             bucket_versioning_configuration: self.bucket_versioning_configuration,
+            object_lock_configuration: self.object_lock_configuration,
         }
     }
 }

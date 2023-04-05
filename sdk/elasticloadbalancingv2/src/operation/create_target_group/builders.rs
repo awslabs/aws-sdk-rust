@@ -201,22 +201,22 @@ impl CreateTargetGroupFluentBuilder {
         self.inner = self.inner.set_health_check_timeout_seconds(input);
         self
     }
-    /// <p>The number of consecutive health check successes required before considering a target healthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health check successes required before considering a target healthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a protocol of GENEVE, the default is 5. If the target type is <code>lambda</code>, the default is 5.</p>
     pub fn healthy_threshold_count(mut self, input: i32) -> Self {
         self.inner = self.inner.healthy_threshold_count(input);
         self
     }
-    /// <p>The number of consecutive health check successes required before considering a target healthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health check successes required before considering a target healthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a protocol of GENEVE, the default is 5. If the target type is <code>lambda</code>, the default is 5.</p>
     pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_healthy_threshold_count(input);
         self
     }
-    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
     pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
         self.inner = self.inner.unhealthy_threshold_count(input);
         self
     }
-    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
     pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_unhealthy_threshold_count(input);
         self

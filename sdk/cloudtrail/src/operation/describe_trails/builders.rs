@@ -76,7 +76,7 @@ impl DescribeTrailsFluentBuilder {
     /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
     /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
     /// </ul> <note>
-    /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
+    /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region and current account. To return information about a trail in another region, you must specify its trail ARN.</p>
     /// </note>
     pub fn trail_name_list(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.trail_name_list(input.into());
@@ -89,7 +89,7 @@ impl DescribeTrailsFluentBuilder {
     /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
     /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
     /// </ul> <note>
-    /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
+    /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region and current account. To return information about a trail in another region, you must specify its trail ARN.</p>
     /// </note>
     pub fn set_trail_name_list(
         mut self,

@@ -12,6 +12,7 @@
 /// ```text
 /// # let originaccesscontrolorigintypes = unimplemented!();
 /// match originaccesscontrolorigintypes {
+///     OriginAccessControlOriginTypes::Mediastore => { /* ... */ },
 ///     OriginAccessControlOriginTypes::S3 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum OriginAccessControlOriginTypes {
     #[allow(missing_docs)] // documentation missing in model
+    Mediastore,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -54,6 +57,7 @@ pub enum OriginAccessControlOriginTypes {
 impl std::convert::From<&str> for OriginAccessControlOriginTypes {
     fn from(s: &str) -> Self {
         match s {
+            "mediastore" => OriginAccessControlOriginTypes::Mediastore,
             "s3" => OriginAccessControlOriginTypes::S3,
             other => OriginAccessControlOriginTypes::Unknown(
                 crate::primitives::UnknownVariantValue(other.to_owned()),
@@ -72,13 +76,14 @@ impl OriginAccessControlOriginTypes {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OriginAccessControlOriginTypes::Mediastore => "mediastore",
             OriginAccessControlOriginTypes::S3 => "s3",
             OriginAccessControlOriginTypes::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["s3"]
+        &["mediastore", "s3"]
     }
 }
 impl AsRef<str> for OriginAccessControlOriginTypes {

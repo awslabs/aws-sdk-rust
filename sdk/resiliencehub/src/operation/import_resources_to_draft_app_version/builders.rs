@@ -5,7 +5,7 @@ pub use crate::operation::import_resources_to_draft_app_version::_import_resourc
 
 /// Fluent builder constructing a request to `ImportResourcesToDraftAppVersion`.
 ///
-/// <p>Imports resources from sources such as a CloudFormation stack, resource-groups, or application registry app to a draft application version.</p>
+/// <p>Imports resources to Resilience Hub application draft version from different input sources. For more information about the input sources supported by Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover the structure and describe your Resilience Hub application</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -56,12 +56,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
@@ -70,12 +70,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_source_arns`](Self::set_source_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) for the resources that you want to import.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the resources.</p>
     pub fn source_arns(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_arns(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) for the resources that you want to import.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the resources.</p>
     pub fn set_source_arns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -98,6 +98,36 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
         input: std::option::Option<std::vec::Vec<crate::types::TerraformSource>>,
     ) -> Self {
         self.inner = self.inner.set_terraform_sources(input);
+        self
+    }
+    /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
+    pub fn import_strategy(mut self, input: crate::types::ResourceImportStrategyType) -> Self {
+        self.inner = self.inner.import_strategy(input);
+        self
+    }
+    /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
+    pub fn set_import_strategy(
+        mut self,
+        input: std::option::Option<crate::types::ResourceImportStrategyType>,
+    ) -> Self {
+        self.inner = self.inner.set_import_strategy(input);
+        self
+    }
+    /// Appends an item to `eksSources`.
+    ///
+    /// To override the contents of this collection use [`set_eks_sources`](Self::set_eks_sources).
+    ///
+    /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you need to import.</p>
+    pub fn eks_sources(mut self, input: crate::types::EksSource) -> Self {
+        self.inner = self.inner.eks_sources(input);
+        self
+    }
+    /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you need to import.</p>
+    pub fn set_eks_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EksSource>>,
+    ) -> Self {
+        self.inner = self.inner.set_eks_sources(input);
         self
     }
 }

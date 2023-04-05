@@ -82,12 +82,18 @@ impl ImportCertificateFluentBuilder {
         self.inner = self.inner.set_usage(input);
         self
     }
-    /// <p>The file that contains the certificate to import.</p>
+    /// <ul>
+    /// <li> <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p> </li>
+    /// <li> <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p> </li>
+    /// </ul>
     pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.certificate(input.into());
         self
     }
-    /// <p>The file that contains the certificate to import.</p>
+    /// <ul>
+    /// <li> <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p> </li>
+    /// <li> <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p> </li>
+    /// </ul>
     pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_certificate(input);
         self
@@ -105,12 +111,18 @@ impl ImportCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_chain(input);
         self
     }
-    /// <p>The file that contains the private key for the certificate that's being imported.</p>
+    /// <ul>
+    /// <li> <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p> </li>
+    /// <li> <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li>
+    /// </ul>
     pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.private_key(input.into());
         self
     }
-    /// <p>The file that contains the private key for the certificate that's being imported.</p>
+    /// <ul>
+    /// <li> <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p> </li>
+    /// <li> <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li>
+    /// </ul>
     pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_private_key(input);
         self

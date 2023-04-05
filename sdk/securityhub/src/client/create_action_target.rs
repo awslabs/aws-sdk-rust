@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`description(impl Into<String>)`](crate::operation::create_action_target::builders::CreateActionTargetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_action_target::builders::CreateActionTargetFluentBuilder::set_description): <p>The description for the custom action target.</p>
     ///   - [`id(impl Into<String>)`](crate::operation::create_action_target::builders::CreateActionTargetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::create_action_target::builders::CreateActionTargetFluentBuilder::set_id): <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
     /// - On success, responds with [`CreateActionTargetOutput`](crate::operation::create_action_target::CreateActionTargetOutput) with field(s):
-    ///   - [`action_target_arn(Option<String>)`](crate::operation::create_action_target::CreateActionTargetOutput::action_target_arn): <p>The ARN for the custom action target.</p>
+    ///   - [`action_target_arn(Option<String>)`](crate::operation::create_action_target::CreateActionTargetOutput::action_target_arn): <p>The Amazon Resource Name (ARN) for the custom action target.</p>
     /// - On failure, responds with [`SdkError<CreateActionTargetError>`](crate::operation::create_action_target::CreateActionTargetError)
     pub fn create_action_target(
         &self,

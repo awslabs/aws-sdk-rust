@@ -5,7 +5,7 @@ pub use crate::operation::get_attribute_group::_get_attribute_group_input::GetAt
 
 /// Fluent builder constructing a request to `GetAttributeGroup`.
 ///
-/// <p>Retrieves an attribute group, either by its name or its ID. The attribute group can be specified either by its unique ID or by its name.</p>
+/// <p> Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or name. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAttributeGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +69,12 @@ impl GetAttributeGroupFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn attribute_group(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.attribute_group(input.into());
         self
     }
-    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn set_attribute_group(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_group(input);
         self

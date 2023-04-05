@@ -74,6 +74,8 @@ pub(crate) mod shape_get_repository;
 
 pub(crate) mod shape_get_repository_sync_status;
 
+pub(crate) mod shape_get_resources_summary;
+
 pub(crate) mod shape_get_service;
 
 pub(crate) mod shape_get_service_instance;
@@ -336,6 +338,8 @@ pub(crate) mod shape_component;
 
 pub(crate) mod shape_component_summary_list;
 
+pub(crate) mod shape_counts_summary;
+
 pub(crate) mod shape_environment;
 
 pub(crate) mod shape_environment_account_connection;
@@ -423,6 +427,8 @@ pub(crate) mod shape_repository_summary;
 pub(crate) mod shape_repository_sync_definition;
 
 pub(crate) mod shape_repository_sync_events;
+
+pub(crate) mod shape_resource_counts_summary;
 
 pub(crate) mod shape_resource_sync_events;
 

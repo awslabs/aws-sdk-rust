@@ -5,7 +5,7 @@ pub use crate::operation::create_tracker::_create_tracker_input::CreateTrackerIn
 
 /// Fluent builder constructing a request to `CreateTracker`.
 ///
-/// <p>Creates a tracker resource in your AWS account, which lets you retrieve current and historical location of devices.</p>
+/// <p>Creates a tracker resource in your Amazon Web Services account, which lets you retrieve current and historical location of devices.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrackerFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -108,12 +108,12 @@ impl CreateTrackerFluentBuilder {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
-    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self

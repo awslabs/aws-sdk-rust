@@ -37,6 +37,11 @@ where
                                     crate::protocol_serde::shape_data_sources_free_trial::de_data_sources_free_trial(tokens)?
                                 );
                             }
+                            "features" => {
+                                builder = builder.set_features(
+                                    crate::protocol_serde::shape_free_trial_feature_configurations_results::de_free_trial_feature_configurations_results(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

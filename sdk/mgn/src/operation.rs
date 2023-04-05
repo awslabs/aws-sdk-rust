@@ -91,6 +91,18 @@ pub mod initialize_service;
 /// Types for the `ListApplications` operation.
 pub mod list_applications;
 
+/// Types for the `ListExportErrors` operation.
+pub mod list_export_errors;
+
+/// Types for the `ListExports` operation.
+pub mod list_exports;
+
+/// Types for the `ListImportErrors` operation.
+pub mod list_import_errors;
+
+/// Types for the `ListImports` operation.
+pub mod list_imports;
+
 /// Types for the `ListSourceServerActions` operation.
 pub mod list_source_server_actions;
 
@@ -123,6 +135,12 @@ pub mod retry_data_replication;
 
 /// Types for the `StartCutover` operation.
 pub mod start_cutover;
+
+/// Types for the `StartExport` operation.
+pub mod start_export;
+
+/// Types for the `StartImport` operation.
+pub mod start_import;
 
 /// Types for the `StartReplication` operation.
 pub mod start_replication;

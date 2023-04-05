@@ -5,14 +5,14 @@
 pub struct ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of items to return in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of items to return in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
@@ -65,7 +65,6 @@ impl ListOrganizationAdminAccountsInputBuilder {
         Ok(
             crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsInput {
                 max_results: self.max_results
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

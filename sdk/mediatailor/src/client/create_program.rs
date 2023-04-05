@@ -20,6 +20,8 @@ impl super::Client {
     ///   - [`scheduled_start_time(Option<DateTime>)`](crate::operation::create_program::CreateProgramOutput::scheduled_start_time): <p>The scheduled start time for this Program.</p>
     ///   - [`source_location_name(Option<String>)`](crate::operation::create_program::CreateProgramOutput::source_location_name): <p>The name to assign to the source location for this program.</p>
     ///   - [`vod_source_name(Option<String>)`](crate::operation::create_program::CreateProgramOutput::vod_source_name): <p>The name that's used to refer to a VOD source.</p>
+    ///   - [`clip_range(Option<ClipRange>)`](crate::operation::create_program::CreateProgramOutput::clip_range): <p>The clip range configuration settings.</p>
+    ///   - [`duration_millis(i64)`](crate::operation::create_program::CreateProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
     /// - On failure, responds with [`SdkError<CreateProgramError>`](crate::operation::create_program::CreateProgramError)
     pub fn create_program(
         &self,

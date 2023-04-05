@@ -5,6 +5,14 @@ pub use crate::types::_delete_object_input::DeleteObjectInputBuilder;
 
 pub use crate::types::_add_object_input::AddObjectInputBuilder;
 
+pub use crate::types::_data_cells_filter::DataCellsFilterBuilder;
+
+pub use crate::types::_column_wildcard::ColumnWildcardBuilder;
+
+pub use crate::types::_row_filter::RowFilterBuilder;
+
+pub use crate::types::_all_rows_wildcard::AllRowsWildcardBuilder;
+
 pub use crate::types::_query_planning_context::QueryPlanningContextBuilder;
 
 pub use crate::types::_tagged_table::TaggedTableBuilder;
@@ -35,8 +43,6 @@ pub use crate::types::_data_location_resource::DataLocationResourceBuilder;
 
 pub use crate::types::_table_with_columns_resource::TableWithColumnsResourceBuilder;
 
-pub use crate::types::_column_wildcard::ColumnWildcardBuilder;
-
 pub use crate::types::_catalog_resource::CatalogResourceBuilder;
 
 pub use crate::types::_data_lake_principal::DataLakePrincipalBuilder;
@@ -60,12 +66,6 @@ pub use crate::types::_filter_condition::FilterConditionBuilder;
 pub use crate::types::_principal_resource_permissions::PrincipalResourcePermissionsBuilder;
 
 pub use crate::types::_details_map::DetailsMapBuilder;
-
-pub use crate::types::_data_cells_filter::DataCellsFilterBuilder;
-
-pub use crate::types::_row_filter::RowFilterBuilder;
-
-pub use crate::types::_all_rows_wildcard::AllRowsWildcardBuilder;
 
 pub use crate::types::_work_unit_range::WorkUnitRangeBuilder;
 

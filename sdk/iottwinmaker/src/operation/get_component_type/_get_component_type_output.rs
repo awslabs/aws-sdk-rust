@@ -52,7 +52,7 @@ pub struct GetComponentTypeOutput {
     pub property_groups: std::option::Option<
         std::collections::HashMap<std::string::String, crate::types::PropertyGroupResponse>,
     >,
-    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
     #[doc(hidden)]
     pub sync_source: std::option::Option<std::string::String>,
     /// <p>The component type name.</p>
@@ -130,7 +130,7 @@ impl GetComponentTypeOutput {
     > {
         self.property_groups.as_ref()
     }
-    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
     pub fn sync_source(&self) -> std::option::Option<&str> {
         self.sync_source.as_deref()
     }
@@ -389,12 +389,12 @@ impl GetComponentTypeOutputBuilder {
         self.property_groups = input;
         self
     }
-    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
     pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.sync_source = Some(input.into());
         self
     }
-    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
     pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.sync_source = input;
         self

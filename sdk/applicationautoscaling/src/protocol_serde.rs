@@ -22,11 +22,17 @@ pub(crate) mod shape_describe_scaling_policies;
 
 pub(crate) mod shape_describe_scheduled_actions;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_put_scaling_policy;
 
 pub(crate) mod shape_put_scheduled_action;
 
 pub(crate) mod shape_register_scalable_target;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -60,6 +66,8 @@ pub(crate) mod shape_invalid_next_token_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_list_tags_for_resource_input;
+
 pub(crate) mod shape_object_not_found_exception;
 
 pub(crate) mod shape_put_scaling_policy_input;
@@ -67,6 +75,14 @@ pub(crate) mod shape_put_scaling_policy_input;
 pub(crate) mod shape_put_scheduled_action_input;
 
 pub(crate) mod shape_register_scalable_target_input;
+
+pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_too_many_tags_exception;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -85,6 +101,8 @@ pub(crate) mod shape_scheduled_actions;
 pub(crate) mod shape_step_scaling_policy_configuration;
 
 pub(crate) mod shape_suspended_state;
+
+pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_target_tracking_scaling_policy_configuration;
 
@@ -108,8 +126,20 @@ pub(crate) mod shape_metric_dimension;
 
 pub(crate) mod shape_not_scaled_reasons;
 
+pub(crate) mod shape_target_tracking_metric_data_query;
+
 pub(crate) mod shape_not_scaled_reason;
 
 pub(crate) mod shape_step_adjustments;
 
+pub(crate) mod shape_target_tracking_metric_stat;
+
 pub(crate) mod shape_metric_dimensions;
+
+pub(crate) mod shape_target_tracking_metric;
+
+pub(crate) mod shape_target_tracking_metric_data_queries;
+
+pub(crate) mod shape_target_tracking_metric_dimension;
+
+pub(crate) mod shape_target_tracking_metric_dimensions;

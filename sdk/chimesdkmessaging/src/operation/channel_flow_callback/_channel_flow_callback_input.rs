@@ -11,7 +11,7 @@ pub struct ChannelFlowCallbackInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
     #[doc(hidden)]
-    pub delete_resource: bool,
+    pub delete_resource: std::option::Option<bool>,
     /// <p>Stores information about the processed message.</p>
     #[doc(hidden)]
     pub channel_message: std::option::Option<crate::types::ChannelMessageCallback>,
@@ -26,7 +26,7 @@ impl ChannelFlowCallbackInput {
         self.channel_arn.as_deref()
     }
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
-    pub fn delete_resource(&self) -> bool {
+    pub fn delete_resource(&self) -> std::option::Option<bool> {
         self.delete_resource
     }
     /// <p>Stores information about the processed message.</p>
@@ -107,7 +107,7 @@ impl ChannelFlowCallbackInputBuilder {
             crate::operation::channel_flow_callback::ChannelFlowCallbackInput {
                 callback_id: self.callback_id,
                 channel_arn: self.channel_arn,
-                delete_resource: self.delete_resource.unwrap_or_default(),
+                delete_resource: self.delete_resource,
                 channel_message: self.channel_message,
             },
         )

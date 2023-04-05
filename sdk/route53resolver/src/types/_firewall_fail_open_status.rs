@@ -14,6 +14,7 @@
 /// match firewallfailopenstatus {
 ///     FirewallFailOpenStatus::Disabled => { /* ... */ },
 ///     FirewallFailOpenStatus::Enabled => { /* ... */ },
+///     FirewallFailOpenStatus::UseLocalResourceSetting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum FirewallFailOpenStatus {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    UseLocalResourceSetting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl std::convert::From<&str> for FirewallFailOpenStatus {
         match s {
             "DISABLED" => FirewallFailOpenStatus::Disabled,
             "ENABLED" => FirewallFailOpenStatus::Enabled,
+            "USE_LOCAL_RESOURCE_SETTING" => FirewallFailOpenStatus::UseLocalResourceSetting,
             other => FirewallFailOpenStatus::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -78,12 +82,13 @@ impl FirewallFailOpenStatus {
         match self {
             FirewallFailOpenStatus::Disabled => "DISABLED",
             FirewallFailOpenStatus::Enabled => "ENABLED",
+            FirewallFailOpenStatus::UseLocalResourceSetting => "USE_LOCAL_RESOURCE_SETTING",
             FirewallFailOpenStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &["DISABLED", "ENABLED", "USE_LOCAL_RESOURCE_SETTING"]
     }
 }
 impl AsRef<str> for FirewallFailOpenStatus {

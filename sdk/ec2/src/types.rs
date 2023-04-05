@@ -21,6 +21,10 @@ pub use crate::types::_monitoring::Monitoring;
 
 pub use crate::types::_monitoring_state::MonitoringState;
 
+pub use crate::types::_nat_gateway_address::NatGatewayAddress;
+
+pub use crate::types::_nat_gateway_address_status::NatGatewayAddressStatus;
+
 pub use crate::types::_instance_state_change::InstanceStateChange;
 
 pub use crate::types::_instance_state::InstanceState;
@@ -41,13 +45,17 @@ pub use crate::types::_alternate_path_hint::AlternatePathHint;
 
 pub use crate::types::_explanation::Explanation;
 
+pub use crate::types::_firewall_stateful_rule::FirewallStatefulRule;
+
+pub use crate::types::_port_range::PortRange;
+
+pub use crate::types::_firewall_stateless_rule::FirewallStatelessRule;
+
 pub use crate::types::_analysis_component::AnalysisComponent;
 
 pub use crate::types::_transit_gateway_route_table_route::TransitGatewayRouteTableRoute;
 
 pub use crate::types::_analysis_security_group_rule::AnalysisSecurityGroupRule;
-
-pub use crate::types::_port_range::PortRange;
 
 pub use crate::types::_analysis_route_table_route::AnalysisRouteTableRoute;
 
@@ -60,6 +68,12 @@ pub use crate::types::_analysis_acl_rule::AnalysisAclRule;
 pub use crate::types::_path_component::PathComponent;
 
 pub use crate::types::_additional_detail::AdditionalDetail;
+
+pub use crate::types::_rule_group_rule_options_pair::RuleGroupRuleOptionsPair;
+
+pub use crate::types::_rule_option::RuleOption;
+
+pub use crate::types::_rule_group_type_pair::RuleGroupTypePair;
 
 pub use crate::types::_analysis_packet_header::AnalysisPacketHeader;
 
@@ -114,6 +128,8 @@ pub use crate::types::_scheduled_instances_block_device_mapping::ScheduledInstan
 pub use crate::types::_scheduled_instances_ebs::ScheduledInstancesEbs;
 
 pub use crate::types::_instance::Instance;
+
+pub use crate::types::_instance_boot_mode_values::InstanceBootModeValues;
 
 pub use crate::types::_instance_maintenance_options::InstanceMaintenanceOptions;
 
@@ -699,6 +715,16 @@ pub use crate::types::_ipam_scope_state::IpamScopeState;
 
 pub use crate::types::_ipam_scope_type::IpamScopeType;
 
+pub use crate::types::_ipam_resource_discovery::IpamResourceDiscovery;
+
+pub use crate::types::_ipam_resource_discovery_state::IpamResourceDiscoveryState;
+
+pub use crate::types::_ipam_operating_region::IpamOperatingRegion;
+
+pub use crate::types::_remove_ipam_operating_region::RemoveIpamOperatingRegion;
+
+pub use crate::types::_add_ipam_operating_region::AddIpamOperatingRegion;
+
 pub use crate::types::_ipam_resource_cidr::IpamResourceCidr;
 
 pub use crate::types::_ipam_overlap_status::IpamOverlapStatus;
@@ -713,6 +739,8 @@ pub use crate::types::_ipam_resource_type::IpamResourceType;
 
 pub use crate::types::_ipam_pool::IpamPool;
 
+pub use crate::types::_ipam_pool_public_ip_source::IpamPoolPublicIpSource;
+
 pub use crate::types::_ipam_pool_aws_service::IpamPoolAwsService;
 
 pub use crate::types::_address_family::AddressFamily;
@@ -724,12 +752,6 @@ pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTag;
 pub use crate::types::_ipam::Ipam;
 
 pub use crate::types::_ipam_state::IpamState;
-
-pub use crate::types::_ipam_operating_region::IpamOperatingRegion;
-
-pub use crate::types::_remove_ipam_operating_region::RemoveIpamOperatingRegion;
-
-pub use crate::types::_add_ipam_operating_region::AddIpamOperatingRegion;
 
 pub use crate::types::_host_tenancy::HostTenancy;
 
@@ -770,6 +792,8 @@ pub use crate::types::_ebs_instance_block_device_specification::EbsInstanceBlock
 pub use crate::types::_launch_permission_modifications::LaunchPermissionModifications;
 
 pub use crate::types::_launch_permission::LaunchPermission;
+
+pub use crate::types::_host_maintenance::HostMaintenance;
 
 pub use crate::types::_host_recovery::HostRecovery;
 
@@ -882,6 +906,8 @@ pub use crate::types::_snapshot_detail::SnapshotDetail;
 pub use crate::types::_import_image_license_configuration_request::ImportImageLicenseConfigurationRequest;
 
 pub use crate::types::_image_disk_container::ImageDiskContainer;
+
+pub use crate::types::_maintenance_details::MaintenanceDetails;
 
 pub use crate::types::_vpn_connection_device_type::VpnConnectionDeviceType;
 
@@ -1007,6 +1033,14 @@ pub use crate::types::_ipam_pool_allocation::IpamPoolAllocation;
 
 pub use crate::types::_ipam_pool_allocation_resource_type::IpamPoolAllocationResourceType;
 
+pub use crate::types::_ipam_discovered_resource_cidr::IpamDiscoveredResourceCidr;
+
+pub use crate::types::_ipam_discovered_account::IpamDiscoveredAccount;
+
+pub use crate::types::_ipam_discovery_failure_reason::IpamDiscoveryFailureReason;
+
+pub use crate::types::_ipam_discovery_failure_code::IpamDiscoveryFailureCode;
+
 pub use crate::types::_ipam_address_history_record::IpamAddressHistoryRecord;
 
 pub use crate::types::_ipam_address_history_resource_type::IpamAddressHistoryResourceType;
@@ -1094,6 +1128,12 @@ pub use crate::types::_subnet_ipv6_cidr_block_association::SubnetIpv6CidrBlockAs
 pub use crate::types::_subnet_cidr_block_state::SubnetCidrBlockState;
 
 pub use crate::types::_subnet_cidr_block_state_code::SubnetCidrBlockStateCode;
+
+pub use crate::types::_ipam_resource_discovery_association::IpamResourceDiscoveryAssociation;
+
+pub use crate::types::_ipam_resource_discovery_association_state::IpamResourceDiscoveryAssociationState;
+
+pub use crate::types::_ipam_associated_resource_discovery_status::IpamAssociatedResourceDiscoveryStatus;
 
 pub use crate::types::_instance_event_window_disassociation_request::InstanceEventWindowDisassociationRequest;
 
@@ -1417,6 +1457,10 @@ pub use crate::types::_network_interface_attribute::NetworkInterfaceAttribute;
 
 pub use crate::types::_network_insights_path::NetworkInsightsPath;
 
+pub use crate::types::_path_filter::PathFilter;
+
+pub use crate::types::_filter_port_range::FilterPortRange;
+
 pub use crate::types::_network_insights_access_scope::NetworkInsightsAccessScope;
 
 pub use crate::types::_network_acl::NetworkAcl;
@@ -1432,8 +1476,6 @@ pub use crate::types::_connectivity_type::ConnectivityType;
 pub use crate::types::_nat_gateway_state::NatGatewayState;
 
 pub use crate::types::_provisioned_bandwidth::ProvisionedBandwidth;
-
-pub use crate::types::_nat_gateway_address::NatGatewayAddress;
 
 pub use crate::types::_moving_address_status::MovingAddressStatus;
 
@@ -1856,6 +1898,10 @@ pub use crate::types::_instance_specification::InstanceSpecification;
 pub use crate::types::_price_schedule_specification::PriceScheduleSpecification;
 
 pub use crate::types::_network_interface_creation_type::NetworkInterfaceCreationType;
+
+pub use crate::types::_path_request_filter::PathRequestFilter;
+
+pub use crate::types::_request_filter_port_range::RequestFilterPortRange;
 
 pub use crate::types::_access_scope_path_request::AccessScopePathRequest;
 
@@ -2515,7 +2561,13 @@ mod _federated_authentication_request;
 
 mod _filter;
 
+mod _filter_port_range;
+
 mod _findings_found;
+
+mod _firewall_stateful_rule;
+
+mod _firewall_stateless_rule;
 
 mod _fleet_activity_status;
 
@@ -2605,6 +2657,8 @@ mod _host;
 
 mod _host_instance;
 
+mod _host_maintenance;
+
 mod _host_offering;
 
 mod _host_properties;
@@ -2682,6 +2736,8 @@ mod _instance_auto_recovery_state;
 mod _instance_block_device_mapping;
 
 mod _instance_block_device_mapping_specification;
+
+mod _instance_boot_mode_values;
 
 mod _instance_capacity;
 
@@ -2823,9 +2879,19 @@ mod _ipam_address_history_record;
 
 mod _ipam_address_history_resource_type;
 
+mod _ipam_associated_resource_discovery_status;
+
 mod _ipam_cidr_authorization_context;
 
 mod _ipam_compliance_status;
+
+mod _ipam_discovered_account;
+
+mod _ipam_discovered_resource_cidr;
+
+mod _ipam_discovery_failure_code;
+
+mod _ipam_discovery_failure_reason;
 
 mod _ipam_management_state;
 
@@ -2849,9 +2915,19 @@ mod _ipam_pool_cidr_failure_reason;
 
 mod _ipam_pool_cidr_state;
 
+mod _ipam_pool_public_ip_source;
+
 mod _ipam_pool_state;
 
 mod _ipam_resource_cidr;
+
+mod _ipam_resource_discovery;
+
+mod _ipam_resource_discovery_association;
+
+mod _ipam_resource_discovery_association_state;
+
+mod _ipam_resource_discovery_state;
 
 mod _ipam_resource_tag;
 
@@ -3043,6 +3119,8 @@ mod _location_type;
 
 mod _log_destination_type;
 
+mod _maintenance_details;
+
 mod _managed_prefix_list;
 
 mod _market_type;
@@ -3090,6 +3168,8 @@ mod _multicast_support_value;
 mod _nat_gateway;
 
 mod _nat_gateway_address;
+
+mod _nat_gateway_address_status;
 
 mod _nat_gateway_state;
 
@@ -3170,6 +3250,10 @@ mod _packet_header_statement_request;
 mod _partition_load_frequency;
 
 mod _path_component;
+
+mod _path_filter;
+
+mod _path_request_filter;
 
 mod _path_statement;
 
@@ -3317,6 +3401,8 @@ mod _report_instance_reason_codes;
 
 mod _report_status_type;
 
+mod _request_filter_port_range;
+
 mod _request_ipam_resource_tag;
 
 mod _request_launch_template_data;
@@ -3384,6 +3470,12 @@ mod _route_table_association_state;
 mod _route_table_association_state_code;
 
 mod _rule_action;
+
+mod _rule_group_rule_options_pair;
+
+mod _rule_group_type_pair;
+
+mod _rule_option;
 
 mod _run_instances_monitoring_enabled;
 

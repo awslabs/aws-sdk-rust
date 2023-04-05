@@ -6,7 +6,7 @@ pub struct ImportHostKeyInput {
     /// <p>The identifier of the server that contains the host key that you are importing.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The public key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     #[doc(hidden)]
     pub host_key_body: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ impl ImportHostKeyInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The public key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn host_key_body(&self) -> std::option::Option<&str> {
         self.host_key_body.as_deref()
@@ -73,13 +73,13 @@ impl ImportHostKeyInputBuilder {
         self.server_id = input;
         self
     }
-    /// <p>The public key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn host_key_body(mut self, input: impl Into<std::string::String>) -> Self {
         self.host_key_body = Some(input.into());
         self
     }
-    /// <p>The public key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn set_host_key_body(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.host_key_body = input;

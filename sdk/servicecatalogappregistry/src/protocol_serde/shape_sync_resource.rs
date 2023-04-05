@@ -72,6 +72,42 @@ pub fn de_sync_resource_http_error(
                 tmp
             })
         }
+        "ThrottlingException" => {
+            crate::operation::sync_resource::SyncResourceError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sync_resource::SyncResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::sync_resource::SyncResourceError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sync_resource::SyncResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::sync_resource::SyncResourceError::generic(generic),
     })
 }

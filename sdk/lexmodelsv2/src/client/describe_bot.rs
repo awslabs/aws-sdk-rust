@@ -14,6 +14,9 @@ impl super::Client {
     ///   - [`bot_status(Option<BotStatus>)`](crate::operation::describe_bot::DescribeBotOutput::bot_status): <p>The current status of the bot. When the status is <code>Available</code> the bot is ready to be used in conversations with users.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_bot::DescribeBotOutput::creation_date_time): <p>A timestamp of the date and time that the bot was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_bot::DescribeBotOutput::last_updated_date_time): <p>A timestamp of the date and time that the bot was last updated.</p>
+    ///   - [`bot_type(Option<BotType>)`](crate::operation::describe_bot::DescribeBotOutput::bot_type): <p>The type of the bot that was described.</p>
+    ///   - [`bot_members(Option<Vec<BotMember>>)`](crate::operation::describe_bot::DescribeBotOutput::bot_members): <p>The list of bots in the network that was described.</p>
+    ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_bot::DescribeBotOutput::failure_reasons): <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
     /// - On failure, responds with [`SdkError<DescribeBotError>`](crate::operation::describe_bot::DescribeBotError)
     pub fn describe_bot(
         &self,

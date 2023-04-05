@@ -46,5 +46,8 @@ pub fn ser_get_resource_metrics_input(
     if let Some(var_11) = &input.next_token {
         object.key("NextToken").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.period_alignment {
+        object.key("PeriodAlignment").string(var_12.as_str());
+    }
     Ok(())
 }

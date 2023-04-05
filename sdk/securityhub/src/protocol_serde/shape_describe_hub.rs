@@ -164,6 +164,19 @@ pub(crate) fn de_describe_hub(
                             )?,
                         );
                     }
+                    "ControlFindingGenerator" => {
+                        builder = builder.set_control_finding_generator(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped().map(|u| {
+                                    crate::types::ControlFindingGenerator::from(u.as_ref())
+                                })
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "HubArn" => {
                         builder = builder.set_hub_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

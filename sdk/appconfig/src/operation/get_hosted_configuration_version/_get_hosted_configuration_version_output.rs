@@ -21,6 +21,9 @@ pub struct GetHostedConfigurationVersionOutput {
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    #[doc(hidden)]
+    pub version_label: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetHostedConfigurationVersionOutput {
@@ -48,6 +51,10 @@ impl GetHostedConfigurationVersionOutput {
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
 }
 impl std::fmt::Debug for GetHostedConfigurationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58,6 +65,7 @@ impl std::fmt::Debug for GetHostedConfigurationVersionOutput {
         formatter.field("description", &self.description);
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
+        formatter.field("version_label", &self.version_label);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -84,6 +92,7 @@ pub struct GetHostedConfigurationVersionOutputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) content: std::option::Option<aws_smithy_types::Blob>,
     pub(crate) content_type: std::option::Option<std::string::String>,
+    pub(crate) version_label: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetHostedConfigurationVersionOutputBuilder {
@@ -150,6 +159,16 @@ impl GetHostedConfigurationVersionOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
+        self.version_label = Some(input.into());
+        self
+    }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.version_label = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -171,6 +190,7 @@ impl GetHostedConfigurationVersionOutputBuilder {
             description: self.description,
             content: self.content,
             content_type: self.content_type,
+            version_label: self.version_label,
             _request_id: self._request_id,
         }
     }
@@ -184,6 +204,7 @@ impl std::fmt::Debug for GetHostedConfigurationVersionOutputBuilder {
         formatter.field("description", &self.description);
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
+        formatter.field("version_label", &self.version_label);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

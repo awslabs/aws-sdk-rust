@@ -5,7 +5,6 @@
 pub struct SearchProductsAsAdminInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -33,7 +32,7 @@ pub struct SearchProductsAsAdminInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: std::option::Option<i32>,
     /// <p>Access level of the source of the product.</p>
     #[doc(hidden)]
     pub product_source: std::option::Option<crate::types::ProductSource>,
@@ -41,7 +40,6 @@ pub struct SearchProductsAsAdminInput {
 impl SearchProductsAsAdminInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -76,7 +74,7 @@ impl SearchProductsAsAdminInput {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
     /// <p>Access level of the source of the product.</p>
@@ -114,7 +112,6 @@ pub struct SearchProductsAsAdminInputBuilder {
 impl SearchProductsAsAdminInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -124,7 +121,6 @@ impl SearchProductsAsAdminInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -241,7 +237,7 @@ impl SearchProductsAsAdminInputBuilder {
                 sort_by: self.sort_by,
                 sort_order: self.sort_order,
                 page_token: self.page_token,
-                page_size: self.page_size.unwrap_or_default(),
+                page_size: self.page_size,
                 product_source: self.product_source,
             },
         )

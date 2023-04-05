@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImageRecipeInput {
-    /// <p> The name of the image recipe.</p>
+    /// <p>The name of the image recipe.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p> The description of the image recipe.</p>
+    /// <p>The description of the image recipe.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
@@ -37,7 +37,7 @@ pub struct CreateImageRecipeInput {
     #[doc(hidden)]
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
-    /// <p> The tags of the image recipe.</p>
+    /// <p>The tags of the image recipe.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -53,11 +53,11 @@ pub struct CreateImageRecipeInput {
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateImageRecipeInput {
-    /// <p> The name of the image recipe.</p>
+    /// <p>The name of the image recipe.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The description of the image recipe.</p>
+    /// <p>The description of the image recipe.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -94,7 +94,7 @@ impl CreateImageRecipeInput {
     ) -> std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
-    /// <p> The tags of the image recipe.</p>
+    /// <p>The tags of the image recipe.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -143,22 +143,22 @@ pub struct CreateImageRecipeInputBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl CreateImageRecipeInputBuilder {
-    /// <p> The name of the image recipe.</p>
+    /// <p>The name of the image recipe.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p> The name of the image recipe.</p>
+    /// <p>The name of the image recipe.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The description of the image recipe.</p>
+    /// <p>The description of the image recipe.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p> The description of the image recipe.</p>
+    /// <p>The description of the image recipe.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
         self
@@ -258,7 +258,7 @@ impl CreateImageRecipeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags of the image recipe.</p>
+    /// <p>The tags of the image recipe.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -269,7 +269,7 @@ impl CreateImageRecipeInputBuilder {
         self.tags = Some(hash_map);
         self
     }
-    /// <p> The tags of the image recipe.</p>
+    /// <p>The tags of the image recipe.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<

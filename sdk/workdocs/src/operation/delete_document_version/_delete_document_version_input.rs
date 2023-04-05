@@ -3,34 +3,34 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentVersionInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
-    /// <p>The ID of a document.</p>
+    /// <p>The ID of the document associated with the version being deleted.</p>
     #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
-    /// <p>The version ID of a document.</p>
+    /// <p>The ID of the version being deleted.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+    /// <p>Deletes all versions of a document prior to the current version.</p>
     #[doc(hidden)]
-    pub delete_prior_versions: bool,
+    pub delete_prior_versions: std::option::Option<bool>,
 }
 impl DeleteDocumentVersionInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
-    /// <p>The ID of a document.</p>
+    /// <p>The ID of the document associated with the version being deleted.</p>
     pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
-    /// <p>The version ID of a document.</p>
+    /// <p>The ID of the version being deleted.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
-    pub fn delete_prior_versions(&self) -> bool {
+    /// <p>Deletes all versions of a document prior to the current version.</p>
+    pub fn delete_prior_versions(&self) -> std::option::Option<bool> {
         self.delete_prior_versions
     }
 }
@@ -63,12 +63,12 @@ pub struct DeleteDocumentVersionInputBuilder {
     pub(crate) delete_prior_versions: std::option::Option<bool>,
 }
 impl DeleteDocumentVersionInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -76,32 +76,32 @@ impl DeleteDocumentVersionInputBuilder {
         self.authentication_token = input;
         self
     }
-    /// <p>The ID of a document.</p>
+    /// <p>The ID of the document associated with the version being deleted.</p>
     pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.document_id = Some(input.into());
         self
     }
-    /// <p>The ID of a document.</p>
+    /// <p>The ID of the document associated with the version being deleted.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.document_id = input;
         self
     }
-    /// <p>The version ID of a document.</p>
+    /// <p>The ID of the version being deleted.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.version_id = Some(input.into());
         self
     }
-    /// <p>The version ID of a document.</p>
+    /// <p>The ID of the version being deleted.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.version_id = input;
         self
     }
-    /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+    /// <p>Deletes all versions of a document prior to the current version.</p>
     pub fn delete_prior_versions(mut self, input: bool) -> Self {
         self.delete_prior_versions = Some(input);
         self
     }
-    /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+    /// <p>Deletes all versions of a document prior to the current version.</p>
     pub fn set_delete_prior_versions(mut self, input: std::option::Option<bool>) -> Self {
         self.delete_prior_versions = input;
         self
@@ -118,7 +118,7 @@ impl DeleteDocumentVersionInputBuilder {
                 authentication_token: self.authentication_token,
                 document_id: self.document_id,
                 version_id: self.version_id,
-                delete_prior_versions: self.delete_prior_versions.unwrap_or_default(),
+                delete_prior_versions: self.delete_prior_versions,
             },
         )
     }

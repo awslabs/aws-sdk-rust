@@ -84,6 +84,8 @@ pub(crate) mod shape_capacity_specification;
 
 pub(crate) mod shape_capacity_specification_summary;
 
+pub(crate) mod shape_client_side_timestamps;
+
 pub(crate) mod shape_column_definition;
 
 pub(crate) mod shape_comment;

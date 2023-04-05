@@ -7,7 +7,7 @@ pub use crate::operation::create_channel::_create_channel_input::CreateChannelIn
 ///
 /// <p>Creates a channel to which you can add users and send messages.</p>
 /// <p> <b>Restriction</b>: You can't change a channel's privacy.</p> <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannelFluentBuilder {
@@ -148,12 +148,12 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
@@ -216,6 +216,19 @@ impl CreateChannelFluentBuilder {
         input: std::option::Option<crate::types::ElasticChannelConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_elastic_channel_configuration(input);
+        self
+    }
+    /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
+    pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
+        self.inner = self.inner.expiration_settings(input);
+        self
+    }
+    /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
+    pub fn set_expiration_settings(
+        mut self,
+        input: std::option::Option<crate::types::ExpirationSettings>,
+    ) -> Self {
+        self.inner = self.inner.set_expiration_settings(input);
         self
     }
 }

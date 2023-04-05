@@ -39,18 +39,27 @@ pub fn ser_create_mission_profile_input(
     if let Some(var_9) = &input.name {
         object.key("name").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_10) = &input.streams_kms_key {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
-            {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
-            }
-        }
+        let mut object_11 = object.key("streamsKmsKey").start_object();
+        crate::protocol_serde::shape_kms_key::ser_kms_key(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_14) = &input.tracking_config_arn {
-        object.key("trackingConfigArn").string(var_14.as_str());
+    if let Some(var_12) = &input.streams_kms_role {
+        object.key("streamsKmsRole").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
+            {
+                object_14.key(key_15.as_str()).string(value_16.as_str());
+            }
+        }
+        object_14.finish();
+    }
+    if let Some(var_17) = &input.tracking_config_arn {
+        object.key("trackingConfigArn").string(var_17.as_str());
     }
     Ok(())
 }

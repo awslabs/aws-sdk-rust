@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Bucket {
-    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are uploaded to the bucket. Possible values are:</p>
+    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are added to the bucket. Possible values are:</p>
     /// <ul>
     /// <li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid server-side encryption header.</p></li>
     /// <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid server-side encryption header.</p></li>
@@ -17,10 +17,10 @@ pub struct S3Bucket {
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the finding was created or last updated.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of server-side encryption that's used by default to encrypt objects in the bucket.</p>
+    /// <p>The default server-side encryption settings for the bucket.</p>
     #[doc(hidden)]
     pub default_server_side_encryption: std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>The name of the bucket.</p>
@@ -37,7 +37,7 @@ pub struct S3Bucket {
     pub tags: std::option::Option<std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl S3Bucket {
-    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are uploaded to the bucket. Possible values are:</p>
+    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are added to the bucket. Possible values are:</p>
     /// <ul>
     /// <li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid server-side encryption header.</p></li>
     /// <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid server-side encryption header.</p></li>
@@ -53,11 +53,11 @@ impl S3Bucket {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the finding was created or last updated.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The type of server-side encryption that's used by default to encrypt objects in the bucket.</p>
+    /// <p>The default server-side encryption settings for the bucket.</p>
     pub fn default_server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::types::ServerSideEncryption> {
@@ -103,7 +103,7 @@ pub struct S3BucketBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl S3BucketBuilder {
-    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are uploaded to the bucket. Possible values are:</p>
+    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are added to the bucket. Possible values are:</p>
     /// <ul>
     /// <li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid server-side encryption header.</p></li>
     /// <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid server-side encryption header.</p></li>
@@ -117,7 +117,7 @@ impl S3BucketBuilder {
         self.allows_unencrypted_object_uploads = Some(input);
         self
     }
-    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are uploaded to the bucket. Possible values are:</p>
+    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are added to the bucket. Possible values are:</p>
     /// <ul>
     /// <li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid server-side encryption header.</p></li>
     /// <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid server-side encryption header.</p></li>
@@ -141,12 +141,12 @@ impl S3BucketBuilder {
         self.arn = input;
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the finding was created or last updated.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.created_at = Some(input);
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the finding was created or last updated.</p>
     pub fn set_created_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -154,7 +154,7 @@ impl S3BucketBuilder {
         self.created_at = input;
         self
     }
-    /// <p>The type of server-side encryption that's used by default to encrypt objects in the bucket.</p>
+    /// <p>The default server-side encryption settings for the bucket.</p>
     pub fn default_server_side_encryption(
         mut self,
         input: crate::types::ServerSideEncryption,
@@ -162,7 +162,7 @@ impl S3BucketBuilder {
         self.default_server_side_encryption = Some(input);
         self
     }
-    /// <p>The type of server-side encryption that's used by default to encrypt objects in the bucket.</p>
+    /// <p>The default server-side encryption settings for the bucket.</p>
     pub fn set_default_server_side_encryption(
         mut self,
         input: std::option::Option<crate::types::ServerSideEncryption>,

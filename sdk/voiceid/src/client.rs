@@ -61,13 +61,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteFraudster`](crate::operation::delete_fraudster) operation has
-/// a [`Client::delete_fraudster`], function which returns a builder for that operation.
+/// For example, the [`AssociateFraudster`](crate::operation::associate_fraudster) operation has
+/// a [`Client::associate_fraudster`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `call()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_fraudster()
+/// let result = client.associate_fraudster()
 ///     .domain_id("example")
 ///     .call()
 ///     .await;
@@ -212,7 +212,11 @@ impl Client {
     }
 }
 
+mod associate_fraudster;
+
 mod create_domain;
+
+mod create_watchlist;
 
 /// Operation customization and supporting types.
 ///
@@ -225,7 +229,7 @@ mod create_domain;
 /// # let client: aws_sdk_voiceid::Client = unimplemented!();
 /// use http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.delete_fraudster()
+/// let result = client.associate_fraudster()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -248,6 +252,8 @@ mod delete_fraudster;
 
 mod delete_speaker;
 
+mod delete_watchlist;
+
 mod describe_domain;
 
 mod describe_fraudster;
@@ -258,17 +264,25 @@ mod describe_speaker;
 
 mod describe_speaker_enrollment_job;
 
+mod describe_watchlist;
+
+mod disassociate_fraudster;
+
 mod evaluate_session;
 
 mod list_domains;
 
 mod list_fraudster_registration_jobs;
 
+mod list_fraudsters;
+
 mod list_speaker_enrollment_jobs;
 
 mod list_speakers;
 
 mod list_tags_for_resource;
+
+mod list_watchlists;
 
 mod opt_out_speaker;
 
@@ -281,3 +295,5 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_domain;
+
+mod update_watchlist;

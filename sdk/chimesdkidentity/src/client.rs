@@ -216,6 +216,8 @@ mod create_app_instance;
 
 mod create_app_instance_admin;
 
+mod create_app_instance_bot;
+
 mod create_app_instance_user;
 
 /// Operation customization and supporting types.
@@ -250,6 +252,8 @@ mod delete_app_instance;
 
 mod delete_app_instance_admin;
 
+mod delete_app_instance_bot;
+
 mod delete_app_instance_user;
 
 mod deregister_app_instance_user_endpoint;
@@ -258,6 +262,8 @@ mod describe_app_instance;
 
 mod describe_app_instance_admin;
 
+mod describe_app_instance_bot;
+
 mod describe_app_instance_user;
 
 mod describe_app_instance_user_endpoint;
@@ -265,6 +271,8 @@ mod describe_app_instance_user_endpoint;
 mod get_app_instance_retention_settings;
 
 mod list_app_instance_admins;
+
+mod list_app_instance_bots;
 
 mod list_app_instance_user_endpoints;
 
@@ -276,6 +284,8 @@ mod list_tags_for_resource;
 
 mod put_app_instance_retention_settings;
 
+mod put_app_instance_user_expiration_settings;
+
 mod register_app_instance_user_endpoint;
 
 mod tag_resource;
@@ -283,6 +293,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_app_instance;
+
+mod update_app_instance_bot;
 
 mod update_app_instance_user;
 

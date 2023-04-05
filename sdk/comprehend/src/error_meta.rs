@@ -411,6 +411,47 @@ impl From<crate::operation::contains_pii_entities::ContainsPiiEntitiesError> for
     }
 }
 impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_dataset::CreateDatasetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_dataset::CreateDatasetError> for Error {
+    fn from(err: crate::operation::create_dataset::CreateDatasetError) -> Self {
+        match err {
+            crate::operation::create_dataset::CreateDatasetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_dataset::CreateDatasetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_dataset::CreateDatasetError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_dataset::CreateDatasetError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_dataset::CreateDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_dataset::CreateDatasetError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_dataset::CreateDatasetError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_dataset::CreateDatasetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         aws_smithy_http::result::SdkError<
             crate::operation::create_document_classifier::CreateDocumentClassifierError,
@@ -547,6 +588,54 @@ impl From<crate::operation::create_entity_recognizer::CreateEntityRecognizerErro
             crate::operation::create_entity_recognizer::CreateEntityRecognizerError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::create_entity_recognizer::CreateEntityRecognizerError::UnsupportedLanguageException(inner) => Error::UnsupportedLanguageException(inner),
             crate::operation::create_entity_recognizer::CreateEntityRecognizerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_flywheel::CreateFlywheelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_flywheel::CreateFlywheelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_flywheel::CreateFlywheelError> for Error {
+    fn from(err: crate::operation::create_flywheel::CreateFlywheelError) -> Self {
+        match err {
+            crate::operation::create_flywheel::CreateFlywheelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::KmsKeyValidationException(inner) => Error::KmsKeyValidationException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::UnsupportedLanguageException(inner) => Error::UnsupportedLanguageException(inner),
+            crate::operation::create_flywheel::CreateFlywheelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -698,6 +787,50 @@ impl From<crate::operation::delete_entity_recognizer::DeleteEntityRecognizerErro
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::delete_flywheel::DeleteFlywheelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_flywheel::DeleteFlywheelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_flywheel::DeleteFlywheelError> for Error {
+    fn from(err: crate::operation::delete_flywheel::DeleteFlywheelError) -> Self {
+        match err {
+            crate::operation::delete_flywheel::DeleteFlywheelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_flywheel::DeleteFlywheelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_flywheel::DeleteFlywheelError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_flywheel::DeleteFlywheelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_flywheel::DeleteFlywheelError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
+            crate::operation::delete_flywheel::DeleteFlywheelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_flywheel::DeleteFlywheelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::delete_resource_policy::DeleteResourcePolicyError,
             R,
         >,
@@ -733,6 +866,58 @@ impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> f
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_dataset::DescribeDatasetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_dataset::DescribeDatasetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_dataset::DescribeDatasetError> for Error {
+    fn from(err: crate::operation::describe_dataset::DescribeDatasetError) -> Self {
+        match err {
+            crate::operation::describe_dataset::DescribeDatasetError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1005,6 +1190,92 @@ impl From<crate::operation::describe_events_detection_job::DescribeEventsDetecti
             crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
             crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_flywheel::DescribeFlywheelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_flywheel::DescribeFlywheelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_flywheel::DescribeFlywheelError> for Error {
+    fn from(err: crate::operation::describe_flywheel::DescribeFlywheelError) -> Self {
+        match err {
+            crate::operation::describe_flywheel::DescribeFlywheelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_flywheel::DescribeFlywheelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_flywheel::DescribeFlywheelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_flywheel::DescribeFlywheelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_flywheel::DescribeFlywheelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError> for Error {
+    fn from(
+        err: crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1584,6 +1855,57 @@ impl From<crate::operation::import_model::ImportModelError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_datasets::ListDatasetsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_datasets::ListDatasetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_datasets::ListDatasetsError> for Error {
+    fn from(err: crate::operation::list_datasets::ListDatasetsError) -> Self {
+        match err {
+            crate::operation::list_datasets::ListDatasetsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_datasets::ListDatasetsError::InvalidFilterException(inner) => {
+                Error::InvalidFilterException(inner)
+            }
+            crate::operation::list_datasets::ListDatasetsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_datasets::ListDatasetsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_datasets::ListDatasetsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_datasets::ListDatasetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsError, R>) -> Self {
         match err {
@@ -1927,6 +2249,101 @@ impl From<crate::operation::list_events_detection_jobs::ListEventsDetectionJobsE
             crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError,
+    ) -> Self {
+        match err {
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError::InvalidFilterException(inner) => Error::InvalidFilterException(inner),
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_flywheels::ListFlywheelsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_flywheels::ListFlywheelsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_flywheels::ListFlywheelsError> for Error {
+    fn from(err: crate::operation::list_flywheels::ListFlywheelsError) -> Self {
+        match err {
+            crate::operation::list_flywheels::ListFlywheelsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_flywheels::ListFlywheelsError::InvalidFilterException(inner) => {
+                Error::InvalidFilterException(inner)
+            }
+            crate::operation::list_flywheels::ListFlywheelsError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::list_flywheels::ListFlywheelsError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::list_flywheels::ListFlywheelsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -2365,6 +2782,49 @@ impl From<crate::operation::start_events_detection_job::StartEventsDetectionJobE
             crate::operation::start_events_detection_job::StartEventsDetectionJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::start_events_detection_job::StartEventsDetectionJobError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::start_events_detection_job::StartEventsDetectionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_flywheel_iteration::StartFlywheelIterationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_flywheel_iteration::StartFlywheelIterationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_flywheel_iteration::StartFlywheelIterationError> for Error {
+    fn from(err: crate::operation::start_flywheel_iteration::StartFlywheelIterationError) -> Self {
+        match err {
+            crate::operation::start_flywheel_iteration::StartFlywheelIterationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_flywheel_iteration::StartFlywheelIterationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_flywheel_iteration::StartFlywheelIterationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::start_flywheel_iteration::StartFlywheelIterationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_flywheel_iteration::StartFlywheelIterationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_flywheel_iteration::StartFlywheelIterationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3046,6 +3506,61 @@ impl From<crate::operation::update_endpoint::UpdateEndpointError> for Error {
             crate::operation::update_endpoint::UpdateEndpointError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
             crate::operation::update_endpoint::UpdateEndpointError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_endpoint::UpdateEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_flywheel::UpdateFlywheelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_flywheel::UpdateFlywheelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_flywheel::UpdateFlywheelError> for Error {
+    fn from(err: crate::operation::update_flywheel::UpdateFlywheelError) -> Self {
+        match err {
+            crate::operation::update_flywheel::UpdateFlywheelError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::update_flywheel::UpdateFlywheelError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::update_flywheel::UpdateFlywheelError::KmsKeyValidationException(
+                inner,
+            ) => Error::KmsKeyValidationException(inner),
+            crate::operation::update_flywheel::UpdateFlywheelError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_flywheel::UpdateFlywheelError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::update_flywheel::UpdateFlywheelError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

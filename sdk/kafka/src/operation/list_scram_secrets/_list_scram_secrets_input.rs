@@ -8,7 +8,7 @@ pub struct ListScramSecretsInput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The maxResults of the query.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The nextToken of the query.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl ListScramSecretsInput {
         self.cluster_arn.as_deref()
     }
     /// <p>The maxResults of the query.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The nextToken of the query.</p>
@@ -84,7 +84,7 @@ impl ListScramSecretsInputBuilder {
         Ok(
             crate::operation::list_scram_secrets::ListScramSecretsInput {
                 cluster_arn: self.cluster_arn,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateVoiceConnector`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::set_name): (undocumented)
-    ///   - [`aws_region(VoiceConnectorAwsRegion)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::aws_region) / [`set_aws_region(Option<VoiceConnectorAwsRegion>)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::set_aws_region): (undocumented)
-    ///   - [`require_encryption(bool)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::require_encryption) / [`set_require_encryption(Option<bool>)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::set_require_encryption): (undocumented)
+    ///   - [`name(impl Into<String>)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::set_name): <p>The name of the Voice Connector.</p>
+    ///   - [`aws_region(VoiceConnectorAwsRegion)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::aws_region) / [`set_aws_region(Option<VoiceConnectorAwsRegion>)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::set_aws_region): <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
+    ///   - [`require_encryption(bool)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::require_encryption) / [`set_require_encryption(Option<bool>)`](crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::set_require_encryption): <p>Enables or disables encryption for the Voice Connector.</p>
     /// - On success, responds with [`CreateVoiceConnectorOutput`](crate::operation::create_voice_connector::CreateVoiceConnectorOutput) with field(s):
-    ///   - [`voice_connector(Option<VoiceConnector>)`](crate::operation::create_voice_connector::CreateVoiceConnectorOutput::voice_connector): (undocumented)
+    ///   - [`voice_connector(Option<VoiceConnector>)`](crate::operation::create_voice_connector::CreateVoiceConnectorOutput::voice_connector): <p>The details of the Voice Connector.</p>
     /// - On failure, responds with [`SdkError<CreateVoiceConnectorError>`](crate::operation::create_voice_connector::CreateVoiceConnectorError)
     pub fn create_voice_connector(
         &self,

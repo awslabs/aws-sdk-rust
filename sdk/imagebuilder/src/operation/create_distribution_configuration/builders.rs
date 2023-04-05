@@ -56,22 +56,22 @@ impl CreateDistributionConfigurationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p> The name of the distribution configuration.</p>
+    /// <p>The name of the distribution configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The name of the distribution configuration.</p>
+    /// <p>The name of the distribution configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The description of the distribution configuration.</p>
+    /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> The description of the distribution configuration.</p>
+    /// <p>The description of the distribution configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
@@ -80,12 +80,12 @@ impl CreateDistributionConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
     ///
-    /// <p> The distributions of the distribution configuration.</p>
+    /// <p>The distributions of the distribution configuration.</p>
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         self.inner = self.inner.distributions(input);
         self
     }
-    /// <p> The distributions of the distribution configuration.</p>
+    /// <p>The distributions of the distribution configuration.</p>
     pub fn set_distributions(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Distribution>>,
@@ -97,7 +97,7 @@ impl CreateDistributionConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags of the distribution configuration.</p>
+    /// <p>The tags of the distribution configuration.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -106,7 +106,7 @@ impl CreateDistributionConfigurationFluentBuilder {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p> The tags of the distribution configuration.</p>
+    /// <p>The tags of the distribution configuration.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<
@@ -116,12 +116,12 @@ impl CreateDistributionConfigurationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p> The idempotency token of the distribution configuration.</p>
+    /// <p>The idempotency token of the distribution configuration.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p> The idempotency token of the distribution configuration.</p>
+    /// <p>The idempotency token of the distribution configuration.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self

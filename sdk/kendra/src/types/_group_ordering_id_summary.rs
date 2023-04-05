@@ -7,10 +7,10 @@ pub struct GroupOrderingIdSummary {
     /// <p>The current processing status of actions for mapping users to their groups. The status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::PrincipalMappingStatus>,
-    /// <p>The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     #[doc(hidden)]
     pub received_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The order in which actions should complete processing. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
@@ -25,11 +25,11 @@ impl GroupOrderingIdSummary {
     pub fn status(&self) -> std::option::Option<&crate::types::PrincipalMappingStatus> {
         self.status.as_ref()
     }
-    /// <p>The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn received_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.received_at.as_ref()
     }
@@ -73,12 +73,12 @@ impl GroupOrderingIdSummaryBuilder {
         self.status = input;
         self
     }
-    /// <p>The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = Some(input);
         self
     }
-    /// <p>The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn set_last_updated_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -86,12 +86,12 @@ impl GroupOrderingIdSummaryBuilder {
         self.last_updated_at = input;
         self
     }
-    /// <p>The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn received_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.received_at = Some(input);
         self
     }
-    /// <p>The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn set_received_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

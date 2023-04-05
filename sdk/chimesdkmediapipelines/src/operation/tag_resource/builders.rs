@@ -5,7 +5,7 @@ pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBui
 
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>The ARN of the media pipeline that you want to tag. Consists of he pipeline's endpoint region, resource ID, and pipeline ID.</p>
+/// <p>The ARN of the media pipeline that you want to tag. Consists of the pipeline's endpoint region, resource ID, and pipeline ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

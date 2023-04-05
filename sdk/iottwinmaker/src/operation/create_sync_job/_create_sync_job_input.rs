@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSyncJobInput {
-    /// <p>The workspace Id.</p>
+    /// <p>The workspace ID.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     #[doc(hidden)]
     pub sync_source: std::option::Option<std::string::String>,
-    /// <p>The SyncJob IAM role. This IAM role is used by the sync job to read from the syncSource, and create, update or delete the corresponding resources.</p>
+    /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
     #[doc(hidden)]
     pub sync_role: std::option::Option<std::string::String>,
     /// <p>The SyncJob tags.</p>
@@ -20,17 +20,17 @@ pub struct CreateSyncJobInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSyncJobInput {
-    /// <p>The workspace Id.</p>
+    /// <p>The workspace ID.</p>
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(&self) -> std::option::Option<&str> {
         self.sync_source.as_deref()
     }
-    /// <p>The SyncJob IAM role. This IAM role is used by the sync job to read from the syncSource, and create, update or delete the corresponding resources.</p>
+    /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
     pub fn sync_role(&self) -> std::option::Option<&str> {
         self.sync_role.as_deref()
     }
@@ -60,36 +60,36 @@ pub struct CreateSyncJobInputBuilder {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSyncJobInputBuilder {
-    /// <p>The workspace Id.</p>
+    /// <p>The workspace ID.</p>
     pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.workspace_id = Some(input.into());
         self
     }
-    /// <p>The workspace Id.</p>
+    /// <p>The workspace ID.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.workspace_id = input;
         self
     }
     /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.sync_source = Some(input.into());
         self
     }
     /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.sync_source = input;
         self
     }
-    /// <p>The SyncJob IAM role. This IAM role is used by the sync job to read from the syncSource, and create, update or delete the corresponding resources.</p>
+    /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
     pub fn sync_role(mut self, input: impl Into<std::string::String>) -> Self {
         self.sync_role = Some(input.into());
         self
     }
-    /// <p>The SyncJob IAM role. This IAM role is used by the sync job to read from the syncSource, and create, update or delete the corresponding resources.</p>
+    /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
     pub fn set_sync_role(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.sync_role = input;
         self

@@ -27,6 +27,9 @@ pub struct LakeConfigurationResponse {
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::SettingsStatus>,
+    /// <p>The status of the last <code>UpdateDatalake </code>or <code>DeleteDatalake</code> API request. </p>
+    #[doc(hidden)]
+    pub update_status: std::option::Option<crate::types::UpdateStatus>,
 }
 impl LakeConfigurationResponse {
     /// <p>The type of encryption key used by secure the Security Lake configuration object.</p>
@@ -61,6 +64,10 @@ impl LakeConfigurationResponse {
     pub fn status(&self) -> std::option::Option<&crate::types::SettingsStatus> {
         self.status.as_ref()
     }
+    /// <p>The status of the last <code>UpdateDatalake </code>or <code>DeleteDatalake</code> API request. </p>
+    pub fn update_status(&self) -> std::option::Option<&crate::types::UpdateStatus> {
+        self.update_status.as_ref()
+    }
 }
 impl LakeConfigurationResponse {
     /// Creates a new builder-style object to manufacture [`LakeConfigurationResponse`](crate::types::LakeConfigurationResponse).
@@ -83,6 +90,7 @@ pub struct LakeConfigurationResponseBuilder {
     pub(crate) replication_role_arn: std::option::Option<std::string::String>,
     pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::SettingsStatus>,
+    pub(crate) update_status: std::option::Option<crate::types::UpdateStatus>,
 }
 impl LakeConfigurationResponseBuilder {
     /// <p>The type of encryption key used by secure the Security Lake configuration object.</p>
@@ -193,6 +201,19 @@ impl LakeConfigurationResponseBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the last <code>UpdateDatalake </code>or <code>DeleteDatalake</code> API request. </p>
+    pub fn update_status(mut self, input: crate::types::UpdateStatus) -> Self {
+        self.update_status = Some(input);
+        self
+    }
+    /// <p>The status of the last <code>UpdateDatalake </code>or <code>DeleteDatalake</code> API request. </p>
+    pub fn set_update_status(
+        mut self,
+        input: std::option::Option<crate::types::UpdateStatus>,
+    ) -> Self {
+        self.update_status = input;
+        self
+    }
     /// Consumes the builder and constructs a [`LakeConfigurationResponse`](crate::types::LakeConfigurationResponse).
     pub fn build(self) -> crate::types::LakeConfigurationResponse {
         crate::types::LakeConfigurationResponse {
@@ -203,6 +224,7 @@ impl LakeConfigurationResponseBuilder {
             replication_role_arn: self.replication_role_arn,
             s3_bucket_arn: self.s3_bucket_arn,
             status: self.status,
+            update_status: self.update_status,
         }
     }
 }

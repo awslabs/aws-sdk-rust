@@ -7,6 +7,7 @@ pub struct ModifyFleetInput {
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     #[doc(hidden)]
     pub excess_capacity_termination_policy:
         std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
@@ -31,6 +32,7 @@ impl ModifyFleetInput {
         self.dry_run
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         &self,
     ) -> std::option::Option<&crate::types::FleetExcessCapacityTerminationPolicy> {
@@ -90,6 +92,7 @@ impl ModifyFleetInputBuilder {
         self
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         mut self,
         input: crate::types::FleetExcessCapacityTerminationPolicy,
@@ -98,6 +101,7 @@ impl ModifyFleetInputBuilder {
         self
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(
         mut self,
         input: std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,

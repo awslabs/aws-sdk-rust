@@ -53,6 +53,9 @@ async fn operation_input_test_delete_access_point_2() {
     .set_name(Some(
         "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
@@ -115,6 +118,9 @@ async fn operation_input_test_delete_access_point_4() {
     let _result = dbg!(client.delete_access_point()
     .set_name(Some(
         "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+    ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
     ))
     .send().await);
     let req = rcvr.expect_request();
@@ -179,6 +185,9 @@ async fn operation_input_test_delete_access_point_6() {
     .set_name(Some(
         "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
@@ -238,6 +247,9 @@ async fn operation_input_test_delete_access_point_8() {
     .set_name(Some(
         "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
@@ -296,6 +308,9 @@ async fn operation_input_test_delete_access_point_10() {
     let _result = dbg!(client.delete_access_point()
     .set_name(Some(
         "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+    ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
     ))
     .send().await);
     let req = rcvr.expect_request();
@@ -360,6 +375,9 @@ async fn operation_input_test_delete_access_point_12() {
     .set_name(Some(
         "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
@@ -419,6 +437,9 @@ async fn operation_input_test_delete_access_point_14() {
     .set_name(Some(
         "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
@@ -473,6 +494,9 @@ async fn operation_input_test_delete_access_point_16() {
     let _result = dbg!(client.delete_access_point()
     .set_name(Some(
         "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+    ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
     ))
     .send().await);
     let req = rcvr.expect_request();
@@ -533,6 +557,9 @@ async fn operation_input_test_delete_access_point_18() {
     .set_name(Some(
         "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
@@ -592,6 +619,9 @@ async fn operation_input_test_delete_access_point_20() {
     .set_name(Some(
         "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
@@ -650,6 +680,9 @@ async fn operation_input_test_delete_access_point_22() {
     let _result = dbg!(client.delete_access_point()
     .set_name(Some(
         "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+    ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
     ))
     .send().await);
     let req = rcvr.expect_request();
@@ -714,6 +747,9 @@ async fn operation_input_test_delete_access_point_24() {
     .set_name(Some(
         "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
@@ -772,6 +808,9 @@ async fn operation_input_test_delete_access_point_26() {
     let _result = dbg!(client.delete_access_point()
     .set_name(Some(
         "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+    ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
     ))
     .send().await);
     let req = rcvr.expect_request();
@@ -2158,6 +2197,9 @@ async fn operation_input_test_delete_access_point_70() {
     .set_name(Some(
         "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false]");
@@ -2252,6 +2294,9 @@ async fn operation_input_test_delete_access_point_73() {
     let _result = dbg!(client.delete_access_point()
     .set_name(Some(
         "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+    ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
     ))
     .send().await);
     let req = rcvr.expect_request();
@@ -2380,6 +2425,9 @@ async fn operation_input_test_delete_access_point_77() {
     .set_name(Some(
         "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
     ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
     .send().await);
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Client was configured for partition `aws` but ARN has `aws-cn` [Accesspoint ARN with partition mismatch and UseArnRegion=true]");
@@ -2387,4 +2435,79 @@ async fn operation_input_test_delete_access_point_77() {
                                     format!("{:?}", error).contains("Client was configured for partition `aws` but ARN has `aws-cn`"),
                                     "expected error to contain `Client was configured for partition `aws` but ARN has `aws-cn`` but it was {:?}", error
                                 );
+}
+
+#[tokio::test]
+async fn operation_input_test_get_bucket_versioning_78() {
+    /* builtIns: {
+        "AWS::Region": "us-west-2"
+    } */
+    /* clientParams: {} */
+    let (conn, rcvr) = aws_smithy_client::test_connection::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder()
+            .with_test_defaults()
+            .http_connector(conn);
+        let builder = builder.region(aws_types::region::Region::new("us-west-2"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(client.get_bucket_versioning()
+    .set_bucket(Some(
+        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+    ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
+    .send().await);
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[tokio::test]
+async fn operation_input_test_put_bucket_versioning_79() {
+    /* builtIns: {
+        "AWS::Region": "us-west-2"
+    } */
+    /* clientParams: {} */
+    let (conn, rcvr) = aws_smithy_client::test_connection::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder()
+            .with_test_defaults()
+            .http_connector(conn);
+        let builder = builder.region(aws_types::region::Region::new("us-west-2"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(client.put_bucket_versioning()
+    .set_bucket(Some(
+        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+    ))
+    .set_account_id(Some(
+        "123456789012".to_owned()
+    ))
+    .set_versioning_configuration(Some(
+        aws_sdk_s3control::types::VersioningConfiguration::builder()
+        .set_status(
+            Some(
+                aws_sdk_s3control::types::BucketVersioningStatus::from("Enabled")
+            )
+        )
+        .build()
+    ))
+    .send().await);
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
 }

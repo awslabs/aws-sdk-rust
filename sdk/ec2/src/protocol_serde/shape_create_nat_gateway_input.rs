@@ -48,6 +48,36 @@ pub fn ser_create_nat_gateway_input_input(
     if let Some(var_17) = &input.private_ip_address {
         scope_16.string(var_17);
     }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("SecondaryAllocationId");
+    if let Some(var_19) = &input.secondary_allocation_ids {
+        let mut list_21 = scope_18.start_list(true, Some("AllocationId"));
+        for item_20 in var_19 {
+            #[allow(unused_mut)]
+            let mut entry_22 = list_21.entry();
+            entry_22.string(item_20);
+        }
+        list_21.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_23 = writer.prefix("SecondaryPrivateIpAddress");
+    if let Some(var_24) = &input.secondary_private_ip_addresses {
+        let mut list_26 = scope_23.start_list(true, Some("item"));
+        for item_25 in var_24 {
+            #[allow(unused_mut)]
+            let mut entry_27 = list_26.entry();
+            entry_27.string(item_25);
+        }
+        list_26.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_28 = writer.prefix("SecondaryPrivateIpAddressCount");
+    if let Some(var_29) = &input.secondary_private_ip_address_count {
+        scope_28.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_29).into()),
+        );
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

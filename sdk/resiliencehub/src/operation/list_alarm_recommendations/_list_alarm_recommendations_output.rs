@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAlarmRecommendationsOutput {
-    /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
+    /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
     #[doc(hidden)]
     pub alarm_recommendations:
         std::option::Option<std::vec::Vec<crate::types::AlarmRecommendation>>,
@@ -13,7 +13,7 @@ pub struct ListAlarmRecommendationsOutput {
     _request_id: Option<String>,
 }
 impl ListAlarmRecommendationsOutput {
-    /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
+    /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
     pub fn alarm_recommendations(
         &self,
     ) -> std::option::Option<&[crate::types::AlarmRecommendation]> {
@@ -52,14 +52,14 @@ impl ListAlarmRecommendationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_alarm_recommendations`](Self::set_alarm_recommendations).
     ///
-    /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
+    /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
     pub fn alarm_recommendations(mut self, input: crate::types::AlarmRecommendation) -> Self {
         let mut v = self.alarm_recommendations.unwrap_or_default();
         v.push(input);
         self.alarm_recommendations = Some(v);
         self
     }
-    /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
+    /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
     pub fn set_alarm_recommendations(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::AlarmRecommendation>>,

@@ -216,6 +216,8 @@ mod add_tags_to_resource;
 
 mod apply_pending_maintenance_action;
 
+mod batch_start_recommendations;
+
 mod cancel_replication_task_assessment_run;
 
 mod create_endpoint;
@@ -312,6 +314,10 @@ mod describe_orderable_replication_instances;
 
 mod describe_pending_maintenance_actions;
 
+mod describe_recommendation_limitations;
+
+mod describe_recommendations;
+
 mod describe_refresh_schemas_status;
 
 mod describe_replication_instance_task_logs;
@@ -357,6 +363,8 @@ mod reload_tables;
 mod remove_tags_from_resource;
 
 mod run_fleet_advisor_lsa_analysis;
+
+mod start_recommendations;
 
 mod start_replication_task;
 

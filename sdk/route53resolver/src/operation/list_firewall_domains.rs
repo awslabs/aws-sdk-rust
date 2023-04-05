@@ -178,7 +178,7 @@ pub enum ListFirewallDomainsError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p></p>
+    /// <p>You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

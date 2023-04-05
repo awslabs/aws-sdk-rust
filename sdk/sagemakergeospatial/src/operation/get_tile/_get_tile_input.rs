@@ -36,6 +36,9 @@ pub struct GetTileInput {
     /// <p>The output data type of the tile operation.</p>
     #[doc(hidden)]
     pub output_data_type: std::option::Option<crate::types::OutputType>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+    #[doc(hidden)]
+    pub execution_role_arn: std::option::Option<std::string::String>,
 }
 impl GetTileInput {
     /// <p>The x coordinate of the tile input.</p>
@@ -82,6 +85,10 @@ impl GetTileInput {
     pub fn output_data_type(&self) -> std::option::Option<&crate::types::OutputType> {
         self.output_data_type.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
 }
 impl GetTileInput {
     /// Creates a new builder-style object to manufacture [`GetTileInput`](crate::operation::get_tile::GetTileInput).
@@ -105,6 +112,7 @@ pub struct GetTileInputBuilder {
     pub(crate) time_range_filter: std::option::Option<std::string::String>,
     pub(crate) property_filters: std::option::Option<std::string::String>,
     pub(crate) output_data_type: std::option::Option<crate::types::OutputType>,
+    pub(crate) execution_role_arn: std::option::Option<std::string::String>,
 }
 impl GetTileInputBuilder {
     /// <p>The x coordinate of the tile input.</p>
@@ -232,6 +240,19 @@ impl GetTileInputBuilder {
         self.output_data_type = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+    pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.execution_role_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+    pub fn set_execution_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.execution_role_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetTileInput`](crate::operation::get_tile::GetTileInput).
     pub fn build(
         self,
@@ -251,6 +272,7 @@ impl GetTileInputBuilder {
             time_range_filter: self.time_range_filter,
             property_filters: self.property_filters,
             output_data_type: self.output_data_type,
+            execution_role_arn: self.execution_role_arn,
         })
     }
 }

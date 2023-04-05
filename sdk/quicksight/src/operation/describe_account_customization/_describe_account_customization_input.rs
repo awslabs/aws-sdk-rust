@@ -11,7 +11,7 @@ pub struct DescribeAccountCustomizationInput {
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
     #[doc(hidden)]
-    pub resolved: bool,
+    pub resolved: std::option::Option<bool>,
 }
 impl DescribeAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
@@ -23,7 +23,7 @@ impl DescribeAccountCustomizationInput {
         self.namespace.as_deref()
     }
     /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
-    pub fn resolved(&self) -> bool {
+    pub fn resolved(&self) -> std::option::Option<bool> {
         self.resolved
     }
 }
@@ -84,7 +84,7 @@ impl DescribeAccountCustomizationInputBuilder {
             crate::operation::describe_account_customization::DescribeAccountCustomizationInput {
                 aws_account_id: self.aws_account_id,
                 namespace: self.namespace,
-                resolved: self.resolved.unwrap_or_default(),
+                resolved: self.resolved,
             },
         )
     }

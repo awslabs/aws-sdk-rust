@@ -31,6 +31,9 @@ pub mod calculate_route_matrix;
 /// Types for the `CreateGeofenceCollection` operation.
 pub mod create_geofence_collection;
 
+/// Types for the `CreateKey` operation.
+pub mod create_key;
+
 /// Types for the `CreateMap` operation.
 pub mod create_map;
 
@@ -46,6 +49,9 @@ pub mod create_tracker;
 /// Types for the `DeleteGeofenceCollection` operation.
 pub mod delete_geofence_collection;
 
+/// Types for the `DeleteKey` operation.
+pub mod delete_key;
+
 /// Types for the `DeleteMap` operation.
 pub mod delete_map;
 
@@ -60,6 +66,9 @@ pub mod delete_tracker;
 
 /// Types for the `DescribeGeofenceCollection` operation.
 pub mod describe_geofence_collection;
+
+/// Types for the `DescribeKey` operation.
+pub mod describe_key;
 
 /// Types for the `DescribeMap` operation.
 pub mod describe_map;
@@ -109,6 +118,9 @@ pub mod list_geofence_collections;
 /// Types for the `ListGeofences` operation.
 pub mod list_geofences;
 
+/// Types for the `ListKeys` operation.
+pub mod list_keys;
+
 /// Types for the `ListMaps` operation.
 pub mod list_maps;
 
@@ -147,6 +159,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateGeofenceCollection` operation.
 pub mod update_geofence_collection;
+
+/// Types for the `UpdateKey` operation.
+pub mod update_key;
 
 /// Types for the `UpdateMap` operation.
 pub mod update_map;

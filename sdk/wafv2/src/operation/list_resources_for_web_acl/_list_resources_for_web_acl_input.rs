@@ -6,7 +6,7 @@ pub struct ListResourcesForWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     #[doc(hidden)]
     pub web_acl_arn: std::option::Option<std::string::String>,
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> <note>
+    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App Runner service. </p> <note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
     /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code> </p>
@@ -18,7 +18,7 @@ impl ListResourcesForWebAclInput {
     pub fn web_acl_arn(&self) -> std::option::Option<&str> {
         self.web_acl_arn.as_deref()
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> <note>
+    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App Runner service. </p> <note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
     /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code> </p>
@@ -53,7 +53,7 @@ impl ListResourcesForWebAclInputBuilder {
         self.web_acl_arn = input;
         self
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> <note>
+    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App Runner service. </p> <note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
     /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code> </p>
@@ -61,7 +61,7 @@ impl ListResourcesForWebAclInputBuilder {
         self.resource_type = Some(input);
         self
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> <note>
+    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App Runner service. </p> <note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
     /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code> </p>

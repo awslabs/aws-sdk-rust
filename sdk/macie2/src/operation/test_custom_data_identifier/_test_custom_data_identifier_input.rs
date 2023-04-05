@@ -11,7 +11,7 @@ pub struct TestCustomDataIdentifierInput {
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     #[doc(hidden)]
-    pub maximum_match_distance: i32,
+    pub maximum_match_distance: std::option::Option<i32>,
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
     #[doc(hidden)]
     pub regex: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ impl TestCustomDataIdentifierInput {
         self.keywords.as_deref()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
-    pub fn maximum_match_distance(&self) -> i32 {
+    pub fn maximum_match_distance(&self) -> std::option::Option<i32> {
         self.maximum_match_distance
     }
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
@@ -140,7 +140,7 @@ impl TestCustomDataIdentifierInputBuilder {
             crate::operation::test_custom_data_identifier::TestCustomDataIdentifierInput {
                 ignore_words: self.ignore_words,
                 keywords: self.keywords,
-                maximum_match_distance: self.maximum_match_distance.unwrap_or_default(),
+                maximum_match_distance: self.maximum_match_distance,
                 regex: self.regex,
                 sample_text: self.sample_text,
             },

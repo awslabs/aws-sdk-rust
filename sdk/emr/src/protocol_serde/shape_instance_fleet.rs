@@ -105,6 +105,11 @@ where
                                     crate::protocol_serde::shape_instance_fleet_provisioning_specifications::de_instance_fleet_provisioning_specifications(tokens)?
                                 );
                             }
+                            "ResizeSpecifications" => {
+                                builder = builder.set_resize_specifications(
+                                    crate::protocol_serde::shape_instance_fleet_resizing_specifications::de_instance_fleet_resizing_specifications(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

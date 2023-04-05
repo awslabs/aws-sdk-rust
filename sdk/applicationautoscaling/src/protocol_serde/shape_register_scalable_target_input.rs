@@ -33,5 +33,15 @@ pub fn ser_register_scalable_target_input(
         crate::protocol_serde::shape_suspended_state::ser_suspended_state(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("Tags").start_object();
+        for (key_11, value_12) in var_9 {
+            {
+                object_10.key(key_11.as_str()).string(value_12.as_str());
+            }
+        }
+        object_10.finish();
+    }
     Ok(())
 }

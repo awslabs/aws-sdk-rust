@@ -6,6 +6,7 @@ pub use crate::operation::disassociate_members::_disassociate_members_input::Dis
 /// Fluent builder constructing a request to `DisassociateMembers`.
 ///
 /// <p>Disassociates GuardDuty member accounts (to the current administrator account) specified by the account IDs.</p>
+/// <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a member account before removing them from your Amazon Web Services organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateMembersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

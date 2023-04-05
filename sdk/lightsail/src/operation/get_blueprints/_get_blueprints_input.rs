@@ -10,6 +10,11 @@ pub struct GetBlueprintsInput {
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub app_category: std::option::Option<crate::types::AppCategory>,
 }
 impl GetBlueprintsInput {
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
@@ -20,6 +25,12 @@ impl GetBlueprintsInput {
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
+    }
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
+    /// </important>
+    pub fn app_category(&self) -> std::option::Option<&crate::types::AppCategory> {
+        self.app_category.as_ref()
     }
 }
 impl GetBlueprintsInput {
@@ -35,6 +46,7 @@ impl GetBlueprintsInput {
 pub struct GetBlueprintsInputBuilder {
     pub(crate) include_inactive: std::option::Option<bool>,
     pub(crate) page_token: std::option::Option<std::string::String>,
+    pub(crate) app_category: std::option::Option<crate::types::AppCategory>,
 }
 impl GetBlueprintsInputBuilder {
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
@@ -59,6 +71,23 @@ impl GetBlueprintsInputBuilder {
         self.page_token = input;
         self
     }
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
+    /// </important>
+    pub fn app_category(mut self, input: crate::types::AppCategory) -> Self {
+        self.app_category = Some(input);
+        self
+    }
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
+    /// </important>
+    pub fn set_app_category(
+        mut self,
+        input: std::option::Option<crate::types::AppCategory>,
+    ) -> Self {
+        self.app_category = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetBlueprintsInput`](crate::operation::get_blueprints::GetBlueprintsInput).
     pub fn build(
         self,
@@ -69,6 +98,7 @@ impl GetBlueprintsInputBuilder {
         Ok(crate::operation::get_blueprints::GetBlueprintsInput {
             include_inactive: self.include_inactive,
             page_token: self.page_token,
+            app_category: self.app_category,
         })
     }
 }

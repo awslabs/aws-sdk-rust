@@ -166,6 +166,8 @@ pub type DeleteEventDataStoreErrorKind = DeleteEventDataStoreError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEventDataStoreError {
+    /// <p>This exception is thrown when the specified event data store cannot yet be deleted because it is in use by a channel.</p>
+    ChannelExistsForEdsException(crate::types::error::ChannelExistsForEdsException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
     /// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
@@ -216,6 +218,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteEventDataStoreError
 impl std::fmt::Display for DeleteEventDataStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Self::ChannelExistsForEdsException(_inner) => _inner.fmt(f),
             Self::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             Self::EventDataStoreHasOngoingImportException(_inner) => _inner.fmt(f),
             Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
@@ -234,6 +237,9 @@ impl std::fmt::Display for DeleteEventDataStoreError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteEventDataStoreError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ChannelExistsForEdsException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::EventDataStoreArnInvalidException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -314,6 +320,7 @@ impl DeleteEventDataStoreError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ChannelExistsForEdsException(e) => e.meta(),
             Self::EventDataStoreArnInvalidException(e) => e.meta(),
             Self::EventDataStoreHasOngoingImportException(e) => e.meta(),
             Self::EventDataStoreNotFoundException(e) => e.meta(),
@@ -327,6 +334,10 @@ impl DeleteEventDataStoreError {
             Self::UnsupportedOperationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreError::ChannelExistsForEdsException`.
+    pub fn is_channel_exists_for_eds_exception(&self) -> bool {
+        matches!(self, Self::ChannelExistsForEdsException(_))
     }
     /// Returns `true` if the error kind is `DeleteEventDataStoreError::EventDataStoreArnInvalidException`.
     pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
@@ -379,6 +390,7 @@ impl DeleteEventDataStoreError {
 impl std::error::Error for DeleteEventDataStoreError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Self::ChannelExistsForEdsException(_inner) => Some(_inner),
             Self::EventDataStoreArnInvalidException(_inner) => Some(_inner),
             Self::EventDataStoreHasOngoingImportException(_inner) => Some(_inner),
             Self::EventDataStoreNotFoundException(_inner) => Some(_inner),

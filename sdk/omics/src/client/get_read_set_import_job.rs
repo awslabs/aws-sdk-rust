@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::status_message): <p>The job's status message.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::creation_time): <p>When the job was created.</p>
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::completion_time): <p>When the job completed.</p>
-    ///   - [`sources(Option<Vec<ImportReadSetSourceItem>>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::sources): <p>The job's sources.</p>
+    ///   - [`sources(Option<Vec<ImportReadSetSourceItem>>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::sources): <p>The job's source files.</p>
     /// - On failure, responds with [`SdkError<GetReadSetImportJobError>`](crate::operation::get_read_set_import_job::GetReadSetImportJobError)
     pub fn get_read_set_import_job(
         &self,

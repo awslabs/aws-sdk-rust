@@ -18,7 +18,7 @@ pub struct DescribeFastLaunchImagesSuccessItem {
     #[doc(hidden)]
     pub launch_template:
         std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationResponse>,
-    /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     #[doc(hidden)]
     pub max_parallel_launches: std::option::Option<i32>,
     /// <p>The owner ID for the fast-launch enabled Windows AMI.</p>
@@ -55,7 +55,7 @@ impl DescribeFastLaunchImagesSuccessItem {
     ) -> std::option::Option<&crate::types::FastLaunchLaunchTemplateSpecificationResponse> {
         self.launch_template.as_ref()
     }
-    /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     pub fn max_parallel_launches(&self) -> std::option::Option<i32> {
         self.max_parallel_launches
     }
@@ -155,12 +155,12 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
         self.launch_template = input;
         self
     }
-    /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     pub fn max_parallel_launches(mut self, input: i32) -> Self {
         self.max_parallel_launches = Some(input);
         self
     }
-    /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     pub fn set_max_parallel_launches(mut self, input: std::option::Option<i32>) -> Self {
         self.max_parallel_launches = input;
         self

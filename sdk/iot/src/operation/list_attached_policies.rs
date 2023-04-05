@@ -69,22 +69,24 @@ impl ListAttachedPoliciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.recursive {
-                    query.push_kv(
-                        "recursive",
-                        aws_smithy_types::primitive::Encoder::from(_input.recursive).encode(),
-                    );
-                }
-                if let Some(inner_2) = &_input.marker {
-                    {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_2));
+                if let Some(inner_2) = &_input.recursive {
+                    if *inner_2 {
+                        query.push_kv(
+                            "recursive",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
                     }
                 }
-                if let Some(inner_3) = &_input.page_size {
-                    if *inner_3 != 0 {
+                if let Some(inner_3) = &_input.marker {
+                    {
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
+                if let Some(inner_4) = &_input.page_size {
+                    if *inner_4 != 0 {
                         query.push_kv(
                             "pageSize",
-                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
                         );
                     }
                 }

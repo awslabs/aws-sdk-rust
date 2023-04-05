@@ -24,93 +24,89 @@ pub fn ser_run_task_input(
             aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.enable_ecs_managed_tags {
-        object
-            .key("enableECSManagedTags")
-            .boolean(input.enable_ecs_managed_tags);
+    if let Some(var_7) = &input.enable_ecs_managed_tags {
+        object.key("enableECSManagedTags").boolean(*var_7);
     }
-    if input.enable_execute_command {
-        object
-            .key("enableExecuteCommand")
-            .boolean(input.enable_execute_command);
+    if let Some(var_8) = &input.enable_execute_command {
+        object.key("enableExecuteCommand").boolean(*var_8);
     }
-    if let Some(var_7) = &input.group {
-        object.key("group").string(var_7.as_str());
+    if let Some(var_9) = &input.group {
+        object.key("group").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.launch_type {
-        object.key("launchType").string(var_8.as_str());
+    if let Some(var_10) = &input.launch_type {
+        object.key("launchType").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.network_configuration {
+    if let Some(var_11) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("networkConfiguration").start_object();
+        let mut object_12 = object.key("networkConfiguration").start_object();
         crate::protocol_serde::shape_network_configuration::ser_network_configuration(
-            &mut object_10,
-            var_9,
+            &mut object_12,
+            var_11,
         )?;
-        object_10.finish();
-    }
-    if let Some(var_11) = &input.overrides {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("overrides").start_object();
-        crate::protocol_serde::shape_task_override::ser_task_override(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.placement_constraints {
-        let mut array_14 = object.key("placementConstraints").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.overrides {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("overrides").start_object();
+        crate::protocol_serde::shape_task_override::ser_task_override(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.placement_constraints {
+        let mut array_16 = object.key("placementConstraints").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
+                let mut object_18 = array_16.value().start_object();
                 crate::protocol_serde::shape_placement_constraint::ser_placement_constraint(
-                    &mut object_16,
-                    item_15,
+                    &mut object_18,
+                    item_17,
                 )?;
-                object_16.finish();
+                object_18.finish();
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_17) = &input.placement_strategy {
-        let mut array_18 = object.key("placementStrategy").start_array();
-        for item_19 in var_17 {
+    if let Some(var_19) = &input.placement_strategy {
+        let mut array_20 = object.key("placementStrategy").start_array();
+        for item_21 in var_19 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = array_18.value().start_object();
+                let mut object_22 = array_20.value().start_object();
                 crate::protocol_serde::shape_placement_strategy::ser_placement_strategy(
-                    &mut object_20,
-                    item_19,
+                    &mut object_22,
+                    item_21,
                 )?;
-                object_20.finish();
+                object_22.finish();
             }
         }
-        array_18.finish();
+        array_20.finish();
     }
-    if let Some(var_21) = &input.platform_version {
-        object.key("platformVersion").string(var_21.as_str());
+    if let Some(var_23) = &input.platform_version {
+        object.key("platformVersion").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.propagate_tags {
-        object.key("propagateTags").string(var_22.as_str());
+    if let Some(var_24) = &input.propagate_tags {
+        object.key("propagateTags").string(var_24.as_str());
     }
-    if let Some(var_23) = &input.reference_id {
-        object.key("referenceId").string(var_23.as_str());
+    if let Some(var_25) = &input.reference_id {
+        object.key("referenceId").string(var_25.as_str());
     }
-    if let Some(var_24) = &input.started_by {
-        object.key("startedBy").string(var_24.as_str());
+    if let Some(var_26) = &input.started_by {
+        object.key("startedBy").string(var_26.as_str());
     }
-    if let Some(var_25) = &input.tags {
-        let mut array_26 = object.key("tags").start_array();
-        for item_27 in var_25 {
+    if let Some(var_27) = &input.tags {
+        let mut array_28 = object.key("tags").start_array();
+        for item_29 in var_27 {
             {
                 #[allow(unused_mut)]
-                let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_28, item_27)?;
-                object_28.finish();
+                let mut object_30 = array_28.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_30, item_29)?;
+                object_30.finish();
             }
         }
-        array_26.finish();
+        array_28.finish();
     }
-    if let Some(var_29) = &input.task_definition {
-        object.key("taskDefinition").string(var_29.as_str());
+    if let Some(var_31) = &input.task_definition {
+        object.key("taskDefinition").string(var_31.as_str());
     }
     Ok(())
 }

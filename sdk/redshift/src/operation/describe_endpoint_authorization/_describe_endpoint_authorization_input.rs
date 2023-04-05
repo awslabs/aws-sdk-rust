@@ -6,7 +6,7 @@ pub struct DescribeEndpointAuthorizationInput {
     /// <p>The cluster identifier of the cluster to access.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
     /// <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
@@ -24,7 +24,7 @@ impl DescribeEndpointAuthorizationInput {
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
     }
@@ -72,12 +72,12 @@ impl DescribeEndpointAuthorizationInputBuilder {
         self.cluster_identifier = input;
         self
     }
-    /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
         self.account = Some(input.into());
         self
     }
-    /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.account = input;
         self

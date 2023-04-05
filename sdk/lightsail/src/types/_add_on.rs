@@ -20,6 +20,16 @@ pub struct AddOn {
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     #[doc(hidden)]
     pub next_snapshot_time_of_day: std::option::Option<std::string::String>,
+    /// <p>The trigger threshold of the action.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub threshold: std::option::Option<std::string::String>,
+    /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub duration: std::option::Option<std::string::String>,
 }
 impl AddOn {
     /// <p>The name of the add-on.</p>
@@ -42,6 +52,18 @@ impl AddOn {
     pub fn next_snapshot_time_of_day(&self) -> std::option::Option<&str> {
         self.next_snapshot_time_of_day.as_deref()
     }
+    /// <p>The trigger threshold of the action.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn threshold(&self) -> std::option::Option<&str> {
+        self.threshold.as_deref()
+    }
+    /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn duration(&self) -> std::option::Option<&str> {
+        self.duration.as_deref()
+    }
 }
 impl AddOn {
     /// Creates a new builder-style object to manufacture [`AddOn`](crate::types::AddOn).
@@ -58,6 +80,8 @@ pub struct AddOnBuilder {
     pub(crate) status: std::option::Option<std::string::String>,
     pub(crate) snapshot_time_of_day: std::option::Option<std::string::String>,
     pub(crate) next_snapshot_time_of_day: std::option::Option<std::string::String>,
+    pub(crate) threshold: std::option::Option<std::string::String>,
+    pub(crate) duration: std::option::Option<std::string::String>,
 }
 impl AddOnBuilder {
     /// <p>The name of the add-on.</p>
@@ -114,6 +138,34 @@ impl AddOnBuilder {
         self.next_snapshot_time_of_day = input;
         self
     }
+    /// <p>The trigger threshold of the action.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn threshold(mut self, input: impl Into<std::string::String>) -> Self {
+        self.threshold = Some(input.into());
+        self
+    }
+    /// <p>The trigger threshold of the action.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn set_threshold(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.threshold = input;
+        self
+    }
+    /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+        self.duration = Some(input.into());
+        self
+    }
+    /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.duration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AddOn`](crate::types::AddOn).
     pub fn build(self) -> crate::types::AddOn {
         crate::types::AddOn {
@@ -121,6 +173,8 @@ impl AddOnBuilder {
             status: self.status,
             snapshot_time_of_day: self.snapshot_time_of_day,
             next_snapshot_time_of_day: self.next_snapshot_time_of_day,
+            threshold: self.threshold,
+            duration: self.duration,
         }
     }
 }

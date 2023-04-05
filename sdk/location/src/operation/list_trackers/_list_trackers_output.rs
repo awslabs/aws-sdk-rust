@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrackersOutput {
-    /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
+    /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::types::ListTrackersResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
@@ -12,7 +12,7 @@ pub struct ListTrackersOutput {
     _request_id: Option<String>,
 }
 impl ListTrackersOutput {
-    /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
+    /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::types::ListTrackersResponseEntry]> {
         self.entries.as_deref()
     }
@@ -46,14 +46,14 @@ impl ListTrackersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
+    /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
     pub fn entries(mut self, input: crate::types::ListTrackersResponseEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = Some(v);
         self
     }
-    /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
+    /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
     pub fn set_entries(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ListTrackersResponseEntry>>,

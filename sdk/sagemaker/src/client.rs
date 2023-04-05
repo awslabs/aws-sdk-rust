@@ -232,6 +232,8 @@ mod create_artifact;
 
 mod create_auto_ml_job;
 
+mod create_auto_ml_job_v2;
+
 mod create_code_repository;
 
 mod create_compilation_job;
@@ -457,6 +459,8 @@ mod describe_app_image_config;
 mod describe_artifact;
 
 mod describe_auto_ml_job;
+
+mod describe_auto_ml_job_v2;
 
 mod describe_code_repository;
 

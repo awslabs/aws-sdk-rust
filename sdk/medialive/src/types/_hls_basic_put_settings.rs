@@ -10,7 +10,7 @@ pub struct HlsBasicPutSettings {
     /// Size in seconds of file cache for streaming outputs.
     #[doc(hidden)]
     pub filecache_duration: i32,
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     #[doc(hidden)]
     pub num_retries: i32,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
@@ -26,7 +26,7 @@ impl HlsBasicPutSettings {
     pub fn filecache_duration(&self) -> i32 {
         self.filecache_duration
     }
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(&self) -> i32 {
         self.num_retries
     }
@@ -72,12 +72,12 @@ impl HlsBasicPutSettingsBuilder {
         self.filecache_duration = input;
         self
     }
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(mut self, input: i32) -> Self {
         self.num_retries = Some(input);
         self
     }
-    /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
         self.num_retries = input;
         self

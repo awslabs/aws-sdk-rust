@@ -77,6 +77,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "rootVolume" => {
+                                builder = builder.set_root_volume(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

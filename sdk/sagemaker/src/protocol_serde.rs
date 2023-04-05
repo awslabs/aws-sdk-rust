@@ -28,6 +28,8 @@ pub(crate) mod shape_create_artifact;
 
 pub(crate) mod shape_create_auto_ml_job;
 
+pub(crate) mod shape_create_auto_ml_job_v2;
+
 pub(crate) mod shape_create_code_repository;
 
 pub(crate) mod shape_create_compilation_job;
@@ -225,6 +227,8 @@ pub(crate) mod shape_describe_app_image_config;
 pub(crate) mod shape_describe_artifact;
 
 pub(crate) mod shape_describe_auto_ml_job;
+
+pub(crate) mod shape_describe_auto_ml_job_v2;
 
 pub(crate) mod shape_describe_code_repository;
 
@@ -638,6 +642,8 @@ pub(crate) mod shape_create_artifact_input;
 
 pub(crate) mod shape_create_auto_ml_job_input;
 
+pub(crate) mod shape_create_auto_ml_job_v2_input;
+
 pub(crate) mod shape_create_code_repository_input;
 
 pub(crate) mod shape_create_compilation_job_input;
@@ -835,6 +841,8 @@ pub(crate) mod shape_describe_app_input;
 pub(crate) mod shape_describe_artifact_input;
 
 pub(crate) mod shape_describe_auto_ml_job_input;
+
+pub(crate) mod shape_describe_auto_ml_job_v2_input;
 
 pub(crate) mod shape_describe_code_repository_input;
 
@@ -1258,11 +1266,17 @@ pub(crate) mod shape_auto_ml_candidates;
 
 pub(crate) mod shape_auto_ml_channel;
 
+pub(crate) mod shape_auto_ml_data_split_config;
+
 pub(crate) mod shape_auto_ml_input_data_config;
 
 pub(crate) mod shape_auto_ml_job_artifacts;
 
+pub(crate) mod shape_auto_ml_job_channel;
+
 pub(crate) mod shape_auto_ml_job_config;
+
+pub(crate) mod shape_auto_ml_job_input_data_config;
 
 pub(crate) mod shape_auto_ml_job_objective;
 
@@ -1271,6 +1285,10 @@ pub(crate) mod shape_auto_ml_job_summaries;
 pub(crate) mod shape_auto_ml_output_data_config;
 
 pub(crate) mod shape_auto_ml_partial_failure_reasons;
+
+pub(crate) mod shape_auto_ml_problem_type_config;
+
+pub(crate) mod shape_auto_ml_security_config;
 
 pub(crate) mod shape_batch_data_capture_config;
 
@@ -1428,7 +1446,11 @@ pub(crate) mod shape_hyper_parameter_training_job_summaries;
 
 pub(crate) mod shape_hyper_parameter_training_job_summary;
 
+pub(crate) mod shape_hyper_parameter_tuning_job_completion_details;
+
 pub(crate) mod shape_hyper_parameter_tuning_job_config;
+
+pub(crate) mod shape_hyper_parameter_tuning_job_consumed_resources;
 
 pub(crate) mod shape_hyper_parameter_tuning_job_summaries;
 
@@ -1830,15 +1852,13 @@ pub(crate) mod shape_auto_ml_container_definitions;
 
 pub(crate) mod shape_auto_ml_data_source;
 
-pub(crate) mod shape_auto_ml_data_split_config;
+pub(crate) mod shape_auto_ml_inference_container_definitions;
 
 pub(crate) mod shape_auto_ml_job_completion_criteria;
 
 pub(crate) mod shape_auto_ml_job_summary;
 
 pub(crate) mod shape_auto_ml_partial_failure_reason;
-
-pub(crate) mod shape_auto_ml_security_config;
 
 pub(crate) mod shape_auto_rollback_config;
 
@@ -1996,7 +2016,11 @@ pub(crate) mod shape_hyper_parameter_tuning_job_summary;
 
 pub(crate) mod shape_hyper_parameter_tuning_resource_config;
 
+pub(crate) mod shape_iam_identity;
+
 pub(crate) mod shape_image;
+
+pub(crate) mod shape_image_classification_job_config;
 
 pub(crate) mod shape_image_config;
 
@@ -2226,11 +2250,15 @@ pub(crate) mod shape_task_keywords;
 
 pub(crate) mod shape_tensor_board_app_settings;
 
+pub(crate) mod shape_text_classification_job_config;
+
 pub(crate) mod shape_traffic_pattern;
 
 pub(crate) mod shape_training_container_arguments;
 
 pub(crate) mod shape_training_container_entrypoint;
+
+pub(crate) mod shape_training_image_config;
 
 pub(crate) mod shape_training_instance_types;
 
@@ -2270,11 +2298,17 @@ pub(crate) mod shape_async_inference_notification_config;
 
 pub(crate) mod shape_athena_dataset_definition;
 
+pub(crate) mod shape_auto_ml_algorithm_config;
+
+pub(crate) mod shape_auto_ml_algorithms_config;
+
 pub(crate) mod shape_auto_ml_candidate_step;
 
 pub(crate) mod shape_auto_ml_container_definition;
 
 pub(crate) mod shape_auto_mls3_data_source;
+
+pub(crate) mod shape_best_objective_not_improving;
 
 pub(crate) mod shape_cache_hit_result;
 
@@ -2299,6 +2333,8 @@ pub(crate) mod shape_content_classifiers;
 pub(crate) mod shape_continuous_parameter_range;
 
 pub(crate) mod shape_continuous_parameter_ranges;
+
+pub(crate) mod shape_convergence_detected;
 
 pub(crate) mod shape_csv_content_types;
 
@@ -2436,6 +2472,8 @@ pub(crate) mod shape_training_job;
 
 pub(crate) mod shape_training_job_definition;
 
+pub(crate) mod shape_training_repository_auth_config;
+
 pub(crate) mod shape_transform_job_definition;
 
 pub(crate) mod shape_transform_s3_data_source;
@@ -2449,6 +2487,8 @@ pub(crate) mod shape_usd;
 pub(crate) mod shape_workforce_security_group_ids;
 
 pub(crate) mod shape_workforce_subnets;
+
+pub(crate) mod shape_async_notification_topic_type_list;
 
 pub(crate) mod shape_auto_ml_job_step_metadata;
 
@@ -2545,6 +2585,8 @@ pub(crate) mod shape_trial_component_source_detail;
 pub(crate) mod shape_tuning_job_step_meta_data;
 
 pub(crate) mod shape_attribute_names;
+
+pub(crate) mod shape_auto_ml_algorithms;
 
 pub(crate) mod shape_categorical_parameters;
 

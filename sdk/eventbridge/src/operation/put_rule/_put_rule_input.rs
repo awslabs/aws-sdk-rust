@@ -9,7 +9,7 @@ pub struct PutRuleInput {
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
     #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>Indicates whether the rule is enabled or disabled.</p>
@@ -38,7 +38,7 @@ impl PutRuleInput {
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
@@ -108,12 +108,12 @@ impl PutRuleInputBuilder {
         self.schedule_expression = input;
         self
     }
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_pattern = Some(input.into());
         self
     }
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_event_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.event_pattern = input;
         self

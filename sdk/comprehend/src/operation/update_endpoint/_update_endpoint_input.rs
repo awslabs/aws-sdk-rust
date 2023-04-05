@@ -15,6 +15,9 @@ pub struct UpdateEndpointInput {
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
     #[doc(hidden)]
     pub desired_data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    #[doc(hidden)]
+    pub flywheel_arn: std::option::Option<std::string::String>,
 }
 impl UpdateEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
@@ -33,6 +36,10 @@ impl UpdateEndpointInput {
     pub fn desired_data_access_role_arn(&self) -> std::option::Option<&str> {
         self.desired_data_access_role_arn.as_deref()
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
+        self.flywheel_arn.as_deref()
+    }
 }
 impl UpdateEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
@@ -49,6 +56,7 @@ pub struct UpdateEndpointInputBuilder {
     pub(crate) desired_model_arn: std::option::Option<std::string::String>,
     pub(crate) desired_inference_units: std::option::Option<i32>,
     pub(crate) desired_data_access_role_arn: std::option::Option<std::string::String>,
+    pub(crate) flywheel_arn: std::option::Option<std::string::String>,
 }
 impl UpdateEndpointInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
@@ -97,6 +105,16 @@ impl UpdateEndpointInputBuilder {
         self.desired_data_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.flywheel_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.flywheel_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
     pub fn build(
         self,
@@ -109,6 +127,7 @@ impl UpdateEndpointInputBuilder {
             desired_model_arn: self.desired_model_arn,
             desired_inference_units: self.desired_inference_units,
             desired_data_access_role_arn: self.desired_data_access_role_arn,
+            flywheel_arn: self.flywheel_arn,
         })
     }
 }

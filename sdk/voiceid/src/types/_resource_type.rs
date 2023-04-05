@@ -18,6 +18,7 @@
 ///     ResourceType::Fraudster => { /* ... */ },
 ///     ResourceType::Session => { /* ... */ },
 ///     ResourceType::Speaker => { /* ... */ },
+///     ResourceType::Watchlist => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -63,6 +64,8 @@ pub enum ResourceType {
     Session,
     #[allow(missing_docs)] // documentation missing in model
     Speaker,
+    #[allow(missing_docs)] // documentation missing in model
+    Watchlist,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -75,6 +78,7 @@ impl std::convert::From<&str> for ResourceType {
             "FRAUDSTER" => ResourceType::Fraudster,
             "SESSION" => ResourceType::Session,
             "SPEAKER" => ResourceType::Speaker,
+            "WATCHLIST" => ResourceType::Watchlist,
             other => {
                 ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -98,6 +102,7 @@ impl ResourceType {
             ResourceType::Fraudster => "FRAUDSTER",
             ResourceType::Session => "SESSION",
             ResourceType::Speaker => "SPEAKER",
+            ResourceType::Watchlist => "WATCHLIST",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -110,6 +115,7 @@ impl ResourceType {
             "FRAUDSTER",
             "SESSION",
             "SPEAKER",
+            "WATCHLIST",
         ]
     }
 }

@@ -45,18 +45,18 @@ pub fn ser_delete_stack_instances_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("RetainStacks");
-    {
-        scope_17.boolean(input.retain_stacks);
+    if let Some(var_18) = &input.retain_stacks {
+        scope_17.boolean(*var_18);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("OperationId");
-    if let Some(var_19) = &input.operation_id {
-        scope_18.string(var_19);
+    let mut scope_19 = writer.prefix("OperationId");
+    if let Some(var_20) = &input.operation_id {
+        scope_19.string(var_20);
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("CallAs");
-    if let Some(var_21) = &input.call_as {
-        scope_20.string(var_21.as_str());
+    let mut scope_21 = writer.prefix("CallAs");
+    if let Some(var_22) = &input.call_as {
+        scope_21.string(var_22.as_str());
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

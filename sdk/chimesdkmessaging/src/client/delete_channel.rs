@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_channel_arn): <p>The ARN of the channel being deleted.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_chime_bearer): <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     ///   - [`sub_channel_id(impl Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::sub_channel_id) / [`set_sub_channel_id(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_sub_channel_id): <p>The ID of the SubChannel in the request.</p>
     /// - On success, responds with [`DeleteChannelOutput`](crate::operation::delete_channel::DeleteChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::operation::delete_channel::DeleteChannelError)

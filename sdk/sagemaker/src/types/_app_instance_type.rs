@@ -34,6 +34,7 @@
 ///     AppInstanceType::MlG54Xlarge => { /* ... */ },
 ///     AppInstanceType::MlG58Xlarge => { /* ... */ },
 ///     AppInstanceType::MlG5Xlarge => { /* ... */ },
+///     AppInstanceType::MlGeospatialInteractive => { /* ... */ },
 ///     AppInstanceType::MlM512Xlarge => { /* ... */ },
 ///     AppInstanceType::MlM516Xlarge => { /* ... */ },
 ///     AppInstanceType::MlM524Xlarge => { /* ... */ },
@@ -147,6 +148,8 @@ pub enum AppInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlG5Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlGeospatialInteractive,
+    #[allow(missing_docs)] // documentation missing in model
     MlM512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlM516Xlarge,
@@ -244,6 +247,7 @@ impl std::convert::From<&str> for AppInstanceType {
             "ml.g5.4xlarge" => AppInstanceType::MlG54Xlarge,
             "ml.g5.8xlarge" => AppInstanceType::MlG58Xlarge,
             "ml.g5.xlarge" => AppInstanceType::MlG5Xlarge,
+            "ml.geospatial.interactive" => AppInstanceType::MlGeospatialInteractive,
             "ml.m5.12xlarge" => AppInstanceType::MlM512Xlarge,
             "ml.m5.16xlarge" => AppInstanceType::MlM516Xlarge,
             "ml.m5.24xlarge" => AppInstanceType::MlM524Xlarge,
@@ -318,6 +322,7 @@ impl AppInstanceType {
             AppInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
             AppInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
             AppInstanceType::MlG5Xlarge => "ml.g5.xlarge",
+            AppInstanceType::MlGeospatialInteractive => "ml.geospatial.interactive",
             AppInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
             AppInstanceType::MlM516Xlarge => "ml.m5.16xlarge",
             AppInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
@@ -381,6 +386,7 @@ impl AppInstanceType {
             "ml.g5.4xlarge",
             "ml.g5.8xlarge",
             "ml.g5.xlarge",
+            "ml.geospatial.interactive",
             "ml.m5.12xlarge",
             "ml.m5.16xlarge",
             "ml.m5.24xlarge",

@@ -5,6 +5,7 @@ pub use crate::operation::update_sip_media_application::_update_sip_media_applic
 
 /// Fluent builder constructing a request to `UpdateSipMediaApplication`.
 ///
+/// <p>Updates the details of the specified SIP media application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl UpdateSipMediaApplicationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn set_sip_media_application_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -81,12 +82,12 @@ impl UpdateSipMediaApplicationFluentBuilder {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new name for the specified SIP media application.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new name for the specified SIP media application.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
@@ -95,12 +96,12 @@ impl UpdateSipMediaApplicationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new set of endpoints for the specified SIP media application.</p>
     pub fn endpoints(mut self, input: crate::types::SipMediaApplicationEndpoint) -> Self {
         self.inner = self.inner.endpoints(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The new set of endpoints for the specified SIP media application.</p>
     pub fn set_endpoints(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,

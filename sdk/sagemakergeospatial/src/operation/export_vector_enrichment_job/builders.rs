@@ -5,7 +5,7 @@ pub use crate::operation::export_vector_enrichment_job::_export_vector_enrichmen
 
 /// Fluent builder constructing a request to `ExportVectorEnrichmentJob`.
 ///
-/// <p>Use this operation to copy results of a Vector Enrichment job to an S3 location.</p>
+/// <p>Use this operation to copy results of a Vector Enrichment job to an Amazon S3 location.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportVectorEnrichmentJobFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -77,6 +77,16 @@ impl ExportVectorEnrichmentJobFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
+        self
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>

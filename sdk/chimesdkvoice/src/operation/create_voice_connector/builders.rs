@@ -5,6 +5,7 @@ pub use crate::operation::create_voice_connector::_create_voice_connector_input:
 
 /// Fluent builder constructing a request to `CreateVoiceConnector`.
 ///
+/// <p>Creates an Amazon Chime SDK Voice Connector. For more information about Voice Connectors, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/voice-connector-groups.html">Managing Amazon Chime SDK Voice Connector groups</a> in the <i>Amazon Chime SDK Administrator Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVoiceConnectorFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -68,22 +69,22 @@ impl CreateVoiceConnectorFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Voice Connector.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn aws_region(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
         self.inner = self.inner.aws_region(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn set_aws_region(
         mut self,
         input: std::option::Option<crate::types::VoiceConnectorAwsRegion>,
@@ -91,12 +92,12 @@ impl CreateVoiceConnectorFluentBuilder {
         self.inner = self.inner.set_aws_region(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Enables or disables encryption for the Voice Connector.</p>
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.inner = self.inner.require_encryption(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Enables or disables encryption for the Voice Connector.</p>
     pub fn set_require_encryption(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_require_encryption(input);
         self

@@ -9,6 +9,12 @@ pub struct UpdateResolverEndpointInput {
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+    #[doc(hidden)]
+    pub resolver_endpoint_type: std::option::Option<crate::types::ResolverEndpointType>,
+    /// <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+    #[doc(hidden)]
+    pub update_ip_addresses: std::option::Option<std::vec::Vec<crate::types::UpdateIpAddress>>,
 }
 impl UpdateResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
@@ -18,6 +24,16 @@ impl UpdateResolverEndpointInput {
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+    pub fn resolver_endpoint_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ResolverEndpointType> {
+        self.resolver_endpoint_type.as_ref()
+    }
+    /// <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+    pub fn update_ip_addresses(&self) -> std::option::Option<&[crate::types::UpdateIpAddress]> {
+        self.update_ip_addresses.as_deref()
     }
 }
 impl UpdateResolverEndpointInput {
@@ -35,6 +51,9 @@ impl UpdateResolverEndpointInput {
 pub struct UpdateResolverEndpointInputBuilder {
     pub(crate) resolver_endpoint_id: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) resolver_endpoint_type: std::option::Option<crate::types::ResolverEndpointType>,
+    pub(crate) update_ip_addresses:
+        std::option::Option<std::vec::Vec<crate::types::UpdateIpAddress>>,
 }
 impl UpdateResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
@@ -60,6 +79,38 @@ impl UpdateResolverEndpointInputBuilder {
         self.name = input;
         self
     }
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+    pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
+        self.resolver_endpoint_type = Some(input);
+        self
+    }
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+    pub fn set_resolver_endpoint_type(
+        mut self,
+        input: std::option::Option<crate::types::ResolverEndpointType>,
+    ) -> Self {
+        self.resolver_endpoint_type = input;
+        self
+    }
+    /// Appends an item to `update_ip_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_update_ip_addresses`](Self::set_update_ip_addresses).
+    ///
+    /// <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+    pub fn update_ip_addresses(mut self, input: crate::types::UpdateIpAddress) -> Self {
+        let mut v = self.update_ip_addresses.unwrap_or_default();
+        v.push(input);
+        self.update_ip_addresses = Some(v);
+        self
+    }
+    /// <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+    pub fn set_update_ip_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdateIpAddress>>,
+    ) -> Self {
+        self.update_ip_addresses = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
     pub fn build(
         self,
@@ -71,6 +122,8 @@ impl UpdateResolverEndpointInputBuilder {
             crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput {
                 resolver_endpoint_id: self.resolver_endpoint_id,
                 name: self.name,
+                resolver_endpoint_type: self.resolver_endpoint_type,
+                update_ip_addresses: self.update_ip_addresses,
             },
         )
     }

@@ -172,8 +172,10 @@ pub enum CreateApplicationError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The maximum number of resources per account has been reached.</p>
+    /// <p> The maximum number of resources per account has been reached.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p> The maximum number of API requests has been exceeded. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has invalid or missing parameters.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -197,6 +199,7 @@ impl std::fmt::Display for CreateApplicationError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -212,6 +215,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateApplicati
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ServiceQuotaExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ThrottlingException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ValidationException(_inner) => {
@@ -267,6 +273,7 @@ impl CreateApplicationError {
             Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ServiceQuotaExceededException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -283,6 +290,10 @@ impl CreateApplicationError {
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(self, Self::ServiceQuotaExceededException(_))
     }
+    /// Returns `true` if the error kind is `CreateApplicationError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `CreateApplicationError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -294,6 +305,7 @@ impl std::error::Error for CreateApplicationError {
             Self::ConflictException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => Some(_inner),
+            Self::ThrottlingException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }

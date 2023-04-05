@@ -13,6 +13,9 @@ pub struct GetAccessPointForObjectLambdaOutput {
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    #[doc(hidden)]
+    pub alias: std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
     _request_id: Option<String>,
 }
 impl GetAccessPointForObjectLambdaOutput {
@@ -29,6 +32,10 @@ impl GetAccessPointForObjectLambdaOutput {
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
+    }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn alias(&self) -> std::option::Option<&crate::types::ObjectLambdaAccessPointAlias> {
+        self.alias.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAccessPointForObjectLambdaOutput {
@@ -51,6 +58,7 @@ pub struct GetAccessPointForObjectLambdaOutputBuilder {
     pub(crate) public_access_block_configuration:
         std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) alias: std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
     _request_id: Option<String>,
 }
 impl GetAccessPointForObjectLambdaOutputBuilder {
@@ -93,6 +101,19 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn alias(mut self, input: crate::types::ObjectLambdaAccessPointAlias) -> Self {
+        self.alias = Some(input);
+        self
+    }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn set_alias(
+        mut self,
+        input: std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
+    ) -> Self {
+        self.alias = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -111,6 +132,7 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
             name: self.name,
             public_access_block_configuration: self.public_access_block_configuration,
             creation_date: self.creation_date,
+            alias: self.alias,
             _request_id: self._request_id,
         }
     }

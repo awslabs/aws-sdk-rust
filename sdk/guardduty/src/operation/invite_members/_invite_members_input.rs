@@ -11,7 +11,7 @@ pub struct InviteMembersInput {
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
     #[doc(hidden)]
-    pub disable_email_notification: bool,
+    pub disable_email_notification: std::option::Option<bool>,
     /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ impl InviteMembersInput {
         self.account_ids.as_deref()
     }
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
-    pub fn disable_email_notification(&self) -> bool {
+    pub fn disable_email_notification(&self) -> std::option::Option<bool> {
         self.disable_email_notification
     }
     /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
@@ -110,7 +110,7 @@ impl InviteMembersInputBuilder {
         Ok(crate::operation::invite_members::InviteMembersInput {
             detector_id: self.detector_id,
             account_ids: self.account_ids,
-            disable_email_notification: self.disable_email_notification.unwrap_or_default(),
+            disable_email_notification: self.disable_email_notification,
             message: self.message,
         })
     }

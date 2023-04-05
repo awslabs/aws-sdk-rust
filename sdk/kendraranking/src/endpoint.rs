@@ -9,8 +9,8 @@ mod test {
     fn test_1() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(true)
             .region("us-east-1".to_string())
+            .use_fips(true)
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -30,8 +30,8 @@ mod test {
     fn test_2() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(false)
             .region("us-east-1".to_string())
+            .use_fips(false)
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -46,13 +46,53 @@ mod test {
         );
     }
 
-    /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
+    /// For region cn-north-1 with FIPS enabled and DualStack enabled
     #[test]
     fn test_3() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
             .use_fips(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kendra-ranking-fips.cn-north-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kendra-ranking-fips.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_4() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kendra-ranking.cn-north-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kendra-ranking.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_5() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
+            .use_fips(true)
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -69,11 +109,11 @@ mod test {
 
     /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_4() {
+    fn test_6() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(false)
             .region("us-gov-east-1".to_string())
+            .use_fips(false)
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -88,53 +128,33 @@ mod test {
         );
     }
 
-    /// For region cn-north-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_5() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("cn-north-1".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://kendra-ranking-fips.cn-north-1.api.amazonwebservices.com.cn");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://kendra-ranking-fips.cn-north-1.api.amazonwebservices.com.cn")
-                .build()
-        );
-    }
-
-    /// For region cn-north-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_6() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("cn-north-1".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://kendra-ranking.cn-north-1.api.amazonwebservices.com.cn");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://kendra-ranking.cn-north-1.api.amazonwebservices.com.cn")
-                .build()
-        );
-    }
-
-    /// For custom endpoint with fips disabled and dualstack disabled
+    /// For custom endpoint with region set and fips disabled and dualstack disabled
     #[test]
     fn test_7() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(false)
             .region("us-east-1".to_string())
+            .use_fips(false)
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://example.com")
+                .build()
+        );
+    }
+
+    /// For custom endpoint with region not set and fips disabled and dualstack disabled
+    #[test]
+    fn test_8() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -151,11 +171,11 @@ mod test {
 
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
-    fn test_8() {
+    fn test_9() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(true)
             .region("us-east-1".to_string())
+            .use_fips(true)
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -167,6 +187,23 @@ mod test {
             "Invalid Configuration: FIPS and custom endpoint are not supported"
         )
     }
+
+    /// Missing region
+    #[test]
+    fn test_10() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: Missing Region"
+        )
+    }
 }
 
 #[non_exhaustive]
@@ -174,7 +211,7 @@ mod test {
 /// Configuration parameters for resolving the correct endpoint
 pub struct Params {
     /// The AWS region used to dispatch the request.
-    pub(crate) region: std::string::String,
+    pub(crate) region: std::option::Option<std::string::String>,
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
     pub(crate) use_fips: bool,
     /// Override the endpoint used to send this request
@@ -187,7 +224,7 @@ impl Params {
     }
     /// The AWS region used to dispatch the request.
     pub fn region(&self) -> std::option::Option<&str> {
-        Some(&self.region)
+        self.region.as_deref()
     }
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
     pub fn use_fips(&self) -> std::option::Option<bool> {
@@ -237,9 +274,7 @@ impl ParamsBuilder {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::endpoint::Params {
-                region: self
-                    .region
-                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("region"))?,
+                region: self.region,
                 use_fips: self
                     .use_fips
                     .or_else(|| Some(false))

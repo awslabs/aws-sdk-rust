@@ -36,6 +36,9 @@ pub struct Channel {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    #[doc(hidden)]
+    pub insecure_ingest: bool,
 }
 impl Channel {
     /// <p>Channel ARN.</p>
@@ -81,6 +84,10 @@ impl Channel {
     {
         self.tags.as_ref()
     }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn insecure_ingest(&self) -> bool {
+        self.insecure_ingest
+    }
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::types::Channel).
@@ -103,6 +110,7 @@ pub struct ChannelBuilder {
     pub(crate) authorized: std::option::Option<bool>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) insecure_ingest: std::option::Option<bool>,
 }
 impl ChannelBuilder {
     /// <p>Channel ARN.</p>
@@ -224,6 +232,16 @@ impl ChannelBuilder {
         self.tags = input;
         self
     }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn insecure_ingest(mut self, input: bool) -> Self {
+        self.insecure_ingest = Some(input);
+        self
+    }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn set_insecure_ingest(mut self, input: std::option::Option<bool>) -> Self {
+        self.insecure_ingest = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {
         crate::types::Channel {
@@ -236,6 +254,7 @@ impl ChannelBuilder {
             playback_url: self.playback_url,
             authorized: self.authorized.unwrap_or_default(),
             tags: self.tags,
+            insecure_ingest: self.insecure_ingest.unwrap_or_default(),
         }
     }
 }

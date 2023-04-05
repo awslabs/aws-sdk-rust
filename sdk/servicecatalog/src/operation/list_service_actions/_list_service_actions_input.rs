@@ -5,7 +5,6 @@
 pub struct ListServiceActionsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -13,7 +12,7 @@ pub struct ListServiceActionsInput {
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: std::option::Option<i32>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
@@ -21,7 +20,6 @@ pub struct ListServiceActionsInput {
 impl ListServiceActionsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -29,7 +27,7 @@ impl ListServiceActionsInput {
         self.accept_language.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -56,7 +54,6 @@ pub struct ListServiceActionsInputBuilder {
 impl ListServiceActionsInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -66,7 +63,6 @@ impl ListServiceActionsInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -104,7 +100,7 @@ impl ListServiceActionsInputBuilder {
         Ok(
             crate::operation::list_service_actions::ListServiceActionsInput {
                 accept_language: self.accept_language,
-                page_size: self.page_size.unwrap_or_default(),
+                page_size: self.page_size,
                 page_token: self.page_token,
             },
         )

@@ -5,7 +5,7 @@ pub use crate::operation::add_tags::_add_tags_input::AddTagsInputBuilder;
 
 /// Fluent builder constructing a request to `AddTags`.
 ///
-/// <p>Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the same name but different values. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web Services Regions only from the Region in which the trail or event data store was created (also known as its home region).</p>
+/// <p>Adds one or more tags to a trail, event data store, or channel, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key. Tag key names must be unique; you cannot have two keys with the same name but different values. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web Services Regions only from the Region in which the trail or event data store was created (also known as its home region).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddTagsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,14 +65,18 @@ impl AddTagsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Specifies the ARN of the trail, event data store, or channel to which one or more tags will be added.</p>
+    /// <p>The format of a trail ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>The format of an event data store ARN is: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>The format of a channel ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
-    /// <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Specifies the ARN of the trail, event data store, or channel to which one or more tags will be added.</p>
+    /// <p>The format of a trail ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>The format of an event data store ARN is: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>The format of a channel ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self

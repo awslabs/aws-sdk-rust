@@ -1,8 +1,10 @@
 [workspace]
 exclude = [
-    "tests/no-default-features",
     "tests/aws-smithy-runtime-test",
     "tests/using-native-tls-instead-of-rustls",
+    "tests/no-default-features"
+]
+members = [
     "examples/apigateway",
     "examples/apigatewaymanagement",
     "examples/applicationautoscaling",
@@ -58,8 +60,6 @@ exclude = [
     "examples/testing",
     "examples/tls",
     "examples/transcribestreaming",
-]
-members = [
     "sdk/accessanalyzer",
     "sdk/account",
     "sdk/acm",
@@ -136,6 +136,7 @@ members = [
     "sdk/cloudsearch",
     "sdk/cloudsearchdomain",
     "sdk/cloudtrail",
+    "sdk/cloudtraildata",
     "sdk/cloudwatch",
     "sdk/cloudwatchevents",
     "sdk/cloudwatchlogs",
@@ -230,6 +231,7 @@ members = [
     "sdk/imagebuilder",
     "sdk/inspector",
     "sdk/inspector2",
+    "sdk/internetmonitor",
     "sdk/iot",
     "sdk/iot1clickdevices",
     "sdk/iot1clickprojects",
@@ -249,6 +251,7 @@ members = [
     "sdk/iotwireless",
     "sdk/ivs",
     "sdk/ivschat",
+    "sdk/ivsrealtime",
     "sdk/kafka",
     "sdk/kafkaconnect",
     "sdk/kendra",
@@ -401,11 +404,13 @@ members = [
     "sdk/swf",
     "sdk/synthetics",
     "sdk/textract",
+    "sdk/tnb",
     "sdk/transcribe",
     "sdk/transcribestreaming",
     "sdk/transfer",
     "sdk/translate",
     "sdk/voiceid",
+    "sdk/vpclattice",
     "sdk/waf",
     "sdk/wafregional",
     "sdk/wafv2",

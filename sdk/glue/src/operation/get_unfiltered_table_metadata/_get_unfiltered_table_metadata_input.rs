@@ -3,41 +3,41 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUnfilteredTableMetadataInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The catalog ID where the table resides.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a database that contains the table.</p>
     #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>A structure containing information for audit.</p>
+    /// <p>A structure containing Lake Formation audit context information.</p>
     #[doc(hidden)]
     pub audit_context: std::option::Option<crate::types::AuditContext>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) A list of supported permission types. </p>
     #[doc(hidden)]
     pub supported_permission_types:
         std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredTableMetadataInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The catalog ID where the table resides.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a database that contains the table.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A structure containing information for audit.</p>
+    /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn audit_context(&self) -> std::option::Option<&crate::types::AuditContext> {
         self.audit_context.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn supported_permission_types(
         &self,
     ) -> std::option::Option<&[crate::types::PermissionType]> {
@@ -63,42 +63,42 @@ pub struct GetUnfilteredTableMetadataInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredTableMetadataInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The catalog ID where the table resides.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.catalog_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The catalog ID where the table resides.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.catalog_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a database that contains the table.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.database_name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a database that contains the table.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A structure containing information for audit.</p>
+    /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
         self.audit_context = Some(input);
         self
     }
-    /// <p>A structure containing information for audit.</p>
+    /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn set_audit_context(
         mut self,
         input: std::option::Option<crate::types::AuditContext>,
@@ -110,13 +110,14 @@ impl GetUnfilteredTableMetadataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
     ///
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn supported_permission_types(mut self, input: crate::types::PermissionType) -> Self {
         let mut v = self.supported_permission_types.unwrap_or_default();
         v.push(input);
         self.supported_permission_types = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn set_supported_permission_types(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,

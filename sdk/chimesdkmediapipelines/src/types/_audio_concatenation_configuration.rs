@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioConcatenationConfiguration {
-    /// <p>Enables the <i>name</i> object, where <i>name</i> is the name of the configuration object, such as <code>AudioConcatenation</code>.</p>
+    /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::AudioArtifactsConcatenationState>,
 }
 impl AudioConcatenationConfiguration {
-    /// <p>Enables the <i>name</i> object, where <i>name</i> is the name of the configuration object, such as <code>AudioConcatenation</code>.</p>
+    /// <p>Enables or disables the configuration object.</p>
     pub fn state(&self) -> std::option::Option<&crate::types::AudioArtifactsConcatenationState> {
         self.state.as_ref()
     }
@@ -28,12 +28,12 @@ pub struct AudioConcatenationConfigurationBuilder {
     pub(crate) state: std::option::Option<crate::types::AudioArtifactsConcatenationState>,
 }
 impl AudioConcatenationConfigurationBuilder {
-    /// <p>Enables the <i>name</i> object, where <i>name</i> is the name of the configuration object, such as <code>AudioConcatenation</code>.</p>
+    /// <p>Enables or disables the configuration object.</p>
     pub fn state(mut self, input: crate::types::AudioArtifactsConcatenationState) -> Self {
         self.state = Some(input);
         self
     }
-    /// <p>Enables the <i>name</i> object, where <i>name</i> is the name of the configuration object, such as <code>AudioConcatenation</code>.</p>
+    /// <p>Enables or disables the configuration object.</p>
     pub fn set_state(
         mut self,
         input: std::option::Option<crate::types::AudioArtifactsConcatenationState>,

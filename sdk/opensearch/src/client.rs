@@ -312,6 +312,8 @@ mod list_instance_type_details;
 
 mod list_packages_for_domain;
 
+mod list_scheduled_actions;
+
 mod list_tags;
 
 mod list_versions;
@@ -335,6 +337,8 @@ mod start_service_software_update;
 mod update_domain_config;
 
 mod update_package;
+
+mod update_scheduled_action;
 
 mod update_vpc_endpoint;
 

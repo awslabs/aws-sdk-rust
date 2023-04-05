@@ -5,7 +5,7 @@ pub use crate::operation::create_subscription_notification_configuration::_creat
 
 /// Fluent builder constructing a request to `CreateSubscriptionNotificationConfiguration`.
 ///
-/// <p>Notifies the subscriber when new data is written to the data lake for the sources that the subscriber consumes in Security Lake.</p>
+/// <p>Notifies the subscriber when new data is written to the data lake for the sources that the subscriber consumes in Security Lake. You can create only one subscriber notification per subscriber.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSubscriptionNotificationConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -56,12 +56,12 @@ impl CreateSubscriptionNotificationConfigurationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The subscription ID for the notification subscription/</p>
+    /// <p>The subscription ID for the notification subscription.</p>
     pub fn subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.subscription_id(input.into());
         self
     }
-    /// <p>The subscription ID for the notification subscription/</p>
+    /// <p>The subscription ID for the notification subscription.</p>
     pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_id(input);
         self
@@ -128,12 +128,12 @@ impl CreateSubscriptionNotificationConfigurationFluentBuilder {
         self.inner = self.inner.set_create_sqs(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self

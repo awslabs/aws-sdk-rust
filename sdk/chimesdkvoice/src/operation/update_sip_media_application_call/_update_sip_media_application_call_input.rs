@@ -3,27 +3,27 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationCallInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the SIP media application handling the call.</p>
     #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the call transaction.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
     #[doc(hidden)]
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateSipMediaApplicationCallInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the SIP media application handling the call.</p>
     pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
         self.sip_media_application_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the call transaction.</p>
     pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
     pub fn arguments(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -48,12 +48,12 @@ pub struct UpdateSipMediaApplicationCallInputBuilder {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateSipMediaApplicationCallInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the SIP media application handling the call.</p>
     pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.sip_media_application_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the SIP media application handling the call.</p>
     pub fn set_sip_media_application_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -61,12 +61,12 @@ impl UpdateSipMediaApplicationCallInputBuilder {
         self.sip_media_application_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the call transaction.</p>
     pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.transaction_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the call transaction.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.transaction_id = input;
         self
@@ -75,6 +75,7 @@ impl UpdateSipMediaApplicationCallInputBuilder {
     ///
     /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
     ///
+    /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
     pub fn arguments(
         mut self,
         k: impl Into<std::string::String>,
@@ -85,7 +86,7 @@ impl UpdateSipMediaApplicationCallInputBuilder {
         self.arguments = Some(hash_map);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
     pub fn set_arguments(
         mut self,
         input: std::option::Option<

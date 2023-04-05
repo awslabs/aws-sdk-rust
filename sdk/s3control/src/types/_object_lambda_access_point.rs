@@ -10,6 +10,9 @@ pub struct ObjectLambdaAccessPoint {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub object_lambda_access_point_arn: std::option::Option<std::string::String>,
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    #[doc(hidden)]
+    pub alias: std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
 }
 impl ObjectLambdaAccessPoint {
     /// <p>The name of the Object Lambda Access Point.</p>
@@ -19,6 +22,10 @@ impl ObjectLambdaAccessPoint {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
     pub fn object_lambda_access_point_arn(&self) -> std::option::Option<&str> {
         self.object_lambda_access_point_arn.as_deref()
+    }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn alias(&self) -> std::option::Option<&crate::types::ObjectLambdaAccessPointAlias> {
+        self.alias.as_ref()
     }
 }
 impl ObjectLambdaAccessPoint {
@@ -34,6 +41,7 @@ impl ObjectLambdaAccessPoint {
 pub struct ObjectLambdaAccessPointBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) object_lambda_access_point_arn: std::option::Option<std::string::String>,
+    pub(crate) alias: std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
 }
 impl ObjectLambdaAccessPointBuilder {
     /// <p>The name of the Object Lambda Access Point.</p>
@@ -59,11 +67,25 @@ impl ObjectLambdaAccessPointBuilder {
         self.object_lambda_access_point_arn = input;
         self
     }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn alias(mut self, input: crate::types::ObjectLambdaAccessPointAlias) -> Self {
+        self.alias = Some(input);
+        self
+    }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn set_alias(
+        mut self,
+        input: std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
+    ) -> Self {
+        self.alias = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ObjectLambdaAccessPoint`](crate::types::ObjectLambdaAccessPoint).
     pub fn build(self) -> crate::types::ObjectLambdaAccessPoint {
         crate::types::ObjectLambdaAccessPoint {
             name: self.name,
             object_lambda_access_point_arn: self.object_lambda_access_point_arn,
+            alias: self.alias,
         }
     }
 }

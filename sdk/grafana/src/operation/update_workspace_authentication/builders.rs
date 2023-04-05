@@ -5,7 +5,9 @@ pub use crate::operation::update_workspace_authentication::_update_workspace_aut
 
 /// Fluent builder constructing a request to `UpdateWorkspaceAuthentication`.
 ///
-/// <p>Use this operation to define the identity provider (IdP) that this workspace authenticates users from, using SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
+/// <p>Use this operation to define the identity provider (IdP) that this workspace authenticates users from, using SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p> <note>
+/// <p>Changes to the authentication method for a workspace may take a few minutes to take effect.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkspaceAuthenticationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

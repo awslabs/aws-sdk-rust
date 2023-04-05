@@ -118,6 +118,25 @@ pub fn de_start_import_http_error(
                 tmp
             })
         }
+        "InsufficientEncryptionPolicyException" => {
+            crate::operation::start_import::StartImportError::InsufficientEncryptionPolicyException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InsufficientEncryptionPolicyExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_insufficient_encryption_policy_exception::de_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
         "InvalidEventDataStoreCategoryException" => {
             crate::operation::start_import::StartImportError::InvalidEventDataStoreCategoryException(
                 {

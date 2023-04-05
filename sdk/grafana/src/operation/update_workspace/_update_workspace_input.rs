@@ -6,19 +6,21 @@ pub struct UpdateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
     #[doc(hidden)]
     pub account_access_type: std::option::Option<crate::types::AccountAccessType>,
-    /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
+    /// <p>The name of an IAM role that already exists to use to access resources through Organizations. This can only be used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.</p>
     #[doc(hidden)]
     pub organization_role_name: std::option::Option<std::string::String>,
-    /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
-    /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+    /// <p>Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access datasources and notification channels. If the workspace is in a member Amazon Web Services account of an organization, and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+    /// <p>If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a <code>workspaceRoleArn</code> that the workspace will use for accessing Amazon Web Services resources.</p>
+    /// <p>For more information on the role and permissions needed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p> <note>
+    /// <p>Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.</p>
+    /// <p>You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon Managed Grafana console. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>.</p>
+    /// </note>
     #[doc(hidden)]
     pub permission_type: std::option::Option<crate::types::PermissionType>,
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
     #[doc(hidden)]
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>
-    /// <p>If you don't specify a data source here, you can still add it as a data source later in the workspace console. However, you will then have to manually configure permissions for it.</p>
+    /// <p>This parameter is for internal use only, and should not be used.</p>
     #[doc(hidden)]
     pub workspace_data_sources: std::option::Option<std::vec::Vec<crate::types::DataSourceType>>,
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
@@ -37,7 +39,7 @@ pub struct UpdateWorkspaceInput {
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
     #[doc(hidden)]
     pub workspace_organizational_units: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+    /// <p>Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.</p>
     #[doc(hidden)]
     pub workspace_role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
@@ -47,19 +49,32 @@ pub struct UpdateWorkspaceInput {
     /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
     #[doc(hidden)]
     pub remove_vpc_configuration: std::option::Option<bool>,
+    /// <p>The configuration settings for network access to your workspace.</p>
+    /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
+    /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
+    #[doc(hidden)]
+    pub network_access_control: std::option::Option<crate::types::NetworkAccessConfiguration>,
+    /// <p>Whether to remove the network access configuration from the workspace.</p>
+    /// <p>Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.</p>
+    /// <p>If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
+    #[doc(hidden)]
+    pub remove_network_access_configuration: std::option::Option<bool>,
 }
 impl UpdateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
     pub fn account_access_type(&self) -> std::option::Option<&crate::types::AccountAccessType> {
         self.account_access_type.as_ref()
     }
-    /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
+    /// <p>The name of an IAM role that already exists to use to access resources through Organizations. This can only be used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.</p>
     pub fn organization_role_name(&self) -> std::option::Option<&str> {
         self.organization_role_name.as_deref()
     }
-    /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
-    /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+    /// <p>Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access datasources and notification channels. If the workspace is in a member Amazon Web Services account of an organization, and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+    /// <p>If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a <code>workspaceRoleArn</code> that the workspace will use for accessing Amazon Web Services resources.</p>
+    /// <p>For more information on the role and permissions needed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p> <note>
+    /// <p>Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.</p>
+    /// <p>You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon Managed Grafana console. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>.</p>
+    /// </note>
     pub fn permission_type(&self) -> std::option::Option<&crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
@@ -67,8 +82,7 @@ impl UpdateWorkspaceInput {
     pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>
-    /// <p>If you don't specify a data source here, you can still add it as a data source later in the workspace console. However, you will then have to manually configure permissions for it.</p>
+    /// <p>This parameter is for internal use only, and should not be used.</p>
     pub fn workspace_data_sources(&self) -> std::option::Option<&[crate::types::DataSourceType]> {
         self.workspace_data_sources.as_deref()
     }
@@ -94,7 +108,7 @@ impl UpdateWorkspaceInput {
     pub fn workspace_organizational_units(&self) -> std::option::Option<&[std::string::String]> {
         self.workspace_organizational_units.as_deref()
     }
-    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+    /// <p>Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.</p>
     pub fn workspace_role_arn(&self) -> std::option::Option<&str> {
         self.workspace_role_arn.as_deref()
     }
@@ -106,6 +120,20 @@ impl UpdateWorkspaceInput {
     /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
     pub fn remove_vpc_configuration(&self) -> std::option::Option<bool> {
         self.remove_vpc_configuration
+    }
+    /// <p>The configuration settings for network access to your workspace.</p>
+    /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
+    /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
+    pub fn network_access_control(
+        &self,
+    ) -> std::option::Option<&crate::types::NetworkAccessConfiguration> {
+        self.network_access_control.as_ref()
+    }
+    /// <p>Whether to remove the network access configuration from the workspace.</p>
+    /// <p>Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.</p>
+    /// <p>If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
+    pub fn remove_network_access_configuration(&self) -> std::option::Option<bool> {
+        self.remove_network_access_configuration
     }
 }
 impl std::fmt::Debug for UpdateWorkspaceInput {
@@ -130,6 +158,11 @@ impl std::fmt::Debug for UpdateWorkspaceInput {
         formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("remove_vpc_configuration", &self.remove_vpc_configuration);
+        formatter.field("network_access_control", &self.network_access_control);
+        formatter.field(
+            "remove_network_access_configuration",
+            &self.remove_network_access_configuration,
+        );
         formatter.finish()
     }
 }
@@ -160,6 +193,9 @@ pub struct UpdateWorkspaceInputBuilder {
     pub(crate) workspace_role_arn: std::option::Option<std::string::String>,
     pub(crate) vpc_configuration: std::option::Option<crate::types::VpcConfiguration>,
     pub(crate) remove_vpc_configuration: std::option::Option<bool>,
+    pub(crate) network_access_control:
+        std::option::Option<crate::types::NetworkAccessConfiguration>,
+    pub(crate) remove_network_access_configuration: std::option::Option<bool>,
 }
 impl UpdateWorkspaceInputBuilder {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -175,12 +211,12 @@ impl UpdateWorkspaceInputBuilder {
         self.account_access_type = input;
         self
     }
-    /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
+    /// <p>The name of an IAM role that already exists to use to access resources through Organizations. This can only be used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.</p>
     pub fn organization_role_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.organization_role_name = Some(input.into());
         self
     }
-    /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
+    /// <p>The name of an IAM role that already exists to use to access resources through Organizations. This can only be used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.</p>
     pub fn set_organization_role_name(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -188,16 +224,22 @@ impl UpdateWorkspaceInputBuilder {
         self.organization_role_name = input;
         self
     }
-    /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
-    /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+    /// <p>Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access datasources and notification channels. If the workspace is in a member Amazon Web Services account of an organization, and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+    /// <p>If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a <code>workspaceRoleArn</code> that the workspace will use for accessing Amazon Web Services resources.</p>
+    /// <p>For more information on the role and permissions needed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p> <note>
+    /// <p>Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.</p>
+    /// <p>You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon Managed Grafana console. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>.</p>
+    /// </note>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.permission_type = Some(input);
         self
     }
-    /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
-    /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+    /// <p>Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access datasources and notification channels. If the workspace is in a member Amazon Web Services account of an organization, and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+    /// <p>If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a <code>workspaceRoleArn</code> that the workspace will use for accessing Amazon Web Services resources.</p>
+    /// <p>For more information on the role and permissions needed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p> <note>
+    /// <p>Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.</p>
+    /// <p>You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon Managed Grafana console. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>.</p>
+    /// </note>
     pub fn set_permission_type(
         mut self,
         input: std::option::Option<crate::types::PermissionType>,
@@ -219,16 +261,14 @@ impl UpdateWorkspaceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_workspace_data_sources`](Self::set_workspace_data_sources).
     ///
-    /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>
-    /// <p>If you don't specify a data source here, you can still add it as a data source later in the workspace console. However, you will then have to manually configure permissions for it.</p>
+    /// <p>This parameter is for internal use only, and should not be used.</p>
     pub fn workspace_data_sources(mut self, input: crate::types::DataSourceType) -> Self {
         let mut v = self.workspace_data_sources.unwrap_or_default();
         v.push(input);
         self.workspace_data_sources = Some(v);
         self
     }
-    /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>
-    /// <p>If you don't specify a data source here, you can still add it as a data source later in the workspace console. However, you will then have to manually configure permissions for it.</p>
+    /// <p>This parameter is for internal use only, and should not be used.</p>
     pub fn set_workspace_data_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::DataSourceType>>,
@@ -310,12 +350,12 @@ impl UpdateWorkspaceInputBuilder {
         self.workspace_organizational_units = input;
         self
     }
-    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+    /// <p>Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.</p>
     pub fn workspace_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.workspace_role_arn = Some(input.into());
         self
     }
-    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+    /// <p>Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.</p>
     pub fn set_workspace_role_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -348,6 +388,43 @@ impl UpdateWorkspaceInputBuilder {
         self.remove_vpc_configuration = input;
         self
     }
+    /// <p>The configuration settings for network access to your workspace.</p>
+    /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
+    /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
+    pub fn network_access_control(
+        mut self,
+        input: crate::types::NetworkAccessConfiguration,
+    ) -> Self {
+        self.network_access_control = Some(input);
+        self
+    }
+    /// <p>The configuration settings for network access to your workspace.</p>
+    /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
+    /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
+    pub fn set_network_access_control(
+        mut self,
+        input: std::option::Option<crate::types::NetworkAccessConfiguration>,
+    ) -> Self {
+        self.network_access_control = input;
+        self
+    }
+    /// <p>Whether to remove the network access configuration from the workspace.</p>
+    /// <p>Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.</p>
+    /// <p>If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
+    pub fn remove_network_access_configuration(mut self, input: bool) -> Self {
+        self.remove_network_access_configuration = Some(input);
+        self
+    }
+    /// <p>Whether to remove the network access configuration from the workspace.</p>
+    /// <p>Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.</p>
+    /// <p>If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
+    pub fn set_remove_network_access_configuration(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.remove_network_access_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
     pub fn build(
         self,
@@ -369,6 +446,8 @@ impl UpdateWorkspaceInputBuilder {
             workspace_role_arn: self.workspace_role_arn,
             vpc_configuration: self.vpc_configuration,
             remove_vpc_configuration: self.remove_vpc_configuration,
+            network_access_control: self.network_access_control,
+            remove_network_access_configuration: self.remove_network_access_configuration,
         })
     }
 }
@@ -394,6 +473,11 @@ impl std::fmt::Debug for UpdateWorkspaceInputBuilder {
         formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("remove_vpc_configuration", &self.remove_vpc_configuration);
+        formatter.field("network_access_control", &self.network_access_control);
+        formatter.field(
+            "remove_network_access_configuration",
+            &self.remove_network_access_configuration,
+        );
         formatter.finish()
     }
 }

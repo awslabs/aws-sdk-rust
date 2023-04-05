@@ -6,7 +6,7 @@ pub use crate::operation::put_rum_metrics_destination::_put_rum_metrics_destinat
 /// Fluent builder constructing a request to `PutRumMetricsDestination`.
 ///
 /// <p>Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics to CloudWatch or to a CloudWatch Evidently experiment.</p>
-/// <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.</p>
+/// <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricDefinitions.html">BatchCreateRumMetricDefinitions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRumMetricsDestinationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

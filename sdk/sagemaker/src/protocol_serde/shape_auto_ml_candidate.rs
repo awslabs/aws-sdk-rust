@@ -111,6 +111,11 @@ where
                                     crate::protocol_serde::shape_candidate_properties::de_candidate_properties(tokens)?
                                 );
                             }
+                            "InferenceContainerDefinitions" => {
+                                builder = builder.set_inference_container_definitions(
+                                    crate::protocol_serde::shape_auto_ml_inference_container_definitions::de_auto_ml_inference_container_definitions(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

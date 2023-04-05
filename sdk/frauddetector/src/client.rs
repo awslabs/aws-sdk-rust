@@ -226,6 +226,8 @@ mod create_batch_prediction_job;
 
 mod create_detector_version;
 
+mod create_list;
+
 mod create_model;
 
 mod create_model_version;
@@ -282,6 +284,8 @@ mod delete_external_model;
 
 mod delete_label;
 
+mod delete_list;
+
 mod delete_model;
 
 mod delete_model_version;
@@ -321,6 +325,10 @@ mod get_external_models;
 mod get_kms_encryption_key;
 
 mod get_labels;
+
+mod get_list_elements;
+
+mod get_lists_metadata;
 
 mod get_model_version;
 
@@ -363,6 +371,8 @@ mod update_detector_version_metadata;
 mod update_detector_version_status;
 
 mod update_event_label;
+
+mod update_list;
 
 mod update_model;
 

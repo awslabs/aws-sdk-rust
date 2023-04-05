@@ -163,6 +163,26 @@ pub fn de_network_insights_path(
                 builder = builder.set_tags(var_12);
             }
             ,
+            s if s.matches("filterAtSource") /* FilterAtSource com.amazonaws.ec2#NetworkInsightsPath$FilterAtSource */ =>  {
+                let var_13 =
+                    Some(
+                        crate::protocol_serde::shape_path_filter::de_path_filter(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_filter_at_source(var_13);
+            }
+            ,
+            s if s.matches("filterAtDestination") /* FilterAtDestination com.amazonaws.ec2#NetworkInsightsPath$FilterAtDestination */ =>  {
+                let var_14 =
+                    Some(
+                        crate::protocol_serde::shape_path_filter::de_path_filter(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_filter_at_destination(var_14);
+            }
+            ,
             _ => {}
         }
     }

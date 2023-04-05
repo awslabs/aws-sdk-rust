@@ -81,12 +81,14 @@ impl CreateRoleFluentBuilder {
     }
     /// <p>The name of the role to create.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.role_name(input.into());
         self
     }
     /// <p>The name of the role to create.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
@@ -142,12 +144,16 @@ impl CreateRoleFluentBuilder {
         self.inner = self.inner.set_max_session_duration(input);
         self
     }
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the role.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.permissions_boundary(input.into());
         self
     }
-    /// <p>The ARN of the policy that is used to set the permissions boundary for the role.</p>
+    /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
+    /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub fn set_permissions_boundary(
         mut self,
         input: std::option::Option<std::string::String>,

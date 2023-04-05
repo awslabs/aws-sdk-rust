@@ -11,7 +11,7 @@ pub struct GetDiscoveredResourceCountsInput {
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ impl GetDiscoveredResourceCountsInput {
         self.resource_types.as_deref()
     }
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -104,7 +104,7 @@ impl GetDiscoveredResourceCountsInputBuilder {
         Ok(
             crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsInput {
                 resource_types: self.resource_types,
-                limit: self.limit.unwrap_or_default(),
+                limit: self.limit,
                 next_token: self.next_token,
             },
         )

@@ -97,7 +97,7 @@ impl ListTimelineEventsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
     /// <li> <p> <code>eventTime</code> </p> </li>
     /// <li> <p> <code>eventType</code> </p> </li>
@@ -112,7 +112,7 @@ impl ListTimelineEventsFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
     /// <li> <p> <code>eventTime</code> </p> </li>
     /// <li> <p> <code>eventType</code> </p> </li>
@@ -130,12 +130,12 @@ impl ListTimelineEventsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Sort by the specified key value pair.</p>
+    /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn sort_by(mut self, input: crate::types::TimelineEventSort) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p>Sort by the specified key value pair.</p>
+    /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn set_sort_by(
         mut self,
         input: std::option::Option<crate::types::TimelineEventSort>,

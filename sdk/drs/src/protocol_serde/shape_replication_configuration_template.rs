@@ -146,6 +146,13 @@ where
                                     crate::protocol_serde::shape_pit_policy::de_pit_policy(tokens)?,
                                 );
                             }
+                            "autoReplicateNewDisks" => {
+                                builder = builder.set_auto_replicate_new_disks(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -5,14 +5,14 @@
 pub struct ListNetworkAnalyzerConfigurationsInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNetworkAnalyzerConfigurationsInput {
     /// <p>The maximum number of results to return in this operation.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -60,7 +60,6 @@ impl ListNetworkAnalyzerConfigurationsInputBuilder {
         Ok(
             crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput {
                 max_results: self.max_results
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

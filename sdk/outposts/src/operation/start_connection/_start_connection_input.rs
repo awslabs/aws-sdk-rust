@@ -14,7 +14,7 @@ pub struct StartConnectionInput {
     pub client_public_key: std::option::Option<std::string::String>,
     /// <p> The device index of the network interface on the Outpost server. </p>
     #[doc(hidden)]
-    pub network_interface_device_index: i32,
+    pub network_interface_device_index: std::option::Option<i32>,
 }
 impl StartConnectionInput {
     /// <p> The serial number of the dongle. </p>
@@ -30,7 +30,7 @@ impl StartConnectionInput {
         self.client_public_key.as_deref()
     }
     /// <p> The device index of the network interface on the Outpost server. </p>
-    pub fn network_interface_device_index(&self) -> i32 {
+    pub fn network_interface_device_index(&self) -> std::option::Option<i32> {
         self.network_interface_device_index
     }
 }
@@ -108,7 +108,7 @@ impl StartConnectionInputBuilder {
             device_serial_number: self.device_serial_number,
             asset_id: self.asset_id,
             client_public_key: self.client_public_key,
-            network_interface_device_index: self.network_interface_device_index.unwrap_or_default(),
+            network_interface_device_index: self.network_interface_device_index,
         })
     }
 }

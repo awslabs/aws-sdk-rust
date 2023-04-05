@@ -6,14 +6,14 @@ pub fn ser_get_work_unit_results_input(
     if let Some(var_1) = &input.query_id {
         object.key("QueryId").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.work_unit_id {
         object.key("WorkUnitId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.work_unit_id).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.work_unit_token {
-        object.key("WorkUnitToken").string(var_2.as_str());
+    if let Some(var_3) = &input.work_unit_token {
+        object.key("WorkUnitToken").string(var_3.as_str());
     }
     Ok(())
 }

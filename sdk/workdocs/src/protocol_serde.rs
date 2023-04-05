@@ -86,6 +86,8 @@ pub(crate) mod shape_remove_resource_permission;
 
 pub(crate) mod shape_restore_document_versions;
 
+pub(crate) mod shape_search_resources;
+
 pub(crate) mod shape_update_document;
 
 pub(crate) mod shape_update_document_version;
@@ -154,6 +156,8 @@ pub(crate) mod shape_requested_entity_too_large_exception;
 
 pub(crate) mod shape_resource_already_checked_out_exception;
 
+pub(crate) mod shape_search_resources_input;
+
 pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_storage_limit_exceeded_exception;
@@ -192,6 +196,8 @@ pub(crate) mod shape_document_version_metadata_list;
 
 pub(crate) mod shape_entity_id_list;
 
+pub(crate) mod shape_filters;
+
 pub(crate) mod shape_folder_metadata;
 
 pub(crate) mod shape_folder_metadata_list;
@@ -205,6 +211,10 @@ pub(crate) mod shape_organization_user_list;
 pub(crate) mod shape_principal_list;
 
 pub(crate) mod shape_resource_path;
+
+pub(crate) mod shape_response_items_list;
+
+pub(crate) mod shape_search_sort_result;
 
 pub(crate) mod shape_share_principal;
 
@@ -224,15 +234,23 @@ pub(crate) mod shape_user_activities;
 
 pub(crate) mod shape_activity;
 
+pub(crate) mod shape_date_range_type;
+
 pub(crate) mod shape_document_source_url_map;
 
 pub(crate) mod shape_document_thumbnail_url_map;
 
 pub(crate) mod shape_group_metadata;
 
+pub(crate) mod shape_long_range_type;
+
 pub(crate) mod shape_principal;
 
 pub(crate) mod shape_resource_path_component_list;
+
+pub(crate) mod shape_response_item;
+
+pub(crate) mod shape_search_principal_type;
 
 pub(crate) mod shape_share_result;
 

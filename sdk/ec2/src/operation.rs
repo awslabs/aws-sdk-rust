@@ -43,6 +43,9 @@ pub mod assign_ipv6_addresses;
 /// Types for the `AssignPrivateIpAddresses` operation.
 pub mod assign_private_ip_addresses;
 
+/// Types for the `AssignPrivateNatGatewayAddress` operation.
+pub mod assign_private_nat_gateway_address;
+
 /// Types for the `AssociateAddress` operation.
 pub mod associate_address;
 
@@ -60,6 +63,12 @@ pub mod associate_iam_instance_profile;
 
 /// Types for the `AssociateInstanceEventWindow` operation.
 pub mod associate_instance_event_window;
+
+/// Types for the `AssociateIpamResourceDiscovery` operation.
+pub mod associate_ipam_resource_discovery;
+
+/// Types for the `AssociateNatGatewayAddress` operation.
+pub mod associate_nat_gateway_address;
 
 /// Types for the `AssociateRouteTable` operation.
 pub mod associate_route_table;
@@ -216,6 +225,9 @@ pub mod create_ipam;
 
 /// Types for the `CreateIpamPool` operation.
 pub mod create_ipam_pool;
+
+/// Types for the `CreateIpamResourceDiscovery` operation.
+pub mod create_ipam_resource_discovery;
 
 /// Types for the `CreateIpamScope` operation.
 pub mod create_ipam_scope;
@@ -438,6 +450,9 @@ pub mod delete_ipam;
 
 /// Types for the `DeleteIpamPool` operation.
 pub mod delete_ipam_pool;
+
+/// Types for the `DeleteIpamResourceDiscovery` operation.
+pub mod delete_ipam_resource_discovery;
 
 /// Types for the `DeleteIpamScope` operation.
 pub mod delete_ipam_scope;
@@ -793,6 +808,12 @@ pub mod describe_internet_gateways;
 /// Types for the `DescribeIpamPools` operation.
 pub mod describe_ipam_pools;
 
+/// Types for the `DescribeIpamResourceDiscoveries` operation.
+pub mod describe_ipam_resource_discoveries;
+
+/// Types for the `DescribeIpamResourceDiscoveryAssociations` operation.
+pub mod describe_ipam_resource_discovery_associations;
+
 /// Types for the `DescribeIpamScopes` operation.
 pub mod describe_ipam_scopes;
 
@@ -1126,6 +1147,12 @@ pub mod disassociate_iam_instance_profile;
 /// Types for the `DisassociateInstanceEventWindow` operation.
 pub mod disassociate_instance_event_window;
 
+/// Types for the `DisassociateIpamResourceDiscovery` operation.
+pub mod disassociate_ipam_resource_discovery;
+
+/// Types for the `DisassociateNatGatewayAddress` operation.
+pub mod disassociate_nat_gateway_address;
+
 /// Types for the `DisassociateRouteTable` operation.
 pub mod disassociate_route_table;
 
@@ -1249,6 +1276,12 @@ pub mod get_instance_uefi_data;
 /// Types for the `GetIpamAddressHistory` operation.
 pub mod get_ipam_address_history;
 
+/// Types for the `GetIpamDiscoveredAccounts` operation.
+pub mod get_ipam_discovered_accounts;
+
+/// Types for the `GetIpamDiscoveredResourceCidrs` operation.
+pub mod get_ipam_discovered_resource_cidrs;
+
 /// Types for the `GetIpamPoolAllocations` operation.
 pub mod get_ipam_pool_allocations;
 
@@ -1320,6 +1353,9 @@ pub mod get_vpn_connection_device_sample_configuration;
 
 /// Types for the `GetVpnConnectionDeviceTypes` operation.
 pub mod get_vpn_connection_device_types;
+
+/// Types for the `GetVpnTunnelReplacementStatus` operation.
+pub mod get_vpn_tunnel_replacement_status;
 
 /// Types for the `ImportClientVpnClientCertificateRevocationList` operation.
 pub mod import_client_vpn_client_certificate_revocation_list;
@@ -1416,6 +1452,9 @@ pub mod modify_ipam_pool;
 
 /// Types for the `ModifyIpamResourceCidr` operation.
 pub mod modify_ipam_resource_cidr;
+
+/// Types for the `ModifyIpamResourceDiscovery` operation.
+pub mod modify_ipam_resource_discovery;
 
 /// Types for the `ModifyIpamScope` operation.
 pub mod modify_ipam_scope;
@@ -1618,6 +1657,9 @@ pub mod replace_route_table_association;
 /// Types for the `ReplaceTransitGatewayRoute` operation.
 pub mod replace_transit_gateway_route;
 
+/// Types for the `ReplaceVpnTunnel` operation.
+pub mod replace_vpn_tunnel;
+
 /// Types for the `ReportInstanceStatus` operation.
 pub mod report_instance_status;
 
@@ -1716,6 +1758,9 @@ pub mod unassign_ipv6_addresses;
 
 /// Types for the `UnassignPrivateIpAddresses` operation.
 pub mod unassign_private_ip_addresses;
+
+/// Types for the `UnassignPrivateNatGatewayAddress` operation.
+pub mod unassign_private_nat_gateway_address;
 
 /// Types for the `UnmonitorInstances` operation.
 pub mod unmonitor_instances;

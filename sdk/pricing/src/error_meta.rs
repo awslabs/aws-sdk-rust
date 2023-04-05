@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>General authentication failure. The request wasn't signed correctly.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The pagination token expired. Try again without a pagination token.</p>
     ExpiredNextTokenException(crate::types::error::ExpiredNextTokenException),
     /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
@@ -19,6 +21,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ExpiredNextTokenException(inner) => inner.fmt(f),
             Error::InternalErrorException(inner) => inner.fmt(f),
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
@@ -114,6 +117,48 @@ impl From<crate::operation::get_attribute_values::GetAttributeValuesError> for E
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_price_list_file_url::GetPriceListFileUrlError> for Error {
+    fn from(err: crate::operation::get_price_list_file_url::GetPriceListFileUrlError) -> Self {
+        match err {
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError, R>>
     for Error
 where
@@ -161,10 +206,69 @@ impl From<crate::operation::get_products::GetProductsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_price_lists::ListPriceListsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_price_lists::ListPriceListsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_price_lists::ListPriceListsError> for Error {
+    fn from(err: crate::operation::list_price_lists::ListPriceListsError) -> Self {
+        match err {
+            crate::operation::list_price_lists::ListPriceListsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::ExpiredNextTokenException(
+                inner,
+            ) => Error::ExpiredNextTokenException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::InternalErrorException(
+                inner,
+            ) => Error::InternalErrorException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::InvalidNextTokenException(
+                inner,
+            ) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_price_lists::ListPriceListsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl std::error::Error for Error {}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
             Self::ExpiredNextTokenException(e) => e.request_id(),
             Self::InternalErrorException(e) => e.request_id(),
             Self::InvalidNextTokenException(e) => e.request_id(),

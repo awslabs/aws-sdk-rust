@@ -9,7 +9,7 @@ pub struct PutConfigurationSetSendingOptionsInput {
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     #[doc(hidden)]
-    pub sending_enabled: bool,
+    pub sending_enabled: std::option::Option<bool>,
 }
 impl PutConfigurationSetSendingOptionsInput {
     /// <p>The name of the configuration set to enable or disable email sending for.</p>
@@ -17,7 +17,7 @@ impl PutConfigurationSetSendingOptionsInput {
         self.configuration_set_name.as_deref()
     }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
-    pub fn sending_enabled(&self) -> bool {
+    pub fn sending_enabled(&self) -> std::option::Option<bool> {
         self.sending_enabled
     }
 }
@@ -66,7 +66,6 @@ impl PutConfigurationSetSendingOptionsInputBuilder {
                 configuration_set_name: self.configuration_set_name
                 ,
                 sending_enabled: self.sending_enabled
-                    .unwrap_or_default()
                 ,
             }
         )

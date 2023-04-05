@@ -16,6 +16,8 @@
 ///     ResolverAutodefinedReverseStatus::Disabling => { /* ... */ },
 ///     ResolverAutodefinedReverseStatus::Enabled => { /* ... */ },
 ///     ResolverAutodefinedReverseStatus::Enabling => { /* ... */ },
+///     ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting => { /* ... */ },
+///     ResolverAutodefinedReverseStatus::UseLocalResourceSetting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,6 +59,10 @@ pub enum ResolverAutodefinedReverseStatus {
     Enabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabling,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatingToUseLocalResourceSetting,
+    #[allow(missing_docs)] // documentation missing in model
+    UseLocalResourceSetting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -67,6 +73,12 @@ impl std::convert::From<&str> for ResolverAutodefinedReverseStatus {
             "DISABLING" => ResolverAutodefinedReverseStatus::Disabling,
             "ENABLED" => ResolverAutodefinedReverseStatus::Enabled,
             "ENABLING" => ResolverAutodefinedReverseStatus::Enabling,
+            "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING" => {
+                ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting
+            }
+            "USE_LOCAL_RESOURCE_SETTING" => {
+                ResolverAutodefinedReverseStatus::UseLocalResourceSetting
+            }
             other => ResolverAutodefinedReverseStatus::Unknown(
                 crate::primitives::UnknownVariantValue(other.to_owned()),
             ),
@@ -88,12 +100,25 @@ impl ResolverAutodefinedReverseStatus {
             ResolverAutodefinedReverseStatus::Disabling => "DISABLING",
             ResolverAutodefinedReverseStatus::Enabled => "ENABLED",
             ResolverAutodefinedReverseStatus::Enabling => "ENABLING",
+            ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting => {
+                "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING"
+            }
+            ResolverAutodefinedReverseStatus::UseLocalResourceSetting => {
+                "USE_LOCAL_RESOURCE_SETTING"
+            }
             ResolverAutodefinedReverseStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
+        &[
+            "DISABLED",
+            "DISABLING",
+            "ENABLED",
+            "ENABLING",
+            "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING",
+            "USE_LOCAL_RESOURCE_SETTING",
+        ]
     }
 }
 impl AsRef<str> for ResolverAutodefinedReverseStatus {

@@ -18,6 +18,9 @@ pub struct CreateLocalGatewayRouteInput {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    #[doc(hidden)]
+    pub destination_prefix_list_id: std::option::Option<std::string::String>,
 }
 impl CreateLocalGatewayRouteInput {
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
@@ -40,6 +43,10 @@ impl CreateLocalGatewayRouteInput {
     pub fn network_interface_id(&self) -> std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn destination_prefix_list_id(&self) -> std::option::Option<&str> {
+        self.destination_prefix_list_id.as_deref()
+    }
 }
 impl CreateLocalGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteInput`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput).
@@ -59,6 +66,7 @@ pub struct CreateLocalGatewayRouteInputBuilder {
     pub(crate) local_gateway_virtual_interface_group_id: std::option::Option<std::string::String>,
     pub(crate) dry_run: std::option::Option<bool>,
     pub(crate) network_interface_id: std::option::Option<std::string::String>,
+    pub(crate) destination_prefix_list_id: std::option::Option<std::string::String>,
 }
 impl CreateLocalGatewayRouteInputBuilder {
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
@@ -126,6 +134,19 @@ impl CreateLocalGatewayRouteInputBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.destination_prefix_list_id = Some(input.into());
+        self
+    }
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn set_destination_prefix_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_prefix_list_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteInput`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput).
     pub fn build(
         self,
@@ -141,6 +162,7 @@ impl CreateLocalGatewayRouteInputBuilder {
                     .local_gateway_virtual_interface_group_id,
                 dry_run: self.dry_run,
                 network_interface_id: self.network_interface_id,
+                destination_prefix_list_id: self.destination_prefix_list_id,
             },
         )
     }

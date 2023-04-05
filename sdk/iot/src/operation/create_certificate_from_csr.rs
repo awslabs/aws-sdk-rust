@@ -49,11 +49,13 @@ impl CreateCertificateFromCsrInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.set_as_active {
-                    query.push_kv(
-                        "setAsActive",
-                        aws_smithy_types::primitive::Encoder::from(_input.set_as_active).encode(),
-                    );
+                if let Some(inner_1) = &_input.set_as_active {
+                    if *inner_1 {
+                        query.push_kv(
+                            "setAsActive",
+                            aws_smithy_types::primitive::Encoder::from(*inner_1).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

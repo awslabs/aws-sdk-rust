@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFileSystemOutput {
-    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
+    /// <p>The Amazon Web Services account that created the file system.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The opaque string specified in the request.</p>
@@ -58,7 +58,7 @@ pub struct UpdateFileSystemOutput {
     _request_id: Option<String>,
 }
 impl UpdateFileSystemOutput {
-    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
+    /// <p>The Amazon Web Services account that created the file system.</p>
     pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
@@ -164,12 +164,12 @@ pub struct UpdateFileSystemOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFileSystemOutputBuilder {
-    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
+    /// <p>The Amazon Web Services account that created the file system.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.owner_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
+    /// <p>The Amazon Web Services account that created the file system.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.owner_id = input;
         self

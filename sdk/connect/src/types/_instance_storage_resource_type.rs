@@ -13,8 +13,10 @@
 /// # let instancestorageresourcetype = unimplemented!();
 /// match instancestorageresourcetype {
 ///     InstanceStorageResourceType::AgentEvents => { /* ... */ },
+///     InstanceStorageResourceType::Attachments => { /* ... */ },
 ///     InstanceStorageResourceType::CallRecordings => { /* ... */ },
 ///     InstanceStorageResourceType::ChatTranscripts => { /* ... */ },
+///     InstanceStorageResourceType::ContactEvaluations => { /* ... */ },
 ///     InstanceStorageResourceType::ContactTraceRecords => { /* ... */ },
 ///     InstanceStorageResourceType::MediaStreams => { /* ... */ },
 ///     InstanceStorageResourceType::RealTimeContactAnalysisSegments => { /* ... */ },
@@ -55,9 +57,13 @@ pub enum InstanceStorageResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AgentEvents,
     #[allow(missing_docs)] // documentation missing in model
+    Attachments,
+    #[allow(missing_docs)] // documentation missing in model
     CallRecordings,
     #[allow(missing_docs)] // documentation missing in model
     ChatTranscripts,
+    #[allow(missing_docs)] // documentation missing in model
+    ContactEvaluations,
     #[allow(missing_docs)] // documentation missing in model
     ContactTraceRecords,
     #[allow(missing_docs)] // documentation missing in model
@@ -73,8 +79,10 @@ impl std::convert::From<&str> for InstanceStorageResourceType {
     fn from(s: &str) -> Self {
         match s {
             "AGENT_EVENTS" => InstanceStorageResourceType::AgentEvents,
+            "ATTACHMENTS" => InstanceStorageResourceType::Attachments,
             "CALL_RECORDINGS" => InstanceStorageResourceType::CallRecordings,
             "CHAT_TRANSCRIPTS" => InstanceStorageResourceType::ChatTranscripts,
+            "CONTACT_EVALUATIONS" => InstanceStorageResourceType::ContactEvaluations,
             "CONTACT_TRACE_RECORDS" => InstanceStorageResourceType::ContactTraceRecords,
             "MEDIA_STREAMS" => InstanceStorageResourceType::MediaStreams,
             "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS" => {
@@ -99,8 +107,10 @@ impl InstanceStorageResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             InstanceStorageResourceType::AgentEvents => "AGENT_EVENTS",
+            InstanceStorageResourceType::Attachments => "ATTACHMENTS",
             InstanceStorageResourceType::CallRecordings => "CALL_RECORDINGS",
             InstanceStorageResourceType::ChatTranscripts => "CHAT_TRANSCRIPTS",
+            InstanceStorageResourceType::ContactEvaluations => "CONTACT_EVALUATIONS",
             InstanceStorageResourceType::ContactTraceRecords => "CONTACT_TRACE_RECORDS",
             InstanceStorageResourceType::MediaStreams => "MEDIA_STREAMS",
             InstanceStorageResourceType::RealTimeContactAnalysisSegments => {
@@ -114,8 +124,10 @@ impl InstanceStorageResourceType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AGENT_EVENTS",
+            "ATTACHMENTS",
             "CALL_RECORDINGS",
             "CHAT_TRANSCRIPTS",
+            "CONTACT_EVALUATIONS",
             "CONTACT_TRACE_RECORDS",
             "MEDIA_STREAMS",
             "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",

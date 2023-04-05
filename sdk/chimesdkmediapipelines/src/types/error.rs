@@ -11,11 +11,15 @@ pub use crate::types::error::_not_found_exception::NotFoundException;
 
 pub use crate::types::error::_forbidden_exception::ForbiddenException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_bad_request_exception::BadRequestException;
 
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededException;
 
 mod _bad_request_exception;
+
+mod _conflict_exception;
 
 mod _forbidden_exception;
 

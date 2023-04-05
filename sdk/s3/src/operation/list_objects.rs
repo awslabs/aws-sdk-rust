@@ -72,15 +72,17 @@ impl ListObjectsInput {
                         query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.max_keys != 0 {
-                    query.push_kv(
-                        "max-keys",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
-                    );
+                if let Some(inner_4) = &_input.max_keys {
+                    if *inner_4 != 0 {
+                        query.push_kv(
+                            "max-keys",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_4) = &_input.prefix {
+                if let Some(inner_5) = &_input.prefix {
                     {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
                 Ok(())

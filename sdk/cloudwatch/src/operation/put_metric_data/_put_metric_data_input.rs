@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetricDataInput {
-    /// <p>The namespace for the metric data.</p>
+    /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct PutMetricDataInput {
     pub metric_data: std::option::Option<std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl PutMetricDataInput {
-    /// <p>The namespace for the metric data.</p>
+    /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -37,13 +37,13 @@ pub struct PutMetricDataInputBuilder {
     pub(crate) metric_data: std::option::Option<std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl PutMetricDataInputBuilder {
-    /// <p>The namespace for the metric data.</p>
+    /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
         self
     }
-    /// <p>The namespace for the metric data.</p>
+    /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.namespace = input;

@@ -191,6 +191,11 @@ pub(crate) fn de_get_device_profile(
                             .transpose()?,
                         );
                     }
+                    "Sidewalk" => {
+                        builder = builder.set_sidewalk(
+                            crate::protocol_serde::shape_sidewalk_get_device_profile::de_sidewalk_get_device_profile(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

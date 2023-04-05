@@ -7,7 +7,7 @@ pub struct ConfigRecommendation {
     /// <p>The cost for the application.</p>
     #[doc(hidden)]
     pub cost: std::option::Option<crate::types::Cost>,
-    /// <p>The application component name.</p>
+    /// <p>The name of the Application Component.</p>
     #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
@@ -47,7 +47,7 @@ impl ConfigRecommendation {
     pub fn cost(&self) -> std::option::Option<&crate::types::Cost> {
         self.cost.as_ref()
     }
-    /// <p>The application component name.</p>
+    /// <p>The name of the Application Component.</p>
     pub fn app_component_name(&self) -> std::option::Option<&str> {
         self.app_component_name.as_deref()
     }
@@ -141,12 +141,12 @@ impl ConfigRecommendationBuilder {
         self.cost = input;
         self
     }
-    /// <p>The application component name.</p>
+    /// <p>The name of the Application Component.</p>
     pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.app_component_name = Some(input.into());
         self
     }
-    /// <p>The application component name.</p>
+    /// <p>The name of the Application Component.</p>
     pub fn set_app_component_name(
         mut self,
         input: std::option::Option<std::string::String>,

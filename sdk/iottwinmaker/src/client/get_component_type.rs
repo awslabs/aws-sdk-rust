@@ -20,7 +20,7 @@ impl super::Client {
     ///   - [`is_schema_initialized(Option<bool>)`](crate::operation::get_component_type::GetComponentTypeOutput::is_schema_initialized): <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
     ///   - [`status(Option<Status>)`](crate::operation::get_component_type::GetComponentTypeOutput::status): <p>The current status of the component type.</p>
     ///   - [`property_groups(Option<HashMap<String, PropertyGroupResponse>>)`](crate::operation::get_component_type::GetComponentTypeOutput::property_groups): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
-    ///   - [`sync_source(Option<String>)`](crate::operation::get_component_type::GetComponentTypeOutput::sync_source): <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    ///   - [`sync_source(Option<String>)`](crate::operation::get_component_type::GetComponentTypeOutput::sync_source): <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
     ///   - [`component_type_name(Option<String>)`](crate::operation::get_component_type::GetComponentTypeOutput::component_type_name): <p>The component type name.</p>
     /// - On failure, responds with [`SdkError<GetComponentTypeError>`](crate::operation::get_component_type::GetComponentTypeError)
     pub fn get_component_type(

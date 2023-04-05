@@ -5,9 +5,9 @@ pub use crate::operation::delete_fleets::_delete_fleets_input::DeleteFleetsInput
 
 /// Fluent builder constructing a request to `DeleteFleets`.
 ///
-/// <p>Deletes the specified EC2 Fleet.</p>
+/// <p>Deletes the specified EC2 Fleets.</p>
 /// <p>After you delete an EC2 Fleet, it launches no new instances.</p>
-/// <p>You must specify whether a deleted EC2 Fleet should also terminate its instances. If you choose to terminate the instances, the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state, and the instances continue to run until they are interrupted or you terminate them manually.</p>
+/// <p>You must also specify whether a deleted EC2 Fleet should terminate its instances. If you choose to terminate the instances, the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state, and the instances continue to run until they are interrupted or you terminate them manually.</p>
 /// <p>For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet is deleted. A deleted <code>instant</code> fleet with running instances is not supported.</p>
 /// <p class="title"> <b>Restrictions</b> </p>
 /// <ul>
@@ -101,15 +101,15 @@ impl DeleteFleetsFluentBuilder {
         self.inner = self.inner.set_fleet_ids(input);
         self
     }
-    /// <p>Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
-    /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>NoTerminateInstances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
+    /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
     /// <p>For <code>instant</code> fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted <code>instant</code> fleet with running instances is not supported.</p>
     pub fn terminate_instances(mut self, input: bool) -> Self {
         self.inner = self.inner.terminate_instances(input);
         self
     }
-    /// <p>Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
-    /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>NoTerminateInstances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
+    /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
     /// <p>For <code>instant</code> fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted <code>instant</code> fleet with running instances is not supported.</p>
     pub fn set_terminate_instances(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_terminate_instances(input);

@@ -36,6 +36,9 @@ pub struct CreateFormData {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    #[doc(hidden)]
+    pub label_decorator: std::option::Option<crate::types::LabelDecorator>,
 }
 impl CreateFormData {
     /// <p>The name of the form.</p>
@@ -85,6 +88,10 @@ impl CreateFormData {
     {
         self.tags.as_ref()
     }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn label_decorator(&self) -> std::option::Option<&crate::types::LabelDecorator> {
+        self.label_decorator.as_ref()
+    }
 }
 impl CreateFormData {
     /// Creates a new builder-style object to manufacture [`CreateFormData`](crate::types::CreateFormData).
@@ -111,6 +118,7 @@ pub struct CreateFormDataBuilder {
     pub(crate) cta: std::option::Option<crate::types::FormCta>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) label_decorator: std::option::Option<crate::types::LabelDecorator>,
 }
 impl CreateFormDataBuilder {
     /// <p>The name of the form.</p>
@@ -254,6 +262,19 @@ impl CreateFormDataBuilder {
         self.tags = input;
         self
     }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn label_decorator(mut self, input: crate::types::LabelDecorator) -> Self {
+        self.label_decorator = Some(input);
+        self
+    }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn set_label_decorator(
+        mut self,
+        input: std::option::Option<crate::types::LabelDecorator>,
+    ) -> Self {
+        self.label_decorator = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateFormData`](crate::types::CreateFormData).
     pub fn build(self) -> crate::types::CreateFormData {
         crate::types::CreateFormData {
@@ -266,6 +287,7 @@ impl CreateFormDataBuilder {
             schema_version: self.schema_version,
             cta: self.cta,
             tags: self.tags,
+            label_decorator: self.label_decorator,
         }
     }
 }

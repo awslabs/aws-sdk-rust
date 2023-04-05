@@ -9,8 +9,8 @@ pub fn ser_get_connection_input(
     if let Some(var_2) = &input.name {
         object.key("Name").string(var_2.as_str());
     }
-    if input.hide_password {
-        object.key("HidePassword").boolean(input.hide_password);
+    if let Some(var_3) = &input.hide_password {
+        object.key("HidePassword").boolean(*var_3);
     }
     Ok(())
 }

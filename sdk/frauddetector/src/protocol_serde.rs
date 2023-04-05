@@ -22,6 +22,8 @@ pub(crate) mod shape_create_batch_prediction_job;
 
 pub(crate) mod shape_create_detector_version;
 
+pub(crate) mod shape_create_list;
+
 pub(crate) mod shape_create_model;
 
 pub(crate) mod shape_create_model_version;
@@ -49,6 +51,8 @@ pub(crate) mod shape_delete_events_by_event_type;
 pub(crate) mod shape_delete_external_model;
 
 pub(crate) mod shape_delete_label;
+
+pub(crate) mod shape_delete_list;
 
 pub(crate) mod shape_delete_model;
 
@@ -89,6 +93,10 @@ pub(crate) mod shape_get_external_models;
 pub(crate) mod shape_get_kms_encryption_key;
 
 pub(crate) mod shape_get_labels;
+
+pub(crate) mod shape_get_list_elements;
+
+pub(crate) mod shape_get_lists_metadata;
 
 pub(crate) mod shape_get_model_version;
 
@@ -132,6 +140,8 @@ pub(crate) mod shape_update_detector_version_status;
 
 pub(crate) mod shape_update_event_label;
 
+pub(crate) mod shape_update_list;
+
 pub(crate) mod shape_update_model;
 
 pub(crate) mod shape_update_model_version;
@@ -170,6 +180,8 @@ pub(crate) mod shape_create_batch_prediction_job_input;
 
 pub(crate) mod shape_create_detector_version_input;
 
+pub(crate) mod shape_create_list_input;
+
 pub(crate) mod shape_create_model_input;
 
 pub(crate) mod shape_create_model_version_input;
@@ -197,6 +209,8 @@ pub(crate) mod shape_delete_events_by_event_type_input;
 pub(crate) mod shape_delete_external_model_input;
 
 pub(crate) mod shape_delete_label_input;
+
+pub(crate) mod shape_delete_list_input;
 
 pub(crate) mod shape_delete_model_input;
 
@@ -235,6 +249,10 @@ pub(crate) mod shape_get_event_types_input;
 pub(crate) mod shape_get_external_models_input;
 
 pub(crate) mod shape_get_labels_input;
+
+pub(crate) mod shape_get_list_elements_input;
+
+pub(crate) mod shape_get_lists_metadata_input;
 
 pub(crate) mod shape_get_model_version_input;
 
@@ -286,6 +304,8 @@ pub(crate) mod shape_update_detector_version_status_input;
 
 pub(crate) mod shape_update_event_label_input;
 
+pub(crate) mod shape_update_list_input;
+
 pub(crate) mod shape_update_model_input;
 
 pub(crate) mod shape_update_model_version_input;
@@ -300,6 +320,8 @@ pub(crate) mod shape_update_variable_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_allow_deny_lists;
+
 pub(crate) mod shape_batch_create_variable_error_list;
 
 pub(crate) mod shape_batch_get_variable_error_list;
@@ -311,6 +333,8 @@ pub(crate) mod shape_batch_prediction_list;
 pub(crate) mod shape_detector_list;
 
 pub(crate) mod shape_detector_version_summary_list;
+
+pub(crate) mod shape_elements_list;
 
 pub(crate) mod shape_entity;
 
@@ -383,6 +407,8 @@ pub(crate) mod shape_training_data_schema;
 pub(crate) mod shape_variable_entry;
 
 pub(crate) mod shape_variable_list;
+
+pub(crate) mod shape_allow_deny_list;
 
 pub(crate) mod shape_batch_create_variable_error;
 
@@ -525,5 +551,7 @@ pub(crate) mod shape_ati_metric_data_point;
 pub(crate) mod shape_ofi_metric_data_point;
 
 pub(crate) mod shape_tfi_metric_data_point;
+
+pub(crate) mod shape_uncertainty_range;
 
 pub(crate) mod shape_variable_impact_explanation;

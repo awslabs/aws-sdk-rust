@@ -163,11 +163,11 @@ pub type StopVectorEnrichmentJobErrorKind = StopVectorEnrichmentJobError;
 pub enum StopVectorEnrichmentJobError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p></p>
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p></p>
+    /// <p>The request references a resource which does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

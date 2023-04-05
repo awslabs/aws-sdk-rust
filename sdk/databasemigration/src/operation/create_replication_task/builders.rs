@@ -211,14 +211,14 @@ impl CreateReplicationTaskFluentBuilder {
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
     pub fn cdc_stop_position(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cdc_stop_position(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
     pub fn set_cdc_stop_position(
         mut self,
         input: std::option::Option<std::string::String>,

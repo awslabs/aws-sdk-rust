@@ -27,79 +27,77 @@ pub fn ser_update_stack_input(
         }
         array_5.finish();
     }
-    if input.delete_storage_connectors {
-        object
-            .key("DeleteStorageConnectors")
-            .boolean(input.delete_storage_connectors);
+    if let Some(var_8) = &input.delete_storage_connectors {
+        object.key("DeleteStorageConnectors").boolean(*var_8);
     }
-    if let Some(var_8) = &input.redirect_url {
-        object.key("RedirectURL").string(var_8.as_str());
+    if let Some(var_9) = &input.redirect_url {
+        object.key("RedirectURL").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.feedback_url {
-        object.key("FeedbackURL").string(var_9.as_str());
+    if let Some(var_10) = &input.feedback_url {
+        object.key("FeedbackURL").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.attributes_to_delete {
-        let mut array_11 = object.key("AttributesToDelete").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.attributes_to_delete {
+        let mut array_12 = object.key("AttributesToDelete").start_array();
+        for item_13 in var_11 {
             {
-                array_11.value().string(item_12.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.user_settings {
-        let mut array_14 = object.key("UserSettings").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.user_settings {
+        let mut array_15 = object.key("UserSettings").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
+                let mut object_17 = array_15.value().start_object();
                 crate::protocol_serde::shape_user_setting::ser_user_setting(
-                    &mut object_16,
-                    item_15,
+                    &mut object_17,
+                    item_16,
                 )?;
-                object_16.finish();
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
-    if let Some(var_17) = &input.application_settings {
+    if let Some(var_18) = &input.application_settings {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("ApplicationSettings").start_object();
+        let mut object_19 = object.key("ApplicationSettings").start_object();
         crate::protocol_serde::shape_application_settings::ser_application_settings(
-            &mut object_18,
-            var_17,
+            &mut object_19,
+            var_18,
         )?;
-        object_18.finish();
+        object_19.finish();
     }
-    if let Some(var_19) = &input.access_endpoints {
-        let mut array_20 = object.key("AccessEndpoints").start_array();
-        for item_21 in var_19 {
+    if let Some(var_20) = &input.access_endpoints {
+        let mut array_21 = object.key("AccessEndpoints").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
+                let mut object_23 = array_21.value().start_object();
                 crate::protocol_serde::shape_access_endpoint::ser_access_endpoint(
-                    &mut object_22,
-                    item_21,
+                    &mut object_23,
+                    item_22,
                 )?;
-                object_22.finish();
+                object_23.finish();
             }
         }
-        array_20.finish();
+        array_21.finish();
     }
-    if let Some(var_23) = &input.embed_host_domains {
-        let mut array_24 = object.key("EmbedHostDomains").start_array();
-        for item_25 in var_23 {
+    if let Some(var_24) = &input.embed_host_domains {
+        let mut array_25 = object.key("EmbedHostDomains").start_array();
+        for item_26 in var_24 {
             {
-                array_24.value().string(item_25.as_str());
+                array_25.value().string(item_26.as_str());
             }
         }
-        array_24.finish();
+        array_25.finish();
     }
-    if let Some(var_26) = &input.streaming_experience_settings {
+    if let Some(var_27) = &input.streaming_experience_settings {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("StreamingExperienceSettings").start_object();
-        crate::protocol_serde::shape_streaming_experience_settings::ser_streaming_experience_settings(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_28 = object.key("StreamingExperienceSettings").start_object();
+        crate::protocol_serde::shape_streaming_experience_settings::ser_streaming_experience_settings(&mut object_28, var_27)?;
+        object_28.finish();
     }
     Ok(())
 }

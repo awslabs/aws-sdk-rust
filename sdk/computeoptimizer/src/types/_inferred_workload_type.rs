@@ -15,6 +15,7 @@
 ///     InferredWorkloadType::AmazonEmr => { /* ... */ },
 ///     InferredWorkloadType::ApacheCassandra => { /* ... */ },
 ///     InferredWorkloadType::ApacheHadoop => { /* ... */ },
+///     InferredWorkloadType::Kafka => { /* ... */ },
 ///     InferredWorkloadType::Memcached => { /* ... */ },
 ///     InferredWorkloadType::Nginx => { /* ... */ },
 ///     InferredWorkloadType::PostgreSql => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum InferredWorkloadType {
     #[allow(missing_docs)] // documentation missing in model
     ApacheHadoop,
     #[allow(missing_docs)] // documentation missing in model
+    Kafka,
+    #[allow(missing_docs)] // documentation missing in model
     Memcached,
     #[allow(missing_docs)] // documentation missing in model
     Nginx,
@@ -75,6 +78,7 @@ impl std::convert::From<&str> for InferredWorkloadType {
             "AmazonEmr" => InferredWorkloadType::AmazonEmr,
             "ApacheCassandra" => InferredWorkloadType::ApacheCassandra,
             "ApacheHadoop" => InferredWorkloadType::ApacheHadoop,
+            "Kafka" => InferredWorkloadType::Kafka,
             "Memcached" => InferredWorkloadType::Memcached,
             "Nginx" => InferredWorkloadType::Nginx,
             "PostgreSql" => InferredWorkloadType::PostgreSql,
@@ -99,6 +103,7 @@ impl InferredWorkloadType {
             InferredWorkloadType::AmazonEmr => "AmazonEmr",
             InferredWorkloadType::ApacheCassandra => "ApacheCassandra",
             InferredWorkloadType::ApacheHadoop => "ApacheHadoop",
+            InferredWorkloadType::Kafka => "Kafka",
             InferredWorkloadType::Memcached => "Memcached",
             InferredWorkloadType::Nginx => "Nginx",
             InferredWorkloadType::PostgreSql => "PostgreSql",
@@ -112,6 +117,7 @@ impl InferredWorkloadType {
             "AmazonEmr",
             "ApacheCassandra",
             "ApacheHadoop",
+            "Kafka",
             "Memcached",
             "Nginx",
             "PostgreSql",

@@ -31,6 +31,7 @@
 ///     ExportableInstanceField::InferredWorkloadTypes => { /* ... */ },
 ///     ExportableInstanceField::InstanceArn => { /* ... */ },
 ///     ExportableInstanceField::InstanceName => { /* ... */ },
+///     ExportableInstanceField::InstanceState => { /* ... */ },
 ///     ExportableInstanceField::LastRefreshTimestamp => { /* ... */ },
 ///     ExportableInstanceField::LookbackPeriodInDays => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
@@ -137,6 +138,8 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     InstanceName,
     #[allow(missing_docs)] // documentation missing in model
+    InstanceState,
+    #[allow(missing_docs)] // documentation missing in model
     LastRefreshTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     LookbackPeriodInDays,
@@ -229,6 +232,7 @@ impl std::convert::From<&str> for ExportableInstanceField {
 "InferredWorkloadTypes" => ExportableInstanceField::InferredWorkloadTypes,
 "InstanceArn" => ExportableInstanceField::InstanceArn,
 "InstanceName" => ExportableInstanceField::InstanceName,
+"InstanceState" => ExportableInstanceField::InstanceState,
 "LastRefreshTimestamp" => ExportableInstanceField::LastRefreshTimestamp,
 "LookbackPeriodInDays" => ExportableInstanceField::LookbackPeriodInDays,
 "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
@@ -297,6 +301,7 @@ impl ExportableInstanceField {
     ExportableInstanceField::InferredWorkloadTypes => "InferredWorkloadTypes",
     ExportableInstanceField::InstanceArn => "InstanceArn",
     ExportableInstanceField::InstanceName => "InstanceName",
+    ExportableInstanceField::InstanceState => "InstanceState",
     ExportableInstanceField::LastRefreshTimestamp => "LastRefreshTimestamp",
     ExportableInstanceField::LookbackPeriodInDays => "LookbackPeriodInDays",
     ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
@@ -356,6 +361,7 @@ impl ExportableInstanceField {
             "InferredWorkloadTypes",
             "InstanceArn",
             "InstanceName",
+            "InstanceState",
             "LastRefreshTimestamp",
             "LookbackPeriodInDays",
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",

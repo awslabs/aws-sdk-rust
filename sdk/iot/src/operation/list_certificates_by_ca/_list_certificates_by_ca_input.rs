@@ -15,7 +15,7 @@ pub struct ListCertificatesByCaInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     #[doc(hidden)]
-    pub ascending_order: bool,
+    pub ascending_order: std::option::Option<bool>,
 }
 impl ListCertificatesByCaInput {
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
@@ -31,7 +31,7 @@ impl ListCertificatesByCaInput {
         self.marker.as_deref()
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
-    pub fn ascending_order(&self) -> bool {
+    pub fn ascending_order(&self) -> std::option::Option<bool> {
         self.ascending_order
     }
 }
@@ -108,7 +108,7 @@ impl ListCertificatesByCaInputBuilder {
                 ca_certificate_id: self.ca_certificate_id,
                 page_size: self.page_size,
                 marker: self.marker,
-                ascending_order: self.ascending_order.unwrap_or_default(),
+                ascending_order: self.ascending_order,
             },
         )
     }

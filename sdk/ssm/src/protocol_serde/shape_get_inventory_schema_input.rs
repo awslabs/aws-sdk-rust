@@ -15,11 +15,11 @@ pub fn ser_get_inventory_schema_input(
             aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.aggregator {
-        object.key("Aggregator").boolean(input.aggregator);
+    if let Some(var_4) = &input.aggregator {
+        object.key("Aggregator").boolean(*var_4);
     }
-    if let Some(var_4) = &input.sub_type {
-        object.key("SubType").boolean(*var_4);
+    if let Some(var_5) = &input.sub_type {
+        object.key("SubType").boolean(*var_5);
     }
     Ok(())
 }

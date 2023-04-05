@@ -24,6 +24,9 @@ pub struct ChannelMessageCallback {
     /// <p>The ID of the SubChannel.</p>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    /// <p>The content type of the call-back message.</p>
+    #[doc(hidden)]
+    pub content_type: std::option::Option<std::string::String>,
 }
 impl ChannelMessageCallback {
     /// <p>The message ID.</p>
@@ -56,6 +59,10 @@ impl ChannelMessageCallback {
     pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
+    /// <p>The content type of the call-back message.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelMessageCallback {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -66,6 +73,7 @@ impl std::fmt::Debug for ChannelMessageCallback {
         formatter.field("push_notification", &self.push_notification);
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -88,6 +96,7 @@ pub struct ChannelMessageCallbackBuilder {
         std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
     >,
     pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+    pub(crate) content_type: std::option::Option<std::string::String>,
 }
 impl ChannelMessageCallbackBuilder {
     /// <p>The message ID.</p>
@@ -168,6 +177,16 @@ impl ChannelMessageCallbackBuilder {
         self.sub_channel_id = input;
         self
     }
+    /// <p>The content type of the call-back message.</p>
+    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.content_type = Some(input.into());
+        self
+    }
+    /// <p>The content type of the call-back message.</p>
+    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.content_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ChannelMessageCallback`](crate::types::ChannelMessageCallback).
     pub fn build(self) -> crate::types::ChannelMessageCallback {
         crate::types::ChannelMessageCallback {
@@ -177,6 +196,7 @@ impl ChannelMessageCallbackBuilder {
             push_notification: self.push_notification,
             message_attributes: self.message_attributes,
             sub_channel_id: self.sub_channel_id,
+            content_type: self.content_type,
         }
     }
 }
@@ -189,6 +209,7 @@ impl std::fmt::Debug for ChannelMessageCallbackBuilder {
         formatter.field("push_notification", &self.push_notification);
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

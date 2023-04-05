@@ -62,17 +62,19 @@ impl ListCaCertificatesInput {
                         query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
-                if _input.ascending_order {
-                    query.push_kv(
-                        "isAscendingOrder",
-                        aws_smithy_types::primitive::Encoder::from(_input.ascending_order).encode(),
-                    );
+                if let Some(inner_3) = &_input.ascending_order {
+                    if *inner_3 {
+                        query.push_kv(
+                            "isAscendingOrder",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_3) = &_input.template_name {
+                if let Some(inner_4) = &_input.template_name {
                     {
                         query.push_kv(
                             "templateName",
-                            &aws_smithy_http::query::fmt_string(&inner_3),
+                            &aws_smithy_http::query::fmt_string(&inner_4),
                         );
                     }
                 }

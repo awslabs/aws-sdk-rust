@@ -82,102 +82,98 @@ pub fn ser_create_training_job_input(
         }
         array_22.finish();
     }
-    if input.enable_network_isolation {
-        object
-            .key("EnableNetworkIsolation")
-            .boolean(input.enable_network_isolation);
+    if let Some(var_25) = &input.enable_network_isolation {
+        object.key("EnableNetworkIsolation").boolean(*var_25);
     }
-    if input.enable_inter_container_traffic_encryption {
+    if let Some(var_26) = &input.enable_inter_container_traffic_encryption {
         object
             .key("EnableInterContainerTrafficEncryption")
-            .boolean(input.enable_inter_container_traffic_encryption);
+            .boolean(*var_26);
     }
-    if input.enable_managed_spot_training {
-        object
-            .key("EnableManagedSpotTraining")
-            .boolean(input.enable_managed_spot_training);
+    if let Some(var_27) = &input.enable_managed_spot_training {
+        object.key("EnableManagedSpotTraining").boolean(*var_27);
     }
-    if let Some(var_25) = &input.checkpoint_config {
+    if let Some(var_28) = &input.checkpoint_config {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("CheckpointConfig").start_object();
+        let mut object_29 = object.key("CheckpointConfig").start_object();
         crate::protocol_serde::shape_checkpoint_config::ser_checkpoint_config(
-            &mut object_26,
-            var_25,
+            &mut object_29,
+            var_28,
         )?;
-        object_26.finish();
+        object_29.finish();
     }
-    if let Some(var_27) = &input.debug_hook_config {
+    if let Some(var_30) = &input.debug_hook_config {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("DebugHookConfig").start_object();
+        let mut object_31 = object.key("DebugHookConfig").start_object();
         crate::protocol_serde::shape_debug_hook_config::ser_debug_hook_config(
-            &mut object_28,
-            var_27,
+            &mut object_31,
+            var_30,
         )?;
-        object_28.finish();
+        object_31.finish();
     }
-    if let Some(var_29) = &input.debug_rule_configurations {
-        let mut array_30 = object.key("DebugRuleConfigurations").start_array();
-        for item_31 in var_29 {
+    if let Some(var_32) = &input.debug_rule_configurations {
+        let mut array_33 = object.key("DebugRuleConfigurations").start_array();
+        for item_34 in var_32 {
             {
                 #[allow(unused_mut)]
-                let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_debug_rule_configuration::ser_debug_rule_configuration(&mut object_32, item_31)?;
-                object_32.finish();
+                let mut object_35 = array_33.value().start_object();
+                crate::protocol_serde::shape_debug_rule_configuration::ser_debug_rule_configuration(&mut object_35, item_34)?;
+                object_35.finish();
             }
         }
-        array_30.finish();
+        array_33.finish();
     }
-    if let Some(var_33) = &input.tensor_board_output_config {
+    if let Some(var_36) = &input.tensor_board_output_config {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("TensorBoardOutputConfig").start_object();
+        let mut object_37 = object.key("TensorBoardOutputConfig").start_object();
         crate::protocol_serde::shape_tensor_board_output_config::ser_tensor_board_output_config(
-            &mut object_34,
-            var_33,
+            &mut object_37,
+            var_36,
         )?;
-        object_34.finish();
+        object_37.finish();
     }
-    if let Some(var_35) = &input.experiment_config {
+    if let Some(var_38) = &input.experiment_config {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("ExperimentConfig").start_object();
+        let mut object_39 = object.key("ExperimentConfig").start_object();
         crate::protocol_serde::shape_experiment_config::ser_experiment_config(
-            &mut object_36,
-            var_35,
+            &mut object_39,
+            var_38,
         )?;
-        object_36.finish();
+        object_39.finish();
     }
-    if let Some(var_37) = &input.profiler_config {
+    if let Some(var_40) = &input.profiler_config {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("ProfilerConfig").start_object();
-        crate::protocol_serde::shape_profiler_config::ser_profiler_config(&mut object_38, var_37)?;
-        object_38.finish();
+        let mut object_41 = object.key("ProfilerConfig").start_object();
+        crate::protocol_serde::shape_profiler_config::ser_profiler_config(&mut object_41, var_40)?;
+        object_41.finish();
     }
-    if let Some(var_39) = &input.profiler_rule_configurations {
-        let mut array_40 = object.key("ProfilerRuleConfigurations").start_array();
-        for item_41 in var_39 {
+    if let Some(var_42) = &input.profiler_rule_configurations {
+        let mut array_43 = object.key("ProfilerRuleConfigurations").start_array();
+        for item_44 in var_42 {
             {
                 #[allow(unused_mut)]
-                let mut object_42 = array_40.value().start_object();
-                crate::protocol_serde::shape_profiler_rule_configuration::ser_profiler_rule_configuration(&mut object_42, item_41)?;
-                object_42.finish();
+                let mut object_45 = array_43.value().start_object();
+                crate::protocol_serde::shape_profiler_rule_configuration::ser_profiler_rule_configuration(&mut object_45, item_44)?;
+                object_45.finish();
             }
         }
-        array_40.finish();
+        array_43.finish();
     }
-    if let Some(var_43) = &input.environment {
+    if let Some(var_46) = &input.environment {
         #[allow(unused_mut)]
-        let mut object_44 = object.key("Environment").start_object();
-        for (key_45, value_46) in var_43 {
+        let mut object_47 = object.key("Environment").start_object();
+        for (key_48, value_49) in var_46 {
             {
-                object_44.key(key_45.as_str()).string(value_46.as_str());
+                object_47.key(key_48.as_str()).string(value_49.as_str());
             }
         }
-        object_44.finish();
+        object_47.finish();
     }
-    if let Some(var_47) = &input.retry_strategy {
+    if let Some(var_50) = &input.retry_strategy {
         #[allow(unused_mut)]
-        let mut object_48 = object.key("RetryStrategy").start_object();
-        crate::protocol_serde::shape_retry_strategy::ser_retry_strategy(&mut object_48, var_47)?;
-        object_48.finish();
+        let mut object_51 = object.key("RetryStrategy").start_object();
+        crate::protocol_serde::shape_retry_strategy::ser_retry_strategy(&mut object_51, var_50)?;
+        object_51.finish();
     }
     Ok(())
 }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableVoiceConnectorRegionsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of AWS Regions.</p>
     #[doc(hidden)]
     pub voice_connector_regions:
         std::option::Option<std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
     _request_id: Option<String>,
 }
 impl ListAvailableVoiceConnectorRegionsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of AWS Regions.</p>
     pub fn voice_connector_regions(
         &self,
     ) -> std::option::Option<&[crate::types::VoiceConnectorAwsRegion]> {
@@ -42,13 +42,14 @@ impl ListAvailableVoiceConnectorRegionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_voice_connector_regions`](Self::set_voice_connector_regions).
     ///
+    /// <p>The list of AWS Regions.</p>
     pub fn voice_connector_regions(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
         let mut v = self.voice_connector_regions.unwrap_or_default();
         v.push(input);
         self.voice_connector_regions = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of AWS Regions.</p>
     pub fn set_voice_connector_regions(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,

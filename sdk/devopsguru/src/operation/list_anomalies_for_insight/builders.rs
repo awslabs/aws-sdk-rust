@@ -132,4 +132,17 @@ impl ListAnomaliesForInsightFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
+    pub fn filters(mut self, input: crate::types::ListAnomaliesForInsightFilters) -> Self {
+        self.inner = self.inner.filters(input);
+        self
+    }
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
+    ) -> Self {
+        self.inner = self.inner.set_filters(input);
+        self
+    }
 }

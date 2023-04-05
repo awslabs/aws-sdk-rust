@@ -33,5 +33,8 @@ pub fn ser_create_endpoint_input(
     if let Some(var_9) = &input.data_access_role_arn {
         object.key("DataAccessRoleArn").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.flywheel_arn {
+        object.key("FlywheelArn").string(var_10.as_str());
+    }
     Ok(())
 }

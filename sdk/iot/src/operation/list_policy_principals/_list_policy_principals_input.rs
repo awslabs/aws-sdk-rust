@@ -15,7 +15,7 @@ pub struct ListPolicyPrincipalsInput {
     pub page_size: std::option::Option<i32>,
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     #[doc(hidden)]
-    pub ascending_order: bool,
+    pub ascending_order: std::option::Option<bool>,
 }
 impl ListPolicyPrincipalsInput {
     /// <p>The policy name.</p>
@@ -31,7 +31,7 @@ impl ListPolicyPrincipalsInput {
         self.page_size
     }
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
-    pub fn ascending_order(&self) -> bool {
+    pub fn ascending_order(&self) -> std::option::Option<bool> {
         self.ascending_order
     }
 }
@@ -105,7 +105,7 @@ impl ListPolicyPrincipalsInputBuilder {
                 policy_name: self.policy_name,
                 marker: self.marker,
                 page_size: self.page_size,
-                ascending_order: self.ascending_order.unwrap_or_default(),
+                ascending_order: self.ascending_order,
             },
         )
     }

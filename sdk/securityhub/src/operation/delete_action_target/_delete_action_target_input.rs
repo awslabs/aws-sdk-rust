@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteActionTargetInput {
-    /// <p>The ARN of the custom action target to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
     #[doc(hidden)]
     pub action_target_arn: std::option::Option<std::string::String>,
 }
 impl DeleteActionTargetInput {
-    /// <p>The ARN of the custom action target to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
     pub fn action_target_arn(&self) -> std::option::Option<&str> {
         self.action_target_arn.as_deref()
     }
@@ -28,12 +28,12 @@ pub struct DeleteActionTargetInputBuilder {
     pub(crate) action_target_arn: std::option::Option<std::string::String>,
 }
 impl DeleteActionTargetInputBuilder {
-    /// <p>The ARN of the custom action target to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
     pub fn action_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.action_target_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the custom action target to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
     pub fn set_action_target_arn(
         mut self,
         input: std::option::Option<std::string::String>,

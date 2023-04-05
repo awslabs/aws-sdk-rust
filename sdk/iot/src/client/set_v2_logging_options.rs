@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`role_arn(impl Into<String>)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::set_role_arn): <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
     ///   - [`default_log_level(LogLevel)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::default_log_level) / [`set_default_log_level(Option<LogLevel>)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::set_default_log_level): <p>The default logging level.</p>
-    ///   - [`disable_all_logs(bool)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::disable_all_logs) / [`set_disable_all_logs(bool)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::set_disable_all_logs): <p>If true all logs are disabled. The default is false.</p>
+    ///   - [`disable_all_logs(bool)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::disable_all_logs) / [`set_disable_all_logs(Option<bool>)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::set_disable_all_logs): <p>If true all logs are disabled. The default is false.</p>
     /// - On success, responds with [`SetV2LoggingOptionsOutput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsOutput)
     /// - On failure, responds with [`SdkError<SetV2LoggingOptionsError>`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsError)
     pub fn set_v2_logging_options(

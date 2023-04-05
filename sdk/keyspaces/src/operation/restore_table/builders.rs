@@ -5,20 +5,24 @@ pub use crate::operation::restore_table::_restore_table_input::RestoreTableInput
 
 /// Fluent builder constructing a request to `RestoreTable`.
 ///
-/// <p>Restores the specified table to the specified point in time within the <code>earliest_restorable_timestamp</code> and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window"> Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>. </p>
+/// <p>Restores the specified table to the specified point in time within the <code>earliest_restorable_timestamp</code> and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window"> Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 /// <p>Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.</p>
 /// <p>When you restore using point in time recovery, Amazon Keyspaces restores your source table's schema and data to the state based on the selected timestamp <code>(day:hour:minute:second)</code> to a new table. The Time to Live (TTL) settings are also restored to the state based on the selected timestamp.</p>
 /// <p>In addition to the table's schema, data, and TTL settings, <code>RestoreTable</code> restores the capacity mode, encryption, and point-in-time recovery settings from the source table. Unlike the table's schema data and TTL settings, which are restored based on the selected timestamp, these settings are always restored based on the table's settings as of the current time or when the table was deleted.</p>
 /// <p>You can also overwrite these settings during restore:</p>
-/// <p>• Read/write capacity mode</p>
-/// <p>• Provisioned throughput capacity settings</p>
-/// <p>• Point-in-time (PITR) settings</p>
-/// <p>• Tags</p>
+/// <ul>
+/// <li> <p>Read/write capacity mode</p> </li>
+/// <li> <p>Provisioned throughput capacity settings</p> </li>
+/// <li> <p>Point-in-time (PITR) settings</p> </li>
+/// <li> <p>Tags</p> </li>
+/// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 /// <p>Note that the following settings are not restored, and you must configure them manually for the new table:</p>
-/// <p>• Automatic scaling policies (for tables that use provisioned capacity mode)</p>
-/// <p>• Identity and Access Management (IAM) policies</p>
-/// <p>• Amazon CloudWatch metrics and alarms</p>
+/// <ul>
+/// <li> <p>Automatic scaling policies (for tables that use provisioned capacity mode)</p> </li>
+/// <li> <p>Identity and Access Management (IAM) policies</p> </li>
+/// <li> <p>Amazon CloudWatch metrics and alarms</p> </li>
+/// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreTableFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -144,8 +148,10 @@ impl RestoreTableFluentBuilder {
         self
     }
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn capacity_specification_override(
@@ -156,8 +162,10 @@ impl RestoreTableFluentBuilder {
         self
     }
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_capacity_specification_override(
@@ -168,8 +176,10 @@ impl RestoreTableFluentBuilder {
         self
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
+    /// <ul>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn encryption_specification_override(
@@ -180,8 +190,10 @@ impl RestoreTableFluentBuilder {
         self
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
+    /// <ul>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_encryption_specification_override(
@@ -192,9 +204,11 @@ impl RestoreTableFluentBuilder {
         self
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
+    /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn point_in_time_recovery_override(
         mut self,
@@ -204,9 +218,11 @@ impl RestoreTableFluentBuilder {
         self
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
+    /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_point_in_time_recovery_override(
         mut self,

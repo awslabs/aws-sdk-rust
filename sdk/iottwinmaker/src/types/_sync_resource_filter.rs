@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum SyncResourceFilter {
-    /// <p>The external Id.</p>
+    /// <p>The external ID.</p>
     ExternalId(std::string::String),
-    /// <p>The sync resource filter resource Id.</p>
+    /// <p>The sync resource filter resource ID.</p>
     ResourceId(std::string::String),
-    /// <p>The sync resource filter resoucre type</p>
+    /// <p>The sync resource filter resource type</p>
     ResourceType(crate::types::SyncResourceType),
     /// <p>The sync resource filter's state.</p>
     State(crate::types::SyncResourceState),

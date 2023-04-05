@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDbInstanceAutomatedBackupsReplicationInput {
-    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     #[doc(hidden)]
     pub source_db_instance_arn: std::option::Option<std::string::String>,
 }
 impl StopDbInstanceAutomatedBackupsReplicationInput {
-    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     pub fn source_db_instance_arn(&self) -> std::option::Option<&str> {
         self.source_db_instance_arn.as_deref()
     }
@@ -27,12 +27,12 @@ pub struct StopDbInstanceAutomatedBackupsReplicationInputBuilder {
     pub(crate) source_db_instance_arn: std::option::Option<std::string::String>,
 }
 impl StopDbInstanceAutomatedBackupsReplicationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     pub fn source_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_db_instance_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     pub fn set_source_db_instance_arn(
         mut self,
         input: std::option::Option<std::string::String>,

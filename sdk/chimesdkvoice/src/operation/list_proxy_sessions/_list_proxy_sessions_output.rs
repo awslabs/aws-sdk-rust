@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProxySessionsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy sessions' details.</p>
     #[doc(hidden)]
     pub proxy_sessions: std::option::Option<std::vec::Vec<crate::types::ProxySession>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProxySessionsOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy sessions' details.</p>
     pub fn proxy_sessions(&self) -> std::option::Option<&[crate::types::ProxySession]> {
         self.proxy_sessions.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,13 +47,14 @@ impl ListProxySessionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_proxy_sessions`](Self::set_proxy_sessions).
     ///
+    /// <p>The proxy sessions' details.</p>
     pub fn proxy_sessions(mut self, input: crate::types::ProxySession) -> Self {
         let mut v = self.proxy_sessions.unwrap_or_default();
         v.push(input);
         self.proxy_sessions = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy sessions' details.</p>
     pub fn set_proxy_sessions(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ProxySession>>,
@@ -61,12 +62,12 @@ impl ListProxySessionsOutputBuilder {
         self.proxy_sessions = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

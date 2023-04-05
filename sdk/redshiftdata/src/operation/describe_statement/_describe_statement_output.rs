@@ -66,7 +66,7 @@ pub struct DescribeStatementOutput {
     /// <p>The SQL statements from a multiple statement run.</p>
     #[doc(hidden)]
     pub sub_statements: std::option::Option<std::vec::Vec<crate::types::SubStatementData>>,
-    /// <p>The serverless workgroup name.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -153,7 +153,7 @@ impl DescribeStatementOutput {
     pub fn sub_statements(&self) -> std::option::Option<&[crate::types::SubStatementData]> {
         self.sub_statements.as_deref()
     }
-    /// <p>The serverless workgroup name.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
@@ -422,12 +422,12 @@ impl DescribeStatementOutputBuilder {
         self.sub_statements = input;
         self
     }
-    /// <p>The serverless workgroup name.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.workgroup_name = Some(input.into());
         self
     }
-    /// <p>The serverless workgroup name.</p>
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.workgroup_name = input;
         self

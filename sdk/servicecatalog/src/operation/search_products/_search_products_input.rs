@@ -5,7 +5,6 @@
 pub struct SearchProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -21,7 +20,7 @@ pub struct SearchProductsInput {
     >,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: std::option::Option<i32>,
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
     #[doc(hidden)]
     pub sort_by: std::option::Option<crate::types::ProductViewSortBy>,
@@ -35,7 +34,6 @@ pub struct SearchProductsInput {
 impl SearchProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -54,7 +52,7 @@ impl SearchProductsInput {
         self.filters.as_ref()
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
@@ -96,7 +94,6 @@ pub struct SearchProductsInputBuilder {
 impl SearchProductsInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -106,7 +103,6 @@ impl SearchProductsInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -195,7 +191,7 @@ impl SearchProductsInputBuilder {
         Ok(crate::operation::search_products::SearchProductsInput {
             accept_language: self.accept_language,
             filters: self.filters,
-            page_size: self.page_size.unwrap_or_default(),
+            page_size: self.page_size,
             sort_by: self.sort_by,
             sort_order: self.sort_order,
             page_token: self.page_token,

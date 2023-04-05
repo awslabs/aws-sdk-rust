@@ -160,6 +160,8 @@ pub(crate) mod shape_get_federation_token;
 
 pub(crate) mod shape_get_metric_data;
 
+pub(crate) mod shape_get_metric_data_v2;
+
 pub(crate) mod shape_get_task_template;
 
 pub(crate) mod shape_get_traffic_distribution;
@@ -434,6 +436,8 @@ pub(crate) mod shape_get_current_user_data_input;
 
 pub(crate) mod shape_get_metric_data_input;
 
+pub(crate) mod shape_get_metric_data_v2_input;
+
 pub(crate) mod shape_idempotency_exception;
 
 pub(crate) mod shape_internal_service_exception;
@@ -624,6 +628,8 @@ pub(crate) mod shape_current_metric_sort_criteria;
 
 pub(crate) mod shape_default_vocabulary_list;
 
+pub(crate) mod shape_filter_v2;
+
 pub(crate) mod shape_filters;
 
 pub(crate) mod shape_function_arns_list;
@@ -667,6 +673,10 @@ pub(crate) mod shape_lex_v2_bot;
 pub(crate) mod shape_list_phone_numbers_summary_list;
 
 pub(crate) mod shape_media_concurrency;
+
+pub(crate) mod shape_metric_results_v2;
+
+pub(crate) mod shape_metric_v2;
 
 pub(crate) mod shape_origins_list;
 
@@ -858,6 +868,10 @@ pub(crate) mod shape_list_phone_numbers_summary;
 
 pub(crate) mod shape_media_concurrencies;
 
+pub(crate) mod shape_metric_filter_v2;
+
+pub(crate) mod shape_metric_result_v2;
+
 pub(crate) mod shape_phone_number_quick_connect_config;
 
 pub(crate) mod shape_phone_number_status;
@@ -924,6 +938,8 @@ pub(crate) mod shape_task_template_metadata;
 
 pub(crate) mod shape_threshold;
 
+pub(crate) mod shape_threshold_v2;
+
 pub(crate) mod shape_traffic_distribution_group_summary;
 
 pub(crate) mod shape_use_case;
@@ -937,6 +953,8 @@ pub(crate) mod shape_user_search_summary;
 pub(crate) mod shape_user_summary;
 
 pub(crate) mod shape_vocabulary_summary;
+
+pub(crate) mod shape_wisdom_info;
 
 pub(crate) mod shape_action_summaries;
 
@@ -954,6 +972,8 @@ pub(crate) mod shape_date_reference;
 
 pub(crate) mod shape_dimensions;
 
+pub(crate) mod shape_dimensions_v2_map;
+
 pub(crate) mod shape_email_reference;
 
 pub(crate) mod shape_encryption_config;
@@ -961,6 +981,8 @@ pub(crate) mod shape_encryption_config;
 pub(crate) mod shape_hierarchy_path_reference;
 
 pub(crate) mod shape_historical_metric_data_collections;
+
+pub(crate) mod shape_metric_data_collections_v2;
 
 pub(crate) mod shape_notification_recipient_type;
 
@@ -992,12 +1014,20 @@ pub(crate) mod shape_hierarchy_group_summary_reference;
 
 pub(crate) mod shape_historical_metric_data;
 
+pub(crate) mod shape_metric_data_v2;
+
 pub(crate) mod shape_participant_timer_value;
 
 pub(crate) mod shape_queue_reference;
 
 pub(crate) mod shape_contact_references;
 
+pub(crate) mod shape_metric_filters_v2_list;
+
+pub(crate) mod shape_threshold_collections;
+
 pub(crate) mod shape_user_id_list;
 
 pub(crate) mod shape_user_tag_map;
+
+pub(crate) mod shape_metric_filter_value_list;

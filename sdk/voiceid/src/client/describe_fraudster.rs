@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFraudster`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::set_domain_id): <p>The identifier of the domain containing the fraudster.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::set_domain_id): <p>The identifier of the domain that contains the fraudster.</p>
     ///   - [`fraudster_id(impl Into<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::fraudster_id) / [`set_fraudster_id(Option<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::set_fraudster_id): <p>The identifier of the fraudster you are describing.</p>
     /// - On success, responds with [`DescribeFraudsterOutput`](crate::operation::describe_fraudster::DescribeFraudsterOutput) with field(s):
     ///   - [`fraudster(Option<Fraudster>)`](crate::operation::describe_fraudster::DescribeFraudsterOutput::fraudster): <p>Information about the specified fraudster.</p>

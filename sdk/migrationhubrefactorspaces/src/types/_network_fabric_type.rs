@@ -12,6 +12,7 @@
 /// ```text
 /// # let networkfabrictype = unimplemented!();
 /// match networkfabrictype {
+///     NetworkFabricType::None => { /* ... */ },
 ///     NetworkFabricType::TransitGateway => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum NetworkFabricType {
     #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
     TransitGateway,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -54,6 +57,7 @@ pub enum NetworkFabricType {
 impl std::convert::From<&str> for NetworkFabricType {
     fn from(s: &str) -> Self {
         match s {
+            "NONE" => NetworkFabricType::None,
             "TRANSIT_GATEWAY" => NetworkFabricType::TransitGateway,
             other => {
                 NetworkFabricType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -72,13 +76,14 @@ impl NetworkFabricType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            NetworkFabricType::None => "NONE",
             NetworkFabricType::TransitGateway => "TRANSIT_GATEWAY",
             NetworkFabricType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TRANSIT_GATEWAY"]
+        &["NONE", "TRANSIT_GATEWAY"]
     }
 }
 impl AsRef<str> for NetworkFabricType {

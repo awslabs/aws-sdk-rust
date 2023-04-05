@@ -19,6 +19,7 @@
 ///     ScalingActivityStatusCode::PendingSpotBidPlacement => { /* ... */ },
 ///     ScalingActivityStatusCode::PreInService => { /* ... */ },
 ///     ScalingActivityStatusCode::Successful => { /* ... */ },
+///     ScalingActivityStatusCode::WaitingForConnectionDraining => { /* ... */ },
 ///     ScalingActivityStatusCode::WaitingForElbConnectionDraining => { /* ... */ },
 ///     ScalingActivityStatusCode::WaitingForInstanceId => { /* ... */ },
 ///     ScalingActivityStatusCode::WaitingForInstanceWarmup => { /* ... */ },
@@ -72,6 +73,8 @@ pub enum ScalingActivityStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Successful,
     #[allow(missing_docs)] // documentation missing in model
+    WaitingForConnectionDraining,
+    #[allow(missing_docs)] // documentation missing in model
     WaitingForElbConnectionDraining,
     #[allow(missing_docs)] // documentation missing in model
     WaitingForInstanceId,
@@ -94,6 +97,9 @@ impl std::convert::From<&str> for ScalingActivityStatusCode {
             "PendingSpotBidPlacement" => ScalingActivityStatusCode::PendingSpotBidPlacement,
             "PreInService" => ScalingActivityStatusCode::PreInService,
             "Successful" => ScalingActivityStatusCode::Successful,
+            "WaitingForConnectionDraining" => {
+                ScalingActivityStatusCode::WaitingForConnectionDraining
+            }
             "WaitingForELBConnectionDraining" => {
                 ScalingActivityStatusCode::WaitingForElbConnectionDraining
             }
@@ -127,6 +133,9 @@ impl ScalingActivityStatusCode {
             ScalingActivityStatusCode::PendingSpotBidPlacement => "PendingSpotBidPlacement",
             ScalingActivityStatusCode::PreInService => "PreInService",
             ScalingActivityStatusCode::Successful => "Successful",
+            ScalingActivityStatusCode::WaitingForConnectionDraining => {
+                "WaitingForConnectionDraining"
+            }
             ScalingActivityStatusCode::WaitingForElbConnectionDraining => {
                 "WaitingForELBConnectionDraining"
             }
@@ -149,6 +158,7 @@ impl ScalingActivityStatusCode {
             "PendingSpotBidPlacement",
             "PreInService",
             "Successful",
+            "WaitingForConnectionDraining",
             "WaitingForELBConnectionDraining",
             "WaitingForInstanceId",
             "WaitingForInstanceWarmup",

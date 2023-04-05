@@ -69,6 +69,46 @@ pub(crate) fn reflens_list_applications_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_export_errors_output_next_token(
+    input: &crate::operation::list_export_errors::ListExportErrorsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_exports_output_next_token(
+    input: &crate::operation::list_exports::ListExportsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_import_errors_output_next_token(
+    input: &crate::operation::list_import_errors::ListImportErrorsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_imports_output_next_token(
+    input: &crate::operation::list_imports::ListImportsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_source_server_actions_output_next_token(
     input: &crate::operation::list_source_server_actions::ListSourceServerActionsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -162,6 +202,46 @@ pub(crate) fn lens_describe_vcenter_clients_output_items(
 pub(crate) fn lens_list_applications_output_items(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::Application>> {
+    let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_export_errors_output_items(
+    input: crate::operation::list_export_errors::ListExportErrorsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ExportTaskError>> {
+    let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_exports_output_items(
+    input: crate::operation::list_exports::ListExportsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ExportTask>> {
+    let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_import_errors_output_items(
+    input: crate::operation::list_import_errors::ListImportErrorsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ImportTaskError>> {
+    let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_imports_output_items(
+    input: crate::operation::list_imports::ListImportsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ImportTask>> {
     let input = match input.items {
         None => return None,
         Some(t) => t,

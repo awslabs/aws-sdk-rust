@@ -93,12 +93,12 @@ impl ListImagePackagesFluentBuilder {
         self.inner = self.inner.set_image_build_version_arn(input);
         self
     }
-    /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self

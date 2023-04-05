@@ -15,7 +15,7 @@ pub struct Options {
     #[doc(hidden)]
     pub verify_mode: std::option::Option<crate::types::VerifyMode>,
     /// <p>Specifies whether data at the destination location should be overwritten or preserved. If set to <code>NEVER</code>, a destination file for example will not be replaced by a source file (even if the destination file differs from the source file). If you modify files in the destination and you sync the files, you can use this value to protect against overwriting those changes. </p>
-    /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>.</p>
+    /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     #[doc(hidden)]
     pub overwrite_mode: std::option::Option<crate::types::OverwriteMode>,
     /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p> <note>
@@ -52,10 +52,12 @@ pub struct Options {
     /// <p> <code>NONE</code>: Ignore UID and GID.</p>
     #[doc(hidden)]
     pub gid: std::option::Option<crate::types::Gid>,
-    /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>.</p>
+    /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code> </p>
     /// <p> <code>PRESERVE</code>: Ignore such destination files (recommended). </p>
-    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p>
+    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
+    /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
+    /// </note>
     #[doc(hidden)]
     pub preserve_deleted_files: std::option::Option<crate::types::PreserveDeletedFiles>,
     /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p> <note>
@@ -126,7 +128,7 @@ impl Options {
         self.verify_mode.as_ref()
     }
     /// <p>Specifies whether data at the destination location should be overwritten or preserved. If set to <code>NEVER</code>, a destination file for example will not be replaced by a source file (even if the destination file differs from the source file). If you modify files in the destination and you sync the files, you can use this value to protect against overwriting those changes. </p>
-    /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>.</p>
+    /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     pub fn overwrite_mode(&self) -> std::option::Option<&crate::types::OverwriteMode> {
         self.overwrite_mode.as_ref()
     }
@@ -168,10 +170,12 @@ impl Options {
     pub fn gid(&self) -> std::option::Option<&crate::types::Gid> {
         self.gid.as_ref()
     }
-    /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>.</p>
+    /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code> </p>
     /// <p> <code>PRESERVE</code>: Ignore such destination files (recommended). </p>
-    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p>
+    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
+    /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
+    /// </note>
     pub fn preserve_deleted_files(
         &self,
     ) -> std::option::Option<&crate::types::PreserveDeletedFiles> {
@@ -294,13 +298,13 @@ impl OptionsBuilder {
         self
     }
     /// <p>Specifies whether data at the destination location should be overwritten or preserved. If set to <code>NEVER</code>, a destination file for example will not be replaced by a source file (even if the destination file differs from the source file). If you modify files in the destination and you sync the files, you can use this value to protect against overwriting those changes. </p>
-    /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>.</p>
+    /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     pub fn overwrite_mode(mut self, input: crate::types::OverwriteMode) -> Self {
         self.overwrite_mode = Some(input);
         self
     }
     /// <p>Specifies whether data at the destination location should be overwritten or preserved. If set to <code>NEVER</code>, a destination file for example will not be replaced by a source file (even if the destination file differs from the source file). If you modify files in the destination and you sync the files, you can use this value to protect against overwriting those changes. </p>
-    /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>.</p>
+    /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     pub fn set_overwrite_mode(
         mut self,
         input: std::option::Option<crate::types::OverwriteMode>,
@@ -392,18 +396,22 @@ impl OptionsBuilder {
         self.gid = input;
         self
     }
-    /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>.</p>
+    /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code> </p>
     /// <p> <code>PRESERVE</code>: Ignore such destination files (recommended). </p>
-    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p>
+    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
+    /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
+    /// </note>
     pub fn preserve_deleted_files(mut self, input: crate::types::PreserveDeletedFiles) -> Self {
         self.preserve_deleted_files = Some(input);
         self
     }
-    /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>.</p>
+    /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code> </p>
     /// <p> <code>PRESERVE</code>: Ignore such destination files (recommended). </p>
-    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p>
+    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
+    /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
+    /// </note>
     pub fn set_preserve_deleted_files(
         mut self,
         input: std::option::Option<crate::types::PreserveDeletedFiles>,

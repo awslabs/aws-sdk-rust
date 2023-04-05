@@ -22,7 +22,7 @@ pub struct Session {
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
     #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Web Services user account that started the session.</p>
+    /// <p>The ID of the Amazon Web Services user that started the session.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The reason for connecting to the instance.</p>
@@ -63,7 +63,7 @@ impl Session {
     pub fn document_name(&self) -> std::option::Option<&str> {
         self.document_name.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services user account that started the session.</p>
+    /// <p>The ID of the Amazon Web Services user that started the session.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -171,12 +171,12 @@ impl SessionBuilder {
         self.document_name = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services user account that started the session.</p>
+    /// <p>The ID of the Amazon Web Services user that started the session.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
         self.owner = Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services user account that started the session.</p>
+    /// <p>The ID of the Amazon Web Services user that started the session.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.owner = input;
         self

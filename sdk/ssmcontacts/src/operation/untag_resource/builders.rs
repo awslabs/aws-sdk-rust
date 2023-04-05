@@ -5,7 +5,7 @@ pub use crate::operation::untag_resource::_untag_resource_input::UntagResourceIn
 
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Removes tags from the specified resource. </p>
+/// <p>Removes tags from the specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

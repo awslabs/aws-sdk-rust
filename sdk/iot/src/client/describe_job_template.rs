@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`abort_config(Option<AbortConfig>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::abort_config): <p>The criteria that determine when and how a job abort takes place.</p>
     ///   - [`timeout_config(Option<TimeoutConfig>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     ///   - [`job_executions_retry_config(Option<JobExecutionsRetryConfig>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::job_executions_retry_config): <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
+    ///   - [`maintenance_windows(Option<Vec<MaintenanceWindow>>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::maintenance_windows): <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
     /// - On failure, responds with [`SdkError<DescribeJobTemplateError>`](crate::operation::describe_job_template::DescribeJobTemplateError)
     pub fn describe_job_template(
         &self,

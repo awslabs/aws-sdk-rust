@@ -105,12 +105,12 @@ impl UpdateRunGroupFluentBuilder {
         self.inner = self.inner.set_max_runs(input);
         self
     }
-    /// <p>The maximum amount of time to run.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.max_duration(input);
         self
     }
-    /// <p>The maximum amount of time to run.</p>
+    /// <p>A maximum run time for the group in minutes.</p>
     pub fn set_max_duration(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_duration(input);
         self

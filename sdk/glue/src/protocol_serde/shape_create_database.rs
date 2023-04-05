@@ -67,6 +67,23 @@ pub fn de_create_database_http_error(
                                                     }
             tmp
         }),
+        "FederatedResourceAlreadyExistsException" => crate::operation::create_database::CreateDatabaseError::FederatedResourceAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::FederatedResourceAlreadyExistsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_federated_resource_already_exists_exception::de_federated_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_database::CreateDatabaseError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "GlueEncryptionException" => crate::operation::create_database::CreateDatabaseError::GlueEncryptionException({
             #[allow(unused_mut)]
             let mut tmp =

@@ -10,6 +10,9 @@ pub mod associate_personas_to_entities;
 /// Types for the `BatchDeleteDocument` operation.
 pub mod batch_delete_document;
 
+/// Types for the `BatchDeleteFeaturedResultsSet` operation.
+pub mod batch_delete_featured_results_set;
+
 /// Types for the `BatchGetDocumentStatus` operation.
 pub mod batch_get_document_status;
 
@@ -30,6 +33,9 @@ pub mod create_experience;
 
 /// Types for the `CreateFaq` operation.
 pub mod create_faq;
+
+/// Types for the `CreateFeaturedResultsSet` operation.
+pub mod create_featured_results_set;
 
 /// Types for the `CreateIndex` operation.
 pub mod create_index;
@@ -75,6 +81,9 @@ pub mod describe_experience;
 
 /// Types for the `DescribeFaq` operation.
 pub mod describe_faq;
+
+/// Types for the `DescribeFeaturedResultsSet` operation.
+pub mod describe_featured_results_set;
 
 /// Types for the `DescribeIndex` operation.
 pub mod describe_index;
@@ -124,6 +133,9 @@ pub mod list_experiences;
 /// Types for the `ListFaqs` operation.
 pub mod list_faqs;
 
+/// Types for the `ListFeaturedResultsSets` operation.
+pub mod list_featured_results_sets;
+
 /// Types for the `ListGroupsOlderThanOrderingId` operation.
 pub mod list_groups_older_than_ordering_id;
 
@@ -168,6 +180,9 @@ pub mod update_data_source;
 
 /// Types for the `UpdateExperience` operation.
 pub mod update_experience;
+
+/// Types for the `UpdateFeaturedResultsSet` operation.
+pub mod update_featured_results_set;
 
 /// Types for the `UpdateIndex` operation.
 pub mod update_index;

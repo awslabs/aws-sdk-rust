@@ -25,7 +25,7 @@ pub struct CreateUpdatedImageInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
     #[doc(hidden)]
-    pub dry_run: bool,
+    pub dry_run: std::option::Option<bool>,
 }
 impl CreateUpdatedImageInput {
     /// <p>The name of the image to update.</p>
@@ -56,7 +56,7 @@ impl CreateUpdatedImageInput {
         self.new_image_tags.as_ref()
     }
     /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -187,7 +187,7 @@ impl CreateUpdatedImageInputBuilder {
                 new_image_description: self.new_image_description,
                 new_image_display_name: self.new_image_display_name,
                 new_image_tags: self.new_image_tags,
-                dry_run: self.dry_run.unwrap_or_default(),
+                dry_run: self.dry_run,
             },
         )
     }

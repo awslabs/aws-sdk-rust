@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`bot_id(Option<String>)`](crate::operation::describe_bot_alias::DescribeBotAliasOutput::bot_id): <p>The identifier of the bot associated with the bot alias.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_bot_alias::DescribeBotAliasOutput::creation_date_time): <p>A timestamp of the date and time that the alias was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_bot_alias::DescribeBotAliasOutput::last_updated_date_time): <p>A timestamp of the date and time that the alias was last updated.</p>
+    ///   - [`parent_bot_networks(Option<Vec<ParentBotNetwork>>)`](crate::operation::describe_bot_alias::DescribeBotAliasOutput::parent_bot_networks): <p>A list of the networks to which the bot alias you described belongs.</p>
     /// - On failure, responds with [`SdkError<DescribeBotAliasError>`](crate::operation::describe_bot_alias::DescribeBotAliasError)
     pub fn describe_bot_alias(
         &self,

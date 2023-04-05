@@ -2,7 +2,7 @@
 
 /// <p>Describes a disk image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiskImageDetail {
     /// <p>The size of the disk image, in GiB.</p>
     #[doc(hidden)]
@@ -30,6 +30,15 @@ impl DiskImageDetail {
         self.import_manifest_url.as_deref()
     }
 }
+impl std::fmt::Debug for DiskImageDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DiskImageDetail");
+        formatter.field("bytes", &self.bytes);
+        formatter.field("format", &self.format);
+        formatter.field("import_manifest_url", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl DiskImageDetail {
     /// Creates a new builder-style object to manufacture [`DiskImageDetail`](crate::types::DiskImageDetail).
     pub fn builder() -> crate::types::builders::DiskImageDetailBuilder {
@@ -39,7 +48,7 @@ impl DiskImageDetail {
 
 /// A builder for [`DiskImageDetail`](crate::types::DiskImageDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct DiskImageDetailBuilder {
     pub(crate) bytes: std::option::Option<i64>,
     pub(crate) format: std::option::Option<crate::types::DiskImageFormat>,
@@ -88,5 +97,14 @@ impl DiskImageDetailBuilder {
             format: self.format,
             import_manifest_url: self.import_manifest_url,
         }
+    }
+}
+impl std::fmt::Debug for DiskImageDetailBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DiskImageDetailBuilder");
+        formatter.field("bytes", &self.bytes);
+        formatter.field("format", &self.format);
+        formatter.field("import_manifest_url", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

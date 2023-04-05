@@ -11,7 +11,7 @@ pub struct ListPoliciesInput {
     /// <p>A flag to filter the results to only the attached policies.</p>
     /// <p>When <code>OnlyAttached</code> is <code>true</code>, the returned list contains only the policies that are attached to an IAM user, group, or role. When <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not included, all policies are returned.</p>
     #[doc(hidden)]
-    pub only_attached: bool,
+    pub only_attached: std::option::Option<bool>,
     /// <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all policies. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     #[doc(hidden)]
     pub path_prefix: std::option::Option<std::string::String>,
@@ -37,7 +37,7 @@ impl ListPoliciesInput {
     }
     /// <p>A flag to filter the results to only the attached policies.</p>
     /// <p>When <code>OnlyAttached</code> is <code>true</code>, the returned list contains only the policies that are attached to an IAM user, group, or role. When <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not included, all policies are returned.</p>
-    pub fn only_attached(&self) -> bool {
+    pub fn only_attached(&self) -> std::option::Option<bool> {
         self.only_attached
     }
     /// <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all policies. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
@@ -163,7 +163,7 @@ impl ListPoliciesInputBuilder {
     > {
         Ok(crate::operation::list_policies::ListPoliciesInput {
             scope: self.scope,
-            only_attached: self.only_attached.unwrap_or_default(),
+            only_attached: self.only_attached,
             path_prefix: self.path_prefix,
             policy_usage_filter: self.policy_usage_filter,
             marker: self.marker,

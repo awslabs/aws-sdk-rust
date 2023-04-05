@@ -42,7 +42,7 @@
 /// <li>
 /// <p>
 /// <code>TYPE</code> – The recommendation type, with values like <code>DKIM</code>,
-/// <code>SPF</code> or <code>DMARC</code>.</p>
+/// <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
 /// </li>
 /// <li>
 /// <p>

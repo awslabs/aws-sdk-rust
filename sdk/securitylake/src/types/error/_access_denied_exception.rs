@@ -7,7 +7,16 @@ pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
+    /// <p>A coded string to provide more information about the access denied exception. You can use the error code to check the exception type.</p>
+    #[doc(hidden)]
+    pub error_code: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+}
+impl AccessDeniedException {
+    /// <p>A coded string to provide more information about the access denied exception. You can use the error code to check the exception type.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl AccessDeniedException {
     /// Returns the error message.
@@ -50,6 +59,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AccessDeniedExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) error_code: std::option::Option<std::string::String>,
     meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl AccessDeniedExceptionBuilder {
@@ -61,6 +71,16 @@ impl AccessDeniedExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.message = input;
+        self
+    }
+    /// <p>A coded string to provide more information about the access denied exception. You can use the error code to check the exception type.</p>
+    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+        self.error_code = Some(input.into());
+        self
+    }
+    /// <p>A coded string to provide more information about the access denied exception. You can use the error code to check the exception type.</p>
+    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.error_code = input;
         self
     }
     /// Sets error metadata
@@ -81,6 +101,7 @@ impl AccessDeniedExceptionBuilder {
     pub fn build(self) -> crate::types::error::AccessDeniedException {
         crate::types::error::AccessDeniedException {
             message: self.message,
+            error_code: self.error_code,
             meta: self.meta.unwrap_or_default(),
         }
     }

@@ -5,7 +5,6 @@
 pub struct DisassociatePrincipalFromPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -14,7 +13,7 @@ pub struct DisassociatePrincipalFromPortfolioInput {
     /// <p>The portfolio identifier.</p>
     #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
@@ -24,7 +23,6 @@ pub struct DisassociatePrincipalFromPortfolioInput {
 impl DisassociatePrincipalFromPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -35,7 +33,7 @@ impl DisassociatePrincipalFromPortfolioInput {
     pub fn portfolio_id(&self) -> std::option::Option<&str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
@@ -63,7 +61,6 @@ pub struct DisassociatePrincipalFromPortfolioInputBuilder {
 impl DisassociatePrincipalFromPortfolioInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -73,7 +70,6 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -91,12 +87,12 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
         self.portfolio_id = input;
         self
     }
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.principal_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.principal_arn = input;
         self

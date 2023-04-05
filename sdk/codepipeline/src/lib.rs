@@ -86,7 +86,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-codepipeline = "0.25.0"
+//! aws-sdk-codepipeline = "0.25.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

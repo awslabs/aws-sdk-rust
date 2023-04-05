@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAgentStatusInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the agent status.</p>
@@ -23,10 +23,10 @@ pub struct UpdateAgentStatusInput {
     pub display_order: std::option::Option<i32>,
     /// <p>A number indicating the reset order of the agent status.</p>
     #[doc(hidden)]
-    pub reset_order_number: bool,
+    pub reset_order_number: std::option::Option<bool>,
 }
 impl UpdateAgentStatusInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -51,7 +51,7 @@ impl UpdateAgentStatusInput {
         self.display_order
     }
     /// <p>A number indicating the reset order of the agent status.</p>
-    pub fn reset_order_number(&self) -> bool {
+    pub fn reset_order_number(&self) -> std::option::Option<bool> {
         self.reset_order_number
     }
 }
@@ -76,12 +76,12 @@ pub struct UpdateAgentStatusInputBuilder {
     pub(crate) reset_order_number: std::option::Option<bool>,
 }
 impl UpdateAgentStatusInputBuilder {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.instance_id = input;
         self
@@ -161,7 +161,7 @@ impl UpdateAgentStatusInputBuilder {
                 description: self.description,
                 state: self.state,
                 display_order: self.display_order,
-                reset_order_number: self.reset_order_number.unwrap_or_default(),
+                reset_order_number: self.reset_order_number,
             },
         )
     }

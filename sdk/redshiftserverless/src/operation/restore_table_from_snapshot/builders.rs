@@ -5,7 +5,7 @@ pub use crate::operation::restore_table_from_snapshot::_restore_table_from_snaps
 
 /// Fluent builder constructing a request to `RestoreTableFromSnapshot`.
 ///
-/// <p>Restores a table from a snapshot to your Amazon Redshift Serverless instance.</p>
+/// <p>Restores a table from a snapshot to your Amazon Redshift Serverless instance. You can't use this operation to restore tables with <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved sort keys</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreTableFromSnapshotFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

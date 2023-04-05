@@ -3,54 +3,54 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateE911AddressInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS account ID.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
     #[doc(hidden)]
     pub street_number: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
     #[doc(hidden)]
     pub street_info: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address city, such as <code>Portland</code>.</p>
     #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address state, such as <code>ME</code>.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country in the address being validated.</p>
     #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The dress postal code, such <code>04352</code>.</p>
     #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
 }
 impl ValidateE911AddressInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS account ID.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
     pub fn street_number(&self) -> std::option::Option<&str> {
         self.street_number.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
     pub fn street_info(&self) -> std::option::Option<&str> {
         self.street_info.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address city, such as <code>Portland</code>.</p>
     pub fn city(&self) -> std::option::Option<&str> {
         self.city.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address state, such as <code>ME</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country in the address being validated.</p>
     pub fn country(&self) -> std::option::Option<&str> {
         self.country.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The dress postal code, such <code>04352</code>.</p>
     pub fn postal_code(&self) -> std::option::Option<&str> {
         self.postal_code.as_deref()
     }
@@ -90,72 +90,72 @@ pub struct ValidateE911AddressInputBuilder {
     pub(crate) postal_code: std::option::Option<std::string::String>,
 }
 impl ValidateE911AddressInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS account ID.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.aws_account_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The AWS account ID.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
     pub fn street_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.street_number = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
     pub fn set_street_number(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.street_number = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
     pub fn street_info(mut self, input: impl Into<std::string::String>) -> Self {
         self.street_info = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
     pub fn set_street_info(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.street_info = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address city, such as <code>Portland</code>.</p>
     pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
         self.city = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address city, such as <code>Portland</code>.</p>
     pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.city = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address state, such as <code>ME</code>.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
         self.state = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The address state, such as <code>ME</code>.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.state = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country in the address being validated.</p>
     pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
         self.country = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The country in the address being validated.</p>
     pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.country = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The dress postal code, such <code>04352</code>.</p>
     pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.postal_code = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The dress postal code, such <code>04352</code>.</p>
     pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.postal_code = input;
         self

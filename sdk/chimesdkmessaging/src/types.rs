@@ -39,6 +39,10 @@ pub use crate::types::_search_field_operator::SearchFieldOperator;
 
 pub use crate::types::_search_field_key::SearchFieldKey;
 
+pub use crate::types::_streaming_configuration::StreamingConfiguration;
+
+pub use crate::types::_messaging_data_type::MessagingDataType;
+
 pub use crate::types::_channel_membership_preferences::ChannelMembershipPreferences;
 
 pub use crate::types::_push_notification_preferences::PushNotificationPreferences;
@@ -46,6 +50,10 @@ pub use crate::types::_push_notification_preferences::PushNotificationPreference
 pub use crate::types::_allow_notifications::AllowNotifications;
 
 pub use crate::types::_identity::Identity;
+
+pub use crate::types::_expiration_settings::ExpirationSettings;
+
+pub use crate::types::_expiration_criterion::ExpirationCriterion;
 
 pub use crate::types::_sub_channel_summary::SubChannelSummary;
 
@@ -153,6 +161,10 @@ mod _elastic_channel_configuration;
 
 mod _error_code;
 
+mod _expiration_criterion;
+
+mod _expiration_settings;
+
 mod _fallback_action;
 
 mod _identity;
@@ -162,6 +174,8 @@ mod _invocation_type;
 mod _lambda_configuration;
 
 mod _message_attribute_value;
+
+mod _messaging_data_type;
 
 mod _messaging_session_endpoint;
 
@@ -182,6 +196,8 @@ mod _search_field_key;
 mod _search_field_operator;
 
 mod _sort_order;
+
+mod _streaming_configuration;
 
 mod _sub_channel_summary;
 

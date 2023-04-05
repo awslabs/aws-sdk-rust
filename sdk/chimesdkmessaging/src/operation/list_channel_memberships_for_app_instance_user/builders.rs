@@ -5,8 +5,8 @@ pub use crate::operation::list_channel_memberships_for_app_instance_user::_list_
 
 /// Fluent builder constructing a request to `ListChannelMembershipsForAppInstanceUser`.
 ///
-/// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+/// <p> Lists all channels that anr <code>AppInstanceUser</code> or <code>AppInstanceBot</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelMembershipsForAppInstanceUserFluentBuilder {
@@ -64,12 +64,12 @@ impl ListChannelMembershipsForAppInstanceUserFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_channel_memberships_for_app_instance_user::paginator::ListChannelMembershipsForAppInstanceUserPaginator{
         crate::operation::list_channel_memberships_for_app_instance_user::paginator::ListChannelMembershipsForAppInstanceUserPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    /// <p>The ARN of the user or bot.</p>
     pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
-    /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    /// <p>The ARN of the user or bot.</p>
     pub fn set_app_instance_user_arn(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -97,12 +97,12 @@ impl ListChannelMembershipsForAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
-    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self

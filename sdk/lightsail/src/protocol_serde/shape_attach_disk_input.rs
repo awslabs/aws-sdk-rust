@@ -12,5 +12,8 @@ pub fn ser_attach_disk_input(
     if let Some(var_3) = &input.disk_path {
         object.key("diskPath").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.auto_mounting {
+        object.key("autoMounting").boolean(*var_4);
+    }
     Ok(())
 }

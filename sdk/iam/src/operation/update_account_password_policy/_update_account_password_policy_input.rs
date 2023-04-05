@@ -11,23 +11,23 @@ pub struct UpdateAccountPasswordPolicyInput {
     /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
     #[doc(hidden)]
-    pub require_symbols: bool,
+    pub require_symbols: std::option::Option<bool>,
     /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one numeric character.</p>
     #[doc(hidden)]
-    pub require_numbers: bool,
+    pub require_numbers: std::option::Option<bool>,
     /// <p>Specifies whether IAM user passwords must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one uppercase character.</p>
     #[doc(hidden)]
-    pub require_uppercase_characters: bool,
+    pub require_uppercase_characters: std::option::Option<bool>,
     /// <p>Specifies whether IAM user passwords must contain at least one lowercase character from the ISO basic Latin alphabet (a to z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one lowercase character.</p>
     #[doc(hidden)]
-    pub require_lowercase_characters: bool,
+    pub require_lowercase_characters: std::option::Option<bool>,
     /// <p> Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users in the account do not automatically have permissions to change their own password.</p>
     #[doc(hidden)]
-    pub allow_users_to_change_password: bool,
+    pub allow_users_to_change_password: std::option::Option<bool>,
     /// <p>The number of days that an IAM user password is valid.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>0</code>. The result is that IAM user passwords never expire.</p>
     #[doc(hidden)]
@@ -52,27 +52,27 @@ impl UpdateAccountPasswordPolicyInput {
     /// <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p>
     /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
-    pub fn require_symbols(&self) -> bool {
+    pub fn require_symbols(&self) -> std::option::Option<bool> {
         self.require_symbols
     }
     /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one numeric character.</p>
-    pub fn require_numbers(&self) -> bool {
+    pub fn require_numbers(&self) -> std::option::Option<bool> {
         self.require_numbers
     }
     /// <p>Specifies whether IAM user passwords must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one uppercase character.</p>
-    pub fn require_uppercase_characters(&self) -> bool {
+    pub fn require_uppercase_characters(&self) -> std::option::Option<bool> {
         self.require_uppercase_characters
     }
     /// <p>Specifies whether IAM user passwords must contain at least one lowercase character from the ISO basic Latin alphabet (a to z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one lowercase character.</p>
-    pub fn require_lowercase_characters(&self) -> bool {
+    pub fn require_lowercase_characters(&self) -> std::option::Option<bool> {
         self.require_lowercase_characters
     }
     /// <p> Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users in the account do not automatically have permissions to change their own password.</p>
-    pub fn allow_users_to_change_password(&self) -> bool {
+    pub fn allow_users_to_change_password(&self) -> std::option::Option<bool> {
         self.allow_users_to_change_password
     }
     /// <p>The number of days that an IAM user password is valid.</p>
@@ -239,13 +239,11 @@ impl UpdateAccountPasswordPolicyInputBuilder {
         Ok(
             crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyInput {
                 minimum_password_length: self.minimum_password_length,
-                require_symbols: self.require_symbols.unwrap_or_default(),
-                require_numbers: self.require_numbers.unwrap_or_default(),
-                require_uppercase_characters: self.require_uppercase_characters.unwrap_or_default(),
-                require_lowercase_characters: self.require_lowercase_characters.unwrap_or_default(),
-                allow_users_to_change_password: self
-                    .allow_users_to_change_password
-                    .unwrap_or_default(),
+                require_symbols: self.require_symbols,
+                require_numbers: self.require_numbers,
+                require_uppercase_characters: self.require_uppercase_characters,
+                require_lowercase_characters: self.require_lowercase_characters,
+                allow_users_to_change_password: self.allow_users_to_change_password,
                 max_password_age: self.max_password_age,
                 password_reuse_prevention: self.password_reuse_prevention,
                 hard_expiry: self.hard_expiry,

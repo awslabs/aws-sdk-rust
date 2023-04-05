@@ -23,6 +23,9 @@ pub struct ChannelSummary {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    #[doc(hidden)]
+    pub insecure_ingest: bool,
 }
 impl ChannelSummary {
     /// <p>Channel ARN.</p>
@@ -52,6 +55,10 @@ impl ChannelSummary {
     {
         self.tags.as_ref()
     }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn insecure_ingest(&self) -> bool {
+        self.insecure_ingest
+    }
 }
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::types::ChannelSummary).
@@ -71,6 +78,7 @@ pub struct ChannelSummaryBuilder {
     pub(crate) recording_configuration_arn: std::option::Option<std::string::String>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) insecure_ingest: std::option::Option<bool>,
 }
 impl ChannelSummaryBuilder {
     /// <p>Channel ARN.</p>
@@ -154,6 +162,16 @@ impl ChannelSummaryBuilder {
         self.tags = input;
         self
     }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn insecure_ingest(mut self, input: bool) -> Self {
+        self.insecure_ingest = Some(input);
+        self
+    }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn set_insecure_ingest(mut self, input: std::option::Option<bool>) -> Self {
+        self.insecure_ingest = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn build(self) -> crate::types::ChannelSummary {
         crate::types::ChannelSummary {
@@ -163,6 +181,7 @@ impl ChannelSummaryBuilder {
             authorized: self.authorized.unwrap_or_default(),
             recording_configuration_arn: self.recording_configuration_arn,
             tags: self.tags,
+            insecure_ingest: self.insecure_ingest.unwrap_or_default(),
         }
     }
 }

@@ -9,11 +9,11 @@ pub fn ser_delete_inventory_input(
     if let Some(var_2) = &input.schema_delete_option {
         object.key("SchemaDeleteOption").string(var_2.as_str());
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_3) = &input.dry_run {
+        object.key("DryRun").boolean(*var_3);
     }
-    if let Some(var_3) = &input.client_token {
-        object.key("ClientToken").string(var_3.as_str());
+    if let Some(var_4) = &input.client_token {
+        object.key("ClientToken").string(var_4.as_str());
     }
     Ok(())
 }

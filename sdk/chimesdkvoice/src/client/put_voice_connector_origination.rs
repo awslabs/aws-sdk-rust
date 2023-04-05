@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutVoiceConnectorOrigination`](crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::set_voice_connector_id): (undocumented)
-    ///   - [`origination(Origination)`](crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::origination) / [`set_origination(Option<Origination>)`](crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::set_origination): (undocumented)
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
+    ///   - [`origination(Origination)`](crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::origination) / [`set_origination(Option<Origination>)`](crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::set_origination): <p>The origination settings being updated.</p>
     /// - On success, responds with [`PutVoiceConnectorOriginationOutput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput) with field(s):
-    ///   - [`origination(Option<Origination>)`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput::origination): (undocumented)
+    ///   - [`origination(Option<Origination>)`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput::origination): <p>The updated origination settings.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorOriginationError>`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationError)
     pub fn put_voice_connector_origination(&self) -> crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder{
         crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::new(self.handle.clone())

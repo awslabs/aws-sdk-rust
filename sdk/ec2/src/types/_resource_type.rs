@@ -36,6 +36,8 @@
 ///     ResourceType::InternetGateway => { /* ... */ },
 ///     ResourceType::Ipam => { /* ... */ },
 ///     ResourceType::IpamPool => { /* ... */ },
+///     ResourceType::IpamResourceDiscovery => { /* ... */ },
+///     ResourceType::IpamResourceDiscoveryAssociation => { /* ... */ },
 ///     ResourceType::IpamScope => { /* ... */ },
 ///     ResourceType::Ipv4poolEc2 => { /* ... */ },
 ///     ResourceType::Ipv6poolEc2 => { /* ... */ },
@@ -176,6 +178,10 @@ pub enum ResourceType {
     Ipam,
     #[allow(missing_docs)] // documentation missing in model
     IpamPool,
+    #[allow(missing_docs)] // documentation missing in model
+    IpamResourceDiscovery,
+    #[allow(missing_docs)] // documentation missing in model
+    IpamResourceDiscoveryAssociation,
     #[allow(missing_docs)] // documentation missing in model
     IpamScope,
     #[allow(missing_docs)] // documentation missing in model
@@ -324,6 +330,8 @@ impl std::convert::From<&str> for ResourceType {
             "internet-gateway" => ResourceType::InternetGateway,
             "ipam" => ResourceType::Ipam,
             "ipam-pool" => ResourceType::IpamPool,
+            "ipam-resource-discovery" => ResourceType::IpamResourceDiscovery,
+            "ipam-resource-discovery-association" => ResourceType::IpamResourceDiscoveryAssociation,
             "ipam-scope" => ResourceType::IpamScope,
             "ipv4pool-ec2" => ResourceType::Ipv4poolEc2,
             "ipv6pool-ec2" => ResourceType::Ipv6poolEc2,
@@ -434,6 +442,8 @@ impl ResourceType {
             ResourceType::InternetGateway => "internet-gateway",
             ResourceType::Ipam => "ipam",
             ResourceType::IpamPool => "ipam-pool",
+            ResourceType::IpamResourceDiscovery => "ipam-resource-discovery",
+            ResourceType::IpamResourceDiscoveryAssociation => "ipam-resource-discovery-association",
             ResourceType::IpamScope => "ipam-scope",
             ResourceType::Ipv4poolEc2 => "ipv4pool-ec2",
             ResourceType::Ipv6poolEc2 => "ipv6pool-ec2",
@@ -533,6 +543,8 @@ impl ResourceType {
             "internet-gateway",
             "ipam",
             "ipam-pool",
+            "ipam-resource-discovery",
+            "ipam-resource-discovery-association",
             "ipam-scope",
             "ipv4pool-ec2",
             "ipv6pool-ec2",

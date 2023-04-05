@@ -20,6 +20,9 @@ pub struct ModifyHostsInput {
     /// <p>If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same request.</p>
     #[doc(hidden)]
     pub instance_family: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    #[doc(hidden)]
+    pub host_maintenance: std::option::Option<crate::types::HostMaintenance>,
 }
 impl ModifyHostsInput {
     /// <p>Specify whether to enable or disable auto-placement.</p>
@@ -44,6 +47,10 @@ impl ModifyHostsInput {
     pub fn instance_family(&self) -> std::option::Option<&str> {
         self.instance_family.as_deref()
     }
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn host_maintenance(&self) -> std::option::Option<&crate::types::HostMaintenance> {
+        self.host_maintenance.as_ref()
+    }
 }
 impl ModifyHostsInput {
     /// Creates a new builder-style object to manufacture [`ModifyHostsInput`](crate::operation::modify_hosts::ModifyHostsInput).
@@ -61,6 +68,7 @@ pub struct ModifyHostsInputBuilder {
     pub(crate) host_recovery: std::option::Option<crate::types::HostRecovery>,
     pub(crate) instance_type: std::option::Option<std::string::String>,
     pub(crate) instance_family: std::option::Option<std::string::String>,
+    pub(crate) host_maintenance: std::option::Option<crate::types::HostMaintenance>,
 }
 impl ModifyHostsInputBuilder {
     /// <p>Specify whether to enable or disable auto-placement.</p>
@@ -132,6 +140,19 @@ impl ModifyHostsInputBuilder {
         self.instance_family = input;
         self
     }
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn host_maintenance(mut self, input: crate::types::HostMaintenance) -> Self {
+        self.host_maintenance = Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_host_maintenance(
+        mut self,
+        input: std::option::Option<crate::types::HostMaintenance>,
+    ) -> Self {
+        self.host_maintenance = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyHostsInput`](crate::operation::modify_hosts::ModifyHostsInput).
     pub fn build(
         self,
@@ -145,6 +166,7 @@ impl ModifyHostsInputBuilder {
             host_recovery: self.host_recovery,
             instance_type: self.instance_type,
             instance_family: self.instance_family,
+            host_maintenance: self.host_maintenance,
         })
     }
 }

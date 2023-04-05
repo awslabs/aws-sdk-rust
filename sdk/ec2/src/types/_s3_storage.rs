@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Storage {
-    /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best practices for managing Amazon Web Services access keys</a>.</p>
+    /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
     #[doc(hidden)]
     pub aws_access_key_id: std::option::Option<std::string::String>,
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
@@ -21,7 +21,7 @@ pub struct S3Storage {
     pub upload_policy_signature: std::option::Option<std::string::String>,
 }
 impl S3Storage {
-    /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best practices for managing Amazon Web Services access keys</a>.</p>
+    /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
     pub fn aws_access_key_id(&self) -> std::option::Option<&str> {
         self.aws_access_key_id.as_deref()
     }
@@ -60,12 +60,12 @@ pub struct S3StorageBuilder {
     pub(crate) upload_policy_signature: std::option::Option<std::string::String>,
 }
 impl S3StorageBuilder {
-    /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best practices for managing Amazon Web Services access keys</a>.</p>
+    /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
     pub fn aws_access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.aws_access_key_id = Some(input.into());
         self
     }
-    /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best practices for managing Amazon Web Services access keys</a>.</p>
+    /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
     pub fn set_aws_access_key_id(
         mut self,
         input: std::option::Option<std::string::String>,

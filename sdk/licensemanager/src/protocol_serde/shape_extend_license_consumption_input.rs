@@ -6,8 +6,8 @@ pub fn ser_extend_license_consumption_input(
     if let Some(var_1) = &input.license_consumption_token {
         object.key("LicenseConsumptionToken").string(var_1.as_str());
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_2) = &input.dry_run {
+        object.key("DryRun").boolean(*var_2);
     }
     Ok(())
 }

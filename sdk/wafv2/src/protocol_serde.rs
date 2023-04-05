@@ -478,6 +478,8 @@ pub(crate) mod shape_action_condition;
 
 pub(crate) mod shape_all;
 
+pub(crate) mod shape_aws_managed_rules_atp_rule_set;
+
 pub(crate) mod shape_aws_managed_rules_bot_control_rule_set;
 
 pub(crate) mod shape_conditions;
@@ -502,8 +504,36 @@ pub(crate) mod shape_json_pointer_paths;
 
 pub(crate) mod shape_managed_rule_group_configs;
 
+pub(crate) mod shape_request_inspection;
+
+pub(crate) mod shape_response_inspection;
+
 pub(crate) mod shape_rule_action_overrides;
 
 pub(crate) mod shape_statements;
 
 pub(crate) mod shape_text_transformations;
+
+pub(crate) mod shape_response_inspection_body_contains;
+
+pub(crate) mod shape_response_inspection_header;
+
+pub(crate) mod shape_response_inspection_json;
+
+pub(crate) mod shape_response_inspection_status_code;
+
+pub(crate) mod shape_response_inspection_body_contains_failure_strings;
+
+pub(crate) mod shape_response_inspection_body_contains_success_strings;
+
+pub(crate) mod shape_response_inspection_header_failure_values;
+
+pub(crate) mod shape_response_inspection_header_success_values;
+
+pub(crate) mod shape_response_inspection_json_failure_values;
+
+pub(crate) mod shape_response_inspection_json_success_values;
+
+pub(crate) mod shape_response_inspection_status_code_failure_codes;
+
+pub(crate) mod shape_response_inspection_status_code_success_codes;

@@ -12,6 +12,11 @@ pub struct AttachDiskInput {
     /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
     #[doc(hidden)]
     pub disk_path: std::option::Option<std::string::String>,
+    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
+    /// <p>This value only applies to Lightsail for Research resources.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub auto_mounting: std::option::Option<bool>,
 }
 impl AttachDiskInput {
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
@@ -25,6 +30,12 @@ impl AttachDiskInput {
     /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
     pub fn disk_path(&self) -> std::option::Option<&str> {
         self.disk_path.as_deref()
+    }
+    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
+    /// <p>This value only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn auto_mounting(&self) -> std::option::Option<bool> {
+        self.auto_mounting
     }
 }
 impl AttachDiskInput {
@@ -41,6 +52,7 @@ pub struct AttachDiskInputBuilder {
     pub(crate) disk_name: std::option::Option<std::string::String>,
     pub(crate) instance_name: std::option::Option<std::string::String>,
     pub(crate) disk_path: std::option::Option<std::string::String>,
+    pub(crate) auto_mounting: std::option::Option<bool>,
 }
 impl AttachDiskInputBuilder {
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
@@ -73,6 +85,20 @@ impl AttachDiskInputBuilder {
         self.disk_path = input;
         self
     }
+    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
+    /// <p>This value only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn auto_mounting(mut self, input: bool) -> Self {
+        self.auto_mounting = Some(input);
+        self
+    }
+    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
+    /// <p>This value only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn set_auto_mounting(mut self, input: std::option::Option<bool>) -> Self {
+        self.auto_mounting = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AttachDiskInput`](crate::operation::attach_disk::AttachDiskInput).
     pub fn build(
         self,
@@ -84,6 +110,7 @@ impl AttachDiskInputBuilder {
             disk_name: self.disk_name,
             instance_name: self.instance_name,
             disk_path: self.disk_path,
+            auto_mounting: self.auto_mounting,
         })
     }
 }

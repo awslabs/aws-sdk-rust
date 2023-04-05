@@ -14,7 +14,7 @@ pub struct PillarReviewSummary {
     /// <p>The notes associated with the workload.</p>
     #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     #[doc(hidden)]
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
 }
@@ -32,7 +32,7 @@ impl PillarReviewSummary {
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::types::Risk, i32>> {
@@ -92,14 +92,14 @@ impl PillarReviewSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
     ///
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.risk_counts.unwrap_or_default();
         hash_map.insert(k, v);
         self.risk_counts = Some(hash_map);
         self
     }
-    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn set_risk_counts(
         mut self,
         input: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,

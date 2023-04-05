@@ -264,6 +264,8 @@ mod delete_bucket_lifecycle_configuration;
 
 mod delete_bucket_policy;
 
+mod delete_bucket_replication;
+
 mod delete_bucket_tagging;
 
 mod delete_job_tagging;
@@ -299,6 +301,8 @@ mod get_bucket;
 mod get_bucket_lifecycle_configuration;
 
 mod get_bucket_policy;
+
+mod get_bucket_replication;
 
 mod get_bucket_tagging;
 
@@ -341,6 +345,8 @@ mod put_access_point_policy_for_object_lambda;
 mod put_bucket_lifecycle_configuration;
 
 mod put_bucket_policy;
+
+mod put_bucket_replication;
 
 mod put_bucket_tagging;
 

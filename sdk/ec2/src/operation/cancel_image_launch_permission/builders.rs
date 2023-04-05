@@ -5,7 +5,7 @@ pub use crate::operation::cancel_image_launch_permission::_cancel_image_launch_p
 
 /// Fluent builder constructing a request to `CancelImageLaunchPermission`.
 ///
-/// <p>Removes your Amazon Web Services account from the launch permissions for the specified AMI. For more information, see <a href="https://docs.aws.amazon.com/">Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>Removes your Amazon Web Services account from the launch permissions for the specified AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html"> Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelImageLaunchPermissionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

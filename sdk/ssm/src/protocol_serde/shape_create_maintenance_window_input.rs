@@ -27,37 +27,35 @@ pub fn ser_create_maintenance_window_input(
             aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    {
+    if let Some(var_8) = &input.duration {
         object.key("Duration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.duration).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    {
+    if let Some(var_9) = &input.cutoff {
         object.key("Cutoff").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.cutoff).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    {
-        object
-            .key("AllowUnassociatedTargets")
-            .boolean(input.allow_unassociated_targets);
+    if let Some(var_10) = &input.allow_unassociated_targets {
+        object.key("AllowUnassociatedTargets").boolean(*var_10);
     }
-    if let Some(var_8) = &input.client_token {
-        object.key("ClientToken").string(var_8.as_str());
+    if let Some(var_11) = &input.client_token {
+        object.key("ClientToken").string(var_11.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("Tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_10.finish();
+        array_13.finish();
     }
     Ok(())
 }

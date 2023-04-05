@@ -7,7 +7,7 @@ impl ExportEarthObservationJobInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -35,6 +35,9 @@ impl ExportEarthObservationJobInput {
             ),
             Err(e) => (Err(e), None),
         };
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::export_earth_observation_job::ExportEarthObservationJobInput,
@@ -163,11 +166,11 @@ pub type ExportEarthObservationJobErrorKind = ExportEarthObservationJobError;
 pub enum ExportEarthObservationJobError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p></p>
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p></p>
+    /// <p>The request references a resource which does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You have exceeded the service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),

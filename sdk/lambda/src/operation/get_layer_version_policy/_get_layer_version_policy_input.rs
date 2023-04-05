@@ -8,7 +8,7 @@ pub struct GetLayerVersionPolicyInput {
     pub layer_name: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     #[doc(hidden)]
-    pub version_number: i64,
+    pub version_number: std::option::Option<i64>,
 }
 impl GetLayerVersionPolicyInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -16,7 +16,7 @@ impl GetLayerVersionPolicyInput {
         self.layer_name.as_deref()
     }
     /// <p>The version number.</p>
-    pub fn version_number(&self) -> i64 {
+    pub fn version_number(&self) -> std::option::Option<i64> {
         self.version_number
     }
 }
@@ -67,7 +67,7 @@ impl GetLayerVersionPolicyInputBuilder {
         Ok(
             crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput {
                 layer_name: self.layer_name,
-                version_number: self.version_number.unwrap_or_default(),
+                version_number: self.version_number,
             },
         )
     }

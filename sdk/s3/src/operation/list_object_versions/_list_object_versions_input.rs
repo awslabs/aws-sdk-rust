@@ -19,7 +19,7 @@ pub struct ListObjectVersionsInput {
     /// true
     /// </istruncated>. To return the additional keys, see key-marker and version-id-marker.</p>
     #[doc(hidden)]
-    pub max_keys: i32,
+    pub max_keys: std::option::Option<i32>,
     /// <p>Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -50,7 +50,7 @@ impl ListObjectVersionsInput {
     /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. If additional keys satisfy the search criteria, but were not returned because max-keys was exceeded, the response contains <istruncated>
     /// true
     /// </istruncated>. To return the additional keys, see key-marker and version-id-marker.</p>
-    pub fn max_keys(&self) -> i32 {
+    pub fn max_keys(&self) -> std::option::Option<i32> {
         self.max_keys
     }
     /// <p>Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </p>
@@ -194,7 +194,7 @@ impl ListObjectVersionsInputBuilder {
                 delimiter: self.delimiter,
                 encoding_type: self.encoding_type,
                 key_marker: self.key_marker,
-                max_keys: self.max_keys.unwrap_or_default(),
+                max_keys: self.max_keys,
                 prefix: self.prefix,
                 version_id_marker: self.version_id_marker,
                 expected_bucket_owner: self.expected_bucket_owner,

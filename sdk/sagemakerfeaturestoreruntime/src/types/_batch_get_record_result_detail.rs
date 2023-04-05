@@ -7,7 +7,7 @@ pub struct BatchGetRecordResultDetail {
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
     #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
-    /// <p>The value of the record identifer in string format.</p>
+    /// <p>The value of the record identifier in string format.</p>
     #[doc(hidden)]
     pub record_identifier_value_as_string: std::option::Option<std::string::String>,
     /// <p>The <code>Record</code> retrieved.</p>
@@ -19,7 +19,7 @@ impl BatchGetRecordResultDetail {
     pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
-    /// <p>The value of the record identifer in string format.</p>
+    /// <p>The value of the record identifier in string format.</p>
     pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
         self.record_identifier_value_as_string.as_deref()
     }
@@ -57,7 +57,7 @@ impl BatchGetRecordResultDetailBuilder {
         self.feature_group_name = input;
         self
     }
-    /// <p>The value of the record identifer in string format.</p>
+    /// <p>The value of the record identifier in string format.</p>
     pub fn record_identifier_value_as_string(
         mut self,
         input: impl Into<std::string::String>,
@@ -65,7 +65,7 @@ impl BatchGetRecordResultDetailBuilder {
         self.record_identifier_value_as_string = Some(input.into());
         self
     }
-    /// <p>The value of the record identifer in string format.</p>
+    /// <p>The value of the record identifier in string format.</p>
     pub fn set_record_identifier_value_as_string(
         mut self,
         input: std::option::Option<std::string::String>,

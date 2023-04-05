@@ -70,6 +70,9 @@ pub struct TunnelOption {
     /// <p>Options for logging VPN tunnel activity.</p>
     #[doc(hidden)]
     pub log_options: std::option::Option<crate::types::VpnTunnelLogOptions>,
+    /// <p>Status of tunnel endpoint lifecycle control feature.</p>
+    #[doc(hidden)]
+    pub enable_tunnel_lifecycle_control: std::option::Option<bool>,
 }
 impl TunnelOption {
     /// <p>The external IP address of the VPN tunnel.</p>
@@ -164,6 +167,10 @@ impl TunnelOption {
     pub fn log_options(&self) -> std::option::Option<&crate::types::VpnTunnelLogOptions> {
         self.log_options.as_ref()
     }
+    /// <p>Status of tunnel endpoint lifecycle control feature.</p>
+    pub fn enable_tunnel_lifecycle_control(&self) -> std::option::Option<bool> {
+        self.enable_tunnel_lifecycle_control
+    }
 }
 impl TunnelOption {
     /// Creates a new builder-style object to manufacture [`TunnelOption`](crate::types::TunnelOption).
@@ -202,6 +209,7 @@ pub struct TunnelOptionBuilder {
     pub(crate) ike_versions: std::option::Option<std::vec::Vec<crate::types::IkeVersionsListValue>>,
     pub(crate) startup_action: std::option::Option<std::string::String>,
     pub(crate) log_options: std::option::Option<crate::types::VpnTunnelLogOptions>,
+    pub(crate) enable_tunnel_lifecycle_control: std::option::Option<bool>,
 }
 impl TunnelOptionBuilder {
     /// <p>The external IP address of the VPN tunnel.</p>
@@ -504,6 +512,16 @@ impl TunnelOptionBuilder {
         self.log_options = input;
         self
     }
+    /// <p>Status of tunnel endpoint lifecycle control feature.</p>
+    pub fn enable_tunnel_lifecycle_control(mut self, input: bool) -> Self {
+        self.enable_tunnel_lifecycle_control = Some(input);
+        self
+    }
+    /// <p>Status of tunnel endpoint lifecycle control feature.</p>
+    pub fn set_enable_tunnel_lifecycle_control(mut self, input: std::option::Option<bool>) -> Self {
+        self.enable_tunnel_lifecycle_control = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TunnelOption`](crate::types::TunnelOption).
     pub fn build(self) -> crate::types::TunnelOption {
         crate::types::TunnelOption {
@@ -527,6 +545,7 @@ impl TunnelOptionBuilder {
             ike_versions: self.ike_versions,
             startup_action: self.startup_action,
             log_options: self.log_options,
+            enable_tunnel_lifecycle_control: self.enable_tunnel_lifecycle_control,
         }
     }
 }

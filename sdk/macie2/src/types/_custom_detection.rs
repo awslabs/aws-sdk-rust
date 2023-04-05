@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomDetection {
-    /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    /// <p>The unique identifier for the custom data identifier.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
@@ -18,7 +18,7 @@ pub struct CustomDetection {
     pub occurrences: std::option::Option<crate::types::Occurrences>,
 }
 impl CustomDetection {
-    /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    /// <p>The unique identifier for the custom data identifier.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -52,12 +52,12 @@ pub struct CustomDetectionBuilder {
     pub(crate) occurrences: std::option::Option<crate::types::Occurrences>,
 }
 impl CustomDetectionBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    /// <p>The unique identifier for the custom data identifier.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    /// <p>The unique identifier for the custom data identifier.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.arn = input;
         self

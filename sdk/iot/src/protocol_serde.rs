@@ -880,6 +880,10 @@ pub(crate) mod shape_log_target_configurations;
 
 pub(crate) mod shape_logging_options_payload;
 
+pub(crate) mod shape_maintenance_window;
+
+pub(crate) mod shape_maintenance_windows;
+
 pub(crate) mod shape_managed_job_templates_summary_list;
 
 pub(crate) mod shape_metric_datum_list;
@@ -1168,6 +1172,8 @@ pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_scheduled_audit_metadata;
 
+pub(crate) mod shape_scheduled_job_rollout_list;
+
 pub(crate) mod shape_searchable_attributes;
 
 pub(crate) mod shape_security_profile_identifier;
@@ -1279,6 +1285,8 @@ pub(crate) mod shape_republish_action;
 pub(crate) mod shape_s3_action;
 
 pub(crate) mod shape_salesforce_action;
+
+pub(crate) mod shape_scheduled_job_rollout;
 
 pub(crate) mod shape_security_group_list;
 

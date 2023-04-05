@@ -8,7 +8,7 @@ pub struct DescribeNetworkInterfacePermissionsOutput {
     #[doc(hidden)]
     pub network_interface_permissions:
         std::option::Option<std::vec::Vec<crate::types::NetworkInterfacePermission>>,
-    /// <p>The token to use to retrieve the next page of results.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -20,7 +20,7 @@ impl DescribeNetworkInterfacePermissionsOutput {
     ) -> std::option::Option<&[crate::types::NetworkInterfacePermission]> {
         self.network_interface_permissions.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -69,12 +69,12 @@ impl DescribeNetworkInterfacePermissionsOutputBuilder {
         self.network_interface_permissions = input;
         self
     }
-    /// <p>The token to use to retrieve the next page of results.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next page of results.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

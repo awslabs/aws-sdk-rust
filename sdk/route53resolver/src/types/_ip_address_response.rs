@@ -10,9 +10,12 @@ pub struct IpAddressResponse {
     /// <p>The ID of one subnet.</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
+    /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
     #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
+    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    #[doc(hidden)]
+    pub ipv6: std::option::Option<std::string::String>,
     /// <p>A status code that gives the current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::IpAddressStatus>,
@@ -35,9 +38,13 @@ impl IpAddressResponse {
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
+    /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
+    }
+    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    pub fn ipv6(&self) -> std::option::Option<&str> {
+        self.ipv6.as_deref()
     }
     /// <p>A status code that gives the current status of the request.</p>
     pub fn status(&self) -> std::option::Option<&crate::types::IpAddressStatus> {
@@ -70,6 +77,7 @@ pub struct IpAddressResponseBuilder {
     pub(crate) ip_id: std::option::Option<std::string::String>,
     pub(crate) subnet_id: std::option::Option<std::string::String>,
     pub(crate) ip: std::option::Option<std::string::String>,
+    pub(crate) ipv6: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::IpAddressStatus>,
     pub(crate) status_message: std::option::Option<std::string::String>,
     pub(crate) creation_time: std::option::Option<std::string::String>,
@@ -96,14 +104,24 @@ impl IpAddressResponseBuilder {
         self.subnet_id = input;
         self
     }
-    /// <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
+    /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.ip = Some(input.into());
         self
     }
-    /// <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
+    /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.ip = input;
+        self
+    }
+    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    pub fn ipv6(mut self, input: impl Into<std::string::String>) -> Self {
+        self.ipv6 = Some(input.into());
+        self
+    }
+    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    pub fn set_ipv6(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ipv6 = input;
         self
     }
     /// <p>A status code that gives the current status of the request.</p>
@@ -155,6 +173,7 @@ impl IpAddressResponseBuilder {
             ip_id: self.ip_id,
             subnet_id: self.subnet_id,
             ip: self.ip,
+            ipv6: self.ipv6,
             status: self.status,
             status_message: self.status_message,
             creation_time: self.creation_time,

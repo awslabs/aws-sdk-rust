@@ -5,7 +5,7 @@ pub use crate::operation::get_cluster_session_credentials::_get_cluster_session_
 
 /// Fluent builder constructing a request to `GetClusterSessionCredentials`.
 ///
-/// <p>Provides Temporary, basic HTTP credentials that are associated with a given runtime IAM role and used by a cluster with fine-grained access control activated. You can use these credentials to connect to cluster endpoints that support username-based and password-based authentication.</p>
+/// <p>Provides temporary, HTTP basic credentials that are associated with a given runtime IAM role and used by a cluster with fine-grained access control activated. You can use these credentials to connect to cluster endpoints that support username and password authentication.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetClusterSessionCredentialsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

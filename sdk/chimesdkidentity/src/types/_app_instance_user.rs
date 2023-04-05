@@ -19,6 +19,9 @@ pub struct AppInstanceUser {
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
     #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
+    #[doc(hidden)]
+    pub expiration_settings: std::option::Option<crate::types::ExpirationSettings>,
 }
 impl AppInstanceUser {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -41,6 +44,10 @@ impl AppInstanceUser {
     pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
+    /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn expiration_settings(&self) -> std::option::Option<&crate::types::ExpirationSettings> {
+        self.expiration_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for AppInstanceUser {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50,6 +57,7 @@ impl std::fmt::Debug for AppInstanceUser {
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+        formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
 }
@@ -69,6 +77,7 @@ pub struct AppInstanceUserBuilder {
     pub(crate) metadata: std::option::Option<std::string::String>,
     pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) expiration_settings: std::option::Option<crate::types::ExpirationSettings>,
 }
 impl AppInstanceUserBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -130,6 +139,19 @@ impl AppInstanceUserBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
+        self.expiration_settings = Some(input);
+        self
+    }
+    /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn set_expiration_settings(
+        mut self,
+        input: std::option::Option<crate::types::ExpirationSettings>,
+    ) -> Self {
+        self.expiration_settings = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AppInstanceUser`](crate::types::AppInstanceUser).
     pub fn build(self) -> crate::types::AppInstanceUser {
         crate::types::AppInstanceUser {
@@ -138,6 +160,7 @@ impl AppInstanceUserBuilder {
             metadata: self.metadata,
             created_timestamp: self.created_timestamp,
             last_updated_timestamp: self.last_updated_timestamp,
+            expiration_settings: self.expiration_settings,
         }
     }
 }
@@ -149,6 +172,7 @@ impl std::fmt::Debug for AppInstanceUserBuilder {
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+        formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
 }

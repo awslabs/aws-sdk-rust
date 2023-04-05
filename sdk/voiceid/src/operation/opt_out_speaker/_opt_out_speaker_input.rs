@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptOutSpeakerInput {
-    /// <p>The identifier of the domain containing the speaker.</p>
+    /// <p>The identifier of the domain that contains the speaker.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the speaker you want opted-out.</p>
@@ -11,7 +11,7 @@ pub struct OptOutSpeakerInput {
     pub speaker_id: std::option::Option<std::string::String>,
 }
 impl OptOutSpeakerInput {
-    /// <p>The identifier of the domain containing the speaker.</p>
+    /// <p>The identifier of the domain that contains the speaker.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -43,12 +43,12 @@ pub struct OptOutSpeakerInputBuilder {
     pub(crate) speaker_id: std::option::Option<std::string::String>,
 }
 impl OptOutSpeakerInputBuilder {
-    /// <p>The identifier of the domain containing the speaker.</p>
+    /// <p>The identifier of the domain that contains the speaker.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the domain containing the speaker.</p>
+    /// <p>The identifier of the domain that contains the speaker.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.domain_id = input;
         self

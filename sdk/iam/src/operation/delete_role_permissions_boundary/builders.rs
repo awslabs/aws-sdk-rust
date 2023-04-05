@@ -5,8 +5,9 @@ pub use crate::operation::delete_role_permissions_boundary::_delete_role_permiss
 
 /// Fluent builder constructing a request to `DeleteRolePermissionsBoundary`.
 ///
-/// <p>Deletes the permissions boundary for the specified IAM role. </p> <important>
-/// <p>Deleting the permissions boundary for a role might increase its permissions. For example, it might allow anyone who assumes the role to perform all the actions granted in its permissions policies. </p>
+/// <p>Deletes the permissions boundary for the specified IAM role. </p>
+/// <p>You cannot set the boundary for a service-linked role.</p> <important>
+/// <p>Deleting the permissions boundary for a role might increase its permissions. For example, it might allow anyone who assumes the role to perform all the actions granted in its permissions policies.</p>
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRolePermissionsBoundaryFluentBuilder {

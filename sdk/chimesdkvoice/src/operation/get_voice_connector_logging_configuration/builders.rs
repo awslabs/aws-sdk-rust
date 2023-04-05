@@ -5,6 +5,7 @@ pub use crate::operation::get_voice_connector_logging_configuration::_get_voice_
 
 /// Fluent builder constructing a request to `GetVoiceConnectorLoggingConfiguration`.
 ///
+/// <p>Retrieves the logging configuration settings for the specified Voice Connector. Shows whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceConnectorLoggingConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl GetVoiceConnectorLoggingConfigurationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,

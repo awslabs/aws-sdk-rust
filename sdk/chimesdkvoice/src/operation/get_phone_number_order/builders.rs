@@ -5,6 +5,7 @@ pub use crate::operation::get_phone_number_order::_get_phone_number_order_input:
 
 /// Fluent builder constructing a request to `GetPhoneNumberOrder`.
 ///
+/// <p>Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in E.164 format, product type, and order status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPhoneNumberOrderFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl GetPhoneNumberOrderFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number order .</p>
     pub fn phone_number_order_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.phone_number_order_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number order .</p>
     pub fn set_phone_number_order_id(
         mut self,
         input: std::option::Option<std::string::String>,

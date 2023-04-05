@@ -8,3 +8,13 @@ pub(crate) fn reflens_describe_accelerators_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_describe_accelerators_output_accelerator_set(
+    input: crate::operation::describe_accelerators::DescribeAcceleratorsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
+    let input = match input.accelerator_set {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

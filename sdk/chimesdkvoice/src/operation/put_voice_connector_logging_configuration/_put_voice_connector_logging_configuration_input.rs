@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorLoggingConfigurationInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The logging configuration being updated.</p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::types::LoggingConfiguration>,
 }
 impl PutVoiceConnectorLoggingConfigurationInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The logging configuration being updated.</p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::types::LoggingConfiguration> {
@@ -37,12 +37,12 @@ pub struct PutVoiceConnectorLoggingConfigurationInputBuilder {
     pub(crate) logging_configuration: std::option::Option<crate::types::LoggingConfiguration>,
 }
 impl PutVoiceConnectorLoggingConfigurationInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -50,12 +50,12 @@ impl PutVoiceConnectorLoggingConfigurationInputBuilder {
         self.voice_connector_id = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The logging configuration being updated.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The logging configuration being updated.</p>
     pub fn set_logging_configuration(
         mut self,
         input: std::option::Option<crate::types::LoggingConfiguration>,

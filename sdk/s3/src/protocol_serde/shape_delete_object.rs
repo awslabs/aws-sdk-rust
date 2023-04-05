@@ -35,12 +35,11 @@ pub fn ser_delete_object_headers(
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
-    if input.bypass_governance_retention {
-        let mut encoder =
-            aws_smithy_types::primitive::Encoder::from(input.bypass_governance_retention);
-        let formatted_5 = encoder.encode();
-        if !formatted_5.is_empty() {
-            let header_value = formatted_5;
+    if let Some(inner_5) = &input.bypass_governance_retention {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_5);
+        let formatted_6 = encoder.encode();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "bypass_governance_retention",
@@ -53,10 +52,10 @@ pub fn ser_delete_object_headers(
             builder = builder.header("x-amz-bypass-governance-retention", header_value);
         }
     }
-    if let Some(inner_6) = &input.expected_bucket_owner {
-        let formatted_7 = inner_6.as_str();
-        if !formatted_7.is_empty() {
-            let header_value = formatted_7;
+    if let Some(inner_7) = &input.expected_bucket_owner {
+        let formatted_8 = inner_7.as_str();
+        if !formatted_8.is_empty() {
+            let header_value = formatted_8;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                 aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",

@@ -3,17 +3,17 @@ pub fn ser_describe_endpoints_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_endpoints::DescribeEndpointsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.max_results != 0 {
+    if let Some(var_1) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.mode {
-        object.key("mode").string(var_1.as_str());
+    if let Some(var_2) = &input.mode {
+        object.key("mode").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("nextToken").string(var_2.as_str());
+    if let Some(var_3) = &input.next_token {
+        object.key("nextToken").string(var_3.as_str());
     }
     Ok(())
 }

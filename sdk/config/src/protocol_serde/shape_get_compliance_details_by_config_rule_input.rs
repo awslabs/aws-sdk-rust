@@ -15,14 +15,14 @@ pub fn ser_get_compliance_details_by_config_rule_input(
         }
         array_3.finish();
     }
-    if input.limit != 0 {
+    if let Some(var_5) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.limit).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("NextToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("NextToken").string(var_6.as_str());
     }
     Ok(())
 }

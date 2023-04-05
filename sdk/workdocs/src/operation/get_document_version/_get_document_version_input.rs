@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentVersionInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
@@ -17,10 +17,10 @@ pub struct GetDocumentVersionInput {
     pub fields: std::option::Option<std::string::String>,
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
     #[doc(hidden)]
-    pub include_custom_metadata: bool,
+    pub include_custom_metadata: std::option::Option<bool>,
 }
 impl GetDocumentVersionInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -37,7 +37,7 @@ impl GetDocumentVersionInput {
         self.fields.as_deref()
     }
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
-    pub fn include_custom_metadata(&self) -> bool {
+    pub fn include_custom_metadata(&self) -> std::option::Option<bool> {
         self.include_custom_metadata
     }
 }
@@ -71,12 +71,12 @@ pub struct GetDocumentVersionInputBuilder {
     pub(crate) include_custom_metadata: std::option::Option<bool>,
 }
 impl GetDocumentVersionInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.authentication_token = Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -137,7 +137,7 @@ impl GetDocumentVersionInputBuilder {
                 document_id: self.document_id,
                 version_id: self.version_id,
                 fields: self.fields,
-                include_custom_metadata: self.include_custom_metadata.unwrap_or_default(),
+                include_custom_metadata: self.include_custom_metadata,
             },
         )
     }

@@ -16,6 +16,9 @@ pub struct InboundConnection {
     /// <p>The current status of the connection.</p>
     #[doc(hidden)]
     pub connection_status: std::option::Option<crate::types::InboundConnectionStatus>,
+    /// <p>The connection mode.</p>
+    #[doc(hidden)]
+    pub connection_mode: std::option::Option<crate::types::ConnectionMode>,
 }
 impl InboundConnection {
     /// <p>Information about the source (local) domain.</p>
@@ -38,6 +41,10 @@ impl InboundConnection {
     pub fn connection_status(&self) -> std::option::Option<&crate::types::InboundConnectionStatus> {
         self.connection_status.as_ref()
     }
+    /// <p>The connection mode.</p>
+    pub fn connection_mode(&self) -> std::option::Option<&crate::types::ConnectionMode> {
+        self.connection_mode.as_ref()
+    }
 }
 impl InboundConnection {
     /// Creates a new builder-style object to manufacture [`InboundConnection`](crate::types::InboundConnection).
@@ -54,6 +61,7 @@ pub struct InboundConnectionBuilder {
     pub(crate) remote_domain_info: std::option::Option<crate::types::DomainInformationContainer>,
     pub(crate) connection_id: std::option::Option<std::string::String>,
     pub(crate) connection_status: std::option::Option<crate::types::InboundConnectionStatus>,
+    pub(crate) connection_mode: std::option::Option<crate::types::ConnectionMode>,
 }
 impl InboundConnectionBuilder {
     /// <p>Information about the source (local) domain.</p>
@@ -105,6 +113,19 @@ impl InboundConnectionBuilder {
         self.connection_status = input;
         self
     }
+    /// <p>The connection mode.</p>
+    pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
+        self.connection_mode = Some(input);
+        self
+    }
+    /// <p>The connection mode.</p>
+    pub fn set_connection_mode(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionMode>,
+    ) -> Self {
+        self.connection_mode = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InboundConnection`](crate::types::InboundConnection).
     pub fn build(self) -> crate::types::InboundConnection {
         crate::types::InboundConnection {
@@ -112,6 +133,7 @@ impl InboundConnectionBuilder {
             remote_domain_info: self.remote_domain_info,
             connection_id: self.connection_id,
             connection_status: self.connection_status,
+            connection_mode: self.connection_mode,
         }
     }
 }

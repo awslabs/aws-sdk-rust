@@ -218,6 +218,8 @@ mod associate_personas_to_entities;
 
 mod batch_delete_document;
 
+mod batch_delete_featured_results_set;
+
 mod batch_get_document_status;
 
 mod batch_put_document;
@@ -231,6 +233,8 @@ mod create_data_source;
 mod create_experience;
 
 mod create_faq;
+
+mod create_featured_results_set;
 
 mod create_index;
 
@@ -290,6 +294,8 @@ mod describe_experience;
 
 mod describe_faq;
 
+mod describe_featured_results_set;
+
 mod describe_index;
 
 mod describe_principal_mapping;
@@ -322,6 +328,8 @@ mod list_experiences;
 
 mod list_faqs;
 
+mod list_featured_results_sets;
+
 mod list_groups_older_than_ordering_id;
 
 mod list_indices;
@@ -351,6 +359,8 @@ mod update_access_control_configuration;
 mod update_data_source;
 
 mod update_experience;
+
+mod update_featured_results_set;
 
 mod update_index;
 

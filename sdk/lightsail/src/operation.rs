@@ -67,6 +67,9 @@ pub mod create_domain;
 /// Types for the `CreateDomainEntry` operation.
 pub mod create_domain_entry;
 
+/// Types for the `CreateGUISessionAccessDetails` operation.
+pub mod create_gui_session_access_details;
+
 /// Types for the `CreateInstanceSnapshot` operation.
 pub mod create_instance_snapshot;
 
@@ -237,6 +240,9 @@ pub mod get_container_service_powers;
 
 /// Types for the `GetContainerServices` operation.
 pub mod get_container_services;
+
+/// Types for the `GetCostEstimate` operation.
+pub mod get_cost_estimate;
 
 /// Types for the `GetDisk` operation.
 pub mod get_disk;
@@ -412,11 +418,17 @@ pub mod set_ip_address_type;
 /// Types for the `SetResourceAccessForBucket` operation.
 pub mod set_resource_access_for_bucket;
 
+/// Types for the `StartGUISession` operation.
+pub mod start_gui_session;
+
 /// Types for the `StartInstance` operation.
 pub mod start_instance;
 
 /// Types for the `StartRelationalDatabase` operation.
 pub mod start_relational_database;
+
+/// Types for the `StopGUISession` operation.
+pub mod stop_gui_session;
 
 /// Types for the `StopInstance` operation.
 pub mod stop_instance;

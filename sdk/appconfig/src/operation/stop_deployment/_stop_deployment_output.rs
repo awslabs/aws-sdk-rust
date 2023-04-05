@@ -60,6 +60,12 @@ pub struct StopDeploymentOutput {
     /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
     #[doc(hidden)]
     pub applied_extensions: std::option::Option<std::vec::Vec<crate::types::AppliedExtension>>,
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
+    #[doc(hidden)]
+    pub kms_key_arn: std::option::Option<std::string::String>,
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    #[doc(hidden)]
+    pub kms_key_identifier: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl StopDeploymentOutput {
@@ -139,6 +145,14 @@ impl StopDeploymentOutput {
     pub fn applied_extensions(&self) -> std::option::Option<&[crate::types::AppliedExtension]> {
         self.applied_extensions.as_deref()
     }
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn kms_key_identifier(&self) -> std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for StopDeploymentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -176,6 +190,8 @@ pub struct StopDeploymentOutputBuilder {
     pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) applied_extensions:
         std::option::Option<std::vec::Vec<crate::types::AppliedExtension>>,
+    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    pub(crate) kms_key_identifier: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl StopDeploymentOutputBuilder {
@@ -408,6 +424,29 @@ impl StopDeploymentOutputBuilder {
         self.applied_extensions = input;
         self
     }
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
+    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.kms_key_arn = Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
+    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn kms_key_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+        self.kms_key_identifier = Some(input.into());
+        self
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn set_kms_key_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -439,6 +478,8 @@ impl StopDeploymentOutputBuilder {
             started_at: self.started_at,
             completed_at: self.completed_at,
             applied_extensions: self.applied_extensions,
+            kms_key_arn: self.kms_key_arn,
+            kms_key_identifier: self.kms_key_identifier,
             _request_id: self._request_id,
         }
     }

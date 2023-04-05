@@ -21,5 +21,17 @@ pub fn ser_update_member_detectors_input(
         )?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.features {
+        let mut array_7 = object.key("features").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_member_features_configuration::ser_member_features_configuration(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

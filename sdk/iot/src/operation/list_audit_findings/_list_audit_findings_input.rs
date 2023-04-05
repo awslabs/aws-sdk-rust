@@ -26,7 +26,7 @@ pub struct ListAuditFindingsInput {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     #[doc(hidden)]
-    pub list_suppressed_findings: bool,
+    pub list_suppressed_findings: std::option::Option<bool>,
 }
 impl ListAuditFindingsInput {
     /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
@@ -58,7 +58,7 @@ impl ListAuditFindingsInput {
         self.end_time.as_ref()
     }
     /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
-    pub fn list_suppressed_findings(&self) -> bool {
+    pub fn list_suppressed_findings(&self) -> std::option::Option<bool> {
         self.list_suppressed_findings
     }
 }
@@ -186,7 +186,7 @@ impl ListAuditFindingsInputBuilder {
                 next_token: self.next_token,
                 start_time: self.start_time,
                 end_time: self.end_time,
-                list_suppressed_findings: self.list_suppressed_findings.unwrap_or_default(),
+                list_suppressed_findings: self.list_suppressed_findings,
             },
         )
     }

@@ -33,23 +33,23 @@ pub fn ser_list_open_workflow_executions_input(
     if let Some(var_8) = &input.next_page_token {
         object.key("nextPageToken").string(var_8.as_str());
     }
-    if input.maximum_page_size != 0 {
+    if let Some(var_9) = &input.maximum_page_size {
         object.key("maximumPageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_page_size).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.reverse_order {
-        object.key("reverseOrder").boolean(input.reverse_order);
+    if let Some(var_10) = &input.reverse_order {
+        object.key("reverseOrder").boolean(*var_10);
     }
-    if let Some(var_9) = &input.execution_filter {
+    if let Some(var_11) = &input.execution_filter {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("executionFilter").start_object();
+        let mut object_12 = object.key("executionFilter").start_object();
         crate::protocol_serde::shape_workflow_execution_filter::ser_workflow_execution_filter(
-            &mut object_10,
-            var_9,
+            &mut object_12,
+            var_11,
         )?;
-        object_10.finish();
+        object_12.finish();
     }
     Ok(())
 }

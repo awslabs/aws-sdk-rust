@@ -19,7 +19,7 @@ pub struct VideoPreprocessor {
     /// Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
     #[doc(hidden)]
     pub image_inserter: std::option::Option<crate::types::ImageInserter>,
-    /// Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default.
+    /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
     #[doc(hidden)]
     pub noise_reducer: std::option::Option<crate::types::NoiseReducer>,
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
@@ -50,7 +50,7 @@ impl VideoPreprocessor {
     pub fn image_inserter(&self) -> std::option::Option<&crate::types::ImageInserter> {
         self.image_inserter.as_ref()
     }
-    /// Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default.
+    /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
     pub fn noise_reducer(&self) -> std::option::Option<&crate::types::NoiseReducer> {
         self.noise_reducer.as_ref()
     }
@@ -146,12 +146,12 @@ impl VideoPreprocessorBuilder {
         self.image_inserter = input;
         self
     }
-    /// Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default.
+    /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
     pub fn noise_reducer(mut self, input: crate::types::NoiseReducer) -> Self {
         self.noise_reducer = Some(input);
         self
     }
-    /// Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default.
+    /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
     pub fn set_noise_reducer(
         mut self,
         input: std::option::Option<crate::types::NoiseReducer>,

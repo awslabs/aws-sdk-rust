@@ -45,6 +45,11 @@ where
                                     crate::protocol_serde::shape_cluster_timeline::de_cluster_timeline(tokens)?
                                 );
                             }
+                            "ErrorDetails" => {
+                                builder = builder.set_error_details(
+                                    crate::protocol_serde::shape_error_detail_list::de_error_detail_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

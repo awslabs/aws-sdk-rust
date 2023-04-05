@@ -7,10 +7,10 @@ pub struct ReplicationDetails {
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
     #[doc(hidden)]
     pub replicated: bool,
-    /// <p>Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
+    /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
     #[doc(hidden)]
     pub replicated_externally: bool,
-    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is configured to replicate one or more objects to.</p>
+    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
     #[doc(hidden)]
     pub replication_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -19,11 +19,11 @@ impl ReplicationDetails {
     pub fn replicated(&self) -> bool {
         self.replicated
     }
-    /// <p>Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
+    /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
     pub fn replicated_externally(&self) -> bool {
         self.replicated_externally
     }
-    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is configured to replicate one or more objects to.</p>
+    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
     pub fn replication_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.replication_accounts.as_deref()
     }
@@ -54,12 +54,12 @@ impl ReplicationDetailsBuilder {
         self.replicated = input;
         self
     }
-    /// <p>Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
+    /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
     pub fn replicated_externally(mut self, input: bool) -> Self {
         self.replicated_externally = Some(input);
         self
     }
-    /// <p>Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
+    /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
     pub fn set_replicated_externally(mut self, input: std::option::Option<bool>) -> Self {
         self.replicated_externally = input;
         self
@@ -68,14 +68,14 @@ impl ReplicationDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_replication_accounts`](Self::set_replication_accounts).
     ///
-    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is configured to replicate one or more objects to.</p>
+    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
     pub fn replication_accounts(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.replication_accounts.unwrap_or_default();
         v.push(input.into());
         self.replication_accounts = Some(v);
         self
     }
-    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is configured to replicate one or more objects to.</p>
+    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
     pub fn set_replication_accounts(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

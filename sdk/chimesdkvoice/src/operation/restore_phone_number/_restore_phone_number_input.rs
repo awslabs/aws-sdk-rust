@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestorePhoneNumberInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number being restored.</p>
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl RestorePhoneNumberInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number being restored.</p>
     pub fn phone_number_id(&self) -> std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
@@ -35,12 +35,12 @@ pub struct RestorePhoneNumberInputBuilder {
     pub(crate) phone_number_id: std::option::Option<std::string::String>,
 }
 impl RestorePhoneNumberInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number being restored.</p>
     pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.phone_number_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the phone number being restored.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.phone_number_id = input;
         self

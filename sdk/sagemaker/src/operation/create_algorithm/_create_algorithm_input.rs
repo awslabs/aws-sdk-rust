@@ -35,7 +35,7 @@ pub struct CreateAlgorithmInput {
         std::option::Option<crate::types::AlgorithmValidationSpecification>,
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
     #[doc(hidden)]
-    pub certify_for_marketplace: bool,
+    pub certify_for_marketplace: std::option::Option<bool>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -82,7 +82,7 @@ impl CreateAlgorithmInput {
         self.validation_specification.as_ref()
     }
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
-    pub fn certify_for_marketplace(&self) -> bool {
+    pub fn certify_for_marketplace(&self) -> std::option::Option<bool> {
         self.certify_for_marketplace
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
@@ -246,7 +246,7 @@ impl CreateAlgorithmInputBuilder {
             training_specification: self.training_specification,
             inference_specification: self.inference_specification,
             validation_specification: self.validation_specification,
-            certify_for_marketplace: self.certify_for_marketplace.unwrap_or_default(),
+            certify_for_marketplace: self.certify_for_marketplace,
             tags: self.tags,
         })
     }

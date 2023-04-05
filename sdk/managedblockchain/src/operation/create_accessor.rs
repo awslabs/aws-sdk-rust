@@ -176,6 +176,8 @@ pub enum CreateAccessorError {
     ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
     /// <p>The request or operation couldn't be performed because a service is throttling requests. The most common source of throttling errors is creating resources that exceed your service limit for this resource type. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p></p>
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -200,6 +202,7 @@ impl std::fmt::Display for CreateAccessorError {
             Self::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::ResourceLimitExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::TooManyTagsException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -223,6 +226,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateAccessorE
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ThrottlingException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyTagsException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -276,6 +282,7 @@ impl CreateAccessorError {
             Self::ResourceAlreadyExistsException(e) => e.meta(),
             Self::ResourceLimitExceededException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
+            Self::TooManyTagsException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -303,6 +310,10 @@ impl CreateAccessorError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `CreateAccessorError::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(self, Self::TooManyTagsException(_))
+    }
 }
 impl std::error::Error for CreateAccessorError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
@@ -313,6 +324,7 @@ impl std::error::Error for CreateAccessorError {
             Self::ResourceAlreadyExistsException(_inner) => Some(_inner),
             Self::ResourceLimitExceededException(_inner) => Some(_inner),
             Self::ThrottlingException(_inner) => Some(_inner),
+            Self::TooManyTagsException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

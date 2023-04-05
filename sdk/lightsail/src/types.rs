@@ -197,6 +197,8 @@ pub use crate::types::_instance_snapshot::InstanceSnapshot;
 
 pub use crate::types::_disk::Disk;
 
+pub use crate::types::_auto_mount_status::AutoMountStatus;
+
 pub use crate::types::_disk_state::DiskState;
 
 pub use crate::types::_add_on::AddOn;
@@ -275,6 +277,18 @@ pub use crate::types::_disk_snapshot::DiskSnapshot;
 
 pub use crate::types::_disk_snapshot_state::DiskSnapshotState;
 
+pub use crate::types::_resource_budget_estimate::ResourceBudgetEstimate;
+
+pub use crate::types::_cost_estimate::CostEstimate;
+
+pub use crate::types::_estimate_by_time::EstimateByTime;
+
+pub use crate::types::_time_period::TimePeriod;
+
+pub use crate::types::_currency::Currency;
+
+pub use crate::types::_pricing_unit::PricingUnit;
+
 pub use crate::types::_container_service_power::ContainerServicePower;
 
 pub use crate::types::_container_service_metric_name::ContainerServiceMetricName;
@@ -313,6 +327,8 @@ pub use crate::types::_certificate_status::CertificateStatus;
 
 pub use crate::types::_bundle::Bundle;
 
+pub use crate::types::_app_category::AppCategory;
+
 pub use crate::types::_instance_platform::InstancePlatform;
 
 pub use crate::types::_account_level_bpa_sync::AccountLevelBpaSync;
@@ -347,11 +363,17 @@ pub use crate::types::_monitored_resource_info::MonitoredResourceInfo;
 
 pub use crate::types::_add_on_request::AddOnRequest;
 
+pub use crate::types::_stop_instance_on_idle_request::StopInstanceOnIdleRequest;
+
 pub use crate::types::_auto_snapshot_add_on_request::AutoSnapshotAddOnRequest;
 
 pub use crate::types::_add_on_type::AddOnType;
 
 pub use crate::types::_disk_map::DiskMap;
+
+pub use crate::types::_session::Session;
+
+pub use crate::types::_status::Status;
 
 pub use crate::types::_container_service_registry_login::ContainerServiceRegistryLogin;
 
@@ -387,7 +409,11 @@ mod _alarm;
 
 mod _alarm_state;
 
+mod _app_category;
+
 mod _attached_disk;
+
+mod _auto_mount_status;
 
 mod _auto_snapshot_add_on_request;
 
@@ -487,6 +513,10 @@ mod _container_service_state_detail_code;
 
 mod _cookie_object;
 
+mod _cost_estimate;
+
+mod _currency;
+
 mod _destination_info;
 
 mod _disk;
@@ -518,6 +548,8 @@ mod _domain_entry;
 mod _domain_validation_record;
 
 mod _endpoint_request;
+
+mod _estimate_by_time;
 
 mod _export_snapshot_record;
 
@@ -665,6 +697,8 @@ mod _port_info_source_type;
 
 mod _port_state;
 
+mod _pricing_unit;
+
 mod _private_registry_access;
 
 mod _private_registry_access_request;
@@ -711,6 +745,8 @@ mod _renewal_summary;
 
 mod _resource_bucket_access;
 
+mod _resource_budget_estimate;
+
 mod _resource_location;
 
 mod _resource_receiving_access;
@@ -719,11 +755,19 @@ mod _resource_record;
 
 mod _resource_type;
 
+mod _session;
+
 mod _static_ip;
+
+mod _status;
 
 mod _status_type;
 
+mod _stop_instance_on_idle_request;
+
 mod _tag;
+
+mod _time_period;
 
 mod _treat_missing_data;
 

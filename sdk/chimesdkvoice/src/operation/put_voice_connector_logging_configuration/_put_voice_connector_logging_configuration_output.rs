@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorLoggingConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated logging configuration.</p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorLoggingConfigurationOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated logging configuration.</p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::types::LoggingConfiguration> {
@@ -36,12 +36,12 @@ pub struct PutVoiceConnectorLoggingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorLoggingConfigurationOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated logging configuration.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The updated logging configuration.</p>
     pub fn set_logging_configuration(
         mut self,
         input: std::option::Option<crate::types::LoggingConfiguration>,

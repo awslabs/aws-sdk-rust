@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`definition(Option<String>)`](crate::operation::get_run::GetRunOutput::definition): <p>The run's definition.</p>
     ///   - [`digest(Option<String>)`](crate::operation::get_run::GetRunOutput::digest): <p>The run's digest.</p>
     ///   - [`parameters(Option<Document>)`](crate::operation::get_run::GetRunOutput::parameters): <p>The run's parameters.</p>
-    ///   - [`storage_capacity(Option<i32>)`](crate::operation::get_run::GetRunOutput::storage_capacity): <p>The run's storage capacity.</p>
+    ///   - [`storage_capacity(Option<i32>)`](crate::operation::get_run::GetRunOutput::storage_capacity): <p>The run's storage capacity in gigabytes.</p>
     ///   - [`output_uri(Option<String>)`](crate::operation::get_run::GetRunOutput::output_uri): <p>The run's output URI.</p>
     ///   - [`log_level(Option<RunLogLevel>)`](crate::operation::get_run::GetRunOutput::log_level): <p>The run's log level.</p>
     ///   - [`resource_digests(Option<HashMap<String, String>>)`](crate::operation::get_run::GetRunOutput::resource_digests): <p>The run's resource digests.</p>

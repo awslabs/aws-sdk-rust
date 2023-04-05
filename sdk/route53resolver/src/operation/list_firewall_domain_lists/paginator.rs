@@ -28,6 +28,14 @@ impl ListFirewallDomainListsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `firewall_domain_lists`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_firewall_domain_lists::paginator::ListFirewallDomainListsPaginatorItems{
+        crate::operation::list_firewall_domain_lists::paginator::ListFirewallDomainListsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -111,6 +119,35 @@ impl ListFirewallDomainListsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListFirewallDomainListsPaginator`
+///
+/// This is created with [`.items()`](ListFirewallDomainListsPaginator::items)
+pub struct ListFirewallDomainListsPaginatorItems(ListFirewallDomainListsPaginator);
+
+impl ListFirewallDomainListsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::types::FirewallDomainListMetadata,
+            aws_smithy_http::result::SdkError<
+                crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError,
+            >,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_firewall_domain_lists_output_firewall_domain_lists(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

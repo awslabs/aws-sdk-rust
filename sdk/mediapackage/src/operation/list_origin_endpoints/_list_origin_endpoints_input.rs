@@ -8,7 +8,7 @@ pub struct ListOriginEndpointsInput {
     pub channel_id: std::option::Option<std::string::String>,
     /// The upper bound on the number of records to return.
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// A token used to resume pagination from the end of a previous request.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl ListOriginEndpointsInput {
         self.channel_id.as_deref()
     }
     /// The upper bound on the number of records to return.
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// A token used to resume pagination from the end of a previous request.
@@ -85,7 +85,7 @@ impl ListOriginEndpointsInputBuilder {
         Ok(
             crate::operation::list_origin_endpoints::ListOriginEndpointsInput {
                 channel_id: self.channel_id,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

@@ -1002,6 +1002,53 @@ impl From<crate::operation::create_domain_entry::CreateDomainEntryError> for Err
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError,
+    ) -> Self {
+        match err {
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::create_instances::CreateInstancesError,
             R,
         >,
@@ -3496,6 +3543,61 @@ impl From<crate::operation::get_container_services::GetContainerServicesError> f
             crate::operation::get_container_services::GetContainerServicesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_container_services::GetContainerServicesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_container_services::GetContainerServicesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_estimate::GetCostEstimateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_estimate::GetCostEstimateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_cost_estimate::GetCostEstimateError> for Error {
+    fn from(err: crate::operation::get_cost_estimate::GetCostEstimateError) -> Self {
+        match err {
+            crate::operation::get_cost_estimate::GetCostEstimateError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::get_cost_estimate::GetCostEstimateError::InvalidInputException(
+                inner,
+            ) => Error::InvalidInputException(inner),
+            crate::operation::get_cost_estimate::GetCostEstimateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_cost_estimate::GetCostEstimateError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::get_cost_estimate::GetCostEstimateError::UnauthenticatedException(
+                inner,
+            ) => Error::UnauthenticatedException(inner),
+            crate::operation::get_cost_estimate::GetCostEstimateError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -6128,6 +6230,61 @@ impl From<crate::operation::set_resource_access_for_bucket::SetResourceAccessFor
     }
 }
 impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_gui_session::StartGUISessionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_gui_session::StartGUISessionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_gui_session::StartGUISessionError> for Error {
+    fn from(err: crate::operation::start_gui_session::StartGUISessionError) -> Self {
+        match err {
+            crate::operation::start_gui_session::StartGUISessionError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::start_gui_session::StartGUISessionError::InvalidInputException(
+                inner,
+            ) => Error::InvalidInputException(inner),
+            crate::operation::start_gui_session::StartGUISessionError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::start_gui_session::StartGUISessionError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::start_gui_session::StartGUISessionError::UnauthenticatedException(
+                inner,
+            ) => Error::UnauthenticatedException(inner),
+            crate::operation::start_gui_session::StartGUISessionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::operation::start_instance::StartInstanceError, R>>
     for Error
 where
@@ -6212,6 +6369,61 @@ impl From<crate::operation::start_relational_database::StartRelationalDatabaseEr
             crate::operation::start_relational_database::StartRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::start_relational_database::StartRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::start_relational_database::StartRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_gui_session::StopGUISessionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_gui_session::StopGUISessionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_gui_session::StopGUISessionError> for Error {
+    fn from(err: crate::operation::stop_gui_session::StopGUISessionError) -> Self {
+        match err {
+            crate::operation::stop_gui_session::StopGUISessionError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::stop_gui_session::StopGUISessionError::InvalidInputException(
+                inner,
+            ) => Error::InvalidInputException(inner),
+            crate::operation::stop_gui_session::StopGUISessionError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::stop_gui_session::StopGUISessionError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::stop_gui_session::StopGUISessionError::UnauthenticatedException(
+                inner,
+            ) => Error::UnauthenticatedException(inner),
+            crate::operation::stop_gui_session::StopGUISessionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

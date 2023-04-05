@@ -6,7 +6,7 @@ pub struct ListAccessPoliciesInput {
     /// <p>The type of access policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::AccessPolicyType>,
-    /// <p>Resource filters (can be collection or indexes) that policies can apply to.</p>
+    /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If your initial <code>ListAccessPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListAccessPolicies</code> operations, which returns results in the next page. </p>
@@ -21,7 +21,7 @@ impl ListAccessPoliciesInput {
     pub fn r#type(&self) -> std::option::Option<&crate::types::AccessPolicyType> {
         self.r#type.as_ref()
     }
-    /// <p>Resource filters (can be collection or indexes) that policies can apply to.</p>
+    /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
     pub fn resource(&self) -> std::option::Option<&[std::string::String]> {
         self.resource.as_deref()
     }
@@ -66,14 +66,14 @@ impl ListAccessPoliciesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource`](Self::set_resource).
     ///
-    /// <p>Resource filters (can be collection or indexes) that policies can apply to.</p>
+    /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
     pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource.unwrap_or_default();
         v.push(input.into());
         self.resource = Some(v);
         self
     }
-    /// <p>Resource filters (can be collection or indexes) that policies can apply to.</p>
+    /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
     pub fn set_resource(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

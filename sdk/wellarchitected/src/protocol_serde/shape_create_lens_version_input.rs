@@ -6,11 +6,11 @@ pub fn ser_create_lens_version_input(
     if let Some(var_1) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_1.as_str());
     }
-    if input.is_major_version {
-        object.key("IsMajorVersion").boolean(input.is_major_version);
+    if let Some(var_2) = &input.is_major_version {
+        object.key("IsMajorVersion").boolean(*var_2);
     }
-    if let Some(var_2) = &input.lens_version {
-        object.key("LensVersion").string(var_2.as_str());
+    if let Some(var_3) = &input.lens_version {
+        object.key("LensVersion").string(var_3.as_str());
     }
     Ok(())
 }

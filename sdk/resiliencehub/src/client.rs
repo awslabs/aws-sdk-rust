@@ -216,6 +216,10 @@ mod add_draft_app_version_resource_mappings;
 
 mod create_app;
 
+mod create_app_version_app_component;
+
+mod create_app_version_resource;
+
 mod create_recommendation_template;
 
 mod create_resiliency_policy;
@@ -252,6 +256,12 @@ mod delete_app;
 
 mod delete_app_assessment;
 
+mod delete_app_input_source;
+
+mod delete_app_version_app_component;
+
+mod delete_app_version_resource;
+
 mod delete_recommendation_template;
 
 mod delete_resiliency_policy;
@@ -259,6 +269,12 @@ mod delete_resiliency_policy;
 mod describe_app;
 
 mod describe_app_assessment;
+
+mod describe_app_version;
+
+mod describe_app_version_app_component;
+
+mod describe_app_version_resource;
 
 mod describe_app_version_resources_resolution_status;
 
@@ -277,6 +293,10 @@ mod list_app_assessments;
 mod list_app_component_compliances;
 
 mod list_app_component_recommendations;
+
+mod list_app_input_sources;
+
+mod list_app_version_app_components;
 
 mod list_app_version_resource_mappings;
 
@@ -315,5 +335,11 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_app;
+
+mod update_app_version;
+
+mod update_app_version_app_component;
+
+mod update_app_version_resource;
 
 mod update_resiliency_policy;

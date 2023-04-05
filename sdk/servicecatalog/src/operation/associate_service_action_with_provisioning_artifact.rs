@@ -153,6 +153,8 @@ pub type AssociateServiceActionWithProvisioningArtifactErrorKind =
 pub enum AssociateServiceActionWithProvisioningArtifactError {
     /// <p>The specified resource is a duplicate.</p>
     DuplicateResourceException(crate::types::error::DuplicateResourceException),
+    /// <p>One or more parameters provided to the operation are not valid.</p>
+    InvalidParametersException(crate::types::error::InvalidParametersException),
     /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
@@ -178,6 +180,7 @@ impl std::fmt::Display for AssociateServiceActionWithProvisioningArtifactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::DuplicateResourceException(_inner) => _inner.fmt(f),
+            Self::InvalidParametersException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -190,6 +193,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::DuplicateResourceException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidParametersException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::LimitExceededException(_inner) => {
@@ -246,6 +252,7 @@ impl AssociateServiceActionWithProvisioningArtifactError {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::DuplicateResourceException(e) => e.meta(),
+            Self::InvalidParametersException(e) => e.meta(),
             Self::LimitExceededException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -254,6 +261,10 @@ impl AssociateServiceActionWithProvisioningArtifactError {
     /// Returns `true` if the error kind is `AssociateServiceActionWithProvisioningArtifactError::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(self, Self::DuplicateResourceException(_))
+    }
+    /// Returns `true` if the error kind is `AssociateServiceActionWithProvisioningArtifactError::InvalidParametersException`.
+    pub fn is_invalid_parameters_exception(&self) -> bool {
+        matches!(self, Self::InvalidParametersException(_))
     }
     /// Returns `true` if the error kind is `AssociateServiceActionWithProvisioningArtifactError::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -268,6 +279,7 @@ impl std::error::Error for AssociateServiceActionWithProvisioningArtifactError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::DuplicateResourceException(_inner) => Some(_inner),
+            Self::InvalidParametersException(_inner) => Some(_inner),
             Self::LimitExceededException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),

@@ -54,6 +54,11 @@ where
                                     crate::protocol_serde::shape_kubernetes_api_call_action::de_kubernetes_api_call_action(tokens)?
                                 );
                             }
+                            "rdsLoginAttemptAction" => {
+                                builder = builder.set_rds_login_attempt_action(
+                                    crate::protocol_serde::shape_rds_login_attempt_action::de_rds_login_attempt_action(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

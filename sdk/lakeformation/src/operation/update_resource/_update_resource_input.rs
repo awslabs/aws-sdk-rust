@@ -9,6 +9,9 @@ pub struct UpdateResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>Whether or not the resource is a federated resource.</p>
+    #[doc(hidden)]
+    pub with_federation: std::option::Option<bool>,
 }
 impl UpdateResourceInput {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
@@ -18,6 +21,10 @@ impl UpdateResourceInput {
     /// <p>The resource ARN.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn with_federation(&self) -> std::option::Option<bool> {
+        self.with_federation
     }
 }
 impl UpdateResourceInput {
@@ -33,6 +40,7 @@ impl UpdateResourceInput {
 pub struct UpdateResourceInputBuilder {
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) resource_arn: std::option::Option<std::string::String>,
+    pub(crate) with_federation: std::option::Option<bool>,
 }
 impl UpdateResourceInputBuilder {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
@@ -55,6 +63,16 @@ impl UpdateResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn with_federation(mut self, input: bool) -> Self {
+        self.with_federation = Some(input);
+        self
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn set_with_federation(mut self, input: std::option::Option<bool>) -> Self {
+        self.with_federation = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(
         self,
@@ -65,6 +83,7 @@ impl UpdateResourceInputBuilder {
         Ok(crate::operation::update_resource::UpdateResourceInput {
             role_arn: self.role_arn,
             resource_arn: self.resource_arn,
+            with_federation: self.with_federation,
         })
     }
 }

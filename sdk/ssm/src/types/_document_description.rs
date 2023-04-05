@@ -26,7 +26,7 @@ pub struct DocumentDescription {
     /// <p>The version of the artifact associated with the document.</p>
     #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services user account that created the document.</p>
+    /// <p>The Amazon Web Services user that created the document.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date when the document was created.</p>
@@ -129,7 +129,7 @@ impl DocumentDescription {
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon Web Services user account that created the document.</p>
+    /// <p>The Amazon Web Services user that created the document.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -344,12 +344,12 @@ impl DocumentDescriptionBuilder {
         self.version_name = input;
         self
     }
-    /// <p>The Amazon Web Services user account that created the document.</p>
+    /// <p>The Amazon Web Services user that created the document.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
         self.owner = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services user account that created the document.</p>
+    /// <p>The Amazon Web Services user that created the document.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.owner = input;
         self

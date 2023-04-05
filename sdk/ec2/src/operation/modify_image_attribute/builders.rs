@@ -5,7 +5,8 @@ pub use crate::operation::modify_image_attribute::_modify_image_attribute_input:
 
 /// Fluent builder constructing a request to `ModifyImageAttribute`.
 ///
-/// <p>Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time. You can use the <code>Attribute</code> parameter to specify the attribute or one of the following parameters: <code>Description</code> or <code>LaunchPermission</code>.</p>
+/// <p>Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time.</p>
+/// <p>To specify the attribute, you can use the <code>Attribute</code> parameter, or one of the following parameters: <code>Description</code>, <code>ImdsSupport</code>, or <code>LaunchPermission</code>.</p>
 /// <p>Images with an Amazon Web Services Marketplace product code cannot be made public.</p>
 /// <p>To enable the SriovNetSupport enhanced networking attribute of an image, enable SriovNetSupport on an instance and create an AMI from the instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -72,13 +73,13 @@ impl ModifyImageAttributeFluentBuilder {
         self.handle.client.call(op).await
     }
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.attribute(input.into());
         self
     }
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
@@ -183,12 +184,12 @@ impl ModifyImageAttributeFluentBuilder {
         self.inner = self.inner.set_user_ids(input);
         self
     }
-    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
+    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
         self
     }
-    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
+    /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self
@@ -235,6 +236,23 @@ impl ModifyImageAttributeFluentBuilder {
         input: std::option::Option<std::vec::Vec<std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_organizational_unit_arns(input);
+        self
+    }
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
+    /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
+    /// </important>
+    pub fn imds_support(mut self, input: crate::types::AttributeValue) -> Self {
+        self.inner = self.inner.imds_support(input);
+        self
+    }
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
+    /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
+    /// </important>
+    pub fn set_imds_support(
+        mut self,
+        input: std::option::Option<crate::types::AttributeValue>,
+    ) -> Self {
+        self.inner = self.inner.set_imds_support(input);
         self
     }
 }

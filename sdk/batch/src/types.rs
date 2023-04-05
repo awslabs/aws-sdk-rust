@@ -25,6 +25,8 @@ pub use crate::types::_eks_properties_override::EksPropertiesOverride;
 
 pub use crate::types::_eks_pod_properties_override::EksPodPropertiesOverride;
 
+pub use crate::types::_eks_metadata::EksMetadata;
+
 pub use crate::types::_eks_container_override::EksContainerOverride;
 
 pub use crate::types::_eks_container_resource_requirements::EksContainerResourceRequirements;
@@ -82,6 +84,8 @@ pub use crate::types::_node_properties::NodeProperties;
 pub use crate::types::_node_range_property::NodeRangeProperty;
 
 pub use crate::types::_container_properties::ContainerProperties;
+
+pub use crate::types::_ephemeral_storage::EphemeralStorage;
 
 pub use crate::types::_fargate_platform_configuration::FargatePlatformConfiguration;
 
@@ -261,6 +265,8 @@ mod _eks_empty_dir;
 
 mod _eks_host_path;
 
+mod _eks_metadata;
+
 mod _eks_pod_properties;
 
 mod _eks_pod_properties_detail;
@@ -276,6 +282,8 @@ mod _eks_properties_override;
 mod _eks_secret;
 
 mod _eks_volume;
+
+mod _ephemeral_storage;
 
 mod _evaluate_on_exit;
 

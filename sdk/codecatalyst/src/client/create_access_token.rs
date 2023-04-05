@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`secret(Option<String>)`](crate::operation::create_access_token::CreateAccessTokenOutput::secret): <p>The secret value of the personal access token.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_access_token::CreateAccessTokenOutput::name): <p>The friendly name of the personal access token.</p>
     ///   - [`expires_time(Option<DateTime>)`](crate::operation::create_access_token::CreateAccessTokenOutput::expires_time): <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
+    ///   - [`access_token_id(Option<String>)`](crate::operation::create_access_token::CreateAccessTokenOutput::access_token_id): <p>The system-generated unique ID of the access token.</p>
     /// - On failure, responds with [`SdkError<CreateAccessTokenError>`](crate::operation::create_access_token::CreateAccessTokenError)
     pub fn create_access_token(
         &self,

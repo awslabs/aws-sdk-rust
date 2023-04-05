@@ -58,6 +58,19 @@ where
                                     .map(|v| v.to_f32_lossy()),
                                 );
                             }
+                            "StandardMetricName" => {
+                                builder = builder.set_standard_metric_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::AutoMlMetricEnum::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

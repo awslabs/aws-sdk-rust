@@ -7,11 +7,18 @@ pub struct OfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     #[doc(hidden)]
     pub auc: std::option::Option<f32>,
+    /// <p> Indicates the range of area under curve (auc) expected from the OFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
+    #[doc(hidden)]
+    pub uncertainty_range: std::option::Option<crate::types::UncertaintyRange>,
 }
 impl OfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     pub fn auc(&self) -> std::option::Option<f32> {
         self.auc
+    }
+    /// <p> Indicates the range of area under curve (auc) expected from the OFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
+    pub fn uncertainty_range(&self) -> std::option::Option<&crate::types::UncertaintyRange> {
+        self.uncertainty_range.as_ref()
     }
 }
 impl OfiModelPerformance {
@@ -26,6 +33,7 @@ impl OfiModelPerformance {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct OfiModelPerformanceBuilder {
     pub(crate) auc: std::option::Option<f32>,
+    pub(crate) uncertainty_range: std::option::Option<crate::types::UncertaintyRange>,
 }
 impl OfiModelPerformanceBuilder {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
@@ -38,8 +46,24 @@ impl OfiModelPerformanceBuilder {
         self.auc = input;
         self
     }
+    /// <p> Indicates the range of area under curve (auc) expected from the OFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
+    pub fn uncertainty_range(mut self, input: crate::types::UncertaintyRange) -> Self {
+        self.uncertainty_range = Some(input);
+        self
+    }
+    /// <p> Indicates the range of area under curve (auc) expected from the OFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
+    pub fn set_uncertainty_range(
+        mut self,
+        input: std::option::Option<crate::types::UncertaintyRange>,
+    ) -> Self {
+        self.uncertainty_range = input;
+        self
+    }
     /// Consumes the builder and constructs a [`OfiModelPerformance`](crate::types::OfiModelPerformance).
     pub fn build(self) -> crate::types::OfiModelPerformance {
-        crate::types::OfiModelPerformance { auc: self.auc }
+        crate::types::OfiModelPerformance {
+            auc: self.auc,
+            uncertainty_range: self.uncertainty_range,
+        }
     }
 }

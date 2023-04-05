@@ -9,6 +9,18 @@ pub use crate::types::_vpc_derived_info::VpcDerivedInfo;
 
 pub use crate::types::_vpc_options::VpcOptions;
 
+pub use crate::types::_scheduled_action::ScheduledAction;
+
+pub use crate::types::_action_status::ActionStatus;
+
+pub use crate::types::_scheduled_by::ScheduledBy;
+
+pub use crate::types::_action_severity::ActionSeverity;
+
+pub use crate::types::_action_type::ActionType;
+
+pub use crate::types::_schedule_at::ScheduleAt;
+
 pub use crate::types::_package_details::PackageDetails;
 
 pub use crate::types::_error_details::ErrorDetails;
@@ -26,6 +38,22 @@ pub use crate::types::_validation_failure::ValidationFailure;
 pub use crate::types::_dry_run_results::DryRunResults;
 
 pub use crate::types::_domain_config::DomainConfig;
+
+pub use crate::types::_software_update_options_status::SoftwareUpdateOptionsStatus;
+
+pub use crate::types::_option_status::OptionStatus;
+
+pub use crate::types::_option_state::OptionState;
+
+pub use crate::types::_software_update_options::SoftwareUpdateOptions;
+
+pub use crate::types::_off_peak_window_options_status::OffPeakWindowOptionsStatus;
+
+pub use crate::types::_off_peak_window_options::OffPeakWindowOptions;
+
+pub use crate::types::_off_peak_window::OffPeakWindow;
+
+pub use crate::types::_window_start_time::WindowStartTime;
 
 pub use crate::types::_auto_tune_options_status::AutoTuneOptionsStatus;
 
@@ -46,10 +74,6 @@ pub use crate::types::_rollback_on_disable::RollbackOnDisable;
 pub use crate::types::_auto_tune_desired_state::AutoTuneDesiredState;
 
 pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptionsStatus;
-
-pub use crate::types::_option_status::OptionStatus;
-
-pub use crate::types::_option_state::OptionState;
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptions;
 
@@ -125,6 +149,8 @@ pub use crate::types::_deployment_status::DeploymentStatus;
 
 pub use crate::types::_inbound_connection::InboundConnection;
 
+pub use crate::types::_connection_mode::ConnectionMode;
+
 pub use crate::types::_inbound_connection_status::InboundConnectionStatus;
 
 pub use crate::types::_inbound_connection_status_code::InboundConnectionStatusCode;
@@ -181,6 +207,8 @@ pub use crate::types::_describe_packages_filter_name::DescribePackagesFilterName
 
 pub use crate::types::_outbound_connection::OutboundConnection;
 
+pub use crate::types::_connection_properties::ConnectionProperties;
+
 pub use crate::types::_outbound_connection_status::OutboundConnectionStatus;
 
 pub use crate::types::_outbound_connection_status_code::OutboundConnectionStatusCode;
@@ -224,6 +252,12 @@ pub use crate::types::_auto_tune_type::AutoTuneType;
 pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInput;
 
 mod _access_policies_status;
+
+mod _action_severity;
+
+mod _action_status;
+
+mod _action_type;
 
 mod _additional_limit;
 
@@ -278,6 +312,10 @@ mod _cognito_options_status;
 mod _cold_storage_options;
 
 mod _compatible_versions_map;
+
+mod _connection_mode;
+
+mod _connection_properties;
 
 mod _deployment_status;
 
@@ -349,6 +387,12 @@ mod _node_to_node_encryption_options;
 
 mod _node_to_node_encryption_options_status;
 
+mod _off_peak_window;
+
+mod _off_peak_window_options;
+
+mod _off_peak_window_options_status;
+
 mod _open_search_partition_instance_type;
 
 mod _open_search_warm_partition_instance_type;
@@ -393,17 +437,27 @@ mod _saml_options_input;
 
 mod _saml_options_output;
 
+mod _schedule_at;
+
+mod _scheduled_action;
+
 mod _scheduled_auto_tune_action_type;
 
 mod _scheduled_auto_tune_details;
 
 mod _scheduled_auto_tune_severity_type;
 
+mod _scheduled_by;
+
 mod _service_software_options;
 
 mod _snapshot_options;
 
 mod _snapshot_options_status;
+
+mod _software_update_options;
+
+mod _software_update_options_status;
 
 mod _storage_type;
 
@@ -444,6 +498,8 @@ mod _vpc_endpoint_status;
 mod _vpc_endpoint_summary;
 
 mod _vpc_options;
+
+mod _window_start_time;
 
 mod _zone_awareness_config;
 

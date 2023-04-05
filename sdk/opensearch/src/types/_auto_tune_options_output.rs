@@ -10,6 +10,9 @@ pub struct AutoTuneOptionsOutput {
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
+    /// <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.</p>
+    #[doc(hidden)]
+    pub use_off_peak_window: std::option::Option<bool>,
 }
 impl AutoTuneOptionsOutput {
     /// <p>The current state of Auto-Tune on the domain.</p>
@@ -19,6 +22,10 @@ impl AutoTuneOptionsOutput {
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
+    }
+    /// <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.</p>
+    pub fn use_off_peak_window(&self) -> std::option::Option<bool> {
+        self.use_off_peak_window
     }
 }
 impl AutoTuneOptionsOutput {
@@ -34,6 +41,7 @@ impl AutoTuneOptionsOutput {
 pub struct AutoTuneOptionsOutputBuilder {
     pub(crate) state: std::option::Option<crate::types::AutoTuneState>,
     pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) use_off_peak_window: std::option::Option<bool>,
 }
 impl AutoTuneOptionsOutputBuilder {
     /// <p>The current state of Auto-Tune on the domain.</p>
@@ -56,11 +64,22 @@ impl AutoTuneOptionsOutputBuilder {
         self.error_message = input;
         self
     }
+    /// <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.</p>
+    pub fn use_off_peak_window(mut self, input: bool) -> Self {
+        self.use_off_peak_window = Some(input);
+        self
+    }
+    /// <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.</p>
+    pub fn set_use_off_peak_window(mut self, input: std::option::Option<bool>) -> Self {
+        self.use_off_peak_window = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AutoTuneOptionsOutput`](crate::types::AutoTuneOptionsOutput).
     pub fn build(self) -> crate::types::AutoTuneOptionsOutput {
         crate::types::AutoTuneOptionsOutput {
             state: self.state,
             error_message: self.error_message,
+            use_off_peak_window: self.use_off_peak_window,
         }
     }
 }

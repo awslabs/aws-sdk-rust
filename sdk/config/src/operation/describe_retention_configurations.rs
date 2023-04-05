@@ -160,9 +160,9 @@ pub type DescribeRetentionConfigurationsErrorKind = DescribeRetentionConfigurati
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRetentionConfigurationsError {
-    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
+    /// <p>The specified next token is not valid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
-    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>You have specified a retention configuration that does not exist.</p>
     NoSuchRetentionConfigurationException(

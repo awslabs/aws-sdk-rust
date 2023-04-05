@@ -15,6 +15,9 @@ pub fn ser_async_inference_output_config(
         crate::protocol_serde::shape_async_inference_notification_config::ser_async_inference_notification_config(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.s3_failure_path {
+        object.key("S3FailurePath").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -63,6 +66,15 @@ where
                             "NotificationConfig" => {
                                 builder = builder.set_notification_config(
                                     crate::protocol_serde::shape_async_inference_notification_config::de_async_inference_notification_config(tokens)?
+                                );
+                            }
+                            "S3FailurePath" => {
+                                builder = builder.set_s3_failure_path(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -6,7 +6,7 @@ pub struct DescribeExportTasksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeExportTasks</code> request. A marker is used for pagination to identify the location to begin output for the next response of <code>DescribeExportTasks</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Information about an export of a snapshot to Amazon S3.</p>
+    /// <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
     #[doc(hidden)]
     pub export_tasks: std::option::Option<std::vec::Vec<crate::types::ExportTask>>,
     _request_id: Option<String>,
@@ -16,7 +16,7 @@ impl DescribeExportTasksOutput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Information about an export of a snapshot to Amazon S3.</p>
+    /// <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
     pub fn export_tasks(&self) -> std::option::Option<&[crate::types::ExportTask]> {
         self.export_tasks.as_deref()
     }
@@ -58,14 +58,14 @@ impl DescribeExportTasksOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_export_tasks`](Self::set_export_tasks).
     ///
-    /// <p>Information about an export of a snapshot to Amazon S3.</p>
+    /// <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
     pub fn export_tasks(mut self, input: crate::types::ExportTask) -> Self {
         let mut v = self.export_tasks.unwrap_or_default();
         v.push(input);
         self.export_tasks = Some(v);
         self
     }
-    /// <p>Information about an export of a snapshot to Amazon S3.</p>
+    /// <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
     pub fn set_export_tasks(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ExportTask>>,

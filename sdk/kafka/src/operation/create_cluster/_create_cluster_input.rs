@@ -32,7 +32,7 @@ pub struct CreateClusterInput {
     pub logging_info: std::option::Option<crate::types::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
     #[doc(hidden)]
-    pub number_of_broker_nodes: i32,
+    pub number_of_broker_nodes: std::option::Option<i32>,
     /// <p>Create tags when creating the cluster.</p>
     #[doc(hidden)]
     pub tags:
@@ -83,7 +83,7 @@ impl CreateClusterInput {
         self.logging_info.as_ref()
     }
     /// <p>The number of broker nodes in the cluster.</p>
-    pub fn number_of_broker_nodes(&self) -> i32 {
+    pub fn number_of_broker_nodes(&self) -> std::option::Option<i32> {
         self.number_of_broker_nodes
     }
     /// <p>Create tags when creating the cluster.</p>
@@ -300,7 +300,7 @@ impl CreateClusterInputBuilder {
             open_monitoring: self.open_monitoring,
             kafka_version: self.kafka_version,
             logging_info: self.logging_info,
-            number_of_broker_nodes: self.number_of_broker_nodes.unwrap_or_default(),
+            number_of_broker_nodes: self.number_of_broker_nodes,
             tags: self.tags,
             storage_mode: self.storage_mode,
         })

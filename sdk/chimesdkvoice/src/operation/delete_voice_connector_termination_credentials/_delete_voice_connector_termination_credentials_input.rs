@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationCredentialsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     #[doc(hidden)]
     pub usernames: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteVoiceConnectorTerminationCredentialsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     pub fn usernames(&self) -> std::option::Option<&[std::string::String]> {
         self.usernames.as_deref()
     }
@@ -35,12 +35,12 @@ pub struct DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     pub(crate) usernames: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.voice_connector_id = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -52,13 +52,14 @@ impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_usernames`](Self::set_usernames).
     ///
+    /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     pub fn usernames(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.usernames.unwrap_or_default();
         v.push(input.into());
         self.usernames = Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     pub fn set_usernames(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

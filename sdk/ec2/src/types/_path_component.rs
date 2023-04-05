@@ -56,6 +56,15 @@ pub struct PathComponent {
     /// <p>The load balancer listener.</p>
     #[doc(hidden)]
     pub elastic_load_balancer_listener: std::option::Option<crate::types::AnalysisComponent>,
+    /// <p>The Network Firewall stateless rule.</p>
+    #[doc(hidden)]
+    pub firewall_stateless_rule: std::option::Option<crate::types::FirewallStatelessRule>,
+    /// <p>The Network Firewall stateful rule.</p>
+    #[doc(hidden)]
+    pub firewall_stateful_rule: std::option::Option<crate::types::FirewallStatefulRule>,
+    /// <p>The name of the VPC endpoint service.</p>
+    #[doc(hidden)]
+    pub service_name: std::option::Option<std::string::String>,
 }
 impl PathComponent {
     /// <p>The sequence number.</p>
@@ -132,6 +141,22 @@ impl PathComponent {
     ) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.elastic_load_balancer_listener.as_ref()
     }
+    /// <p>The Network Firewall stateless rule.</p>
+    pub fn firewall_stateless_rule(
+        &self,
+    ) -> std::option::Option<&crate::types::FirewallStatelessRule> {
+        self.firewall_stateless_rule.as_ref()
+    }
+    /// <p>The Network Firewall stateful rule.</p>
+    pub fn firewall_stateful_rule(
+        &self,
+    ) -> std::option::Option<&crate::types::FirewallStatefulRule> {
+        self.firewall_stateful_rule.as_ref()
+    }
+    /// <p>The name of the VPC endpoint service.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl PathComponent {
     /// Creates a new builder-style object to manufacture [`PathComponent`](crate::types::PathComponent).
@@ -163,6 +188,9 @@ pub struct PathComponentBuilder {
         std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
     pub(crate) explanations: std::option::Option<std::vec::Vec<crate::types::Explanation>>,
     pub(crate) elastic_load_balancer_listener: std::option::Option<crate::types::AnalysisComponent>,
+    pub(crate) firewall_stateless_rule: std::option::Option<crate::types::FirewallStatelessRule>,
+    pub(crate) firewall_stateful_rule: std::option::Option<crate::types::FirewallStatefulRule>,
+    pub(crate) service_name: std::option::Option<std::string::String>,
 }
 impl PathComponentBuilder {
     /// <p>The sequence number.</p>
@@ -398,6 +426,42 @@ impl PathComponentBuilder {
         self.elastic_load_balancer_listener = input;
         self
     }
+    /// <p>The Network Firewall stateless rule.</p>
+    pub fn firewall_stateless_rule(mut self, input: crate::types::FirewallStatelessRule) -> Self {
+        self.firewall_stateless_rule = Some(input);
+        self
+    }
+    /// <p>The Network Firewall stateless rule.</p>
+    pub fn set_firewall_stateless_rule(
+        mut self,
+        input: std::option::Option<crate::types::FirewallStatelessRule>,
+    ) -> Self {
+        self.firewall_stateless_rule = input;
+        self
+    }
+    /// <p>The Network Firewall stateful rule.</p>
+    pub fn firewall_stateful_rule(mut self, input: crate::types::FirewallStatefulRule) -> Self {
+        self.firewall_stateful_rule = Some(input);
+        self
+    }
+    /// <p>The Network Firewall stateful rule.</p>
+    pub fn set_firewall_stateful_rule(
+        mut self,
+        input: std::option::Option<crate::types::FirewallStatefulRule>,
+    ) -> Self {
+        self.firewall_stateful_rule = input;
+        self
+    }
+    /// <p>The name of the VPC endpoint service.</p>
+    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.service_name = Some(input.into());
+        self
+    }
+    /// <p>The name of the VPC endpoint service.</p>
+    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PathComponent`](crate::types::PathComponent).
     pub fn build(self) -> crate::types::PathComponent {
         crate::types::PathComponent {
@@ -418,6 +482,9 @@ impl PathComponentBuilder {
             transit_gateway_route_table_route: self.transit_gateway_route_table_route,
             explanations: self.explanations,
             elastic_load_balancer_listener: self.elastic_load_balancer_listener,
+            firewall_stateless_rule: self.firewall_stateless_rule,
+            firewall_stateful_rule: self.firewall_stateful_rule,
+            service_name: self.service_name,
         }
     }
 }

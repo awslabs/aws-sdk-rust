@@ -58,6 +58,12 @@ pub struct KinesisStreamingSourceOptions {
     /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
     #[doc(hidden)]
     pub role_session_name: std::option::Option<std::string::String>,
+    /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    #[doc(hidden)]
+    pub add_record_timestamp: std::option::Option<std::string::String>,
+    /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    #[doc(hidden)]
+    pub emit_consumer_lag_metrics: std::option::Option<std::string::String>,
 }
 impl KinesisStreamingSourceOptions {
     /// <p>The URL of the Kinesis endpoint.</p>
@@ -132,6 +138,14 @@ impl KinesisStreamingSourceOptions {
     pub fn role_session_name(&self) -> std::option::Option<&str> {
         self.role_session_name.as_deref()
     }
+    /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn add_record_timestamp(&self) -> std::option::Option<&str> {
+        self.add_record_timestamp.as_deref()
+    }
+    /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn emit_consumer_lag_metrics(&self) -> std::option::Option<&str> {
+        self.emit_consumer_lag_metrics.as_deref()
+    }
 }
 impl KinesisStreamingSourceOptions {
     /// Creates a new builder-style object to manufacture [`KinesisStreamingSourceOptions`](crate::types::KinesisStreamingSourceOptions).
@@ -162,6 +176,8 @@ pub struct KinesisStreamingSourceOptionsBuilder {
     pub(crate) stream_arn: std::option::Option<std::string::String>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) role_session_name: std::option::Option<std::string::String>,
+    pub(crate) add_record_timestamp: std::option::Option<std::string::String>,
+    pub(crate) emit_consumer_lag_metrics: std::option::Option<std::string::String>,
 }
 impl KinesisStreamingSourceOptionsBuilder {
     /// <p>The URL of the Kinesis endpoint.</p>
@@ -350,6 +366,32 @@ impl KinesisStreamingSourceOptionsBuilder {
         self.role_session_name = input;
         self
     }
+    /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn add_record_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+        self.add_record_timestamp = Some(input.into());
+        self
+    }
+    /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn set_add_record_timestamp(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.add_record_timestamp = input;
+        self
+    }
+    /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn emit_consumer_lag_metrics(mut self, input: impl Into<std::string::String>) -> Self {
+        self.emit_consumer_lag_metrics = Some(input.into());
+        self
+    }
+    /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn set_emit_consumer_lag_metrics(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.emit_consumer_lag_metrics = input;
+        self
+    }
     /// Consumes the builder and constructs a [`KinesisStreamingSourceOptions`](crate::types::KinesisStreamingSourceOptions).
     pub fn build(self) -> crate::types::KinesisStreamingSourceOptions {
         crate::types::KinesisStreamingSourceOptions {
@@ -371,6 +413,8 @@ impl KinesisStreamingSourceOptionsBuilder {
             stream_arn: self.stream_arn,
             role_arn: self.role_arn,
             role_session_name: self.role_session_name,
+            add_record_timestamp: self.add_record_timestamp,
+            emit_consumer_lag_metrics: self.emit_consumer_lag_metrics,
         }
     }
 }

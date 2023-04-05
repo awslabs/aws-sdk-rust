@@ -5,7 +5,7 @@ pub use crate::operation::create_image_recipe::_create_image_recipe_input::Creat
 
 /// Fluent builder constructing a request to `CreateImageRecipe`.
 ///
-/// <p> Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.</p>
+/// <p>Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateImageRecipeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,22 +69,22 @@ impl CreateImageRecipeFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p> The name of the image recipe.</p>
+    /// <p>The name of the image recipe.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The name of the image recipe.</p>
+    /// <p>The name of the image recipe.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The description of the image recipe.</p>
+    /// <p>The description of the image recipe.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> The description of the image recipe.</p>
+    /// <p>The description of the image recipe.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
@@ -180,7 +180,7 @@ impl CreateImageRecipeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags of the image recipe.</p>
+    /// <p>The tags of the image recipe.</p>
     pub fn tags(
         mut self,
         k: impl Into<std::string::String>,
@@ -189,7 +189,7 @@ impl CreateImageRecipeFluentBuilder {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p> The tags of the image recipe.</p>
+    /// <p>The tags of the image recipe.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<

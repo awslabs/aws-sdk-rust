@@ -9,10 +9,8 @@ pub fn ser_start_import_labels_task_run_input(
     if let Some(var_2) = &input.input_s3_path {
         object.key("InputS3Path").string(var_2.as_str());
     }
-    if input.replace_all_labels {
-        object
-            .key("ReplaceAllLabels")
-            .boolean(input.replace_all_labels);
+    if let Some(var_3) = &input.replace_all_labels {
+        object.key("ReplaceAllLabels").boolean(*var_3);
     }
     Ok(())
 }

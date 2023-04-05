@@ -5,7 +5,7 @@ pub use crate::operation::create_analysis::_create_analysis_input::CreateAnalysi
 
 /// Fluent builder constructing a request to `CreateAnalysis`.
 ///
-/// <p>Creates an analysis in Amazon QuickSight.</p>
+/// <p>Creates an analysis in Amazon QuickSight. Analyses can be created either from a template or from an <code>AnalysisDefinition</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAnalysisFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -125,11 +125,13 @@ impl CreateAnalysisFluentBuilder {
         self
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn source_entity(mut self, input: crate::types::AnalysisSourceEntity) -> Self {
         self.inner = self.inner.source_entity(input);
         self
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn set_source_entity(
         mut self,
         input: std::option::Option<crate::types::AnalysisSourceEntity>,
@@ -166,12 +168,14 @@ impl CreateAnalysisFluentBuilder {
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn definition(mut self, input: crate::types::AnalysisDefinition) -> Self {
         self.inner = self.inner.definition(input);
         self
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn set_definition(
         mut self,
         input: std::option::Option<crate::types::AnalysisDefinition>,

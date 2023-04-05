@@ -12,10 +12,8 @@ pub fn ser_set_visible_to_all_users_input(
         }
         array_2.finish();
     }
-    {
-        object
-            .key("VisibleToAllUsers")
-            .boolean(input.visible_to_all_users);
+    if let Some(var_4) = &input.visible_to_all_users {
+        object.key("VisibleToAllUsers").boolean(*var_4);
     }
     Ok(())
 }

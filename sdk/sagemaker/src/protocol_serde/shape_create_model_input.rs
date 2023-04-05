@@ -60,10 +60,8 @@ pub fn ser_create_model_input(
         crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if input.enable_network_isolation {
-        object
-            .key("EnableNetworkIsolation")
-            .boolean(input.enable_network_isolation);
+    if let Some(var_17) = &input.enable_network_isolation {
+        object.key("EnableNetworkIsolation").boolean(*var_17);
     }
     Ok(())
 }

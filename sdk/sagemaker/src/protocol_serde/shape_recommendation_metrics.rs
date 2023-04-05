@@ -57,6 +57,22 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "CpuUtilization" => {
+                                builder = builder.set_cpu_utilization(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f32_lossy()),
+                                );
+                            }
+                            "MemoryUtilization" => {
+                                builder = builder.set_memory_utilization(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f32_lossy()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -55,20 +55,22 @@ impl ListSharedEndpointsInput {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                if let Some(inner_2) = &_input.max_results {
+                    if *inner_2 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
+                    }
                 }
-                let inner_2 = &_input.outpost_id;
-                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                let inner_3 = &_input.outpost_id;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "outpost_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_2.is_empty() {
+                if inner_3.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "outpost_id",
@@ -76,7 +78,7 @@ impl ListSharedEndpointsInput {
                         ),
                     );
                 }
-                query.push_kv("outpostId", &aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("outpostId", &aws_smithy_http::query::fmt_string(&inner_3));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -191,6 +193,8 @@ pub enum ListSharedEndpointsError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -214,6 +218,7 @@ impl std::fmt::Display for ListSharedEndpointsError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -229,6 +234,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ListSharedEndpo
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ResourceNotFoundException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ThrottlingException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ValidationException(_inner) => {
@@ -284,6 +292,7 @@ impl ListSharedEndpointsError {
             Self::AccessDeniedException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -300,6 +309,10 @@ impl ListSharedEndpointsError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `ListSharedEndpointsError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `ListSharedEndpointsError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -311,6 +324,7 @@ impl std::error::Error for ListSharedEndpointsError {
             Self::AccessDeniedException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
+            Self::ThrottlingException(_inner) => Some(_inner),
             Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }

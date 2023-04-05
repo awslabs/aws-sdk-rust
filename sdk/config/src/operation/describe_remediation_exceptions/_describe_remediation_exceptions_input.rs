@@ -12,7 +12,7 @@ pub struct DescribeRemediationExceptionsInput {
         std::option::Option<std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ impl DescribeRemediationExceptionsInput {
         self.resource_keys.as_deref()
     }
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -115,7 +115,7 @@ impl DescribeRemediationExceptionsInputBuilder {
             crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsInput {
                 config_rule_name: self.config_rule_name,
                 resource_keys: self.resource_keys,
-                limit: self.limit.unwrap_or_default(),
+                limit: self.limit,
                 next_token: self.next_token,
             },
         )

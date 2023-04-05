@@ -5,6 +5,7 @@ pub use crate::operation::list_sip_rules::_list_sip_rules_input::ListSipRulesInp
 
 /// Fluent builder constructing a request to `ListSipRules`.
 ///
+/// <p>Lists the SIP rules under the administrator's AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSipRulesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -75,12 +76,12 @@ impl ListSipRulesFluentBuilder {
             self.inner,
         )
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn set_sip_media_application_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -88,22 +89,22 @@ impl ListSipRulesFluentBuilder {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self

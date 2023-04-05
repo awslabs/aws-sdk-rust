@@ -166,6 +166,8 @@ pub type PutResolverRulePolicyErrorKind = PutResolverRulePolicyError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutResolverRulePolicyError {
+    /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>We encountered an unknown error. Try again in a few minutes.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>One or more parameters in this request are not valid.</p>
@@ -192,6 +194,7 @@ impl aws_smithy_http::result::CreateUnhandledError for PutResolverRulePolicyErro
 impl std::fmt::Display for PutResolverRulePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServiceErrorException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidPolicyDocument(_inner) => _inner.fmt(f),
@@ -203,6 +206,9 @@ impl std::fmt::Display for PutResolverRulePolicyError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PutResolverRulePolicyError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::InternalServiceErrorException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -262,12 +268,17 @@ impl PutResolverRulePolicyError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::AccessDeniedException(e) => e.meta(),
             Self::InternalServiceErrorException(e) => e.meta(),
             Self::InvalidParameterException(e) => e.meta(),
             Self::InvalidPolicyDocument(e) => e.meta(),
             Self::UnknownResourceException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `PutResolverRulePolicyError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `PutResolverRulePolicyError::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
@@ -289,6 +300,7 @@ impl PutResolverRulePolicyError {
 impl std::error::Error for PutResolverRulePolicyError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => Some(_inner),
             Self::InternalServiceErrorException(_inner) => Some(_inner),
             Self::InvalidParameterException(_inner) => Some(_inner),
             Self::InvalidPolicyDocument(_inner) => Some(_inner),

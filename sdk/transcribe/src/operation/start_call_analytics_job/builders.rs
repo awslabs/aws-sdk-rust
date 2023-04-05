@@ -7,8 +7,9 @@ pub use crate::operation::start_call_analytics_job::_start_call_analytics_job_in
 ///
 /// <p>Transcribes the audio from a customer service call and applies any additional Request Parameters you choose to include in your request.</p>
 /// <p>In addition to many standard transcription features, Call Analytics provides you with call characteristics, call summarization, speaker sentiment, and optional redaction of your text transcript and your audio file. You can also apply custom categories to flag specified conditions. To learn more about these features and insights, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call center audio with Call Analytics</a>.</p>
-/// <p>If you want to apply categories to your Call Analytics job, you must create them before submitting your job request. Categories cannot be retroactively applied to a job. To create a new category, use the operation. To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for streaming transcriptions</a>.</p>
+/// <p>If you want to apply categories to your Call Analytics job, you must create them before submitting your job request. Categories cannot be retroactively applied to a job. To create a new category, use the operation. To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for real-time transcriptions</a>.</p>
 /// <p>To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.</p>
+/// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
 /// <p>You must include the following parameters in your <code>StartCallAnalyticsJob</code> request:</p>
 /// <ul>
 /// <li> <p> <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web Services Regions supported with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon Transcribe endpoints and quotas</a>.</p> </li>
@@ -147,7 +148,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// </ol>
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.output_encryption_kms_key_id(input.into());
         self
@@ -167,7 +168,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// </ol>
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(
         mut self,
         input: std::option::Option<std::string::String>,

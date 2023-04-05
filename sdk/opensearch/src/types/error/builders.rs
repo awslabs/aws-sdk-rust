@@ -13,6 +13,8 @@ pub use crate::types::error::_base_exception::BaseExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
+pub use crate::types::error::_slot_not_available_exception::SlotNotAvailableExceptionBuilder;
+
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;

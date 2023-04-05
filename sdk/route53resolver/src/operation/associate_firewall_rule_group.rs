@@ -171,7 +171,7 @@ pub type AssociateFirewallRuleGroupErrorKind = AssociateFirewallRuleGroupError;
 pub enum AssociateFirewallRuleGroupError {
     /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p></p>
+    /// <p>The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is in the process of being deleted, or you can't import domains into a domain list that is in the process of being deleted.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>We encountered an unknown error. Try again in a few minutes.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
@@ -181,7 +181,7 @@ pub enum AssociateFirewallRuleGroupError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p></p>
+    /// <p>You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

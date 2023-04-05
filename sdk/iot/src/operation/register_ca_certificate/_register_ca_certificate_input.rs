@@ -13,10 +13,10 @@ pub struct RegisterCaCertificateInput {
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
     #[doc(hidden)]
-    pub set_as_active: bool,
+    pub set_as_active: std::option::Option<bool>,
     /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
     #[doc(hidden)]
-    pub allow_auto_registration: bool,
+    pub allow_auto_registration: std::option::Option<bool>,
     /// <p>Information about the registration configuration.</p>
     #[doc(hidden)]
     pub registration_config: std::option::Option<crate::types::RegistrationConfig>,
@@ -42,11 +42,11 @@ impl RegisterCaCertificateInput {
     }
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
-    pub fn set_as_active(&self) -> bool {
+    pub fn set_as_active(&self) -> std::option::Option<bool> {
         self.set_as_active
     }
     /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
-    pub fn allow_auto_registration(&self) -> bool {
+    pub fn allow_auto_registration(&self) -> std::option::Option<bool> {
         self.allow_auto_registration
     }
     /// <p>Information about the registration configuration.</p>
@@ -197,8 +197,8 @@ impl RegisterCaCertificateInputBuilder {
             crate::operation::register_ca_certificate::RegisterCaCertificateInput {
                 ca_certificate: self.ca_certificate,
                 verification_certificate: self.verification_certificate,
-                set_as_active: self.set_as_active.unwrap_or_default(),
-                allow_auto_registration: self.allow_auto_registration.unwrap_or_default(),
+                set_as_active: self.set_as_active,
+                allow_auto_registration: self.allow_auto_registration,
                 registration_config: self.registration_config,
                 tags: self.tags,
                 certificate_mode: self.certificate_mode,

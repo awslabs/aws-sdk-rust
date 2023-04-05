@@ -191,7 +191,7 @@ pub enum PutOrganizationConformancePackError {
     OrganizationAllFeaturesNotEnabledException(
         crate::types::error::OrganizationAllFeaturesNotEnabledException,
     ),
-    /// <p>You have specified a template that is invalid or supported.</p>
+    /// <p>You have specified a template that is not valid or supported.</p>
     OrganizationConformancePackTemplateValidationException(
         crate::types::error::OrganizationConformancePackTemplateValidationException,
     ),
@@ -206,7 +206,7 @@ pub enum PutOrganizationConformancePackError {
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// <p>The requested action is invalid.</p>
+    /// <p>The requested action is not valid.</p>
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::types::error::ValidationException),

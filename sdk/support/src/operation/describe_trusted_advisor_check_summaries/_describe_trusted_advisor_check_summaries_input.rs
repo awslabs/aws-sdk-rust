@@ -5,11 +5,11 @@
 pub struct DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
     #[doc(hidden)]
-    pub check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub check_ids: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn check_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn check_ids(&self) -> std::option::Option<&[std::option::Option<std::string::String>]> {
         self.check_ids.as_deref()
     }
 }
@@ -24,7 +24,8 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesInputBuilder {
-    pub(crate) check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) check_ids:
+        std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
     /// Appends an item to `check_ids`.
@@ -32,16 +33,16 @@ impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
     /// To override the contents of this collection use [`set_check_ids`](Self::set_check_ids).
     ///
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn check_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn check_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
         let mut v = self.check_ids.unwrap_or_default();
-        v.push(input.into());
+        v.push(input);
         self.check_ids = Some(v);
         self
     }
     /// <p>The IDs of the Trusted Advisor checks.</p>
     pub fn set_check_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
     ) -> Self {
         self.check_ids = input;
         self

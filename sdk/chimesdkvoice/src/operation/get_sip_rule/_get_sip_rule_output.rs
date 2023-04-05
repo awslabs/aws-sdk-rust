@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSipRuleOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule details.</p>
     #[doc(hidden)]
     pub sip_rule: std::option::Option<crate::types::SipRule>,
     _request_id: Option<String>,
 }
 impl GetSipRuleOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule details.</p>
     pub fn sip_rule(&self) -> std::option::Option<&crate::types::SipRule> {
         self.sip_rule.as_ref()
     }
@@ -34,12 +34,12 @@ pub struct GetSipRuleOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSipRuleOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule details.</p>
     pub fn sip_rule(mut self, input: crate::types::SipRule) -> Self {
         self.sip_rule = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP rule details.</p>
     pub fn set_sip_rule(mut self, input: std::option::Option<crate::types::SipRule>) -> Self {
         self.sip_rule = input;
         self

@@ -19,7 +19,7 @@ pub struct UpdateCaCertificateInput {
     pub registration_config: std::option::Option<crate::types::RegistrationConfig>,
     /// <p>If true, removes auto registration.</p>
     #[doc(hidden)]
-    pub remove_auto_registration: bool,
+    pub remove_auto_registration: std::option::Option<bool>,
 }
 impl UpdateCaCertificateInput {
     /// <p>The CA certificate identifier.</p>
@@ -42,7 +42,7 @@ impl UpdateCaCertificateInput {
         self.registration_config.as_ref()
     }
     /// <p>If true, removes auto registration.</p>
-    pub fn remove_auto_registration(&self) -> bool {
+    pub fn remove_auto_registration(&self) -> std::option::Option<bool> {
         self.remove_auto_registration
     }
 }
@@ -144,7 +144,7 @@ impl UpdateCaCertificateInputBuilder {
                 new_status: self.new_status,
                 new_auto_registration_status: self.new_auto_registration_status,
                 registration_config: self.registration_config,
-                remove_auto_registration: self.remove_auto_registration.unwrap_or_default(),
+                remove_auto_registration: self.remove_auto_registration,
             },
         )
     }

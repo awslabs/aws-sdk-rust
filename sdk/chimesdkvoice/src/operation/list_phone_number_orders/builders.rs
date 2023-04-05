@@ -5,6 +5,7 @@ pub use crate::operation::list_phone_number_orders::_list_phone_number_orders_in
 
 /// Fluent builder constructing a request to `ListPhoneNumberOrders`.
 ///
+/// <p>Lists the phone numbers for an administrator's Amazon Chime SDK account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPhoneNumberOrdersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -79,22 +80,22 @@ impl ListPhoneNumberOrdersFluentBuilder {
             self.inner,
         )
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self

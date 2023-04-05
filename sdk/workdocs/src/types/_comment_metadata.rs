@@ -19,6 +19,9 @@ pub struct CommentMetadata {
     /// <p>The ID of the user being replied to.</p>
     #[doc(hidden)]
     pub recipient_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the user who made the comment.</p>
+    #[doc(hidden)]
+    pub contributor_id: std::option::Option<std::string::String>,
 }
 impl CommentMetadata {
     /// <p>The ID of the comment.</p>
@@ -41,6 +44,10 @@ impl CommentMetadata {
     pub fn recipient_id(&self) -> std::option::Option<&str> {
         self.recipient_id.as_deref()
     }
+    /// <p>The ID of the user who made the comment.</p>
+    pub fn contributor_id(&self) -> std::option::Option<&str> {
+        self.contributor_id.as_deref()
+    }
 }
 impl CommentMetadata {
     /// Creates a new builder-style object to manufacture [`CommentMetadata`](crate::types::CommentMetadata).
@@ -58,6 +65,7 @@ pub struct CommentMetadataBuilder {
     pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) comment_status: std::option::Option<crate::types::CommentStatusType>,
     pub(crate) recipient_id: std::option::Option<std::string::String>,
+    pub(crate) contributor_id: std::option::Option<std::string::String>,
 }
 impl CommentMetadataBuilder {
     /// <p>The ID of the comment.</p>
@@ -116,6 +124,16 @@ impl CommentMetadataBuilder {
         self.recipient_id = input;
         self
     }
+    /// <p>The ID of the user who made the comment.</p>
+    pub fn contributor_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.contributor_id = Some(input.into());
+        self
+    }
+    /// <p>The ID of the user who made the comment.</p>
+    pub fn set_contributor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.contributor_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CommentMetadata`](crate::types::CommentMetadata).
     pub fn build(self) -> crate::types::CommentMetadata {
         crate::types::CommentMetadata {
@@ -124,6 +142,7 @@ impl CommentMetadataBuilder {
             created_timestamp: self.created_timestamp,
             comment_status: self.comment_status,
             recipient_id: self.recipient_id,
+            contributor_id: self.contributor_id,
         }
     }
 }

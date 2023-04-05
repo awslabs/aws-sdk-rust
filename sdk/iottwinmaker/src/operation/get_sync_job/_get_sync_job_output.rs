@@ -10,7 +10,7 @@ pub struct GetSyncJobOutput {
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The sync soucre.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     #[doc(hidden)]
     pub sync_source: std::option::Option<std::string::String>,
@@ -38,7 +38,7 @@ impl GetSyncJobOutput {
         self.workspace_id.as_deref()
     }
     /// <p>The sync soucre.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(&self) -> std::option::Option<&str> {
         self.sync_source.as_deref()
@@ -107,14 +107,14 @@ impl GetSyncJobOutputBuilder {
         self
     }
     /// <p>The sync soucre.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.sync_source = Some(input.into());
         self
     }
     /// <p>The sync soucre.</p> <note>
-    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.sync_source = input;

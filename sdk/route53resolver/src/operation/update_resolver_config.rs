@@ -184,6 +184,8 @@ pub enum UpdateResolverConfigError {
     ResourceUnavailableException(crate::types::error::ResourceUnavailableException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -210,6 +212,7 @@ impl std::fmt::Display for UpdateResolverConfigError {
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourceUnavailableException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -239,6 +242,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateResolverC
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ThrottlingException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ValidationException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -296,6 +302,7 @@ impl UpdateResolverConfigError {
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ResourceUnavailableException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
+            Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -331,6 +338,10 @@ impl UpdateResolverConfigError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `UpdateResolverConfigError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl std::error::Error for UpdateResolverConfigError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
@@ -343,6 +354,7 @@ impl std::error::Error for UpdateResolverConfigError {
             Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ResourceUnavailableException(_inner) => Some(_inner),
             Self::ThrottlingException(_inner) => Some(_inner),
+            Self::ValidationException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

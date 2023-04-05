@@ -302,6 +302,20 @@ pub fn de_ipam_pool(
                 builder = builder.set_aws_service(var_22);
             }
             ,
+            s if s.matches("publicIpSource") /* PublicIpSource com.amazonaws.ec2#IpamPool$PublicIpSource */ =>  {
+                let var_23 =
+                    Some(
+                        Result::<crate::types::IpamPoolPublicIpSource, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IpamPoolPublicIpSource::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_public_ip_source(var_23);
+            }
+            ,
             _ => {}
         }
     }

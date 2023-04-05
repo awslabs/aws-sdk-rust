@@ -69,12 +69,12 @@ impl DescribeEntitiesDetectionJobFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartEntitiesDetectionJob</code> operation returns this identifier in its response.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartEntitiesDetectionJob</code> operation returns this identifier in its response.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self

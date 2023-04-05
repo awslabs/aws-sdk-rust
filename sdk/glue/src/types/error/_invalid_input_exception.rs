@@ -7,7 +7,16 @@ pub struct InvalidInputException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
+    /// <p>Indicates whether or not the exception relates to a federated source.</p>
+    #[doc(hidden)]
+    pub from_federation_source: std::option::Option<bool>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+}
+impl InvalidInputException {
+    /// <p>Indicates whether or not the exception relates to a federated source.</p>
+    pub fn from_federation_source(&self) -> std::option::Option<bool> {
+        self.from_federation_source
+    }
 }
 impl InvalidInputException {
     /// Returns the error message.
@@ -50,6 +59,7 @@ impl InvalidInputException {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct InvalidInputExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) from_federation_source: std::option::Option<bool>,
     meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidInputExceptionBuilder {
@@ -61,6 +71,16 @@ impl InvalidInputExceptionBuilder {
     /// <p>A message describing the problem.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.message = input;
+        self
+    }
+    /// <p>Indicates whether or not the exception relates to a federated source.</p>
+    pub fn from_federation_source(mut self, input: bool) -> Self {
+        self.from_federation_source = Some(input);
+        self
+    }
+    /// <p>Indicates whether or not the exception relates to a federated source.</p>
+    pub fn set_from_federation_source(mut self, input: std::option::Option<bool>) -> Self {
+        self.from_federation_source = input;
         self
     }
     /// Sets error metadata
@@ -81,6 +101,7 @@ impl InvalidInputExceptionBuilder {
     pub fn build(self) -> crate::types::error::InvalidInputException {
         crate::types::error::InvalidInputException {
             message: self.message,
+            from_federation_source: self.from_federation_source,
             meta: self.meta.unwrap_or_default(),
         }
     }

@@ -5,6 +5,7 @@ pub use crate::operation::update_proxy_session::_update_proxy_session_input::Upd
 
 /// Fluent builder constructing a request to `UpdateProxySession`.
 ///
+/// <p>Updates the specified proxy session details, such as voice or SMS capabilities.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProxySessionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -68,12 +69,12 @@ impl UpdateProxySessionFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -81,12 +82,12 @@ impl UpdateProxySessionFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.proxy_session_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session ID.</p>
     pub fn set_proxy_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_proxy_session_id(input);
         self
@@ -95,12 +96,12 @@ impl UpdateProxySessionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session capabilities.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         self.inner = self.inner.capabilities(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The proxy session capabilities.</p>
     pub fn set_capabilities(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Capability>>,
@@ -108,12 +109,12 @@ impl UpdateProxySessionFluentBuilder {
         self.inner = self.inner.set_capabilities(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.expiry_minutes(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn set_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expiry_minutes(input);
         self

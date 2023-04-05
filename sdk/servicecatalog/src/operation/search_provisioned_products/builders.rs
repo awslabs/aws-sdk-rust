@@ -5,11 +5,7 @@ pub use crate::operation::search_provisioned_products::_search_provisioned_produ
 
 /// Fluent builder constructing a request to `SearchProvisionedProducts`.
 ///
-/// <p>Gets information about the provisioned products that meet the specified criteria.</p> <note>
-/// <p>To ensure a complete list of provisioned products and remove duplicate products, use <code>sort-by createdTime</code>. </p>
-/// <p>Here is a CLI example: <code> </code> </p>
-/// <p> <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code> </p>
-/// </note>
+/// <p>Gets information about the provisioned products that meet the specified criteria.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchProvisionedProductsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -84,7 +80,6 @@ impl SearchProvisionedProductsFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
@@ -94,7 +89,6 @@ impl SearchProvisionedProductsFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>en</code> - English (default)</p> </li>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>

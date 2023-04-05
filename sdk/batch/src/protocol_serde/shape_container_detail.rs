@@ -211,6 +211,11 @@ where
                                     crate::protocol_serde::shape_fargate_platform_configuration::de_fargate_platform_configuration(tokens)?
                                 );
                             }
+                            "ephemeralStorage" => {
+                                builder = builder.set_ephemeral_storage(
+                                    crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

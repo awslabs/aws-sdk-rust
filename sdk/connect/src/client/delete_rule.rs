@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRule`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     ///   - [`rule_id(impl Into<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::rule_id) / [`set_rule_id(Option<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::set_rule_id): <p>A unique identifier for the rule.</p>
     /// - On success, responds with [`DeleteRuleOutput`](crate::operation::delete_rule::DeleteRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteRuleError>`](crate::operation::delete_rule::DeleteRuleError)

@@ -7,6 +7,9 @@ pub struct RotateChannelCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    /// The date and time the Channel was created.
+    #[doc(hidden)]
+    pub created_at: std::option::Option<std::string::String>,
     /// A short text description of the Channel.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -32,6 +35,10 @@ impl RotateChannelCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// The date and time the Channel was created.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
     }
     /// A short text description of the Channel.
     pub fn description(&self) -> std::option::Option<&str> {
@@ -80,6 +87,7 @@ impl RotateChannelCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RotateChannelCredentialsOutputBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) created_at: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) egress_access_logs: std::option::Option<crate::types::EgressAccessLogs>,
     pub(crate) hls_ingest: std::option::Option<crate::types::HlsIngest>,
@@ -98,6 +106,16 @@ impl RotateChannelCredentialsOutputBuilder {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.arn = input;
+        self
+    }
+    /// The date and time the Channel was created.
+    pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
+        self.created_at = Some(input.into());
+        self
+    }
+    /// The date and time the Channel was created.
+    pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.created_at = input;
         self
     }
     /// A short text description of the Channel.
@@ -196,6 +214,7 @@ impl RotateChannelCredentialsOutputBuilder {
     ) -> crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput {
         crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput {
             arn: self.arn,
+            created_at: self.created_at,
             description: self.description,
             egress_access_logs: self.egress_access_logs,
             hls_ingest: self.hls_ingest,

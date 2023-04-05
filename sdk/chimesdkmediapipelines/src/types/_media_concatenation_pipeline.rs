@@ -10,7 +10,7 @@ pub struct MediaConcatenationPipeline {
     /// <p>The ARN of the media pipeline that you specify in the <code>SourceConfiguration</code> object.</p>
     #[doc(hidden)]
     pub media_pipeline_arn: std::option::Option<std::string::String>,
-    /// <p>The data sources being concatnated.</p>
+    /// <p>The data sources being concatenated.</p>
     #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::types::ConcatenationSource>>,
     /// <p>The data sinks of the concatenation pipeline.</p>
@@ -35,7 +35,7 @@ impl MediaConcatenationPipeline {
     pub fn media_pipeline_arn(&self) -> std::option::Option<&str> {
         self.media_pipeline_arn.as_deref()
     }
-    /// <p>The data sources being concatnated.</p>
+    /// <p>The data sources being concatenated.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::types::ConcatenationSource]> {
         self.sources.as_deref()
     }
@@ -106,14 +106,14 @@ impl MediaConcatenationPipelineBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>The data sources being concatnated.</p>
+    /// <p>The data sources being concatenated.</p>
     pub fn sources(mut self, input: crate::types::ConcatenationSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
         self.sources = Some(v);
         self
     }
-    /// <p>The data sources being concatnated.</p>
+    /// <p>The data sources being concatenated.</p>
     pub fn set_sources(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ConcatenationSource>>,

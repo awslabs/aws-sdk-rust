@@ -5,7 +5,7 @@
 pub struct ListJobsInput {
     /// Optional. Number of jobs, up to twenty, that will be returned at one time.
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct ListJobsInput {
 }
 impl ListJobsInput {
     /// Optional. Number of jobs, up to twenty, that will be returned at one time.
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
@@ -117,7 +117,7 @@ impl ListJobsInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::list_jobs::ListJobsInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             order: self.order,
             queue: self.queue,

@@ -5,7 +5,7 @@ pub use crate::operation::list_place_indexes::_list_place_indexes_input::ListPla
 
 /// Fluent builder constructing a request to `ListPlaceIndexes`.
 ///
-/// <p>Lists place index resources in your AWS account.</p>
+/// <p>Lists place index resources in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPlaceIndexesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

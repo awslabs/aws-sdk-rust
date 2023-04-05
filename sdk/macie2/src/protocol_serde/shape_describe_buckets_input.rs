@@ -16,23 +16,23 @@ pub fn ser_describe_buckets_input(
         }
         object_2.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_6) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.next_token {
-        object.key("nextToken").string(var_6.as_str());
+    if let Some(var_7) = &input.next_token {
+        object.key("nextToken").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.sort_criteria {
+    if let Some(var_8) = &input.sort_criteria {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("sortCriteria").start_object();
+        let mut object_9 = object.key("sortCriteria").start_object();
         crate::protocol_serde::shape_bucket_sort_criteria::ser_bucket_sort_criteria(
-            &mut object_8,
-            var_7,
+            &mut object_9,
+            var_8,
         )?;
-        object_8.finish();
+        object_9.finish();
     }
     Ok(())
 }

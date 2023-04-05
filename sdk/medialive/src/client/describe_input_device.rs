@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`serial_number(Option<String>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::serial_number): The unique serial number of the input device.
     ///   - [`r#type(Option<InputDeviceType>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::type): The type of the input device.
     ///   - [`uhd_device_settings(Option<InputDeviceUhdSettings>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::uhd_device_settings): Settings that describe an input device that is type UHD.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::tags): A collection of key-value pairs.
     /// - On failure, responds with [`SdkError<DescribeInputDeviceError>`](crate::operation::describe_input_device::DescribeInputDeviceError)
     pub fn describe_input_device(
         &self,

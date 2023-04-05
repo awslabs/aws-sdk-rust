@@ -5,6 +5,7 @@ pub use crate::operation::put_sip_media_application_alexa_skill_configuration::_
 
 /// Fluent builder constructing a request to `PutSipMediaApplicationAlexaSkillConfiguration`.
 ///
+/// <p>Updates the Alexa Skill configuration for the SIP media application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -55,12 +56,12 @@ impl PutSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The SIP media application ID.</p>
     pub fn set_sip_media_application_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -68,7 +69,7 @@ impl PutSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Alexa Skill configuration.</p>
     pub fn sip_media_application_alexa_skill_configuration(
         mut self,
         input: crate::types::SipMediaApplicationAlexaSkillConfiguration,
@@ -78,7 +79,7 @@ impl PutSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
             .sip_media_application_alexa_skill_configuration(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Alexa Skill configuration.</p>
     pub fn set_sip_media_application_alexa_skill_configuration(
         mut self,
         input: std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,

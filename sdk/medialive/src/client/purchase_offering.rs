@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PurchaseOffering`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`count(i32)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::count) / [`set_count(i32)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::set_count): Number of resources
+    ///   - [`count(i32)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::count) / [`set_count(Option<i32>)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::set_count): Number of resources
     ///   - [`name(impl Into<String>)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::set_name): Name for the new reservation
     ///   - [`offering_id(impl Into<String>)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::offering_id) / [`set_offering_id(Option<String>)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::set_offering_id): Offering to purchase, e.g. '87654321'
     ///   - [`renewal_settings(RenewalSettings)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::renewal_settings) / [`set_renewal_settings(Option<RenewalSettings>)`](crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::set_renewal_settings): Renewal settings for the reservation

@@ -35,6 +35,12 @@ pub use crate::types::_placement_type::PlacementTypeBuilder;
 
 pub use crate::types::_instance_fleet_config::InstanceFleetConfigBuilder;
 
+pub use crate::types::_instance_fleet_resizing_specifications::InstanceFleetResizingSpecificationsBuilder;
+
+pub use crate::types::_on_demand_resizing_specification::OnDemandResizingSpecificationBuilder;
+
+pub use crate::types::_spot_resizing_specification::SpotResizingSpecificationBuilder;
+
 pub use crate::types::_instance_fleet_provisioning_specifications::InstanceFleetProvisioningSpecificationsBuilder;
 
 pub use crate::types::_on_demand_provisioning_specification::OnDemandProvisioningSpecificationBuilder;
@@ -142,6 +148,8 @@ pub use crate::types::_instance_fleet_state_change_reason::InstanceFleetStateCha
 pub use crate::types::_cluster_summary::ClusterSummaryBuilder;
 
 pub use crate::types::_cluster_status::ClusterStatusBuilder;
+
+pub use crate::types::_error_detail::ErrorDetailBuilder;
 
 pub use crate::types::_cluster_timeline::ClusterTimelineBuilder;
 

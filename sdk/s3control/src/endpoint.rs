@@ -3247,6 +3247,43 @@ mod test {
         let error = endpoint.expect_err("expected error: Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false` [Accesspoint ARN with region mismatch, UseArnRegion=false and custom endpoint]");
         assert_eq!(format!("{}", error), "Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false`")
     }
+
+    /// outpost bucket arn@us-west-2
+    #[test]
+    fn test_107() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+    .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+    .region("us-west-2".to_string())
+    .requires_account_id(true)
+    .use_dual_stack(false)
+    .use_fips(false)
+    .build().expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-outposts.us-west-2.amazonaws.com")
+                .header("x-amz-account-id", "123456789012")
+                .header("x-amz-outpost-id", "op-01234567890123456")
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
 }
 
 #[non_exhaustive]

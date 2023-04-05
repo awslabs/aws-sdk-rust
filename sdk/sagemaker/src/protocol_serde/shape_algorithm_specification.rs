@@ -50,6 +50,15 @@ pub fn ser_algorithm_specification(
         }
         array_12.finish();
     }
+    if let Some(var_14) = &input.training_image_config {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("TrainingImageConfig").start_object();
+        crate::protocol_serde::shape_training_image_config::ser_training_image_config(
+            &mut object_15,
+            var_14,
+        )?;
+        object_15.finish();
+    }
     Ok(())
 }
 
@@ -128,6 +137,11 @@ where
                             "ContainerArguments" => {
                                 builder = builder.set_container_arguments(
                                     crate::protocol_serde::shape_training_container_arguments::de_training_container_arguments(tokens)?
+                                );
+                            }
+                            "TrainingImageConfig" => {
+                                builder = builder.set_training_image_config(
+                                    crate::protocol_serde::shape_training_image_config::de_training_image_config(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -9,7 +9,7 @@ pub struct SetVisibleToAllUsersInput {
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
     #[doc(hidden)]
-    pub visible_to_all_users: bool,
+    pub visible_to_all_users: std::option::Option<bool>,
 }
 impl SetVisibleToAllUsersInput {
     /// <p>The unique identifier of the job flow (cluster).</p>
@@ -17,7 +17,7 @@ impl SetVisibleToAllUsersInput {
         self.job_flow_ids.as_deref()
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
-    pub fn visible_to_all_users(&self) -> bool {
+    pub fn visible_to_all_users(&self) -> std::option::Option<bool> {
         self.visible_to_all_users
     }
 }
@@ -77,7 +77,7 @@ impl SetVisibleToAllUsersInputBuilder {
         Ok(
             crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput {
                 job_flow_ids: self.job_flow_ids,
-                visible_to_all_users: self.visible_to_all_users.unwrap_or_default(),
+                visible_to_all_users: self.visible_to_all_users,
             },
         )
     }

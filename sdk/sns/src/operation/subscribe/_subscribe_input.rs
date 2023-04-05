@@ -64,7 +64,7 @@ pub struct SubscribeInput {
     /// <p></p>
     /// <p>The default value is <code>false</code>.</p>
     #[doc(hidden)]
-    pub return_subscription_arn: bool,
+    pub return_subscription_arn: std::option::Option<bool>,
 }
 impl SubscribeInput {
     /// <p>The ARN of the topic you want to subscribe to.</p>
@@ -132,7 +132,7 @@ impl SubscribeInput {
     /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.</p>
     /// <p></p>
     /// <p>The default value is <code>false</code>.</p>
-    pub fn return_subscription_arn(&self) -> bool {
+    pub fn return_subscription_arn(&self) -> std::option::Option<bool> {
         self.return_subscription_arn
     }
 }
@@ -322,7 +322,7 @@ impl SubscribeInputBuilder {
             protocol: self.protocol,
             endpoint: self.endpoint,
             attributes: self.attributes,
-            return_subscription_arn: self.return_subscription_arn.unwrap_or_default(),
+            return_subscription_arn: self.return_subscription_arn,
         })
     }
 }

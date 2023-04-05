@@ -6,7 +6,7 @@ pub struct DeleteTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
 }
@@ -15,7 +15,7 @@ impl DeleteTimelineEventInput {
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
@@ -50,12 +50,12 @@ impl DeleteTimelineEventInputBuilder {
         self.incident_record_arn = input;
         self
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_id = Some(input.into());
         self
     }
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.event_id = input;
         self

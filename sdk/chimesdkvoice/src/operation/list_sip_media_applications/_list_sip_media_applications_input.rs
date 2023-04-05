@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSipMediaApplicationsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSipMediaApplicationsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -37,22 +37,22 @@ pub struct ListSipMediaApplicationsInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl ListSipMediaApplicationsInputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

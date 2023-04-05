@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::creation_time): <p>The creation time.</p>
     ///   - [`duration_in_seconds(Option<i32>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::duration_in_seconds): <p>The duration of the Vector Enrichment job, in seconds.</p>
     ///   - [`status(Option<VectorEnrichmentJobStatus>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::status): <p>The status of the initiated Vector Enrichment job.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::kms_key_id): <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::kms_key_id): <p>The Key Management Service key ID for server-side encryption.</p>
     ///   - [`input_config(Option<VectorEnrichmentJobInputConfig>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::input_config): <p>Input configuration information for the Vector Enrichment job.</p>
     ///   - [`job_config(Option<VectorEnrichmentJobConfig>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::job_config): <p>An object containing information about the job configuration.</p>
     ///   - [`execution_role_arn(Option<String>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>

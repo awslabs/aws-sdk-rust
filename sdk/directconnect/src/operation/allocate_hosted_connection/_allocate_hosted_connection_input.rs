@@ -17,7 +17,7 @@ pub struct AllocateHostedConnectionInput {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The dedicated VLAN provisioned to the hosted connection.</p>
     #[doc(hidden)]
-    pub vlan: i32,
+    pub vlan: std::option::Option<i32>,
     /// <p>The tags associated with the connection.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -40,7 +40,7 @@ impl AllocateHostedConnectionInput {
         self.connection_name.as_deref()
     }
     /// <p>The dedicated VLAN provisioned to the hosted connection.</p>
-    pub fn vlan(&self) -> i32 {
+    pub fn vlan(&self) -> std::option::Option<i32> {
         self.vlan
     }
     /// <p>The tags associated with the connection.</p>
@@ -151,7 +151,7 @@ impl AllocateHostedConnectionInputBuilder {
                 owner_account: self.owner_account,
                 bandwidth: self.bandwidth,
                 connection_name: self.connection_name,
-                vlan: self.vlan.unwrap_or_default(),
+                vlan: self.vlan,
                 tags: self.tags,
             },
         )

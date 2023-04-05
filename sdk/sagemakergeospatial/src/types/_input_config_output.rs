@@ -10,7 +10,7 @@ pub struct InputConfigOutput {
     /// <p>The location of the input data.</p>
     #[doc(hidden)]
     pub data_source_config: std::option::Option<crate::types::EojDataSourceConfigInput>,
-    /// <p></p>
+    /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     #[doc(hidden)]
     pub raster_data_collection_query:
         std::option::Option<crate::types::RasterDataCollectionQueryOutput>,
@@ -26,7 +26,7 @@ impl InputConfigOutput {
     ) -> std::option::Option<&crate::types::EojDataSourceConfigInput> {
         self.data_source_config.as_ref()
     }
-    /// <p></p>
+    /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     pub fn raster_data_collection_query(
         &self,
     ) -> std::option::Option<&crate::types::RasterDataCollectionQueryOutput> {
@@ -79,7 +79,7 @@ impl InputConfigOutputBuilder {
         self.data_source_config = input;
         self
     }
-    /// <p></p>
+    /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     pub fn raster_data_collection_query(
         mut self,
         input: crate::types::RasterDataCollectionQueryOutput,
@@ -87,7 +87,7 @@ impl InputConfigOutputBuilder {
         self.raster_data_collection_query = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     pub fn set_raster_data_collection_query(
         mut self,
         input: std::option::Option<crate::types::RasterDataCollectionQueryOutput>,

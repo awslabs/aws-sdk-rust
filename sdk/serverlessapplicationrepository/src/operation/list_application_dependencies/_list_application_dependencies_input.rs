@@ -8,7 +8,7 @@ pub struct ListApplicationDependenciesInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The total number of items to return.</p>
     #[doc(hidden)]
-    pub max_items: i32,
+    pub max_items: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ impl ListApplicationDependenciesInput {
         self.application_id.as_deref()
     }
     /// <p>The total number of items to return.</p>
-    pub fn max_items(&self) -> i32 {
+    pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
     /// <p>A token to specify where to start paginating.</p>
@@ -101,7 +101,7 @@ impl ListApplicationDependenciesInputBuilder {
         Ok(
             crate::operation::list_application_dependencies::ListApplicationDependenciesInput {
                 application_id: self.application_id,
-                max_items: self.max_items.unwrap_or_default(),
+                max_items: self.max_items,
                 next_token: self.next_token,
                 semantic_version: self.semantic_version,
             },

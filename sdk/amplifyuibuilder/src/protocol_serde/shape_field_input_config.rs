@@ -60,6 +60,15 @@ pub fn ser_field_input_config(
     if let Some(var_16) = &input.is_array {
         object.key("isArray").boolean(*var_16);
     }
+    if let Some(var_17) = &input.file_uploader_config {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("fileUploaderConfig").start_object();
+        crate::protocol_serde::shape_file_uploader_field_config::ser_file_uploader_field_config(
+            &mut object_18,
+            var_17,
+        )?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -207,6 +216,11 @@ where
                                     aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            "fileUploaderConfig" => {
+                                builder = builder.set_file_uploader_config(
+                                    crate::protocol_serde::shape_file_uploader_field_config::de_file_uploader_field_config(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

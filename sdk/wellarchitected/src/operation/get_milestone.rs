@@ -61,6 +61,12 @@ impl GetMilestoneInput {
                     );
                 }
                 let input_2 = &_input.milestone_number;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "milestone_number",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mut milestone_number_encoder =
                     aws_smithy_types::primitive::Encoder::from(*input_2);
                 let milestone_number = milestone_number_encoder.encode();

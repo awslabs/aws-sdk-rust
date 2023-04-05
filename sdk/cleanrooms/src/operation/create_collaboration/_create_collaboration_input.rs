@@ -24,6 +24,10 @@ pub struct CreateCollaborationInput {
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     #[doc(hidden)]
     pub query_log_status: std::option::Option<crate::types::CollaborationQueryLogStatus>,
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
@@ -58,6 +62,13 @@ impl CreateCollaborationInput {
     ) -> std::option::Option<&crate::types::CollaborationQueryLogStatus> {
         self.query_log_status.as_ref()
     }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl CreateCollaborationInput {
     /// Creates a new builder-style object to manufacture [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
@@ -79,6 +90,8 @@ pub struct CreateCollaborationInputBuilder {
     pub(crate) creator_display_name: std::option::Option<std::string::String>,
     pub(crate) data_encryption_metadata: std::option::Option<crate::types::DataEncryptionMetadata>,
     pub(crate) query_log_status: std::option::Option<crate::types::CollaborationQueryLogStatus>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateCollaborationInputBuilder {
     /// Appends an item to `members`.
@@ -178,6 +191,31 @@ impl CreateCollaborationInputBuilder {
         self.query_log_status = input;
         self
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
+    }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
     pub fn build(
         self,
@@ -194,6 +232,7 @@ impl CreateCollaborationInputBuilder {
                 creator_display_name: self.creator_display_name,
                 data_encryption_metadata: self.data_encryption_metadata,
                 query_log_status: self.query_log_status,
+                tags: self.tags,
             },
         )
     }

@@ -189,7 +189,7 @@ impl UpdateDomainConfigFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
     ///
-    /// <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+    /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub fn log_publishing_options(
         mut self,
         k: crate::types::LogType,
@@ -198,7 +198,7 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.log_publishing_options(k, v);
         self
     }
-    /// <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+    /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub fn set_log_publishing_options(
         mut self,
         input: std::option::Option<
@@ -237,7 +237,7 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_domain_endpoint_options(input);
         self
     }
-    /// <p>Node-To-Node Encryption options for the domain.</p>
+    /// <p>Node-to-node encryption options for the domain.</p>
     pub fn node_to_node_encryption_options(
         mut self,
         input: crate::types::NodeToNodeEncryptionOptions,
@@ -245,7 +245,7 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.node_to_node_encryption_options(input);
         self
     }
-    /// <p>Node-To-Node Encryption options for the domain.</p>
+    /// <p>Node-to-node encryption options for the domain.</p>
     pub fn set_node_to_node_encryption_options(
         mut self,
         input: std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
@@ -311,6 +311,32 @@ impl UpdateDomainConfigFluentBuilder {
         input: std::option::Option<crate::types::DryRunMode>,
     ) -> Self {
         self.inner = self.inner.set_dry_run_mode(input);
+        self
+    }
+    /// <p>Off-peak window options for the domain.</p>
+    pub fn off_peak_window_options(mut self, input: crate::types::OffPeakWindowOptions) -> Self {
+        self.inner = self.inner.off_peak_window_options(input);
+        self
+    }
+    /// <p>Off-peak window options for the domain.</p>
+    pub fn set_off_peak_window_options(
+        mut self,
+        input: std::option::Option<crate::types::OffPeakWindowOptions>,
+    ) -> Self {
+        self.inner = self.inner.set_off_peak_window_options(input);
+        self
+    }
+    /// <p>Service software update options for the domain.</p>
+    pub fn software_update_options(mut self, input: crate::types::SoftwareUpdateOptions) -> Self {
+        self.inner = self.inner.software_update_options(input);
+        self
+    }
+    /// <p>Service software update options for the domain.</p>
+    pub fn set_software_update_options(
+        mut self,
+        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+    ) -> Self {
+        self.inner = self.inner.set_software_update_options(input);
         self
     }
 }

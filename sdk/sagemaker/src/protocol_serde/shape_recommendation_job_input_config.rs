@@ -66,6 +66,9 @@ pub fn ser_recommendation_job_input_config(
         crate::protocol_serde::shape_recommendation_job_vpc_config::ser_recommendation_job_vpc_config(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.model_name {
+        object.key("ModelName").string(var_20.as_str());
+    }
     Ok(())
 }
 
@@ -149,6 +152,15 @@ where
                             "VpcConfig" => {
                                 builder = builder.set_vpc_config(
                                     crate::protocol_serde::shape_recommendation_job_vpc_config::de_recommendation_job_vpc_config(tokens)?
+                                );
+                            }
+                            "ModelName" => {
+                                builder = builder.set_model_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

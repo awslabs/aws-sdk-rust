@@ -3,31 +3,29 @@ pub fn ser_update_thing_groups_for_thing_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.override_dynamic_groups {
-        object
-            .key("overrideDynamicGroups")
-            .boolean(input.override_dynamic_groups);
+    if let Some(var_1) = &input.override_dynamic_groups {
+        object.key("overrideDynamicGroups").boolean(*var_1);
     }
-    if let Some(var_1) = &input.thing_groups_to_add {
-        let mut array_2 = object.key("thingGroupsToAdd").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.thing_groups_to_add {
+        let mut array_3 = object.key("thingGroupsToAdd").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_4) = &input.thing_groups_to_remove {
-        let mut array_5 = object.key("thingGroupsToRemove").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.thing_groups_to_remove {
+        let mut array_6 = object.key("thingGroupsToRemove").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.thing_name {
-        object.key("thingName").string(var_7.as_str());
+    if let Some(var_8) = &input.thing_name {
+        object.key("thingName").string(var_8.as_str());
     }
     Ok(())
 }

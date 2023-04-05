@@ -3,32 +3,32 @@ pub fn ser_create_index_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_index::CreateIndexInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("IsUnique").boolean(input.is_unique);
+    if let Some(var_1) = &input.is_unique {
+        object.key("IsUnique").boolean(*var_1);
     }
-    if let Some(var_1) = &input.link_name {
-        object.key("LinkName").string(var_1.as_str());
+    if let Some(var_2) = &input.link_name {
+        object.key("LinkName").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.ordered_indexed_attribute_list {
-        let mut array_3 = object.key("OrderedIndexedAttributeList").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.ordered_indexed_attribute_list {
+        let mut array_4 = object.key("OrderedIndexedAttributeList").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
+                let mut object_6 = array_4.value().start_object();
                 crate::protocol_serde::shape_attribute_key::ser_attribute_key(
-                    &mut object_5,
-                    item_4,
+                    &mut object_6,
+                    item_5,
                 )?;
-                object_5.finish();
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_6) = &input.parent_reference {
+    if let Some(var_7) = &input.parent_reference {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ParentReference").start_object();
-        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("ParentReference").start_object();
+        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

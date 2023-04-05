@@ -130,6 +130,16 @@ pub fn de_get_latest_configuration_http_response(
             crate::protocol_serde::shape_get_latest_configuration_output::de_next_poll_interval_in_seconds_header(response.headers())
                                     .map_err(|_|crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled("Failed to parse NextPollIntervalInSeconds from header `Next-Poll-Interval-In-Seconds"))?
         );
+        output = output.set_version_label(
+            crate::protocol_serde::shape_get_latest_configuration_output::de_version_label_header(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::operation::get_latest_configuration::GetLatestConfigurationError::unhandled(
+                    "Failed to parse VersionLabel from header `Version-Label",
+                )
+            })?,
+        );
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );

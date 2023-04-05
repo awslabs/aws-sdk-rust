@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatalakeAutoEnableInput {
-    /// <p>Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new accounts in Security Lake. </p>
+    /// <p>Remove automatic enablement of configuration settings for new member accounts in Security Lake. </p>
     #[doc(hidden)]
     pub remove_from_configuration_for_new_accounts:
         std::option::Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>,
 }
 impl DeleteDatalakeAutoEnableInput {
-    /// <p>Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new accounts in Security Lake. </p>
+    /// <p>Remove automatic enablement of configuration settings for new member accounts in Security Lake. </p>
     pub fn remove_from_configuration_for_new_accounts(
         &self,
     ) -> std::option::Option<&[crate::types::AutoEnableNewRegionConfiguration]> {
@@ -37,7 +37,7 @@ impl DeleteDatalakeAutoEnableInputBuilder {
     ///
     /// To override the contents of this collection use [`set_remove_from_configuration_for_new_accounts`](Self::set_remove_from_configuration_for_new_accounts).
     ///
-    /// <p>Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new accounts in Security Lake. </p>
+    /// <p>Remove automatic enablement of configuration settings for new member accounts in Security Lake. </p>
     pub fn remove_from_configuration_for_new_accounts(
         mut self,
         input: crate::types::AutoEnableNewRegionConfiguration,
@@ -49,7 +49,7 @@ impl DeleteDatalakeAutoEnableInputBuilder {
         self.remove_from_configuration_for_new_accounts = Some(v);
         self
     }
-    /// <p>Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new accounts in Security Lake. </p>
+    /// <p>Remove automatic enablement of configuration settings for new member accounts in Security Lake. </p>
     pub fn set_remove_from_configuration_for_new_accounts(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>,

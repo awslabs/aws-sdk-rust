@@ -12,23 +12,23 @@ pub fn ser_list_classification_jobs_input(
         )?;
         object_2.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_3) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("nextToken").string(var_3.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("nextToken").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.sort_criteria {
+    if let Some(var_5) = &input.sort_criteria {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("sortCriteria").start_object();
+        let mut object_6 = object.key("sortCriteria").start_object();
         crate::protocol_serde::shape_list_jobs_sort_criteria::ser_list_jobs_sort_criteria(
-            &mut object_5,
-            var_4,
+            &mut object_6,
+            var_5,
         )?;
-        object_5.finish();
+        object_6.finish();
     }
     Ok(())
 }

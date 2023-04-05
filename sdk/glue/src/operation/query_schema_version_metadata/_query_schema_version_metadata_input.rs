@@ -17,7 +17,7 @@ pub struct QuerySchemaVersionMetadataInput {
     pub metadata_list: std::option::Option<std::vec::Vec<crate::types::MetadataKeyValuePair>>,
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -40,7 +40,7 @@ impl QuerySchemaVersionMetadataInput {
         self.metadata_list.as_deref()
     }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>A continuation token, if this is a continuation call.</p>
@@ -156,7 +156,7 @@ impl QuerySchemaVersionMetadataInputBuilder {
                 schema_version_number: self.schema_version_number,
                 schema_version_id: self.schema_version_id,
                 metadata_list: self.metadata_list,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

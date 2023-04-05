@@ -11,7 +11,7 @@ pub struct ListMulticastGroupsByFuotaTaskInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListMulticastGroupsByFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
@@ -23,7 +23,7 @@ impl ListMulticastGroupsByFuotaTaskInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in this operation.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -87,7 +87,6 @@ impl ListMulticastGroupsByFuotaTaskInputBuilder {
                 next_token: self.next_token
                 ,
                 max_results: self.max_results
-                    .unwrap_or_default()
                 ,
             }
         )

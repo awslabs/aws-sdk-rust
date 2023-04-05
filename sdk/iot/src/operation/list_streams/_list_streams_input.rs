@@ -11,7 +11,7 @@ pub struct ListStreamsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Set to true to return the list of streams in ascending order.</p>
     #[doc(hidden)]
-    pub ascending_order: bool,
+    pub ascending_order: std::option::Option<bool>,
 }
 impl ListStreamsInput {
     /// <p>The maximum number of results to return at a time.</p>
@@ -23,7 +23,7 @@ impl ListStreamsInput {
         self.next_token.as_deref()
     }
     /// <p>Set to true to return the list of streams in ascending order.</p>
-    pub fn ascending_order(&self) -> bool {
+    pub fn ascending_order(&self) -> std::option::Option<bool> {
         self.ascending_order
     }
 }
@@ -83,7 +83,7 @@ impl ListStreamsInputBuilder {
         Ok(crate::operation::list_streams::ListStreamsInput {
             max_results: self.max_results,
             next_token: self.next_token,
-            ascending_order: self.ascending_order.unwrap_or_default(),
+            ascending_order: self.ascending_order,
         })
     }
 }

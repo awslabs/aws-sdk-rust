@@ -4,8 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsFluentBuilder::send) it.
     /// - On success, responds with [`GetPhoneNumberSettingsOutput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput) with field(s):
-    ///   - [`calling_name(Option<String>)`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput::calling_name): (undocumented)
-    ///   - [`calling_name_updated_timestamp(Option<DateTime>)`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput::calling_name_updated_timestamp): (undocumented)
+    ///   - [`calling_name(Option<String>)`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput::calling_name): <p>The default outbound calling name for the account.</p>
+    ///   - [`calling_name_updated_timestamp(Option<DateTime>)`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput::calling_name_updated_timestamp): <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetPhoneNumberSettingsError>`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsError)
     pub fn get_phone_number_settings(
         &self,

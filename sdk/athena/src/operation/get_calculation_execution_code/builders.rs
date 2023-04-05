@@ -5,7 +5,7 @@ pub use crate::operation::get_calculation_execution_code::_get_calculation_execu
 
 /// Fluent builder constructing a request to `GetCalculationExecutionCode`.
 ///
-/// <p>Retrieves a pre-signed URL to a copy of the code that was executed for the calculation.</p>
+/// <p>Retrieves the unencrypted code that was executed for the calculation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCalculationExecutionCodeFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,

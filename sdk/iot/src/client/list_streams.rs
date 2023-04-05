@@ -6,7 +6,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_max_results): <p>The maximum number of results to return at a time.</p>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_next_token): <p>A token used to get the next set of results.</p>
-    ///   - [`ascending_order(bool)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::ascending_order) / [`set_ascending_order(bool)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_ascending_order): <p>Set to true to return the list of streams in ascending order.</p>
+    ///   - [`ascending_order(bool)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::ascending_order) / [`set_ascending_order(Option<bool>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_ascending_order): <p>Set to true to return the list of streams in ascending order.</p>
     /// - On success, responds with [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput) with field(s):
     ///   - [`streams(Option<Vec<StreamSummary>>)`](crate::operation::list_streams::ListStreamsOutput::streams): <p>A list of streams.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_streams::ListStreamsOutput::next_token): <p>A token used to get the next set of results.</p>

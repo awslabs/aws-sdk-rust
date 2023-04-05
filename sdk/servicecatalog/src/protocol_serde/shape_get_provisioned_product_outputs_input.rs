@@ -21,14 +21,14 @@ pub fn ser_get_provisioned_product_outputs_input(
         }
         array_5.finish();
     }
-    if input.page_size != 0 {
+    if let Some(var_7) = &input.page_size {
         object.key("PageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.page_size).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.page_token {
-        object.key("PageToken").string(var_7.as_str());
+    if let Some(var_8) = &input.page_token {
+        object.key("PageToken").string(var_8.as_str());
     }
     Ok(())
 }

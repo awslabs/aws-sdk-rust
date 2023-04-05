@@ -219,7 +219,23 @@ pub use crate::types::_sheet_text_box::SheetTextBoxBuilder;
 
 pub use crate::types::_visual::VisualBuilder;
 
-pub use crate::types::_empty_visual::EmptyVisualBuilder;
+pub use crate::types::_radar_chart_visual::RadarChartVisualBuilder;
+
+pub use crate::types::_column_hierarchy::ColumnHierarchyBuilder;
+
+pub use crate::types::_predefined_hierarchy::PredefinedHierarchyBuilder;
+
+pub use crate::types::_drill_down_filter::DrillDownFilterBuilder;
+
+pub use crate::types::_time_range_drill_down_filter::TimeRangeDrillDownFilterBuilder;
+
+pub use crate::types::_category_drill_down_filter::CategoryDrillDownFilterBuilder;
+
+pub use crate::types::_numeric_equality_drill_down_filter::NumericEqualityDrillDownFilterBuilder;
+
+pub use crate::types::_date_time_hierarchy::DateTimeHierarchyBuilder;
+
+pub use crate::types::_explicit_hierarchy::ExplicitHierarchyBuilder;
 
 pub use crate::types::_visual_custom_action::VisualCustomActionBuilder;
 
@@ -249,23 +265,11 @@ pub use crate::types::_same_sheet_target_visual_configuration::SameSheetTargetVi
 
 pub use crate::types::_filter_operation_selected_fields_configuration::FilterOperationSelectedFieldsConfigurationBuilder;
 
-pub use crate::types::_custom_content_visual::CustomContentVisualBuilder;
+pub use crate::types::_radar_chart_configuration::RadarChartConfigurationBuilder;
 
-pub use crate::types::_custom_content_configuration::CustomContentConfigurationBuilder;
+pub use crate::types::_legend_options::LegendOptionsBuilder;
 
-pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptionsBuilder;
-
-pub use crate::types::_long_format_text::LongFormatTextBuilder;
-
-pub use crate::types::_visual_title_label_options::VisualTitleLabelOptionsBuilder;
-
-pub use crate::types::_short_format_text::ShortFormatTextBuilder;
-
-pub use crate::types::_sankey_diagram_visual::SankeyDiagramVisualBuilder;
-
-pub use crate::types::_sankey_diagram_chart_configuration::SankeyDiagramChartConfigurationBuilder;
-
-pub use crate::types::_data_label_options::DataLabelOptionsBuilder;
+pub use crate::types::_label_options::LabelOptionsBuilder;
 
 pub use crate::types::_font_configuration::FontConfigurationBuilder;
 
@@ -273,19 +277,51 @@ pub use crate::types::_font_weight::FontWeightBuilder;
 
 pub use crate::types::_font_size::FontSizeBuilder;
 
-pub use crate::types::_data_label_type::DataLabelTypeBuilder;
+pub use crate::types::_chart_axis_label_options::ChartAxisLabelOptionsBuilder;
 
-pub use crate::types::_maximum_label_type::MaximumLabelTypeBuilder;
+pub use crate::types::_axis_label_options::AxisLabelOptionsBuilder;
 
-pub use crate::types::_minimum_label_type::MinimumLabelTypeBuilder;
+pub use crate::types::_axis_label_reference_options::AxisLabelReferenceOptionsBuilder;
 
-pub use crate::types::_range_ends_label_type::RangeEndsLabelTypeBuilder;
+pub use crate::types::_axis_display_options::AxisDisplayOptionsBuilder;
 
-pub use crate::types::_data_path_label_type::DataPathLabelTypeBuilder;
+pub use crate::types::_scroll_bar_options::ScrollBarOptionsBuilder;
 
-pub use crate::types::_field_label_type::FieldLabelTypeBuilder;
+pub use crate::types::_visible_range_options::VisibleRangeOptionsBuilder;
 
-pub use crate::types::_sankey_diagram_sort_configuration::SankeyDiagramSortConfigurationBuilder;
+pub use crate::types::_percent_visible_range::PercentVisibleRangeBuilder;
+
+pub use crate::types::_axis_data_options::AxisDataOptionsBuilder;
+
+pub use crate::types::_date_axis_options::DateAxisOptionsBuilder;
+
+pub use crate::types::_numeric_axis_options::NumericAxisOptionsBuilder;
+
+pub use crate::types::_axis_display_range::AxisDisplayRangeBuilder;
+
+pub use crate::types::_axis_display_data_driven_range::AxisDisplayDataDrivenRangeBuilder;
+
+pub use crate::types::_axis_display_min_max_range::AxisDisplayMinMaxRangeBuilder;
+
+pub use crate::types::_axis_scale::AxisScaleBuilder;
+
+pub use crate::types::_axis_logarithmic_scale::AxisLogarithmicScaleBuilder;
+
+pub use crate::types::_axis_linear_scale::AxisLinearScaleBuilder;
+
+pub use crate::types::_axis_tick_label_options::AxisTickLabelOptionsBuilder;
+
+pub use crate::types::_visual_palette::VisualPaletteBuilder;
+
+pub use crate::types::_data_path_color::DataPathColorBuilder;
+
+pub use crate::types::_data_path_value::DataPathValueBuilder;
+
+pub use crate::types::_radar_chart_series_settings::RadarChartSeriesSettingsBuilder;
+
+pub use crate::types::_radar_chart_area_style_settings::RadarChartAreaStyleSettingsBuilder;
+
+pub use crate::types::_radar_chart_sort_configuration::RadarChartSortConfigurationBuilder;
 
 pub use crate::types::_items_limit_configuration::ItemsLimitConfigurationBuilder;
 
@@ -295,9 +331,9 @@ pub use crate::types::_column_sort::ColumnSortBuilder;
 
 pub use crate::types::_field_sort::FieldSortBuilder;
 
-pub use crate::types::_sankey_diagram_field_wells::SankeyDiagramFieldWellsBuilder;
+pub use crate::types::_radar_chart_field_wells::RadarChartFieldWellsBuilder;
 
-pub use crate::types::_sankey_diagram_aggregated_field_wells::SankeyDiagramAggregatedFieldWellsBuilder;
+pub use crate::types::_radar_chart_aggregated_field_wells::RadarChartAggregatedFieldWellsBuilder;
 
 pub use crate::types::_measure_field::MeasureFieldBuilder;
 
@@ -316,6 +352,44 @@ pub use crate::types::_date_dimension_field::DateDimensionFieldBuilder;
 pub use crate::types::_categorical_dimension_field::CategoricalDimensionFieldBuilder;
 
 pub use crate::types::_numerical_dimension_field::NumericalDimensionFieldBuilder;
+
+pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptionsBuilder;
+
+pub use crate::types::_long_format_text::LongFormatTextBuilder;
+
+pub use crate::types::_visual_title_label_options::VisualTitleLabelOptionsBuilder;
+
+pub use crate::types::_short_format_text::ShortFormatTextBuilder;
+
+pub use crate::types::_empty_visual::EmptyVisualBuilder;
+
+pub use crate::types::_custom_content_visual::CustomContentVisualBuilder;
+
+pub use crate::types::_custom_content_configuration::CustomContentConfigurationBuilder;
+
+pub use crate::types::_sankey_diagram_visual::SankeyDiagramVisualBuilder;
+
+pub use crate::types::_sankey_diagram_chart_configuration::SankeyDiagramChartConfigurationBuilder;
+
+pub use crate::types::_data_label_options::DataLabelOptionsBuilder;
+
+pub use crate::types::_data_label_type::DataLabelTypeBuilder;
+
+pub use crate::types::_maximum_label_type::MaximumLabelTypeBuilder;
+
+pub use crate::types::_minimum_label_type::MinimumLabelTypeBuilder;
+
+pub use crate::types::_range_ends_label_type::RangeEndsLabelTypeBuilder;
+
+pub use crate::types::_data_path_label_type::DataPathLabelTypeBuilder;
+
+pub use crate::types::_field_label_type::FieldLabelTypeBuilder;
+
+pub use crate::types::_sankey_diagram_sort_configuration::SankeyDiagramSortConfigurationBuilder;
+
+pub use crate::types::_sankey_diagram_field_wells::SankeyDiagramFieldWellsBuilder;
+
+pub use crate::types::_sankey_diagram_aggregated_field_wells::SankeyDiagramAggregatedFieldWellsBuilder;
 
 pub use crate::types::_insight_visual::InsightVisualBuilder;
 
@@ -347,31 +421,9 @@ pub use crate::types::_top_bottom_ranked_computation::TopBottomRankedComputation
 
 pub use crate::types::_word_cloud_visual::WordCloudVisualBuilder;
 
-pub use crate::types::_column_hierarchy::ColumnHierarchyBuilder;
-
-pub use crate::types::_predefined_hierarchy::PredefinedHierarchyBuilder;
-
-pub use crate::types::_drill_down_filter::DrillDownFilterBuilder;
-
-pub use crate::types::_time_range_drill_down_filter::TimeRangeDrillDownFilterBuilder;
-
-pub use crate::types::_category_drill_down_filter::CategoryDrillDownFilterBuilder;
-
-pub use crate::types::_numeric_equality_drill_down_filter::NumericEqualityDrillDownFilterBuilder;
-
-pub use crate::types::_date_time_hierarchy::DateTimeHierarchyBuilder;
-
-pub use crate::types::_explicit_hierarchy::ExplicitHierarchyBuilder;
-
 pub use crate::types::_word_cloud_chart_configuration::WordCloudChartConfigurationBuilder;
 
 pub use crate::types::_word_cloud_options::WordCloudOptionsBuilder;
-
-pub use crate::types::_chart_axis_label_options::ChartAxisLabelOptionsBuilder;
-
-pub use crate::types::_axis_label_options::AxisLabelOptionsBuilder;
-
-pub use crate::types::_axis_label_reference_options::AxisLabelReferenceOptionsBuilder;
 
 pub use crate::types::_word_cloud_sort_configuration::WordCloudSortConfigurationBuilder;
 
@@ -382,12 +434,6 @@ pub use crate::types::_word_cloud_aggregated_field_wells::WordCloudAggregatedFie
 pub use crate::types::_histogram_visual::HistogramVisualBuilder;
 
 pub use crate::types::_histogram_configuration::HistogramConfigurationBuilder;
-
-pub use crate::types::_visual_palette::VisualPaletteBuilder;
-
-pub use crate::types::_data_path_color::DataPathColorBuilder;
-
-pub use crate::types::_data_path_value::DataPathValueBuilder;
 
 pub use crate::types::_tooltip_options::TooltipOptionsBuilder;
 
@@ -405,36 +451,6 @@ pub use crate::types::_bin_width_options::BinWidthOptionsBuilder;
 
 pub use crate::types::_bin_count_options::BinCountOptionsBuilder;
 
-pub use crate::types::_axis_display_options::AxisDisplayOptionsBuilder;
-
-pub use crate::types::_scroll_bar_options::ScrollBarOptionsBuilder;
-
-pub use crate::types::_visible_range_options::VisibleRangeOptionsBuilder;
-
-pub use crate::types::_percent_visible_range::PercentVisibleRangeBuilder;
-
-pub use crate::types::_axis_data_options::AxisDataOptionsBuilder;
-
-pub use crate::types::_date_axis_options::DateAxisOptionsBuilder;
-
-pub use crate::types::_numeric_axis_options::NumericAxisOptionsBuilder;
-
-pub use crate::types::_axis_display_range::AxisDisplayRangeBuilder;
-
-pub use crate::types::_axis_display_data_driven_range::AxisDisplayDataDrivenRangeBuilder;
-
-pub use crate::types::_axis_display_min_max_range::AxisDisplayMinMaxRangeBuilder;
-
-pub use crate::types::_axis_scale::AxisScaleBuilder;
-
-pub use crate::types::_axis_logarithmic_scale::AxisLogarithmicScaleBuilder;
-
-pub use crate::types::_axis_linear_scale::AxisLinearScaleBuilder;
-
-pub use crate::types::_axis_tick_label_options::AxisTickLabelOptionsBuilder;
-
-pub use crate::types::_label_options::LabelOptionsBuilder;
-
 pub use crate::types::_histogram_field_wells::HistogramFieldWellsBuilder;
 
 pub use crate::types::_histogram_aggregated_field_wells::HistogramAggregatedFieldWellsBuilder;
@@ -442,8 +458,6 @@ pub use crate::types::_histogram_aggregated_field_wells::HistogramAggregatedFiel
 pub use crate::types::_waterfall_visual::WaterfallVisualBuilder;
 
 pub use crate::types::_waterfall_chart_configuration::WaterfallChartConfigurationBuilder;
-
-pub use crate::types::_legend_options::LegendOptionsBuilder;
 
 pub use crate::types::_waterfall_chart_options::WaterfallChartOptionsBuilder;
 
@@ -1023,6 +1037,20 @@ pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclara
 
 pub use crate::types::_dashboard_publish_options::DashboardPublishOptionsBuilder;
 
+pub use crate::types::_data_point_tooltip_option::DataPointTooltipOptionBuilder;
+
+pub use crate::types::_data_point_menu_label_option::DataPointMenuLabelOptionBuilder;
+
+pub use crate::types::_data_point_drill_up_down_option::DataPointDrillUpDownOptionBuilder;
+
+pub use crate::types::_export_with_hidden_fields_option::ExportWithHiddenFieldsOptionBuilder;
+
+pub use crate::types::_visual_axis_sort_option::VisualAxisSortOptionBuilder;
+
+pub use crate::types::_visual_menu_option::VisualMenuOptionBuilder;
+
+pub use crate::types::_sheet_layout_element_maximization_option::SheetLayoutElementMaximizationOptionBuilder;
+
 pub use crate::types::_dashboard_visual_publish_options::DashboardVisualPublishOptionsBuilder;
 
 pub use crate::types::_export_hidden_fields_option::ExportHiddenFieldsOptionBuilder;
@@ -1123,7 +1151,13 @@ pub use crate::types::_registered_user_q_search_bar_embedding_configuration::Reg
 
 pub use crate::types::_registered_user_quick_sight_console_embedding_configuration::RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder;
 
+pub use crate::types::_registered_user_console_feature_configurations::RegisteredUserConsoleFeatureConfigurationsBuilder;
+
+pub use crate::types::_state_persistence_configurations::StatePersistenceConfigurationsBuilder;
+
 pub use crate::types::_registered_user_dashboard_embedding_configuration::RegisteredUserDashboardEmbeddingConfigurationBuilder;
+
+pub use crate::types::_registered_user_dashboard_feature_configurations::RegisteredUserDashboardFeatureConfigurationsBuilder;
 
 pub use crate::types::_anonymous_user_embedding_experience_configuration::AnonymousUserEmbeddingExperienceConfigurationBuilder;
 

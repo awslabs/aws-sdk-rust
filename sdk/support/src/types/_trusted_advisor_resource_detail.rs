@@ -18,7 +18,7 @@ pub struct TrustedAdvisorResourceDetail {
     pub is_suppressed: bool,
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub metadata: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl TrustedAdvisorResourceDetail {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
@@ -38,7 +38,7 @@ impl TrustedAdvisorResourceDetail {
         self.is_suppressed
     }
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
-    pub fn metadata(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn metadata(&self) -> std::option::Option<&[std::option::Option<std::string::String>]> {
         self.metadata.as_deref()
     }
 }
@@ -57,7 +57,8 @@ pub struct TrustedAdvisorResourceDetailBuilder {
     pub(crate) region: std::option::Option<std::string::String>,
     pub(crate) resource_id: std::option::Option<std::string::String>,
     pub(crate) is_suppressed: std::option::Option<bool>,
-    pub(crate) metadata: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) metadata:
+        std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl TrustedAdvisorResourceDetailBuilder {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
@@ -105,16 +106,16 @@ impl TrustedAdvisorResourceDetailBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
-    pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
         let mut v = self.metadata.unwrap_or_default();
-        v.push(input.into());
+        v.push(input);
         self.metadata = Some(v);
         self
     }
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
     ) -> Self {
         self.metadata = input;
         self

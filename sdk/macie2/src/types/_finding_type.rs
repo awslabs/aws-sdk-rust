@@ -17,6 +17,7 @@
 ///     FindingType::PolicyIamUserS3BucketPublic => { /* ... */ },
 ///     FindingType::PolicyIamUserS3BucketReplicatedExternally => { /* ... */ },
 ///     FindingType::PolicyIamUserS3BucketSharedExternally => { /* ... */ },
+///     FindingType::PolicyIamUserS3BucketSharedWithCloudFront => { /* ... */ },
 ///     FindingType::SensitiveDataS3ObjectCredentials => { /* ... */ },
 ///     FindingType::SensitiveDataS3ObjectCustomIdentifier => { /* ... */ },
 ///     FindingType::SensitiveDataS3ObjectFinancial => { /* ... */ },
@@ -66,6 +67,8 @@ pub enum FindingType {
     #[allow(missing_docs)] // documentation missing in model
     PolicyIamUserS3BucketSharedExternally,
     #[allow(missing_docs)] // documentation missing in model
+    PolicyIamUserS3BucketSharedWithCloudFront,
+    #[allow(missing_docs)] // documentation missing in model
     SensitiveDataS3ObjectCredentials,
     #[allow(missing_docs)] // documentation missing in model
     SensitiveDataS3ObjectCustomIdentifier,
@@ -93,6 +96,9 @@ impl std::convert::From<&str> for FindingType {
             }
             "Policy:IAMUser/S3BucketSharedExternally" => {
                 FindingType::PolicyIamUserS3BucketSharedExternally
+            }
+            "Policy:IAMUser/S3BucketSharedWithCloudFront" => {
+                FindingType::PolicyIamUserS3BucketSharedWithCloudFront
             }
             "SensitiveData:S3Object/Credentials" => FindingType::SensitiveDataS3ObjectCredentials,
             "SensitiveData:S3Object/CustomIdentifier" => {
@@ -129,6 +135,9 @@ impl FindingType {
             FindingType::PolicyIamUserS3BucketSharedExternally => {
                 "Policy:IAMUser/S3BucketSharedExternally"
             }
+            FindingType::PolicyIamUserS3BucketSharedWithCloudFront => {
+                "Policy:IAMUser/S3BucketSharedWithCloudFront"
+            }
             FindingType::SensitiveDataS3ObjectCredentials => "SensitiveData:S3Object/Credentials",
             FindingType::SensitiveDataS3ObjectCustomIdentifier => {
                 "SensitiveData:S3Object/CustomIdentifier"
@@ -147,6 +156,7 @@ impl FindingType {
             "Policy:IAMUser/S3BucketPublic",
             "Policy:IAMUser/S3BucketReplicatedExternally",
             "Policy:IAMUser/S3BucketSharedExternally",
+            "Policy:IAMUser/S3BucketSharedWithCloudFront",
             "SensitiveData:S3Object/Credentials",
             "SensitiveData:S3Object/CustomIdentifier",
             "SensitiveData:S3Object/Financial",

@@ -2,7 +2,7 @@
 
 /// <p>Describes a folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderMetadata {
     /// <p>The ID of the folder.</p>
     #[doc(hidden)]
@@ -84,6 +84,23 @@ impl FolderMetadata {
         self.latest_version_size
     }
 }
+impl std::fmt::Debug for FolderMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FolderMetadata");
+        formatter.field("id", &self.id);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("creator_id", &self.creator_id);
+        formatter.field("parent_folder_id", &self.parent_folder_id);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("modified_timestamp", &self.modified_timestamp);
+        formatter.field("resource_state", &self.resource_state);
+        formatter.field("signature", &self.signature);
+        formatter.field("labels", &self.labels);
+        formatter.field("size", &self.size);
+        formatter.field("latest_version_size", &self.latest_version_size);
+        formatter.finish()
+    }
+}
 impl FolderMetadata {
     /// Creates a new builder-style object to manufacture [`FolderMetadata`](crate::types::FolderMetadata).
     pub fn builder() -> crate::types::builders::FolderMetadataBuilder {
@@ -93,7 +110,7 @@ impl FolderMetadata {
 
 /// A builder for [`FolderMetadata`](crate::types::FolderMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct FolderMetadataBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
@@ -251,5 +268,22 @@ impl FolderMetadataBuilder {
             size: self.size,
             latest_version_size: self.latest_version_size,
         }
+    }
+}
+impl std::fmt::Debug for FolderMetadataBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FolderMetadataBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("creator_id", &self.creator_id);
+        formatter.field("parent_folder_id", &self.parent_folder_id);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("modified_timestamp", &self.modified_timestamp);
+        formatter.field("resource_state", &self.resource_state);
+        formatter.field("signature", &self.signature);
+        formatter.field("labels", &self.labels);
+        formatter.field("size", &self.size);
+        formatter.field("latest_version_size", &self.latest_version_size);
+        formatter.finish()
     }
 }

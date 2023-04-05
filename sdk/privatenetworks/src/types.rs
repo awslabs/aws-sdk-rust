@@ -15,25 +15,11 @@ pub use crate::types::_network_resource_definition_type::NetworkResourceDefiniti
 
 pub use crate::types::_network_site_status::NetworkSiteStatus;
 
-pub use crate::types::_order::Order;
+pub use crate::types::_network_resource::NetworkResource;
 
-pub use crate::types::_acknowledgment_status::AcknowledgmentStatus;
-
-pub use crate::types::_tracking_information::TrackingInformation;
+pub use crate::types::_return_information::ReturnInformation;
 
 pub use crate::types::_address::Address;
-
-pub use crate::types::_order_filter_keys::OrderFilterKeys;
-
-pub use crate::types::_network_site_filter_keys::NetworkSiteFilterKeys;
-
-pub use crate::types::_network::Network;
-
-pub use crate::types::_network_status::NetworkStatus;
-
-pub use crate::types::_network_filter_keys::NetworkFilterKeys;
-
-pub use crate::types::_network_resource::NetworkResource;
 
 pub use crate::types::_position::Position;
 
@@ -46,6 +32,24 @@ pub use crate::types::_health_status::HealthStatus;
 pub use crate::types::_network_resource_status::NetworkResourceStatus;
 
 pub use crate::types::_network_resource_type::NetworkResourceType;
+
+pub use crate::types::_update_type::UpdateType;
+
+pub use crate::types::_order::Order;
+
+pub use crate::types::_acknowledgment_status::AcknowledgmentStatus;
+
+pub use crate::types::_tracking_information::TrackingInformation;
+
+pub use crate::types::_order_filter_keys::OrderFilterKeys;
+
+pub use crate::types::_network_site_filter_keys::NetworkSiteFilterKeys;
+
+pub use crate::types::_network::Network;
+
+pub use crate::types::_network_status::NetworkStatus;
+
+pub use crate::types::_network_filter_keys::NetworkFilterKeys;
 
 pub use crate::types::_network_resource_filter_keys::NetworkResourceFilterKeys;
 
@@ -103,9 +107,13 @@ mod _order_filter_keys;
 
 mod _position;
 
+mod _return_information;
+
 mod _site_plan;
 
 mod _tracking_information;
+
+mod _update_type;
 
 mod _validation_exception_field;
 

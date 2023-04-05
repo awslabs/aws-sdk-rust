@@ -5,7 +5,7 @@ pub use crate::operation::list_component_build_versions::_list_component_build_v
 
 /// Fluent builder constructing a request to `ListComponentBuildVersions`.
 ///
-/// <p> Returns the list of component build versions for the specified semantic version.</p> <note>
+/// <p>Returns the list of component build versions for the specified semantic version.</p> <note>
 /// <p>The semantic version has four nodes: <major>
 /// .
 /// <minor>

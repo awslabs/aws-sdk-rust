@@ -55,7 +55,13 @@ pub use crate::types::error::_condition_check_failure_exception::ConditionCheckF
 
 pub use crate::types::error::_permission_type_mismatch_exception::PermissionTypeMismatchException;
 
+pub use crate::types::error::_federation_source_retryable_exception::FederationSourceRetryableException;
+
+pub use crate::types::error::_federation_source_exception::FederationSourceException;
+
 pub use crate::types::error::_invalid_state_exception::InvalidStateException;
+
+pub use crate::types::error::_federated_resource_already_exists_exception::FederatedResourceAlreadyExistsException;
 
 mod _access_denied_exception;
 
@@ -76,6 +82,12 @@ mod _crawler_running_exception;
 mod _crawler_stopping_exception;
 
 mod _entity_not_found_exception;
+
+mod _federated_resource_already_exists_exception;
+
+mod _federation_source_exception;
+
+mod _federation_source_retryable_exception;
 
 mod _glue_encryption_exception;
 

@@ -2,7 +2,7 @@
 
 /// <p>Describes the launch specification for one or more Spot Instances. If you include On-Demand capacity in your fleet request or want to specify an EFA network device, you can't use <code>SpotFleetLaunchSpecification</code>; you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpotFleetLaunchSpecification {
     /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
     #[doc(hidden)]
@@ -55,7 +55,7 @@ pub struct SpotFleetLaunchSpecification {
     /// <p>The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>The Base64-encoded user data that instances use when starting up.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     #[doc(hidden)]
     pub user_data: std::option::Option<std::string::String>,
     /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
@@ -144,7 +144,7 @@ impl SpotFleetLaunchSpecification {
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The Base64-encoded user data that instances use when starting up.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn user_data(&self) -> std::option::Option<&str> {
         self.user_data.as_deref()
     }
@@ -168,6 +168,31 @@ impl SpotFleetLaunchSpecification {
         self.instance_requirements.as_ref()
     }
 }
+impl std::fmt::Debug for SpotFleetLaunchSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SpotFleetLaunchSpecification");
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("addressing_type", &self.addressing_type);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("placement", &self.placement);
+        formatter.field("ramdisk_id", &self.ramdisk_id);
+        formatter.field("spot_price", &self.spot_price);
+        formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("weighted_capacity", &self.weighted_capacity);
+        formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("instance_requirements", &self.instance_requirements);
+        formatter.finish()
+    }
+}
 impl SpotFleetLaunchSpecification {
     /// Creates a new builder-style object to manufacture [`SpotFleetLaunchSpecification`](crate::types::SpotFleetLaunchSpecification).
     pub fn builder() -> crate::types::builders::SpotFleetLaunchSpecificationBuilder {
@@ -177,7 +202,7 @@ impl SpotFleetLaunchSpecification {
 
 /// A builder for [`SpotFleetLaunchSpecification`](crate::types::SpotFleetLaunchSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct SpotFleetLaunchSpecificationBuilder {
     pub(crate) security_groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) addressing_type: std::option::Option<std::string::String>,
@@ -411,12 +436,12 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.subnet_id = input;
         self
     }
-    /// <p>The Base64-encoded user data that instances use when starting up.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_data = Some(input.into());
         self
     }
-    /// <p>The Base64-encoded user data that instances use when starting up.</p>
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_data = input;
         self
@@ -492,5 +517,30 @@ impl SpotFleetLaunchSpecificationBuilder {
             tag_specifications: self.tag_specifications,
             instance_requirements: self.instance_requirements,
         }
+    }
+}
+impl std::fmt::Debug for SpotFleetLaunchSpecificationBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SpotFleetLaunchSpecificationBuilder");
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("addressing_type", &self.addressing_type);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("placement", &self.placement);
+        formatter.field("ramdisk_id", &self.ramdisk_id);
+        formatter.field("spot_price", &self.spot_price);
+        formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("user_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("weighted_capacity", &self.weighted_capacity);
+        formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("instance_requirements", &self.instance_requirements);
+        formatter.finish()
     }
 }

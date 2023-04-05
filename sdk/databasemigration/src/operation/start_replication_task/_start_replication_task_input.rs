@@ -8,8 +8,10 @@ pub struct StartReplicationTaskInput {
     #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The type of replication task to start.</p>
-    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
-    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
+    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. This option will start the migration.</p>
+    /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
+    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
     #[doc(hidden)]
     pub start_replication_task_type:
         std::option::Option<crate::types::StartReplicationTaskTypeValue>,
@@ -28,7 +30,7 @@ pub struct StartReplicationTaskInput {
     pub cdc_start_position: std::option::Option<std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
     #[doc(hidden)]
     pub cdc_stop_position: std::option::Option<std::string::String>,
 }
@@ -38,8 +40,10 @@ impl StartReplicationTaskInput {
         self.replication_task_arn.as_deref()
     }
     /// <p>The type of replication task to start.</p>
-    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
-    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
+    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. This option will start the migration.</p>
+    /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
+    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
     pub fn start_replication_task_type(
         &self,
     ) -> std::option::Option<&crate::types::StartReplicationTaskTypeValue> {
@@ -62,7 +66,7 @@ impl StartReplicationTaskInput {
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
     pub fn cdc_stop_position(&self) -> std::option::Option<&str> {
         self.cdc_stop_position.as_deref()
     }
@@ -101,8 +105,10 @@ impl StartReplicationTaskInputBuilder {
         self
     }
     /// <p>The type of replication task to start.</p>
-    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
-    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
+    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. This option will start the migration.</p>
+    /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
+    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
     pub fn start_replication_task_type(
         mut self,
         input: crate::types::StartReplicationTaskTypeValue,
@@ -111,8 +117,10 @@ impl StartReplicationTaskInputBuilder {
         self
     }
     /// <p>The type of replication task to start.</p>
-    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
-    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
+    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. This option will start the migration.</p>
+    /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
+    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
     pub fn set_start_replication_task_type(
         mut self,
         input: std::option::Option<crate::types::StartReplicationTaskTypeValue>,
@@ -162,14 +170,14 @@ impl StartReplicationTaskInputBuilder {
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
     pub fn cdc_stop_position(mut self, input: impl Into<std::string::String>) -> Self {
         self.cdc_stop_position = Some(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
     pub fn set_cdc_stop_position(
         mut self,
         input: std::option::Option<std::string::String>,

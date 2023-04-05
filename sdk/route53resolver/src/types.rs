@@ -13,9 +13,13 @@ pub use crate::types::_resolver_rule_config::ResolverRuleConfig;
 
 pub use crate::types::_resolver_endpoint::ResolverEndpoint;
 
+pub use crate::types::_resolver_endpoint_type::ResolverEndpointType;
+
 pub use crate::types::_resolver_endpoint_status::ResolverEndpointStatus;
 
 pub use crate::types::_resolver_endpoint_direction::ResolverEndpointDirection;
+
+pub use crate::types::_update_ip_address::UpdateIpAddress;
 
 pub use crate::types::_resolver_dnssec_config::ResolverDnssecConfig;
 
@@ -151,6 +155,8 @@ mod _resolver_endpoint_direction;
 
 mod _resolver_endpoint_status;
 
+mod _resolver_endpoint_type;
+
 mod _resolver_query_log_config;
 
 mod _resolver_query_log_config_association;
@@ -180,6 +186,8 @@ mod _sort_order;
 mod _tag;
 
 mod _target_address;
+
+mod _update_ip_address;
 
 mod _validation;
 

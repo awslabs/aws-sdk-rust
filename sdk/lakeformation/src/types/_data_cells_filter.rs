@@ -26,6 +26,9 @@ pub struct DataCellsFilter {
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     #[doc(hidden)]
     pub column_wildcard: std::option::Option<crate::types::ColumnWildcard>,
+    /// <p>The ID of the data cells filter version.</p>
+    #[doc(hidden)]
+    pub version_id: std::option::Option<std::string::String>,
 }
 impl DataCellsFilter {
     /// <p>The ID of the catalog to which the table belongs.</p>
@@ -57,6 +60,10 @@ impl DataCellsFilter {
     pub fn column_wildcard(&self) -> std::option::Option<&crate::types::ColumnWildcard> {
         self.column_wildcard.as_ref()
     }
+    /// <p>The ID of the data cells filter version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl DataCellsFilter {
     /// Creates a new builder-style object to manufacture [`DataCellsFilter`](crate::types::DataCellsFilter).
@@ -76,6 +83,7 @@ pub struct DataCellsFilterBuilder {
     pub(crate) row_filter: std::option::Option<crate::types::RowFilter>,
     pub(crate) column_names: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) column_wildcard: std::option::Option<crate::types::ColumnWildcard>,
+    pub(crate) version_id: std::option::Option<std::string::String>,
 }
 impl DataCellsFilterBuilder {
     /// <p>The ID of the catalog to which the table belongs.</p>
@@ -162,6 +170,16 @@ impl DataCellsFilterBuilder {
         self.column_wildcard = input;
         self
     }
+    /// <p>The ID of the data cells filter version.</p>
+    pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.version_id = Some(input.into());
+        self
+    }
+    /// <p>The ID of the data cells filter version.</p>
+    pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.version_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DataCellsFilter`](crate::types::DataCellsFilter).
     pub fn build(self) -> crate::types::DataCellsFilter {
         crate::types::DataCellsFilter {
@@ -172,6 +190,7 @@ impl DataCellsFilterBuilder {
             row_filter: self.row_filter,
             column_names: self.column_names,
             column_wildcard: self.column_wildcard,
+            version_id: self.version_id,
         }
     }
 }

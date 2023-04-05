@@ -37,7 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>The type of server-side encryption that's used to encrypt an S3 object or objects in an S3 bucket. Possible values are:</p>
+/// <p>The server-side encryption algorithm that was used to encrypt an S3 object or is used by default to encrypt objects that are added to an S3 bucket. Possible values are:</p>
 ///
 /// _Note: `EncryptionType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]

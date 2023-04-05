@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`connector_label(impl Into<String>)`](crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::connector_label) / [`set_connector_label(Option<String>)`](crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::set_connector_label): <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    ///   - [`force_delete(bool)`](crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::force_delete) / [`set_force_delete(bool)`](crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::set_force_delete): <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
+    ///   - [`force_delete(bool)`](crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::force_delete) / [`set_force_delete(Option<bool>)`](crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::set_force_delete): <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
     /// - On success, responds with [`UnregisterConnectorOutput`](crate::operation::unregister_connector::UnregisterConnectorOutput)
     /// - On failure, responds with [`SdkError<UnregisterConnectorError>`](crate::operation::unregister_connector::UnregisterConnectorError)
     pub fn unregister_connector(

@@ -101,14 +101,13 @@ impl DeleteAnalysisInput {
                         );
                     }
                 }
-                if _input.force_delete_without_recovery {
-                    query.push_kv(
-                        "force-delete-without-recovery",
-                        aws_smithy_types::primitive::Encoder::from(
-                            _input.force_delete_without_recovery,
-                        )
-                        .encode(),
-                    );
+                if let Some(inner_4) = &_input.force_delete_without_recovery {
+                    if *inner_4 {
+                        query.push_kv(
+                            "force-delete-without-recovery",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

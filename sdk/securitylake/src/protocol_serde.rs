@@ -198,7 +198,11 @@ pub(crate) mod shape_tags_map;
 
 pub(crate) mod shape_two_dimensions_map;
 
+pub(crate) mod shape_update_status;
+
 pub(crate) mod shape_failures;
+
+pub(crate) mod shape_last_update_failure;
 
 pub(crate) mod shape_logs_status;
 

@@ -16,6 +16,8 @@ impl super::Client {
     ///   - [`start_time(Option<DateTime>)`](crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput::start_time): <p>The timestamp when the batch job execution started.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput::end_time): <p>The timestamp when the batch job execution ended.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput::status_reason): <p>The reason for the reported status.</p>
+    ///   - [`return_code(Option<String>)`](crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput::return_code): <p></p>
+    ///   - [`batch_job_identifier(Option<BatchJobIdentifier>)`](crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput::batch_job_identifier): <p>Identifies a specific batch job.</p>
     /// - On failure, responds with [`SdkError<GetBatchJobExecutionError>`](crate::operation::get_batch_job_execution::GetBatchJobExecutionError)
     pub fn get_batch_job_execution(
         &self,

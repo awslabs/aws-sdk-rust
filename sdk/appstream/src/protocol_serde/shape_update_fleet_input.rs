@@ -39,73 +39,71 @@ pub fn ser_update_fleet_input(
             aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.delete_vpc_config {
-        object
-            .key("DeleteVpcConfig")
-            .boolean(input.delete_vpc_config);
+    if let Some(var_11) = &input.delete_vpc_config {
+        object.key("DeleteVpcConfig").boolean(*var_11);
     }
-    if let Some(var_11) = &input.description {
-        object.key("Description").string(var_11.as_str());
+    if let Some(var_12) = &input.description {
+        object.key("Description").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.display_name {
-        object.key("DisplayName").string(var_12.as_str());
+    if let Some(var_13) = &input.display_name {
+        object.key("DisplayName").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.enable_default_internet_access {
-        object.key("EnableDefaultInternetAccess").boolean(*var_13);
+    if let Some(var_14) = &input.enable_default_internet_access {
+        object.key("EnableDefaultInternetAccess").boolean(*var_14);
     }
-    if let Some(var_14) = &input.domain_join_info {
+    if let Some(var_15) = &input.domain_join_info {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("DomainJoinInfo").start_object();
+        let mut object_16 = object.key("DomainJoinInfo").start_object();
         crate::protocol_serde::shape_domain_join_info::ser_domain_join_info(
-            &mut object_15,
-            var_14,
+            &mut object_16,
+            var_15,
         )?;
-        object_15.finish();
+        object_16.finish();
     }
-    if let Some(var_16) = &input.idle_disconnect_timeout_in_seconds {
+    if let Some(var_17) = &input.idle_disconnect_timeout_in_seconds {
         object.key("IdleDisconnectTimeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_16).into()),
+            aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_17) = &input.attributes_to_delete {
-        let mut array_18 = object.key("AttributesToDelete").start_array();
-        for item_19 in var_17 {
+    if let Some(var_18) = &input.attributes_to_delete {
+        let mut array_19 = object.key("AttributesToDelete").start_array();
+        for item_20 in var_18 {
             {
-                array_18.value().string(item_19.as_str());
+                array_19.value().string(item_20.as_str());
             }
         }
-        array_18.finish();
+        array_19.finish();
     }
-    if let Some(var_20) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_20.as_str());
+    if let Some(var_21) = &input.iam_role_arn {
+        object.key("IamRoleArn").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.stream_view {
-        object.key("StreamView").string(var_21.as_str());
+    if let Some(var_22) = &input.stream_view {
+        object.key("StreamView").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.platform {
-        object.key("Platform").string(var_22.as_str());
+    if let Some(var_23) = &input.platform {
+        object.key("Platform").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.max_concurrent_sessions {
+    if let Some(var_24) = &input.max_concurrent_sessions {
         object.key("MaxConcurrentSessions").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_23).into()),
+            aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
-    if let Some(var_24) = &input.usb_device_filter_strings {
-        let mut array_25 = object.key("UsbDeviceFilterStrings").start_array();
-        for item_26 in var_24 {
+    if let Some(var_25) = &input.usb_device_filter_strings {
+        let mut array_26 = object.key("UsbDeviceFilterStrings").start_array();
+        for item_27 in var_25 {
             {
-                array_25.value().string(item_26.as_str());
+                array_26.value().string(item_27.as_str());
             }
         }
-        array_25.finish();
+        array_26.finish();
     }
-    if let Some(var_27) = &input.session_script_s3_location {
+    if let Some(var_28) = &input.session_script_s3_location {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("SessionScriptS3Location").start_object();
-        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_28, var_27)?;
-        object_28.finish();
+        let mut object_29 = object.key("SessionScriptS3Location").start_object();
+        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_29, var_28)?;
+        object_29.finish();
     }
     Ok(())
 }

@@ -12,16 +12,14 @@ pub fn ser_terminate_provisioned_product_input(
     if let Some(var_3) = &input.terminate_token {
         object.key("TerminateToken").string(var_3.as_str());
     }
-    if input.ignore_errors {
-        object.key("IgnoreErrors").boolean(input.ignore_errors);
+    if let Some(var_4) = &input.ignore_errors {
+        object.key("IgnoreErrors").boolean(*var_4);
     }
-    if let Some(var_4) = &input.accept_language {
-        object.key("AcceptLanguage").string(var_4.as_str());
+    if let Some(var_5) = &input.accept_language {
+        object.key("AcceptLanguage").string(var_5.as_str());
     }
-    if input.retain_physical_resources {
-        object
-            .key("RetainPhysicalResources")
-            .boolean(input.retain_physical_resources);
+    if let Some(var_6) = &input.retain_physical_resources {
+        object.key("RetainPhysicalResources").boolean(*var_6);
     }
     Ok(())
 }

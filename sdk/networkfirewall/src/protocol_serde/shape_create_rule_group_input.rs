@@ -39,23 +39,23 @@ pub fn ser_create_rule_group_input(
         }
         array_9.finish();
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_12) = &input.dry_run {
+        object.key("DryRun").boolean(*var_12);
     }
-    if let Some(var_12) = &input.encryption_configuration {
+    if let Some(var_13) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("EncryptionConfiguration").start_object();
+        let mut object_14 = object.key("EncryptionConfiguration").start_object();
         crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_13,
-            var_12,
+            &mut object_14,
+            var_13,
         )?;
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_14) = &input.source_metadata {
+    if let Some(var_15) = &input.source_metadata {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("SourceMetadata").start_object();
-        crate::protocol_serde::shape_source_metadata::ser_source_metadata(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("SourceMetadata").start_object();
+        crate::protocol_serde::shape_source_metadata::ser_source_metadata(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

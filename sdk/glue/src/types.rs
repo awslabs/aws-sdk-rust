@@ -79,7 +79,7 @@ pub use crate::types::_execution_class::ExecutionClass;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNode;
 
-pub use crate::types::_s3_hudi_direct_target::S3HudiDirectTarget;
+pub use crate::types::_s3_delta_direct_target::S3DeltaDirectTarget;
 
 pub use crate::types::_direct_schema_change_policy::DirectSchemaChangePolicy;
 
@@ -87,19 +87,35 @@ pub use crate::types::_update_catalog_behavior::UpdateCatalogBehavior;
 
 pub use crate::types::_target_format::TargetFormat;
 
-pub use crate::types::_hudi_target_compression_type::HudiTargetCompressionType;
+pub use crate::types::_delta_target_compression_type::DeltaTargetCompressionType;
 
-pub use crate::types::_s3_hudi_catalog_target::S3HudiCatalogTarget;
+pub use crate::types::_s3_delta_catalog_target::S3DeltaCatalogTarget;
 
 pub use crate::types::_catalog_schema_change_policy::CatalogSchemaChangePolicy;
 
-pub use crate::types::_s3_hudi_source::S3HudiSource;
+pub use crate::types::_s3_delta_source::S3DeltaSource;
 
 pub use crate::types::_glue_schema::GlueSchema;
 
 pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumn;
 
 pub use crate::types::_s3_direct_source_additional_options::S3DirectSourceAdditionalOptions;
+
+pub use crate::types::_catalog_delta_source::CatalogDeltaSource;
+
+pub use crate::types::_s3_catalog_delta_source::S3CatalogDeltaSource;
+
+pub use crate::types::_direct_jdbc_source::DirectJdbcSource;
+
+pub use crate::types::_jdbc_connection_type::JdbcConnectionType;
+
+pub use crate::types::_s3_hudi_direct_target::S3HudiDirectTarget;
+
+pub use crate::types::_hudi_target_compression_type::HudiTargetCompressionType;
+
+pub use crate::types::_s3_hudi_catalog_target::S3HudiCatalogTarget;
+
+pub use crate::types::_s3_hudi_source::S3HudiSource;
 
 pub use crate::types::_catalog_hudi_source::CatalogHudiSource;
 
@@ -289,6 +305,8 @@ pub use crate::types::_dev_endpoint_custom_libraries::DevEndpointCustomLibraries
 
 pub use crate::types::_database_input::DatabaseInput;
 
+pub use crate::types::_federated_database::FederatedDatabase;
+
 pub use crate::types::_database_identifier::DatabaseIdentifier;
 
 pub use crate::types::_principal_permissions::PrincipalPermissions;
@@ -380,6 +398,8 @@ pub use crate::types::_data_source::DataSource;
 pub use crate::types::_glue_table::GlueTable;
 
 pub use crate::types::_table::Table;
+
+pub use crate::types::_federated_table::FederatedTable;
 
 pub use crate::types::_resource_share_type::ResourceShareType;
 
@@ -514,6 +534,8 @@ pub use crate::types::_workflow::Workflow;
 pub use crate::types::_blueprint_details::BlueprintDetails;
 
 pub use crate::types::_user_defined_function::UserDefinedFunction;
+
+pub use crate::types::_federation_source_error_code::FederationSourceErrorCode;
 
 pub use crate::types::_column_row_filter::ColumnRowFilter;
 
@@ -737,6 +759,8 @@ mod _blueprint_status;
 
 mod _boolean_column_statistics_data;
 
+mod _catalog_delta_source;
+
 mod _catalog_encryption_mode;
 
 mod _catalog_entry;
@@ -897,9 +921,13 @@ mod _delete_behavior;
 
 mod _delta_target;
 
+mod _delta_target_compression_type;
+
 mod _dev_endpoint;
 
 mod _dev_endpoint_custom_libraries;
+
+mod _direct_jdbc_source;
 
 mod _direct_kafka_source;
 
@@ -955,6 +983,12 @@ mod _exist_condition;
 
 mod _export_labels_task_run_properties;
 
+mod _federated_database;
+
+mod _federated_table;
+
+mod _federation_source_error_code;
+
 mod _field_name;
 
 mod _fill_missing_values;
@@ -1000,6 +1034,8 @@ mod _grok_classifier;
 mod _hudi_target_compression_type;
 
 mod _import_labels_task_run_properties;
+
+mod _jdbc_connection_type;
 
 mod _jdbc_connector_options;
 
@@ -1179,6 +1215,8 @@ mod _resource_type;
 
 mod _resource_uri;
 
+mod _s3_catalog_delta_source;
+
 mod _s3_catalog_hudi_source;
 
 mod _s3_catalog_source;
@@ -1186,6 +1224,12 @@ mod _s3_catalog_source;
 mod _s3_catalog_target;
 
 mod _s3_csv_source;
+
+mod _s3_delta_catalog_target;
+
+mod _s3_delta_direct_target;
+
+mod _s3_delta_source;
 
 mod _s3_direct_source_additional_options;
 

@@ -6,10 +6,10 @@ pub fn ser_describe_model_card_input(
     if let Some(var_1) = &input.model_card_name {
         object.key("ModelCardName").string(var_1.as_str());
     }
-    if input.model_card_version != 0 {
+    if let Some(var_2) = &input.model_card_version {
         object.key("ModelCardVersion").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.model_card_version).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

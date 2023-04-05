@@ -30,7 +30,7 @@ pub struct ExportEbsVolumeRecommendationsInput {
     /// <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
     #[doc(hidden)]
-    pub include_member_accounts: bool,
+    pub include_member_accounts: std::option::Option<bool>,
 }
 impl ExportEbsVolumeRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS volume recommendations.</p>
@@ -64,7 +64,7 @@ impl ExportEbsVolumeRecommendationsInput {
     /// <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>
     /// <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
-    pub fn include_member_accounts(&self) -> bool {
+    pub fn include_member_accounts(&self) -> std::option::Option<bool> {
         self.include_member_accounts
     }
 }
@@ -218,7 +218,6 @@ impl ExportEbsVolumeRecommendationsInputBuilder {
                 file_format: self.file_format
                 ,
                 include_member_accounts: self.include_member_accounts
-                    .unwrap_or_default()
                 ,
             }
         )

@@ -147,6 +147,16 @@ pub fn de_instance_refresh(
                 builder = builder.set_desired_configuration(var_11);
             }
             ,
+            s if s.matches("RollbackDetails") /* RollbackDetails com.amazonaws.autoscaling#InstanceRefresh$RollbackDetails */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_rollback_details::de_rollback_details(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_rollback_details(var_12);
+            }
+            ,
             _ => {}
         }
     }

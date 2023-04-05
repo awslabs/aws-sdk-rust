@@ -41,6 +41,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "batchMode" => {
+                                builder = builder.set_batch_mode(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -73,6 +80,9 @@ pub fn ser_cloudwatch_logs_action(
     }
     if let Some(var_2) = &input.log_group_name {
         object.key("logGroupName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.batch_mode {
+        object.key("batchMode").boolean(*var_3);
     }
     Ok(())
 }

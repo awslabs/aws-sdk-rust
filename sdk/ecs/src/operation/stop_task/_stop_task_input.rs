@@ -6,7 +6,7 @@ pub struct StopTaskInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
-    /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+    /// <p>The task ID of the task to stop.</p>
     #[doc(hidden)]
     pub task: std::option::Option<std::string::String>,
     /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <code>DescribeTasks</code> API operations on this task. Up to 255 characters are allowed in this message.</p>
@@ -18,7 +18,7 @@ impl StopTaskInput {
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
-    /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+    /// <p>The task ID of the task to stop.</p>
     pub fn task(&self) -> std::option::Option<&str> {
         self.task.as_deref()
     }
@@ -53,12 +53,12 @@ impl StopTaskInputBuilder {
         self.cluster = input;
         self
     }
-    /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+    /// <p>The task ID of the task to stop.</p>
     pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
         self.task = Some(input.into());
         self
     }
-    /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+    /// <p>The task ID of the task to stop.</p>
     pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.task = input;
         self

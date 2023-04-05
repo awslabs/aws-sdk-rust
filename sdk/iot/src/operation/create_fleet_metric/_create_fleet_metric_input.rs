@@ -27,7 +27,7 @@ pub struct CreateFleetMetricInput {
     /// <p>The name of the index to search.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     #[doc(hidden)]
     pub unit: std::option::Option<crate::types::FleetMetricUnit>,
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
@@ -67,7 +67,7 @@ impl CreateFleetMetricInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub fn unit(&self) -> std::option::Option<&crate::types::FleetMetricUnit> {
         self.unit.as_ref()
     }
@@ -186,12 +186,12 @@ impl CreateFleetMetricInputBuilder {
         self.index_name = input;
         self
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub fn unit(mut self, input: crate::types::FleetMetricUnit) -> Self {
         self.unit = Some(input);
         self
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub fn set_unit(mut self, input: std::option::Option<crate::types::FleetMetricUnit>) -> Self {
         self.unit = input;
         self
