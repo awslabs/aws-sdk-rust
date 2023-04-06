@@ -2,7 +2,7 @@ smithy_rs_revision = 'c2c6a66a8b701b1da3888c773b7be3d04fe90684'
 aws_doc_sdk_examples_revision = '76f43900fd4110435015f3e4e811476e0611b372'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-smithy-runtime-test"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.55.0'
