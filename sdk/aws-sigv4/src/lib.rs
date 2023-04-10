@@ -14,6 +14,7 @@
     unreachable_pub
 )]
 
+use std::fmt;
 use std::time::SystemTime;
 
 pub mod sign;
@@ -28,7 +29,6 @@ pub mod http_request;
 
 /// Parameters to use when signing.
 #[non_exhaustive]
-#[derive(Debug)]
 pub struct SigningParams<'a, S> {
     /// Access Key ID to use.
     pub(crate) access_key: &'a str,
@@ -46,6 +46,20 @@ pub struct SigningParams<'a, S> {
 
     /// Additional signing settings. These differ between HTTP and Event Stream.
     pub(crate) settings: S,
+}
+
+impl<'a, S: fmt::Debug> fmt::Debug for SigningParams<'a, S> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("SigningParams")
+            .field("access_key", &"** redacted **")
+            .field("secret_key", &"** redacted **")
+            .field("security_token", &"** redacted **")
+            .field("region", &self.region)
+            .field("service_name", &self.service_name)
+            .field("time", &self.time)
+            .field("settings", &self.settings)
+            .finish()
+    }
 }
 
 impl<'a, S: Default> SigningParams<'a, S> {
