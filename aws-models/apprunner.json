@@ -1486,10 +1486,10 @@
             "type": "string",
             "traits": {
                 "smithy.api#length": {
-                    "min": 4,
-                    "max": 6
+                    "min": 3,
+                    "max": 9
                 },
-                "smithy.api#pattern": "^1024|2048|(1|2) vCPU$"
+                "smithy.api#pattern": "^256|512|1024|2048|4096|(0.25|0.5|1|2|4) vCPU$"
             }
         },
         "com.amazonaws.apprunner#CreateAutoScalingConfiguration": {
@@ -3837,10 +3837,10 @@
             "type": "string",
             "traits": {
                 "smithy.api#length": {
-                    "min": 4,
-                    "max": 4
+                    "min": 3,
+                    "max": 6
                 },
-                "smithy.api#pattern": "^2048|3072|4096|(2|3|4) GB$"
+                "smithy.api#pattern": "^512|1024|2048|3072|4096|6144|8192|10240|12288|(0.5|1|2|3|4|6|8|10|12) GB$"
             }
         },
         "com.amazonaws.apprunner#NetworkConfiguration": {

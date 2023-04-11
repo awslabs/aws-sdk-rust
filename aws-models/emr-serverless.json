@@ -791,8 +791,8 @@
                             },
                             "params": {
                                 "Region": "ap-northeast-1",
-                                "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -804,8 +804,8 @@
                             },
                             "params": {
                                 "Region": "eu-west-1",
-                                "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -817,8 +817,8 @@
                             },
                             "params": {
                                 "Region": "us-east-1",
-                                "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -830,8 +830,8 @@
                             },
                             "params": {
                                 "Region": "us-east-1",
-                                "UseFIPS": true,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -843,8 +843,8 @@
                             },
                             "params": {
                                 "Region": "us-west-2",
-                                "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -856,8 +856,8 @@
                             },
                             "params": {
                                 "Region": "us-west-2",
-                                "UseFIPS": true,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -869,8 +869,8 @@
                             },
                             "params": {
                                 "Region": "us-east-1",
-                                "UseFIPS": true,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -882,8 +882,8 @@
                             },
                             "params": {
                                 "Region": "us-east-1",
-                                "UseFIPS": false,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -895,8 +895,8 @@
                             },
                             "params": {
                                 "Region": "cn-north-1",
-                                "UseFIPS": true,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -908,8 +908,8 @@
                             },
                             "params": {
                                 "Region": "cn-north-1",
-                                "UseFIPS": true,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -921,8 +921,8 @@
                             },
                             "params": {
                                 "Region": "cn-north-1",
-                                "UseFIPS": false,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -934,8 +934,8 @@
                             },
                             "params": {
                                 "Region": "cn-north-1",
-                                "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -947,8 +947,8 @@
                             },
                             "params": {
                                 "Region": "us-gov-east-1",
-                                "UseFIPS": true,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -960,8 +960,8 @@
                             },
                             "params": {
                                 "Region": "us-gov-east-1",
-                                "UseFIPS": true,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -973,8 +973,8 @@
                             },
                             "params": {
                                 "Region": "us-gov-east-1",
-                                "UseFIPS": false,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -986,8 +986,8 @@
                             },
                             "params": {
                                 "Region": "us-gov-east-1",
-                                "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -997,8 +997,8 @@
                             },
                             "params": {
                                 "Region": "us-iso-east-1",
-                                "UseFIPS": true,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -1010,8 +1010,8 @@
                             },
                             "params": {
                                 "Region": "us-iso-east-1",
-                                "UseFIPS": true,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -1021,8 +1021,8 @@
                             },
                             "params": {
                                 "Region": "us-iso-east-1",
-                                "UseFIPS": false,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -1034,8 +1034,8 @@
                             },
                             "params": {
                                 "Region": "us-iso-east-1",
-                                "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -1045,8 +1045,8 @@
                             },
                             "params": {
                                 "Region": "us-isob-east-1",
-                                "UseFIPS": true,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -1058,8 +1058,8 @@
                             },
                             "params": {
                                 "Region": "us-isob-east-1",
-                                "UseFIPS": true,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -1069,8 +1069,8 @@
                             },
                             "params": {
                                 "Region": "us-isob-east-1",
-                                "UseFIPS": false,
-                                "UseDualStack": true
+                                "UseDualStack": true,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -1082,8 +1082,8 @@
                             },
                             "params": {
                                 "Region": "us-isob-east-1",
-                                "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -1095,8 +1095,8 @@
                             },
                             "params": {
                                 "Region": "us-east-1",
-                                "UseFIPS": false,
                                 "UseDualStack": false,
+                                "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1108,8 +1108,8 @@
                                 }
                             },
                             "params": {
-                                "UseFIPS": false,
                                 "UseDualStack": false,
+                                "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1120,8 +1120,8 @@
                             },
                             "params": {
                                 "Region": "us-east-1",
-                                "UseFIPS": true,
                                 "UseDualStack": false,
+                                "UseFIPS": true,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1132,8 +1132,8 @@
                             },
                             "params": {
                                 "Region": "us-east-1",
-                                "UseFIPS": false,
                                 "UseDualStack": true,
+                                "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1422,13 +1422,13 @@
                 "imageConfiguration": {
                     "target": "com.amazonaws.emrserverless#ImageConfigurationInput",
                     "traits": {
-                        "smithy.api#documentation": "<p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> \n         for each worker type in <code>workerTypeSpecifications</code>.</p>"
+                        "smithy.api#documentation": "<p>The image configuration for all worker types. You can either set this parameter or\n            <code>imageConfiguration</code> for each worker type in\n            <code>workerTypeSpecifications</code>.</p>"
                     }
                 },
                 "workerTypeSpecifications": {
                     "target": "com.amazonaws.emrserverless#WorkerTypeSpecificationInputMap",
                     "traits": {
-                        "smithy.api#documentation": "<p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid \n         worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for \n         Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set \n         image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>"
+                        "smithy.api#documentation": "<p>The key-value pairs that specify worker type to\n            <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker\n         types for a Spark or Hive application. Valid worker types include <code>Driver</code> and\n            <code>Executor</code> for Spark applications and <code>HiveDriver</code> and\n            <code>TezTask</code> for Hive applications. You can either set image details in this\n         parameter for each worker type, or in <code>imageConfiguration</code> for all worker\n         types.</p>"
                     }
                 }
             }
@@ -1818,7 +1818,7 @@
                 "resolvedImageDigest": {
                     "target": "com.amazonaws.emrserverless#ImageDigest",
                     "traits": {
-                        "smithy.api#documentation": "<p>The SHA256 digest of the image URI. This indicates which specific image \n         the application is configured for. The image digest doesn't exist until an application has started.</p>"
+                        "smithy.api#documentation": "<p>The SHA256 digest of the image URI. This indicates which specific image the application\n         is configured for. The image digest doesn't exist until an application has started.</p>"
                     }
                 }
             },
@@ -1832,7 +1832,7 @@
                 "imageUri": {
                     "target": "com.amazonaws.emrserverless#ImageUri",
                     "traits": {
-                        "smithy.api#documentation": "<p>The URI of an image in the Amazon ECR registry. This field is required when you create a new \n         application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>"
+                        "smithy.api#documentation": "<p>The URI of an image in the Amazon ECR registry. This field is required when you create a\n         new application. If you leave this field blank in an update, Amazon EMR will remove the\n         image configuration.</p>"
                     }
                 }
             },
@@ -2066,6 +2066,13 @@
                     "target": "smithy.api#Integer",
                     "traits": {
                         "smithy.api#documentation": "<p>The job run total execution duration in seconds. This field is only available for job\n         runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code>\n         state.</p>"
+                    }
+                },
+                "executionTimeoutMinutes": {
+                    "target": "com.amazonaws.emrserverless#Duration",
+                    "traits": {
+                        "smithy.api#default": null,
+                        "smithy.api#documentation": "Maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled."
                     }
                 }
             },
@@ -2938,7 +2945,7 @@
                 "arn": {
                     "target": "com.amazonaws.emrserverless#JobArn",
                     "traits": {
-                        "smithy.api#documentation": "<p>The output lists the execution role ARN of the job run.</p>",
+                        "smithy.api#documentation": "<p>This output displays the ARN of the job run..</p>",
                         "smithy.api#required": {}
                     }
                 }
@@ -3089,7 +3096,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag\n         consists of a key and an optional value, both of which you define. Tags enable you to\n         categorize your AWS resources by attributes such as purpose, owner, or environment. When\n         you have many resources of the same type, you can quickly identify a specific resource\n         based on the tags you've assigned to it. </p>",
+                "smithy.api#documentation": "<p>Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag\n         consists of a key and an optional value, both of which you define. Tags enable you to\n         categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When\n         you have many resources of the same type, you can quickly identify a specific resource\n         based on the tags you've assigned to it. </p>",
                 "smithy.api#http": {
                     "method": "POST",
                     "uri": "/tags/{resourceArn}"
@@ -3292,13 +3299,13 @@
                 "imageConfiguration": {
                     "target": "com.amazonaws.emrserverless#ImageConfigurationInput",
                     "traits": {
-                        "smithy.api#documentation": "<p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> \n         for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>"
+                        "smithy.api#documentation": "<p>The image configuration to be used for all worker types. You can either set this\n         parameter or <code>imageConfiguration</code> for each worker type in\n            <code>WorkerTypeSpecificationInput</code>.</p>"
                     }
                 },
                 "workerTypeSpecifications": {
                     "target": "com.amazonaws.emrserverless#WorkerTypeSpecificationInputMap",
                     "traits": {
-                        "smithy.api#documentation": "<p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid \n         worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for \n         Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set \n         image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>"
+                        "smithy.api#documentation": "<p>The key-value pairs that specify worker type to\n            <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker\n         types for a Spark or Hive application. Valid worker types include <code>Driver</code> and\n            <code>Executor</code> for Spark applications and <code>HiveDriver</code> and\n            <code>TezTask</code> for Hive applications. You can either set image details in this\n         parameter for each worker type, or in <code>imageConfiguration</code> for all worker\n         types.</p>"
                     }
                 }
             }
@@ -3345,7 +3352,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
+                "smithy.api#documentation": "<p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
             }
