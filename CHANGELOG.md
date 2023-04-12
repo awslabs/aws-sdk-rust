@@ -1,6 +1,9 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
 April 12th, 2023
 ================
+**New this release:**
+- 🐛🎉 ([smithy-rs#2562](https://github.com/awslabs/smithy-rs/issues/2562)) Update the `std::fmt::Debug` implementation for `aws-sigv4::SigningParams` so that it will no longer print sensitive information.
+
 **Crate Versions**
 <details>
 <summary>Click to expand to view crate versions...</summary>
