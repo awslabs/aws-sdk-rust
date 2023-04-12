@@ -11,8 +11,6 @@ aws-config= { version = "0.55.0", path = "../../sdk/aws-config" }
 aws-sdk-qldb= { version = "0.25.1", path = "../../sdk/qldb" }
 aws-sdk-qldbsession= { version = "0.25.1", path = "../../sdk/qldbsession" }
 
-[workspace]
-
 [dependencies.tokio]
 version = "1.20.1"
 features = ["full"]
@@ -28,3 +26,5 @@ features = ["derive"]
 [dependencies.tracing-subscriber]
 version = "0.3.15"
 features = ["env-filter"]
+
+[workspace]
