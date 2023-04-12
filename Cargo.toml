@@ -58,6 +58,7 @@ members = [
     "examples/sts",
     "examples/test-utils",
     "examples/testing",
+    "examples/textract",
     "examples/tls",
     "examples/transcribestreaming",
     "sdk/accessanalyzer",

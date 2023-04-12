@@ -29,6 +29,7 @@ rand = "0.5.0"
 thiserror = "1.0"
 tokio-stream = "0.1.8"
 tracing = "0.1.37"
+anyhow = "1.0.70"
 aws-config= { version = "0.55.0", path = "../../sdk/aws-config" }
 aws-endpoint= { version = "0.55.0", path = "../../sdk/aws-endpoint" }
 aws-sdk-s3= { version = "0.25.1", path = "../../sdk/s3" }
