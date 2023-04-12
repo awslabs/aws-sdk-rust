@@ -9,61 +9,61 @@ license = "Apache-2.0"
 repository = "https://github.com/awslabs/aws-sdk-rust"
 readme = "README.md"
 [package.metadata.smithy]
-codegen-version = "0.55.0-a87b41587f311214c3fc8169c8b41ece9c10fe2b"
+codegen-version = "0.55.1-a87b41587f311214c3fc8169c8b41ece9c10fe2b"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-endpoint]
 path = "../aws-endpoint"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-http]
 path = "../aws-http"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-sig-auth]
 path = "../aws-sig-auth"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-smithy-http-tower]
 path = "../aws-smithy-http-tower"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-smithy-json]
 path = "../aws-smithy-json"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-smithy-query]
 path = "../aws-smithy-query"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.aws-types]
 path = "../aws-types"
-version = "0.55.0"
+version = "0.55.1"
 
 [dependencies.bytes]
 version = "1.0.0"
@@ -87,21 +87,21 @@ version = "0.4"
 version = "0.1"
 [dev-dependencies.aws-config]
 path = "../aws-config"
-version = "0.55.0"
+version = "0.55.1"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util"]
-version = "0.55.0"
+version = "0.55.1"
 
 [dev-dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
 features = ["test-util"]
-version = "0.55.0"
+version = "0.55.1"
 
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
-version = "0.55.0"
+version = "0.55.1"
 
 [dev-dependencies.futures-util]
 version = "0.3.25"

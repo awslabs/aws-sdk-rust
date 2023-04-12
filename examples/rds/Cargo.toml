@@ -7,7 +7,7 @@ version = "0.1.0"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.55.0", path = "../../sdk/aws-config" }
+aws-config= { version = "0.55.1", path = "../../sdk/aws-config" }
 aws-sdk-rds= { version = "0.26.0", path = "../../sdk/rds" }
 
 [dependencies.tokio]

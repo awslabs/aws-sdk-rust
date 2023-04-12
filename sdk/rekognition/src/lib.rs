@@ -96,7 +96,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.0"
+//! aws-config = "0.55.1"
 //! aws-sdk-rekognition = "0.26.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
