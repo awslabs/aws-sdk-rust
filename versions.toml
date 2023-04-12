@@ -2138,11 +2138,6 @@ category = 'SmithyRuntime'
 version = '0.55.1'
 source_hash = '06e997b08d8140d9247d5dbfec1af6bb4a34f658545f096cd31aeca2319ce37d'
 
-[crates.aws-smithy-runtime-test]
-category = 'SmithyRuntime'
-version = '0.1.0'
-source_hash = '2d9cb864a5b7791121d3650d9d26e4f0fe67099b59d9ece886ff67951ebb3efa'
-
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
 version = '0.55.1'
