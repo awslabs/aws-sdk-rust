@@ -17,7 +17,7 @@ pub struct DetectLabelsInput {
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
     #[doc(hidden)]
     pub features: std::option::Option<std::vec::Vec<crate::types::DetectLabelsFeatureName>>,
-    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
+    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
     #[doc(hidden)]
     pub settings: std::option::Option<crate::types::DetectLabelsSettings>,
 }
@@ -40,7 +40,7 @@ impl DetectLabelsInput {
     pub fn features(&self) -> std::option::Option<&[crate::types::DetectLabelsFeatureName]> {
         self.features.as_deref()
     }
-    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
+    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
     pub fn settings(&self) -> std::option::Option<&crate::types::DetectLabelsSettings> {
         self.settings.as_ref()
     }
@@ -116,12 +116,12 @@ impl DetectLabelsInputBuilder {
         self.features = input;
         self
     }
-    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
+    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
     pub fn settings(mut self, input: crate::types::DetectLabelsSettings) -> Self {
         self.settings = Some(input);
         self
     }
-    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
+    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
     pub fn set_settings(
         mut self,
         input: std::option::Option<crate::types::DetectLabelsSettings>,

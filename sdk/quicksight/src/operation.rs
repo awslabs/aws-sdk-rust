@@ -43,9 +43,6 @@ pub mod create_ingestion;
 /// Types for the `CreateNamespace` operation.
 pub mod create_namespace;
 
-/// Types for the `CreateRefreshSchedule` operation.
-pub mod create_refresh_schedule;
-
 /// Types for the `CreateTemplate` operation.
 pub mod create_template;
 
@@ -73,9 +70,6 @@ pub mod delete_dashboard;
 /// Types for the `DeleteDataSet` operation.
 pub mod delete_data_set;
 
-/// Types for the `DeleteDataSetRefreshProperties` operation.
-pub mod delete_data_set_refresh_properties;
-
 /// Types for the `DeleteDataSource` operation.
 pub mod delete_data_source;
 
@@ -96,9 +90,6 @@ pub mod delete_iam_policy_assignment;
 
 /// Types for the `DeleteNamespace` operation.
 pub mod delete_namespace;
-
-/// Types for the `DeleteRefreshSchedule` operation.
-pub mod delete_refresh_schedule;
 
 /// Types for the `DeleteTemplate` operation.
 pub mod delete_template;
@@ -151,9 +142,6 @@ pub mod describe_data_set;
 /// Types for the `DescribeDataSetPermissions` operation.
 pub mod describe_data_set_permissions;
 
-/// Types for the `DescribeDataSetRefreshProperties` operation.
-pub mod describe_data_set_refresh_properties;
-
 /// Types for the `DescribeDataSource` operation.
 pub mod describe_data_source;
 
@@ -186,9 +174,6 @@ pub mod describe_ip_restriction;
 
 /// Types for the `DescribeNamespace` operation.
 pub mod describe_namespace;
-
-/// Types for the `DescribeRefreshSchedule` operation.
-pub mod describe_refresh_schedule;
 
 /// Types for the `DescribeTemplate` operation.
 pub mod describe_template;
@@ -265,9 +250,6 @@ pub mod list_ingestions;
 /// Types for the `ListNamespaces` operation.
 pub mod list_namespaces;
 
-/// Types for the `ListRefreshSchedules` operation.
-pub mod list_refresh_schedules;
-
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -294,9 +276,6 @@ pub mod list_user_groups;
 
 /// Types for the `ListUsers` operation.
 pub mod list_users;
-
-/// Types for the `PutDataSetRefreshProperties` operation.
-pub mod put_data_set_refresh_properties;
 
 /// Types for the `RegisterUser` operation.
 pub mod register_user;
@@ -378,9 +357,6 @@ pub mod update_ip_restriction;
 
 /// Types for the `UpdatePublicSharingSettings` operation.
 pub mod update_public_sharing_settings;
-
-/// Types for the `UpdateRefreshSchedule` operation.
-pub mod update_refresh_schedule;
 
 /// Types for the `UpdateTemplate` operation.
 pub mod update_template;

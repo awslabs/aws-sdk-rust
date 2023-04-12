@@ -10,7 +10,7 @@ pub struct HopDestination {
     /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
     #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
-    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
+    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 1440 minutes, inclusive.
     #[doc(hidden)]
     pub wait_minutes: i32,
 }
@@ -23,7 +23,7 @@ impl HopDestination {
     pub fn queue(&self) -> std::option::Option<&str> {
         self.queue.as_deref()
     }
-    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
+    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 1440 minutes, inclusive.
     pub fn wait_minutes(&self) -> i32 {
         self.wait_minutes
     }
@@ -64,12 +64,12 @@ impl HopDestinationBuilder {
         self.queue = input;
         self
     }
-    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
+    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 1440 minutes, inclusive.
     pub fn wait_minutes(mut self, input: i32) -> Self {
         self.wait_minutes = Some(input);
         self
     }
-    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
+    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 1440 minutes, inclusive.
     pub fn set_wait_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.wait_minutes = input;
         self

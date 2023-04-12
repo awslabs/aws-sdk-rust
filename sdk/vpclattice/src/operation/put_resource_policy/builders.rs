@@ -79,12 +79,12 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>An IAM policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>An IAM policy.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
-    /// <p>An IAM policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>An IAM policy.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self

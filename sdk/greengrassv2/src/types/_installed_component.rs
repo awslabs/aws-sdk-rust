@@ -23,13 +23,11 @@ pub struct InstalledComponent {
     /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
     #[doc(hidden)]
     pub last_status_change_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
+    /// <p>The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
     #[doc(hidden)]
     pub last_reported_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p> <note>
-    /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
-    /// </note>
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p>
     #[doc(hidden)]
     pub last_installation_source: std::option::Option<std::string::String>,
     /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
@@ -66,14 +64,12 @@ impl InstalledComponent {
     pub fn last_status_change_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change_timestamp.as_ref()
     }
-    /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
+    /// <p>The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
     pub fn last_reported_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_reported_timestamp.as_ref()
     }
-    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p> <note>
-    /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
-    /// </note>
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p>
     pub fn last_installation_source(&self) -> std::option::Option<&str> {
         self.last_installation_source.as_deref()
     }
@@ -183,13 +179,13 @@ impl InstalledComponentBuilder {
         self.last_status_change_timestamp = input;
         self
     }
-    /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
+    /// <p>The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
     pub fn last_reported_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_reported_timestamp = Some(input);
         self
     }
-    /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
+    /// <p>The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
     pub fn set_last_reported_timestamp(
         mut self,
@@ -198,16 +194,12 @@ impl InstalledComponentBuilder {
         self.last_reported_timestamp = input;
         self
     }
-    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p> <note>
-    /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
-    /// </note>
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p>
     pub fn last_installation_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_installation_source = Some(input.into());
         self
     }
-    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p> <note>
-    /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
-    /// </note>
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p>
     pub fn set_last_installation_source(
         mut self,
         input: std::option::Option<std::string::String>,

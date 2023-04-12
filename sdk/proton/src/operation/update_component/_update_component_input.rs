@@ -38,9 +38,6 @@ pub struct UpdateComponentInput {
     /// </note>
     #[doc(hidden)]
     pub template_file: std::option::Option<std::string::String>,
-    /// <p>The client token for the updated component.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateComponentInput {
     /// <p>The name of the component to update.</p>
@@ -87,10 +84,6 @@ impl UpdateComponentInput {
     pub fn template_file(&self) -> std::option::Option<&str> {
         self.template_file.as_deref()
     }
-    /// <p>The client token for the updated component.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
-        self.client_token.as_deref()
-    }
 }
 impl std::fmt::Debug for UpdateComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -102,7 +95,6 @@ impl std::fmt::Debug for UpdateComponentInput {
         formatter.field("service_instance_name", &self.service_instance_name);
         formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("template_file", &"*** Sensitive Data Redacted ***");
-        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }
@@ -124,7 +116,6 @@ pub struct UpdateComponentInputBuilder {
     pub(crate) service_instance_name: std::option::Option<std::string::String>,
     pub(crate) service_spec: std::option::Option<std::string::String>,
     pub(crate) template_file: std::option::Option<std::string::String>,
-    pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl UpdateComponentInputBuilder {
     /// <p>The name of the component to update.</p>
@@ -231,16 +222,6 @@ impl UpdateComponentInputBuilder {
         self.template_file = input;
         self
     }
-    /// <p>The client token for the updated component.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_token = Some(input.into());
-        self
-    }
-    /// <p>The client token for the updated component.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
-    }
     /// Consumes the builder and constructs a [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
     pub fn build(
         self,
@@ -256,7 +237,6 @@ impl UpdateComponentInputBuilder {
             service_instance_name: self.service_instance_name,
             service_spec: self.service_spec,
             template_file: self.template_file,
-            client_token: self.client_token,
         })
     }
 }
@@ -270,7 +250,6 @@ impl std::fmt::Debug for UpdateComponentInputBuilder {
         formatter.field("service_instance_name", &self.service_instance_name);
         formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("template_file", &"*** Sensitive Data Redacted ***");
-        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }

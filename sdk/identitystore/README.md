@@ -5,7 +5,7 @@ feedback purposes only. Do not use this SDK for production workloads.**
 
 The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the [IAM Identity Center User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
 
-This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.
+This reference guide describes the identity store operations that you can call programatically and includes detailed information on data types and errors.
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-identitystore = "0.25.2"
+aws-sdk-identitystore = "0.25.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

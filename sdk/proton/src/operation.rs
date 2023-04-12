@@ -37,12 +37,6 @@ pub mod create_repository;
 /// Types for the `CreateService` operation.
 pub mod create_service;
 
-/// Types for the `CreateServiceInstance` operation.
-pub mod create_service_instance;
-
-/// Types for the `CreateServiceSyncConfig` operation.
-pub mod create_service_sync_config;
-
 /// Types for the `CreateServiceTemplate` operation.
 pub mod create_service_template;
 
@@ -72,9 +66,6 @@ pub mod delete_repository;
 
 /// Types for the `DeleteService` operation.
 pub mod delete_service;
-
-/// Types for the `DeleteServiceSyncConfig` operation.
-pub mod delete_service_sync_config;
 
 /// Types for the `DeleteServiceTemplate` operation.
 pub mod delete_service_template;
@@ -117,15 +108,6 @@ pub mod get_service;
 
 /// Types for the `GetServiceInstance` operation.
 pub mod get_service_instance;
-
-/// Types for the `GetServiceInstanceSyncStatus` operation.
-pub mod get_service_instance_sync_status;
-
-/// Types for the `GetServiceSyncBlockerSummary` operation.
-pub mod get_service_sync_blocker_summary;
-
-/// Types for the `GetServiceSyncConfig` operation.
-pub mod get_service_sync_config;
 
 /// Types for the `GetServiceTemplate` operation.
 pub mod get_service_template;
@@ -237,12 +219,6 @@ pub mod update_service_instance;
 
 /// Types for the `UpdateServicePipeline` operation.
 pub mod update_service_pipeline;
-
-/// Types for the `UpdateServiceSyncBlocker` operation.
-pub mod update_service_sync_blocker;
-
-/// Types for the `UpdateServiceSyncConfig` operation.
-pub mod update_service_sync_config;
 
 /// Types for the `UpdateServiceTemplate` operation.
 pub mod update_service_template;

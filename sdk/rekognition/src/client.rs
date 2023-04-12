@@ -220,8 +220,6 @@ mod create_collection;
 
 mod create_dataset;
 
-mod create_face_liveness_session;
-
 mod create_project;
 
 mod create_project_version;
@@ -301,8 +299,6 @@ mod get_celebrity_recognition;
 mod get_content_moderation;
 
 mod get_face_detection;
-
-mod get_face_liveness_session_results;
 
 mod get_face_search;
 

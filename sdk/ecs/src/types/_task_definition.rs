@@ -62,7 +62,7 @@ pub struct TaskDefinition {
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
     #[doc(hidden)]
     pub runtime_platform: std::option::Option<crate::types::RuntimePlatform>,
-    /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. To determine which task launch types the task definition is validated for, see the <code>TaskDefinition$compatibilities</code> parameter.</p>
     #[doc(hidden)]
     pub requires_compatibilities: std::option::Option<std::vec::Vec<crate::types::Compatibility>>,
     /// <p>The number of <code>cpu</code> units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the <code>memory</code> parameter.</p>
@@ -204,7 +204,7 @@ impl TaskDefinition {
     pub fn runtime_platform(&self) -> std::option::Option<&crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
-    /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. To determine which task launch types the task definition is validated for, see the <code>TaskDefinition$compatibilities</code> parameter.</p>
     pub fn requires_compatibilities(&self) -> std::option::Option<&[crate::types::Compatibility]> {
         self.requires_compatibilities.as_deref()
     }
@@ -556,14 +556,14 @@ impl TaskDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_requires_compatibilities`](Self::set_requires_compatibilities).
     ///
-    /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. To determine which task launch types the task definition is validated for, see the <code>TaskDefinition$compatibilities</code> parameter.</p>
     pub fn requires_compatibilities(mut self, input: crate::types::Compatibility) -> Self {
         let mut v = self.requires_compatibilities.unwrap_or_default();
         v.push(input);
         self.requires_compatibilities = Some(v);
         self
     }
-    /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. To determine which task launch types the task definition is validated for, see the <code>TaskDefinition$compatibilities</code> parameter.</p>
     pub fn set_requires_compatibilities(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Compatibility>>,

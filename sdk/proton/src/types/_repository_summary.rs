@@ -13,9 +13,6 @@ pub struct RepositorySummary {
     /// <p>The repository name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    #[doc(hidden)]
-    pub connection_arn: std::option::Option<std::string::String>,
 }
 impl RepositorySummary {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
@@ -29,10 +26,6 @@ impl RepositorySummary {
     /// <p>The repository name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
-        self.connection_arn.as_deref()
     }
 }
 impl RepositorySummary {
@@ -49,7 +42,6 @@ pub struct RepositorySummaryBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) provider: std::option::Option<crate::types::RepositoryProvider>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) connection_arn: std::option::Option<std::string::String>,
 }
 impl RepositorySummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
@@ -85,23 +77,12 @@ impl RepositorySummaryBuilder {
         self.name = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_arn = Some(input.into());
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
-    }
     /// Consumes the builder and constructs a [`RepositorySummary`](crate::types::RepositorySummary).
     pub fn build(self) -> crate::types::RepositorySummary {
         crate::types::RepositorySummary {
             arn: self.arn,
             provider: self.provider,
             name: self.name,
-            connection_arn: self.connection_arn,
         }
     }
 }

@@ -79,12 +79,12 @@ impl GetServiceInstanceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the service that you want the service instance input for.</p>
+    /// <p>The name of the service that the service instance belongs to.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
         self
     }
-    /// <p>The name of the service that you want the service instance input for.</p>
+    /// <p>The name of the service that the service instance belongs to.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self

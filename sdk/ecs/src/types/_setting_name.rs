@@ -15,7 +15,6 @@
 ///     SettingName::AwsvpcTrunking => { /* ... */ },
 ///     SettingName::ContainerInsights => { /* ... */ },
 ///     SettingName::ContainerInstanceLongArnFormat => { /* ... */ },
-///     SettingName::FargateFipsMode => { /* ... */ },
 ///     SettingName::ServiceLongArnFormat => { /* ... */ },
 ///     SettingName::TaskLongArnFormat => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -58,8 +57,6 @@ pub enum SettingName {
     #[allow(missing_docs)] // documentation missing in model
     ContainerInstanceLongArnFormat,
     #[allow(missing_docs)] // documentation missing in model
-    FargateFipsMode,
-    #[allow(missing_docs)] // documentation missing in model
     ServiceLongArnFormat,
     #[allow(missing_docs)] // documentation missing in model
     TaskLongArnFormat,
@@ -72,7 +69,6 @@ impl std::convert::From<&str> for SettingName {
             "awsvpcTrunking" => SettingName::AwsvpcTrunking,
             "containerInsights" => SettingName::ContainerInsights,
             "containerInstanceLongArnFormat" => SettingName::ContainerInstanceLongArnFormat,
-            "fargateFIPSMode" => SettingName::FargateFipsMode,
             "serviceLongArnFormat" => SettingName::ServiceLongArnFormat,
             "taskLongArnFormat" => SettingName::TaskLongArnFormat,
             other => SettingName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -93,7 +89,6 @@ impl SettingName {
             SettingName::AwsvpcTrunking => "awsvpcTrunking",
             SettingName::ContainerInsights => "containerInsights",
             SettingName::ContainerInstanceLongArnFormat => "containerInstanceLongArnFormat",
-            SettingName::FargateFipsMode => "fargateFIPSMode",
             SettingName::ServiceLongArnFormat => "serviceLongArnFormat",
             SettingName::TaskLongArnFormat => "taskLongArnFormat",
             SettingName::Unknown(value) => value.as_str(),
@@ -105,7 +100,6 @@ impl SettingName {
             "awsvpcTrunking",
             "containerInsights",
             "containerInstanceLongArnFormat",
-            "fargateFIPSMode",
             "serviceLongArnFormat",
             "taskLongArnFormat",
         ]

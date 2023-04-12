@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteImageInput {
-    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository in a public registry that contains the image to delete.</p>
@@ -14,7 +14,7 @@ pub struct BatchDeleteImageInput {
     pub image_ids: std::option::Option<std::vec::Vec<crate::types::ImageIdentifier>>,
 }
 impl BatchDeleteImageInput {
-    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -44,12 +44,12 @@ pub struct BatchDeleteImageInputBuilder {
     pub(crate) image_ids: std::option::Option<std::vec::Vec<crate::types::ImageIdentifier>>,
 }
 impl BatchDeleteImageInputBuilder {
-    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.registry_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.registry_id = input;
         self

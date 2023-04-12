@@ -14,7 +14,6 @@
 /// match ipaddresstype {
 ///     IpAddressType::Dualstack => { /* ... */ },
 ///     IpAddressType::Ipv4 => { /* ... */ },
-///     IpAddressType::Ipv6 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,8 +51,6 @@ pub enum IpAddressType {
     Dualstack,
     #[allow(missing_docs)] // documentation missing in model
     Ipv4,
-    #[allow(missing_docs)] // documentation missing in model
-    Ipv6,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -62,7 +59,6 @@ impl std::convert::From<&str> for IpAddressType {
         match s {
             "DUALSTACK" => IpAddressType::Dualstack,
             "IPV4" => IpAddressType::Ipv4,
-            "IPV6" => IpAddressType::Ipv6,
             other => {
                 IpAddressType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -82,13 +78,12 @@ impl IpAddressType {
         match self {
             IpAddressType::Dualstack => "DUALSTACK",
             IpAddressType::Ipv4 => "IPV4",
-            IpAddressType::Ipv6 => "IPV6",
             IpAddressType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DUALSTACK", "IPV4", "IPV6"]
+        &["DUALSTACK", "IPV4"]
     }
 }
 impl AsRef<str> for IpAddressType {

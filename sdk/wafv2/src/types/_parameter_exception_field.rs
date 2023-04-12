@@ -14,7 +14,6 @@
 /// match parameterexceptionfield {
 ///     ParameterExceptionField::AndStatement => { /* ... */ },
 ///     ParameterExceptionField::AssociableResource => { /* ... */ },
-///     ParameterExceptionField::AssociatedResourceType => { /* ... */ },
 ///     ParameterExceptionField::AtpRuleSetResponseInspection => { /* ... */ },
 ///     ParameterExceptionField::BodyParsingFallbackBehavior => { /* ... */ },
 ///     ParameterExceptionField::ByteMatchStatement => { /* ... */ },
@@ -116,8 +115,6 @@ pub enum ParameterExceptionField {
     AndStatement,
     #[allow(missing_docs)] // documentation missing in model
     AssociableResource,
-    #[allow(missing_docs)] // documentation missing in model
-    AssociatedResourceType,
     #[allow(missing_docs)] // documentation missing in model
     AtpRuleSetResponseInspection,
     #[allow(missing_docs)] // documentation missing in model
@@ -254,7 +251,6 @@ impl std::convert::From<&str> for ParameterExceptionField {
         match s {
             "AND_STATEMENT" => ParameterExceptionField::AndStatement,
             "ASSOCIABLE_RESOURCE" => ParameterExceptionField::AssociableResource,
-            "ASSOCIATED_RESOURCE_TYPE" => ParameterExceptionField::AssociatedResourceType,
             "ATP_RULE_SET_RESPONSE_INSPECTION" => {
                 ParameterExceptionField::AtpRuleSetResponseInspection
             }
@@ -346,7 +342,6 @@ impl ParameterExceptionField {
         match self {
             ParameterExceptionField::AndStatement => "AND_STATEMENT",
             ParameterExceptionField::AssociableResource => "ASSOCIABLE_RESOURCE",
-            ParameterExceptionField::AssociatedResourceType => "ASSOCIATED_RESOURCE_TYPE",
             ParameterExceptionField::AtpRuleSetResponseInspection => {
                 "ATP_RULE_SET_RESPONSE_INSPECTION"
             }
@@ -427,7 +422,6 @@ impl ParameterExceptionField {
         &[
             "AND_STATEMENT",
             "ASSOCIABLE_RESOURCE",
-            "ASSOCIATED_RESOURCE_TYPE",
             "ATP_RULE_SET_RESPONSE_INSPECTION",
             "BODY_PARSING_FALLBACK_BEHAVIOR",
             "BYTE_MATCH_STATEMENT",

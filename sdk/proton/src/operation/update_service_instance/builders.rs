@@ -186,14 +186,4 @@ impl UpdateServiceInstanceFluentBuilder {
         self.inner = self.inner.set_template_minor_version(input);
         self
     }
-    /// <p>The client token of the service instance to update.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inner = self.inner.client_token(input.into());
-        self
-    }
-    /// <p>The client token of the service instance to update.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.inner = self.inner.set_client_token(input);
-        self
-    }
 }

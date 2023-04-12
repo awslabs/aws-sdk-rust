@@ -164,13 +164,13 @@ impl From<crate::operation::add_layer_version_permission::AddLayerVersionPermiss
         err: crate::operation::add_layer_version_permission::AddLayerVersionPermissionError,
     ) -> Self {
         match err {
-            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::PolicyLengthExceededException(inner) => Error::PolicyLengthExceededException(inner),
+            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
             crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -205,13 +205,13 @@ where
 impl From<crate::operation::add_permission::AddPermissionError> for Error {
     fn from(err: crate::operation::add_permission::AddPermissionError) -> Self {
         match err {
-            crate::operation::add_permission::AddPermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::add_permission::AddPermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::operation::add_permission::AddPermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::add_permission::AddPermissionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::add_permission::AddPermissionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::add_permission::AddPermissionError::PolicyLengthExceededException(inner) => Error::PolicyLengthExceededException(inner),
+            crate::operation::add_permission::AddPermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
             crate::operation::add_permission::AddPermissionError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::add_permission::AddPermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::add_permission::AddPermissionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::add_permission::AddPermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::add_permission::AddPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -242,20 +242,20 @@ where
 impl From<crate::operation::create_alias::CreateAliasError> for Error {
     fn from(err: crate::operation::create_alias::CreateAliasError) -> Self {
         match err {
-            crate::operation::create_alias::CreateAliasError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::create_alias::CreateAliasError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::create_alias::CreateAliasError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
             crate::operation::create_alias::CreateAliasError::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
             crate::operation::create_alias::CreateAliasError::ResourceConflictException(inner) => {
                 Error::ResourceConflictException(inner)
+            }
+            crate::operation::create_alias::CreateAliasError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_alias::CreateAliasError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::create_alias::CreateAliasError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::create_alias::CreateAliasError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -299,8 +299,8 @@ impl From<crate::operation::create_code_signing_config::CreateCodeSigningConfigE
         err: crate::operation::create_code_signing_config::CreateCodeSigningConfigError,
     ) -> Self {
         match err {
-            crate::operation::create_code_signing_config::CreateCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_code_signing_config::CreateCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_code_signing_config::CreateCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_code_signing_config::CreateCodeSigningConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -341,11 +341,11 @@ impl From<crate::operation::create_event_source_mapping::CreateEventSourceMappin
         err: crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
     ) -> Self {
         match err {
-            crate::operation::create_event_source_mapping::CreateEventSourceMappingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_event_source_mapping::CreateEventSourceMappingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::create_event_source_mapping::CreateEventSourceMappingError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_event_source_mapping::CreateEventSourceMappingError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::create_event_source_mapping::CreateEventSourceMappingError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::create_event_source_mapping::CreateEventSourceMappingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_event_source_mapping::CreateEventSourceMappingError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_event_source_mapping::CreateEventSourceMappingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_event_source_mapping::CreateEventSourceMappingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -384,15 +384,15 @@ where
 impl From<crate::operation::create_function::CreateFunctionError> for Error {
     fn from(err: crate::operation::create_function::CreateFunctionError) -> Self {
         match err {
-            crate::operation::create_function::CreateFunctionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_function::CreateFunctionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::create_function::CreateFunctionError::CodeVerificationFailedException(inner) => Error::CodeVerificationFailedException(inner),
-            crate::operation::create_function::CreateFunctionError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::create_function::CreateFunctionError::InvalidCodeSignatureException(inner) => Error::InvalidCodeSignatureException(inner),
             crate::operation::create_function::CreateFunctionError::CodeSigningConfigNotFoundException(inner) => Error::CodeSigningConfigNotFoundException(inner),
             crate::operation::create_function::CreateFunctionError::CodeStorageExceededException(inner) => Error::CodeStorageExceededException(inner),
+            crate::operation::create_function::CreateFunctionError::CodeVerificationFailedException(inner) => Error::CodeVerificationFailedException(inner),
+            crate::operation::create_function::CreateFunctionError::InvalidCodeSignatureException(inner) => Error::InvalidCodeSignatureException(inner),
             crate::operation::create_function::CreateFunctionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::create_function::CreateFunctionError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::create_function::CreateFunctionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_function::CreateFunctionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_function::CreateFunctionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_function::CreateFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -433,11 +433,11 @@ impl From<crate::operation::create_function_url_config::CreateFunctionUrlConfigE
         err: crate::operation::create_function_url_config::CreateFunctionUrlConfigError,
     ) -> Self {
         match err {
-            crate::operation::create_function_url_config::CreateFunctionUrlConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_function_url_config::CreateFunctionUrlConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::create_function_url_config::CreateFunctionUrlConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_function_url_config::CreateFunctionUrlConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::create_function_url_config::CreateFunctionUrlConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::create_function_url_config::CreateFunctionUrlConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_function_url_config::CreateFunctionUrlConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_function_url_config::CreateFunctionUrlConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_function_url_config::CreateFunctionUrlConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -468,17 +468,17 @@ where
 impl From<crate::operation::delete_alias::DeleteAliasError> for Error {
     fn from(err: crate::operation::delete_alias::DeleteAliasError) -> Self {
         match err {
-            crate::operation::delete_alias::DeleteAliasError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::delete_alias::DeleteAliasError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
             crate::operation::delete_alias::DeleteAliasError::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
             crate::operation::delete_alias::DeleteAliasError::ResourceConflictException(inner) => {
                 Error::ResourceConflictException(inner)
+            }
+            crate::operation::delete_alias::DeleteAliasError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::delete_alias::DeleteAliasError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::delete_alias::DeleteAliasError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -522,10 +522,10 @@ impl From<crate::operation::delete_code_signing_config::DeleteCodeSigningConfigE
         err: crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError,
     ) -> Self {
         match err {
-            crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -566,11 +566,11 @@ impl From<crate::operation::delete_event_source_mapping::DeleteEventSourceMappin
         err: crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError,
     ) -> Self {
         match err {
-            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -609,11 +609,11 @@ where
 impl From<crate::operation::delete_function::DeleteFunctionError> for Error {
     fn from(err: crate::operation::delete_function::DeleteFunctionError) -> Self {
         match err {
-            crate::operation::delete_function::DeleteFunctionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_function::DeleteFunctionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::delete_function::DeleteFunctionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_function::DeleteFunctionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::delete_function::DeleteFunctionError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::delete_function::DeleteFunctionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_function::DeleteFunctionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_function::DeleteFunctionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_function::DeleteFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -640,12 +640,12 @@ impl
         err: crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError,
     ) -> Self {
         match err {
-            crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::CodeSigningConfigNotFoundException(inner) => Error::CodeSigningConfigNotFoundException(inner),
             crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -686,11 +686,11 @@ impl From<crate::operation::delete_function_concurrency::DeleteFunctionConcurren
         err: crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError,
     ) -> Self {
         match err {
-            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -717,11 +717,11 @@ impl
         err: crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError,
     ) -> Self {
         match err {
-            crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -762,10 +762,10 @@ impl From<crate::operation::delete_function_url_config::DeleteFunctionUrlConfigE
         err: crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError,
     ) -> Self {
         match err {
-            crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -804,8 +804,8 @@ where
 impl From<crate::operation::delete_layer_version::DeleteLayerVersionError> for Error {
     fn from(err: crate::operation::delete_layer_version::DeleteLayerVersionError) -> Self {
         match err {
-            crate::operation::delete_layer_version::DeleteLayerVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_layer_version::DeleteLayerVersionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_layer_version::DeleteLayerVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_layer_version::DeleteLayerVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -826,11 +826,11 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_provisio
 impl From<crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError> for Error {
     fn from(err: crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError) -> Self {
         match err {
-            crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -869,8 +869,8 @@ where
 impl From<crate::operation::get_account_settings::GetAccountSettingsError> for Error {
     fn from(err: crate::operation::get_account_settings::GetAccountSettingsError) -> Self {
         match err {
-            crate::operation::get_account_settings::GetAccountSettingsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_account_settings::GetAccountSettingsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_account_settings::GetAccountSettingsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_account_settings::GetAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -901,17 +901,17 @@ where
 impl From<crate::operation::get_alias::GetAliasError> for Error {
     fn from(err: crate::operation::get_alias::GetAliasError) -> Self {
         match err {
+            crate::operation::get_alias::GetAliasError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::get_alias::GetAliasError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_alias::GetAliasError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
             }
             crate::operation::get_alias::GetAliasError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
-            crate::operation::get_alias::GetAliasError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
+            crate::operation::get_alias::GetAliasError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::get_alias::GetAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -951,9 +951,9 @@ where
 impl From<crate::operation::get_code_signing_config::GetCodeSigningConfigError> for Error {
     fn from(err: crate::operation::get_code_signing_config::GetCodeSigningConfigError) -> Self {
         match err {
+            crate::operation::get_code_signing_config::GetCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::get_code_signing_config::GetCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_code_signing_config::GetCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_code_signing_config::GetCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::get_code_signing_config::GetCodeSigningConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -992,10 +992,10 @@ where
 impl From<crate::operation::get_event_source_mapping::GetEventSourceMappingError> for Error {
     fn from(err: crate::operation::get_event_source_mapping::GetEventSourceMappingError) -> Self {
         match err {
-            crate::operation::get_event_source_mapping::GetEventSourceMappingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_event_source_mapping::GetEventSourceMappingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_event_source_mapping::GetEventSourceMappingError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_event_source_mapping::GetEventSourceMappingError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_event_source_mapping::GetEventSourceMappingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_event_source_mapping::GetEventSourceMappingError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_event_source_mapping::GetEventSourceMappingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_event_source_mapping::GetEventSourceMappingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1026,18 +1026,18 @@ where
 impl From<crate::operation::get_function::GetFunctionError> for Error {
     fn from(err: crate::operation::get_function::GetFunctionError) -> Self {
         match err {
+            crate::operation::get_function::GetFunctionError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
             crate::operation::get_function::GetFunctionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_function::GetFunctionError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
             }
             crate::operation::get_function::GetFunctionError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
-            crate::operation::get_function::GetFunctionError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_function::GetFunctionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::get_function::GetFunctionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -1082,10 +1082,10 @@ impl From<crate::operation::get_function_code_signing_config::GetFunctionCodeSig
         err: crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError,
     ) -> Self {
         match err {
-            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1124,10 +1124,10 @@ where
 impl From<crate::operation::get_function_concurrency::GetFunctionConcurrencyError> for Error {
     fn from(err: crate::operation::get_function_concurrency::GetFunctionConcurrencyError) -> Self {
         match err {
-            crate::operation::get_function_concurrency::GetFunctionConcurrencyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_function_concurrency::GetFunctionConcurrencyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_function_concurrency::GetFunctionConcurrencyError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_function_concurrency::GetFunctionConcurrencyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_function_concurrency::GetFunctionConcurrencyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_function_concurrency::GetFunctionConcurrencyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_function_concurrency::GetFunctionConcurrencyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_function_concurrency::GetFunctionConcurrencyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1168,10 +1168,10 @@ impl From<crate::operation::get_function_configuration::GetFunctionConfiguration
         err: crate::operation::get_function_configuration::GetFunctionConfigurationError,
     ) -> Self {
         match err {
-            crate::operation::get_function_configuration::GetFunctionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_function_configuration::GetFunctionConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_function_configuration::GetFunctionConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_function_configuration::GetFunctionConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_function_configuration::GetFunctionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_function_configuration::GetFunctionConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_function_configuration::GetFunctionConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_function_configuration::GetFunctionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1214,10 +1214,10 @@ impl From<crate::operation::get_function_event_invoke_config::GetFunctionEventIn
         err: crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
     ) -> Self {
         match err {
-            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1256,10 +1256,10 @@ where
 impl From<crate::operation::get_function_url_config::GetFunctionUrlConfigError> for Error {
     fn from(err: crate::operation::get_function_url_config::GetFunctionUrlConfigError) -> Self {
         match err {
-            crate::operation::get_function_url_config::GetFunctionUrlConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_function_url_config::GetFunctionUrlConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_function_url_config::GetFunctionUrlConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_function_url_config::GetFunctionUrlConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_function_url_config::GetFunctionUrlConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_function_url_config::GetFunctionUrlConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_function_url_config::GetFunctionUrlConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_function_url_config::GetFunctionUrlConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1298,10 +1298,10 @@ where
 impl From<crate::operation::get_layer_version::GetLayerVersionError> for Error {
     fn from(err: crate::operation::get_layer_version::GetLayerVersionError) -> Self {
         match err {
-            crate::operation::get_layer_version::GetLayerVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_layer_version::GetLayerVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_layer_version::GetLayerVersionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_layer_version::GetLayerVersionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_layer_version::GetLayerVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_layer_version::GetLayerVersionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_layer_version::GetLayerVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_layer_version::GetLayerVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1340,10 +1340,10 @@ where
 impl From<crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError> for Error {
     fn from(err: crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError) -> Self {
         match err {
-            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1382,10 +1382,10 @@ where
 impl From<crate::operation::get_layer_version_policy::GetLayerVersionPolicyError> for Error {
     fn from(err: crate::operation::get_layer_version_policy::GetLayerVersionPolicyError) -> Self {
         match err {
-            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1416,17 +1416,17 @@ where
 impl From<crate::operation::get_policy::GetPolicyError> for Error {
     fn from(err: crate::operation::get_policy::GetPolicyError) -> Self {
         match err {
+            crate::operation::get_policy::GetPolicyError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::get_policy::GetPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_policy::GetPolicyError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
             }
             crate::operation::get_policy::GetPolicyError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
-            crate::operation::get_policy::GetPolicyError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
+            crate::operation::get_policy::GetPolicyError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::get_policy::GetPolicyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -1455,11 +1455,11 @@ impl
         err: crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError,
     ) -> Self {
         match err {
-            crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::ProvisionedConcurrencyConfigNotFoundException(inner) => Error::ProvisionedConcurrencyConfigNotFoundException(inner),
-            crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::ProvisionedConcurrencyConfigNotFoundException(inner) => Error::ProvisionedConcurrencyConfigNotFoundException(inner),
+            crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1502,10 +1502,10 @@ impl From<crate::operation::get_runtime_management_config::GetRuntimeManagementC
         err: crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError,
     ) -> Self {
         match err {
-            crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1535,23 +1535,14 @@ where
 impl From<crate::operation::invoke::InvokeError> for Error {
     fn from(err: crate::operation::invoke::InvokeError) -> Self {
         match err {
-            crate::operation::invoke::InvokeError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
+            crate::operation::invoke::InvokeError::Ec2AccessDeniedException(inner) => {
+                Error::Ec2AccessDeniedException(inner)
             }
-            crate::operation::invoke::InvokeError::KmsNotFoundException(inner) => {
-                Error::KmsNotFoundException(inner)
+            crate::operation::invoke::InvokeError::Ec2ThrottledException(inner) => {
+                Error::Ec2ThrottledException(inner)
             }
-            crate::operation::invoke::InvokeError::SnapStartException(inner) => {
-                Error::SnapStartException(inner)
-            }
-            crate::operation::invoke::InvokeError::InvalidSubnetIdException(inner) => {
-                Error::InvalidSubnetIdException(inner)
-            }
-            crate::operation::invoke::InvokeError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::operation::invoke::InvokeError::KmsDisabledException(inner) => {
-                Error::KmsDisabledException(inner)
+            crate::operation::invoke::InvokeError::Ec2UnexpectedException(inner) => {
+                Error::Ec2UnexpectedException(inner)
             }
             crate::operation::invoke::InvokeError::EfsioException(inner) => {
                 Error::EfsioException(inner)
@@ -1562,14 +1553,11 @@ impl From<crate::operation::invoke::InvokeError> for Error {
             crate::operation::invoke::InvokeError::EfsMountFailureException(inner) => {
                 Error::EfsMountFailureException(inner)
             }
-            crate::operation::invoke::InvokeError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
+            crate::operation::invoke::InvokeError::EfsMountTimeoutException(inner) => {
+                Error::EfsMountTimeoutException(inner)
             }
-            crate::operation::invoke::InvokeError::ResourceNotReadyException(inner) => {
-                Error::ResourceNotReadyException(inner)
-            }
-            crate::operation::invoke::InvokeError::InvalidZipFileException(inner) => {
-                Error::InvalidZipFileException(inner)
+            crate::operation::invoke::InvokeError::EniLimitReachedException(inner) => {
+                Error::EniLimitReachedException(inner)
             }
             crate::operation::invoke::InvokeError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
@@ -1577,50 +1565,62 @@ impl From<crate::operation::invoke::InvokeError> for Error {
             crate::operation::invoke::InvokeError::InvalidRequestContentException(inner) => {
                 Error::InvalidRequestContentException(inner)
             }
-            crate::operation::invoke::InvokeError::SnapStartTimeoutException(inner) => {
-                Error::SnapStartTimeoutException(inner)
-            }
-            crate::operation::invoke::InvokeError::Ec2ThrottledException(inner) => {
-                Error::Ec2ThrottledException(inner)
-            }
-            crate::operation::invoke::InvokeError::SubnetIpAddressLimitReachedException(inner) => {
-                Error::SubnetIpAddressLimitReachedException(inner)
+            crate::operation::invoke::InvokeError::InvalidRuntimeException(inner) => {
+                Error::InvalidRuntimeException(inner)
             }
             crate::operation::invoke::InvokeError::InvalidSecurityGroupIdException(inner) => {
                 Error::InvalidSecurityGroupIdException(inner)
             }
-            crate::operation::invoke::InvokeError::RequestTooLargeException(inner) => {
-                Error::RequestTooLargeException(inner)
+            crate::operation::invoke::InvokeError::InvalidSubnetIdException(inner) => {
+                Error::InvalidSubnetIdException(inner)
             }
-            crate::operation::invoke::InvokeError::UnsupportedMediaTypeException(inner) => {
-                Error::UnsupportedMediaTypeException(inner)
-            }
-            crate::operation::invoke::InvokeError::EfsMountTimeoutException(inner) => {
-                Error::EfsMountTimeoutException(inner)
-            }
-            crate::operation::invoke::InvokeError::EniLimitReachedException(inner) => {
-                Error::EniLimitReachedException(inner)
-            }
-            crate::operation::invoke::InvokeError::SnapStartNotReadyException(inner) => {
-                Error::SnapStartNotReadyException(inner)
-            }
-            crate::operation::invoke::InvokeError::Ec2UnexpectedException(inner) => {
-                Error::Ec2UnexpectedException(inner)
-            }
-            crate::operation::invoke::InvokeError::Ec2AccessDeniedException(inner) => {
-                Error::Ec2AccessDeniedException(inner)
-            }
-            crate::operation::invoke::InvokeError::InvalidRuntimeException(inner) => {
-                Error::InvalidRuntimeException(inner)
+            crate::operation::invoke::InvokeError::InvalidZipFileException(inner) => {
+                Error::InvalidZipFileException(inner)
             }
             crate::operation::invoke::InvokeError::KmsAccessDeniedException(inner) => {
                 Error::KmsAccessDeniedException(inner)
             }
+            crate::operation::invoke::InvokeError::KmsDisabledException(inner) => {
+                Error::KmsDisabledException(inner)
+            }
             crate::operation::invoke::InvokeError::KmsInvalidStateException(inner) => {
                 Error::KmsInvalidStateException(inner)
             }
+            crate::operation::invoke::InvokeError::KmsNotFoundException(inner) => {
+                Error::KmsNotFoundException(inner)
+            }
+            crate::operation::invoke::InvokeError::RequestTooLargeException(inner) => {
+                Error::RequestTooLargeException(inner)
+            }
             crate::operation::invoke::InvokeError::ResourceConflictException(inner) => {
                 Error::ResourceConflictException(inner)
+            }
+            crate::operation::invoke::InvokeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::invoke::InvokeError::ResourceNotReadyException(inner) => {
+                Error::ResourceNotReadyException(inner)
+            }
+            crate::operation::invoke::InvokeError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::invoke::InvokeError::SnapStartException(inner) => {
+                Error::SnapStartException(inner)
+            }
+            crate::operation::invoke::InvokeError::SnapStartNotReadyException(inner) => {
+                Error::SnapStartNotReadyException(inner)
+            }
+            crate::operation::invoke::InvokeError::SnapStartTimeoutException(inner) => {
+                Error::SnapStartTimeoutException(inner)
+            }
+            crate::operation::invoke::InvokeError::SubnetIpAddressLimitReachedException(inner) => {
+                Error::SubnetIpAddressLimitReachedException(inner)
+            }
+            crate::operation::invoke::InvokeError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::invoke::InvokeError::UnsupportedMediaTypeException(inner) => {
+                Error::UnsupportedMediaTypeException(inner)
             }
             crate::operation::invoke::InvokeError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1652,20 +1652,20 @@ where
 impl From<crate::operation::invoke_async::InvokeAsyncError> for Error {
     fn from(err: crate::operation::invoke_async::InvokeAsyncError) -> Self {
         match err {
-            crate::operation::invoke_async::InvokeAsyncError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::invoke_async::InvokeAsyncError::InvalidRuntimeException(inner) => {
-                Error::InvalidRuntimeException(inner)
-            }
-            crate::operation::invoke_async::InvokeAsyncError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
             crate::operation::invoke_async::InvokeAsyncError::InvalidRequestContentException(
                 inner,
             ) => Error::InvalidRequestContentException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::InvalidRuntimeException(inner) => {
+                Error::InvalidRuntimeException(inner)
+            }
             crate::operation::invoke_async::InvokeAsyncError::ResourceConflictException(inner) => {
                 Error::ResourceConflictException(inner)
+            }
+            crate::operation::invoke_async::InvokeAsyncError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::invoke_async::InvokeAsyncError::ServiceException(inner) => {
+                Error::ServiceException(inner)
             }
             crate::operation::invoke_async::InvokeAsyncError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -1699,18 +1699,18 @@ where
 impl From<crate::operation::list_aliases::ListAliasesError> for Error {
     fn from(err: crate::operation::list_aliases::ListAliasesError) -> Self {
         match err {
+            crate::operation::list_aliases::ListAliasesError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
             crate::operation::list_aliases::ListAliasesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_aliases::ListAliasesError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
             }
             crate::operation::list_aliases::ListAliasesError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
-            crate::operation::list_aliases::ListAliasesError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_aliases::ListAliasesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::list_aliases::ListAliasesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -1751,8 +1751,8 @@ where
 impl From<crate::operation::list_code_signing_configs::ListCodeSigningConfigsError> for Error {
     fn from(err: crate::operation::list_code_signing_configs::ListCodeSigningConfigsError) -> Self {
         match err {
-            crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1793,10 +1793,10 @@ impl From<crate::operation::list_event_source_mappings::ListEventSourceMappingsE
         err: crate::operation::list_event_source_mappings::ListEventSourceMappingsError,
     ) -> Self {
         match err {
-            crate::operation::list_event_source_mappings::ListEventSourceMappingsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_event_source_mappings::ListEventSourceMappingsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_event_source_mappings::ListEventSourceMappingsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_event_source_mappings::ListEventSourceMappingsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_event_source_mappings::ListEventSourceMappingsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_event_source_mappings::ListEventSourceMappingsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_event_source_mappings::ListEventSourceMappingsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_event_source_mappings::ListEventSourceMappingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1821,10 +1821,10 @@ impl From<crate::operation::list_function_event_invoke_configs::ListFunctionEven
         err: crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError,
     ) -> Self {
         match err {
-            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1859,9 +1859,9 @@ where
 impl From<crate::operation::list_functions::ListFunctionsError> for Error {
     fn from(err: crate::operation::list_functions::ListFunctionsError) -> Self {
         match err {
-            crate::operation::list_functions::ListFunctionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_functions::ListFunctionsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_functions::ListFunctionsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_functions::ListFunctionsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_functions::ListFunctionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_functions::ListFunctionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1882,9 +1882,9 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_functions_
 impl From<crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError> for Error {
     fn from(err: crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError) -> Self {
         match err {
+            crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1923,10 +1923,10 @@ where
 impl From<crate::operation::list_function_url_configs::ListFunctionUrlConfigsError> for Error {
     fn from(err: crate::operation::list_function_url_configs::ListFunctionUrlConfigsError) -> Self {
         match err {
-            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_function_url_configs::ListFunctionUrlConfigsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_function_url_configs::ListFunctionUrlConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1957,15 +1957,15 @@ where
 impl From<crate::operation::list_layers::ListLayersError> for Error {
     fn from(err: crate::operation::list_layers::ListLayersError) -> Self {
         match err {
-            crate::operation::list_layers::ListLayersError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_layers::ListLayersError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
             crate::operation::list_layers::ListLayersError::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_layers::ListLayersError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_layers::ListLayersError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
             crate::operation::list_layers::ListLayersError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -2006,10 +2006,10 @@ where
 impl From<crate::operation::list_layer_versions::ListLayerVersionsError> for Error {
     fn from(err: crate::operation::list_layer_versions::ListLayerVersionsError) -> Self {
         match err {
-            crate::operation::list_layer_versions::ListLayerVersionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_layer_versions::ListLayerVersionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_layer_versions::ListLayerVersionsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_layer_versions::ListLayerVersionsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_layer_versions::ListLayerVersionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_layer_versions::ListLayerVersionsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_layer_versions::ListLayerVersionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_layer_versions::ListLayerVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2030,10 +2030,10 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_provisione
 impl From<crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError> for Error {
     fn from(err: crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError) -> Self {
         match err {
-            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2064,17 +2064,17 @@ where
 impl From<crate::operation::list_tags::ListTagsError> for Error {
     fn from(err: crate::operation::list_tags::ListTagsError) -> Self {
         match err {
+            crate::operation::list_tags::ListTagsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::list_tags::ListTagsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_tags::ListTagsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
             }
             crate::operation::list_tags::ListTagsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
-            crate::operation::list_tags::ListTagsError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
+            crate::operation::list_tags::ListTagsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::list_tags::ListTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2114,10 +2114,10 @@ where
 impl From<crate::operation::list_versions_by_function::ListVersionsByFunctionError> for Error {
     fn from(err: crate::operation::list_versions_by_function::ListVersionsByFunctionError) -> Self {
         match err {
-            crate::operation::list_versions_by_function::ListVersionsByFunctionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_versions_by_function::ListVersionsByFunctionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_versions_by_function::ListVersionsByFunctionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_versions_by_function::ListVersionsByFunctionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_versions_by_function::ListVersionsByFunctionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_versions_by_function::ListVersionsByFunctionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_versions_by_function::ListVersionsByFunctionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_versions_by_function::ListVersionsByFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2156,11 +2156,11 @@ where
 impl From<crate::operation::publish_layer_version::PublishLayerVersionError> for Error {
     fn from(err: crate::operation::publish_layer_version::PublishLayerVersionError) -> Self {
         match err {
-            crate::operation::publish_layer_version::PublishLayerVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::publish_layer_version::PublishLayerVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::publish_layer_version::PublishLayerVersionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::publish_layer_version::PublishLayerVersionError::CodeStorageExceededException(inner) => Error::CodeStorageExceededException(inner),
             crate::operation::publish_layer_version::PublishLayerVersionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::publish_layer_version::PublishLayerVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::publish_layer_version::PublishLayerVersionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::publish_layer_version::PublishLayerVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::publish_layer_version::PublishLayerVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2199,13 +2199,13 @@ where
 impl From<crate::operation::publish_version::PublishVersionError> for Error {
     fn from(err: crate::operation::publish_version::PublishVersionError) -> Self {
         match err {
-            crate::operation::publish_version::PublishVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::publish_version::PublishVersionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::operation::publish_version::PublishVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::publish_version::PublishVersionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::publish_version::PublishVersionError::CodeStorageExceededException(inner) => Error::CodeStorageExceededException(inner),
             crate::operation::publish_version::PublishVersionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::publish_version::PublishVersionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
             crate::operation::publish_version::PublishVersionError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::publish_version::PublishVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::publish_version::PublishVersionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::publish_version::PublishVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::publish_version::PublishVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2248,12 +2248,12 @@ impl From<crate::operation::put_function_code_signing_config::PutFunctionCodeSig
         err: crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError,
     ) -> Self {
         match err {
-            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::CodeSigningConfigNotFoundException(inner) => Error::CodeSigningConfigNotFoundException(inner),
             crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2292,11 +2292,11 @@ where
 impl From<crate::operation::put_function_concurrency::PutFunctionConcurrencyError> for Error {
     fn from(err: crate::operation::put_function_concurrency::PutFunctionConcurrencyError) -> Self {
         match err {
-            crate::operation::put_function_concurrency::PutFunctionConcurrencyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_function_concurrency::PutFunctionConcurrencyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::put_function_concurrency::PutFunctionConcurrencyError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::put_function_concurrency::PutFunctionConcurrencyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::put_function_concurrency::PutFunctionConcurrencyError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::put_function_concurrency::PutFunctionConcurrencyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_function_concurrency::PutFunctionConcurrencyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::put_function_concurrency::PutFunctionConcurrencyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_function_concurrency::PutFunctionConcurrencyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2339,11 +2339,11 @@ impl From<crate::operation::put_function_event_invoke_config::PutFunctionEventIn
         err: crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError,
     ) -> Self {
         match err {
-            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2369,11 +2369,11 @@ impl
         err: crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
     ) -> Self {
         match err {
-            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2416,11 +2416,11 @@ impl From<crate::operation::put_runtime_management_config::PutRuntimeManagementC
         err: crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError,
     ) -> Self {
         match err {
-            crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2463,11 +2463,11 @@ impl From<crate::operation::remove_layer_version_permission::RemoveLayerVersionP
         err: crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError,
     ) -> Self {
         match err {
-            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2506,11 +2506,11 @@ where
 impl From<crate::operation::remove_permission::RemovePermissionError> for Error {
     fn from(err: crate::operation::remove_permission::RemovePermissionError) -> Self {
         match err {
-            crate::operation::remove_permission::RemovePermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::remove_permission::RemovePermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::operation::remove_permission::RemovePermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::remove_permission::RemovePermissionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::remove_permission::RemovePermissionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::remove_permission::RemovePermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::remove_permission::RemovePermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::remove_permission::RemovePermissionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::remove_permission::RemovePermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::remove_permission::RemovePermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2541,20 +2541,20 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
             crate::operation::tag_resource::TagResourceError::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceConflictException(inner) => {
                 Error::ResourceConflictException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -2592,11 +2592,11 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::untag_resource::UntagResourceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2627,23 +2627,23 @@ where
 impl From<crate::operation::update_alias::UpdateAliasError> for Error {
     fn from(err: crate::operation::update_alias::UpdateAliasError) -> Self {
         match err {
-            crate::operation::update_alias::UpdateAliasError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::update_alias::UpdateAliasError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
             crate::operation::update_alias::UpdateAliasError::PreconditionFailedException(
                 inner,
             ) => Error::PreconditionFailedException(inner),
-            crate::operation::update_alias::UpdateAliasError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
+            crate::operation::update_alias::UpdateAliasError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::update_alias::UpdateAliasError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_alias::UpdateAliasError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
-            crate::operation::update_alias::UpdateAliasError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::operation::update_alias::UpdateAliasError::ResourceConflictException(inner) => {
-                Error::ResourceConflictException(inner)
+            crate::operation::update_alias::UpdateAliasError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::update_alias::UpdateAliasError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -2687,9 +2687,9 @@ impl From<crate::operation::update_code_signing_config::UpdateCodeSigningConfigE
         err: crate::operation::update_code_signing_config::UpdateCodeSigningConfigError,
     ) -> Self {
         match err {
+            crate::operation::update_code_signing_config::UpdateCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::update_code_signing_config::UpdateCodeSigningConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_code_signing_config::UpdateCodeSigningConfigError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::update_code_signing_config::UpdateCodeSigningConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::update_code_signing_config::UpdateCodeSigningConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2730,12 +2730,12 @@ impl From<crate::operation::update_event_source_mapping::UpdateEventSourceMappin
         err: crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
     ) -> Self {
         match err {
-            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_event_source_mapping::UpdateEventSourceMappingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2774,16 +2774,16 @@ where
 impl From<crate::operation::update_function_code::UpdateFunctionCodeError> for Error {
     fn from(err: crate::operation::update_function_code::UpdateFunctionCodeError) -> Self {
         match err {
-            crate::operation::update_function_code::UpdateFunctionCodeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_function_code::UpdateFunctionCodeError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::operation::update_function_code::UpdateFunctionCodeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::update_function_code::UpdateFunctionCodeError::CodeVerificationFailedException(inner) => Error::CodeVerificationFailedException(inner),
-            crate::operation::update_function_code::UpdateFunctionCodeError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::update_function_code::UpdateFunctionCodeError::InvalidCodeSignatureException(inner) => Error::InvalidCodeSignatureException(inner),
             crate::operation::update_function_code::UpdateFunctionCodeError::CodeSigningConfigNotFoundException(inner) => Error::CodeSigningConfigNotFoundException(inner),
             crate::operation::update_function_code::UpdateFunctionCodeError::CodeStorageExceededException(inner) => Error::CodeStorageExceededException(inner),
+            crate::operation::update_function_code::UpdateFunctionCodeError::CodeVerificationFailedException(inner) => Error::CodeVerificationFailedException(inner),
+            crate::operation::update_function_code::UpdateFunctionCodeError::InvalidCodeSignatureException(inner) => Error::InvalidCodeSignatureException(inner),
             crate::operation::update_function_code::UpdateFunctionCodeError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_function_code::UpdateFunctionCodeError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
             crate::operation::update_function_code::UpdateFunctionCodeError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::update_function_code::UpdateFunctionCodeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_function_code::UpdateFunctionCodeError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_function_code::UpdateFunctionCodeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_function_code::UpdateFunctionCodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2826,15 +2826,15 @@ impl From<crate::operation::update_function_configuration::UpdateFunctionConfigu
         err: crate::operation::update_function_configuration::UpdateFunctionConfigurationError,
     ) -> Self {
         match err {
-            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::CodeVerificationFailedException(inner) => Error::CodeVerificationFailedException(inner),
-            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::InvalidCodeSignatureException(inner) => Error::InvalidCodeSignatureException(inner),
             crate::operation::update_function_configuration::UpdateFunctionConfigurationError::CodeSigningConfigNotFoundException(inner) => Error::CodeSigningConfigNotFoundException(inner),
+            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::CodeVerificationFailedException(inner) => Error::CodeVerificationFailedException(inner),
+            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::InvalidCodeSignatureException(inner) => Error::InvalidCodeSignatureException(inner),
             crate::operation::update_function_configuration::UpdateFunctionConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
             crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_function_configuration::UpdateFunctionConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_function_configuration::UpdateFunctionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2861,11 +2861,11 @@ impl
         err: crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError,
     ) -> Self {
         match err {
-            crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2906,11 +2906,11 @@ impl From<crate::operation::update_function_url_config::UpdateFunctionUrlConfigE
         err: crate::operation::update_function_url_config::UpdateFunctionUrlConfigError,
     ) -> Self {
         match err {
-            crate::operation::update_function_url_config::UpdateFunctionUrlConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_function_url_config::UpdateFunctionUrlConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::update_function_url_config::UpdateFunctionUrlConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::update_function_url_config::UpdateFunctionUrlConfigError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::update_function_url_config::UpdateFunctionUrlConfigError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::update_function_url_config::UpdateFunctionUrlConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_function_url_config::UpdateFunctionUrlConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_function_url_config::UpdateFunctionUrlConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_function_url_config::UpdateFunctionUrlConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

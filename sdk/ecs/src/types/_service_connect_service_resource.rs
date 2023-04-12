@@ -7,7 +7,7 @@
 pub struct ServiceConnectServiceResource {
     /// <p>The discovery name of this Service Connect resource.</p>
     /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
-    /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
     #[doc(hidden)]
     pub discovery_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the namespace in Cloud Map that matches the discovery name for this Service Connect resource. You can use this ARN in other integrations with Cloud Map. However, Service Connect can't ensure connectivity outside of Amazon ECS.</p>
@@ -17,7 +17,7 @@ pub struct ServiceConnectServiceResource {
 impl ServiceConnectServiceResource {
     /// <p>The discovery name of this Service Connect resource.</p>
     /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
-    /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
     pub fn discovery_name(&self) -> std::option::Option<&str> {
         self.discovery_name.as_deref()
     }
@@ -43,14 +43,14 @@ pub struct ServiceConnectServiceResourceBuilder {
 impl ServiceConnectServiceResourceBuilder {
     /// <p>The discovery name of this Service Connect resource.</p>
     /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
-    /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
     pub fn discovery_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.discovery_name = Some(input.into());
         self
     }
     /// <p>The discovery name of this Service Connect resource.</p>
     /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
-    /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
     pub fn set_discovery_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.discovery_name = input;
         self

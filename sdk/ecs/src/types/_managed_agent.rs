@@ -7,7 +7,7 @@ pub struct ManagedAgent {
     /// <p>The Unix timestamp for the time when the managed agent was last started.</p>
     #[doc(hidden)]
     pub last_started_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
+    /// <p>The name of the managed agent. When the execute command feature is enabled, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::ManagedAgentName>,
     /// <p>The reason for why the managed agent is in the state it is in.</p>
@@ -22,7 +22,7 @@ impl ManagedAgent {
     pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
-    /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
+    /// <p>The name of the managed agent. When the execute command feature is enabled, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
     pub fn name(&self) -> std::option::Option<&crate::types::ManagedAgentName> {
         self.name.as_ref()
     }
@@ -65,12 +65,12 @@ impl ManagedAgentBuilder {
         self.last_started_at = input;
         self
     }
-    /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
+    /// <p>The name of the managed agent. When the execute command feature is enabled, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
     pub fn name(mut self, input: crate::types::ManagedAgentName) -> Self {
         self.name = Some(input);
         self
     }
-    /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
+    /// <p>The name of the managed agent. When the execute command feature is enabled, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::ManagedAgentName>) -> Self {
         self.name = input;
         self

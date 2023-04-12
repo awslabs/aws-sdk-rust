@@ -13,9 +13,6 @@ pub struct MediaConcurrency {
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     #[doc(hidden)]
     pub concurrency: i32,
-    /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
-    #[doc(hidden)]
-    pub cross_channel_behavior: std::option::Option<crate::types::CrossChannelBehavior>,
 }
 impl MediaConcurrency {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
@@ -28,12 +25,6 @@ impl MediaConcurrency {
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     pub fn concurrency(&self) -> i32 {
         self.concurrency
-    }
-    /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
-    pub fn cross_channel_behavior(
-        &self,
-    ) -> std::option::Option<&crate::types::CrossChannelBehavior> {
-        self.cross_channel_behavior.as_ref()
     }
 }
 impl MediaConcurrency {
@@ -49,7 +40,6 @@ impl MediaConcurrency {
 pub struct MediaConcurrencyBuilder {
     pub(crate) channel: std::option::Option<crate::types::Channel>,
     pub(crate) concurrency: std::option::Option<i32>,
-    pub(crate) cross_channel_behavior: std::option::Option<crate::types::CrossChannelBehavior>,
 }
 impl MediaConcurrencyBuilder {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
@@ -78,25 +68,11 @@ impl MediaConcurrencyBuilder {
         self.concurrency = input;
         self
     }
-    /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
-    pub fn cross_channel_behavior(mut self, input: crate::types::CrossChannelBehavior) -> Self {
-        self.cross_channel_behavior = Some(input);
-        self
-    }
-    /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
-    pub fn set_cross_channel_behavior(
-        mut self,
-        input: std::option::Option<crate::types::CrossChannelBehavior>,
-    ) -> Self {
-        self.cross_channel_behavior = input;
-        self
-    }
     /// Consumes the builder and constructs a [`MediaConcurrency`](crate::types::MediaConcurrency).
     pub fn build(self) -> crate::types::MediaConcurrency {
         crate::types::MediaConcurrency {
             channel: self.channel,
             concurrency: self.concurrency.unwrap_or_default(),
-            cross_channel_behavior: self.cross_channel_behavior,
         }
     }
 }

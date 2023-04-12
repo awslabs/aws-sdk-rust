@@ -173,14 +173,4 @@ impl UpdateComponentFluentBuilder {
         self.inner = self.inner.set_template_file(input);
         self
     }
-    /// <p>The client token for the updated component.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inner = self.inner.client_token(input.into());
-        self
-    }
-    /// <p>The client token for the updated component.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.inner = self.inner.set_client_token(input);
-        self
-    }
 }

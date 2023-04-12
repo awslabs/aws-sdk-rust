@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelDetectionSettings {
-    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual labels or entire label categories. To see a list of label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting Labels</a>.</p>
+    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
     #[doc(hidden)]
     pub general_labels: std::option::Option<crate::types::GeneralLabelsSettings>,
 }
 impl LabelDetectionSettings {
-    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual labels or entire label categories. To see a list of label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting Labels</a>.</p>
+    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
     pub fn general_labels(&self) -> std::option::Option<&crate::types::GeneralLabelsSettings> {
         self.general_labels.as_ref()
     }
@@ -28,12 +28,12 @@ pub struct LabelDetectionSettingsBuilder {
     pub(crate) general_labels: std::option::Option<crate::types::GeneralLabelsSettings>,
 }
 impl LabelDetectionSettingsBuilder {
-    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual labels or entire label categories. To see a list of label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting Labels</a>.</p>
+    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
     pub fn general_labels(mut self, input: crate::types::GeneralLabelsSettings) -> Self {
         self.general_labels = Some(input);
         self
     }
-    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual labels or entire label categories. To see a list of label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting Labels</a>.</p>
+    /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
     pub fn set_general_labels(
         mut self,
         input: std::option::Option<crate::types::GeneralLabelsSettings>,

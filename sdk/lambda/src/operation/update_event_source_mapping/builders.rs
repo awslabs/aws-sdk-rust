@@ -14,7 +14,6 @@ pub use crate::operation::update_event_source_mapping::_update_event_source_mapp
 /// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping"> Amazon MQ and RabbitMQ</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Amazon MSK</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a> </p> </li>
 /// </ul>
 /// <p>The following error handling options are available only for stream sources (DynamoDB and Kinesis):</p>
 /// <ul>
@@ -32,7 +31,6 @@ pub use crate::operation::update_event_source_mapping::_update_event_source_mapp
 /// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-params"> Amazon MQ and RabbitMQ</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-parms"> Amazon MSK</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon DocumentDB</a> </p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEventSourceMappingFluentBuilder {
@@ -153,7 +151,6 @@ impl UpdateEventSourceMappingFluentBuilder {
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(mut self, input: i32) -> Self {
         self.inner = self.inner.batch_size(input);
@@ -167,7 +164,6 @@ impl UpdateEventSourceMappingFluentBuilder {
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_batch_size(input);
@@ -187,14 +183,14 @@ impl UpdateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_batching_window_in_seconds(input);
         self
     }
     /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn set_maximum_batching_window_in_seconds(
         mut self,
@@ -203,12 +199,12 @@ impl UpdateEventSourceMappingFluentBuilder {
         self.inner = self.inner.set_maximum_batching_window_in_seconds(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.inner = self.inner.destination_config(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub fn set_destination_config(
         mut self,
         input: std::option::Option<crate::types::DestinationConfig>,
@@ -216,42 +212,42 @@ impl UpdateEventSourceMappingFluentBuilder {
         self.inner = self.inner.set_destination_config(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
     pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_record_age_in_seconds(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
     pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_record_age_in_seconds(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
     pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
         self.inner = self.inner.bisect_batch_on_function_error(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
     pub fn set_bisect_batch_on_function_error(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_bisect_batch_on_function_error(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_retry_attempts(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_retry_attempts(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
+    /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
     pub fn parallelization_factor(mut self, input: i32) -> Self {
         self.inner = self.inner.parallelization_factor(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
+    /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
     pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_parallelization_factor(input);
         self
@@ -276,12 +272,12 @@ impl UpdateEventSourceMappingFluentBuilder {
         self.inner = self.inner.set_source_access_configurations(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.tumbling_window_in_seconds(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_tumbling_window_in_seconds(input);
         self
@@ -290,12 +286,12 @@ impl UpdateEventSourceMappingFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
     ///
-    /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(mut self, input: crate::types::FunctionResponseType) -> Self {
         self.inner = self.inner.function_response_types(input);
         self
     }
-    /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn set_function_response_types(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::FunctionResponseType>>,

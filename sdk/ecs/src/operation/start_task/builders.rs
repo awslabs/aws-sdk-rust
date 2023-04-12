@@ -5,9 +5,7 @@ pub use crate::operation::start_task::_start_task_input::StartTaskInputBuilder;
 
 /// Fluent builder constructing a request to `StartTask`.
 ///
-/// <p>Starts a new task from the specified task definition on the specified container instance or instances.</p> <note>
-/// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service. </p>
-/// </note>
+/// <p>Starts a new task from the specified task definition on the specified container instance or instances.</p>
 /// <p>Alternatively, you can use <code>RunTask</code> to place tasks for you. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartTaskFluentBuilder {
@@ -105,12 +103,12 @@ impl StartTaskFluentBuilder {
         self.inner = self.inner.set_enable_ecs_managed_tags(input);
         self
     }
-    /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
+    /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_execute_command(input);
         self
     }
-    /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
+    /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_execute_command(input);
         self

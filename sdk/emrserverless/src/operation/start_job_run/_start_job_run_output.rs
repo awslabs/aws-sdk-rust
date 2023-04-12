@@ -9,7 +9,7 @@ pub struct StartJobRunOutput {
     /// <p>The output contains the ID of the started job run.</p>
     #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
-    /// <p>This output displays the ARN of the job run..</p>
+    /// <p>The output lists the execution role ARN of the job run.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -23,7 +23,7 @@ impl StartJobRunOutput {
     pub fn job_run_id(&self) -> std::option::Option<&str> {
         self.job_run_id.as_deref()
     }
-    /// <p>This output displays the ARN of the job run..</p>
+    /// <p>The output lists the execution role ARN of the job run.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -70,12 +70,12 @@ impl StartJobRunOutputBuilder {
         self.job_run_id = input;
         self
     }
-    /// <p>This output displays the ARN of the job run..</p>
+    /// <p>The output lists the execution role ARN of the job run.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.arn = Some(input.into());
         self
     }
-    /// <p>This output displays the ARN of the job run..</p>
+    /// <p>The output lists the execution role ARN of the job run.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.arn = input;
         self

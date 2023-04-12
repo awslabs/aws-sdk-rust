@@ -27,52 +27,14 @@ pub fn de_update_function_configuration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ResourceNotFoundException({
+        "CodeSigningConfigNotFoundException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::CodeSigningConfigNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::CodeSigningConfigNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "PreconditionFailedException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::PreconditionFailedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "TooManyRequestsException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
+                    output = crate::protocol_serde::shape_code_signing_config_not_found_exception::de_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -99,23 +61,6 @@ pub fn de_update_function_configuration_http_error(
                                                     }
             tmp
         }),
-        "ServiceException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
         "InvalidCodeSignatureException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::InvalidCodeSignatureException({
             #[allow(unused_mut)]
             let mut tmp =
@@ -124,23 +69,6 @@ pub fn de_update_function_configuration_http_error(
                     let mut output = crate::types::error::builders::InvalidCodeSignatureExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_invalid_code_signature_exception::de_invalid_code_signature_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "CodeSigningConfigNotFoundException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::CodeSigningConfigNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CodeSigningConfigNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_code_signing_config_not_found_exception::de_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -167,6 +95,23 @@ pub fn de_update_function_configuration_http_error(
                                                     }
             tmp
         }),
+        "PreconditionFailedException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::PreconditionFailedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "ResourceConflictException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ResourceConflictException({
             #[allow(unused_mut)]
             let mut tmp =
@@ -175,6 +120,61 @@ pub fn de_update_function_configuration_http_error(
                     let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::update_function_configuration::UpdateFunctionConfigurationError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::update_function_configuration::UpdateFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 }

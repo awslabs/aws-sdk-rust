@@ -4,21 +4,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSetting {
-    /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
+    /// <p>The name of the cluster setting. The only supported value is <code>containerInsights</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::ClusterSettingName>,
-    /// <p>The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>. </p>
-    /// <p>If you set <code>name</code> to <code>containerInsights</code> and <code>value</code> to <code>enabled</code>, CloudWatch Container Insights will be on for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
+    /// <p>The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ClusterSetting {
-    /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
+    /// <p>The name of the cluster setting. The only supported value is <code>containerInsights</code>.</p>
     pub fn name(&self) -> std::option::Option<&crate::types::ClusterSettingName> {
         self.name.as_ref()
     }
-    /// <p>The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>. </p>
-    /// <p>If you set <code>name</code> to <code>containerInsights</code> and <code>value</code> to <code>enabled</code>, CloudWatch Container Insights will be on for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
+    /// <p>The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -38,12 +36,12 @@ pub struct ClusterSettingBuilder {
     pub(crate) value: std::option::Option<std::string::String>,
 }
 impl ClusterSettingBuilder {
-    /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
+    /// <p>The name of the cluster setting. The only supported value is <code>containerInsights</code>.</p>
     pub fn name(mut self, input: crate::types::ClusterSettingName) -> Self {
         self.name = Some(input);
         self
     }
-    /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
+    /// <p>The name of the cluster setting. The only supported value is <code>containerInsights</code>.</p>
     pub fn set_name(
         mut self,
         input: std::option::Option<crate::types::ClusterSettingName>,
@@ -51,14 +49,12 @@ impl ClusterSettingBuilder {
         self.name = input;
         self
     }
-    /// <p>The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>. </p>
-    /// <p>If you set <code>name</code> to <code>containerInsights</code> and <code>value</code> to <code>enabled</code>, CloudWatch Container Insights will be on for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
+    /// <p>The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>. </p>
-    /// <p>If you set <code>name</code> to <code>containerInsights</code> and <code>value</code> to <code>enabled</code>, CloudWatch Container Insights will be on for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
+    /// <p>The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.value = input;
         self

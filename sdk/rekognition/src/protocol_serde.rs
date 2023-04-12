@@ -16,8 +16,6 @@ pub(crate) mod shape_create_collection;
 
 pub(crate) mod shape_create_dataset;
 
-pub(crate) mod shape_create_face_liveness_session;
-
 pub(crate) mod shape_create_project;
 
 pub(crate) mod shape_create_project_version;
@@ -69,8 +67,6 @@ pub(crate) mod shape_get_celebrity_recognition;
 pub(crate) mod shape_get_content_moderation;
 
 pub(crate) mod shape_get_face_detection;
-
-pub(crate) mod shape_get_face_liveness_session_results;
 
 pub(crate) mod shape_get_face_search;
 
@@ -156,8 +152,6 @@ pub(crate) mod shape_create_collection_input;
 
 pub(crate) mod shape_create_dataset_input;
 
-pub(crate) mod shape_create_face_liveness_session_input;
-
 pub(crate) mod shape_create_project_input;
 
 pub(crate) mod shape_create_project_version_input;
@@ -209,8 +203,6 @@ pub(crate) mod shape_get_celebrity_recognition_input;
 pub(crate) mod shape_get_content_moderation_input;
 
 pub(crate) mod shape_get_face_detection_input;
-
-pub(crate) mod shape_get_face_liveness_session_results_input;
 
 pub(crate) mod shape_get_face_search_input;
 
@@ -280,8 +272,6 @@ pub(crate) mod shape_search_faces_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
-pub(crate) mod shape_session_not_found_exception;
-
 pub(crate) mod shape_start_celebrity_recognition_input;
 
 pub(crate) mod shape_start_content_moderation_input;
@@ -320,10 +310,6 @@ pub(crate) mod shape_video_too_large_exception;
 
 pub(crate) mod shape_audio_metadata_list;
 
-pub(crate) mod shape_audit_image;
-
-pub(crate) mod shape_audit_images;
-
 pub(crate) mod shape_bounding_box;
 
 pub(crate) mod shape_celebrity_list;
@@ -341,8 +327,6 @@ pub(crate) mod shape_compared_face_list;
 pub(crate) mod shape_compared_source_image_face;
 
 pub(crate) mod shape_content_moderation_detections;
-
-pub(crate) mod shape_create_face_liveness_session_request_settings;
 
 pub(crate) mod shape_custom_labels;
 
@@ -529,8 +513,6 @@ pub(crate) mod shape_kinesis_video_stream_start_selector;
 pub(crate) mod shape_label;
 
 pub(crate) mod shape_label_detection;
-
-pub(crate) mod shape_liveness_output_config;
 
 pub(crate) mod shape_moderation_label;
 

@@ -105,23 +105,6 @@ pub fn de_update_stream_processor_http_error(
                                                     }
             tmp
         }),
-        "ResourceInUseException" => crate::operation::update_stream_processor::UpdateStreamProcessorError::ResourceInUseException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_stream_processor::UpdateStreamProcessorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
         "ResourceNotFoundException" => crate::operation::update_stream_processor::UpdateStreamProcessorError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =

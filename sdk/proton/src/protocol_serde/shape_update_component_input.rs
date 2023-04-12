@@ -24,8 +24,5 @@ pub fn ser_update_component_input(
     if let Some(var_7) = &input.template_file {
         object.key("templateFile").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.client_token {
-        object.key("clientToken").string(var_8.as_str());
-    }
     Ok(())
 }

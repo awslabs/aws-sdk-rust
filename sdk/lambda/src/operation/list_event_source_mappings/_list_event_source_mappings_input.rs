@@ -10,7 +10,6 @@ pub struct ListEventSourceMappingsInput {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
@@ -40,7 +39,6 @@ impl ListEventSourceMappingsInput {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
@@ -92,7 +90,6 @@ impl ListEventSourceMappingsInputBuilder {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_source_arn = Some(input.into());
@@ -105,7 +102,6 @@ impl ListEventSourceMappingsInputBuilder {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.event_source_arn = input;

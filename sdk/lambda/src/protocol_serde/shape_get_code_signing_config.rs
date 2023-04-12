@@ -24,6 +24,23 @@ pub fn de_get_code_signing_config_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidParameterValueException" => crate::operation::get_code_signing_config::GetCodeSigningConfigError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_code_signing_config::GetCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::get_code_signing_config::GetCodeSigningConfigError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
@@ -49,23 +66,6 @@ pub fn de_get_code_signing_config_http_error(
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_code_signing_config::GetCodeSigningConfigError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidParameterValueException" => crate::operation::get_code_signing_config::GetCodeSigningConfigError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_code_signing_config::GetCodeSigningConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

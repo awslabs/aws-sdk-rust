@@ -12,7 +12,7 @@ pub struct BatchExecuteStatementInput {
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
@@ -44,7 +44,7 @@ impl BatchExecuteStatementInput {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
@@ -135,12 +135,12 @@ impl BatchExecuteStatementInputBuilder {
         self.secret_arn = input;
         self
     }
-    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_user = Some(input.into());
         self
     }
-    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.db_user = input;
         self

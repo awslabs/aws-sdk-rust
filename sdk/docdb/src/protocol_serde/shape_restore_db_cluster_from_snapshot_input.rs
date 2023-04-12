@@ -93,11 +93,6 @@ pub fn ser_restore_db_cluster_from_snapshot_input_input(
     if let Some(var_36) = &input.deletion_protection {
         scope_35.boolean(*var_36);
     }
-    #[allow(unused_mut)]
-    let mut scope_37 = writer.prefix("DBClusterParameterGroupName");
-    if let Some(var_38) = &input.db_cluster_parameter_group_name {
-        scope_37.string(var_38);
-    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

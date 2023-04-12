@@ -157,9 +157,6 @@ pub(crate) mod shape___list_of_output_group_detail;
 pub(crate) mod shape___list_of_queue_transition;
 
 #[allow(non_snake_case)]
-pub(crate) mod shape___list_of_warning_group;
-
-#[allow(non_snake_case)]
 pub(crate) mod shape___map_of__string;
 
 pub(crate) mod shape_audio_description;
@@ -287,8 +284,6 @@ pub(crate) mod shape_video_codec_settings;
 pub(crate) mod shape_video_preprocessor;
 
 pub(crate) mod shape_video_selector;
-
-pub(crate) mod shape_warning_group;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape___list_of_id3_insertion;

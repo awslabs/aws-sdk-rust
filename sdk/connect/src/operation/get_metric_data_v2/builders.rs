@@ -106,13 +106,13 @@ impl GetMetricDataV2FluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
@@ -365,7 +365,6 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ABANDONED_IN_X
@@ -373,7 +372,6 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_DISCONNECTED
@@ -572,7 +570,6 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ABANDONED_IN_X
@@ -580,7 +577,6 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_DISCONNECTED

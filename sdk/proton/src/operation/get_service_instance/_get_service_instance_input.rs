@@ -6,7 +6,7 @@ pub struct GetServiceInstanceInput {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the service that you want the service instance input for.</p>
+    /// <p>The name of the service that the service instance belongs to.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
@@ -15,7 +15,7 @@ impl GetServiceInstanceInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name of the service that you want the service instance input for.</p>
+    /// <p>The name of the service that the service instance belongs to.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
@@ -46,12 +46,12 @@ impl GetServiceInstanceInputBuilder {
         self.name = input;
         self
     }
-    /// <p>The name of the service that you want the service instance input for.</p>
+    /// <p>The name of the service that the service instance belongs to.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.service_name = Some(input.into());
         self
     }
-    /// <p>The name of the service that you want the service instance input for.</p>
+    /// <p>The name of the service that the service instance belongs to.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.service_name = input;
         self

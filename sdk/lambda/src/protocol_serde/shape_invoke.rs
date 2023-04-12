@@ -73,15 +73,15 @@ pub fn de_invoke_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => {
-            crate::operation::invoke::InvokeError::ResourceNotFoundException({
+        "EC2AccessDeniedException" => {
+            crate::operation::invoke::InvokeError::Ec2AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        crate::types::error::builders::Ec2AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    output = crate::protocol_serde::shape_ec2_access_denied_exception::de_ec2_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -91,14 +91,14 @@ pub fn de_invoke_http_error(
                 tmp
             })
         }
-        "KMSNotFoundException" => crate::operation::invoke::InvokeError::KmsNotFoundException({
+        "EC2ThrottledException" => crate::operation::invoke::InvokeError::Ec2ThrottledException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output =
-                    crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
+                    crate::types::error::builders::Ec2ThrottledExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                output = crate::protocol_serde::shape_ec2_throttled_exception::de_ec2_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -107,31 +107,15 @@ pub fn de_invoke_http_error(
             }
             tmp
         }),
-        "SnapStartException" => crate::operation::invoke::InvokeError::SnapStartException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::types::error::builders::SnapStartExceptionBuilder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_snap_start_exception::de_snap_start_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidSubnetIDException" => {
-            crate::operation::invoke::InvokeError::InvalidSubnetIdException({
+        "EC2UnexpectedException" => {
+            crate::operation::invoke::InvokeError::Ec2UnexpectedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::InvalidSubnetIdExceptionBuilder::default();
+                        crate::types::error::builders::Ec2UnexpectedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_subnet_id_exception::de_invalid_subnet_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    output = crate::protocol_serde::shape_ec2_unexpected_exception::de_ec2_unexpected_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -141,40 +125,6 @@ pub fn de_invoke_http_error(
                 tmp
             })
         }
-        "ServiceException" => {
-            crate::operation::invoke::InvokeError::ServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "KMSDisabledException" => crate::operation::invoke::InvokeError::KmsDisabledException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::types::error::builders::KmsDisabledExceptionBuilder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_kms_disabled_exception::de_kms_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "EFSIOException" => crate::operation::invoke::InvokeError::EfsioException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -229,19 +179,15 @@ pub fn de_invoke_http_error(
                 tmp
             })
         }
-        "TooManyRequestsException" => {
-            crate::operation::invoke::InvokeError::TooManyRequestsException({
+        "EFSMountTimeoutException" => {
+            crate::operation::invoke::InvokeError::EfsMountTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                        crate::types::error::builders::EfsMountTimeoutExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::operation::invoke::InvokeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
+                    output = crate::protocol_serde::shape_efs_mount_timeout_exception::de_efs_mount_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -251,33 +197,15 @@ pub fn de_invoke_http_error(
                 tmp
             })
         }
-        "ResourceNotReadyException" => {
-            crate::operation::invoke::InvokeError::ResourceNotReadyException({
+        "ENILimitReachedException" => {
+            crate::operation::invoke::InvokeError::EniLimitReachedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::ResourceNotReadyExceptionBuilder::default();
+                        crate::types::error::builders::EniLimitReachedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_ready_exception::de_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidZipFileException" => {
-            crate::operation::invoke::InvokeError::InvalidZipFileException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidZipFileExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_zip_file_exception::de_invalid_zip_file_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    output = crate::protocol_serde::shape_eni_limit_reached_exception::de_eni_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -321,48 +249,15 @@ pub fn de_invoke_http_error(
                 tmp
             })
         }
-        "SnapStartTimeoutException" => {
-            crate::operation::invoke::InvokeError::SnapStartTimeoutException({
+        "InvalidRuntimeException" => {
+            crate::operation::invoke::InvokeError::InvalidRuntimeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::SnapStartTimeoutExceptionBuilder::default();
+                        crate::types::error::builders::InvalidRuntimeExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snap_start_timeout_exception::de_snap_start_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "EC2ThrottledException" => crate::operation::invoke::InvokeError::Ec2ThrottledException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::types::error::builders::Ec2ThrottledExceptionBuilder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_ec2_throttled_exception::de_ec2_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "SubnetIPAddressLimitReachedException" => {
-            crate::operation::invoke::InvokeError::SubnetIpAddressLimitReachedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SubnetIpAddressLimitReachedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_subnet_ip_address_limit_reached_exception::de_subnet_ip_address_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_runtime_exception::de_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -389,15 +284,15 @@ pub fn de_invoke_http_error(
                 tmp
             })
         }
-        "RequestTooLargeException" => {
-            crate::operation::invoke::InvokeError::RequestTooLargeException({
+        "InvalidSubnetIDException" => {
+            crate::operation::invoke::InvokeError::InvalidSubnetIdException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::RequestTooLargeExceptionBuilder::default();
+                        crate::types::error::builders::InvalidSubnetIdExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_request_too_large_exception::de_request_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_subnet_id_exception::de_invalid_subnet_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -407,122 +302,15 @@ pub fn de_invoke_http_error(
                 tmp
             })
         }
-        "UnsupportedMediaTypeException" => {
-            crate::operation::invoke::InvokeError::UnsupportedMediaTypeException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnsupportedMediaTypeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_media_type_exception::de_unsupported_media_type_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "EFSMountTimeoutException" => {
-            crate::operation::invoke::InvokeError::EfsMountTimeoutException({
+        "InvalidZipFileException" => {
+            crate::operation::invoke::InvokeError::InvalidZipFileException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::EfsMountTimeoutExceptionBuilder::default();
+                        crate::types::error::builders::InvalidZipFileExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_efs_mount_timeout_exception::de_efs_mount_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ENILimitReachedException" => {
-            crate::operation::invoke::InvokeError::EniLimitReachedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::EniLimitReachedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_eni_limit_reached_exception::de_eni_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "SnapStartNotReadyException" => {
-            crate::operation::invoke::InvokeError::SnapStartNotReadyException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::SnapStartNotReadyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_snap_start_not_ready_exception::de_snap_start_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "EC2UnexpectedException" => {
-            crate::operation::invoke::InvokeError::Ec2UnexpectedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::Ec2UnexpectedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_ec2_unexpected_exception::de_ec2_unexpected_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "EC2AccessDeniedException" => {
-            crate::operation::invoke::InvokeError::Ec2AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::Ec2AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_ec2_access_denied_exception::de_ec2_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRuntimeException" => {
-            crate::operation::invoke::InvokeError::InvalidRuntimeException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidRuntimeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_runtime_exception::de_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_zip_file_exception::de_invalid_zip_file_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -550,6 +338,22 @@ pub fn de_invoke_http_error(
                 tmp
             })
         }
+        "KMSDisabledException" => crate::operation::invoke::InvokeError::KmsDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output =
+                    crate::types::error::builders::KmsDisabledExceptionBuilder::default();
+                let _ = response;
+                output = crate::protocol_serde::shape_kms_disabled_exception::de_kms_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "KMSInvalidStateException" => {
             crate::operation::invoke::InvokeError::KmsInvalidStateException({
                 #[allow(unused_mut)]
@@ -568,6 +372,40 @@ pub fn de_invoke_http_error(
                 tmp
             })
         }
+        "KMSNotFoundException" => crate::operation::invoke::InvokeError::KmsNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output =
+                    crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
+                let _ = response;
+                output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestTooLargeException" => {
+            crate::operation::invoke::InvokeError::RequestTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::RequestTooLargeExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_request_too_large_exception::de_request_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceConflictException" => {
             crate::operation::invoke::InvokeError::ResourceConflictException({
                 #[allow(unused_mut)]
@@ -577,6 +415,168 @@ pub fn de_invoke_http_error(
                         crate::types::error::builders::ResourceConflictExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::invoke::InvokeError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotReadyException" => {
+            crate::operation::invoke::InvokeError::ResourceNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotReadyExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_ready_exception::de_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::operation::invoke::InvokeError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "SnapStartException" => crate::operation::invoke::InvokeError::SnapStartException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output =
+                    crate::types::error::builders::SnapStartExceptionBuilder::default();
+                let _ = response;
+                output = crate::protocol_serde::shape_snap_start_exception::de_snap_start_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "SnapStartNotReadyException" => {
+            crate::operation::invoke::InvokeError::SnapStartNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::SnapStartNotReadyExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_snap_start_not_ready_exception::de_snap_start_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "SnapStartTimeoutException" => {
+            crate::operation::invoke::InvokeError::SnapStartTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::SnapStartTimeoutExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_snap_start_timeout_exception::de_snap_start_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "SubnetIPAddressLimitReachedException" => {
+            crate::operation::invoke::InvokeError::SubnetIpAddressLimitReachedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SubnetIpAddressLimitReachedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_subnet_ip_address_limit_reached_exception::de_subnet_ip_address_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::operation::invoke::InvokeError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::invoke::InvokeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnsupportedMediaTypeException" => {
+            crate::operation::invoke::InvokeError::UnsupportedMediaTypeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedMediaTypeExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_media_type_exception::de_unsupported_media_type_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

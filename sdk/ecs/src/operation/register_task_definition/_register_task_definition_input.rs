@@ -110,7 +110,7 @@ pub struct RegisterTaskDefinitionInput {
     pub inference_accelerators:
         std::option::Option<std::vec::Vec<crate::types::InferenceAccelerator>>,
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note>
-    /// <p>For tasks using the Fargate launch type, the task requires the following platforms:</p>
+    /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
     /// <ul>
     /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
     /// </ul>
@@ -248,7 +248,7 @@ impl RegisterTaskDefinitionInput {
         self.inference_accelerators.as_deref()
     }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note>
-    /// <p>For tasks using the Fargate launch type, the task requires the following platforms:</p>
+    /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
     /// <ul>
     /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
     /// </ul>
@@ -631,7 +631,7 @@ impl RegisterTaskDefinitionInputBuilder {
         self
     }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note>
-    /// <p>For tasks using the Fargate launch type, the task requires the following platforms:</p>
+    /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
     /// <ul>
     /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
     /// </ul>
@@ -641,7 +641,7 @@ impl RegisterTaskDefinitionInputBuilder {
         self
     }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note>
-    /// <p>For tasks using the Fargate launch type, the task requires the following platforms:</p>
+    /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
     /// <ul>
     /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
     /// </ul>

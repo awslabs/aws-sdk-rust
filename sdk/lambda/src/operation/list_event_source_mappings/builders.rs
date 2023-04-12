@@ -86,7 +86,6 @@ impl ListEventSourceMappingsFluentBuilder {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.event_source_arn(input.into());
@@ -99,7 +98,6 @@ impl ListEventSourceMappingsFluentBuilder {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_event_source_arn(input);

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystem {
-    /// <p>The Amazon Web Services account that created the file system. If the file system was created by a user in IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
+    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
@@ -87,7 +87,7 @@ pub struct FileSystem {
     pub open_zfs_configuration: std::option::Option<crate::types::OpenZfsFileSystemConfiguration>,
 }
 impl FileSystem {
-    /// <p>The Amazon Web Services account that created the file system. If the file system was created by a user in IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
+    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
     pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
@@ -237,12 +237,12 @@ pub struct FileSystemBuilder {
         std::option::Option<crate::types::OpenZfsFileSystemConfiguration>,
 }
 impl FileSystemBuilder {
-    /// <p>The Amazon Web Services account that created the file system. If the file system was created by a user in IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
+    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.owner_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account that created the file system. If the file system was created by a user in IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
+    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.owner_id = input;
         self

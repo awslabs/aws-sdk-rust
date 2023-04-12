@@ -10,7 +10,6 @@ pub struct CreateEventSourceMappingInput {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
@@ -37,7 +36,6 @@ pub struct CreateEventSourceMappingInput {
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -45,32 +43,32 @@ pub struct CreateEventSourceMappingInput {
     #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::types::FilterCriteria>,
     /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
+    /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
     #[doc(hidden)]
     pub parallelization_factor: std::option::Option<i32>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     #[doc(hidden)]
     pub starting_position: std::option::Option<crate::types::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     #[doc(hidden)]
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     #[doc(hidden)]
     pub destination_config: std::option::Option<crate::types::DestinationConfig>,
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
     #[doc(hidden)]
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
-    /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
     #[doc(hidden)]
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     #[doc(hidden)]
     pub maximum_retry_attempts: std::option::Option<i32>,
-    /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     #[doc(hidden)]
     pub tumbling_window_in_seconds: std::option::Option<i32>,
     /// <p>The name of the Kafka topic.</p>
@@ -86,7 +84,7 @@ pub struct CreateEventSourceMappingInput {
     /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
     #[doc(hidden)]
     pub self_managed_event_source: std::option::Option<crate::types::SelfManagedEventSource>,
-    /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     #[doc(hidden)]
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::types::FunctionResponseType>>,
@@ -114,7 +112,6 @@ impl CreateEventSourceMappingInput {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
@@ -144,7 +141,6 @@ impl CreateEventSourceMappingInput {
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
@@ -154,16 +150,16 @@ impl CreateEventSourceMappingInput {
         self.filter_criteria.as_ref()
     }
     /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
+    /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
     pub fn parallelization_factor(&self) -> std::option::Option<i32> {
         self.parallelization_factor
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub fn starting_position(&self) -> std::option::Option<&crate::types::EventSourcePosition> {
         self.starting_position.as_ref()
     }
@@ -171,23 +167,23 @@ impl CreateEventSourceMappingInput {
     pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub fn destination_config(&self) -> std::option::Option<&crate::types::DestinationConfig> {
         self.destination_config.as_ref()
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
     pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_record_age_in_seconds
     }
-    /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
     pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
         self.bisect_batch_on_function_error
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
         self.maximum_retry_attempts
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
@@ -211,7 +207,7 @@ impl CreateEventSourceMappingInput {
     ) -> std::option::Option<&crate::types::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
-    /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(
         &self,
     ) -> std::option::Option<&[crate::types::FunctionResponseType]> {
@@ -290,7 +286,6 @@ impl CreateEventSourceMappingInputBuilder {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_source_arn = Some(input.into());
@@ -303,7 +298,6 @@ impl CreateEventSourceMappingInputBuilder {
     /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
     pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.event_source_arn = input;
@@ -355,7 +349,6 @@ impl CreateEventSourceMappingInputBuilder {
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(mut self, input: i32) -> Self {
         self.batch_size = Some(input);
@@ -369,7 +362,6 @@ impl CreateEventSourceMappingInputBuilder {
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
         self.batch_size = input;
@@ -389,14 +381,14 @@ impl CreateEventSourceMappingInputBuilder {
         self
     }
     /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
         self.maximum_batching_window_in_seconds = Some(input);
         self
     }
     /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn set_maximum_batching_window_in_seconds(
         mut self,
@@ -405,22 +397,22 @@ impl CreateEventSourceMappingInputBuilder {
         self.maximum_batching_window_in_seconds = input;
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
+    /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
     pub fn parallelization_factor(mut self, input: i32) -> Self {
         self.parallelization_factor = Some(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
+    /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
     pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
         self.parallelization_factor = input;
         self
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub fn starting_position(mut self, input: crate::types::EventSourcePosition) -> Self {
         self.starting_position = Some(input);
         self
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub fn set_starting_position(
         mut self,
         input: std::option::Option<crate::types::EventSourcePosition>,
@@ -441,12 +433,12 @@ impl CreateEventSourceMappingInputBuilder {
         self.starting_position_timestamp = input;
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.destination_config = Some(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub fn set_destination_config(
         mut self,
         input: std::option::Option<crate::types::DestinationConfig>,
@@ -454,42 +446,42 @@ impl CreateEventSourceMappingInputBuilder {
         self.destination_config = input;
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
     pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
         self.maximum_record_age_in_seconds = Some(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
     pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
         self.maximum_record_age_in_seconds = input;
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
     pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
         self.bisect_batch_on_function_error = Some(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
     pub fn set_bisect_batch_on_function_error(mut self, input: std::option::Option<bool>) -> Self {
         self.bisect_batch_on_function_error = input;
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
         self.maximum_retry_attempts = Some(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
         self.maximum_retry_attempts = input;
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
         self.tumbling_window_in_seconds = Some(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
         self.tumbling_window_in_seconds = input;
         self
@@ -574,14 +566,14 @@ impl CreateEventSourceMappingInputBuilder {
     ///
     /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
     ///
-    /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(mut self, input: crate::types::FunctionResponseType) -> Self {
         let mut v = self.function_response_types.unwrap_or_default();
         v.push(input);
         self.function_response_types = Some(v);
         self
     }
-    /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn set_function_response_types(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::FunctionResponseType>>,

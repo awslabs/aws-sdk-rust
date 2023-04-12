@@ -78,12 +78,12 @@ impl CreateGroupFluentBuilder {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
-    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self

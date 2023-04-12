@@ -64,11 +64,6 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>The name of the DB cluster parameter group to associate with this DB cluster.</p>
-    /// <p> <i>Type:</i> String. &nbsp; &nbsp; &nbsp; <i>Required:</i> No.</p>
-    /// <p>If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
-    pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
@@ -143,12 +138,6 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The name of the DB cluster parameter group to associate with this DB cluster.</p>
-    /// <p> <i>Type:</i> String. &nbsp; &nbsp; &nbsp; <i>Required:</i> No.</p>
-    /// <p>If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
-        self.db_cluster_parameter_group_name.as_deref()
-    }
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
@@ -174,7 +163,6 @@ pub struct RestoreDbClusterFromSnapshotInputBuilder {
     pub(crate) enable_cloudwatch_logs_exports:
         std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) deletion_protection: std::option::Option<bool>,
-    pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -390,26 +378,6 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
         self.deletion_protection = input;
         self
     }
-    /// <p>The name of the DB cluster parameter group to associate with this DB cluster.</p>
-    /// <p> <i>Type:</i> String. &nbsp; &nbsp; &nbsp; <i>Required:</i> No.</p>
-    /// <p>If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
-        self.db_cluster_parameter_group_name = Some(input.into());
-        self
-    }
-    /// <p>The name of the DB cluster parameter group to associate with this DB cluster.</p>
-    /// <p> <i>Type:</i> String. &nbsp; &nbsp; &nbsp; <i>Required:</i> No.</p>
-    /// <p>If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_cluster_parameter_group_name = input;
-        self
-    }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
     pub fn build(
         self,
@@ -431,7 +399,6 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
                 kms_key_id: self.kms_key_id,
                 enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
                 deletion_protection: self.deletion_protection,
-                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
             },
         )
     }

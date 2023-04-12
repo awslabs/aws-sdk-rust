@@ -24,14 +24,14 @@ pub fn de_get_function_url_config_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::get_function_url_config::GetFunctionUrlConfigError::ResourceNotFoundException({
+        "InvalidParameterValueException" => crate::operation::get_function_url_config::GetFunctionUrlConfigError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_url_config::GetFunctionUrlConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_url_config::GetFunctionUrlConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -41,18 +41,14 @@ pub fn de_get_function_url_config_http_error(
                                                     }
             tmp
         }),
-        "TooManyRequestsException" => crate::operation::get_function_url_config::GetFunctionUrlConfigError::TooManyRequestsException({
+        "ResourceNotFoundException" => crate::operation::get_function_url_config::GetFunctionUrlConfigError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_url_config::GetFunctionUrlConfigError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::operation::get_function_url_config::GetFunctionUrlConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_url_config::GetFunctionUrlConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -79,14 +75,18 @@ pub fn de_get_function_url_config_http_error(
                                                     }
             tmp
         }),
-        "InvalidParameterValueException" => crate::operation::get_function_url_config::GetFunctionUrlConfigError::InvalidParameterValueException({
+        "TooManyRequestsException" => crate::operation::get_function_url_config::GetFunctionUrlConfigError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_url_config::GetFunctionUrlConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_url_config::GetFunctionUrlConfigError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::get_function_url_config::GetFunctionUrlConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -180,18 +180,6 @@ pub(crate) fn de_get_function_url_config(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "InvokeMode" => {
-                        builder = builder.set_invoke_mode(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::types::InvokeMode::from(u.as_ref()))
-                            })
                             .transpose()?,
                         );
                     }

@@ -7,7 +7,7 @@ impl UpdateComponentInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -35,9 +35,6 @@ impl UpdateComponentInput {
             ),
             Err(e) => (Err(e), None),
         };
-        if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::update_component::UpdateComponentInput,

@@ -169,10 +169,10 @@ pub type ListCodeSigningConfigsErrorKind = ListCodeSigningConfigsError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCodeSigningConfigsError {
-    /// <p>The Lambda service encountered an internal error.</p>
-    ServiceException(crate::types::error::ServiceException),
     /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::types::error::ServiceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -191,8 +191,8 @@ impl aws_smithy_http::result::CreateUnhandledError for ListCodeSigningConfigsErr
 impl std::fmt::Display for ListCodeSigningConfigsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::ServiceException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::ServiceException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -200,10 +200,10 @@ impl std::fmt::Display for ListCodeSigningConfigsError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ListCodeSigningConfigsError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ServiceException(_inner) => {
+            Self::InvalidParameterValueException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::InvalidParameterValueException(_inner) => {
+            Self::ServiceException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -253,25 +253,25 @@ impl ListCodeSigningConfigsError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::ServiceException(e) => e.meta(),
             Self::InvalidParameterValueException(e) => e.meta(),
+            Self::ServiceException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
-    }
-    /// Returns `true` if the error kind is `ListCodeSigningConfigsError::ServiceException`.
-    pub fn is_service_exception(&self) -> bool {
-        matches!(self, Self::ServiceException(_))
     }
     /// Returns `true` if the error kind is `ListCodeSigningConfigsError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValueException(_))
     }
+    /// Returns `true` if the error kind is `ListCodeSigningConfigsError::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(self, Self::ServiceException(_))
+    }
 }
 impl std::error::Error for ListCodeSigningConfigsError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::ServiceException(_inner) => Some(_inner),
             Self::InvalidParameterValueException(_inner) => Some(_inner),
+            Self::ServiceException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

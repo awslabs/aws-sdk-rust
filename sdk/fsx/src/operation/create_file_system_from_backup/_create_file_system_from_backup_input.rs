@@ -7,7 +7,7 @@ pub struct CreateFileSystemFromBackupInput {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
-    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
@@ -25,7 +25,7 @@ pub struct CreateFileSystemFromBackupInput {
     pub windows_configuration:
         std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>,
     /// <p>The Lustre configuration for the file system being created.</p> <note>
-    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
+    /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
@@ -74,7 +74,7 @@ impl CreateFileSystemFromBackupInput {
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
-    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -98,7 +98,7 @@ impl CreateFileSystemFromBackupInput {
         self.windows_configuration.as_ref()
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
-    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
+    /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
@@ -188,12 +188,12 @@ impl CreateFileSystemFromBackupInputBuilder {
         self.backup_id = input;
         self
     }
-    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -277,7 +277,7 @@ impl CreateFileSystemFromBackupInputBuilder {
         self
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
-    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
+    /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
@@ -293,7 +293,7 @@ impl CreateFileSystemFromBackupInputBuilder {
         self
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
-    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
+    /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>

@@ -6,7 +6,7 @@ pub struct CreateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
-    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A string containing the description of the group.</p>
@@ -18,7 +18,7 @@ impl CreateGroupInput {
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
-    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -65,12 +65,12 @@ impl CreateGroupInputBuilder {
         self.identity_store_id = input;
         self
     }
-    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.display_name = Some(input.into());
         self
     }
-    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.display_name = input;
         self

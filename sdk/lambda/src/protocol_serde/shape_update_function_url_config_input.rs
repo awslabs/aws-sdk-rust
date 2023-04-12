@@ -12,8 +12,5 @@ pub fn ser_update_function_url_config_input(
         crate::protocol_serde::shape_cors::ser_cors(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.invoke_mode {
-        object.key("InvokeMode").string(var_4.as_str());
-    }
     Ok(())
 }

@@ -6,19 +6,19 @@ pub struct CreateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the user's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::Name>,
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    /// <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A string containing an alternate name for the user.</p>
     #[doc(hidden)]
     pub nick_name: std::option::Option<std::string::String>,
-    /// <p>A string containing a URL that might be associated with the user.</p>
+    /// <p>A string containing a URL that may be associated with the user.</p>
     #[doc(hidden)]
     pub profile_url: std::option::Option<std::string::String>,
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
@@ -30,19 +30,19 @@ pub struct CreateUserInput {
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
     #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
-    /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
     #[doc(hidden)]
     pub user_type: std::option::Option<std::string::String>,
-    /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
     #[doc(hidden)]
     pub preferred_language: std::option::Option<std::string::String>,
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
-    /// <p>A string containing the time zone of the user.</p>
+    /// <p>A string containing the user's time zone.</p>
     #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
 }
@@ -51,15 +51,15 @@ impl CreateUserInput {
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the user's name.</p>
     pub fn name(&self) -> std::option::Option<&crate::types::Name> {
         self.name.as_ref()
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    /// <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -67,7 +67,7 @@ impl CreateUserInput {
     pub fn nick_name(&self) -> std::option::Option<&str> {
         self.nick_name.as_deref()
     }
-    /// <p>A string containing a URL that might be associated with the user.</p>
+    /// <p>A string containing a URL that may be associated with the user.</p>
     pub fn profile_url(&self) -> std::option::Option<&str> {
         self.profile_url.as_deref()
     }
@@ -83,11 +83,11 @@ impl CreateUserInput {
     pub fn phone_numbers(&self) -> std::option::Option<&[crate::types::PhoneNumber]> {
         self.phone_numbers.as_deref()
     }
-    /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
     pub fn user_type(&self) -> std::option::Option<&str> {
         self.user_type.as_deref()
     }
-    /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
@@ -95,11 +95,11 @@ impl CreateUserInput {
     pub fn preferred_language(&self) -> std::option::Option<&str> {
         self.preferred_language.as_deref()
     }
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
-    /// <p>A string containing the time zone of the user.</p>
+    /// <p>A string containing the user's time zone.</p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
@@ -164,32 +164,32 @@ impl CreateUserInputBuilder {
         self.identity_store_id = input;
         self
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the user's name.</p>
     pub fn name(mut self, input: crate::types::Name) -> Self {
         self.name = Some(input);
         self
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the user's name.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::Name>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    /// <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.display_name = Some(input.into());
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    /// <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.display_name = input;
         self
@@ -204,12 +204,12 @@ impl CreateUserInputBuilder {
         self.nick_name = input;
         self
     }
-    /// <p>A string containing a URL that might be associated with the user.</p>
+    /// <p>A string containing a URL that may be associated with the user.</p>
     pub fn profile_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.profile_url = Some(input.into());
         self
     }
-    /// <p>A string containing a URL that might be associated with the user.</p>
+    /// <p>A string containing a URL that may be associated with the user.</p>
     pub fn set_profile_url(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.profile_url = input;
         self
@@ -271,22 +271,22 @@ impl CreateUserInputBuilder {
         self.phone_numbers = input;
         self
     }
-    /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
     pub fn user_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_type = Some(input.into());
         self
     }
-    /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
     pub fn set_user_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_type = input;
         self
     }
-    /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
         self.title = Some(input.into());
         self
     }
-    /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.title = input;
         self
@@ -304,22 +304,22 @@ impl CreateUserInputBuilder {
         self.preferred_language = input;
         self
     }
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
         self.locale = Some(input.into());
         self
     }
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>A string containing the time zone of the user.</p>
+    /// <p>A string containing the user's time zone.</p>
     pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
         self.timezone = Some(input.into());
         self
     }
-    /// <p>A string containing the time zone of the user.</p>
+    /// <p>A string containing the user's time zone.</p>
     pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.timezone = input;
         self

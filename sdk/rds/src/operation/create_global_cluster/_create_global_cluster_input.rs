@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGlobalClusterInput {
-    /// <p>The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.</p>
+    /// <p>The cluster identifier of the new global database cluster.</p>
     #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional.</p>
@@ -26,7 +26,7 @@ pub struct CreateGlobalClusterInput {
     pub storage_encrypted: std::option::Option<bool>,
 }
 impl CreateGlobalClusterInput {
-    /// <p>The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.</p>
+    /// <p>The cluster identifier of the new global database cluster.</p>
     pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
@@ -77,12 +77,12 @@ pub struct CreateGlobalClusterInputBuilder {
     pub(crate) storage_encrypted: std::option::Option<bool>,
 }
 impl CreateGlobalClusterInputBuilder {
-    /// <p>The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.</p>
+    /// <p>The cluster identifier of the new global database cluster.</p>
     pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.global_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.</p>
+    /// <p>The cluster identifier of the new global database cluster.</p>
     pub fn set_global_cluster_identifier(
         mut self,
         input: std::option::Option<std::string::String>,
