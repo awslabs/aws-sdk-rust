@@ -52,7 +52,7 @@ pub struct Environment {
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     #[doc(hidden)]
     pub provisioning: std::option::Option<crate::types::Provisioning>,
-    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
     #[doc(hidden)]
     pub provisioning_repository: std::option::Option<crate::types::RepositoryBranch>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
@@ -129,7 +129,7 @@ impl Environment {
     pub fn provisioning(&self) -> std::option::Option<&crate::types::Provisioning> {
         self.provisioning.as_ref()
     }
-    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
     pub fn provisioning_repository(&self) -> std::option::Option<&crate::types::RepositoryBranch> {
         self.provisioning_repository.as_ref()
     }
@@ -409,12 +409,12 @@ impl EnvironmentBuilder {
         self.provisioning = input;
         self
     }
-    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
     pub fn provisioning_repository(mut self, input: crate::types::RepositoryBranch) -> Self {
         self.provisioning_repository = Some(input);
         self
     }
-    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
     pub fn set_provisioning_repository(
         mut self,
         input: std::option::Option<crate::types::RepositoryBranch>,

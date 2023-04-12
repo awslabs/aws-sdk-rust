@@ -21,5 +21,8 @@ pub fn ser_update_service_instance_input(
     if let Some(var_6) = &input.template_minor_version {
         object.key("templateMinorVersion").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
+    }
     Ok(())
 }

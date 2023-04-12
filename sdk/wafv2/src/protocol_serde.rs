@@ -244,6 +244,8 @@ pub(crate) mod shape_waf_tag_operation_internal_error_exception;
 
 pub(crate) mod shape_waf_unavailable_entity_exception;
 
+pub(crate) mod shape_association_config;
+
 pub(crate) mod shape_captcha_config;
 
 pub(crate) mod shape_challenge_config;
@@ -354,6 +356,8 @@ pub(crate) mod shape_regular_expression_list;
 
 pub(crate) mod shape_release_summary;
 
+pub(crate) mod shape_request_body_associated_resource_type_config;
+
 pub(crate) mod shape_rule_action;
 
 pub(crate) mod shape_rule_summary;
@@ -433,6 +437,8 @@ pub(crate) mod shape_rate_based_statement;
 pub(crate) mod shape_regex_match_statement;
 
 pub(crate) mod shape_regex_pattern_set_reference_statement;
+
+pub(crate) mod shape_request_body;
 
 pub(crate) mod shape_rule_group_reference_statement;
 

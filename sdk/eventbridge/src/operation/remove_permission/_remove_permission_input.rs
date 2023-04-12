@@ -8,7 +8,7 @@ pub struct RemovePermissionInput {
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether to remove all permissions.</p>
     #[doc(hidden)]
-    pub remove_all_permissions: bool,
+    pub remove_all_permissions: std::option::Option<bool>,
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
     #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl RemovePermissionInput {
         self.statement_id.as_deref()
     }
     /// <p>Specifies whether to remove all permissions.</p>
-    pub fn remove_all_permissions(&self) -> bool {
+    pub fn remove_all_permissions(&self) -> std::option::Option<bool> {
         self.remove_all_permissions
     }
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
@@ -83,7 +83,7 @@ impl RemovePermissionInputBuilder {
     > {
         Ok(crate::operation::remove_permission::RemovePermissionInput {
             statement_id: self.statement_id,
-            remove_all_permissions: self.remove_all_permissions.unwrap_or_default(),
+            remove_all_permissions: self.remove_all_permissions,
             event_bus_name: self.event_bus_name,
         })
     }

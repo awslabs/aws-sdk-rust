@@ -4,11 +4,17 @@ pub use aws_http::request_id::RequestId;
 /// Types for the `CancelChangeSet` operation.
 pub mod cancel_change_set;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DescribeChangeSet` operation.
 pub mod describe_change_set;
 
 /// Types for the `DescribeEntity` operation.
 pub mod describe_entity;
+
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
 
 /// Types for the `ListChangeSets` operation.
 pub mod list_change_sets;
@@ -18,6 +24,9 @@ pub mod list_entities;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `StartChangeSet` operation.
 pub mod start_change_set;

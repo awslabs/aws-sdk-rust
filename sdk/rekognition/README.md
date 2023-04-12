@@ -85,7 +85,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-rekognition = "0.25.1"
+aws-sdk-rekognition = "0.25.2"
 tokio = { version = "1", features = ["full"] }
 ```
 

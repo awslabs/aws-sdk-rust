@@ -27,14 +27,16 @@ pub struct FieldToMatch {
     #[doc(hidden)]
     pub query_string: std::option::Option<crate::types::QueryString>,
     /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. For information about how to handle oversized request bodies, see the <code>Body</code> object configuration. </p>
+    /// <p>A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+    /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration. </p>
     #[doc(hidden)]
     pub body: std::option::Option<crate::types::Body>,
     /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform. </p>
     #[doc(hidden)]
     pub method: std::option::Option<crate::types::Method>,
     /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration. </p>
+    /// <p>A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+    /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration. </p>
     #[doc(hidden)]
     pub json_body: std::option::Option<crate::types::JsonBody>,
     /// <p>Inspect the request headers. You must configure scope and pattern matching filters in the <code>Headers</code> object, to define the set of headers to and the parts of the headers that WAF inspects. </p>
@@ -71,7 +73,8 @@ impl FieldToMatch {
         self.query_string.as_ref()
     }
     /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. For information about how to handle oversized request bodies, see the <code>Body</code> object configuration. </p>
+    /// <p>A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+    /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration. </p>
     pub fn body(&self) -> std::option::Option<&crate::types::Body> {
         self.body.as_ref()
     }
@@ -80,7 +83,8 @@ impl FieldToMatch {
         self.method.as_ref()
     }
     /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration. </p>
+    /// <p>A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+    /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration. </p>
     pub fn json_body(&self) -> std::option::Option<&crate::types::JsonBody> {
         self.json_body.as_ref()
     }
@@ -187,13 +191,15 @@ impl FieldToMatchBuilder {
         self
     }
     /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. For information about how to handle oversized request bodies, see the <code>Body</code> object configuration. </p>
+    /// <p>A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+    /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration. </p>
     pub fn body(mut self, input: crate::types::Body) -> Self {
         self.body = Some(input);
         self
     }
     /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. For information about how to handle oversized request bodies, see the <code>Body</code> object configuration. </p>
+    /// <p>A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+    /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration. </p>
     pub fn set_body(mut self, input: std::option::Option<crate::types::Body>) -> Self {
         self.body = input;
         self
@@ -209,13 +215,15 @@ impl FieldToMatchBuilder {
         self
     }
     /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration. </p>
+    /// <p>A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+    /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration. </p>
     pub fn json_body(mut self, input: crate::types::JsonBody) -> Self {
         self.json_body = Some(input);
         self
     }
     /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration. </p>
+    /// <p>A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+    /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration. </p>
     pub fn set_json_body(mut self, input: std::option::Option<crate::types::JsonBody>) -> Self {
         self.json_body = input;
         self

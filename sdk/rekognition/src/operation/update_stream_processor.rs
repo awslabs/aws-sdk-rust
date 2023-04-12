@@ -176,6 +176,8 @@ pub enum UpdateStreamProcessorError {
     ProvisionedThroughputExceededException(
         crate::types::error::ProvisionedThroughputExceededException,
     ),
+    /// <p>The specified resource is already being used.</p>
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
@@ -202,6 +204,7 @@ impl std::fmt::Display for UpdateStreamProcessorError {
             Self::InternalServerError(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
+            Self::ResourceInUseException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -221,6 +224,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateStreamPro
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ProvisionedThroughputExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ResourceInUseException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ResourceNotFoundException(_inner) => {
@@ -280,6 +286,7 @@ impl UpdateStreamProcessorError {
             Self::InternalServerError(e) => e.meta(),
             Self::InvalidParameterException(e) => e.meta(),
             Self::ProvisionedThroughputExceededException(e) => e.meta(),
+            Self::ResourceInUseException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -301,6 +308,10 @@ impl UpdateStreamProcessorError {
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(self, Self::ProvisionedThroughputExceededException(_))
     }
+    /// Returns `true` if the error kind is `UpdateStreamProcessorError::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(self, Self::ResourceInUseException(_))
+    }
     /// Returns `true` if the error kind is `UpdateStreamProcessorError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -317,6 +328,7 @@ impl std::error::Error for UpdateStreamProcessorError {
             Self::InternalServerError(_inner) => Some(_inner),
             Self::InvalidParameterException(_inner) => Some(_inner),
             Self::ProvisionedThroughputExceededException(_inner) => Some(_inner),
+            Self::ResourceInUseException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ThrottlingException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),

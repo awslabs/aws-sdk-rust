@@ -12,6 +12,15 @@ pub fn ser_media_concurrency(
             aws_smithy_types::Number::NegInt((input.concurrency).into()),
         );
     }
+    if let Some(var_2) = &input.cross_channel_behavior {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("CrossChannelBehavior").start_object();
+        crate::protocol_serde::shape_cross_channel_behavior::ser_cross_channel_behavior(
+            &mut object_3,
+            var_2,
+        )?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -58,6 +67,11 @@ where
                                     )?
                                     .map(i32::try_from)
                                     .transpose()?,
+                                );
+                            }
+                            "CrossChannelBehavior" => {
+                                builder = builder.set_cross_channel_behavior(
+                                    crate::protocol_serde::shape_cross_channel_behavior::de_cross_channel_behavior(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

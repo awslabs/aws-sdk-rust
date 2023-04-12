@@ -1115,6 +1115,8 @@ pub use crate::types::_job_template_list_by::JobTemplateListBy;
 
 pub use crate::types::_job::Job;
 
+pub use crate::types::_warning_group::WarningGroup;
+
 pub use crate::types::_timing::Timing;
 
 pub use crate::types::_job_status::JobStatus;
@@ -2236,6 +2238,8 @@ mod _vp9_quality_tuning_level;
 mod _vp9_rate_control_mode;
 
 mod _vp9_settings;
+
+mod _warning_group;
 
 mod _watermarking_strength;
 

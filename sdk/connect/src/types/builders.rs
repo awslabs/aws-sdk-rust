@@ -49,6 +49,8 @@ pub use crate::types::_routing_profile_queue_reference::RoutingProfileQueueRefer
 
 pub use crate::types::_media_concurrency::MediaConcurrencyBuilder;
 
+pub use crate::types::_cross_channel_behavior::CrossChannelBehaviorBuilder;
+
 pub use crate::types::_quick_connect_config::QuickConnectConfigBuilder;
 
 pub use crate::types::_phone_number_quick_connect_config::PhoneNumberQuickConnectConfigBuilder;

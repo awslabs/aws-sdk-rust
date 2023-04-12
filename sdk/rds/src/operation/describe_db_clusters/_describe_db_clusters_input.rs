@@ -16,6 +16,7 @@ pub struct DescribeDbClustersInput {
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li>
     /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
     /// </ul>
@@ -47,6 +48,7 @@ impl DescribeDbClustersInput {
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li>
     /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
     /// </ul>
@@ -117,6 +119,7 @@ impl DescribeDbClustersInputBuilder {
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li>
     /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
     /// </ul>
@@ -131,6 +134,7 @@ impl DescribeDbClustersInputBuilder {
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li>
     /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
     /// </ul>

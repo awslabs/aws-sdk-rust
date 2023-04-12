@@ -131,6 +131,8 @@ pub use crate::types::_dominant_color::DominantColorBuilder;
 
 pub use crate::types::_person_match::PersonMatchBuilder;
 
+pub use crate::types::_audit_image::AuditImageBuilder;
+
 pub use crate::types::_face_detection::FaceDetectionBuilder;
 
 pub use crate::types::_content_moderation_detection::ContentModerationDetectionBuilder;
@@ -224,6 +226,10 @@ pub use crate::types::_dataset_metadata::DatasetMetadataBuilder;
 pub use crate::types::_dataset_description::DatasetDescriptionBuilder;
 
 pub use crate::types::_dataset_stats::DatasetStatsBuilder;
+
+pub use crate::types::_create_face_liveness_session_request_settings::CreateFaceLivenessSessionRequestSettingsBuilder;
+
+pub use crate::types::_liveness_output_config::LivenessOutputConfigBuilder;
 
 pub use crate::types::_dataset_source::DatasetSourceBuilder;
 

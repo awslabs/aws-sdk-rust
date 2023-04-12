@@ -917,6 +917,12 @@ pub use crate::types::_template_source_analysis::TemplateSourceAnalysisBuilder;
 
 pub use crate::types::_data_set_reference::DataSetReferenceBuilder;
 
+pub use crate::types::_refresh_schedule::RefreshScheduleBuilder;
+
+pub use crate::types::_refresh_frequency::RefreshFrequencyBuilder;
+
+pub use crate::types::_schedule_refresh_on_entity::ScheduleRefreshOnEntityBuilder;
+
 pub use crate::types::_group::GroupBuilder;
 
 pub use crate::types::_ssl_properties::SslPropertiesBuilder;
@@ -1106,6 +1112,14 @@ pub use crate::types::_dashboard_search_filter::DashboardSearchFilterBuilder;
 pub use crate::types::_analysis_summary::AnalysisSummaryBuilder;
 
 pub use crate::types::_analysis_search_filter::AnalysisSearchFilterBuilder;
+
+pub use crate::types::_data_set_refresh_properties::DataSetRefreshPropertiesBuilder;
+
+pub use crate::types::_refresh_configuration::RefreshConfigurationBuilder;
+
+pub use crate::types::_incremental_refresh::IncrementalRefreshBuilder;
+
+pub use crate::types::_lookback_window::LookbackWindowBuilder;
 
 pub use crate::types::_theme_version_summary::ThemeVersionSummaryBuilder;
 

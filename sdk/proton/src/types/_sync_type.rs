@@ -12,6 +12,7 @@
 /// ```text
 /// # let synctype = unimplemented!();
 /// match synctype {
+///     SyncType::ServiceSync => { /* ... */ },
 ///     SyncType::TemplateSync => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,7 +47,11 @@
     std::hash::Hash,
 )]
 pub enum SyncType {
-    #[allow(missing_docs)] // documentation missing in model
+    /// Syncs services and service instances to Proton.
+    ///
+    ServiceSync,
+    /// Syncs environment and service templates to Proton.
+    ///
     TemplateSync,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -54,6 +59,7 @@ pub enum SyncType {
 impl std::convert::From<&str> for SyncType {
     fn from(s: &str) -> Self {
         match s {
+            "SERVICE_SYNC" => SyncType::ServiceSync,
             "TEMPLATE_SYNC" => SyncType::TemplateSync,
             other => SyncType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +76,14 @@ impl SyncType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SyncType::ServiceSync => "SERVICE_SYNC",
             SyncType::TemplateSync => "TEMPLATE_SYNC",
             SyncType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TEMPLATE_SYNC"]
+        &["SERVICE_SYNC", "TEMPLATE_SYNC"]
     }
 }
 impl AsRef<str> for SyncType {

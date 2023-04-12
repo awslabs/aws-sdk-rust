@@ -9,8 +9,8 @@ pub fn ser_delete_repository_input(
     if let Some(var_2) = &input.repository_name {
         object.key("repositoryName").string(var_2.as_str());
     }
-    if input.force {
-        object.key("force").boolean(input.force);
+    if let Some(var_3) = &input.force {
+        object.key("force").boolean(*var_3);
     }
     Ok(())
 }

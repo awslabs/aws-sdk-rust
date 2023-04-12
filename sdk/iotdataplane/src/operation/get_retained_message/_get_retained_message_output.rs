@@ -16,6 +16,11 @@ pub struct GetRetainedMessageOutput {
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     #[doc(hidden)]
     pub last_modified_time: i64,
+    /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    #[doc(hidden)]
+    pub user_properties: std::option::Option<aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl GetRetainedMessageOutput {
@@ -34,6 +39,12 @@ impl GetRetainedMessageOutput {
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
+    }
+    /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    pub fn user_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.user_properties.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetRetainedMessageOutput {
@@ -57,6 +68,7 @@ pub struct GetRetainedMessageOutputBuilder {
     pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     pub(crate) qos: std::option::Option<i32>,
     pub(crate) last_modified_time: std::option::Option<i64>,
+    pub(crate) user_properties: std::option::Option<aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl GetRetainedMessageOutputBuilder {
@@ -100,6 +112,23 @@ impl GetRetainedMessageOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    pub fn user_properties(mut self, input: aws_smithy_types::Blob) -> Self {
+        self.user_properties = Some(input);
+        self
+    }
+    /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    pub fn set_user_properties(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.user_properties = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -116,6 +145,7 @@ impl GetRetainedMessageOutputBuilder {
             payload: self.payload,
             qos: self.qos.unwrap_or_default(),
             last_modified_time: self.last_modified_time.unwrap_or_default(),
+            user_properties: self.user_properties,
             _request_id: self._request_id,
         }
     }

@@ -5,7 +5,7 @@ pub use crate::operation::update_data_repository_association::_update_data_repos
 
 /// Fluent builder constructing a request to `UpdateDataRepositoryAssociation`.
 ///
-/// <p>Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system. Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
+/// <p>Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system. Data repository associations are supported for all file systems except for <code>Scratch_1</code> deployment type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDataRepositoryAssociationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -66,12 +66,12 @@ impl UpdateDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_association_id(input);
         self
     }
-    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,

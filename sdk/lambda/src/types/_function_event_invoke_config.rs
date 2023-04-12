@@ -19,8 +19,8 @@ pub struct FunctionEventInvokeConfig {
     /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
     /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -47,8 +47,8 @@ impl FunctionEventInvokeConfig {
     /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
     /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(&self) -> std::option::Option<&crate::types::DestinationConfig> {
@@ -120,8 +120,8 @@ impl FunctionEventInvokeConfigBuilder {
     /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
     /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
@@ -132,8 +132,8 @@ impl FunctionEventInvokeConfigBuilder {
     /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
     /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn set_destination_config(

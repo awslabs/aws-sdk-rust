@@ -223,7 +223,7 @@ pub type ListJobRunsErrorKind = ListJobRunsError;
 pub enum ListJobRunsError {
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

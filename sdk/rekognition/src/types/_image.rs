@@ -10,7 +10,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Image {
-    /// <p>Blob of image bytes up to 5 MBs.</p>
+    /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
     #[doc(hidden)]
     pub bytes: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Identifies an S3 object as the image source.</p>
@@ -18,7 +18,7 @@ pub struct Image {
     pub s3_object: std::option::Option<crate::types::S3Object>,
 }
 impl Image {
-    /// <p>Blob of image bytes up to 5 MBs.</p>
+    /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
     pub fn bytes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.bytes.as_ref()
     }
@@ -42,12 +42,12 @@ pub struct ImageBuilder {
     pub(crate) s3_object: std::option::Option<crate::types::S3Object>,
 }
 impl ImageBuilder {
-    /// <p>Blob of image bytes up to 5 MBs.</p>
+    /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
     pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
         self.bytes = Some(input);
         self
     }
-    /// <p>Blob of image bytes up to 5 MBs.</p>
+    /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
     pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
         self.bytes = input;
         self

@@ -30,11 +30,14 @@ pub fn ser_list_entities_input(
     if let Some(var_8) = &input.next_token {
         object.key("NextToken").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.sort {
+    if let Some(var_9) = &input.ownership_type {
+        object.key("OwnershipType").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.sort {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Sort").start_object();
-        crate::protocol_serde::shape_sort::ser_sort(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("Sort").start_object();
+        crate::protocol_serde::shape_sort::ser_sort(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

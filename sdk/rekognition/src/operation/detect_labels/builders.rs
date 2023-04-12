@@ -13,7 +13,7 @@ pub use crate::operation::detect_labels::_detect_labels_input::DetectLabelsInput
 /// <p>When using <code>GENERAL_LABELS</code> and/or <code>IMAGE_PROPERTIES</code> you can provide filtering criteria to the Settings parameter. You can filter with sets of individual labels or with label categories. You can specify inclusive filters, exclusive filters, or a combination of inclusive and exclusive filters. For more information on filtering see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html">Detecting Labels in an Image</a>.</p>
 /// <p>You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. The default and upper limit is 1000 labels.</p>
 /// <p> <b>Response Elements</b> </p>
-/// <p> For each object, scene, and concept the API returns one or more labels. The API returns the following types of information regarding labels:</p>
+/// <p> For each object, scene, and concept the API returns one or more labels. The API returns the following types of information about labels:</p>
 /// <ul>
 /// <li> <p> Name - The name of the detected label. </p> </li>
 /// <li> <p> Confidence - The level of confidence in the label assigned to a detected object. </p> </li>
@@ -40,7 +40,7 @@ pub use crate::operation::detect_labels::_detect_labels_input::DetectLabelsInput
 /// <p>In this example, the detection algorithm more precisely identifies the flower as a tulip.</p> <note>
 /// <p>If the object detected is a person, the operation doesn't provide the same facial details that the <code>DetectFaces</code> operation provides.</p>
 /// </note>
-/// <p>This is a stateless API operation. That is, the operation does not persist any data.</p>
+/// <p>This is a stateless API operation that doesn't return any data.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:DetectLabels</code> action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectLabelsFluentBuilder {
@@ -152,12 +152,12 @@ impl DetectLabelsFluentBuilder {
         self.inner = self.inner.set_features(input);
         self
     }
-    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
+    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
     pub fn settings(mut self, input: crate::types::DetectLabelsSettings) -> Self {
         self.inner = self.inner.settings(input);
         self
     }
-    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
+    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
     pub fn set_settings(
         mut self,
         input: std::option::Option<crate::types::DetectLabelsSettings>,

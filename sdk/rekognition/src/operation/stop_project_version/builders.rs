@@ -6,6 +6,7 @@ pub use crate::operation::stop_project_version::_stop_project_version_input::Sto
 /// Fluent builder constructing a request to `StopProjectVersion`.
 ///
 /// <p>Stops a running model. The operation might take a while to complete. To check the current status, call <code>DescribeProjectVersions</code>. </p>
+/// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopProjectVersionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

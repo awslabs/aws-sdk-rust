@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-vpclattice = "0.1.0"
+//! aws-sdk-vpclattice = "0.1.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -39,5 +39,8 @@ pub fn ser_create_component_input(
         }
         array_10.finish();
     }
+    if let Some(var_13) = &input.client_token {
+        object.key("clientToken").string(var_13.as_str());
+    }
     Ok(())
 }

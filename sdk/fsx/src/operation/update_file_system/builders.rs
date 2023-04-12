@@ -6,7 +6,7 @@ pub use crate::operation::update_file_system::_update_file_system_input::UpdateF
 /// Fluent builder constructing a request to `UpdateFileSystem`.
 ///
 /// <p>Use this operation to update the configuration of an existing Amazon FSx file system. You can update multiple properties in a single request.</p>
-/// <p>For Amazon FSx for Windows File Server file systems, you can update the following properties:</p>
+/// <p>For FSx for Windows File Server file systems, you can update the following properties:</p>
 /// <ul>
 /// <li> <p> <code>AuditLogConfiguration</code> </p> </li>
 /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
@@ -16,7 +16,7 @@ pub use crate::operation::update_file_system::_update_file_system_input::UpdateF
 /// <li> <p> <code>ThroughputCapacity</code> </p> </li>
 /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
 /// </ul>
-/// <p>For Amazon FSx for Lustre file systems, you can update the following properties:</p>
+/// <p>For FSx for Lustre file systems, you can update the following properties:</p>
 /// <ul>
 /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
 /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
@@ -26,22 +26,26 @@ pub use crate::operation::update_file_system::_update_file_system_input::UpdateF
 /// <li> <p> <code>StorageCapacity</code> </p> </li>
 /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
 /// </ul>
-/// <p>For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:</p>
+/// <p>For FSx for ONTAP file systems, you can update the following properties:</p>
 /// <ul>
+/// <li> <p> <code>AddRouteTableIds</code> </p> </li>
 /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
 /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
 /// <li> <p> <code>DiskIopsConfiguration</code> </p> </li>
 /// <li> <p> <code>FsxAdminPassword</code> </p> </li>
+/// <li> <p> <code>RemoveRouteTableIds</code> </p> </li>
 /// <li> <p> <code>StorageCapacity</code> </p> </li>
 /// <li> <p> <code>ThroughputCapacity</code> </p> </li>
 /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
 /// </ul>
-/// <p>For the Amazon FSx for OpenZFS file systems, you can update the following properties:</p>
+/// <p>For FSx for OpenZFS file systems, you can update the following properties:</p>
 /// <ul>
 /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
 /// <li> <p> <code>CopyTagsToBackups</code> </p> </li>
 /// <li> <p> <code>CopyTagsToVolumes</code> </p> </li>
 /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
+/// <li> <p> <code>DiskIopsConfiguration</code> </p> </li>
+/// <li> <p> <code>StorageCapacity</code> </p> </li>
 /// <li> <p> <code>ThroughputCapacity</code> </p> </li>
 /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
 /// </ul>
@@ -118,12 +122,12 @@ impl UpdateFileSystemFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
-    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -131,33 +135,35 @@ impl UpdateFileSystemFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server, Amazon FSx for Lustre, or Amazon FSx for NetApp ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
+    /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
     /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
     /// </note>
-    /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.</p>
     /// <p>For Lustre file systems, the storage capacity target value can be the following:</p>
     /// <ul>
     /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p> </li>
     /// <li> <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p> </li>
     /// <li> <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>FSx for Lustre User Guide</i>.</p>
+    /// <p>For FSx for OpenZFS file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>FSx for OpenZFS User Guide</i>.</p>
+    /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.</p>
     /// <p>For ONTAP file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
         self
     }
-    /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server, Amazon FSx for Lustre, or Amazon FSx for NetApp ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
+    /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
     /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
     /// </note>
-    /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.</p>
     /// <p>For Lustre file systems, the storage capacity target value can be the following:</p>
     /// <ul>
     /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p> </li>
     /// <li> <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p> </li>
     /// <li> <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>FSx for Lustre User Guide</i>.</p>
+    /// <p>For FSx for OpenZFS file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>FSx for OpenZFS User Guide</i>.</p>
+    /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.</p>
     /// <p>For ONTAP file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);

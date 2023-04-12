@@ -9,8 +9,8 @@ pub fn ser_delete_rule_input(
     if let Some(var_2) = &input.event_bus_name {
         object.key("EventBusName").string(var_2.as_str());
     }
-    if input.force {
-        object.key("Force").boolean(input.force);
+    if let Some(var_3) = &input.force {
+        object.key("Force").boolean(*var_3);
     }
     Ok(())
 }

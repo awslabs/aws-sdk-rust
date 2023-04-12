@@ -17,14 +17,14 @@ pub fn de_remove_layer_version_permission_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::InvalidParameterValueException({
+        "ResourceNotFoundException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -51,14 +51,18 @@ pub fn de_remove_layer_version_permission_http_error(
                                                     }
             tmp
         }),
-        "ResourceNotFoundException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceNotFoundException({
+        "TooManyRequestsException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -85,18 +89,14 @@ pub fn de_remove_layer_version_permission_http_error(
                                                     }
             tmp
         }),
-        "TooManyRequestsException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::TooManyRequestsException({
+        "InvalidParameterValueException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

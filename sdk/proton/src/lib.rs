@@ -113,7 +113,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-proton = "0.25.1"
+//! aws-sdk-proton = "0.25.2"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

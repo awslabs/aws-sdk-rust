@@ -7,6 +7,7 @@ pub use crate::operation::list_project_policies::_list_project_policies_input::L
 ///
 /// <p>Gets a list of the project policies attached to a project.</p>
 /// <p>To attach a project policy to a project, call <code>PutProjectPolicy</code>. To remove a project policy from a project, call <code>DeleteProjectPolicy</code>.</p>
+/// <p>This operation requires permissions to perform the <code>rekognition:ListProjectPolicies</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProjectPoliciesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

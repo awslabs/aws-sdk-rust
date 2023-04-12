@@ -21,6 +21,15 @@ pub fn ser_redshift_data_parameters(
     if input.with_event {
         object.key("WithEvent").boolean(input.with_event);
     }
+    if let Some(var_6) = &input.sqls {
+        let mut array_7 = object.key("Sqls").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }
 
@@ -99,6 +108,10 @@ where
                                         tokens.next(),
                                     )?,
                                 );
+                            }
+                            "Sqls" => {
+                                builder = builder
+                                    .set_sqls(crate::protocol_serde::shape_sqls::de_sqls(tokens)?);
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }

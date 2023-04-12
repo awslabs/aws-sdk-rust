@@ -8,7 +8,7 @@ pub struct LustreFileSystemConfiguration {
     #[doc(hidden)]
     pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
     /// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
-    /// <p>This data type is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use .</p>
+    /// <p>This data type is not supported on file systems with a data repository association. For file systems with a data repository association, see .</p>
     #[doc(hidden)]
     pub data_repository_configuration:
         std::option::Option<crate::types::DataRepositoryConfiguration>,
@@ -65,7 +65,7 @@ impl LustreFileSystemConfiguration {
         self.weekly_maintenance_start_time.as_deref()
     }
     /// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
-    /// <p>This data type is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use .</p>
+    /// <p>This data type is not supported on file systems with a data repository association. For file systems with a data repository association, see .</p>
     pub fn data_repository_configuration(
         &self,
     ) -> std::option::Option<&crate::types::DataRepositoryConfiguration> {
@@ -171,7 +171,7 @@ impl LustreFileSystemConfigurationBuilder {
         self
     }
     /// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
-    /// <p>This data type is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use .</p>
+    /// <p>This data type is not supported on file systems with a data repository association. For file systems with a data repository association, see .</p>
     pub fn data_repository_configuration(
         mut self,
         input: crate::types::DataRepositoryConfiguration,
@@ -180,7 +180,7 @@ impl LustreFileSystemConfigurationBuilder {
         self
     }
     /// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
-    /// <p>This data type is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use .</p>
+    /// <p>This data type is not supported on file systems with a data repository association. For file systems with a data repository association, see .</p>
     pub fn set_data_repository_configuration(
         mut self,
         input: std::option::Option<crate::types::DataRepositoryConfiguration>,

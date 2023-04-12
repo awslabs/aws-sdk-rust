@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyCustomDbEngineVersionInput {
-    /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
+    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
@@ -32,7 +32,7 @@ pub struct ModifyCustomDbEngineVersionInput {
     pub status: std::option::Option<crate::types::CustomEngineVersionStatus>,
 }
 impl ModifyCustomDbEngineVersionInput {
-    /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
+    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -81,12 +81,12 @@ pub struct ModifyCustomDbEngineVersionInputBuilder {
     pub(crate) status: std::option::Option<crate::types::CustomEngineVersionStatus>,
 }
 impl ModifyCustomDbEngineVersionInputBuilder {
-    /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
+    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
         self.engine = Some(input.into());
         self
     }
-    /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
+    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.engine = input;
         self

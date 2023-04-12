@@ -3,6 +3,8 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
+
 pub use crate::types::error::_provisioned_throughput_exceeded_exception::ProvisionedThroughputExceededExceptionBuilder;
 
 pub use crate::types::error::_invalid_parameter_exception::InvalidParameterExceptionBuilder;
@@ -10,8 +12,6 @@ pub use crate::types::error::_invalid_parameter_exception::InvalidParameterExcep
 pub use crate::types::error::_internal_server_error::InternalServerErrorBuilder;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
-
-pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
 
@@ -36,5 +36,7 @@ pub use crate::types::error::_invalid_policy_revision_id_exception::InvalidPolic
 pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenExceptionBuilder;
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExceptionBuilder;
+
+pub use crate::types::error::_session_not_found_exception::SessionNotFoundExceptionBuilder;
 
 pub use crate::types::error::_human_loop_quota_exceeded_exception::HumanLoopQuotaExceededExceptionBuilder;

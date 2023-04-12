@@ -14,7 +14,7 @@ log = "0.4"
 time = "0.3"
 aws-config= { version = "0.55.0", path = "../../sdk/aws-config" }
 aws-sdk-ec2= { version = "0.25.1", path = "../../sdk/ec2" }
-aws-sdk-lambda= { version = "0.25.1", path = "../../sdk/lambda" }
+aws-sdk-lambda= { version = "0.25.2", path = "../../sdk/lambda" }
 aws-sdk-s3= { version = "0.25.1", path = "../../sdk/s3" }
 
 [dependencies.serde]

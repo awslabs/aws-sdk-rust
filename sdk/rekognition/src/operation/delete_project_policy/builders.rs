@@ -7,6 +7,7 @@ pub use crate::operation::delete_project_policy::_delete_project_policy_input::D
 ///
 /// <p>Deletes an existing project policy.</p>
 /// <p>To get a list of project policies attached to a project, call <code>ListProjectPolicies</code>. To attach a project policy to a project, call <code>PutProjectPolicy</code>.</p>
+/// <p>This operation requires permissions to perform the <code>rekognition:DeleteProjectPolicy</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteProjectPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

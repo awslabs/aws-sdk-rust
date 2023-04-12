@@ -8,10 +8,8 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.55.0", path = "../../sdk/aws-config" }
-aws-sdk-greengrassv2= { version = "0.25.1", path = "../../sdk/greengrassv2" }
+aws-sdk-greengrassv2= { version = "0.25.2", path = "../../sdk/greengrassv2" }
 aws-types= { version = "0.55.0", path = "../../sdk/aws-types" }
-
-[workspace]
 
 [dependencies.tokio]
 version = "1"
@@ -24,3 +22,5 @@ features = ["derive"]
 [dependencies.tracing-subscriber]
 version = "0.3.5"
 features = ["env-filter"]
+
+[workspace]
