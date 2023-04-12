@@ -13512,10 +13512,6 @@
                     {
                         "name": "FAILED",
                         "value": "FAILED"
-                    },
-                    {
-                        "name": "INACTIVE",
-                        "value": "INACTIVE"
                     }
                 ],
                 "smithy.api#length": {
@@ -13543,10 +13539,6 @@
                     {
                         "name": "PRIVATE",
                         "value": "PRIVATE"
-                    },
-                    {
-                        "name": "SERVICE",
-                        "value": "SERVICE"
                     }
                 ],
                 "smithy.api#length": {

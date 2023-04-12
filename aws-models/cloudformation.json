@@ -4442,6 +4442,16 @@
                                         "comparator": "anyStringEquals"
                                     }
                                 }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "Stacks[].StackStatus",
+                                        "expected": "UPDATE_COMPLETE",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
                             }
                         ],
                         "minDelay": 30
