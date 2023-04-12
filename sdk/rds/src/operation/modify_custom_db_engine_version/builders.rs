@@ -72,12 +72,12 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
+    /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
+    /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self

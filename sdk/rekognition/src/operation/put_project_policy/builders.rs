@@ -10,7 +10,6 @@ pub use crate::operation::put_project_policy::_put_project_policy_input::PutProj
 /// <p>The response from <code>PutProjectPolicy</code> is a revision ID for the project policy. You can attach multiple project policies to a project. You can also update an existing project policy by specifying the policy revision ID of the existing policy.</p>
 /// <p>To remove a project policy from a project, call <code>DeleteProjectPolicy</code>. To get a list of project policies attached to a project, call <code>ListProjectPolicies</code>. </p>
 /// <p>You copy a model version by calling <code>CopyProjectVersion</code>.</p>
-/// <p>This operation requires permissions to perform the <code>rekognition:PutProjectPolicy</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutProjectPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

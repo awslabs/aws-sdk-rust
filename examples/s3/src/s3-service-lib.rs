@@ -102,6 +102,7 @@ pub async fn copy_object(
 // snippet-end:[rust.example_code.s3.basics.copy_object]
 
 // snippet-start:[rust.example_code.s3.basics.download_object]
+// snippet-start:[rust.example_code.s3.basics.get_object]
 pub async fn download_object(
     client: &Client,
     bucket_name: &str,
@@ -114,6 +115,7 @@ pub async fn download_object(
         .send()
         .await
 }
+// snippet-end:[rust.example_code.s3.basics.get_object]
 // snippet-end:[rust.example_code.s3.basics.download_object]
 
 // snippet-start:[rust.example_code.s3.basics.upload_object]

@@ -127,22 +127,4 @@ impl CreateFunctionUrlConfigFluentBuilder {
         self.inner = self.inner.set_cors(input);
         self
     }
-    /// <p>Use one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p> </li>
-    /// <li> <p> <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p> </li>
-    /// </ul>
-    pub fn invoke_mode(mut self, input: crate::types::InvokeMode) -> Self {
-        self.inner = self.inner.invoke_mode(input);
-        self
-    }
-    /// <p>Use one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p> </li>
-    /// <li> <p> <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p> </li>
-    /// </ul>
-    pub fn set_invoke_mode(mut self, input: std::option::Option<crate::types::InvokeMode>) -> Self {
-        self.inner = self.inner.set_invoke_mode(input);
-        self
-    }
 }

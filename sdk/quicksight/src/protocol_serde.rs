@@ -36,8 +36,6 @@ pub(crate) mod shape_create_ingestion;
 
 pub(crate) mod shape_create_namespace;
 
-pub(crate) mod shape_create_refresh_schedule;
-
 pub(crate) mod shape_create_template;
 
 pub(crate) mod shape_create_template_alias;
@@ -56,8 +54,6 @@ pub(crate) mod shape_delete_dashboard;
 
 pub(crate) mod shape_delete_data_set;
 
-pub(crate) mod shape_delete_data_set_refresh_properties;
-
 pub(crate) mod shape_delete_data_source;
 
 pub(crate) mod shape_delete_folder;
@@ -71,8 +67,6 @@ pub(crate) mod shape_delete_group_membership;
 pub(crate) mod shape_delete_iam_policy_assignment;
 
 pub(crate) mod shape_delete_namespace;
-
-pub(crate) mod shape_delete_refresh_schedule;
 
 pub(crate) mod shape_delete_template;
 
@@ -108,8 +102,6 @@ pub(crate) mod shape_describe_data_set;
 
 pub(crate) mod shape_describe_data_set_permissions;
 
-pub(crate) mod shape_describe_data_set_refresh_properties;
-
 pub(crate) mod shape_describe_data_source;
 
 pub(crate) mod shape_describe_data_source_permissions;
@@ -131,8 +123,6 @@ pub(crate) mod shape_describe_ingestion;
 pub(crate) mod shape_describe_ip_restriction;
 
 pub(crate) mod shape_describe_namespace;
-
-pub(crate) mod shape_describe_refresh_schedule;
 
 pub(crate) mod shape_describe_template;
 
@@ -184,8 +174,6 @@ pub(crate) mod shape_list_ingestions;
 
 pub(crate) mod shape_list_namespaces;
 
-pub(crate) mod shape_list_refresh_schedules;
-
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_template_aliases;
@@ -203,8 +191,6 @@ pub(crate) mod shape_list_themes;
 pub(crate) mod shape_list_user_groups;
 
 pub(crate) mod shape_list_users;
-
-pub(crate) mod shape_put_data_set_refresh_properties;
 
 pub(crate) mod shape_register_user;
 
@@ -260,8 +246,6 @@ pub(crate) mod shape_update_ip_restriction;
 
 pub(crate) mod shape_update_public_sharing_settings;
 
-pub(crate) mod shape_update_refresh_schedule;
-
 pub(crate) mod shape_update_template;
 
 pub(crate) mod shape_update_template_alias;
@@ -312,8 +296,6 @@ pub(crate) mod shape_create_ingestion_input;
 
 pub(crate) mod shape_create_namespace_input;
 
-pub(crate) mod shape_create_refresh_schedule_input;
-
 pub(crate) mod shape_create_template_alias_input;
 
 pub(crate) mod shape_create_template_input;
@@ -343,8 +325,6 @@ pub(crate) mod shape_limit_exceeded_exception;
 pub(crate) mod shape_list_iam_policy_assignments_input;
 
 pub(crate) mod shape_precondition_not_met_exception;
-
-pub(crate) mod shape_put_data_set_refresh_properties_input;
 
 pub(crate) mod shape_quick_sight_user_not_found_exception;
 
@@ -410,8 +390,6 @@ pub(crate) mod shape_update_ip_restriction_input;
 
 pub(crate) mod shape_update_public_sharing_settings_input;
 
-pub(crate) mod shape_update_refresh_schedule_input;
-
 pub(crate) mod shape_update_template_alias_input;
 
 pub(crate) mod shape_update_template_input;
@@ -469,8 +447,6 @@ pub(crate) mod shape_dashboard_version_definition;
 pub(crate) mod shape_dashboard_version_summary_list;
 
 pub(crate) mod shape_data_set;
-
-pub(crate) mod shape_data_set_refresh_properties;
 
 pub(crate) mod shape_data_set_search_filter;
 
@@ -535,10 +511,6 @@ pub(crate) mod shape_namespaces;
 pub(crate) mod shape_parameters;
 
 pub(crate) mod shape_physical_table;
-
-pub(crate) mod shape_refresh_schedule;
-
-pub(crate) mod shape_refresh_schedules;
 
 pub(crate) mod shape_registered_user_embedding_experience_configuration;
 
@@ -744,10 +716,6 @@ pub(crate) mod shape_rds_parameters;
 
 pub(crate) mod shape_redshift_parameters;
 
-pub(crate) mod shape_refresh_configuration;
-
-pub(crate) mod shape_refresh_frequency;
-
 pub(crate) mod shape_registered_user_dashboard_embedding_configuration;
 
 pub(crate) mod shape_registered_user_dashboard_visual_embedding_configuration;
@@ -858,8 +826,6 @@ pub(crate) mod shape_font;
 
 pub(crate) mod shape_format_configuration;
 
-pub(crate) mod shape_incremental_refresh;
-
 pub(crate) mod shape_input_column;
 
 pub(crate) mod shape_integer_parameter_declaration;
@@ -882,11 +848,7 @@ pub(crate) mod shape_registered_user_dashboard_feature_configurations;
 
 pub(crate) mod shape_rename_column_operation;
 
-pub(crate) mod shape_row_level_permission_tag_rule_configuration_list;
-
 pub(crate) mod shape_row_level_permission_tag_rule_list;
-
-pub(crate) mod shape_schedule_refresh_on_entity;
 
 pub(crate) mod shape_sheet;
 
@@ -1002,8 +964,6 @@ pub(crate) mod shape_layout_list;
 
 pub(crate) mod shape_line_chart_visual;
 
-pub(crate) mod shape_lookback_window;
-
 pub(crate) mod shape_margin_style;
 
 pub(crate) mod shape_number_format_configuration;
@@ -1035,8 +995,6 @@ pub(crate) mod shape_principal_list;
 pub(crate) mod shape_radar_chart_visual;
 
 pub(crate) mod shape_relative_dates_filter;
-
-pub(crate) mod shape_row_level_permission_tag_rule_configuration;
 
 pub(crate) mod shape_sankey_diagram_visual;
 

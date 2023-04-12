@@ -154,15 +154,6 @@ where
                                     .transpose()?,
                                 );
                             }
-                            "executionTimeoutMinutes" => {
-                                builder = builder.set_execution_timeout_minutes(
-                                    aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                                );
-                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

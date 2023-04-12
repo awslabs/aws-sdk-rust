@@ -44,9 +44,6 @@ pub struct Component {
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
     #[doc(hidden)]
     pub service_spec: std::option::Option<std::string::String>,
-    /// <p>The last token the client requested.</p>
-    #[doc(hidden)]
-    pub last_client_request_token: std::option::Option<std::string::String>,
 }
 impl Component {
     /// <p>The name of the component.</p>
@@ -101,10 +98,6 @@ impl Component {
     pub fn service_spec(&self) -> std::option::Option<&str> {
         self.service_spec.as_deref()
     }
-    /// <p>The last token the client requested.</p>
-    pub fn last_client_request_token(&self) -> std::option::Option<&str> {
-        self.last_client_request_token.as_deref()
-    }
 }
 impl std::fmt::Debug for Component {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -131,7 +124,6 @@ impl std::fmt::Debug for Component {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
-        formatter.field("last_client_request_token", &self.last_client_request_token);
         formatter.finish()
     }
 }
@@ -159,7 +151,6 @@ pub struct ComponentBuilder {
     pub(crate) deployment_status: std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) deployment_status_message: std::option::Option<std::string::String>,
     pub(crate) service_spec: std::option::Option<std::string::String>,
-    pub(crate) last_client_request_token: std::option::Option<std::string::String>,
 }
 impl ComponentBuilder {
     /// <p>The name of the component.</p>
@@ -313,19 +304,6 @@ impl ComponentBuilder {
         self.service_spec = input;
         self
     }
-    /// <p>The last token the client requested.</p>
-    pub fn last_client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_client_request_token = Some(input.into());
-        self
-    }
-    /// <p>The last token the client requested.</p>
-    pub fn set_last_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.last_client_request_token = input;
-        self
-    }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
     pub fn build(self) -> crate::types::Component {
         crate::types::Component {
@@ -342,7 +320,6 @@ impl ComponentBuilder {
             deployment_status: self.deployment_status,
             deployment_status_message: self.deployment_status_message,
             service_spec: self.service_spec,
-            last_client_request_token: self.last_client_request_token,
         }
     }
 }
@@ -371,7 +348,6 @@ impl std::fmt::Debug for ComponentBuilder {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
-        formatter.field("last_client_request_token", &self.last_client_request_token);
         formatter.finish()
     }
 }

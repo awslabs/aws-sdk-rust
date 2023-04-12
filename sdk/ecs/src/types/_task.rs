@@ -52,7 +52,7 @@ pub struct Task {
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
     #[doc(hidden)]
     pub desired_status: std::option::Option<std::string::String>,
-    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    /// <p>Determines whether execute command functionality is enabled for this task. If <code>true</code>, execute command functionality is enabled on all the containers in the task.</p>
     #[doc(hidden)]
     pub enable_execute_command: bool,
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
@@ -220,7 +220,7 @@ impl Task {
     pub fn desired_status(&self) -> std::option::Option<&str> {
         self.desired_status.as_deref()
     }
-    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    /// <p>Determines whether execute command functionality is enabled for this task. If <code>true</code>, execute command functionality is enabled on all the containers in the task.</p>
     pub fn enable_execute_command(&self) -> bool {
         self.enable_execute_command
     }
@@ -591,12 +591,12 @@ impl TaskBuilder {
         self.desired_status = input;
         self
     }
-    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    /// <p>Determines whether execute command functionality is enabled for this task. If <code>true</code>, execute command functionality is enabled on all the containers in the task.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {
         self.enable_execute_command = Some(input);
         self
     }
-    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    /// <p>Determines whether execute command functionality is enabled for this task. If <code>true</code>, execute command functionality is enabled on all the containers in the task.</p>
     pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
         self.enable_execute_command = input;
         self

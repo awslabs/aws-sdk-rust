@@ -5,7 +5,7 @@ pub use crate::operation::delete_auth_policy::_delete_auth_policy_input::DeleteA
 
 /// Fluent builder constructing a request to `DeleteAuthPolicy`.
 ///
-/// <p>Deletes the specified auth policy. If an auth is set to <code>AWS_IAM</code> and the auth policy is deleted, all requests will be denied by default. If you are trying to remove the auth policy completely, you must set the auth_type to <code>NONE</code>. If auth is enabled on the resource, but no auth policy is set, all requests will be denied.</p>
+/// <p>Deletes the specified auth policy. If an auth is set to <code>Amazon Web Services_IAM</code> and the auth policy is deleted, all requests will be denied by default. If you are trying to remove the auth policy completely, you must set the auth_type to <code>NONE</code>. If auth is enabled on the resource, but no auth policy is set, all requests will be denied.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAuthPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

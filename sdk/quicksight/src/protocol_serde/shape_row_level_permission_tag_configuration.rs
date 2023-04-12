@@ -18,21 +18,6 @@ pub fn ser_row_level_permission_tag_configuration(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.tag_rule_configurations {
-        let mut array_7 = object.key("TagRuleConfigurations").start_array();
-        for item_8 in var_6 {
-            {
-                let mut array_9 = array_7.value().start_array();
-                for item_10 in item_8 {
-                    {
-                        array_9.value().string(item_10.as_str());
-                    }
-                }
-                array_9.finish();
-            }
-        }
-        array_7.finish();
-    }
     Ok(())
 }
 
@@ -76,11 +61,6 @@ where
                             "TagRules" => {
                                 builder = builder.set_tag_rules(
                                     crate::protocol_serde::shape_row_level_permission_tag_rule_list::de_row_level_permission_tag_rule_list(tokens)?
-                                );
-                            }
-                            "TagRuleConfigurations" => {
-                                builder = builder.set_tag_rule_configurations(
-                                    crate::protocol_serde::shape_row_level_permission_tag_rule_configuration_list::de_row_level_permission_tag_rule_configuration_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

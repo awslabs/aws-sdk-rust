@@ -1121,18 +1121,6 @@ pub use crate::types::_template_source_analysis::TemplateSourceAnalysis;
 
 pub use crate::types::_data_set_reference::DataSetReference;
 
-pub use crate::types::_refresh_schedule::RefreshSchedule;
-
-pub use crate::types::_ingestion_type::IngestionType;
-
-pub use crate::types::_refresh_frequency::RefreshFrequency;
-
-pub use crate::types::_schedule_refresh_on_entity::ScheduleRefreshOnEntity;
-
-pub use crate::types::_day_of_week::DayOfWeek;
-
-pub use crate::types::_refresh_interval::RefreshInterval;
-
 pub use crate::types::_assignment_status::AssignmentStatus;
 
 pub use crate::types::_group::Group;
@@ -1379,16 +1367,6 @@ pub use crate::types::_analysis_search_filter::AnalysisSearchFilter;
 
 pub use crate::types::_analysis_filter_attribute::AnalysisFilterAttribute;
 
-pub use crate::types::_data_set_refresh_properties::DataSetRefreshProperties;
-
-pub use crate::types::_refresh_configuration::RefreshConfiguration;
-
-pub use crate::types::_incremental_refresh::IncrementalRefresh;
-
-pub use crate::types::_lookback_window::LookbackWindow;
-
-pub use crate::types::_lookback_window_size_unit::LookbackWindowSizeUnit;
-
 pub use crate::types::_theme_version_summary::ThemeVersionSummary;
 
 pub use crate::types::_theme_summary::ThemeSummary;
@@ -1520,6 +1498,8 @@ pub use crate::types::_edition::Edition;
 pub use crate::types::_account_settings::AccountSettings;
 
 pub use crate::types::_member_type::MemberType;
+
+pub use crate::types::_ingestion_type::IngestionType;
 
 pub use crate::types::_folder_member::FolderMember;
 
@@ -1887,8 +1867,6 @@ mod _data_set_import_mode;
 
 mod _data_set_reference;
 
-mod _data_set_refresh_properties;
-
 mod _data_set_schema;
 
 mod _data_set_search_filter;
@@ -1938,8 +1916,6 @@ mod _date_time_parameter_declaration;
 mod _date_time_picker_control_display_options;
 
 mod _date_time_value_when_unset_configuration;
-
-mod _day_of_week;
 
 mod _decimal_default_values;
 
@@ -2239,8 +2215,6 @@ mod _identity_store;
 
 mod _identity_type;
 
-mod _incremental_refresh;
-
 mod _ingestion;
 
 mod _ingestion_error_type;
@@ -2354,10 +2328,6 @@ mod _logical_table;
 mod _logical_table_source;
 
 mod _long_format_text;
-
-mod _lookback_window;
-
-mod _lookback_window_size_unit;
 
 mod _manifest_file_location;
 
@@ -2601,14 +2571,6 @@ mod _reference_line_value_label_configuration;
 
 mod _reference_line_value_label_relative_position;
 
-mod _refresh_configuration;
-
-mod _refresh_frequency;
-
-mod _refresh_interval;
-
-mod _refresh_schedule;
-
 mod _registered_user_console_feature_configurations;
 
 mod _registered_user_dashboard_embedding_configuration;
@@ -2682,8 +2644,6 @@ mod _scatter_plot_field_wells;
 mod _scatter_plot_unaggregated_field_wells;
 
 mod _scatter_plot_visual;
-
-mod _schedule_refresh_on_entity;
 
 mod _scroll_bar_options;
 

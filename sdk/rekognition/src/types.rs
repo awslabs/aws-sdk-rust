@@ -175,10 +175,6 @@ pub use crate::types::_person_match::PersonMatch;
 
 pub use crate::types::_face_search_sort_by::FaceSearchSortBy;
 
-pub use crate::types::_audit_image::AuditImage;
-
-pub use crate::types::_liveness_session_status::LivenessSessionStatus;
-
 pub use crate::types::_face_detection::FaceDetection;
 
 pub use crate::types::_content_moderation_detection::ContentModerationDetection;
@@ -293,10 +289,6 @@ pub use crate::types::_dataset_description::DatasetDescription;
 
 pub use crate::types::_dataset_stats::DatasetStats;
 
-pub use crate::types::_create_face_liveness_session_request_settings::CreateFaceLivenessSessionRequestSettings;
-
-pub use crate::types::_liveness_output_config::LivenessOutputConfig;
-
 pub use crate::types::_dataset_source::DatasetSource;
 
 pub use crate::types::_compare_faces_match::CompareFacesMatch;
@@ -310,8 +302,6 @@ mod _asset;
 mod _attribute;
 
 mod _audio_metadata;
-
-mod _audit_image;
 
 mod _beard;
 
@@ -346,8 +336,6 @@ mod _content_moderation_detection;
 mod _content_moderation_sort_by;
 
 mod _covers_body_part;
-
-mod _create_face_liveness_session_request_settings;
 
 mod _custom_label;
 
@@ -472,10 +460,6 @@ mod _label_detection_sort_by;
 mod _landmark;
 
 mod _landmark_type;
-
-mod _liveness_output_config;
-
-mod _liveness_session_status;
 
 mod _moderation_label;
 

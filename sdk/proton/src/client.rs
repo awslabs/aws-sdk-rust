@@ -236,10 +236,6 @@ mod create_repository;
 
 mod create_service;
 
-mod create_service_instance;
-
-mod create_service_sync_config;
-
 mod create_service_template;
 
 mod create_service_template_version;
@@ -288,8 +284,6 @@ mod delete_repository;
 
 mod delete_service;
 
-mod delete_service_sync_config;
-
 mod delete_service_template;
 
 mod delete_service_template_version;
@@ -317,12 +311,6 @@ mod get_resources_summary;
 mod get_service;
 
 mod get_service_instance;
-
-mod get_service_instance_sync_status;
-
-mod get_service_sync_blocker_summary;
-
-mod get_service_sync_config;
 
 mod get_service_template;
 
@@ -397,10 +385,6 @@ mod update_service;
 mod update_service_instance;
 
 mod update_service_pipeline;
-
-mod update_service_sync_blocker;
-
-mod update_service_sync_config;
 
 mod update_service_template;
 

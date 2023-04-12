@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.55.0", path = "../../sdk/aws-config" }
-aws-sdk-config= { version = "0.25.2", path = "../../sdk/config" }
+aws-sdk-config= { version = "0.25.1", path = "../../sdk/config" }
 
 [workspace]
 

@@ -6,7 +6,7 @@ pub struct UpdateServiceNetworkVpcAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     #[doc(hidden)]
     pub service_network_vpc_association_identifier: std::option::Option<std::string::String>,
-    /// <p>The IDs of the security groups. </p>
+    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -15,7 +15,7 @@ impl UpdateServiceNetworkVpcAssociationInput {
     pub fn service_network_vpc_association_identifier(&self) -> std::option::Option<&str> {
         self.service_network_vpc_association_identifier.as_deref()
     }
-    /// <p>The IDs of the security groups. </p>
+    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -55,14 +55,14 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>The IDs of the security groups. </p>
+    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = Some(v);
         self
     }
-    /// <p>The IDs of the security groups. </p>
+    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
     pub fn set_security_group_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

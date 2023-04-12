@@ -22,7 +22,6 @@
 ///     ResourceType::AppConfigApplication => { /* ... */ },
 ///     ResourceType::AppConfigConfigurationProfile => { /* ... */ },
 ///     ResourceType::AppConfigEnvironment => { /* ... */ },
-///     ResourceType::AppStreamDirectoryConfig => { /* ... */ },
 ///     ResourceType::AppSyncGraphQlApi => { /* ... */ },
 ///     ResourceType::AthenaDataCatalog => { /* ... */ },
 ///     ResourceType::AthenaWorkGroup => { /* ... */ },
@@ -30,7 +29,6 @@
 ///     ResourceType::LaunchConfiguration => { /* ... */ },
 ///     ResourceType::ScalingPolicy => { /* ... */ },
 ///     ResourceType::ScheduledAction => { /* ... */ },
-///     ResourceType::AutoScalingWarmPool => { /* ... */ },
 ///     ResourceType::BackupPlan => { /* ... */ },
 ///     ResourceType::BackupSelection => { /* ... */ },
 ///     ResourceType::BackupVault => { /* ... */ },
@@ -53,8 +51,6 @@
 ///     ResourceType::Pipeline => { /* ... */ },
 ///     ResourceType::ConformancePackCompliance => { /* ... */ },
 ///     ResourceType::ResourceCompliance => { /* ... */ },
-///     ResourceType::ConnectPhoneNumber => { /* ... */ },
-///     ResourceType::CustomerProfilesDomain => { /* ... */ },
 ///     ResourceType::DmsCertificate => { /* ... */ },
 ///     ResourceType::DmsEventSubscription => { /* ... */ },
 ///     ResourceType::DmsReplicationSubnetGroup => { /* ... */ },
@@ -71,25 +67,21 @@
 ///     ResourceType::DeviceFarmTestGridProject => { /* ... */ },
 ///     ResourceType::Table => { /* ... */ },
 ///     ResourceType::CustomerGateway => { /* ... */ },
-///     ResourceType::Ec2DhcpOptions => { /* ... */ },
 ///     ResourceType::Eip => { /* ... */ },
 ///     ResourceType::EgressOnlyInternetGateway => { /* ... */ },
 ///     ResourceType::FlowLog => { /* ... */ },
 ///     ResourceType::Host => { /* ... */ },
-///     ResourceType::Ec2Ipam => { /* ... */ },
 ///     ResourceType::Instance => { /* ... */ },
 ///     ResourceType::InternetGateway => { /* ... */ },
 ///     ResourceType::LaunchTemplate => { /* ... */ },
 ///     ResourceType::NatGateway => { /* ... */ },
 ///     ResourceType::NetworkAcl => { /* ... */ },
 ///     ResourceType::NetworkInsightsAccessScopeAnalysis => { /* ... */ },
-///     ResourceType::Ec2NetworkInsightsPath => { /* ... */ },
 ///     ResourceType::NetworkInterface => { /* ... */ },
 ///     ResourceType::RegisteredHaInstance => { /* ... */ },
 ///     ResourceType::RouteTable => { /* ... */ },
 ///     ResourceType::SecurityGroup => { /* ... */ },
 ///     ResourceType::Subnet => { /* ... */ },
-///     ResourceType::Ec2TrafficMirrorFilter => { /* ... */ },
 ///     ResourceType::Ec2TrafficMirrorSession => { /* ... */ },
 ///     ResourceType::Ec2TrafficMirrorTarget => { /* ... */ },
 ///     ResourceType::TransitGateway => { /* ... */ },
@@ -131,7 +123,6 @@
 ///     ResourceType::EventsConnection => { /* ... */ },
 ///     ResourceType::EventsEndpoint => { /* ... */ },
 ///     ResourceType::EventsEventBus => { /* ... */ },
-///     ResourceType::EventsRule => { /* ... */ },
 ///     ResourceType::FisExperimentTemplate => { /* ... */ },
 ///     ResourceType::FraudDetectorEntityType => { /* ... */ },
 ///     ResourceType::FraudDetectorLabel => { /* ... */ },
@@ -147,7 +138,6 @@
 ///     ResourceType::GuardDutyFilter => { /* ... */ },
 ///     ResourceType::GuardDutyIpSet => { /* ... */ },
 ///     ResourceType::GuardDutyThreatIntelSet => { /* ... */ },
-///     ResourceType::HealthLakeFhirDatastore => { /* ... */ },
 ///     ResourceType::Group => { /* ... */ },
 ///     ResourceType::Policy => { /* ... */ },
 ///     ResourceType::Role => { /* ... */ },
@@ -180,13 +170,11 @@
 ///     ResourceType::IoTSiteWisePortal => { /* ... */ },
 ///     ResourceType::IoTSiteWiseProject => { /* ... */ },
 ///     ResourceType::IoTTwinMakerEntity => { /* ... */ },
-///     ResourceType::IoTTwinMakerScene => { /* ... */ },
 ///     ResourceType::IoTTwinMakerWorkspace => { /* ... */ },
 ///     ResourceType::Key => { /* ... */ },
 ///     ResourceType::KinesisStream => { /* ... */ },
 ///     ResourceType::KinesisStreamConsumer => { /* ... */ },
 ///     ResourceType::KinesisAnalyticsV2Application => { /* ... */ },
-///     ResourceType::KinesisVideoSignalingChannel => { /* ... */ },
 ///     ResourceType::Function => { /* ... */ },
 ///     ResourceType::LexBot => { /* ... */ },
 ///     ResourceType::LexBotAlias => { /* ... */ },
@@ -195,17 +183,13 @@
 ///     ResourceType::LightsailDisk => { /* ... */ },
 ///     ResourceType::LightsailStaticIp => { /* ... */ },
 ///     ResourceType::LookoutMetricsAlert => { /* ... */ },
-///     ResourceType::LookoutVisionProject => { /* ... */ },
 ///     ResourceType::MskCluster => { /* ... */ },
 ///     ResourceType::MediaPackagePackagingConfiguration => { /* ... */ },
 ///     ResourceType::MediaPackagePackagingGroup => { /* ... */ },
 ///     ResourceType::NetworkFirewallFirewall => { /* ... */ },
 ///     ResourceType::NetworkFirewallFirewallPolicy => { /* ... */ },
 ///     ResourceType::NetworkFirewallRuleGroup => { /* ... */ },
-///     ResourceType::NetworkManagerTransitGatewayRegistration => { /* ... */ },
 ///     ResourceType::OpenSearchDomain => { /* ... */ },
-///     ResourceType::PinpointApplicationSettings => { /* ... */ },
-///     ResourceType::PinpointSegment => { /* ... */ },
 ///     ResourceType::QldbLedger => { /* ... */ },
 ///     ResourceType::DbCluster => { /* ... */ },
 ///     ResourceType::DbClusterSnapshot => { /* ... */ },
@@ -223,18 +207,11 @@
 ///     ResourceType::ClusterSubnetGroup => { /* ... */ },
 ///     ResourceType::RedshiftEventSubscription => { /* ... */ },
 ///     ResourceType::ResilienceHubResiliencyPolicy => { /* ... */ },
-///     ResourceType::RoboMakerRobotApplication => { /* ... */ },
 ///     ResourceType::RoboMakerRobotApplicationVersion => { /* ... */ },
-///     ResourceType::RoboMakerSimulationApplication => { /* ... */ },
 ///     ResourceType::Route53HostedZone => { /* ... */ },
-///     ResourceType::Route53RecoveryControlCluster => { /* ... */ },
-///     ResourceType::Route53RecoveryControlControlPanel => { /* ... */ },
-///     ResourceType::Route53RecoveryControlRoutingControl => { /* ... */ },
-///     ResourceType::Route53RecoveryControlSafetyRule => { /* ... */ },
 ///     ResourceType::Route53RecoveryReadinessCell => { /* ... */ },
 ///     ResourceType::Route53RecoveryReadinessReadinessCheck => { /* ... */ },
 ///     ResourceType::Route53RecoveryReadinessRecoveryGroup => { /* ... */ },
-///     ResourceType::Route53RecoveryReadinessResourceSet => { /* ... */ },
 ///     ResourceType::Route53ResolverFirewallDomainList => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverEndpoint => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverRule => { /* ... */ },
@@ -340,8 +317,6 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AppConfigEnvironment,
     #[allow(missing_docs)] // documentation missing in model
-    AppStreamDirectoryConfig,
-    #[allow(missing_docs)] // documentation missing in model
     AppSyncGraphQlApi,
     #[allow(missing_docs)] // documentation missing in model
     AthenaDataCatalog,
@@ -355,8 +330,6 @@ pub enum ResourceType {
     ScalingPolicy,
     #[allow(missing_docs)] // documentation missing in model
     ScheduledAction,
-    #[allow(missing_docs)] // documentation missing in model
-    AutoScalingWarmPool,
     #[allow(missing_docs)] // documentation missing in model
     BackupPlan,
     #[allow(missing_docs)] // documentation missing in model
@@ -402,10 +375,6 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ResourceCompliance,
     #[allow(missing_docs)] // documentation missing in model
-    ConnectPhoneNumber,
-    #[allow(missing_docs)] // documentation missing in model
-    CustomerProfilesDomain,
-    #[allow(missing_docs)] // documentation missing in model
     DmsCertificate,
     #[allow(missing_docs)] // documentation missing in model
     DmsEventSubscription,
@@ -438,8 +407,6 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CustomerGateway,
     #[allow(missing_docs)] // documentation missing in model
-    Ec2DhcpOptions,
-    #[allow(missing_docs)] // documentation missing in model
     Eip,
     #[allow(missing_docs)] // documentation missing in model
     EgressOnlyInternetGateway,
@@ -447,8 +414,6 @@ pub enum ResourceType {
     FlowLog,
     #[allow(missing_docs)] // documentation missing in model
     Host,
-    #[allow(missing_docs)] // documentation missing in model
-    Ec2Ipam,
     #[allow(missing_docs)] // documentation missing in model
     Instance,
     #[allow(missing_docs)] // documentation missing in model
@@ -462,8 +427,6 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     NetworkInsightsAccessScopeAnalysis,
     #[allow(missing_docs)] // documentation missing in model
-    Ec2NetworkInsightsPath,
-    #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
     RegisteredHaInstance,
@@ -473,8 +436,6 @@ pub enum ResourceType {
     SecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
     Subnet,
-    #[allow(missing_docs)] // documentation missing in model
-    Ec2TrafficMirrorFilter,
     #[allow(missing_docs)] // documentation missing in model
     Ec2TrafficMirrorSession,
     #[allow(missing_docs)] // documentation missing in model
@@ -558,8 +519,6 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EventsEventBus,
     #[allow(missing_docs)] // documentation missing in model
-    EventsRule,
-    #[allow(missing_docs)] // documentation missing in model
     FisExperimentTemplate,
     #[allow(missing_docs)] // documentation missing in model
     FraudDetectorEntityType,
@@ -589,8 +548,6 @@ pub enum ResourceType {
     GuardDutyIpSet,
     #[allow(missing_docs)] // documentation missing in model
     GuardDutyThreatIntelSet,
-    #[allow(missing_docs)] // documentation missing in model
-    HealthLakeFhirDatastore,
     #[allow(missing_docs)] // documentation missing in model
     Group,
     #[allow(missing_docs)] // documentation missing in model
@@ -656,8 +613,6 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     IoTTwinMakerEntity,
     #[allow(missing_docs)] // documentation missing in model
-    IoTTwinMakerScene,
-    #[allow(missing_docs)] // documentation missing in model
     IoTTwinMakerWorkspace,
     #[allow(missing_docs)] // documentation missing in model
     Key,
@@ -667,8 +622,6 @@ pub enum ResourceType {
     KinesisStreamConsumer,
     #[allow(missing_docs)] // documentation missing in model
     KinesisAnalyticsV2Application,
-    #[allow(missing_docs)] // documentation missing in model
-    KinesisVideoSignalingChannel,
     #[allow(missing_docs)] // documentation missing in model
     Function,
     #[allow(missing_docs)] // documentation missing in model
@@ -686,8 +639,6 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     LookoutMetricsAlert,
     #[allow(missing_docs)] // documentation missing in model
-    LookoutVisionProject,
-    #[allow(missing_docs)] // documentation missing in model
     MskCluster,
     #[allow(missing_docs)] // documentation missing in model
     MediaPackagePackagingConfiguration,
@@ -700,13 +651,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     NetworkFirewallRuleGroup,
     #[allow(missing_docs)] // documentation missing in model
-    NetworkManagerTransitGatewayRegistration,
-    #[allow(missing_docs)] // documentation missing in model
     OpenSearchDomain,
-    #[allow(missing_docs)] // documentation missing in model
-    PinpointApplicationSettings,
-    #[allow(missing_docs)] // documentation missing in model
-    PinpointSegment,
     #[allow(missing_docs)] // documentation missing in model
     QldbLedger,
     #[allow(missing_docs)] // documentation missing in model
@@ -742,29 +687,15 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ResilienceHubResiliencyPolicy,
     #[allow(missing_docs)] // documentation missing in model
-    RoboMakerRobotApplication,
-    #[allow(missing_docs)] // documentation missing in model
     RoboMakerRobotApplicationVersion,
     #[allow(missing_docs)] // documentation missing in model
-    RoboMakerSimulationApplication,
-    #[allow(missing_docs)] // documentation missing in model
     Route53HostedZone,
-    #[allow(missing_docs)] // documentation missing in model
-    Route53RecoveryControlCluster,
-    #[allow(missing_docs)] // documentation missing in model
-    Route53RecoveryControlControlPanel,
-    #[allow(missing_docs)] // documentation missing in model
-    Route53RecoveryControlRoutingControl,
-    #[allow(missing_docs)] // documentation missing in model
-    Route53RecoveryControlSafetyRule,
     #[allow(missing_docs)] // documentation missing in model
     Route53RecoveryReadinessCell,
     #[allow(missing_docs)] // documentation missing in model
     Route53RecoveryReadinessReadinessCheck,
     #[allow(missing_docs)] // documentation missing in model
     Route53RecoveryReadinessRecoveryGroup,
-    #[allow(missing_docs)] // documentation missing in model
-    Route53RecoveryReadinessResourceSet,
     #[allow(missing_docs)] // documentation missing in model
     Route53ResolverFirewallDomainList,
     #[allow(missing_docs)] // documentation missing in model
@@ -883,7 +814,6 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::AppConfig::Application" => ResourceType::AppConfigApplication,
             "AWS::AppConfig::ConfigurationProfile" => ResourceType::AppConfigConfigurationProfile,
             "AWS::AppConfig::Environment" => ResourceType::AppConfigEnvironment,
-            "AWS::AppStream::DirectoryConfig" => ResourceType::AppStreamDirectoryConfig,
             "AWS::AppSync::GraphQLApi" => ResourceType::AppSyncGraphQlApi,
             "AWS::Athena::DataCatalog" => ResourceType::AthenaDataCatalog,
             "AWS::Athena::WorkGroup" => ResourceType::AthenaWorkGroup,
@@ -891,7 +821,6 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::AutoScaling::LaunchConfiguration" => ResourceType::LaunchConfiguration,
             "AWS::AutoScaling::ScalingPolicy" => ResourceType::ScalingPolicy,
             "AWS::AutoScaling::ScheduledAction" => ResourceType::ScheduledAction,
-            "AWS::AutoScaling::WarmPool" => ResourceType::AutoScalingWarmPool,
             "AWS::Backup::BackupPlan" => ResourceType::BackupPlan,
             "AWS::Backup::BackupSelection" => ResourceType::BackupSelection,
             "AWS::Backup::BackupVault" => ResourceType::BackupVault,
@@ -916,8 +845,6 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
             "AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
             "AWS::Config::ResourceCompliance" => ResourceType::ResourceCompliance,
-            "AWS::Connect::PhoneNumber" => ResourceType::ConnectPhoneNumber,
-            "AWS::CustomerProfiles::Domain" => ResourceType::CustomerProfilesDomain,
             "AWS::DMS::Certificate" => ResourceType::DmsCertificate,
             "AWS::DMS::EventSubscription" => ResourceType::DmsEventSubscription,
             "AWS::DMS::ReplicationSubnetGroup" => ResourceType::DmsReplicationSubnetGroup,
@@ -934,12 +861,10 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::DeviceFarm::TestGridProject" => ResourceType::DeviceFarmTestGridProject,
             "AWS::DynamoDB::Table" => ResourceType::Table,
             "AWS::EC2::CustomerGateway" => ResourceType::CustomerGateway,
-            "AWS::EC2::DHCPOptions" => ResourceType::Ec2DhcpOptions,
             "AWS::EC2::EIP" => ResourceType::Eip,
             "AWS::EC2::EgressOnlyInternetGateway" => ResourceType::EgressOnlyInternetGateway,
             "AWS::EC2::FlowLog" => ResourceType::FlowLog,
             "AWS::EC2::Host" => ResourceType::Host,
-            "AWS::EC2::IPAM" => ResourceType::Ec2Ipam,
             "AWS::EC2::Instance" => ResourceType::Instance,
             "AWS::EC2::InternetGateway" => ResourceType::InternetGateway,
             "AWS::EC2::LaunchTemplate" => ResourceType::LaunchTemplate,
@@ -948,13 +873,11 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EC2::NetworkInsightsAccessScopeAnalysis" => {
                 ResourceType::NetworkInsightsAccessScopeAnalysis
             }
-            "AWS::EC2::NetworkInsightsPath" => ResourceType::Ec2NetworkInsightsPath,
             "AWS::EC2::NetworkInterface" => ResourceType::NetworkInterface,
             "AWS::EC2::RegisteredHAInstance" => ResourceType::RegisteredHaInstance,
             "AWS::EC2::RouteTable" => ResourceType::RouteTable,
             "AWS::EC2::SecurityGroup" => ResourceType::SecurityGroup,
             "AWS::EC2::Subnet" => ResourceType::Subnet,
-            "AWS::EC2::TrafficMirrorFilter" => ResourceType::Ec2TrafficMirrorFilter,
             "AWS::EC2::TrafficMirrorSession" => ResourceType::Ec2TrafficMirrorSession,
             "AWS::EC2::TrafficMirrorTarget" => ResourceType::Ec2TrafficMirrorTarget,
             "AWS::EC2::TransitGateway" => ResourceType::TransitGateway,
@@ -996,7 +919,6 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Events::Connection" => ResourceType::EventsConnection,
             "AWS::Events::Endpoint" => ResourceType::EventsEndpoint,
             "AWS::Events::EventBus" => ResourceType::EventsEventBus,
-            "AWS::Events::Rule" => ResourceType::EventsRule,
             "AWS::FIS::ExperimentTemplate" => ResourceType::FisExperimentTemplate,
             "AWS::FraudDetector::EntityType" => ResourceType::FraudDetectorEntityType,
             "AWS::FraudDetector::Label" => ResourceType::FraudDetectorLabel,
@@ -1012,7 +934,6 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::GuardDuty::Filter" => ResourceType::GuardDutyFilter,
             "AWS::GuardDuty::IPSet" => ResourceType::GuardDutyIpSet,
             "AWS::GuardDuty::ThreatIntelSet" => ResourceType::GuardDutyThreatIntelSet,
-            "AWS::HealthLake::FHIRDatastore" => ResourceType::HealthLakeFhirDatastore,
             "AWS::IAM::Group" => ResourceType::Group,
             "AWS::IAM::Policy" => ResourceType::Policy,
             "AWS::IAM::Role" => ResourceType::Role,
@@ -1049,13 +970,11 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::IoTSiteWise::Portal" => ResourceType::IoTSiteWisePortal,
             "AWS::IoTSiteWise::Project" => ResourceType::IoTSiteWiseProject,
             "AWS::IoTTwinMaker::Entity" => ResourceType::IoTTwinMakerEntity,
-            "AWS::IoTTwinMaker::Scene" => ResourceType::IoTTwinMakerScene,
             "AWS::IoTTwinMaker::Workspace" => ResourceType::IoTTwinMakerWorkspace,
             "AWS::KMS::Key" => ResourceType::Key,
             "AWS::Kinesis::Stream" => ResourceType::KinesisStream,
             "AWS::Kinesis::StreamConsumer" => ResourceType::KinesisStreamConsumer,
             "AWS::KinesisAnalyticsV2::Application" => ResourceType::KinesisAnalyticsV2Application,
-            "AWS::KinesisVideo::SignalingChannel" => ResourceType::KinesisVideoSignalingChannel,
             "AWS::Lambda::Function" => ResourceType::Function,
             "AWS::Lex::Bot" => ResourceType::LexBot,
             "AWS::Lex::BotAlias" => ResourceType::LexBotAlias,
@@ -1064,7 +983,6 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Lightsail::Disk" => ResourceType::LightsailDisk,
             "AWS::Lightsail::StaticIp" => ResourceType::LightsailStaticIp,
             "AWS::LookoutMetrics::Alert" => ResourceType::LookoutMetricsAlert,
-            "AWS::LookoutVision::Project" => ResourceType::LookoutVisionProject,
             "AWS::MSK::Cluster" => ResourceType::MskCluster,
             "AWS::MediaPackage::PackagingConfiguration" => {
                 ResourceType::MediaPackagePackagingConfiguration
@@ -1073,12 +991,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::NetworkFirewall::Firewall" => ResourceType::NetworkFirewallFirewall,
             "AWS::NetworkFirewall::FirewallPolicy" => ResourceType::NetworkFirewallFirewallPolicy,
             "AWS::NetworkFirewall::RuleGroup" => ResourceType::NetworkFirewallRuleGroup,
-            "AWS::NetworkManager::TransitGatewayRegistration" => {
-                ResourceType::NetworkManagerTransitGatewayRegistration
-            }
             "AWS::OpenSearch::Domain" => ResourceType::OpenSearchDomain,
-            "AWS::Pinpoint::ApplicationSettings" => ResourceType::PinpointApplicationSettings,
-            "AWS::Pinpoint::Segment" => ResourceType::PinpointSegment,
             "AWS::QLDB::Ledger" => ResourceType::QldbLedger,
             "AWS::RDS::DBCluster" => ResourceType::DbCluster,
             "AWS::RDS::DBClusterSnapshot" => ResourceType::DbClusterSnapshot,
@@ -1096,31 +1009,16 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Redshift::ClusterSubnetGroup" => ResourceType::ClusterSubnetGroup,
             "AWS::Redshift::EventSubscription" => ResourceType::RedshiftEventSubscription,
             "AWS::ResilienceHub::ResiliencyPolicy" => ResourceType::ResilienceHubResiliencyPolicy,
-            "AWS::RoboMaker::RobotApplication" => ResourceType::RoboMakerRobotApplication,
             "AWS::RoboMaker::RobotApplicationVersion" => {
                 ResourceType::RoboMakerRobotApplicationVersion
             }
-            "AWS::RoboMaker::SimulationApplication" => ResourceType::RoboMakerSimulationApplication,
             "AWS::Route53::HostedZone" => ResourceType::Route53HostedZone,
-            "AWS::Route53RecoveryControl::Cluster" => ResourceType::Route53RecoveryControlCluster,
-            "AWS::Route53RecoveryControl::ControlPanel" => {
-                ResourceType::Route53RecoveryControlControlPanel
-            }
-            "AWS::Route53RecoveryControl::RoutingControl" => {
-                ResourceType::Route53RecoveryControlRoutingControl
-            }
-            "AWS::Route53RecoveryControl::SafetyRule" => {
-                ResourceType::Route53RecoveryControlSafetyRule
-            }
             "AWS::Route53RecoveryReadiness::Cell" => ResourceType::Route53RecoveryReadinessCell,
             "AWS::Route53RecoveryReadiness::ReadinessCheck" => {
                 ResourceType::Route53RecoveryReadinessReadinessCheck
             }
             "AWS::Route53RecoveryReadiness::RecoveryGroup" => {
                 ResourceType::Route53RecoveryReadinessRecoveryGroup
-            }
-            "AWS::Route53RecoveryReadiness::ResourceSet" => {
-                ResourceType::Route53RecoveryReadinessResourceSet
             }
             "AWS::Route53Resolver::FirewallDomainList" => {
                 ResourceType::Route53ResolverFirewallDomainList
@@ -1212,7 +1110,6 @@ impl ResourceType {
             ResourceType::AppConfigApplication => "AWS::AppConfig::Application",
             ResourceType::AppConfigConfigurationProfile => "AWS::AppConfig::ConfigurationProfile",
             ResourceType::AppConfigEnvironment => "AWS::AppConfig::Environment",
-            ResourceType::AppStreamDirectoryConfig => "AWS::AppStream::DirectoryConfig",
             ResourceType::AppSyncGraphQlApi => "AWS::AppSync::GraphQLApi",
             ResourceType::AthenaDataCatalog => "AWS::Athena::DataCatalog",
             ResourceType::AthenaWorkGroup => "AWS::Athena::WorkGroup",
@@ -1220,7 +1117,6 @@ impl ResourceType {
             ResourceType::LaunchConfiguration => "AWS::AutoScaling::LaunchConfiguration",
             ResourceType::ScalingPolicy => "AWS::AutoScaling::ScalingPolicy",
             ResourceType::ScheduledAction => "AWS::AutoScaling::ScheduledAction",
-            ResourceType::AutoScalingWarmPool => "AWS::AutoScaling::WarmPool",
             ResourceType::BackupPlan => "AWS::Backup::BackupPlan",
             ResourceType::BackupSelection => "AWS::Backup::BackupSelection",
             ResourceType::BackupVault => "AWS::Backup::BackupVault",
@@ -1245,8 +1141,6 @@ impl ResourceType {
             ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
             ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
             ResourceType::ResourceCompliance => "AWS::Config::ResourceCompliance",
-            ResourceType::ConnectPhoneNumber => "AWS::Connect::PhoneNumber",
-            ResourceType::CustomerProfilesDomain => "AWS::CustomerProfiles::Domain",
             ResourceType::DmsCertificate => "AWS::DMS::Certificate",
             ResourceType::DmsEventSubscription => "AWS::DMS::EventSubscription",
             ResourceType::DmsReplicationSubnetGroup => "AWS::DMS::ReplicationSubnetGroup",
@@ -1263,12 +1157,10 @@ impl ResourceType {
             ResourceType::DeviceFarmTestGridProject => "AWS::DeviceFarm::TestGridProject",
             ResourceType::Table => "AWS::DynamoDB::Table",
             ResourceType::CustomerGateway => "AWS::EC2::CustomerGateway",
-            ResourceType::Ec2DhcpOptions => "AWS::EC2::DHCPOptions",
             ResourceType::Eip => "AWS::EC2::EIP",
             ResourceType::EgressOnlyInternetGateway => "AWS::EC2::EgressOnlyInternetGateway",
             ResourceType::FlowLog => "AWS::EC2::FlowLog",
             ResourceType::Host => "AWS::EC2::Host",
-            ResourceType::Ec2Ipam => "AWS::EC2::IPAM",
             ResourceType::Instance => "AWS::EC2::Instance",
             ResourceType::InternetGateway => "AWS::EC2::InternetGateway",
             ResourceType::LaunchTemplate => "AWS::EC2::LaunchTemplate",
@@ -1277,13 +1169,11 @@ impl ResourceType {
             ResourceType::NetworkInsightsAccessScopeAnalysis => {
                 "AWS::EC2::NetworkInsightsAccessScopeAnalysis"
             }
-            ResourceType::Ec2NetworkInsightsPath => "AWS::EC2::NetworkInsightsPath",
             ResourceType::NetworkInterface => "AWS::EC2::NetworkInterface",
             ResourceType::RegisteredHaInstance => "AWS::EC2::RegisteredHAInstance",
             ResourceType::RouteTable => "AWS::EC2::RouteTable",
             ResourceType::SecurityGroup => "AWS::EC2::SecurityGroup",
             ResourceType::Subnet => "AWS::EC2::Subnet",
-            ResourceType::Ec2TrafficMirrorFilter => "AWS::EC2::TrafficMirrorFilter",
             ResourceType::Ec2TrafficMirrorSession => "AWS::EC2::TrafficMirrorSession",
             ResourceType::Ec2TrafficMirrorTarget => "AWS::EC2::TrafficMirrorTarget",
             ResourceType::TransitGateway => "AWS::EC2::TransitGateway",
@@ -1325,7 +1215,6 @@ impl ResourceType {
             ResourceType::EventsConnection => "AWS::Events::Connection",
             ResourceType::EventsEndpoint => "AWS::Events::Endpoint",
             ResourceType::EventsEventBus => "AWS::Events::EventBus",
-            ResourceType::EventsRule => "AWS::Events::Rule",
             ResourceType::FisExperimentTemplate => "AWS::FIS::ExperimentTemplate",
             ResourceType::FraudDetectorEntityType => "AWS::FraudDetector::EntityType",
             ResourceType::FraudDetectorLabel => "AWS::FraudDetector::Label",
@@ -1341,7 +1230,6 @@ impl ResourceType {
             ResourceType::GuardDutyFilter => "AWS::GuardDuty::Filter",
             ResourceType::GuardDutyIpSet => "AWS::GuardDuty::IPSet",
             ResourceType::GuardDutyThreatIntelSet => "AWS::GuardDuty::ThreatIntelSet",
-            ResourceType::HealthLakeFhirDatastore => "AWS::HealthLake::FHIRDatastore",
             ResourceType::Group => "AWS::IAM::Group",
             ResourceType::Policy => "AWS::IAM::Policy",
             ResourceType::Role => "AWS::IAM::Role",
@@ -1378,13 +1266,11 @@ impl ResourceType {
             ResourceType::IoTSiteWisePortal => "AWS::IoTSiteWise::Portal",
             ResourceType::IoTSiteWiseProject => "AWS::IoTSiteWise::Project",
             ResourceType::IoTTwinMakerEntity => "AWS::IoTTwinMaker::Entity",
-            ResourceType::IoTTwinMakerScene => "AWS::IoTTwinMaker::Scene",
             ResourceType::IoTTwinMakerWorkspace => "AWS::IoTTwinMaker::Workspace",
             ResourceType::Key => "AWS::KMS::Key",
             ResourceType::KinesisStream => "AWS::Kinesis::Stream",
             ResourceType::KinesisStreamConsumer => "AWS::Kinesis::StreamConsumer",
             ResourceType::KinesisAnalyticsV2Application => "AWS::KinesisAnalyticsV2::Application",
-            ResourceType::KinesisVideoSignalingChannel => "AWS::KinesisVideo::SignalingChannel",
             ResourceType::Function => "AWS::Lambda::Function",
             ResourceType::LexBot => "AWS::Lex::Bot",
             ResourceType::LexBotAlias => "AWS::Lex::BotAlias",
@@ -1393,7 +1279,6 @@ impl ResourceType {
             ResourceType::LightsailDisk => "AWS::Lightsail::Disk",
             ResourceType::LightsailStaticIp => "AWS::Lightsail::StaticIp",
             ResourceType::LookoutMetricsAlert => "AWS::LookoutMetrics::Alert",
-            ResourceType::LookoutVisionProject => "AWS::LookoutVision::Project",
             ResourceType::MskCluster => "AWS::MSK::Cluster",
             ResourceType::MediaPackagePackagingConfiguration => {
                 "AWS::MediaPackage::PackagingConfiguration"
@@ -1402,12 +1287,7 @@ impl ResourceType {
             ResourceType::NetworkFirewallFirewall => "AWS::NetworkFirewall::Firewall",
             ResourceType::NetworkFirewallFirewallPolicy => "AWS::NetworkFirewall::FirewallPolicy",
             ResourceType::NetworkFirewallRuleGroup => "AWS::NetworkFirewall::RuleGroup",
-            ResourceType::NetworkManagerTransitGatewayRegistration => {
-                "AWS::NetworkManager::TransitGatewayRegistration"
-            }
             ResourceType::OpenSearchDomain => "AWS::OpenSearch::Domain",
-            ResourceType::PinpointApplicationSettings => "AWS::Pinpoint::ApplicationSettings",
-            ResourceType::PinpointSegment => "AWS::Pinpoint::Segment",
             ResourceType::QldbLedger => "AWS::QLDB::Ledger",
             ResourceType::DbCluster => "AWS::RDS::DBCluster",
             ResourceType::DbClusterSnapshot => "AWS::RDS::DBClusterSnapshot",
@@ -1425,31 +1305,16 @@ impl ResourceType {
             ResourceType::ClusterSubnetGroup => "AWS::Redshift::ClusterSubnetGroup",
             ResourceType::RedshiftEventSubscription => "AWS::Redshift::EventSubscription",
             ResourceType::ResilienceHubResiliencyPolicy => "AWS::ResilienceHub::ResiliencyPolicy",
-            ResourceType::RoboMakerRobotApplication => "AWS::RoboMaker::RobotApplication",
             ResourceType::RoboMakerRobotApplicationVersion => {
                 "AWS::RoboMaker::RobotApplicationVersion"
             }
-            ResourceType::RoboMakerSimulationApplication => "AWS::RoboMaker::SimulationApplication",
             ResourceType::Route53HostedZone => "AWS::Route53::HostedZone",
-            ResourceType::Route53RecoveryControlCluster => "AWS::Route53RecoveryControl::Cluster",
-            ResourceType::Route53RecoveryControlControlPanel => {
-                "AWS::Route53RecoveryControl::ControlPanel"
-            }
-            ResourceType::Route53RecoveryControlRoutingControl => {
-                "AWS::Route53RecoveryControl::RoutingControl"
-            }
-            ResourceType::Route53RecoveryControlSafetyRule => {
-                "AWS::Route53RecoveryControl::SafetyRule"
-            }
             ResourceType::Route53RecoveryReadinessCell => "AWS::Route53RecoveryReadiness::Cell",
             ResourceType::Route53RecoveryReadinessReadinessCheck => {
                 "AWS::Route53RecoveryReadiness::ReadinessCheck"
             }
             ResourceType::Route53RecoveryReadinessRecoveryGroup => {
                 "AWS::Route53RecoveryReadiness::RecoveryGroup"
-            }
-            ResourceType::Route53RecoveryReadinessResourceSet => {
-                "AWS::Route53RecoveryReadiness::ResourceSet"
             }
             ResourceType::Route53ResolverFirewallDomainList => {
                 "AWS::Route53Resolver::FirewallDomainList"
@@ -1530,7 +1395,6 @@ impl ResourceType {
             "AWS::AppConfig::Application",
             "AWS::AppConfig::ConfigurationProfile",
             "AWS::AppConfig::Environment",
-            "AWS::AppStream::DirectoryConfig",
             "AWS::AppSync::GraphQLApi",
             "AWS::Athena::DataCatalog",
             "AWS::Athena::WorkGroup",
@@ -1538,7 +1402,6 @@ impl ResourceType {
             "AWS::AutoScaling::LaunchConfiguration",
             "AWS::AutoScaling::ScalingPolicy",
             "AWS::AutoScaling::ScheduledAction",
-            "AWS::AutoScaling::WarmPool",
             "AWS::Backup::BackupPlan",
             "AWS::Backup::BackupSelection",
             "AWS::Backup::BackupVault",
@@ -1561,8 +1424,6 @@ impl ResourceType {
             "AWS::CodePipeline::Pipeline",
             "AWS::Config::ConformancePackCompliance",
             "AWS::Config::ResourceCompliance",
-            "AWS::Connect::PhoneNumber",
-            "AWS::CustomerProfiles::Domain",
             "AWS::DMS::Certificate",
             "AWS::DMS::EventSubscription",
             "AWS::DMS::ReplicationSubnetGroup",
@@ -1579,25 +1440,21 @@ impl ResourceType {
             "AWS::DeviceFarm::TestGridProject",
             "AWS::DynamoDB::Table",
             "AWS::EC2::CustomerGateway",
-            "AWS::EC2::DHCPOptions",
             "AWS::EC2::EIP",
             "AWS::EC2::EgressOnlyInternetGateway",
             "AWS::EC2::FlowLog",
             "AWS::EC2::Host",
-            "AWS::EC2::IPAM",
             "AWS::EC2::Instance",
             "AWS::EC2::InternetGateway",
             "AWS::EC2::LaunchTemplate",
             "AWS::EC2::NatGateway",
             "AWS::EC2::NetworkAcl",
             "AWS::EC2::NetworkInsightsAccessScopeAnalysis",
-            "AWS::EC2::NetworkInsightsPath",
             "AWS::EC2::NetworkInterface",
             "AWS::EC2::RegisteredHAInstance",
             "AWS::EC2::RouteTable",
             "AWS::EC2::SecurityGroup",
             "AWS::EC2::Subnet",
-            "AWS::EC2::TrafficMirrorFilter",
             "AWS::EC2::TrafficMirrorSession",
             "AWS::EC2::TrafficMirrorTarget",
             "AWS::EC2::TransitGateway",
@@ -1639,7 +1496,6 @@ impl ResourceType {
             "AWS::Events::Connection",
             "AWS::Events::Endpoint",
             "AWS::Events::EventBus",
-            "AWS::Events::Rule",
             "AWS::FIS::ExperimentTemplate",
             "AWS::FraudDetector::EntityType",
             "AWS::FraudDetector::Label",
@@ -1655,7 +1511,6 @@ impl ResourceType {
             "AWS::GuardDuty::Filter",
             "AWS::GuardDuty::IPSet",
             "AWS::GuardDuty::ThreatIntelSet",
-            "AWS::HealthLake::FHIRDatastore",
             "AWS::IAM::Group",
             "AWS::IAM::Policy",
             "AWS::IAM::Role",
@@ -1688,13 +1543,11 @@ impl ResourceType {
             "AWS::IoTSiteWise::Portal",
             "AWS::IoTSiteWise::Project",
             "AWS::IoTTwinMaker::Entity",
-            "AWS::IoTTwinMaker::Scene",
             "AWS::IoTTwinMaker::Workspace",
             "AWS::KMS::Key",
             "AWS::Kinesis::Stream",
             "AWS::Kinesis::StreamConsumer",
             "AWS::KinesisAnalyticsV2::Application",
-            "AWS::KinesisVideo::SignalingChannel",
             "AWS::Lambda::Function",
             "AWS::Lex::Bot",
             "AWS::Lex::BotAlias",
@@ -1703,17 +1556,13 @@ impl ResourceType {
             "AWS::Lightsail::Disk",
             "AWS::Lightsail::StaticIp",
             "AWS::LookoutMetrics::Alert",
-            "AWS::LookoutVision::Project",
             "AWS::MSK::Cluster",
             "AWS::MediaPackage::PackagingConfiguration",
             "AWS::MediaPackage::PackagingGroup",
             "AWS::NetworkFirewall::Firewall",
             "AWS::NetworkFirewall::FirewallPolicy",
             "AWS::NetworkFirewall::RuleGroup",
-            "AWS::NetworkManager::TransitGatewayRegistration",
             "AWS::OpenSearch::Domain",
-            "AWS::Pinpoint::ApplicationSettings",
-            "AWS::Pinpoint::Segment",
             "AWS::QLDB::Ledger",
             "AWS::RDS::DBCluster",
             "AWS::RDS::DBClusterSnapshot",
@@ -1731,18 +1580,11 @@ impl ResourceType {
             "AWS::Redshift::ClusterSubnetGroup",
             "AWS::Redshift::EventSubscription",
             "AWS::ResilienceHub::ResiliencyPolicy",
-            "AWS::RoboMaker::RobotApplication",
             "AWS::RoboMaker::RobotApplicationVersion",
-            "AWS::RoboMaker::SimulationApplication",
             "AWS::Route53::HostedZone",
-            "AWS::Route53RecoveryControl::Cluster",
-            "AWS::Route53RecoveryControl::ControlPanel",
-            "AWS::Route53RecoveryControl::RoutingControl",
-            "AWS::Route53RecoveryControl::SafetyRule",
             "AWS::Route53RecoveryReadiness::Cell",
             "AWS::Route53RecoveryReadiness::ReadinessCheck",
             "AWS::Route53RecoveryReadiness::RecoveryGroup",
-            "AWS::Route53RecoveryReadiness::ResourceSet",
             "AWS::Route53Resolver::FirewallDomainList",
             "AWS::Route53Resolver::ResolverEndpoint",
             "AWS::Route53Resolver::ResolverRule",

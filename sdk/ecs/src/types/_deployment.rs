@@ -73,7 +73,7 @@ pub struct Deployment {
     /// <note>
     /// <p>The <code>rolloutState</code> of a service is only returned for services that use the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
     /// </note>
-    /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is turned on, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
+    /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
     #[doc(hidden)]
     pub rollout_state: std::option::Option<crate::types::DeploymentRolloutState>,
     /// <p>A description of the rollout state of a deployment.</p>
@@ -177,7 +177,7 @@ impl Deployment {
     /// <note>
     /// <p>The <code>rolloutState</code> of a service is only returned for services that use the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
     /// </note>
-    /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is turned on, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
+    /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
     pub fn rollout_state(&self) -> std::option::Option<&crate::types::DeploymentRolloutState> {
         self.rollout_state.as_ref()
     }
@@ -444,7 +444,7 @@ impl DeploymentBuilder {
     /// <note>
     /// <p>The <code>rolloutState</code> of a service is only returned for services that use the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
     /// </note>
-    /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is turned on, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
+    /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
     pub fn rollout_state(mut self, input: crate::types::DeploymentRolloutState) -> Self {
         self.rollout_state = Some(input);
         self
@@ -452,7 +452,7 @@ impl DeploymentBuilder {
     /// <note>
     /// <p>The <code>rolloutState</code> of a service is only returned for services that use the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
     /// </note>
-    /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is turned on, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
+    /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
     pub fn set_rollout_state(
         mut self,
         input: std::option::Option<crate::types::DeploymentRolloutState>,

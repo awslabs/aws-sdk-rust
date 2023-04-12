@@ -10,21 +10,15 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_cancel_change_set;
 
-pub(crate) mod shape_delete_resource_policy;
-
 pub(crate) mod shape_describe_change_set;
 
 pub(crate) mod shape_describe_entity;
-
-pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_list_change_sets;
 
 pub(crate) mod shape_list_entities;
 
 pub(crate) mod shape_list_tags_for_resource;
-
-pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_start_change_set;
 
@@ -49,8 +43,6 @@ pub(crate) mod shape_list_change_sets_input;
 pub(crate) mod shape_list_entities_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
-
-pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_resource_in_use_exception;
 

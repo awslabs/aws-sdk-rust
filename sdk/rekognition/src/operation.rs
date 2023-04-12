@@ -13,9 +13,6 @@ pub mod create_collection;
 /// Types for the `CreateDataset` operation.
 pub mod create_dataset;
 
-/// Types for the `CreateFaceLivenessSession` operation.
-pub mod create_face_liveness_session;
-
 /// Types for the `CreateProject` operation.
 pub mod create_project;
 
@@ -93,9 +90,6 @@ pub mod get_content_moderation;
 
 /// Types for the `GetFaceDetection` operation.
 pub mod get_face_detection;
-
-/// Types for the `GetFaceLivenessSessionResults` operation.
-pub mod get_face_liveness_session_results;
 
 /// Types for the `GetFaceSearch` operation.
 pub mod get_face_search;

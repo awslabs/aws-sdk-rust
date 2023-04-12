@@ -25,7 +25,6 @@ pub struct DataRepositoryTask {
     /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
     /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
     /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
-    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::DataRepositoryTaskType>,
@@ -91,7 +90,6 @@ impl DataRepositoryTask {
     /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
     /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
     /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
-    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::types::DataRepositoryTaskType> {
         self.r#type.as_ref()
@@ -224,7 +222,6 @@ impl DataRepositoryTaskBuilder {
     /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
     /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
     /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
-    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::DataRepositoryTaskType) -> Self {
         self.r#type = Some(input);
@@ -235,7 +232,6 @@ impl DataRepositoryTaskBuilder {
     /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
     /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
     /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
-    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
     /// </ul>
     pub fn set_type(
         mut self,

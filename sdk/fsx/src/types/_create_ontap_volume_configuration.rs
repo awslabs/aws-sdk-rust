@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOntapVolumeConfiguration {
-    /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
+    /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     #[doc(hidden)]
     pub junction_path: std::option::Option<std::string::String>,
     /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
@@ -15,10 +15,10 @@ pub struct CreateOntapVolumeConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub security_style: std::option::Option<crate::types::SecurityStyle>,
-    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range of 20–104857600 to specify the size of the volume.</p>
+    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
     #[doc(hidden)]
     pub size_in_megabytes: std::option::Option<i32>,
-    /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or set to false to disable them. This parameter is required.</p>
+    /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.</p>
     #[doc(hidden)]
     pub storage_efficiency_enabled: std::option::Option<bool>,
     /// <p>Specifies the ONTAP SVM in which to create the volume.</p>
@@ -63,7 +63,7 @@ pub struct CreateOntapVolumeConfiguration {
     pub copy_tags_to_backups: std::option::Option<bool>,
 }
 impl CreateOntapVolumeConfiguration {
-    /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
+    /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     pub fn junction_path(&self) -> std::option::Option<&str> {
         self.junction_path.as_deref()
     }
@@ -76,11 +76,11 @@ impl CreateOntapVolumeConfiguration {
     pub fn security_style(&self) -> std::option::Option<&crate::types::SecurityStyle> {
         self.security_style.as_ref()
     }
-    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range of 20–104857600 to specify the size of the volume.</p>
+    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
     pub fn size_in_megabytes(&self) -> std::option::Option<i32> {
         self.size_in_megabytes
     }
-    /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or set to false to disable them. This parameter is required.</p>
+    /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.</p>
     pub fn storage_efficiency_enabled(&self) -> std::option::Option<bool> {
         self.storage_efficiency_enabled
     }
@@ -152,12 +152,12 @@ pub struct CreateOntapVolumeConfigurationBuilder {
     pub(crate) copy_tags_to_backups: std::option::Option<bool>,
 }
 impl CreateOntapVolumeConfigurationBuilder {
-    /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
+    /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     pub fn junction_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.junction_path = Some(input.into());
         self
     }
-    /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
+    /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     pub fn set_junction_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.junction_path = input;
         self
@@ -185,22 +185,22 @@ impl CreateOntapVolumeConfigurationBuilder {
         self.security_style = input;
         self
     }
-    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range of 20–104857600 to specify the size of the volume.</p>
+    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
     pub fn size_in_megabytes(mut self, input: i32) -> Self {
         self.size_in_megabytes = Some(input);
         self
     }
-    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range of 20–104857600 to specify the size of the volume.</p>
+    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
     pub fn set_size_in_megabytes(mut self, input: std::option::Option<i32>) -> Self {
         self.size_in_megabytes = input;
         self
     }
-    /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or set to false to disable them. This parameter is required.</p>
+    /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.</p>
     pub fn storage_efficiency_enabled(mut self, input: bool) -> Self {
         self.storage_efficiency_enabled = Some(input);
         self
     }
-    /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or set to false to disable them. This parameter is required.</p>
+    /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.</p>
     pub fn set_storage_efficiency_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.storage_efficiency_enabled = input;
         self

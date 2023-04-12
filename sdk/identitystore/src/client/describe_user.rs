@@ -10,16 +10,16 @@ impl super::Client {
     ///   - [`user_id(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_id): <p>The identifier for a user in the identity store.</p>
     ///   - [`external_ids(Option<Vec<ExternalId>>)`](crate::operation::describe_user::DescribeUserOutput::external_ids): <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     ///   - [`name(Option<Name>)`](crate::operation::describe_user::DescribeUserOutput::name): <p>The name of the user.</p>
-    ///   - [`display_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::display_name): <p>The display name of the user.</p>
+    ///   - [`display_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::display_name): <p>The user's name value for display.</p>
     ///   - [`nick_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::nick_name): <p>An alternative descriptive name for the user.</p>
     ///   - [`profile_url(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::profile_url): <p>A URL link for the user's profile.</p>
-    ///   - [`emails(Option<Vec<Email>>)`](crate::operation::describe_user::DescribeUserOutput::emails): <p>The email address of the user.</p>
-    ///   - [`addresses(Option<Vec<Address>>)`](crate::operation::describe_user::DescribeUserOutput::addresses): <p>The physical address of the user.</p>
+    ///   - [`emails(Option<Vec<Email>>)`](crate::operation::describe_user::DescribeUserOutput::emails): <p>The user's email value.</p>
+    ///   - [`addresses(Option<Vec<Address>>)`](crate::operation::describe_user::DescribeUserOutput::addresses): <p>The user's physical address.</p>
     ///   - [`phone_numbers(Option<Vec<PhoneNumber>>)`](crate::operation::describe_user::DescribeUserOutput::phone_numbers): <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
-    ///   - [`user_type(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_type): <p>A string indicating the type of user.</p>
-    ///   - [`title(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::title): <p>A string containing the title of the user.</p>
+    ///   - [`user_type(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_type): <p>A string indicating the user's type.</p>
+    ///   - [`title(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::title): <p>A string containing the user's title.</p>
     ///   - [`preferred_language(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::preferred_language): <p>The preferred language of the user.</p>
-    ///   - [`locale(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::locale): <p>A string containing the geographical region or location of the user.</p>
+    ///   - [`locale(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::locale): <p>A string containing the user's geographical region or location.</p>
     ///   - [`timezone(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::timezone): <p>The time zone for a user.</p>
     ///   - [`identity_store_id(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)

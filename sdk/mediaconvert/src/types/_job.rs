@@ -16,9 +16,6 @@ pub struct Job {
     /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
     #[doc(hidden)]
     pub billing_tags_source: std::option::Option<crate::types::BillingTagsSource>,
-    /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
-    #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
     /// The time, in Unix epoch format in seconds, when the job got created.
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -83,9 +80,6 @@ pub struct Job {
     #[doc(hidden)]
     pub user_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    #[doc(hidden)]
-    pub warnings: std::option::Option<std::vec::Vec<crate::types::WarningGroup>>,
 }
 impl Job {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
@@ -105,10 +99,6 @@ impl Job {
     /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
     pub fn billing_tags_source(&self) -> std::option::Option<&crate::types::BillingTagsSource> {
         self.billing_tags_source.as_ref()
-    }
-    /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
-        self.client_request_token.as_deref()
     }
     /// The time, in Unix epoch format in seconds, when the job got created.
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -201,10 +191,6 @@ impl Job {
     {
         self.user_metadata.as_ref()
     }
-    /// Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    pub fn warnings(&self) -> std::option::Option<&[crate::types::WarningGroup]> {
-        self.warnings.as_deref()
-    }
 }
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::types::Job).
@@ -221,7 +207,6 @@ pub struct JobBuilder {
     pub(crate) acceleration_status: std::option::Option<crate::types::AccelerationStatus>,
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) billing_tags_source: std::option::Option<crate::types::BillingTagsSource>,
-    pub(crate) client_request_token: std::option::Option<std::string::String>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) current_phase: std::option::Option<crate::types::JobPhase>,
     pub(crate) error_code: std::option::Option<i32>,
@@ -245,7 +230,6 @@ pub struct JobBuilder {
     pub(crate) timing: std::option::Option<crate::types::Timing>,
     pub(crate) user_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) warnings: std::option::Option<std::vec::Vec<crate::types::WarningGroup>>,
 }
 impl JobBuilder {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
@@ -295,19 +279,6 @@ impl JobBuilder {
         input: std::option::Option<crate::types::BillingTagsSource>,
     ) -> Self {
         self.billing_tags_source = input;
-        self
-    }
-    /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_request_token = Some(input.into());
-        self
-    }
-    /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
         self
     }
     /// The time, in Unix epoch format in seconds, when the job got created.
@@ -571,25 +542,6 @@ impl JobBuilder {
         self.user_metadata = input;
         self
     }
-    /// Appends an item to `warnings`.
-    ///
-    /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
-    ///
-    /// Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    pub fn warnings(mut self, input: crate::types::WarningGroup) -> Self {
-        let mut v = self.warnings.unwrap_or_default();
-        v.push(input);
-        self.warnings = Some(v);
-        self
-    }
-    /// Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    pub fn set_warnings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WarningGroup>>,
-    ) -> Self {
-        self.warnings = input;
-        self
-    }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
@@ -597,7 +549,6 @@ impl JobBuilder {
             acceleration_status: self.acceleration_status,
             arn: self.arn,
             billing_tags_source: self.billing_tags_source,
-            client_request_token: self.client_request_token,
             created_at: self.created_at,
             current_phase: self.current_phase,
             error_code: self.error_code.unwrap_or_default(),
@@ -619,7 +570,6 @@ impl JobBuilder {
             status_update_interval: self.status_update_interval,
             timing: self.timing,
             user_metadata: self.user_metadata,
-            warnings: self.warnings,
         }
     }
 }

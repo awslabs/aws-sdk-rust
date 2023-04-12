@@ -452,8 +452,6 @@ pub(crate) mod shape_run_command_targets;
 
 pub(crate) mod shape_sage_maker_pipeline_parameter_list;
 
-pub(crate) mod shape_sqls;
-
 pub(crate) mod shape_transformer_paths;
 
 pub(crate) mod shape_run_command_target_values;

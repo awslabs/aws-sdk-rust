@@ -11,7 +11,7 @@ pub struct CountsSummary {
     /// <p>The staleness counts for Proton environments in the Amazon Web Services account. The <code>environments</code> object will only contain <code>total</code> members.</p>
     #[doc(hidden)]
     pub environments: std::option::Option<crate::types::ResourceCountsSummary>,
-    /// <p>The total number of environment templates in the Amazon Web Services account. The <code>environmentTemplates</code> object will only contain <code>total</code> members.</p>
+    /// <p>The total number of environment templates in the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub environment_templates: std::option::Option<crate::types::ResourceCountsSummary>,
     /// <p>The staleness counts for Proton service instances in the Amazon Web Services account.</p>
@@ -37,7 +37,7 @@ impl CountsSummary {
     pub fn environments(&self) -> std::option::Option<&crate::types::ResourceCountsSummary> {
         self.environments.as_ref()
     }
-    /// <p>The total number of environment templates in the Amazon Web Services account. The <code>environmentTemplates</code> object will only contain <code>total</code> members.</p>
+    /// <p>The total number of environment templates in the Amazon Web Services account.</p>
     pub fn environment_templates(
         &self,
     ) -> std::option::Option<&crate::types::ResourceCountsSummary> {
@@ -108,12 +108,12 @@ impl CountsSummaryBuilder {
         self.environments = input;
         self
     }
-    /// <p>The total number of environment templates in the Amazon Web Services account. The <code>environmentTemplates</code> object will only contain <code>total</code> members.</p>
+    /// <p>The total number of environment templates in the Amazon Web Services account.</p>
     pub fn environment_templates(mut self, input: crate::types::ResourceCountsSummary) -> Self {
         self.environment_templates = Some(input);
         self
     }
-    /// <p>The total number of environment templates in the Amazon Web Services account. The <code>environmentTemplates</code> object will only contain <code>total</code> members.</p>
+    /// <p>The total number of environment templates in the Amazon Web Services account.</p>
     pub fn set_environment_templates(
         mut self,
         input: std::option::Option<crate::types::ResourceCountsSummary>,

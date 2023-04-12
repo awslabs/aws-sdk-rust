@@ -323,8 +323,6 @@ pub use crate::types::_resource_tags::ResourceTagsBuilder;
 
 pub use crate::types::_job::JobBuilder;
 
-pub use crate::types::_warning_group::WarningGroupBuilder;
-
 pub use crate::types::_timing::TimingBuilder;
 
 pub use crate::types::_job_settings::JobSettingsBuilder;

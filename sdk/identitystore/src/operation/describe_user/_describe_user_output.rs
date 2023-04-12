@@ -15,7 +15,7 @@ pub struct DescribeUserOutput {
     /// <p>The name of the user.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::Name>,
-    /// <p>The display name of the user.</p>
+    /// <p>The user's name value for display.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>An alternative descriptive name for the user.</p>
@@ -24,25 +24,25 @@ pub struct DescribeUserOutput {
     /// <p>A URL link for the user's profile.</p>
     #[doc(hidden)]
     pub profile_url: std::option::Option<std::string::String>,
-    /// <p>The email address of the user.</p>
+    /// <p>The user's email value.</p>
     #[doc(hidden)]
     pub emails: std::option::Option<std::vec::Vec<crate::types::Email>>,
-    /// <p>The physical address of the user.</p>
+    /// <p>The user's physical address.</p>
     #[doc(hidden)]
     pub addresses: std::option::Option<std::vec::Vec<crate::types::Address>>,
     /// <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
     #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
-    /// <p>A string indicating the type of user.</p>
+    /// <p>A string indicating the user's type.</p>
     #[doc(hidden)]
     pub user_type: std::option::Option<std::string::String>,
-    /// <p>A string containing the title of the user.</p>
+    /// <p>A string containing the user's title.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The preferred language of the user.</p>
     #[doc(hidden)]
     pub preferred_language: std::option::Option<std::string::String>,
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
     /// <p>The time zone for a user.</p>
@@ -70,7 +70,7 @@ impl DescribeUserOutput {
     pub fn name(&self) -> std::option::Option<&crate::types::Name> {
         self.name.as_ref()
     }
-    /// <p>The display name of the user.</p>
+    /// <p>The user's name value for display.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -82,11 +82,11 @@ impl DescribeUserOutput {
     pub fn profile_url(&self) -> std::option::Option<&str> {
         self.profile_url.as_deref()
     }
-    /// <p>The email address of the user.</p>
+    /// <p>The user's email value.</p>
     pub fn emails(&self) -> std::option::Option<&[crate::types::Email]> {
         self.emails.as_deref()
     }
-    /// <p>The physical address of the user.</p>
+    /// <p>The user's physical address.</p>
     pub fn addresses(&self) -> std::option::Option<&[crate::types::Address]> {
         self.addresses.as_deref()
     }
@@ -94,11 +94,11 @@ impl DescribeUserOutput {
     pub fn phone_numbers(&self) -> std::option::Option<&[crate::types::PhoneNumber]> {
         self.phone_numbers.as_deref()
     }
-    /// <p>A string indicating the type of user.</p>
+    /// <p>A string indicating the user's type.</p>
     pub fn user_type(&self) -> std::option::Option<&str> {
         self.user_type.as_deref()
     }
-    /// <p>A string containing the title of the user.</p>
+    /// <p>A string containing the user's title.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
@@ -106,7 +106,7 @@ impl DescribeUserOutput {
     pub fn preferred_language(&self) -> std::option::Option<&str> {
         self.preferred_language.as_deref()
     }
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -226,12 +226,12 @@ impl DescribeUserOutputBuilder {
         self.name = input;
         self
     }
-    /// <p>The display name of the user.</p>
+    /// <p>The user's name value for display.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.display_name = Some(input.into());
         self
     }
-    /// <p>The display name of the user.</p>
+    /// <p>The user's name value for display.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.display_name = input;
         self
@@ -260,14 +260,14 @@ impl DescribeUserOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_emails`](Self::set_emails).
     ///
-    /// <p>The email address of the user.</p>
+    /// <p>The user's email value.</p>
     pub fn emails(mut self, input: crate::types::Email) -> Self {
         let mut v = self.emails.unwrap_or_default();
         v.push(input);
         self.emails = Some(v);
         self
     }
-    /// <p>The email address of the user.</p>
+    /// <p>The user's email value.</p>
     pub fn set_emails(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Email>>,
@@ -279,14 +279,14 @@ impl DescribeUserOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
     ///
-    /// <p>The physical address of the user.</p>
+    /// <p>The user's physical address.</p>
     pub fn addresses(mut self, input: crate::types::Address) -> Self {
         let mut v = self.addresses.unwrap_or_default();
         v.push(input);
         self.addresses = Some(v);
         self
     }
-    /// <p>The physical address of the user.</p>
+    /// <p>The user's physical address.</p>
     pub fn set_addresses(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Address>>,
@@ -313,22 +313,22 @@ impl DescribeUserOutputBuilder {
         self.phone_numbers = input;
         self
     }
-    /// <p>A string indicating the type of user.</p>
+    /// <p>A string indicating the user's type.</p>
     pub fn user_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_type = Some(input.into());
         self
     }
-    /// <p>A string indicating the type of user.</p>
+    /// <p>A string indicating the user's type.</p>
     pub fn set_user_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_type = input;
         self
     }
-    /// <p>A string containing the title of the user.</p>
+    /// <p>A string containing the user's title.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
         self.title = Some(input.into());
         self
     }
-    /// <p>A string containing the title of the user.</p>
+    /// <p>A string containing the user's title.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.title = input;
         self
@@ -346,12 +346,12 @@ impl DescribeUserOutputBuilder {
         self.preferred_language = input;
         self
     }
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
         self.locale = Some(input.into());
         self
     }
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.locale = input;
         self

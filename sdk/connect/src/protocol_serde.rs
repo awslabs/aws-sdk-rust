@@ -818,8 +818,6 @@ pub(crate) mod shape_contact_flow_summary;
 
 pub(crate) mod shape_control_plane_tag_filter;
 
-pub(crate) mod shape_cross_channel_behavior;
-
 pub(crate) mod shape_current_metric_result;
 
 pub(crate) mod shape_default_vocabulary;

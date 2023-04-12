@@ -12,7 +12,6 @@ pub use crate::operation::copy_project_version::_copy_project_version_input::Cop
 /// <p>To copy a model, the destination project, source project, and source model version must already exist.</p>
 /// </note>
 /// <p>Copying a model version takes a while to complete. To get the current status, call <code>DescribeProjectVersions</code> and check the value of <code>Status</code> in the <code>ProjectVersionDescription</code> object. The copy operation has finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.</p>
-/// <p>This operation requires permissions to perform the <code>rekognition:CopyProjectVersion</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CopyProjectVersionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

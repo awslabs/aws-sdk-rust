@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.0"
-//! aws-sdk-ecs = "0.25.2"
+//! aws-sdk-ecs = "0.25.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

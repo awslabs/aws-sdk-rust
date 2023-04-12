@@ -181,7 +181,7 @@ pub enum StartApplicationError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The maximum number of resources per account has been reached.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

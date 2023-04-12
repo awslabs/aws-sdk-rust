@@ -72,12 +72,12 @@ impl CreateGlobalClusterFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.</p>
+    /// <p>The cluster identifier of the new global database cluster.</p>
     pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
-    /// <p>The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.</p>
+    /// <p>The cluster identifier of the new global database cluster.</p>
     pub fn set_global_cluster_identifier(
         mut self,
         input: std::option::Option<std::string::String>,

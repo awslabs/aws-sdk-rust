@@ -172,14 +172,4 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The client token for the created component.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inner = self.inner.client_token(input.into());
-        self
-    }
-    /// <p>The client token for the created component.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.inner = self.inner.set_client_token(input);
-        self
-    }
 }

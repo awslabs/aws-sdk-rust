@@ -21,9 +21,6 @@ pub struct ListEntitiesInput {
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub ownership_type: std::option::Option<crate::types::OwnershipType>,
 }
 impl ListEntitiesInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
@@ -50,10 +47,6 @@ impl ListEntitiesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn ownership_type(&self) -> std::option::Option<&crate::types::OwnershipType> {
-        self.ownership_type.as_ref()
-    }
 }
 impl ListEntitiesInput {
     /// Creates a new builder-style object to manufacture [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
@@ -72,7 +65,6 @@ pub struct ListEntitiesInputBuilder {
     pub(crate) sort: std::option::Option<crate::types::Sort>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) ownership_type: std::option::Option<crate::types::OwnershipType>,
 }
 impl ListEntitiesInputBuilder {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
@@ -144,19 +136,6 @@ impl ListEntitiesInputBuilder {
         self.max_results = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn ownership_type(mut self, input: crate::types::OwnershipType) -> Self {
-        self.ownership_type = Some(input);
-        self
-    }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn set_ownership_type(
-        mut self,
-        input: std::option::Option<crate::types::OwnershipType>,
-    ) -> Self {
-        self.ownership_type = input;
-        self
-    }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
     pub fn build(
         self,
@@ -171,7 +150,6 @@ impl ListEntitiesInputBuilder {
             sort: self.sort,
             next_token: self.next_token,
             max_results: self.max_results,
-            ownership_type: self.ownership_type,
         })
     }
 }

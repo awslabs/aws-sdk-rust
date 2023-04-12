@@ -13,6 +13,7 @@
 /// # let provisioningartifacttype = unimplemented!();
 /// match provisioningartifacttype {
 ///     ProvisioningArtifactType::CloudFormationTemplate => { /* ... */ },
+///     ProvisioningArtifactType::DefaultCustom => { /* ... */ },
 ///     ProvisioningArtifactType::MarketplaceAmi => { /* ... */ },
 ///     ProvisioningArtifactType::MarketplaceCar => { /* ... */ },
 ///     ProvisioningArtifactType::TerraformOpenSource => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum ProvisioningArtifactType {
     #[allow(missing_docs)] // documentation missing in model
     CloudFormationTemplate,
     #[allow(missing_docs)] // documentation missing in model
+    DefaultCustom,
+    #[allow(missing_docs)] // documentation missing in model
     MarketplaceAmi,
     #[allow(missing_docs)] // documentation missing in model
     MarketplaceCar,
@@ -64,6 +67,7 @@ impl std::convert::From<&str> for ProvisioningArtifactType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD_FORMATION_TEMPLATE" => ProvisioningArtifactType::CloudFormationTemplate,
+            "DEFAULT_CUSTOM" => ProvisioningArtifactType::DefaultCustom,
             "MARKETPLACE_AMI" => ProvisioningArtifactType::MarketplaceAmi,
             "MARKETPLACE_CAR" => ProvisioningArtifactType::MarketplaceCar,
             "TERRAFORM_OPEN_SOURCE" => ProvisioningArtifactType::TerraformOpenSource,
@@ -85,6 +89,7 @@ impl ProvisioningArtifactType {
     pub fn as_str(&self) -> &str {
         match self {
             ProvisioningArtifactType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
+            ProvisioningArtifactType::DefaultCustom => "DEFAULT_CUSTOM",
             ProvisioningArtifactType::MarketplaceAmi => "MARKETPLACE_AMI",
             ProvisioningArtifactType::MarketplaceCar => "MARKETPLACE_CAR",
             ProvisioningArtifactType::TerraformOpenSource => "TERRAFORM_OPEN_SOURCE",
@@ -95,6 +100,7 @@ impl ProvisioningArtifactType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUD_FORMATION_TEMPLATE",
+            "DEFAULT_CUSTOM",
             "MARKETPLACE_AMI",
             "MARKETPLACE_CAR",
             "TERRAFORM_OPEN_SOURCE",

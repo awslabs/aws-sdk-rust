@@ -6,7 +6,7 @@
 /// <li> <p> <code>UpdateDataRepositoryAssociation</code> </p> </li>
 /// <li> <p> <code>DescribeDataRepositoryAssociations</code> </p> </li>
 /// </ul>
-/// <p>Data repository associations are supported on Amazon File Cache resources and all Amazon FSx for Lustre file systems excluding <code>Scratch_1</code> deployment types.</p>
+/// <p>Data repository associations are supported only for an Amazon FSx for Lustre file system with the <code>Persistent_2</code> deployment type and for an Amazon File Cache resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryAssociation {

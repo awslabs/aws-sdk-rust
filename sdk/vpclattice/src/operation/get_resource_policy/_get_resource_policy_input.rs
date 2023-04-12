@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>An IAM policy.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>An IAM policy.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -28,12 +28,12 @@ pub struct GetResourcePolicyInputBuilder {
     pub(crate) resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>An IAM policy.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.resource_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>An IAM policy.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.resource_arn = input;
         self

@@ -14,7 +14,7 @@ pub struct SetRepositoryPolicyInput {
     pub policy_text: std::option::Option<std::string::String>,
     /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
     #[doc(hidden)]
-    pub force: std::option::Option<bool>,
+    pub force: bool,
 }
 impl SetRepositoryPolicyInput {
     /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
@@ -30,7 +30,7 @@ impl SetRepositoryPolicyInput {
         self.policy_text.as_deref()
     }
     /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
-    pub fn force(&self) -> std::option::Option<bool> {
+    pub fn force(&self) -> bool {
         self.force
     }
 }
@@ -105,7 +105,7 @@ impl SetRepositoryPolicyInputBuilder {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
                 policy_text: self.policy_text,
-                force: self.force,
+                force: self.force.unwrap_or_default(),
             },
         )
     }

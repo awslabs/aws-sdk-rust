@@ -91,14 +91,5 @@ pub fn ser_create_web_acl_input(
         }
         array_26.finish();
     }
-    if let Some(var_28) = &input.association_config {
-        #[allow(unused_mut)]
-        let mut object_29 = object.key("AssociationConfig").start_object();
-        crate::protocol_serde::shape_association_config::ser_association_config(
-            &mut object_29,
-            var_28,
-        )?;
-        object_29.finish();
-    }
     Ok(())
 }

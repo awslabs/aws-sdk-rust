@@ -5,7 +5,7 @@ pub use crate::operation::update_service_network_vpc_association::_update_servic
 
 /// Fluent builder constructing a request to `UpdateServiceNetworkVpcAssociation`.
 ///
-/// <p>Updates the service network and VPC association. If you add a security group to the service network and VPC association, the association must continue to always have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and recreate it without security groups.</p>
+/// <p>Updates the service network and VPC association. Once you add a security group, it cannot be removed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceNetworkVpcAssociationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
@@ -80,12 +80,12 @@ impl UpdateServiceNetworkVpcAssociationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>The IDs of the security groups. </p>
+    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
-    /// <p>The IDs of the security groups. </p>
+    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
     pub fn set_security_group_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

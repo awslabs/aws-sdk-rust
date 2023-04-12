@@ -32,10 +32,6 @@ pub(crate) mod shape_create_repository;
 
 pub(crate) mod shape_create_service;
 
-pub(crate) mod shape_create_service_instance;
-
-pub(crate) mod shape_create_service_sync_config;
-
 pub(crate) mod shape_create_service_template;
 
 pub(crate) mod shape_create_service_template_version;
@@ -55,8 +51,6 @@ pub(crate) mod shape_delete_environment_template_version;
 pub(crate) mod shape_delete_repository;
 
 pub(crate) mod shape_delete_service;
-
-pub(crate) mod shape_delete_service_sync_config;
 
 pub(crate) mod shape_delete_service_template;
 
@@ -85,12 +79,6 @@ pub(crate) mod shape_get_resources_summary;
 pub(crate) mod shape_get_service;
 
 pub(crate) mod shape_get_service_instance;
-
-pub(crate) mod shape_get_service_instance_sync_status;
-
-pub(crate) mod shape_get_service_sync_blocker_summary;
-
-pub(crate) mod shape_get_service_sync_config;
 
 pub(crate) mod shape_get_service_template;
 
@@ -166,10 +154,6 @@ pub(crate) mod shape_update_service_instance;
 
 pub(crate) mod shape_update_service_pipeline;
 
-pub(crate) mod shape_update_service_sync_blocker;
-
-pub(crate) mod shape_update_service_sync_config;
-
 pub(crate) mod shape_update_service_template;
 
 pub(crate) mod shape_update_service_template_version;
@@ -212,10 +196,6 @@ pub(crate) mod shape_create_repository_input;
 
 pub(crate) mod shape_create_service_input;
 
-pub(crate) mod shape_create_service_instance_input;
-
-pub(crate) mod shape_create_service_sync_config_input;
-
 pub(crate) mod shape_create_service_template_input;
 
 pub(crate) mod shape_create_service_template_version_input;
@@ -235,8 +215,6 @@ pub(crate) mod shape_delete_environment_template_version_input;
 pub(crate) mod shape_delete_repository_input;
 
 pub(crate) mod shape_delete_service_input;
-
-pub(crate) mod shape_delete_service_sync_config_input;
 
 pub(crate) mod shape_delete_service_template_input;
 
@@ -261,12 +239,6 @@ pub(crate) mod shape_get_repository_sync_status_input;
 pub(crate) mod shape_get_service_input;
 
 pub(crate) mod shape_get_service_instance_input;
-
-pub(crate) mod shape_get_service_instance_sync_status_input;
-
-pub(crate) mod shape_get_service_sync_blocker_summary_input;
-
-pub(crate) mod shape_get_service_sync_config_input;
 
 pub(crate) mod shape_get_service_template_input;
 
@@ -350,10 +322,6 @@ pub(crate) mod shape_update_service_instance_input;
 
 pub(crate) mod shape_update_service_pipeline_input;
 
-pub(crate) mod shape_update_service_sync_blocker_input;
-
-pub(crate) mod shape_update_service_sync_config_input;
-
 pub(crate) mod shape_update_service_template_input;
 
 pub(crate) mod shape_update_service_template_version_input;
@@ -422,10 +390,6 @@ pub(crate) mod shape_service_pipeline;
 
 pub(crate) mod shape_service_summary_list;
 
-pub(crate) mod shape_service_sync_blocker_summary;
-
-pub(crate) mod shape_service_sync_config;
-
 pub(crate) mod shape_service_template;
 
 pub(crate) mod shape_service_template_summary_list;
@@ -433,8 +397,6 @@ pub(crate) mod shape_service_template_summary_list;
 pub(crate) mod shape_service_template_version;
 
 pub(crate) mod shape_service_template_version_summary_list;
-
-pub(crate) mod shape_sync_blocker;
 
 pub(crate) mod shape_tag;
 
@@ -455,8 +417,6 @@ pub(crate) mod shape_environment_summary;
 pub(crate) mod shape_environment_template_summary;
 
 pub(crate) mod shape_environment_template_version_summary;
-
-pub(crate) mod shape_latest_sync_blockers;
 
 pub(crate) mod shape_provisioned_resource;
 
@@ -484,12 +444,8 @@ pub(crate) mod shape_service_template_supported_component_source_input_list;
 
 pub(crate) mod shape_service_template_version_summary;
 
-pub(crate) mod shape_sync_blocker_contexts;
-
 pub(crate) mod shape_compatible_environment_template;
 
 pub(crate) mod shape_repository_sync_event;
 
 pub(crate) mod shape_resource_sync_event;
-
-pub(crate) mod shape_sync_blocker_context;

@@ -1,10 +1,8 @@
 [workspace]
 exclude = [
-    "tests/using-native-tls-instead-of-rustls",
     "tests/aws-smithy-runtime-test",
-    "tests/no-default-features"
-]
-members = [
+    "tests/using-native-tls-instead-of-rustls",
+    "tests/no-default-features",
     "examples/apigateway",
     "examples/apigatewaymanagement",
     "examples/applicationautoscaling",
@@ -58,9 +56,10 @@ members = [
     "examples/sts",
     "examples/test-utils",
     "examples/testing",
-    "examples/textract",
     "examples/tls",
-    "examples/transcribestreaming",
+    "examples/transcribestreaming"
+]
+members = [
     "sdk/accessanalyzer",
     "sdk/account",
     "sdk/acm",

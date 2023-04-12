@@ -143,17 +143,4 @@ impl ListEntitiesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn ownership_type(mut self, input: crate::types::OwnershipType) -> Self {
-        self.inner = self.inner.ownership_type(input);
-        self
-    }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn set_ownership_type(
-        mut self,
-        input: std::option::Option<crate::types::OwnershipType>,
-    ) -> Self {
-        self.inner = self.inner.set_ownership_type(input);
-        self
-    }
 }

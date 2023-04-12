@@ -756,52 +756,6 @@ impl From<crate::operation::create_namespace::CreateNamespaceError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::operation::create_refresh_schedule::CreateRefreshScheduleError> for Error {
-    fn from(err: crate::operation::create_refresh_schedule::CreateRefreshScheduleError) -> Self {
-        match err {
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::create_refresh_schedule::CreateRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
             crate::operation::create_template::CreateTemplateError,
             R,
         >,
@@ -1217,37 +1171,6 @@ impl From<crate::operation::delete_data_set::DeleteDataSetError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError>
-    for Error
-{
-    fn from(
-        err: crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError,
-    ) -> Self {
-        match err {
-            crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -1584,50 +1507,6 @@ impl From<crate::operation::delete_namespace::DeleteNamespaceError> for Error {
             crate::operation::delete_namespace::DeleteNamespaceError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
             crate::operation::delete_namespace::DeleteNamespaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_namespace::DeleteNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError> for Error {
-    fn from(err: crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError) -> Self {
-        match err {
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2430,33 +2309,6 @@ impl From<crate::operation::describe_data_set_permissions::DescribeDataSetPermis
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError> for Error {
-    fn from(err: crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError) -> Self {
-        match err {
-            crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
-            crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -2927,52 +2779,6 @@ impl From<crate::operation::describe_namespace::DescribeNamespaceError> for Erro
             crate::operation::describe_namespace::DescribeNamespaceError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
             crate::operation::describe_namespace::DescribeNamespaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_namespace::DescribeNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError> for Error {
-    fn from(
-        err: crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError,
-    ) -> Self {
-        match err {
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4099,50 +3905,6 @@ impl From<crate::operation::list_namespaces::ListNamespacesError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::operation::list_refresh_schedules::ListRefreshSchedulesError> for Error {
-    fn from(err: crate::operation::list_refresh_schedules::ListRefreshSchedulesError) -> Self {
-        match err {
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_refresh_schedules::ListRefreshSchedulesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
             crate::operation::list_tags_for_resource::ListTagsForResourceError,
             R,
         >,
@@ -4551,56 +4313,6 @@ impl From<crate::operation::list_users::ListUsersError> for Error {
             crate::operation::list_users::ListUsersError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError>
-    for Error
-{
-    fn from(
-        err: crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError,
-    ) -> Self {
-        match err {
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5867,51 +5579,6 @@ impl From<crate::operation::update_public_sharing_settings::UpdatePublicSharingS
             crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
             crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::operation::update_refresh_schedule::UpdateRefreshScheduleError> for Error {
-    fn from(err: crate::operation::update_refresh_schedule::UpdateRefreshScheduleError) -> Self {
-        match err {
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

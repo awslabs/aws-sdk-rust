@@ -132,11 +132,6 @@ where
                                     )?,
                                 );
                             }
-                            "AssociationConfig" => {
-                                builder = builder.set_association_config(
-                                    crate::protocol_serde::shape_association_config::de_association_config(tokens)?
-                                );
-                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

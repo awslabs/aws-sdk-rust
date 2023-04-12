@@ -5,7 +5,7 @@ pub use crate::operation::create_user::_create_user_input::CreateUserInputBuilde
 
 /// Fluent builder constructing a request to `CreateUser`.
 ///
-/// <p>Creates a user within the specified identity store.</p>
+/// <p>Creates a new user within the specified identity store.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateUserFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -78,32 +78,32 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the user's name.</p>
     pub fn name(mut self, input: crate::types::Name) -> Self {
         self.inner = self.inner.name(input);
         self
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the user's name.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::Name>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    /// <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    /// <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
@@ -118,12 +118,12 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_nick_name(input);
         self
     }
-    /// <p>A string containing a URL that might be associated with the user.</p>
+    /// <p>A string containing a URL that may be associated with the user.</p>
     pub fn profile_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.profile_url(input.into());
         self
     }
-    /// <p>A string containing a URL that might be associated with the user.</p>
+    /// <p>A string containing a URL that may be associated with the user.</p>
     pub fn set_profile_url(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_profile_url(input);
         self
@@ -179,22 +179,22 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_phone_numbers(input);
         self
     }
-    /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
     pub fn user_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_type(input.into());
         self
     }
-    /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
     pub fn set_user_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_user_type(input);
         self
     }
-    /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
         self
     }
-    /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    /// <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self
@@ -212,22 +212,22 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_preferred_language(input);
         self
     }
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
         self
     }
-    /// <p>A string containing the geographical region or location of the user.</p>
+    /// <p>A string containing the user's geographical region or location.</p>
     pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
-    /// <p>A string containing the time zone of the user.</p>
+    /// <p>A string containing the user's time zone.</p>
     pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.timezone(input.into());
         self
     }
-    /// <p>A string containing the time zone of the user.</p>
+    /// <p>A string containing the user's time zone.</p>
     pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_timezone(input);
         self

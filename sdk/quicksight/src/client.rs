@@ -240,8 +240,6 @@ mod create_ingestion;
 
 mod create_namespace;
 
-mod create_refresh_schedule;
-
 mod create_template;
 
 mod create_template_alias;
@@ -288,8 +286,6 @@ mod delete_dashboard;
 
 mod delete_data_set;
 
-mod delete_data_set_refresh_properties;
-
 mod delete_data_source;
 
 mod delete_folder;
@@ -303,8 +299,6 @@ mod delete_group_membership;
 mod delete_iam_policy_assignment;
 
 mod delete_namespace;
-
-mod delete_refresh_schedule;
 
 mod delete_template;
 
@@ -340,8 +334,6 @@ mod describe_data_set;
 
 mod describe_data_set_permissions;
 
-mod describe_data_set_refresh_properties;
-
 mod describe_data_source;
 
 mod describe_data_source_permissions;
@@ -363,8 +355,6 @@ mod describe_ingestion;
 mod describe_ip_restriction;
 
 mod describe_namespace;
-
-mod describe_refresh_schedule;
 
 mod describe_template;
 
@@ -416,8 +406,6 @@ mod list_ingestions;
 
 mod list_namespaces;
 
-mod list_refresh_schedules;
-
 mod list_tags_for_resource;
 
 mod list_template_aliases;
@@ -435,8 +423,6 @@ mod list_themes;
 mod list_user_groups;
 
 mod list_users;
-
-mod put_data_set_refresh_properties;
 
 mod register_user;
 
@@ -491,8 +477,6 @@ mod update_iam_policy_assignment;
 mod update_ip_restriction;
 
 mod update_public_sharing_settings;
-
-mod update_refresh_schedule;
 
 mod update_template;
 

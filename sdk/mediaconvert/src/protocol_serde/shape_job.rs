@@ -60,15 +60,6 @@ where
                                     .transpose()?,
                                 );
                             }
-                            "clientRequestToken" => {
-                                builder = builder.set_client_request_token(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
                             "createdAt" => {
                                 builder = builder.set_created_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -245,11 +236,6 @@ where
                             "userMetadata" => {
                                 builder = builder.set_user_metadata(
                                     crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?
-                                );
-                            }
-                            "warnings" => {
-                                builder = builder.set_warnings(
-                                    crate::protocol_serde::shape___list_of_warning_group::de___list_of_warning_group(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

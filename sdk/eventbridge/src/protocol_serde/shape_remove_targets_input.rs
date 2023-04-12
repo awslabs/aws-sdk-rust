@@ -18,8 +18,8 @@ pub fn ser_remove_targets_input(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.force {
-        object.key("Force").boolean(*var_6);
+    if input.force {
+        object.key("Force").boolean(input.force);
     }
     Ok(())
 }

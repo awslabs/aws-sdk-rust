@@ -7,7 +7,7 @@ pub struct VisibilityConfig {
     /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
     #[doc(hidden)]
     pub sampled_requests_enabled: bool,
-    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a>.</p>
     #[doc(hidden)]
     pub cloud_watch_metrics_enabled: bool,
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
@@ -19,7 +19,7 @@ impl VisibilityConfig {
     pub fn sampled_requests_enabled(&self) -> bool {
         self.sampled_requests_enabled
     }
-    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a>.</p>
     pub fn cloud_watch_metrics_enabled(&self) -> bool {
         self.cloud_watch_metrics_enabled
     }
@@ -54,12 +54,12 @@ impl VisibilityConfigBuilder {
         self.sampled_requests_enabled = input;
         self
     }
-    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a>.</p>
     pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
         self.cloud_watch_metrics_enabled = Some(input);
         self
     }
-    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a>.</p>
     pub fn set_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.cloud_watch_metrics_enabled = input;
         self

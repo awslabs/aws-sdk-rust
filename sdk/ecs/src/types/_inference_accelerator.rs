@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceAccelerator {
-    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
+    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <code>ResourceRequirement</code>.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The Elastic Inference accelerator type to use.</p>
@@ -12,7 +12,7 @@ pub struct InferenceAccelerator {
     pub device_type: std::option::Option<std::string::String>,
 }
 impl InferenceAccelerator {
-    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
+    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <code>ResourceRequirement</code>.</p>
     pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
@@ -36,12 +36,12 @@ pub struct InferenceAcceleratorBuilder {
     pub(crate) device_type: std::option::Option<std::string::String>,
 }
 impl InferenceAcceleratorBuilder {
-    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
+    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <code>ResourceRequirement</code>.</p>
     pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.device_name = Some(input.into());
         self
     }
-    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
+    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <code>ResourceRequirement</code>.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.device_name = input;
         self

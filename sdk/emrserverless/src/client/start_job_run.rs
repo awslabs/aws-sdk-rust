@@ -14,7 +14,7 @@ impl super::Client {
     /// - On success, responds with [`StartJobRunOutput`](crate::operation::start_job_run::StartJobRunOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::application_id): <p>This output displays the application ID on which the job run was submitted.</p>
     ///   - [`job_run_id(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::job_run_id): <p>The output contains the ID of the started job run.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::arn): <p>This output displays the ARN of the job run..</p>
+    ///   - [`arn(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::arn): <p>The output lists the execution role ARN of the job run.</p>
     /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::operation::start_job_run::StartJobRunError)
     pub fn start_job_run(
         &self,

@@ -242,21 +242,15 @@ mod cancel_change_set;
 /// ```
 pub mod customize;
 
-mod delete_resource_policy;
-
 mod describe_change_set;
 
 mod describe_entity;
-
-mod get_resource_policy;
 
 mod list_change_sets;
 
 mod list_entities;
 
 mod list_tags_for_resource;
-
-mod put_resource_policy;
 
 mod start_change_set;
 
