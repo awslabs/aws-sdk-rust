@@ -9,9 +9,11 @@ publish = false
 [workspace]
 
 [dependencies]
-lambda_runtime = "0.4"
+lambda_runtime = "0.7.3"
 log = "0.4"
 time = "0.3"
+tracing = "0.1.37"
+serde_json = "1.0.94"
 aws-config= { version = "0.55.1", path = "../../sdk/aws-config" }
 aws-sdk-ec2= { version = "0.26.0", path = "../../sdk/ec2" }
 aws-sdk-lambda= { version = "0.26.0", path = "../../sdk/lambda" }

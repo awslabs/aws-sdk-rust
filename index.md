@@ -297,7 +297,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Simple Storage Service | [aws-sdk-s3](https://crates.io/crates/aws-sdk-s3) ([docs](https://docs.rs/aws-sdk-s3)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/s3)) |
 | Amazon Simple Systems Manager (SSM) | [aws-sdk-ssm](https://crates.io/crates/aws-sdk-ssm) ([docs](https://docs.rs/aws-sdk-ssm)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/ssm)) |
 | Amazon Simple Workflow Service | [aws-sdk-swf](https://crates.io/crates/aws-sdk-swf) ([docs](https://docs.rs/aws-sdk-swf)) |
-| Amazon Textract | [aws-sdk-textract](https://crates.io/crates/aws-sdk-textract) ([docs](https://docs.rs/aws-sdk-textract)) |
+| Amazon Textract | [aws-sdk-textract](https://crates.io/crates/aws-sdk-textract) ([docs](https://docs.rs/aws-sdk-textract)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/textract)) |
 | Amazon Transcribe Service | [aws-sdk-transcribe](https://crates.io/crates/aws-sdk-transcribe) ([docs](https://docs.rs/aws-sdk-transcribe)) |
 | Amazon Transcribe Streaming Service | [aws-sdk-transcribestreaming](https://crates.io/crates/aws-sdk-transcribestreaming) ([docs](https://docs.rs/aws-sdk-transcribestreaming)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/transcribestreaming)) |
 | Amazon Translate | [aws-sdk-translate](https://crates.io/crates/aws-sdk-translate) ([docs](https://docs.rs/aws-sdk-translate)) |

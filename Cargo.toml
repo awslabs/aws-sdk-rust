@@ -28,6 +28,7 @@ exclude = [
     "examples/eks",
     "examples/kinesis",
     "examples/ssm",
+    "examples/textract",
     "examples/custom-root-certificates",
     "examples/sdk-config",
     "examples/mediapackage",
