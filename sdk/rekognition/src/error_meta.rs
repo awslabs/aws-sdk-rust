@@ -42,6 +42,8 @@ pub enum Error {
     /// <p></p>
     /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>Occurs when a given sessionId is not found.</p>
+    SessionNotFoundException(crate::types::error::SessionNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
@@ -70,6 +72,7 @@ impl std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceNotReadyException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::SessionNotFoundException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::VideoTooLargeException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -250,6 +253,53 @@ impl From<crate::operation::create_dataset::CreateDatasetError> for Error {
             crate::operation::create_dataset::CreateDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_dataset::CreateDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_dataset::CreateDatasetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError,
+    ) -> Self {
+        match err {
+            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1397,6 +1447,54 @@ impl From<crate::operation::get_face_detection::GetFaceDetectionError> for Error
             crate::operation::get_face_detection::GetFaceDetectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_face_detection::GetFaceDetectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_face_detection::GetFaceDetectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
+    ) -> Self {
+        match err {
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError::SessionNotFoundException(inner) => Error::SessionNotFoundException(inner),
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2870,6 +2968,7 @@ impl From<crate::operation::update_stream_processor::UpdateStreamProcessorError>
             crate::operation::update_stream_processor::UpdateStreamProcessorError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::update_stream_processor::UpdateStreamProcessorError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_stream_processor::UpdateStreamProcessorError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::operation::update_stream_processor::UpdateStreamProcessorError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::update_stream_processor::UpdateStreamProcessorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_stream_processor::UpdateStreamProcessorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_stream_processor::UpdateStreamProcessorError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2898,6 +2997,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourceNotReadyException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::SessionNotFoundException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::VideoTooLargeException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),

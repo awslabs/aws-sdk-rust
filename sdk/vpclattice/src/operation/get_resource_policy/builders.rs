@@ -5,7 +5,7 @@ pub use crate::operation::get_resource_policy::_get_resource_policy_input::GetRe
 
 /// Fluent builder constructing a request to `GetResourcePolicy`.
 ///
-/// <p>Retrieves information about the resource policy. The resource policy is an IAM policy created by AWS RAM on behalf of the resource owner when they share a resource.</p>
+/// <p>Retrieves information about the resource policy. The resource policy is an IAM policy created on behalf of the resource owner when they share a resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourcePolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +69,12 @@ impl GetResourcePolicyFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>An IAM policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>An IAM policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self

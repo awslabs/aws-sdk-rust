@@ -11,7 +11,7 @@ pub struct RulesSource {
     /// <p>Stateful inspection criteria for a domain list rule group. </p>
     #[doc(hidden)]
     pub rules_source_list: std::option::Option<crate::types::RulesSourceList>,
-    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
+    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
     #[doc(hidden)]
     pub stateful_rules: std::option::Option<std::vec::Vec<crate::types::StatefulRule>>,
     /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
@@ -29,7 +29,7 @@ impl RulesSource {
     pub fn rules_source_list(&self) -> std::option::Option<&crate::types::RulesSourceList> {
         self.rules_source_list.as_ref()
     }
-    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
+    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
     pub fn stateful_rules(&self) -> std::option::Option<&[crate::types::StatefulRule]> {
         self.stateful_rules.as_deref()
     }
@@ -87,14 +87,14 @@ impl RulesSourceBuilder {
     ///
     /// To override the contents of this collection use [`set_stateful_rules`](Self::set_stateful_rules).
     ///
-    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
+    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
     pub fn stateful_rules(mut self, input: crate::types::StatefulRule) -> Self {
         let mut v = self.stateful_rules.unwrap_or_default();
         v.push(input);
         self.stateful_rules = Some(v);
         self
     }
-    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
+    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
     pub fn set_stateful_rules(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::StatefulRule>>,

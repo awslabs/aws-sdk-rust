@@ -12,7 +12,7 @@ pub struct StartTaskInput {
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub enable_ecs_managed_tags: std::option::Option<bool>,
-    /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
+    /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     #[doc(hidden)]
     pub enable_execute_command: std::option::Option<bool>,
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
@@ -66,7 +66,7 @@ impl StartTaskInput {
     pub fn enable_ecs_managed_tags(&self) -> std::option::Option<bool> {
         self.enable_ecs_managed_tags
     }
-    /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
+    /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     pub fn enable_execute_command(&self) -> std::option::Option<bool> {
         self.enable_execute_command
     }
@@ -182,12 +182,12 @@ impl StartTaskInputBuilder {
         self.enable_ecs_managed_tags = input;
         self
     }
-    /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
+    /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {
         self.enable_execute_command = Some(input);
         self
     }
-    /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
+    /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
         self.enable_execute_command = input;
         self

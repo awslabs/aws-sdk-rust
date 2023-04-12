@@ -29,6 +29,18 @@ pub use crate::types::_provisioning::Provisioning;
 
 pub use crate::types::_service_template::ServiceTemplate;
 
+pub use crate::types::_service_sync_config::ServiceSyncConfig;
+
+pub use crate::types::_sync_blocker::SyncBlocker;
+
+pub use crate::types::_sync_blocker_context::SyncBlockerContext;
+
+pub use crate::types::_blocker_status::BlockerStatus;
+
+pub use crate::types::_blocker_type::BlockerType;
+
+pub use crate::types::_service_sync_blocker_summary::ServiceSyncBlockerSummary;
+
 pub use crate::types::_service_summary::ServiceSummary;
 
 pub use crate::types::_service_status::ServiceStatus;
@@ -122,6 +134,10 @@ pub use crate::types::_repository_sync_event::RepositorySyncEvent;
 pub use crate::types::_repository_sync_status::RepositorySyncStatus;
 
 mod _account_settings;
+
+mod _blocker_status;
+
+mod _blocker_type;
 
 mod _compatible_environment_template;
 
@@ -219,6 +235,10 @@ mod _service_status;
 
 mod _service_summary;
 
+mod _service_sync_blocker_summary;
+
+mod _service_sync_config;
+
 mod _service_template;
 
 mod _service_template_summary;
@@ -230,6 +250,10 @@ mod _service_template_version;
 mod _service_template_version_summary;
 
 mod _sort_order;
+
+mod _sync_blocker;
+
+mod _sync_blocker_context;
 
 mod _sync_type;
 

@@ -18,6 +18,7 @@
 ///     EffectiveDeploymentExecutionStatus::InProgress => { /* ... */ },
 ///     EffectiveDeploymentExecutionStatus::Queued => { /* ... */ },
 ///     EffectiveDeploymentExecutionStatus::Rejected => { /* ... */ },
+///     EffectiveDeploymentExecutionStatus::Succeeded => { /* ... */ },
 ///     EffectiveDeploymentExecutionStatus::TimedOut => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum EffectiveDeploymentExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
     #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -78,6 +81,7 @@ impl std::convert::From<&str> for EffectiveDeploymentExecutionStatus {
             "IN_PROGRESS" => EffectiveDeploymentExecutionStatus::InProgress,
             "QUEUED" => EffectiveDeploymentExecutionStatus::Queued,
             "REJECTED" => EffectiveDeploymentExecutionStatus::Rejected,
+            "SUCCEEDED" => EffectiveDeploymentExecutionStatus::Succeeded,
             "TIMED_OUT" => EffectiveDeploymentExecutionStatus::TimedOut,
             other => EffectiveDeploymentExecutionStatus::Unknown(
                 crate::primitives::UnknownVariantValue(other.to_owned()),
@@ -102,6 +106,7 @@ impl EffectiveDeploymentExecutionStatus {
             EffectiveDeploymentExecutionStatus::InProgress => "IN_PROGRESS",
             EffectiveDeploymentExecutionStatus::Queued => "QUEUED",
             EffectiveDeploymentExecutionStatus::Rejected => "REJECTED",
+            EffectiveDeploymentExecutionStatus::Succeeded => "SUCCEEDED",
             EffectiveDeploymentExecutionStatus::TimedOut => "TIMED_OUT",
             EffectiveDeploymentExecutionStatus::Unknown(value) => value.as_str(),
         }
@@ -115,6 +120,7 @@ impl EffectiveDeploymentExecutionStatus {
             "IN_PROGRESS",
             "QUEUED",
             "REJECTED",
+            "SUCCEEDED",
             "TIMED_OUT",
         ]
     }

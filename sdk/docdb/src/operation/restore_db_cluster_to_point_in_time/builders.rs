@@ -86,6 +86,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
     /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
     /// </ul>
+    /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     pub fn restore_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.restore_type(input.into());
@@ -96,6 +97,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
     /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
     /// </ul>
+    /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     pub fn set_restore_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_restore_type(input);

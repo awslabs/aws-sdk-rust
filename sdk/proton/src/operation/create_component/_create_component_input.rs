@@ -33,6 +33,9 @@ pub struct CreateComponentInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    /// <p>The client token for the created component.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateComponentInput {
     /// <p>The customer-provided name of the component.</p>
@@ -74,6 +77,10 @@ impl CreateComponentInput {
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The client token for the created component.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -87,6 +94,7 @@ impl std::fmt::Debug for CreateComponentInput {
         formatter.field("manifest", &"*** Sensitive Data Redacted ***");
         formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }
@@ -110,6 +118,7 @@ pub struct CreateComponentInputBuilder {
     pub(crate) manifest: std::option::Option<std::string::String>,
     pub(crate) service_spec: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl CreateComponentInputBuilder {
     /// <p>The customer-provided name of the component.</p>
@@ -220,6 +229,16 @@ impl CreateComponentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The client token for the created component.</p>
+    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+        self.client_token = Some(input.into());
+        self
+    }
+    /// <p>The client token for the created component.</p>
+    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
     pub fn build(
         self,
@@ -237,6 +256,7 @@ impl CreateComponentInputBuilder {
             manifest: self.manifest,
             service_spec: self.service_spec,
             tags: self.tags,
+            client_token: self.client_token,
         })
     }
 }
@@ -252,6 +272,7 @@ impl std::fmt::Debug for CreateComponentInputBuilder {
         formatter.field("manifest", &"*** Sensitive Data Redacted ***");
         formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }

@@ -71,12 +71,12 @@ impl BatchDeleteImageFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The Amazon Web Services account ID that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_registry_id(input);
         self

@@ -10,7 +10,7 @@ pub struct RemediationConfiguration {
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
     #[doc(hidden)]
     pub target_type: std::option::Option<crate::types::RemediationTargetType>,
-    /// <p>Target ID is the name of the public document.</p>
+    /// <p>Target ID is the name of the SSM document.</p>
     #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>Version of the target. For example, version of the SSM document.</p> <note>
@@ -56,7 +56,7 @@ impl RemediationConfiguration {
     pub fn target_type(&self) -> std::option::Option<&crate::types::RemediationTargetType> {
         self.target_type.as_ref()
     }
-    /// <p>Target ID is the name of the public document.</p>
+    /// <p>Target ID is the name of the SSM document.</p>
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
     }
@@ -155,12 +155,12 @@ impl RemediationConfigurationBuilder {
         self.target_type = input;
         self
     }
-    /// <p>Target ID is the name of the public document.</p>
+    /// <p>Target ID is the name of the SSM document.</p>
     pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_id = Some(input.into());
         self
     }
-    /// <p>Target ID is the name of the public document.</p>
+    /// <p>Target ID is the name of the SSM document.</p>
     pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.target_id = input;
         self

@@ -78,12 +78,12 @@ impl GetGroupIdFluentBuilder {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>GroupDisplayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
     pub fn alternate_identifier(mut self, input: crate::types::AlternateIdentifier) -> Self {
         self.inner = self.inner.alternate_identifier(input);
         self
     }
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>GroupDisplayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
     pub fn set_alternate_identifier(
         mut self,
         input: std::option::Option<crate::types::AlternateIdentifier>,

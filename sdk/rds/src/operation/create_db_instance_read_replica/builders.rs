@@ -287,7 +287,6 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     /// <p>Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web Services Region.</p> </li>
     /// <li> <p>If supplied, must match the name of an existing DBSubnetGroup.</p> </li>
     /// <li> <p>The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.</p> </li>
     /// <li> <p>All read replicas in one Amazon Web Services Region that are created from the same source DB instance must either:&gt;</p>
@@ -304,7 +303,6 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     /// <p>Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web Services Region.</p> </li>
     /// <li> <p>If supplied, must match the name of an existing DBSubnetGroup.</p> </li>
     /// <li> <p>The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.</p> </li>
     /// <li> <p>All read replicas in one Amazon Web Services Region that are created from the same source DB instance must either:&gt;</p>

@@ -2,7 +2,7 @@
 
 /// <p>Object specifying a participant token in a stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParticipantToken {
     /// <p>Unique identifier for this participant token, assigned by IVS.</p>
     #[doc(hidden)]
@@ -60,6 +60,19 @@ impl ParticipantToken {
         self.expiration_time.as_ref()
     }
 }
+impl std::fmt::Debug for ParticipantToken {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ParticipantToken");
+        formatter.field("participant_id", &self.participant_id);
+        formatter.field("token", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("attributes", &self.attributes);
+        formatter.field("duration", &self.duration);
+        formatter.field("capabilities", &self.capabilities);
+        formatter.field("expiration_time", &self.expiration_time);
+        formatter.finish()
+    }
+}
 impl ParticipantToken {
     /// Creates a new builder-style object to manufacture [`ParticipantToken`](crate::types::ParticipantToken).
     pub fn builder() -> crate::types::builders::ParticipantTokenBuilder {
@@ -69,7 +82,7 @@ impl ParticipantToken {
 
 /// A builder for [`ParticipantToken`](crate::types::ParticipantToken).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct ParticipantTokenBuilder {
     pub(crate) participant_id: std::option::Option<std::string::String>,
     pub(crate) token: std::option::Option<std::string::String>,
@@ -190,5 +203,18 @@ impl ParticipantTokenBuilder {
             capabilities: self.capabilities,
             expiration_time: self.expiration_time,
         }
+    }
+}
+impl std::fmt::Debug for ParticipantTokenBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ParticipantTokenBuilder");
+        formatter.field("participant_id", &self.participant_id);
+        formatter.field("token", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("attributes", &self.attributes);
+        formatter.field("duration", &self.duration);
+        formatter.field("capabilities", &self.capabilities);
+        formatter.field("expiration_time", &self.expiration_time);
+        formatter.finish()
     }
 }

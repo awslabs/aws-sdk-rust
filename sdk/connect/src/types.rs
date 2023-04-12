@@ -71,6 +71,10 @@ pub use crate::types::_channel::Channel;
 
 pub use crate::types::_media_concurrency::MediaConcurrency;
 
+pub use crate::types::_cross_channel_behavior::CrossChannelBehavior;
+
+pub use crate::types::_behavior_type::BehaviorType;
+
 pub use crate::types::_quick_connect_config::QuickConnectConfig;
 
 pub use crate::types::_phone_number_quick_connect_config::PhoneNumberQuickConnectConfig;
@@ -447,6 +451,8 @@ mod _attribute;
 
 mod _available_number_summary;
 
+mod _behavior_type;
+
 mod _channel;
 
 mod _chat_message;
@@ -486,6 +492,8 @@ mod _contact_state;
 mod _control_plane_tag_filter;
 
 mod _credentials;
+
+mod _cross_channel_behavior;
 
 mod _current_metric;
 

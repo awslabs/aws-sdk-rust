@@ -23,6 +23,7 @@
 ///     IngestionErrorType::DataSourceConnectionFailed => { /* ... */ },
 ///     IngestionErrorType::DataSourceNotFound => { /* ... */ },
 ///     IngestionErrorType::DataToleranceException => { /* ... */ },
+///     IngestionErrorType::DuplicateColumnNamesFound => { /* ... */ },
 ///     IngestionErrorType::ElasticsearchCursorNotEnabled => { /* ... */ },
 ///     IngestionErrorType::FailureToAssumeRole => { /* ... */ },
 ///     IngestionErrorType::FailureToProcessJsonFile => { /* ... */ },
@@ -112,6 +113,8 @@ pub enum IngestionErrorType {
     #[allow(missing_docs)] // documentation missing in model
     DataToleranceException,
     #[allow(missing_docs)] // documentation missing in model
+    DuplicateColumnNamesFound,
+    #[allow(missing_docs)] // documentation missing in model
     ElasticsearchCursorNotEnabled,
     #[allow(missing_docs)] // documentation missing in model
     FailureToAssumeRole,
@@ -194,6 +197,7 @@ impl std::convert::From<&str> for IngestionErrorType {
             "DATA_SOURCE_CONNECTION_FAILED" => IngestionErrorType::DataSourceConnectionFailed,
             "DATA_SOURCE_NOT_FOUND" => IngestionErrorType::DataSourceNotFound,
             "DATA_TOLERANCE_EXCEPTION" => IngestionErrorType::DataToleranceException,
+            "DUPLICATE_COLUMN_NAMES_FOUND" => IngestionErrorType::DuplicateColumnNamesFound,
             "ELASTICSEARCH_CURSOR_NOT_ENABLED" => IngestionErrorType::ElasticsearchCursorNotEnabled,
             "FAILURE_TO_ASSUME_ROLE" => IngestionErrorType::FailureToAssumeRole,
             "FAILURE_TO_PROCESS_JSON_FILE" => IngestionErrorType::FailureToProcessJsonFile,
@@ -259,6 +263,7 @@ impl IngestionErrorType {
             IngestionErrorType::DataSourceConnectionFailed => "DATA_SOURCE_CONNECTION_FAILED",
             IngestionErrorType::DataSourceNotFound => "DATA_SOURCE_NOT_FOUND",
             IngestionErrorType::DataToleranceException => "DATA_TOLERANCE_EXCEPTION",
+            IngestionErrorType::DuplicateColumnNamesFound => "DUPLICATE_COLUMN_NAMES_FOUND",
             IngestionErrorType::ElasticsearchCursorNotEnabled => "ELASTICSEARCH_CURSOR_NOT_ENABLED",
             IngestionErrorType::FailureToAssumeRole => "FAILURE_TO_ASSUME_ROLE",
             IngestionErrorType::FailureToProcessJsonFile => "FAILURE_TO_PROCESS_JSON_FILE",
@@ -313,6 +318,7 @@ impl IngestionErrorType {
             "DATA_SOURCE_CONNECTION_FAILED",
             "DATA_SOURCE_NOT_FOUND",
             "DATA_TOLERANCE_EXCEPTION",
+            "DUPLICATE_COLUMN_NAMES_FOUND",
             "ELASTICSEARCH_CURSOR_NOT_ENABLED",
             "FAILURE_TO_ASSUME_ROLE",
             "FAILURE_TO_PROCESS_JSON_FILE",

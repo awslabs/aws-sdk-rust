@@ -14,7 +14,7 @@ version = "0.55.0"
 path = "../../sdk/s3"
 default-features = false
 features = ["native-tls"]
-version = "0.25.1"
+version = "0.26.0"
 
 [dev-dependencies.tokio]
 version = "1.20.1"

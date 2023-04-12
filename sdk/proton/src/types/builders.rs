@@ -17,6 +17,14 @@ pub use crate::types::_service_template_summary::ServiceTemplateSummaryBuilder;
 
 pub use crate::types::_service_template::ServiceTemplateBuilder;
 
+pub use crate::types::_service_sync_config::ServiceSyncConfigBuilder;
+
+pub use crate::types::_sync_blocker::SyncBlockerBuilder;
+
+pub use crate::types::_sync_blocker_context::SyncBlockerContextBuilder;
+
+pub use crate::types::_service_sync_blocker_summary::ServiceSyncBlockerSummaryBuilder;
+
 pub use crate::types::_service_summary::ServiceSummaryBuilder;
 
 pub use crate::types::_service::ServiceBuilder;

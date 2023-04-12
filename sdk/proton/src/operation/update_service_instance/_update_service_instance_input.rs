@@ -43,6 +43,9 @@ pub struct UpdateServiceInstanceInput {
     /// <p>The minor version of the service template to update.</p>
     #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
+    /// <p>The client token of the service instance to update.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateServiceInstanceInput {
     /// <p>The name of the service instance to update.</p>
@@ -91,6 +94,10 @@ impl UpdateServiceInstanceInput {
     pub fn template_minor_version(&self) -> std::option::Option<&str> {
         self.template_minor_version.as_deref()
     }
+    /// <p>The client token of the service instance to update.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateServiceInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -101,6 +108,7 @@ impl std::fmt::Debug for UpdateServiceInstanceInput {
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }
@@ -123,6 +131,7 @@ pub struct UpdateServiceInstanceInputBuilder {
     pub(crate) spec: std::option::Option<std::string::String>,
     pub(crate) template_major_version: std::option::Option<std::string::String>,
     pub(crate) template_minor_version: std::option::Option<std::string::String>,
+    pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl UpdateServiceInstanceInputBuilder {
     /// <p>The name of the service instance to update.</p>
@@ -238,6 +247,16 @@ impl UpdateServiceInstanceInputBuilder {
         self.template_minor_version = input;
         self
     }
+    /// <p>The client token of the service instance to update.</p>
+    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+        self.client_token = Some(input.into());
+        self
+    }
+    /// <p>The client token of the service instance to update.</p>
+    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateServiceInstanceInput`](crate::operation::update_service_instance::UpdateServiceInstanceInput).
     pub fn build(
         self,
@@ -253,6 +272,7 @@ impl UpdateServiceInstanceInputBuilder {
                 spec: self.spec,
                 template_major_version: self.template_major_version,
                 template_minor_version: self.template_minor_version,
+                client_token: self.client_token,
             },
         )
     }
@@ -266,6 +286,7 @@ impl std::fmt::Debug for UpdateServiceInstanceInputBuilder {
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }

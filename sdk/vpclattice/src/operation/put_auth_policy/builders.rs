@@ -5,7 +5,7 @@ pub use crate::operation::put_auth_policy::_put_auth_policy_input::PutAuthPolicy
 
 /// Fluent builder constructing a request to `PutAuthPolicy`.
 ///
-/// <p>Creates or updates the auth policy.</p>
+/// <p>Creates or updates the auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAuthPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -78,12 +78,12 @@ impl PutAuthPolicyFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
-    /// <p>The auth policy.</p>
+    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
-    /// <p>The auth policy.</p>
+    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self

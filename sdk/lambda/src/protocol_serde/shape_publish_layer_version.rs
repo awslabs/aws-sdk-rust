@@ -37,40 +37,6 @@ pub fn de_publish_layer_version_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeStorageExceededException" => crate::operation::publish_layer_version::PublishLayerVersionError::CodeStorageExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CodeStorageExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_code_storage_exceeded_exception::de_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::publish_layer_version::PublishLayerVersionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidParameterValueException" => crate::operation::publish_layer_version::PublishLayerVersionError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::publish_layer_version::PublishLayerVersionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
         "ResourceNotFoundException" => crate::operation::publish_layer_version::PublishLayerVersionError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
@@ -79,6 +45,27 @@ pub fn de_publish_layer_version_http_error(
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::publish_layer_version::PublishLayerVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::publish_layer_version::PublishLayerVersionError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::publish_layer_version::PublishLayerVersionError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::publish_layer_version::PublishLayerVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -105,18 +92,31 @@ pub fn de_publish_layer_version_http_error(
                                                     }
             tmp
         }),
-        "TooManyRequestsException" => crate::operation::publish_layer_version::PublishLayerVersionError::TooManyRequestsException({
+        "CodeStorageExceededException" => crate::operation::publish_layer_version::PublishLayerVersionError::CodeStorageExceededException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::CodeStorageExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::publish_layer_version::PublishLayerVersionError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::operation::publish_layer_version::PublishLayerVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
+                    output = crate::protocol_serde::shape_code_storage_exceeded_exception::de_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::publish_layer_version::PublishLayerVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValueException" => crate::operation::publish_layer_version::PublishLayerVersionError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::publish_layer_version::PublishLayerVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

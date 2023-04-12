@@ -27,40 +27,6 @@ pub fn de_put_function_event_invoke_config_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceConflictException" => crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
         "ResourceNotFoundException" => crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
@@ -69,6 +35,27 @@ pub fn de_put_function_event_invoke_config_http_error(
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
                     output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -95,18 +82,31 @@ pub fn de_put_function_event_invoke_config_http_error(
                                                     }
             tmp
         }),
-        "TooManyRequestsException" => crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::TooManyRequestsException({
+        "InvalidParameterValueException" => crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceConflictException" => crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::ResourceConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

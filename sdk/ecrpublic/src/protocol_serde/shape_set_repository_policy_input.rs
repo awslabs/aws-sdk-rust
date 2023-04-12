@@ -12,8 +12,8 @@ pub fn ser_set_repository_policy_input(
     if let Some(var_3) = &input.policy_text {
         object.key("policyText").string(var_3.as_str());
     }
-    if input.force {
-        object.key("force").boolean(input.force);
+    if let Some(var_4) = &input.force {
+        object.key("force").boolean(*var_4);
     }
     Ok(())
 }

@@ -7,6 +7,8 @@ pub use crate::types::_entity::Entity;
 
 pub use crate::types::_entity_summary::EntitySummary;
 
+pub use crate::types::_ownership_type::OwnershipType;
+
 pub use crate::types::_sort::Sort;
 
 pub use crate::types::_sort_order::SortOrder;
@@ -40,6 +42,8 @@ mod _error_detail;
 mod _failure_code;
 
 mod _filter;
+
+mod _ownership_type;
 
 mod _sort;
 

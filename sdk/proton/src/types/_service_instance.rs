@@ -43,6 +43,9 @@ pub struct ServiceInstance {
     /// <p>The service spec that was used to create the service instance.</p>
     #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
+    /// <p>The last client request token received.</p>
+    #[doc(hidden)]
+    pub last_client_request_token: std::option::Option<std::string::String>,
 }
 impl ServiceInstance {
     /// <p>The name of the service instance.</p>
@@ -97,6 +100,10 @@ impl ServiceInstance {
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
+    /// <p>The last client request token received.</p>
+    pub fn last_client_request_token(&self) -> std::option::Option<&str> {
+        self.last_client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -123,6 +130,7 @@ impl std::fmt::Debug for ServiceInstance {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_client_request_token", &self.last_client_request_token);
         formatter.finish()
     }
 }
@@ -150,6 +158,7 @@ pub struct ServiceInstanceBuilder {
     pub(crate) deployment_status: std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) deployment_status_message: std::option::Option<std::string::String>,
     pub(crate) spec: std::option::Option<std::string::String>,
+    pub(crate) last_client_request_token: std::option::Option<std::string::String>,
 }
 impl ServiceInstanceBuilder {
     /// <p>The name of the service instance.</p>
@@ -303,6 +312,19 @@ impl ServiceInstanceBuilder {
         self.spec = input;
         self
     }
+    /// <p>The last client request token received.</p>
+    pub fn last_client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+        self.last_client_request_token = Some(input.into());
+        self
+    }
+    /// <p>The last client request token received.</p>
+    pub fn set_last_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_client_request_token = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ServiceInstance`](crate::types::ServiceInstance).
     pub fn build(self) -> crate::types::ServiceInstance {
         crate::types::ServiceInstance {
@@ -319,6 +341,7 @@ impl ServiceInstanceBuilder {
             deployment_status: self.deployment_status,
             deployment_status_message: self.deployment_status_message,
             spec: self.spec,
+            last_client_request_token: self.last_client_request_token,
         }
     }
 }
@@ -347,6 +370,7 @@ impl std::fmt::Debug for ServiceInstanceBuilder {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_client_request_token", &self.last_client_request_token);
         formatter.finish()
     }
 }

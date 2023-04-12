@@ -15,7 +15,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.0"
-aws-sdk-kinesisvideo = "0.25.1"
+aws-sdk-kinesisvideo = "0.26.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

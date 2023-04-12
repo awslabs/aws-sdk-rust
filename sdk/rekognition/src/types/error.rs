@@ -3,6 +3,8 @@ pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
+
 pub use crate::types::error::_provisioned_throughput_exceeded_exception::ProvisionedThroughputExceededException;
 
 pub use crate::types::error::_invalid_parameter_exception::InvalidParameterException;
@@ -10,8 +12,6 @@ pub use crate::types::error::_invalid_parameter_exception::InvalidParameterExcep
 pub use crate::types::error::_internal_server_error::InternalServerError;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
-
-pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
@@ -36,6 +36,8 @@ pub use crate::types::error::_invalid_policy_revision_id_exception::InvalidPolic
 pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenException;
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
+
+pub use crate::types::error::_session_not_found_exception::SessionNotFoundException;
 
 pub use crate::types::error::_human_loop_quota_exceeded_exception::HumanLoopQuotaExceededException;
 
@@ -74,6 +76,8 @@ mod _resource_not_found_exception;
 mod _resource_not_ready_exception;
 
 mod _service_quota_exceeded_exception;
+
+mod _session_not_found_exception;
 
 mod _throttling_exception;
 

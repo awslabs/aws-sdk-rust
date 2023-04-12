@@ -205,18 +205,18 @@ pub type UpdateAliasErrorKind = UpdateAliasError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAliasError {
-    /// <p>One of the parameters in the request is not valid.</p>
-    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for your resource.</p>
-    PreconditionFailedException(crate::types::error::PreconditionFailedException),
-    /// <p>The resource already exists, or another operation is in progress.</p>
-    ResourceConflictException(crate::types::error::ResourceConflictException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The Lambda service encountered an internal error.</p>
-    ServiceException(crate::types::error::ServiceException),
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for your resource.</p>
+    PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::types::error::ServiceException),
+    /// <p>One of the parameters in the request is not valid.</p>
+    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>The resource already exists, or another operation is in progress.</p>
+    ResourceConflictException(crate::types::error::ResourceConflictException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -235,12 +235,12 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateAliasError {
 impl std::fmt::Display for UpdateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            Self::PreconditionFailedException(_inner) => _inner.fmt(f),
-            Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            Self::ServiceException(_inner) => _inner.fmt(f),
+            Self::PreconditionFailedException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
+            Self::ServiceException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -248,22 +248,22 @@ impl std::fmt::Display for UpdateAliasError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateAliasError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidParameterValueException(_inner) => {
+            Self::ResourceNotFoundException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::PreconditionFailedException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::ResourceConflictException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ResourceNotFoundException(_inner) => {
+            Self::TooManyRequestsException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ServiceException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::TooManyRequestsException(_inner) => {
+            Self::InvalidParameterValueException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ResourceConflictException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -311,49 +311,49 @@ impl UpdateAliasError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::InvalidParameterValueException(e) => e.meta(),
-            Self::PreconditionFailedException(e) => e.meta(),
-            Self::ResourceConflictException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
-            Self::ServiceException(e) => e.meta(),
+            Self::PreconditionFailedException(e) => e.meta(),
             Self::TooManyRequestsException(e) => e.meta(),
+            Self::ServiceException(e) => e.meta(),
+            Self::InvalidParameterValueException(e) => e.meta(),
+            Self::ResourceConflictException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
-    }
-    /// Returns `true` if the error kind is `UpdateAliasError::InvalidParameterValueException`.
-    pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(self, Self::InvalidParameterValueException(_))
-    }
-    /// Returns `true` if the error kind is `UpdateAliasError::PreconditionFailedException`.
-    pub fn is_precondition_failed_exception(&self) -> bool {
-        matches!(self, Self::PreconditionFailedException(_))
-    }
-    /// Returns `true` if the error kind is `UpdateAliasError::ResourceConflictException`.
-    pub fn is_resource_conflict_exception(&self) -> bool {
-        matches!(self, Self::ResourceConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateAliasError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
-    /// Returns `true` if the error kind is `UpdateAliasError::ServiceException`.
-    pub fn is_service_exception(&self) -> bool {
-        matches!(self, Self::ServiceException(_))
+    /// Returns `true` if the error kind is `UpdateAliasError::PreconditionFailedException`.
+    pub fn is_precondition_failed_exception(&self) -> bool {
+        matches!(self, Self::PreconditionFailedException(_))
     }
     /// Returns `true` if the error kind is `UpdateAliasError::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(self, Self::TooManyRequestsException(_))
     }
+    /// Returns `true` if the error kind is `UpdateAliasError::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(self, Self::ServiceException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateAliasError::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterValueException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateAliasError::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(self, Self::ResourceConflictException(_))
+    }
 }
 impl std::error::Error for UpdateAliasError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::InvalidParameterValueException(_inner) => Some(_inner),
-            Self::PreconditionFailedException(_inner) => Some(_inner),
-            Self::ResourceConflictException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
-            Self::ServiceException(_inner) => Some(_inner),
+            Self::PreconditionFailedException(_inner) => Some(_inner),
             Self::TooManyRequestsException(_inner) => Some(_inner),
+            Self::ServiceException(_inner) => Some(_inner),
+            Self::InvalidParameterValueException(_inner) => Some(_inner),
+            Self::ResourceConflictException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

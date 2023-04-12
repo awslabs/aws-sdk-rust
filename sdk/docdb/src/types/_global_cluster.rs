@@ -7,7 +7,7 @@ pub struct GlobalCluster {
     /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
     #[doc(hidden)]
     pub global_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global cluster.</p>
@@ -41,7 +41,7 @@ impl GlobalCluster {
     pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
     pub fn global_cluster_resource_id(&self) -> std::option::Option<&str> {
         self.global_cluster_resource_id.as_deref()
     }
@@ -117,12 +117,12 @@ impl GlobalClusterBuilder {
         self.global_cluster_identifier = input;
         self
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
     pub fn global_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.global_cluster_resource_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
     pub fn set_global_cluster_resource_id(
         mut self,
         input: std::option::Option<std::string::String>,

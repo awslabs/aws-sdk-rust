@@ -6,13 +6,11 @@ pub fn ser_remove_permission_input(
     if let Some(var_1) = &input.statement_id {
         object.key("StatementId").string(var_1.as_str());
     }
-    if input.remove_all_permissions {
-        object
-            .key("RemoveAllPermissions")
-            .boolean(input.remove_all_permissions);
+    if let Some(var_2) = &input.remove_all_permissions {
+        object.key("RemoveAllPermissions").boolean(*var_2);
     }
-    if let Some(var_2) = &input.event_bus_name {
-        object.key("EventBusName").string(var_2.as_str());
+    if let Some(var_3) = &input.event_bus_name {
+        object.key("EventBusName").string(var_3.as_str());
     }
     Ok(())
 }

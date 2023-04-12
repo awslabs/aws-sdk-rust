@@ -9,7 +9,7 @@ pub struct GetMetricDataV2Input {
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 14 days before the time of the request. Historical metrics are available for 14 days.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -212,6 +212,7 @@ pub struct GetMetricDataV2Input {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ABANDONED_IN_X
@@ -219,6 +220,7 @@ pub struct GetMetricDataV2Input {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_DISCONNECTED
@@ -254,7 +256,7 @@ impl GetMetricDataV2Input {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
@@ -460,6 +462,7 @@ impl GetMetricDataV2Input {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ABANDONED_IN_X
@@ -467,6 +470,7 @@ impl GetMetricDataV2Input {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_DISCONNECTED
@@ -541,13 +545,13 @@ impl GetMetricDataV2InputBuilder {
         self.start_time = input;
         self
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.end_time = Some(input);
         self
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
@@ -804,6 +808,7 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ABANDONED_IN_X
@@ -811,6 +816,7 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_DISCONNECTED
@@ -1011,6 +1017,7 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ABANDONED_IN_X
@@ -1018,6 +1025,7 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_DISCONNECTED

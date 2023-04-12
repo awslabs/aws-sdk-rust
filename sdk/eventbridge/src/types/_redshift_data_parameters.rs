@@ -2,7 +2,7 @@
 
 /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster or Redshift Serverless workgroup to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
     #[doc(hidden)]
@@ -23,6 +23,9 @@ pub struct RedshiftDataParameters {
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     #[doc(hidden)]
     pub with_event: bool,
+    /// A list of SQLs.
+    #[doc(hidden)]
+    pub sqls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
@@ -50,6 +53,23 @@ impl RedshiftDataParameters {
     pub fn with_event(&self) -> bool {
         self.with_event
     }
+    /// A list of SQLs.
+    pub fn sqls(&self) -> std::option::Option<&[std::string::String]> {
+        self.sqls.as_deref()
+    }
+}
+impl std::fmt::Debug for RedshiftDataParameters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RedshiftDataParameters");
+        formatter.field("secret_manager_arn", &self.secret_manager_arn);
+        formatter.field("database", &self.database);
+        formatter.field("db_user", &self.db_user);
+        formatter.field("sql", &"*** Sensitive Data Redacted ***");
+        formatter.field("statement_name", &self.statement_name);
+        formatter.field("with_event", &self.with_event);
+        formatter.field("sqls", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl RedshiftDataParameters {
     /// Creates a new builder-style object to manufacture [`RedshiftDataParameters`](crate::types::RedshiftDataParameters).
@@ -60,7 +80,7 @@ impl RedshiftDataParameters {
 
 /// A builder for [`RedshiftDataParameters`](crate::types::RedshiftDataParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct RedshiftDataParametersBuilder {
     pub(crate) secret_manager_arn: std::option::Option<std::string::String>,
     pub(crate) database: std::option::Option<std::string::String>,
@@ -68,6 +88,7 @@ pub struct RedshiftDataParametersBuilder {
     pub(crate) sql: std::option::Option<std::string::String>,
     pub(crate) statement_name: std::option::Option<std::string::String>,
     pub(crate) with_event: std::option::Option<bool>,
+    pub(crate) sqls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RedshiftDataParametersBuilder {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
@@ -135,6 +156,25 @@ impl RedshiftDataParametersBuilder {
         self.with_event = input;
         self
     }
+    /// Appends an item to `sqls`.
+    ///
+    /// To override the contents of this collection use [`set_sqls`](Self::set_sqls).
+    ///
+    /// A list of SQLs.
+    pub fn sqls(mut self, input: impl Into<std::string::String>) -> Self {
+        let mut v = self.sqls.unwrap_or_default();
+        v.push(input.into());
+        self.sqls = Some(v);
+        self
+    }
+    /// A list of SQLs.
+    pub fn set_sqls(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.sqls = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RedshiftDataParameters`](crate::types::RedshiftDataParameters).
     pub fn build(self) -> crate::types::RedshiftDataParameters {
         crate::types::RedshiftDataParameters {
@@ -144,6 +184,20 @@ impl RedshiftDataParametersBuilder {
             sql: self.sql,
             statement_name: self.statement_name,
             with_event: self.with_event.unwrap_or_default(),
+            sqls: self.sqls,
         }
+    }
+}
+impl std::fmt::Debug for RedshiftDataParametersBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RedshiftDataParametersBuilder");
+        formatter.field("secret_manager_arn", &self.secret_manager_arn);
+        formatter.field("database", &self.database);
+        formatter.field("db_user", &self.db_user);
+        formatter.field("sql", &"*** Sensitive Data Redacted ***");
+        formatter.field("statement_name", &self.statement_name);
+        formatter.field("with_event", &self.with_event);
+        formatter.field("sqls", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

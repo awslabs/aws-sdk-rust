@@ -56,6 +56,9 @@ pub struct JobRun {
     /// <p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
     #[doc(hidden)]
     pub total_execution_duration_seconds: std::option::Option<i32>,
+    /// Maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.
+    #[doc(hidden)]
+    pub execution_timeout_minutes: std::option::Option<i64>,
 }
 impl JobRun {
     /// <p>The ID of the application the job is running on.</p>
@@ -135,6 +138,10 @@ impl JobRun {
     pub fn total_execution_duration_seconds(&self) -> std::option::Option<i32> {
         self.total_execution_duration_seconds
     }
+    /// Maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.
+    pub fn execution_timeout_minutes(&self) -> std::option::Option<i64> {
+        self.execution_timeout_minutes
+    }
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::types::JobRun).
@@ -166,6 +173,7 @@ pub struct JobRunBuilder {
         std::option::Option<crate::types::TotalResourceUtilization>,
     pub(crate) network_configuration: std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) total_execution_duration_seconds: std::option::Option<i32>,
+    pub(crate) execution_timeout_minutes: std::option::Option<i64>,
 }
 impl JobRunBuilder {
     /// <p>The ID of the application the job is running on.</p>
@@ -371,6 +379,16 @@ impl JobRunBuilder {
         self.total_execution_duration_seconds = input;
         self
     }
+    /// Maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.
+    pub fn execution_timeout_minutes(mut self, input: i64) -> Self {
+        self.execution_timeout_minutes = Some(input);
+        self
+    }
+    /// Maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.
+    pub fn set_execution_timeout_minutes(mut self, input: std::option::Option<i64>) -> Self {
+        self.execution_timeout_minutes = input;
+        self
+    }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     pub fn build(self) -> crate::types::JobRun {
         crate::types::JobRun {
@@ -391,6 +409,7 @@ impl JobRunBuilder {
             total_resource_utilization: self.total_resource_utilization,
             network_configuration: self.network_configuration,
             total_execution_duration_seconds: self.total_execution_duration_seconds,
+            execution_timeout_minutes: self.execution_timeout_minutes,
         }
     }
 }

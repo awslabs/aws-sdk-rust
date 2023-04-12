@@ -16,7 +16,6 @@
 ///     WorkflowStatus::Creating => { /* ... */ },
 ///     WorkflowStatus::Deleted => { /* ... */ },
 ///     WorkflowStatus::Failed => { /* ... */ },
-///     WorkflowStatus::Inactive => { /* ... */ },
 ///     WorkflowStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -60,8 +59,6 @@ pub enum WorkflowStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
-    Inactive,
-    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -73,7 +70,6 @@ impl std::convert::From<&str> for WorkflowStatus {
             "CREATING" => WorkflowStatus::Creating,
             "DELETED" => WorkflowStatus::Deleted,
             "FAILED" => WorkflowStatus::Failed,
-            "INACTIVE" => WorkflowStatus::Inactive,
             "UPDATING" => WorkflowStatus::Updating,
             other => {
                 WorkflowStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -96,16 +92,13 @@ impl WorkflowStatus {
             WorkflowStatus::Creating => "CREATING",
             WorkflowStatus::Deleted => "DELETED",
             WorkflowStatus::Failed => "FAILED",
-            WorkflowStatus::Inactive => "INACTIVE",
             WorkflowStatus::Updating => "UPDATING",
             WorkflowStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETED", "FAILED", "INACTIVE", "UPDATING",
-        ]
+        &["ACTIVE", "CREATING", "DELETED", "FAILED", "UPDATING"]
     }
 }
 impl AsRef<str> for WorkflowStatus {

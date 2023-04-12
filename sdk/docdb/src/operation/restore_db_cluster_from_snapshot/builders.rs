@@ -276,4 +276,24 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
+    /// <p>The name of the DB cluster parameter group to associate with this DB cluster.</p>
+    /// <p> <i>Type:</i> String. &nbsp; &nbsp; &nbsp; <i>Required:</i> No.</p>
+    /// <p>If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.</p>
+    pub fn db_cluster_parameter_group_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.db_cluster_parameter_group_name(input.into());
+        self
+    }
+    /// <p>The name of the DB cluster parameter group to associate with this DB cluster.</p>
+    /// <p> <i>Type:</i> String. &nbsp; &nbsp; &nbsp; <i>Required:</i> No.</p>
+    /// <p>If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.</p>
+    pub fn set_db_cluster_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_db_cluster_parameter_group_name(input);
+        self
+    }
 }

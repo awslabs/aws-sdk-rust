@@ -180,7 +180,7 @@ pub enum ExecuteCommandError {
     /// <ul>
     /// <li> <p>Incorrect IAM permissions</p> </li>
     /// <li> <p>The SSM agent is not installed or is not running</p> </li>
-    /// <li> <p> There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for for Systems Manager Session Manager</p> </li>
+    /// <li> <p> There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for Systems Manager Session Manager</p> </li>
     /// </ul>
     /// <p>For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     TargetNotConnectedException(crate::types::error::TargetNotConnectedException),

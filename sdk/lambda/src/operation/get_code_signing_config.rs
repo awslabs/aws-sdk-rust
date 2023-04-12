@@ -171,12 +171,12 @@ pub type GetCodeSigningConfigErrorKind = GetCodeSigningConfigError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCodeSigningConfigError {
-    /// <p>One of the parameters in the request is not valid.</p>
-    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
+    /// <p>One of the parameters in the request is not valid.</p>
+    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -195,9 +195,9 @@ impl aws_smithy_http::result::CreateUnhandledError for GetCodeSigningConfigError
 impl std::fmt::Display for GetCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -205,13 +205,13 @@ impl std::fmt::Display for GetCodeSigningConfigError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GetCodeSigningConfigError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidParameterValueException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
             Self::ResourceNotFoundException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ServiceException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidParameterValueException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -261,15 +261,11 @@ impl GetCodeSigningConfigError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::InvalidParameterValueException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ServiceException(e) => e.meta(),
+            Self::InvalidParameterValueException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
-    }
-    /// Returns `true` if the error kind is `GetCodeSigningConfigError::InvalidParameterValueException`.
-    pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(self, Self::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetCodeSigningConfigError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -279,13 +275,17 @@ impl GetCodeSigningConfigError {
     pub fn is_service_exception(&self) -> bool {
         matches!(self, Self::ServiceException(_))
     }
+    /// Returns `true` if the error kind is `GetCodeSigningConfigError::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterValueException(_))
+    }
 }
 impl std::error::Error for GetCodeSigningConfigError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::InvalidParameterValueException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ServiceException(_inner) => Some(_inner),
+            Self::InvalidParameterValueException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

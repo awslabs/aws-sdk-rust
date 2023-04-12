@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFileSystemInput {
-    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
@@ -59,7 +59,7 @@ pub struct CreateFileSystemInput {
     pub windows_configuration:
         std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>,
     /// <p>The Lustre configuration for the file system being created.</p> <note>
-    /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
+    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
@@ -89,7 +89,7 @@ pub struct CreateFileSystemInput {
         std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
 }
 impl CreateFileSystemInput {
-    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -154,7 +154,7 @@ impl CreateFileSystemInput {
         self.windows_configuration.as_ref()
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
-    /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
+    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
@@ -222,12 +222,12 @@ pub struct CreateFileSystemInputBuilder {
         std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
 }
 impl CreateFileSystemInputBuilder {
-    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -407,7 +407,7 @@ impl CreateFileSystemInputBuilder {
         self
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
-    /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
+    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
@@ -423,7 +423,7 @@ impl CreateFileSystemInputBuilder {
         self
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
-    /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
+    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>

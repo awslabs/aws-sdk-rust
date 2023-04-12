@@ -162,14 +162,19 @@ pub type ListEntitiesErrorKind = ListEntitiesError;
 #[derive(std::fmt::Debug)]
 pub enum ListEntitiesError {
     /// <p>Access is denied.</p>
+    /// <p>HTTP status code: 403</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>There was an internal service exception.</p>
+    /// <p>HTTP status code: 500</p>
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The specified resource wasn't found.</p>
+    /// <p>HTTP status code: 404</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Too many requests.</p>
+    /// <p>HTTP status code: 429</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>An error occurred during validation.</p>
+    /// <p>HTTP status code: 422</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
