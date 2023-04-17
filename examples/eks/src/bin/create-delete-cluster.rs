@@ -22,7 +22,7 @@ struct Opt {
 
     /// The Amazon Resource Name (ARN) of the IAM role that provides permissions
     /// for the Kubernetes control plane to make calls to AWS API operations on your behalf.
-    #[structopt(long)]
+    #[structopt(short, long)]
     arn: String,
 
     /// The subnet IDs for your Amazon EKS nodes.
