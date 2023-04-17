@@ -369,7 +369,6 @@ April 12th, 2023
 |aws-smithy-query|0.55.1|
 |aws-smithy-runtime|0.55.1|
 |aws-smithy-runtime-api|0.55.1|
-|aws-smithy-runtime-test|0.1.0|
 |aws-smithy-types|0.55.1|
 |aws-smithy-types-convert|0.55.1|
 |aws-smithy-xml|0.55.1|
@@ -742,9 +741,6 @@ April 5th, 2023
 |aws-smithy-json|0.55.0|
 |aws-smithy-protocol-test|0.55.0|
 |aws-smithy-query|0.55.0|
-|aws-smithy-runtime|0.55.0|
-|aws-smithy-runtime-api|0.55.0|
-|aws-smithy-runtime-test|0.1.0|
 |aws-smithy-types|0.55.0|
 |aws-smithy-types-convert|0.55.0|
 |aws-smithy-xml|0.55.0|
