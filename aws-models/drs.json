@@ -292,6 +292,95 @@
                 }
             }
         },
+        "com.amazonaws.drs#CreateLaunchConfigurationTemplate": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.drs#CreateLaunchConfigurationTemplateRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.drs#CreateLaunchConfigurationTemplateResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.drs#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.drs#InternalServerException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ServiceQuotaExceededException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.drs#UninitializedAccountException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ValidationException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Creates a new Launch Configuration Template.</p>",
+                "smithy.api#http": {
+                    "uri": "/CreateLaunchConfigurationTemplate",
+                    "method": "POST",
+                    "code": 201
+                }
+            }
+        },
+        "com.amazonaws.drs#CreateLaunchConfigurationTemplateRequest": {
+            "type": "structure",
+            "members": {
+                "tags": {
+                    "target": "com.amazonaws.drs#TagsMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Request to associate tags during creation of a Launch Configuration Template.</p>"
+                    }
+                },
+                "launchDisposition": {
+                    "target": "com.amazonaws.drs#LaunchDisposition",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Launch disposition.</p>"
+                    }
+                },
+                "targetInstanceTypeRightSizingMethod": {
+                    "target": "com.amazonaws.drs#TargetInstanceTypeRightSizingMethod",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Target instance type right-sizing method.</p>"
+                    }
+                },
+                "copyPrivateIp": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Copy private IP.</p>"
+                    }
+                },
+                "copyTags": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Copy tags.</p>"
+                    }
+                },
+                "licensing": {
+                    "target": "com.amazonaws.drs#Licensing",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Licensing.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.drs#CreateLaunchConfigurationTemplateResponse": {
+            "type": "structure",
+            "members": {
+                "launchConfigurationTemplate": {
+                    "target": "com.amazonaws.drs#LaunchConfigurationTemplate",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Created Launch Configuration Template.</p>"
+                    }
+                }
+            }
+        },
         "com.amazonaws.drs#CreateReplicationConfigurationTemplate": {
             "type": "operation",
             "input": {
@@ -852,6 +941,57 @@
             "type": "structure",
             "members": {}
         },
+        "com.amazonaws.drs#DeleteLaunchConfigurationTemplate": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.drs#DeleteLaunchConfigurationTemplateRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.drs#DeleteLaunchConfigurationTemplateResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.drs#ConflictException"
+                },
+                {
+                    "target": "com.amazonaws.drs#InternalServerException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.drs#UninitializedAccountException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Deletes a single Launch Configuration Template by ID.</p>",
+                "smithy.api#http": {
+                    "uri": "/DeleteLaunchConfigurationTemplate",
+                    "method": "POST",
+                    "code": 204
+                },
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.drs#DeleteLaunchConfigurationTemplateRequest": {
+            "type": "structure",
+            "members": {
+                "launchConfigurationTemplateID": {
+                    "target": "com.amazonaws.drs#LaunchConfigurationTemplateID",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the Launch Configuration Template to be deleted.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            }
+        },
+        "com.amazonaws.drs#DeleteLaunchConfigurationTemplateResponse": {
+            "type": "structure",
+            "members": {}
+        },
         "com.amazonaws.drs#DeleteRecoveryInstance": {
             "type": "operation",
             "input": {
@@ -1193,6 +1333,88 @@
                     "target": "com.amazonaws.drs#PaginationToken",
                     "traits": {
                         "smithy.api#documentation": "<p>The token of the next Job to retrieve.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.drs#DescribeLaunchConfigurationTemplates": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.drs#DescribeLaunchConfigurationTemplatesRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.drs#DescribeLaunchConfigurationTemplatesResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.drs#InternalServerException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.drs#UninitializedAccountException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ValidationException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs</p>",
+                "smithy.api#http": {
+                    "uri": "/DescribeLaunchConfigurationTemplates",
+                    "method": "POST",
+                    "code": 200
+                },
+                "smithy.api#paginated": {
+                    "inputToken": "nextToken",
+                    "outputToken": "nextToken",
+                    "pageSize": "maxResults",
+                    "items": "items"
+                },
+                "smithy.api#readonly": {}
+            }
+        },
+        "com.amazonaws.drs#DescribeLaunchConfigurationTemplatesRequest": {
+            "type": "structure",
+            "members": {
+                "launchConfigurationTemplateIDs": {
+                    "target": "com.amazonaws.drs#LaunchConfigurationTemplateIDs",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>"
+                    }
+                },
+                "maxResults": {
+                    "target": "com.amazonaws.drs#MaxResultsType",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>"
+                    }
+                },
+                "nextToken": {
+                    "target": "com.amazonaws.drs#PaginationToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The token of the next Launch Configuration Template to retrieve.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.drs#DescribeLaunchConfigurationTemplatesResponse": {
+            "type": "structure",
+            "members": {
+                "items": {
+                    "target": "com.amazonaws.drs#LaunchConfigurationTemplates",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of items returned by DescribeLaunchConfigurationTemplates.</p>"
+                    }
+                },
+                "nextToken": {
+                    "target": "com.amazonaws.drs#PaginationToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The token of the next Launch Configuration Template to retrieve.</p>"
                     }
                 }
             }
@@ -1856,6 +2078,9 @@
                 },
                 {
                     "target": "com.amazonaws.drs#JobResource"
+                },
+                {
+                    "target": "com.amazonaws.drs#LaunchConfigurationTemplateResource"
                 },
                 {
                     "target": "com.amazonaws.drs#RecoveryInstanceResource"
@@ -3699,6 +3924,121 @@
                 }
             }
         },
+        "com.amazonaws.drs#LaunchConfigurationTemplate": {
+            "type": "structure",
+            "members": {
+                "launchConfigurationTemplateID": {
+                    "target": "com.amazonaws.drs#LaunchConfigurationTemplateID",
+                    "traits": {
+                        "smithy.api#documentation": "<p>ID of the Launch Configuration Template.</p>"
+                    }
+                },
+                "arn": {
+                    "target": "com.amazonaws.drs#ARN",
+                    "traits": {
+                        "smithy.api#documentation": "<p>ARN of the Launch Configuration Template.</p>"
+                    }
+                },
+                "tags": {
+                    "target": "com.amazonaws.drs#TagsMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Tags of the Launch Configuration Template.</p>"
+                    }
+                },
+                "launchDisposition": {
+                    "target": "com.amazonaws.drs#LaunchDisposition",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Launch disposition.</p>"
+                    }
+                },
+                "targetInstanceTypeRightSizingMethod": {
+                    "target": "com.amazonaws.drs#TargetInstanceTypeRightSizingMethod",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Target instance type right-sizing method.</p>"
+                    }
+                },
+                "copyPrivateIp": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Copy private IP.</p>"
+                    }
+                },
+                "copyTags": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Copy tags.</p>"
+                    }
+                },
+                "licensing": {
+                    "target": "com.amazonaws.drs#Licensing",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Licensing.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Account level Launch Configuration Template.</p>"
+            }
+        },
+        "com.amazonaws.drs#LaunchConfigurationTemplateID": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 21,
+                    "max": 21
+                },
+                "smithy.api#pattern": "^lct-[0-9a-zA-Z]{17}$"
+            }
+        },
+        "com.amazonaws.drs#LaunchConfigurationTemplateIDs": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.drs#LaunchConfigurationTemplateID"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 1
+                }
+            }
+        },
+        "com.amazonaws.drs#LaunchConfigurationTemplateResource": {
+            "type": "resource",
+            "identifiers": {
+                "launchConfigurationTemplateID": {
+                    "target": "com.amazonaws.drs#LaunchConfigurationTemplateID"
+                }
+            },
+            "create": {
+                "target": "com.amazonaws.drs#CreateLaunchConfigurationTemplate"
+            },
+            "update": {
+                "target": "com.amazonaws.drs#UpdateLaunchConfigurationTemplate"
+            },
+            "delete": {
+                "target": "com.amazonaws.drs#DeleteLaunchConfigurationTemplate"
+            },
+            "list": {
+                "target": "com.amazonaws.drs#DescribeLaunchConfigurationTemplates"
+            },
+            "traits": {
+                "aws.api#arn": {
+                    "template": "launch-configuration-template/{launchConfigurationTemplateID}"
+                }
+            }
+        },
+        "com.amazonaws.drs#LaunchConfigurationTemplates": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.drs#LaunchConfigurationTemplate"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 200
+                }
+            }
+        },
         "com.amazonaws.drs#LaunchDisposition": {
             "type": "string",
             "traits": {
@@ -4068,6 +4408,16 @@
                 "smithy.api#range": {
                     "min": 1,
                     "max": 300
+                }
+            }
+        },
+        "com.amazonaws.drs#MaxResultsType": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#default": 0,
+                "smithy.api#range": {
+                    "min": 1,
+                    "max": 1000
                 }
             }
         },
@@ -5733,6 +6083,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Operating system.</p>"
                     }
+                },
+                "supportsNitroInstances": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Are EC2 nitro instance types supported when recovering the Source Server.</p>"
+                    }
                 }
             },
             "traits": {
@@ -6794,6 +7150,96 @@
                     "target": "com.amazonaws.drs#Licensing",
                     "traits": {
                         "smithy.api#documentation": "<p>The licensing configuration to be used for this launch configuration.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.drs#UpdateLaunchConfigurationTemplate": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.drs#UpdateLaunchConfigurationTemplateRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.drs#UpdateLaunchConfigurationTemplateResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.drs#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.drs#InternalServerException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.drs#UninitializedAccountException"
+                },
+                {
+                    "target": "com.amazonaws.drs#ValidationException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Updates an existing Launch Configuration Template by ID.</p>",
+                "smithy.api#http": {
+                    "uri": "/UpdateLaunchConfigurationTemplate",
+                    "method": "POST",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.drs#UpdateLaunchConfigurationTemplateRequest": {
+            "type": "structure",
+            "members": {
+                "launchConfigurationTemplateID": {
+                    "target": "com.amazonaws.drs#LaunchConfigurationTemplateID",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Launch Configuration Template ID.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "launchDisposition": {
+                    "target": "com.amazonaws.drs#LaunchDisposition",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Launch disposition.</p>"
+                    }
+                },
+                "targetInstanceTypeRightSizingMethod": {
+                    "target": "com.amazonaws.drs#TargetInstanceTypeRightSizingMethod",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Target instance type right-sizing method.</p>"
+                    }
+                },
+                "copyPrivateIp": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Copy private IP.</p>"
+                    }
+                },
+                "copyTags": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Copy tags.</p>"
+                    }
+                },
+                "licensing": {
+                    "target": "com.amazonaws.drs#Licensing",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Licensing.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.drs#UpdateLaunchConfigurationTemplateResponse": {
+            "type": "structure",
+            "members": {
+                "launchConfigurationTemplate": {
+                    "target": "com.amazonaws.drs#LaunchConfigurationTemplate",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Updated Launch Configuration Template.</p>"
                     }
                 }
             }

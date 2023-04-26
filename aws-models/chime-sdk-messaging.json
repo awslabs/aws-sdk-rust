@@ -2468,6 +2468,7 @@
                     "target": "com.amazonaws.chimesdkmessaging#ClientRequestToken",
                     "traits": {
                         "smithy.api#documentation": "<p>The client token for the request. An Idempotency token.</p>",
+                        "smithy.api#idempotencyToken": {},
                         "smithy.api#required": {}
                     }
                 }
@@ -2817,6 +2818,9 @@
             "errors": [
                 {
                     "target": "com.amazonaws.chimesdkmessaging#BadRequestException"
+                },
+                {
+                    "target": "com.amazonaws.chimesdkmessaging#ConflictException"
                 },
                 {
                     "target": "com.amazonaws.chimesdkmessaging#ForbiddenException"
@@ -3210,13 +3214,6 @@
                         "smithy.api#httpHeader": "x-amz-chime-bearer",
                         "smithy.api#required": {}
                     }
-                },
-                "SubChannelId": {
-                    "target": "com.amazonaws.chimesdkmessaging#SubChannelId",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The ID of the SubChannel in the request.</p>",
-                        "smithy.api#httpQuery": "sub-channel-id"
-                    }
                 }
             },
             "traits": {
@@ -3232,6 +3229,9 @@
                 "target": "smithy.api#Unit"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.chimesdkmessaging#BadRequestException"
+                },
                 {
                     "target": "com.amazonaws.chimesdkmessaging#ForbiddenException"
                 },
@@ -7511,12 +7511,6 @@
                         "smithy.api#httpHeader": "x-amz-chime-bearer",
                         "smithy.api#required": {}
                     }
-                },
-                "SubChannelId": {
-                    "target": "com.amazonaws.chimesdkmessaging#SubChannelId",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The ID of the SubChannel in the request.</p>"
-                    }
                 }
             },
             "traits": {
@@ -7530,12 +7524,6 @@
                     "target": "com.amazonaws.chimesdkmessaging#ChimeArn",
                     "traits": {
                         "smithy.api#documentation": "<p>The ARN of the channel.</p>"
-                    }
-                },
-                "SubChannelId": {
-                    "target": "com.amazonaws.chimesdkmessaging#SubChannelId",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The ID of the SubChannel in the response.</p>"
                     }
                 }
             },

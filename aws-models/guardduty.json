@@ -3298,6 +3298,12 @@
                     "traits": {
                         "smithy.api#enumValue": "EKS_RUNTIME_MONITORING"
                     }
+                },
+                "LAMBDA_NETWORK_LOGS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "LAMBDA_NETWORK_LOGS"
+                    }
                 }
             }
         },
@@ -3427,6 +3433,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "EKS_RUNTIME_MONITORING"
+                    }
+                },
+                "LAMBDA_NETWORK_LOGS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "LAMBDA_NETWORK_LOGS"
                     }
                 }
             }
@@ -4684,6 +4696,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "EKS_RUNTIME_MONITORING"
+                    }
+                },
+                "LAMBDA_NETWORK_LOGS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "LAMBDA_NETWORK_LOGS"
                     }
                 }
             }
@@ -7884,6 +7902,77 @@
                 "smithy.api#documentation": "<p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>"
             }
         },
+        "com.amazonaws.guardduty#LambdaDetails": {
+            "type": "structure",
+            "members": {
+                "FunctionArn": {
+                    "target": "com.amazonaws.guardduty#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Amazon Resource Name (ARN) of the Lambda function.</p>",
+                        "smithy.api#jsonName": "functionArn"
+                    }
+                },
+                "FunctionName": {
+                    "target": "com.amazonaws.guardduty#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Name of the Lambda function.</p>",
+                        "smithy.api#jsonName": "functionName"
+                    }
+                },
+                "Description": {
+                    "target": "com.amazonaws.guardduty#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Description of the Lambda function.</p>",
+                        "smithy.api#jsonName": "description"
+                    }
+                },
+                "LastModifiedAt": {
+                    "target": "com.amazonaws.guardduty#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The timestamp when the Lambda function was last modified. This field is in the UTC date string \n      format <code>(2023-03-22T19:37:20.168Z)</code>.</p>",
+                        "smithy.api#jsonName": "lastModifiedAt"
+                    }
+                },
+                "RevisionId": {
+                    "target": "com.amazonaws.guardduty#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The revision ID of the Lambda function version.</p>",
+                        "smithy.api#jsonName": "revisionId"
+                    }
+                },
+                "FunctionVersion": {
+                    "target": "com.amazonaws.guardduty#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version of the Lambda function.</p>",
+                        "smithy.api#jsonName": "functionVersion"
+                    }
+                },
+                "Role": {
+                    "target": "com.amazonaws.guardduty#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The execution role of the Lambda function.</p>",
+                        "smithy.api#jsonName": "role"
+                    }
+                },
+                "VpcConfig": {
+                    "target": "com.amazonaws.guardduty#VpcConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>",
+                        "smithy.api#jsonName": "vpcConfig"
+                    }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.guardduty#Tags",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of tags attached to this resource, listed in the format of \n      <code>key</code>:<code>value</code> pair.</p>",
+                        "smithy.api#jsonName": "tags"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Information about the Lambda function involved in the finding.</p>"
+            }
+        },
         "com.amazonaws.guardduty#Lineage": {
             "type": "list",
             "member": {
@@ -9603,6 +9692,12 @@
                     "traits": {
                         "smithy.api#enumValue": "EKS_RUNTIME_MONITORING"
                     }
+                },
+                "LAMBDA_NETWORK_LOGS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "LAMBDA_NETWORK_LOGS"
+                    }
                 }
             }
         },
@@ -10646,6 +10741,13 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Contains information about the user details through which anomalous login attempt was\n      made.</p>",
                         "smithy.api#jsonName": "rdsDbUserDetails"
+                    }
+                },
+                "LambdaDetails": {
+                    "target": "com.amazonaws.guardduty#LambdaDetails",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains information about the Lambda function that was involved in a finding.</p>",
+                        "smithy.api#jsonName": "lambdaDetails"
                     }
                 }
             },
@@ -11735,6 +11837,12 @@
         },
         "com.amazonaws.guardduty#String": {
             "type": "string"
+        },
+        "com.amazonaws.guardduty#SubnetIds": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.guardduty#String"
+            }
         },
         "com.amazonaws.guardduty#Tag": {
             "type": "structure",
@@ -13395,6 +13503,35 @@
             "type": "list",
             "member": {
                 "target": "com.amazonaws.guardduty#Volume"
+            }
+        },
+        "com.amazonaws.guardduty#VpcConfig": {
+            "type": "structure",
+            "members": {
+                "SubnetIds": {
+                    "target": "com.amazonaws.guardduty#SubnetIds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifiers of the subnets that are associated with your Lambda function.</p>",
+                        "smithy.api#jsonName": "subnetIds"
+                    }
+                },
+                "VpcId": {
+                    "target": "com.amazonaws.guardduty#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the Amazon Virtual Private Cloud.</p>",
+                        "smithy.api#jsonName": "vpcId"
+                    }
+                },
+                "SecurityGroups": {
+                    "target": "com.amazonaws.guardduty#SecurityGroups",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the security group attached to the Lambda function.</p>",
+                        "smithy.api#jsonName": "securityGroups"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>"
             }
         }
     }
