@@ -1,12 +1,9 @@
 on:
-  push:
-    branches:
-      # A bot pushes changes from smithy-rs to `next`, so run CI when that happens
-      - next
   pull_request:
+    paths-ignore:
+      - aws-models
     branches:
       - main
-      - next
 
 name: CI
 
