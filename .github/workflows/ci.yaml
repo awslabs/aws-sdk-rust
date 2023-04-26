@@ -1,7 +1,7 @@
 on:
   pull_request:
     paths-ignore:
-      - aws-models
+      - 'aws-models/**'
     branches:
       - main
 
