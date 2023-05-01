@@ -1,4 +1,4 @@
-smithy_rs_revision = 'e941e810f9e8b07c74ed98cdf8fca1f42c031a4c'
+smithy_rs_revision = '1b138b09a2196d67fe6bc6a7b481ba4edfe25b0e'
 aws_doc_sdk_examples_revision = '1f48dbeac254cb3fa6d3eb25628ee748d42017d1'
 
 [manual_interventions]
@@ -11,7 +11,7 @@ source_hash = '1b7f595c14aa8e04fdb4f22e6be46724826426334ce60269bf55805b8e2755fb'
 [crates.aws-credential-types]
 category = 'AwsRuntime'
 version = '0.55.1'
-source_hash = '199e8289c421323558946caa985bc48bdb96677b5f1ceca11c99df5b615be3a1'
+source_hash = '630bdecec4e67bd8d69cf5cafcfcfd670733fe0c10c85ac5d34de06b6d7969b4'
 
 [crates.aws-endpoint]
 category = 'AwsRuntime'
