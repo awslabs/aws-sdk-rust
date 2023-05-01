@@ -1,4 +1,4 @@
-smithy_rs_revision = '56ff4bf2844f9d55a01802f9da6d260cc95e1947'
+smithy_rs_revision = 'a23fba154ed61e29369f71e93864d2bd69dd297e'
 aws_doc_sdk_examples_revision = '1f48dbeac254cb3fa6d3eb25628ee748d42017d1'
 
 [manual_interventions]
@@ -21,7 +21,7 @@ source_hash = 'f625d90e4b867c33aa19e92e381df68239056b74a6c40110291e5091216b9ff4'
 [crates.aws-http]
 category = 'AwsRuntime'
 version = '0.55.1'
-source_hash = '23c2e75ba0134bc3e595b40fe0628f6fa5debf390a5b3292193aebc55396bf13'
+source_hash = '97ce1b60aeb85f9ffe889a64e9afbaa88d963d9ec8e95183f3bc6cd994e3610f'
 
 [crates.aws-hyper]
 category = 'AwsRuntime'
@@ -31,7 +31,7 @@ source_hash = '034df117bac781485765257f3f1d5248156ab6c6581d4ee86aed6953a017446d'
 [crates.aws-runtime]
 category = 'AwsRuntime'
 version = '0.55.1'
-source_hash = '55dbc7247781eac855b5b59aff67d1aa124642e7108cd2b0cd2b2c4694c57015'
+source_hash = '520c747bcec0aaa3e835b250bb99edddb0c7adcb0280a7a844f82328c24b0cc2'
 
 [crates.aws-runtime-api]
 category = 'AwsRuntime'

@@ -3,49 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::recursion_detection::env::TRACE_ID;
-use aws_smithy_http::middleware::MapRequest;
-use aws_smithy_http::operation::Request;
+use aws_smithy_runtime_api::client::interceptors::{BoxError, Interceptor, InterceptorContext};
+use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
+use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_types::os_shim_internal::Env;
 use http::HeaderValue;
 use percent_encoding::{percent_encode, CONTROLS};
 use std::borrow::Cow;
-
-// TODO(enableNewSmithyRuntime): Delete this module
-
-/// Recursion Detection Middleware
-///
-/// This middleware inspects the value of the `AWS_LAMBDA_FUNCTION_NAME` and `_X_AMZN_TRACE_ID` environment
-/// variables to detect if the request is being invoked in a lambda function. If it is, the `X-Amzn-Trace-Id` header
-/// will be set. This enables downstream services to prevent accidentally infinitely recursive invocations spawned
-/// from lambda.
-#[non_exhaustive]
-#[derive(Default, Debug, Clone)]
-pub struct RecursionDetectionStage {
-    env: Env,
-}
-
-impl RecursionDetectionStage {
-    /// Creates a new `RecursionDetectionStage`
-    pub fn new() -> Self {
-        Self::default()
-    }
-}
-
-impl MapRequest for RecursionDetectionStage {
-    type Error = std::convert::Infallible;
-
-    fn name(&self) -> &'static str {
-        "recursion_detection"
-    }
-
-    fn apply(&self, request: Request) -> Result<Request, Self::Error> {
-        request.augment(|mut req, _conf| {
-            augument_request(&mut req, &self.env);
-            Ok(req)
-        })
-    }
-}
 
 const TRACE_ID_HEADER: &str = "x-amzn-trace-id";
 
@@ -54,16 +18,45 @@ mod env {
     pub(super) const TRACE_ID: &str = "_X_AMZN_TRACE_ID";
 }
 
-/// Set the trace id header from the request
-fn augument_request<B>(req: &mut http::Request<B>, env: &Env) {
-    if req.headers().contains_key(TRACE_ID_HEADER) {
-        return;
+/// Recursion Detection Interceptor
+///
+/// This interceptor inspects the value of the `AWS_LAMBDA_FUNCTION_NAME` and `_X_AMZN_TRACE_ID` environment
+/// variables to detect if the request is being invoked in a Lambda function. If it is, the `X-Amzn-Trace-Id` header
+/// will be set. This enables downstream services to prevent accidentally infinitely recursive invocations spawned
+/// from Lambda.
+#[non_exhaustive]
+#[derive(Debug, Default)]
+pub struct RecursionDetectionInterceptor {
+    env: Env,
+}
+
+impl RecursionDetectionInterceptor {
+    /// Creates a new `RecursionDetectionInterceptor`
+    pub fn new() -> Self {
+        Self::default()
     }
-    if let (Ok(_function_name), Ok(trace_id)) =
-        (env.get(env::LAMBDA_FUNCTION_NAME), env.get(TRACE_ID))
-    {
-        req.headers_mut()
-            .insert(TRACE_ID_HEADER, encode_header(trace_id.as_bytes()));
+}
+
+impl Interceptor<HttpRequest, HttpResponse> for RecursionDetectionInterceptor {
+    fn modify_before_signing(
+        &self,
+        context: &mut InterceptorContext<HttpRequest, HttpResponse>,
+        _cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        let request = context.request_mut()?;
+        if request.headers().contains_key(TRACE_ID_HEADER) {
+            return Ok(());
+        }
+
+        if let (Ok(_function_name), Ok(trace_id)) = (
+            self.env.get(env::LAMBDA_FUNCTION_NAME),
+            self.env.get(env::TRACE_ID),
+        ) {
+            request
+                .headers_mut()
+                .insert(TRACE_ID_HEADER, encode_header(trace_id.as_bytes()));
+        }
+        Ok(())
     }
 }
 
@@ -76,12 +69,11 @@ fn encode_header(value: &[u8]) -> HeaderValue {
 }
 
 #[cfg(test)]
-mod test {
-    use crate::recursion_detection::{encode_header, RecursionDetectionStage};
+mod tests {
+    use super::*;
     use aws_smithy_http::body::SdkBody;
-    use aws_smithy_http::middleware::MapRequest;
-    use aws_smithy_http::operation;
     use aws_smithy_protocol_test::{assert_ok, validate_headers};
+    use aws_smithy_runtime_api::type_erasure::TypedBox;
     use aws_types::os_shim_internal::Env;
     use http::HeaderValue;
     use proptest::{prelude::*, proptest};
@@ -149,24 +141,28 @@ mod test {
 
     fn check(test_case: TestCase) {
         let env = test_case.env();
-        let mut req = http::Request::builder();
-        for (k, v) in test_case.request_headers_before() {
-            req = req.header(k, v);
+        let mut request = http::Request::builder();
+        for (name, value) in test_case.request_headers_before() {
+            request = request.header(name, value);
         }
-        let req = req.body(SdkBody::empty()).expect("must be valid");
-        let req = operation::Request::new(req);
-        let augmented_req = RecursionDetectionStage { env }
-            .apply(req)
-            .expect("stage must succeed");
-        for k in augmented_req.http().headers().keys() {
+        let request = request.body(SdkBody::empty()).expect("must be valid");
+        let mut context = InterceptorContext::new(TypedBox::new("doesntmatter").erase());
+        context.set_request(request);
+        let mut config = ConfigBag::base();
+
+        RecursionDetectionInterceptor { env }
+            .modify_before_signing(&mut context, &mut config)
+            .expect("interceptor must succeed");
+        let mutated_request = context.request().expect("request is still set");
+        for name in mutated_request.headers().keys() {
             assert_eq!(
-                augmented_req.http().headers().get_all(k).iter().count(),
+                mutated_request.headers().get_all(name).iter().count(),
                 1,
                 "No duplicated headers"
             )
         }
         assert_ok(validate_headers(
-            augmented_req.http().headers(),
+            mutated_request.headers(),
             test_case.request_headers_after(),
         ))
     }
